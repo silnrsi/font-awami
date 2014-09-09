@@ -1,4 +1,4 @@
-<!-- Generated on Wed, 13 Aug 2014 16:41:10 +0000 by Peter Martin -->
+<!-- Generated on Tue, 09 Sep 2014 11:44:48 +0000 by Peter Martin -->
 
 <font>
 
@@ -59,8 +59,8 @@
 	<blue_fuzz>[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]</blue_fuzz>
 	<blue_scale>[0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625,0.039625]</blue_scale>
 	<blue_shift>[7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]</blue_shift>
-	<blue_values_num>0</blue_values_num>
-	<blue_values>[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]</blue_values>
+	<blue_values_num>2</blue_values_num>
+	<blue_values>[[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]</blue_values>
 	<other_blues_num>0</other_blues_num>
 	<other_blues>[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]</other_blues>
 	<family_blues_num>0</family_blues_num>
@@ -68,10 +68,10 @@
 	<family_other_blues_num>0</family_other_blues_num>
 	<family_other_blues>[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]</family_other_blues>
 	<force_bold>[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]</force_bold>
-	<stem_snap_h_num>0</stem_snap_h_num>
-	<stem_snap_h>[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]</stem_snap_h>
-	<stem_snap_v_num>0</stem_snap_v_num>
-	<stem_snap_v >[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]</stem_snap_v >
+	<stem_snap_h_num>3</stem_snap_h_num>
+	<stem_snap_h>[[300,50,154], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]</stem_snap_h>
+	<stem_snap_v_num>3</stem_snap_v_num>
+	<stem_snap_v >[[82,103,120], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]</stem_snap_v >
 
 	<!-- OTHER  -->
 	<modified>0</modified>
@@ -89,6 +89,36 @@
 
 	<glyphs>
 		<glyph>
+			<name>.notdef</name>
+			<note>None</note>
+			<node_count>25</node_count>
+			<node_hash>ec7e776efcfe42fa2d2e1b2a3662cc443ce19fc3d71337ee5beb4b11</node_hash>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>NULL</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>0</component_count>
+			<width>0</width>
+			<unicode>0000</unicode>
+			<unicode_count>1</unicode_count>
+		</glyph>
+		<glyph>
+			<name>CR</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>0</component_count>
+			<width>556</width>
+			<unicode>000D</unicode>
+			<unicode_count>1</unicode_count>
+		</glyph>
+		<glyph>
 			<name>space</name>
 			<note>None</note>
 			<node_count>0</node_count>
@@ -97,42 +127,6 @@
 			<width>556</width>
 			<unicode>0020</unicode>
 			<unicode_count>1</unicode_count>
-		</glyph>
-		<glyph>
-			<name>absComma</name>
-			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
-		</glyph>
-		<glyph>
-			<name>absAlef</name>
-			<note>None</note>
-			<node_count>9</node_count>
-			<node_hash>ac6848ae3113410282d871c22d3f8d4d486680bceda81080ba7774fe</node_hash>
-			<component_count>0</component_count>
-			<width>421</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
-		</glyph>
-		<glyph>
-			<name>absAlefFin</name>
-			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absAlefHamzaAbove</name>
@@ -187,7 +181,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absAlefMaddah.shifted</name>
+			<name>absAlefMadda.shifted</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -200,7 +194,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absAlefMaddahFin</name>
+			<name>absAlefMaddaFin</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -213,7 +207,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absAlefMaddahGaf</name>
+			<name>absAlefMaddaGaf</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -262,8 +256,8 @@
 				<component>_beh: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>2339</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
+			<unicode>0628</unicode>
+			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absBehFin</name>
@@ -467,13 +461,13 @@
 		<glyph>
 			<name>absBehIni.jm</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>8</node_count>
+			<node_hash>d1f7337b831f6d38a238b0681a6c67b105ff4c425e91019068b248f6</node_hash>
+			<anchors>
+				<anchor>_exit: 166,685</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>903</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -1105,7 +1099,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absTehFin._bfklI</name>
+			<name>absTehFin._bfkl</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -1145,7 +1139,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absThehFin._bfklI</name>
+			<name>absThehFin._bfkl</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -1185,7 +1179,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absPehFin._bfklI</name>
+			<name>absPehFin._bfkl</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -1238,7 +1232,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absTtehFin._bfklI</name>
+			<name>absTtehFin._bfkl</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -1966,7 +1960,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absQafFin.stfhM</name>
+			<name>absQafFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -2813,8 +2807,8 @@
 				<component>absHah: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1572</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
+			<unicode>062C</unicode>
+			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absJeemFin</name>
@@ -3209,13 +3203,13 @@
 		<glyph>
 			<name>absJeemMed.beF</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>9</node_count>
+			<node_hash>d6773ce28f2ac0d2f67617d162378ca45fe1bb99347b594fe53ddc7f</node_hash>
+			<anchors>
+				<anchor>exit: 166,685</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>300</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -5784,7 +5778,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absLamAlefMaddah</name>
+			<name>absLamAlefMadda</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -5797,7 +5791,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absLamAlefMaddahFin</name>
+			<name>absLamAlefMaddaFin</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -6196,18 +6190,19 @@
 		<glyph>
 			<name>absGaf</name>
 			<note>None</note>
-			<node_count>7</node_count>
-			<node_hash>551c689b45cc2bb5e4b70da4e2c115fc3a8eca6c43d0867c44fda8b2</node_hash>
-			<component_count>1</component_count>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>2</component_count>
 			<components>
 				<component>absKaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_gafStroke: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1673</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absGaf.short</name>
+			<name>absGaf.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -6610,7 +6605,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absGafIni.short</name>
+			<name>absGafIni.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -7091,7 +7086,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absGafMed.short</name>
+			<name>absGafMed.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -8157,7 +8152,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absWawFin._stfhM</name>
+			<name>absWawFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -9921,7 +9916,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absHehGoalFin._stfhM</name>
+			<name>absHehGoalFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -9960,7 +9955,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absHehGoalHamzaAboveFin._stfhM</name>
+			<name>absHehGoalHamzaAboveFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -10689,7 +10684,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absTehMarbutaGoalFin._stfhM</name>
+			<name>absTehMarbutaGoalFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -10780,7 +10775,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absKeheh.short</name>
+			<name>absKeheh.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -11183,7 +11178,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absKehehIni.short</name>
+			<name>absKehehIni.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -11664,7 +11659,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absKehehMed.short</name>
+			<name>absKehehMed.dk</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -11820,7 +11815,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absMaddahAbove</name>
+			<name>absMaddaAbove</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -11833,7 +11828,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absMaddahAbove.large</name>
+			<name>absMaddaAbove.large</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -12145,7 +12140,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absWawHamzaFin._stfhM</name>
+			<name>absWawHamzaFin._stfh</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -13216,11 +13211,14 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>.notdef</name>
+			<name>absAlefFin</name>
 			<note>None</note>
-			<node_count>25</node_count>
-			<node_hash>ec7e776efcfe42fa2d2e1b2a3662cc443ce19fc3d71337ee5beb4b11</node_hash>
-			<component_count>0</component_count>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
 			<width>1300</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
@@ -16257,7 +16255,170 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absBehFin._bfklI</name>
+			<name>absBehFin._bfkl</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_gafStroke</name>
+			<note>None</note>
+			<node_count>7</node_count>
+			<node_hash>eed95ef618d7ce014c3d9e26f696b7f40c311834e3c657b06b405100</node_hash>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absComma</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absAlef</name>
+			<note>None</note>
+			<node_count>9</node_count>
+			<node_hash>ac6848ae3113410282d871c22d3f8d4d486680bceda81080ba7774fe</node_hash>
+			<component_count>0</component_count>
+			<width>421</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absSadIni.nn</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absSadMed.beM2</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absFehMed.ta</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absHamzaAbove2</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absWawHamzaAboveFin</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absLamAlefHamza</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absGafIni.jm</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absGafIniBeM2_alt</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absGafMed.short2</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_smallTah2</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
