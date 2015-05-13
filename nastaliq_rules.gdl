@@ -1,0 +1,114 @@
+/*
+    File: nastaliq_rules.gdl
+
+    Graphite rules for Awami Nastaliq
+*/
+
+// Standard definitions and abbreviations:
+#include "stddef.gdh"
+
+// Collision fixing:
+#define DO_COL_FIX 1
+
+// Separate the nuqtas on final glyphs from their bases:
+#define SEP_FINAL_NUQTAS 0
+
+// just for testing the end of the compilation process; doesn't generate a workable font
+#define QUICKCOMPILE 0
+
+
+Bidi = true;
+ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
+
+
+#if DO_COL_FIX
+
+#define COLL_FREEZE       0		// base - test for collisions but don't move this glyph; 
+                           		// the default for a glyph in the START-END range
+#define COLL_FIX          1
+#define COLL_IGNORE       2
+#define COLL_START        4
+#define COLL_END          8
+#define COLL_KERN        16
+//      COLL_ISCOL       32		// this glyph has a collision
+//      COLL_KNOWN       64		// we've figured out what's happening with this glyph
+#define COLL_JUMPABLE   128
+#define COLL_OVERLAP    256
+
+#define setbits(f,m,v) (f & (~m)) | v
+
+
+#define SET_FIX(f) 			setbits(f, COLL_FIX, COLL_FIX)
+#define CLEAR_FIX(f) 		setbits(f, COLL_FIX, 0)
+#define SET_IGNORE(f)		setbits(f, COLL_IGNORE, COLL_IGNORE)
+#define CLEAR_IGNORE(f)		setbits(f, COLL_IGNORE, 0)
+#define SET_START(f)		setbits(f, COLL_START, COLL_START)
+#define CLEAR_START(f)		setbits(f, COLL_START, 0)
+#define SET_END(f)			setbits(f, COLL_END, COLL_END)
+#define CLEAR_END(f)		setbits(f, COLL_END, 0)
+#define SET_KERN(f)			setbits(f, COLL_KERN, COLL_KERN)
+#define CLEAR_KERN(f)		setbits(f, COLL_KERN, 0)
+#define SET_JUMPABLE(f)		setbits(f, COLL_JUMPABLE, COLL_JUMPABLE)
+#define CLEAR_JUMPABLE(f)	setbits(f, COLL_JUMPABLE, 0)
+#define SET_OVERLAP(f)		setbits(f, COLL_OVERLAP, COLL_OVERLAP)
+#define CLEAR_OVERLAP(f)	setbits(f, COLL_OVERLAP, 0)
+
+#define SET_START_END(f)	setbits(f, (COLL_START + COLL_END), (COLL_START + COLL_END))
+
+
+#endif // DO_COL_FIX
+
+
+// 1 means strip out the nuqtas altogether during the contextual shaping passes and put them back in later.
+#define STRIP_NUQTAS 0
+
+
+// Classes for contextual shaping:
+#include "nastaliq_cntxlClasses.gdh"
+
+#include "nastaliq_classes.gdh"
+
+
+#if DO_COL_FIX
+
+#include "nastaliq_complexShapes.gdh"
+
+table(glyph)
+
+cKernable = (c_isolated c_final) {collision.kern = true};
+
+endtable;
+
+#endif // DO_COL_FIX
+
+
+// FEATURES
+
+//table(feature)
+//endtable; // feature
+
+
+#define DIACS [cDiacritics cDiacritics?]?
+
+// TODO: include diacritic combinations
+#define MARKS (cNuqtas g__hehHook_small g__hamza)?  DIACS
+
+
+table(glyph)
+
+// TODO: include diacritic combinations
+cNuqtaLikeUpper = (cNuqtaUpper g__hamza);
+cNuqtaLikeLower = (cNuqtaLower g__hehHook_small);
+cNuqtaLike = (cNuqtaLikeUpper cNuqtaLikeLower)
+
+endtable;
+
+
+// SUBSTITUTION RULES
+
+#include "nastaliq_shaping.gdh"
+
+
+// POSITIONING RULES
+
+#include "nastaliq_positioning.gdh"

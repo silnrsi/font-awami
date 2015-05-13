@@ -1,0 +1,576 @@
+/*
+    File: nastaliq_rules.gdl
+
+    Graphite positioning rules for Awami Nastaliq
+*/
+
+
+table(positioning)
+
+pass(1)
+
+//
+//	CURSIVE ATTACHMENT
+//
+
+table(glyph) {AttributeOverride = true} // override entryX and exitX APs
+
+c_catt2_bariyeh = (gBehMedBy, gJeemMedBy, gSeenMedBy, gSadMedBy, gTahMedBy, gAinMedBy,
+		gFehMedBy, gKafMedBy, gGafMedBy, gLamMedBy, gMeemMedBy, gHehGoalMedBy,
+		gHehDoMedBy);
+
+c_catt2_lam = (gBehIni, gJeemIni, gSeenIni, gSadIni, gTahIni, gAinIni,
+		gFehIni, gKafIni, gGafIni, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni,
+		gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed,
+		gFehMed, gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed,
+		gMeemMed_alt);
+c_catt_lam = (gLamFin, gLamAlefFin, cLamMed, gLamAlefMaddaFin, gLamAlefHamzaFin);
+
+c_catt2_kaf = (gBehIni, gJeemIni, gSeenIni, gSadIni, gTahIni, gAinIni,
+		gFehIni, gKafIniDk, gGafIniDk, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni,
+		gKafIniKf, gGafIniKf,
+		gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed,
+		gFehMed, gKafMedDk, gGafMedDk, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed,
+		gMeemMed_alt, gGafMed_short);
+c_catt_kaf = (gKafMedBeF, gKafMedBeM2, gKafMedJm, gKafMedRe, gKafMedSn, gKafMedSd, gKafMedTaF, gKafMedAi,
+		gKafMedFe, gKafMedQf, gKafMedMm, gKafMedNn, gKafMedHgF, gKafMedHd, gKafMedCh, gKafMedBy,
+		gKafMedDk, gGafMedBeF, gGafMedBeM2, gGafMedJm, gGafMedRe, gGafMedSn, gGafMedSd, gGafMedTaF,
+		gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedNn, gGafMedHgF, gGafMedHd, gGafMedCh,
+		gGafMedBy, gGafMedDk, gGafMed_short);
+		
+c_catt2_qafFin = (gBehIniQf, gJeemIniQf, /*gSeenIniQf,*/ gSadIniQf, /*gTahIniQf,*/ gAinIniQf,
+		gFehIniQf, gKafIniQf, gGafIniQf, gLamIniQf, gMeemIniQf, gHehGoalIniQf, gHehDoIniQf,
+		gBehMedQf, gJeemMedQf, /*gSeenMedQf,*/ gSadMedQf, /*gTahMedQf,*/ gAinMedQf,
+		/*gFehMedQf,*/ gKafMedQf, gGafMedQf, gLamMedQf, gMeemMedQf, gHehGoalMedQf, /*gHehDoMedQf,*/
+		gBehMedQf_ss);
+		
+c_catt2_qafFin_STFH = (gSeenIniQf, gTahIniQf, gSeenMedQf, gTahMedQf, gFehMedQf, gHehDoMedQf);
+
+c_catt2_jeem = (gBehIniJm, gJeemIniJm, gSeenIniJm, gSadIniJm, gTahIniJm, gAinIniJm,
+		gFehIniJm, gKafIniJm, gGafIniJm, gLamIniJm, gMeemIniJm, gHehGoalIniJm, gHehDoIniJm,
+		gKafIniJm_alt, gGafIniJm_alt,
+		gBehMedJm, gJeemMedJm, gSeenMedJm, gSadMedJm, gTahMedJm, gAinMedJm,
+		gFehMedJm, /*gKafMedJm, gGafMedJm,*/ gLamMedJm, gMeemMedJm, gHehGoalMedJm, gHehDoMedJm,
+		gKafMedJm_alt, gGafMedJm_alt);
+		
+c_catt2_seen = (gBehIniSn, gJeemIniSn, gSeenIniSn, gSadIniSn, gTahIniSn, gAinIniSn,
+		gFehIniSn, gKafIniSn, gGafIniSn, gLamIniSn, gMeemIniSn, gHehGoalIniSn, gHehDoIniSn,
+		gBehMedSn, gJeemMedSn, gSeenMedSn, gSadMedSn, gTahMedSn, gAinMedSn,
+		gFehMedSn, gKafMedSn, gGafMedSn, gLamMedSn, gMeemMedSn, gHehGoalMedSn, gHehDoMedSn,
+		gKafMedSn_alt, gGafMedSn_alt);
+		
+c_catt2_sad = (gBehIniSd, gJeemIniSd, gSeenIniSd, gSadIniSd, gTahIniSd, gAinIniSd,
+		gFehIniSd, /*gKafIniSd, gGafIniSd,*/ gLamIniSd, gMeemIniSd, gHehGoalIniSd, gHehDoIniSd,
+		gKafIniSd_alt, gGafIniSd_alt,
+		gBehMedSd, gJeemMedSd, gSeenMedSd, gSadMedSd, gTahMedSd, gAinMedSd,
+		gFehMedSd, /*gKafMedSd, gGafMedSd,*/ gLamMedSd, gMeemMedSd, gHehGoalMedSd, gHehDoMedSd,
+		gKafMedSd_alt, gGafMedSd_alt, gBehMedSd_ss);
+c_catt_sad = (cSadMed, gKafMed, gGafMed);
+
+c_catt2_tah = (gBehIniTaM, gJeemIniTaM, gSeenIniTaM, gSadIniTaM, gTahIniTaM, gAinIniTaM,
+		gFehIniTaM, 
+		gKafIniTaM, gGafIniTaM, // these are not present in the OT lookup, but seem to be needed
+		gLamIniTaM, gMeemIniTaM, gHehGoalIniTaM, gHehDoIniTaM,
+		gKafIniTaM_alt, gGafIniTaM_alt,
+		gBehMedTaM, gJeemMedTaM, gSeenMedTaM, gSadMedTaM, gTahMedTaM, gAinMedTaM,
+		gFehMedTaM, /*gKafMedTaa, gGafMedTaa,*/ gLamMedTaM, gMeemMedTaM, gHehGoalMedTaM, gHehDoMedTaM,
+		gKafMedTaM_alt, gGafMedTaM_alt, gBehMedTaM_ss);
+
+c_catt2_ain = (gBehIniAi, gJeemIniAi, gSeenIniAi, gSadIniAi, gTahIniAi, gAinIniAi,
+		gFehIniAi, /*gKafIniAi, gGafIniAi,*/ gLamIniAi, gMeemIniAi, gHehGoalIniAi, gHehDoIniAi,
+		gKafIniAi_alt, gGafIniAi_alt,
+		gBehMedAi, gJeemMedAi, gSeenMedAi, gSadMedAi, gTahMedAi, gAinMedAi,
+		gFehMedAi, /*gKafMedAi, gGafMedAi,*/ gLamMedAi, gMeemMedAi, gHehGoalMedAi, gHehDoMedAi,
+		gKafMedAi_alt, gGafMedAi_alt, gBehMedAi_ss);
+		
+c_catt2_feh = (gBehIniFe, gJeemIniFe, gSeenIniFe, gSadIniFe, gTahIniFe, gAinIniFe,
+		gFehIniFe, /*gKafIniFe, gGafIniFe,*/ gLamIniFe, gMeemIniFe, gHehGoalIniFe, gHehDoIniFe,
+		gKafIniFe_alt, gGafIniFe_alt,
+		gBehMedFe, gJeemMedFe, gSeenMedFe, gSadMedFe, gTahMedFe, gAinMedFe,
+		gFehMedFe, /*gKafMedFe, gGafMedFe,*/ gLamMedFe, gMeemMedFe, gHehGoalMedFe, gHehDoMedFe,
+		gKafMedFe_alt, gGafMedFe_alt, gBehMedFe_ss);
+		
+c_catt2_meem = (/*gBehIniMm,*/ gJeemIniMm, gSeenIniMm, gSadIniMm, gTahIniMm, gAinIniMm,
+		gFehIniMm, /*gKafIniMm, gGafIniMm,*/ gLamIniMm, gMeemIniMm, gHehGoalIniMm, gHehDoIniMm,
+		gBehIniMmM, gKafIniMm_alt, gGafIniMm_alt,
+		gBehMedMm, gJeemMedMm, gSeenMedMm, gSadMedMm, gTahMedMm, gAinMedMm,
+		gFehMedMm, /*gKafMedMm, gGafMedMm,*/ gLamMedMm, gMeemMedMm, gHehGoalMedMm, gHehDoMedMm,
+		gKafMedMm_alt, gGafMedMm_alt);
+		
+c_catt2_hehGoal = (gBehIniHgM, gJeemIniHgM, gSeenIniHgM, gSadIniHgM, gTahIniHgM, gAinIniHgM,
+		gFehIniHgM, /*gKafIniHgm, gGafIniHgm,*/ gLamIniHgM, gMeemIniHgM, gHehGoalIniHgM, gHehDoIniHgM,
+		gKafIniHgM_alt, gGafIniHgM_alt,
+		gBehMedHgM, gJeemMedHgM, gSeenMedHgM, gSadMedHgM, gTahMedHgM, gAinMedHgM,
+		gFehMedHgM, /*gKehehMedHgm, gGafMedHgm,*/ gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM,
+		gKafMedHgM_alt, gGafMedHgM_alt);
+		
+c_catt2_hehDo = (gBehIniHd, gJeemIniHd, gSeenIniHd, gSadIniHd, gTahIniHd, gAinIniHd,
+		gFehIniHd, /*gKafIniHd, gGafIniHd,*/ gLamIniHd, gMeemIniHd, gHehGoalIniHd, gHehDoIniHd,
+		gKafIniHd_alt, gGafIniHd_alt,
+		gBehMedHd, gJeemMedHd, gSeenMedHd, gSadMedHd, gTahMedHd, gAinMedHd,
+		gFehMedHd, /*gKafMedHd, gGafMedHd,*/ gLamMedHd, gMeemMedHd, gHehGoalMedHd, gHehDoMedHd,
+		gKafMedHd_alt, gGafMedHd_alt);
+		
+c_catt2_meem_alt = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX,
+		gFehIniMmX, /*gKafIniJm9, gGafIniJm9, gLamIniJm9,*/ gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX,
+		gKafIniMmX_alt, gGafIniMmX_alt,
+		gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX,
+		gFehMedMmX, /*gKafMedJm9, gGafMedJm9, gLamMedJm9,*/ gMeemMedMmX, gHehGoalMedMmX, gHehDoMedMmX,
+		gKafMedMmX, gGafMedMmX);
+c_catt_meem_alt = (gMeemMed_alt, gMeemMedBeNn_alt);
+		
+c_catt2_kaf_alt = (gBehIniKfX, gJeemIniKfX, gSeenIniKfX, gSadIniKfX, gTahIniKfX, gAinIniKfX,
+		gFehIniKfX, /*gKafIniRe1, gGafIniRe1,*/ gLamIniKfX, gMeemIniKfX, gHehGoalIniKfX, gHehDoIniKfX,
+		gKafIniKfX_alt, gGafIniKfX_alt,
+		gBehMedKfX, gJeemMedKfX, gSeenMedKfX, gSadMedKfX, gTahMedKfX, gAinMedKfX,
+		gFehMedKfX, /*Kafmedi41, gGafmedi41,*/ gLamMedKfX, gMeemMedKfX, gHehGoalMedKfX, gHehDoMedKfX,
+		gKafMedKfX, gGafMedKfX);
+		
+c_catt2_beh = (gBehIniBe, gJeemIniBe, gSeenIniBe, gSadIniBe, gTahIniBe, gAinIniBe,
+		gFehIniBe, /*gKafinit23, gGafinit23,*/ gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe,
+		gKafIniBe_alt, gGafIniBe_alt,
+		gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gAinMedBe,
+		gFehMedBe, /*gKafMedBeF3, gGafMedBeF3,*/ gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe,
+		gKafMedBe_alt, gGafMedBe_alt);
+c_catt_beh = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTaF, gBehMedTaM, gBehMedAi, gBehMedFe, gBehMedQf,
+		gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX, gBehMedKfX);
+		
+// Why these? They should be handled by the classes above.
+c_catt2_beh_SS = (gSeenIniBe, gSadIniBe, gSeenMedBe, gSadMedBe);
+c_catt_beh_SS = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedMmX, gBehMedKfX);
+
+c_catt2_behM1_SS = (gSeenIniBeM1, gSadIniBeM1, gSeenMedBeM1, gSadMedBeM1);
+c_catt_behM1_SS = (gBehMedSn, gBehMedBe, gBehMedBeHg, gBehMedBeM2, gBehMedSd_ss, gBehMedTaF_ss, gBehMedTaM_ss,
+		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss);
+		
+///c_catt2_beh_S1 = (gSeenIni, gSadIni, gSeenMed, gSadMed); // trial
+
+c_catt2_behBeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg,
+		gFehIniBeHg, /*gKafIniJm5, gGafIniJm5,*/ gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg,
+		gKafIniBeHg_alt, gGafIniBeHg_alt,
+		gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, gTahMedBeHg, gAinMedBeHg,
+		gFehMedBeHg, /*gKafMedJm5, gGafMedJm5,*/ gLamMedBeHg, gMeemMedBeHg, gHehGoalMedBeHg, gHehDoMedBeHg,
+		gKafMedBeHg, gGafMedBeHg);
+		
+c_catt2_behM1_behNn = (gBehIniBeM2, gJeemIniBeM2, gSeenIniBeM2, gSadIniBeM2, gTahIniBeM2, gAinIniBeM2,
+		gFehIniBeM2, gKafIniBeM2, gGafIniBeM2, gLamIniBeM2, gMeemIniBeM2, gHehGoalIniBeM2, gHehDoIniBeM2,
+		gKafIniBeM2_alt, gGafIniBeM2_alt,
+		gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2,
+		gFehMedBeM2, gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2,
+		gKafMedBeM2_alt, gGafMedBeM2_alt);	
+c_catt_behM1_behNn = (gBehMed, gBehMedBeNn, gBehMedBeM1);
+
+c_catt2_behM2 = (gBehIniBeM1, gJeemIniBeM1, /*gSeenIniBeM1, gSadIniBeM1,*/ gTahIniBeM1, gAinIniBeM1,
+		gFehIniBeM1, /*gKafInia, gGafInia,*/ gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1,
+		gKafIniBeM1_alt, gGafIniBeM1_alt,
+		gBehMedBeM1, gJeemMedBeM1, /*gSeenMedBeM1, gSadMedBeM1,*/ gTahMedBeM1, gAinMedBeM1,
+		gFehMedBeM1, /*gKafMeda, gGafMeda,*/ gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1,
+		gKafMedBeM1_alt, gGafMedBeM1_alt);	
+c_catt_behM2 = (gBehMedSn, gBehMedBe, gBehMedBeHg, gBehMedBeM2);
+
+//c_catt2_finals_J = (gJeemMedSn, gJeemMedHd, gJeemMedQf);
+//c_catt_finals_J = (gSeenFin, gSheenFin, gHehDoFin, gWawFin, gWawHamzaAboveFin);
+
+endtable;  // glyph
+
+
+//c_catt2_bariyah {shift.y = NOTSET}
+//	gBariyehFin {shift.y = NOTSET; adv.x -= aw - entry.x} // - @M.exit.x;}		
+//	/ _=M ^ _=F ;
+
+// Perform cursive attachments.
+
+#define cursive_attach(P)  c_exit_##P {att {to=@L; with=exit_##P; at=entr_##P}} c_entr_##P {insert=1} / _ MARKS ^ _=L ;
+#define cursive_attach2(P1, P2)  c_exit_##P1 {att {to=@L; with=exit_##P1; at=entr_##P2}} c_entr_##P2 {insert=1} / _ MARKS ^ _=L ;
+
+
+#if (QUICKCOMPILE == 0)
+
+cursive_attach(beh)
+cursive_attach(behFinal)
+cursive_attach(behHighTooth)
+cursive_attach(behLowTooth)
+cursive_attach2(behLowTooth, behPreFinalHehGoal)
+cursive_attach(behPreReh)
+cursive_attach(behPreNoon)
+cursive_attach(jeem)
+cursive_attach(reh)
+cursive_attach(rehHgM)
+cursive_attach(rehJkl)
+cursive_attach(rehSshg)
+cursive_attach(seen)
+cursive_attach(sad)
+cursive_attach(tah)
+cursive_attach(feh)
+cursive_attach(noon)
+cursive_attach(hehgoalMedial)
+cursive_attach(hehgoalFinal)
+cursive_attach(chotiyehBfkl)
+cursive_attach(lamKaf)
+
+#endif  // QUICKCOMPILE
+
+(c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS ^ _=L ;
+
+endpass; // 1
+
+endtable;	// positioning
+
+
+// Basic reprocess rules:
+#define attachR_BN(B,N,A,W)    B  N {attach {to = @1; at = A; with = W}}  / ^ _ _ {att.to==0};
+#define attachR_BLN(B,N,A,W)   B  N {attach {to = @1; at = A; with = W}}  / ^ _ cNuqtaLower? _ {att.to==0};
+
+
+// Nuqta attachment:
+
+
+table(positioning)
+
+pass(2)
+
+// UPPER NUQTA ATTACHMENT
+
+// Special APs for some beh forms:
+attachR_BN( cTakes_n1hUpperBehSpecialDia, cNuqtaLikeUpper, n1hUpperBehSpecialS, nUpperM)
+
+// 1 nuqta above
+attachR_BLN( cTakes_nUpperDia,	g__dot1u,	nUpperS,	nUpperM)
+
+// 2 nuqtas above
+attachR_BN(	cTakes_nUpperDia,	g__dot2u,	nUpperS,	nUpperM)
+
+// 3 nuqtas above
+attachR_BN( cTakes_nUpperDia,	g__dot3u,	nUpperS,	nUpperM)
+
+endpass;
+
+
+pass(3)
+
+// LOWER NUQTA ATTACHMENT
+
+// Basic:
+
+// Hehhook - big
+////////attachR_BN(	gHehGoalIni,	g__hehHook_big,		default2,		default2_)
+
+// Hehhook
+attachR_BN(	cTakes_hehHookDia,	g__hehHook_small,	hehHookS,	 hehHookM)
+
+// NuqtaBelow
+attachR_BN(	cTakes_n1LowerDia,	g__dot1l,	n1LowerS,		n1LowerM)
+attachR_BN(	cTakes_n23LowerDia,	g__dot2l,	n23LowerS,		n23LowerM)
+attachR_BN(	cTakes_n23LowerDia,	g__dot3l,	n23LowerS,		n23LowerM)
+
+endpass;  // 3
+
+endtable;
+
+
+#if DO_COL_FIX
+
+/****
+table(glyph)
+
+cNuqtas { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
+
+c_jumpTail = ( cJeemFinals, g_ainfina, g_gainfina );
+
+
+g_kafExclude = glyphid(1006); // bb.bl = (335, 1719)
+g_kaf1Exclude = glyphid(1007);
+g_kaf3Exclude = glyphid(1008);
+g_kafaltExclude = glyphid(1009);
+
+//g_kafinit2a { collision.exclude.glyph = g_kafExclude };
+
+g_kafmedi1	{ collision.exclude {glyph = g_kaf1Exclude;	offset {x = 400; 	y = 400;}}};
+g_kafmedi2	{ collision.exclude {glyph = g_kafExclude;	offset {x = 1100; 	y = 400;}}};
+g_kafmedi6	{ collision.exclude {glyph = g_kafExclude;	offset {x = 0;		y = 800;}}};
+g_kaffina	{ collision.exclude {glyph = g_kafExclude;	offset {x = 2100;	y = 0;}}};
+g_ghafmedishort {collision.exclude {glyph=g_kafExclude;	offset {x = 400;	y = -100;}}};
+
+cls_excludingGlyphs = (g_kafinit2a, g_kafmedi1, g_kafmedi2, g_kafmedi6,	g_ghafmedishort);
+
+cls_excludingGlyphs_kern = (g_kaffina);
+
+endtable;
+****/
+
+table(positioning)
+pass(4)
+// Set up for collision fixing
+
+// Spaces serve as boundaries between collision ranges.
+g_space { collision.flags = SET_START_END(collision.flags) };
+
+
+// Heh-hooks can't move very far, especially vertically.
+// TODO: is this right?
+g__hehHook_small { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	min.x = -50m;
+	min.y = -50m;
+	max.x = 50m;
+	max.y = 50m;
+} };
+
+// The nuqta on the zah (tah form) fits nicely above it, so it is not normally helpful to move it.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	marginmin = 40m;
+	min.x = 100m;     // don't let this one move left
+	max.x = 100m;
+	min.y = -200m;  // shouldn't need to move vertically either, at least by much
+	max.y = 300m;
+	////maxoverlap = -75m;
+} } / cTahMed _ ;
+
+// Nuqtas on initials can be moved quite a bit to the right.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	marginmin = 40m;
+	min.x = -250m;
+	max.x = 350m; // more than normal
+	min.y = -300m;
+	max.y = 1000m;
+} } / c_initial _;
+
+
+// Nuqtas above can move more to the left than the right.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	marginmin = 40m;
+	min.x = -250m;
+	max.x = 200m;
+	min.y = -300m;
+	//max.y = (position.y > 1000m ? 1000m : 1500m);	
+	max.y = 1000m;
+}; user2 = position.y; };
+
+// Nuqtas before certain finals can move down quite a bit to jump below swashes.
+/**********
+cNuqtaLikeBelow { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	marginmin = 40m;
+	min.x = -200m;
+	max.x = 400m;
+	min.y = -1500m; // a lot!
+	max.y = 300m;
+	maxoverlap = 50m;  // and move to the right if necessary
+} } / _  c_jumpTail;
+**********/
+
+// Nuqtas below can move more to the right than the left.
+cNuqtaLikeLower { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	marginmin = 40m;
+	min.x = -200m;
+	max.x = 250m;
+	min.y = -1000m;
+	max.y = 300m;
+} };
+
+// experiment
+/*****
+cls_excludingGlyphs { collision {
+	flags = CLEAR_FIX(collision.flags);
+	flags = CLEAR_KERN(collision.flags);
+	//exclude.glyph = glyph.collision.exclude.glyph;
+	//exclude.offset.x = glyph.collision.exclude.offset.x;
+	//exclude.offset.y = glyph.collision.exclude.offset.y;
+} };
+*****/
+
+// Other bases are not moved.
+(c_initial c_medial) { collision { flags = COLL_FREEZE } };
+
+cDiacritics { collision.flags = SET_IGNORE(collision.flags) };	// these have not been attached, so don't bother with them
+
+endpass; // 3
+
+pass(5) { CollisionFix = 3 }
+// Actually do the collision fixing. Any failures leave for now.
+endpass;
+
+endtable;
+
+#endif // DO_COL_FIX
+
+
+table(positioning)
+
+//
+//	DIACRITIC ATTACHMENT
+//
+
+table(glyph)
+
+c_final_wo_diac = c_final;
+c_final_wo_diac -= (gWawHamzaAboveFin, gWawHamzaAboveFin_stfh, gAlefMaddaFin, gLamAlefMaddaFin, gAlefHamzaFin, gLamAlefHamzaFin,
+	gHehGoalHamzaFin, gHehGoalHamzaFin_stfh, gYehHamzaAboveFin);
+	
+
+// many diacritics are attached to initials and medials as if they were nuqtas - but not all
+c_base_wo_diac = (c_initial c_medial c_final_wo_diac c_isolated);
+
+c_base_wo_nuqta = (c_initial c_medial);
+
+endtable;  // glyph
+
+
+// Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
+
+#if DO_COL_FIX
+pass(6)
+#else
+pass(4)
+#endif // DO_COL_FIX
+
+// Attach diacritics.
+ 
+table(glyph) { AttributeOverride = false }
+// Classes of nuqtas and things that attach closely like nuqtas:
+c_attLikeNqUpper = (cNuqtaUpper); // includes small toa
+c_attLikeNqLower = (cNuqtaLower, g__hehHook_small);
+endtable;
+
+
+// attach to nuqta
+cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticsUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  _  cDiacriticsLower? _ {att.to==0};
+cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticsLower {att {to=@N; at=mLowerS; with=mLowerM}; insert=true}
+		/ ^ _  _  c_attLikeNqUpper?  _ {att.to==0};
+
+// Attaching to final form, or nuqta, uses mUpper/LowerS.
+cTakes_mUpperDia=B  cDiacriticsUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  cDiacriticsLower?  _ {att.to==0};
+cTakes_mLowerDia=B  cDiacriticsLower {att {to=@B; at=mLowerS; with=mLowerM}; insert=true}
+		/ ^ _  _ {att.to==0};
+
+// Attaching initial/medial base - uses stationary nuqta APs.
+cTakes_nUpperDia=B  cDiacriticsUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  cDiacriticsLower?  _ {att.to==0};
+cTakes_n1LowerDia=B  cDiacriticsLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
+		/ ^ _  c_attLikeNqUpper?  _ {att.to==0};
+
+// attach to diacritic
+///cDiacriticsAbove=D1  cDiacriticsUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true};
+///cDiacriticsBelow=D1  cDiacriticsLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true};
+
+// Remove if we create a nuqta+smalltah glyph:
+////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
+
+endpass; // pos - 4 or 5
+
+
+#if DO_COL_FIX
+
+pass(7)
+
+// Set up diacritic collision fixes and kerning.
+
+// Spaces serve as boundaries between collision ranges.
+g_space { collision.flags = COLL_START + COLL_END };
+
+/***
+g_takhalus  { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	min.x = -400m;
+	min.y = -300m;
+	max.x = 400m;
+	max.y = 800m;
+} };
+***/
+
+cDiacriticsUpper { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	min.x = -250m;
+	min.y = -300m;
+	max.x = 250m;
+	max.y = 500m;
+} };
+
+
+cDiacriticsLower { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	min.x = -250m;
+	min.y = -500m;
+	max.x = 250m;
+	max.y = 300m;
+} };
+
+// Also wiggle around nuqtas slightly to make more space if possible.
+////cNuqtaLike {collision.margin = 150m};
+
+////cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
+
+// Isolate and final forms can be kerned, as indicated by glyph attribute collision.kern.
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = 100m;
+	////max.x = 300m; min.x = 0;  // kerning right is logically equivalent to shifting left in RTL
+	max.x = 5000m; min.x = -5000m;
+    // min/max.y are omitted for kernable glyphs
+} };
+
+
+cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
+/////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
+
+endpass;
+
+pass(8) { CollisionFix = 4 }
+
+// Perform diacritic-related fixing.
+
+endpass;
+
+/**************
+pass(9)
+
+cKernable { collision.flags = CLEAR_FIX(collision.flags) }; // turn off COLL_FIX
+
+cNuqtaLike { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+} };
+
+cDiacritics { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 125m;
+} };
+
+endpass;
+
+
+pass(10) { CollisionFix = 2 }
+
+// Last chance fixes.
+
+endpass;
+
+***************/
+
+
+#endif // DO_COL_FIX
+
+
+/////#include "awami_tweaks.gdh"
+
+endtable;
