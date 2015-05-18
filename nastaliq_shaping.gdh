@@ -17,7 +17,7 @@ pass(1)
 	gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
 
 	// Yay + hamza = hamzayay (move zair or zabar out of the way):
-	gChotiyeh=Y  cDiacritics=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
+	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
 
 	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)
         c_nfd_noHamza=B  gHamzaAbove=H  >  @1  c_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;

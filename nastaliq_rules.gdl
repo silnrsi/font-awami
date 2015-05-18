@@ -88,25 +88,62 @@ endtable;
 //endtable; // feature
 
 
-#define DIACS [cDiacritics cDiacritics?]?
+
+#define DIACS [cDiacritic cDiacritic?]?
 
 // TODO: include diacritic combinations
-#define MARKS (cNuqtas g__hehHook_small g__hamza)?  DIACS
+#define MARKS  cNuqtaLike?  DIACS
 
+// In positioning table, allow two nuqta-like glyphs for some glyphs that can have
+// nuqtas both above and below
+#define MARKS2N  cNuqtaLikeLower? cNuqtaLikeUpper?  DIACS
+
+
+// EXPERIMENTAL - both lower and upper nuqtas
 
 table(glyph)
 
-// TODO: include diacritic combinations
-cNuqtaLikeUpper = (cNuqtaUpper g__hamza);
-cNuqtaLikeLower = (cNuqtaLower g__hehHook_small);
-cNuqtaLike = (cNuqtaLikeUpper cNuqtaLikeLower)
+g_dalTahNuqtas = pseudo(postscript("absDal"), 0x0759);
+g_dalTahNuqtasFin = pseudo(postscript("absDalFin"));
+
+g_rehDotBelowDotAbove = pseudo(postscript("absReh"), 0x0696);
+g_rehDotBelowDotAboveFin = pseudo(postscript("absRehFin"));
+
+cRightLinkIso += (g_dalTahNuqtas, g_rehDotBelowDotAbove);
+cRightLinkFin += (g_dalTahNuqtasFin, g_rehDotBelowDotAboveFin);
+
+
+cLowerUpper = (g__dot2l_smallTah, g__smallTah_dot2vl, g__dot1u_dot1l);
+cLowerNoUpper = (g__dot2l, g__dot2vl, g__dot1l);
+cUpperNoLower = (g__smallTah, g__smallTah, g__dot1u);
 
 endtable;
+
 
 
 // SUBSTITUTION RULES
 
 #include "nastaliq_shaping.gdh"
+
+
+// EXPERIMENTAL - both lower and upper nuqtas
+
+table(sub)
+pass(2)
+
+g_dalTahNuqtasFin 			 _	>	gDalFin		g__smallTah_dot2vl:1;
+g_rehDotBelowDotAboveFin	 _	>	gRehFin		g__dot1u_dot1l:1;
+
+endpass;
+
+pass(6)
+
+// Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
+
+cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+
+endpass;
+endtable;
 
 
 // POSITIONING RULES

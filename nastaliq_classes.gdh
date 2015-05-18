@@ -28,9 +28,14 @@ g_zwnj = pseudo(postscript("space"), 0x200C);
 g_zwj = pseudo(postscript("space"), 0x200D);
 
 
-cNuqtaUpper = ( g__dot1u  g__dot2u  g__dot3u  g__smallTah  gHamzaAbove2 ) ;
-cNuqtaLower = ( g__dot1l g__dot2l  g__dot3l ) ;
-cNuqtas = ( cNuqtaUpper cNuqtaLower ) ;
+cNuqtaUpper = (g__dot1u  g__dot2u  g__dot3u  g__dot4u) ;
+cNuqtaLower = (g__dot1l  g__dot2l  g__dot3l  g__dot2vl) ;
+cNuqta = (cNuqtaUpper  cNuqtaLower) ;
+
+cNuqtaLikeUpper = (cNuqtaUpper  g__smallTah  g__hamza);
+cNuqtaLikeLower = (cNuqtaLower  g__hehHook_small);
+cNuqtaLike = (cNuqtaLikeUpper  cNuqtaLikeLower)
+
 
 
 // TODO: remove nuqtaG glyph attribute
@@ -355,6 +360,7 @@ cRightLinkFin = (	g_zwj,	cAlefFin0,	cDalFin0,	cRehFin0,	cWawFin0,	cBariyehFin0);
 
 // NFD > NFC
 
+// TODO: add more characters here: waw, alef...
 c_nfd_noHamza = (gChotiyeh, gHehGoal);		// chotiyah, goal-hay
 c_nfc_hamza   = (gYehHamzaAbove, gHehGoalHamza);		// hamza-yay, hay-hamza
 
@@ -503,13 +509,13 @@ c_qw = ( gQafFin gQafFin_stfh gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaAb
 
 // Diacritics
 
-cDiacriticsUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
+cDiacriticUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
     gDopesh gUltaPesh gNoonGhunnaMark gSmallHighSadMark gSmallHighAinMark gSmallHighRehDadMark 
     gSmallHighRehHahMark gNameMarker gMaddaAbove, g__dot1u_smallTah
 ) ;
-cDiacriticsLower = ( gZair gKharizair gDozair, g__dot2vl ) ;
+cDiacriticLower = ( gZair gKharizair gDozair, g__dot2vl ) ;
 
-cDiacritics = (cDiacriticsUpper cDiacriticsLower);
+cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
 endtable;  // glyph

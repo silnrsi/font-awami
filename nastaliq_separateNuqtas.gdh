@@ -43,7 +43,7 @@ gHehGoalFin0						>	gHehGoalFin;
 (gYehHamzaAboveIni0 gYehHamzaAboveMed0)  _	>	(gBehIni_raw gBehMed_raw):1		g__hamza:1;
 (gBariyehIni0 gBariyehMed0)			_	>   (gBehIni_raw gBehMed_raw):1		g__dot2l:1;
 
-gYehHamzaAboveFin0  		_  >  gChotiyehFin  gHamzaAbove2:1;
+gYehHamzaAboveFin0  		_  >  gChotiyehFin  g__hamza:1;
 gChotiyehFin0  >  gChotiyehFin;
 gBariyehFin0  >  gBariyehFin;
 
@@ -53,7 +53,7 @@ gBariyehFin0  >  gBariyehFin;
 
 // Right-link
 gBariyeh0			_	>	gBehIni:1	g__dot2l:1;
-//gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	gHamzaAbove2:1;	// eventually replaced with beh + bariyeh
+//gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 g__hamza:1;	// eventually replaced with beh + bariyeh
 
 
 gAlefFin0				>	gAlefFin;
