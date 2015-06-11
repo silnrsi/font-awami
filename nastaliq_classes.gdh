@@ -309,7 +309,7 @@ gAlefHamzaFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_hamza};
 gDalFin0 = pseudo(postscript("absDalFin"))			{nuqtaG = nNone};
 gThalFin0 = pseudo(postscript("absDalFin"))			{nuqtaG = n1U};
 gDdalFin0 = pseudo(postscript("absDalFin"))			{nuqtaG = tahU};
-gDalTahNuqtasFin0 = pseudo(postscript("absDalFin"))	{nuqtaG = tahU_n2vl};
+ggDalTwoVertBelowSmallTah0 = pseudo(postscript("absDalFin"))	{nuqtaG = tahU_n2vl};
 gRehFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = nNone};
 gZainFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = n1U};
 gRrehFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = tahU};
@@ -330,10 +330,10 @@ gBariyeh0 = pseudo(postscript("absBehIni")) {nuqtaG = n2L};
 cAlefIso = (gAlef, gAlefHamzaAbove, gAlefMaddaAbove);
 cAlefFin0 = (gAlefFin0, gAlefHamzaFin0, gAlefMaddaFin);
 
-cDalIso = (gDal, gThal, gDdal, gDalTahNuqtas);
-cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0, gDalTahNuqtasFin0);
+cDalIso = (gDal, gThal, gDdal); ////gDalTwoVertBelowSmallTah);
+cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0);   //// gDalTahNuqtasFin0);
 
-cDalFin = ( gDalFin gDdalFin gThalFin, gDalTahNuqtasFin ) ;
+cDalFin = ( gDalFin gDdalFin gThalFin ); //// gDalTwoVertBelowSmallTahFin ) ;
 
 cRehIso = (gReh, gZain, gRreh, gJeh);
 cRehFin0 = (gRehFin0, gZainFin0, gRrehFin0, gJehFin0);
@@ -418,7 +418,7 @@ cBehMed = ( gBehMed gBehMedBeM1 gBehMedBeF gBehMedBeM2 gBehMedJm gBehMedRe
     gBehMedSn gBehMedSd gBehMedTaF gBehMedTaM gBehMedAi gBehMedFe gBehMedQf 
     gBehMedMm gBehMedNn gBehMedHgF gBehMedHgM gBehMedHd gBehMedCh gBehMedBy 
     gBehMedBe gBehMedBeRe gBehMedBeNn gBehMedBeHg gBehMedMmX gBehMedKfX gBehMedBeF_ss 
-    gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHg_be ) ;
+    gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be ) ;
 cJeemMed = ( gJeemMed gJeemMedBeM1 gJeemMedBeF gJeemMedBeM2 gJeemMedJm gJeemMedRe 
     gJeemMedSn gJeemMedSd gJeemMedTaF gJeemMedTaM gJeemMedAi gJeemMedFe gJeemMedQf 
     gJeemMedMm gJeemMedNn gJeemMedHgF gJeemMedHgM gJeemMedHd gJeemMedCh gJeemMedBy 
@@ -485,11 +485,12 @@ cChotiyehFin = (gChotiyehFin_bfkl, gChotiyehFin);
 
 
 c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss gBehMedFe_ss 
-	gBehMedQf_ss gBehMedHg_be ) ;
+	gBehMedQf_ss gBehMedHgF_be ) ;
 
 
 // Does not initiate alternate (rounded) kaf:
-c_dkg_noKalt = ( gDalFin gDdalFin gThalFin gDalTahNuqtasFin gKafFin gGafFin 
+c_dkg_noKalt = ( gDalFin gDdalFin gThalFin //// gDalTwoVertBelowSmallTahFin 
+	gKafFin gGafFin 
 	gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSd gKafMedTaF
 	gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn gKafMedHgF gKafMedHd gKafMedCh 
 	gKafMedBy gKafMedDk 

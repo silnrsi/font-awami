@@ -175,7 +175,6 @@ g__hehHook_small { collision {
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	margin = 100m;
-	marginmin = 40m;
 	min.x = 100m;     // don't let this one move left
 	max.x = 100m;
 	min.y = -200m;  // shouldn't need to move vertically either, at least by much
@@ -187,7 +186,6 @@ cNuqtaLikeUpper { collision {
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	margin = 100m;
-	marginmin = 40m;
 	min.x = -250m;
 	max.x = 350m; // more than normal
 	min.y = -300m;
@@ -199,7 +197,6 @@ cNuqtaLikeUpper { collision {
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	margin = 100m;
-	marginmin = 40m;
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
@@ -225,7 +222,6 @@ cNuqtaLikeBelow { collision {
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	margin = 100m;
-	marginmin = 40m;
 	min.x = -200m;
 	max.x = 250m;
 	min.y = -1000m;

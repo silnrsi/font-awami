@@ -63,6 +63,17 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define STRIP_NUQTAS 0
 
 
+// TEMPORARY
+
+table(glyph)
+
+gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
+gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
+
+endtable;
+
+
+
 // Classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
 
@@ -113,12 +124,11 @@ cRightLinkIso += (g_dalTahNuqtas, g_rehDotBelowDotAbove);
 cRightLinkFin += (g_dalTahNuqtasFin, g_rehDotBelowDotAboveFin);
 
 
-cLowerUpper = (g__dot2l_smallTah, g__smallTah_dot2vl, g__dot1u_dot1l);
+cLowerUpper = (g__dot2l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
 cLowerNoUpper = (g__dot2l, g__dot2vl, g__dot1l);
 cUpperNoLower = (g__smallTah, g__smallTah, g__dot1u);
 
 endtable;
-
 
 
 // SUBSTITUTION RULES
@@ -131,8 +141,8 @@ endtable;
 table(sub)
 pass(2)
 
-g_dalTahNuqtasFin 			 _	>	gDalFin		g__smallTah_dot2vl:1;
-g_rehDotBelowDotAboveFin	 _	>	gRehFin		g__dot1u_dot1l:1;
+////g_gDalTwoVertBelowSmallTahFin	_	>	gDalFin		g__dot2vl_smallTah:1;
+g_rehDotBelowDotAboveFin	 	_	>	gRehFin		g__dot1l_dot1u:1;
 
 endpass;
 
