@@ -179,7 +179,7 @@ c_isolated = (
 	gKaf, gGaf,
 	gHehGoal, gHeh, gHehGoalHamza, 
 	gHehDo, gHeh,
-	gAlef, // gAlefHamza, gAlefMadda,
+	gAlef, gAlefMaddaAbove,  // gAlefHamza
 	gDal, gThal, gDdal, gDalTwoVertBelowSmallTah,
 	gWaw, gWawHamzaAbove,
 	gReh, gZain, gRreh, gJeh,
@@ -187,5 +187,8 @@ c_isolated = (
 	gChotiyeh, gYehHamzaAbove, // gYehTail, 
 	gBariyeh
 );
+
+cFin = c_final;
+cIso = c_isolated;
 
 endtable; // glyph

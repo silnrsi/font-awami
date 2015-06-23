@@ -55,6 +55,10 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 
 #define SET_START_END(f)	setbits(f, (COLL_START + COLL_END), (COLL_START + COLL_END))
 
+#define ORDER_LEFTDOWN	1
+#define ORDER_RIGHTUP	2
+#define ORDER_NOABOVE	4
+#define ORDER_NOBELOW	8
 
 #endif // DO_COL_FIX
 
@@ -65,19 +69,100 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 
 // TEMPORARY
 
-table(glyph)
+table(glyph) {AttributeOverride = 1}
 
 gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
+gAlefMaddaAboveZZZ = pseudo(glyphid(7), 0x0622);
+gShaddaZZZ = pseudo(glyphid(908), 0x0651);
+gNameMarkerZZZ = pseudo(glyphid(903), 0x0614);
+
+
+gBehMedTaM {exit_tah = point(-500m, 200m)};
+c_exit_tah += (gBehMedTaM);
+
+gBehMedSd {exit_sad = point(-200m, 650m)};
+gLamIni {exit_lamKaf = point(150m, 500m) };
+
+gGafMed {entr_sad = point(221m, -101m) };
+c_entr_sad += (gGafMed);
+
+gGafMedBe_alt {entr_kafAlt = point(250m, 1500m) };
+c_entr_kafAlt += (gGafMedBe_alt);
+
+gBehMedBy {exit_bariyeh = point(0m, 250m) };
+c_exit_bariyeh += (gBehMedBy);
+
+gSeenMedBy {exit_bariyeh = point(0m, 250m) };
+c_exit_bariyeh += (gSeenMedBy);
+
+gJeemMedBy {exit_bariyeh = point(0m, 250m) };
+c_exit_bariyeh += (gJeemMedBy);
+
+gJeemMedHd {exit_hehdoach = point(0m, 250m) };
+c_exit_hehdoach += (gJeemMedHd);
+
+gHehDoMedBy {entr_hehdoach = point(950m, 1000m) };
+c_entr_hehdoach += (gHehDoMedBy);
+
+
+gFehIniBeM2 {nUpperS = point(300m, 1300m)};
+cTakes_nUpperDia += (gFehIniBeM2);
+
+gRehFin_jkl {mLowerS = point(200m, -250m)};
+cTakes_mLowerDia += (gRehFin_jkl);
+
+gBehMedKfX {nUpperS = point(300m, 1100m) };
+cTakes_nUpperDia += (gBehMedKfX);
+
+gJeemIniBeM1 {n1LowerS = point(300m, 300m); n23LowerS = point(300m, 300m) };
+cTakes_n1LowerDia += (gJeemIniBeM1);
+cTakes_n23LowerDia += (gJeemIniBeM1);
+
+gBehMedBy {nUpperS = point(250m, 300m); n23LowerS = point(0,0); tahUpperS = point(250m, 300m) };
+cTakes_nUpperDia += (gBehMedBy);
+cTakes_n23LowerDia += (gBehMedBy);
+cTakes_tahUpperDia += (gBehMedBy);
+
+gBehMedCh {nUpperS = point(300m, 300m)};
+cTakes_nUpperDia += (gBehMedCh);
+
+gJeemMedCh {n1LowerS = point(300m, 750m)};
+cTakes_n1LowerDia += (gJeemMedCh);
+
+gJeemMedBy {n23LowerS = point(300m, 0m)};
+cTakes_n23LowerDia += (gJeemMedBy);
+
+gJeemMedBe {n23LowerS = point(300m, 0m)};
+cTakes_n23LowerDia += (gJeemMedBe);
+
+gJeemMedHd {n23LowerS = point(300m, 0m)};
+cTakes_n23LowerDia += (gJeemMedHd);
+
+
 endtable;
 
+table(sub)
+pass(6)
+gAlefMaddaAboveZZZ > gAlefMaddaAbove;
+gShaddaZZZ > gShadda;
+gNameMarkerZZZ > gNameMarker;
+ 
+endpass;
+endtable;
 
 
 // Classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
 
 #include "nastaliq_classes.gdh"
+
+
+// TEMPORARY
+table(glyph)
+cDiacriticUpper += (gAlefMaddaAboveZZZ gShaddaZZZ gNameMarkerZZZ );
+endtable;
 
 
 #if DO_COL_FIX

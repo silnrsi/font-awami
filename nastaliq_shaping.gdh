@@ -297,7 +297,7 @@ gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4
 
 // CaltfinaBclass
 (gWawFin gWawHamzaAboveFin gQafFin)  >  (gWawFin_stfh gWawHamzaAboveFin_stfh gQafFin_stfh)
-		/  (gSeenIni gTahIni gSeenMed gTahMed gFehMed gHehDoMed)  MARKS
+		/  (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw)  MARKS
 			_;
 
 table(glyph)
@@ -450,6 +450,7 @@ cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMed  MARKS  c_dkgal_postAlt
 //	/ ^ MPRECXT _  MARKS  ^ gBehMed  MARKS  cA;
 
 // Alternate kaf forms (different from NGA)
+(gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed; // collision fix testing
 /****
 (gKafMed_raw gGafMed_raw)	>  (gKafMedJm_alt gGafMedJm_alt)	/ ^ MPRECXT  _  MARKS  cJeemMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed;
@@ -502,9 +503,9 @@ pass(5)
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniBeM2 gGafIniBeM2)  /  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
 
-//cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
-// Don't use kinked kafs for now:
-cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
+cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);  // kinked kafs for collision fix testing
+//// Don't use kinked kafs for now:
+//cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
 
 cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
 
