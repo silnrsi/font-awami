@@ -219,6 +219,8 @@ endtable; // glyph
 g_space { collision.flags = SET_START_END(collision.flags) };
 
 
+// Upper nuqtas
+
 // The nuqta on the zah (tah form) fits nicely above it, so it is not normally helpful to move it.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -260,8 +262,16 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / c_initial _;
 
+// Nuqtas on finals can be moved quite a bit to the left.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -500m;   // more than normal
+	max.x = 200m;
+	min.y = -300m;
+	max.y = 1000m;
+} } / c_final _;
 
-// Nuqtas above (other than initial) can move more to the left than the right.
+// Default case: nuqtas above (other than initial) can move more to the left than the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
@@ -270,6 +280,9 @@ cNuqtaLikeUpper { collision {
 	//max.y = (position.y > 1000m ? 1000m : 1500m);	
 	max.y = 1000m;
 }; user2 = position.y; };
+
+
+// Lower nuqtas
 
 // Nuqtas before certain finals can move down quite a bit to jump below swashes.
 // Note that if we make the lower limit too low, the nuqtas will jump completely *below* 
@@ -303,7 +316,7 @@ cNuqtaLikeLower { collision {
 	max.y = 300m;
 } };
 
-// Nuqtas below (other than initial) can move more to the right than the left.
+// Default case: nuqtas below (other than initial) can move more to the right than the left.
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	margin = 100m;
@@ -497,20 +510,20 @@ cDiacriticUpper {
 		max.y = 500m;
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
-}  /  cBase  _;
+}  /  cBase  cNuqtaLikeLower?  _;
 
 
 cDiacriticLower { 
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
-		min.x = -300m; // making these larger than ideal fixes \u0628\u0650\u06CC\u062C
+		min.x = -300m; // making this larger than ideal fixes \u0628\u0650\u06CC\u062C
 		max.x = 300m;
-		min.y = -800m;
+		min.y = -1200m; // needed to get below nuqtas for sure
 		max.y = 300m;
 	};
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
-}  /  cBase  _;
+}  /  cBase  cNuqtaLikeUpper?  _;
 
 
 cDiacriticUpper { collision {
