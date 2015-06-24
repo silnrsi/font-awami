@@ -140,20 +140,12 @@ cNuqta { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
 
 
-g_kafExclude = glyphid(984); // bb.bl = (335, 1719)
-g_kaf1Exclude = glyphid(984);
-g_kaf3Exclude = glyphid(984);
-g_kafaltExclude = glyphid(984);
+gKafMedSn		{ collision.exclude {glyph = g_kaf_exclude;	offset {x=-100m; y=700m;}}};
+gGafMedBe_alt	{ collision.exclude {glyph = g_kaf_alt_exclude;	offset {x=-100m; y=750m;}}};
+gGafMedSn_alt	{ collision.exclude {glyph = g_kaf_alt_exclude;	offset {x=-200m; y=650m;}}};
+gKafFin			{ collision.exclude {glyph = g_kaf_exclude;	offset {x=-150m; y=400m;}}};
 
-//gKafIniBeM2 { collision.exclude.glyph = g_kafExclude };
-
-gKafMed		{ collision.exclude {glyph = g_kaf1Exclude;	offset {x = 400m; 	y = 400m;}}};
-gKafMedBeF	{ collision.exclude {glyph = g_kafExclude;	offset {x = 1100m; 	y = 400m;}}};
-gKafMedSn	{ collision.exclude {glyph = g_kafExclude;	offset {x = 0m;		y = 800m;}}};
-gKafFin		{ collision.exclude {glyph = g_kafExclude;	offset {x = 2100m;	y = 0m;}}};
-gGafMed_short {collision.exclude {glyph=g_kafExclude;	offset {x = 400m;	y = -100m;}}};
-
-cls_excludingGlyphs = (gKafIniBeM2, gKafMed, gKafMedBeF, gKafMedSn,	gGafMed_short);
+cls_excludingGlyphs = (gKafMedSn, gGafMedBe_alt, gGafMedSn_alt);
 
 cls_excludingGlyphs_kern = (gKafFin);
 
@@ -179,7 +171,7 @@ pass(3)
 table(glyph) {AttributeOverride = 1}
 
 cNuqtaLikeUpper {
-	collision { margin = 100m; marginweight = 150 };
+	collision { margin = 150m; marginweight = 250 };
 	sequence {
 		class = ORDER_UNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = -100m;	weight = 250 };
@@ -189,7 +181,7 @@ cNuqtaLikeUpper {
 };
 
 cNuqtaLikeLower {
-	collision { margin = 100m; marginweight = 150 };
+	collision { margin = 150m; marginweight = 250 };
 	sequence {
 		class = ORDER_LNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = -100m;	weight = 250 };
@@ -198,6 +190,7 @@ cNuqtaLikeLower {
 	}
 };
 
+// Smaller nuqta glyphs need larger margins:
 g__dot1u { collision.margin = 150m };
 g__dot1l { collision.margin = 150m };
 g__dot2u { collision.margin = 125m };
@@ -205,14 +198,14 @@ g__dot2l { collision.margin = 125m };
 
 
 cDiacriticUpper {
-	collision { margin = 100m; marginweight = 150 }
+	collision { margin = 150m; marginweight = 250 }
 	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 };
 
 cBase = (c_initial, c_medial, c_final);
 
 cDiacriticLower {
-	collision { margin = 100m; marginweight = 150 }
+	collision { margin = 150m; marginweight = 250 }
 	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 };
 
@@ -240,11 +233,22 @@ cNuqtaLikeUpper { collision {
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
-	max.x = 500m; // more than normal
+	max.x = 800m; // a lot more than normal
 	min.y = -300m;
 	max.y = 1000m;
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed gKafFin);
 
+
+// Need more flexibility in getting away from kinked kafs
+// TODO: use a class including all kinked kafs.
+g__dot3u { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 100m;
+	min.x = -500m;
+	max.x = 250m;
+	min.y = -300m;
+	max.y = 1000m;
+} } / (gGafMedBe_alt gGafMedSn_alt gKafIniBeM2_alt)  cBase _ ;
 
 
 // Nuqtas on initials can be moved quite a bit to the right.
@@ -268,12 +272,14 @@ cNuqtaLikeUpper { collision {
 }; user2 = position.y; };
 
 // Nuqtas before certain finals can move down quite a bit to jump below swashes.
+// Note that if we make the lower limit too low, the nuqtas will jump completely *below* 
+// the swash, which is not what we want. We want to be down and to the right.
 cNuqtaLikeLower {
 	collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -200m;
-		max.x = 400m;
-		min.y = -1500m; // a lot!
+		max.x = 700m;	// a lot!
+		min.y = -1600m; // a lot!
 		max.y = 300m;
   };
   sequence { class = 0; order = 0 } // don't enforce the order relative to the other glyphs
@@ -306,7 +312,6 @@ cNuqtaLikeLower { collision {
 	min.y = -1000m;
 	max.y = 300m;
 } };
-
 
 // experiment
 cls_excludingGlyphs { collision {
@@ -442,7 +447,7 @@ cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; inse
 cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; insert=true}
 		/ ^ _  c_attLikeNqUpper?  _ {att.to==0};
 
-// Attaching initial/medial base - uses stationary nuqta APs.
+// Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
