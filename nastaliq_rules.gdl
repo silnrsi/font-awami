@@ -90,10 +90,10 @@ c_entr_sad += (gGafMed);
 gGafMedBe_alt {entr_kafAlt = point(250m, 1500m) };
 c_entr_kafAlt += (gGafMedBe_alt);
 
-gGafMedSn_alt {entr_kafAlt = point(250m, 1500m) };  // ####
+gGafMedSn_alt {entr_kafAlt = point(250m, 1500m) };
 c_entr_kafAlt += (gGafMedSn_alt);
 
-gBehIni {exit_kafAlt = point(0m, 617m) };  // ####
+gBehIni {exit_kafAlt = point(0m, 617m) };
 c_exit_kafAlt += (gBehIni);
 
 gKafIniBeM2_alt {exit_behHighTooth = point(0m, 438m) };  // ####
@@ -114,8 +114,11 @@ c_exit_hehdoach += (gJeemMedHd);
 gHehDoMedBy {entr_hehdoach = point(950m, 1000m) };
 c_entr_hehdoach += (gHehDoMedBy);
 
-gHehDoMedBeRe {entr_hehdoach = point(620m, 900m) };  // ####
+gHehDoMedBeRe {entr_hehdoach = point(620m, 900m) };
 c_entr_hehdoach += (gHehDoMedBeRe);
+
+gHehDoMedBe {entr_hehdoach = point(500m, 1500m) };   // ####
+c_entr_hehdoach += (gHehDoMedBe);
 
 
 
@@ -124,6 +127,11 @@ cTakes_nUpperDia += (gJeemMedJm);
 
 gJeemMed { n1LowerS = point(0m, 0m) };
 cTakes_n1LowerDia += (gJeemMed);
+
+gJeemFin { nUpperS = point(-0m, 1100m) };
+
+gLamIniJm { mLowerS = point(600m, 1300m) };
+cTakes_mLowerDia += (gLamIniJm);
 
 endtable;
 

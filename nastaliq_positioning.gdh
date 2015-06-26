@@ -171,7 +171,7 @@ pass(3)
 table(glyph) {AttributeOverride = 1}
 
 cNuqtaLikeUpper {
-	collision { margin = 150m; marginweight = 250 };
+	collision { margin = 150m; marginweight = 400 };
 	sequence {
 		class = ORDER_UNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = -100m;	weight = 250 };
@@ -181,7 +181,7 @@ cNuqtaLikeUpper {
 };
 
 cNuqtaLikeLower {
-	collision { margin = 150m; marginweight = 250 };
+	collision { margin = 150m; marginweight = 400 };
 	sequence {
 		class = ORDER_LNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = -100m;	weight = 250 };
@@ -198,14 +198,14 @@ g__dot2l { collision.margin = 125m };
 
 
 cDiacriticUpper {
-	collision { margin = 150m; marginweight = 250 }
+	collision { margin = 150m; marginweight = 400 }
 	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 };
 
 cBase = (c_initial, c_medial, c_final);
 
 cDiacriticLower {
-	collision { margin = 150m; marginweight = 250 }
+	collision { margin = 150m; marginweight = 400 }
 	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 };
 
