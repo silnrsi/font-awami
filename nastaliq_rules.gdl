@@ -78,66 +78,23 @@ gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 gNoonTah = pseudo(postscript("absNoon"), 0x0768);
 
 
-gBehMedTaM {exit_tah = point(-500m, 200m)};
-c_exit_tah += (gBehMedTaM);
-
-gBehMedSd {exit_sad = point(-200m, 650m)};
-gLamIni {exit_lamKaf = point(150m, 500m) };
-
-gGafMed {entr_sad = point(221m, -101m) };
-c_entr_sad += (gGafMed);
-
-gGafMedBe_alt {entr_kafAlt = point(250m, 1500m) };
-c_entr_kafAlt += (gGafMedBe_alt);
-
-gGafMedSn_alt {entr_kafAlt = point(250m, 1500m) };
-c_entr_kafAlt += (gGafMedSn_alt);
-
-gBehIni {exit_kafAlt = point(0m, 617m) };
-c_exit_kafAlt += (gBehIni);
-
-gKafIniBeM2_alt {exit_behHighTooth = point(0m, 438m) };  // ####
-c_exit_behHighTooth += (gKafIniBeM2_alt);
-
-gBehMedBy {exit_bariyeh = point(0m, 250m) };
-c_exit_bariyeh += (gBehMedBy);
-
-gSeenMedBy {exit_bariyeh = point(0m, 250m) };
-c_exit_bariyeh += (gSeenMedBy);
-
-gJeemMedBy {exit_bariyeh = point(0m, 250m) };
-c_exit_bariyeh += (gJeemMedBy);
-
-gJeemMedHd {exit_hehdoach = point(0m, 250m) };
-c_exit_hehdoach += (gJeemMedHd);
-
-gHehDoMedBy {entr_hehdoach = point(950m, 1000m) };
-c_entr_hehdoach += (gHehDoMedBy);
-
-gHehDoMedBeRe {entr_hehdoach = point(620m, 900m) };
-c_entr_hehdoach += (gHehDoMedBeRe);
-
-gHehDoMedBe {entr_hehdoach = point(500m, 1500m) };   // ####
-c_entr_hehdoach += (gHehDoMedBe);
-
-
-
 gJeemMedJm { nUpperS = point(213m, 1091m) };
 cTakes_nUpperDia += (gJeemMedJm);
-
-gJeemMed { n1LowerS = point(0m, 0m) };
-cTakes_n1LowerDia += (gJeemMed);
 
 gJeemFin { nUpperS = point(-0m, 1100m) };
 
 gLamIniJm { mLowerS = point(600m, 1300m) };
 cTakes_mLowerDia += (gLamIniJm);
 
+g__dot2vl { n1LowerM = point(0m, 381m) };
+cn1LowerDia += (g__dot2vl);
+
 endtable;
 
 
 // Classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
+
 
 #include "nastaliq_classes.gdh"
 
@@ -172,50 +129,9 @@ endtable;
 #define MARKS2N  cNuqtaLikeLower? cNuqtaLikeUpper?  DIACS
 
 
-// EXPERIMENTAL - both lower and upper nuqtas
-
-table(glyph)
-
-g_dalTahNuqtas = pseudo(postscript("absDal"), 0x0759);
-g_dalTahNuqtasFin = pseudo(postscript("absDalFin"));
-
-g_rehDotBelowDotAbove = pseudo(postscript("absReh"), 0x0696);
-g_rehDotBelowDotAboveFin = pseudo(postscript("absRehFin"));
-
-cRightLinkIso += (g_dalTahNuqtas, g_rehDotBelowDotAbove);
-cRightLinkFin += (g_dalTahNuqtasFin, g_rehDotBelowDotAboveFin);
-
-
-cLowerUpper = (g__dot2l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
-cLowerNoUpper = (g__dot2l, g__dot2vl, g__dot1l);
-cUpperNoLower = (g__smallTah, g__smallTah, g__dot1u);
-
-endtable;
-
-
 // SUBSTITUTION RULES
 
 #include "nastaliq_shaping.gdh"
-
-
-// EXPERIMENTAL - both lower and upper nuqtas
-
-table(sub)
-pass(2)
-
-////g_gDalTwoVertBelowSmallTahFin	_	>	gDalFin		g__dot2vl_smallTah:1;
-g_rehDotBelowDotAboveFin	 	_	>	gRehFin		g__dot1l_dot1u:1;
-
-endpass;
-
-pass(6)
-
-// Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
-
-cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
-
-endpass;
-endtable;
 
 
 // POSITIONING RULES

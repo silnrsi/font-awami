@@ -41,7 +41,7 @@ cursive_attach(noon)
 cursive_attach(hehgoalMedial)
 cursive_attach(hehgoalFinal)
 cursive_attach(hehdoach)
-//cursive_attach(chotiyeh)
+cursive_attach(chotiyeh)
 cursive_attach(chotiyehBfkl)
 cursive_attach(bariyeh)
 cursive_attach(lamKaf)
@@ -74,7 +74,7 @@ pass(2)
 //endtable;
 
 cTakes_n1LowerDia
-	cn1LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
+	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
 	/ _=B  _=L  _=U;
 
@@ -174,9 +174,9 @@ cNuqtaLikeUpper {
 	collision { margin = 150m; marginweight = 400 };
 	sequence {
 		class = ORDER_UNUQTAS;		order = ORDER_LEFTDOWN;
-		above { xoffset = -100m;	weight = 250 };
-		below { xlimit = -50m;		weight = 50 };
-		valign { height = 100m;		weight = 500 }
+		above { xoffset = 100m;		weight = 400 };
+		below { xlimit = 50m;		weight = 50 };
+		valign { height = 200m;		weight = 500 }
 	}
 };
 
@@ -184,9 +184,9 @@ cNuqtaLikeLower {
 	collision { margin = 150m; marginweight = 400 };
 	sequence {
 		class = ORDER_LNUQTAS;		order = ORDER_LEFTDOWN;
-		above { xoffset = -100m;	weight = 250 };
-		below { xlimit = -50m;		weight = 50 };
-		valign { height = 100m;		weight = 500 }
+		above { xoffset = 100m;		weight = 400 };
+		below { xlimit = 50m;		weight = 50 };
+		valign { height = 200m;		weight = 500 }
 	}
 };
 
@@ -199,14 +199,14 @@ g__dot2l { collision.margin = 125m };
 
 cDiacriticUpper {
 	collision { margin = 150m; marginweight = 400 }
-	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
+	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; } - set in the rule
 };
 
 cBase = (c_initial, c_medial, c_final);
 
 cDiacriticLower {
 	collision { margin = 150m; marginweight = 400 }
-	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
+	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; } - set in the rule
 };
 
 //cNuqtaLikeAbove { collision.order { class = ORDER_UNUQTAS; enforce = ORDER_LEFT + ORDER_DOWN; } };
@@ -439,7 +439,7 @@ pass(3)
 #endif // DO_COL_FIX
 
 
-// Attach diacritics.
+// Attach diacritics
  
 table(glyph) { AttributeOverride = false }
 // Classes of nuqtas and things that attach closely like nuqtas:
@@ -467,8 +467,8 @@ cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; in
 		/ ^ _  c_attLikeNqUpper?  _ {att.to==0};
 
 // attach to diacritic
-///cDiacriticsAbove=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true};
-///cDiacriticsBelow=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true};
+cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}  / _ ^ _;
+cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}  / _ ^ _;
 
 // Remove if we create a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };

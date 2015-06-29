@@ -323,9 +323,10 @@ endtable;
 	/  ^ c_preReF_sshg MARKS  _;
 (gRehFin gRrehFin gZainFin gJehFin)  >  (gRehFin_hgM gRrehFin_hgM gZainFin_hgM gJehFin_hgM)
 	/  ^ c_preReF_hgM MARKS  _;
-	
-(gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaFin)  >  (gHehGoalFin_stfh gTehMarbutaGoalFin_stfh gHehGoalHamzaFin_stfh)
-	/  ^ c_preHgF_stfh MARKS  _;
+
+// We've decided not to use the extra heh-goal-final form, since it is so similar.
+////(gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaFin)  >  (gHehGoalFin_stfh gTehMarbutaGoalFin_stfh gHehGoalHamzaFin_stfh)
+////	/  ^ c_preHgF_stfh MARKS  _;
 
 gChotiyehFin  >  gChotiyehFin_bfkl  /  ^ c_preChF_bfkl MARKS  _ ;
 
@@ -465,21 +466,21 @@ cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMed  MARKS  c_dkgal_postAlt
 
 // Basic rules
 cMed_raw  >  cMedBeF	/  ^ MPRECXT  _ MARKS  cBehFin;
-cMed_raw  >  cMedJm		/  ^ MPRECXT  _ MARKS  (gJeemFin gTchehFin gHehFin gKhahFin cJeemMed);
+cMed_raw  >  cMedJm		/  ^ MPRECXT  _ MARKS  (cJeemFin cJeemMed);
 cMed_raw  >  cMedRe		/  ^ MPRECXT  _ MARKS  cRehFin;
-cMed_raw  >  cMedSn		/  ^ MPRECXT  _ MARKS  (gSeenFin gSheenFin cSeenMed);
-cMed_raw  >  cMedSd		/  ^ MPRECXT  _ MARKS  (gSadFin gDadFin cSadMed);
-cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  (gTahFin gZahFin);
+cMed_raw  >  cMedSn		/  ^ MPRECXT  _ MARKS  (cSeenFin cSeenMed);
+cMed_raw  >  cMedSd		/  ^ MPRECXT  _ MARKS  (cSadFin cSadMed);
+cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
 cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;
-cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (gAinFin gGhainFin cAinMed);
+cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (gFehFin cFehMed);
 cMed_raw  >  cMedQf		/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
 cMed_raw  >  cMedMm		/  ^ MPRECXT  _ MARKS  (gMeemFin cMeemMed);
-cMed_raw  >  cMedNn		/  ^ MPRECXT  _ MARKS  (gNoonFin gNoonGhunnaFin);
+cMed_raw  >  cMedNn		/  ^ MPRECXT  _ MARKS  cNoonFin;
 cMed_raw  >  cMedHgF	/  ^ MPRECXT _  MARKS  cHehGoalFin;
 cMed_raw  >  cMedHgM	/  ^ MPRECXT _  MARKS  cHehGoalMed;
 cMed_raw  >  cMedHd		/  ^ MPRECXT _  MARKS  (gHehDoFin cHehDoMed);
-cMed_raw  >  cMedCh		/  ^ MPRECXT _  MARKS  (gChotiyehFin_bfkl gChotiyehFin);
+cMed_raw  >  cMedCh		/  ^ MPRECXT _  MARKS  cChotiyehFin;
 cMed_raw  >  cMedBy		/  ^ MPRECXT _  MARKS   gBariyehFin;
 
 // No contextual forms for this glyph:
@@ -551,9 +552,10 @@ cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
 (gKafIni_raw gGafIni_raw)  >  (gKafIniFe_alt gGafIniFe_alt)  /  _ MARKS  cFehMed;
 (gKafIni_raw gGafIni_raw)  >  (gKafIniMm_alt gGafIniMm_alt)  /  _ MARKS  cMeemMed;
 (gKafIni_raw gGafIni_raw)  >  (gKafIniHd_alt gGafIniHd_alt)  /  _ MARKS  cHehDoMed;
+***/
 
 cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_alt;
-***/
+
 
 cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;
 
@@ -618,6 +620,24 @@ g__hehHook_small  >  g__hehHook_big  /  _  MARKS  gAlefFin;
 gGafMedDk  >  gGafMed_short  /  _ MARKS  (gKafFin gGafFin cKafMed);
 
 endpass; // 5
+
+
+table(glyph)
+
+cLowerUpper = (g__dot2l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
+cLowerNoUpper = (g__dot2l, g__dot2vl, g__dot1l);
+cUpperNoLower = (g__smallTah, g__smallTah, g__dot1u);
+
+endtable; // glyph
+
+
+pass(6)
+
+// Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
+
+cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+
+endpass;
 
 
 #if STRIP_NUQTAS
