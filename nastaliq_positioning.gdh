@@ -144,11 +144,11 @@ cKernable = (c_isolated c_final);  //// {collision.kern = true};
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
 
 
-gKafMedSn		{ collexclude {glyph = g_kaf_exclude;		offset {x=-100m; y=700m;}}};
-gGafMedBe_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offset {x=-100m; y=750m;}}};
-gGafMedSn_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offset {x=-200m; y=650m;}}};
-gGafMed_short	{ collexclude {glyph = g_kaf_exclude;		offset {x=200m; y=-200m;}}};
-gKafFin			{ collexclude {glyph = g_kaf_exclude;		offset {x=1800m; y=0m;}}};
+gKafMedSn		{ collexclude {glyph = g_kaf_exclude;		offsetx=-100m;	offsety=700m;}};
+gGafMedBe_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-100m;	offsety=750m;}};
+gGafMedSn_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-200m;	offsety=650m;}};
+gGafMed_short	{ collexclude {glyph = g_kaf_exclude;		offsetx=200m;	offsety=-200m;}};
+gKafFin			{ collexclude {glyph = g_kaf_exclude;		offsetx=1800m;	offsety=0m;}};
 
 cls_excludingGlyphs = (gKafMedSn, gGafMedBe_alt, gGafMedSn_alt, gGafMed_short);
 
@@ -349,8 +349,8 @@ cls_excludingGlyphs { collision {
 	flags = CLEAR_FIX(collision.flags);
 	flags = CLEAR_KERN(collision.flags);
 	exclude.glyph = collexclude.glyph;
-	exclude.offset.x = collexclude.offset.x;
-	exclude.offset.y = collexclude.offset.y;
+	exclude.offset.x = collexclude.offsetx;
+	exclude.offset.y = collexclude.offsety;
 } };
 
 // experiment
@@ -361,8 +361,8 @@ cls_excludingGlyphs_kern { collision {
 	margin = 100m;
     // min/max.y are omitted for kernable glyphs
 	exclude.glyph = collexclude.glyph;
-	exclude.offset.x = collexclude.offset.x;
-	exclude.offset.y = collexclude.offset.y;
+	exclude.offset.x = collexclude.offsetx;
+	exclude.offset.y = collexclude.offsety;
 } };
 
 

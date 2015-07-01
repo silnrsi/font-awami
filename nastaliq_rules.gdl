@@ -82,7 +82,6 @@ cTakes_mLowerDia += (gWaw);
 
 gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah
 
-
 gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
 c_exit_hehgoalFinal += (gBehMedHgF_be);
 cTakes_nUpperDia += (gBehMedHgF_be);
@@ -90,6 +89,9 @@ cTakes_nUpperDia += (gBehMedHgF_be);
 gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
 cTakes_hehhookDia += (gHehGoalIniRe);
 
+gSadMedBeM2 { entr_sad = point(800m, 350m); mLowerS = point(400m, 400m) };  // yeh + beh + bariyeh
+c_entr_sad += (gSadMedBeM2);
+cTakes_mLowerDia += (gSadMedBeM2);
 
 endtable;
 
