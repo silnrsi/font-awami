@@ -32,8 +32,8 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define COLL_KERN        16
 //      COLL_ISCOL       32		// this glyph has a collision
 //      COLL_KNOWN       64		// we've figured out what's happening with this glyph
-#define COLL_JUMPABLE   128
-#define COLL_OVERLAP    256
+////#define COLL_JUMPABLE   128 -- obsolete
+////#define COLL_OVERLAP    256 -- obsolete
 
 #define setbits(f,m,v) (f & (~m)) | v
 
@@ -48,10 +48,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define CLEAR_END(f)		setbits(f, COLL_END, 0)
 #define SET_KERN(f)			setbits(f, COLL_KERN, COLL_KERN)
 #define CLEAR_KERN(f)		setbits(f, COLL_KERN, 0)
-#define SET_JUMPABLE(f)		setbits(f, COLL_JUMPABLE, COLL_JUMPABLE)
-#define CLEAR_JUMPABLE(f)	setbits(f, COLL_JUMPABLE, 0)
-#define SET_OVERLAP(f)		setbits(f, COLL_OVERLAP, COLL_OVERLAP)
-#define CLEAR_OVERLAP(f)	setbits(f, COLL_OVERLAP, 0)
 
 #define SET_START_END(f)	setbits(f, (COLL_START + COLL_END), (COLL_START + COLL_END))
 
@@ -67,7 +63,7 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define STRIP_NUQTAS 0
 
 
-// TEMPORARY
+// TEMPORARY for collision test suite
 
 table(glyph) {AttributeOverride = 1}
 
@@ -75,19 +71,25 @@ gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
 
-gNoonTah = pseudo(postscript("absNoon"), 0x0768);
-
-
-gJeemMedJm { nUpperS = point(213m, 1091m) };
+gJeemMedJm { nUpperS = point(213m, 1091m) }; 
 cTakes_nUpperDia += (gJeemMedJm);
 
-gJeemFin { nUpperS = point(-0m, 1100m) };
-
-gLamIniJm { mLowerS = point(600m, 1300m) };
+gLamIniJm { mLowerS = point(600m, 1300m) };   // alef + lam + ghain
 cTakes_mLowerDia += (gLamIniJm);
 
-g__dot2vl { n1LowerM = point(0m, 381m) };
-cn1LowerDia += (g__dot2vl);
+gWaw { mLower = point(0m, 0m) }; // noon-smalltah + alef
+cTakes_mLowerDia += (gWaw);
+
+gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah
+
+
+gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
+c_exit_hehgoalFinal += (gBehMedHgF_be);
+cTakes_nUpperDia += (gBehMedHgF_be);
+
+gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
+cTakes_hehhookDia += (gHehGoalIniRe);
+
 
 endtable;
 
@@ -102,12 +104,6 @@ endtable;
 #if DO_COL_FIX
 
 #include "nastaliq_complexShapes.gdh"
-
-table(glyph)
-
-cKernable = (c_isolated c_final) {collision.kern = true};
-
-endtable;
 
 #endif // DO_COL_FIX
 

@@ -135,17 +135,22 @@ endtable;  // pos
 
 table(glyph)
 
-cNuqta { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
+////cNuqta { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
+
+
+cKernable = (c_isolated c_final);  //// {collision.kern = true};
+
 
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
 
 
-gKafMedSn		{ collision.exclude {glyph = g_kaf_exclude;	offset {x=-100m; y=700m;}}};
-gGafMedBe_alt	{ collision.exclude {glyph = g_kaf_alt_exclude;	offset {x=-100m; y=750m;}}};
-gGafMedSn_alt	{ collision.exclude {glyph = g_kaf_alt_exclude;	offset {x=-200m; y=650m;}}};
-gKafFin			{ collision.exclude {glyph = g_kaf_exclude;	offset {x=-150m; y=400m;}}};
+gKafMedSn		{ collexclude {glyph = g_kaf_exclude;		offset {x=-100m; y=700m;}}};
+gGafMedBe_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offset {x=-100m; y=750m;}}};
+gGafMedSn_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offset {x=-200m; y=650m;}}};
+gGafMed_short	{ collexclude {glyph = g_kaf_exclude;		offset {x=200m; y=-200m;}}};
+gKafFin			{ collexclude {glyph = g_kaf_exclude;		offset {x=1800m; y=0m;}}};
 
-cls_excludingGlyphs = (gKafMedSn, gGafMedBe_alt, gGafMedSn_alt);
+cls_excludingGlyphs = (gKafMedSn, gGafMedBe_alt, gGafMedSn_alt, gGafMed_short);
 
 cls_excludingGlyphs_kern = (gKafFin);
 
@@ -175,7 +180,7 @@ cNuqtaLikeUpper {
 	sequence {
 		class = ORDER_UNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = 100m;		weight = 400 };
-		below { xlimit = 50m;		weight = 50 };
+		below { xlimit = -50m;		weight = 50 };
 		valign { height = 200m;		weight = 500 }
 	}
 };
@@ -185,7 +190,7 @@ cNuqtaLikeLower {
 	sequence {
 		class = ORDER_LNUQTAS;		order = ORDER_LEFTDOWN;
 		above { xoffset = 100m;		weight = 400 };
-		below { xlimit = 50m;		weight = 50 };
+		below { xlimit = -50m;		weight = 50 };
 		valign { height = 200m;		weight = 500 }
 	}
 };
@@ -221,6 +226,22 @@ g_space { collision.flags = SET_START_END(collision.flags) };
 
 // Upper nuqtas
 
+// Special case: if there is a nuqta before a zah, scootch the nuqta of the
+// zah down pretty close to the base.
+/**
+cNuqtaLikeUpper { 
+	shift{ x = 50m; y = -150m }; // note that shifting in RTL moves forward, ie, left.
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -50m;
+		max.x = 100m;
+		min.y = -100m;
+		max.y = 300m;
+	}
+} /  cNuqtaLikeUpper=N1 DIACS  cTahMed  _=N2 ;
+**/
+
+
 // The nuqta on the zah (tah form) fits nicely above it, so it is not normally helpful to move it.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -245,7 +266,6 @@ cNuqtaLikeUpper { collision {
 // TODO: use a class including all kinked kafs.
 g__dot3u { collision {
 	flags = SET_FIX(collision.flags);
-	margin = 100m;
 	min.x = -500m;
 	max.x = 250m;
 	min.y = -300m;
@@ -277,9 +297,8 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
-	//max.y = (position.y > 1000m ? 1000m : 1500m);	
 	max.y = 1000m;
-}; user2 = position.y; };
+} };
 
 
 // Lower nuqtas
@@ -311,17 +330,16 @@ g__hehHook_small { collision {
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -200m;
-	max.x = 400m;
+	max.x = 400m;  // 600 breaks \u067E\u0650\u06CC\u064F\u0648
 	min.y = -1000m;
 	max.y = 300m;
-} };
+} }  /  c_initial  _;
 
 // Default case: nuqtas below (other than initial) can move more to the right than the left.
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
-	margin = 100m;
 	min.x = -200m;
-	max.x = 250m;
+	max.x = 350m;   // making this 400 helps \u067E\u0650\u06CC\u0686\u06BE\u06D2 but breaks other things
 	min.y = -1000m;
 	max.y = 300m;
 } };
@@ -330,9 +348,9 @@ cNuqtaLikeLower { collision {
 cls_excludingGlyphs { collision {
 	flags = CLEAR_FIX(collision.flags);
 	flags = CLEAR_KERN(collision.flags);
-	exclude.glyph = glyph.collision.exclude.glyph;
-	exclude.offset.x = glyph.collision.exclude.offset.x;
-	exclude.offset.y = glyph.collision.exclude.offset.y;
+	exclude.glyph = collexclude.glyph;
+	exclude.offset.x = collexclude.offset.x;
+	exclude.offset.y = collexclude.offset.y;
 } };
 
 // experiment
@@ -342,11 +360,9 @@ cls_excludingGlyphs_kern { collision {
 	max.x = 5000m; min.x = -5000m;
 	margin = 100m;
     // min/max.y are omitted for kernable glyphs
-	exclude.glyph = glyph.collision.exclude.glyph;
-	exclude.offset.x = glyph.collision.exclude.offset.x;
-	exclude.offset.y = glyph.collision.exclude.offset.y;
-	//exclude.offset.x = 3100m;
-	//exclude.offset.y = 2300m;
+	exclude.glyph = collexclude.glyph;
+	exclude.offset.x = collexclude.offset.x;
+	exclude.offset.y = collexclude.offset.y;
 } };
 
 
@@ -519,7 +535,7 @@ cDiacriticLower {
 		flags = SET_FIX(collision.flags);
 		min.x = -300m; // making this larger than ideal fixes \u0628\u0650\u06CC\u062C
 		max.x = 300m;
-		min.y = -1200m; // needed to get below nuqtas for sure
+		min.y = -1200m; // needed to get below nuqtas for sure; eg \u062A\u0648\u0641\u0650\u06CC\u0642
 		max.y = 300m;
 	};
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
@@ -563,7 +579,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;
 
-pass(9) { CollisionFix = 4 }
+pass(9) { CollisionFix = 4; Kern = true }
 
 // Perform diacritic-related fixing.
 
