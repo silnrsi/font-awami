@@ -57,6 +57,20 @@ endpass; // 1
 endtable;	// positioning
 
 
+// TEMPORARY
+table(glyph)
+
+c_initial { zeroS = point(0m, 0m) };
+c_medial  { zeroS = point(0m, 0m) };
+c_final   { zeroS = point(0m, 0m) };
+
+cNuqtaLike { zeroM = point(0m, 0m); zeroS = point(0m, 0m) };
+
+cDiacritic { zeroM = point(0m, 0m) };
+
+endtable;
+
+
 //
 //  NUQTA POSITIONING
 //
@@ -125,6 +139,11 @@ cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = he
 
 // Hehhook - big
 ////////attachR_BN(	gHehGoalIni,	g__hehHook_big,		default2,		default2_)
+
+
+// TEMPORARY - fall-back attachment
+// Needed to text in Graphite1.
+(c_initial c_medial c_final)  cNuqtaLike { attach {to = @1; at = zeroS; with = zeroM } };
 
 endpass;  // 2
 
@@ -371,7 +390,7 @@ cls_excludingGlyphs_kern { collision {
 cKernable { collision {
 	//---flags = SET_FIX(collision.flags); -- move actual kerning to end of process
 	flags = SET_KERN(collision.flags);
-	margin = 100m;
+	margin = 150m;
 	////max.x = 300m; min.x = 0;  // kerning right is logically equivalent to shifting left in RTL
 	//---max.x = 5000m; min.x = -5000m;
     // min/max.y are omitted for kernable glyphs
@@ -579,7 +598,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;
 
-pass(9) { CollisionFix = 4; Kern = true }
+pass(9) { CollisionFix = 4; AutoKern = true }
 
 // Perform diacritic-related fixing.
 

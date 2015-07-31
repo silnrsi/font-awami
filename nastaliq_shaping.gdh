@@ -15,6 +15,7 @@ pass(1)
 
 	// NFD -> NFC
 	gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
+	(gArabicYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
 
 	// Yay + hamza = hamzayay (move zair or zabar out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;

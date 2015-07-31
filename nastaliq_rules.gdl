@@ -56,6 +56,10 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define ORDER_NOABOVE	4
 #define ORDER_NOBELOW	8
 
+#define AUTOKERN_NONE		0
+#define AUTOKERN_FULL		1
+#define AUTOKERN_NOSPACE	2
+
 #endif // DO_COL_FIX
 
 
@@ -77,7 +81,7 @@ cTakes_nUpperDia += (gJeemMedJm);
 gLamIniJm { mLowerS = point(600m, 1300m) };   // alef + lam + ghain
 cTakes_mLowerDia += (gLamIniJm);
 
-gWaw { mLower = point(0m, 0m) }; // noon-smalltah + alef
+gWaw { mLowers = point(0m, 0m) }; // noon-smalltah + alef
 cTakes_mLowerDia += (gWaw);
 
 gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah
@@ -89,9 +93,18 @@ cTakes_nUpperDia += (gBehMedHgF_be);
 gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
 cTakes_hehhookDia += (gHehGoalIniRe);
 
-gSadMedBeM2 { entr_sad = point(800m, 350m); mLowerS = point(400m, 400m) };  // yeh + beh + bariyeh
+gSadMedBeM2 { entr_sad = point(800m, 380m); mLowerS = point(700m, 200m) };  // yeh + beh + bariyeh
 c_entr_sad += (gSadMedBeM2);
 cTakes_mLowerDia += (gSadMedBeM2);
+
+
+g__hamza { mUpperS = point(270m, 1500m) };
+cTakes_mUpperDia += (g__hamza);
+
+
+
+gArabicYeh = pseudo(glyphid(380), 0x064A);
+
 
 endtable;
 
