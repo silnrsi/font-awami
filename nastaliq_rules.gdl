@@ -75,23 +75,25 @@ gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
 
-gJeemMedJm { nUpperS = point(213m, 1091m) }; 
-cTakes_nUpperDia += (gJeemMedJm);
+//gJeemMedJm { nUpperS = point(213m, 1091m) }; 
+//cTakes_nUpperDia += (gJeemMedJm);
 
-gLamIniJm { mLowerS = point(600m, 1300m) };   // alef + lam + ghain
-cTakes_mLowerDia += (gLamIniJm);
+//gLamIniJm { mLowerS = point(600m, 1300m) };   // alef + lam + ghain
+//cTakes_mLowerDia += (gLamIniJm);
 
-gWaw { mLowers = point(0m, 0m) }; // noon-smalltah + alef
-cTakes_mLowerDia += (gWaw);
+//gWaw { mLowers = point(0m, 0m) }; // noon-smalltah + alef
+//cTakes_mLowerDia += (gWaw);
 
-gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah
+gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah - move from 70, 733
 
-gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
-c_exit_hehgoalFinal += (gBehMedHgF_be);
-cTakes_nUpperDia += (gBehMedHgF_be);
+gBehMedJm { n23LowerS = point(730m, 879m) };  // peh + chotiyeh
 
-gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
-cTakes_hehhookDia += (gHehGoalIniRe);
+//gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
+//c_exit_hehgoalFinal += (gBehMedHgF_be);
+//cTakes_nUpperDia += (gBehMedHgF_be);
+
+//gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
+//cTakes_hehhookDia += (gHehGoalIniRe);
 
 gSadMedBeM2 { entr_sad = point(800m, 380m); mLowerS = point(700m, 200m) };  // yeh + beh + bariyeh
 c_entr_sad += (gSadMedBeM2);

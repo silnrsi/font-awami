@@ -30,7 +30,7 @@ cursive_attach(behPreReh)
 cursive_attach(behPreNoon)
 cursive_attach(jeem)
 cursive_attach(reh)
-cursive_attach(rehHgM)
+cursive_attach(rehHgm)
 cursive_attach(rehJkl)
 cursive_attach(rehSshg)
 cursive_attach(seen)
@@ -184,6 +184,17 @@ pass(3)
 
 // Set up for collision fixing
 
+#define MAXKERN 5000m
+#define MINKERN -1000m
+#define STDMARGIN 150m
+#define STDMARGINWT 400
+#define STDMARGIN_N1 150m
+#define STDMARGINWT_N1 200
+#define STDMARGIN_N2 150m
+#define STDMARGINWT_N2 200
+#define STDMARGIN_DIAC 200m
+#define STDMARGINWT_DIAC 400
+
 
 #define ORDER_UNUQTAS 1
 #define ORDER_LNUQTAS 2
@@ -195,41 +206,41 @@ pass(3)
 table(glyph) {AttributeOverride = 1}
 
 cNuqtaLikeUpper {
-	collision { margin = 150m; marginweight = 400 };
+	collision { margin = STDMARGIN; marginweight = STDMARGINWT };
 	sequence {
-		class = ORDER_UNUQTAS;		order = ORDER_LEFTDOWN;
-		above { xoffset = 100m;		weight = 400 };
-		below { xlimit = -50m;		weight = 50 };
-		valign { height = 200m;		weight = 500 }
+		class = ORDER_UNUQTAS;	order = ORDER_LEFTDOWN;
+		above { xoffset = 100m;	weight = 400 };
+		below { xlimit = -50m;	weight = 50 };
+		valign { height = 200m;	weight = 500 }
 	}
 };
 
 cNuqtaLikeLower {
-	collision { margin = 150m; marginweight = 400 };
+	collision { margin = STDMARGIN; marginweight = STDMARGINWT };
 	sequence {
-		class = ORDER_LNUQTAS;		order = ORDER_LEFTDOWN;
-		above { xoffset = 100m;		weight = 400 };
-		below { xlimit = -50m;		weight = 50 };
-		valign { height = 200m;		weight = 500 }
+		class = ORDER_LNUQTAS;	order = ORDER_LEFTDOWN;
+		above { xoffset = 100m;	weight = 400 };
+		below { xlimit = -50m;	weight = 500 }; // weight was 50
+		valign { height = 200m;	weight = 500 }
 	}
 };
 
 // Smaller nuqta glyphs need larger margins:
-g__dot1u { collision.margin = 150m };
-g__dot1l { collision.margin = 150m };
-g__dot2u { collision.margin = 125m };
-g__dot2l { collision.margin = 125m };
+g__dot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
+g__dot1l { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
+g__dot2u { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };		// was 125
+g__dot2l { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };		// was 125
 
 
 cDiacriticUpper {
-	collision { margin = 150m; marginweight = 400 }
+	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
 	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; } - set in the rule
 };
 
 cBase = (c_initial, c_medial, c_final);
 
 cDiacriticLower {
-	collision { margin = 150m; marginweight = 400 }
+	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
 	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; } - set in the rule
 };
 
@@ -376,7 +387,7 @@ cls_excludingGlyphs { collision {
 cls_excludingGlyphs_kern { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = 5000m; min.x = -5000m;
+	max.x = MAXKERN; min.x = MINKERN;
 	margin = 100m;
     // min/max.y are omitted for kernable glyphs
 	exclude.glyph = collexclude.glyph;
@@ -390,9 +401,9 @@ cls_excludingGlyphs_kern { collision {
 cKernable { collision {
 	//---flags = SET_FIX(collision.flags); -- move actual kerning to end of process
 	flags = SET_KERN(collision.flags);
-	margin = 150m;
+	margin = STDMARGIN;
 	////max.x = 300m; min.x = 0;  // kerning right is logically equivalent to shifting left in RTL
-	//---max.x = 5000m; min.x = -5000m;
+	//---max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
 
@@ -586,7 +597,7 @@ cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	////max.x = 300m; min.x = 0;  // kerning right is logically equivalent to shifting left in RTL
-	max.x = 5000m; min.x = -5000m;
+	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
 

@@ -549,5 +549,13 @@ cDiacriticLower = ( gZair gKharizair gDozair ) ;
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
+// Bidi
+
+c_initial { dir = DIR_ARABIC };
+c_medial { dir = DIR_ARABIC };
+c_final { dir = DIR_ARABIC };
+c_isolated { dir = DIR_ARABIC };
+
+
 endtable;  // glyph
 
