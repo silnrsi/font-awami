@@ -37,6 +37,7 @@ cursive_attach(seen)
 cursive_attach(sad)
 cursive_attach(tah)
 cursive_attach(feh)
+cursive_attach(meem)
 cursive_attach(noon)
 cursive_attach(hehgoalMedial)
 cursive_attach(hehgoalFinal)
@@ -46,6 +47,7 @@ cursive_attach(chotiyehBfkl)
 cursive_attach(bariyeh)
 cursive_attach(lamKaf)
 cursive_attach(kafAlt)
+cursive_attach(qafWaw)
 
 #endif  // QUICKCOMPILE
 
@@ -423,9 +425,11 @@ endpass; // 3
 
 
 
-pass(4) { CollisionFix = 4 }
+pass(4) { CollisionFix = 5 }
 // Perform base + nuqta collision fixing. Any failures leave for now.
 endpass;
+
+/**************************************
 
 pass(5)
 
@@ -449,6 +453,8 @@ endpass;  // 5
 pass(6) { CollisionFix = 4 }
 // Perform adjustments for bariyeh collisions.
 endpass;
+
+*****************************************/
 
 endtable;
 
@@ -479,7 +485,7 @@ endtable;  // glyph
 // Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
 
 #if DO_COL_FIX
-pass(7)
+pass(5)
 #else
 pass(3)
 #endif // DO_COL_FIX
@@ -519,14 +525,14 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 // Remove if we create a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
-endpass; // pos - 7 (or 3)
+endpass; // pos - 5 (or 3)
 
 
 #if DO_COL_FIX
 
 // Diacritic collision fixing and kerning
 
-pass(8)
+pass(6)
 
 // Set up diacritic collision fixes and kerning.
 
@@ -609,39 +615,11 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;
 
-pass(9) { CollisionFix = 4; AutoKern = true }
+pass(7) { CollisionFix = 4; AutoKern = true }
 
 // Perform diacritic-related fixing.
 
 endpass;
-
-
-
-/**************
-pass(10)
-
-cKernable { collision.flags = CLEAR_FIX(collision.flags) }; // turn off COLL_FIX
-
-cNuqtaLike { collision {
-	flags = SET_FIX(collision.flags);
-	margin = 100m;
-} };
-
-cDiacritic { collision {
-	flags = SET_FIX(collision.flags);
-	margin = 125m;
-} };
-
-endpass;
-
-
-pass(11) { CollisionFix = 2 }
-
-// Last chance fixes.
-
-endpass;
-
-***************/
 
 
 #endif // DO_COL_FIX
