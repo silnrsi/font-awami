@@ -36,8 +36,10 @@ cursive_attach(rehSshg)
 cursive_attach(seen)
 cursive_attach(sad)
 cursive_attach(tah)
+cursive_attach(ain)
 cursive_attach(feh)
 cursive_attach(meem)
+cursive_attach(meemAlt)
 cursive_attach(noon)
 cursive_attach(hehgoalMedial)
 cursive_attach(hehgoalFinal)
@@ -48,6 +50,7 @@ cursive_attach(bariyeh)
 cursive_attach(lamKaf)
 cursive_attach(kafAlt)
 cursive_attach(qafWaw)
+cursive_attach(qafWawStfh)
 
 #endif  // QUICKCOMPILE
 
@@ -89,6 +92,7 @@ pass(2)
 //cTakes_n1Lower_and_nUpperDia &= (cTakes_nUpperDia);
 //endtable;
 
+// tah above, nuqta(s) below
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
@@ -118,6 +122,10 @@ cTakes_nUpperDia
 
 cTakes_tahUpperDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
+	/ _=B  _=U;
+
+cTakes_hamzaUpperDia
+	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
 	/ _=B  _=U;
 
 
@@ -187,7 +195,9 @@ pass(3)
 // Set up for collision fixing
 
 #define MAXKERN 5000m
-#define MINKERN -1000m
+#define MINKERN -1000
+#define MINKERN_TIGHT -3000m
+#define MINKERN_WIDE -200m
 #define STDMARGIN 150m
 #define STDMARGINWT 400
 #define STDMARGIN_N1 150m
@@ -599,13 +609,49 @@ cDiacriticLower { collision {
 
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
+if (overlapKern == none)
+
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	////max.x = 300m; min.x = 0;  // kerning right is logically equivalent to shifting left in RTL
+	max.x = MAXKERN; min.x = 0;
+    // min/max.y are omitted for kernable glyphs
+} };
+
+endif;
+
+if (overlapKern == wide)
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	max.x = MAXKERN; min.x = MINKERN_WIDE;
+    // min/max.y are omitted for kernable glyphs
+} };
+
+endif;
+
+if (overlapKern == medium)
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
+
+endif;
+
+if (overlapKern == tight)
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	max.x = MAXKERN; min.x = MINKERN_TIGHT;
+    // min/max.y are omitted for kernable glyphs
+} };
+
+endif;
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 

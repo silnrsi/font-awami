@@ -35,8 +35,14 @@
 (gNoonGhunnaIni0 gNoonGhunnaMed0)	_	>	(gBehIni_raw gBehMed_raw):1				g__dot1u:1;
 gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
 (gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1		g__dot1u_smallTah:1;
-gHehGoalIni0					_	>	gHehGoalIni_raw:1				g__hehHook_small:1;
-gHehGoalMed0						>	gHehGoalMed_raw;  	// TODO: add a feature to include the hook
+
+gHehGoalIni0					_	>	gHehGoalIni_raw:1	g__hehHook_small:1;
+if (hehGoalHook)
+gHehGoalMed0  _						>	gHehGoalMed_raw:1	g__hehHook_small:1;
+else
+gHehGoalMed0						>	gHehGoalMed_raw;
+endif;
+
 gHehGoalFin0						>	gHehGoalFin;
 //g06c3 - goal-teh
 //g06c2 - hay-hamza

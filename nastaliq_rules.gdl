@@ -18,7 +18,7 @@
 
 
 Bidi = true;
-ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
+ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 
 
 #if DO_COL_FIX
@@ -104,6 +104,8 @@ g__hamza { mUpperS = point(270m, 1500m) };
 cTakes_mUpperDia += (g__hamza);
 
 
+gHehGoalMed 	{ hehhookS = point(643, -535) };
+gHehGoalMedBeNn	{ hehhookS = point(646, 138) };
 
 gArabicYeh = pseudo(glyphid(380), 0x064A);
 
@@ -127,8 +129,51 @@ endtable;
 
 // FEATURES
 
-//table(feature)
-//endtable; // feature
+table(feature)
+
+// Heh-goal hook on medial
+hehGoalHook {
+	id = "hehk";
+	name.1033 = string("Hook on medial heh-goal");
+	default = 0;
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("False");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("True");
+        }
+    }
+}
+
+// Overlap kerning
+overlapKern {
+	id = "olap";
+	name.1033 = string("Overlap kerning");
+	default = 2;
+    settings {
+        none {
+            value = 0;
+            name.1033 = string("None");
+        }
+		wide {
+			value = 1;
+			name.1033 = string("Wide");
+		}
+        medium {
+            value = 2;
+            name.1033 = string("Medium");
+        }
+        tight {
+            value = 3;
+            name.1033 = string("Tight");
+        }
+    }
+}
+
+endtable; // feature
 
 
 

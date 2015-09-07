@@ -226,7 +226,7 @@ cIniHgF = (gBehIniHgF, gJeemIniHgF, gSeenIniHgF, gSadIniHgF, gTahIniHgF, gAinIni
 		gKafIniHgF, gGafIniHgF, gLamIniHgF, gMeemIniHgF, gHehGoalIniHgF, gHehDoIniHgF);
 cIniHgM_kx = (gBehIniHgM, gJeemIniHgM, gSeenIniHgM, gSadIniHgM, gTahIniHgM, gAinIniHgM, gFehIniHgM,
 		gKafIniHgM_alt, gGafIniHgM_alt, gLamIniHgM, gMeemIniHgM, gHehGoalIniHgM, gHehDoIniHgM);
-cIniHd= (gBehIniHd, gJeemIniHd, gSeenIniHd, gSadIniHd, gTahIniHd, gAinIniHd, gFehIniHd,
+cIniHd = (gBehIniHd, gJeemIniHd, gSeenIniHd, gSadIniHd, gTahIniHd, gAinIniHd, gFehIniHd,
 		gKafIniHd, gGafIniHd, gLamIniHd, gMeemIniHd, gHehGoalIniHd, gHehDoIniHd);
 cIniCh = (gBehIniCh, gJeemIniCh, gSeenIniCh, gSadIniCh, gTahIniCh, gAinIniCh, gFehIniCh,
 		gKafIniCh, gGafIniCh, gLamIniCh, gMeemIniCh, gHehGoalIniCh, gHehDoIniCh);
@@ -253,6 +253,8 @@ cIniBe_noS_kx = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
 		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 cIniBeM1_noS_kx = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
+cIniBeM1_noS = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
+		gKafIniBeM1_alt, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 
 // before gBehMedBeRe:
 cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
@@ -296,7 +298,6 @@ gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4
 (gAlef gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin gAlefMaddaFin gAlefHamzaFin)  /  (c_initial c_medial)  MARKS  _;
 
-// CaltfinaBclass
 (gWawFin gWawHamzaAboveFin gQafFin)  >  (gWawFin_stfh gWawHamzaAboveFin_stfh gQafFin_stfh)
 		/  (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw)  MARKS
 			_;
@@ -509,7 +510,9 @@ cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);  //
 //// Don't use kinked kafs for now:
 //cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
 
-cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
+
+///cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
+cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
 
 cIni_raw      >  cIniBeHg_BeRe  / _ MARKS  gBehMedBeRe;
 
@@ -522,8 +525,9 @@ cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
 					gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedBeHg);
 
 (gSeenIni_raw gSadIni_raw)  >  (gSeenIniBe gSadIniBe)  /  _ MARKS  cBehMed_postSBeM;
+/**** alternate kafs
 cIni_raw_noS  >  cIniBe_noS_kx                         /  _ MARKS  (cBehMed_postBeM gBehMedHd);
-
+***/
 
 gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;
 
@@ -558,7 +562,9 @@ cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
 cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_alt;
 
 
-cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;
+////cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;
+cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  cBehMed_postBeM;
+
 
 
 // Basic rules
@@ -610,7 +616,7 @@ cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final);
 
 gBehMedNn  >  gBehMedNn_hgbm  /  (gHehGoalIni gHehGoalIniBeNn gBehMed gMeemIni gMeemIniBeNn)  MARKS  _;
 
-g__hehHook_small  >  g__hehHook_big  /  _  MARKS  gAlefFin;
+/////g__hehHook_small  >  g__hehHook_big  /  _  MARKS  gAlefFin;
 
 
 // TODO: fix the precontext
