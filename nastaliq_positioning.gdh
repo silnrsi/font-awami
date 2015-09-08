@@ -57,6 +57,15 @@ cursive_attach(qafWawStfh)
 // Last resort:
 (c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS2N ^ _=L ;
 
+
+if (overlapKern == tight)
+g_space { advance.x = 0m; };
+endif;
+
+if (overlapKern == medium)
+g_space { advance.x = 75m; };
+endif;
+
 endpass; // 1
 
 endtable;	// positioning
