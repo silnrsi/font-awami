@@ -251,8 +251,13 @@ cIni_raw_noS = (gBehIni_raw, gJeemIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw
 		gKafIni_raw, gGafIni_raw, gLamIni_raw, gMeemIni_raw, gHehGoalIni_raw, gHehDoIni_raw);
 cIniBe_noS_kx = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
 		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
+// REMOVE _ALT FORMS
+cIniBe_noS = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
+		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
+
 cIniBeM1_noS_kx = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
+// REMOVE _ALT FORMS
 cIniBeM1_noS = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 
@@ -525,9 +530,12 @@ cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
 					gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedBeHg);
 
 (gSeenIni_raw gSadIni_raw)  >  (gSeenIniBe gSadIniBe)  /  _ MARKS  cBehMed_postSBeM;
+
 /**** alternate kafs
 cIni_raw_noS  >  cIniBe_noS_kx                         /  _ MARKS  (cBehMed_postBeM gBehMedHd);
 ***/
+cIni_raw_noS  >  cIniBe_noS                            /  _ MARKS  (cBehMed_postBeM gBehMedHd);
+
 
 gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;
 
