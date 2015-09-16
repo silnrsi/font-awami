@@ -1,6 +1,9 @@
+import glob
+
 font(target = 'Awami_test.ttf',
      source = 'Awami Nastaliq Regular.ttf',
-     graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D'),
+     graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D',
+                    depends = glob.glob('*.gdh')),
      ap = "Awami Nastaliq Regular_tmp.xml",
     )
 
