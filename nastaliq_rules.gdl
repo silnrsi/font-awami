@@ -84,9 +84,9 @@ gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 //gWaw { mLowers = point(0m, 0m) }; // noon-smalltah + alef
 //cTakes_mLowerDia += (gWaw);
 
-gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah - move from 70, 733
+//gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah - move from 70, 733
 
-gBehMedJm { n23LowerS = point(730m, 879m) };  // peh + chotiyeh
+//gBehMedJm { n23LowerS = point(730m, 879m) };  // peh + chotiyeh
 
 //gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
 //c_exit_hehgoalFinal += (gBehMedHgF_be);
@@ -104,8 +104,8 @@ g__hamza { mUpperS = point(270m, 1500m) };
 cTakes_mUpperDia += (g__hamza);
 
 
-gHehGoalMed 	{ hehhookS = point(643m, -535m) };
-gHehGoalMedBeNn	{ hehhookS = point(646m, 138m) };
+// gHehGoalMed 	{ hehhookS = point(643m, -535m) };
+// gHehGoalMedBeNn	{ hehhookS = point(646m, 138m) };
 
 gArabicYeh = pseudo(glyphid(380), 0x064A);
 
