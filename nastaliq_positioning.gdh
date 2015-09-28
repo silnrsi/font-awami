@@ -181,7 +181,8 @@ cKernable = (c_isolated c_final);  //// {collision.kern = true};
 
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
 
-
+// TODO: do exclusion glyphs correctly.
+// TODO: don't use them for ngoeh
 gKafMedSn		{ collexclude {glyph = g_kaf_exclude;		offsetx=-100m;	offsety=700m;}};
 gGafMedBe_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-100m;	offsety=750m;}};
 gGafMedSn_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-200m;	offsety=650m;}};
@@ -204,7 +205,7 @@ pass(3)
 // Set up for collision fixing
 
 #define MAXKERN 5000m
-#define MINKERN -1000
+#define MINKERN -1000m
 #define MINKERN_TIGHT -3000m
 #define MINKERN_WIDE -200m
 #define STDMARGIN 150m

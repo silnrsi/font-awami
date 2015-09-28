@@ -75,39 +75,14 @@ gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
 
-//gJeemMedJm { nUpperS = point(213m, 1091m) }; 
-//cTakes_nUpperDia += (gJeemMedJm);
-
-//gLamIniJm { mLowerS = point(600m, 1300m) };   // alef + lam + ghain
-//cTakes_mLowerDia += (gLamIniJm);
-
-//gWaw { mLowers = point(0m, 0m) }; // noon-smalltah + alef
-//cTakes_mLowerDia += (gWaw);
-
-//gBehMedTaM { nUpperS = point(170m, 1233m) };  // teh + zah - move from 70, 733
-
-//gBehMedJm { n23LowerS = point(730m, 879m) };  // peh + chotiyeh
-
-//gBehMedHgF_be { exit_hehgoalFinal = point(50m, 240m); nUpperS = point(200m, 300m) }; // dal + nuqta 2
-//c_exit_hehgoalFinal += (gBehMedHgF_be);
-//cTakes_nUpperDia += (gBehMedHgF_be);
-
-//gHehGoalIniRe { hehhookS = point(350m, -200m) };   // gaf + teh + hamza-waw
-//cTakes_hehhookDia += (gHehGoalIniRe);
-
-gSadMedBeM2 { entr_sad = point(800m, 380m); mLowerS = point(700m, 200m) };  // yeh + beh + bariyeh
-c_entr_sad += (gSadMedBeM2);
-cTakes_mLowerDia += (gSadMedBeM2);
-
-
-g__hamza { mUpperS = point(270m, 1500m) };
-cTakes_mUpperDia += (g__hamza);
-
-
-// gHehGoalMed 	{ hehhookS = point(643m, -535m) };
-// gHehGoalMedBeNn	{ hehhookS = point(646m, 138m) };
-
 gArabicYeh = pseudo(glyphid(380), 0x064A);
+
+gKafMedCh {exit_chotiyehBfkl = point(-60m, 720m)};  // 30,200
+
+
+//gNoonFin { tahUpperS = point(847m, 291m) };
+//cTakes_tahUpperDia += (gNoonFin);
+///////gGafFin { nUpperS = point(2275m, 2076m) };
 
 
 endtable;
@@ -135,7 +110,7 @@ table(feature)
 hehGoalHook {
 	id = "hehk";
 	name.1033 = string("Hook on medial heh-goal");
-	default = 0;
+	default = 1;
     settings {
         ffalse {
             value = 0;

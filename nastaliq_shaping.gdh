@@ -238,9 +238,15 @@ cIniBeNn_kx = (gBehIniBeNn, gJeemIniBeNn, gSeenIniBeNn, gSadIniBeNn, gTahIniBeNn
 		gKafIniBeNn_alt, gGafIniBeNn_alt, gLamIniBeNn, gMeemIniBeNn, gHehGoalIniBeNn, gHehDoIniBeNn);
 cIniBeHg_kx = (gBehIniBeHg, gJeemIniBeHg, gSeenIniBeHg, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
 		gKafIniBeHg_alt, gGafIniBeHg_alt, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
-// Note gLamIni in this class:
+
+// Note gLamIni in these classes:
 cIniMmX_kx = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
 		gKafIniMmX_alt, gGafIniMmX_alt, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
+////gKafIniMmX = gKafIniMmX_alt;	// TEMP NON-ALT FORM
+gGafIniMmX = gGafIniMmX_alt;	// TEMP NON-ALT FORM
+cIniMmX = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
+		gKafIniMmX, gGafIniMmX, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
+
 cIniKfX_kx = (gBehIniKfX, gJeemIniKfX, gSeenIniKfX, gSadIniKfX, gTahIniKfX, gAinIniKfX, gFehIniKfX,
 		gKafIniKfX_alt, gGafIniKfX_alt, gLamIniKfX, gMeemIniKfX, gHehGoalIniKfX, gHehDoIniKfX);
 	
@@ -252,8 +258,9 @@ cIni_raw_noS = (gBehIni_raw, gJeemIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw
 cIniBe_noS_kx = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
 		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 // REMOVE _ALT FORMS
+gKafIniBe = gKafIniBe_alt;	// TEMP NON-ALT FORM
 cIniBe_noS = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
-		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
+		gKafIniBe, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 
 cIniBeM1_noS_kx = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
@@ -320,6 +327,7 @@ c_preReF_hgM = (gHehGoalMed_raw);
 
 endtable;
 
+// TODO: get rid of all the various final forms.
 
 (gBehFin gPehFin gTehFin gTtehFin gThehFin)  >  (gBehFin_bfkl gPehFin_bfkl gTehFin_bfkl gTtehFin_bfkl gThehFin_bfkl)
 	/  ^  c_preBe_bfkl MARKS  _;
@@ -521,9 +529,11 @@ cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe g
 
 cIni_raw      >  cIniBeHg_BeRe  / _ MARKS  gBehMedBeRe;
 
+/**** alternate kafs */
 cIni_raw  >  cIniBeRe_kx  /  _ MARKS  gBehMedRe;
 cIni_raw  >  cIniBeNn_kx  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
+/****/
 
 (gSeenIni_raw gSadIni_raw)  >  (gSeenIniBeM1 gSadIniBeM1)
 	/  _ MARKS  (gBehMedSn gBehMedBeM2 gBehMedBeF_ss gBehMedBe gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss
@@ -540,7 +550,10 @@ cIni_raw_noS  >  cIniBe_noS                            /  _ MARKS  (cBehMed_post
 gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;
 
 gLamIni_raw  >  gLamIniMm /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt); // exception to rule below
-cIni_raw      >  cIniMmX_kx /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
+/**** alternate kafs
+cIni_raw     >  cIniMmX_kx /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
+****/
+cIni_raw     >  cIniMmX /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
 
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
@@ -567,7 +580,7 @@ cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
 (gKafIni_raw gGafIni_raw)  >  (gKafIniHd_alt gGafIniHd_alt)  /  _ MARKS  cHehDoMed;
 ***/
 
-cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_alt;
+cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_justAlt;
 
 
 ////cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;
@@ -639,9 +652,9 @@ endpass; // 5
 
 table(glyph)
 
-cLowerUpper = (g__dot2l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
-cLowerNoUpper = (g__dot2l, g__dot2vl, g__dot1l);
-cUpperNoLower = (g__smallTah, g__smallTah, g__dot1u);
+cLowerUpper = (g__dot2l_smallTah, g__dot1l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
+cLowerNoUpper = (g__dot2l, g__dot1l, g__dot2vl, g__dot1l);
+cUpperNoLower = (g__smallTah, g__smallTah, g__smallTah, g__dot1u);
 
 endtable; // glyph
 

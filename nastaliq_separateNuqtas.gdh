@@ -29,12 +29,15 @@
 (gKafIni0 gKafMed0 gKafFin0)			>	(gKafIni_raw gKafMed_raw gKafFin);
 (gGafIni0 gGafMed0 gGafFin0)			>	(gGafIni_raw gGafMed_raw gGafFin);
 (gGuehIni0 gGuehMed0 gGuehFin0)		_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2vl:1;
+(gNgoehIni0 gNgoehMed0 gNgoehFin0)	_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2u:1;
 (gLamIni0 gLamMed0 gLamFin0)			>	(gLamIni_raw gLamMed_raw gLamFin);
 (gMeemIni0 gMeemMed0 gMeemFin0)			>	(gMeemIni_raw gMeemMed_raw gMeemFin);
 (gNoonIni0 gNoonMed0 gNoonFin0)		_	>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u:1;
 (gNoonGhunnaIni0 gNoonGhunnaMed0)	_	>	(gBehIni_raw gBehMed_raw):1				g__dot1u:1;
 gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
-(gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1		g__dot1u_smallTah:1;
+(gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_
+										>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallTah:1;
+(gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
 
 gHehGoalIni0					_	>	gHehGoalIni_raw:1	g__hehHook_small:1;
 if (hehGoalHook)
@@ -69,14 +72,16 @@ gAlefFin0					>	gAlefFin;
 gDalFin0					>	gDalFin;
 gThalFin0				_	>	gDalFin		g__dot1u:1;
 gDdalFin0				_	>	gDalFin		g__smallTah:1;
+gDalDotBelowSmallTahFin0 _	>	gDalFin		g__dot1l_smallTah:1;
 gDalTwoVertBelowSmallTahFin0
 						_	>	gDalFin		g__dot2vl_smallTah:1;
 gThalDotBelowFin0		_	>	gDalFin		g__dot1l:1;
 gRehFin0					>	gRehFin;
-gRehDotBelowDotAboveFin0 _	>	gRehFin		g__dot1l_dot1u:1;
 gZainFin0				_	>	gRehFin		g__dot1u:1;
 gRrehFin0				_	>	gRehFin		g__smallTah:1;
 gJehFin0				_	>	gRehFin		g__dot3u:1;
+gRehDotBelowFin0		_	>	gRehFin		g__dot1l:1;
+gRehDotBelowDotAboveFin0 _	>	gRehFin		g__dot1l_dot1u:1;
 gWawFin0					>	gWawFin;
 gWawHamzaAboveFin0		_	>	gWawFin		g__hamza:1;
 
