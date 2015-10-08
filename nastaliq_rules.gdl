@@ -74,16 +74,16 @@ table(glyph) {AttributeOverride = 1}
 gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
+// ABS-724
+gJeemFin { nUpperS = point(374m, 1274m) };
 
-gArabicYeh = pseudo(glyphid(380), 0x064A);
+gRehFin_hgM { entr_rehHgM = point(-249m, -593m) };
 
-gKafMedCh {exit_chotiyehBfkl = point(-60m, 720m)};  // 30,200
+// ABS-722
+gNoonDotBelow = pseudo(postscript("absNoon"), 0x06B9);
 
-
-//gNoonFin { tahUpperS = point(847m, 291m) };
-//cTakes_tahUpperDia += (gNoonFin);
-///////gGafFin { nUpperS = point(2275m, 2076m) };
-
+// rush job
+gGafMedHgM = pseudo(postscript("absGafMed"));
 
 endtable;
 
@@ -127,8 +127,8 @@ hehGoalHook {
 overlapKern {
 	id = "olap";
 	name.1033 = string("Overlap kerning");
-	default = 2;
-    settings {
+	default = 3;
+	settings {
         none {
             value = 0;
             name.1033 = string("None");

@@ -121,6 +121,9 @@ cTakes_n23LowerDia
 
 // Upper nuqta attachment
 
+////gJeemFin  cNuqtaLike { attach {to = @J; at = point(574m, 1274m); with = nUpperM} }
+////	/  gJeemMedJm=J  cNuqtaLike?  _  _;
+
 //cTakes_n1hUpperBehSpecialDia
 //	cNuqtaLikeUpper { attach {to = @B; at = n1hUpperBehSpecialS; with = nUpperM } }
 //	/ _=B  _=U;
@@ -161,7 +164,7 @@ cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = he
 
 
 // TEMPORARY - fall-back attachment
-// Needed to text in Graphite1.
+// Needed to test in Graphite1.
 (c_initial c_medial c_final)  cNuqtaLike { attach {to = @1; at = zeroS; with = zeroM } };
 
 endpass;  // 2
@@ -216,6 +219,10 @@ pass(3)
 #define STDMARGINWT_N2 200
 #define STDMARGIN_DIAC 200m
 #define STDMARGINWT_DIAC 400
+
+#define KERNMARGIN_TIGHT 150m
+#define KERNMARGIN_MED 300m
+#define KERNMARGIN_WIDE 400m
 
 
 #define ORDER_UNUQTAS 1
@@ -635,7 +642,8 @@ if (overlapKern == wide)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN_WIDE;
+//	max.x = MAXKERN; min.x = MINKERN_WIDE;
+	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_WIDE;
     // min/max.y are omitted for kernable glyphs
 } };
 
@@ -646,7 +654,8 @@ if (overlapKern == medium)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN;
+//	max.x = MAXKERN; min.x = MINKERN;
+	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_MED;
     // min/max.y are omitted for kernable glyphs
 } };
 
@@ -657,7 +666,8 @@ if (overlapKern == tight)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN_TIGHT;
+//	max.x = MAXKERN; min.x = MINKERN_TIGHT;
+	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
     // min/max.y are omitted for kernable glyphs
 } };
 

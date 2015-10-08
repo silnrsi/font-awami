@@ -38,25 +38,35 @@ gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
 (gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_
 										>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallTah:1;
 (gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
+(gNoonDotBelowIni0 gNoonDotBelowMed0 gNoonDotBelowFin0)	_
+										>	(gBehIni_raw gBehMed_raw gNoonFin):1		g__dot1l_dot1u:1;
 
-gHehGoalIni0					_	>	gHehGoalIni_raw:1	g__hehHook_small:1;
+gHehGoalIni0			_					>	gHehGoalIni_raw:1	g__hehHook_small:1;
+(gTehMarbutaIni0 gTehMarbutaGoalIni0)  _	>	gHehGoalIni_raw:1  g__hehHook_dot2u:1;
+
 if (hehGoalHook)
-gHehGoalMed0  _						>	gHehGoalMed_raw:1	g__hehHook_small:1;
+gHehGoalMed0  _								>	gHehGoalMed_raw:1	g__hehHook_small:1;
+(gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__hehHook_dot2u:1;
 else
-gHehGoalMed0						>	gHehGoalMed_raw;
+gHehGoalMed0								>	gHehGoalMed_raw;
+(gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__dot2u:1;
 endif;
 
 gHehGoalFin0						>	gHehGoalFin;
+(gTehMarbutaFin0 gTehMarbutaGoalFin0)  _  >  gHehGoalFin:1  g__dot2u:1;
 //g06c3 - goal-teh
 //g06c2 - hay-hamza
+
 (gHehDoIni0 gHehDoMed0 gHehDoFin0)			>	(gHehDoIni_raw gHehDoMed_raw gHehDoFin);
 
 (gChotiyehIni0 gChotiyehMed0)			_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
+(gYehIni0 gYehMed0)					_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
 (gYehHamzaAboveIni0 gYehHamzaAboveMed0)  _	>	(gBehIni_raw gBehMed_raw):1		g__hamza:1;
-(gBariyehIni0 gBariyehMed0)			_	>   (gBehIni_raw gBehMed_raw):1		g__dot2l:1;
+(gBariyehIni0 gBariyehMed0)			_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
 
 gYehHamzaAboveFin0  		_  >  gChotiyehFin  g__hamza:1;
 gChotiyehFin0  >  gChotiyehFin;
+gYehFin0  _  >  gChotiyehFin:1  g__dot2l:1;
 gBariyehFin0  >  gBariyehFin;
 
 //gYehHamzaAboveFin0		_	>	pseudo(postscript("absYehHamzaAbove"))	gArabicHamza:1;	// temporary final form

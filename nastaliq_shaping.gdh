@@ -15,7 +15,7 @@ pass(1)
 
 	// NFD -> NFC
 	gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
-	(gArabicYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
+	(gYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
 
 	// Yay + hamza = hamzayay (move zair or zabar out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
@@ -130,8 +130,11 @@ cMedNn = (gBehMedNn, gBehMedNn, gJeemMedNn, gSeenMedNn, gSadMedNn, gTahMedNn, gA
 		gKafMedNn, gGafMedNn, gLamMedNn, gMeemMedNn, gHehGoalMedNn, gHehDoMedNn);
 cMedHgF = (gBehMedHgF, gBehMedHgF, gJeemMedHgF, gSeenMedHgF, gSadMedHgF, gTahMedHgF, gAinMedHgF, gFehMedHgF,
 		gKafMedHgF, gGafMedHgF, gLamMedHgF, gMeemMedHgF, gHehGoalMedHgF, gHehDoMedHgF);
+
+
 cMedHgM = (gBehMedHgM, gBehMedHgM, gJeemMedHgM, gSeenMedHgM, gSadMedHgM, gTahMedHgM, gAinMedHgM, gFehMedHgM,
-		gKafMedHgM_alt, gGafMedHgM_alt, gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM);
+		gKafMedHgM_alt, gGafMedHgM, gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM);
+
 cMedHd = (gBehMedHd, gBehMedHd, gJeemMedHd, gSeenMedHd, gSadMedHd, gTahMedHd, gAinMedHd, gFehMedHd,
 		gKafMedHd, gGafMedHd, gLamMedHd, gMeemMedHd, gHehGoalMedHd, gHehDoMedHd);
 cMedCh = (gBehMedCh, gBehMedCh, gJeemMedCh, gSeenMedCh, gSadMedCh, gTahMedCh, gAinMedCh, gFehMedCh,
@@ -652,9 +655,11 @@ endpass; // 5
 
 table(glyph)
 
-cLowerUpper = (g__dot2l_smallTah, g__dot1l_smallTah, g__dot2vl_smallTah, g__dot1l_dot1u);
-cLowerNoUpper = (g__dot2l, g__dot1l, g__dot2vl, g__dot1l);
-cUpperNoLower = (g__smallTah, g__smallTah, g__smallTah, g__dot1u);
+cLowerUpper = (	g__dot2l_smallTah,	g__dot1l_smallTah,	g__dot2vl_smallTah,	g__dot1l_dot1u,	g__hehHook_dot2u);
+cLowerNoUpper = (g__dot2l,			g__dot1l,			g__dot2vl,		g__dot1l,			g__hehHook_small);
+cUpperNoLower = (g__smallTah,			g__smallTah,		g__smallTah,		g__dot1u,			g__dot2u);
+
+cNuqtaLike += (cLowerUpper);
 
 endtable; // glyph
 
