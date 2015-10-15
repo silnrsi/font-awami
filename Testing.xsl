@@ -6,6 +6,7 @@
 <xsl:variable name="width-comment" select="/ftml/head/columns/@comment"/>
 <xsl:variable name="width-label" select="/ftml/head/columns/@label"/>
 <xsl:variable name="width-string" select="/ftml/head/columns/@string"/>
+<xsl:variable name="font-scale" select="concat(/ftml/head/fontscale, substring('100', 1 div not(/ftml/head/fontscale)))"/>
 <html>
 <head>
 <title><xsl:value-of select="ftml/head/title"/></title>
@@ -24,14 +25,14 @@
  col.label { width: <xsl:value-of select="$width-label"/>; padding: 2px; border: 1px solid; border-collapse: collapse; }
  </xsl:if>
  <xsl:if test="$width-string != ''">
- col.string {width: <xsl:value-of select="$width-string"/>; font: <xsl:value-of select="ftml/head/fontscale"/>% TestFont; padding: 2px; border: 1px solid; border-collapse: collapse;}
+ td.string, col.string {width: <xsl:value-of select="$width-string"/>; font: <xsl:value-of select="$font-scale"/>% TestFont; padding: 2px; border: 1px solid; border-collapse: collapse;}
  </xsl:if>
  <xsl:if test="$width-comment != ''">
  col.comment {width: <xsl:value-of select="$width-comment"/>; padding: 2px; border: 1px solid; border-collapse: collapse;}
  </xsl:if>
  <xsl:for-each select="/ftml/head/styles/style">
  .<xsl:value-of select="@name"/> {
- font: <xsl:value-of select="/ftml/head/fontscale"/>% TestFont; 
+ font: <xsl:value-of select="$font-scale"/>% TestFont; 
  lang="<xsl:value-of select="@lang"/>";
  font-feature-settings: <xsl:value-of select="@feats"/> ; 
  padding: 2px; border: 1px solid; border-collapse: collapse; }
@@ -75,7 +76,7 @@
   <td class="tableform"><xsl:value-of select="@label"/></td>
   </xsl:if>
   <xsl:if test="$width-string != ''">
-  <td class="tableform"><xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+  <td class="tableform"><xsl:attribute name="class"><xsl:value-of select="concat(@class, substring('string', 1 div not(@class)))"/></xsl:attribute>
   <xsl:value-of select="string"/></td>
   </xsl:if>
   <xsl:if test="$width-comment != ''">
