@@ -358,7 +358,7 @@ c_preMm_alt = ( gAinIni_raw gAinMed_raw gMeemMed_alt_raw gBehIni_raw gBehMed_raw
 	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gSeenIni_raw gSeenMed_raw 
     gSadIni_raw gSadMed_raw gTahIni_raw gTahMed_raw ) ;
     
-cA_raw = (gDalFin gDdalFin gThalFin gKafFin gGafFin gLamFin gLamAlefFin gAlefFin
+cADLK_raw = (gDalFin gDdalFin gThalFin gKafFin gGafFin gLamFin gLamAlefFin gAlefFin
 	//// gDalTwoVertBelowSmallTahFin
 	gKafMed_raw gGafMed_raw gLamMed_raw);
 
@@ -372,8 +372,8 @@ endtable;
 // Note that we include the final bit of the context to "anchor" the rules
 // to the situations where the immediate next character has been processed.
 
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS  ^ _ MARKS  (cA cDalFin); // kafs and ghafs
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS  ^ _ MARKS  cA;			// others
+gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS  ^ _ MARKS  (cADLK cDalFin); // kafs and ghafs
+gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS  ^ _ MARKS  cADLK;			// others
 
 // also see below
 gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  (c_medial cFinals);
@@ -381,8 +381,8 @@ gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  (c_medial cFi
 
 // Version of above rules if finals and medials are separated into separate passes:
 
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS   _ MARKS  (cA_raw cDalFin); // kafs and ghafs
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS   _ MARKS  cA_raw;			// others
+gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS   _ MARKS  (cADLK_raw cDalFin); // kafs and ghafs
+gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS   _ MARKS  cADLK_raw;			// others
 
 // also see below
 gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
@@ -466,7 +466,7 @@ cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMed  MARKS  c_dkgal_postAlt
 
 // TODO: do we need this? -
 //(gKafMed_alt_raw gGafMed_alt_raw)	>  (gKafMedBeM2 gGafMedBeM2)
-//	/ ^ MPRECXT _  MARKS  ^ gBehMed  MARKS  cA;
+//	/ ^ MPRECXT _  MARKS  ^ gBehMed  MARKS  cADLK;
 
 // Alternate kaf forms (different from NGA)
 (gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed; // collision fix testing

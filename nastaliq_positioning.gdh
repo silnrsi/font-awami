@@ -445,20 +445,20 @@ cDiacritic { collision.flags = SET_IGNORE(collision.flags) };	// these have not 
 endpass; // 3
 
 
-#define CHARSEQ cMed cNuqtaLike? cDiacritic?
-#define SEQ2 [[CHARSEQ]? CHARSEQ]?
-#define SEQ3 [[[CHARSEQ]? CHARSEQ]? CHARSEQ]?
-#define YBELOWBYEH -450
-
-
-
+// We put the actual collision fixing a separate pass just because it makes debugging easier.
 pass(4) { CollisionFix = 5 }
 // Perform base + nuqta collision fixing. Any failures leave for now.
 endpass;
 
 /**************************************
 
-pass(5)
+#define CHARSEQ cMed cNuqtaLike? cDiacritic?
+#define SEQ2 [[CHARSEQ]? CHARSEQ]?
+#define SEQ3 [[[CHARSEQ]? CHARSEQ]? CHARSEQ]?
+#define YBELOWBYEH -450
+
+
+pass(4) { CollisionFix = 4 }
 
 // Next: adjust for nuqtas moved below a bariyeh.
 // Needed for, eg, \u0686\u067E\u0679\u06CC\u0646\u06D2
@@ -475,11 +475,8 @@ cNuqtaLikeLower {
 }  / cIni  _ {position.y > 100m}  cDiacritic?  SEQ2 gBariyehFin;
 
 
-endpass;  // 5
+endpass;  // 4
 
-pass(6) { CollisionFix = 4 }
-// Perform adjustments for bariyeh collisions.
-endpass;
 
 *****************************************/
 
@@ -559,7 +556,8 @@ endpass; // pos - 5 (or 3)
 
 // Diacritic collision fixing and kerning
 
-pass(6)
+pass(6) // { CollisionFix = 4; AutoKern = true }
+
 
 // Set up diacritic collision fixes and kerning.
 
@@ -681,10 +679,11 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;
 
+
+// We put the actual collision fixing a separate pass just because it makes debugging easier.
+
 pass(7) { CollisionFix = 4; AutoKern = true }
-
 // Perform diacritic-related fixing.
-
 endpass;
 
 
