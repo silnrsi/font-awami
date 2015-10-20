@@ -1,10 +1,48 @@
 #!/usr/bin/python
+# this is a smith configuration file
 
 import glob
 
-COPYRIGHT='Copyright 2015, SIL International. All rights reserved.'
+# set the default output folders
+out="results"
+DOCDIR="documentation"
+OUTDIR="installers"
+ZIPDIR="releases"
+TESTDIR='tests'
+# TESTRESULTSDIR = 'results/tests'
+# STANDARDS = 'reference'
+
+# set the font name, version, licensing and description
 APPNAME='Awami'
 VERSION='0.1'
+TTF_VERSION="0.1"
+COPYRIGHT='Copyright (c) 2014-2015, SIL International (http:/www.sil.org)'
+LICENSE='OFL.txt'
+
+DESC_SHORT = "Smart Unicode font for the Nastaliq script"
+DESC_LONG = """
+We are currently working on a Nastaliq-style font which will be called 
+Awami Nastaliq.
+
+Awami means "of the people", "of the common population" or "public". It is 
+intended to be a font that can be used by a wide variety of languages of
+Pakistan, including but not limited to Urdu.
+
+The font will not cover the full Unicode Arabic repertoire. It will only 
+support characters known to be used by languages in areas of the world using 
+the Nastaliq style of Arabic script.
+
+This font will make use of state-of-the-art font technologies to support complex 
+typographic issues. Font smarts will be implemented using  Graphite only. We have 
+no current plans to support OpenType.
+
+One font from this typeface family will be included in this release:
+     * Awami Nastaliq Regular
+
+Font sources are published in the repository and an open workflow is used for building, testing and releasing.
+"""
+DESC_NAME = "Awami-Kano"
+DEBPKG = 'fonts-awami'
 
 tests = fonttest(extras = {
             'pdf' : tests({
@@ -18,10 +56,11 @@ font(target = 'Awami_test.ttf',
      graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D -c',
                     depends = glob.glob('*.gdh')),
      ap = "Awami Nastaliq Regular_tmp.xml",
-     license = ofl(file='OFL.txt'),
+     license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
      extra_srcs = ['bin/awami_makegdl', 'bin/FFcopyGlyphs.py', 'bin/perllib/Font/TTF/Scripts/GDL.pm', 'DoulosSIL-R.ttf'],
-     tests = tests
+     tests = tests,
+     fret = fret(params = '-r')
     )
 
 def configure(ctx) :
