@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import glob
 
 COPYRIGHT='Copyright 2015, SIL International. All rights reserved.'
