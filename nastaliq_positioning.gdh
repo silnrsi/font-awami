@@ -63,7 +63,11 @@ g_space { advance.x = 0m; };
 endif;
 
 if (overlapKern == medium)
-g_space { advance.x = 75m; };
+g_space { advance.x = 150m; };
+endif;
+
+if (overlapKern == wide)
+g_space {advance.x = 300m; };
 endif;
 
 endpass; // 1
@@ -640,8 +644,8 @@ if (overlapKern == wide)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN_WIDE;
-//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_WIDE;
+	max.x = MAXKERN; min.x = MINKERN;
+//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_MED;
     // min/max.y are omitted for kernable glyphs
 } };
 
@@ -652,8 +656,8 @@ if (overlapKern == medium)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN;
-//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_MED;
+	max.x = MAXKERN; min.x = MINKERN_TIGHT;
+//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
     // min/max.y are omitted for kernable glyphs
 } };
 
