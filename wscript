@@ -41,7 +41,7 @@ One font from this typeface family will be included in this release:
 
 Font sources are published in the repository and an open workflow is used for building, testing and releasing.
 """
-DESC_NAME = "Awami-Kano"
+DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
 tests = fonttest(extras = {
