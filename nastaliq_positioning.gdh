@@ -99,6 +99,60 @@ pass(2)
 
 // Upper and lower nuqta attachment
 
+
+table(glyph)
+gBariyehFin {
+	nByRightLowerS = point(1600m, -150m);
+	nByMidRightLowerS = point(1400m, -150m);
+	nByCenterLowerS = point(1000m, -150m);
+	nByMidLeftLowerS = point(700m, -150m);
+	nByLeftLowerS = point(500m, -150m)
+}
+
+// For some reason I have to subtract something to make these things work. :-/
+cn1LowerDia { nByLowerM = point(n1LowerM.x, n1LowerM.y - 1m) };
+cn23LowerDia { nByLowerM = point(n23LowerM.x, n23LowerM.y - 1m) };
+
+cTakes_nLowerDia = (cTakes_n1LowerDia cTakes_n23LowerDia);
+
+endtable;
+
+// Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
+
+// X+Nx  Y+Ny  Z+Nz  Bariyeh
+cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = n23LowerM } }
+	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+
+// X+Nx  Y  Z+Nz  Bariyeh
+// Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
+// the second lower nuqta.
+cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	c_medial   cNuqtaLikeUpper   {                 attach {to = @Y; at = nUpperS; with = nUpperM } }
+	cMedBy cNuqtaLower       { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+
+cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	/ _=X _=Nx DIACS  c_medial=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+
+// X+Nx  Y+Ny  Z  Bariyeh
+cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
+	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ cMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+
+// X+Nx  Y+Ny  Bariyeh
+cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
+	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
+
+// X+Nx Y Bariyeh 
+cTakes_nLowerDia  cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	/ _=B _=L  DIACS  ^ cMedBy cNuqtaUpper? DIACS  gBariyehFin=By;
+
+
+
 // Not really needed, because all glyphs with lower diacs can take upper diacs
 //table(glyph)
 //cTakes_n1Lower_and_nUpperDia = cTakes_n1LowerDia;
@@ -147,6 +201,8 @@ cTakes_hamzaUpperDia
 
 // Lower nuqta attachment
 
+
+
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	/ _=B  _=L;
@@ -183,7 +239,7 @@ table(glyph)
 ////cNuqta { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
 
 
-cKernable = (c_isolated c_final);  //// {collision.kern = true};
+cKernable = (c_isolated c_final gComma);  //// {collision.kern = true};
 
 
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
@@ -379,6 +435,19 @@ cNuqtaLikeLower {
   };
   sequence { class = 0; order = 0 } // don't enforce the order relative to the other glyphs
 } / _  c_jumpTail;
+
+// Nuqtas below a bariyeh cannot move up, and they don't flow diagonally.
+cNuqtaLikeLower {
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -400m;
+		max.x = 400m;
+		min.y = -100m;
+		max.y = 0m;
+  };
+  sequence { class = 0; order = 0 }
+} / c_initial?  _ {underBy == true};
+
 
 // Heh-hooks need to be kept centered under the base.
 g__hehHook_small { collision {

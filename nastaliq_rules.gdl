@@ -62,6 +62,9 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 
 #endif // DO_COL_FIX
 
+// Nuqtas that are attached below a bariyeh:
+#define underBy user1
+
 
 // 1 means strip out the nuqtas altogether during the contextual shaping passes and put them back in later.
 #define STRIP_NUQTAS 0
