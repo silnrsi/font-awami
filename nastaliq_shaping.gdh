@@ -116,6 +116,8 @@ cMedSd_kx = (gBehMedSd, gBehMedSd_ss, gJeemMedSd, gSeenMedSd, gSadMedSd, gTahMed
 		gKafMedSd_alt, gGafMedSd_alt, gLamMedSd, gMeemMedSd, gHehGoalMedSd, gHehDoMedSd);
 cMedTaF = (gBehMedTaF, gBehMedTaF_ss, gJeemMedTaF, gSeenMedTaF, gSadMedTaF, gTahMedTaF, gAinMedTaF, gFehMedTaF,
 		gKafMedTaF, gGafMedTaF, gLamMedTaF, gMeemMedTaF, gHehGoalMedTaF, gHehDoMedTaF);
+cMedTaM = (gBehMedTaM, gBehMedTaM_ss, gJeemMedTaM, gSeenMedTaM, gSadMedTaM, gTahMedTaM, gAinMedTaM, gFehMedTaM,
+		gKafMedTaM, gGafMedTaM, gLamMedTaM, gMeemMedTaM, gHehGoalMedTaM, gHehDoMedTaM);
 cMedTaM_kx = (gBehMedTaM, gBehMedTaM_ss, gJeemMedTaM, gSeenMedTaM, gSadMedTaM, gTahMedTaM, gAinMedTaM, gFehMedTaM,
 		gKafMedTaM_alt, gGafMedTaM_alt, gLamMedTaM, gMeemMedTaM, gHehGoalMedTaM, gHehDoMedTaM);
 cMedAi = (gBehMedAi, gBehMedAi_ss, gJeemMedAi, gSeenMedAi, gSadMedAi, gTahMedAi, gAinMedAi, gFehMedAi,
@@ -130,17 +132,16 @@ cMedNn = (gBehMedNn, gBehMedNn, gJeemMedNn, gSeenMedNn, gSadMedNn, gTahMedNn, gA
 		gKafMedNn, gGafMedNn, gLamMedNn, gMeemMedNn, gHehGoalMedNn, gHehDoMedNn);
 cMedHgF = (gBehMedHgF, gBehMedHgF, gJeemMedHgF, gSeenMedHgF, gSadMedHgF, gTahMedHgF, gAinMedHgF, gFehMedHgF,
 		gKafMedHgF, gGafMedHgF, gLamMedHgF, gMeemMedHgF, gHehGoalMedHgF, gHehDoMedHgF);
-
-// kaf is alt, gaf is not
 cMedHgM = (gBehMedHgM, gBehMedHgM, gJeemMedHgM, gSeenMedHgM, gSadMedHgM, gTahMedHgM, gAinMedHgM, gFehMedHgM,
-		gKafMedHgM_alt, gGafMedHgM, gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM);
-
+		gKafMedHgM, gGafMedHgM, gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM);
 cMedHd = (gBehMedHd, gBehMedHd, gJeemMedHd, gSeenMedHd, gSadMedHd, gTahMedHd, gAinMedHd, gFehMedHd,
 		gKafMedHd, gGafMedHd, gLamMedHd, gMeemMedHd, gHehGoalMedHd, gHehDoMedHd);
 cMedCh = (gBehMedCh, gBehMedCh, gJeemMedCh, gSeenMedCh, gSadMedCh, gTahMedCh, gAinMedCh, gFehMedCh,
 		gKafMedCh, gGafMedCh, gLamMedCh, gMeemMedCh, gHehGoalMedCh, gHehDoMedCh);
 cMedBy = (gBehMedBy, gBehMedBy, gJeemMedBy, gSeenMedBy, gSadMedBy, gTahMedBy, gAinMedBy, gFehMedBy,
 		gKafMedBy, gGafMedBy, gLamMedBy, gMeemMedBy, gHehGoalMedBy, gHehDoMedBy);
+cMedBe = (gBehMedBe, gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
+		gKafMedBe, gGafMedBe, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
 cMedBe_kx = (gBehMedBe, gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
 		gKafMedBe_alt, gGafMedBe_alt, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
 cMedBeRe_kx = (gBehMedBeRe, gBehMedBeRe, gJeemMedBeRe, gSeenMedBeRe, gSadMedBeRe, gTahMedBeRe, gAinMedBeRe, gFehMedBeRe,
@@ -156,8 +157,12 @@ cMedKfX_kx = (gBehMedKfX, gBehMedKfX, gJeemMedKfX, gSeenMedKfX, gSadMedKfX, gTah
 		gKafMedKfX, gGafMedKfX, gLamMedKfX, gMeemMedKfX, gHehGoalMedKfX, gHehDoMedKfX);
 
 // Note: these include an extra beh form to account for the _SS alternate
+cMedBeM1 = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
+		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
 cMedBeM1_kx = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
 		gKafMedBeM1_alt, gGafMedBeM1_alt, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
+cMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
+		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
 cMedBeM2_kx = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
 		gKafMedBeM2_alt, gGafMedBeM2_alt, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
 
@@ -165,10 +170,16 @@ cMedBeM2_kx = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2
 //--		gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
 cMed_raw_noS = (gBehMed_raw, gJeemMed_raw, gTahMed_raw, gAinMed_raw, gFehMed_raw,
 		gKafMed_raw, gGafMed_raw, gLamMed_raw, gMeemMed_raw, gHehGoalMed_raw, gHehDoMed_raw);
+cMedBeM1_noS = (gBehMedBeM1, gJeemMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
+		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
 cMedBeM1_noS_kx = (gBehMedBeM1, gJeemMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
 		gKafMedBeM1_alt, gGafMedBeM1_alt, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
+/*** not used:
+cMedBe_noS = (gBehMedBe, gJeemMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
+		gKafMedBe, gGafMedBe, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
 cMedBe_noS_kx = (gBehMedBe, gJeemMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
 		gKafMedBe_alt, gGafMedBe_alt, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
+***/
 	
 cMed_KG_DK = (gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
 		gKafMedDk, gGafMedDk, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
@@ -227,6 +238,8 @@ cIniNn = (gBehIniNn, gJeemIniNn, gSeenIniNn, gSadIniNn, gTahIniNn, gAinIniNn, gF
 		gKafIniNn, gGafIniNn, gLamIniNn, gMeemIniNn, gHehGoalIniNn, gHehDoIniNn);
 cIniHgF = (gBehIniHgF, gJeemIniHgF, gSeenIniHgF, gSadIniHgF, gTahIniHgF, gAinIniHgF, gFehIniHgF,
 		gKafIniHgF, gGafIniHgF, gLamIniHgF, gMeemIniHgF, gHehGoalIniHgF, gHehDoIniHgF);
+cIniHgM = (gBehIniHgM, gJeemIniHgM, gSeenIniHgM, gSadIniHgM, gTahIniHgM, gAinIniHgM, gFehIniHgM,
+		gKafIniHgM, gGafIniHgM, gLamIniHgM, gMeemIniHgM, gHehGoalIniHgM, gHehDoIniHgM);
 cIniHgM_kx = (gBehIniHgM, gJeemIniHgM, gSeenIniHgM, gSadIniHgM, gTahIniHgM, gAinIniHgM, gFehIniHgM,
 		gKafIniHgM_alt, gGafIniHgM_alt, gLamIniHgM, gMeemIniHgM, gHehGoalIniHgM, gHehDoIniHgM);
 cIniHd = (gBehIniHd, gJeemIniHd, gSeenIniHd, gSadIniHd, gTahIniHd, gAinIniHd, gFehIniHd,
@@ -235,20 +248,24 @@ cIniCh = (gBehIniCh, gJeemIniCh, gSeenIniCh, gSadIniCh, gTahIniCh, gAinIniCh, gF
 		gKafIniCh, gGafIniCh, gLamIniCh, gMeemIniCh, gHehGoalIniCh, gHehDoIniCh);
 cIniBy = (gBehIniBy, gJeemIniBy, gSeenIniBy, gSadIniBy, gTahIniBy, gAinIniBy, gFehIniBy,
 		gKafIniBy, gGafIniBy, gLamIniBy, gMeemIniBy, gHehGoalIniBy, gHehDoIniBy);
+cIniBeRe = (gBehIniBeRe, gJeemIniBeRe, gSeenIniBeRe, gSadIniBeRe, gTahIniBeRe, gAinIniBeRe, gFehIniBeRe,
+		gKafIniBeRe, gGafIniBeRe, gLamIniBeRe, gMeemIniBeRe, gHehGoalIniBeRe, gHehDoIniBeRe);
 cIniBeRe_kx = (gBehIniBeRe, gJeemIniBeRe, gSeenIniBeRe, gSadIniBeRe, gTahIniBeRe, gAinIniBeRe, gFehIniBeRe,
 		gKafIniBeRe_alt, gGafIniBeRe_alt, gLamIniBeRe, gMeemIniBeRe, gHehGoalIniBeRe, gHehDoIniBeRe);
+cIniBeNn = (gBehIniBeNn, gJeemIniBeNn, gSeenIniBeNn, gSadIniBeNn, gTahIniBeNn, gAinIniBeNn, gFehIniBeNn,
+		gKafIniBeNn, gGafIniBeNn, gLamIniBeNn, gMeemIniBeNn, gHehGoalIniBeNn, gHehDoIniBeNn);
 cIniBeNn_kx = (gBehIniBeNn, gJeemIniBeNn, gSeenIniBeNn, gSadIniBeNn, gTahIniBeNn, gAinIniBeNn, gFehIniBeNn,
 		gKafIniBeNn_alt, gGafIniBeNn_alt, gLamIniBeNn, gMeemIniBeNn, gHehGoalIniBeNn, gHehDoIniBeNn);
+cIniBeHg = (gBehIniBeHg, gJeemIniBeHg, gSeenIniBeHg, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
+		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
 cIniBeHg_kx = (gBehIniBeHg, gJeemIniBeHg, gSeenIniBeHg, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
 		gKafIniBeHg_alt, gGafIniBeHg_alt, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
 
 // Note gLamIni in these classes:
-cIniMmX_kx = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
-		gKafIniMmX_alt, gGafIniMmX_alt, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
-////gKafIniMmX = gKafIniMmX_alt;	// TEMP NON-ALT FORM
-gGafIniMmX = gGafIniMmX_alt;	// TEMP NON-ALT FORM
 cIniMmX = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
 		gKafIniMmX, gGafIniMmX, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
+cIniMmX_kx = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
+		gKafIniMmX_alt, gGafIniMmX_alt, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
 
 cIniKfX_kx = (gBehIniKfX, gJeemIniKfX, gSeenIniKfX, gSadIniKfX, gTahIniKfX, gAinIniKfX, gFehIniKfX,
 		gKafIniKfX_alt, gGafIniKfX_alt, gLamIniKfX, gMeemIniKfX, gHehGoalIniKfX, gHehDoIniKfX);
@@ -258,18 +275,16 @@ cIniKfX_kx = (gBehIniKfX, gJeemIniKfX, gSeenIniKfX, gSadIniKfX, gTahIniKfX, gAin
 //--		gKafIni, gGafIni, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni);
 cIni_raw_noS = (gBehIni_raw, gJeemIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw,
 		gKafIni_raw, gGafIni_raw, gLamIni_raw, gMeemIni_raw, gHehGoalIni_raw, gHehDoIni_raw);
+cIniBe_noS = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
+		gKafIniBe, gGafIniBe, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 cIniBe_noS_kx = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
 		gKafIniBe_alt, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
-// REMOVE _ALT FORMS
-gKafIniBe = gKafIniBe_alt;	// TEMP NON-ALT FORM
-cIniBe_noS = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
-		gKafIniBe, gGafIniBe_alt, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 
+cIniBeM1_noS = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
+		gKafIniBeM1, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 cIniBeM1_noS_kx = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
-// REMOVE _ALT FORMS
-cIniBeM1_noS = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
-		gKafIniBeM1_alt, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
+
 
 // before gBehMedBeRe:
 cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
@@ -406,13 +421,15 @@ gBehIni_raw  gBehMed_raw  >  gBehIniBeM2  gBehMedHgF_be
 ////gBehMed_raw  >  gBehMedHg_Be  /  ^ MPRECXT  _ MARKS  (gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaAboveFin);
 
 
-cMed_raw_noS  >  cMedBeM1_noS_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
+cMed_raw_noS  >  cMedBeM1_noS     /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  //  \u0633\u06a9\u0628\u0628\u0627
+//cMed_raw_noS  >  cMedBeM1_noS_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  // ALT-KAF
 
 cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMed  c_dkgal_postAlt;
-cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMedBeNn;
+cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMedBeNn;    // \u0633\u06a9\u0628\u0628\u0628\u0646
 cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  (gBehMedSn gBehMedBe  gBehMedBeHg);
 
-cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM1;
+cMed_raw  >  cMedBeM2     /  ^ MPRECXT  _ MARKS  gBehMedBeM1;
+//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM1;	// ALT-KAF
 
 cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2;
 cMed_raw  gBehMed  >  cMedBeM1_kx  gBehMedBeM2  /  ^ MPRECXT  _ MARKS  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
@@ -438,7 +455,8 @@ table(glyph)
 cBehMed_defaultEntrance = (cBehMed_postBeM  gBehMedHd);
 endtable;
 
-cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
+cMed_raw  >  cMedBe     / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
+//cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;  // ALT-KAF
 
 cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
 
@@ -469,13 +487,13 @@ cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMed  MARKS  c_dkgal_postAlt
 //(gKafMed_alt_raw gGafMed_alt_raw)	>  (gKafMedBeM2 gGafMedBeM2)
 //	/ ^ MPRECXT _  MARKS  ^ gBehMed  MARKS  cADLK;
 
-// Alternate kaf forms (different from NGA)
-(gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed; // collision fix testing
+// Alternate kaf forms (different from NGA) (ALT-KAF)
 /****
+(gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed; // collision fix testing
 (gKafMed_raw gGafMed_raw)	>  (gKafMedJm_alt gGafMedJm_alt)	/ ^ MPRECXT  _  MARKS  cJeemMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedSd_alt gGafMedSd_alt)	/ ^ MPRECXT  _  MARKS  cSadMed;
-(gKafMed_raw gGafMed_raw)  >  (gKafMedTaM_alt gGafMedTaM_alt)	/ ^ MPRECXT  _  MARKS  cTahMed;
+(gKafMed_raw gGafMed_raw)	>  (gKafMedTaM_alt gGafMedTaM_alt)	/ ^ MPRECXT  _  MARKS  cTahMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedAi_alt gGafMedAi_alt)	/ ^ MPRECXT  _  MARKS  cAinMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedFe_alt gGafMedFe_alt)	/ ^ MPRECXT  _  MARKS  cFehMed;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedMm_alt gGafMedMm_alt)	/ ^ MPRECXT  _  MARKS  cMeemMed;
@@ -490,7 +508,8 @@ cMed_raw  >  cMedRe		/  ^ MPRECXT  _ MARKS  cRehFin;
 cMed_raw  >  cMedSn		/  ^ MPRECXT  _ MARKS  (cSeenFin cSeenMed);
 cMed_raw  >  cMedSd		/  ^ MPRECXT  _ MARKS  (cSadFin cSadMed);
 cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
-cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;
+//cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;  // ALT-KAF
+cMed_raw  >  cMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
 cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (gFehFin cFehMed);
 cMed_raw  >  cMedQf		/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
@@ -523,21 +542,25 @@ pass(5)
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniBeM2 gGafIniBeM2)  /  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
 
-cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);  // kinked kafs for collision fix testing
-//// Don't use kinked kafs for now:
-//cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
+cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
+//cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);  // ALT-KAF (needed for collision testing)
 
 
-///cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
 cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
+//cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  // ALT-KAF
 
 cIni_raw      >  cIniBeHg_BeRe  / _ MARKS  gBehMedBeRe;
 
-/**** alternate kafs */
+/**** alternate kafs
 cIni_raw  >  cIniBeRe_kx  /  _ MARKS  gBehMedRe;
 cIni_raw  >  cIniBeNn_kx  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
-/****/
+*****/
+
+cIni_raw  >  cIniBeRe  /  _ MARKS  gBehMedRe;
+cIni_raw  >  cIniBeNn  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
+cIni_raw  >  cIniBeHg  /  _ MARKS  gBehMedHgF;
+
 
 (gSeenIni_raw gSadIni_raw)  >  (gSeenIniBeM1 gSadIniBeM1)
 	/  _ MARKS  (gBehMedSn gBehMedBeM2 gBehMedBeF_ss gBehMedBe gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss
@@ -545,18 +568,15 @@ cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
 
 (gSeenIni_raw gSadIni_raw)  >  (gSeenIniBe gSadIniBe)  /  _ MARKS  cBehMed_postSBeM;
 
-/**** alternate kafs
-cIni_raw_noS  >  cIniBe_noS_kx                         /  _ MARKS  (cBehMed_postBeM gBehMedHd);
-***/
+//cIni_raw_noS  >  cIniBe_noS_kx                         /  _ MARKS  (cBehMed_postBeM gBehMedHd);  // ALT-KAF
 cIni_raw_noS  >  cIniBe_noS                            /  _ MARKS  (cBehMed_postBeM gBehMedHd);
 
 
 gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;
 
 gLamIni_raw  >  gLamIniMm /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt); // exception to rule below
-/**** alternate kafs
-cIni_raw     >  cIniMmX_kx /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
-****/
+
+//cIni_raw     >  cIniMmX_kx /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);  // ALT-KAF
 cIni_raw     >  cIniMmX /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
 
 
@@ -587,7 +607,7 @@ cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
 cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_justAlt;
 
 
-////cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;
+//cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;  // ALT-KAF
 cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  cBehMed_postBeM;
 
 
@@ -606,7 +626,8 @@ cIni_raw  >  cIniQf		/ _ MARKS  c_qw; // qaf, waw
 cIni_raw  >  cIniMm		/ _ MARKS  (gMeemFin cMeemMed);
 cIni_raw  >  cIniNn		/ _ MARKS  (gNoonFin gNoonGhunnaFin);
 cIni_raw  >  cIniHgF	/ _ MARKS  cHehGoalFin;
-cIni_raw  >  cIniHgM_kx	/ _ MARKS  cHehGoalMed;
+cIni_raw  >  cIniHgM	/ _ MARKS  cHehGoalMed;
+//cIni_raw  >  cIniHgM_kx	/ _ MARKS  cHehGoalMed;  // ALT-KAF
 cIni_raw  >  cIniHd  	/ _ MARKS  (gHehDoFin cHehDoMed);
 cIni_raw  >  cIniCh		/ _ MARKS  (gChotiyehFin_bfkl gChotiyehFin);
 cIni_raw  >  cIniBy  	/ _ MARKS  gBariyehFin;

@@ -12,9 +12,9 @@
 (gPehIni0 gPehMed0 gPehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot3l:1;
 (gBeehIni0 gBeehMed0 gBeehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot2vl:1;
 (gJeemIni0 gJeemMed0 gJeemFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1l:1;
-(gTchehIni0 gTchehMed0 gTchehFin0)	_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot3l:1;
 (gHahIni0 gHahMed0 gHahFin0)      		>	(gJeemIni_raw gJeemMed_raw gJeemFin);
 (gKhahIni0 gKhahMed0 gKhahFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1u:1;
+(gTchehIni0 gTchehMed0 gTchehFin0)	_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot3l:1;
 (gDyehIni0 gDyehMed0 gDyehFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot2vl:1;
 (gSeenIni0 gSeenMed0 gSeenFin0)			>	(gSeenIni_raw gSeenMed_raw gSeenFin);
 (gSheenIni0 gSheenMed0 gSheenFin0)	_	>	(gSeenIni_raw gSeenMed_raw gSeenFin):1	g__dot3u:1;
@@ -37,9 +37,9 @@
 gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
 (gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_
 										>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallTah:1;
-(gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
 (gNoonDotBelowIni0 gNoonDotBelowMed0 gNoonDotBelowFin0)	_
 										>	(gBehIni_raw gBehMed_raw gNoonFin):1		g__dot1l_dot1u:1;
+(gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
 
 gHehGoalIni0			_					>	gHehGoalIni_raw:1	g__hehHook_small:1;
 (gTehMarbutaIni0 gTehMarbutaGoalIni0)  _	>	gHehGoalIni_raw:1  g__hehHook_dot2u:1;

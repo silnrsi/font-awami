@@ -165,7 +165,13 @@ cTakes_n1LowerDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
 	/ _=B  _=L  _=U;
 
+// nuqtas above, hehhook below
+cTakes_hehhookDia
+	chehhookDia { attach {to = @B; at = hehhookS; with = hehhookM } }
+	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B  _=L  _=U;
 
+// nuqtas above and below
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
