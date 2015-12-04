@@ -101,13 +101,6 @@ pass(2)
 
 
 table(glyph)
-gBariyehFin {
-	nByRightLowerS = point(1600m, -150m);
-	nByMidRightLowerS = point(1400m, -150m);
-	nByCenterLowerS = point(1000m, -150m);
-	nByMidLeftLowerS = point(700m, -150m);
-	nByLeftLowerS = point(500m, -150m)
-}
 
 // For some reason I have to subtract something to make these things work. :-/
 cn1LowerDia { nByLowerM = point(n1LowerM.x, n1LowerM.y - 1m) };
@@ -242,9 +235,6 @@ endtable;  // pos
 
 table(glyph)
 
-////cNuqta { collision { flags = COLL_OVERLAP; maxoverlap = -300m } };
-
-
 cKernable = (c_isolated c_final gComma);  //// {collision.kern = true};
 
 
@@ -252,15 +242,70 @@ c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
 
 // TODO: do exclusion glyphs correctly.
 // TODO: don't use them for ngoeh
-gKafMedSn		{ collexclude {glyph = g_kaf_exclude;		offsetx=-100m;	offsety=700m;}};
-gGafMedBe_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-100m;	offsety=750m;}};
-gGafMedSn_alt	{ collexclude {glyph = g_kaf_alt_exclude;	offsetx=-200m;	offsety=650m;}};
-gGafMed_short	{ collexclude {glyph = g_kaf_exclude;		offsetx=200m;	offsety=-200m;}};
-gKafFin			{ collexclude {glyph = g_kaf_exclude;		offsetx=1800m;	offsety=0m;}};
+////gKafMedSn		{ collexclude {glyph = g__kaf_exclude;		offsetx=kafExcludeS.x;	offsety=kafExcludeS.y;}};
+////gGafMedBe_alt	{ collexclude {glyph = g__kaf_alt_exclude;	offsetx=-100m;	offsety=750m;}};
+////gGafMedSn_alt	{ collexclude {glyph = g__kaf_alt_exclude;	offsetx=-200m;	offsety=650m;}};
+////gGafMed_short	{ collexclude {glyph = g__kaf_exclude;		offsetx=200m;	offsety=-200m;}};
+////gKafFin			{ collexclude {glyph = g__kaf_exclude;		offsetx=1800m;	offsety=0m;}};
 
-cls_excludingGlyphs = (gKafMedSn, gGafMedBe_alt, gGafMedSn_alt, gGafMed_short);
+/*
+c__kaf_exclude = (g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, 
+	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
+	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
+	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
+	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
+	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude);
+cls_excludingGlyphs = (cKafMed)
+	{collexclude {glyph = c__kaf_exclude; offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
+*/
 
-cls_excludingGlyphs_kern = (gKafFin);
+gKafMed {collexclude.glyph = g__kaf_exclude};
+gKafMedBeF {collexclude.glyph = g__kaf_exclude};
+gKafMedBeM2 {collexclude.glyph = g__kaf_exclude};
+gKafMedJm {collexclude.glyph = g__kaf_exclude};
+gKafMedRe {collexclude.glyph = g__kaf_exclude};
+gKafMedSn {collexclude.glyph = g__kaf_exclude};
+gKafMedSd {collexclude.glyph = g__kaf_exclude};
+gKafMedTaF {collexclude.glyph = g__kaf_exclude};
+gKafMedAi {collexclude.glyph = g__kaf_exclude};
+gKafMedFe {collexclude.glyph = g__kaf_exclude};
+gKafMedQf {collexclude.glyph = g__kaf_exclude};
+gKafMedMm {collexclude.glyph = g__kaf_exclude};
+gKafMedNn {collexclude.glyph = g__kaf_exclude};
+gKafMedHgF {collexclude.glyph = g__kaf_exclude};
+gKafMedHd {collexclude.glyph = g__kaf_exclude};
+gKafMedCh {collexclude.glyph = g__kaf_exclude};
+gKafMedBy {collexclude.glyph = g__kaf_exclude};
+gKafMedDk {collexclude.glyph = g__kaf_exclude};
+gGafMed {collexclude.glyph = g__kaf_exclude};
+gGafMedBeF {collexclude.glyph = g__kaf_exclude};
+gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
+gGafMedJm {collexclude.glyph = g__kaf_exclude};
+gGafMedRe {collexclude.glyph = g__kaf_exclude};
+gGafMedSn {collexclude.glyph = g__kaf_exclude};
+gGafMedSd {collexclude.glyph = g__kaf_exclude};
+gGafMedTaF {collexclude.glyph = g__kaf_exclude};
+gGafMedAi {collexclude.glyph = g__kaf_exclude};
+gGafMedFe {collexclude.glyph = g__kaf_exclude};
+gGafMedQf {collexclude.glyph = g__kaf_exclude};
+gGafMedMm {collexclude.glyph = g__kaf_exclude};
+gGafMedNn {collexclude.glyph = g__kaf_exclude};
+gGafMedHgF {collexclude.glyph = g__kaf_exclude};
+gGafMedHd {collexclude.glyph = g__kaf_exclude};
+gGafMedCh {collexclude.glyph = g__kaf_exclude};
+gGafMedBy {collexclude.glyph = g__kaf_exclude};
+gGafMedDk {collexclude.glyph = g__kaf_exclude};
+// Note gGafMed_short doesn't need an exclude glyph because it is tucked under the following kaf/gaf so there
+// isn't room for anything to jump above it anyway.
+
+cls_excludingGlyphs = (cKafMed)
+	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
+
+gKafFin {collexclude.glyph = g__kaf_exclude};
+gGafFin {collexclude.glyph = g__kaf_exclude};
+
+cls_excludingGlyphs_kern = (gKafFin, gGafFin)
+	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
 endtable;
 

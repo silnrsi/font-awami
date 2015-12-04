@@ -144,12 +144,14 @@ cMedBe = (gBehMedBe, gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gA
 		gKafMedBe, gGafMedBe, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
 cMedBe_kx = (gBehMedBe, gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
 		gKafMedBe_alt, gGafMedBe_alt, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
-cMedBeRe_kx = (gBehMedBeRe, gBehMedBeRe, gJeemMedBeRe, gSeenMedBeRe, gSadMedBeRe, gTahMedBeRe, gAinMedBeRe, gFehMedBeRe,
+cMedBeRe = (gBehMedBeRe, gBehMedBeRe, gJeemMedBeRe, gSeenMedBeRe, gSadMedBeRe, gTahMedBeRe, gAinMedBeRe, gFehMedBeRe,
 		gKafMedBeRe, gGafMedBeRe, gLamMedBeRe, gMeemMedBeRe, gHehGoalMedBeRe, gHehDoMedBeRe);
-cMedBeNn_kx = (gBehMedBeNn, gBehMedBeNn, gJeemMedBeNn, gSeenMedBeNn, gSadMedBeNn, gTahMedBeNn, gAinMedBeNn, gFehMedBeNn,
+cMedBeNn = (gBehMedBeNn, gBehMedBeNn, gJeemMedBeNn, gSeenMedBeNn, gSadMedBeNn, gTahMedBeNn, gAinMedBeNn, gFehMedBeNn,
 		gKafMedBeNn, gGafMedBeNn, gLamMedBeNn, gMeemMedBeNn, gHehGoalMedBeNn, gHehDoMedBeNn);
-cMedBeHg_kx = (gBehMedBeHg, gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, gTahMedBeHg, gAinMedBeHg, gFehMedBeHg,
+cMedBeHg = (gBehMedBeHg, gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, gTahMedBeHg, gAinMedBeHg, gFehMedBeHg,
 		gKafMedBeHg, gGafMedBeHg, gLamMedBeHg, gMeemMedBeHg, gHehGoalMedBeHg, gHehDoMedBeHg);
+// TODO: if necessary, add back cMedBeRe_kx, cMedBeNn_kx, cMedBeHg_kx
+
 // NOTE gLamMedMm in this class:
 cMedMmX_kx = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX, gFehMedMmX,
 		gKafMedMmX, gGafMedMmX, gLamMedMm, gMeemMedMmX, gHehGoalMedMmX, gHehDoMedMmX);
@@ -298,7 +300,7 @@ endtable;
 
 pass(3)
 
-// Laam-alif ligatures
+// Lam-alef ligatures
 
 gLamIni_raw  gAlefFin  >  gLamAlef:(1 2)  _;
 
@@ -440,8 +442,11 @@ cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM1;
 (gKafMed_raw gGafMed_raw)	>  (gKafMedBeM2 gGafMedBeM2)
 	/  ^ MPRECXT  _ gBehMed  MARKS  c_dkgal_postAlt;
 
-cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
-cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
+cMed_raw  >  cMedBeM2     /  ^  MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal;
+cMed_raw  >  cMedBeM2  /    ^ MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
+// For kinked kaf:
+//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
+//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
 
 (gSeenMed_raw gSadMed_raw)  >  (gSeenMedBeM1 gSadMedBeM1) /  ^ MPRECXT  _ MARKS  cBehMed_postSmedBeM1;
 
@@ -463,6 +468,7 @@ cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_p
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
 
 (cMed_raw gMeemMed_alt_raw)  >  (cMedKfX_kx gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed_alt;
+/// ??? (cMed_raw gMeemMed_alt_raw)  >  (cMedKfX gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed;
 
 
 gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
@@ -472,11 +478,19 @@ gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
 
 cMed_raw  >  cMedMmX_kx  / ^ MPRECXT  _  MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
 
+/* ALT-KAF
 cMed_raw  >  cMedBeRe_kx  / ^ MPRECXT  _ MARKS  gBehMedRe;
 cMed_raw  >  cMedBeNn_kx  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 cMed_raw  >  cMedBeHg_kx  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
 cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
 cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  gBehMed  cKafMed_alt;
+*/
+cMed_raw  >  cMedBeRe  / ^ MPRECXT  _ MARKS  gBehMedRe;
+cMed_raw  >  cMedBeNn  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
+cMed_raw  >  cMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
+cMed_raw  >  cMedBe  / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
+cMed_raw  >  cMedBe  / ^ MPRECXT  _ MARKS  gBehMed  cKafMed_alt;
+
 
 gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
 

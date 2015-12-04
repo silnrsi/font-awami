@@ -553,7 +553,7 @@ c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss
 	gBehMedQf_ss gBehMedHgF_be ) ;
 
 
-// Does not initiate alternate (rounded) kaf:
+// Does not initiate alternate (kinked) kaf:
 c_dkg_noKalt = ( gDalFin gDdalFin gThalFin gDalDotBelowSmallTahFin gDalTwoVertBelowSmallTahFin gThalDotBelowFin
 	gKafFin gGafFin 
 	gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSd gKafMedTaF
@@ -563,11 +563,14 @@ c_dkg_noKalt = ( gDalFin gDdalFin gThalFin gDalDotBelowSmallTahFin gDalTwoVertBe
     gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedNn gGafMedHgF gGafMedHd gGafMedCh
     gGafMedBy gGafMedDk ) ;
 
-// initiates alternate (rounded) kaf:
+// initiates alternate (kinked) kaf:
 c_al_postKalt = ( gAlefFin gLamFin gLamAlefFin cLamMed ) ;
 
 // Requires alternate meem and kaf
 c_dkgal_postAlt = ( c_dkg_noKalt, c_al_postKalt ) ;
+
+// Use when we are not generating kinked kafs:
+c_dkgal = (c_dkgal_postAlt, gKafMedBe, gGafMedBe);
 
 // Alternate qaf and waw forms
 c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaAboveFin_stfh ) ;
@@ -577,8 +580,7 @@ c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaA
 
 cDiacriticUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
     gDopesh gUltaPesh gNoonGhunnaMark gSmallHighSadMark gSmallHighAinMark gSmallHighRehDadMark 
-    gSmallHighRehHahMark gNameMarker gMaddaAbove, g__dot1u_smallTah
-) ;
+    gSmallHighRehHahMark gNameMarker gMaddaAbove, g__dot1u_smallTah, gVowelInvSmallV );
 cDiacriticLower = ( gZair gKharizair gDozair ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);

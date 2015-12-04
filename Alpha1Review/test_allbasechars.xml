@@ -1,0 +1,2176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ftml.xsl"?>
+<ftml version="1.0">
+  <head>
+    <columns comment="15%" label="20%" string="15%"/>
+    <description>Test of All Awami Base Characters</description>
+    <fontscale>200</fontscale>
+    <fontsrc>local('Awami Nastaliq Alpha Test'), url(Awami_alpha1.ttf)</fontsrc>
+    <title>Test of All Awami Base Characters</title>
+    <styles><style feats=' ' name="default"/></styles>
+  </head>
+  <testgroup label="Alef form sequences">
+    <testgroup label="peh + alef">
+      <test><string><em>&#x067E;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tcheh + alef">
+      <test><string><em>&#x0686;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + alef">
+      <test><string><em>&#x0634;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + alef">
+      <test><string><em>&#x0635;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + alef">
+      <test><string><em>&#x0638;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + alef">
+      <test><string><em>&#x0639;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + alef">
+      <test><string><em>&#x0641;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + alef">
+      <test><string><em>&#x0644;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + alef">
+      <test><string><em>&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="kaf + alef">
+      <test><string><em>&#x06A9;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + alef">
+      <test><string><em>&#x06BE;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehGoal + alef">
+      <test><string><em>&#x06C1;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Beh form sequences">
+    <testgroup label="beh + teh">
+      <test><string><em>&#x0628;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x062A;</em></string></test>
+      <test><string><em>&#x0628;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hah + theh">
+      <test><string><em>&#x062D;&#x062B;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x062B;</em></string></test>
+      <test><string><em>&#x062D;&#x062B;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x062B;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + beeh">
+      <test><string><em>&#x0633;&#x067B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x067B;</em></string></test>
+      <test><string><em>&#x0633;&#x067B;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x067B;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + tteh">
+      <test><string><em>&#x0635;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0679;</em></string></test>
+      <test><string><em>&#x0635;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + teh">
+      <test><string><em>&#x0637;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x062A;</em></string></test>
+      <test><string><em>&#x0637;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + peh">
+      <test><string><em>&#x063A;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x067E;</em></string></test>
+      <test><string><em>&#x063A;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + teh">
+      <test><string><em>&#x0641;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062A;</em></string></test>
+      <test><string><em>&#x0641;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + peh">
+      <test><string><em>&#x0644;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067E;</em></string></test>
+      <test><string><em>&#x0644;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + teh">
+      <test><string><em>&#x0645;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062A;</em></string></test>
+      <test><string><em>&#x0645;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gaf + peh">
+      <test><string><em>&#x06AF;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x067E;</em></string></test>
+      <test><string><em>&#x06AF;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + teh">
+      <test><string><em>&#x06BE;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062A;</em></string></test>
+      <test><string><em>&#x06BE;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + peh">
+      <test><string><em>&#x0629;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x067E;</em></string></test>
+      <test><string><em>&#x0629;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Jeem form sequences">
+    <testgroup label="theh + jeem">
+      <test><string><em>&#x062B;&#x062C;</em></string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x062C;</em></string></test>
+      <test><string><em>&#x062B;&#x062C;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x062C;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="khah + tcheh">
+      <test><string><em>&#x062E;&#x0686;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0686;</em></string></test>
+      <test><string><em>&#x062E;&#x0686;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0686;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + hah">
+      <test><string><em>&#x0634;&#x062D;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x062D;</em></string></test>
+      <test><string><em>&#x0634;&#x062D;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x062D;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + khah">
+      <test><string><em>&#x0636;&#x062E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x062E;</em></string></test>
+      <test><string><em>&#x0636;&#x062E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x062E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + tcheh">
+      <test><string><em>&#x0638;&#x0686;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0686;</em></string></test>
+      <test><string><em>&#x0638;&#x0686;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0686;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + dyeh">
+      <test><string><em>&#x0639;&#x0684;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0684;</em></string></test>
+      <test><string><em>&#x0639;&#x0684;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0684;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + jeem">
+      <test><string><em>&#x0641;&#x062C;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062C;</em></string></test>
+      <test><string><em>&#x0641;&#x062C;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062C;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + hah">
+      <test><string><em>&#x0644;&#x062D;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x062D;</em></string></test>
+      <test><string><em>&#x0644;&#x062D;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x062D;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + khah">
+      <test><string><em>&#x0645;&#x062E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062E;</em></string></test>
+      <test><string><em>&#x0645;&#x062E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gueh + tcheh">
+      <test><string><em>&#x06B3;&#x0686;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0686;</em></string></test>
+      <test><string><em>&#x06B3;&#x0686;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0686;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + dyeh">
+      <test><string><em>&#x06BE;&#x0684;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0684;</em></string></test>
+      <test><string><em>&#x06BE;&#x0684;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0684;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + jeem">
+      <test><string><em>&#x06C3;&#x062C;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x062C;</em></string></test>
+      <test><string><em>&#x06C3;&#x062C;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x062C;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Dal form sequences">
+    <testgroup label="beeh + dal">
+      <test><string><em>&#x067B;&#x062F;</em></string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x062F;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dyeh + ddal">
+      <test><string><em>&#x0684;&#x0688;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0688;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="seen + dal2DotsVTah">
+      <test><string><em>&#x0633;&#x0759;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0759;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dad + thal">
+      <test><string><em>&#x0636;&#x0630;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0630;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tah + dalDotTah">
+      <test><string><em>&#x0637;&#x068B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x068B;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ghain + dal">
+      <test><string><em>&#x063A;&#x062F;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x062F;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + ddal">
+      <test><string><em>&#x0641;&#x0688;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0688;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + dal2DotsVTah">
+      <test><string><em>&#x0644;&#x0759;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0759;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + dal">
+      <test><string><em>&#x0645;&#x062F;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062F;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gaf + ddal">
+      <test><string><em>&#x06AF;&#x0688;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x0688;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + dalDotTah">
+      <test><string><em>&#x06BE;&#x068B;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x068B;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + dal">
+      <test><string><em>&#x0629;&#x062F;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x062F;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Reh form sequences">
+    <testgroup label="beh + reh">
+      <test><string><em>&#x0628;&#x0631;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x0631;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="jeem + rreh">
+      <test><string><em>&#x062C;&#x0691;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0691;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + rehDotBelow">
+      <test><string><em>&#x0634;&#x0694;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0694;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + reh">
+      <test><string><em>&#x0635;&#x0631;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0631;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + rreh">
+      <test><string><em>&#x0638;&#x0691;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0691;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + rehDotBelow">
+      <test><string><em>&#x0639;&#x0694;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0694;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + reh">
+      <test><string><em>&#x0641;&#x0631;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0631;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + rreh">
+      <test><string><em>&#x0644;&#x0691;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0691;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + rehDotBelow">
+      <test><string><em>&#x0645;&#x0694;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0694;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gueh + reh">
+      <test><string><em>&#x06B3;&#x0631;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0631;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + rreh">
+      <test><string><em>&#x06BE;&#x0691;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0691;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + rehDotBelow">
+      <test><string><em>&#x06C3;&#x0694;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0694;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Seen form sequences">
+    <testgroup label="tteh + seen">
+      <test><string><em>&#x0679;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0633;</em></string></test>
+      <test><string><em>&#x0679;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dyeh + sheen">
+      <test><string><em>&#x0684;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0634;</em></string></test>
+      <test><string><em>&#x0684;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + sheen">
+      <test><string><em>&#x0633;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0634;</em></string></test>
+      <test><string><em>&#x0633;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + seen">
+      <test><string><em>&#x0635;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0633;</em></string></test>
+      <test><string><em>&#x0635;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + sheen">
+      <test><string><em>&#x0637;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0634;</em></string></test>
+      <test><string><em>&#x0637;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + seen">
+      <test><string><em>&#x063A;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0633;</em></string></test>
+      <test><string><em>&#x063A;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + sheen">
+      <test><string><em>&#x0641;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0634;</em></string></test>
+      <test><string><em>&#x0641;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + seen">
+      <test><string><em>&#x0644;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0633;</em></string></test>
+      <test><string><em>&#x0644;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + sheen">
+      <test><string><em>&#x0645;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0634;</em></string></test>
+      <test><string><em>&#x0645;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ngoeh + seen">
+      <test><string><em>&#x06B1;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x0633;</em></string></test>
+      <test><string><em>&#x06B1;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + sheen">
+      <test><string><em>&#x06BE;&#x0634;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0634;</em></string></test>
+      <test><string><em>&#x06BE;&#x0634;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0634;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + seen">
+      <test><string><em>&#x06C1;&#x0633;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0633;</em></string></test>
+      <test><string><em>&#x06C1;&#x0633;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Sad form sequences">
+    <testgroup label="peh + sad">
+      <test><string><em>&#x067E;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x0635;</em></string></test>
+      <test><string><em>&#x067E;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="jeem + dad">
+      <test><string><em>&#x062C;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0636;</em></string></test>
+      <test><string><em>&#x062C;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + sad">
+      <test><string><em>&#x0633;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0635;</em></string></test>
+      <test><string><em>&#x0633;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + sad">
+      <test><string><em>&#x0636;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0635;</em></string></test>
+      <test><string><em>&#x0636;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + dad">
+      <test><string><em>&#x0638;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0636;</em></string></test>
+      <test><string><em>&#x0638;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + sad">
+      <test><string><em>&#x0639;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0635;</em></string></test>
+      <test><string><em>&#x0639;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + dad">
+      <test><string><em>&#x0641;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0636;</em></string></test>
+      <test><string><em>&#x0641;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + sad">
+      <test><string><em>&#x0644;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0635;</em></string></test>
+      <test><string><em>&#x0644;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + dad">
+      <test><string><em>&#x0645;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0636;</em></string></test>
+      <test><string><em>&#x0645;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="kaf + sad">
+      <test><string><em>&#x06A9;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0635;</em></string></test>
+      <test><string><em>&#x06A9;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + dad">
+      <test><string><em>&#x06BE;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0636;</em></string></test>
+      <test><string><em>&#x06BE;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + sad">
+      <test><string><em>&#x0629;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0635;</em></string></test>
+      <test><string><em>&#x0629;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Tah form sequences">
+    <testgroup label="beeh + tah">
+      <test><string><em>&#x067B;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x0637;</em></string></test>
+      <test><string><em>&#x067B;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hah + zah">
+      <test><string><em>&#x062D;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x0638;</em></string></test>
+      <test><string><em>&#x062D;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + tah">
+      <test><string><em>&#x0634;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0637;</em></string></test>
+      <test><string><em>&#x0634;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + tah">
+      <test><string><em>&#x0636;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0637;</em></string></test>
+      <test><string><em>&#x0636;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + zah">
+      <test><string><em>&#x0637;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0638;</em></string></test>
+      <test><string><em>&#x0637;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + tah">
+      <test><string><em>&#x063A;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0637;</em></string></test>
+      <test><string><em>&#x063A;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + zah">
+      <test><string><em>&#x0641;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0638;</em></string></test>
+      <test><string><em>&#x0641;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + tah">
+      <test><string><em>&#x0644;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0637;</em></string></test>
+      <test><string><em>&#x0644;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + zah">
+      <test><string><em>&#x0645;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0638;</em></string></test>
+      <test><string><em>&#x0645;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gaf + tah">
+      <test><string><em>&#x06AF;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x0637;</em></string></test>
+      <test><string><em>&#x06AF;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + zah">
+      <test><string><em>&#x06BE;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0638;</em></string></test>
+      <test><string><em>&#x06BE;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + tah">
+      <test><string><em>&#x06C3;&#x0637;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0637;</em></string></test>
+      <test><string><em>&#x06C3;&#x0637;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0637;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Ain form sequences">
+    <testgroup label="beh + ain">
+      <test><string><em>&#x0628;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x0639;</em></string></test>
+      <test><string><em>&#x0628;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="khah + ghain">
+      <test><string><em>&#x062E;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x063A;</em></string></test>
+      <test><string><em>&#x062E;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + ain">
+      <test><string><em>&#x0633;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0639;</em></string></test>
+      <test><string><em>&#x0633;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + ain">
+      <test><string><em>&#x0635;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0639;</em></string></test>
+      <test><string><em>&#x0635;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + ain">
+      <test><string><em>&#x0637;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0639;</em></string></test>
+      <test><string><em>&#x0637;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + ghain">
+      <test><string><em>&#x0639;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x063A;</em></string></test>
+      <test><string><em>&#x0639;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + ghain">
+      <test><string><em>&#x0641;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x063A;</em></string></test>
+      <test><string><em>&#x0641;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + ain">
+      <test><string><em>&#x0644;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0639;</em></string></test>
+      <test><string><em>&#x0644;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + ghain">
+      <test><string><em>&#x0645;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x063A;</em></string></test>
+      <test><string><em>&#x0645;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gueh + ain">
+      <test><string><em>&#x06B3;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0639;</em></string></test>
+      <test><string><em>&#x06B3;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + ghain">
+      <test><string><em>&#x06BE;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x063A;</em></string></test>
+      <test><string><em>&#x06BE;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + ain">
+      <test><string><em>&#x06C1;&#x0639;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0639;</em></string></test>
+      <test><string><em>&#x06C1;&#x0639;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0639;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Feh form sequences">
+    <testgroup label="teh + feh">
+      <test><string><em>&#x062A;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x0641;</em></string></test>
+      <test><string><em>&#x062A;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tcheh + feh">
+      <test><string><em>&#x0686;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x0641;</em></string></test>
+      <test><string><em>&#x0686;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + feh">
+      <test><string><em>&#x0634;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0641;</em></string></test>
+      <test><string><em>&#x0634;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + feh">
+      <test><string><em>&#x0636;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0641;</em></string></test>
+      <test><string><em>&#x0636;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + feh">
+      <test><string><em>&#x0638;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0641;</em></string></test>
+      <test><string><em>&#x0638;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + feh">
+      <test><string><em>&#x0639;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0641;</em></string></test>
+      <test><string><em>&#x0639;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + feh">
+      <test><string><em>&#x0641;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0641;</em></string></test>
+      <test><string><em>&#x0641;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + feh">
+      <test><string><em>&#x0644;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0641;</em></string></test>
+      <test><string><em>&#x0644;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + feh">
+      <test><string><em>&#x0645;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0641;</em></string></test>
+      <test><string><em>&#x0645;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ngoeh + feh">
+      <test><string><em>&#x06B1;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x0641;</em></string></test>
+      <test><string><em>&#x06B1;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + feh">
+      <test><string><em>&#x06BE;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0641;</em></string></test>
+      <test><string><em>&#x06BE;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + feh">
+      <test><string><em>&#x0629;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0641;</em></string></test>
+      <test><string><em>&#x0629;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Qaf form sequences">
+    <testgroup label="teh + qaf">
+      <test><string><em>&#x062A;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hah + qaf">
+      <test><string><em>&#x062D;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="seen + qaf">
+      <test><string><em>&#x0633;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dad + qaf">
+      <test><string><em>&#x0636;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tah + qaf">
+      <test><string><em>&#x0637;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ghain + qaf">
+      <test><string><em>&#x063A;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + qaf">
+      <test><string><em>&#x0641;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + qaf">
+      <test><string><em>&#x0644;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + qaf">
+      <test><string><em>&#x0645;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ngoeh + qaf">
+      <test><string><em>&#x06B1;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + qaf">
+      <test><string><em>&#x06BE;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehGoal + qaf">
+      <test><string><em>&#x06C1;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0642;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Lam form sequences">
+    <testgroup label="theh + lam">
+      <test><string><em>&#x062B;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0644;</em></string></test>
+      <test><string><em>&#x062B;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dyeh + lam">
+      <test><string><em>&#x0684;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0644;</em></string></test>
+      <test><string><em>&#x0684;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + lam">
+      <test><string><em>&#x0633;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0644;</em></string></test>
+      <test><string><em>&#x0633;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + lam">
+      <test><string><em>&#x0635;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0644;</em></string></test>
+      <test><string><em>&#x0635;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + lam">
+      <test><string><em>&#x0637;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0644;</em></string></test>
+      <test><string><em>&#x0637;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + lam">
+      <test><string><em>&#x063A;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0644;</em></string></test>
+      <test><string><em>&#x063A;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + lam">
+      <test><string><em>&#x0641;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0644;</em></string></test>
+      <test><string><em>&#x0641;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + lam">
+      <test><string><em>&#x0644;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0644;</em></string></test>
+      <test><string><em>&#x0644;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + lam">
+      <test><string><em>&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="kaf + lam">
+      <test><string><em>&#x06A9;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0644;</em></string></test>
+      <test><string><em>&#x06A9;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + lam">
+      <test><string><em>&#x06BE;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0644;</em></string></test>
+      <test><string><em>&#x06BE;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + lam">
+      <test><string><em>&#x06C3;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0644;</em></string></test>
+      <test><string><em>&#x06C3;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Meem form sequences">
+    <testgroup label="tteh + meem">
+      <test><string><em>&#x0679;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0645;</em></string></test>
+      <test><string><em>&#x0679;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="jeem + meem">
+      <test><string><em>&#x062C;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0645;</em></string></test>
+      <test><string><em>&#x062C;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + meem">
+      <test><string><em>&#x0634;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0645;</em></string></test>
+      <test><string><em>&#x0634;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + meem">
+      <test><string><em>&#x0636;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0645;</em></string></test>
+      <test><string><em>&#x0636;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + meem">
+      <test><string><em>&#x0638;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0645;</em></string></test>
+      <test><string><em>&#x0638;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + meem">
+      <test><string><em>&#x0639;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0645;</em></string></test>
+      <test><string><em>&#x0639;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + meem">
+      <test><string><em>&#x0641;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;</em></string></test>
+      <test><string><em>&#x0641;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + meem">
+      <test><string><em>&#x0644;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0645;</em></string></test>
+      <test><string><em>&#x0644;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + meem">
+      <test><string><em>&#x0645;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;</em></string></test>
+      <test><string><em>&#x0645;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gaf + meem">
+      <test><string><em>&#x06AF;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x0645;</em></string></test>
+      <test><string><em>&#x06AF;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + meem">
+      <test><string><em>&#x06BE;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;</em></string></test>
+      <test><string><em>&#x06BE;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + meem">
+      <test><string><em>&#x06C1;&#x0645;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0645;</em></string></test>
+      <test><string><em>&#x06C1;&#x0645;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0645;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Alternate meem sequences">
+    <testgroup label="theh + meem-alt + gaf">
+      <test><string><em>&#x062B;&#x0645;&#x06AF;</em></string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0645;&#x06AF;</em></string></test>
+      <test><string><em>&#x062B;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tteh + meem-alt + lam">
+      <test><string><em>&#x0679;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0679;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="beh + meem-alt + alef">
+      <test><string><em>&#x0628;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="teh + meem-alt + thal">
+      <test><string><em>&#x062A;&#x0645;&#x0630;</em></string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x0645;&#x0630;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hah + meem-alt + ngoeh">
+      <test><string><em>&#x062D;&#x0645;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x0645;&#x06B1;</em></string></test>
+      <test><string><em>&#x062D;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="khah + meem-alt + lam">
+      <test><string><em>&#x062E;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x062E;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dyeh + meem-alt + alef">
+      <test><string><em>&#x0684;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="jeem + meem-alt + dalDotTah">
+      <test><string><em>&#x062C;&#x0645;&#x068B;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0645;&#x068B;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + meem-alt + gaf">
+      <test><string><em>&#x0634;&#x0645;&#x06AF;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0645;&#x06AF;</em></string></test>
+      <test><string><em>&#x0634;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + meem-alt + lam">
+      <test><string><em>&#x0633;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0633;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + meem-alt + alef">
+      <test><string><em>&#x0633;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + meem-alt + dal">
+      <test><string><em>&#x0634;&#x0645;&#x062F;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0645;&#x062F;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + meem-alt + ngoeh">
+      <test><string><em>&#x0635;&#x0645;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0645;&#x06B1;</em></string></test>
+      <test><string><em>&#x0635;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + meem-alt + lam">
+      <test><string><em>&#x0636;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0636;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + meem-alt + alef">
+      <test><string><em>&#x0636;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + meem-alt + ddal">
+      <test><string><em>&#x0635;&#x0645;&#x0688;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0645;&#x0688;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + meem-alt + gaf">
+      <test><string><em>&#x0638;&#x0645;&#x06AF;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0645;&#x06AF;</em></string></test>
+      <test><string><em>&#x0638;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + meem-alt + lam">
+      <test><string><em>&#x0637;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0637;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + meem-alt + alef">
+      <test><string><em>&#x0637;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + meem-alt + dal2DotsVTah">
+      <test><string><em>&#x0638;&#x0645;&#x0759;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0645;&#x0759;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + meem-alt + ngoeh">
+      <test><string><em>&#x0639;&#x0645;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0645;&#x06B1;</em></string></test>
+      <test><string><em>&#x0639;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0645;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + meem-alt + lam">
+      <test><string><em>&#x063A;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x063A;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + meem-alt + alef">
+      <test><string><em>&#x063A;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + meem-alt + thal">
+      <test><string><em>&#x0639;&#x0645;&#x0630;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0645;&#x0630;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + meem-alt + gaf">
+      <test><string><em>&#x0641;&#x0645;&#x06AF;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x06AF;</em></string></test>
+      <test><string><em>&#x0641;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x06AF;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + meem-alt + lam">
+      <test><string><em>&#x0641;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0641;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + meem-alt + alef">
+      <test><string><em>&#x0641;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + meem-alt + dalDotTah">
+      <test><string><em>&#x0641;&#x0645;&#x068B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0645;&#x068B;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + meem-alt + kaf">
+      <test><string><em>&#x0645;&#x0645;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x06A9;</em></string></test>
+      <test><string><em>&#x0645;&#x0645;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + meem-alt + lam">
+      <test><string><em>&#x0645;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x0645;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + meem-alt + alef">
+      <test><string><em>&#x0645;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + meem-alt + thal">
+      <test><string><em>&#x0645;&#x0645;&#x0630;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0645;&#x0630;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + meem-alt + kaf">
+      <test><string><em>&#x06BE;&#x0645;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x06A9;</em></string></test>
+      <test><string><em>&#x06BE;&#x0645;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + meem-alt + lam">
+      <test><string><em>&#x06BE;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x06BE;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + meem-alt + alef">
+      <test><string><em>&#x06BE;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + meem-alt + dal2DotsVTah">
+      <test><string><em>&#x06BE;&#x0645;&#x0759;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0645;&#x0759;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + meem-alt + gueh">
+      <test><string><em>&#x0629;&#x0645;&#x06B3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0645;&#x06B3;</em></string></test>
+      <test><string><em>&#x0629;&#x0645;&#x06B3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0645;&#x06B3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + meem-alt + lam">
+      <test><string><em>&#x06C3;&#x0645;&#x0644;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0645;&#x0644;</em></string></test>
+      <test><string><em>&#x06C3;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + meem-alt + alef">
+      <test><string><em>&#x06C1;&#x0645;&#x0627;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0645;&#x0627;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + meem-alt + thal">
+      <test><string><em>&#x0629;&#x0645;&#x0630;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0645;&#x0630;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Noon form sequences">
+    <testgroup label="beeh + noon">
+      <test><string><em>&#x067B;&#x0646;</em></string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x0646;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="jeem + noonRetro">
+      <test><string><em>&#x062C;&#x0768;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x0768;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="seen + rnoon">
+      <test><string><em>&#x0633;&#x06BB;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x06BB;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dad + noonGhunna">
+      <test><string><em>&#x0636;&#x06BA;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x06BA;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tah + noonDotBelow">
+      <test><string><em>&#x0637;&#x06B9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06B9;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ghain + noon">
+      <test><string><em>&#x063A;&#x0646;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0646;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + noonRetro">
+      <test><string><em>&#x0641;&#x0768;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0768;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + rnoon">
+      <test><string><em>&#x0644;&#x06BB;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06BB;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + noonGhunna">
+      <test><string><em>&#x0645;&#x06BA;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06BA;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ngoeh + noonDotBelow">
+      <test><string><em>&#x06B1;&#x06B9;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x06B9;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + noon">
+      <test><string><em>&#x06BE;&#x0646;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0646;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + noonRetro">
+      <test><string><em>&#x0629;&#x0768;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0768;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Waw form sequences">
+    <testgroup label="theh + waw">
+      <test><string><em>&#x062B;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="khah + wawHamza">
+      <test><string><em>&#x062E;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + waw">
+      <test><string><em>&#x0634;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + wawHamza">
+      <test><string><em>&#x0635;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + waw">
+      <test><string><em>&#x0638;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + wawHamza">
+      <test><string><em>&#x0639;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + waw">
+      <test><string><em>&#x0641;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + wawHamza">
+      <test><string><em>&#x0644;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + waw">
+      <test><string><em>&#x0645;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="kaf + wawHamza">
+      <test><string><em>&#x06A9;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + waw">
+      <test><string><em>&#x06BE;&#x0648;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0648;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + wawHamza">
+      <test><string><em>&#x0629;&#x0624;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0624;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Kaf form sequences">
+    <testgroup label="peh + kaf">
+      <test><string><em>&#x067E;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x06A9;</em></string></test>
+      <test><string><em>&#x067E;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hah + gueh">
+      <test><string><em>&#x062D;&#x06B3;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x06B3;</em></string></test>
+      <test><string><em>&#x062D;&#x06B3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x06B3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + kaf">
+      <test><string><em>&#x0633;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x06A9;</em></string></test>
+      <test><string><em>&#x0633;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + gueh">
+      <test><string><em>&#x0635;&#x06B3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x06B3;</em></string></test>
+      <test><string><em>&#x0635;&#x06B3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x06B3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + kaf">
+      <test><string><em>&#x0637;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06A9;</em></string></test>
+      <test><string><em>&#x0637;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + gueh">
+      <test><string><em>&#x063A;&#x06B3;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x06B3;</em></string></test>
+      <test><string><em>&#x063A;&#x06B3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x06B3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + kaf">
+      <test><string><em>&#x0641;&#x06A9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06A9;</em></string></test>
+      <test><string><em>&#x0641;&#x06A9;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06A9;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + gueh">
+      <test><string><em>&#x0644;&#x06B3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06B3;</em></string></test>
+      <test><string><em>&#x0644;&#x06B3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06B3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + ngoeh">
+      <test><string><em>&#x0645;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06B1;</em></string></test>
+      <test><string><em>&#x0645;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gueh + ngoeh">
+      <test><string><em>&#x06B3;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x06B1;</em></string></test>
+      <test><string><em>&#x06B3;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + ngoeh">
+      <test><string><em>&#x06BE;&#x06B1;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06B1;</em></string></test>
+      <test><string><em>&#x06BE;&#x06B1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06B1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + gaf">
+      <test><string><em>&#x0629;&#x06AF;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x06AF;</em></string></test>
+      <test><string><em>&#x0629;&#x06AF;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x06AF;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Heh-Doachashmee form sequences">
+    <testgroup label="beeh + hehDo">
+      <test><string><em>&#x067B;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x06BE;</em></string></test>
+      <test><string><em>&#x067B;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x067B;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="khah + hehDo">
+      <test><string><em>&#x062E;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x06BE;</em></string></test>
+      <test><string><em>&#x062E;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + hehDo">
+      <test><string><em>&#x0634;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x06BE;</em></string></test>
+      <test><string><em>&#x0634;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + hehDo">
+      <test><string><em>&#x0636;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x06BE;</em></string></test>
+      <test><string><em>&#x0636;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + hehDo">
+      <test><string><em>&#x0638;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x06BE;</em></string></test>
+      <test><string><em>&#x0638;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + hehDo">
+      <test><string><em>&#x0639;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x06BE;</em></string></test>
+      <test><string><em>&#x0639;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + hehDo">
+      <test><string><em>&#x0641;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06BE;</em></string></test>
+      <test><string><em>&#x0641;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + hehDo">
+      <test><string><em>&#x0644;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06BE;</em></string></test>
+      <test><string><em>&#x0644;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + hehDo">
+      <test><string><em>&#x0645;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06BE;</em></string></test>
+      <test><string><em>&#x0645;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="kaf + hehDo">
+      <test><string><em>&#x06A9;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x06BE;</em></string></test>
+      <test><string><em>&#x06A9;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + hehDo">
+      <test><string><em>&#x06BE;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06BE;</em></string></test>
+      <test><string><em>&#x06BE;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + hehDo">
+      <test><string><em>&#x06C3;&#x06BE;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x06BE;</em></string></test>
+      <test><string><em>&#x06C3;&#x06BE;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x06BE;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Heh-Goal form sequences">
+    <testgroup label="beh + hehGoal">
+      <test><string><em>&#x0628;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x06C1;</em></string></test>
+      <test><string><em>&#x0628;&#x06C1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x06C1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tcheh + tehMarGoal">
+      <test><string><em>&#x0686;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x06C3;</em></string></test>
+      <test><string><em>&#x0686;&#x06C3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x06C3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + tehMarbuta">
+      <test><string><em>&#x0633;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0629;</em></string></test>
+      <test><string><em>&#x0633;&#x0629;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0629;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + hehGoal">
+      <test><string><em>&#x0635;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x06C1;</em></string></test>
+      <test><string><em>&#x0635;&#x06C1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x06C1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + tehMarGoal">
+      <test><string><em>&#x0637;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06C3;</em></string></test>
+      <test><string><em>&#x0637;&#x06C3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06C3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + tehMarbuta">
+      <test><string><em>&#x063A;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0629;</em></string></test>
+      <test><string><em>&#x063A;&#x0629;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x0629;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + hehGoal">
+      <test><string><em>&#x0641;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06C1;</em></string></test>
+      <test><string><em>&#x0641;&#x06C1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06C1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + tehMarGoal">
+      <test><string><em>&#x0644;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06C3;</em></string></test>
+      <test><string><em>&#x0644;&#x06C3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06C3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + tehMarbuta">
+      <test><string><em>&#x0645;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0629;</em></string></test>
+      <test><string><em>&#x0645;&#x0629;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0629;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gaf + hehGoal">
+      <test><string><em>&#x06AF;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x06C1;</em></string></test>
+      <test><string><em>&#x06AF;&#x06C1;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x06C1;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + tehMarGoal">
+      <test><string><em>&#x06BE;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06C3;</em></string></test>
+      <test><string><em>&#x06BE;&#x06C3;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06C3;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + tehMarbuta">
+      <test><string><em>&#x06C1;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0629;</em></string></test>
+      <test><string><em>&#x06C1;&#x0629;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x0629;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Chotiyeh form sequences">
+    <testgroup label="peh + chotiyeh">
+      <test><string><em>&#x067E;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dyeh + chotiyeh">
+      <test><string><em>&#x0684;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + chotiyeh">
+      <test><string><em>&#x0634;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + chotiyeh">
+      <test><string><em>&#x0635;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + chotiyeh">
+      <test><string><em>&#x0638;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + chotiyeh">
+      <test><string><em>&#x0639;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + chotiyeh">
+      <test><string><em>&#x0641;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + chotiyeh">
+      <test><string><em>&#x0644;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + chotiyeh">
+      <test><string><em>&#x0645;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gueh + chotiyeh">
+      <test><string><em>&#x06B3;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + chotiyeh">
+      <test><string><em>&#x06BE;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehGoal + chotiyeh">
+      <test><string><em>&#x06C1;&#x06CC;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x06CC;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Bariyeh form sequences">
+    <testgroup label="tteh + bariyeh">
+      <test><string><em>&#x0679;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0679;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tcheh + bariyeh">
+      <test><string><em>&#x0686;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="seen + bariyeh">
+      <test><string><em>&#x0633;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dad + bariyeh">
+      <test><string><em>&#x0636;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tah + bariyeh">
+      <test><string><em>&#x0637;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ghain + bariyeh">
+      <test><string><em>&#x063A;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + bariyeh">
+      <test><string><em>&#x0641;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + bariyeh">
+      <test><string><em>&#x0644;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + bariyeh">
+      <test><string><em>&#x0645;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gaf + bariyeh">
+      <test><string><em>&#x06AF;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + bariyeh">
+      <test><string><em>&#x06BE;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + bariyeh">
+      <test><string><em>&#x06C3;&#x06D2;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x06D2;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Multiple Beh sequences">
+    <testgroup label="teh + theh + tteh">
+      <test><string><em>&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="peh + beeh + beh + teh">
+      <test><string><em>&#x067E;&#x067B;&#x0628;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x067B;&#x0628;&#x062A;</em></string></test>
+      <test><string><em>&#x067E;&#x067B;&#x0628;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x067B;&#x0628;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dyeh + tteh + peh">
+      <test><string><em>&#x0684;&#x0679;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0679;&#x067E;</em></string></test>
+      <test><string><em>&#x0684;&#x0679;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0684;&#x0679;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="jeem + beeh + beh + teh">
+      <test><string><em>&#x062C;&#x067B;&#x0628;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x067B;&#x0628;&#x062A;</em></string></test>
+      <test><string><em>&#x062C;&#x067B;&#x0628;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x062C;&#x067B;&#x0628;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + beh + teh">
+      <test><string><em>&#x0634;&#x0628;&#x062A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0628;&#x062A;</em></string></test>
+      <test><string><em>&#x0634;&#x0628;&#x062A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0628;&#x062A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + theh + tteh + peh">
+      <test><string><em>&#x0633;&#x062B;&#x0679;&#x067E;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x062B;&#x0679;&#x067E;</em></string></test>
+      <test><string><em>&#x0633;&#x062B;&#x0679;&#x067E;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x062B;&#x0679;&#x067E;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + peh + beeh">
+      <test><string><em>&#x0636;&#x067E;&#x067B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x067E;&#x067B;</em></string></test>
+      <test><string><em>&#x0636;&#x067E;&#x067B;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x067E;&#x067B;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + beh + teh + theh">
+      <test><string><em>&#x0635;&#x0628;&#x062A;&#x062B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0628;&#x062A;&#x062B;</em></string></test>
+      <test><string><em>&#x0635;&#x0628;&#x062A;&#x062B;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0628;&#x062A;&#x062B;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="zah + theh + tteh">
+      <test><string><em>&#x0638;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x0638;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + peh + beeh + beh">
+      <test><string><em>&#x0637;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x0637;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + beeh + beh">
+      <test><string><em>&#x0639;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x0639;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ghain + teh + theh + tteh">
+      <test><string><em>&#x063A;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x063A;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + theh + tteh">
+      <test><string><em>&#x0641;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x0641;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + peh + beeh + beh">
+      <test><string><em>&#x0641;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x0641;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + beeh + beh">
+      <test><string><em>&#x0644;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x0644;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + teh + theh + tteh">
+      <test><string><em>&#x0644;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x0644;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + theh + tteh">
+      <test><string><em>&#x0645;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x0645;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + peh + beeh + beh">
+      <test><string><em>&#x0645;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x0645;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gueh + beeh + beh">
+      <test><string><em>&#x06B3;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x06B3;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ngoeh + teh + theh + tteh">
+      <test><string><em>&#x06B1;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x06B1;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06B1;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + theh + tteh">
+      <test><string><em>&#x06BE;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x06BE;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + peh + beeh + beh">
+      <test><string><em>&#x06BE;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x067E;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x06BE;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x067E;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + beeh + beh">
+      <test><string><em>&#x06C3;&#x067B;&#x0628;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x067B;&#x0628;</em></string></test>
+      <test><string><em>&#x06C3;&#x067B;&#x0628;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x067B;&#x0628;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + teh + theh + tteh">
+      <test><string><em>&#x06C1;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x06C1;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Seen/Sad + Beh sequences">
+    <testgroup label="sheen + beeh + dad">
+      <test><string><em>&#x0634;&#x067B;&#x0636;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x067B;&#x0636;</em></string></test>
+      <test><string><em>&#x0634;&#x067B;&#x0636;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x067B;&#x0636;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + beh + zah">
+      <test><string><em>&#x0633;&#x0628;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0628;&#x0638;</em></string></test>
+      <test><string><em>&#x0633;&#x0628;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x0628;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + teh + ghain">
+      <test><string><em>&#x0634;&#x062A;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x062A;&#x063A;</em></string></test>
+      <test><string><em>&#x0634;&#x062A;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x062A;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + theh + feh">
+      <test><string><em>&#x0633;&#x062B;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x062B;&#x0641;</em></string></test>
+      <test><string><em>&#x0633;&#x062B;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x062B;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sheen + tteh + qaf">
+      <test><string><em>&#x0634;&#x0679;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0679;&#x0642;</em></string></test>
+      <test><string><em>&#x0634;&#x0679;&#x0642;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0679;&#x0642;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + peh + beeh">
+      <test><string><em>&#x0633;&#x067E;&#x067B;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x067E;&#x067B;</em></string></test>
+      <test><string><em>&#x0633;&#x067E;&#x067B;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x067E;&#x067B;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + tteh + sad">
+      <test><string><em>&#x0636;&#x0679;&#x0635;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0679;&#x0635;</em></string></test>
+      <test><string><em>&#x0636;&#x0679;&#x0635;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0679;&#x0635;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + peh + zah">
+      <test><string><em>&#x0636;&#x067E;&#x0638;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x067E;&#x0638;</em></string></test>
+      <test><string><em>&#x0636;&#x067E;&#x0638;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x067E;&#x0638;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + beeh + ghain">
+      <test><string><em>&#x0635;&#x067B;&#x063A;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x067B;&#x063A;</em></string></test>
+      <test><string><em>&#x0635;&#x067B;&#x063A;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x067B;&#x063A;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + beh + feh">
+      <test><string><em>&#x0636;&#x0628;&#x0641;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0628;&#x0641;</em></string></test>
+      <test><string><em>&#x0636;&#x0628;&#x0641;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x0628;&#x0641;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + teh + qaf">
+      <test><string><em>&#x0635;&#x062A;&#x0642;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x062A;&#x0642;</em></string></test>
+      <test><string><em>&#x0635;&#x062A;&#x0642;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x062A;&#x0642;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="dad + theh + tteh">
+      <test><string><em>&#x0636;&#x062B;&#x0679;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x062B;&#x0679;</em></string></test>
+      <test><string><em>&#x0636;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Beh + Reh sequences">
+    <testgroup label="theh + tteh + zain">
+      <test><string><em>&#x062B;&#x0679;&#x0632;</em></string></test>
+      <test><string>&#x0644;<em>&#x062B;&#x0679;&#x0632;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="khah + tteh + jeh">
+      <test><string><em>&#x062E;&#x0679;&#x0698;</em></string></test>
+      <test><string>&#x0644;<em>&#x062E;&#x0679;&#x0698;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="seen + teh + rehDotDot">
+      <test><string><em>&#x0633;&#x062A;&#x0696;</em></string></test>
+      <test><string>&#x0644;<em>&#x0633;&#x062A;&#x0696;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="dad + beeh + zain">
+      <test><string><em>&#x0636;&#x067B;&#x0632;</em></string></test>
+      <test><string>&#x0644;<em>&#x0636;&#x067B;&#x0632;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tah + theh + jeh">
+      <test><string><em>&#x0637;&#x062B;&#x0698;</em></string></test>
+      <test><string>&#x0644;<em>&#x0637;&#x062B;&#x0698;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ghain + beeh + rehDotDot">
+      <test><string><em>&#x063A;&#x067B;&#x0696;</em></string></test>
+      <test><string>&#x0644;<em>&#x063A;&#x067B;&#x0696;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + theh + zain">
+      <test><string><em>&#x0641;&#x062B;&#x0632;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062B;&#x0632;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + beeh + jeh">
+      <test><string><em>&#x0644;&#x067B;&#x0698;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067B;&#x0698;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + theh + rehDotDot">
+      <test><string><em>&#x0645;&#x062B;&#x0696;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062B;&#x0696;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gaf + beeh + zain">
+      <test><string><em>&#x06AF;&#x067B;&#x0632;</em></string></test>
+      <test><string>&#x0644;<em>&#x06AF;&#x067B;&#x0632;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + theh + jeh">
+      <test><string><em>&#x06BE;&#x062B;&#x0698;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062B;&#x0698;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehGoal + beeh + rehDotDot">
+      <test><string><em>&#x06C1;&#x067B;&#x0696;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C1;&#x067B;&#x0696;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Beh + Noon sequences">
+    <testgroup label="beh + teh + noonGhunna">
+      <test><string><em>&#x0628;&#x062A;&#x06BA;</em></string></test>
+      <test><string>&#x0644;<em>&#x0628;&#x062A;&#x06BA;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hah + theh + noonDotBelow">
+      <test><string><em>&#x062D;&#x062B;&#x06B9;</em></string></test>
+      <test><string>&#x0644;<em>&#x062D;&#x062B;&#x06B9;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + beh + noon">
+      <test><string><em>&#x0634;&#x0628;&#x0646;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x0628;&#x0646;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + peh + noonRetro">
+      <test><string><em>&#x0635;&#x067E;&#x0768;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x067E;&#x0768;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + teh + rnoon">
+      <test><string><em>&#x0638;&#x062A;&#x06BB;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x062A;&#x06BB;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + peh + noonGhunna">
+      <test><string><em>&#x0639;&#x067E;&#x06BA;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x067E;&#x06BA;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + teh + noonDotBelow">
+      <test><string><em>&#x0641;&#x062A;&#x06B9;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x062A;&#x06B9;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + peh + noon">
+      <test><string><em>&#x0644;&#x067E;&#x0646;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x067E;&#x0646;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + teh + noonRetro">
+      <test><string><em>&#x0645;&#x062A;&#x0768;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x062A;&#x0768;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="kaf + peh + rnoon">
+      <test><string><em>&#x06A9;&#x067E;&#x06BB;</em></string></test>
+      <test><string>&#x0644;<em>&#x06A9;&#x067E;&#x06BB;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + teh + noonGhunna">
+      <test><string><em>&#x06BE;&#x062A;&#x06BA;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x062A;&#x06BA;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarGoal + peh + noonDotBelow">
+      <test><string><em>&#x06C3;&#x067E;&#x06B9;</em></string></test>
+      <test><string>&#x0644;<em>&#x06C3;&#x067E;&#x06B9;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Beh + Heh-Goal sequences">
+    <testgroup label="peh + beeh + tehMarbuta">
+      <test><string><em>&#x067E;&#x067B;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x067E;&#x067B;&#x0629;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tcheh + peh + hehGoal">
+      <test><string><em>&#x0686;&#x067E;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0686;&#x067E;&#x06C1;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sheen + theh + tehMarGoal">
+      <test><string><em>&#x0634;&#x062B;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0634;&#x062B;&#x06C3;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="sad + beh + tehMarbuta">
+      <test><string><em>&#x0635;&#x0628;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x0635;&#x0628;&#x0629;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="zah + tteh + hehGoal">
+      <test><string><em>&#x0638;&#x0679;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0638;&#x0679;&#x06C1;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="ain + beh + tehMarGoal">
+      <test><string><em>&#x0639;&#x0628;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0639;&#x0628;&#x06C3;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="feh + tteh + tehMarbuta">
+      <test><string><em>&#x0641;&#x0679;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x0641;&#x0679;&#x0629;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="lam + beh + hehGoal">
+      <test><string><em>&#x0644;&#x0628;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x0644;&#x0628;&#x06C1;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="meem + tteh + tehMarGoal">
+      <test><string><em>&#x0645;&#x0679;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0645;&#x0679;&#x06C3;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="gueh + beh + tehMarbuta">
+      <test><string><em>&#x06B3;&#x0628;&#x0629;</em></string></test>
+      <test><string>&#x0644;<em>&#x06B3;&#x0628;&#x0629;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="hehDo + tteh + hehGoal">
+      <test><string><em>&#x06BE;&#x0679;&#x06C1;</em></string></test>
+      <test><string>&#x0644;<em>&#x06BE;&#x0679;&#x06C1;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+    <testgroup label="tehMarbuta + beh + tehMarGoal">
+      <test><string><em>&#x0629;&#x0628;&#x06C3;</em></string></test>
+      <test><string>&#x0644;<em>&#x0629;&#x0628;&#x06C3;</em></string></test>
+      <test background="#cfcfcf"><string/></test>
+      <test background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+</ftml>
