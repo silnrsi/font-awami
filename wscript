@@ -14,8 +14,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.1'
-TTF_VERSION="0.1"
+VERSION='0.2'
+TTF_VERSION="0.2"
 COPYRIGHT='Copyright (c) 2014-2015, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -49,8 +49,10 @@ tests = fonttest(extras = {
                 'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
             }, ext=".pdf")})
 
+FONT_NAME = "Awami Nastaliq Alpha Test"
+FONT_FILENAME = "Awami_alpha1.ttf"
 
-font(target = 'Awami_test.ttf',
+font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
      source = create('temp/Awami_full.sfd',
                 cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['Awami Nastaliq Regular.ttf'])),
      graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D -c',
