@@ -61,9 +61,7 @@ sudo python setup.py install
 
 echo "Installing grcompiler from source"
 echo " "
-
-sudo apt-get build-dep grcompiler docbook2x docbook-xml docbook-utils libicu-dev -y 
-sudo apt-get install autoconf2.59 -y 
+sudo apt-get install docbook2x docbook-xml docbook-utils libicu-dev autoconf2.59 -y 
 
 cd ~/builds
 
