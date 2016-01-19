@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-# Vagrant file config to get smith to get the latest smith & friends
+# Vagrant file config to get the latest smith & friends
 # and to compile the grcompiler from trunk via a provisionning script.
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure

@@ -11,10 +11,7 @@ echo " "
 
 
 # this PPA is the production one
-# sudo add-apt-repository -s -y ppa:silnrsi/smith 
-
-# this PPA is the tests one
-sudo add-apt-repository -s -y ppa:silnrsi/tests
+sudo add-apt-repository -s -y ppa:silnrsi/smith 
 
 # the official fontforge PPA
 sudo add-apt-repository -s -y ppa:fontforge/fontforge 
