@@ -34,26 +34,21 @@ echo " "
 mkdir ~/builds
 cd ~/builds
 
-echo "Installing pysilfont from source"
+
+echo "Installing Graphite from source"
 echo " "
 
-sudo apt-get install python-setuptools -y 
-git clone https://github.com/silnrsi/pysilfont
-cd pysilfont
-python setup.py build
-sudo python setup.py install
+sudo apt-get build-dep graphite2 -y 
 
+git clone https://github.com/silnrsi/graphite.git
 
-echo "Installing python-palaso from source"
-echo " "
+cd graphite
+mkdir build
+cd build
+cmake ..
+make
+sudo make install 
 
-sudo apt-get install python-pyrex python-pyicu -y
-sudo apt-get build-dep python-palaso -y 
-cd ~/builds
-hg clone http://hg.palaso.org/palaso-python
-cd palaso-python
-python setup.py build
-sudo python setup.py install
 
 
 echo "Installing grcompiler from source"
