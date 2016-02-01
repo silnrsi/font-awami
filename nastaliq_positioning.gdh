@@ -200,8 +200,6 @@ cTakes_hamzaUpperDia
 
 // Lower nuqta attachment
 
-
-
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	/ _=B  _=L;
@@ -277,6 +275,9 @@ gKafMedHd {collexclude.glyph = g__kaf_exclude};
 gKafMedCh {collexclude.glyph = g__kaf_exclude};
 gKafMedBy {collexclude.glyph = g__kaf_exclude};
 gKafMedDk {collexclude.glyph = g__kaf_exclude};
+gKafMedBeRe {collexclude.glyph = g__kaf_exclude};
+gKafMedBeNn {collexclude.glyph = g__kaf_exclude};
+gKafMedBeHg {collexclude.glyph = g__kaf_exclude};
 gGafMed {collexclude.glyph = g__kaf_exclude};
 gGafMedBeF {collexclude.glyph = g__kaf_exclude};
 gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
@@ -295,6 +296,10 @@ gGafMedHd {collexclude.glyph = g__kaf_exclude};
 gGafMedCh {collexclude.glyph = g__kaf_exclude};
 gGafMedBy {collexclude.glyph = g__kaf_exclude};
 gGafMedDk {collexclude.glyph = g__kaf_exclude};
+gGafMedBeRe {collexclude.glyph = g__kaf_exclude};
+gGafMedBeNn {collexclude.glyph = g__kaf_exclude};
+gGafMedBeHg {collexclude.glyph = g__kaf_exclude};
+
 // Note gGafMed_short doesn't need an exclude glyph because it is tucked under the following kaf/gaf so there
 // isn't room for anything to jump above it anyway.
 
@@ -551,6 +556,7 @@ cls_excludingGlyphs_kern { collision {
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
 
+/***
 cKernable { collision {
 	//---flags = SET_FIX(collision.flags); -- move actual kerning to end of process
 	flags = SET_KERN(collision.flags);
@@ -559,7 +565,7 @@ cKernable { collision {
 	//---max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
-
+***/
 
 // Other bases are not moved.
 (c_initial c_medial) { collision { flags = COLL_FREEZE } };
@@ -570,9 +576,11 @@ endpass; // 3
 
 
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
+if (collFix > 1)
 pass(4) { CollisionFix = 5 }
 // Perform base + nuqta collision fixing. Any failures leave for now.
 endpass;
+endif;
 
 /**************************************
 
@@ -581,7 +589,7 @@ endpass;
 #define SEQ3 [[[CHARSEQ]? CHARSEQ]? CHARSEQ]?
 #define YBELOWBYEH -450
 
-
+if (collFix > 1)
 pass(4) { CollisionFix = 4 }
 
 // Next: adjust for nuqtas moved below a bariyeh.
@@ -600,7 +608,7 @@ cNuqtaLikeLower {
 
 
 endpass;  // 4
-
+endif;    // collFix > 1
 
 *****************************************/
 
@@ -680,8 +688,8 @@ endpass; // pos - 5 (or 3)
 
 // Diacritic collision fixing and kerning
 
-pass(6) // { CollisionFix = 4; AutoKern = true }
 
+pass(6) // { CollisionFix = 4; AutoKern = true }
 
 // Set up diacritic collision fixes and kerning.
 
@@ -753,6 +761,7 @@ if (overlapKern == none)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN;
 	max.x = MAXKERN; min.x = 0;
     // min/max.y are omitted for kernable glyphs
 } };
@@ -776,6 +785,7 @@ if (overlapKern == medium)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN;
 	max.x = MAXKERN; min.x = MINKERN_TIGHT;
 //	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
     // min/max.y are omitted for kernable glyphs
@@ -788,6 +798,7 @@ if (overlapKern == tight)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN;
 	max.x = MAXKERN; min.x = MINKERN_TIGHT;
 //	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
     // min/max.y are omitted for kernable glyphs
@@ -806,10 +817,11 @@ endpass;
 
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
+if (collFix > 0)
 pass(7) { CollisionFix = 4; AutoKern = true }
 // Perform diacritic-related fixing.
 endpass;
-
+endif;
 
 #endif // DO_COL_FIX
 

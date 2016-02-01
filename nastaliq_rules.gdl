@@ -142,6 +142,27 @@ overlapKern {
     }
 }
 
+
+collFix {
+	id = "acga";  // automatic glyph collision avoidance
+	name.1033 = string("Collision avoidance");
+	default = 3;
+    settings {
+        none {
+            value = 0;
+            name.1033 = string("Off");
+        }
+        kernonly {
+            value = 1;
+            name.1033 = string("Kern only");
+        }
+        all {
+            value = 3;
+            name.1033 = string("On");
+        }
+    }
+}
+
 endtable; // feature
 
 
