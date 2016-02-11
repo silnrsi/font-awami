@@ -63,11 +63,11 @@ g_space { advance.x = 0m; };
 endif;
 
 if (overlapKern == medium)
-g_space { advance.x = 150m; };
+g_space { advance.x = 280m; };
 endif;
 
 if (overlapKern == wide)
-g_space {advance.x = 300m; };
+g_space {advance.x = 450m; };
 endif;
 
 endpass; // 1
@@ -142,7 +142,7 @@ cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidRigh
 
 // X+Nx Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B _=L  DIACS  ^ cMedBy cNuqtaUpper? DIACS  gBariyehFin=By;
+	/ _=B _=L  DIACS  ^ cMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 
 
@@ -231,9 +231,32 @@ endtable;  // pos
 
 #if DO_COL_FIX
 
+table(glyph) {AttributeOverride = 0}
+
+// Define for all needed glyphs where they have not been defined in the font.
+c_initial {kernBbRightS = point(0m,0m) };
+c_final {kernBbLeftS = point(0m,0m) };
+c_isolated {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+gComma {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+gFullStop {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+
+endtable;
+
+
 table(glyph)
 
-cKernable = (c_isolated c_final gComma);  //// {collision.kern = true};
+cPostKernable = (c_initial c_isolated) {
+	tempBbRight = bb.right; tempRsb = rsb; tempAdv = advancewidth;
+	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
+};
+
+cKernable = (c_isolated c_final gComma gFullStop)
+{
+	//// collision.kern = true;
+	tempBbLeft = bb.left; tempLsb = lsb;
+	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
+}
+
 
 
 c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
@@ -324,7 +347,7 @@ pass(3)
 // Set up for collision fixing
 
 #define MAXKERN 5000m
-#define MINKERN -1000m
+#define MINKERN -700m
 #define MINKERN_TIGHT -3000m
 #define MINKERN_WIDE -200m
 #define STDMARGIN 150m
@@ -555,8 +578,9 @@ cls_excludingGlyphs_kern { collision {
 
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
+// We actually set the kerning parameters in the final pass. But here, at least indicate
+// which glyphs can be kerned, which affects how shifting works around them.
 
-/***
 cKernable { collision {
 	//---flags = SET_FIX(collision.flags); -- move actual kerning to end of process
 	flags = SET_KERN(collision.flags);
@@ -565,7 +589,7 @@ cKernable { collision {
 	//---max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
-***/
+
 
 // Other bases are not moved.
 (c_initial c_medial) { collision { flags = COLL_FREEZE } };
@@ -773,6 +797,7 @@ if (overlapKern == wide)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN;
 	max.x = MAXKERN; min.x = MINKERN;
 //	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_MED;
     // min/max.y are omitted for kernable glyphs
@@ -782,12 +807,32 @@ endif;
 
 if (overlapKern == medium)
 
+// For short sequences ending with bariyeh, kern against the bariyeh tail, not the initial.
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0, kernLsb + 140m);  // 140m = @b.rsb
+	max.x = MAXKERN; min.x = MINKERN;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _  cNuqtaLike?  DIACS  g_space?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
+		gBariyehFin=F;
+
+cKernable { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0, kernLsb + @N.kernRsb);
+	max.x = MAXKERN; min.x = MINKERN;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _  cNuqtaLike?  DIACS  g_space?  cPostKernable=N;
+
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = STDMARGIN;
-	max.x = MAXKERN; min.x = MINKERN_TIGHT;
-//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
+	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } };
 
@@ -800,7 +845,6 @@ cKernable { collision {
 	flags = SET_KERN(collision.flags);
 	margin = STDMARGIN;
 	max.x = MAXKERN; min.x = MINKERN_TIGHT;
-//	max.x = MAXKERN; min.x = MINKERN_TIGHT; margin = KERNMARGIN_TIGHT;
     // min/max.y are omitted for kernable glyphs
 } };
 

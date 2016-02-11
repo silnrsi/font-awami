@@ -52,10 +52,10 @@ gHehGoalMed0								>	gHehGoalMed_raw;
 (gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__dot2u:1;
 endif;
 
-gHehGoalFin0						>	gHehGoalFin;
+gHehGoalFin0						      >	gHehGoalFin;
 (gTehMarbutaFin0 gTehMarbutaGoalFin0)  _  >  gHehGoalFin:1  g__dot2u:1;
+gHehGoalHamzaFin0                      _  >  gHehGoalFin:1  g__hamza:1;
 //g06c3 - goal-teh
-//g06c2 - hay-hamza
 
 (gHehDoIni0 gHehDoMed0 gHehDoFin0)			>	(gHehDoIni_raw gHehDoMed_raw gHehDoFin);
 

@@ -69,9 +69,13 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 #define STRIP_NUQTAS 0
 
 
-// TEMPORARY for collision test suite
+// TEMPORARY until Peter fixes in the font
 
-table(glyph) {AttributeOverride = 1}
+table(glyph) {AttributeOverride = 1};
+
+gMeemMed_alt {exit_sad = point(0m, 627m)};
+c_exit_sad += (gMeemMed_alt);
+
 
 ////gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 ////gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
@@ -81,6 +85,15 @@ gJeemFin { nUpperS = point(374m, 1274m) };
 
 endtable;
 
+/**
+table(glyph)
+gKaf {kernBbRightS = point(advancewidth - 300m, 0m)};
+gGafIniCh {kernBbRightS = point(advancewidth - 300m, 0m)};
+gGafIniQf {kernBbRightS = point(advancewidth - 300m, 0m)};
+gGafIniMm {kernBbRightS = point(advancewidth - 300m, 0m)};
+gKafIniHgF {kernBbRightS = point(advancewidth - 300m, 0m)};
+endtable;
+**/
 
 // Classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
