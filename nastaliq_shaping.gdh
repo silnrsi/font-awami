@@ -336,7 +336,7 @@ gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4
 
 table(glyph)
 
-c_preBe_bfkl = ( gBehIni_raw gFehIni_raw gKafIni_raw gLamIni_raw );
+c_preBe_bfkl = ( gBehIni_raw gFehIni_raw gKafIni_raw gGafIni_raw gLamIni_raw );
 c_preChF_bfkl = ( gBehIni_raw gFehIni_raw gKafIni_raw gGafIni_raw gLamIni_raw gKafMed_raw gGafMed_raw gLamMed_raw );
 c_preHgF_stfh = ( gSeenIni_raw gTahIni_raw gFehIni_raw gKafIni_raw gGafIni_raw
     gLamIni_raw gMeemIni_raw gHehGoalIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gKafMed_raw 
@@ -375,10 +375,12 @@ c_preMm_alt = ( gAinIni_raw gAinMed_raw gMeemMed_alt_raw gBehIni_raw gBehMed_raw
 	gHehDoIni_raw gHehDoMed_raw gFehIni_raw gFehMed_raw gHehGoalIni_raw gHehGoalMed_raw
 	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gSeenIni_raw gSeenMed_raw 
     gSadIni_raw gSadMed_raw gTahIni_raw gTahMed_raw ) ;
-    
-cADLK_raw = (gDalFin gDdalFin gThalFin gKafFin gGafFin gLamFin gLamAlefFin gAlefFin
-	//// gDalTwoVertBelowSmallTahFin
-	gKafMed_raw gGafMed_raw gLamMed_raw);
+
+
+cADLK_raw = (gDalFin gLamFin gLamAlefFin gAlefFin gLamMed_raw
+	//// gThalFin gDalTwoVertBelowSmallTahFin gDdalFin - no longer used
+	//gKafFin gGafFin gKafMed_raw gGafMed_raw - Sheldon says to take these out ("meem before kaf+alef/lam", 10 Feb 2016).
+);
 
 c_preBehSS_raw = (gSeenIni_raw gSadIni_raw gSeenMed_raw gSadMed_raw);
 
@@ -399,8 +401,10 @@ gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  (c_medial cFi
 
 // Version of above rules if finals and medials are separated into separate passes:
 
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS   _ MARKS  (cADLK_raw cDalFin); // kafs and ghafs
-gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS   _ MARKS  cADLK_raw;			// others
+///gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS   _ MARKS  temp_cADLK_raw; // kafs and ghafs
+///gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS   _ MARKS  cADLK_raw;			// others
+
+gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS  _ MARKS  cADLK_raw;
 
 // also see below
 gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;

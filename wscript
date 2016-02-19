@@ -14,9 +14,9 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.2'
-TTF_VERSION="0.2"
-COPYRIGHT='Copyright (c) 2014-2015, SIL International (http:/www.sil.org)'
+VERSION='0.25'
+TTF_VERSION="0.250"
+COPYRIGHT='Copyright (c) 2014-2016, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
@@ -49,8 +49,8 @@ tests = fonttest(extras = {
                 'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
             }, ext=".pdf")})
 
-FONT_NAME = "Awami Nastaliq Alpha Test"
-FONT_FILENAME = "Awami_alpha1.ttf"
+FONT_NAME = "Awami Nastaliq Alpha1Plus"
+FONT_FILENAME = "Awami_alpha1plus.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
      source = create('temp/Awami_full.sfd',
@@ -60,6 +60,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      ap = "Awami Nastaliq Regular_tmp.xml",
      license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
+     version = TTF_VERSION,
      extra_srcs = ['bin/awami_makegdl', 'bin/FFcopyGlyphs.py', 'bin/perllib/Font/TTF/Scripts/GDL.pm', 'DoulosSIL-R.ttf'],
      tests = tests,
      fret = fret(params = '-r')

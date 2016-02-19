@@ -36,13 +36,13 @@ cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEaster
 		{ dir = DIR_ARABICNUMBER };
 */
 
-cNuqtaUpper = (g__dot1u  g__dot2u  g__dot3u  g__dot4u) ;
-cNuqtaLower = (g__dot1l  g__dot2l  g__dot3l  g__dot2vl) ;
-cNuqta = (cNuqtaUpper  cNuqtaLower) ;
+cNuqtaUpper = (g__dot1u, g__dot2u, g__dot3u, g__dot4u) ;
+cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl) ;
+cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cNuqtaLikeUpper = (cNuqtaUpper  g__smallTah  g__hamza);
-cNuqtaLikeLower = (cNuqtaLower  g__hehHook_small);
-cNuqtaLike = (cNuqtaLikeUpper  cNuqtaLikeLower)
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__dot1u_smallTah );
+cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small);
+cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower)
 
 
 
@@ -427,7 +427,7 @@ c_nfc_hamza   = (gYehHamzaAbove, gHehGoalHamza);		// hamza-yay, hay-hamza
 
 // Classes of initials and medials
 
-cBehIni = ( gBehIniBeM1 gBehIniBeM2 gBehIniJm gBehIniRe gBehIniSn gBehIniSd 
+cBehIni = ( gBehIni gBehIniBeM1 gBehIniBeM2 gBehIniJm gBehIniRe gBehIniSn gBehIniSd 
     gBehIniTaF gBehIniTaM gBehIniAi gBehIniFe gBehIniQf gBehIniMm gBehIniNn 
     gBehIniHgF gBehIniHgM gBehIniHd gBehIniCh gBehIniBy gBehIniBe gBehIniBeRe 
     gBehIniBeNn gBehIniMmX gBehIniMmM gBehIniKfX ) ;
@@ -582,7 +582,7 @@ c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaA
 
 cDiacriticUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
     gDopesh gUltaPesh gNoonGhunnaMark gSmallHighSadMark gSmallHighAinMark gSmallHighRehDadMark 
-    gSmallHighRehHahMark gNameMarker gMaddaAbove, g__dot1u_smallTah, gVowelInvSmallV );
+    gSmallHighRehHahMark gNameMarker gMaddaAbove, gVowelInvSmallV );
 cDiacriticLower = ( gZair gKharizair gDozair ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);

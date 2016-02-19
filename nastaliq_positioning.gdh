@@ -54,6 +54,10 @@ cursive_attach(qafWawStfh)
 
 #endif  // QUICKCOMPILE
 
+// EXPERIMENTS
+#define REDUCE_KERN 60m
+#define SHIFT_N_OUT 0m
+
 // Last resort:
 (c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS2N ^ _=L ;
 
@@ -63,7 +67,7 @@ g_space { advance.x = 0m; };
 endif;
 
 if (overlapKern == medium)
-g_space { advance.x = 280m; };
+g_space { advance.x = 280m - REDUCE_KERN; };
 endif;
 
 if (overlapKern == wide)
@@ -185,6 +189,21 @@ cTakes_n23LowerDia
 //	cNuqtaLikeUpper { attach {to = @B; at = n1hUpperBehSpecialS; with = nUpperM } }
 //	/ _=B  _=U;
 
+// Experiment - moving nuqtas out
+/***/
+table(glyph)
+cBehIniMed = (cBehIni cBehMed);
+cFehIniMed = (cFehIni cFehMed);
+cJeemIniMed = (cJeemIni cJeemMed);
+cTakes_nUpperDia { nUpperSAlt = point(nUpperS.x, nUpperS.y + SHIFT_N_OUT) };
+endtable; // glyph
+
+(cFehIniMed cFehIni cBehIniMed) cnUpperDia { attach {to = @B; at = nUpperSAlt; with = nUpperM } } / _=B  _=U;
+/***/
+///////////////////////
+
+
+
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=U;
@@ -199,6 +218,21 @@ cTakes_hamzaUpperDia
 
 
 // Lower nuqta attachment
+
+// Experiment - moving nuqtas out
+/****/
+table(glyph)
+//cBehIniMed = (cBehIni cBehMed);
+cTakes_n1LowerDia { n1LowerSAlt = point(n1LowerS.x, n1LowerS.y - SHIFT_N_OUT) };
+cTakes_n23LowerDia { n23LowerSAlt = point(n23LowerS.x, n23LowerS.y - SHIFT_N_OUT) };
+endtable; // glyph
+
+cBehIniMed cn1LowerDia { attach {to = @B; at = n1LowerSAlt; with = n1LowerM } }  / _=B  _=L;
+cBehIniMed cn23LowerDia { attach {to = @B; at = n23LowerSAlt; with = n23LowerM } } / _=B  _=L;
+cJeemIniMed cn1LowerDia { attach {to = @B; at = n1LowerSAlt; with = n1LowerM } }  / _=B  _=L;
+/****/
+///////////////////////
+
 
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
@@ -404,6 +438,8 @@ cDiacriticUpper {
 	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
 	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; } - set in the rule
 };
+
+gNoonGhunnaMark { collision.margin = 300; marginweight = 300 }; // override
 
 cBase = (c_initial, c_medial, c_final);
 
@@ -708,12 +744,51 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 endpass; // pos - 5 (or 3)
 
 
+// Kerning pair adjustments - EXPERIMENTAL
+
+#define pairKern user2
+
+table(glyph) { AttributeOverride = 1 }
+
+// alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
+
+cKernable { kernPreAlef = 50m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m; kernPreInitial = 0m };
+
+gAlef { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 50m; kernPreWaw = 50m };
+gAlefFin { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 50m; kernPreWaw = 50m };
+
+gReh { kernPreInitial = -150m };
+
+gRehFin { kernPreDal = 100m };
+gRehFin_sshg { kernPreWaw = 100m };
+
+gWaw { kernPreReh = -75m };
+gWawFin { kernPreReh = -75m };
+
+endtable; // glyph
+
+// Set up kerning pairs.
+
+pass(6)
+
+cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
+cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
+cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
+cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
+(gReh gZain) { pairKern = kernPreInitial }
+						/  _  g_space?  cPostKernable;  // need to include 3 slots to give  
+														// this rule adequate precedence
+///cKernable { pairKern = 0m }           /  _  g_space?  cPostKernable;
+
+endpass;  // 6
+
+
 #if DO_COL_FIX
 
 // Diacritic collision fixing and kerning
 
 
-pass(6) // { CollisionFix = 4; AutoKern = true }
+pass(7) // { CollisionFix = 4; AutoKern = true }
 
 // Set up diacritic collision fixes and kerning.
 
@@ -812,7 +887,7 @@ if (overlapKern == medium)
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0, kernLsb + 140m);  // 140m = @b.rsb
+	margin = max(0, kernLsb + 140m);  // 140m = bariyeh's rsb
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -822,7 +897,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0, kernLsb + @N.kernRsb);
+	margin = max(0m, kernLsb + @N.kernRsb - REDUCE_KERN + pairKern);
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -862,7 +937,7 @@ endpass;
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(7) { CollisionFix = 4; AutoKern = true }
+pass(8) { CollisionFix = 4; AutoKern = true }
 // Perform diacritic-related fixing.
 endpass;
 endif;
