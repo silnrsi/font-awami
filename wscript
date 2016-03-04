@@ -53,15 +53,15 @@ FONT_NAME = "Awami Nastaliq Alpha1Plus"
 FONT_FILENAME = "Awami_alpha1plus.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
-     source = create('temp/Awami_full.sfd',
-                cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['Awami Nastaliq Regular.ttf'])),
+     source = create('temp/Awami_full.sfd'),
+                # cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['Awami Nastaliq Regular.ttf'])),
      graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D -c',
                     depends = glob.glob('*.gdh')),
      ap = "Awami Nastaliq Regular_tmp.xml",
      license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
      version = TTF_VERSION,
-     extra_srcs = ['bin/awami_makegdl', 'bin/FFcopyGlyphs.py', 'bin/perllib/Font/TTF/Scripts/GDL.pm', 'DoulosSIL-R.ttf'],
+     extra_srcs = ['bin/awami_makegdl', 'bin/FFcopyGlyphs.py', 'bin/perllib/Font/TTF/Scripts/GDL.pm'], #, 'DoulosSIL-R.ttf'],
      tests = tests,
      fret = fret(params = '-r')
     )
