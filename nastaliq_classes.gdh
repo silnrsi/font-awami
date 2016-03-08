@@ -15,13 +15,16 @@
 #define n3U 			6
 #define tahU			7
 #define w_hamza			8
-#define w_hook			9	
-#define n1U_tahU		10
-#define tahU_n1L		11
-#define tahU_n2vl		12
-#define invertedv		13
-#define n2vL			14
-#define n1L_n1U			15
+#define w_hamzaB		9
+#define w_wHamza		10
+#define w_wHamzaB		11
+#define w_hook			12	
+#define n1U_tahU		13
+#define tahU_n1L		14
+#define tahU_n2vl		15
+#define invertedv		16
+#define n2vL			17
+#define n1L_n1U			18
 
 
 table(glyph) {MUnits = 2048};
@@ -348,7 +351,10 @@ cIniMed0 = (cDualLinkIni, cDualLinkMed);
 
 
 gAlefFin0 = pseudo(postscript("absAlefFin"))		{nuqtaG = nNone};
-gAlefHamzaFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_hamza};
+gAlefHamzaAboveFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_hamza};
+gAlefHamzaBelowFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_hamzaB};
+gAlefWavyHAboveFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_wHamza};
+gAlefWavyHBelowFin0 = pseudo(postscript("absAlefFin"))	{nuqtaG = w_wHamzaB};
 
 gDalFin0 = pseudo(postscript("absDalFin"))			{nuqtaG = nNone};
 gThalFin0 = pseudo(postscript("absDalFin"))			{nuqtaG = n1U};
@@ -366,8 +372,8 @@ gJehFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = n3U};
 gRehDotBelowFin0 = pseudo(postscript("absRehFin"))	{nuqtaG = n1L};
 gRehDotBelowDotAboveFin0 = pseudo(postscript("absRehFin"))	{nuqtaG = n1L_n1U};
 
-gWawFin0 = pseudo(postscript("absWawFin"))			{nuqtaG = nNone};
-gWawHamzaAboveFin0 = pseudo(postscript("absWawFin")) {nuqtaG = w_hamza};
+gWawFin0 = pseudo(postscript("absWawFin"))				{nuqtaG = nNone};
+gWawHamzaAboveFin0 = pseudo(postscript("absWawFin"))	{nuqtaG = w_hamza};
 
 
 // Special cases
@@ -386,8 +392,10 @@ gRehDotBelowFin = pseudo(postscript("absRehFin"));
 gRehDotBelowDotAboveFin = pseudo(postscript("absRehFin"));
 
 
-cAlefIso = (gAlef, gAlefHamzaAbove, gAlefMaddaAbove);
-cAlefFin0 = (gAlefFin0, gAlefHamzaFin0, gAlefMaddaFin);
+cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefWavyHamzaBelow,
+				gAlefMaddaAbove);
+cAlefFin0 = (gAlefFin0, gAlefHamzaAboveFin0, gAlefHamzaBelowFin0, gAlefWavyHAboveFin0, gAlefWavyHBelowFin0,
+				gAlefMaddaFin);
 
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow);
 cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0, gDalDotBelowSmallTahFin0, gDalTwoVertBelowSmallTahFin0, gThalDotBelowFin0);
@@ -582,7 +590,7 @@ c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaA
 
 cDiacriticUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
     gDopesh gUltaPesh gNoonGhunnaMark gSmallHighSadMark gSmallHighAinMark gSmallHighRehDadMark 
-    gSmallHighRehHahMark gNameMarker gMaddaAbove, gVowelInvSmallV );
+    gSmallHighRehHahMark gNameMarker gMaddaAbove, gVowelSmallV, gVowelInvSmallV );
 cDiacriticLower = ( gZair gKharizair gDozair ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);

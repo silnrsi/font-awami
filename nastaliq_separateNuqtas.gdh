@@ -69,7 +69,7 @@ gChotiyehFin0  >  gChotiyehFin;
 gYehFin0  _  >  gChotiyehFin:1  g__dot2l:1;
 gBariyehFin0  >  gBariyehFin;
 
-//gYehHamzaAboveFin0		_	>	pseudo(postscript("absYehHamzaAbove"))	gArabicHamza:1;	// temporary final form
+///gYehHamzaAboveFin0		_	>	pseudo(postscript("absYehHamzaAbove"))	gArabicHamza:1;	// temporary final form
 
 
 
@@ -79,6 +79,10 @@ gBariyeh0			_	>	gBehIni:1	g__dot2l:1;
 
 
 gAlefFin0					>	gAlefFin;
+gAlefHamzaAboveFin0		_	>	gAlefFin	g__hamza:1;
+gAlefHamzaBelowFin0		_	>	gAlefFin	gHamzaBelow:1;
+gAlefWavyHAboveFin0		_	>	gAlefFin	g__wavyHamza:1;
+gAlefWavyHBelowFin0		_	>	gAlefFin	gWavyHamzaBelow:1;
 gDalFin0					>	gDalFin;
 gThalFin0				_	>	gDalFin		g__dot1u:1;
 gDdalFin0				_	>	gDalFin		g__smallTah:1;
