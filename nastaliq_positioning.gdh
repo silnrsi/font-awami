@@ -203,6 +203,18 @@ endtable; // glyph
 ///////////////////////
 
 
+// Put hamza rules first to make sure to use hamza APs for them.
+cTakes_hamzaUpperDia
+	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
+	/ _=B  _=U;
+
+cTakes_hamzaLowerDia
+	chamzaLowerDia { attach {to = @B; at = hamzaLowerS; with = hamzaLowerM } }
+	/ _=B  _=U;
+
+cTakes_barDia
+	cbarDia { attach {to = @B; at = barS; with = barM } }
+	/ _=B  _=U;
 
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
@@ -210,10 +222,6 @@ cTakes_nUpperDia
 
 cTakes_tahUpperDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
-	/ _=B  _=U;
-
-cTakes_hamzaUpperDia
-	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
 	/ _=B  _=U;
 
 
@@ -427,6 +435,9 @@ cNuqtaLikeLower {
 	}
 };
 
+g__bar { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
+
+
 // Smaller nuqta glyphs need larger margins:
 g__dot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
 g__dot1l { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
@@ -533,6 +544,11 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } };
+
+
+// Middle nuqta-like stuff: bars and rings
+
+g__bar { collision.flags = COLL_FREEZE };
 
 
 // Lower nuqtas
@@ -776,7 +792,7 @@ cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
 cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
 cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
 (gReh gZain) { pairKern = kernPreInitial }
-						/  _  g_space?  cPostKernable;  // need to include 3 slots to give  
+						/  _  g_space?  c_initial;  // need to include 3 slots to give  
 														// this rule adequate precedence
 ///cKernable { pairKern = 0m }           /  _  g_space?  cPostKernable;
 
