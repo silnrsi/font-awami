@@ -77,6 +77,11 @@ gMeemMed_alt {exit_sad = point(0m, 627m)};
 c_exit_sad += (gMeemMed_alt);
 
 
+gKafIniBe { kernBbRightS = point(742m, 797m) };
+gKafIniBeM1 { kernBbRightS = point(891m, 805m) };
+gBariyehFin { kernBbLeftS = point(140m, 0m) };
+
+
 ////gKafMedBeRe = pseudo(postscript("absKehehMed.bere_alt"));
 ////gGafMedBeRe = pseudo(postscript("absGafMed.bere_alt"));
 
@@ -176,6 +181,23 @@ collFix {
     }
 }
 
+debugSpace {
+	id = "dbsp";
+	name.1033 = string("Show spaces for debugging");	
+	default = 0;
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("False");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("True");
+        }
+    }
+}
+
+
 endtable; // feature
 
 
@@ -187,7 +209,7 @@ endtable; // feature
 
 // In positioning table, allow two nuqta-like glyphs for some glyphs that can have
 // nuqtas both above and below
-#define MARKS2N  cNuqtaLikeLower? cNuqtaLikeUpper?  DIACS
+#define MARKS2N  cNuqtaLikeLower? cNuqtaLikeUpMid?  DIACS
 
 
 // SUBSTITUTION RULES

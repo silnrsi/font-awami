@@ -55,7 +55,7 @@ cursive_attach(qafWawStfh)
 #endif  // QUICKCOMPILE
 
 // EXPERIMENTS
-#define REDUCE_KERN 60m
+#define REDUCE_KERN 0m
 #define SHIFT_N_OUT 0m
 
 // Last resort:
@@ -63,15 +63,21 @@ cursive_attach(qafWawStfh)
 
 
 if (overlapKern == tight)
-g_space { advance.x = 0m; };
+cSpace { advance.x = 0m; };
 endif;
 
 if (overlapKern == medium)
-g_space { advance.x = 280m - REDUCE_KERN; };
+cSpace { advance.x = 280m - REDUCE_KERN; };
 endif;
 
 if (overlapKern == wide)
-g_space {advance.x = 450m; };
+cSpace {advance.x = 450m; };
+endif;
+
+
+if (debugSpace == 1)
+g_sideBrMarkRight {advance.x = 0m};
+g_sideBrMarkLeft {advance.x = 0m};
 endif;
 
 endpass; // 1
@@ -288,14 +294,14 @@ endtable;
 table(glyph)
 
 cPostKernable = (c_initial c_isolated) {
-	tempBbRight = bb.right; tempRsb = rsb; tempAdv = advancewidth;
+	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
 cKernable = (c_isolated c_final gComma gFullStop)
 {
 	//// collision.kern = true;
-	tempBbLeft = bb.left; tempLsb = lsb;
+	dbgBbLeft = bb.left; dbgLsb = lsb;
 	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
 }
 
@@ -466,7 +472,7 @@ endtable; // glyph
 
 
 // Spaces serve as boundaries between collision ranges.
-g_space { collision.flags = SET_START_END(collision.flags) };
+cSpace { collision.flags = SET_START_END(collision.flags) };
 
 
 // Upper nuqtas
@@ -809,7 +815,7 @@ pass(7) // { CollisionFix = 4; AutoKern = true }
 // Set up diacritic collision fixes and kerning.
 
 // Spaces serve as boundaries between collision ranges.
-g_space { collision.flags = COLL_START + COLL_END };
+cSpace { collision.flags = COLL_START + COLL_END };
 
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
