@@ -67,7 +67,7 @@ cSpace { advance.x = 0m; };
 endif;
 
 if (overlapKern == medium)
-cSpace { advance.x = 280m - REDUCE_KERN; };
+cSpace { advance.x = 200m - REDUCE_KERN; };
 endif;
 
 if (overlapKern == wide)
@@ -285,20 +285,23 @@ table(glyph) {AttributeOverride = 0}
 c_initial {kernBbRightS = point(0m,0m) };
 c_final {kernBbLeftS = point(0m,0m) };
 c_isolated {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+
 gComma {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 gFullStop {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+gSemicolon {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+cKernPunct = (gComma gFullStop gSemicolon);
 
 endtable;
 
 
 table(glyph)
 
-cPostKernable = (c_initial c_isolated) {
+cPostKernable = (c_initial  c_isolated  cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
-cKernable = (c_isolated c_final gComma gFullStop)
+cKernable = (c_isolated  c_final  cKernPunct)
 {
 	//// collision.kern = true;
 	dbgBbLeft = bb.left; dbgLsb = lsb;

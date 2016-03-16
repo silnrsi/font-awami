@@ -6,6 +6,52 @@
 
 table(substitution)
 
+
+// Debugging
+
+pass(1)
+
+
+gBeh gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef gAlef;
+
+if (overlapKern == none)
+g_X _ _ _  >  g_n:X g_o:X g_n:X g_e:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _;
+gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef;
+endif;
+
+if (overlapKern == wide)
+g_X _ _ _  >  g_w:X g_i:X g_d:X g_e:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _;
+gBeh gBeh gBeh gBeh  >  gAlef:1 gAlef:2 gAlef:(3 4) _;
+endif;
+
+if (overlapKern == medium)
+g_X _ _ _ _ _ >  g_m:X g_e:X g_d:X g_i:X g_u:X g_m:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _ _ _;
+gBeh gBeh gBeh gBeh  >  gAlef:(1 2) gAlef:(3 4) _ _;
+endif;
+
+if (overlapKern == tight)
+g_X _ _ _ _ >  g_t:X g_i:X g_g:X g_h:X g_t:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _ _;
+gBeh gBeh gBeh gBeh  >  gAlef:(1 2 3 4) _ _ _;
+endif;
+
+table(glyph)
+g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
+g_sideBrMarkRight = (g_FontBslnSideBrngMrkrRt);
+cSpace = (g_space g_spaceVis);
+
+/////#define OPTSPACE  g_sideBrMarkLeft? cSpace? g_sideBrMarkRight?
+//////#define OPTSPACE cSpace?
+
+endtable;
+
+if (debugSpace == 1)
+g_space _ _  >  g_sideBrMarkRight:1 g_spaceVis:1  g_sideBrMarkLeft:1;
+endif;
+
+endpass;
+
+
+
 //
 //	BASIC CONTEXTUAL SHAPING - generate initial, medial, and final forms
 //
@@ -302,17 +348,17 @@ pass(3)
 
 // Lam-alef ligatures
 
-gLamIni_raw  gAlefFin  >  gLamAlef:(1 2)  _;
+gLamIni_raw  gAlefFin  >  gLamAlef:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
-gLamMed_raw  gAlefFin  >  gLamAlefFin:(1 2)  _;
+gLamMed_raw  gAlefFin  >  gLamAlefFin:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
-gLamIni_raw  gAlefMaddaFin  >  gLamAlefMadda:(1 2)  _;
+gLamIni_raw  gAlefMaddaFin  >  gLamAlefMadda:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
-gLamMed_raw  gAlefMaddaFin  >  gLamAlefMaddaFin:(1 2)  _;
+gLamMed_raw  gAlefMaddaFin  >  gLamAlefMaddaFin:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
-gLamIni_raw  gAlefHamzaFin  >  gLamAlefHamza:(1 2)  _;
+gLamIni_raw  gAlefHamzaFin  >  gLamAlefHamza:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
-gLamMed_raw  gAlefHamzaFin  >  gLamAlefHamzaFin:(1 2)  _;
+gLamMed_raw  gAlefHamzaFin  >  gLamAlefHamzaFin:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
 gAlef  gLamIni_raw  gLamMed_raw  gHehGoalFin  >  gLigatureAllah:(1 2 3 4) _  _  _;
 
@@ -709,6 +755,11 @@ pass(6)
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
 cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+
+// Special forms of letters
+
+g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
+g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 
 endpass;
 

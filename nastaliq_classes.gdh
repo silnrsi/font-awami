@@ -46,7 +46,7 @@ cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__dot1u_smallTah );
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small);
-cNuqtaLikeMiddle = (g__bar); // also rings
+cNuqtaLikeMiddle = (g__bar, g__barNarrow); // also rings
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle);
 
