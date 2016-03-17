@@ -279,6 +279,9 @@ endtable;  // pos
 
 #if DO_COL_FIX
 
+// Define fake right and left bounding boundaries that will be compared to the side-bearing marks
+// and used to determine the ideal margin/kerning.
+
 table(glyph) {AttributeOverride = 0}
 
 // Define for all needed glyphs where they have not been defined in the font.
@@ -332,6 +335,7 @@ cls_excludingGlyphs = (cKafMed)
 */
 
 gKafMed {collexclude.glyph = g__kaf_exclude};
+gKafMedBe {collexclude.glyph = g__kaf_exclude};
 gKafMedBeF {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gKafMedJm {collexclude.glyph = g__kaf_exclude};
@@ -353,6 +357,7 @@ gKafMedBeRe {collexclude.glyph = g__kaf_exclude};
 gKafMedBeNn {collexclude.glyph = g__kaf_exclude};
 gKafMedBeHg {collexclude.glyph = g__kaf_exclude};
 gGafMed {collexclude.glyph = g__kaf_exclude};
+gGafMedBe {collexclude.glyph = g__kaf_exclude};
 gGafMedBeF {collexclude.glyph = g__kaf_exclude};
 gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gGafMedJm {collexclude.glyph = g__kaf_exclude};
@@ -556,6 +561,9 @@ cNuqtaLikeUpper { collision {
 
 
 // Middle nuqta-like stuff: bars and rings
+// Ideally it would be nice to be able to move the bars up and down a little to avoid
+// collisions, but to do that we would need to be able to ignore the base (lam) from
+// the perspective of the bar.
 
 g__bar { collision.flags = COLL_FREEZE };
 
@@ -773,16 +781,21 @@ endpass; // pos - 5 (or 3)
 
 #define pairKern user2
 
+// It doesn't appear that pair kerning is necessary right now.
+
+/***
 table(glyph) { AttributeOverride = 1 }
 
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 50m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m; kernPreInitial = 0m };
 
-gAlef { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 50m; kernPreWaw = 50m };
+gAlef { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 80m; kernPreWaw = 50m };
 gAlefFin { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 50m; kernPreWaw = 50m };
 
-gReh { kernPreInitial = -150m };
+gDal { kernPreAlef = 40m };
+
+////gReh { kernPreInitial = -150m; kernPreAlef = -100m };
 
 gRehFin { kernPreDal = 100m };
 gRehFin_sshg { kernPreWaw = 100m };
@@ -791,19 +804,28 @@ gWaw { kernPreReh = -75m };
 gWawFin { kernPreReh = -75m };
 
 endtable; // glyph
+***/
 
 // Set up kerning pairs.
 
 pass(6)
 
+// If we reinstate pair kerning, fix the rule below to add the pairKern value.
+// If this code isn't needed in the end, remove the pass.
+/***
 cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
 cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
 cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
 cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
-(gReh gZain) { pairKern = kernPreInitial }
-						/  _  g_space?  c_initial;  // need to include 3 slots to give  
+
+///(gReh gZain) { pairKern = kernPreInitial }
+///						/  _  g_space?  c_initial;  // need to include 3 slots to give  
 														// this rule adequate precedence
 ///cKernable { pairKern = 0m }           /  _  g_space?  cPostKernable;
+***/
+
+// Bogus rule that will never fire:
+gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
 
 endpass;  // 6
 
@@ -922,7 +944,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb - REDUCE_KERN + pairKern);
+	margin = max(0m, kernLsb + @N.kernRsb - REDUCE_KERN);   //// + pairKern???
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }

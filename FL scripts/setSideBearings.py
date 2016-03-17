@@ -58,6 +58,7 @@ def isBaseGlyph(glyphName) :
 	
 	if glyphName[0:8] == "absComma"			: return True
 	if glyphName[0:11] == "absFullStop"	: return True
+	if glyphName[0:12] == "absSemicolon" : return True
 		
 	# components
 	if glyphName[0:4] == "_beh"			: return True
@@ -84,6 +85,8 @@ def shouldFix(glyph) :
 	# Fix isolates, initials, and finals, but not medials.
 	if isBaseGlyph(glyphName) and not "Med" in glyphName :
 		return True
+	else :
+		return False
 
 
 def specialLeft(glyphName) :
