@@ -195,19 +195,6 @@ cTakes_n23LowerDia
 //	cNuqtaLikeUpper { attach {to = @B; at = n1hUpperBehSpecialS; with = nUpperM } }
 //	/ _=B  _=U;
 
-// Experiment - moving nuqtas out
-/***/
-table(glyph)
-cBehIniMed = (cBehIni cBehMed);
-cFehIniMed = (cFehIni cFehMed);
-cJeemIniMed = (cJeemIni cJeemMed);
-cTakes_nUpperDia { nUpperSAlt = point(nUpperS.x, nUpperS.y + SHIFT_N_OUT) };
-endtable; // glyph
-
-(cFehIniMed cFehIni cBehIniMed) cnUpperDia { attach {to = @B; at = nUpperSAlt; with = nUpperM } } / _=B  _=U;
-/***/
-///////////////////////
-
 
 // Put hamza rules first to make sure to use hamza APs for them.
 cTakes_hamzaUpperDia
@@ -232,21 +219,6 @@ cTakes_tahUpperDia
 
 
 // Lower nuqta attachment
-
-// Experiment - moving nuqtas out
-/****/
-table(glyph)
-//cBehIniMed = (cBehIni cBehMed);
-cTakes_n1LowerDia { n1LowerSAlt = point(n1LowerS.x, n1LowerS.y - SHIFT_N_OUT) };
-cTakes_n23LowerDia { n23LowerSAlt = point(n23LowerS.x, n23LowerS.y - SHIFT_N_OUT) };
-endtable; // glyph
-
-cBehIniMed cn1LowerDia { attach {to = @B; at = n1LowerSAlt; with = n1LowerM } }  / _=B  _=L;
-cBehIniMed cn23LowerDia { attach {to = @B; at = n23LowerSAlt; with = n23LowerM } } / _=B  _=L;
-cJeemIniMed cn1LowerDia { attach {to = @B; at = n1LowerSAlt; with = n1LowerM } }  / _=B  _=L;
-/****/
-///////////////////////
-
 
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }

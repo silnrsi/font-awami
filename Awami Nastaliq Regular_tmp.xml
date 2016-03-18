@@ -209,7 +209,7 @@
 		<point type="n1Lower" mark="1">
 			<location y="340" x="524"></location>
 		</point>
-		<compound PSName="absAinIni.hd" GID="691" bbox="-15, 337, 484, 1026"></compound>
+		<compound PSName="absAinIni.hd" GID="691" bbox="-22, 340, 711, 1165"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absAinMed.hgF" GID="15">
@@ -846,7 +846,7 @@
 			<location y="391" x="467"></location>
 		</point>
 		<point type="n23Lower" mark="1">
-			<location y="-320" x="146"></location>
+			<location y="-280" x="147"></location>
 		</point>
 		<point type="exit_lamKaf" mark="1">
 			<location y="617" x="0"></location>
@@ -855,7 +855,7 @@
 			<location y="718" x="348"></location>
 		</point>
 		<point type="n1Lower" mark="1">
-			<location y="-314" x="143"></location>
+			<location y="-274" x="143"></location>
 		</point>
 		<point type="nUpper" mark="1">
 			<location y="717" x="307"></location>
@@ -2677,13 +2677,13 @@
 			<location y="1112" x="-121"></location>
 		</point>
 		<point type="n1Lower" mark="1">
-			<location y="421" x="649"></location>
+			<location y="271" x="739"></location>
 		</point>
 		<point type="n23Lower" mark="1">
-			<location y="385" x="679"></location>
+			<location y="184" x="802"></location>
 		</point>
 		<point type="tahLower" mark="1">
-			<location y="435" x="632"></location>
+			<location y="287" x="724"></location>
 		</point>
 		<point type="hamzaUpper" mark="1">
 			<location y="1120" x="-113"></location>
@@ -5059,19 +5059,19 @@
 			<location y="-201" x="329"></location>
 		</point>
 		<point type="tahUpper" mark="1">
-			<location y="384" x="287"></location>
+			<location y="489" x="302"></location>
 		</point>
 		<point type="nUpper" mark="1">
-			<location y="390" x="296"></location>
+			<location y="500" x="296"></location>
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-216" x="345"></location>
 		</point>
 		<point type="hamzaUpper" mark="1">
-			<location y="403" x="295"></location>
+			<location y="498" x="304"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="395" x="281"></location>
+			<location y="492" x="296"></location>
 		</point>
 		<point type="kernBbLeft" mark="1">
 			<location y="44" x="100"></location>
@@ -10043,7 +10043,7 @@
 		<point type="n1Lower" mark="1">
 			<location y="340" x="524"></location>
 		</point>
-		<property name="mark" value="80"></property>
+		<property name="mark" value="1"></property>
 	</glyph>
 	<glyph PSName="absBehIni.hd" GID="692">
 		<point type="n1Lower" mark="1">
@@ -11520,13 +11520,13 @@
 			<location y="1700" x="376"></location>
 		</point>
 		<point type="n1Lower" mark="1">
-			<location y="937" x="648"></location>
+			<location y="721" x="690"></location>
 		</point>
 		<point type="n23Lower" mark="1">
-			<location y="937" x="816"></location>
+			<location y="621" x="822"></location>
 		</point>
 		<point type="tahLower" mark="1">
-			<location y="906" x="600"></location>
+			<location y="758" x="643"></location>
 		</point>
 		<point type="hamzaUpper" mark="1">
 			<location y="1700" x="416"></location>
@@ -12294,10 +12294,10 @@
 			<location y="898" x="226"></location>
 		</point>
 		<point type="n1Lower" mark="1">
-			<location y="182" x="270"></location>
+			<location y="102" x="330"></location>
 		</point>
 		<point type="n23Lower" mark="1">
-			<location y="111" x="350"></location>
+			<location y="31" x="400"></location>
 		</point>
 		<point type="tahUpper" mark="1">
 			<location y="907" x="218"></location>
@@ -15611,7 +15611,9 @@
 		</point>
 		<property name="mark" value="130"></property>
 	</glyph>
-	<glyph PSName="nobreakspace" GID="1178" UID="U+00A0"></glyph>
+	<glyph PSName="nobreakspace" GID="1178" UID="U+00A0">
+		<property name="mark" value="44"></property>
+	</glyph>
 	<glyph PSName="exclamdown" GID="1179" UID="U+00A1">
 		<property name="mark" value="130"></property>
 	</glyph>
@@ -15963,7 +15965,7 @@
 	<glyph PSName="ecircumflex" GID="1248" UID="U+00EA">
 		<compound PSName="e" GID="976" bbox="75, -30, 852, 944" UID="U+0065"></compound>
 		<compound PSName="uni0302" GID="1289" bbox="167, 1042, 810, 1386" UID="U+0302"></compound>
-		<property name="mark" value="130"></property>
+		<property name="mark" value="38"></property>
 	</glyph>
 	<glyph PSName="edieresis" GID="1249" UID="U+00EB">
 		<compound PSName="e" GID="976" bbox="75, -30, 852, 944" UID="U+0065"></compound>
@@ -16671,4 +16673,7 @@
 	</glyph>
 	<glyph PSName="FontBslnSideBrngMrkrLft" GID="1368" UID="U+F130"></glyph>
 	<glyph PSName="FontBslnSideBrngMrkrRt" GID="1369" UID="U+F131"></glyph>
+	<glyph PSName="absUltaPesh" GID="1370">
+		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+	</glyph>
 </font>
