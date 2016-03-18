@@ -755,28 +755,18 @@ endpass; // pos - 5 (or 3)
 
 // It doesn't appear that pair kerning is necessary right now.
 
-/***
+
 table(glyph) { AttributeOverride = 1 }
 
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
-cKernable { kernPreAlef = 50m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m; kernPreInitial = 0m };
+cKernable { kernPreAlef = 0m }; // kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m; kernPreInitial = 0m };
 
-gAlef { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 80m; kernPreWaw = 50m };
-gAlefFin { kernPreAlef = 50m; kernPreDal = 50m; kernPreReh = 50m; kernPreWaw = 50m };
-
-gDal { kernPreAlef = 40m };
-
-////gReh { kernPreInitial = -150m; kernPreAlef = -100m };
-
-gRehFin { kernPreDal = 100m };
-gRehFin_sshg { kernPreWaw = 100m };
-
-gWaw { kernPreReh = -75m };
-gWawFin { kernPreReh = -75m };
+gDal { kernPreAlef = -60m };
+gReh { kernPreAlef = -70m };
 
 endtable; // glyph
-***/
+
 
 // Set up kerning pairs.
 
@@ -784,20 +774,17 @@ pass(6)
 
 // If we reinstate pair kerning, fix the rule below to add the pairKern value.
 // If this code isn't needed in the end, remove the pass.
-/***
-cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
-cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
-cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
-cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
 
-///(gReh gZain) { pairKern = kernPreInitial }
-///						/  _  g_space?  c_initial;  // need to include 3 slots to give  
-														// this rule adequate precedence
-///cKernable { pairKern = 0m }           /  _  g_space?  cPostKernable;
-***/
+cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
+
+//cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
+//cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
+//cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
+
+
 
 // Bogus rule that will never fire:
-gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
+///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
 
 endpass;  // 6
 
@@ -916,7 +903,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb - REDUCE_KERN);   //// + pairKern???
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);           // - REDUCE_KERN
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
