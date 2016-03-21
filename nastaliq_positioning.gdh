@@ -760,10 +760,14 @@ table(glyph) { AttributeOverride = 1 }
 
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
-cKernable { kernPreAlef = 0m }; // kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m; kernPreInitial = 0m };
+cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
+	kernPreLamAlef = 0m };  // kernPreInitial = 0m };
 
-gDal { kernPreAlef = -60m };
-gReh { kernPreAlef = -70m };
+gDal		{ kernPreAlef = -60m };
+gDalFin		{ kernPreAlef = -50m };
+gReh		{ kernPreAlef = -120m; kernPreDal = -30; kernPreReh = -30; kernPreWaw = -30; kernPreLamAlef = -30 };
+gRehFin_jkl	{ kernPreAlef = -70m };
+gWaw		{ kernPreAlef = -80m };
 
 endtable; // glyph
 
@@ -776,10 +780,10 @@ pass(6)
 // If this code isn't needed in the end, remove the pass.
 
 cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
-
-//cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
-//cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
-//cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
+cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
+cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
+cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
+cKernable { pairKern = kernPreLamAlef} / _  g_space?  gLamAlef;
 
 
 
@@ -903,7 +907,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);           // - REDUCE_KERN
+	margin = max(0m, kernLsb + @N.kernRsb  + pairKern);           // - REDUCE_KERN
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
