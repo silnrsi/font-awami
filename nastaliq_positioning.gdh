@@ -596,7 +596,14 @@ cNuqtaLikeLower { collision {
 	max.y = 300m;
 } };
 
-// experiment
+// Exclusion glyphs for space above kafs and gafs
+
+// For ngoeh, don't using the exclusion glyph - the nuqtas need to go right on top of the gaf.
+(cls_excludingGlyphs cls_excludingGlyphs_kern) { collision {
+	flags = CLEAR_FIX(collision.flags);
+	flags = CLEAR_KERN(collision.flags);
+} } / _ g__dot2u;
+
 cls_excludingGlyphs { collision {
 	flags = CLEAR_FIX(collision.flags);
 	flags = CLEAR_KERN(collision.flags);
@@ -605,7 +612,6 @@ cls_excludingGlyphs { collision {
 	exclude.offset.y = collexclude.offsety;
 } };
 
-// experiment
 cls_excludingGlyphs_kern { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
