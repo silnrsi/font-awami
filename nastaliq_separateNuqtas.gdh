@@ -16,8 +16,12 @@
 (gKhahIni0 gKhahMed0 gKhahFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1u:1;
 (gTchehIni0 gTchehMed0 gTchehFin0)	_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot3l:1;
 (gDyehIni0 gDyehMed0 gDyehFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot2vl:1;
+(gNyehIni0 gNyehMed0 gNyehFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot2l:1;
+(gTchehehIni0 gTchehehMed0 gTchehehFin0) _ >(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot4l:1;
 (gSeenIni0 gSeenMed0 gSeenFin0)			>	(gSeenIni_raw gSeenMed_raw gSeenFin);
 (gSheenIni0 gSheenMed0 gSheenFin0)	_	>	(gSeenIni_raw gSeenMed_raw gSeenFin):1	g__dot3u:1;
+(gSeenFourDotsAboveIni0 gSeenFourDotsAboveMed0 gSeenFourDotsAboveFin0)	_	
+										>	(gSeenIni_raw gSeenMed_raw gSeenFin):1	g__dot4u:1;
 (gSadIni0 gSadMed0 gSadFin0)			>	(gSadIni_raw gSadMed_raw gSadFin);
 (gDadIni0 gDadMed0 gDadFin0)		_	>	(gSadIni_raw gSadMed_raw gSadFin):1		g__dot1u:1;
 (gTahIni0 gTahMed0 gTahFin0)			>	(gTahIni_raw gTahMed_raw gTahFin);
@@ -32,6 +36,8 @@
 (gNgoehIni0 gNgoehMed0 gNgoehFin0)	_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2u:1;
 (gLamIni0 gLamMed0 gLamFin0)			>	(gLamIni_raw gLamMed_raw gLamFin);
 (gLamBarIni0 gLamBarMed0 gLamBarFin0) _	>	(gLamIni_raw gLamMed_raw gLamFin)		g__bar:1;
+(gLamSmallVIni0 gLamSmallVMed0 gLamSmallVFin0) _
+										>	(gLamIni_raw gLamMed_raw gLamFin)		g__smallV:1;
 (gMeemIni0 gMeemMed0 gMeemFin0)			>	(gMeemIni_raw gMeemMed_raw gMeemFin);
 (gNoonIni0 gNoonMed0 gNoonFin0)		_	>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u:1;
 (gNoonGhunnaIni0 gNoonGhunnaMed0)	_	>	(gBehIni_raw gBehMed_raw):1				g__dot1u:1;
@@ -39,8 +45,10 @@ gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
 (gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_
 										>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallTah:1;
 (gNoonDotBelowIni0 gNoonDotBelowMed0 gNoonDotBelowFin0)	_
-										>	(gBehIni_raw gBehMed_raw gNoonFin):1		g__dot1l_dot1u:1;
+										>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1l_dot1u:1;
 (gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
+(gNoonSmallVIni0 gNoonSmallVMed0 gNoonSmallVFin0) _
+										>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallV:1;
 
 gHehGoalIni0			_					>	gHehGoalIni_raw:1	g__hehHook_small:1;
 (gTehMarbutaIni0 gTehMarbutaGoalIni0)  _	>	gHehGoalIni_raw:1  g__hehHook_dot2u:1;
@@ -97,6 +105,7 @@ gRrehFin0				_	>	gRehFin		g__smallTah:1;
 gJehFin0				_	>	gRehFin		g__dot3u:1;
 gRehDotBelowFin0		_	>	gRehFin		g__dot1l:1;
 gRehDotBelowDotAboveFin0 _	>	gRehFin		g__dot1l_dot1u:1;
+gRehTwoDotsAboveFin0	_	>	gRehFin		g__dot2u:1;
 gWawFin0					>	gWawFin;
 gWawHamzaAboveFin0		_	>	gWawFin		g__hamza:1;
 

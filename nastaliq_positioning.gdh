@@ -209,6 +209,11 @@ cTakes_barDia
 	cbarDia { attach {to = @B; at = barS; with = barM } }
 	/ _=B  _=U;
 
+// Use smallV AP if present, otherwise small-V will attach at nUpper.
+cTakes_smallVDia
+	g__smallV { attach {to = @B; at = smallVS; with = nUpperM } }
+	/ _=B  _=U;
+
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=U;
