@@ -73,12 +73,9 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 
 table(glyph) {AttributeOverride = 1};
 
-gMeemMed_alt {exit_sad = point(0m, 627m)};
-c_exit_sad += (gMeemMed_alt);
+////gMeemMed_alt {exit_sad = point(0m, 627m)};
+/////c_exit_sad += (gMeemMed_alt);
 
-
-// ABS-724
-////////////////gJeemFin { nUpperS = point(374m, 1274m) };
 
 endtable;
 
@@ -118,6 +115,7 @@ hehGoalHook {
 }
 
 // Overlap kerning
+/***********
 overlapKern {
 	id = "olap";
 	name.1033 = string("Overlap kerning");
@@ -141,7 +139,35 @@ overlapKern {
         }
     }
 }
+**********/
 
+wordSpacing {
+	id = "wdsp";	// word spacing
+	name.1033 = string("Word spacing");
+	default = 2;
+	settings {
+		xtight {
+			value = 0;
+			name.1033 = string("Extra Tight");
+		}
+		tight {
+			value = 1;
+			name.1033 = string("Tight");
+		}
+		medium {
+			value = 2;
+			name.1033 = string("Medium");
+		}
+		wide {
+			value = 3;
+			name.1033 = string("Wide");
+		}
+		xwide {
+			value = 4;
+			name.1033 = string("Extra Wide");
+		}
+	}
+}
 
 collFix {
 	id = "agca";  // automatic glyph collision avoidance

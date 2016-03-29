@@ -2360,7 +2360,7 @@
 			<location y="722" x="78"></location>
 		</point>
 		<point type="nUpper" mark="1">
-			<location y="1115" x="-217"></location>
+			<location y="1175" x="0"></location>
 		</point>
 		<point type="n23Lower" mark="1">
 			<location y="172" x="472"></location>
@@ -2372,7 +2372,7 @@
 			<location y="125" x="442"></location>
 		</point>
 		<point type="hamzaUpper" mark="1">
-			<location y="1127" x="-206"></location>
+			<location y="1186" x="-13"></location>
 		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
@@ -6098,19 +6098,19 @@
 	</glyph>
 	<glyph PSName="absTahFin" GID="333">
 		<point type="_exit_tah" mark="1">
-			<location y="-40" x="637"></location>
+			<location y="-40" x="479"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="851" x="850"></location>
+			<location y="851" x="692"></location>
 		</point>
 		<point type="mLower" mark="1">
-			<location y="-253" x="445"></location>
+			<location y="-253" x="287"></location>
 		</point>
 		<point type="nUpper" mark="1">
-			<location y="851" x="744"></location>
+			<location y="851" x="586"></location>
 		</point>
 		<point type="kernBbLeft" mark="1">
-			<location y="1000" x="270"></location>
+			<location y="1000" x="120"></location>
 		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
@@ -7349,13 +7349,13 @@
 	</glyph>
 	<glyph PSName="absTah" GID="461" UID="U+0637">
 		<point type="mUpper" mark="1">
-			<location y="851" x="850"></location>
+			<location y="851" x="692"></location>
 		</point>
 		<point type="mLower" mark="1">
-			<location y="-249" x="427"></location>
+			<location y="-249" x="269"></location>
 		</point>
 		<point type="kernBbLeft" mark="1">
-			<location y="1000" x="270"></location>
+			<location y="1000" x="120"></location>
 		</point>
 		<property name="mark" value="20"></property>
 	</glyph>
@@ -7608,16 +7608,16 @@
 	</glyph>
 	<glyph PSName="absZah" GID="488" UID="U+0638">
 		<point type="mUpper" mark="1">
-			<location y="1405" x="839"></location>
+			<location y="1405" x="681"></location>
 		</point>
 		<point type="mLower" mark="1">
-			<location y="-251" x="420"></location>
+			<location y="-251" x="262"></location>
 		</point>
 		<point type="kernBbLeft" mark="1">
-			<location y="1000" x="270"></location>
+			<location y="1000" x="120"></location>
 		</point>
-		<compound PSName="_nukta" GID="1097" bbox="642, 851, 1029, 1233"></compound>
-		<compound PSName="absTah" GID="461" bbox="90, -115, 1001, 1525" UID="U+0637"></compound>
+		<compound PSName="_nukta" GID="1097" bbox="484, 851, 871, 1233"></compound>
+		<compound PSName="absTah" GID="461" bbox="-68, -115, 843, 1525" UID="U+0637"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absZain" GID="489" UID="U+0632">
@@ -14548,6 +14548,9 @@
 		</point>
 		<point type="_exit_meemAlt" mark="1">
 			<location y="419" x="198"></location>
+		</point>
+		<point type="exit_sad" mark="1">
+			<location y="625" x="1"></location>
 		</point>
 		<property name="mark" value="80"></property>
 	</glyph>

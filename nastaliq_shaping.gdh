@@ -14,6 +14,7 @@ pass(1)
 
 gBeh gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef gAlef;
 
+/*****
 if (overlapKern == none)
 g_X _ _ _  >  g_n:X g_o:X g_n:X g_e:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _;
 gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef;
@@ -33,6 +34,7 @@ if (overlapKern == tight)
 g_X _ _ _ _ >  g_t:X g_i:X g_g:X g_h:X g_t:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _ _;
 gBeh gBeh gBeh gBeh  >  gAlef:(1 2 3 4) _ _ _;
 endif;
+*****/
 
 table(glyph)
 g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
@@ -762,6 +764,10 @@ cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
 
 g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
 g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
+
+
+// Experimental - kaf tops
+///cTakes_kafTopDia _  >  @1  g__kafTop:1;
 
 endpass;
 

@@ -61,17 +61,24 @@ cursive_attach(qafWawStfh)
 // Last resort:
 (c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS2N ^ _=L ;
 
-
-if (overlapKern == tight)
-cSpace { advance.x = 0m; };
+if (wordSpacing == xtight)
+cSpace { advance.x = 50m; };
 endif;
 
-if (overlapKern == medium)
-cSpace { advance.x = 200m - REDUCE_KERN; };
+if (wordSpacing == tight)
+cSpace { advance.x = 150m; };
 endif;
 
-if (overlapKern == wide)
-cSpace {advance.x = 450m; };
+if (wordSpacing == medium)
+cSpace { advance.x = 200m; };
+endif;
+
+if (wordSpacing == wide)
+cSpace {advance.x = 250m; };
+endif;
+
+if (wordSpacing == xwide)
+cSpace {advance.x = 300m; };
 endif;
 
 
@@ -162,6 +169,14 @@ cTakes_nLowerDia  cNuqtaLower { underBy = true; attach {to = @By; at = nByCenter
 //cTakes_n1Lower_and_nUpperDia &= (cTakes_nUpperDia);
 //endtable;
 
+// kaf-top, nuqta(s) below
+/*
+cTakes_kafTopDia
+	cn1LowerDia { attach {to = @K; at = n1LowerS; with = n1LowerM } }
+	ckafTopDia { attach {to = @K; at = kafTopS; with = kafTopM } }
+	/ _=K  _=L  _=T;
+*/
+
 // tah above, nuqta(s) below
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
@@ -186,7 +201,14 @@ cTakes_n23LowerDia
 	/ _=B  _=L  _=U;
 
 
-// Upper nuqta attachment
+// Upper nuqta-like attachment
+
+// kaf-top
+/*
+cTakes_kafTopDia
+	ckafTopDia { attach {to = @K; at = kafTopS; with = kafTopM } }
+	/ _=K  _=T;
+*/
 
 ////gJeemFin  cNuqtaLike { attach {to = @J; at = point(574m, 1274m); with = nUpperM} }
 ////	/  gJeemMedJm=J  cNuqtaLike?  _  _;
@@ -458,6 +480,10 @@ endtable; // glyph
 
 // Spaces serve as boundaries between collision ranges.
 cSpace { collision.flags = SET_START_END(collision.flags) };
+
+
+// Experimental - kaf-top is NEVER shifted
+///g__kafTop { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence
 
 
 // Upper nuqtas
@@ -772,11 +798,13 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
-	kernPreLamAlef = 0m };  // kernPreInitial = 0m };
+	kernPreLamAlef = 0m; kernPreShort = 0m };  // kernPreInitial = 0m };
 
 gDal		{ kernPreAlef = -60m };
 gDalFin		{ kernPreAlef = -50m };
-gReh		{ kernPreAlef = -120m; kernPreDal = -30; kernPreReh = -30; kernPreWaw = -30; kernPreLamAlef = -30 };
+gReh		{ kernPreAlef = -120m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
+				// Before a two-letter word:
+				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m };
 gWaw		{ kernPreAlef = -80m };
 
@@ -787,18 +815,17 @@ endtable; // glyph
 
 pass(6)
 
-// If we reinstate pair kerning, fix the rule below to add the pairKern value.
-// If this code isn't needed in the end, remove the pass.
+cKernable { pairKern = kernPreAlef }  /  _  MARKS  g_space?  gAlef;
+cKernable { pairKern = kernPreDal  }  /  _  MARKS  g_space?  gDal;
+cKernable { pairKern = kernPreReh  }  /  _  MARKS  g_space?  gReh;
+cKernable { pairKern = kernPreWaw  }  /  _  MARKS  g_space?  gWaw;
+cKernable { pairKern = kernPreLamAlef} / _  MARKS  g_space?  gLamAlef;
 
-cKernable { pairKern = kernPreAlef }  /  _  g_space?  gAlef;
-cKernable { pairKern = kernPreDal  }  /  _  g_space?  gDal;
-cKernable { pairKern = kernPreReh  }  /  _  g_space?  gReh;
-cKernable { pairKern = kernPreWaw  }  /  _  g_space?  gWaw;
-cKernable { pairKern = kernPreLamAlef} / _  g_space?  gLamAlef;
+// Before a two-letter word:
+cKernable { pairKern = kernPreShort } / _  MARKS  g_space?  c_initial MARKS  c_final;
 
 
-
-// Bogus rule that will never fire:
+// Bogus rule that will never fire (if we disable this pass):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
 
 endpass;  // 6
@@ -876,6 +903,8 @@ cDiacriticLower { collision {
 
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
+
+/******
 if (overlapKern == none)
 
 cKernable { collision {
@@ -902,13 +931,14 @@ cKernable { collision {
 endif;
 
 if (overlapKern == medium)
+******/
 
 // For short sequences ending with bariyeh, kern against the bariyeh tail, not the initial.
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0, kernLsb + 140m);  // 140m = bariyeh's rsb
+	margin = max(0, kernLsb + 90m);  // 90m = bariyeh's rsb
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -918,7 +948,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb  + pairKern);           // - REDUCE_KERN
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);           // - REDUCE_KERN
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -932,6 +962,7 @@ cKernable { collision {
     // min/max.y are omitted for kernable glyphs
 } };
 
+/******
 endif;
 
 if (overlapKern == tight)
@@ -945,6 +976,7 @@ cKernable { collision {
 } };
 
 endif;
+******/
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 

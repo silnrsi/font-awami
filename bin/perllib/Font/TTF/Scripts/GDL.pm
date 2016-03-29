@@ -305,6 +305,7 @@ sub make_name
         $gname =~ s/\.benn/BeNn/;
         $gname =~ s/Kaf/ArabicKaf/;
         $gname =~ s/Keheh/Kaf/;
+        $gname =~ s/_keheh/_kaf/;      # _kehehTop -> g__kafTop
         $gname =~ s/HehDoachashmee/HehDo/;
         $gname =~ s/HehGoalHamzaAbove/HehGoalHamza/;
         $gname =~ s/BariyehHamzaAbove/BariyehHamza/;
