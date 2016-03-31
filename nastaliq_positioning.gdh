@@ -535,6 +535,16 @@ g__dot3u { collision {
 } } / (gGafMedBe_alt gGafMedSn_alt gKafIniBeM2_alt)  cBase _ ;
 
 
+// Special case: jeem + teh/theh - allow more movement to get the nuqta on the jeem to the right of the nuqta on the beh form.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -250m;
+	max.x = 350m;
+	min.y = -300m;
+	max.y = 1000m;
+} } / cJeemMed _ cDiacritic? cBehMed cNuqtaLikeUpper;
+
+
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -798,7 +808,8 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
-	kernPreLamAlef = 0m; kernPreShort = 0m };  // kernPreInitial = 0m };
+	kernPreLamAlef = 0m; kernPreShort = 0m;  // kernPreInitial = 0m };
+	minKernDelta = 0m };
 
 gDal		{ kernPreAlef = -60m };
 gDalFin		{ kernPreAlef = -50m };
@@ -807,6 +818,11 @@ gReh		{ kernPreAlef = -120m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = 
 				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m };
 gWaw		{ kernPreAlef = -80m };
+
+gRehFin { minKernDelta = -400m };
+gRehFin_jkl { minKernDelta = -400m };
+gRehFin_sshg { minKernDelta = -400m };
+gRehFin_hgM { minKernDelta = -400m };
 
 endtable; // glyph
 
@@ -949,7 +965,7 @@ cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);           // - REDUCE_KERN
-	max.x = MAXKERN; min.x = MINKERN;
+	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  g_space?  cPostKernable=N;
