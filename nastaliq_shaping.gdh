@@ -47,7 +47,27 @@ cSpace = (g_space g_spaceVis);
 endtable;
 
 if (debugSpace == 1)
-g_space _ _  >  g_sideBrMarkRight:1 g_spaceVis:1  g_sideBrMarkLeft:1;
+
+if (wordSpacing == xtight)
+g_space  >  g_space_visXtight;
+endif;
+
+if (wordSpacing == tight)
+g_space  >  g_space_visTight;
+endif;
+
+if (wordSpacing == medium)
+g_space  >  g_space_vis;
+endif;
+
+if (wordSpacing == wide)
+g_space  >  g_space_visWide;
+endif;
+
+if (wordSpacing == xwide)
+g_space  >  g_space_visXwide;
+endif;
+
 endif;
 
 endpass;
