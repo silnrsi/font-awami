@@ -774,6 +774,10 @@ cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; w
 cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; with=mLowerM}; insert=true}
 		/ ^ _  _  c_attLikeNqUpper?  _ {att.to==0};
 
+// Special contextual cases - eg, kaf/lam followed by tailed final 
+cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; insert=true}
+		/ ^ _  c_attLikeNqUpper?  _ {att.to==0}  (gAinFin gChotiyehFin gChotiyehFin_bfkl gJeemFin);
+
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
 cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};

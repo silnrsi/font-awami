@@ -49,23 +49,23 @@ endtable;
 if (debugSpace == 1)
 
 if (wordSpacing == xtight)
-g_space  >  g_space_visXtight;
+g_space  >  g_spaceVisXtight;
 endif;
 
 if (wordSpacing == tight)
-g_space  >  g_space_visTight;
+g_space  >  g_spaceVisTight;
 endif;
 
 if (wordSpacing == medium)
-g_space  >  g_space_vis;
+g_space  >  g_spaceVis;
 endif;
 
 if (wordSpacing == wide)
-g_space  >  g_space_visWide;
+g_space  >  g_spaceVisWide;
 endif;
 
 if (wordSpacing == xwide)
-g_space  >  g_space_visXwide;
+g_space  >  g_spaceVisXwide;
 endif;
 
 endif;
