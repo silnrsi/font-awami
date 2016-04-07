@@ -52,6 +52,10 @@ cursive_attach(kafAlt)
 cursive_attach(qafWaw)
 cursive_attach(qafWawStfh)
 
+//  c_exit_qafWawStfh {  attach {to = @6; with = exit_qafWawStfh; at = entr_qafWawStfh; }  }  c_entr_qafWawStfh { insert = 1;  }  
+//              /  _  cNuqtaLikeLower  cNuqtaLikeUpMid  cDiacritic  cDiacritic  ^  _  ;" >
+
+
 #endif  // QUICKCOMPILE
 
 // EXPERIMENTS
@@ -62,23 +66,23 @@ cursive_attach(qafWawStfh)
 (c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS2N ^ _=L ;
 
 if (wordSpacing == xtight)
-cSpace { advance.x = 50m; };
+cSpace { advance.x = 50m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == tight)
-cSpace { advance.x = 150m; };
+cSpace { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == medium)
-cSpace { advance.x = 200m; };
+cSpace { advance.x = 200m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == wide)
-cSpace {advance.x = 250m; };
+cSpace {advance.x = 250m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == xwide)
-cSpace {advance.x = 300m; };
+cSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 
@@ -377,6 +381,7 @@ gGafMedDk {collexclude.glyph = g__kaf_exclude};
 gGafMedBeRe {collexclude.glyph = g__kaf_exclude};
 gGafMedBeNn {collexclude.glyph = g__kaf_exclude};
 gGafMedBeHg {collexclude.glyph = g__kaf_exclude};
+
 
 // Note gGafMed_short doesn't need an exclude glyph because it is tucked under the following kaf/gaf so there
 // isn't room for anything to jump above it anyway.
@@ -835,14 +840,14 @@ endtable; // glyph
 
 pass(6)
 
-cKernable { pairKern = kernPreAlef }  /  _  MARKS  g_space?  gAlef;
-cKernable { pairKern = kernPreDal  }  /  _  MARKS  g_space?  gDal;
-cKernable { pairKern = kernPreReh  }  /  _  MARKS  g_space?  gReh;
-cKernable { pairKern = kernPreWaw  }  /  _  MARKS  g_space?  gWaw;
-cKernable { pairKern = kernPreLamAlef} / _  MARKS  g_space?  gLamAlef;
+cKernable { pairKern = kernPreAlef }  /  _  MARKS  cSpace?  gAlef;
+cKernable { pairKern = kernPreDal  }  /  _  MARKS  cSpace?  gDal;
+cKernable { pairKern = kernPreReh  }  /  _  MARKS  cSpace?  gReh;
+cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cSpace?  gWaw;
+cKernable { pairKern = kernPreLamAlef} / _  MARKS  cSpace?  gLamAlef;
 
 // Before a two-letter word:
-cKernable { pairKern = kernPreShort } / _  MARKS  g_space?  c_initial MARKS  c_final;
+cKernable { pairKern = kernPreShort } / _  MARKS  cSpace?  c_initial MARKS  c_final;
 
 
 // Bogus rule that will never fire (if we disable this pass):
@@ -861,7 +866,7 @@ pass(7) // { CollisionFix = 4; AutoKern = true }
 // Set up diacritic collision fixes and kerning.
 
 // Spaces serve as boundaries between collision ranges.
-cSpace { collision.flags = COLL_START + COLL_END };
+cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flags = SET_IGNORE(collision.flags) };
 
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
@@ -962,7 +967,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  g_space?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
+	/  _  cNuqtaLike?  DIACS  cSpace?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
 		gBariyehFin=F;
 
 cKernable { collision {
@@ -972,7 +977,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  g_space?  cPostKernable=N;
+	/  _  cNuqtaLike?  DIACS  cSpace?  cPostKernable=N;
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);

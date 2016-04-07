@@ -39,36 +39,36 @@ endif;
 table(glyph)
 g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
 g_sideBrMarkRight = (g_FontBslnSideBrngMrkrRt);
-cSpace = (g_space g_spaceVis);
+cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide);
 
 /////#define OPTSPACE  g_sideBrMarkLeft? cSpace? g_sideBrMarkRight?
 //////#define OPTSPACE cSpace?
 
 endtable;
 
-if (debugSpace == 1)
+//if (debugSpace == 1)
 
-if (wordSpacing == xtight)
+if (debugSpace == 1 && wordSpacing == xtight)
 g_space  >  g_spaceVisXtight;
 endif;
 
-if (wordSpacing == tight)
+if (debugSpace == 1 && wordSpacing == tight)
 g_space  >  g_spaceVisTight;
 endif;
 
-if (wordSpacing == medium)
+if (debugSpace == 1 && wordSpacing == medium)
 g_space  >  g_spaceVis;
 endif;
 
-if (wordSpacing == wide)
+if (debugSpace == 1 && wordSpacing == wide)
 g_space  >  g_spaceVisWide;
 endif;
 
-if (wordSpacing == xwide)
+if (debugSpace == 1 && wordSpacing == xwide)
 g_space  >  g_spaceVisXwide;
 endif;
 
-endif;
+//endif;
 
 endpass;
 
@@ -785,6 +785,11 @@ cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
 g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
 g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 
+
+if (hehDoachIni == heart)
+gHehDoIniQf  gWawFin  >  gHehDoIniQf_alt  gWawFin_stfh;
+cHehDoIni_noAlt  >  cHehDoIni_alt;
+endif;
 
 // Experimental - kaf tops
 ///cTakes_kafTopDia _  >  @1  g__kafTop:1;

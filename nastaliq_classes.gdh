@@ -490,6 +490,11 @@ cFehIni = ( gFehIni gFehIniBeM1 gFehIniBeF gFehIniBeM2 gFehIniJm gFehIniRe
     gFehIniSn gFehIniSd gFehIniTaF gFehIniTaM gFehIniAi gFehIniFe gFehIniQf 
     gFehIniMm gFehIniNn gFehIniHgF gFehIniHgM gFehIniHd gFehIniCh gFehIniBy 
     gFehIniBe gFehIniBeRe gFehIniBeNn gFehIniBeHg gFehIniMmX gFehIniKfX ) ;
+cHehDoIni = ( gHehDoIni gHehDoIniBeM1 gHehDoIniBeF gHehDoIniBeM2 gHehDoIniJm 
+    gHehDoIniRe gHehDoIniSn gHehDoIniSd gHehDoIniTaF gHehDoIniTaM gHehDoIniAi 
+    gHehDoIniFe gHehDoIniQf gHehDoIniMm gHehDoIniNn gHehDoIniHgF gHehDoIniHgM 
+    gHehDoIniHd gHehDoIniCh gHehDoIniBy gHehDoIniBe gHehDoIniBeRe gHehDoIniBeNn 
+    gHehDoIniBeHg gHehDoIniMmX gHehDoIniKfX ) ;
 cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehGoalIniJm 
     gHehGoalIniRe gHehGoalIniSn gHehGoalIniSd gHehGoalIniTaF gHehGoalIniTaM gHehGoalIniAi 
     gHehGoalIniFe gHehGoalIniQf gHehGoalIniMm gHehGoalIniNn gHehGoalIniHgF gHehGoalIniHgM 
@@ -629,6 +634,86 @@ c_initial { dir = DIR_ARABIC };
 c_medial { dir = DIR_ARABIC };
 c_final { dir = DIR_ARABIC };
 c_isolated { dir = DIR_ARABIC };
+
+
+// Heh-doachashmee
+
+
+gHehDoIni_alt = pseudo(postscript("absHehDoachashmeeMed"))
+	{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
+gHehDoIniAi_alt = pseudo(postscript("absHehDoachashmeeMed.ai"))
+	{ exit_ain = gHehDoMedAi.exit_ain; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
+gHehDoIniBe_alt = pseudo(postscript("absHehDoachashmeeMed.be"))
+	{ exit_beh = gHehDoMedBe.exit_beh; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
+gHehDoIniBeF_alt = pseudo(postscript("absHehDoachashmeeMed.beF"))
+	{ exit_behFinal = gHehDoMedBeF.exit_behFinal; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
+gHehDoIniBeM1_alt = pseudo(postscript("absHehDoachashmeeMed.beM1"))
+	{ exit_behLowTooth = gHehDoMedBeM1.exit_behLowTooth; n1LowerS = gHehDoMedBeM1.n1LowerS; nUpperS = gHehDoMedBeM1.nUpperS };
+gHehDoIniBeM2_alt = pseudo(postscript("absHehDoachashmeeMed.beM2"))
+	{ exit_behHighTooth = gHehDoMedBeM2.exit_behHighTooth; n1LowerS = gHehDoMedBeM2.n1LowerS; nUpperS = gHehDoMedBeM2.nUpperS };
+gHehDoIniBeHg_alt = pseudo(postscript("absHehDoachashmeeMed.behg"))
+	{ exit_behLowTooth = gHehDoMedBeHg.exit_behLowTooth; n1LowerS = gHehDoMedBeHg.n1LowerS; nUpperS = gHehDoMedBeHg.nUpperS };
+gHehDoIniBeNn_alt = pseudo(postscript("absHehDoachashmeeMed.benn"))
+	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
+gHehDoIniBeRe_alt = pseudo(postscript("absHehDoachashmeeMed.bere"))
+	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
+gHehDoIniFe_alt = pseudo(postscript("absHehDoachashmeeMed.fe"))
+	{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
+gHehDoIniJm_alt = pseudo(postscript("absHehDoachashmeeMed.jm"))
+	{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
+gHehDoIniRe_alt = pseudo(postscript("absHehDoachashmeeMed.re"))
+	{ exit_reh = gHehDoMedRe.exit_reh; n1LowerS = gHehDoMedRe.n1LowerS; nUpperS = gHehDoMedRe.nUpperS };
+gHehDoIniSd_alt = pseudo(postscript("absHehDoachashmeeMed.sd"))
+	{ exit_sad = gHehDoMedSd.exit_sad; n1LowerS = gHehDoMedSd.n1LowerS; nUpperS = gHehDoMedSd.nUpperS };
+gHehDoIniSn_alt = pseudo(postscript("absHehDoachashmeeMed.sn"))
+	{ exit_seen = gHehDoMedSn.exit_seen; n1LowerS = gHehDoMedSn.n1LowerS; nUpperS = gHehDoMedSn.nUpperS };
+gHehDoIniTaF_alt = pseudo(postscript("absHehDoachashmeeMed.taF"))
+	{ exit_tah = gHehDoMedTaF.exit_tah; n1LowerS = gHehDoMedTaF.n1LowerS; nUpperS = gHehDoMedTaF.nUpperS };
+gHehDoIniTaM_alt = pseudo(postscript("absHehDoachashmeeMed.taM"))
+	{ exit_tah = gHehDoMedTaM.exit_tah; n1LowerS = gHehDoMedTaM.n1LowerS; nUpperS = gHehDoMedTaM.nUpperS };
+gHehDoIniKfX_alt = pseudo(postscript("absHehDoachashmeeMed.kfX"))
+	{ exit_kafAlt = gHehDoMedKfX.exit_kafAlt; n1LowerS = gHehDoMedKfX.n1LowerS; nUpperS = gHehDoMedKfX.nUpperS };
+gHehDoIniMm_alt = pseudo(postscript("absHehDoachashmeeMed.mm"))
+	{ exit_meem = gHehDoMedMm.exit_meem; n1LowerS = gHehDoMedMm.n1LowerS; nUpperS = gHehDoMedMm.nUpperS };
+gHehDoIniMmX_alt = pseudo(postscript("absHehDoachashmeeMed.mmX"))
+	{ exit_meemAlt = gHehDoMedMmX.exit_meemAlt; n1LowerS = gHehDoMedMmX.n1LowerS; nUpperS = gHehDoMedMmX.nUpperS };
+gHehDoIniNn_alt = pseudo(postscript("absHehDoachashmeeMed.nn"))
+	{ exit_noon = gHehDoMedNn.exit_noon; n1LowerS = gHehDoMedNn.n1LowerS; nUpperS = gHehDoMedNn.nUpperS };
+gHehDoIniQf_alt = pseudo(postscript("absHehDoachashmeeMed.qf"))
+	{ exit_qafWawStfh = gHehDoMedQf.exit_qafWawStfh; n1LowerS = gHehDoMedQf.n1LowerS; nUpperS = gHehDoMedQf.nUpperS };
+
+c_exit_lamKaf		+=	(gHehDoIni_alt);
+c_exit_ain			+=	(gHehDoIniAi_alt);
+c_exit_beh			+=	(gHehDoIniBe_alt);
+c_exit_behFinal		+=	(gHehDoIniBeF_alt);
+c_exit_behLowTooth	+=	(gHehDoIniBeM1_alt, gHehDoIniBeHg_alt);
+c_exit_behHighTooth	+=	(gHehDoIniBeM2_alt);
+c_exit_behPreNoon	+=	(gHehDoIniBeNn_alt);
+c_exit_behPreReh	+=	(gHehDoIniBeRe_alt);
+c_exit_feh			+=	(gHehDoIniFe_alt);
+c_exit_jeem			+=	(gHehDoIniJm_alt);
+c_exit_reh			+=	(gHehDoIniRe_alt);
+c_exit_sad			+=	(gHehDoIniSd_alt);
+c_exit_seen			+=	(gHehDoIniSn_alt);
+c_exit_tah			+=	(gHehDoIniTaF_alt, gHehDoIniTaM_alt);
+c_exit_kafAlt		+=	(gHehDoIniKfX_alt);
+c_exit_meem			+=	(gHehDoIniMm_alt);
+c_exit_meemAlt		+=	(gHehDoIniMmX_alt);
+c_exit_noon			+=	(gHehDoIniNn_alt);
+c_exit_qafWawStfh	+=	(gHehDoIniQf_alt);
+
+
+cHehDoIni_noAlt = (gHehDoIni gHehDoIniAi gHehDoIniBe gHehDoIniBeF gHehDoIniBeM1 gHehDoIniBeM2 gHehDoIniBeHg 
+	gHehDoIniBeNn gHehDoIniBeRe gHehDoIniFe gHehDoIniJm  gHehDoIniRe gHehDoIniSd gHehDoIniSn
+	gHehDoIniTaF gHehDoIniTaM gHehDoIniKfX gHehDoIniMm gHehDoIniMmX gHehDoIniNn gHehDoIniQf);
+
+cHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt gHehDoIniBeM1_alt gHehDoIniBeM2_alt gHehDoIniBeHg_alt 
+	gHehDoIniBeNn_alt gHehDoIniBeRe_alt gHehDoIniFe_alt gHehDoIniJm_alt gHehDoIniRe_alt gHehDoIniSd_alt gHehDoIniSn_alt
+	gHehDoIniTaF_alt gHehDoIniTaM_alt gHehDoIniKfX_alt gHehDoIniMm_alt gHehDoIniMmX_alt gHehDoIniNn_alt gHehDoIniQf_alt);
+
+c_initial += (cHehDoIni_alt);
+cTakes_n1LowerDia += (cHehDoIni_alt);
+cTakes_nUpperDia += (cHehDoIni_alt);
 
 
 endtable;  // glyph

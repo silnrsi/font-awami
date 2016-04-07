@@ -31,6 +31,7 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 #define COLL_KERN        16
 //      COLL_ISCOL       32		// this glyph has a collision
 //      COLL_KNOWN       64		// we've figured out what's happening with this glyph
+#define COLL_ISSPACE    128		// treat this glyph as a space for the purposes of kerning
 ////#define COLL_JUMPABLE   128 -- obsolete
 ////#define COLL_OVERLAP    256 -- obsolete
 
@@ -47,6 +48,8 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 #define CLEAR_END(f)		setbits(f, COLL_END, 0)
 #define SET_KERN(f)			setbits(f, COLL_KERN, COLL_KERN)
 #define CLEAR_KERN(f)		setbits(f, COLL_KERN, 0)
+#define SET_ISSPACE(f)		setbits(f, COLL_ISSPACE, COLL_ISSPACE)
+#define CLEAR_ISSPACE(f)	setbits(f, COLL_ISSPACE, 0)
 
 #define SET_START_END(f)	setbits(f, (COLL_START + COLL_END), (COLL_START + COLL_END))
 
@@ -112,6 +115,24 @@ hehGoalHook {
         }
     }
 }
+
+// Heh-doachashmee initial
+hehDoachIni {
+	id = "hedo";
+	name.1033 = string("Initial heh doachashmee");
+	default = 0;
+    settings {
+        heart {
+            value = 0;
+            name.1033 = string("Heart shape");
+        }
+        round {
+            value = 1;
+            name.1033 = string("Round");
+        }
+    }
+}
+
 
 // Overlap kerning
 /***********
