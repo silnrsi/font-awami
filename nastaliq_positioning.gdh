@@ -787,6 +787,16 @@ c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
 endtable;
 
 
+// diacritic AND honorific attached to final base; honorific is positioned off to the left
+c_final=B  
+	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+
+// honorific attached to final base w/wo upper diac
+cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  cDiacriticUpper? _ {att.to==0};
+
 // attach to nuqta
 cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  _  cDiacriticLower? _ {att.to==0};
@@ -810,8 +820,8 @@ cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; in
 		/ ^ _  c_attLikeNqUpper?  _ {att.to==0};
 
 // attach to diacritic
-cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}  / _ ^ _;
-cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}  / _ ^ _;
+cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}  / _ ^ _ {att.to==0};
+cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}  / _ ^ _ {att.to==0};
 
 // Remove if we create a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };

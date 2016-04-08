@@ -1205,6 +1205,9 @@
 		<point type="n23Lower" mark="1">
 			<location y="-805" x="614"></location>
 		</point>
+		<point type="honorific" mark="1">
+			<location y="951" x="185"></location>
+		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="nlqChotiyehFin._bfkl" GID="65">
@@ -1228,6 +1231,9 @@
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-815" x="613"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="951" x="185"></location>
 		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
@@ -6750,6 +6756,9 @@
 		<point type="mLower" mark="1">
 			<location y="-877" x="1078"></location>
 		</point>
+		<point type="honorific" mark="1">
+			<location y="1000" x="1080"></location>
+		</point>
 		<compound PSName="_nukta" GID="1097" bbox="867, -711, 1254, -329"></compound>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<property name="mark" value="20"></property>
@@ -6768,13 +6777,16 @@
 			<location y="491" x="1061"></location>
 		</point>
 		<point type="tahUpper" mark="1">
-			<location y="503" x="1137"></location>
+			<location y="516" x="1107"></location>
 		</point>
 		<point type="mUpper" mark="1">
 			<location y="357" x="1069"></location>
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-357" x="1050"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1000" x="1074"></location>
 		</point>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<property name="mark" value="80"></property>
@@ -6799,7 +6811,10 @@
 			<location y="-369" x="1052"></location>
 		</point>
 		<point type="tahUpper" mark="1">
-			<location y="518" x="1126"></location>
+			<location y="511" x="1102"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1000" x="1074"></location>
 		</point>
 		<compound PSName="_behfin._bfkl" GID="1165" bbox="90, -112, 2074, 604"></compound>
 		<property name="mark" value="80"></property>
@@ -7254,6 +7269,9 @@
 		<point type="mLower" mark="1">
 			<location y="-1182" x="1063"></location>
 		</point>
+		<point type="honorific" mark="1">
+			<location y="1000" x="1083"></location>
+		</point>
 		<compound PSName="_nukta3" GID="1099" bbox="687, -1019, 1434, -335"></compound>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<property name="mark" value="80"></property>
@@ -7430,9 +7448,12 @@
 	</glyph>
 	<glyph PSName="absSmallHighAinMark" GID="456" UID="U+0611">
 		<point type="_mUpper" mark="1">
-			<location y="1" x="14"></location>
+			<location y="1" x="18"></location>
 		</point>
-		<compound PSName="nlqKharizabar" GID="1315" bbox="-92, 178, -37, 607" UID="U+0670"></compound>
+		<point type="_honorific" mark="1">
+			<location y="4" x="17"></location>
+		</point>
+		<compound PSName="nlqKharizabar" GID="1315" bbox="-133, 102, -62, 651" UID="U+0670"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absSmallHighRehHahMark" GID="457">
@@ -7443,7 +7464,10 @@
 	</glyph>
 	<glyph PSName="absSmallHighSeen" GID="459" UID="U+06DC">
 		<point type="_mUpper" mark="1">
-			<location y="-198" x="641"></location>
+			<location y="-24" x="350"></location>
+		</point>
+		<point type="_honorific" mark="1">
+			<location y="-21" x="346"></location>
 		</point>
 	</glyph>
 	<glyph PSName="absSmallHighTah" GID="460">
@@ -7488,6 +7512,9 @@
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-282" x="1054"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1555" x="1083"></location>
 		</point>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<compound PSName="_nukta2" GID="1098" bbox="678, 492, 1431, 875"></compound>
@@ -7585,6 +7612,9 @@
 		<point type="mLower" mark="1">
 			<location y="-282" x="1054"></location>
 		</point>
+		<point type="honorific" mark="1">
+			<location y="1500" x="1083"></location>
+		</point>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<compound PSName="_nukta3inv" GID="1100" bbox="710, 543, 1457, 1225"></compound>
 		<property name="mark" value="80"></property>
@@ -7622,6 +7652,9 @@
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-282" x="1054"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1555" x="1083"></location>
 		</point>
 		<compound PSName="_beh" GID="1096" bbox="90, -112, 2156, 657"></compound>
 		<compound PSName="_smallTah" GID="368" bbox="878, 588, 1261, 1230"></compound>
