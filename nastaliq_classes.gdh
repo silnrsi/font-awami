@@ -29,6 +29,7 @@
 #define tahU_n2vl		20
 #define n2vL			21
 #define n1L_n1U			22
+#define gstroke			23
 
 
 table(glyph) {MUnits = 2048};
@@ -47,7 +48,8 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot3u, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__smallV, g__dot1u_smallTah, g__dot1u_smallV);   // g__kafTop
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__smallV, g__dot1u_smallTah, g__dot1u_smallV,   // g__kafTop,
+	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow); // also rings
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
@@ -86,7 +88,7 @@ gGhainIni0 = pseudo(postscript("absAinIni"))	{nuqtaG = n1U};
 gFehIni0 = pseudo(postscript("absFehIni"))		{nuqtaG = n1U};
 gQafIni0 = pseudo(postscript("absFehIni"))		{nuqtaG = n2U};
 gKafIni0 = pseudo(postscript("absKehehIni"))	{nuqtaG = nNone};
-gGafIni0 = pseudo(postscript("absGafIni"))		{nuqtaG = nNone};
+gGafIni0 = pseudo(postscript("absGafIni"))		{nuqtaG = gstroke};
 gGuehIni0 = pseudo(postscript("absGafIni"))		{nuqtaG = n2vL};
 gNgoehIni0 = pseudo(postscript("absGafIni"))	{nuqtaG = n2U};
 gLamIni0 = pseudo(postscript("absLamIni"))		{nuqtaG = nNone};
@@ -135,7 +137,7 @@ gGhainMed0 = pseudo(postscript("absAinMed"))	{nuqtaG = n1U};
 gFehMed0 = pseudo(postscript("absFehMed"))		{nuqtaG = n1U};
 gQafMed0 = pseudo(postscript("absFehMed"))		{nuqtaG = n2U};
 gKafMed0 = pseudo(postscript("absKehehMed"))	{nuqtaG = nNone};
-gGafMed0 = pseudo(postscript("absGafMed"))		{nuqtaG = nNone};
+gGafMed0 = pseudo(postscript("absGafMed"))		{nuqtaG = gstroke};
 gGuehMed0 = pseudo(postscript("absGafMed"))		{nuqtaG = n2vL};
 gNgoehMed0 = pseudo(postscript("absGafMed"))	{nuqtaG = n2U};
 gLamMed0 = pseudo(postscript("absLamMed"))		{nuqtaG = nNone};
@@ -184,7 +186,7 @@ gGhainFin0 = pseudo(postscript("absAinFin"))	{nuqtaG = n1U};
 gFehFin0 = pseudo(postscript("absFehFin"))		{nuqtaG = n1U};
 gQafFin0 = pseudo(postscript("absFehFin"))		{nuqtaG = n2U};
 gKafFin0 = pseudo(postscript("absKehehFin"))	{nuqtaG = nNone};
-gGafFin0 = pseudo(postscript("absGafFin"))		{nuqtaG = nNone};
+gGafFin0 = pseudo(postscript("absGafFin"))		{nuqtaG = gstroke};
 gGuehFin0 = pseudo(postscript("absGafFin"))		{nuqtaG = n2vL};
 gNgoehFin0 = pseudo(postscript("absGafFin"))	{nuqtaG = n2U};
 gLamFin0 = pseudo(postscript("absLamFin"))		{nuqtaG = nNone};
