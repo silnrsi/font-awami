@@ -464,6 +464,8 @@ cNuqtaLikeLower {
 
 g__bar { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
 
+cgafStrokeDia { collision { margin = 0; flags = 0 }; sequence { class = 0; order = 0 } };
+
 
 // Smaller nuqta glyphs need larger margins:
 g__dot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150

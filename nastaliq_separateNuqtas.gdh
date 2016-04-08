@@ -31,8 +31,14 @@
 (gFehIni0 gFehMed0 gFehFin0)		_	>	(gFehIni_raw gFehMed_raw gFehFin):1		g__dot1u:1;
 (gQafIni0 gQafMed0 gQafFin0)		_	>	(gFehIni_raw gFehMed_raw gQafFin):1		g__dot2u:1;
 (gKafIni0 gKafMed0 gKafFin0)			>	(gKafIni_raw gKafMed_raw gKafFin);
+
+if (debugGaf == 0)
+(gGafIni0 gGafMed0 gGafFin0)			>	(gGafIni_raw gGafMed_raw gGafFin);
+else
 (gGafIni0)							_	>	(gKafIni_raw)							g__gafStroke_short:1;
 			(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
+endif;
+
 (gGuehIni0 gGuehMed0 gGuehFin0)		_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2vl:1;
 (gNgoehIni0 gNgoehMed0 gNgoehFin0)	_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2u:1;
 (gLamIni0 gLamMed0 gLamFin0)			>	(gLamIni_raw gLamMed_raw gLamFin);
