@@ -807,6 +807,10 @@ cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; w
 cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; insert=true}
 		/ ^ _  c_attLikeNqUpper?  _ {att.to==0}  (gAinFin gChotiyehFin gChotiyehFin_bfkl gJeemFin);
 
+// Only a few glyphs attach the small alef at a special place.
+cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; insert=true}
+		/ ^ _  c_attLikeNqUpper?  _ {att.to==0};
+
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
 cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};

@@ -76,10 +76,11 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 
 table(glyph) {AttributeOverride = 1};
 
-//g__gafStroke {gafStrokeM = point(1400m, 1810m) };
-//g__gafStroke_short {gafStrokeM = point(1400m, 1770m) };
+g__gafStroke {gafStrokeM = point(1370m, 1750m) };
+g__gafStroke_short {gafStrokeM = point(1370m, 1720m) };
 
-gKafMed {gafStrokeS = point(100, 1250) };
+gKafIni { gafStrokeS = point(170m, 1340m) };
+gKafIniLm { gafStrokeS = point(160m, 2060m) };
 
 endtable;
 
@@ -231,7 +232,7 @@ debugSpace {
 debugGaf {
 	id = "dbgf";
 	name.1033 = string("Gaf stroke");	
-	default = 0;
+	default = 1;
     settings {
         ffalse {
             value = 0;
