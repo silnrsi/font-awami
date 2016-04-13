@@ -620,11 +620,20 @@ c_dkgal = (c_dkgal_postAlt, gKafMedBe, gGafMedBe);
 c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaAboveFin_stfh ) ;
 
 
+// Diacritic combinations
+
+cSecond = (gZabar, gPesh)
+cShaddaPlus = (g__shadda_zabar, g__shadda_pesh);
+cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh);
+
+
 // Diacritics
 
-cDiacriticUpper = ( gHamzaAbove gZabar gPesh gShadda gJazm gKharizabar gDozabar 
-    gDopesh gUltaPesh gNoonGhunnaMark gSmallHighSadMark gSmallHighAinMark gSmallHighRehDadMark 
-    gSmallHighRehHahMark gSmallHighSeen gNameMarker gMaddaAbove, gVowelSmallV, gVowelInvSmallV );
+cDiacriticUpper = ( gHamzaAbove, gZabar, gPesh, gShadda, gJazm, gKharizabar, gDozabar, 
+    gDopesh, gUltaPesh, gNoonGhunnaMark, gVowelSmallV, gVowelInvSmallV,
+	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
+    gSmallHighRehHahMark, gSmallHighSeen, gNameMarker, gMaddaAbove,
+	cShaddaPlus, cKharizabarPlus);
 cDiacriticLower = ( gZair gKharizair gDozair ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);
@@ -639,7 +648,6 @@ c_isolated { dir = DIR_ARABIC };
 
 
 // Heh-doachashmee
-
 
 gHehDoIni_alt = pseudo(postscript("absHehDoachashmeeMed"))
 	{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };

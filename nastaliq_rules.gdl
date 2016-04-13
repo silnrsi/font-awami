@@ -250,7 +250,10 @@ endtable; // feature
 
 
 
+///#define DIACS [[cDiacritic cDiacritic?]? cDiacritic]?
+
 #define DIACS [cDiacritic cDiacritic?]?
+
 
 // TODO: include diacritic combinations
 #define MARKS  cNuqtaLike?  DIACS

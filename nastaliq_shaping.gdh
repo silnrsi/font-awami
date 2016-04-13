@@ -105,6 +105,11 @@ pass(1)
 
 #include "cp1252.gdh"
 
+	// Combine certain diacritics into single glyphs.
+
+	gShadda  cSecond  >  _ cShaddaPlus:(1 2);
+	gKharizabar  cSecond  >  _  cKharizabarPlus:(1 2);
+
 endpass; // 1
 
 // nuqta slot attribute:
