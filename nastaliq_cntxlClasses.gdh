@@ -174,7 +174,7 @@ c_final = (
 	gBariyehFin
 );
 
-c_isolated = (
+c_isolate = (
 	gBeh, gTeh, gTheh, gPeh, gTteh, gBeeh,
 	gJeem, gHah, gKhah, gTcheh, gTcheheh, gDyeh,
 	gSeen, gSheen, gSad, gDad,
@@ -198,7 +198,9 @@ c_isolated = (
 );
 
 cFin = c_final;
-cIso = c_isolated;
+cIso = c_isolate;
+
+cIsoFin = (cIso cFin);
 
 endtable; // glyph
 

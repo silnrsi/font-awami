@@ -86,7 +86,7 @@ cSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 
-if (debugSpace == 1)
+if (showInvis == 1)
 g_sideBrMarkRight {advance.x = 0m};
 g_sideBrMarkLeft {advance.x = 0m};
 endif;
@@ -479,9 +479,9 @@ cDiacriticUpper {
 	//// ; sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; } - set in the rule
 };
 
-gNoonGhunnaMark { collision.margin = 300; marginweight = 300 }; // override
+gNoonGhunnaMark { collision.margin = 300m; marginweight = 300 }; // override
 
-cBase = (c_initial, c_medial, c_final);
+cBase = (c_isolate, c_initial, c_medial, c_final);
 
 cDiacriticLower {
 	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
@@ -787,21 +787,28 @@ c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
 endtable;
 
 
-// diacritic AND honorific attached to final base; honorific is positioned off to the left
-c_final=B  
+// diacritic AND honorific attached to final base or its nuqta; honorific is positioned off to the left
+cIsoFin=B  cNuqtaLikeUpper=N
+	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+		/ ^  _  c_attLikeNqLower?  _  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+
+cIsoFin=B  
 	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
 
-// honorific attached to final base w/wo upper diac
+// honorific attached to final base wo upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  cDiacriticUpper? _ {att.to==0};
+		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};
+
 
 // attach to nuqta
 cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  _  cDiacriticLower? _ {att.to==0};
 cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; with=mLowerM}; insert=true}
 		/ ^ _  _  c_attLikeNqUpper?  _ {att.to==0};
+
 
 // Special contextual cases - eg, kaf/lam followed by tailed final 
 cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; insert=true}
@@ -829,6 +836,7 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 
 // Remove if we create a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
+
 
 endpass; // pos - 5 (or 3)
 
@@ -906,6 +914,16 @@ gNameMarker  { collision {
 	max.x = 400m;
 	min.y = -300m;
 	max.y = 800m;
+} };
+
+chonorificDia { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	margin = 300m; marginweight = 500; // don't squeeze these in!
+	min.x = -250m;
+	max.x = 0m;
+	min.y = -50m;
+	max.y = 500m;
 } };
 
 // Diacritics attached to bases:

@@ -46,29 +46,26 @@ cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_
 
 endtable;
 
-//if (debugSpace == 1)
 
-if (debugSpace == 1 && wordSpacing == xtight)
+if (showInvis == 1 && wordSpacing == xtight)
 g_space  >  g_spaceVisXtight;
 endif;
 
-if (debugSpace == 1 && wordSpacing == tight)
+if (showInvis == 1 && wordSpacing == tight)
 g_space  >  g_spaceVisTight;
 endif;
 
-if (debugSpace == 1 && wordSpacing == medium)
+if (showInvis == 1 && wordSpacing == medium)
 g_space  >  g_spaceVis;
 endif;
 
-if (debugSpace == 1 && wordSpacing == wide)
+if (showInvis == 1 && wordSpacing == wide)
 g_space  >  g_spaceVisWide;
 endif;
 
-if (debugSpace == 1 && wordSpacing == xwide)
+if (showInvis == 1 && wordSpacing == xwide)
 g_space  >  g_spaceVisXwide;
 endif;
-
-//endif;
 
 endpass;
 
