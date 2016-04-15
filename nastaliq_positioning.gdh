@@ -299,7 +299,7 @@ table(glyph) {AttributeOverride = 0}
 // Define for all needed glyphs where they have not been defined in the font.
 c_initial {kernBbRightS = point(0m,0m) };
 c_final {kernBbLeftS = point(0m,0m) };
-c_isolated {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+c_isolate {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 gComma {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 gFullStop {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
@@ -311,12 +311,12 @@ endtable;
 
 table(glyph)
 
-cPostKernable = (c_initial  c_isolated  cKernPunct) {
+cPostKernable = (c_initial  c_isolate  cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
-cKernable = (c_isolated  c_final  cKernPunct)
+cKernable = (c_isolate  c_final  cKernPunct)
 {
 	//// collision.kern = true;
 	dbgBbLeft = bb.left; dbgLsb = lsb;
@@ -798,9 +798,17 @@ cIsoFin=B
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
 
+// honorific attached to final beh with lower nuqtas, wo upper diac - uses standard upper nuqta location
+cBehFin=B  chonorificDia=H {att {to=@B; at=nUpperS; with=honorificM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
+
 // honorific attached to final base wo upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
+
+// honorific attached to final base wo upper diac
+cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
 
 
 // attach to nuqta

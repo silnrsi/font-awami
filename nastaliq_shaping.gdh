@@ -92,13 +92,13 @@ pass(1)
 
 	// Create basic contextual forms. 
 	
-	cDualLinkIso  cDualLinkIso   >  cDualLinkIni  cDualLinkFin  / _  DIACS ^ _ ;
+	cDualLinkIso  cDualLinkIso   >  cDualLinkIni  cDualLinkFin  / _ ^ DIACS  _ ;
 	
-	cDualLinkIso  cRightLinkIso  >  cDualLinkIni  cRightLinkFin  /  _ DIACS ^ _ ;
+	cDualLinkIso  cRightLinkIso  >  cDualLinkIni  cRightLinkFin  /  _ ^ DIACS  _ ;
 		
-	cDualLinkFin  cDualLinkIso   >  cDualLinkMed  cDualLinkFin  / _ DIACS ^ _ ;
+	cDualLinkFin  cDualLinkIso   >  cDualLinkMed  cDualLinkFin  / _ ^ DIACS  _ ;
 	
-	cDualLinkFin  cRightLinkIso  >  cDualLinkMed  cRightLinkFin  / _ DIACS ^ _ ;
+	cDualLinkFin  cRightLinkIso  >  cDualLinkMed  cRightLinkFin  / _ ^ DIACS _ ;
 
 #include "cp1252.gdh"
 
