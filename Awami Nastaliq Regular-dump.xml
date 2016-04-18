@@ -1,9 +1,11 @@
-<!-- Generated on Mon, 18 Apr 2016 14:56:24 +0000 by Peter Martin -->
+<!-- Generated on Mon, 18 Apr 2016 21:07:16 +0000 by  -->
+
+<!-- *** WARNING: This font has not been saved since modifications were made *** -->
 
 <font>
 
 	<!-- IDENTIFICATION -->
-	<file_name>/Users/martinpk/Documents/Fonts/ABS/absfonts wc/Nastaliq/Awami Nastaliq/Awami Nastaliq Regular.vfb</file_name>
+	<file_name>C:\ABS\Nastaliq\Awami Nastaliq\Awami Nastaliq Regular.vfb</file_name>
 	<family_name>Awami Nastaliq</family_name>
 	<style_name>Regular</style_name>
 	<full_name>Awami Nastaliq</full_name>
@@ -74,7 +76,7 @@
 	<stem_snap_v >[[82,103,120], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]</stem_snap_v >
 
 	<!-- OTHER  -->
-	<modified>0</modified>
+	<modified>1</modified>
 	<classes>['.new: ']</classes>
 	<ot_classes>None</ot_classes>
 	<features>[]</features>
@@ -1919,6 +1921,7 @@
 				<anchor>hamzaUpper: 436,437</anchor>
 				<anchor>mUpper: 415,421</anchor>
 				<anchor>mLower: 408,-214</anchor>
+				<anchor>honorific: 150,621</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>549</width>
@@ -16993,13 +16996,16 @@
 			<name>absWawFin._stfh</name>
 			<note>None</note>
 			<node_count>11</node_count>
-			<node_hash>31e0499bd8097d4df3744005d111833c4aedc15893e7ca4c456170df</node_hash>
+			<node_hash>3fd26ae2a9df6db46edb6a8444d787e1e529bcd88550c8cd5a10421e</node_hash>
 			<anchors>
-				<anchor>_exit_qafWawStfh: 638,649</anchor>
-				<anchor>nUpper: 446,1027</anchor>
-				<anchor>n1Lower: 448,-126</anchor>
-				<anchor>hamzaUpper: 444,1030</anchor>
+				<anchor>_exit_qafWawStfh: 644,575</anchor>
+				<anchor>nUpper: 448,973</anchor>
+				<anchor>n1Lower: 341,-196</anchor>
+				<anchor>hamzaUpper: 432,978</anchor>
 				<anchor>honorific: -66,1035</anchor>
+				<anchor>mLower: 309,-215</anchor>
+				<anchor>mUpper: 471,954</anchor>
+				<anchor>invV: 356,-201</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>751</width>
@@ -17205,6 +17211,7 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>_exit_hehGoalFinalStfh: 499,255</anchor>
+				<anchor>honorific: 150,621</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -21253,6 +21260,34 @@
 				<component>nlqPesh: delta: -140.0,860.0, scale: 1.0,1.0</component>
 			</components>
 			<width>32</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absTehMarbutaGoalFin._stfh</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>0</component_count>
+			<width>0</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_shadda_kharizabar</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 0,-165</anchor>
+				<anchor>mUpper: 0,1209</anchor>
+			</anchors>
+			<component_count>2</component_count>
+			<components>
+				<component>absShadda: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqKharizabar: delta: 0.0,310.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>

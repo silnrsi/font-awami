@@ -253,43 +253,42 @@ cBehIni0 = (gBehIni0, gTehIni0, gThehIni0, gTtehIni0, gPehIni0, gBeehIni0);
 cBehMed0 = (gBehMed0, gTehMed0, gThehMed0, gTtehMed0, gPehMed0, gBeehMed0);
 cBehFin0 = (gBehFin0, gTehFin0, gThehFin0, gTtehFin0, gPehFin0, gBeehFin0);
 
-cBehFin = ( gBehFin			gTehFin			gThehFin		gTtehFin		gPehFin 
-			gBehFin_bfkl	gTehFin_bfkl	gThehFin_bfkl	gTtehFin_bfkl	gPehFin_bfkl) ;
+cBehFin = (gBehFin) ;
 
 cJeemIso = (gJeem, gTcheh, gHah, gKhah, gDyeh, gNyeh, gTcheheh);
 cJeemIni0 = (gJeemIni0, gTchehIni0, gHahIni0, gKhahIni0, gDyehIni0, gNyehIni0, gTchehehIni0);
 cJeemMed0 = (gJeemMed0, gTchehMed0, gHahMed0, gKhahMed0, gDyehMed0, gNyehMed0, gTchehehMed0);
 cJeemFin0 = (gJeemFin0, gTchehFin0, gHahFin0, gKhahFin0, gDyehFin0, gNyehFin0, gTchehehFin0);
 
-cJeemFin = ( gJeemFin, gTchehFin, gHahFin, gKhahFin, gDyehFin ) ;  // gTchehehFin
+cJeemFin = (gJeemFin) ;
 
 cSeenIso = (gSeen, gSheen, gSeenFourDotsAbove);
 cSeenIni0 = (gSeenIni0, gSheenIni0, gSeenFourDotsAboveIni0);
 cSeenMed0 = (gSeenMed0, gSheenMed0, gSeenFourDotsAboveMed0);
 cSeenFin0 = (gSeenFin0, gSheenFin0, gSeenFourDotsAboveFin0);
 
-cSeenFin = (gSeenFin, gSheenFin);
+cSeenFin = (gSeenFin);
 
 cSadIso = (gSad, gDad);
 cSadIni0 = (gSadIni0, gDadIni0);
 cSadMed0 = (gSadMed0, gDadMed0);
 cSadFin0 = (gSadFin0, gDadFin0);
 
-cSadFin = (gSadFin, gDadFin);
+cSadFin = (gSadFin);
 
 cTahIso = (gTah, gZah);
 cTahIni0 = (gTahIni0, gZahIni0);
 cTahMed0 = (gTahMed0, gZahMed0);
 cTahFin0 = (gTahFin0, gZahFin0);
 
-cTahFin = (gTahFin, gZahFin);
+cTahFin = (gTahFin);
 
 cAinIso = (gAin, gGhain);
 cAinIni0 = (gAinIni0, gGhainIni0);
 cAinMed0 = (gAinMed0, gGhainMed0);
 cAinFin0 = (gAinFin0, gGhainFin0);
 
-cAinFin = (gAinFin, gGhainFin);
+cAinFin = (gAinFin);
 
 cFehIso = (gFeh);
 cFehIni0 = (gFehIni0);
@@ -329,8 +328,8 @@ cHehGoalMed0 = (gHehGoalMed0, gTehMarbutaMed0, gTehMarbutaGoalMed0, gHehGoalHamz
 cHehGoalFin0 = (gHehGoalFin0, gTehMarbutaFin0, gTehMarbutaGoalFin0, gHehGoalHamzaFin0);
 
 cHehGoalFin = (
-	gHehGoalFin,		gTehMarbutaGoalFin,			gHehGoalHamzaFin
-	gHehGoalFin_stfh,	gTehMarbutaGoalFin_stfh,	gHehGoalHamzaFin_stfh);
+	gHehGoalFin,		gHehGoalHamzaFin
+	gHehGoalFin_stfh,	gHehGoalHamzaFin_stfh);
 
 
 cHehDoIso = (gHehDo);
@@ -427,7 +426,7 @@ cAlefFin0 = (gAlefFin0, gAlefHamzaAboveFin0, gAlefHamzaBelowFin0, gAlefWavyHAbov
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow);
 cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0, gDalDotBelowSmallTahFin0, gDalTwoVertBelowSmallTahFin0, gThalDotBelowFin0);
 
-cDalFin = ( gDalFin gDdalFin gThalFin, gDalDotBelowSmallTahFin, gDalTwoVertBelowSmallTahFin, gThalDotBelowFin0 ) ;
+cDalFin = (gDalFin); // gDdalFin gThalFin, gDalDotBelowSmallTahFin, gDalTwoVertBelowSmallTahFin, gThalDotBelowFin0 ) ;
 
 cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove);
@@ -435,10 +434,7 @@ cRehFin0 = (gRehFin0, gZainFin0, gRrehFin0, gJehFin0, gRehDotBelowFin0, gRehDotB
 	gRehTwoDotsAboveFin0);
 
 // TODO: we no longer need all these various reh forms:
-cRehFin = ( gRehFin			gRrehFin		gZainFin		gJehFin 	gRehDotBelowDotAboveFin0
-			gRehFin_jkl		gRrehFin_jkl	gZainFin_jkl	gJehFin_jkl 
-			gRehFin_sshg	gRrehFin_sshg	gZainFin_sshg	gJehFin_sshg
-			gRehFin_hgM		gRrehFin_hgM	gZainFin_hgM	gJehFin_hgM ) ;
+cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
 
 cWawIso = (gWaw, gWawHamzaAbove);
@@ -598,7 +594,7 @@ c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss
 
 
 // Does not initiate alternate (kinked) kaf:
-c_dkg_noKalt = ( gDalFin gDdalFin gThalFin gDalDotBelowSmallTahFin gDalTwoVertBelowSmallTahFin gThalDotBelowFin
+c_dkg_noKalt = ( gDalFin    // gDalDotBelowSmallTahFin gDalTwoVertBelowSmallTahFin gThalDotBelowFin
 	gKafFin gGafFin 
 	gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSd gKafMedTaF
 	gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn gKafMedHgF gKafMedHd gKafMedCh 
@@ -617,13 +613,15 @@ c_dkgal_postAlt = ( c_dkg_noKalt, c_al_postKalt ) ;
 c_dkgal = (c_dkgal_postAlt, gKafMedBe, gGafMedBe);
 
 // Alternate qaf and waw forms
-c_qw = ( gQafFin gQafFin_stfhM gWawFin gWawFin_stfh gWawHamzaAboveFin gWawHamzaAboveFin_stfh ) ;
+c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh) ;
 
 
 // Diacritic combinations
 
-cSecond = (gZabar, gPesh)
-cShaddaPlus = (g__shadda_zabar, g__shadda_pesh);
+cPostShadda = (gZabar, gPesh, gKharizabar);
+cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_kharizabar);
+
+cPostKharizabar = (gZabar, gPesh);
 cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh);
 
 

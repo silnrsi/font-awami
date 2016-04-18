@@ -325,7 +325,7 @@ cKernable = (c_isolate  c_final  cKernPunct)
 
 
 
-c_jumpTail = ( cJeemFin, gAinFin, gGhainFin );
+c_jumpTail = ( cJeemFin, gAinFin );
 
 // TODO: do exclusion glyphs correctly.
 // TODO: don't use them for ngoeh
@@ -757,8 +757,8 @@ table(positioning)
 table(glyph)
 
 c_final_wo_diac = cFin;
-c_final_wo_diac -= (gWawHamzaAboveFin, gWawHamzaAboveFin_stfh, gAlefMaddaFin, gLamAlefMaddaFin, gAlefHamzaFin, gLamAlefHamzaFin,
-	gHehGoalHamzaFin, gHehGoalHamzaFin_stfh, gYehHamzaAboveFin);
+c_final_wo_diac -= (gAlefMaddaFin, gLamAlefMaddaFin, gAlefHamzaFin, gLamAlefHamzaFin,
+	gHehGoalHamzaFin, gHehGoalHamzaFin_stfh);
 	
 
 // many diacritics are attached to initials and medials as if they were nuqtas - but not all
@@ -800,7 +800,7 @@ cIsoFin=B
 
 // honorific attached to final beh with lower nuqtas, wo upper diac - uses standard upper nuqta location
 cBehFin=B  chonorificDia=H {att {to=@B; at=nUpperS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};
 
 // honorific attached to final base wo upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
