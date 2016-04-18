@@ -374,6 +374,7 @@ pass(3)
 
 // Lam-alef ligatures
 
+/*****
 gLamIni_raw  gAlefFin  >  gLamAlef:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
 gLamMed_raw  gAlefFin  >  gLamAlefFin:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
@@ -385,6 +386,7 @@ gLamMed_raw  gAlefMaddaFin  >  gLamAlefMaddaFin:(1 4)  _  /  _  g__bar? cDiacrit
 gLamIni_raw  gAlefHamzaFin  >  gLamAlefHamza:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
 
 gLamMed_raw  gAlefHamzaFin  >  gLamAlefHamzaFin:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
+*****/
 
 gAlef  gLamIni_raw  gLamMed_raw  gHehGoalFin  >  gLigatureAllah:(1 2 3 4) _  _  _;
 
@@ -419,7 +421,6 @@ c_preReF_hgM = (gHehGoalMed_raw);
 
 endtable;
 
-// TODO: get rid of all the various final forms.
 
 gBehFin  >  gBehFin_bfkl	/  ^  c_preBe_bfkl MARKS  _;
 
@@ -432,6 +433,9 @@ gRehFin  >  gRehFin_hgM		/  ^ c_preReF_hgM MARKS  _;
 ////	/  ^ c_preHgF_stfh MARKS  _;
 
 gChotiyehFin  >  gChotiyehFin_bfkl  /  ^ c_preChF_bfkl MARKS  _ ;
+
+gAlefFin  >  gAlefFin_lm	/  ^ (gLamIni_raw gLamMed_raw) MARKS  _ ;
+
 
 // Situations where characters before have an effect:
 
@@ -607,6 +611,8 @@ cMed_raw  >  cMedHd		/  ^ MPRECXT _  MARKS  (gHehDoFin cHehDoMed);
 cMed_raw  >  cMedCh		/  ^ MPRECXT _  MARKS  cChotiyehFin;
 cMed_raw  >  cMedBy		/  ^ MPRECXT _  MARKS   gBariyehFin;
 
+gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT _  MARKS  gAlefFin_lm;
+
 // No contextual forms for this glyph:
 gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
@@ -735,6 +741,8 @@ gBehIni_raw  >  gBehIniHgM	/ _ MARKS  cHehGoalMed;
 gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (gHehDoFin cHehDoMed);
 gBehIni_raw  >  gBehIniCh 	/ _ MARKS  (gChotiyehFin_bfkl gChotiyehFin);
 gBehIni_raw  >  gBehIniBy  	/ _ MARKS  gBariyehFin;
+
+gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 
 #endif // !QUICKCOMPILE
 
