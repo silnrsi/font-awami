@@ -23,13 +23,15 @@
 #define w_hook			14	
 #define w_bar			15
 #define w_smallV		16
-#define n1U_tahU		17
-#define n1U_smallV		18
-#define tahU_n1L		19
-#define tahU_n2vl		20
-#define n2vL			21
-#define n1L_n1U			22
-#define gstroke			23
+#define w_ring			17
+#define n1U_tahU		18
+#define n1U_smallV		19
+#define tahU_n1L		20
+#define tahU_n2vl		21
+#define n2vL			22
+#define n1L_n1U			23
+#define gstroke			24
+
 
 
 table(glyph) {MUnits = 2048};
@@ -49,9 +51,10 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__smallV, g__dot1u_smallTah, g__dot1u_smallV,   // g__kafTop,
+	g__attachedRing,
 	g__gafStroke, g__gafStroke_short);
-cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small);
-cNuqtaLikeMiddle = (g__bar, g__barNarrow); // also rings
+cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, );
+cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle);
 
@@ -389,6 +392,7 @@ gDalDotBelowSmallTahFin0 = pseudo(postscript("absDalFin"))
 gDalTwoVertBelowSmallTahFin0
 		= pseudo(postscript("absDalFin"))			{nuqtaG = tahU_n2vl};
 gThalDotBelowFin0 = pseudo(postscript("absDalFin"))	{nuqtaG = n1L};
+gDalRingFin0 = pseudo(postscript("absDalFin"))		{nuqtaG = w_ring};
 
 gRehFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = nNone};
 gZainFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = n1U};
@@ -397,9 +401,11 @@ gJehFin0 = pseudo(postscript("absRehFin"))			{nuqtaG = n3U};
 gRehDotBelowFin0 = pseudo(postscript("absRehFin"))	{nuqtaG = n1L};
 gRehDotBelowDotAboveFin0 = pseudo(postscript("absRehFin"))	{nuqtaG = n1L_n1U};
 gRehTwoDotsAboveFin0 = pseudo(postscript("absRehFin"))	{nuqtaG = n2L};
+gRehRingFin0 = pseudo(postscript("absRehFin"))		{nuqtaG = w_ring};
 
-gWawFin0 = pseudo(postscript("absWawFin"))				{nuqtaG = nNone};
-gWawHamzaAboveFin0 = pseudo(postscript("absWawFin"))	{nuqtaG = w_hamza};
+gWawFin0 = pseudo(postscript("absWawFin"))			{nuqtaG = nNone};
+gWawHamzaAboveFin0 = pseudo(postscript("absWawFin")){nuqtaG = w_hamza};
+gWawRingFin0 = pseudo(postscript("absWawFin"))		{nuqtaG = w_ring};
 
 
 // Special cases
@@ -423,22 +429,24 @@ cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefW
 cAlefFin0 = (gAlefFin0, gAlefHamzaAboveFin0, gAlefHamzaBelowFin0, gAlefWavyHAboveFin0, gAlefWavyHBelowFin0,
 				gAlefMaddaFin);
 
-cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow);
-cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0, gDalDotBelowSmallTahFin0, gDalTwoVertBelowSmallTahFin0, gThalDotBelowFin0);
+cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, 
+	gDalRing);
+cDalFin0 = (gDalFin0, gThalFin0, gDdalFin0, gDalDotBelowSmallTahFin0, gDalTwoVertBelowSmallTahFin0, gThalDotBelowFin0, 
+	gDalRingFin0);
 
 cDalFin = (gDalFin); // gDdalFin gThalFin, gDalDotBelowSmallTahFin, gDalTwoVertBelowSmallTahFin, gThalDotBelowFin0 ) ;
 
 cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
-	gRehTwoDotsAbove);
+	gRehTwoDotsAbove, gRehRing);
 cRehFin0 = (gRehFin0, gZainFin0, gRrehFin0, gJehFin0, gRehDotBelowFin0, gRehDotBelowDotAboveFin0, 
-	gRehTwoDotsAboveFin0);
+	gRehTwoDotsAboveFin0, gRehRingFin0);
 
 // TODO: we no longer need all these various reh forms:
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
 
-cWawIso = (gWaw, gWawHamzaAbove);
-cWawFin0 = (gWawFin0, gWawHamzaAboveFin0);
+cWawIso = (gWaw, gWawHamzaAbove, gWawRing);
+cWawFin0 = (gWawFin0, gWawHamzaAboveFin0, gWawRingFin0);
 
 cBariyehIso = (gBariyeh, gBariyehHamza);		// bariyeh -> behIni + 2Nlower
 cBariyehFin0 = (gBariyehFin0, gBariyehHamzaFin0);  // bariyeh+hamza eventually replaced with beh + bariyeh

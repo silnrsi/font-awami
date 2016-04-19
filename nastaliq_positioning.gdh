@@ -258,6 +258,11 @@ cTakes_tahUpperDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
 	/ _=B  _=U;
 
+cTakes_ringDia
+	cringDia { attach {to = @B; at = ringS; with = ringM } }
+	/ _=B  _=U;
+
+
 
 // Lower nuqta attachment
 
@@ -464,6 +469,7 @@ cNuqtaLikeLower {
 };
 
 g__bar { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
+g__attachedRing { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
 
 cgafStrokeDia { collision { margin = 0; flags = 0 }; sequence { class = 0; order = 0 } };
 
@@ -788,6 +794,17 @@ c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
 endtable;
 
 
+// Honorifics with diacritics:
+table(glyph)
+gZabar { honorificS = point(-200m, 300m) };
+gPesh { honorificS = point(-200m, 300m) };
+endtable;
+
+cDiacriticUpper=D  chonorificDia=H {att {to=@D; at=honorificS; with=honorificM}; insert=true}
+		/ ^ _  _ {att.to==0};
+
+/****
+// Alternate approach to honorifics with diacritics:
 // diacritic AND honorific attached to final base or its nuqta; honorific is positioned off to the left
 cIsoFin=B  cNuqtaLikeUpper=N
 	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
@@ -798,16 +815,19 @@ cIsoFin=B
 	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+****/
 
-// honorific attached to final beh with lower nuqtas, wo upper diac - uses standard upper nuqta location
+
+
+// honorific attached to final beh with lower nuqtas, w/o upper diac - uses standard upper nuqta location
 cBehFin=B  chonorificDia=H {att {to=@B; at=nUpperS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  cDiacriticLower?  _ {att.to==0};
 
-// honorific attached to final base wo upper diac
+// honorific attached to final base w/o upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
 
-// honorific attached to final base wo upper diac
+// honorific attached to final base w/o upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLower?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
 
