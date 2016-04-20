@@ -51,9 +51,8 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__smallV, g__dot1u_smallTah, g__dot1u_smallV,   // g__kafTop,
-	g__attachedRing,
 	g__gafStroke, g__gafStroke_short);
-cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, );
+cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle);
@@ -94,6 +93,7 @@ gKafIni0 = pseudo(postscript("absKehehIni"))	{nuqtaG = nNone};
 gGafIni0 = pseudo(postscript("absGafIni"))		{nuqtaG = gstroke};
 gGuehIni0 = pseudo(postscript("absGafIni"))		{nuqtaG = n2vL};
 gNgoehIni0 = pseudo(postscript("absGafIni"))	{nuqtaG = n2U};
+gKafRingIni0 = pseudo(postscript("absKehehIni"))	{nuqtaG = w_ring};
 gLamIni0 = pseudo(postscript("absLamIni"))		{nuqtaG = nNone};
 gLamBarIni0 = pseudo(postscript("absLamIni"))	{nuqtaG = w_bar};
 gLamSmallVIni0 = pseudo(postscript("absLamIni")){nuqtaG = w_smallV};
@@ -143,6 +143,7 @@ gKafMed0 = pseudo(postscript("absKehehMed"))	{nuqtaG = nNone};
 gGafMed0 = pseudo(postscript("absGafMed"))		{nuqtaG = gstroke};
 gGuehMed0 = pseudo(postscript("absGafMed"))		{nuqtaG = n2vL};
 gNgoehMed0 = pseudo(postscript("absGafMed"))	{nuqtaG = n2U};
+gKafRingMed0 = pseudo(postscript("absKehehMed"))	{nuqtaG = w_ring};
 gLamMed0 = pseudo(postscript("absLamMed"))		{nuqtaG = nNone};
 gLamBarMed0 = pseudo(postscript("absLamMed"))	{nuqtaG = w_bar};
 gLamSmallVMed0 = pseudo(postscript("absLamMed")){nuqtaG = w_smallV};
@@ -192,6 +193,7 @@ gKafFin0 = pseudo(postscript("absKehehFin"))	{nuqtaG = nNone};
 gGafFin0 = pseudo(postscript("absGafFin"))		{nuqtaG = gstroke};
 gGuehFin0 = pseudo(postscript("absGafFin"))		{nuqtaG = n2vL};
 gNgoehFin0 = pseudo(postscript("absGafFin"))	{nuqtaG = n2U};
+gKafRingFin0 = pseudo(postscript("absKehehFin"))	{nuqtaG = w_ring};
 gLamFin0 = pseudo(postscript("absLamFin"))		{nuqtaG = nNone};
 gLamBarFin0 = pseudo(postscript("absLamFin"))	{nuqtaG = w_bar};
 gLamSmallVFin0 = pseudo(postscript("absLamFin")){nuqtaG = w_smallV};
@@ -303,10 +305,10 @@ cQafIni0 = (gQafIni0);
 cQafMed0 = (gQafMed0);
 cQafFin0 = (gQafFin0);
 
-cKafIso = (gKaf, gGaf, gArabicKaf, gGueh, gNgoeh);
-cKafIni0 = (gKafIni0, gGafIni0, gKafIni0, gGuehIni0, gNgoehIni0);
-cKafMed0 = (gKafMed0, gGafMed0, gKafMed0, gGuehMed0, gNgoehMed0);
-cKafFin0 = (gKafFin0, gGafFin0, gKafFin0, gGuehFin0, gNgoehFin0);  // maybe we need a separate gArabicKafFin
+cKafIso = (gKaf, gGaf, gArabicKaf, gGueh, gNgoeh, gKafRing);
+cKafIni0 = (gKafIni0, gGafIni0, gKafIni0, gGuehIni0, gNgoehIni0, gKafRingIni0);
+cKafMed0 = (gKafMed0, gGafMed0, gKafMed0, gGuehMed0, gNgoehMed0, gKafRingMed0);
+cKafFin0 = (gKafFin0, gGafFin0, gKafFin0, gGuehFin0, gNgoehFin0, gKafRingFin0);  // maybe we need a separate gArabicKafFin
 
 cLamIso = (gLam, gLamBar, gLamSmallV);
 cLamIni0 = (gLamIni0, gLamBarIni0, gLamSmallVIni0);
