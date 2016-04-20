@@ -12,7 +12,7 @@ table(substitution)
 pass(1)
 
 
-gBeh gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef gAlef;
+///////////gBeh gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef gAlef;
 
 /*****
 if (overlapKern == none)
@@ -771,9 +771,12 @@ endpass; // 5
 
 table(glyph)
 
-cLowerUpper = (	g__dot2l_smallTah,	g__dot1l_smallTah,	g__dot2vl_smallTah,	g__dot1l_dot1u,	g__hehHook_dot2u);
-cLowerNoUpper = (g__dot2l,			g__dot1l,			g__dot2vl,		g__dot1l,			g__hehHook_small);
-cUpperNoLower = (g__smallTah,			g__smallTah,		g__smallTah,		g__dot1u,			g__dot2u);
+cLowerUpper = (	g__dot2l_smallTah,	g__dot1l_smallTah,	g__dot2vl_smallTah,	g__dot1l_dot1u,	g__hehHook_dot2u
+	g__ring_dot2u);
+cLowerNoUpper = (g__dot2l,			g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small
+	g__attachedRing);
+cUpperNoLower = (g__smallTah,		g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u
+	g__dot2u);
 
 cNuqtaLike += (cLowerUpper);
 

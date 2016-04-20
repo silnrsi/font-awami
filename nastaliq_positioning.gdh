@@ -258,10 +258,15 @@ cTakes_tahUpperDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
 	/ _=B  _=U;
 
+// nuqtas above, ring below
 cTakes_ringDia
 	cringDia { attach {to = @B; at = ringS; with = ringM } }
-	/ _=B  _=U;
+	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B  _=U _=R;
 
+cTakes_ringDia
+	cringDia { attach {to = @B; at = ringS; with = ringM } }
+	/ _=B  _=R;
 
 
 // Lower nuqta attachment
@@ -604,8 +609,8 @@ cNuqtaLikeUpper { collision {
 // collisions, but to do that we would need to be able to ignore the base (lam) from
 // the perspective of the bar.
 
-g__bar { collision.flags = COLL_FREEZE };
-cringDia { collision.flags = COLL_FREEZE };
+g__bar { collision.flags = COLL_FREEZE }    /  cBase  _ ;  // add context to increase precendence
+cringDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;
 
 
 // Lower nuqtas

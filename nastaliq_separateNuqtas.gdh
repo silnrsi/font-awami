@@ -11,6 +11,8 @@
 (gTtehIni0 gTtehMed0 gTtehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__smallTah:1;
 (gPehIni0 gPehMed0 gPehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot3l:1;
 (gBeehIni0 gBeehMed0 gBeehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot2vl:1;
+(gTehRingIni0 gTehRingMed0 gTehRingFin0)  _
+										>	(gBehIni_raw gBehMed_raw gBehFin):1		g__ring_dot2u;
 (gJeemIni0 gJeemMed0 gJeemFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1l:1;
 (gHahIni0 gHahMed0 gHahFin0)      		>	(gJeemIni_raw gJeemMed_raw gJeemFin);
 (gKhahIni0 gKhahMed0 gKhahFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1u:1;
@@ -41,7 +43,8 @@ endif;
 
 (gGuehIni0 gGuehMed0 gGuehFin0)		_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2vl:1;
 (gNgoehIni0 gNgoehMed0 gNgoehFin0)	_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2u:1;
-(gKafRingIni0 gKafRingMed0 gKafRingFin0) _ > (gKafIni_raw gKafMed_raw gKafFin)		g__attachedRingMid;
+(gKafRingIni0 gKafRingMed0 gKafRingFin0)  _ 
+										>	(gKafIni_raw gKafMed_raw gKafFin)		g__attachedRingMid;
 (gLamIni0 gLamMed0 gLamFin0)			>	(gLamIni_raw gLamMed_raw gLamFin);
 (gLamBarIni0 gLamBarMed0 gLamBarFin0) _	>	(gLamIni_raw gLamMed_raw gLamFin)		g__bar:1;
 (gLamSmallVIni0 gLamSmallVMed0 gLamSmallVFin0) _
