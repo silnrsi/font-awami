@@ -659,7 +659,7 @@ c_final { dir = DIR_ARABIC };
 c_isolate { dir = DIR_ARABIC };
 
 
-// Heh-doachashmee
+// Heh-doachashmee alternates
 
 gHehDoIni_alt = pseudo(postscript("absHehDoachashmeeMed"))
 	{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
@@ -679,8 +679,18 @@ gHehDoIniBeNn_alt = pseudo(postscript("absHehDoachashmeeMed.benn"))
 	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
 gHehDoIniBeRe_alt = pseudo(postscript("absHehDoachashmeeMed.bere"))
 	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
+gHehDoIniBy_alt = pseudo(postscript("absHehDoachashmeeMed.by"))
+	{ exit_bariyeh = gHehDoMedBy.exit_bariyeh; n1LowerS = gHehDoMedBy.n1LowerS; nUpperS = gHehDoMedBy.nUpperS };
+gHehDoIniCh_alt = pseudo(postscript("absHehDoachashmeeMed.ch"))
+	{ exit_chotiyeh = gHehDoMedCh.exit_chotiyeh; n1LowerS = gHehDoMedCh.n1LowerS; nUpperS = gHehDoMedCh.nUpperS };
 gHehDoIniFe_alt = pseudo(postscript("absHehDoachashmeeMed.fe"))
 	{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
+gHehDoIniHd_alt = pseudo(postscript("absHehDoachashmeeMed.hd"))
+	{ exit_hehdoach = gHehDoMedHd.exit_hehdoach; n1LowerS = gHehDoMedHd.n1LowerS; nUpperS = gHehDoMedHd.nUpperS };
+gHehDoIniHgM_alt = pseudo(postscript("absHehDoachashmeeMed.hgM"))
+	{ exit_hehgoalMedial = gHehDoMedHgM.exit_hehgoalMedial; n1LowerS = gHehDoMedHgM.n1LowerS; nUpperS = gHehDoMedHgM.nUpperS };
+gHehDoIniHgF_alt = pseudo(postscript("absHehDoachashmeeMed.hgF"))
+	{ exit_hehgoalFinal = gHehDoMedHgF.exit_hehgoalFinal; n1LowerS = gHehDoMedHgF.n1LowerS; nUpperS = gHehDoMedHgF.nUpperS };
 gHehDoIniJm_alt = pseudo(postscript("absHehDoachashmeeMed.jm"))
 	{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
 gHehDoIniRe_alt = pseudo(postscript("absHehDoachashmeeMed.re"))
@@ -712,7 +722,12 @@ c_exit_behLowTooth	+=	(gHehDoIniBeM1_alt, gHehDoIniBeHg_alt);
 c_exit_behHighTooth	+=	(gHehDoIniBeM2_alt);
 c_exit_behPreNoon	+=	(gHehDoIniBeNn_alt);
 c_exit_behPreReh	+=	(gHehDoIniBeRe_alt);
+c_exit_bariyeh		+=	(gHehDoIniBy_alt);
+c_exit_chotiyeh		+=	(gHehDoIniCh_alt);
 c_exit_feh			+=	(gHehDoIniFe_alt);
+c_exit_hehdoach		+=	(gHehDoIniHd_alt);
+c_exit_hehgoalMedial +=	(gHehDoIniHgM_alt);
+c_exit_hehgoalFinal	+=	(gHehDoIniHgF_alt);
 c_exit_jeem			+=	(gHehDoIniJm_alt);
 c_exit_reh			+=	(gHehDoIniRe_alt);
 c_exit_sad			+=	(gHehDoIniSd_alt);
@@ -727,11 +742,13 @@ c_exit_qafWawStfh	+=	(gHehDoIniQf_alt);
 
 cHehDoIni_noAlt = (gHehDoIni gHehDoIniAi gHehDoIniBe gHehDoIniBeF gHehDoIniBeM1 gHehDoIniBeM2 gHehDoIniBeHg 
 	gHehDoIniBeNn gHehDoIniBeRe gHehDoIniFe gHehDoIniJm  gHehDoIniRe gHehDoIniSd gHehDoIniSn
-	gHehDoIniTaF gHehDoIniTaM gHehDoIniKfX gHehDoIniMm gHehDoIniMmX gHehDoIniNn gHehDoIniQf);
+	gHehDoIniTaF gHehDoIniTaM gHehDoIniKfX gHehDoIniMm gHehDoIniMmX gHehDoIniNn gHehDoIniQf 
+	gHehDoIniHd gHehDoIniHgM gHehDoIniHgF gHehDoIniCh gHehDoIniBy);
 
 cHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt gHehDoIniBeM1_alt gHehDoIniBeM2_alt gHehDoIniBeHg_alt 
 	gHehDoIniBeNn_alt gHehDoIniBeRe_alt gHehDoIniFe_alt gHehDoIniJm_alt gHehDoIniRe_alt gHehDoIniSd_alt gHehDoIniSn_alt
-	gHehDoIniTaF_alt gHehDoIniTaM_alt gHehDoIniKfX_alt gHehDoIniMm_alt gHehDoIniMmX_alt gHehDoIniNn_alt gHehDoIniQf_alt);
+	gHehDoIniTaF_alt gHehDoIniTaM_alt gHehDoIniKfX_alt gHehDoIniMm_alt gHehDoIniMmX_alt gHehDoIniNn_alt gHehDoIniQf_alt
+	gHehDoIniHd_alt gHehDoIniHgM_alt gHehDoIniHgF_alt gHehDoIniCh_alt gHehDoIniBy_alt);
 
 c_initial += (cHehDoIni_alt);
 cTakes_n1LowerDia += (cHehDoIni_alt);

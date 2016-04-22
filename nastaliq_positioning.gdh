@@ -826,8 +826,9 @@ cIsoFin=B
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
 
-// honorific attached to final beh with lower nuqtas, w/o upper diac - uses standard upper nuqta location
-cBehFin=B  chonorificDia=H {att {to=@B; at=nUpperS; with=honorificM}; insert=true}
+// honorific attached to final beh with lower nuqtas, w/o upper diac - 
+// uses standard upper nuqta location raised a little higher
+cBehFin=B  chonorificDia=H {att {to=@B; at {x=nUpperS.x; y=nUpperS.y + 300m}; with=honorificM}; insert=true}
 		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0};
 
 // honorific attached to final base w/o upper diac
