@@ -321,11 +321,11 @@ c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh) ;
 
 // Diacritic combinations
 
-cPostShadda = (gZabar, gPesh, gKharizabar);
-cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_kharizabar);
+cPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
+cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar);
 
-cPostKharizabar = (gZabar, gPesh);
-cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh);
+cPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
+cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
 
 
 // Diacritics

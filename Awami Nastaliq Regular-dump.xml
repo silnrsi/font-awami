@@ -1,4 +1,6 @@
-<!-- Generated on Tue, 26 Apr 2016 18:47:32 +0000 by  -->
+<!-- Generated on Tue, 26 Apr 2016 21:45:00 +0000 by  -->
+
+<!-- *** WARNING: This font has not been saved since modifications were made *** -->
 
 <font>
 
@@ -74,7 +76,7 @@
 	<stem_snap_v >[[82,103,120], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]</stem_snap_v >
 
 	<!-- OTHER  -->
-	<modified>0</modified>
+	<modified>1</modified>
 	<classes>['.new: ']</classes>
 	<ot_classes>None</ot_classes>
 	<features>[]</features>
@@ -20229,15 +20231,16 @@
 		<glyph>
 			<name>nlqDopesh</name>
 			<note>None</note>
-			<node_count>7</node_count>
-			<node_hash>fe507063856a025472a581820a76c4ff47219cbf4ab1539f8b3778c3</node_hash>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>_mUpper: 0,100</anchor>
 				<anchor>mUpper: 7,743</anchor>
 			</anchors>
-			<component_count>1</component_count>
+			<component_count>2</component_count>
 			<components>
 				<component>nlqPesh: delta: -91.0,103.0, scale: 1.0,1.0</component>
+				<component>_dopesh_top: delta: -91.0,103.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1</width>
 			<unicode>064C</unicode>
@@ -21284,12 +21287,12 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>_mUpper: 30,100</anchor>
-				<anchor>mUpper: 27,1331</anchor>
+				<anchor>mUpper: -3,1331</anchor>
 			</anchors>
 			<component_count>2</component_count>
 			<components>
 				<component>nlqKharizabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
-				<component>nlqZabar: delta: -130.0,890.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -160.0,890.0, scale: 1.0,1.0</component>
 			</components>
 			<width>32</width>
 			<unicode></unicode>
@@ -21611,6 +21614,92 @@
 				<component>_nukta2: delta: -430.0,220.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_shadda_dozabar</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 9,-161</anchor>
+				<anchor>mUpper: 9,1015</anchor>
+			</anchors>
+			<component_count>3</component_count>
+			<components>
+				<component>absShadda: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -150.0,610.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -150.0,380.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_kharizabar_dozabar</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 30,100</anchor>
+				<anchor>mUpper: -3,1561</anchor>
+			</anchors>
+			<component_count>3</component_count>
+			<components>
+				<component>nlqKharizabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -160.0,890.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -160.0,1120.0, scale: 1.0,1.0</component>
+			</components>
+			<width>32</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_dopesh_top</name>
+			<note>None</note>
+			<node_count>7</node_count>
+			<node_hash>a84480ea2793031459829006fe214c8cd8d6cd78830157aa8b955d53</node_hash>
+			<component_count>0</component_count>
+			<width>1</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_shadda_dopesh</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 0,-165</anchor>
+				<anchor>mUpper: 70,889</anchor>
+			</anchors>
+			<component_count>3</component_count>
+			<components>
+				<component>absShadda: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqPesh: delta: -100.0,340.0, scale: 1.0,1.0</component>
+				<component>_dopesh_top: delta: -100.0,340.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_kharizabar_dopesh</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 30,100</anchor>
+				<anchor>mUpper: 97,1456</anchor>
+			</anchors>
+			<component_count>3</component_count>
+			<components>
+				<component>nlqKharizabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqPesh: delta: -70.0,860.0, scale: 1.0,1.0</component>
+				<component>_dopesh_top: delta: -70.0,860.0, scale: 1.0,1.0</component>
+			</components>
+			<width>32</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>

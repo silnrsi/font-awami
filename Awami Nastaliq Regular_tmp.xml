@@ -16943,6 +16943,7 @@
 			<location y="743" x="7"></location>
 		</point>
 		<compound PSName="nlqPesh" GID="1266" bbox="-107, 103, 265, 589" UID="U+064F"></compound>
+		<compound PSName="_dopesh_top" GID="1362" bbox="-209, 320, 24, 677"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="nlqDozair" GID="1264" UID="U+064D">
@@ -17450,10 +17451,10 @@
 			<location y="100" x="30"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="1331" x="27"></location>
+			<location y="1331" x="-3"></location>
 		</point>
 		<compound PSName="nlqKharizabar" GID="1276" bbox="-11, 82, 81, 796" UID="U+0670"></compound>
-		<compound PSName="nlqZabar" GID="1265" bbox="-144, 878, 198, 1264" UID="U+064E"></compound>
+		<compound PSName="nlqZabar" GID="1265" bbox="-174, 878, 168, 1264" UID="U+064E"></compound>
 		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="_kharizabar_pesh" GID="1343">
@@ -17718,5 +17719,56 @@
 		<compound PSName="_hamza" GID="345" bbox="-50, 954, 335, 1336"></compound>
 		<compound PSName="_nukta2" GID="1060" bbox="-250, 32, 503, 415"></compound>
 		<property name="mark" value="80"></property>
+	</glyph>
+	<glyph PSName="_shadda_dozabar" GID="1360">
+		<point type="_mUpper" mark="1">
+			<location y="-161" x="9"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1015" x="9"></location>
+		</point>
+		<compound PSName="absShadda" GID="1268" bbox="-143, -70, 184, 298" UID="U+0651"></compound>
+		<compound PSName="nlqZabar" GID="1265" bbox="-164, 598, 178, 984" UID="U+064E"></compound>
+		<compound PSName="nlqZabar" GID="1265" bbox="-164, 368, 178, 754" UID="U+064E"></compound>
+		<property name="mark" value="130"></property>
+	</glyph>
+	<glyph PSName="_kharizabar_dozabar" GID="1361">
+		<point type="_mUpper" mark="1">
+			<location y="100" x="30"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1561" x="-3"></location>
+		</point>
+		<compound PSName="nlqKharizabar" GID="1276" bbox="-11, 82, 81, 796" UID="U+0670"></compound>
+		<compound PSName="nlqZabar" GID="1265" bbox="-174, 878, 168, 1264" UID="U+064E"></compound>
+		<compound PSName="nlqZabar" GID="1265" bbox="-174, 1108, 168, 1494" UID="U+064E"></compound>
+		<property name="mark" value="130"></property>
+	</glyph>
+	<glyph PSName="_dopesh_top" GID="1362">
+		<property name="mark" value="80"></property>
+	</glyph>
+	<glyph PSName="_shadda_dopesh" GID="1363">
+		<point type="_mUpper" mark="1">
+			<location y="-165" x="0"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="889" x="70"></location>
+		</point>
+		<compound PSName="absShadda" GID="1268" bbox="-143, -70, 184, 298" UID="U+0651"></compound>
+		<compound PSName="nlqPesh" GID="1266" bbox="-116, 340, 256, 826" UID="U+064F"></compound>
+		<compound PSName="_dopesh_top" GID="1362" bbox="-218, 557, 15, 914"></compound>
+		<property name="mark" value="130"></property>
+	</glyph>
+	<glyph PSName="_kharizabar_dopesh" GID="1364">
+		<point type="_mUpper" mark="1">
+			<location y="100" x="30"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1456" x="97"></location>
+		</point>
+		<compound PSName="nlqKharizabar" GID="1276" bbox="-11, 82, 81, 796" UID="U+0670"></compound>
+		<compound PSName="nlqPesh" GID="1266" bbox="-86, 860, 286, 1346" UID="U+064F"></compound>
+		<compound PSName="_dopesh_top" GID="1362" bbox="-188, 1077, 45, 1434"></compound>
+		<property name="mark" value="130"></property>
 	</glyph>
 </font>
