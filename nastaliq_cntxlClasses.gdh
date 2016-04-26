@@ -146,24 +146,24 @@ c_medial = (
 	gHehDoMedMmX, gHehDoMedNn, gHehDoMedQf, gHehDoMedRe, gHehDoMedSd, gHehDoMedSn, gHehDoMedTaF, gHehDoMedTaM
 );
 
-// TODO: redo to use form-specific classes
+
 c_final = (
-	gBehFin, gBehFin_bfkl,
-	gJeemFin, gHahFin,
-	gSeenFin, gSadFin, gTahFin, gAinFin,
-	gFehFin, gQafFin,
-	gLamFin, // gLamBarFin,
+	cBehFin,
+	cJeemFin,
+	cSeenFin, cSadFin, cTahFin, cAinFin,
+	cFehFin, cQafFin,
+	cLamFin,
 	//gLamAlefFin, gLamAlefHamzaFin, gLamAlefMaddaFin,
-	gMeemFin, gNoonFin, gNoonGhunnaFin, 
-	gKafFin, gGafFin,
-	gHehGoalFin, // gHehGoalFin_stfh, gHehGoalHamzaFin, gHehGoalHamzaFin_stfh, gTehMarbutaGoalFin_stfh, 
-	gHehDoFin,
+	cMeemFin, cNoonFin, 
+	cKafFin,
+	cHehGoalFin,       // gHehGoalFin_stfh, gHehGoalHamzaFin, gHehGoalHamzaFin_stfh, gTehMarbutaGoalFin_stfh, 
+	cHehDoFin,
 	gAlefFin, gAlefFin_lm, gAlefMaddaFin, gAlefHamzaFin,
 	gDalFin,
 	gWawFin, gWawFin_stfh,
 	gRehFin, gRehFin_hgM, gRehFin_jkl, gRehFin_sshg,
+	gChotiyehFin, gChotiyehFin_bfkl, gYehTailFin, gYehTailFin_bfkl,    // gYehHamzaAboveFin_bfkl,
 	gKashmiriYehFin, gKashmiriYehFin_bfkl,
-	gChotiyehFin, gChotiyehFin_bfkl, gYehTailFin, gYehTailFin_bfkl, gYehHamzaAboveFin_bfkl,
 	gBariyehFin
 );
 
@@ -175,7 +175,7 @@ c_isolate = (
 	gAin, gGhain,
 	gFeh, gQaf, 
 	gLam, gLamBar,
-	gLamAlef,
+	//gLamAlef,
 	gMeem,
 	gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow,
 	gKaf, gGaf, gKafRing, // gGafRing,
@@ -185,8 +185,8 @@ c_isolate = (
 	gDal, gThal, gDdal, gDalTwoVertBelowSmallTah, gDalDotBelowSmallTah, gDalRing,
 	gWaw, gWawHamzaAbove, gWawRing,
 	gReh, gZain, gRreh, gJeh, gRehRing,
-	gKashmiriYeh,
 	gChotiyeh, gYeh, gYehHamzaAbove, gYehTail, 
+	gKashmiriYeh,
 	gBariyeh
 );
 
@@ -194,6 +194,15 @@ cFin = c_final;
 cIso = c_isolate;
 
 cIsoFin = (cIso cFin);
+
+
+// Bidi
+
+c_initial { dir = DIR_ARABIC };
+c_medial { dir = DIR_ARABIC };
+c_final { dir = DIR_ARABIC };
+c_isolate { dir = DIR_ARABIC };
+
 
 endtable; // glyph
 

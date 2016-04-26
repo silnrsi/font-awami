@@ -124,7 +124,8 @@ endpass; // 1
 pass(2)
 	// Special finals
 
-	gBariyehHamzaFin0  _  >  gBehMedBy {nuqtaS = nuqtaG}  gBariyehFin:1;
+	// FIX THIS:
+	///gBariyehHamzaFin0  _  >  gBehMedBy {nuqtaS = nuqtaG}  gBariyehFin:1;
 
 	// illegal - no these are legal!
 	//gYehHamzaAboveFin  _  >  gBehMed {nuqtaS = nuqtaG}  circledash:1  /  c_medial  _  _;
@@ -577,15 +578,15 @@ cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
 //cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;  // ALT-KAF
 cMed_raw  >  cMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
 cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
-cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (gFehFin cFehMed);
+cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed);
 cMed_raw  >  cMedQf		/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
-cMed_raw  >  cMedMm		/  ^ MPRECXT  _ MARKS  (gMeemFin cMeemMed);
+cMed_raw  >  cMedMm		/  ^ MPRECXT  _ MARKS  (cMeemFin cMeemMed);
 cMed_raw  >  cMedNn		/  ^ MPRECXT  _ MARKS  cNoonFin;
 cMed_raw  >  cMedHgF	/  ^ MPRECXT _  MARKS  cHehGoalFin;
 cMed_raw  >  cMedHgM	/  ^ MPRECXT _  MARKS  cHehGoalMed;
 cMed_raw  >  cMedHd		/  ^ MPRECXT _  MARKS  (gHehDoFin cHehDoMed);
 cMed_raw  >  cMedCh		/  ^ MPRECXT _  MARKS  cChotiyehFin;
-cMed_raw  >  cMedBy		/  ^ MPRECXT _  MARKS   gBariyehFin;
+cMed_raw  >  cMedBy		/  ^ MPRECXT _  MARKS  cBariyehFin;
 
 gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT _  MARKS  gAlefFin_lm;
 
@@ -689,16 +690,16 @@ cIni_raw  >  cIniSd		/ _ MARKS  (cSadFin cSadMed);
 cIni_raw  >  cIniTaF	/ _ MARKS  cTahFin;
 cIni_raw  >  cIniTaM 	/ _ MARKS  cTahMed;
 cIni_raw  >  cIniAi		/ _ MARKS  (cAinFin cAinMed);
-cIni_raw  >  cIniFe		/ _ MARKS  (gFehFin cFehMed);
+cIni_raw  >  cIniFe		/ _ MARKS  (cFehFin cFehMed);
 cIni_raw  >  cIniQf		/ _ MARKS  c_qw; // qaf, waw
-cIni_raw  >  cIniMm		/ _ MARKS  (gMeemFin cMeemMed);
+cIni_raw  >  cIniMm		/ _ MARKS  (cMeemFin cMeemMed);
 cIni_raw  >  cIniNn		/ _ MARKS  (cNoonFin gNoonGhunnaFin);
 cIni_raw  >  cIniHgF	/ _ MARKS  cHehGoalFin;
 cIni_raw  >  cIniHgM	/ _ MARKS  cHehGoalMed;
 //cIni_raw  >  cIniHgM_kx	/ _ MARKS  cHehGoalMed;  // ALT-KAF
-cIni_raw  >  cIniHd  	/ _ MARKS  (gHehDoFin cHehDoMed);
-cIni_raw  >  cIniCh		/ _ MARKS  (gChotiyehFin_bfkl gChotiyehFin);
-cIni_raw  >  cIniBy  	/ _ MARKS  gBariyehFin;
+cIni_raw  >  cIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
+cIni_raw  >  cIniCh		/ _ MARKS  cChotiyehFin;
+cIni_raw  >  cIniBy  	/ _ MARKS  cBariyehFin;
 
 gBehIni_raw  >  gBehIniBeM2	/ _ MARKS  cBehFin;
 gBehIni_raw  >  gBehIniJm	/ _ MARKS  (cJeemFin cJeemMed);
@@ -708,15 +709,15 @@ gBehIni_raw  >  gBehIniSd	/ _ MARKS  (cSadFin cSadMed);
 gBehIni_raw  >  gBehIniTaF	/ _ MARKS  cTahFin;
 gBehIni_raw  >  gBehIniTaM 	/ _ MARKS  cTahMed;
 gBehIni_raw  >  gBehIniAi	/ _ MARKS  (cAinFin cAinMed);
-gBehIni_raw  >  gBehIniFe	/ _ MARKS  (gFehFin cFehMed);
+gBehIni_raw  >  gBehIniFe	/ _ MARKS  (cFehFin cFehMed);
 gBehIni_raw  >  gBehIniQf	/ _ MARKS  c_qw; // qaf, waw
-gBehIni_raw  >  gBehIniMm	/ _ MARKS  (gMeemFin cMeemMed);
-gBehIni_raw  >  gBehIniNn	/ _ MARKS  (gNoonFin gNoonGhunnaFin);
+gBehIni_raw  >  gBehIniMm	/ _ MARKS  (cMeemFin cMeemMed);
+gBehIni_raw  >  gBehIniNn	/ _ MARKS  cNoonFin;
 gBehIni_raw  >  gBehIniHgF	/ _ MARKS  cHehGoalFin;
 gBehIni_raw  >  gBehIniHgM	/ _ MARKS  cHehGoalMed;
-gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (gHehDoFin cHehDoMed);
-gBehIni_raw  >  gBehIniCh 	/ _ MARKS  (gChotiyehFin_bfkl gChotiyehFin);
-gBehIni_raw  >  gBehIniBy  	/ _ MARKS  gBariyehFin;
+gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
+gBehIni_raw  >  gBehIniCh 	/ _ MARKS  cChotiyehFin;
+gBehIni_raw  >  gBehIniBy  	/ _ MARKS  cBariyehFin;
 
 gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 
