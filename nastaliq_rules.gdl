@@ -68,10 +68,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 #define underBy user1
 
 
-// 1 means strip out the nuqtas altogether during the contextual shaping passes and put them back in later.
-#define STRIP_NUQTAS 0
-
-
 // TEMPORARY until Peter fixes in the font
 
 table(glyph) {AttributeOverride = 1};
@@ -253,7 +249,6 @@ endtable; // feature
 ///#define DIACS [[cDiacritic cDiacritic?]? cDiacritic]?
 
 #define DIACS [cDiacritic cDiacritic?]?
-
 
 // TODO: include diacritic combinations
 #define MARKS  cNuqtaLike?  DIACS

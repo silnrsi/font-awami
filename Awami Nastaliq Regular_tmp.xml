@@ -418,16 +418,16 @@
 			<location y="379" x="144"></location>
 		</point>
 		<point type="nUpper" mark="1">
-			<location y="290" x="1206"></location>
+			<location y="658" x="68"></location>
 		</point>
 		<point type="n1Lower" mark="1">
 			<location y="-270" x="1206"></location>
 		</point>
 		<point type="hamzaUpper" mark="1">
-			<location y="301" x="1216"></location>
+			<location y="680" x="85"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="310" x="1226"></location>
+			<location y="698" x="103"></location>
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-277" x="1217"></location>
@@ -7852,7 +7852,7 @@
 	</glyph>
 	<glyph PSName="nlqBariyeh" GID="467" UID="U+06D2">
 		<point type="mUpper" mark="1">
-			<location y="295" x="1554"></location>
+			<location y="586" x="88"></location>
 		</point>
 		<point type="mLower" mark="1">
 			<location y="-273" x="1203"></location>
@@ -7860,16 +7860,21 @@
 		<point type="honorific" mark="1">
 			<location y="1314" x="287"></location>
 		</point>
-		<property name="mark" value="80"></property>
+		<property name="mark" value="20"></property>
 	</glyph>
 	<glyph PSName="nlqBariyehHamzaAbove" GID="468" UID="U+06D3">
 		<point type="mUpper" mark="1">
-			<location y="100" x="30"></location>
+			<location y="1158" x="93"></location>
 		</point>
 		<point type="mLower" mark="1">
-			<location y="150" x="30"></location>
+			<location y="-277" x="1199"></location>
 		</point>
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="temp" mark="1">
+			<location y="658" x="97"></location>
+		</point>
+		<compound PSName="nlqBariyeh" GID="467" bbox="90, -109, 2437, 874" UID="U+06D2"></compound>
+		<compound PSName="_hamza" GID="345" bbox="-110, 604, 275, 986"></compound>
+		<property name="mark" value="20"></property>
 	</glyph>
 	<glyph PSName="nlqChotiyeh" GID="469" UID="U+06CC">
 		<point type="mUpper" mark="1">
@@ -11535,7 +11540,6 @@
 		<point type="ring" mark="1">
 			<location y="-54" x="174"></location>
 		</point>
-		<compound PSName="_attachedRing" GID="1057" bbox="47, -360, 386, 30"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absFehIni" GID="731">
@@ -15907,7 +15911,7 @@
 		<compound PSName="_nukta" GID="1059" bbox="-193, -190, 194, 192"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
-	<glyph PSName="_dot1l_dot1u" GID="1064">
+	<glyph PSName="_dot1l__dot1u" GID="1064">
 		<point type="_nUpLow" mark="1">
 			<location y="100" x="30"></location>
 		</point>
@@ -15930,7 +15934,7 @@
 		<compound PSName="_nukta" GID="1059" bbox="-193, -190, 194, 192"></compound>
 		<property name="mark" value="130"></property>
 	</glyph>
-	<glyph PSName="_dot2l_smallTah" GID="1067">
+	<glyph PSName="_dot2l_smallTahL" GID="1067">
 		<point type="_nUpLow" mark="1">
 			<location y="100" x="30"></location>
 		</point>
@@ -15971,7 +15975,7 @@
 	<glyph PSName="_ring" GID="1073">
 		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
 	</glyph>
-	<glyph PSName="_dot2vl_smallTah" GID="1074">
+	<glyph PSName="_dot2vl__smallTah" GID="1074">
 		<point type="_nUppler" mark="1">
 			<location y="-361" x="0"></location>
 		</point>
@@ -16151,7 +16155,7 @@
 	<glyph PSName="_kaf_alt_exclude" GID="1130">
 		<property name="mark" value="80"></property>
 	</glyph>
-	<glyph PSName="_dot1l_smallTah" GID="1131">
+	<glyph PSName="_dot1l__smallTah" GID="1131">
 		<point type="_nUppler" mark="1">
 			<location y="-361" x="0"></location>
 		</point>
@@ -16160,7 +16164,7 @@
 		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
-	<glyph PSName="_hehHook_dot2u" GID="1132">
+	<glyph PSName="_hehHook__dot2u" GID="1132">
 		<point type="_hehhook" mark="1">
 			<location y="91" x="126"></location>
 		</point>
@@ -17673,7 +17677,7 @@
 		</point>
 		<compound PSName="_attachedRing" GID="1057" bbox="-143, 0, 196, 390"></compound>
 	</glyph>
-	<glyph PSName="_ring_dot2u" GID="1356">
+	<glyph PSName="_ring__dot2u" GID="1356">
 		<point type="mLower" mark="1">
 			<location y="-121" x="135"></location>
 		</point>
@@ -17692,5 +17696,27 @@
 			<location y="1309" x="164"></location>
 		</point>
 		<property name="mark" value="170"></property>
+	</glyph>
+	<glyph PSName="_hehHook__hamza" GID="1358">
+		<point type="_hehhook" mark="1">
+			<location y="91" x="126"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-121" x="135"></location>
+		</point>
+		<compound PSName="_hehHook.small" GID="347" bbox="0, 0, 259, 480"></compound>
+		<compound PSName="_hamza" GID="345" bbox="-50, 954, 335, 1336"></compound>
+		<property name="mark" value="80"></property>
+	</glyph>
+	<glyph PSName="_dot2l__hamza" GID="1359">
+		<point type="_hehhook" mark="1">
+			<location y="91" x="126"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-121" x="135"></location>
+		</point>
+		<compound PSName="_hamza" GID="345" bbox="-50, 954, 335, 1336"></compound>
+		<compound PSName="_nukta2" GID="1060" bbox="-250, 32, 503, 415"></compound>
+		<property name="mark" value="80"></property>
 	</glyph>
 </font>

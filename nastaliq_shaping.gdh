@@ -85,20 +85,28 @@ pass(1)
 	// Yay + hamza = hamzayay (move zair or zabar out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
 
+	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
 	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)
         c_nfd_noHamza=B  gHamzaAbove=H  >  @1  c_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
     c_nfd_noHamza=B  gHamzaAbove=H  >  c_nfc_hamza:(B H)  _  /  ^ _  _;
 
+	// Separate nuqtas and similar bits from bases.
 
+#include "nastaliq_separateNuqtas.gdh"
+
+endpass;
+
+
+pass(2)
 	// Create basic contextual forms. 
 	
-	cDualLinkIso  cDualLinkIso   >  cDualLinkIni  cDualLinkFin  / _ ^ DIACS  _ ;
+	cDualLinkIso  cDualLinkIso   >  cDualLinkIni_raw  cDualLinkFin  / _ ^ MARKS  _ ;
 	
-	cDualLinkIso  cRightLinkIso  >  cDualLinkIni  cRightLinkFin  /  _ ^ DIACS  _ ;
+	cDualLinkIso  cRightLinkIso  >  cDualLinkIni_raw  cRightLinkFin  /  _ ^ MARKS  _ ;
 		
-	cDualLinkFin  cDualLinkIso   >  cDualLinkMed  cDualLinkFin  / _ ^ DIACS  _ ;
+	cDualLinkFin  cDualLinkIso   >  cDualLinkMed_raw  cDualLinkFin  / _ ^ MARKS  _ ;
 	
-	cDualLinkFin  cRightLinkIso  >  cDualLinkMed  cRightLinkFin  / _ ^ DIACS _ ;
+	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  / _ ^ MARKS _ ;
 
 #include "cp1252.gdh"
 
@@ -121,39 +129,6 @@ pass(2)
 	// illegal - no these are legal!
 	//gYehHamzaAboveFin  _  >  gBehMed {nuqtaS = nuqtaG}  circledash:1  /  c_medial  _  _;
 	//gYehHamzaAboveFin  _  >  gBehIni {nuqtaS = nuqtaG}  circledash:1;
-
-
-#if STRIP_NUQTAS
-
-	// Replace pseudo-glyphs with nuqta-less generic glyphs; record the information about the nuqtas
-	// in a slot attribute.
-
-	cBehIni0     >  gBehIni_raw		{nuqtaS = nuqtaG};
-	cJeemIni0    >  gJeemIni_raw	{nuqtaS = nuqtaG};
-	cSeenIni0    >  gSeenIni_raw	{nuqtaS = nuqtaG};
-	cSadIni0     >  gSadIni_raw		{nuqtaS = nuqtaG};
-	cTahIni0     >  gTahIni_raw		{nuqtaS = nuqtaG};
-	cAinIni0     >  gAinIni_raw		{nuqtaS = nuqtaG};
-	cFehIni0     >  gFehIni_raw		{nuqtaS = nuqtaG};
-	cNoonIni0    >  gBehIni_raw		{nuqtaS = nuqtaG};
-	cHehGoalIni0 >  gHehGoalIni_raw	{nuqtaS = nuqtaG};
-
-	cBehMed0     >  gBehMed_raw		{nuqtaS = nuqtaG};
-	cJeemMed0    >  gJeemMed_raw	{nuqtaS = nuqtaG};
-	cSeenMed0    >  gSeenMed_raw	{nuqtaS = nuqtaG};
-	cSadMed0     >  gSadMed_raw		{nuqtaS = nuqtaG};
-	cTahMed0     >  gTahMed_raw		{nuqtaS = nuqtaG};
-	cAinMed0     >  gAinMed_raw		{nuqtaS = nuqtaG};
-	cFehMed0     >  gFehMed_raw		{nuqtaS = nuqtaG};
-	cNoonMed0    >  gBehMed_raw		{nuqtaS = nuqtaG};
-
-////////	gYehHamzaAbovefina0  >  gChotiyehFin_raw {nuqtaS = nuqtaG};
-
-#else
-
-#include "nastaliq_separateNuqtas.gdh"
-
-#endif
 
 endpass;	// 2
 
@@ -544,7 +519,7 @@ cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_p
 
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
 
-(cMed_raw gMeemMed_alt_raw)  >  (cMedKfX_kx gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed_alt;
+////(cMed_raw gMeemMed_alt_raw)  >  (cMedKfX_kx gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed_alt;
 /// ??? (cMed_raw gMeemMed_alt_raw)  >  (cMedKfX gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed;
 
 
@@ -772,12 +747,12 @@ endpass; // 5
 
 table(glyph)
 
-cLowerUpper = (	g__dot2l_smallTah,	g__dot1l_smallTah,	g__dot2vl_smallTah,	g__dot1l_dot1u,	g__hehHook_dot2u
-	g__ring_dot2u);
-cLowerNoUpper = (g__dot2l,			g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small
-	g__attachedRing);
-cUpperNoLower = (g__smallTah,		g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u
-	g__dot2u);
+cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u
+	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza);
+cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small
+	g__attachedRing, g__dot2l, g__hehHook_small);
+cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u
+	g__dot2u, g__hamza, g__hamza);
 
 cNuqtaLike += (cLowerUpper);
 
@@ -785,6 +760,135 @@ endtable; // glyph
 
 
 pass(6)
+
+// Recompose isolates.
+// These rules are the opposite of the rules in nastaliq_seqNuqtas.gdh.
+
+gBeh		g__dot1l				>	gBeh:(1 2)	_;
+gBeh		g__dot2u				>	gTeh:(1 2)	_;
+gBeh		g__dot3u				>	gTheh:(1 2)	_;
+gBeh		g__smallTah				>	gTteh:(1 2)	_;
+gBeh		g__dot3l				>	gPeh:(1 2)	_;
+gBeh		g__dot2vl				>	gBeeh:(1 2)	_;
+gBeh		g__ring__dot2u			>	gTehRing:(1 2)	_;
+
+gJeem		g__dot1l				>	gJeem:(1 2)	_;
+gJeem								>	gHah;
+gJeem		g__dot1u				>	gKhah:(1 2)	_;
+gJeem		g__dot3l				>	gTcheh:(1 2)	_;
+gJeem		g__dot2vl				>	gDyeh:(1 2)	_;
+gJeem		g__dot2l				>	gNyeh:(1 2)	_;
+gJeem		g__dot4l				>	gTcheheh:(1 2)	_;
+
+//gSeen								>	gSeen;
+gSeen		g__dot3u				>	gSheen:(1 2)	_;
+gSeen		g__dot4u				>	gSeenFourDotsAbove:(1 2)	_;
+//gSad								>	gSad;
+gSad		g__dot1u				>	gDad:(1 2)	_;
+//gTah								>	gTah;
+gTah		g__dot1u				>	gZah:(1 2)	_;
+//gAin								>	gAin;
+gAin		g__dot1u				>	gGhain:(1 2)	_;
+gFeh		g__dot1u				>	gFeh:(1 2)	_;
+gFeh		g__dot2u				>	gQaf:(1 2)	_;
+
+//gKaf					>	gKaf;
+
+/**
+if (debugGaf == 0)
+//gGaf					>	gGaf;
+else
+gGaf				_	>	gKafIni		g__gafStroke:1;
+//////(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
+endif;
+**/
+
+gGaf		g__dot2vl				>	gGueh:(1 2)	_;
+gGaf		g__dot2u				>	gNgoeh:(1 2)	_;
+gKaf		g__attachedRingMid		>	gKafRing:(1 2)	_;
+//gGaf		g__attachedRingMid		>	gGafRing:(1 2)  _;
+
+//gLam								>	gLam;
+gLam		g__bar					>	gLamBar:(1 2)	_;
+gLam		g__smallV				>	gLamSmallV:(1 2)	_;
+
+//gMeem								>	gMeem;
+
+gNoon		g__dot1u				>	gNoon:(1 2)	_;
+gNoon		g__dot1u_smallTah		>	gNoonRetro:(1 2)	_;
+gNoon		g__dot1l__dot1u			>	gNoonDotBelow:(1 2)	_;
+gNoon		g__smallTah				>	gRnoon:(1 2)	_;
+gNoon		g__dot1u_smallV			>	gNoonSmallV:(1 2)  _;
+gNoon		g__noDot1u				>	gNoonGhunna:(1 2)  _;
+
+// It's a little strange to have noon-ghunnas in a position other than final,
+// but if that's what we have, add nuqtas:
+(cBehIni cBehMed) g__noDot1u  >  @1  g__dot1u;
+
+gNoonFin  g__noDot1u  >  @1:(1 2)  _;
+
+gHehGoal	g__hehHook_small		>	gHehGoal:(1 2)	_;
+gHehGoal	g__hehHook__dot2u		>	gTehMarbutaGoal:(1 2)	_;
+gHehGoal	g__hamza				>	gHehGoalHamza:(1 2)	_;
+
+// Remove hooks
+gHehGoalFin  g__hehHook_small  >  gHehGoalFin:(1 2)  _;
+gHehGoalFin  g__hehHook__dot2u  >  gHehGoalFin        g__dot2u;	 // teh-marbuta goal
+gHehGoalFin  g__hehHook__hamza  >  gHehGoalFin        g__hamza;
+if (hehGoalHook == 0)
+cHehGoalMed  g__hehHook_small  >  cHehGoalMed:(1 2)  _;
+cHehGoalMed  g__hehHook__dot2u  >  cHehGoalMed        g__dot2u;	 // teh-marbuta goal
+cHehGoalMed  g__hehHook__hamza  >  cHehGoalMed        g__hamza;
+endif;
+
+//gHehDo				>	gHehDo;
+
+gChotiyeh	g__noDot2l			>	gChotiyeh:(1 2)  _;
+gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
+gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
+
+gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
+gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
+
+// Add dots to initial/medial chotiyeh
+(cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
+(cBehIni  cBehMed)  g__dot2l__hamza  _  >  @1  g__dot2l:1  g__hamza:1;
+
+cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
+gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
+gBariyehFin   g__dot2l__hamza  >  @1  g__hamza;
+
+// Right-link
+//gBariyeh			_	>	gBehIni:1	g__dot2l:1;
+//gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 g__hamza:1;	// eventually replaced with beh + bariyeh
+
+
+//gAlef								>	gAlef;
+gAlef		g__hamza				>	gAlefHamzaAbove:(1 2)  _;
+gAlef		gHamzaBelow				>	gAlefHamzaAbove:(1 2)  _;
+//gAlef		g__wavyHamza			>	gAlefWavyHAbove:(1 2)  _;
+//gAlef		gWavyHamzaBelow			>	gAlefWavyHBelow:(1 2)  _;
+//gDal								>	gDal;
+gDal		g__dot1u				>	gThal:(1 2)  _;
+gDal		g__smallTah				>	gDdal:(1 2)  _;
+gDal		g__dot1l__smallTah		>	gDalDotBelowSmallTah:(1 2)  _;
+gDal		g__dot2vl__smallTah		>	gDalTwoVertBelowSmallTah:(1 2)  _;
+gDal		g__dot1l				>	gThalDotBelow:(1 2)  _;
+gDal		g__attachedRing			>	gDalRing:(1 2)  _;
+//gReh								>	gReh;
+gReh		g__dot1u				>	gZain:(1 2)  _;
+gReh		g__smallTah				>	gRreh:(1 2)  _;
+gReh		g__dot3u				>	gJeh:(1 2)  _;
+gReh		g__dot1l				>	gRehDotBelow:(1 2)  _;
+gReh		g__dot1l__dot1u			>	gRehDotBelowDotAbove:(1 2)  _;
+gReh		g__dot2u				>	gRehTwoDotsAbove:(1 2)  _;
+gReh		g__attachedRing			>	gRehRing:(1 2)  _;
+//gWaw								>	gWaw;
+gWaw		g__hamza				>	gWawHamzaAbove:(1 2)  _;
+gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
+
+
+
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
@@ -807,32 +911,7 @@ endif;
 endpass;
 
 
-#if STRIP_NUQTAS
 
-/****
-pass(6)
-
-// Add back in the nuqtas
-
-// TODO: make the classes here more complex so that not so many are matched and most of the
-// contexts tests can be avoided.
-
-(c_initial c_medial)  _  >  @1  g__dot1l:1   /  _ {nuqtaS == n1L}   _;
-(c_initial c_medial)  _  >  @1  g__dot2l:1   /  _ {nuqtaS == n2L}   _;
-(c_initial c_medial)  _  >  @1  g__dot3l:1 /  _ {nuqtaS == n3L} _;
-(c_initial c_medial)  _  >  @1  g__dot1u:1   /  _ {nuqtaS == n1U}   _;
-(c_initial c_medial)  _  >  @1  g__dot2u:1   /  _ {nuqtaS == n2U}   _;
-(c_initial c_medial)  _  >  @1  g__dot3u:1 /  _ {nuqtaS == n3U} _;
-(c_initial c_medial)  _  >  @1  g__smallTah:1        /  _ {nuqtaS == tahU}   _;
-(c_initial c_medial)  _  >  @1  gHamzaAbove2:1          /  _ {nuqtaS == w_hamza}   _;
-(c_initial c_medial)  _  >  @1  g__hehHook_small:1    /  _ {nuqtaS == w_hook}   _;
-
-///(c_initial c_medial)  _  _  >  @1  g__dot1l:1  g__smallTah:1  /  _ {nuqtaS == n1U_tahU}  _  _;
-
-endpass;	// 6
-****/
-
-#endif // STRIP_NUQTAS
 
 endtable;	// sub
 

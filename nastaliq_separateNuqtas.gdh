@@ -5,68 +5,69 @@
 */
 
 
-(gBehIni0 gBehMed0 gBehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot1l:1;
-(gTehIni0 gTehMed0 gTehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot2u:1;
-(gThehIni0 gThehMed0 gThehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot3u:1;
-(gTtehIni0 gTtehMed0 gTtehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__smallTah:1;
-(gPehIni0 gPehMed0 gPehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot3l:1;
-(gBeehIni0 gBeehMed0 gBeehFin0)		_	>	(gBehIni_raw gBehMed_raw gBehFin):1		g__dot2vl:1;
-(gTehRingIni0 gTehRingMed0 gTehRingFin0)  _
-										>	(gBehIni_raw gBehMed_raw gBehFin):1		g__ring_dot2u;
-(gJeemIni0 gJeemMed0 gJeemFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1l:1;
-(gHahIni0 gHahMed0 gHahFin0)      		>	(gJeemIni_raw gJeemMed_raw gJeemFin);
-(gKhahIni0 gKhahMed0 gKhahFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot1u:1;
-(gTchehIni0 gTchehMed0 gTchehFin0)	_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot3l:1;
-(gDyehIni0 gDyehMed0 gDyehFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot2vl:1;
-(gNyehIni0 gNyehMed0 gNyehFin0)		_	>	(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot2l:1;
-(gTchehehIni0 gTchehehMed0 gTchehehFin0) _ >(gJeemIni_raw gJeemMed_raw gJeemFin):1	g__dot4l:1;
-(gSeenIni0 gSeenMed0 gSeenFin0)			>	(gSeenIni_raw gSeenMed_raw gSeenFin);
-(gSheenIni0 gSheenMed0 gSheenFin0)	_	>	(gSeenIni_raw gSeenMed_raw gSeenFin):1	g__dot3u:1;
-(gSeenFourDotsAboveIni0 gSeenFourDotsAboveMed0 gSeenFourDotsAboveFin0)	_	
-										>	(gSeenIni_raw gSeenMed_raw gSeenFin):1	g__dot4u:1;
-(gSadIni0 gSadMed0 gSadFin0)			>	(gSadIni_raw gSadMed_raw gSadFin);
-(gDadIni0 gDadMed0 gDadFin0)		_	>	(gSadIni_raw gSadMed_raw gSadFin):1		g__dot1u:1;
-(gTahIni0 gTahMed0 gTahFin0)			>	(gTahIni_raw gTahMed_raw gTahFin);
-(gZahIni0 gZahMed0 gZahFin0)		_	>	(gTahIni_raw gTahMed_raw gTahFin):1		g__dot1u:1;
-(gAinIni0 gAinMed0 gAinFin0)			>	(gAinIni_raw gAinMed_raw gAinFin);
-(gGhainIni0 gGhainMed0 gGhainFin0)	_	>	(gAinIni_raw gAinMed_raw gAinFin):1		g__dot1u:1;
-(gFehIni0 gFehMed0 gFehFin0)		_	>	(gFehIni_raw gFehMed_raw gFehFin):1		g__dot1u:1;
-(gQafIni0 gQafMed0 gQafFin0)		_	>	(gFehIni_raw gFehMed_raw gQafFin):1		g__dot2u:1;
-(gKafIni0 gKafMed0 gKafFin0)			>	(gKafIni_raw gKafMed_raw gKafFin);
+gBeh				_	>	gBeh:1		g__dot1l:1;
+gTeh				_	>	gBeh:1		g__dot2u:1;
+gTheh				_	>	gBeh:1		g__dot3u:1;
+gTteh				_	>	gBeh:1		g__smallTah:1;
+gPeh				_	>	gBeh:1		g__dot3l:1;
+gBeeh				_	>	gBeh:1		g__dot2vl:1;
+gTehRing			_	>	gBeh:1		g__ring__dot2u:1;
 
+gJeem				_	>	gJeem:1		g__dot1l:1;
+gHah  					>	gJeem;
+gKhah				_	>	gJeem:1		g__dot1u:1;
+gTcheh				_	>	gJeem:1		g__dot3l:1;
+gDyeh				_	>	gJeem:1		g__dot2vl:1;
+gNyeh				_	>	gJeem:1		g__dot2l:1;
+gTcheheh			_	>	gJeem:1		g__dot4l:1;
+
+//gSeen					>	gSeen;
+gSheen				_	>	gSeen:1		g__dot3u:1;
+gSeenFourDotsAbove	_	>	gSeen:1		g__dot4u:1;
+//gSad					>	gSad;
+gDad				_	>	gSad:1		g__dot1u:1;
+//gTah					>	gTah;
+gZah				_	>	gTah:1		g__dot1u:1;
+//gAin					>	gAin;
+gGhain				_	>	gAin:1		g__dot1u:1;
+gFeh				_	>	gFeh:1		g__dot1u:1;
+gQaf				_	>	gFeh:1		g__dot2u:1;
+
+//gKaf					>	gKaf;
+
+/***
 if (debugGaf == 0)
-(gGafIni0 gGafMed0 gGafFin0)			>	(gGafIni_raw gGafMed_raw gGafFin);
+//gGaf					>	gGaf;
 else
-(gGafIni0)							_	>	(gKafIni_raw)							g__gafStroke_short:1;
-			(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
+gGaf				_	>	gKafIni		g__gafStroke:1;
+//////(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
 endif;
+***/
 
-(gGuehIni0 gGuehMed0 gGuehFin0)		_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2vl:1;
-(gNgoehIni0 gNgoehMed0 gNgoehFin0)	_	>	(gGafIni_raw gGafMed_raw gGafFin)		g__dot2u:1;
-(gKafRingIni0 gKafRingMed0 gKafRingFin0)  _ 
-										>	(gKafIni_raw gKafMed_raw gKafFin)		g__attachedRingMid;
-(gLamIni0 gLamMed0 gLamFin0)			>	(gLamIni_raw gLamMed_raw gLamFin);
-(gLamBarIni0 gLamBarMed0 gLamBarFin0) _	>	(gLamIni_raw gLamMed_raw gLamFin)		g__bar:1;
-(gLamSmallVIni0 gLamSmallVMed0 gLamSmallVFin0) _
-										>	(gLamIni_raw gLamMed_raw gLamFin)		g__smallV:1;
-(gMeemIni0 gMeemMed0 gMeemFin0)			>	(gMeemIni_raw gMeemMed_raw gMeemFin);
-(gNoonIni0 gNoonMed0 gNoonFin0)		_	>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u:1;
-(gNoonGhunnaIni0 gNoonGhunnaMed0)	_	>	(gBehIni_raw gBehMed_raw):1				g__dot1u:1;
-gNoonGhunnaFin0							>	gNoonFin;  // no dot on final form
-(gNoonRetroIni0 gNoonRetroMed0 gNoonRetroFin0)	_
-										>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallTah:1;
-(gNoonDotBelowIni0 gNoonDotBelowMed0 gNoonDotBelowFin0)	_
-										>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1l_dot1u:1;
-(gRnoonIni0 gRnoonMed0 gRnoonFin0)	_	>   (gBehIni_raw gBehMed_raw gNoonFin):1	g__smallTah:1;
-(gNoonSmallVIni0 gNoonSmallVMed0 gNoonSmallVFin0) _
-										>	(gBehIni_raw gBehMed_raw gNoonFin):1	g__dot1u_smallV:1;
+gGueh				_	>	gGaf		g__dot2vl:1;
+gNgoeh				_	>	gGaf		g__dot2u:1;
+gKafRing			_	>	gKaf		g__attachedRingMid:1;
 
-gHehGoalIni0			_					>	gHehGoalIni_raw:1	g__hehHook_small:1;
-(gTehMarbutaIni0 gTehMarbutaGoalIni0)  _	>	gHehGoalIni_raw:1  g__hehHook_dot2u:1;
+//gLam					>	gLam;
+gLamBar				_	>	gLam		g__bar:1;
+gLamSmallV			_	>	gLam		g__smallV:1;
+
+//gMeem					>	gMeem;
+
+gNoon				_	>	gNoon:1		g__dot1u:1;
+gNoonGhunna			_	>	gNoon:1		g__noDot1u:1;
+gNoonRetro			_	>   gNoon:1		g__dot1u_smallTah:1;
+gNoonDotBelow		_	>	gNoon:1		g__dot1l__dot1u:1;
+gRnoon				_	>   gNoon:1		g__smallTah:1;
+gNoonSmallV			_	>	gNoon:1		g__dot1u_smallV:1;
+
+gHehGoal			_	>	gHehGoal:1	g__hehHook_small:1;
+gTehMarbutaGoal		_	>	gHehGoal:1	g__hehHook__dot2u:1;
+gHehGoalHamza		_	>	gHehGoal:1	g__hehHook__hamza:1;
 
 if (hehGoalHook)
-gHehGoalMed0  _								>	gHehGoalMed_raw:1	g__hehHook_small:1;
-(gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__hehHook_dot2u:1;
+gHehGoalMed0  _								>	gHehGoalMed_raw:1  g__hehHook_small:1;
+(gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__hehHook__dot2u:1;
 else
 gHehGoalMed0								>	gHehGoalMed_raw;
 (gTehMarbutaMed0 gTehMarbutaGoalMed0)  _	>	gHehGoalMed_raw:1  g__dot2u:1;
@@ -77,49 +78,46 @@ gHehGoalFin0						      >	gHehGoalFin;
 gHehGoalHamzaFin0                      _  >  gHehGoalFin:1  g__hamza:1;
 //g06c3 - goal-teh
 
-(gHehDoIni0 gHehDoMed0 gHehDoFin0)			>	(gHehDoIni_raw gHehDoMed_raw gHehDoFin);
+//gHehDo				>	gHehDo;
 
-(gChotiyehIni0 gChotiyehMed0)			_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
-(gYehIni0 gYehMed0)					_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
-(gYehHamzaAboveIni0 gYehHamzaAboveMed0)  _	>	(gBehIni_raw gBehMed_raw):1		g__hamza:1;
-(gBariyehIni0 gBariyehMed0)			_	>	(gBehIni_raw gBehMed_raw):1		g__dot2l:1;
+gChotiyeh			_	>	gChotiyeh:1		g__noDot2l:1;
+gYehHamzaAbove		_	>	gChotiyeh:1		g__dot2l__hamza:1;
+gYeh				_	>	gChotiyeh:1		g__dot2l:1;
 
-gYehHamzaAboveFin0  		_  >  gChotiyehFin  g__hamza:1;
-gChotiyehFin0  >  gChotiyehFin;
-gYehFin0  _  >  gChotiyehFin:1  g__dot2l:1;
-gBariyehFin0  >  gBariyehFin;
 
 ///gYehHamzaAboveFin0		_	>	pseudo(postscript("absYehHamzaAbove"))	gArabicHamza:1;	// temporary final form
 
-
+gBariyeh			_	>	gBariyeh:1		g__noDot2l:1;
+gBariyehHamza		_	>	gBariyeh:1		g__dot2l__hamza:1;
 
 // Right-link
-gBariyeh0			_	>	gBehIni:1	g__dot2l:1;
+
 //gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 g__hamza:1;	// eventually replaced with beh + bariyeh
 
 
-gAlefFin0					>	gAlefFin;
-gAlefHamzaAboveFin0		_	>	gAlefFin	g__hamza:1;
-gAlefHamzaBelowFin0		_	>	gAlefFin	gHamzaBelow:1;
-gAlefWavyHAboveFin0		_	>	gAlefFin	g__wavyHamza:1;
-gAlefWavyHBelowFin0		_	>	gAlefFin	gWavyHamzaBelow:1;
-gDalFin0					>	gDalFin;
-gThalFin0				_	>	gDalFin		g__dot1u:1;
-gDdalFin0				_	>	gDalFin		g__smallTah:1;
-gDalDotBelowSmallTahFin0 _	>	gDalFin		g__dot1l_smallTah:1;
-gDalTwoVertBelowSmallTahFin0
-						_	>	gDalFin		g__dot2vl_smallTah:1;
-gThalDotBelowFin0		_	>	gDalFin		g__dot1l:1;
-gDalRingFin0			_	>	gDalFin		g__attachedRing:1;
-gRehFin0					>	gRehFin;
-gZainFin0				_	>	gRehFin		g__dot1u:1;
-gRrehFin0				_	>	gRehFin		g__smallTah:1;
-gJehFin0				_	>	gRehFin		g__dot3u:1;
-gRehDotBelowFin0		_	>	gRehFin		g__dot1l:1;
-gRehDotBelowDotAboveFin0 _	>	gRehFin		g__dot1l_dot1u:1;
-gRehTwoDotsAboveFin0	_	>	gRehFin		g__dot2u:1;
-gRehRingFin0			_	>	gRehFin		g__attachedRing:1;
-gWawFin0					>	gWawFin;
-gWawHamzaAboveFin0		_	>	gWawFin		g__hamza:1;
-gWawRingFin0			_	>	gWawFin		g__attachedRingMid:1;
+//gAlef					>	gAlef;
+gAlefHamzaAbove		_	>	gAlef		g__hamza:1;
+gAlefHamzaBelow		_	>	gAlef		gHamzaBelow:1;
+////gAlefWavyHAbove		_	>	gAlef		g__wavyHamza:1;
+////gAlefWavyHBelow		_	>	gAlef		gWavyHamzaBelow:1;
+//gDal					>	gDal;
+gThal				_	>	gDal		g__dot1u:1;
+gDdal				_	>	gDal		g__smallTah:1;
+gDalDotBelowSmallTah _	>	gDal		g__dot1l__smallTah:1;
+gDalTwoVertBelowSmallTah
+					_	>	gDal		g__dot2vl__smallTah:1;
+gThalDotBelow		_	>	gDal		g__dot1l:1;
+gDalRing			_	>	gDal		g__attachedRing:1;
+//gReh					>	gReh;
+gZain				_	>	gReh		g__dot1u:1;
+gRreh				_	>	gReh		g__smallTah:1;
+gJeh				_	>	gReh		g__dot3u:1;
+gRehDotBelow		_	>	gReh		g__dot1l:1;
+gRehDotBelowDotAbove _	>	gReh		g__dot1l__dot1u:1;
+gRehTwoDotsAbove	_	>	gReh		g__dot2u:1;
+gRehRing			_	>	gReh		g__attachedRing:1;
+//gWaw					>	gWaw;
+gWawHamzaAbove		_	>	gWaw		g__hamza:1;
+gWawRing			_	>	gWaw		g__attachedRingMid:1;
+
 
