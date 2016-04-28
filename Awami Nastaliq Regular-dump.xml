@@ -1,9 +1,11 @@
-<!-- Generated on Thu, 28 Apr 2016 15:10:01 +0000 by Peter Martin -->
+<!-- Generated on Thu, 28 Apr 2016 22:01:04 +0000 by  -->
+
+<!-- *** WARNING: This font has not been saved since modifications were made *** -->
 
 <font>
 
 	<!-- IDENTIFICATION -->
-	<file_name>/Users/martinpk/Documents/Fonts/ABS/absfonts wc/Nastaliq/Awami Nastaliq/Awami Nastaliq Regular.vfb</file_name>
+	<file_name>C:\ABS\Nastaliq\Awami Nastaliq\Awami Nastaliq Regular.vfb</file_name>
 	<family_name>Awami Nastaliq</family_name>
 	<style_name>Regular</style_name>
 	<full_name>Awami Nastaliq</full_name>
@@ -74,7 +76,7 @@
 	<stem_snap_v >[[82,103,120], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]</stem_snap_v >
 
 	<!-- OTHER  -->
-	<modified>0</modified>
+	<modified>1</modified>
 	<classes>['.new: ']</classes>
 	<ot_classes>None</ot_classes>
 	<features>[]</features>
@@ -6471,18 +6473,17 @@
 		<glyph>
 			<name>absAlefMaddaAbove</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<node_count>9</node_count>
+			<node_hash>8a6622da24467d20461edadb5d450ba3e9d0afa848cde39439eaf4a7</node_hash>
 			<anchors>
 				<anchor>mUpper: 220,2486</anchor>
 				<anchor>mLower: 208,-43</anchor>
 				<anchor>kernBbRight: 284,1005</anchor>
 				<anchor>kernBbLeft: 140,1000</anchor>
 			</anchors>
-			<component_count>2</component_count>
+			<component_count>1</component_count>
 			<components>
 				<component>absAlef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-				<component>_madda: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>404</width>
 			<unicode>0622</unicode>
@@ -6872,7 +6873,7 @@
 				<component>absKaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
 				<component>_gafStroke: delta: -90.0,0.0, scale: 1.0,1.0</component>
 			</components>
-			<width>2455</width>
+			<width>1568</width>
 			<unicode>06AF</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -8307,11 +8308,17 @@
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
+			<anchors>
+				<anchor>_mUpper: 152,0</anchor>
+				<anchor>mUpper: 149,416</anchor>
+			</anchors>
+			<component_count>3</component_count>
 			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_nukta: delta: -64.0,309.0, scale: 0.330000013113,0.330000013113</component>
+				<component>_nukta: delta: 159.0,50.0, scale: 0.330000013113,0.330000013113</component>
 			</components>
-			<width>1300</width>
+			<width>0</width>
 			<unicode>065E</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -17541,32 +17548,6 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absMaddaAbove</name>
-			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
-		</glyph>
-		<glyph>
-			<name>absMaddaAbove.large</name>
-			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
-		</glyph>
-		<glyph>
 			<name>absSemicolon.sch</name>
 			<note>None</note>
 			<node_count>15</node_count>
@@ -17621,15 +17602,16 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>_mLower: 30,100</anchor>
+				<anchor>_mLower: 30,774</anchor>
+				<anchor>mLower: 27,0</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqKharizabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
+			<width>22</width>
+			<unicode>0656</unicode>
+			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
 			<name>wordJallah</name>
@@ -20236,11 +20218,13 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>_mLower: 30,100</anchor>
+				<anchor>_mLower: 145,330</anchor>
+				<anchor>mLower: 145,-286</anchor>
 			</anchors>
-			<component_count>1</component_count>
+			<component_count>2</component_count>
 			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>nlqZabar: delta: -20.0,-230.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1300</width>
 			<unicode>064D</unicode>
@@ -20281,7 +20265,7 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>_mLower: 145,330</anchor>
-				<anchor>mLower: 142,-56</anchor>
+				<anchor>mLower: 145,-56</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -20308,8 +20292,8 @@
 		<glyph>
 			<name>nlqJazm</name>
 			<note>None</note>
-			<node_count>5</node_count>
-			<node_hash>aeaf7cd2430e4f7bb0dd0dc59bdf517a2b583bbb4c27541d083f8b50</node_hash>
+			<node_count>7</node_count>
+			<node_hash>a8bee6001f5dbaec5081f71e697d8ab0166d9abb94763bd68088aa6f</node_hash>
 			<anchors>
 				<anchor>_mUpper: 0,0</anchor>
 				<anchor>mUpper: -7,498</anchor>
@@ -20320,7 +20304,7 @@
 			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absMaddahAbove</name>
+			<name>absMaddaAbove.001</name>
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
@@ -20333,8 +20317,8 @@
 				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1300</width>
-			<unicode>0653</unicode>
-			<unicode_count>1</unicode_count>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absHamzaAbove</name>
@@ -20758,13 +20742,14 @@
 		<glyph>
 			<name>absShortVowelMark</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>5</node_count>
+			<node_hash>aeaf7cd2430e4f7bb0dd0dc59bdf517a2b583bbb4c27541d083f8b50</node_hash>
+			<anchors>
+				<anchor>mUpper: -5,520</anchor>
+				<anchor>_mUpper: -5,60</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>5</width>
 			<unicode>08FF</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -21688,7 +21673,7 @@
 			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
-			<name>_madda</name>
+			<name>absMaddaAbove</name>
 			<note>None</note>
 			<node_count>9</node_count>
 			<node_hash>8a6622da24467d20461edadb5d450ba3e9d0afa848cde39439eaf4a7</node_hash>
@@ -21698,6 +21683,20 @@
 			</anchors>
 			<component_count>0</component_count>
 			<width>404</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>nlqJazm_openleft</name>
+			<note>None</note>
+			<node_count>5</node_count>
+			<node_hash>aeaf7cd2430e4f7bb0dd0dc59bdf517a2b583bbb4c27541d083f8b50</node_hash>
+			<anchors>
+				<anchor>_mUpper: 0,0</anchor>
+				<anchor>mUpper: -7,498</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>8</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>

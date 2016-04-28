@@ -25,12 +25,54 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot3u, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, g__smallV, g__dot1u_smallTah, g__dot1u_smallV,   // g__kafTop,
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__smallV,
+	g__dot1u_smallTah, g__dot1u_smallV,   
+	// g__kafTop,
 	g__gafStroke, g__gafStroke_short);
-cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing);
+cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, gHamzaBelow);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2l);
+
+// Diacritics
+// Note: hamzas are nuqta-like, not diacritic
+
+// Diacritic combinations
+
+cPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
+cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar);
+
+cPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
+cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
+
+
+cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, gDozabar, 
+    gDopesh, gUltaPesh, gMaddaAbove, gNoonGhunnaMark,
+	gVowelSmallV, gVowelInvSmallV,
+	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
+    gSmallHighRehHahMark, gSmallHighSeen, gNameMarker,
+	cShaddaPlus, cKharizabarPlus);
+cDiacriticLower = ( gZair, gKharizair, gDozair ) ;
+
+cDiacritic = (cDiacriticUpper cDiacriticLower);
+
+
+/*
+Classes for diacritic ordering:
+	cMark1 class contains shadda, hamza, mark noon ghunna
+	cMark2 class contains the vowels
+	cMark3 class contains maddah
+	cMark4 class contains quranic marks and Rohingya tones
+*/
+
+cMark1 = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, gHamzaBelow, gWavyHamzaBelow);
+cMark2 = (gZabar, gPesh, gZair, gDozabar, gDopesh, gDozair, gKharizabar, gKharizair,
+	gJazm, gVowelInvSmallV, gVowelSmallV);
+cMark3 = (gMaddaAbove);
+cMark4 = (gSmallHighRehDadMark, gSmallHighAinMark, gSmallHighSeen);
+
+cMark234 = (cMark2 cMark3 cMark4);
+cMark34 = (cMark3 cMark4);
 
 
 // The "raw" forms indicate that initial/medial processing has not been done yet.
@@ -107,7 +149,7 @@ cChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl);
 
 cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefWavyHamzaBelow,
 				gAlefMaddaAbove);
-cAlefFin = (gAlefFin);
+cAlefFin = (gAlefFin, gAlefFin_lm);
 
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, 
 	gDalRing);
@@ -317,27 +359,6 @@ c_dkgal = (c_dkgal_postAlt,
 
 // Alternate qaf and waw forms
 c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh) ;
-
-
-// Diacritic combinations
-
-cPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
-cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar);
-
-cPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
-cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
-
-
-// Diacritics
-
-cDiacriticUpper = ( gHamzaAbove, gZabar, gPesh, gShadda, gJazm, gKharizabar, gDozabar, 
-    gDopesh, gUltaPesh, gNoonGhunnaMark, gVowelSmallV, gVowelInvSmallV,
-	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
-    gSmallHighRehHahMark, gSmallHighSeen, gNameMarker, gMaddaAbove,
-	cShaddaPlus, cKharizabarPlus);
-cDiacriticLower = ( gZair gKharizair gDozair ) ;
-
-cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
 // Heh-doachashmee initial alternates (which are actually the default forms)

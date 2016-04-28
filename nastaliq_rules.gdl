@@ -72,6 +72,9 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
 
 table(glyph) {AttributeOverride = 1};
 
+gMaddaAbove { mUpperM = point(215m, 1768m) };
+cmUpperDia += (gMaddaAbove);
+
 /**
 g__gafStroke {gafStrokeM = point(1370m, 1750m) };
 g__gafStroke_short {gafStrokeM = point(1370m, 1720m) };
@@ -129,6 +132,22 @@ hehDoachIni {
             name.1033 = string("Round");
         }
     }
+}
+
+sukunAlt {
+    id = "cv78";
+    name.1033 = string("Sukun/Jazm");
+    settings {
+        jazmDown {
+            value = 1;
+            name.1033 = string("Open down");
+        }
+        jazmLeft {
+            value = 2;
+            name.1033 = string("Open left");
+        }
+    }
+    default = jazmDown;
 }
 
 

@@ -78,12 +78,30 @@ endpass;
 
 pass(1)
 
+	// Diacritic ordering
+	// We don't swap the glyphs, because that would mess up the original order,
+	// rather we delete and insert.
+	// (We move the position back before the first diacritic to allow the 
+	// combining rules below to fire. This shouldn't be a problem because they
+	// should never match a second time.)
+	
+	_  cMark1  >  @M:M  _  / ^ _ cMark234 cMark234?  _=M;
+	_  cMark2  >  @M:M  _  / ^ _ cMark34  cMark34?   _=M;
+	_  cMark3  >  @M:M  _  / ^ _ cMark4   cMark4?    _=M;
+
+	// Combine certain diacritics into single glyphs.
+	gShadda      cPostShadda      >  cShaddaPlus$3:(1 3)      _  /  _  cMark34? _;
+	gKharizabar  cPostKharizabar  >  cKharizabarPlus$3:(1 3)  _  /  _  cMark34? _;
+
 	// NFD -> NFC
 	gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
 	(gYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
 
-	// Yay + hamza = hamzayay (move zair or zabar out of the way):
+	// Yay + hamza = hamzayay (move zair or zabar up out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
+
+	// Madda should come above diacritic
+	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  cDiacriticUpper:2  gMaddaAbove:1;
 
 	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
 	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)
@@ -109,11 +127,6 @@ pass(2)
 	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  / _ ^ MARKS _ ;
 
 #include "cp1252.gdh"
-
-	// Combine certain diacritics into single glyphs.
-
-	gShadda  cPostShadda  >  _ cShaddaPlus:(1 2);
-	gKharizabar  cPostKharizabar  >  _  cKharizabarPlus:(1 2);
 
 endpass; // 1
 
@@ -748,12 +761,12 @@ endpass; // 5
 
 table(glyph)
 
-cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u
+cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
 	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza);
-cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small
+cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
 	g__attachedRing, g__dot2l, g__hehHook_small);
-cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u
-	g__dot2u, g__hamza, g__hamza);
+cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
+	g__dot2u, gHamzaAbove, gHamzaAbove);
 
 cNuqtaLike += (cLowerUpper);
 
@@ -830,16 +843,16 @@ gNoonFin  g__noDot1u  >  @1:(1 2)  _;
 
 gHehGoal	g__hehHook_small		>	gHehGoal:(1 2)	_;
 gHehGoal	g__hehHook__dot2u		>	gTehMarbutaGoal:(1 2)	_;
-gHehGoal	g__hamza				>	gHehGoalHamza:(1 2)	_;
+gHehGoal	(gHamzaAbove g__hamza)	>	gHehGoalHamza:(1 2)	_;
 
 // Remove hooks
 gHehGoalFin  g__hehHook_small  >  gHehGoalFin:(1 2)  _;
 gHehGoalFin  g__hehHook__dot2u  >  gHehGoalFin        g__dot2u;	 // teh-marbuta goal
-gHehGoalFin  g__hehHook__hamza  >  gHehGoalFin        g__hamza;
+gHehGoalFin  g__hehHook__hamza  >  gHehGoalFin        gHamzaAbove;
 if (hehGoalHook == 0)
 cHehGoalMed  g__hehHook_small  >  cHehGoalMed:(1 2)  _;
 cHehGoalMed  g__hehHook__dot2u  >  cHehGoalMed        g__dot2u;	 // teh-marbuta goal
-cHehGoalMed  g__hehHook__hamza  >  cHehGoalMed        g__hamza;
+cHehGoalMed  g__hehHook__hamza  >  cHehGoalMed        gHamzaAbove;
 endif;
 
 //gHehDo				>	gHehDo;
@@ -853,22 +866,22 @@ gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
 
 // Add dots to initial/medial chotiyeh
 (cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
-(cBehIni  cBehMed)  g__dot2l__hamza  _  >  @1  g__dot2l:1  g__hamza:1;
+(cBehIni  cBehMed)  g__dot2l__hamza  _  >  @1  g__dot2l:1  gHamzaAbove:1;
 
 cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
-gBariyehFin   g__dot2l__hamza  >  @1  g__hamza;
+gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 
 // Right-link
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1;
-//gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 g__hamza:1;	// eventually replaced with beh + bariyeh
+//gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 absHamzaAbove:1;	// eventually replaced with beh + bariyeh
 
 
 //gAlef								>	gAlef;
-gAlef		g__hamza				>	gAlefHamzaAbove:(1 2)  _;
+gAlef		(gHamzaAbove g__hamza)	>	gAlefHamzaAbove:(1 2)  _;
 gAlef		gHamzaBelow				>	gAlefHamzaAbove:(1 2)  _;
-gAlef		g__madda				>	gAlefMaddaAbove:(1 2)  _;
-//gAlef		g__wavyHamza			>	gAlefWavyHAbove:(1 2)  _;
+gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
+//gAlef		g__wavyHamza)			>	gAlefWavyHAbove:(1 2)  _;
 //gAlef		gWavyHamzaBelow			>	gAlefWavyHBelow:(1 2)  _;
 //gDal								>	gDal;
 gDal		g__dot1u				>	gThal:(1 2)  _;
@@ -886,7 +899,7 @@ gReh		g__dot1l__dot1u			>	gRehDotBelowDotAbove:(1 2)  _;
 gReh		g__dot2u				>	gRehTwoDotsAbove:(1 2)  _;
 gReh		g__attachedRing			>	gRehRing:(1 2)  _;
 //gWaw								>	gWaw;
-gWaw		g__hamza				>	gWawHamzaAbove:(1 2)  _;
+gWaw		(gHamzaAbove g__hamza)	>	gWawHamzaAbove:(1 2)  _;
 gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
 
 
@@ -905,6 +918,10 @@ g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 if (hehDoachIni == heart)
 gHehDoIniQf  gWawFin  >  gHehDoIniQf_alt  gWawFin_stfh;
 cHehDoIni_noAlt  >  cHehDoIni_alt;
+endif;
+
+if (sukunAlt == jazmLeft)
+gJazm  >  gJazm_openleft;
 endif;
 
 // Experimental - kaf tops

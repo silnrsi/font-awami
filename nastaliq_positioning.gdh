@@ -221,7 +221,7 @@ cTakes_kafTopDia
 */
 
 ////gJeemFin  cNuqtaLike { attach {to = @J; at = point(574m, 1274m); with = nUpperM} }
-////	/  gJeemMedJm=J  cNuqtaLike?  _  _;
+////	/  gJeemMedJm=J  cNuqtaLike?  _=J  _=N;
 
 //cTakes_n1hUpperBehSpecialDia
 //	cNuqtaLikeUpper { attach {to = @B; at = n1hUpperBehSpecialS; with = nUpperM } }
@@ -513,17 +513,19 @@ cSpace { collision.flags = SET_START_END(collision.flags) };
 // Experimental - kaf-top is NEVER shifted
 ///g__kafTop { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence
 
-
 // Upper nuqtas
 
 // Gaf strokes are considered part of the base - they don't move.
 cgafStrokeDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;     // make context long enough to give precedence
 
+// Things on top of alefs should never move horizontally. For now, just don't let the move at all.
+cNuqtaLikeUpper { collision.flags = COLL_FREEZE }  /  (gAlef cAlefFin)  _;
+	
 // Special case: if there is a nuqta before a zah, scootch the nuqta of the
 // zah down pretty close to the base.
 /**
 cNuqtaLikeUpper { 
-	shift{ x = 50m; y = -150m }; // note that shifting in RTL moves forward, ie, left.
+	shift { x = 50m; y = -150m }; // note that shifting in RTL moves forward, ie, left.
 	collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -50m;
@@ -819,57 +821,59 @@ cDiacriticUpper=D  chonorificDia=H {att {to=@D; at=honorificS; with=honorificM};
 cIsoFin=B  cNuqtaLikeUpper=N
 	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^  _  c_attLikeNqLowMid?  _  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+		/ ^  _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 cIsoFin=B  
 	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0}  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 // honorific attached to final beh with lower nuqtas, w/o upper diac - 
 // uses standard upper nuqta location raised a little higher
 cBehFin=B  chonorificDia=H {att {to=@B; at {x=nUpperS.x; y=nUpperS.y + 300m}; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=H {att.to==0};
 
 // honorific attached to final base w/o upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
 
 // honorific attached to final base w/o upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
 
 
 // attach to nuqta
 cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  _  cDiacriticLower? _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower? _=D {att.to==0};
 cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; with=mLowerM}; insert=true}
-		/ ^ _  _  c_attLikeNqUpMid?  _ {att.to==0};
+		/ ^ _=B  _=N  c_attLikeNqUpMid?  _=D {att.to==0};
 
 
 // Special contextual cases - eg, kaf/lam followed by tailed final 
 cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; insert=true}
-		/ ^ _  c_attLikeNqUpMid?  _ {att.to==0}  (gAinFin gChotiyehFin gChotiyehFin_bfkl gJeemFin);
+		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0}  (gAinFin gChotiyehFin gChotiyehFin_bfkl gJeemFin);
 
 // Only a few glyphs attach the small alef at a special place.
 cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; insert=true}
-		/ ^ _  c_attLikeNqUpMid?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
 cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; insert=true}
-		/ ^ _  c_attLikeNqUpMid?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
-		/ ^ _  c_attLikeNqLowMid?  cDiacriticLower?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
-		/ ^ _  c_attLikeNqUpMid?  _ {att.to==0};
+		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // attach to diacritic
-cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}  / _ ^ _ {att.to==0};
-cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}  / _ ^ _ {att.to==0};
+cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}
+	/ _=D1 ^ _=D2 {att.to==0};
+cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}
+	/ _=D1 ^ _=D2 {att.to==0};
 
 // Remove if we create a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
