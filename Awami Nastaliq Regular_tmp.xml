@@ -1907,7 +1907,7 @@
 		<point type="_exit_hehdoach" mark="1">
 			<location y="600" x="714"></location>
 		</point>
-		<property name="mark" value="80"></property>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absHehDoachashmeeMed.re" GID="102">
 		<point type="exit_reh" mark="1">
@@ -7552,9 +7552,16 @@
 		<point type="_honorific" mark="1">
 			<location y="-21" x="346"></location>
 		</point>
+		<property name="mark" value="130"></property>
 	</glyph>
-	<glyph PSName="absSmallHighTah" GID="435">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+	<glyph PSName="absSmallHighTah" GID="435" UID="U+0615">
+		<point type="mUpper" mark="1">
+			<location y="590" x="252"></location>
+		</point>
+		<point type="_mUpper" mark="1">
+			<location y="-206" x="347"></location>
+		</point>
+		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absTah" GID="436" UID="U+0637">
 		<point type="mUpper" mark="1">
@@ -7900,8 +7907,8 @@
 			<location y="416" x="149"></location>
 		</point>
 		<compound PSName="nlqZabar" GID="1263" bbox="-14, -12, 328, 374" UID="U+064E"></compound>
-		<compound PSName="_nukta" GID="1057" bbox="205, 249, 333, 376"></compound>
-		<compound PSName="_nukta" GID="1057" bbox="428, -9, 556, 117"></compound>
+		<compound PSName="_nukta" GID="1057" bbox="185, 249, 313, 376"></compound>
+		<compound PSName="_nukta" GID="1057" bbox="448, -9, 576, 117"></compound>
 		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="ornateLeftParen" GID="471" UID="U+FD3E">
@@ -17037,12 +17044,12 @@
 	</glyph>
 	<glyph PSName="absNoonGhunnaMark" GID="1271" UID="U+0658">
 		<point type="_mUpper" mark="1">
-			<location y="-11" x="164"></location>
+			<location y="-132" x="254"></location>
 		</point>
 		<point type="_mUpper" mark="1">
-			<location y="515" x="164"></location>
+			<location y="401" x="254"></location>
 		</point>
-		<property name="mark" value="80"></property>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absFivePointedStar" GID="1272" UID="U+066D">
 		<point type="diaA" mark="1">
@@ -17238,6 +17245,7 @@
 		<point type="_mUpper" mark="1">
 			<location y="60" x="-5"></location>
 		</point>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="zerospace" GID="1296" UID="U+200B">
 		<property name="mark" value="130"></property>
