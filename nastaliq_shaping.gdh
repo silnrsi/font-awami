@@ -78,6 +78,10 @@ endpass;
 
 pass(1)
 
+if (maddaAlt == aboveVowel)
+	gMaddaAbove  >  gMaddaAbove_dia  /  ^ _;
+endif;
+
 	// Diacritic ordering
 	// We don't swap the glyphs, because that would mess up the original order,
 	// rather we delete and insert.
@@ -94,14 +98,18 @@ pass(1)
 	gKharizabar  cPostKharizabar  >  cKharizabarPlus$3:(1 3)  _  /  _  cMark34? _;
 
 	// NFD -> NFC
-	gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
+	////gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
 	(gYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
 
 	// Yay + hamza = hamzayay (move zair or zabar up out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
 
-	// Madda should come above diacritic
-	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  cDiacriticUpper:2  gMaddaAbove:1;
+	// Madda should come above diacritic if feature is turned on.
+if (maddaAlt == 0)
+	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  gMaddaAbove:1  @2:2;
+else
+	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  @2:2  gMaddaAbove_dia:1;
+endif;
 
 	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
 	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)

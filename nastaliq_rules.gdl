@@ -150,6 +150,22 @@ sukunAlt {
     default = jazmDown;
 }
 
+maddaAlt {
+    id = "madd";
+    name.1033 = string("Madda");
+    settings {
+        belowVowel {
+            value = 0;
+            name.1033 = string("Below vowel mark");
+        }
+        aboveVowel {
+            value = 1;
+            name.1033 = string("Above vowel mark");
+        }
+    }
+    default = belowVowel;
+}
+
 
 // Overlap kerning
 /***********

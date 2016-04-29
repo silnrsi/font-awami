@@ -21,12 +21,17 @@ g__noDot1u = pseudo(postscript("_dot1u"));
 g__noDot2l = pseudo(postscript("_dot2l"));
 
 
+// The version of the madda that is placed above the vowel:
+gMaddaAbove_dia = pseudo(postscript("absMaddaAbove"))
+	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
+
+
 cNuqtaUpper = (g__dot1u, g__dot2u, g__dot3u, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV,   
+	g__dot1u_smallTah, g__dot1u_smallV, gMaddaAbove,
 	// g__kafTop,
 	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, gHamzaBelow);
@@ -47,8 +52,8 @@ cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozaba
 
 
 cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, gDozabar, 
-    gDopesh, gUltaPesh, gMaddaAbove, gNoonGhunnaMark,
-	gVowelSmallV, gVowelInvSmallV,
+    gDopesh, gUltaPesh, gNoonGhunnaMark, gMaddaAbove_dia,
+	gVowelSmallV, gVowelInvSmallV, gZabarTwoDots, gShortVowelMark,
 	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
     gSmallHighRehHahMark, gSmallHighSeen, gNameMarker,
 	cShaddaPlus, cKharizabarPlus);
@@ -65,10 +70,11 @@ Classes for diacritic ordering:
 	cMark4 class contains quranic marks and Rohingya tones
 */
 
-cMark1 = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, gHamzaBelow, gWavyHamzaBelow);
+cMark1 = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, gHamzaBelow, g__wavyHamza, gWavyHamzaBelow,
+	gMaddaAbove);
 cMark2 = (gZabar, gPesh, gZair, gDozabar, gDopesh, gDozair, gKharizabar, gKharizair,
 	gJazm, gVowelInvSmallV, gVowelSmallV);
-cMark3 = (gMaddaAbove);
+cMark3 = (gMaddaAbove_dia);
 cMark4 = (gSmallHighRehDadMark, gSmallHighAinMark, gSmallHighSeen);
 
 cMark234 = (cMark2 cMark3 cMark4);
