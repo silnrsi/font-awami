@@ -95,6 +95,7 @@ gDalTwoVertBelowSmallTah
 					_	>	gDal		g__dot2vl__smallTah:1;
 gThalDotBelow		_	>	gDal		g__dot1l:1;
 gDalRing			_	>	gDal		g__attachedRing:1;
+gDalFourDotsAbove	_	>	gDal		g__dot4u:1;
 //gReh					>	gReh;
 gZain				_	>	gReh		g__dot1u:1;
 gRreh				_	>	gReh		g__smallTah:1;
@@ -103,6 +104,10 @@ gRehDotBelow		_	>	gReh		g__dot1l:1;
 gRehDotBelowDotAbove _	>	gReh		g__dot1l__dot1u:1;
 gRehTwoDotsAbove	_	>	gReh		g__dot2u:1;
 gRehRing			_	>	gReh		g__attachedRing:1;
+gRehFourDotsAbove	_	>	gReh		g__dot4u:1;
+gRehTwoVertAbove	_	>	gReh		g__dot2vu:1;
+gRehHamzaAbove		_	>	gReh		gHamzaAbove:1;
+gRehSmallTahTwoDots	_	>	gReh		g__smallTah2dots:1;
 //gWaw					>	gWaw;
 gWawHamzaAbove		_	>	gWaw		gHamzaAbove:1;
 gWawRing			_	>	gWaw		g__attachedRingMid:1;

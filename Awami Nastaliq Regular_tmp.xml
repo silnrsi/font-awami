@@ -6924,7 +6924,6 @@
 			<location y="1341" x="-30"></location>
 		</point>
 		<compound PSName="absHah" GID="380" bbox="95, -635, 1377, 1108" UID="U+062D"></compound>
-		<compound PSName="_dot2vl" GID="1067" bbox="468, -1547, 855, -805"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absE" GID="363" UID="U+06D0">
@@ -7418,19 +7417,35 @@
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absRehFourDotsAbove" GID="419" UID="U+0699">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mLower" mark="1">
+			<location y="-212" x="242"></location>
+		</point>
+		<point type="kernBbRight" mark="1">
+			<location y="407" x="621"></location>
+		</point>
+		<point type="kernBbLeft" mark="1">
+			<location y="97" x="120"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1918" x="526"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1947" x="-121"></location>
+		</point>
+		<compound PSName="absReh" GID="417" bbox="0, -70, 618, 795" UID="U+0631"></compound>
+		<compound PSName="_nukta4" GID="1327" bbox="148, 1022, 901, 1765"></compound>
 	</glyph>
 	<glyph PSName="absRehTwoDotsAbove" GID="420" UID="U+0697">
 		<point type="mLower" mark="1">
 			<location y="-212" x="242"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="1575" x="571"></location>
+			<location y="1575" x="529"></location>
 		</point>
 		<point type="kernBbRight" mark="1">
 			<location y="407" x="621"></location>
 		</point>
-		<point type="bbKernLeft" mark="1">
+		<point type="kernBbLeft" mark="1">
 			<location y="97" x="120"></location>
 		</point>
 		<point type="honorific" mark="1">
@@ -7441,7 +7456,23 @@
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absRehTwoVertAbove" GID="421" UID="U+076B">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="kernBbLeft" mark="1">
+			<location y="75" x="120"></location>
+		</point>
+		<point type="kernBbRight" mark="1">
+			<location y="412" x="618"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1859" x="601"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-212" x="242"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1461" x="-72"></location>
+		</point>
+		<compound PSName="absReh" GID="417" bbox="0, -70, 618, 795" UID="U+0631"></compound>
+		<compound PSName="_nukta2v" GID="1364" bbox="397, 964, 784, 1706"></compound>
 	</glyph>
 	<glyph PSName="absRnoon" GID="422" UID="U+06BB">
 		<point type="mLower" mark="1">
@@ -7467,7 +7498,7 @@
 		<point type="kernBbRight" mark="1">
 			<location y="545" x="600"></location>
 		</point>
-		<point type="bbKernLeft" mark="1">
+		<point type="kernBbLeft" mark="1">
 			<location y="124" x="120"></location>
 		</point>
 		<point type="honorific" mark="1">
@@ -15964,6 +15995,10 @@
 		<point type="_n1Lower" mark="1">
 			<location y="381" x="0"></location>
 		</point>
+		<point type="mLower" mark="1">
+			<location y="-515" x="12"></location>
+		</point>
+		<compound PSName="_nukta2v" GID="1364" bbox="-193, -371, 194, 371"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="_dot3u" GID="1068">
@@ -17096,7 +17131,6 @@
 			<location y="1315" x="161"></location>
 		</point>
 		<compound PSName="_beh" GID="1056" bbox="90, -112, 2156, 657"></compound>
-		<compound PSName="_dot2vl" GID="1067" bbox="867, -1071, 1254, -329"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absHahHamzaAbove" GID="1279" UID="U+0681">
@@ -17144,10 +17178,27 @@
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absDalFourDotsAbove" GID="1282" UID="U+0690">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="kernBbLeft" mark="1">
+			<location y="76" x="90"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="2090" x="-400"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="2030" x="272"></location>
+		</point>
+		<point type="kernBbRight" mark="1">
+			<location y="326" x="633"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-202" x="335"></location>
+		</point>
+		<compound PSName="absDal" GID="358" bbox="0, -68, 622, 863" UID="U+062F"></compound>
+		<compound PSName="_nukta4" GID="1327" bbox="-102, 1112, 651, 1855"></compound>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absRehDotBelow" GID="1283" UID="U+0694">
-		<point type="bbKernRight" mark="1">
+		<point type="kernBbRight" mark="1">
 			<location y="536" x="618"></location>
 		</point>
 		<point type="kernBbLeft" mark="1">
@@ -17178,7 +17229,6 @@
 		</point>
 		<compound PSName="absKaf" GID="390" bbox="90, -111, 2365, 2444" UID="U+0643"></compound>
 		<compound PSName="_gafStroke" GID="1115" bbox="1298, 1659, 2073, 2515"></compound>
-		<compound PSName="_dot2vl" GID="1067" bbox="533, -1023, 920, -281"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absNoonDotBelow" GID="1285" UID="U+06B9">
@@ -17227,16 +17277,45 @@
 		<point type="mUpper" mark="1">
 			<location y="1981" x="277"></location>
 		</point>
-		<compound PSName="_dot2vl" GID="1067" bbox="50, -1042, 437, -300"></compound>
 		<compound PSName="_smallTah" GID="348" bbox="67, 1081, 450, 1723"></compound>
 		<compound PSName="absDal" GID="358" bbox="0, -68, 622, 863" UID="U+062F"></compound>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absRehHamzaAbove" GID="1293" UID="U+076C">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mLower" mark="1">
+			<location y="-202" x="311"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="1551" x="571"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1100" x="-39"></location>
+		</point>
+		<point type="kernBbRight" mark="1">
+			<location y="572" x="600"></location>
+		</point>
+		<compound PSName="absReh" GID="417" bbox="0, -70, 618, 795" UID="U+0631"></compound>
+		<compound PSName="_hamza" GID="345" bbox="354, 984, 739, 1366"></compound>
 	</glyph>
 	<glyph PSName="absRehSmallTahTwoDots" GID="1294" UID="U+0771">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mUpper" mark="1">
+			<location y="1953" x="390"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1924" x="-64"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-212" x="221"></location>
+		</point>
+		<point type="kernBbRight" mark="1">
+			<location y="545" x="600"></location>
+		</point>
+		<point type="kernBbLeft" mark="1">
+			<location y="124" x="120"></location>
+		</point>
+		<compound PSName="absReh" GID="417" bbox="0, -70, 618, 795" UID="U+0631"></compound>
+		<compound PSName="_smallTah" GID="348" bbox="270, 1106, 653, 1748"></compound>
+		<compound PSName="_nukta2" GID="1058" bbox="704, 914, 968, 1048"></compound>
 	</glyph>
 	<glyph PSName="absShortVowelMark" GID="1295" UID="U+08FF">
 		<point type="mUpper" mark="1">
@@ -17382,7 +17461,7 @@
 			<location y="-805" x="562"></location>
 		</point>
 		<point type="mUpper" mark="1">
-			<location y="2214" x="1111"></location>
+			<location y="2294" x="1111"></location>
 		</point>
 		<point type="honorific" mark="1">
 			<location y="2000" x="265"></location>
@@ -17800,5 +17879,32 @@
 			<location y="498" x="-7"></location>
 		</point>
 		<property name="mark" value="130"></property>
+	</glyph>
+	<glyph PSName="_nukta2v" GID="1364">
+		<property name="mark" value="80"></property>
+	</glyph>
+	<glyph PSName="_dot2vu" GID="1365">
+		<point type="_nUpper" mark="1">
+			<location y="-195" x="0"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="660" x="5"></location>
+		</point>
+		<compound PSName="_nukta2v" GID="1364" bbox="-193, -191, 194, 551"></compound>
+		<property name="mark" value="80"></property>
+	</glyph>
+	<glyph PSName="_smallTah2dots" GID="1366">
+		<point type="_tahUpper" mark="1">
+			<location y="-424" x="347"></location>
+		</point>
+		<point type="_tahLower" mark="1">
+			<location y="430" x="350"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="590" x="252"></location>
+		</point>
+		<compound PSName="_smallTah" GID="348" bbox="140, -222, 523, 420"></compound>
+		<compound PSName="_nukta2" GID="1058" bbox="574, -413, 838, -279"></compound>
+		<property name="mark" value="80"></property>
 	</glyph>
 </font>

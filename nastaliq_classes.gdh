@@ -26,12 +26,12 @@ gMaddaAbove_dia = pseudo(postscript("absMaddaAbove"))
 	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
 
 
-cNuqtaUpper = (g__dot1u, g__dot2u, g__dot3u, g__dot4u) ;
-cNuqtaLower = (g__dot1l, g__dot2l, g__dot3l, g__dot2vl, g__dot4l) ;
+cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot4u) ;
+cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV, gMaddaAbove,
+	g__dot1u_smallTah, g__dot1u_smallV, gMaddaAbove, g__smallTah2dots,
 	// g__kafTop,
 	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, gHamzaBelow);
@@ -158,11 +158,11 @@ cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefW
 cAlefFin = (gAlefFin, gAlefFin_lm);
 
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, 
-	gDalRing);
-cDalFin = (gDalFin); // gDdalFin gThalFin, gDalDotBelowSmallTahFin, gDalTwoVertBelowSmallTahFin, gThalDotBelowFin0 ) ;
+	gDalRing, gDalFourDotsAbove);
+cDalFin = (gDalFin);
 
 cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
-	gRehTwoDotsAbove, gRehRing);
+	gRehTwoDotsAbove, gRehRing, gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
 cWawIso = (gWaw, gWawHamzaAbove, gWawRing);
