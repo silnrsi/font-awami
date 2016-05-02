@@ -78,9 +78,9 @@ endpass;
 
 pass(1)
 
-if (maddaAlt == aboveVowel)
-	gMaddaAbove  >  gMaddaAbove_dia  /  ^ _;
-endif;
+//if (maddaAlt == belowVowel)
+//	gMaddaAbove  >  gMaddaAbove_low  /  ^ _;
+//endif;
 
 	// Diacritic ordering
 	// We don't swap the glyphs, because that would mess up the original order,
@@ -104,12 +104,11 @@ endif;
 	// Yay + hamza = hamzayay (move zair or zabar up out of the way):
 	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
 
-	// Madda should come above diacritic if feature is turned on.
-if (maddaAlt == 0)
-	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  gMaddaAbove:1  @2:2;
-else
-	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  @2:2  gMaddaAbove_dia:1;
-endif;
+//if (maddaAlt == 0)
+//	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  gMaddaAbove_low:1  @2:2;
+//else
+	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  @2:2  gMaddaAbove:1;
+//endif;
 
 	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
 	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)
@@ -793,6 +792,8 @@ gBeh		g__smallTah				>	gTteh:(1 2)	_;
 gBeh		g__dot3l				>	gPeh:(1 2)	_;
 gBeh		g__dot2vl				>	gBeeh:(1 2)	_;
 gBeh		g__ring__dot2u			>	gTehRing:(1 2)	_;
+gBeh		g__dot2vu				>	gTteheh:(1 2)  _;
+gBeh		g__dot3uD				>	gTehThreeDotsAboveDownwards:(1 2)  _;
 
 gJeem		g__dot1l				>	gJeem:(1 2)	_;
 gJeem								>	gHah;
@@ -803,8 +804,12 @@ gJeem		g__dot2l				>	gNyeh:(1 2)	_;
 gJeem		g__dot4l				>	gTcheheh:(1 2)	_;
 
 //gSeen								>	gSeen;
-gSeen		g__dot3u				>	gSheen:(1 2)	_;
-gSeen		g__dot4u				>	gSeenFourDotsAbove:(1 2)	_;
+gSeen		g__dot3u				>	gSheen:(1 2)  _;
+gSeen		g__dot4u				>	gSeenFourDotsAbove:(1 2)  _;
+gSeen		g__dot1l__dot1u			>	gSeenDotBelowDotAbove:(1 2)  _;
+gSeen		g__smallTah2dots		>	gSeenSmallTahTwoDots:(1 2)  _;
+gSeen		g__dot2vu				>	gSeenTwoVertAbove:(1 2)  _;
+
 //gSad								>	gSad;
 gSad		g__dot1u				>	gDad:(1 2)	_;
 //gTah								>	gTah;
@@ -868,6 +873,7 @@ endif;
 gChotiyeh	g__noDot2l			>	gChotiyeh:(1 2)  _;
 gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
 gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
+gChotiyeh	g__dot2vl			>	gE:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
@@ -887,7 +893,7 @@ gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 
 //gAlef								>	gAlef;
 gAlef		(gHamzaAbove g__hamza)	>	gAlefHamzaAbove:(1 2)  _;
-gAlef		gHamzaBelow				>	gAlefHamzaAbove:(1 2)  _;
+gAlef		(gHamzaBelow g__hamza)	>	gAlefHamzaBelow:(1 2)  _;
 gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
 //gAlef		g__wavyHamza)			>	gAlefWavyHAbove:(1 2)  _;
 //gAlef		gWavyHamzaBelow			>	gAlefWavyHBelow:(1 2)  _;
@@ -914,8 +920,6 @@ gReh		g__smallTah2dots		>	gRehSmallTahTwoDots:(1 2)  _;
 //gWaw								>	gWaw;
 gWaw		(gHamzaAbove g__hamza)	>	gWawHamzaAbove:(1 2)  _;
 gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
-
-
 
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.

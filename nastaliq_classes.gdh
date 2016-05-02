@@ -21,18 +21,18 @@ g__noDot1u = pseudo(postscript("_dot1u"));
 g__noDot2l = pseudo(postscript("_dot2l"));
 
 
-// The version of the madda that is placed above the vowel:
-gMaddaAbove_dia = pseudo(postscript("absMaddaAbove"))
-	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
+// The version of the madda that is placed below the vowel - not currently used.
+//gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
+//	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
 
 
-cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot4u) ;
+cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV, gMaddaAbove, g__smallTah2dots,
-	// g__kafTop,
+	g__dot1u_smallTah, g__dot1u_smallV,  g__smallTah2dots,
+	// g__kafTop, gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, gHamzaBelow);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__attachedRingMid);
@@ -40,7 +40,7 @@ cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2l);
 
 // Diacritics
-// Note: hamzas are nuqta-like, not diacritic
+// Note: hamzas are nuqta-like, not diacritics
 
 // Diacritic combinations
 
@@ -52,7 +52,7 @@ cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozaba
 
 
 cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, gDozabar, 
-    gDopesh, gUltaPesh, gNoonGhunnaMark, gMaddaAbove_dia,
+    gDopesh, gUltaPesh, gNoonGhunnaMark, gMaddaAbove,
 	gVowelSmallV, gVowelInvSmallV, gZabarTwoDots, gShortVowelMark,
 	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
     gSmallHighRehHahMark, gSmallHighSeen, gSmallHighTah, gNameMarker,
@@ -70,11 +70,12 @@ Classes for diacritic ordering:
 	cMark4 class contains quranic marks and Rohingya tones
 */
 
-cMark1 = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, gHamzaBelow, g__wavyHamza, gWavyHamzaBelow,
-	gMaddaAbove);
+cMark1 = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, gHamzaBelow, g__wavyHamza, gWavyHamzaBelow
+	// , gMaddaAbove_low
+	);
 cMark2 = (gZabar, gPesh, gZair, gDozabar, gDopesh, gDozair, gKharizabar, gKharizair,
 	gJazm, gVowelInvSmallV, gVowelSmallV);
-cMark3 = (gMaddaAbove_dia);
+cMark3 = (gMaddaAbove);
 cMark4 = (gSmallHighRehDadMark, gSmallHighAinMark, gSmallHighSeen);
 
 cMark234 = (cMark2 cMark3 cMark4);
