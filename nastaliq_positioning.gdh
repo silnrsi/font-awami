@@ -245,10 +245,10 @@ cTakes_gafStrokeDia
 	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
 	/ _=K  _=S;
 
-// Use smallV AP if present, otherwise small-V will attach at nUpper.
-cTakes_smallVDia
-	g__smallV { attach {to = @B; at = smallVS; with = nUpperM } }
-	/ _=B  _=U;
+// Use smallV AP if present, otherwise small-V will attach at nUpper - no longer used.
+////cTakes_smallVDia
+////	g__smallV { attach {to = @B; at = smallVS; with = nUpperM } }
+////	/ _=B  _=U;
 
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
@@ -525,6 +525,17 @@ cgafStrokeDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;     // make conte
 
 // Things on top of alefs should never move horizontally. For now, just don't let the move at all.
 cNuqtaLikeUpper { collision.flags = COLL_FREEZE }  /  (gAlef cAlefFin)  _;
+
+
+// Small V over lam needs to stay nicely centered.
+g__smallV { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -50m;
+	max.x = 50m;
+	min.y = -300m;
+	max.y = 1000m;
+} }  /  (cLamIni cLamMed)  _;
+
 	
 // Special case: if there is a nuqta before a zah, scootch the nuqta of the
 // zah down pretty close to the base.
@@ -616,9 +627,8 @@ cNuqtaLikeUpper { collision {
 // collisions, but to do that we would need to be able to ignore the base (lam) from
 // the perspective of the bar.
 
-g__bar { collision.flags = COLL_FREEZE }    /  cBase  _ ;  // add context to increase precendence
+g__bar { collision.flags = COLL_FREEZE }    /  cBase  _ ;  // add context to increase precedence
 cringDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;
-
 
 // Lower nuqtas
 
