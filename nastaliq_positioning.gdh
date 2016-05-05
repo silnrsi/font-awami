@@ -60,7 +60,6 @@ cursive_attach(qafWawStfh)
 #endif  // QUICKCOMPILE
 
 // EXPERIMENTS
-#define REDUCE_KERN 0m
 #define SHIFT_N_OUT 0m
 
 // Last resort:
@@ -932,11 +931,11 @@ endtable; // glyph
 
 pass(6)
 
-cKernable { pairKern = kernPreAlef }  /  _  MARKS  cSpace?  gAlef;
-cKernable { pairKern = kernPreDal  }  /  _  MARKS  cSpace?  gDal;
-cKernable { pairKern = kernPreReh  }  /  _  MARKS  cSpace?  gReh;
-cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cSpace?  gWaw;
-cKernable { pairKern = kernPreLamAlef} / _  MARKS  cSpace?  gLamAlef;
+cKernable { pairKern = kernPreAlef }  /  _  MARKS  cSpace?  (cAlefIso);
+cKernable { pairKern = kernPreDal  }  /  _  MARKS  cSpace?  (cDalIso);
+cKernable { pairKern = kernPreReh  }  /  _  MARKS  cSpace?  (cRehIso);
+cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cSpace?  (cWawIso);
+cKernable { pairKern = kernPreLamAlef} / _  MARKS  cSpace?  (gLamAlef gLamIniAl);
 
 // Before a two-letter word:
 cKernable { pairKern = kernPreShort } / _  MARKS  cSpace?  c_initial MARKS  c_final;
@@ -1075,7 +1074,7 @@ cKernable { collision {
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);           // - REDUCE_KERN
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
