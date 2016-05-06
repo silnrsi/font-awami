@@ -304,6 +304,7 @@ sub make_name
         $gname =~ s/\.bere/BeRe/;
         $gname =~ s/\.benn/BeNn/;
         $gname =~ s/Kaf/ArabicKaf/;
+        $gname =~ s/ArabicKafRing/KafRing/;
         $gname =~ s/Keheh/Kaf/;
         $gname =~ s/_keheh/_kaf/;      # _kehehTop -> g__kafTop
         $gname =~ s/HehDoachashmee/HehDo/;
@@ -316,6 +317,10 @@ sub make_name
 
         $gname =~ s/\.(.)/uc($1)/oge;           # remove '.', uppercase first after
         $gname =~ s/_tt//;
+        if ((length($gname) == 2) or ($gname eq "gOE"))
+        {
+            $gname =~ s/g/gArabic/;    # gE -> gArabicE, gU -> gArabicU, gOE -> gArabicOE
+        }
     }
     else
     {
