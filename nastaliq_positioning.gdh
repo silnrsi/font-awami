@@ -226,8 +226,12 @@ cTakes_kafTopDia
 //	cNuqtaLikeUpper { attach {to = @B; at = n1hUpperBehSpecialS; with = nUpperM } }
 //	/ _=B  _=U;
 
-
 // Put hamza rules first to make sure to use hamza APs for them.
+cTakes_hamzaUpperDia
+	chehhookDia { attach {to = @B; at = hehhookS; with = hehhookM } }
+	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
+	/ _=B  _=H  _=U;
+
 cTakes_hamzaUpperDia
 	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
 	/ _=B  _=U;

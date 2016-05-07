@@ -74,8 +74,9 @@ gRnoon				_	>   gNoon:1		g__smallTah:1;
 gNoonSmallV			_	>	gNoon:1		g__dot1u_smallV:1;
 
 gHehGoal			_	>	gHehGoal:1	g__hehHook_small:1;
-gTehMarbutaGoal		_	>	gHehGoal:1	g__hehHook__dot2u:1;
 gHehGoalHamza		_	>	gHehGoal:1	g__hehHook__hamza:1;
+// For now, make heh act like heh-goal:
+gHeh				_	>	gHehGoal:1	g__hehHook_small:1;
 
 //gHehDo				>	gHehDo;
 
@@ -100,6 +101,7 @@ gAlefHamzaBelow		_	>	gAlef		gHamzaBelow:1;
 gAlefWavyHamzaAbove	_	>	gAlef		g__wavyHamza:1;
 gAlefMaddaAbove		_	>	gAlef		gMaddaAbove:1;
 ////gAlefWavyHBelow		_	>	gAlef		gWavyHamzaBelow:1;
+
 //gDal					>	gDal;
 gThal				_	>	gDal		g__dot1u:1;
 gDdal				_	>	gDal		g__smallTah:1;
@@ -109,6 +111,7 @@ gDalTwoVertBelowSmallTah
 gThalDotBelow		_	>	gDal		g__dot1l:1;
 gDalRing			_	>	gDal		g__attachedRing:1;
 gDalFourDotsAbove	_	>	gDal		g__dot4u:1;
+
 //gReh					>	gReh;
 gZain				_	>	gReh		g__dot1u:1;
 gRreh				_	>	gReh		g__smallTah:1;
@@ -121,8 +124,12 @@ gRehFourDotsAbove	_	>	gReh		g__dot4u:1;
 gRehTwoVertAbove	_	>	gReh		g__dot2vu:1;
 gRehHamzaAbove		_	>	gReh		gHamzaAbove:1;
 gRehSmallTahTwoDots	_	>	gReh		g__smallTah2dots:1;
+
 //gWaw					>	gWaw;
 gWawHamzaAbove		_	>	gWaw		gHamzaAbove:1;
 gWawRing			_	>	gWaw		g__attachedRingMid:1;
 
+gTehMarbutaGoal		_	>	gTehMarbutaGoal	g__dot2u:1;
 
+gTehMarbuta			_	>	gTehMarbuta		g__dot2u:1;
+gHehYehAbove		_	>	gTehMarbuta		gHamzaAbove:1;	// OR SHOULD THIS BE TEH MARBUTA GOAL??

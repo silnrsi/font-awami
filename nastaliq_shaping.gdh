@@ -274,6 +274,8 @@ cIni_raw = (gBehIni_raw, gJeemIni_raw, gSeenIni_raw, gSadIni_raw, gTahIni_raw, g
 
 cIni = (gBehIni, gJeemIni, gSeenIni, gSadIni, gTahIni, gAinIni, gFehIni,
 		gKafIni, gGafIni, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni);
+cIniBe = (gBehIniBe, gJeemIniBe, gSeenIniBe, gSadIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
+		gKafIniBe, gGafIniBe, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
 cIniBeM1_kx = (gBehIniBeM1, gJeemIniBeM1, gSeenIniBeM1, gSadIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 cIniBeM2 = (gBehIniBeM2, gJeemIniBeM2, gSeenIniBeM2, gSadIniBeM2, gTahIniBeM2, gAinIniBeM2, gFehIniBeM2,
@@ -608,6 +610,8 @@ cMed_raw  >  cMedHd		/  ^ MPRECXT _  MARKS  (gHehDoFin cHehDoMed);
 cMed_raw  >  cMedCh		/  ^ MPRECXT _  MARKS  cChotiyehFin;
 cMed_raw  >  cMedBy		/  ^ MPRECXT _  MARKS  cBariyehFin;
 
+cMed_raw  >  cMedBe		/  ^ MPRECXT  _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
+
 gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT _  MARKS  gAlefFin_lm;
 
 // No contextual forms for this glyph:
@@ -720,6 +724,8 @@ cIni_raw  >  cIniHgM	/ _ MARKS  cHehGoalMed;
 cIni_raw  >  cIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
 cIni_raw  >  cIniCh		/ _ MARKS  cChotiyehFin;
 cIni_raw  >  cIniBy  	/ _ MARKS  cBariyehFin;
+
+cIni_raw  >  cIniBe		/ _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
 
 gBehIni_raw  >  gBehIniBeM2	/ _ MARKS  cBehFin;
 gBehIni_raw  >  gBehIniJm	/ _ MARKS  (cJeemFin cJeemMed);
@@ -861,6 +867,7 @@ gNoonFin  g__noDot1u  >  @1:(1 2)  _;
 gHehGoal	g__hehHook_small		>	gHehGoal:(1 2)	_;
 gHehGoal	g__hehHook__dot2u		>	gTehMarbutaGoal:(1 2)	_;
 gHehGoal	(gHamzaAbove g__hamza)	>	gHehGoalHamza:(1 2)	_;
+gHehGoal	g__hehHook__hamza		>	gHehGoalHamza:(1 2) _;
 
 // Remove hooks
 gHehGoalFin  g__hehHook_small  >  gHehGoalFin:(1 2)  _;
@@ -901,6 +908,7 @@ gAlef		(gHamzaBelow g__hamza)	>	gAlefHamzaBelow:(1 2)  _;
 gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
 //gAlef		g__wavyHamza)			>	gAlefWavyHAbove:(1 2)  _;
 //gAlef		gWavyHamzaBelow			>	gAlefWavyHBelow:(1 2)  _;
+
 //gDal								>	gDal;
 gDal		g__dot1u				>	gThal:(1 2)  _;
 gDal		g__smallTah				>	gDdal:(1 2)  _;
@@ -909,6 +917,7 @@ gDal		g__dot2vl__smallTah		>	gDalTwoVertBelowSmallTah:(1 2)  _;
 gDal		g__dot1l				>	gThalDotBelow:(1 2)  _;
 gDal		g__attachedRing			>	gDalRing:(1 2)  _;
 gDal		g__dot4u				>	gDalFourDotsAbove:(1 2)  _;
+
 //gReh								>	gReh;
 gReh		g__dot1u				>	gZain:(1 2)  _;
 gReh		g__smallTah				>	gRreh:(1 2)  _;
@@ -921,9 +930,15 @@ gReh		g__dot4u				>	gRehFourDotsAbove:(1 2)  _;
 gReh		g__dot2vu				>	gRehTwoVertAbove:(1 2)  _;
 gReh		gHamzaAbove				>	gRehHamzaAbove:(1 2)  _;
 gReh		g__smallTah2dots		>	gRehSmallTahTwoDots:(1 2)  _;
+
 //gWaw								>	gWaw;
 gWaw		(gHamzaAbove g__hamza)	>	gWawHamzaAbove:(1 2)  _;
 gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
+
+gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
+
+gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
+gTehMarbuta		gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// OR SHOULD THIS BE TEH MARBUTA GOAL??
 
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
