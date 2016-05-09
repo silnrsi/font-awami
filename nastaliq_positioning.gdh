@@ -209,6 +209,18 @@ cTakes_n23LowerDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=L  _=U;
 
+// hamza above, nuqtas below
+cTakes_hamzaUpperDia
+	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
+	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
+	/ _=B  _=L  _=H;
+
+// for beh forms (ie, yeh-hamza), attach hamza at nUpper.
+(cBehIni cBehMed)
+	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
+	chamzaUpperDia { attach {to = @B; at = nUpperS; with = hamzaUpperM } }
+	/ _=B  _=L  _=H;
+
 
 // Upper nuqta-like attachment
 

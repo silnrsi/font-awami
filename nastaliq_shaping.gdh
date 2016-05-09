@@ -894,6 +894,8 @@ gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
 (cBehIni  cBehMed)  g__dot2l__hamza  _  >  @1  g__dot2l:1  gHamzaAbove:1;
 
 cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
+cChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
+
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 
@@ -939,6 +941,11 @@ gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
 gTehMarbuta		gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// OR SHOULD THIS BE TEH MARBUTA GOAL??
+
+
+// If no other rule matches, than we do in fact need these nuqtas:
+g__noDot1u  >  g__dot1u;
+g__noDot2l  >  g__dot2l;
 
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
