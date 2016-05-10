@@ -5151,6 +5151,9 @@
 		<point type="ring" mark="1">
 			<location y="234" x="66"></location>
 		</point>
+		<point type="bar" mark="1">
+			<location y="43" x="331"></location>
+		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absQafFin._stfhM" GID="253">
@@ -7946,6 +7949,9 @@
 		</point>
 		<point type="honorific" mark="1">
 			<location y="1104" x="20"></location>
+		</point>
+		<point type="bar" mark="1">
+			<location y="43" x="331"></location>
 		</point>
 		<property name="mark" value="20"></property>
 	</glyph>
@@ -15625,6 +15631,9 @@
 		<point type="ring" mark="1">
 			<location y="234" x="66"></location>
 		</point>
+		<point type="bar" mark="1">
+			<location y="43" x="331"></location>
+		</point>
 		<property name="mark" value="80"></property>
 	</glyph>
 	<glyph PSName="absHehDoachashmeeMed.be" GID="1021">
@@ -17473,13 +17482,46 @@
 		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absKirghizOe" GID="1287" UID="U+06C5">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mUpper" mark="1">
+			<location y="975" x="445"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1104" x="20"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-362" x="311"></location>
+		</point>
+		<compound PSName="absWaw" GID="451" bbox="90, -70, 663, 801" UID="U+0648"></compound>
+		<compound PSName="_barWaw" GID="1383" bbox="38, -228, 624, 314"></compound>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absOe" GID="1288" UID="U+06C6">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mUpper" mark="1">
+			<location y="1656" x="432"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1324" x="-92"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-202" x="311"></location>
+		</point>
+		<compound PSName="absWaw" GID="451" bbox="90, -70, 663, 801" UID="U+0648"></compound>
+		<compound PSName="_smallV" GID="1328" bbox="193, 1039, 645, 1424"></compound>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absU" GID="1289" UID="U+06C7">
-		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
+		<point type="mUpper" mark="1">
+			<location y="1671" x="471"></location>
+		</point>
+		<point type="honorific" mark="1">
+			<location y="1103" x="13"></location>
+		</point>
+		<point type="mLower" mark="1">
+			<location y="-202" x="311"></location>
+		</point>
+		<compound PSName="absWaw" GID="451" bbox="90, -70, 663, 801" UID="U+0648"></compound>
+		<compound PSName="nlqPesh" GID="1264" bbox="198, 1008, 570, 1494" UID="U+064F"></compound>
+		<property name="mark" value="130"></property>
 	</glyph>
 	<glyph PSName="absYehTail" GID="1290" UID="U+06CD">
 		<compound PSName=".notdef" GID="0" bbox="100, 0, 1200, 1380"></compound>
@@ -18232,6 +18274,21 @@
 	</glyph>
 	<glyph PSName="absNine" GID="1381" UID="U+0669">
 		<compound PSName="absEasternNine" GID="367" bbox="140, -155, 686, 1094" UID="U+06F9"></compound>
+		<property name="mark" value="130"></property>
+	</glyph>
+	<glyph PSName="_peshWaw" GID="1382">
+		<point type="_nUpper" mark="1">
+			<location y="1" x="180"></location>
+		</point>
+		<point type="mUpper" mark="1">
+			<location y="568" x="180"></location>
+		</point>
+		<compound PSName="nlqPesh" GID="1264" bbox="-16, 0, 356, 486" UID="U+064F"></compound>
+	</glyph>
+	<glyph PSName="_barWaw" GID="1383">
+		<point type="_bar" mark="1">
+			<location y="-157" x="181"></location>
+		</point>
 		<property name="mark" value="130"></property>
 	</glyph>
 </font>

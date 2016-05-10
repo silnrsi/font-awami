@@ -31,12 +31,12 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV,  g__smallTah2dots,
+	g__dot1u_smallTah, g__dot1u_smallV,  g__smallTah2dots, g__peshWaw,
 	// g__kafTop, gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, gHamzaBelow, g__smallTahBelow, 
 	g__smallTah2dotsBelow);
-cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__attachedRingMid);
+cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2l);
 
