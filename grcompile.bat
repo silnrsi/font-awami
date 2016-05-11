@@ -1,1 +1,1 @@
-grcompiler -D -w3531 awami_autogen.gdl "Awami Nastaliq Regular.ttf" Awami_gr.ttf
+grcompiler -D -c -w3531 awami_autogen.gdl "Awami Nastaliq Regular.ttf" Awami_gr.ttf

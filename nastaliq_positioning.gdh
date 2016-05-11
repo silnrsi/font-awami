@@ -799,20 +799,6 @@ table(positioning)
 //	DIACRITIC ATTACHMENT
 //
 
-table(glyph)
-
-c_final_wo_diac = cFin;
-c_final_wo_diac -= (gAlefMaddaFin, gLamAlefMaddaFin, gAlefHamzaFin, gLamAlefHamzaFin,
-	gHehGoalHamzaFin, gHehGoalHamzaFin_stfh);
-	
-
-// many diacritics are attached to initials and medials as if they were nuqtas - but not all
-c_base_wo_diac = (cIni cMed c_final_wo_diac cIso);
-
-c_base_wo_nuqta = (cIni cMed);
-
-endtable;  // glyph
-
 
 // Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
 
