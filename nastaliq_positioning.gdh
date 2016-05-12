@@ -63,7 +63,7 @@ cursive_attach(qafWawStfh)
 #define SHIFT_N_OUT 0m
 
 // Last resort:
-(c_initial c_medial) {att.to=@L} (c_medial  c_final) {insert=1}  / _ MARKS2N ^ _=L ;
+(c_initial c_medial) {att.to=@L} (c_medial  c_final  g_zerojoin) {insert=1}  / _ MARKS2N ^ _=L ;
 
 if (wordSpacing == xtight)
 cSpace { advance.x = 50m; collision.flags = SET_ISSPACE(collision.flags) };
@@ -517,7 +517,7 @@ cDiacriticUpper {
 
 gNoonGhunnaMark { collision.margin = 300m; marginweight = 300 }; // override
 
-cBase = (c_isolate, c_initial, c_medial, c_final);
+cBase = (c_isolate, c_initial, c_medial, c_final, g_zerojoin);
 
 cDiacriticLower {
 	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
@@ -647,7 +647,7 @@ cNuqtaLikeUpper { collision {
 // the perspective of the bar.
 
 g__bar { collision.flags = COLL_FREEZE }    /  cBase  _ ;  // add context to increase precedence
-cringDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;
+g__attachedRing { collision.flags = COLL_FREEZE }  /  cBase  _ ;
 
 // Lower nuqtas
 

@@ -363,7 +363,7 @@ cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBe
 		gKafIniBeHg_alt, gGafIniBeHg_alt, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
 
 // Unprocessed initials and medials:
-cIMraw = (cIni_raw, cMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zwj);
+cIMraw = (cIni_raw, cMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
 
 endtable;
 
@@ -621,7 +621,7 @@ gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
 // Last resort:
 
-cMed_raw  >  cMed	/ ^ MPRECXT _  MARKS  (c_medial c_final g_zwj);
+cMed_raw  >  cMed	/ ^ MPRECXT _  MARKS  (c_medial c_final g_zerojoin);
 
 
 endpass;
@@ -752,7 +752,7 @@ gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 
 // Last resort:
 
-cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final);
+cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final g_zerojoin);
 
 
 // Final clean-ups
@@ -890,6 +890,7 @@ gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
 gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
 gChotiyeh	g__dot2vl			>	gArabicE:(1 2)  _;
 gChotiyeh	g__dot2l_tail		>	gYehTail:(1 2)  _;
+gChotiyeh	g__ring				>	gKashmiriYeh:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
@@ -902,6 +903,8 @@ cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
 cChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
 
 cChotiyehFin  g__dot2l_tail  >  cYehTailFin:(1 2)  _;
+cChotiyehFin  g__ring  >  cKashmiriYehFin:(1 2)  _;
+
 
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
