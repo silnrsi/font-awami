@@ -59,6 +59,7 @@ endif;
 gGueh				_	>	gGaf		g__dot2vl:1;
 gNgoeh				_	>	gGaf		g__dot2u:1;
 gKafRing			_	>	gKaf		g__attachedRingMid:1;
+gArabicKaf			_	>	gKaf		g__kafSquiggle:1;
 
 //gLam					>	gLam;
 gLamBar				_	>	gLam		g__bar:1;
@@ -84,6 +85,7 @@ gChotiyeh			_	>	gChotiyeh:1		g__noDot2l:1;
 gYehHamzaAbove		_	>	gChotiyeh:1		g__dot2l__hamza:1;
 gYeh				_	>	gChotiyeh:1		g__dot2l:1;
 gArabicE			_	>	gChotiyeh:1		g__dot2vl:1;
+gYehTail			_	>	gChotiyeh:1		g__dot2l_tail:1;
 
 
 // Bariyeh is officially right-link only, but in strange situations when it 
@@ -101,6 +103,7 @@ gAlefHamzaBelow		_	>	gAlef		gHamzaBelow:1;
 gAlefMaddaAbove		_	>	gAlef		gMaddaAbove:1;
 gAlefWavyHamzaAbove	_	>	gAlef		g__wavyHamza:1;
 gAlefWavyHamzaBelow	_	>	gAlef		gWavyHamzaBelow:1;
+gHighHamzaAlef		_	>	gAlef		gHighHamza:1;
 
 //gDal					>	gDal;
 gThal				_	>	gDal		g__dot1u:1;

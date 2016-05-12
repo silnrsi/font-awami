@@ -1,9 +1,9 @@
-<!-- Generated on Thu, 12 May 2016 15:20:29 +0000 by Peter Martin -->
+<!-- Generated on Thu, 12 May 2016 19:38:40 +0000 by  -->
 
 <font>
 
 	<!-- IDENTIFICATION -->
-	<file_name>/Users/martinpk/Documents/Fonts/ABS/absfonts wc/Nastaliq/Awami Nastaliq/Awami Nastaliq Regular.vfb</file_name>
+	<file_name>C:\ABS\Nastaliq\Awami Nastaliq\Awami Nastaliq Regular.vfb</file_name>
 	<family_name>Awami Nastaliq</family_name>
 	<style_name>Regular</style_name>
 	<full_name>Awami Nastaliq</full_name>
@@ -1087,9 +1087,9 @@
 			<name>absBehMed.sn</name>
 			<note>None</note>
 			<node_count>5</node_count>
-			<node_hash>b8af9c5c30aad68334a3cbeda553494bdede4123b648ebe8ba0749ec</node_hash>
+			<node_hash>abb20dbefe6fd1c812fba435d759ee8859de0112fbb0ee1bd35b79f8</node_hash>
 			<anchors>
-				<anchor>_exit_behLowTooth: 660,1122</anchor>
+				<anchor>_exit_behLowTooth: 640,1182</anchor>
 				<anchor>nUpper: 491,1991</anchor>
 				<anchor>exit_seen: 476,1052</anchor>
 				<anchor>n1Lower: 578,726</anchor>
@@ -1236,7 +1236,7 @@
 				<anchor>alef: 600,1116</anchor>
 			</anchors>
 			<component_count>0</component_count>
-			<width>969</width>
+			<width>920</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -1257,7 +1257,7 @@
 				<anchor>alef: 600,1116</anchor>
 			</anchors>
 			<component_count>0</component_count>
-			<width>1027</width>
+			<width>976</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -3395,6 +3395,7 @@
 				<anchor>gafStroke: 2001,1832</anchor>
 				<anchor>honorific: 1057,650</anchor>
 				<anchor>ring: 2683,1902</anchor>
+				<anchor>squiggle: 1048,500</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>2259</width>
@@ -6897,7 +6898,7 @@
 			</anchors>
 			<component_count>2</component_count>
 			<components>
-				<component>absKaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_kaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
 				<component>_gafStroke: delta: -90.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1568</width>
@@ -7105,19 +7106,14 @@
 			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
-			<name>absKaf</name>
+			<name>_kaf</name>
 			<note>None</note>
 			<node_count>14</node_count>
 			<node_hash>63b601f3d2cefa857de1c50a928168081507a3e2955b7e1932666b25</node_hash>
-			<anchors>
-				<anchor>kernBbRight: 1447,1057</anchor>
-				<anchor>gafStroke: 1321,1872</anchor>
-				<anchor>honorific: 740,650</anchor>
-			</anchors>
 			<component_count>0</component_count>
 			<width>1568</width>
-			<unicode>0643</unicode>
-			<unicode_count>1</unicode_count>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absKashmiriYehFin</name>
@@ -7147,7 +7143,7 @@
 			</anchors>
 			<component_count>1</component_count>
 			<components>
-				<component>absKaf: delta: 40.0,0.0, scale: 1.0,1.0</component>
+				<component>_kaf: delta: 40.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1620</width>
 			<unicode>06A9</unicode>
@@ -8190,13 +8186,21 @@
 		<glyph>
 			<name>absYehTailFin</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>14</node_count>
+			<node_hash>db0eb6b8da2b3cc0d4bcb2ea31ce886ffb6aed660f1f26d1db22e2b2</node_hash>
+			<anchors>
+				<anchor>_exit_chotiyeh: 919,684</anchor>
+				<anchor>nUpper: 313,994</anchor>
+				<anchor>n1Lower: 592,-808</anchor>
+				<anchor>hamzaUpper: 317,1040</anchor>
+				<anchor>mUpper: 358,1015</anchor>
+				<anchor>mLower: 606,-825</anchor>
+				<anchor>n23Lower: 828,-788</anchor>
+				<anchor>honorific: 185,1102</anchor>
+				<anchor>alef: 600,1116</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>919</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -9531,7 +9535,7 @@
 			<name>absSeenIni.be</name>
 			<note>None</note>
 			<node_count>15</node_count>
-			<node_hash>ed54f9b9759bb3a55cbff4300e240a4671bc3abb299ebc7357f7e651</node_hash>
+			<node_hash>e4d135e8b457306755f9139a71c4f1338cfa4f4045d59416dcdfdd4b</node_hash>
 			<anchors>
 				<anchor>exit_beh: 0,1275</anchor>
 				<anchor>nUpper: 261,1675</anchor>
@@ -9924,7 +9928,7 @@
 			<name>absSeenIni.beM2</name>
 			<note>None</note>
 			<node_count>17</node_count>
-			<node_hash>e5b6ced527de82463683d011e003ff933044cdb4829a5026e501903a</node_hash>
+			<node_hash>0e21ee5dfc853b74d6fa6aa5906f518db122ac9722d9a1669955af7c</node_hash>
 			<anchors>
 				<anchor>exit_behHighTooth: 0,438</anchor>
 				<anchor>nUpper: 364,940</anchor>
@@ -10941,7 +10945,7 @@
 			<name>absSeenIni.bere</name>
 			<note>None</note>
 			<node_count>10</node_count>
-			<node_hash>0076866cd1e7a21efa7c940c416c404b88ec0507d9ed561dee9c8b98</node_hash>
+			<node_hash>afc9a83247562c9d98b132b3aeb8b2fc34dbccbfd563837e9362fb97</node_hash>
 			<anchors>
 				<anchor>exit_behPreReh: 0,515</anchor>
 				<anchor>nUpper: 458,911</anchor>
@@ -12616,7 +12620,7 @@
 			<name>absSeenIni.kfX</name>
 			<note>None</note>
 			<node_count>15</node_count>
-			<node_hash>b8e4ec8704202ac5aede9ecdd7be9b6bfdefe1aa5cd49bd117dda0b8</node_hash>
+			<node_hash>b72ce1bb9a8928f7882f7b67f5df67ab6ff7304903f89662f4c78480</node_hash>
 			<anchors>
 				<anchor>exit_kafAlt: 0,1037</anchor>
 				<anchor>nUpper: 603,1383</anchor>
@@ -12957,7 +12961,7 @@
 			<name>absSeenIni</name>
 			<note>None</note>
 			<node_count>15</node_count>
-			<node_hash>e7394e9112beec6e32f90d9708eba5d84fd754cf1a960df398906d41</node_hash>
+			<node_hash>00419f3907c9c917e6a7bc09daf0c97af5764c3520d655fae8b21d20</node_hash>
 			<anchors>
 				<anchor>exit_lamKaf: 0,613</anchor>
 				<anchor>nUpper: 555,843</anchor>
@@ -17662,13 +17666,21 @@
 		<glyph>
 			<name>absYehTailFin._bfkl</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>15</node_count>
+			<node_hash>35cf294d32bba4796630dd5110a650630e8132504c97bbeee2c59995</node_hash>
+			<anchors>
+				<anchor>_exit_chotiyehBfkl: 977,913</anchor>
+				<anchor>mUpper: 320,1040</anchor>
+				<anchor>n23Lower: 614,-805</anchor>
+				<anchor>nUpper: 313,984</anchor>
+				<anchor>n1Lower: 601,-806</anchor>
+				<anchor>hamzaUpper: 348,1010</anchor>
+				<anchor>mLower: 613,-815</anchor>
+				<anchor>honorific: 185,1099</anchor>
+				<anchor>alef: 600,1116</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>976</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -17927,13 +17939,13 @@
 		<glyph>
 			<name>_kafSquiggle</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>9</node_count>
+			<node_hash>1f5eef59d75e5b7276a633c69c297d8d174dbd40d648cced264c4a9d</node_hash>
+			<anchors>
+				<anchor>_squiggle: 11,354</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>16</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -20529,11 +20541,12 @@
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
+			<component_count>2</component_count>
 			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>absAlef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_hamza: delta: 520.0,683.0, scale: 1.0,1.0</component>
 			</components>
-			<width>1300</width>
+			<width>404</width>
 			<unicode>0675</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -20688,7 +20701,7 @@
 			</anchors>
 			<component_count>2</component_count>
 			<components>
-				<component>absKaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_kaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
 				<component>_gafStroke: delta: -90.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>2455</width>
@@ -20794,12 +20807,9 @@
 		<glyph>
 			<name>absYehTail</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
+			<node_count>16</node_count>
+			<node_hash>2145251629fd4b9f14e903943e9fe6527ab2a6a45363362ca0845b49</node_hash>
+			<component_count>0</component_count>
 			<width>1300</width>
 			<unicode>06CD</unicode>
 			<unicode_count>1</unicode_count>
@@ -21528,7 +21538,7 @@
 			</anchors>
 			<component_count>2</component_count>
 			<components>
-				<component>absKaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_kaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
 				<component>_attachedRing: delta: 1912.0,1549.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1567</width>
@@ -21630,7 +21640,7 @@
 			</anchors>
 			<component_count>2</component_count>
 			<components>
-				<component>absKaf: delta: 40.0,0.0, scale: 1.0,1.0</component>
+				<component>_kaf: delta: 40.0,0.0, scale: 1.0,1.0</component>
 				<component>_attachedRing: delta: 1952.0,1549.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1620</width>
@@ -22173,6 +22183,42 @@
 			<width>1</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absHighHamza</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_hamzaUpper: 287,1200</anchor>
+				<anchor>mUpper: 282,1590</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>_hamza: delta: 586.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1</width>
+			<unicode>0674</unicode>
+			<unicode_count>1</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absKaf</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>kernBbRight: 1447,1057</anchor>
+				<anchor>gafStroke: 1321,1872</anchor>
+				<anchor>honorific: 740,1158</anchor>
+			</anchors>
+			<component_count>2</component_count>
+			<components>
+				<component>_kaf: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_kafSquiggle: delta: 728.0,136.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1568</width>
+			<unicode>0643</unicode>
+			<unicode_count>1</unicode_count>
 		</glyph>
 	</glyphs>
 </font>

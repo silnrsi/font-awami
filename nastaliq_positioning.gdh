@@ -256,6 +256,10 @@ cTakes_barDia
 	cbarDia { attach {to = @B; at = barS; with = barM } }
 	/ _=B  _=U;
 
+cTakes_squiggleDia
+	csquiggleDia { attach {to = @K; at = squiggleS; with = squiggleM } }
+	/ _=K  _=S;
+
 cTakes_gafStrokeDia
 	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
 	/ _=K  _=S;

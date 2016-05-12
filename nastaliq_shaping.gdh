@@ -844,6 +844,10 @@ gGaf		g__dot2vl				>	gGueh:(1 2)	_;
 gGaf		g__dot2u				>	gNgoeh:(1 2)	_;
 gKaf		g__attachedRingMid		>	gKafRing:(1 2)	_;
 //gGaf		g__attachedRingMid		>	gGafRing:(1 2)  _;
+gKaf		g__kafSquiggle			>	gArabicKaf:(1 2)  _;
+
+// Remove squiggle from initial/medial forms.
+(cKafIni  cKafMed)  g__kafSquiggle	>	@1:(1 2)  _;
 
 //gLam								>	gLam;
 gLam		g__bar					>	gLamBar:(1 2)	_;
@@ -885,6 +889,7 @@ gChotiyeh	g__noDot2l			>	gChotiyeh:(1 2)  _;
 gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
 gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
 gChotiyeh	g__dot2vl			>	gArabicE:(1 2)  _;
+gChotiyeh	g__dot2l_tail		>	gYehTail:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
@@ -895,6 +900,8 @@ gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
 
 cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
 cChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
+
+cChotiyehFin  g__dot2l_tail  >  cYehTailFin:(1 2)  _;
 
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
@@ -910,6 +917,7 @@ gAlef		(gHamzaBelow g__hamza)	>	gAlefHamzaBelow:(1 2)  _;
 gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
 gAlef		g__wavyHamza			>	gAlefWavyHamzaAbove:(1 2)  _;
 gAlef		gWavyHamzaBelow			>	gAlefWavyHamzaBelow:(1 2)  _;
+gAlef		gHighHamza				>	gHighHamzaAlef:(1 2)  _;
 
 //gDal								>	gDal;
 gDal		g__dot1u				>	gThal:(1 2)  _;
@@ -949,6 +957,7 @@ gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// OR SHOULD THIS BE TEH 
 // If no other rule matches, than we do in fact need these nuqtas:
 g__noDot1u  >  g__dot1u;
 g__noDot2l  >  g__dot2l;
+g__dot2l_tail  >  g__dot2l;
 
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
