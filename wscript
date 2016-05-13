@@ -14,8 +14,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.25'
-TTF_VERSION="0.250"
+VERSION='0.50'
+TTF_VERSION="0.500"
 COPYRIGHT='Copyright (c) 2014-2016, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -49,8 +49,8 @@ tests = fonttest(extras = {
                 'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
             }, ext=".pdf")})
 
-FONT_NAME = "Awami Nastaliq Alpha1Plus"
-FONT_FILENAME = "Awami_alpha1plus.ttf"
+FONT_NAME = "Awami Nastaliq Alpha2"
+FONT_FILENAME = "Awami_alpha2.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
      #source = create('temp/Awami_full.sfd',
