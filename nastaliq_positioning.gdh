@@ -252,6 +252,12 @@ cTakes_hamzaLowerDia
 	chamzaLowerDia { attach {to = @B; at = hamzaLowerS; with = hamzaLowerM } }
 	/ _=B  _=U;
 
+// for beh forms (ie, yeh-hamza), attach hamza at nUpper.
+// TODO: add real hamzaUpper APs to beh forms.
+(cBehIni cBehMed)
+	chamzaUpperDia { attach {to = @B; at = nUpperS; with = hamzaUpperM } }
+	/ _=B  _=H;
+
 cTakes_barDia
 	cbarDia { attach {to = @B; at = barS; with = barM } }
 	/ _=B  _=U;

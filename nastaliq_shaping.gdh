@@ -365,6 +365,9 @@ cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBe
 // Unprocessed initials and medials:
 cIMraw = (cIni_raw, cMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
 
+// Before alternate qaf/waw interface:
+cPreQwStfhM = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw);
+
 endtable;
 
 
@@ -404,8 +407,11 @@ gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4
 	>  (gAlefFin gAlefMaddaFin gAlefHamzaFin)  /  (c_initial c_medial)  MARKS  _;
 
 (gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfhM)
-		/  (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw)  MARKS
-			_;
+		/  cPreQwStfhM  MARKS _;
+gFehFin  >  gQafFin_stfhM
+		/  cPreQwStfhM  MARKS  _  g__dot2u;
+gFehFin  >  gQafFin  /  _  g__dot2u;
+
 
 table(glyph)
 
@@ -897,7 +903,7 @@ gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
 
 // Add dots to initial/medial chotiyeh
 (cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
-(cBehIni  cBehMed)  g__dot2l__hamza  _  >  @1  g__dot2l:1  gHamzaAbove:1;
+(cBehIni  cBehMed)  g__dot2l__hamza  >  @1  gHamzaAbove:1;
 
 cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
 cChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;

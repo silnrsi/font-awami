@@ -377,58 +377,32 @@ c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh) ;
 
 // Heh-doachashmee initial alternates (which are actually the default forms)
 
-gHehDoIni_alt = pseudo(postscript("absHehDoachashmeeMed"))
-	{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
-gHehDoIniAi_alt = pseudo(postscript("absHehDoachashmeeMed.ai"))
-	{ exit_ain = gHehDoMedAi.exit_ain; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
-gHehDoIniBe_alt = pseudo(postscript("absHehDoachashmeeMed.be"))
-	{ exit_beh = gHehDoMedBe.exit_beh; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
-gHehDoIniBeF_alt = pseudo(postscript("absHehDoachashmeeMed.beF"))
-	{ exit_behFinal = gHehDoMedBeF.exit_behFinal; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
-gHehDoIniBeM1_alt = pseudo(postscript("absHehDoachashmeeMed.beM1"))
-	{ exit_behLowTooth = gHehDoMedBeM1.exit_behLowTooth; n1LowerS = gHehDoMedBeM1.n1LowerS; nUpperS = gHehDoMedBeM1.nUpperS };
-gHehDoIniBeM2_alt = pseudo(postscript("absHehDoachashmeeMed.beM2"))
-	{ exit_behHighTooth = gHehDoMedBeM2.exit_behHighTooth; n1LowerS = gHehDoMedBeM2.n1LowerS; nUpperS = gHehDoMedBeM2.nUpperS };
-gHehDoIniBeHg_alt = pseudo(postscript("absHehDoachashmeeMed.behg"))
-	{ exit_behLowTooth = gHehDoMedBeHg.exit_behLowTooth; n1LowerS = gHehDoMedBeHg.n1LowerS; nUpperS = gHehDoMedBeHg.nUpperS };
-gHehDoIniBeNn_alt = pseudo(postscript("absHehDoachashmeeMed.benn"))
-	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
-gHehDoIniBeRe_alt = pseudo(postscript("absHehDoachashmeeMed.bere"))
-	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
-gHehDoIniBy_alt = pseudo(postscript("absHehDoachashmeeMed.by"))
-	{ exit_bariyeh = gHehDoMedBy.exit_bariyeh; n1LowerS = gHehDoMedBy.n1LowerS; nUpperS = gHehDoMedBy.nUpperS };
-gHehDoIniCh_alt = pseudo(postscript("absHehDoachashmeeMed.ch"))
-	{ exit_chotiyeh = gHehDoMedCh.exit_chotiyeh; n1LowerS = gHehDoMedCh.n1LowerS; nUpperS = gHehDoMedCh.nUpperS };
-gHehDoIniFe_alt = pseudo(postscript("absHehDoachashmeeMed.fe"))
-	{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
-gHehDoIniHd_alt = pseudo(postscript("absHehDoachashmeeMed.hd"))
-	{ exit_hehdoach = gHehDoMedHd.exit_hehdoach; n1LowerS = gHehDoMedHd.n1LowerS; nUpperS = gHehDoMedHd.nUpperS };
-gHehDoIniHgM_alt = pseudo(postscript("absHehDoachashmeeMed.hgM"))
-	{ exit_hehgoalMedial = gHehDoMedHgM.exit_hehgoalMedial; n1LowerS = gHehDoMedHgM.n1LowerS; nUpperS = gHehDoMedHgM.nUpperS };
-gHehDoIniHgF_alt = pseudo(postscript("absHehDoachashmeeMed.hgF"))
-	{ exit_hehgoalFinal = gHehDoMedHgF.exit_hehgoalFinal; n1LowerS = gHehDoMedHgF.n1LowerS; nUpperS = gHehDoMedHgF.nUpperS };
-gHehDoIniJm_alt = pseudo(postscript("absHehDoachashmeeMed.jm"))
-	{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
-gHehDoIniRe_alt = pseudo(postscript("absHehDoachashmeeMed.re"))
-	{ exit_reh = gHehDoMedRe.exit_reh; n1LowerS = gHehDoMedRe.n1LowerS; nUpperS = gHehDoMedRe.nUpperS };
-gHehDoIniSd_alt = pseudo(postscript("absHehDoachashmeeMed.sd"))
-	{ exit_sad = gHehDoMedSd.exit_sad; n1LowerS = gHehDoMedSd.n1LowerS; nUpperS = gHehDoMedSd.nUpperS };
-gHehDoIniSn_alt = pseudo(postscript("absHehDoachashmeeMed.sn"))
-	{ exit_seen = gHehDoMedSn.exit_seen; n1LowerS = gHehDoMedSn.n1LowerS; nUpperS = gHehDoMedSn.nUpperS };
-gHehDoIniTaF_alt = pseudo(postscript("absHehDoachashmeeMed.taF"))
-	{ exit_tah = gHehDoMedTaF.exit_tah; n1LowerS = gHehDoMedTaF.n1LowerS; nUpperS = gHehDoMedTaF.nUpperS };
-gHehDoIniTaM_alt = pseudo(postscript("absHehDoachashmeeMed.taM"))
-	{ exit_tah = gHehDoMedTaM.exit_tah; n1LowerS = gHehDoMedTaM.n1LowerS; nUpperS = gHehDoMedTaM.nUpperS };
-gHehDoIniKfX_alt = pseudo(postscript("absHehDoachashmeeMed.kfX"))
-	{ exit_kafAlt = gHehDoMedKfX.exit_kafAlt; n1LowerS = gHehDoMedKfX.n1LowerS; nUpperS = gHehDoMedKfX.nUpperS };
-gHehDoIniMm_alt = pseudo(postscript("absHehDoachashmeeMed.mm"))
-	{ exit_meem = gHehDoMedMm.exit_meem; n1LowerS = gHehDoMedMm.n1LowerS; nUpperS = gHehDoMedMm.nUpperS };
-gHehDoIniMmX_alt = pseudo(postscript("absHehDoachashmeeMed.mmX"))
-	{ exit_meemAlt = gHehDoMedMmX.exit_meemAlt; n1LowerS = gHehDoMedMmX.n1LowerS; nUpperS = gHehDoMedMmX.nUpperS };
-gHehDoIniNn_alt = pseudo(postscript("absHehDoachashmeeMed.nn"))
-	{ exit_noon = gHehDoMedNn.exit_noon; n1LowerS = gHehDoMedNn.n1LowerS; nUpperS = gHehDoMedNn.nUpperS };
-gHehDoIniQf_alt = pseudo(postscript("absHehDoachashmeeMed.qf"))
-	{ exit_qafWawStfh = gHehDoMedQf.exit_qafWawStfh; n1LowerS = gHehDoMedQf.n1LowerS; nUpperS = gHehDoMedQf.nUpperS };
+gHehDoIni_alt		{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
+gHehDoIniAi_alt		{ exit_ain = gHehDoMedAi.exit_ain; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
+gHehDoIniBe_alt		{ exit_beh = gHehDoMedBe.exit_beh; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
+gHehDoIniBeF_alt	{ exit_behFinal = gHehDoMedBeF.exit_behFinal; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
+gHehDoIniBeM1_alt	{ exit_behLowTooth = gHehDoMedBeM1.exit_behLowTooth; n1LowerS = gHehDoMedBeM1.n1LowerS; nUpperS = gHehDoMedBeM1.nUpperS };
+gHehDoIniBeM2_alt	{ exit_behHighTooth = gHehDoMedBeM2.exit_behHighTooth; n1LowerS = gHehDoMedBeM2.n1LowerS; nUpperS = gHehDoMedBeM2.nUpperS };
+gHehDoIniBeHg_alt	{ exit_behLowTooth = gHehDoMedBeHg.exit_behLowTooth; n1LowerS = gHehDoMedBeHg.n1LowerS; nUpperS = gHehDoMedBeHg.nUpperS };
+gHehDoIniBeNn_alt	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
+gHehDoIniBeRe_alt	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
+gHehDoIniBy_alt		{ exit_bariyeh = gHehDoMedBy.exit_bariyeh; n1LowerS = gHehDoMedBy.n1LowerS; nUpperS = gHehDoMedBy.nUpperS };
+gHehDoIniCh_alt		{ exit_chotiyeh = gHehDoMedCh.exit_chotiyeh; n1LowerS = gHehDoMedCh.n1LowerS; nUpperS = gHehDoMedCh.nUpperS };
+gHehDoIniFe_alt		{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
+gHehDoIniHd_alt		{ exit_hehdoach = gHehDoMedHd.exit_hehdoach; n1LowerS = gHehDoMedHd.n1LowerS; nUpperS = gHehDoMedHd.nUpperS };
+gHehDoIniHgM_alt	{ exit_hehgoalMedial = gHehDoMedHgM.exit_hehgoalMedial; n1LowerS = gHehDoMedHgM.n1LowerS; nUpperS = gHehDoMedHgM.nUpperS };
+gHehDoIniHgF_alt	{ exit_hehgoalFinal = gHehDoMedHgF.exit_hehgoalFinal; n1LowerS = gHehDoMedHgF.n1LowerS; nUpperS = gHehDoMedHgF.nUpperS };
+gHehDoIniJm_alt		{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
+gHehDoIniRe_alt		{ exit_reh = gHehDoMedRe.exit_reh; n1LowerS = gHehDoMedRe.n1LowerS; nUpperS = gHehDoMedRe.nUpperS };
+gHehDoIniSd_alt		{ exit_sad = gHehDoMedSd.exit_sad; n1LowerS = gHehDoMedSd.n1LowerS; nUpperS = gHehDoMedSd.nUpperS };
+gHehDoIniSn_alt		{ exit_seen = gHehDoMedSn.exit_seen; n1LowerS = gHehDoMedSn.n1LowerS; nUpperS = gHehDoMedSn.nUpperS };
+gHehDoIniTaF_alt	{ exit_tah = gHehDoMedTaF.exit_tah; n1LowerS = gHehDoMedTaF.n1LowerS; nUpperS = gHehDoMedTaF.nUpperS };
+gHehDoIniTaM_alt	{ exit_tah = gHehDoMedTaM.exit_tah; n1LowerS = gHehDoMedTaM.n1LowerS; nUpperS = gHehDoMedTaM.nUpperS };
+gHehDoIniKfX_alt	{ exit_kafAlt = gHehDoMedKfX.exit_kafAlt; n1LowerS = gHehDoMedKfX.n1LowerS; nUpperS = gHehDoMedKfX.nUpperS };
+gHehDoIniMm_alt		{ exit_meem = gHehDoMedMm.exit_meem; n1LowerS = gHehDoMedMm.n1LowerS; nUpperS = gHehDoMedMm.nUpperS };
+gHehDoIniMmX_alt	{ exit_meemAlt = gHehDoMedMmX.exit_meemAlt; n1LowerS = gHehDoMedMmX.n1LowerS; nUpperS = gHehDoMedMmX.nUpperS };
+gHehDoIniNn_alt		{ exit_noon = gHehDoMedNn.exit_noon; n1LowerS = gHehDoMedNn.n1LowerS; nUpperS = gHehDoMedNn.nUpperS };
+gHehDoIniQf_alt		{ exit_qafWawStfh = gHehDoMedQf.exit_qafWawStfh; n1LowerS = gHehDoMedQf.n1LowerS; nUpperS = gHehDoMedQf.nUpperS };
 
 c_exit_lamKaf		+=	(gHehDoIni_alt);
 c_exit_ain			+=	(gHehDoIniAi_alt);
