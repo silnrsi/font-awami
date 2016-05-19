@@ -360,7 +360,10 @@ cIniBeM1_noS_kx = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniB
 
 // before gBehMedBeRe:
 cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
-		gKafIniBeHg_alt, gGafIniBeHg_alt, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
+		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
+// ALT-KAF:
+////cIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
+////		gKafIniBeHg_alt, gGafIniBeHg_alt, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
 
 // Unprocessed initials and medials:
 cIMraw = (cIni_raw, cMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
@@ -373,7 +376,7 @@ endtable;
 
 pass(3)
 
-// Lam-alef ligatures
+// Lam-alef ligatures - not used
 
 /*****
 gLamIni_raw  gAlefFin  >  gLamAlef:(1 4)  _  /  _  g__bar? cDiacritic? _ ;
@@ -434,7 +437,8 @@ gRehFin  >  gRehFin_sshg	/  ^ c_preReF_sshg MARKS  _;
 gRehFin  >  gRehFin_hgM		/  ^ c_preReF_hgM MARKS  _;
 
 // We've decided not to use the extra heh-goal-final form, since it is so similar.
-////(gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaFin)  >  (gHehGoalFin_stfh gTehMarbutaGoalFin_stfh gHehGoalHamzaFin_stfh)
+////(gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaFin)
+////			>  (gHehGoalFin_stfh gTehMarbutaGoalFin_stfh gHehGoalHamzaFin_stfh)
 ////	/  ^ c_preHgF_stfh MARKS  _;
 
 gChotiyehFin  >  gChotiyehFin_bfkl  /  ^ c_preChF_bfkl MARKS  _ ;
@@ -992,8 +996,6 @@ endif;
 ///cTakes_kafTopDia _  >  @1  g__kafTop:1;
 
 endpass;
-
-
 
 
 endtable;	// sub
