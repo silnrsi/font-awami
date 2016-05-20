@@ -3,7 +3,7 @@
 <ftml version="1.0">
   <head>
     <columns comment="30%" label="25%" string="45%"/>
-    <fontsrc>url(Awami_gr.ttf)</fontsrc>
+    <fontsrc>url(..\results\Awami_gr.ttf)</fontsrc>
     <styles>
       <style feats="=0 agca=3 dbsp=0 hehk=1 olap=2" name="fset10"/>
       <style feats="agca=3 dbsp=0 hehk=1 wdsp=2" name="fset11"/>
@@ -16,7 +16,7 @@
       <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 madd=0 wdsp=2" name="fset18"/>
       <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset19"/>
       <style feats="hehk=0 olap=2" name="fset2"/>
-      <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset20"/>
+      <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset21"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -706,7 +706,7 @@
     <test class="fset9" label="long word w/ collisions" rtl="True">
       <string>قِیلِیقِیہصُوبِئیں</string>
     </test>
-    <test class="fset20" label="lam-bar" rtl="True">
+    <test class="fset21" label="lam-bar" rtl="True">
       <string>نکݪتی نکݪئی</string>
     </test>
   </testgroup>
@@ -714,10 +714,10 @@
     <test class="fset2" label="khah khah khah" rtl="True">
       <string>خخخ</string>
     </test>
-    <test class="fset20" label="kaf + lam-bar" rtl="True">
+    <test class="fset21" label="kaf + lam-bar" rtl="True">
       <string>کݪ کݪس قکݪب گݪہ</string>
     </test>
-    <test class="fset20" label="kaf + lam-bar 2" rtl="True">
+    <test class="fset21" label="kaf + lam-bar 2" rtl="True">
       <string>نکݪتی نکݪئی</string>
     </test>
   </testgroup>
@@ -1010,7 +1010,7 @@
     <test class="fset19" label="alef w/ wavy hamza" rtl="True">
       <string>ٲ سٲ</string>
     </test>
-    <test class="fset20" label="alef w/ wavy hamza below" rtl="True">
+    <test class="fset21" label="alef w/ wavy hamza below" rtl="True">
       <string>ٳ قٳ</string>
     </test>
     <test class="fset12" label="kaf lower nuqtas - heh-do, heh-goal, meem" rtl="True">
@@ -1025,16 +1025,16 @@
     <test class="fset18" label="teh w/ 3 dots above downwards" rtl="True">
       <string>ٽ ٽٽٽ</string>
     </test>
-    <test class="fset20" label="hah w/ hamza above" rtl="True">
+    <test class="fset21" label="hah w/ hamza above" rtl="True">
       <string>ځ ځځځ</string>
     </test>
-    <test class="fset20" label="hah w/ three dots above" rtl="True">
+    <test class="fset21" label="hah w/ three dots above" rtl="True">
       <string>څ څڅڅ</string>
     </test>
-    <test class="fset20" label="hah w/ small tah &amp; two dots" rtl="True">
+    <test class="fset21" label="hah w/ small tah &amp; two dots" rtl="True">
       <string>ݯ ݯݯݯ</string>
     </test>
-    <test class="fset20" label="hah w/ small tah below" rtl="True">
+    <test class="fset21" label="hah w/ small tah below" rtl="True">
       <string>ݮ ݮݮݮ ݮلݮیݮ</string>
     </test>
     <test class="fset18" label="seen w/ dot above and below" rtl="True">
@@ -1046,25 +1046,25 @@
     <test class="fset18" label="seen w/ 2 dots vertically" rtl="True">
       <string>ݭ ݭݭݭ</string>
     </test>
-    <test class="fset20" label="teh marbuta goal" rtl="True">
+    <test class="fset21" label="teh marbuta goal" rtl="True">
       <string>ۃ لۃ سۃ</string>
     </test>
-    <test class="fset20" label="teh marbuta" rtl="True">
+    <test class="fset21" label="teh marbuta" rtl="True">
       <string>ة مة لبة</string>
     </test>
-    <test class="fset20" label="heh w/ hamza" rtl="True">
+    <test class="fset21" label="heh w/ hamza" rtl="True">
       <string>ۂ ۂۂۂ</string>
     </test>
-    <test class="fset20" label="heh w/ yeh above (teh marbuta w/ hamza)" rtl="True">
+    <test class="fset21" label="heh w/ yeh above (teh marbuta w/ hamza)" rtl="True">
       <string>ۀ مۀ لبۀ سۀ لقۀ</string>
     </test>
-    <test class="fset20" label="kirghiz oe" rtl="True">
+    <test class="fset21" label="kirghiz oe" rtl="True">
       <string>ۅ سۅ فۅَ</string>
     </test>
-    <test class="fset20" label="Arabic OE" rtl="True">
+    <test class="fset21" label="Arabic OE" rtl="True">
       <string>ۆ قۆ ثۆُ</string>
     </test>
-    <test class="fset20" label="Arabic U" rtl="True">
+    <test class="fset21" label="Arabic U" rtl="True">
       <string>ۇ لجۇ صۇُ</string>
     </test>
     <test class="fset19" label="yeh w/ tail" rtl="True">
@@ -1097,7 +1097,7 @@
     <test class="fset19" label="kaf" rtl="True">
       <string>ك ككك</string>
     </test>
-    <test class="fset20" label="Kashmiri yeh" rtl="True">
+    <test class="fset21" label="Kashmiri yeh" rtl="True">
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
   </testgroup>
@@ -1110,43 +1110,43 @@
     </test>
   </testgroup>
   <testgroup label="Too vertical?">
-    <test class="fset20" label="smjhty" rtl="True">
+    <test class="fset21" label="smjhty" rtl="True">
       <string>سمجھتے </string>
     </test>
-    <test class="fset20" label="smjhny" rtl="True">
+    <test class="fset21" label="smjhny" rtl="True">
       <string>سمجھنے</string>
     </test>
-    <test class="fset20" label="smjhy" rtl="True">
+    <test class="fset21" label="smjhy" rtl="True">
       <string>سمجھی</string>
     </test>
-    <test class="fset20" label="smjhl" rtl="True">
+    <test class="fset21" label="smjhl" rtl="True">
       <string>سمجھا</string>
     </test>
-    <test class="fset20" label="tkmyl" rtl="True">
+    <test class="fset21" label="tkmyl" rtl="True">
       <string>تکمیل</string>
     </test>
-    <test class="fset20" label="kbhy" rtl="True">
+    <test class="fset21" label="kbhy" rtl="True">
       <string>کبھی</string>
     </test>
-    <test class="fset20" label="mkhn" rtl="True">
+    <test class="fset21" label="mkhn" rtl="True">
       <string>مکھن</string>
     </test>
-    <test class="fset20" label="klymns" rtl="True">
+    <test class="fset21" label="klymns" rtl="True">
       <string>کلیمنس</string>
     </test>
-    <test class="fset20" label="rkhty" rtl="True">
+    <test class="fset21" label="rkhty" rtl="True">
       <string>رکھتی</string>
     </test>
-    <test class="fset20" label="dygchy" rtl="True">
+    <test class="fset21" label="dygchy" rtl="True">
       <string>دیگچی</string>
     </test>
-    <test class="fset20" label="ktts" rtl="True">
+    <test class="fset21" label="ktts" rtl="True">
       <string>کٹس</string>
     </test>
-    <test class="fset20" label="klyjy" rtl="True">
+    <test class="fset21" label="klyjy" rtl="True">
       <string>کلیجی</string>
     </test>
-    <test class="fset20" label="knslttntts" rtl="True">
+    <test class="fset21" label="knslttntts" rtl="True">
       <string>کنسلٹنٹس</string>
     </test>
   </testgroup>
@@ -1185,10 +1185,10 @@
     <test label="dal 2N toa" rtl="True">
       <string>یضݙ</string>
     </test>
-    <test class="fset20" label="qaf / feh" rtl="True">
+    <test class="fset21" label="qaf / feh" rtl="True">
       <string>سطق سضق سطف سضف</string>
     </test>
-    <test class="fset20" label="waw" rtl="True">
+    <test class="fset21" label="waw" rtl="True">
       <string>سطو سضو</string>
     </test>
   </testgroup>
