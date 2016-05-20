@@ -55,19 +55,20 @@ FONT_FILENAME = "Awami_alpha2.ttf"
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['Awami Nastaliq Regular.ttf'])),
-     source = "Awami Nastaliq Regular.ttf",
-     graphite = gdl('awami.gdl', master = 'nastaliq_rules.gdl', params='-D',
+     source = "source/Awami Nastaliq Regular.ttf",
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D',
                     depends = glob.glob('*.gdh')),
-     ap = "Awami Nastaliq Regular_tmp.xml",
+     ap = "source/Awami Nastaliq Regular_APs.xml",
      license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
      version = TTF_VERSION,
-     extra_srcs = ['bin/awami_makegdl', 'bin/FFcopyGlyphs.py', 'bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
+     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
      tests = tests,
      fret = fret(params = '-r')
     )
 
 def configure(ctx) :
-    ctx.env['MAKE_GDL'] = 'perl -I ../bin/perllib ../bin/awami_makegdl'
-    ctx.env['FFCOPYGLYPHS'] = '../bin/FFcopyGlyphs.py'
-    ctx.env['PDFSHAPED'] = 'perl ../bin/pdfshaped.pl'
+    ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
+    ctx.env['FFCOPYGLYPHS'] = '../tools/bin/FFcopyGlyphs.py'
+    ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
+
