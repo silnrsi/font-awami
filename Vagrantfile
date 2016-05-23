@@ -85,10 +85,10 @@ Vagrant.configure(2) do |config|
 
     cat /etc/apt/sources.list
 
-     sudo apt-get update
-     # sudo apt-get upgrade
+    sudo apt-get update -y -q
+    sudo apt-get upgrade -y -q
 
-     sudo apt-get install -y -q less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion 
+    sudo apt-get install -y -q less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion
 
     SHELL
 
