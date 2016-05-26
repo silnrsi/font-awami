@@ -11,31 +11,6 @@ table(substitution)
 
 pass(1)
 
-
-///////////gBeh gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef gAlef;
-
-/*****
-if (overlapKern == none)
-g_X _ _ _  >  g_n:X g_o:X g_n:X g_e:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _;
-gBeh gBeh gBeh gBeh  >  gAlef gAlef gAlef gAlef;
-endif;
-
-if (overlapKern == wide)
-g_X _ _ _  >  g_w:X g_i:X g_d:X g_e:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _;
-gBeh gBeh gBeh gBeh  >  gAlef:1 gAlef:2 gAlef:(3 4) _;
-endif;
-
-if (overlapKern == medium)
-g_X _ _ _ _ _ >  g_m:X g_e:X g_d:X g_i:X g_u:X g_m:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _ _ _;
-gBeh gBeh gBeh gBeh  >  gAlef:(1 2) gAlef:(3 4) _ _;
-endif;
-
-if (overlapKern == tight)
-g_X _ _ _ _ >  g_t:X g_i:X g_g:X g_h:X g_t:X / g_G  g_D  g_L  g_space  g_k  g_e  g_r  g_n  g_space  _=X _ _ _ _;
-gBeh gBeh gBeh gBeh  >  gAlef:(1 2 3 4) _ _ _;
-endif;
-*****/
-
 table(glyph)
 g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
 g_sideBrMarkRight = (g_FontBslnSideBrngMrkrRt);
@@ -995,8 +970,78 @@ endif;
 // Experimental - kaf tops
 ///cTakes_kafTopDia _  >  @1  g__kafTop:1;
 
+// Experimental
+
+/***
+table(glyph)
+g__barRaisedX = pseudo(postscript("_bar.raised")) { barM = point(g__barRaised.barM.x, g__barRaised.barM.y - 200m) };
+cNuqtaLikeMiddle += (g__barRaisedX);
+cbarDia += (g__barRaisedX);
+endtable;
+
+cbarDia  >  g__barRaisedX  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
+cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
+***/
+
+
 endpass;
 
+table(glyph)
+
+cDigitArabic = (gZero, gOne, gTwo, gThree, gFour, gFive, gSix, gSeven, gEight, gNine);
+cDigitEastern = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEasternFour, gEasternFive,
+	gEasternSix, gEasternSeven, gEasternEight, gEasternNine);
+
+cDigitLatin = (g_zero, g_one, g_two, g_three, g_four, g_five, g_six, g_seven, g_eight, g_nine);
+cDigitLatin_small = (g_zero_small, g_one_small, g_two_small, g_three_small, g_four_small, g_five_small, 
+	g_six_small, g_seven_small, g_eight_small, g_nine_small);
+cDigitLatin_smaller = (g_zero_smaller, g_one_smaller, g_two_smaller, g_three_smaller, g_four_smaller, g_five_smaller, 
+	g_six_smaller, g_seven_smaller, g_eight_smaller, g_nine_smaller);
+
+//cDigitsAny = ( cDigitArabic cDigitEastern cDigitLatin );
+cDigitAny = (cDigitLatin);
+cDigitAnySmall = (cDigitLatin_small);
+cDigitAnySmaller = (cDigitLatin_smaller);
+
+
+cSignTakes4 = (gYearSign gNumberSign gPageSign gFootnoteSign); // small
+
+cSignTakes3Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
+
+cSignTakes2 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // small
+
+cSignTakes1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // small
+	
+cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
+cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);
+cSign3Smaller  = (gEndOfAyah);	// should be gEndOfAyah3; also alternative forms
+cSign3 = (cSign3Small cSign3Smaller);
+cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign gEndOfAyah);
+cSign1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah);
+
+cSignDigit = (cDigitAnySmall cDigitAnySmaller);
+
+endtable;
+
+pass(7) {Direction=1}
+	// Subtending marks
+	
+	cSignTakes4 cDigitAny cDigitAny cDigitAny cDigitAny  >
+		cSign4 cDigitAnySmall cDigitAnySmall cDigitAnySmall cDigitAnySmall;
+
+	cSignTakes3Small cDigitAny cDigitAny cDigitAny  >
+		cSign3Small cDigitAnySmall cDigitAnySmall cDigitAnySmall;
+		
+	cSignTakes3Smaller cDigitAny cDigitAny cDigitAny  >
+		cSign3Smaller cDigitAnySmaller cDigitAnySmaller cDigitAnySmaller;
+		
+	cSignTakes2 cDigitAny cDigitAny  >
+		cSign2 cDigitAnySmall cDigitAnySmall;
+
+	cSignTakes1 cDigitAny  >  cSign1  cDigitAnySmall;
+
+endpass; // 7
 
 endtable;	// sub
 

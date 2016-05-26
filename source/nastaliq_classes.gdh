@@ -36,7 +36,7 @@ cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, gHighHamza, 
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring,
 	gHamzaBelow, g__smallTahBelow, 
 	g__smallTah2dotsBelow, g__dot2l_tail);
-cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, g__attachedRingMid);
+cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, /*g__barRaised,*/ g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2l);
 
@@ -255,14 +255,15 @@ cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehG
     gHehGoalIniFe gHehGoalIniQf gHehGoalIniMm gHehGoalIniNn gHehGoalIniHgF gHehGoalIniHgM 
     gHehGoalIniHd gHehGoalIniCh gHehGoalIniBy gHehGoalIniBe gHehGoalIniBeRe gHehGoalIniBeNn 
     gHehGoalIniBeHg gHehGoalIniMmX gHehGoalIniKfX ) ;
+cKafIni_gaf = (gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn 
+	gGafIniSd gGafIniTaF gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniNn 
+	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gKafIniBeNn gKafIniBeHg gGafIniKf
+	gGafIniBeRe gGafIniBeHg gGafIniBeNn gGafIniLm);
 cKafIni = ( gKafIni gKafIniBe /*gKafIniBeF*/ gKafIniBeM1 gKafIniBeM2 gKafIniJm gKafIniRe gKafIniSn 
     gKafIniSd gKafIniTaF gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniNn 
     gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
-	gKafIniBeRe gKafIniBeHg gKafIniBeNn
-	gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn 
-	gGafIniSd gGafIniTaF gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniNn 
-	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gKafIniBeNn gKafIniBeHg gGafIniKf
-	gGafIniBeRe gGafIniBeHg gGafIniBeNn ) ;
+	gKafIniBeRe gKafIniBeHg gKafIniBeNn gKafIniLm
+	cKafIni_gaf) ;
 cKafIni_alt = ( gKafIniBeM1_alt gKafIniBeM2_alt gKafIniJm_alt gKafIniSn_alt gKafIniSd_alt gKafIniTaF_alt 
 	gKafIniTaM_alt gKafIniAi_alt gKafIniFe_alt gKafIniMm_alt gKafIniHgM_alt gKafIniHd_alt
 	gKafIniBe_alt gKafIniBeRe_alt gKafIniBeNn_alt gKafIniBeHg_alt gKafIniMmX_alt gKafIniKfX_alt
@@ -314,12 +315,13 @@ cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
     gHehGoalMedAi gHehGoalMedFe gHehGoalMedQf gHehGoalMedMm gHehGoalMedNn gHehGoalMedHgF 
     gHehGoalMedHgM gHehGoalMedHd gHehGoalMedCh gHehGoalMedBy gHehGoalMedBe 
     gHehGoalMedBeRe gHehGoalMedBeNn gHehGoalMedBeHg gHehGoalMedMmX gHehGoalMedKfX ) ;
+cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn 
+	gGafMedSd gGafMedTaF gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedNn 
+	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg);
 cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn 
     gKafMedSd gKafMedTaF gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn 
     gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
-	gGafMed gGafMedBe gGafMedBeF gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn 
-	gGafMedSd gGafMedTaF gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedNn 
-	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg) ;
+	cKafMed_gaf) ;
 cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF 
     gHehDoMedBeM2 gHehDoMedJm gHehDoMedRe gHehDoMedSn 
     gHehDoMedSd gHehDoMedTaF gHehDoMedTaM gHehDoMedAi 

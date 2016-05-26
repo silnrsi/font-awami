@@ -258,6 +258,13 @@ cTakes_hamzaLowerDia
 	chamzaUpperDia { attach {to = @B; at = nUpperS; with = hamzaUpperM } }
 	/ _=B  _=H;
 
+// Bar after kaf needs to be offset vertically.
+/*
+(cLamMed cLamFin)
+	cbarDia { attach {to = @L; at {x = barS.x; y = barS.y + 380m}; with = barM } }
+	/ (cKafIni cKafMed)  MARKS  _=L  _=B;
+*/
+
 cTakes_barDia
 	cbarDia { attach {to = @B; at = barS; with = barM } }
 	/ _=B  _=U;
@@ -324,6 +331,51 @@ cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = he
 // TEMPORARY - fall-back attachment
 // Needed to test in Graphite1.
 (c_initial c_medial c_final)  cNuqtaLike { attach {to = @1; at = zeroS; with = zeroM } };
+
+
+// Subtending marks
+
+// NB: at this point digits should be in visual order, right to left,
+// so we attach the left-most (logically first) to the sign, and proceed to the right.
+
+cSignDigit=D4 { attach {to=@D3; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D3 { attach {to=@D2; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSign4=S;
+
+cSignDigit=D3 { attach {to=@D2; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSign3=S;
+
+cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSign2=S;
+
+cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSign1=S;
+
+// However, there is a bug in some implementations (eg Firefox) where the numbers are still in
+// logical order.
+
+cSign4=S
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D3 { attach {to=@D2; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D4 { attach {to=@D3; at=digitS; with=digitM }; insert = true};
+	
+cSign3=S
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true}
+	cSignDigit=D3 { attach {to=@D2; at=digitS; with=digitM }; insert = true};
+	
+cSign2=S
+	cSignDigit=D1 { attach {to=@S;  at=digitS; with=digitM }; insert = true}
+	cSignDigit=D2 { attach {to=@D1; at=digitS; with=digitM }; insert = true};
+	
+cSign1=S
+	cSignDigit { attach {to=@S;  at=digitS; with=digitM }; insert = true};
 
 endpass;  // 2
 

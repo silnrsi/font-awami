@@ -1,9 +1,9 @@
-<!-- Generated on Mon, 16 May 2016 19:18:38 +0000 by  -->
+<!-- Generated on Thu, 26 May 2016 21:43:17 +0000 by  -->
 
 <font>
 
 	<!-- IDENTIFICATION -->
-	<file_name>C:\ABS\Nastaliq\Awami Nastaliq\Awami Nastaliq Regular.vfb</file_name>
+	<file_name>C:\AWAMI-~1\source\Awami Nastaliq Regular.vfb</file_name>
 	<family_name>Awami Nastaliq</family_name>
 	<style_name>Regular</style_name>
 	<full_name>Awami Nastaliq</full_name>
@@ -3438,7 +3438,7 @@
 			<components>
 				<component>absLam: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
-			<width>1414</width>
+			<width>1485</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -4215,16 +4215,20 @@
 		<glyph>
 			<name>absLamMed</name>
 			<note>None</note>
-			<node_count>13</node_count>
-			<node_hash>35bcdce0d13883d8b4a55cb5f07ad78e2ad9e1245a703310def7746b</node_hash>
+			<node_count>29</node_count>
+			<node_hash>a37f03e307aaf8d472c801e165b55342792eeb71f1c9f5ff634b5b1a</node_hash>
 			<anchors>
 				<anchor>exit_lamKaf: 0,625</anchor>
 				<anchor>nUpper: 475,1722</anchor>
 				<anchor>n1Lower: 188,-314</anchor>
 				<anchor>_exit_lamKaf: 552,772</anchor>
-				<anchor>bar: 482,942</anchor>
+				<anchor>bar: 482,1072</anchor>
 			</anchors>
-			<component_count>0</component_count>
+			<component_count>2</component_count>
+			<components>
+				<component>_gafStroke: delta: -757.0,-383.0, scale: 1.0,1.0</component>
+				<component>_bar.raised: delta: 330.0,1480.0, scale: 1.0,1.0</component>
+			</components>
 			<width>552</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
@@ -6871,13 +6875,10 @@
 		<glyph>
 			<name>absFootnoteSign</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>17</node_count>
+			<node_hash>e200e6f32e1ee59069249270f52015f00d87598f247f80fd774aaa2d</node_hash>
+			<component_count>0</component_count>
+			<width>1150</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -7432,15 +7433,12 @@
 		<glyph>
 			<name>absNumberSign</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
-			<unicode></unicode>
-			<unicode_count>0</unicode_count>
+			<node_count>14</node_count>
+			<node_hash>5fee0adcf7afd85fea4c517138348c93a98acd99f514c79ad7a74bec</node_hash>
+			<component_count>0</component_count>
+			<width>994</width>
+			<unicode>0600</unicode>
+			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
 			<name>absNyeh</name>
@@ -7464,13 +7462,10 @@
 		<glyph>
 			<name>absPageSign</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>20</node_count>
+			<node_hash>cc8cc20738a8db0ef8d369f12695c496150b6620aec9f3248cc70c4a</node_hash>
+			<component_count>0</component_count>
+			<width>1372</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -8181,10 +8176,13 @@
 		<glyph>
 			<name>absYearSign</name>
 			<note>None</note>
-			<node_count>13</node_count>
-			<node_hash>71cea52015e947eaee7fe2248ed779a678694c13daa89bc6460d617b</node_hash>
+			<node_count>16</node_count>
+			<node_hash>1755d469b1ef137e6bb35bcf4118c18611ba4cc16ec30ef5148181dc</node_hash>
+			<anchors>
+				<anchor>digit: 524,210</anchor>
+			</anchors>
 			<component_count>0</component_count>
-			<width>846</width>
+			<width>1300</width>
 			<unicode>0601</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -8442,26 +8440,20 @@
 		<glyph>
 			<name>ornateLeftParen</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>176</node_count>
+			<node_hash>e90da9d559afe32e22e1f3c116897ca1bdef18a948046afe50bfc433</node_hash>
+			<component_count>0</component_count>
+			<width>954</width>
 			<unicode>FD3E</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
 		<glyph>
 			<name>ornateRightParen</name>
 			<note>None</note>
-			<node_count>0</node_count>
-			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
-			<components>
-				<component>.notdef: delta: 0.0,0.0, scale: 1.0,1.0</component>
-			</components>
-			<width>1300</width>
+			<node_count>176</node_count>
+			<node_hash>20add5ded2c6d7d492bc002eae10f63c2bb66e13fe136e722f8b2fda</node_hash>
+			<component_count>0</component_count>
+			<width>954</width>
 			<unicode>FD3F</unicode>
 			<unicode_count>1</unicode_count>
 		</glyph>
@@ -15546,8 +15538,7 @@
 		</glyph>
 		<glyph>
 			<name>A</name>
-			<note>2004-03-23 jvg mod Added hints
-2003-08-18 pkm mod Added H at x=1180, y=0</note>
+			<note>2004-03-23 jvg mod Added hints2003-08-18 pkm mod Added H at x=1180, y=0</note>
 			<node_count>35</node_count>
 			<node_hash>1ea2ca754ff402c4a5e8056e9c735ba97f8ec6e40880426d46367542</node_hash>
 			<anchors>
@@ -15575,9 +15566,7 @@
 		</glyph>
 		<glyph>
 			<name>C</name>
-			<note>2004-03-24 jvg mod Removed duplicate knot
-2004-02-27 pkm mod Moved U,L APs to x=740
-2003-06-17 pkm mod Referenced original componentnts</note>
+			<note>2004-03-24 jvg mod Removed duplicate knot2004-02-27 pkm mod Moved U,L APs to x=7402003-06-17 pkm mod Referenced original componentnts</note>
 			<node_count>49</node_count>
 			<node_hash>0809831f23469c6572a1a33f08a0684b4628740cd18c93993527fe8c</node_hash>
 			<anchors>
@@ -15648,8 +15637,7 @@
 		</glyph>
 		<glyph>
 			<name>H</name>
-			<note>2004-07-20 jvg mod Moved H
-2003-08-18 pkm mod Moved H to x=1150</note>
+			<note>2004-07-20 jvg mod Moved H2003-08-18 pkm mod Moved H to x=1150</note>
 			<node_count>83</node_count>
 			<node_hash>767cc6a0a7a396089950bf5655b58f3af7bd88abe3c8f2b9c672cbb3</node_hash>
 			<anchors>
@@ -15663,8 +15651,7 @@
 		</glyph>
 		<glyph>
 			<name>I</name>
-			<note>2004-07-23 jvg mod Moved O x+119
-2004-03-03 pkm mod Added H AP at 341,0</note>
+			<note>2004-07-23 jvg mod Moved O x+1192004-03-03 pkm mod Added H AP at 341,0</note>
 			<node_count>38</node_count>
 			<node_hash>78f93ca12aaaf1442f03fd8bf20f20403a19101bc75ebab85a27ad3b</node_hash>
 			<anchors>
@@ -15748,9 +15735,7 @@
 		</glyph>
 		<glyph>
 			<name>O</name>
-			<note>2004-07-23 jvg mod Moved O x+165
-2004-07-23 jvg mod Moved O x+40
-2004-03-03 pkm mod Added H AP at 735,0</note>
+			<note>2004-07-23 jvg mod Moved O x+1652004-07-23 jvg mod Moved O x+402004-03-03 pkm mod Added H AP at 735,0</note>
 			<node_count>44</node_count>
 			<node_hash>21facd2c92f24d72069bf3eb6ca83f37692d5e3c6125b0c099d641eb</node_hash>
 			<anchors>
@@ -15964,9 +15949,7 @@
 		</glyph>
 		<glyph>
 			<name>a</name>
-			<note>2004-03-24 jvg mod Removed duplicate knot
-2004-02-27 pkm mod Moved U AP to x=445
-2003-08-18 pkm mod Moved H AP to x=689</note>
+			<note>2004-03-24 jvg mod Removed duplicate knot2004-02-27 pkm mod Moved U AP to x=4452003-08-18 pkm mod Moved H AP to x=689</note>
 			<node_count>75</node_count>
 			<node_hash>e33d6eb0c92f8fde265ebc4163938bac453b9d631d192108f578517c</node_hash>
 			<anchors>
@@ -15994,8 +15977,7 @@
 		</glyph>
 		<glyph>
 			<name>c</name>
-			<note>2004-03-24 jvg mod Removed duplicate knot
-2004-02-27 pkm mod Moved U,L AP to x=480</note>
+			<note>2004-03-24 jvg mod Removed duplicate knot2004-02-27 pkm mod Moved U,L AP to x=480</note>
 			<node_count>47</node_count>
 			<node_hash>a9a609acf1c61de1048606ee034930492dca2c7c1a3033fc2aa241e9</node_hash>
 			<anchors>
@@ -16024,9 +16006,7 @@
 		</glyph>
 		<glyph>
 			<name>e</name>
-			<note>2006-12-21 jvg mod Moved O AP way to right
-2004-03-24 jvg mod Removed duplicate knot
-2004-03-03 pkm mod Changed U & L so that x=485</note>
+			<note>2006-12-21 jvg mod Moved O AP way to right2004-03-24 jvg mod Removed duplicate knot2004-03-03 pkm mod Changed U & L so that x=485</note>
 			<node_count>43</node_count>
 			<node_hash>620f3f5c52ae2c32f122ff0847301ade04d682bd0a2380f78c0f9a2d</node_hash>
 			<anchors>
@@ -16040,8 +16020,7 @@
 		</glyph>
 		<glyph>
 			<name>f</name>
-			<note>2004-07-20 jvg mod Moved U -100 to avoid shift for LtnSmFDotAbv
-2004-03-03 pkm mod Change U so that x=570, L so that x=338</note>
+			<note>2004-07-20 jvg mod Moved U -100 to avoid shift for LtnSmFDotAbv2004-03-03 pkm mod Change U so that x=570, L so that x=338</note>
 			<node_count>57</node_count>
 			<node_hash>51ec2c62cd7cc119c2cee9ca19776b19d5e27183f31168625f2b351c</node_hash>
 			<anchors>
@@ -16055,9 +16034,7 @@
 		</glyph>
 		<glyph>
 			<name>g</name>
-			<note>2004-03-03 pkm mod Moved U AP to x=510
-2004-02-27 pkm mod Moved U AP to x=500
-2003-08-18 pkm mod Moved H AP to x=-432</note>
+			<note>2004-03-03 pkm mod Moved U AP to x=5102004-02-27 pkm mod Moved U AP to x=5002003-08-18 pkm mod Moved H AP to x=-432</note>
 			<node_count>126</node_count>
 			<node_hash>e3f5b684eee2dfb3aec0ce9ad8377070603feef60c0941bf31ea98f8</node_hash>
 			<anchors>
@@ -16071,8 +16048,7 @@
 		</glyph>
 		<glyph>
 			<name>h</name>
-			<note>2004-07-20 jvg mod Moved H
-2003-08-18 pkm mod Moved H to x=800</note>
+			<note>2004-07-20 jvg mod Moved H2003-08-18 pkm mod Moved H to x=800</note>
 			<node_count>62</node_count>
 			<node_hash>aa55ac092447f19c7a93f88cd1f981366d065df50e6a69054d58972b</node_hash>
 			<anchors>
@@ -16086,8 +16062,7 @@
 		</glyph>
 		<glyph>
 			<name>i</name>
-			<note>2004-07-23 jvg mod Moved O x+100
-2004-03-18 pkm mod Moved L AP x=294->300</note>
+			<note>2004-07-23 jvg mod Moved O x+1002004-03-18 pkm mod Moved L AP x=294->300</note>
 			<node_count>40</node_count>
 			<node_hash>20a0ce360196ba902487671a9f73eed6bf36d85d13117e0132e6b910</node_hash>
 			<anchors>
@@ -16101,8 +16076,7 @@
 		</glyph>
 		<glyph>
 			<name>j</name>
-			<note>2004-03-24 jvg mod Removed duplicate knot
-2003-08-18 pkm mod Moved U to x=300</note>
+			<note>2004-03-24 jvg mod Removed duplicate knot2003-08-18 pkm mod Moved U to x=300</note>
 			<node_count>54</node_count>
 			<node_hash>e689f27e347d62e4bce4f57f946531494f2c07a1bef9cc422447402f</node_hash>
 			<anchors>
@@ -16270,9 +16244,7 @@
 		</glyph>
 		<glyph>
 			<name>v</name>
-			<note>2004-03-24 jvg mod Removed duplicate knot
-2003-08-18 pkm mod Moved H to x=525
-2003-08-18 pkm mod Moved O to x=620</note>
+			<note>2004-03-24 jvg mod Removed duplicate knot2003-08-18 pkm mod Moved H to x=5252003-08-18 pkm mod Moved O to x=620</note>
 			<node_count>40</node_count>
 			<node_hash>f9d550c6d7baafffa0fac858d9f4d6ff65e911dba9515126a6c323f7</node_hash>
 			<anchors>
@@ -16314,8 +16286,7 @@
 		</glyph>
 		<glyph>
 			<name>y</name>
-			<note>2004-07-23 jvg mod Moved U x+38
-2004-03-24 jvg mod Removed duplicate knot</note>
+			<note>2004-07-23 jvg mod Moved U x+382004-03-24 jvg mod Removed duplicate knot</note>
 			<node_count>59</node_count>
 			<node_hash>82da8081fe3e6cf4167dc4a55b010c3fc7a22c8a8f27cf2aaaa4735b</node_hash>
 			<anchors>
@@ -16446,8 +16417,8 @@
 		<glyph>
 			<name>absLamMed.ai</name>
 			<note>None</note>
-			<node_count>12</node_count>
-			<node_hash>7c62ced64a619dabe2d30bed29fdda8a220ff5781ffa288e4d6b30b2</node_hash>
+			<node_count>28</node_count>
+			<node_hash>5380b29826e1595bb3a1028c7d7423ecaa2ae42163d9472b96b8a1e7</node_hash>
 			<anchors>
 				<anchor>exit_ain: 0,868</anchor>
 				<anchor>nUpper: 505,2486</anchor>
@@ -16455,7 +16426,10 @@
 				<anchor>_exit_lamKaf: 582,1536</anchor>
 				<anchor>bar: 512,1706</anchor>
 			</anchors>
-			<component_count>0</component_count>
+			<component_count>1</component_count>
+			<components>
+				<component>_bar.raised: delta: 365.0,1940.0, scale: 1.0,1.0</component>
+			</components>
 			<width>582</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
@@ -17191,7 +17165,7 @@
 			<node_count>11</node_count>
 			<node_hash>3fd26ae2a9df6db46edb6a8444d787e1e529bcd88550c8cd5a10421e</node_hash>
 			<anchors>
-				<anchor>_exit_qafWawStfh: 644,575</anchor>
+				<anchor>_exit_qafWawStfh_OLD: 644,575</anchor>
 				<anchor>nUpper: 448,973</anchor>
 				<anchor>n1Lower: 341,-196</anchor>
 				<anchor>hamzaUpper: 432,978</anchor>
@@ -17201,6 +17175,7 @@
 				<anchor>invV: 356,-201</anchor>
 				<anchor>ring: 66,234</anchor>
 				<anchor>bar: 331,43</anchor>
+				<anchor>_exit_qafWawStfh: 648,445</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>751</width>
@@ -18636,7 +18611,7 @@
 			<name>_bar</name>
 			<note>None</note>
 			<node_count>7</node_count>
-			<node_hash>9c6daa0186844968ffad8effb4d9f07b6704b3386855207bbe79a825</node_hash>
+			<node_hash>5ead10d68e149c9b7f83b29934c8a02f6d0b99a0a6fa27a901c706e8</node_hash>
 			<anchors>
 				<anchor>_bar: 157,185</anchor>
 			</anchors>
@@ -18659,7 +18634,7 @@
 			<name>_bar.narrow</name>
 			<note>None</note>
 			<node_count>7</node_count>
-			<node_hash>0768f68b862f2f5090f62135802760df6168cdbfbdf20872b4e9e32d</node_hash>
+			<node_hash>0037e8f5ffbfcc61d4db270edfaeaf32eaadfdf9f89cf678ab6cd0ec</node_hash>
 			<anchors>
 				<anchor>_bar: 157,185</anchor>
 			</anchors>
@@ -18690,9 +18665,7 @@
 		</glyph>
 		<glyph>
 			<name>cent</name>
-			<note>2006-09-24 jvg mod Added aligns
-2004-03-26 jvg mod Removed duplicate knot again!
-2004-03-24 jvg mod Removed duplicate knot</note>
+			<note>2006-09-24 jvg mod Added aligns2004-03-26 jvg mod Removed duplicate knot again!2004-03-24 jvg mod Removed duplicate knot</note>
 			<node_count>74</node_count>
 			<node_hash>23b5e5fc485d081e91705aa70d63bd1f09fdde4e29564c5a64f47b4a</node_hash>
 			<component_count>0</component_count>
@@ -19990,8 +19963,7 @@
 		</glyph>
 		<glyph>
 			<name>ModMacron</name>
-			<note>2004-10-06 jvg mod Moved U AP to match other macrons
-2003-06-19 pkm mod Switched identity of CombMacron and ModMacron</note>
+			<note>2004-10-06 jvg mod Moved U AP to match other macrons2003-06-19 pkm mod Switched identity of CombMacron and ModMacron</note>
 			<node_count>4</node_count>
 			<node_hash>78f786ec6b46e4d60b018b53a72b9f0b1e4c28bce2e6f6e6c28b0d84</node_hash>
 			<anchors>
@@ -20064,8 +20036,7 @@
 		</glyph>
 		<glyph>
 			<name>tilde</name>
-			<note>2004-03-26 jvg mod Fixed duplicate knot
-2004-03-14 jvg mod Changed to TT curves and hinted</note>
+			<note>2004-03-26 jvg mod Fixed duplicate knot2004-03-14 jvg mod Changed to TT curves and hinted</note>
 			<node_count>34</node_count>
 			<node_hash>2bffb12175efc4dd0eed433f9f6577e2b61ae2aeadab81ec101ce1c4</node_hash>
 			<component_count>0</component_count>
@@ -21183,8 +21154,7 @@
 		</glyph>
 		<glyph>
 			<name>circledash</name>
-			<note>2003-06-18 pkm mod Reduced sidebearings
-2003-06-18 pkm mod Lowered U AP to U1</note>
+			<note>2003-06-18 pkm mod Reduced sidebearings2003-06-18 pkm mod Lowered U AP to U1</note>
 			<node_count>94</node_count>
 			<node_hash>2119ae9a6e47fc7f01f2955bd13511351c8234bc0ee3d4ef1e8de8d0</node_hash>
 			<anchors>
@@ -21467,7 +21437,7 @@
 				<anchor>exit_alef: -6,107</anchor>
 			</anchors>
 			<component_count>0</component_count>
-			<width>463</width>
+			<width>493</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -22558,6 +22528,428 @@
 				<component>absHehDoachashmeeMed.kfX: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1248</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_bar.raised</name>
+			<note>None</note>
+			<node_count>13</node_count>
+			<node_hash>8c2b7b65977277779eb13d0c414068ce1488676d61bff380a933463c</node_hash>
+			<anchors>
+				<anchor>_bar: 157,-215</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>1</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>zero.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 550,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>zero: delta: 59.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>549</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>one.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 405,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>one: delta: -11.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>404</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>two.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 557,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>two: delta: 71.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>556</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>three.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 505,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>three: delta: 54.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>504</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>four.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 568,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>four: delta: 77.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>567</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>five.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 513,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>five: delta: 49.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>512</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>six.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 541,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>six: delta: 53.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>540</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>seven.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 541,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>seven: delta: 59.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>540</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>eight.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_digit: 1,-10</anchor>
+				<anchor>digit: 511,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>eight: delta: 39.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>510</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>nine.small</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>digit: 539,-10</anchor>
+				<anchor>_digit: 1,-10</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>nine: delta: 55.0,0.0, scale: 0.419999986887,0.419999986887</component>
+			</components>
+			<width>538</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>one.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>one: delta: 6.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>367</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>zero.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>zero: delta: 64.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>487</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>two.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>two: delta: 74.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>493</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>three.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>three: delta: 60.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>450</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>nine.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>nine: delta: 61.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>479</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>eight.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>eight: delta: 47.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>454</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>seven.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>seven: delta: 64.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>480</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>six.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>six: delta: 59.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>480</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>five.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>five: delta: 56.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>457</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>four.smaller</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>1</component_count>
+			<components>
+				<component>four: delta: 79.0,0.0, scale: 0.34999999404,0.34999999404</component>
+			</components>
+			<width>502</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absNumberSign.2</name>
+			<note>None</note>
+			<node_count>16</node_count>
+			<node_hash>b09a25d6c523cd9f658e93a4fcac8bbbae8fcbecb41c904d52d9d4e7</node_hash>
+			<component_count>0</component_count>
+			<width>1444</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absNumberSign.3</name>
+			<note>None</note>
+			<node_count>16</node_count>
+			<node_hash>0f16fe79ca2ca9f97ae2301c3da9a75fffc889ab2c2891b12d207cee</node_hash>
+			<component_count>0</component_count>
+			<width>1894</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absNumberSign.4</name>
+			<note>None</note>
+			<node_count>16</node_count>
+			<node_hash>751386c6c6109ab5273fa69acf7b373358432b5cf6805f293fc86a4f</node_hash>
+			<component_count>0</component_count>
+			<width>2344</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absYearSign.2</name>
+			<note>None</note>
+			<node_count>16</node_count>
+			<node_hash>08946c2a231f138528efdb557c206b4d6d1a56ece0fb19b62f92ab43</node_hash>
+			<anchors>
+				<anchor>digit: 420,210</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absYearSign.3</name>
+			<note>None</note>
+			<node_count>17</node_count>
+			<node_hash>97a99be09d9bc1d7b3bc6fb9a276f92ce8fbaf983d767965016c2558</node_hash>
+			<anchors>
+				<anchor>digit: 420,210</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absYearSign.4</name>
+			<note>None</note>
+			<node_count>17</node_count>
+			<node_hash>e71e6d420cb145fdd82fe8c34f669e5415899f08fd76902c8d9a1a65</node_hash>
+			<anchors>
+				<anchor>digit: 420,210</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absFootnoteSign.2</name>
+			<note>None</note>
+			<node_count>17</node_count>
+			<node_hash>e2f5b481fd4070c2bc95983099db5514351d3a56293e226be3f1a9ec</node_hash>
+			<component_count>0</component_count>
+			<width>1150</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absPageSign.2</name>
+			<note>None</note>
+			<node_count>21</node_count>
+			<node_hash>4c0070c6e3f5c8a497388636f55a2afc6294ff3844637d08919d18b0</node_hash>
+			<component_count>0</component_count>
+			<width>1372</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absPageSign.3</name>
+			<note>None</note>
+			<node_count>21</node_count>
+			<node_hash>cebf8ca1226fde9854fb9a1ab3ece52578033aa4ef4acb480fd2c5b3</node_hash>
+			<component_count>0</component_count>
+			<width>1372</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absPageSign.4</name>
+			<note>None</note>
+			<node_count>21</node_count>
+			<node_hash>1ba553590ca1f3eb0978f32151ee99c24edfcd684ebc8a4a561ff27c</node_hash>
+			<component_count>0</component_count>
+			<width>1372</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
