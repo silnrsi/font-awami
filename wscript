@@ -9,6 +9,7 @@ DOCDIR="documentation"
 OUTDIR="installers"
 ZIPDIR="releases"
 TESTDIR='tests'
+# TESTSTRING=u'Hello World'
 # TESTRESULTSDIR = 'results/tests'
 # STANDARDS = 'reference'
 
@@ -44,10 +45,10 @@ Font sources are published in the repository and an open workflow is used for bu
 DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
-tests = fonttest(extras = {
-            'pdf' : tests({
-                'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
-            }, ext=".pdf")})
+#tests = fonttest(extras = {
+#            'pdf' : tests({
+#                'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
+#            }, ext=".pdf")})
 
 FONT_NAME = "Awami Nastaliq Alpha2"
 FONT_FILENAME = "Awami_alpha2.ttf"
@@ -63,7 +64,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      copyright = COPYRIGHT,
      version = TTF_VERSION,
      extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
-     tests = tests,
+     #tests = tests,
      fret = fret(params = '-r')
     )
 
