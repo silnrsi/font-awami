@@ -131,7 +131,7 @@ newName2 = newName.replace(".VFB", ".vfb")
 filename = newName2.replace(".vfb", "-dump.xml")
 print "filename=",filename
 if filename[25:31] == "AWAMIN" or filename[25:28] == "AWB" :
-    filename = "Awami Nastaliq Regular-dump.xml"
+    filename = "AwamiNastaliqRegular-dump.xml"
 ###############
 
 print
@@ -170,14 +170,17 @@ for property in properties:
 		
 		# KLUDGE for Awami:
 		if property == "file_name" :
-			tpath = value.find("Nastaliq\\AWAMIN~")
-			t16 = tpath + 16
-			t17 = tpath + 17
-			if tpath > 0 and (value[t16] == "1" or value[t16] == "2" or value[t16] == "3" or value[t16] == "4") and value[t17] == "\\" :
-				value = value[0:tpath] + "Nastaliq\Awami Nastaliq" + value[t17:]
-			tfname = value.find("AWAMIN~", t16)
-			if tfname >= t16 :
-				value = value[0:tfname] + "Awami Nastaliq Regular.vfb"
+			#dirName = "Nastaliq"
+			dirName = "source"
+			pathStart = dirName + "\\AWAMIN~"
+			tpath = value.find(pathStart)
+			tNext0 = tpath + len(pathStart)
+			tNext1 = tpath + len(pathStart) + 1
+			if tpath > 0 and (value[tNext0] == "1" or value[tNext0] == "2" or value[tNext0] == "3" or value[tNext0] == "4") and value[tNext1] == "\\" :
+				value = value[0:tpath] + dirName + "\\AwamiNastaliq" + value[tNext1:]
+			tfname = value.find("AWAMIN~", tNext0)
+			if tfname >= tNext0 :
+				value = value[0:tfname] + "AwamiNastaliqRegular.vfb"
 		###################
 
 		open_tag = "\t<" + property + ">"
