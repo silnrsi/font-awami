@@ -49,16 +49,16 @@ tests = fonttest(extras = {
                 'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
             }, ext=".pdf")})
 
-FONT_NAME = "Awami Nastaliq Alpha2"
+FONT_NAME = "AwamiNastaliqAlpha2"
 FONT_FILENAME = "Awami_alpha2.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
      #source = create('temp/Awami_full.sfd',
-     #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['Awami Nastaliq Regular.ttf'])),
-     source = "source/Awami Nastaliq Regular.ttf",
+     #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
+     source = "source/AwamiNastaliqRegular.ttf",
      graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D',
                     depends = glob.glob('*.gdh')),
-     ap = "source/Awami Nastaliq Regular_APs.xml",
+     ap = "source/AwamiNastaliqRegular_APs.xml",
      license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
      version = TTF_VERSION,
