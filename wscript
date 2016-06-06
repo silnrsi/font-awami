@@ -58,7 +58,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      source = "source/AwamiNastaliqRegular.ttf",
      graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D',
                     depends = glob.glob('*.gdh')),
-     ap = "source/AwamiNastaliqRegular_APs.xml",
+     ap = "source/AwamiNastaliqRegular_AP.xml",
      license = ofl('Awami','SIL'),
      copyright = COPYRIGHT,
      version = TTF_VERSION,
