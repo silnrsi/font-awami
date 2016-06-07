@@ -1013,9 +1013,9 @@ cSignTakes1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // sma
 	
 cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
 cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);
-cSign3Smaller  = (gEndOfAyah);	// should be gEndOfAyah3; also alternative forms
+cSign3Smaller  = (gEndOfAyah3);
 cSign3 = (cSign3Small cSign3Smaller);
-cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign gEndOfAyah);
+cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gEndOfAyah2);
 cSign1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah);
 
 cSignDigit = (cDigitAnySmall cDigitAnySmaller);
