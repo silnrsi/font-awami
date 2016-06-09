@@ -50,7 +50,7 @@ DEBPKG = 'fonts-awami'
 #                'pdfs' : cmd("${CMPTXTRENDER} -t ${SRC[1]} -e ${shaper} --outputtype=json -r ${SRC[0]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[0]}")
 #            }, ext=".pdf")})
 
-FONT_NAME = "AwamiNastaliqAlpha2plus"
+FONT_NAME = "AwamiNastaliq Alpha2Plus"
 FONT_FILENAME = "Awami_alpha2plus.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
