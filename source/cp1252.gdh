@@ -23,7 +23,7 @@ endtable;
 */
 
 table (substitution)
-pass(1)
+pass(7) {Direction=LEFT_TO_RIGHT}
 g_A  g_gravecomb	>  unicode(0xc0):(1,2) _ ;  // U+00C0 LATIN CAPITAL LETTER A WITH GRAVE
 g_A  g_acutecomb	>  unicode(0xc1):(1,2) _ ;  // U+00C1 LATIN CAPITAL LETTER A WITH ACUTE
 g_A  g_uni0302		>  unicode(0xc2):(1,2) _ ;  // U+00C2 LATIN CAPITAL LETTER A WITH CIRCUMFLEX

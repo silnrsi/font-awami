@@ -108,8 +108,6 @@ pass(2)
 	
 	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  / _ ^ MARKS _ ;
 
-#include "cp1252.gdh"
-
 endpass; // 1
 
 // nuqta slot attribute:
@@ -1004,9 +1002,9 @@ cDigitAnySmall = (cDigitLatin_small);
 cDigitAnySmaller = (cDigitLatin_smaller);
 
 
-cSignTakes4 = (gYearSign gNumberSign gPageSign gFootnoteSign); // small
+cSignTakes4 = (gYearSign gNumberSign gPageSign); // small
 
-cSignTakes3Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSignTakes3Small = (gYearSign gNumberSign gPageSign);
 cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
 
 cSignTakes2 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // small
@@ -1015,16 +1013,16 @@ cSignTakes1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // sma
 	
 cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
 cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);
-cSign3Smaller  = (gEndOfAyah);	// should be gEndOfAyah3; also alternative forms
+cSign3Smaller  = (gEndOfAyah3);
 cSign3 = (cSign3Small cSign3Smaller);
-cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign gEndOfAyah);
+cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gEndOfAyah2);
 cSign1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah);
 
 cSignDigit = (cDigitAnySmall cDigitAnySmaller);
 
 endtable;
 
-pass(7) {Direction=1}
+pass(7) {Direction=LEFT_TO_RIGHT}
 	// Subtending marks
 	
 	cSignTakes4 cDigitAny cDigitAny cDigitAny cDigitAny  >
@@ -1040,6 +1038,8 @@ pass(7) {Direction=1}
 		cSign2 cDigitAnySmall cDigitAnySmall;
 
 	cSignTakes1 cDigitAny  >  cSign1  cDigitAnySmall;
+
+#include "cp1252.gdh"
 
 endpass; // 7
 

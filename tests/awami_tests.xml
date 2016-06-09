@@ -190,7 +190,22 @@
       <string>١٢٣٤</string>
     </test>
     <test class="fset19" label="year sign (sanah) - digits">
-      <string>؁123 ؁1</string>
+      <string>؁5 ؁56 ؁123 ؁1973 </string>
+    </test>
+    <test class="fset19" label="number sign">
+      <string>؀1 ؀23 ؀346 ؀9876 </string>
+    </test>
+    <test class="fset19" label="page sign">
+      <string>؃1 ؃45 ؃345 ؃4567</string>
+    </test>
+    <test class="fset19" label="footnote sign">
+      <string>؂1 ؂12</string>
+    </test>
+    <test class="fset19" label="end of ayah">
+      <string>۝8 ۝88 ۝678 ۝888</string>
+    </test>
+    <test class="fset21" label="Latin NFD">
+      <string>ábĉ̃</string>
     </test>
   </testgroup>
   <testgroup label="Ligatures">

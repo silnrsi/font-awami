@@ -81,9 +81,9 @@ def print_glyph(font, glyph, index):
 # KLUDGE for Awami:
 newName = fl.font.file_name.replace(" ", "")
 newName2 = newName.replace(".VFB", ".vfb")
-outname = newName2.replace(".vfb", "_APs.xml")
+outname = newName2.replace(".vfb", "_AP.xml")
 if outname[25:31] == "AWAMIN" or outname[25:28] == "AWB":
-    outname = "Awami Nastaliq Regular_APs.xml"
+    outname = "AwamiNastaliqRegular_AP.xml"
 ###############
 fh = open(outname, "w")
 print "filename =", outname
