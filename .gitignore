@@ -13,7 +13,6 @@ results/**
 *.autosave
 *(Autosaved)*
 
-
 # OS X
 *.DS_STORE
 *__MACOSX
@@ -52,6 +51,9 @@ $RECYCLE.BIN/
 
 # Fontforge temporary backups
 *.sfd-*
+
+# FontLab temporary file for TTF generation
+*.~tt
 
 # Opaque formats to keep out of git
 *.fog
