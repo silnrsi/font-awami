@@ -504,6 +504,8 @@ endtable;
 
 table(positioning)
 
+if (collFix > 0)
+
 pass(3)
 
 // Set up for collision fixing
@@ -812,6 +814,8 @@ cDiacritic { collision.flags = SET_IGNORE(collision.flags) };	// these have not 
 
 endpass; // 3
 
+endif; // (collFix > 0)
+
 
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 if (collFix > 1)
@@ -1015,6 +1019,7 @@ endpass;  // 6
 
 // Diacritic collision fixing and kerning
 
+if (collFix > 0)
 
 pass(7) // { CollisionFix = 4; AutoKern = true }
 
@@ -1025,6 +1030,8 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
+
+if (collFix >= 2)
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -1090,6 +1097,8 @@ cDiacriticLower { collision {
 	min.y = -800m;
 	max.y = 300m;
 } };
+
+endif; // (collfix >= 2) - shift fixes
 
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
@@ -1175,6 +1184,8 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
 endpass;
+
+endif; // (collFix > 0)
 
 
 // We put the actual collision fixing a separate pass just because it makes debugging easier.

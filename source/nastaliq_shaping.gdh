@@ -583,7 +583,8 @@ cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
 //cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;  // ALT-KAF
 cMed_raw  >  cMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
 cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
-cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed);
+// The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
+cMed_raw  >  cMedFe		/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed g_zerojoin);
 cMed_raw  >  cMedQf		/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
 cMed_raw  >  cMedMm		/  ^ MPRECXT  _ MARKS  (cMeemFin cMeemMed);
 cMed_raw  >  cMedNn		/  ^ MPRECXT  _ MARKS  cNoonFin;
@@ -604,7 +605,7 @@ gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
 // Last resort:
 
-cMed_raw  >  cMed	/ ^ MPRECXT _  MARKS  (c_medial c_final g_zerojoin);
+cMed_raw  >  cMed	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
 
 endpass;
@@ -697,7 +698,7 @@ cIni_raw  >  cIniSd		/ _ MARKS  (cSadFin cSadMed);
 cIni_raw  >  cIniTaF	/ _ MARKS  cTahFin;
 cIni_raw  >  cIniTaM 	/ _ MARKS  cTahMed;
 cIni_raw  >  cIniAi		/ _ MARKS  (cAinFin cAinMed);
-cIni_raw  >  cIniFe		/ _ MARKS  (cFehFin cFehMed);
+cIni_raw  >  cIniFe		/ _ MARKS  (cFehFin cFehMed g_zerojoin);
 cIni_raw  >  cIniQf		/ _ MARKS  c_qw; // qaf, waw
 cIni_raw  >  cIniMm		/ _ MARKS  (cMeemFin cMeemMed);
 cIni_raw  >  cIniNn		/ _ MARKS  (cNoonFin gNoonGhunnaFin);
@@ -705,7 +706,7 @@ cIni_raw  >  cIniHgF	/ _ MARKS  cHehGoalFin;
 cIni_raw  >  cIniHgM	/ _ MARKS  cHehGoalMed;
 //cIni_raw  >  cIniHgM_kx	/ _ MARKS  cHehGoalMed;  // ALT-KAF
 cIni_raw  >  cIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
-cIni_raw  >  cIniCh		/ _ MARKS  cChotiyehFin;
+cIni_raw  >  cIniCh		/ _ MARKS  (cChotiyehFin);
 cIni_raw  >  cIniBy  	/ _ MARKS  cBariyehFin;
 
 cIni_raw  >  cIniBe		/ _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
@@ -718,13 +719,13 @@ gBehIni_raw  >  gBehIniSd	/ _ MARKS  (cSadFin cSadMed);
 gBehIni_raw  >  gBehIniTaF	/ _ MARKS  cTahFin;
 gBehIni_raw  >  gBehIniTaM 	/ _ MARKS  cTahMed;
 gBehIni_raw  >  gBehIniAi	/ _ MARKS  (cAinFin cAinMed);
-gBehIni_raw  >  gBehIniFe	/ _ MARKS  (cFehFin cFehMed);
+gBehIni_raw  >  gBehIniFe	/ _ MARKS  (cFehFin cFehMed g_zerojoin);
 gBehIni_raw  >  gBehIniQf	/ _ MARKS  c_qw; // qaf, waw
 gBehIni_raw  >  gBehIniMm	/ _ MARKS  (cMeemFin cMeemMed);
 gBehIni_raw  >  gBehIniNn	/ _ MARKS  cNoonFin;
 gBehIni_raw  >  gBehIniHgF	/ _ MARKS  cHehGoalFin;
 gBehIni_raw  >  gBehIniHgM	/ _ MARKS  cHehGoalMed;
-gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
+gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed );
 gBehIni_raw  >  gBehIniCh 	/ _ MARKS  cChotiyehFin;
 gBehIni_raw  >  gBehIniBy  	/ _ MARKS  cBariyehFin;
 
@@ -735,7 +736,7 @@ gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 
 // Last resort:
 
-cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final g_zerojoin);
+cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final);
 
 
 // Final clean-ups
