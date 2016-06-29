@@ -988,19 +988,30 @@ endpass;
 table(glyph)
 
 cDigitArabic = (gZero, gOne, gTwo, gThree, gFour, gFive, gSix, gSeven, gEight, gNine);
+cDigitArabic_small = (gZero_small, gOne_small, gTwo_small, gThree_small, gFour_small,
+	gFive_small, gSix_small, gSeven_small, gEight_small, gNine_small);
+cDigitArabic_smaller = (gZero_smaller, gOne_smaller, gTwo_smaller, gThree_smaller, gFour_smaller,
+	gFive_smaller, gSix_smaller, gSeven_smaller, gEight_smaller, gNine_smaller);
+
 cDigitEastern = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEasternFour, gEasternFive,
 	gEasternSix, gEasternSeven, gEasternEight, gEasternNine);
+cDigitEastern_small = (gEasternZero_small, gEasternOne_small, gEasternTwo_small,
+	gEasternThree_small, gEasternFour_small, gEasternFive_small,
+	gEasternSix_small, gEasternSeven_small, gEasternEight_small, gEasternNine_small);
+cDigitEastern_smaller = (gEasternZero_smaller, gEasternOne_smaller, gEasternTwo_smaller,
+	gEasternThree_smaller, gEasternFour_smaller, gEasternFive_smaller,
+	gEasternSix_smaller, gEasternSeven_smaller, gEasternEight_smaller, gEasternNine_smaller);
 
 cDigitLatin = (g_zero, g_one, g_two, g_three, g_four, g_five, g_six, g_seven, g_eight, g_nine);
-cDigitLatin_small = (g_zero_small, g_one_small, g_two_small, g_three_small, g_four_small, g_five_small, 
-	g_six_small, g_seven_small, g_eight_small, g_nine_small);
-cDigitLatin_smaller = (g_zero_smaller, g_one_smaller, g_two_smaller, g_three_smaller, g_four_smaller, g_five_smaller, 
-	g_six_smaller, g_seven_smaller, g_eight_smaller, g_nine_smaller);
+cDigitLatin_small = (g_zero_small, g_one_small, g_two_small, g_three_small, g_four_small,
+	g_five_small, g_six_small, g_seven_small, g_eight_small, g_nine_small);
+cDigitLatin_smaller = (g_zero_smaller, g_one_smaller, g_two_smaller, g_three_smaller, g_four_smaller, 
+	g_five_smaller, g_six_smaller, g_seven_smaller, g_eight_smaller, g_nine_smaller);
 
 //cDigitsAny = ( cDigitArabic cDigitEastern cDigitLatin );
-cDigitAny = (cDigitLatin);
-cDigitAnySmall = (cDigitLatin_small);
-cDigitAnySmaller = (cDigitLatin_smaller);
+cDigitAny = (cDigitLatin, cDigitArabic, cDigitEastern);
+cDigitAnySmall = (cDigitLatin_small, cDigitArabic_small, cDigitEastern_small);
+cDigitAnySmaller = (cDigitLatin_smaller, cDigitArabic_smaller, cDigitEastern_smaller);
 
 
 cSignTakes4 = (gYearSign gNumberSign gPageSign); // small

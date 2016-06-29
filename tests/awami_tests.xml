@@ -196,13 +196,19 @@
       <string>؀1 ؀23 ؀346 ؀9876 </string>
     </test>
     <test class="fset19" label="page sign">
-      <string>؃1 ؃45 ؃345 ؃4567</string>
+      <string>؃1 ؃45 ؃345 ؃4567 ؃۵۷۰</string>
     </test>
     <test class="fset19" label="footnote sign">
-      <string>؂1 ؂12</string>
+      <string>؂1 ؂12 ؂٣٤</string>
     </test>
-    <test class="fset19" label="end of ayah">
-      <string>۝8 ۝88 ۝678 ۝888</string>
+    <test class="fset19" label="end of ayah - Latin">
+      <string>۝8 ۝88 ۝888</string>
+    </test>
+    <test class="fset19" label="end of ayah - std Arabic">
+      <string>۝٣٤٥ ۝٤٠٧ ۝٤١٨</string>
+    </test>
+    <test class="fset19" label="end of ayah - Eastern">
+      <string>۝۳۴۵ ۝۴۳۷ ۝۴۵۸</string>
     </test>
     <test class="fset21" label="Latin NFD">
       <string>ábĉ̃</string>
@@ -1305,7 +1311,7 @@
     <test class="fset15" label="small high ain" rtl="True">
       <string>آتُؑ سسٌؑ بجؑ ففُؑ سیَّؑ عنُٰؑ</string>
     </test>
-    <test class="fset15" label="exception - app" rtl="True">
+    <test class="fset15" label="exception - 'app'" rtl="True">
       <string>آپؑ</string>
     </test>
     <test background="#55aaff" class="fset16" label="ENFORCE ORDER" rtl="True">
