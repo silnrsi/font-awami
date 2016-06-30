@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absSmallHighRehHahMark" format="1">
-  <advance width="0"/>
-  <unicode hex="0612"/>
+  <advance width="12"/>
   <outline>
     <contour>
       <point x="177" y="457" type="line"/>
@@ -17,7 +16,7 @@
       <point x="111" y="139" type="curve" smooth="yes"/>
       <point x="129" y="154"/>
       <point x="196" y="358"/>
-      <point x="215" y="449" type="curve" smooth="yes"/>
+      <point x="215" y="449" type="curve"/>
       <point x="218" y="467"/>
       <point x="183" y="472"/>
       <point x="177" y="458" type="curve"/>
@@ -36,8 +35,8 @@
       <point x="-142" y="365" type="line"/>
       <point x="-120" y="401"/>
       <point x="-99" y="412"/>
-      <point x="-71" y="412" type="curve"/>
-      <point x="-59" y="412" type="line"/>
+      <point x="-71" y="412" type="curve" smooth="yes"/>
+      <point x="-59" y="412" type="line" smooth="yes"/>
       <point x="-29" y="412"/>
       <point x="30" y="412"/>
       <point x="30" y="412" type="curve"/>
@@ -62,14 +61,16 @@
     <contour>
       <point x="2" y="4" type="move" name="_honorific"/>
     </contour>
+    <component base="nlqKharizabar" xScale="0.77" yScale="0.77" xOffset="-243" yOffset="-62"/>
+    <component base="_nukta" xScale="0.4" yScale="0.4" xOffset="-215" yOffset="605"/>
   </outline>
   <lib>
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
-    <real>0.967</real>
-    <real>0.6</real>
+    <real>0.656</real>
     <real>1</real>
+    <real>0.6</real>
     <real>1</real>
   </array>
   </dict>
