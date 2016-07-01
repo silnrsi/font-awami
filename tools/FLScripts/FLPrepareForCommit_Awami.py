@@ -61,8 +61,8 @@ if user != "SC" :
 # Generate TTF
 ttf_output_file = ttf_output_path + "AwamiNastaliqRegular.ttf"
 print
-print "Generating TTF to " + ttf_output_path
-fl.GenerateFont(ftTRUETYPE, ttf_output_path)
+print "Generating TTF to " + ttf_output_file
+fl.GenerateFont(ftTRUETYPE, ttf_output_file)
 print "Done."
 
 # Discard VFB (the components are all de-referenced and the overlaps are merged, so we don't want to keep it)
