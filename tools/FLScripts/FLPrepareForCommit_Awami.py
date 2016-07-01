@@ -31,7 +31,7 @@ fl.Save( vfb_path )
 execfile(fl_macro_path + "FontToXMLDump_Awami.py")
 execfile(fl_macro_path + "FLWriteAPXml_Awami.py")
 
-if user = "SC" :
+if user == "SC" :
     # The Windows version of vfb2ufo gets confused about the slashes in the paths.
     # It helps to delete the folder first.
     ufo_dir = ttf_output_path + "AwamiNastaliqRegular.ufo\\"
