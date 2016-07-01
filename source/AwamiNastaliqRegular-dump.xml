@@ -1,4 +1,4 @@
-<!-- Generated on Thu, 30 Jun 2016 14:27:52 +0000 by Peter Martin -->
+<!-- Generated on Fri, 01 Jul 2016 17:44:21 +0000 by Peter Martin -->
 
 <font>
 
@@ -29,7 +29,7 @@
 	<tt_u_id>None</tt_u_id>
 	<tt_version>Version 0.250</tt_version>
 	<trademark>None</trademark>
-	<vendor>PYRS</vendor>
+	<vendor>SIL</vendor>
 	<vendor_url>http://scripts.sil.org</vendor_url>
 	<version>0.250</version>
 	<year>2014</year>
@@ -83,7 +83,7 @@
 	<ttinfo><TTInfo: "Awami Nastaliq"></ttinfo>
 	<encoding><Encoding: parent: "AwamiNastaliq-Regular"></encoding>
 	<codepages>[0, 6]</codepages>
-	<unicoderanges>[0, 1, 2, 3, 5, 6, 13, 31, 33, 34, 35, 38, 45, 63, 67]</unicoderanges>
+	<unicoderanges>[0, 1, 2, 3, 5, 13, 31, 33, 34, 35, 38, 45, 60, 63, 67]</unicoderanges>
 	<source>SIL International</source>
 	<weight_vector><WeightVector: parent font: "Awami Nastaliq"></weight_vector>
 
@@ -1601,10 +1601,10 @@
 			<name>absFehMed.qf</name>
 			<note>None</note>
 			<node_count>11</node_count>
-			<node_hash>55b283ff0cce87642cbd5ff2e91884ecadeb69fee71ee31a498f9b78</node_hash>
+			<node_hash>2e5edffd0ee951037117f3804647951c26ca2ac86580fca0dd6ba06d</node_hash>
 			<anchors>
 				<anchor>_exit_feh: 540,781</anchor>
-				<anchor>exit_qafWawStfh: 0,497</anchor>
+				<anchor>exit_qafWawStfh: 0,382</anchor>
 				<anchor>nUpper: 525,1582</anchor>
 				<anchor>n1Lower: 533,399</anchor>
 			</anchors>
@@ -5652,7 +5652,7 @@
 			<name>absSeenMed.jm</name>
 			<note>None</note>
 			<node_count>17</node_count>
-			<node_hash>cb09c6759e1767063354a34059dab4e3fa0a91128e83c939c4c3ca9b</node_hash>
+			<node_hash>87570f12b17cc6346710898e76986eb8f1a4b8f70b85757fecfe4f5e</node_hash>
 			<anchors>
 				<anchor>exit_jeem: 0,1077</anchor>
 				<anchor>n1Lower: 543,1162</anchor>
@@ -5753,17 +5753,17 @@
 		<glyph>
 			<name>absSeenMed.qf</name>
 			<note>None</note>
-			<node_count>18</node_count>
-			<node_hash>5a030c44a1cdc3a936b4d4c2a3abf0465f73d83edc8f8b94db687f03</node_hash>
+			<node_count>17</node_count>
+			<node_hash>cfad68651852545d6be10a5fe4866b9d23ab87237037a366e652022b</node_hash>
 			<anchors>
-				<anchor>_exit_seen: 727,1145</anchor>
-				<anchor>exit_qafWawStfh: 0,775</anchor>
-				<anchor>nUpper: 385,1314</anchor>
-				<anchor>n1Lower: 394,551</anchor>
-				<anchor>tahUpper: 395,1331</anchor>
+				<anchor>_exit_seen: 751,1145</anchor>
+				<anchor>exit_qafWawStfh: 0,642</anchor>
+				<anchor>nUpper: 409,1314</anchor>
+				<anchor>n1Lower: 418,551</anchor>
+				<anchor>tahUpper: 419,1331</anchor>
 			</anchors>
 			<component_count>0</component_count>
-			<width>727</width>
+			<width>751</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -6229,16 +6229,19 @@
 		<glyph>
 			<name>absTahMed.qf</name>
 			<note>None</note>
-			<node_count>19</node_count>
-			<node_hash>8af1992d10fcdcd51a325fb648b1228feecf487e09b6545d3e97159e</node_hash>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>_exit_tah: 351,714</anchor>
-				<anchor>exit_qafWawStfh: -39,520</anchor>
-				<anchor>nUpper: 768,1608</anchor>
-				<anchor>n1Lower: 487,477</anchor>
+				<anchor>_exit_tah: 306,714</anchor>
+				<anchor>exit_qafWawStfh: 0,593</anchor>
+				<anchor>nUpper: 723,1608</anchor>
+				<anchor>n1Lower: 442,477</anchor>
 			</anchors>
-			<component_count>0</component_count>
-			<width>352</width>
+			<component_count>1</component_count>
+			<components>
+				<component>absTahIni.qf: delta: 0.0,115.0, scale: 1.0,1.0</component>
+			</components>
+			<width>307</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
@@ -13763,8 +13766,8 @@
 		<glyph>
 			<name>absGafIni.qf</name>
 			<note>None</note>
-			<node_count>24</node_count>
-			<node_hash>1522111f86fb15216f5e2ce4b8887398409f52f6842c384e0525ca95</node_hash>
+			<node_count>12</node_count>
+			<node_hash>87c889400ba8100c24e00ff08337eff459a5232e5a2ec7a9c73aa4cc</node_hash>
 			<anchors>
 				<anchor>exit_qafWaw: 0,707</anchor>
 				<anchor>nUpper: 259,2526</anchor>
@@ -13899,9 +13902,9 @@
 			<name>absSeenIni.qf</name>
 			<note>None</note>
 			<node_count>13</node_count>
-			<node_hash>a17681650f7c3f63b4f3a8c2c7f5640d83725845427c45cd4e530eb6</node_hash>
+			<node_hash>6b554c8c24a9f4e6b8a4455b731d9a49713514cdad0bbafa303ddcb8</node_hash>
 			<anchors>
-				<anchor>exit_qafWawStfh: 0,555</anchor>
+				<anchor>exit_qafWawStfh: 0,422</anchor>
 				<anchor>nUpper: 354,1152</anchor>
 				<anchor>n1Lower: 431,362</anchor>
 				<anchor>tahUpper: 340,1165</anchor>
@@ -13915,9 +13918,9 @@
 			<name>absTahIni.qf</name>
 			<note>None</note>
 			<node_count>18</node_count>
-			<node_hash>e1e813dddafbcd1009b8331c7da5380c24de7dffd5450132de6d38d7</node_hash>
+			<node_hash>20903b354b7e3ddcccc09d1d0b87e755d43374ca0cfdde51884856f1</node_hash>
 			<anchors>
-				<anchor>exit_qafWawStfh: 0,555</anchor>
+				<anchor>exit_qafWawStfh: 0,478</anchor>
 				<anchor>nUpper: 715,1491</anchor>
 				<anchor>n1Lower: 513,400</anchor>
 			</anchors>
@@ -15254,8 +15257,8 @@
 		<glyph>
 			<name>parenleft</name>
 			<note>None</note>
-			<node_count>7</node_count>
-			<node_hash>ede22f68b49bab8e2f4790990e2a777be94b39eef390ace098dfe940</node_hash>
+			<node_count>6</node_count>
+			<node_hash>5536cd910ee702f35b503349d767c02d7a05ffdacf850a48f1241aeb</node_hash>
 			<component_count>0</component_count>
 			<width>593</width>
 			<unicode>0028</unicode>
@@ -16323,8 +16326,8 @@
 		<glyph>
 			<name>braceleft</name>
 			<note>None</note>
-			<node_count>16</node_count>
-			<node_hash>d09f631b110e46495750941046d61a943ffcf6b079a69f8d25978732</node_hash>
+			<node_count>15</node_count>
+			<node_hash>81391f99d19c3727d03dc8be087028395de8f7b68339f6eeea1b8e0f</node_hash>
 			<component_count>0</component_count>
 			<width>853</width>
 			<unicode>007B</unicode>
@@ -16343,8 +16346,8 @@
 		<glyph>
 			<name>braceright</name>
 			<note>None</note>
-			<node_count>16</node_count>
-			<node_hash>94cb53849654d34803f60f883f5d60a916bc075315689e222ac6f0c2</node_hash>
+			<node_count>15</node_count>
+			<node_hash>8a41703126977d174b039496e08955c9b78ca064e615d61f729f0364</node_hash>
 			<component_count>0</component_count>
 			<width>853</width>
 			<unicode>007D</unicode>
@@ -16353,8 +16356,8 @@
 		<glyph>
 			<name>asciitilde</name>
 			<note>None</note>
-			<node_count>9</node_count>
-			<node_hash>40a5013b96b2891c7ab653afa7ca9d85f41ad4cd68137d16900e9a9b</node_hash>
+			<node_count>8</node_count>
+			<node_hash>7b964ccbf993436753d530ac3ac6ea03319b3286c827bbe31480d79f</node_hash>
 			<component_count>0</component_count>
 			<width>970</width>
 			<unicode>007E</unicode>
@@ -17168,7 +17171,7 @@
 			<name>absWawFin._stfh</name>
 			<note>None</note>
 			<node_count>11</node_count>
-			<node_hash>f51d345eb2a2ca6212f4f19a2beab3000565181f07a231d0aaf4a503</node_hash>
+			<node_hash>26e4825b07f0ff3f11695c00ba30199f4782d71941a9f4b418c002c1</node_hash>
 			<anchors>
 				<anchor>_exit_qafWawStfh_OLD: 644,686</anchor>
 				<anchor>nUpper: 448,1084</anchor>
@@ -17180,7 +17183,8 @@
 				<anchor>invV: 356,-90</anchor>
 				<anchor>ring: 66,345</anchor>
 				<anchor>bar: 331,154</anchor>
-				<anchor>_exit_qafWawStfh: 648,556</anchor>
+				<anchor>_exit_qafWawStfh_OLD2: 648,556</anchor>
+				<anchor>_exit_qafWawStfh: 597,473</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>751</width>
@@ -17367,10 +17371,10 @@
 			<name>absHehDoachashmeeMed.qf</name>
 			<note>None</note>
 			<node_count>16</node_count>
-			<node_hash>b10ea667c3b89d283851b23bb6c8c4a98f5be1b1e06cea62f0b14e08</node_hash>
+			<node_hash>8f4823f8b56983a4b622fd8b2dbc8fe5fb7faf327d04f9e844c195eb</node_hash>
 			<anchors>
 				<anchor>_exit_hehdoach: 704,1055</anchor>
-				<anchor>exit_qafWawStfh: 0,565</anchor>
+				<anchor>exit_qafWawStfh: 0,484</anchor>
 				<anchor>nUpper: 568,1513</anchor>
 				<anchor>n1Lower: 477,292</anchor>
 			</anchors>
@@ -18883,8 +18887,8 @@
 		<glyph>
 			<name>micro</name>
 			<note>None</note>
-			<node_count>22</node_count>
-			<node_hash>4958439e443530e7bbadebc811e5b4f24f0c9c8667535b729c3b669c</node_hash>
+			<node_count>21</node_count>
+			<node_hash>ab54f1b5c48a177594b4148569b2055edcf3a0cde8c9e6bc1aca0d4c</node_hash>
 			<component_count>0</component_count>
 			<width>1010</width>
 			<unicode>00B5</unicode>
@@ -20001,8 +20005,8 @@
 		<glyph>
 			<name>breve</name>
 			<note>2003-06-19 pkm mod Switched identity of Breve and CombBreve</note>
-			<node_count>7</node_count>
-			<node_hash>4811050d3203ff000152aa8f414d2715b87253fd852bc6be266e58dd</node_hash>
+			<node_count>6</node_count>
+			<node_hash>48e7ac46a8382db769d54bbef862db8c8adcee43f80b66b870a082e5</node_hash>
 			<anchors>
 				<anchor>U: 289,1375</anchor>
 			</anchors>
