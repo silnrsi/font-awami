@@ -15,7 +15,7 @@ cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEaster
 
 g_lrm = pseudo(postscript("space"), 0x200E);	// some data uses LRM incorrectly instead of ZWNJ to break context
 
-g__noDot1u = pseudo(postscript("_dot1u"));
+g__noDot1u = pseudo(postscript("_dot1u"));  // no longer used
 g__noDot2l = pseudo(postscript("_dot2l"));
 g__dot2l_tail = pseudo(postscript("_dot2l"));
 
@@ -30,7 +30,7 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, gHighHamza, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV,  g__smallTah2dots, g__kafSquiggle, g__peshWaw,
+	g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
 	// g__kafTop, gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_short);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring,

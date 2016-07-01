@@ -853,13 +853,10 @@ gNoon		g__dot1u_smallTah		>	gNoonRetro:(1 2)	_;
 gNoon		g__dot1l__dot1u			>	gNoonDotBelow:(1 2)	_;
 gNoon		g__smallTah				>	gRnoon:(1 2)	_;
 gNoon		g__dot1u_smallV			>	gNoonSmallV:(1 2)  _;
-gNoon		g__noDot1u				>	gNoonGhunna:(1 2)  _;
+//gNoon		g__noDot1u				>	gNoonGhunna:(1 2)  _;
+gNoon		g__dot1u_ngMark			>	gNoonGhunna:(1 2)  _;
 
-// It's a little strange to have noon-ghunnas in a position other than final,
-// but if that's what we have, add nuqtas:
-(cBehIni cBehMed) g__noDot1u  >  @1  g__dot1u;
-
-gNoonFin  g__noDot1u  >  @1:(1 2)  _;
+gNoonFin  g__dot1u_ngMark  >  @1:(1 2)  _;
 
 gHehGoal	g__hehHook_small		>	gHehGoal:(1 2)	_;
 gHehGoal	g__hehHook__dot2u		>	gTehMarbutaGoal:(1 2)	_;
