@@ -30,6 +30,7 @@ wscript text
 *.sh eol=lf
 *.sfd text eol=lf
 
+# Keep these as Linux because vfb2ufo generates Linux line-endings, even on Windows:
 *.glif text eol=lf
 *.plist text eol=lf
 

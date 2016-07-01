@@ -642,6 +642,16 @@ cNuqtaLikeUpper { collision {
 } } / cTahMed _ ;
 
 
+//
+// Exception to special case below when there is a previous lam.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -250m;
+	max.x = 200m;
+	min.y = -300m;
+	max.y = 1000m;
+} } / cLamIM cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
+
 // Special cases involving kaf tops - allow nuqtas to move further right than normal.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -650,7 +660,6 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
-
 
 // Need more flexibility in getting away from kinked kafs
 // TODO: use a class including all kinked kafs.
@@ -976,13 +985,13 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
-	kernPreLamAlef = 0m; kernPreShort = 0m;  // kernPreInitial = 0m };
+	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;  // kernPreInitial = 0m };
 	minKernDelta = 0m };
 
 gDal		{ kernPreAlef = -60m };
 gDalFin		{ kernPreAlef = -50m };
 gReh		{ kernPreAlef = -120m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
-				// Before a two-letter word:
+				// Before a two-letter sequence:
 				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m };
 gWaw		{ kernPreAlef = -80m };
@@ -992,6 +1001,11 @@ gRehFin_jkl { minKernDelta = -400m };
 gRehFin_sshg { minKernDelta = -400m };
 gRehFin_hgM { minKernDelta = -400m };
 
+// Don't let punctuation kern underneath following segment:
+cKernPunct { minKernDelta = MINKERN * -1 };
+
+///gAlefFin { kernPreKafNoSp = -80m };  // Malachi suggested this
+
 endtable; // glyph
 
 
@@ -999,14 +1013,16 @@ endtable; // glyph
 
 pass(6)
 
-cKernable { pairKern = kernPreAlef }  /  _  MARKS  cSpace?  (cAlefIso);
-cKernable { pairKern = kernPreDal  }  /  _  MARKS  cSpace?  (cDalIso);
-cKernable { pairKern = kernPreReh  }  /  _  MARKS  cSpace?  (cRehIso);
-cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cSpace?  (cWawIso);
-cKernable { pairKern = kernPreLamAlef} / _  MARKS  cSpace?  (gLamAlef gLamIniAl);
+cKernable { pairKern = kernPreAlef }  /  _  MARKS  cNoJoin?  (cAlefIso);
+cKernable { pairKern = kernPreDal  }  /  _  MARKS  cNoJoin?  (cDalIso);
+cKernable { pairKern = kernPreReh  }  /  _  MARKS  cNoJoin?  (cRehIso);
+cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cNoJoin?  (cWawIso);
+cKernable { pairKern = kernPreLamAlef} / _  MARKS  cNoJoin?  (gLamAlef gLamIniAl);
 
-// Before a two-letter word:
-cKernable { pairKern = kernPreShort } / _  MARKS  cSpace?  c_initial MARKS  c_final;
+cKernable { pairKern = kernPreKafNoSp }   /  _  MARKS  (gKaf  gGaf  cKafIni);
+
+// Before a two-letter sequence:
+cKernable { pairKern = kernPreShort } / _  MARKS  cNoJoin?  c_initial MARKS  c_final;
 
 
 // Bogus rule that will never fire (if we disable this pass):
@@ -1141,7 +1157,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  cSpace?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
+	/  _  cNuqtaLike?  DIACS  cNoJoin?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
 		gBariyehFin=F;
 
 cKernable { collision {
@@ -1151,7 +1167,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  cSpace?  cPostKernable=N;
+	/  _  cNuqtaLike?  DIACS  cNoJoin?  cPostKernable=N;
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);

@@ -362,9 +362,67 @@
     <test class="fset11" label="final reh overlap" rtl="True">
       <string>ہر شخص جر شخص عر شخص بہر شخص</string>
     </test>
+    <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
+      <string/>
+    </test>
+    <test class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
+      <comment>There is not enough space after the isolate waw.</comment>
+      <string>مشیت و مصلحت</string>
+    </test>
+    <test class="fset21" label="pa + k (Malachi - 6)" rtl="True">
+      <comment>Expects the alef to be closer to the kaf.</comment>
+      <string>پاک پاکیز</string>
+    </test>
+    <test background="#aaff7f" class="fset21" label="full stop (Malachi - 7)" rtl="True">
+      <comment>Full stop way too close to the following word.</comment>
+      <string>ہے۔ تھین</string>
+    </test>
+    <test background="#aaff7f" class="fset19" label="comma (Sheldon)" rtl="True">
+      <string>کہ، نعو</string>
+    </test>
+    <test background="#aaff7f" class="fset21" label="xalifa (Malachi - 10)" rtl="True">
+      <comment>Need more space before the second word.</comment>
+      <string>اور خلیفة   |   پنے خلیفة   |   کہ خلیفة</string>
+    </test>
+    <test background="#aaff7f" class="fset19" label="debana khuda (Eunice)" rtl="True">
+      <comment>Fixed.</comment>
+      <string>دیبنہ خدا</string>
+    </test>
+    <test background="#aaff7f" class="fset19" label="nga chik (Eunice)" rtl="True">
+      <string>ںا چک</string>
+    </test>
+    <test class="fset19" label="reh/dal + yeh (Eunice)" rtl="True">
+      <string>ریر دیر</string>
+    </test>
+    <test class="fset21" label="reh + yeh (Dieter)" rtl="True">
+      <comment>Too far apart</comment>
+      <string>طریقہ</string>
+    </test>
+    <test class="fset21" label="alef + yeh + meem (Dieter)" rtl="True">
+      <comment>If the nuqtas were moved down, the alef could scootch in.</comment>
+      <string>ایمان</string>
+    </test>
+    <test background="#aaff7f" class="fset21" label="waw + qaf (Sheldon)" rtl="True">
+      <string>حقوق</string>
+    </test>
+    <test class="fset21" label="sheen + kaf (Dieter)" rtl="True">
+      <comment>Would look better a bit closer together.</comment>
+      <string>شش کو</string>
+    </test>
+    <test background="#aaff7f" class="fset21" label="not enough overlap (Sheldon)" rtl="True">
+      <comment>The third example is good, the first two are not tight enough.</comment>
+      <string>کویی شحض   |   کہیں شحض  |   برشحض کوں</string>
+    </test>
+    <test background="#aaff7f" class="fset19" label="Eunice - collision" rtl="True">
+      <string>ڇھق پو</string>
+    </test>
+    <test class="fset21" label="nyeh (Eunice)" rtl="True">
+      <comment>Dots too high and to the right. It looks better to me in Graide than it did in Eunice's PDF.</comment>
+      <string>سی ڃوش</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions">
-    <test background="#ffff7f" label="noon-smalltah + alef" rtl="True">
+    <test label="noon-smalltah + alef" rtl="True">
       <string>بݨاوِیں</string>
     </test>
     <test background="#00aaff" label="NUQTA / NUQTA" rtl="True">
@@ -403,7 +461,7 @@
     <test label="dal + nuqta" rtl="True">
       <string>دِینِنگا</string>
     </test>
-    <test background="#ffff7f" label="dal + nuqta 2" rtl="True">
+    <test label="dal + nuqta 2" rtl="True">
       <string>پودِینہ</string>
     </test>
     <test label="reh + nuqta" rtl="True">
@@ -444,7 +502,7 @@
     <test label="alef + noon + kaf" rtl="True">
       <string>انکا</string>
     </test>
-    <test background="#aaff7f" label="alef + beh + chotiyeh + jeem + chotiyeh" rtl="True">
+    <test label="alef + beh + chotiyeh + jeem + chotiyeh" rtl="True">
       <string>اؔبِیجیل</string>
     </test>
     <test label="alef + peh + chotiyeh + lam" rtl="True">
@@ -453,7 +511,7 @@
     <test label="sheen + sheen" rtl="True">
       <string>بخشِش</string>
     </test>
-    <test label="sheen + sheen 2" rtl="True">
+    <test background="#ffaaff" label="sheen + sheen 2" rtl="True">
       <string>ارتنحششتا</string>
     </test>
     <test label="yeh + final tcheh" rtl="True">
@@ -634,7 +692,7 @@
       <comment>The ordering of the nuqtas does not seem to reflect maxoverlap.</comment>
       <string>ابیجی</string>
     </test>
-    <test label="beh + yeh + jeem" rtl="True">
+    <test background="#ffaaff" label="beh + yeh + jeem" rtl="True">
       <comment>The centers of the first single-nuqta and the double-nuqta does not reflect minxoffset.</comment>
       <string>بِیج</string>
     </test>
@@ -642,7 +700,7 @@
       <comment>The double-nuqta is centered over the hamza - it should be further to the right.</comment>
       <string>کُنتؤ</string>
     </test>
-    <test label="teh + noon + hah + sheen*2 + teh" rtl="True">
+    <test background="#ffaaff" label="teh + noon + hah + sheen*2 + teh" rtl="True">
       <string>ارتنحششتا</string>
     </test>
     <test background="#00aaff" label="OVERLAPS" rtl="True">
@@ -719,7 +777,7 @@
     <test background="#00aaff" label="OTHER SPECIAL CASES" rtl="True">
       <string/>
     </test>
-    <test background="#aaff7f" label="beh + yeh + final jeem" rtl="True">
+    <test label="beh + yeh + final jeem" rtl="True">
       <string>بِیج</string>
     </test>
     <test label="teh + zah" rtl="True">
@@ -1130,7 +1188,7 @@
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
   </testgroup>
-  <testgroup label="Special case candidates">
+  <testgroup label="Hand-code candidates">
     <test class="fset7" label="noon-retro kaf" rtl="True">
       <string>ݨک خݨک شݨک صݨک </string>
     </test>
@@ -1274,6 +1332,17 @@
       <string>برابر</string>
     </test>
   </testgroup>
+  <testgroup label="Special chars - ZWJ, etc.">
+    <test class="fset21" label="ZWJ" rtl="True">
+      <string>س‍ق‍لم سقلم</string>
+    </test>
+    <test class="fset21" label="ZWJ" rtl="True">
+      <string>ق‍ ‍ش</string>
+    </test>
+    <test class="fset21" label="ZWNJ" rtl="True">
+      <string>س‌ق‌لم سقلم</string>
+    </test>
+  </testgroup>
   <testgroup label="diacritics">
     <test label="initial + D-above" rtl="True">
       <string>سًب | عّجگ | طُکشو</string>
@@ -1313,6 +1382,12 @@
     </test>
     <test class="fset15" label="exception - 'app'" rtl="True">
       <string>آپؑ</string>
+    </test>
+    <test class="fset21" label="small reh dad" rtl="True">
+      <string>اصغرؓ</string>
+    </test>
+    <test class="fset21" label="small high seen on yeh (Malachi - 5)" rtl="True">
+      <string>عیسٰیۜ کا</string>
     </test>
     <test background="#55aaff" class="fset16" label="ENFORCE ORDER" rtl="True">
       <string/>
@@ -1522,66 +1597,29 @@
       <string>٫ ۝ ۪ ﴾﴿</string>
     </test>
   </testgroup>
-  <testgroup label="SK Urdu">
-    <test background="#ffb8bc" label="169 - hamazayay final" rtl="True">
-      <string>آلہئ | آلہئ</string>
+  <testgroup label="alpha2 - general">
+    <test class="fset19" label="beh + yeh-F (Eunice)" rtl="True">
+      <comment>She thinks the dot is too high; should be the same as the peh+waw.</comment>
+      <string>پو بی میدپی</string>
     </test>
-    <test label="hamzayay zair" rtl="True">
-      <string>آئِین</string>
+    <test background="#aaff7f" class="fset19" label="peh + waw (Eunice)" rtl="True">
+      <comment>This looks okay to me, better than in her PDF.</comment>
+      <string>اوت پو</string>
     </test>
-    <test background="#aaffff" label="bayinit + alif" rtl="True">
-      <comment>line 17</comment>
-      <string>آبائی</string>
+    <test class="fset19" label="aalim (Eunice)" rtl="True">
+      <comment>Where *should* the zair go? Isn't putting it under the meem confusing?</comment>
+      <string>عالِم</string>
     </test>
-    <test background="#ffff7f" label="bay alif kaf" rtl="True">
-      <comment>line 30</comment>
-      <string>آتاکہ</string>
+    <test class="fset19" label="tcheh" rtl="True">
+      <string>چھد</string>
     </test>
-    <test background="#ffff7f" label="alifmadd bay NFD" rtl="True">
-      <comment>line 33</comment>
-      <string>آتشِ</string>
+    <test class="fset19" label="swad (Eunice)" rtl="True">
+      <comment>Dot is too far to the right.</comment>
+      <string>حضر</string>
     </test>
-    <test background="#ffff7f" label="alifmadd bay NFC" rtl="True">
-      <string>آتشِ</string>
-    </test>
-    <test label="4 - yay w/ hamza + zair NFD" rtl="True">
-      <string>آئِین آئین</string>
-    </test>
-    <test label="251 - NFC" rtl="True">
-      <string>آیئں</string>
-    </test>
-    <test label="251 - NFD" rtl="True">
-      <string>آیئں</string>
-    </test>
-    <test label="752 - laam + meem" rtl="True">
-      <string>لمین</string>
-    </test>
-    <test label="98 - bariyah" rtl="True">
-      <string>مابے</string>
-    </test>
-    <test label="449 - bay zair hamzayay NFD" rtl="True">
-      <string>ادبِئیل ادبِئیل</string>
-    </test>
-    <test label="333" rtl="True">
-      <string>ابیرا</string>
-    </test>
-    <test label="608 -pesh +  shadda" rtl="True">
-      <string>اسُّس | اسس</string>
-    </test>
-    <test label="zair + shadda" rtl="True">
-      <string>اسِّیویں</string>
-    </test>
-    <test label="many dots" rtl="True">
-      <string>ښڛ</string>
-    </test>
-    <test label="2045 - goalhay + hayhook + pesh" rtl="True">
-      <string>اہُلیبامہ</string>
-    </test>
-    <test label="goalhay + hayhook + zair" rtl="True">
-      <string>ہِل</string>
-    </test>
-    <test label="xxx" rtl="True">
-      <string>بَلّی</string>
+    <test class="fset19" label="laqkha (Eunice)" rtl="True">
+      <comment>Bad nuqta positioning.</comment>
+      <string>لقکھہ</string>
     </test>
   </testgroup>
 </ftml>

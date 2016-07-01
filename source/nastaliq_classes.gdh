@@ -141,7 +141,7 @@ cSadFin = (gSadFin);
 cTahFin = (gTahFin);
 cAinFin = (gAinFin);
 cFehFin = (gFehFin);
-cQafFin = (gQafFin);
+cQafFin = (gQafFin, gQafFin_stfhM);
 cLamFin = (gLamFin);
 cMeemFin = (gMeemFin);
 cKafFin = (gKafFin, gGafFin);
@@ -446,6 +446,8 @@ c_initial += (cHehDoIni_alt);
 cTakes_n1LowerDia += (cHehDoIni_alt);
 cTakes_nUpperDia += (cHehDoIni_alt);
 
+
+cLamIM = (cLamIni cLamMed);
 
 endtable;  // glyph
 

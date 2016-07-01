@@ -16,6 +16,8 @@ g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
 g_sideBrMarkRight = (g_FontBslnSideBrngMrkrRt);
 cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide);
 
+cNoJoin = (cSpace g_zeronojoin);
+
 /////#define OPTSPACE  g_sideBrMarkLeft? cSpace? g_sideBrMarkRight?
 //////#define OPTSPACE cSpace?
 
@@ -98,15 +100,22 @@ endpass;
 
 
 pass(2)
+
+	// Delete superfluous ZWJ:
+	cDualLinkIso  g_zerojoin  cDualLinkIso   >  cDualLinkIni_raw:(B1 ZWJ)  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkIso  g_zerojoin  cRightLinkIso  >  cDualLinkIni_raw:(B1 ZWJ)  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkFin  g_zerojoin  cDualLinkIso   >  cDualLinkMed_raw:(B1 ZWJ)  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkFin  g_zerojoin  cRightLinkIso  >  cDualLinkMed_raw:(B1 ZWJ)  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ  _ ;
+
 	// Create basic contextual forms. 
 	
-	cDualLinkIso  cDualLinkIso   >  cDualLinkIni_raw  cDualLinkFin  / _ ^ MARKS  _ ;
+	cDualLinkIso  cDualLinkIso   >  cDualLinkIni_raw  cDualLinkFin   /  _ ^ MARKS  _ ;
 	
 	cDualLinkIso  cRightLinkIso  >  cDualLinkIni_raw  cRightLinkFin  /  _ ^ MARKS  _ ;
 		
-	cDualLinkFin  cDualLinkIso   >  cDualLinkMed_raw  cDualLinkFin  / _ ^ MARKS  _ ;
+	cDualLinkFin  cDualLinkIso   >  cDualLinkMed_raw  cDualLinkFin   /  _ ^ MARKS  _ ;
 	
-	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  / _ ^ MARKS _ ;
+	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  /  _ ^ MARKS _ ;
 
 endpass; // 1
 
