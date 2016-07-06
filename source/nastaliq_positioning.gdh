@@ -118,8 +118,12 @@ table(positioning)
 
 pass(2)
 
-// Upper and lower nuqta attachment
+// Use wider spaces for Latin text.
+cSpace {advance.x += 200m}  /  _  cLatin;
+cSpace {advance.x += 200m}  /  cLatin  _;
 
+
+// Upper and lower nuqta attachment
 
 table(glyph)
 
@@ -591,7 +595,7 @@ endtable; // glyph
 
 
 // Spaces serve as boundaries between collision ranges.
-cSpace { collision.flags = SET_START_END(collision.flags) };
+cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET_IGNORE(collision.flags) };
 
 
 // Experimental - kaf-top is NEVER shifted

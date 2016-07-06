@@ -186,11 +186,20 @@
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
-    <test class="fset21" label="numbers">
+    <test class="fset21" label="Arabic numbers">
       <string>١٢٣٤</string>
     </test>
+    <test class="fset21" label="Latin numbers">
+      <string>1234</string>
+    </test>
+    <test class="fset19" label="Eastern number combinations">
+      <string>۵۴۵۳۵۶۷۸۵۸۵</string>
+    </test>
     <test class="fset19" label="year sign (sanah) - digits">
-      <string>؁5 ؁56 ؁123 ؁1973 </string>
+      <string>؁5 ؁56 ؁123 ؁1973</string>
+    </test>
+    <test class="fset21" label="year sign - three digits">
+      <string>؁123</string>
     </test>
     <test class="fset19" label="number sign">
       <string>؀1 ؀23 ؀346 ؀9876 </string>
@@ -202,16 +211,19 @@
       <string>؂1 ؂12 ؂٣٤</string>
     </test>
     <test class="fset19" label="end of ayah - Latin">
-      <string>۝8 ۝88 ۝888</string>
+      <string>۝8 ۝88 ۝888 ۝56 ۝482</string>
     </test>
     <test class="fset19" label="end of ayah - std Arabic">
-      <string>۝٣٤٥ ۝٤٠٧ ۝٤١٨</string>
+      <string>۝٦ ۝٣٥ ۝٤٠٧ ۝٤١٨</string>
     </test>
     <test class="fset19" label="end of ayah - Eastern">
-      <string>۝۳۴۵ ۝۴۳۷ ۝۴۵۸</string>
+      <string>۝۱ ۝۴۶ ۝۴۳۷ ۝۴۵۸</string>
     </test>
     <test class="fset21" label="Latin NFD">
       <string>ábĉ̃</string>
+    </test>
+    <test class="fset21" label="Latin spacing">
+      <string>The quick brown fox jumps over the lazy dog.</string>
     </test>
   </testgroup>
   <testgroup label="Ligatures">
@@ -1008,6 +1020,9 @@
     </test>
     <test class="fset8" label="lam-bar" rtl="True">
       <string>ݪ ݪݪݪ ݪے ݪج ݪص</string>
+    </test>
+    <test class="fset21" label="kaf + lam-bar" rtl="True">
+      <string>کݪ کݪس گݪس</string>
     </test>
     <test background="#00aaff" class="fset10" label="GOJRI" rtl="True">
       <string/>

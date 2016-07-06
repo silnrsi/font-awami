@@ -17,7 +17,7 @@
 #define QUICKCOMPILE 0
 
 Bidi = true;
-ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT
+ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 
 
 #if DO_COL_FIX
@@ -84,6 +84,7 @@ endtable;
 
 
 #include "nastaliq_classes.gdh"
+#include "latin_awami.gdh"
 
 
 #if DO_COL_FIX

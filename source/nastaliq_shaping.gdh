@@ -975,7 +975,7 @@ endif;
 // Experimental - kaf tops
 ///cTakes_kafTopDia _  >  @1  g__kafTop:1;
 
-// Experimental
+// Experimental - kaf + lam-bar
 
 /***
 table(glyph)
@@ -987,6 +987,10 @@ endtable;
 cbarDia  >  g__barRaisedX  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
 ***/
+
+// Experimental - kaf + lam-bar
+
+/////gKafIni  >  gKafIniSd_alt  /  _   cLamMed  g__bar;
 
 
 endpass;
@@ -1039,6 +1043,7 @@ cSign1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah);
 cSignDigit = (cDigitAnySmall cDigitAnySmaller);
 
 endtable;
+
 
 pass(7) {Direction=LEFT_TO_RIGHT}
 	// Subtending marks
