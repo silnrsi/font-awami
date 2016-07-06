@@ -977,16 +977,16 @@ endif;
 
 // Experimental - kaf + lam-bar
 
-/***
-table(glyph)
-g__barRaisedX = pseudo(postscript("_bar.raised")) { barM = point(g__barRaised.barM.x, g__barRaised.barM.y - 200m) };
-cNuqtaLikeMiddle += (g__barRaisedX);
-cbarDia += (g__barRaisedX);
-endtable;
+/***/
+///table(glyph)
+///g__barRaisedX = pseudo(postscript("_bar.raised")) { barM = point(g__barRaised.barM.x, g__barRaised.barM.y - 200m) };
+///cNuqtaLikeMiddle += (g__barRaisedX);
+///cbarDia += (g__barRaisedX);
+///endtable;
 
-cbarDia  >  g__barRaisedX  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
+cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
-***/
+/***/
 
 // Experimental - kaf + lam-bar
 
