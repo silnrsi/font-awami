@@ -85,12 +85,6 @@ if (wordSpacing == xwide)
 cSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
-
-if (showInvis == 1)
-g_sideBrMarkRight {advance.x = 0m};
-g_sideBrMarkLeft {advance.x = 0m};
-endif;
-
 endpass; // 1
 
 endtable;	// positioning

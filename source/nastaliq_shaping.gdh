@@ -12,14 +12,14 @@ table(substitution)
 pass(1)
 
 table(glyph)
-g_sideBrMarkLeft = (g_FontBslnSideBrngMrkrLft);
-g_sideBrMarkRight = (g_FontBslnSideBrngMrkrRt);
+
 cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide);
 
 cNoJoin = (cSpace g_zeronojoin);
 
-/////#define OPTSPACE  g_sideBrMarkLeft? cSpace? g_sideBrMarkRight?
-//////#define OPTSPACE cSpace?
+cInvisible = (g_leftToRightEmbedding  g_rightToLeftEmbedding  g_popDirectionalFormatting  g_leftToRightOverride
+	g_rightToLeftOverride  g_inhibitArabicFormShaping  g_activateArabicFormShaping g_leftToRightIsolate
+	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate);
 
 endtable;
 
@@ -42,6 +42,10 @@ endif;
 
 if (showInvis == 1 && wordSpacing == xwide)
 g_space  >  g_spaceVisXwide;
+endif;
+
+if (showInvis == 0)
+cInvisible  >  g_zeroWidthNoBreakSpace;
 endif;
 
 endpass;
