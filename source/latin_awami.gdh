@@ -15,28 +15,40 @@ cLatin = (
 	g_zero  g_one  g_two  g_three  g_four  g_five  g_six  g_seven  g_eight  g_nine
 	g_onequarter  g_onehalf  g_threequarters
 
+	g_onesuperior  g_twosuperior  g_threesuperior  g_uni2074
+
 	g_Agrave  g_Aacute  g_Acircumflex  g_Atilde  g_Adieresis  g_Aring  g_AE  g_Ccedilla  g_Egrave  g_Eacute
 	g_Ecircumflex  g_Edieresis  g_Igrave  g_Iacute  g_Icircumflex  g_Idieresis  g_Eth  g_Ntilde  g_Ograve
 	g_Oacute  g_Otilde  g_Odieresis  g_Oslash  g_Ugrave  g_Uacute  g_Ucircumflex  g_Udieresis  g_Yacute
 	g_agrave  g_aacute  g_acircumflex  g_atilde  g_adieresis  g_aring  g_ae  g_ccedilla  g_egrave  g_eacute
 	g_ecircumflex  g_edieresis  g_igrave  g_iacute  g_icircumflex  g_idieresis  g_eth  g_ntilde  g_ograve
 	g_oacute  g_otilde  g_odieresis  g_oslash  g_ugrave  g_uacute  g_ucircumflex  g_udieresis  g_yacute
-	g_Thorn  g_thorn	g_dotlessi g_OE  g_oe  g_Scaron  g_scaron  g_Ydieresis  g_ydieresis  g_Zcaron  g_zcaron
+	g_Thorn  g_thorn  g_dotlessi  g_OE  g_oe  g_Scaron  g_scaron  g_Ydieresis  g_ydieresis  g_Zcaron  g_zcaron
 	g_florin
 
-	g_exclam  g_quotedbl  g_quotesingle  g_parenleft  g_parenright  g_comma  g_hyphenminus
-	g_period  g_slash  g_colon  g_semicolon  g_question  g_at  g_backslash  g_underscore
-	g_braceleft  g_braceright  g_guillemotleft  g_guillemotright  g_guilsinglleft  g_guilsinglright
-	g_questiondown  g_exclamdown
+	g_asciitilde  g_asciicircum  g_grave  g_circumflex  g_caron  g_ring  g_acute  g_cedilla  g_tilde  g_macron  g_dieresis
 
-	g_plus  g_multiply  g_divide  g_plusminus  g_degree
-	g_dollar  g_cent  g_sterling  g_currency  g_yen 
+	g_parenleft  g_parenright  g_braceleft  g_braceright
+	g_comma  g_hyphenminus  g_period  g_colon  g_semicolon  g_periodcentered  g_sfthyphen
+	g_slash g_backslash  g_underscore
+	g_ellipsis  g_uni2025 // two-dot ellipsis
+	g_quotesingle g_quoteleft  g_quoteright   g_quotesinglbase
+	g_quotedbl  g_quotedblleft  g_quotedblright  g_quotedblbase
+	g_guillemotleft  g_guillemotright  g_guilsinglleft  g_guilsinglright
+	g_question  g_questiondown  
+	g_exclam  g_exclamdown
 
+	g_dagger  g_daggerdbl  g_bullet
 	g_bar  g_brokenbar
+	g_uni02D0  // triangular colon
 
-	g_uni02D0  // pointed colon
+	g_plus  g_minus  g_multiply  g_divide  g_plusminus  g_degree  g_fraction
+	g_less  g_greater  g_equal  g_logicalnot  g_numbersign
+	g_percent  g_perthousand  g_ampersand  g_asterisk
+	g_dollar  g_cent  g_sterling  g_currency  g_yen  g_Euro  g_micro
 
-	g_at  g_copyright  g_registered  g_ordfeminine  g_ordmasculine
+	g_at  g_copyright  g_trademark  g_registered  g_ordfeminine  g_ordmasculine
+	g_section  g_paragraph
 
 );
 
