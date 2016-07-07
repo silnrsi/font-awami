@@ -1025,20 +1025,26 @@ cDigitAnySmaller = (cDigitLatin_smaller, cDigitArabic_smaller, cDigitEastern_sma
 
 
 cSignTakes4 = (gYearSign gNumberSign gPageSign); // small
+cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
 
 cSignTakes3Small = (gYearSign gNumberSign gPageSign);
-cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
-
-cSignTakes2 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // small
-
-cSignTakes1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah); // small
-	
-cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
 cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);
+cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
 cSign3Smaller  = (gEndOfAyah3);
-cSign3 = (cSign3Small cSign3Smaller);
-cSign2 = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gEndOfAyah2);
-cSign1 = (gYearSign gNumberSign gPageSign gFootnoteSign gEndOfAyah);
+
+cSignTakes2Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSign2Small = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gEndOfAyah2);
+cSignTakes2Smaller = (gEndOfAyah);
+cSign2Smaller = (gEndOfAyah2);
+
+cSignTakes1Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSign1Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSignTakes1Smaller = (gEndOfAyah);
+cSign1Smaller = (gEndOfAyah);
+
+cSign3 = (cSign3Small, cSign3Smaller);
+cSign2 = (cSign2Small, cSign2Smaller);
+cSign1 = (cSign1Small, cSign1Smaller);
 
 cSignDigit = (cDigitAnySmall cDigitAnySmaller);
 
@@ -1057,10 +1063,15 @@ pass(7) {Direction=LEFT_TO_RIGHT}
 	cSignTakes3Smaller cDigitAny cDigitAny cDigitAny  >
 		cSign3Smaller cDigitAnySmaller cDigitAnySmaller cDigitAnySmaller;
 		
-	cSignTakes2 cDigitAny cDigitAny  >
-		cSign2 cDigitAnySmall cDigitAnySmall;
+	cSignTakes2Small cDigitAny cDigitAny  >
+		cSign2Small cDigitAnySmall cDigitAnySmall;
 
-	cSignTakes1 cDigitAny  >  cSign1  cDigitAnySmall;
+	cSignTakes2Smaller cDigitAny cDigitAny  >
+		cSign2Smaller cDigitAnySmaller cDigitAnySmaller;
+
+	cSignTakes1Small cDigitAny  >  cSign1Small  cDigitAnySmall;
+
+	cSignTakes1Smaller cDigitAny  >  cSign1Smaller  cDigitAnySmaller;
 
 #include "cp1252.gdh"
 
