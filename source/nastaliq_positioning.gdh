@@ -974,6 +974,7 @@ endpass; // pos - 5 (or 3)
 // Kerning pair adjustments - EXPERIMENTAL
 
 #define pairKern user2
+#define marginSet user3
 
 // It doesn't appear that pair kerning is necessary right now.
 
@@ -1002,14 +1003,32 @@ gRehFin_hgM { minKernDelta = -400m };
 // Don't let punctuation kern underneath following segment:
 cKernPunct { minKernDelta = MINKERN * -1 };
 
-///gAlefFin { kernPreKafNoSp = -80m };  // Malachi suggested this
+// To account for the fact that the top edge of the kaf pushes the top of the alef away:
+gAlef { kernPreKafNoSp = -150 };
+gAlefFin { kernPreKafNoSp = -80m };
 
 endtable; // glyph
 
 
-// Set up kerning pairs.
-
 pass(6)
+
+// Special cases involving nuqtas.
+
+table(glyph)
+gNlWide = (g__dot2l  g__dot3l  g__dot4l);
+endtable;
+
+// \u0631\u06CC\u0631
+(gDal gReh)  gBehIniRe  gNlWide {shift {x = 170m; y = -300m}}  gRehFin_jkl;
+
+// \u0627\u06CC\u0645\u0627
+gAlef  gBehIniMmX  gNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
+
+// Low priority special case:
+////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  gNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
+
+
+// Set up kerning pairs.
 
 cKernable { pairKern = kernPreAlef }  /  _  MARKS  cNoJoin?  (cAlefIso);
 cKernable { pairKern = kernPreDal  }  /  _  MARKS  cNoJoin?  (cDalIso);
@@ -1046,6 +1065,13 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
 
 if (collFix >= 2)
+
+// For special cases:
+cKernable {collision {
+	flags = SET_FIX(collision.flags);
+	max.x = MAXKERN; min.x = MINKERN + minKernDelta;}}
+	/  _ {marginSet == 1}  cNuqtaLike?  DIACS  cPostKernable;
+
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -1145,6 +1171,18 @@ endif;
 
 if (overlapKern == medium)
 ******/
+
+
+// Don't let a single-letter word kern underneath following segment:
+cIso { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = (@S.advance.x * -1) - collision.margin;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
+
 
 // For short sequences ending with bariyeh, kern against the bariyeh tail, not the initial.
 

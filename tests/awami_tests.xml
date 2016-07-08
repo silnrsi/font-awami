@@ -225,6 +225,22 @@
     <test class="fset21" label="Latin spacing">
       <string>The quick brown fox jumps over the lazy dog.</string>
     </test>
+    <test background="#55aaff" class="fset21" label="RIGHT-TO-LEFT VERSIONS" rtl="True">
+      <string/>
+    </test>
+    <test background="#55aaff" class="fset21" label="as needed for buggy apps" rtl="True">
+      <string/>
+    </test>
+    <test class="fset21" label="year sign - RTL" rtl="True">
+      <string>6771؁</string>
+    </test>
+    <test class="fset21" label="end of ayah - RTL" rtl="True">
+      <string>321۝</string>
+    </test>
+    <test class="fset21" label="long sequence" rtl="True">
+      <comment>Note that no app should pass data like this, because it mixes RTL and LTR data.</comment>
+      <string>نے ڋہ دسمبر 8491؁ کوں انسانی حقوق</string>
+    </test>
   </testgroup>
   <testgroup label="Ligatures">
     <test class="fset17" label="allah" rtl="True">
@@ -377,13 +393,13 @@
     <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
       <string/>
     </test>
-    <test class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
+    <test background="#aaff7f" class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
       <comment>There is not enough space after the isolate waw.</comment>
       <string>مشیت و مصلحت</string>
     </test>
     <test class="fset21" label="pa + k (Malachi - 6)" rtl="True">
-      <comment>Expects the alef to be closer to the kaf.</comment>
-      <string>پاک پاکیز</string>
+      <comment>Expects the alef to be closer to the kaf. Sheldon says: The vertical part of the kaf and the alef should be spaced as two alefs or an ale lam would.</comment>
+      <string>پاک پاکیز اال</string>
     </test>
     <test background="#aaff7f" class="fset21" label="full stop (Malachi - 7)" rtl="True">
       <comment>Full stop way too close to the following word.</comment>
@@ -403,16 +419,16 @@
     <test background="#aaff7f" class="fset19" label="nga chik (Eunice)" rtl="True">
       <string>ںا چک</string>
     </test>
-    <test class="fset19" label="reh/dal + yeh (Eunice)" rtl="True">
-      <string>ریر دیر</string>
+    <test background="#ffff7f" class="fset19" label="reh/dal + yeh (Eunice)" rtl="True">
+      <string>ریر رنر دیر دنر</string>
+    </test>
+    <test background="#ffff7f" class="fset21" label="alef + yeh + meem (Dieter)" rtl="True">
+      <comment>If the nuqtas were moved down, the alef could scootch in.</comment>
+      <string>ایمان انمان</string>
     </test>
     <test class="fset21" label="reh + yeh (Dieter)" rtl="True">
       <comment>Too far apart</comment>
-      <string>طریقہ</string>
-    </test>
-    <test class="fset21" label="alef + yeh + meem (Dieter)" rtl="True">
-      <comment>If the nuqtas were moved down, the alef could scootch in.</comment>
-      <string>ایمان</string>
+      <string>طریقہ طرنقہ</string>
     </test>
     <test background="#aaff7f" class="fset21" label="waw + qaf (Sheldon)" rtl="True">
       <string>حقوق</string>

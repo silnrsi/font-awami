@@ -788,6 +788,8 @@ pass(6)
 // Recompose isolates.
 // These rules are the opposite of the rules in nastaliq_seqNuqtas.gdh.
 
+// See also subtending rules below.
+
 gBeh		g__dot1l				>	gBeh:(1 2)	_;
 gBeh		g__dot2u				>	gTeh:(1 2)	_;
 gBeh		g__dot3u				>	gTheh:(1 2)	_;
@@ -996,6 +998,7 @@ cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
 
 /////gKafIni  >  gKafIniSd_alt  /  _   cLamMed  g__bar;
 
+// See also subtending rules below.
 
 endpass;
 
@@ -1080,6 +1083,33 @@ pass(7) {Direction=LEFT_TO_RIGHT}
 #include "cp1252.gdh"
 
 endpass; // 7
+
+	// In theory, the rules above should be adequate to handle subtending marks.
+	// But there is a bug where some applications don't put these in the right
+	// direction. So we provide right-to-left rules instead.
+
+pass(6)
+
+	cDigitAny  cDigitAny  cDigitAny  cDigitAny  cSignTakes4  >
+		cDigitAnySmall  cDigitAnySmall  cDigitAnySmall  cDigitAnySmall  cSign4;
+
+	cDigitAny  cDigitAny  cDigitAny  cSignTakes3Small  >
+		cDigitAnySmall  cDigitAnySmall  cDigitAnySmall  cSign3Small;
+		
+	cDigitAny  cDigitAny  cDigitAny  cSignTakes3Smaller  >
+		cDigitAnySmaller  cDigitAnySmaller  cDigitAnySmaller  cSign3Smaller;
+		
+	cDigitAny  cDigitAny  cSignTakes2Small  >
+		cDigitAnySmall  cDigitAnySmall  cSign2Small;
+
+	cDigitAny  cDigitAny  cSignTakes2Smaller  >
+		cDigitAnySmaller cDigitAnySmaller  cSign2Smaller;
+
+	cDigitAny  cSignTakes1Small  >  cDigitAnySmall  cSign1Small;
+
+	cDigitAny  cSignTakes1Smaller  >  cDigitAnySmaller  cSign1Smaller;
+
+endpass;
 
 endtable;	// sub
 
