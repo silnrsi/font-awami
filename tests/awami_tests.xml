@@ -231,13 +231,13 @@
     <test background="#55aaff" class="fset21" label="as needed for buggy apps" rtl="True">
       <string/>
     </test>
-    <test class="fset21" label="year sign - RTL" rtl="True">
-      <string>6771؁</string>
+    <test class="fset21" label="page sign - RTL" rtl="True">
+      <string>5432؀</string>
     </test>
     <test class="fset21" label="end of ayah - RTL" rtl="True">
       <string>321۝</string>
     </test>
-    <test class="fset21" label="long sequence" rtl="True">
+    <test class="fset21" label="year sign in context" rtl="True">
       <comment>Note that no app should pass data like this, because it mixes RTL and LTR data.</comment>
       <string>نے ڋہ دسمبر 8491؁ کوں انسانی حقوق</string>
     </test>
@@ -1226,6 +1226,35 @@
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
   </testgroup>
+  <testgroup label="NFC / NFD">
+    <test class="fset21" label="alef madda" rtl="True">
+      <string>آ جآ  |  آ جآ</string>
+    </test>
+    <test class="fset21" label="alef w/ hamza above" rtl="True">
+      <string>أ سأ  |  أ سأ</string>
+    </test>
+    <test class="fset21" label="waw w/ hamza above" rtl="True">
+      <string>ؤ سؤ  |  ؤ سؤ</string>
+    </test>
+    <test class="fset21" label="alef w/ hamza below" rtl="True">
+      <string>إ بإ  |  إ بإ</string>
+    </test>
+    <test class="fset21" label="yeh w/ hamza above" rtl="True">
+      <string>ئ ئئئ  |  یٔ یٔیٔیٔ</string>
+    </test>
+    <test class="fset21" label="high hamza alef" rtl="True">
+      <string>ٵ بٵ |  اٴ باٴ</string>
+    </test>
+    <test class="fset21" label="heh w/ yeh above" rtl="True">
+      <string>ۀ ۀۀۀ  |   ۀ ۀۀۀ</string>
+    </test>
+    <test class="fset19" label="heh-goal w/ hamza above" rtl="True">
+      <string>ۂ ۂۂۂ  |  ۂ ۂۂۂ</string>
+    </test>
+    <test class="fset19" label="bariyeh w/ hamza above" rtl="True">
+      <string>ۓ  |  ۓ</string>
+    </test>
+  </testgroup>
   <testgroup label="Hand-code candidates">
     <test class="fset7" label="noon-retro kaf" rtl="True">
       <string>ݨک خݨک شݨک صݨک </string>
@@ -1276,48 +1305,6 @@
     </test>
     <test class="fset21" label="hmjhky" rtl="True">
       <string>حمجھخے</string>
-    </test>
-  </testgroup>
-  <testgroup label="Spacing Issues">
-    <test class="fset3" label="tight 1" rtl="True">
-      <string>میں بھی</string>
-    </test>
-    <test class="fset5" label="far 1" rtl="True">
-      <comment>Full context: \u0622\u0632\u0627\u062F\u06CC\u0627\u06BA \u06A9\u0633\u06CC </comment>
-      <string>اں کسی </string>
-    </test>
-    <test class="fset3" label="tight 2" rtl="True">
-      <string>تسلیم کرانے</string>
-    </test>
-    <test label="far 2" rtl="True">
-      <string> ہر شخص</string>
-    </test>
-    <test label="close" rtl="True">
-      <string>کی شخصیت</string>
-    </test>
-    <test class="fset5" label="close" rtl="True">
-      <string>کیونکہ معاشرے</string>
-    </test>
-    <test label="too much space" rtl="True">
-      <comment>More space between waw and heh-goal than between heh-goal and next word</comment>
-      <string>وہ تمام</string>
-    </test>
-  </testgroup>
-  <testgroup label="Finals">
-    <test label="ray1" rtl="True">
-      <string>جصسر </string>
-    </test>
-    <test label="dal" rtl="True">
-      <string>سد</string>
-    </test>
-    <test label="dal 2N toa" rtl="True">
-      <string>یضݙ</string>
-    </test>
-    <test class="fset21" label="qaf / feh" rtl="True">
-      <string>سطق سضق سطف سضف</string>
-    </test>
-    <test class="fset21" label="waw" rtl="True">
-      <string>سطو سضو</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">

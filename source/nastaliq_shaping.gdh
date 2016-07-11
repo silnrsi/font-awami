@@ -889,7 +889,7 @@ gChotiyeh	g__dot2l_tail		>	gYehTail:(1 2)  _;
 gChotiyeh	g__ring				>	gKashmiriYeh:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
-gBariyeh	g__dot2l__hamza		>	gBariyehHamza:(1 2)  _;
+gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 
 // Add dots to initial/medial chotiyeh
 (cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
@@ -1058,7 +1058,7 @@ cSignDigit = (cDigitAnySmall cDigitAnySmaller);
 endtable;
 
 
-pass(7) {Direction=LEFT_TO_RIGHT}
+pass(7) {Direction = LEFT_TO_RIGHT}
 	// Subtending marks
 	
 	cSignTakes4 cDigitAny cDigitAny cDigitAny cDigitAny  >
@@ -1086,8 +1086,10 @@ endpass; // 7
 
 	// In theory, the rules above should be adequate to handle subtending marks.
 	// But there is a bug where some applications don't put these in the right
-	// direction. So we provide right-to-left rules instead.
+	// direction. So we provide right-to-left rules as well.
 
+// I don't think this is quite right:
+/************
 pass(6)
 
 	cDigitAny  cDigitAny  cDigitAny  cDigitAny  cSignTakes4  >
@@ -1110,6 +1112,7 @@ pass(6)
 	cDigitAny  cSignTakes1Smaller  >  cDigitAnySmaller  cSign1Smaller;
 
 endpass;
+************/
 
 endtable;	// sub
 
