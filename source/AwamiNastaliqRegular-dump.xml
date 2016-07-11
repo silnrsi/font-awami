@@ -1,4 +1,4 @@
-<!-- Generated on Mon, 11 Jul 2016 21:05:08 +0000 by  -->
+<!-- Generated on Mon, 11 Jul 2016 22:53:57 +0000 by  -->
 
 <font>
 
@@ -7232,9 +7232,14 @@
 			<note>None</note>
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
-			<component_count>1</component_count>
+			<anchors>
+				<anchor>mUpper: 1252,1505</anchor>
+			</anchors>
+			<component_count>3</component_count>
 			<components>
-				<component>.notdef: delta: 0.0,111.0, scale: 1.0,1.0</component>
+				<component>absAlef: delta: 2100.0,0.0, scale: 1.0,1.0</component>
+				<component>absLamIni: delta: 1312.0,-22.0, scale: 1.0,1.0</component>
+				<component>_Allah_lah: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>1300</width>
 			<unicode>FDF2</unicode>
@@ -23685,6 +23690,55 @@
 			<width>601</width>
 			<unicode>06D5</unicode>
 			<unicode_count>1</unicode_count>
+		</glyph>
+		<glyph>
+			<name>_Allah_lah</name>
+			<note>None</note>
+			<node_count>21</node_count>
+			<node_hash>506f0f6e3d667d44b58f7acc831437e7d80c42a19f075d6ff1dd3b9d</node_hash>
+			<anchors>
+				<anchor>exit_lamKaf: 1310,728</anchor>
+			</anchors>
+			<component_count>0</component_count>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absLigatureLlah</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_mUpper: 1252,1505</anchor>
+			</anchors>
+			<component_count>2</component_count>
+			<components>
+				<component>_Allah_lah: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>absLamIni: delta: 1313.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absLigatureLlahFin</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_exit_lamKaf: 1860,880</anchor>
+				<anchor>sdafsf: 1941,926</anchor>
+				<anchor>mUpper: 1252,1505</anchor>
+			</anchors>
+			<component_count>2</component_count>
+			<components>
+				<component>_Allah_lah: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>absLamMed: delta: 1313.0,0.0, scale: 1.0,1.0</component>
+			</components>
+			<width>1300</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
 		</glyph>
 	</glyphs>
 </font>
