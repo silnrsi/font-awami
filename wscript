@@ -65,7 +65,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
      #tests = tests,
      fret = fret(params = '-r'),
-     woff = woff(params = '-v ' + VERSION + ' -m ../source/Awami-WOFF-metadata.xml'),
+     woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
     )
 
 def configure(ctx) :
