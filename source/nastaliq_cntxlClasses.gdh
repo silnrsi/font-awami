@@ -164,7 +164,9 @@ c_final = (
 	gRehFin, gRehFin_hgM, gRehFin_jkl, gRehFin_sshg,
 	gChotiyehFin, gChotiyehFin_bfkl, gYehTailFin, gYehTailFin_bfkl,    // gYehHamzaAboveFin_bfkl,
 	gKashmiriYehFin, gKashmiriYehFin_bfkl,
-	gBariyehFin
+	gBariyehFin,
+
+	gLigatureLlahFin
 );
 
 c_isolate = (
@@ -187,7 +189,9 @@ c_isolate = (
 	gReh, gZain, gRreh, gJeh, gRehRing,
 	gChotiyeh, gYeh, gYehHamzaAbove, gYehTail, 
 	gKashmiriYeh,
-	gBariyeh
+	gBariyeh,
+
+	gLigatureAllah, gLigatureLlah
 );
 
 cFin = c_final;

@@ -28,7 +28,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>حقوق تے ازادیاں دا احترام پیدا کرے</string>
+      <string>الحَمْد لله‎</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -182,7 +182,7 @@
       <string>ودھارے  پڑھ  اہتھ  رکھڋ  سمجھ  جتھاں</string>
     </test>
     <test class="fset19" label="meem problems" rtl="True">
-      <string>دے مﺅخر</string>
+      <string>الحَمْدللہ</string>
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
@@ -245,6 +245,21 @@
   <testgroup label="Ligatures">
     <test class="fset17" label="allah" rtl="True">
       <string>اللہ اللّٰہ</string>
+    </test>
+    <test class="fset21" label="FDF2" rtl="True">
+      <string>ﷲ</string>
+    </test>
+    <test class="fset21" label="after space" rtl="True">
+      <string>الحَمْد للہ</string>
+    </test>
+    <test class="fset19" label="final dal" rtl="True">
+      <string>الحَمْدللہ</string>
+    </test>
+    <test class="fset19" label="final alef" rtl="True">
+      <string>نعوذ باللہ</string>
+    </test>
+    <test class="fset21" label="final connecting form" rtl="True">
+      <string>سللہ بجللّٰہ</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
@@ -1648,6 +1663,9 @@
     <test class="fset19" label="laqkha (Eunice)" rtl="True">
       <comment>Bad nuqta positioning.</comment>
       <string>لقکھہ</string>
+    </test>
+    <test class="fset19" label="wider jeem?" rtl="True">
+      <string>اخبان جبر ےصُحبت</string>
     </test>
   </testgroup>
   <testgroup label="Special case positioning">
