@@ -249,9 +249,6 @@
     <test class="fset21" label="FDF2" rtl="True">
       <string>ﷲ</string>
     </test>
-    <test class="fset21" label="after space" rtl="True">
-      <string>الحَمْد للہ</string>
-    </test>
     <test class="fset19" label="final dal" rtl="True">
       <string>الحَمْدللہ</string>
     </test>
@@ -259,7 +256,19 @@
       <string>نعوذ باللہ</string>
     </test>
     <test class="fset21" label="final connecting form" rtl="True">
-      <string>سللہ بجللّٰہ</string>
+      <string>سَللہ بجللّٰہ</string>
+    </test>
+    <test class="fset19" label="diac on lig" rtl="True">
+      <string>بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیم</string>
+    </test>
+    <test class="fset21" label="after space - no ligature" rtl="True">
+      <string>الحَمْد للہ</string>
+    </test>
+    <test class="fset21" label="bad diac comb - no ligature" rtl="True">
+      <string>اللٰہ اللُہ</string>
+    </test>
+    <test class="fset21" label="heh-goal not final - no ligature" rtl="True">
+      <string>اللہس</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
@@ -1221,6 +1230,10 @@
     </test>
     <test class="fset16" label="real names with small ain" rtl="True">
       <string>اِرمِیاؑ  آپؑ  ایوبؑ  لُشتؑ  ادریسؑ  ہابیلؑ  حبقُّوقؑ  نونؑ  یمؑ  لُوطؑ  وہؑ  یوسفؑ  سویؑ  اللّٰہؑ</string>
+    </test>
+    <test class="fset19" label="more real names with small ain" rtl="True">
+      <comment>Moses</comment>
+      <string>مُسیٰؑ</string>
     </test>
     <test class="fset17" label="ain and diacritics" rtl="True">
       <string>عِندِکَؑ عَلَیَؑ سختَئجِدہُؑ</string>

@@ -382,24 +382,21 @@ gLamMed_raw  gAlefHamzaFin  >  gLamAlefHamzaFin:(1 4)  _  /  _  g__bar? cDiacrit
 
 // Standard ligature
 gAlef  gLamIni_raw  gLamMed_raw  gHehGoalFin  g__hehHook_small
-	>  gLigatureAllah:(1 2 4 5) g__shadda_kharizabar:3  _  _  _;
-gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar=SK  gHehGoalFin  g__hehHook_small  
-	>  gLigatureAllah:(1 2 3 5 6) _  _  @SK  _  _;
+	>  gLigatureAllah:(1 2 3 4 5) _  _  _  _;
+gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small  
+	>  gLigatureAllah:(1 2 3 4 5 6) _  _  _  _  _;
 
 // After something other than an isolate alef,
 // eg, \u0628\u0627\u0644\u0644\u06C1,
 // \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u0644\u0644\u06C1
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  gHehGoalFin  g__hehHook_small
-	>  (gLigatureLlah gLigatureLlahFin):(L1 HG HH) g__shadda_kharizabar:L2  _  _
+	>  (gLigatureLlah gLigatureLlahFin):(L1 HG HH) _  _  _
 	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=HG  _=HH;
 
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small
-	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 HG HH)  _  @SK  _  _
+	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 SK HG HH)  _  _  _  _
 	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=SK  _=HG  _=HH;
 
-
-// FDF2 - add diacritics
-gLigatureAllah  _  >  @1  g__shadda_kharizabar:1;
 
 
 // And other common ligatures
