@@ -409,8 +409,8 @@ gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4
 
 // Finals
 
-(gAlef gAlefMaddaAbove gAlefHamzaAbove)
-	>  (gAlefFin gAlefMaddaFin gAlefHamzaFin)  /  (c_initial c_medial)  MARKS  _;
+(gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
+	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  (c_initial c_medial)  MARKS  _;
 
 (gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfhM)
 		/  cPreQwStfhM  MARKS _;
