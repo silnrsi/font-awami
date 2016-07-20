@@ -1,4 +1,4 @@
-<!-- Generated on Wed, 20 Jul 2016 15:06:18 +0000 by  -->
+<!-- Generated on Wed, 20 Jul 2016 22:42:37 +0000 by  -->
 
 <font>
 
@@ -6467,6 +6467,7 @@
 			<anchors>
 				<anchor>mUpper: 244,1849</anchor>
 				<anchor>mLower: 178,-52</anchor>
+				<anchor>hamzaUpper: 174,1852</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>404</width>
@@ -6913,6 +6914,7 @@
 				<anchor>mUpper: 563,1406</anchor>
 				<anchor>mLower: 634,-691</anchor>
 				<anchor>honorific: -35,1611</anchor>
+				<anchor>hamzaUpper: 554,1394</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1462</width>
@@ -7019,6 +7021,7 @@
 				<anchor>mUpper: 300,934</anchor>
 				<anchor>mLower: 232,-178</anchor>
 				<anchor>honorific: 43,1171</anchor>
+				<anchor>hamzaUpper: 258,936</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>601</width>
@@ -7053,6 +7056,7 @@
 				<anchor>mUpper: 584,1385</anchor>
 				<anchor>mLower: 639,-691</anchor>
 				<anchor>honorific: -30,1442</anchor>
+				<anchor>hamzaUpper: 574,1368</anchor>
 			</anchors>
 			<component_count>2</component_count>
 			<components>
@@ -7536,6 +7540,7 @@
 				<anchor>mLower: 242,-101</anchor>
 				<anchor>kernBbLeft: 120,182</anchor>
 				<anchor>honorific: -66,1417</anchor>
+				<anchor>hamzaUpper: 262,896</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>708</width>
@@ -8150,6 +8155,7 @@
 				<anchor>mLower: 311,-91</anchor>
 				<anchor>honorific: 20,1215</anchor>
 				<anchor>bar: 421,174</anchor>
+				<anchor>hamzaUpper: 396,1086</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>753</width>
@@ -8418,6 +8424,7 @@
 				<anchor>mLower: 566,-690</anchor>
 				<anchor>alef: 600,1227</anchor>
 				<anchor>honorific: 73,1214</anchor>
+				<anchor>hamzaUpper: 348,1116</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1576</width>
@@ -10948,7 +10955,7 @@
 			<name>absSeenIni.bere</name>
 			<note>None</note>
 			<node_count>10</node_count>
-			<node_hash>b35a6f79cf386f4cfbbfdc367f746cb7637d34fcec3eb063cbfbb034</node_hash>
+			<node_hash>5ba2e04391dd3c52e6908efe1165cfd4e99d79da1c090746bc8a4762</node_hash>
 			<anchors>
 				<anchor>exit_behPreReh: 0,626</anchor>
 				<anchor>nUpper: 458,1022</anchor>
@@ -11417,7 +11424,7 @@
 			<name>absSeenIni.fe</name>
 			<note>None</note>
 			<node_count>13</node_count>
-			<node_hash>fa30b1b50ebfbbc926a74c69d7fb0968190eab9b383035441c618c9c</node_hash>
+			<node_hash>4093e11d019a41c19639a2a5d703aad5cb278c72f80346bac9d2a836</node_hash>
 			<anchors>
 				<anchor>exit_feh: 0,404</anchor>
 				<anchor>nUpper: 609,1062</anchor>
@@ -13465,7 +13472,7 @@
 			<name>absSeenIni.mmX</name>
 			<note>None</note>
 			<node_count>17</node_count>
-			<node_hash>bcdfe6ba6b9c567135f331d19fe590246d872b64145c1a345edc13ee</node_hash>
+			<node_hash>de9670e977032206d7e55112490cf12875b1c61545c3755f287efdf1</node_hash>
 			<anchors>
 				<anchor>exit_meemAlt: 0,525</anchor>
 				<anchor>nUpper: 369,1145</anchor>
@@ -23548,6 +23555,37 @@
 				<component>nlqKharizabar: delta: 1150.0,1710.0, scale: 1.0,0.75</component>
 			</components>
 			<width>1783</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absHighHamzaAlef.arabic</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<component_count>2</component_count>
+			<components>
+				<component>absAlef: delta: 0.0,0.0, scale: 1.0,1.0</component>
+				<component>_hamza.arabic: delta: 180.0,360.0, scale: 1.0,1.0</component>
+			</components>
+			<width>404</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absHighHamza.arabic</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>_hamzaUpper: 287,1200</anchor>
+				<anchor>mUpper: 282,1640</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>_hamza.arabic: delta: 310.0,-280.0, scale: 1.0,1.0</component>
+			</components>
+			<width>0</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>

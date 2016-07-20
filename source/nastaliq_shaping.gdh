@@ -123,6 +123,7 @@ pass(2)
 
 endpass; // 1
 
+
 // nuqta slot attribute:
 // TODO: remove when we get rid of STRIP_NUQTAS
 #define nuqtaS user1
@@ -390,7 +391,7 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 // eg, \u0628\u0627\u0644\u0644\u06C1,
 // \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u0644\u0644\u06C1
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  gHehGoalFin  g__hehHook_small
-	>  (gLigatureLlah gLigatureLlahFin):(L1 HG HH) _  _  _
+	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 HG HH) _  _  _
 	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=HG  _=HH;
 
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small
@@ -802,6 +803,31 @@ endtable; // glyph
 
 pass(6)
 
+// Alterate (standard Arabic-style) hamza
+if (hamzaAlt == 1)
+
+(gHamzaAbove  gHighHamza)  >  (g__hamzaArabic  gHighHamzaArabic);
+gJeem    gHamzaAbove  >  gHah  g__hamzaArabic;
+(gAlef gWaw gChotiyeh gHehGoal gReh gJeem gBariyeh)  gHamzaAbove  >  @1  g__hamzaArabic;
+
+(gChotiyeh gChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
+(gHehGoal gHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
+(gBariyeh gBariyehFin)		g__dot2l__hamza		>  @1  g__hamzaArabic;
+
+cHehGoalIni  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
+if (hehGoalHook == 0)
+cHehGoalMed  g__hehHook__hamza		>  @1  g__hamzaArabic;
+endif;
+if (hehGoalHook == 1)
+cHehGoalMed  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
+endif;
+
+gAlef  gHighHamza  >  gHighHamzaAlefArabic:(1 2)  _;
+
+(cBehIni  cBehMed)  g__dot2l__hamza	>  @1  g__hamzaArabic:1;
+
+endif; // hamzaAlt
+
 // Recompose isolates.
 // These rules are the opposite of the rules in nastaliq_seqNuqtas.gdh.
 
@@ -967,7 +993,7 @@ gWaw		g__peshWaw				>	gArabicU:(1 2)  _;
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
-gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// OR SHOULD THIS BE TEH MARBUTA??
+gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 
 
 // If no other rule matches, than we do in fact need these nuqtas:
@@ -1000,20 +1026,9 @@ endif;
 
 // Experimental - kaf + lam-bar
 
-/***/
-///table(glyph)
-///g__barRaisedX = pseudo(postscript("_bar.raised")) { barM = point(g__barRaised.barM.x, g__barRaised.barM.y - 200m) };
-///cNuqtaLikeMiddle += (g__barRaisedX);
-///cbarDia += (g__barRaisedX);
-///endtable;
-
 cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
-/***/
 
-// Experimental - kaf + lam-bar
-
-/////gKafIni  >  gKafIniSd_alt  /  _   cLamMed  g__bar;
 
 // See also subtending rules below.
 
@@ -1057,7 +1072,7 @@ cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
 cSign3Smaller  = (gEndOfAyah3);
 
 cSignTakes2Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
-cSign2Small = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gEndOfAyah2);
+cSign2Small = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2);
 cSignTakes2Smaller = (gEndOfAyah);
 cSign2Smaller = (gEndOfAyah2);
 

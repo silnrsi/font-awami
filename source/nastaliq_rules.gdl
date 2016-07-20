@@ -148,6 +148,22 @@ sukunAlt {
     default = jazmDown;
 }
 
+hamzaAlt {
+    id = "hamz";
+    name.1033 = string("Arabic-style hamza");
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("False");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("True");
+        }
+    }
+    default = 0;
+}
+
 /***
 maddaAlt {
     id = "madd";

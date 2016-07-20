@@ -29,8 +29,8 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, gHighHamza, g__smallV,
-	g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, gHighHamza, gHighHamzaArabic,
+	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
 	g__wavyHamza,
 	// g__kafTop, gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_short);
@@ -136,7 +136,7 @@ gBehMed_SS_raw = pseudo(postscript("absBehMed.beF_ss"));  // absBehMed.beF_ss / 
 
 
 cBehFin = (gBehFin, gBehFin_bfkl) ;
-cJeemFin = (gJeemFin) ;
+cJeemFin = (gJeemFin, gHahFin) ;
 cSeenFin = (gSeenFin);
 cSadFin = (gSadFin);
 cTahFin = (gTahFin);
