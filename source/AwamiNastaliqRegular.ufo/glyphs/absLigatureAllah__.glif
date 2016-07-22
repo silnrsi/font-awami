@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absLigatureAllah" format="1">
-  <advance width="2280"/>
+  <advance width="2040"/>
   <unicode hex="FDF2"/>
   <outline>
-    <component base="absAlef" xOffset="1876"/>
-    <component base="absLamIni" xOffset="1228"/>
+    <contour>
+      <point x="1208" y="64" type="curve" smooth="yes"/>
+      <point x="1366" y="64"/>
+      <point x="1522" y="459"/>
+      <point x="1522" y="811" type="curve" smooth="yes"/>
+      <point x="1522" y="970"/>
+      <point x="1512" y="1174"/>
+      <point x="1501" y="1370" type="curve" smooth="yes"/>
+      <point x="1489" y="1578"/>
+      <point x="1521" y="1610"/>
+      <point x="1503" y="1610" type="curve" smooth="yes"/>
+      <point x="1487" y="1610"/>
+      <point x="1381" y="1449"/>
+      <point x="1381" y="1279" type="curve" smooth="yes"/>
+      <point x="1381" y="1093"/>
+      <point x="1405" y="869"/>
+      <point x="1412" y="674" type="curve" smooth="yes"/>
+      <point x="1420" y="477"/>
+      <point x="1371" y="362"/>
+      <point x="1254" y="362" type="curve" smooth="yes"/>
+      <point x="1109" y="362"/>
+      <point x="1105" y="476"/>
+      <point x="1095" y="718" type="curve" smooth="yes"/>
+      <point x="1092" y="790"/>
+      <point x="1003" y="606"/>
+      <point x="1011" y="537" type="curve" smooth="yes"/>
+      <point x="1045" y="255"/>
+      <point x="1055" y="64"/>
+    </contour>
+    <contour>
+      <point x="536" y="892" type="move" name="mUpper"/>
+    </contour>
+    <contour>
+      <point x="444" y="-320" type="move" name="mLower"/>
+    </contour>
+    <component base="absAlef" xOffset="1636"/>
     <component base="_Allah_lah" xOffset="-84"/>
-    <component base="absShadda" xOffset="1169" yOffset="1370"/>
-    <component base="nlqKharizabar" yScale="0.75" xOffset="1150" yOffset="1710"/>
+    <component base="absShadda" xOffset="1029" yOffset="1370"/>
+    <component base="nlqKharizabar" yScale="0.75" xOffset="1010" yOffset="1710"/>
   </outline>
   <lib>
   <dict>

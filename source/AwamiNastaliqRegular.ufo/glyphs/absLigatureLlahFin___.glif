@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absLigatureLlahFin" format="1">
-  <advance width="1783"/>
+  <advance width="1522"/>
   <outline>
+    <contour>
+      <point x="1478" y="461" type="curve"/>
+      <point x="1492" y="425"/>
+      <point x="1551" y="469"/>
+      <point x="1541" y="509" type="curve" smooth="yes"/>
+      <point x="1535" y="533"/>
+      <point x="1526" y="655"/>
+      <point x="1526" y="743" type="curve" smooth="yes"/>
+      <point x="1526" y="781"/>
+      <point x="1526" y="821"/>
+      <point x="1525" y="862" type="curve" smooth="yes"/>
+      <point x="1522" y="998"/>
+      <point x="1514" y="1232"/>
+      <point x="1506" y="1382" type="curve" smooth="yes"/>
+      <point x="1494" y="1590"/>
+      <point x="1526" y="1622"/>
+      <point x="1508" y="1622" type="curve" smooth="yes"/>
+      <point x="1492" y="1622"/>
+      <point x="1386" y="1461"/>
+      <point x="1386" y="1291" type="curve" smooth="yes"/>
+      <point x="1386" y="1105"/>
+      <point x="1406" y="801"/>
+      <point x="1417" y="606" type="curve" smooth="yes"/>
+      <point x="1426" y="439"/>
+      <point x="1372" y="364"/>
+      <point x="1250" y="364" type="curve" smooth="yes"/>
+      <point x="1120" y="364"/>
+      <point x="1103" y="472"/>
+      <point x="1093" y="714" type="curve" smooth="yes"/>
+      <point x="1090" y="786"/>
+      <point x="1001" y="602"/>
+      <point x="1009" y="533" type="curve" smooth="yes"/>
+      <point x="1043" y="251"/>
+      <point x="1067" y="64"/>
+      <point x="1209" y="64" type="curve" smooth="yes"/>
+      <point x="1323" y="64"/>
+      <point x="1392" y="276"/>
+    </contour>
+    <contour>
+      <point x="1525" y="872" type="move" name="_exit_lamKaf"/>
+    </contour>
+    <contour>
+      <point x="536" y="892" type="move" name="mUpper"/>
+    </contour>
+    <contour>
+      <point x="444" y="-320" type="move" name="mLower"/>
+    </contour>
     <component base="_Allah_lah" xOffset="-84"/>
-    <component base="absLamMed" xOffset="1229"/>
-    <component base="absShadda" xOffset="1169" yOffset="1370"/>
-    <component base="nlqKharizabar" yScale="0.75" xOffset="1150" yOffset="1710"/>
+    <component base="absShadda" xOffset="1029" yOffset="1370"/>
+    <component base="nlqKharizabar" yScale="0.75" xOffset="1010" yOffset="1710"/>
   </outline>
   <lib>
   <dict>

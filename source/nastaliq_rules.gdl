@@ -101,7 +101,7 @@ table(feature)
 // Heh-goal hook on medial
 hehGoalHook {
 	id = "hehk";
-	name.1033 = string("Hook on medial heh-goal");
+	name.1033 = string("Hook on medial heh goal");
 	default = 1;
     settings {
         ffalse {
@@ -150,15 +150,15 @@ sukunAlt {
 
 hamzaAlt {
     id = "hamz";
-    name.1033 = string("Arabic-style hamza");
+    name.1033 = string("Hamza");
     settings {
         ffalse {
             value = 0;
-            name.1033 = string("False");
+            name.1033 = string("Urdu style");
         }
         ftrue {
             value = 1;
-            name.1033 = string("True");
+            name.1033 = string("Arabic style");
         }
     }
     default = 0;
