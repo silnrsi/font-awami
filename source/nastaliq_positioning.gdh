@@ -127,34 +127,56 @@ cn23LowerDia { nByLowerM = point(n23LowerM.x, n23LowerM.y - 1m) };
 
 cTakes_nLowerDia = (cTakes_n1LowerDia cTakes_n23LowerDia);
 
+// For attaching any kind of nuqta-like thing...
+cHasUpperMaux = (cNuqtaUpper, gHamzaAbove, g__hamzaArabic, g__smallTah, g__smallTah2dots, g__smallV);
+cNuqtaUpper { nUpperMaux = point(nUpperM.x, nUpperM.y + 1m) };
+gHamzaAbove { nUpperMaux = point(hamzaUpperM.x, hamzaUpperM.y + 1m) };
+g__hamzaArabic  { nUpperMaux = point(hamzaUpperM.x, hamzaUpperM.y + 1m) };
+g__smallTah { nUpperMaux = point(tahUpperM.x, tahUpperM.y + 1m) };
+g__smallTah2dots { nUpperMaux = point(tahUpperM.x, tahUpperM.y + 1m) };
+g__smallV  { nUpperMaux = point(nUpperM.x, nUpperM.y + 1m) };
+
+
+// Intersection classes:
+
+cTakes_hamzaAndN23LowerDia = cTakes_n23LowerDia;
+cTakes_hamzaAndN23LowerDia &= cTakes_hamzaUpperDia;
+
+cTakes_hamzaAndHehhookDia = cTakes_hamzaUpperDia;
+cTakes_hamzaAndHehhookDia &= cTakes_hehhookDia;
+
+cTakes_ringAndNUpperDia = cTakes_nUpperDia;
+cTakes_ringAndNUpperDia &= cTakes_ringDia;
+
 endtable;
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
 
-// X+Nx  Y+Ny  Z+Nz  Bariyeh
+// X+NxL  Y+NyL  Z+Nz  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = n23LowerM } }
+	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
-// X+Nx  Y  Z+Nz  Bariyeh
+// X+NxL  Y+NyU  Z+NzL  Bariyeh
 // Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
 // the second lower nuqta.
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	c_medial   cNuqtaLikeUpper   {                 attach {to = @Y; at = nUpperS; with = nUpperM } }
+	c_medial   cHasUpperMaux   { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
 	cMedBy cNuqtaLower       { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
+// X+NxL  Y+NyL  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  c_medial=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
-// X+Nx  Y+Ny  Z  Bariyeh
+// X+NxL  Y+NyL  Z  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
 	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ cMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
-// X+Nx  Y+Ny  Bariyeh
+// X+NxL  Y+NyL  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
 	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
@@ -177,18 +199,24 @@ cTakes_kafTopDia
 	cn1LowerDia { attach {to = @K; at = n1LowerS; with = n1LowerM } }
 	ckafTopDia { attach {to = @K; at = kafTopS; with = kafTopM } }
 	/ _=K  _=L  _=T;
-*/
+
 
 cTakes_gafStrokeDia
 	cn1LowerDia { attach {to = @K; at = n1LowerS; with = n1LowerM } }
 	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
 	/ _=K  _=L  _=S;
+*/
 
 // tah above, nuqta(s) below
-cTakes_n1LowerDia
+cTakes_tahUpperDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
 	/ _=B  _=L  _=U;
+// Do we need this? We shouldn't need to attach a tah to a glyph that doesn't take a tah.
+//cTakes_n1LowerDia
+//	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
+//	ctahUpperDia { attach {to = @B; at = nUpperS; with = tahUpperM } }
+//	/ _=B  _=L  _=U;
 
 // nuqtas above, hehhook below
 cTakes_hehhookDia
@@ -202,13 +230,13 @@ cTakes_n1LowerDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=L  _=U;
 
-cTakes_n23LowerDia
+cTakes_hamzaAndN23LowerDia
 	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=L  _=U;
 
 // hamza above, nuqtas below
-cTakes_hamzaUpperDia
+cTakes_hamzaAndN23LowerDia
 	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
 	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
 	/ _=B  _=L  _=H;
@@ -237,7 +265,7 @@ cTakes_kafTopDia
 //	/ _=B  _=U;
 
 // Put hamza rules first to make sure to use hamza APs for them.
-cTakes_hamzaUpperDia
+cTakes_hamzaAndHehhookDia
 	chehhookDia { attach {to = @B; at = hehhookS; with = hehhookM } }
 	chamzaUpperDia { attach {to = @B; at = hamzaUpperS; with = hamzaUpperM } }
 	/ _=B  _=H  _=U;
@@ -289,7 +317,7 @@ cTakes_tahUpperDia
 	/ _=B  _=U;
 
 // nuqtas above, ring below
-cTakes_ringDia
+cTakes_ringAndNUpperDia
 	cringDia { attach {to = @B; at = ringS; with = ringM } }
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=U _=R;
@@ -1004,7 +1032,7 @@ gRehFin_hgM { minKernDelta = -400m };
 cKernPunct { minKernDelta = MINKERN * -1 };
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
-gAlef { kernPreKafNoSp = -150 };
+gAlef { kernPreKafNoSp = -150m };
 gAlefFin { kernPreKafNoSp = -80m };
 
 endtable; // glyph

@@ -17,6 +17,8 @@
       <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset19"/>
       <style feats="hehk=0 olap=2" name="fset2"/>
       <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset21"/>
+      <style feats="hamz=1" name="fset22"/>
+      <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -1254,6 +1256,23 @@
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
   </testgroup>
+  <testgroup label="Features">
+    <test class="fset22" label="alt hamza - isolate" rtl="True">
+      <string>ٔ أ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
+    </test>
+    <test class="fset22" label="alt hamza - right-connecting" rtl="True">
+      <string>سأ صؤ مۂ بۓ جٵ قݬ</string>
+    </test>
+    <test class="fset22" label="alt hamza - heh goal" rtl="True">
+      <string>ۂ ۂمۂسۂ</string>
+    </test>
+    <test class="fset22" label="alt hamza - hah" rtl="True">
+      <string>ځ ځسځمځ</string>
+    </test>
+    <test class="fset22" label="alt hamza - chotiyeh" rtl="True">
+      <string>ئ ئلئفئ</string>
+    </test>
+  </testgroup>
   <testgroup label="NFC / NFD">
     <test class="fset21" label="alef madda" rtl="True">
       <string>آ جآ  |  آ جآ</string>
@@ -1386,6 +1405,12 @@
     </test>
     <test class="fset9" label="SM4 - beh reh" rtl="True">
       <string>برابر</string>
+    </test>
+    <test background="#55aaff" class="fset23" label="BARIYEH" rtl="True">
+      <string/>
+    </test>
+    <test class="fset23" label="X+NxL  Y+NyU  Z+NzL  Bariyeh" rtl="True">
+      <string>جشبے ڇئبے </string>
     </test>
   </testgroup>
   <testgroup label="Special chars - ZWJ, etc.">
