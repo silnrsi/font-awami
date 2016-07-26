@@ -999,9 +999,10 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 endpass; // pos - 5 (or 3)
 
 
-// Kerning pair adjustments - EXPERIMENTAL
+// Kerning pair adjustments
 
 #define pairKern user2
+// currently not used
 #define marginSet user3
 
 // It doesn't appear that pair kerning is necessary right now.
@@ -1212,7 +1213,8 @@ cIso { collision {
 	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
 
-// For short sequences ending with bariyeh, kern against the bariyeh tail, not the initial.
+// For short sequences (two base chars) ending with bariyeh,
+// kern against the bariyeh tail, not the initial.
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);

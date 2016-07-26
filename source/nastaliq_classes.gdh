@@ -17,7 +17,7 @@ g_lrm = pseudo(postscript("space"), 0x200E);	// some data uses LRM incorrectly i
 
 g__noDot1u = pseudo(postscript("_dot1u"));  // no longer used
 g__noDot2l = pseudo(postscript("_dot2l"));
-g__dot2l_tail = pseudo(postscript("_dot2l"));
+g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoid spurious warning
 
 
 // The version of the madda that is placed below the vowel - not currently used.

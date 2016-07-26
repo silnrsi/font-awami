@@ -419,55 +419,55 @@
     <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
       <string/>
     </test>
-    <test background="#aaff7f" class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
+    <test class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
       <comment>There is not enough space after the isolate waw.</comment>
       <string>مشیت و مصلحت</string>
     </test>
-    <test background="#aaff7f" class="fset21" label="pa + k (Malachi - 6)" rtl="True">
+    <test class="fset21" label="pa + k (Malachi - 6)" rtl="True">
       <comment>Expects the alef to be closer to the kaf. Sheldon says: The vertical part of the kaf and the alef should be spaced as two alefs or an ale lam would.</comment>
       <string>پاک پاکیز اال</string>
     </test>
-    <test background="#aaff7f" class="fset21" label="full stop (Malachi - 7)" rtl="True">
+    <test class="fset21" label="full stop (Malachi - 7)" rtl="True">
       <comment>Full stop way too close to the following word.</comment>
       <string>ہے۔ تھین</string>
     </test>
-    <test background="#aaff7f" class="fset19" label="comma (Sheldon)" rtl="True">
+    <test class="fset19" label="comma (Sheldon)" rtl="True">
       <string>کہ، نعو</string>
     </test>
-    <test class="fset21" label="xalifa (Malachi - 10)" rtl="True">
+    <test background="#ffaaff" class="fset21" label="xalifa (Malachi - 10)" rtl="True">
       <comment>Need more space before the second word.</comment>
       <string>اور خلیفة   |   پنے خلیفة   |   کہ خلیفة</string>
     </test>
-    <test background="#aaff7f" class="fset19" label="debana khuda (Eunice)" rtl="True">
+    <test class="fset19" label="debana khuda (Eunice)" rtl="True">
       <comment>Fixed.</comment>
       <string>دیبنہ خدا</string>
     </test>
-    <test background="#aaff7f" class="fset19" label="nga chik (Eunice)" rtl="True">
+    <test class="fset19" label="nga chik (Eunice)" rtl="True">
       <string>ںا چک</string>
     </test>
-    <test background="#ffff7f" class="fset19" label="reh/dal + yeh (Eunice)" rtl="True">
+    <test class="fset19" label="reh/dal + yeh (Eunice)" rtl="True">
       <string>ریر رنر دیر دنر</string>
     </test>
-    <test background="#ffff7f" class="fset21" label="alef + yeh + meem (Dieter)" rtl="True">
+    <test class="fset21" label="alef + yeh + meem (Dieter)" rtl="True">
       <comment>If the nuqtas were moved down, the alef could scootch in.</comment>
       <string>ایمان انمان</string>
     </test>
-    <test class="fset21" label="reh + yeh (Dieter)" rtl="True">
+    <test background="#ffaaff" class="fset21" label="reh + yeh (Dieter)" rtl="True">
       <comment>Too far apart</comment>
       <string>طریقہ طرنقہ</string>
     </test>
-    <test background="#aaff7f" class="fset21" label="waw + qaf (Sheldon)" rtl="True">
+    <test class="fset21" label="waw + qaf (Sheldon)" rtl="True">
       <string>حقوق</string>
     </test>
     <test class="fset21" label="sheen + kaf (Dieter)" rtl="True">
       <comment>Would look better a bit closer together.</comment>
       <string>شش کو</string>
     </test>
-    <test background="#aaff7f" class="fset21" label="not enough overlap (Sheldon)" rtl="True">
+    <test class="fset21" label="not enough overlap (Sheldon)" rtl="True">
       <comment>The third example is good, the first two are not tight enough.</comment>
       <string>کویی شحض   |   کہیں شحض  |   برشحض کوں</string>
     </test>
-    <test background="#aaff7f" class="fset19" label="Eunice - collision" rtl="True">
+    <test class="fset19" label="Eunice - collision" rtl="True">
       <string>ڇھق پو</string>
     </test>
     <test class="fset21" label="nyeh (Eunice)" rtl="True">
@@ -477,7 +477,7 @@
     <test class="fset19" label="kaf heh-goal sp jeem" rtl="True">
       <string>کہ خلیفة  |  کہ خل  |  لہ خل  |  سہ خسم  |  قہ خک</string>
     </test>
-    <test background="#aaff7f" class="fset21" label="dal jeem zair" rtl="True">
+    <test class="fset21" label="dal jeem zair" rtl="True">
       <string>ݙِخا ݙِخیجو</string>
     </test>
   </testgroup>
@@ -1730,6 +1730,9 @@
     </test>
     <test class="fset19" label="reh + yeh" rtl="True">
       <string>طریقہ طرنقہ</string>
+    </test>
+    <test class="fset23" label="xalifa (Malachi - 10)" rtl="True">
+      <string>اور خلیفة   |   پنے خلیفة   |   کہ خلیفة</string>
     </test>
   </testgroup>
 </ftml>
