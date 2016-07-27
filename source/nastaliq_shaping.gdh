@@ -402,7 +402,7 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 
 // And other common ligatures
 
-gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4) _  _  _;
+////gMeemIni_raw  gJeemMed_raw  gMeemMed_raw  gDalFin  >  gLigatureMuhammad:(1 2 3 4) _  _  _;
 
 // Restore eventually if we use this:
 ////gAlefMaddaAbove gGaf  >  g_alefMaddaGaf:(1 2)  _;
@@ -552,7 +552,10 @@ endtable;
 cMed_raw  >  cMedBe     / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
 //cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;  // ALT-KAF
 
-cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
+// Alternate kaf forms
+////cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
+// ...replace with:
+cMed_raw  >  cMedSd  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
 
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
 
@@ -690,7 +693,10 @@ cIni_raw     >  cIniMmX /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
 
-cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
+// Alternate kaf forms
+////cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
+// ...replace with
+cIni_raw  >  cIniSd  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
 
 // GDL QUESTION
 (gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  (gKafFin gGafFin cKafMed);
@@ -1113,6 +1119,11 @@ pass(7) {Direction = LEFT_TO_RIGHT}
 	cSignTakes1Smaller cDigitAny  >  cSign1Smaller  cDigitAnySmaller;
 
 #include "cp1252.gdh"
+
+	// Convert symmetrical punctuation where there are not separate characters 
+	// for the two scripts:
+	cPunctLatin  >  @P  /  cLatin  _=P;
+	cPunctLatin  >  cPunctArabic;
 
 endpass; // 7
 
