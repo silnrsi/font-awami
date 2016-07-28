@@ -19,6 +19,7 @@
       <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset21"/>
       <style feats="hamz=1" name="fset22"/>
       <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -30,7 +31,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>گینوککار</string>
+      <string>کاٞنۡنی حاٞل</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -91,7 +92,7 @@
       <string>کلینر | جینیر | مستتر | گھبیر</string>
     </test>
     <test label="initial + meem + laam" rtl="True">
-      <string>گملکتو | مملکتو</string>
+      <string>کاٞنۡنی حاٞ</string>
     </test>
     <test label="meem + final alef" rtl="True">
       <string>جھلما | لعلما</string>
@@ -1197,6 +1198,15 @@
     <test class="fset18" label="seen w/ 2 dots vertically" rtl="True">
       <string>ݭ ݭݭݭ</string>
     </test>
+    <test class="fset24" label="seen w/ 3 dots above and below (Palula)" rtl="True">
+      <string>ڜ ڜڜڜ</string>
+    </test>
+    <test class="fset24" label="dad w/ dot below (Khowar)" rtl="True">
+      <string>ۻ ۻۻۻ</string>
+    </test>
+    <test class="fset24" label="feh w/ 3 dots below (Khowar)" rtl="True">
+      <string>ڥ ڥڥڥ</string>
+    </test>
     <test class="fset21" label="teh marbuta goal" rtl="True">
       <string>ۃ لۃ سۃ</string>
     </test>
@@ -1352,6 +1362,9 @@
     </test>
     <test class="fset21" label="hmjhky" rtl="True">
       <string>حمجھخے</string>
+    </test>
+    <test class="fset24" label="shkhsytw" rtl="True">
+      <string>شخصیتو</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">

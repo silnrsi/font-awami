@@ -796,11 +796,11 @@ endpass; // 5
 table(glyph)
 
 cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
-	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza);
+	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza, g__dot3l__dot3u);
 cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
-	g__attachedRing, g__dot2l, g__hehHook_small);
+	g__attachedRing, g__dot2l, g__hehHook_small, g__dot3l);
 cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
-	g__dot2u, gHamzaAbove, gHamzaAbove);
+	g__dot2u, gHamzaAbove, gHamzaAbove, g__dot3u);
 
 cNuqtaLike += (cLowerUpper);
 
@@ -867,23 +867,26 @@ gSeen		g__dot4u				>	gSeenFourDotsAbove:(1 2)  _;
 gSeen		g__dot1l__dot1u			>	gSeenDotBelowDotAbove:(1 2)  _;
 gSeen		g__smallTah2dots		>	gSeenSmallTahTwoDots:(1 2)  _;
 gSeen		g__dot2vu				>	gSeenTwoVertAbove:(1 2)  _;
+gSeen		g__dot3l__dot3u			>	gSeenThreeDotsBelowThreeDotsAbove:(1 2)  _;
 
 //gSad								>	gSad;
 gSad		g__dot1u				>	gDad:(1 2)	_;
+gSad		g__dot1l__dot1u			>	gDadDotBelow:(1 2)  _;
 //gTah								>	gTah;
 gTah		g__dot1u				>	gZah:(1 2)	_;
 //gAin								>	gAin;
 gAin		g__dot1u				>	gGhain:(1 2)	_;
 gFeh		g__dot1u				>	gFeh:(1 2)	_;
 gFeh		g__dot2u				>	gQaf:(1 2)	_;
+gFeh		g__dot3l				>	gFehThreeDotsBelow:(1 2)  _;
 
-//gKaf					>	gKaf;
+//gKaf								>	gKaf;
 
 /**
 if (debugGaf == 0)
-//gGaf					>	gGaf;
+//gGaf								>	gGaf;
 else
-gGaf				_	>	gKafIni		g__gafStroke:1;
+gGaf				_				>	gKafIni		g__gafStroke:1;
 //////(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
 endif;
 **/

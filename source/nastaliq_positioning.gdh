@@ -230,6 +230,11 @@ cTakes_n1LowerDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  _=L  _=U;
 
+cTakes_n23LowerDia
+	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
+	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B  _=L  _=U;
+
 cTakes_hamzaAndN23LowerDia
 	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
