@@ -14,7 +14,7 @@ else:
     vfb2ufo_util = "C:/FontUtils/VFB2UFO/exe/vfb2ufo"
     vfb_path = '"C:\\Awami-Git\\source\\AwamiNastaliqRegular.vfb"'
     ttf_output_path = "C:\\Awami-Git\\source\\"
-    fl_macro_path = "C:\\Awami-Git\\tools\\FLScripts\\"
+    fl_macro_path = "C:\\Users\\Correll\\Documents\\Fontlab\\Studio 5\\Macros\\Custom\\"
 
 print "---------------------------------------------------------------"
 print "Processing VFB " + vfb_path
