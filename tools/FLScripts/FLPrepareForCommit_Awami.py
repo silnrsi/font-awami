@@ -24,8 +24,9 @@ print
 print "Saving VFB..."
 fl.Save( vfb_path )
 
-# Do XML dump
-
+###################################
+# Do XML dumps
+#
 execfile(fl_macro_path + "FontToXMLDump_Awami.py")
 execfile(fl_macro_path + "FLWriteAPXml_Awami.py")
 
@@ -35,7 +36,9 @@ if user == "SC" :
     ufo_dir = ttf_output_path + "AwamiNastaliqRegular.ufo\\"
     shutil.rmtree(ufo_dir)
 
+###################################
 # Generate the UFO
+#
 print "Generating UFO..."
 # -fo to force overwrite
 command = vfb2ufo_util + " -fo " + vfb_path
@@ -43,29 +46,39 @@ print command
 os.system(command)
 print "Done."
 
+###################################
 # De-reference components
+#
 print
 print "De-referencing components..."
+execfile(fl_macro_path + "FLSelectOverlap.py")
+fl.CallCommand(32925) #SymbolDecompose constant matches "Glyph-Decompose menu" item
+execfile(fl_macro_path + "FLSelectScaled.py")
+fl.CallCommand(32925) #SymbolDecompose constant matches "Glyph-Decompose menu" item
+
+###################################
+# Merge overlaps
+#
+print "Merging contours on all glyphs..."
 #fl.CallCommand(32873) #EditSelectAll constant matches "Edit-Select All" menu item   -- doesn't seem to work
 for g in fl.font.glyphs:
     fl.Select(g.index) #select all glyphs
-fl.CallCommand(32925) #SymbolDecompose constant matches "Glyph-Decompose menu" item
-
-# Merge overlaps
-print "Merging contours on all glyphs..."
 fl.CallCommand(32846) #ActionRemoveOverlap constant matches "Tools-Outline-Merge Outlines" menu item
 
+###################################
 # Generate TTF
+#
 ttf_output_file = ttf_output_path + "AwamiNastaliqRegular.ttf"
 print
 print "Generating TTF to " + ttf_output_file
 fl.GenerateFont(ftTRUETYPE, ttf_output_file)
 print "Done."
 
-# Discard VFB (the components are all de-referenced and the overlaps are merged, so we don't want to keep it)
+###################################
+# Discard VFB and re-open
+# (the components are all de-referenced and the overlaps are merged, so we don't want to keep it)
+#
 fl.Close(0)
-
-# Re-open the original VFB
 fl.Open( vfb_path )
 
 print
