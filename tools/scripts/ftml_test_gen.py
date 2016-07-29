@@ -8,11 +8,11 @@ def run():
     
     outputPath = "C:\\Awami-Git\\tests\\data\\FTML_XSL\\"
     
-    mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
+    #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
     #mode = "allbasecharforms"   # all forms of all letters
     #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
-    #mode = "basic_alldiac"      # same  characters as basicforms, with every diac
+    mode = "basic_alldiac"      # same  characters as basicforms, with every diac
     #mode = "allbase_somediac"
     #mode = "alldiac"
     
@@ -136,10 +136,11 @@ def expand_sequences(mode, basicSequences) :
         expand = {
             "beh"       :   ["teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
             "jeem"      :   ["hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
-            "seen"      :   ["seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
-            "sad"       :   ["dad"],
+            "seen"      :   ["seen3dots3dots", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
+            "sad"       :   ["dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ghain"],
+            "feh"       :   ["feh3dots"],
             "kaf"       :   ["kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
             "lam"       :   ["lamSmallV", "lamBar"],
@@ -532,13 +533,16 @@ def _char_name_to_usv(charName) :
             "seen4dots" :   '075C',
             "seen2dotsV"  : '076D',
             "seenTah2smd" : '0770',
+            "seen3dots3dots" : '069C',
         "sad"           :   '0635',
             "dad"       :   '0636',
+            "dadDotBelow" : '06FB',
         "tah"           :   '0637',
             "zah"       :   '0638',
         "ain"           :   '0639',
             "ghain"     :   '063A',
         "feh"           :   '0641',
+            "feh3dots"  :   '06A5',
         "qaf"           :   '0642',
             "qafIM"     :   '0642',
         "lam"           :   '0644',
@@ -682,15 +686,18 @@ def _group_name_format(charName) :
         "seen4dots"     :   ('06c',     'Seen with four dots',               2, 2),
         "seen2dotsV"    :   ('06d',     'Seen with two dots vertically',     2, 2),
         "seenTah2smd"   :   ('06e',     'Seen with tah and two small dots',  2, 2),
+        "seen3dots3dots":   ('06f',     'Seen with three lower and upper dots', 2, 2),
             
         "sad"           :   ('07',      'Sad form',     2, 2),
         "dad"           :   ('07a',     'Dad form',     2, 2),
+        "dadDotBelow"   :   ('07b',     'Dad with dot below', 2, 2),
         "tah"           :   ('08',      'Tah form',     2, 2),
         "zah"           :   ('08a',     'Zah form',     2, 2),
         "ain"           :   ('09',      'Ain form',     2, 2),
         "ghain"         :   ('09a',     'Ghain form',   2, 2),
         "feh"           :   ('10',      'Feh form',     2, 2),
-        "qafIM"         :   ('10a',     'Qaf initial/medial form', 0, 2),
+        "qafIM"         :   ('10a',     'Qaf initial/medial form',      0, 2),
+        "feh3dots"      :   ('10b',     'Feh with three dots below',    2, 2),
         "qaf"           :   ('11',      'Qaf form',     2, 0),
         "lam"           :   ('12',      'Lam form',     2, 2),
         "lamBar"        :   ('12a',     'Lam with bar',     2, 2),
@@ -787,7 +794,7 @@ def write_xml_header(f, mode, fontScale) :
     f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
     f.write('    <description>' + title + '</description>\n')
     f.write('    <fontscale>' + fontScale + '</fontscale>\n')
-    f.write('    <fontsrc>local(\'Awami Nastaliq Alpha2\'), url(Awami_alpha2.ttf)</fontsrc>\n')
+    f.write('    <fontsrc>local(\'Awami Nastaliq Beta1\'), url(Awami_beta1.ttf)</fontsrc>\n')
     f.write('    <title>' + title + '</title>\n')
     f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
     f.write('  </head>\n')
