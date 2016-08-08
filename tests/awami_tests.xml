@@ -20,6 +20,7 @@
       <style feats="hamz=1" name="fset22"/>
       <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
+      <style feats="agca=0" name="fset25"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -29,9 +30,9 @@
     </styles>
   </head>
   <testgroup label="main">
-    <test background="#ffff7f" label="analyze" rtl="True">
+    <test background="#ffff7f" class="fset25" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>کاٞنۡنی</string>
+      <string>یخ </string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -273,6 +274,13 @@
     <test class="fset21" label="heh-goal not final - no ligature" rtl="True">
       <string>اللہس</string>
     </test>
+    <test class="fset24" label="bismillah text" rtl="True">
+      <comment>This probably doesn't include all the vowel marks.</comment>
+      <string>بِسمِ اللہ الرَّ حمن الرَّ حࣿیمِ</string>
+    </test>
+    <test class="fset24" label="salaam ulena text" rtl="True">
+      <string>سلامُهُ عَلَینَا  |  سلامهُ علینا</string>
+    </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
     <test class="fset7" label="alef + kaf" rtl="True">
@@ -480,6 +488,9 @@
     </test>
     <test class="fset21" label="dal jeem zair" rtl="True">
       <string>ݙِخا ݙِخیجو</string>
+    </test>
+    <test class="fset24" label="initial heh-doachashmee" rtl="True">
+      <string>دھا دھس</string>
     </test>
   </testgroup>
   <testgroup label="Collisions">
