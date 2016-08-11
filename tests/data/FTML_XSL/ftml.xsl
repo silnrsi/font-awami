@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="html" encoding="utf-8"/>
-<!-- Use with nested <testgroup> elements to create tables with multiple <test> elements per row -->
+
+<!--
+This XSL stylesheet generates tables from a group of test strings.
+The top-level test group generates a section with a label and table.
+Each second-level testgroup is a single line of the of the table; the row label is taken from that
+testgroup label.
+The testgroup's test items are successive cells in the row.
+The final cell is the first test's comment, which really functions as a comment for the group.
+
+The data should look something like:
+
+<ftml>
+  <head>
+    <columns comment="15%" label="20%" string="15%"/>
+    <description>Page Title</description>
+    <fontscale>200</fontscale>
+    <fontsrc>local('Font Name'), url(fontfile.ttf)</fontsrc>
+    <title>Page Title</title>
+    <styles><style feats=' ' name="default"/></styles>
+  </head>
+  <testgroup label="Section 1">
+    <testgroup label="row 1" comment="comment 1">
+      <test rtl="True">
+      	<comment>This is a comment - for the group, really.</comment>
+      	<string><em>test1</em></string>
+      </test>
+      <test rtl="True"><string>pre-context<em>test1</em></string></test>
+      <test rtl="True" background="#cfcfcf"><string></string></test>
+      <test rtl="True" background="#cfcfcf"><string></string></test>
+    </testgroup>
+    <testgroup label="row 2">
+      <test rtl="True"><string><em>test2</em></string></test>
+      <test rtl="True"><string>pre-context<em>test2</em></string></test>
+      <test rtl="True"><string><em>test2</em>y</string>post-context</test>
+      <test rtl="True"><string>pre-context<em>test2</em>post-context</string></test>
+    </testgroup>
+  </testgroup>
+  ...
+-->
 
 <!-- set variables from head element -->
 <xsl:variable name="width-comment" select="/ftml/head/columns/@comment"/>
@@ -10,7 +48,7 @@
 <xsl:variable name="font-scale" select="concat(/ftml/head/fontscale, substring('100', 1 div not(/ftml/head/fontscale)))"/>
 
 <!-- 
-	Process the root node to construct the html page
+	Process the root node to construct the html page.
 -->
 <xsl:template match="/">
 <html>
@@ -29,7 +67,7 @@
 	@font-face {font-family: TestFont; src: <xsl:value-of select="ftml/head/fontsrc"/>; }
 	th { text-align: left; }
 	table { width: 100%; table-layout: fixed; }
-	table,th,td { padding: 2px; border: 1px solid #111111; border-collapse: collapse; }
+	table,th,td { padding: 2px; border: 1px solid #D8D8D8; border-collapse: collapse; }
 <xsl:if test="$width-label != ''">
 	.label { width: <xsl:value-of select="$width-label"/> }
 </xsl:if>
@@ -45,15 +83,25 @@
 	<!-- <xsl:apply-templates select="/ftml/head/styles/*" /> -->
 		</style>
 	</head>
+	
 	<body>
+		<!-- TOC anchor -->
+		<a><xsl:attribute name="name">toc</xsl:attribute></a>
+
 		<h1><xsl:value-of select="/ftml/head/title"/></h1>
-		<xsl:apply-templates select="/ftml/testgroup"/>
+		
+		<!-- Generate table of contents -->
+		<ul>
+			<xsl:apply-templates select="/ftml/testgroup" mode="toc"/>
+		</ul>
+			
+		<xsl:apply-templates select="/ftml/testgroup" />
 	</body>
 </html>
 </xsl:template>
 
 <!-- 
-	Build CSS style for FTML style element
+	Build CSS style for FTML style element.
 -->
 <xsl:template match="style">
 	.<xsl:value-of select="@name"/> {
@@ -67,11 +115,27 @@
 	}
 </xsl:template>
 
+
 <!-- 
-	Process a top level testgroup, emitting a table (containing a row for each testgroup subelement)
+	Generate a table-of-contents link for the testgroup.
+-->
+<xsl:template match="ftml/testgroup" mode="toc">
+	<li><a>
+		<xsl:attribute name="href">#section<xsl:value-of select="position()"/></xsl:attribute>
+		<xsl:value-of select="@label" />
+	</a></li>
+</xsl:template>
+
+
+<!-- 
+	Process a top level testgroup, emitting a table (containing a row for each testgroup subelement).
 -->
 <xsl:template match="/ftml/testgroup">
+	<!-- TOC anchor -->
+	<a><xsl:attribute name="name">section<xsl:value-of select="position()"/></xsl:attribute></a>
+	
 	<h2><xsl:value-of select="@label"/></h2>
+	<p><a><xsl:attribute name="href">#toc</xsl:attribute>[Table of Contents]</a></p>
 	<table>
 		<tbody>
 			<xsl:apply-templates/>
@@ -80,12 +144,12 @@
 </xsl:template>
 
 <!-- 
-	Process a second level testgroup record, emitting a table row (containing a cell for each test subelement)
-	Pick up comment and class from first test subelement
+	Process a second level testgroup record, emitting a table row (containing a cell for each test subelement).
+	Pick up comment and class from first test subelement.
 -->
 <xsl:template match="/ftml/testgroup/testgroup">
 <tr>
-    <xsl:if test="@background">
+	<xsl:if test="@background">
 		<xsl:attribute name="style">background-color: <xsl:value-of select="@background"/>;</xsl:attribute>
 	</xsl:if>
 	<xsl:if test="$width-label != ''">
@@ -95,7 +159,8 @@
 		</td>
 	</xsl:if>
 
-    	<xsl:apply-templates/>
+	<xsl:apply-templates/>  <!-- generate the test string cells -->
+	
 	<xsl:if test="$width-comment != ''">
 		<td class="comment">
 			<!-- emit comment concatenated with class (if not default) -->
@@ -125,7 +190,7 @@ font-feature-settings: <xsl:value-of select="@feats"/>;</xsl:attribute>
 </xsl:template>
 
 <!-- 
-	Process a single test record, emitting a table cell
+	Process a single test record, emitting a table cell.
 -->
 <xsl:template match="test">
 	<xsl:if test="$width-string != ''">
@@ -157,7 +222,7 @@ font-feature-settings: <xsl:value-of select="@feats"/>;</xsl:attribute>
 </xsl:template>
 
 <!--  
-	suppress all text nodes except those we really want 
+	Suppress all text nodes except those we really want.
 -->
 <xsl:template match="text()"/>
 
