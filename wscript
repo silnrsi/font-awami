@@ -52,7 +52,8 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 FONT_NAME = "Awami Nastaliq Beta1"
 FONT_FILENAME = "Awami_beta1.ttf"
 
-font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
+font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
+                                     cmd('psfix -s ${DEP} ${TGT}')),
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
