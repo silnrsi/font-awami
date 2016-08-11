@@ -49,10 +49,13 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Beta1"
-FONT_FILENAME = "Awami_beta1.ttf"
+FONT_NAME = "Awami Nastaliq PreBeta2"
+FONT_FILENAME = "Awami_prebeta2.ttf"
 
-font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))),
+font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))
+				# for removing psnames:
+				####, cmd('psfix -s ${DEP} ${TGT}')
+     		),
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
@@ -66,7 +69,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      #tests = tests,
      fret = fret(params = '-r'),
      woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
-    )
+  )
 
 def configure(ctx) :
     ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
