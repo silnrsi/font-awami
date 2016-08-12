@@ -413,11 +413,10 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  (c_initial c_medial)  MARKS  _;
 
-(gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfhM)
-		/  cPreQwStfhM  MARKS _;
-gFehFin  >  gQafFin_stfhM
-		/  cPreQwStfhM  MARKS  _  g__dot2u;
-gFehFin  >  gQafFin  /  _  g__dot2u;
+(gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfhM)  /  cPreQwStfhM  MARKS _;
+// Change feh to qaf for final qaf:
+gFehFin  >  gQafFin_stfhM                           /  cPreQwStfhM  MARKS  _  g__dot2u;
+gFehFin  >  gQafFin                                 /  _  g__dot2u;
 
 
 table(glyph)
@@ -454,20 +453,22 @@ gAlefFin  >  gAlefFin_lm	/  ^ (gLamIni_raw gLamMed_raw) MARKS  _ ;
 
 table(glyph)
 
-// TODO: I'm pretty sure this is wrong:
+// Everything BUT lam:
 c_kgPreMm_alt = ( gKafIni_raw gGafIni_raw gKafMed_raw gKafIni_raw gKafMed_raw ) ;
-c_preMm_alt = ( gAinIni_raw gAinMed_raw gMeemMed_alt_raw gBehIni_raw gBehMed_raw
+c_preMm_alt = ( gAinIni_raw gAinMed_raw gBehIni_raw gBehMed_raw
 	gHehDoIni_raw gHehDoMed_raw gFehIni_raw gFehMed_raw gHehGoalIni_raw gHehGoalMed_raw
-	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gSeenIni_raw gSeenMed_raw 
-    gSadIni_raw gSadMed_raw gTahIni_raw gTahMed_raw ) ;
+	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gMeemMed_alt_raw
+	gSeenIni_raw gSeenMed_raw gSadIni_raw gSadMed_raw gTahIni_raw gTahMed_raw ) ;
 
 
-cADLK_raw = (gDalFin gLamFin gLamAlefFin gAlefFin gLamMed_raw
+cADL_raw = (gDalFin gLamFin gLamAlefFin gAlefFin gLamMed_raw
 	//// gThalFin gDalTwoVertBelowSmallTahFin gDdalFin - no longer used
 	//gKafFin gGafFin gKafMed_raw gGafMed_raw - Sheldon says to take these out ("meem before kaf+alef/lam", 10 Feb 2016).
 );
 
 c_preBehSS_raw = (gSeenIni_raw gSadIni_raw gSeenMed_raw gSadMed_raw);
+
+c_preBehNn_hgbm = (gHehGoalIni gHehGoalIniBeNn gBehMed gBehMedBeNn gMeemIni gMeemIniBeNn)
 
 endtable;
 
@@ -489,7 +490,7 @@ gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  (c_medial cFi
 ///gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS  _ MARKS  ^ temp_cADLK_raw; // kafs and ghafs
 ///gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS  _ MARKS  ^ cADLK_raw;			// others
 
-gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS ^ cADLK_raw;
+gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS ^ cADL_raw;
 
 // also see below
 gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
@@ -568,7 +569,7 @@ gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
 //--gMeemMed_raw  >  gMeemMedBeNn     / ^  gLamIni_raw MARKS  _ MARKS  gBehMedNn; // exception to rule below
 //--gMeemMed_raw  >  gMeemMedBeNn_alt  / ^  cIni_raw MARKS  _ MARKS  gBehMedNn; // 
 
-cMed_raw  >  cMedMmX_kx  / ^ MPRECXT  _  MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
+cMed_raw  >  cMedMmX_kx  / ^ MPRECXT  _  MARKS  cMeemMed_alt;
 
 /* ALT-KAF
 cMed_raw  >  cMedBeRe_kx  / ^ MPRECXT  _ MARKS  gBehMedRe;
@@ -683,14 +684,15 @@ cIni_raw  >  cIniBeHg  /  _ MARKS  gBehMedHgF;
 cIni_raw_noS  >  cIniBe_noS                            /  _ MARKS  (cBehMed_postBeM gBehMedHd);
 
 
-gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;
+gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;  // before standard meem
 
-gLamIni_raw  >  gLamIniMm /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt); // exception to rule below
+gLamIni_raw  >  gLamIniMm /  _ MARKS  cMeemMed_alt; // exception to rule below
 
-//cIni_raw     >  cIniMmX_kx /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);  // ALT-KAF
-cIni_raw     >  cIniMmX /  _ MARKS  (gMeemMed_alt gMeemMedBeNn_alt);
+//cIni_raw     >  cIniMmX_kx /  _ MARKS  cMeemMed_alt;  // ALT-KAF
+cIni_raw     >  cIniMmX /  _ MARKS  cMeemMed_alt;
 
 
+// Do we really want this rule? If not comment out.
 (gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
 
 // Alternate kaf forms
@@ -778,7 +780,7 @@ cIni_raw  >  cIni	/ _  MARKS  (c_medial c_final);
 
 // Final clean-ups
 
-gBehMedNn  >  gBehMedNn_hgbm  /  (gHehGoalIni gHehGoalIniBeNn gBehMed gBehMedBeNn gMeemIni gMeemIniBeNn)  MARKS  _;
+gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 
 /////g__hehHook_small  >  g__hehHook_big  /  _  MARKS  gAlefFin;
 
