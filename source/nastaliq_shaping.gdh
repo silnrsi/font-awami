@@ -208,7 +208,7 @@ cMedBeHg = (gBehMedBeHg, gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, g
 // TODO: if necessary, add back cMedBeRe_kx, cMedBeNn_kx, cMedBeHg_kx
 
 // NOTE gLamMedMm in this class:
-cMedMmX_kx = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX, gFehMedMmX,
+cMedMmX = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX, gFehMedMmX,
 		gKafMedMmX, gGafMedMmX, gLamMedMm, gMeemMedMmX, gHehGoalMedMmX, gHehDoMedMmX);
 cMedKfX_kx = (gBehMedKfX, gBehMedKfX, gJeemMedKfX, gSeenMedKfX, gSadMedKfX, gTahMedKfX, gAinMedKfX, gFehMedKfX,
 		gKafMedKfX, gGafMedKfX, gLamMedKfX, gMeemMedKfX, gHehGoalMedKfX, gHehDoMedKfX);
@@ -216,12 +216,8 @@ cMedKfX_kx = (gBehMedKfX, gBehMedKfX, gJeemMedKfX, gSeenMedKfX, gSadMedKfX, gTah
 // Note: these include an extra beh form to account for the _SS alternate
 cMedBeM1 = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
 		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
-cMedBeM1_kx = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
-		gKafMedBeM1_alt, gGafMedBeM1_alt, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
 cMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
 		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
-cMedBeM2_kx = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
-		gKafMedBeM2_alt, gGafMedBeM2_alt, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
 
 //--cMed_noS = (gBehMed, gJeemMed, gTahMed, gAinMed, gFehMed,
 //--		gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
@@ -247,12 +243,14 @@ cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTaF, gBehMedTaM, gBe
 		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX,
 		gBehMedKfX);	// gBehMedKfX not included in Caltmedialtkaf23, but it is in Caltmedi23
 		
-cBehMed_postSBeM = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
+cBehMed_postSBe = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
 		gBehMedBy, gBehMedMmX, gBehMedKfX);
 		
-cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBeF_ss, gBehMedSn, gBehMedSd_ss, gBehMedTaF_ss,
-		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBe, gBehMedBeHg,
+cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTaF_ss,
+		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg,
 		gBehMedHgF_be, gBehMedBeRe);
+cBehMed_postSiniBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTaF_ss, 
+		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg);
 
 //cJeemMed1a_KfX? = glyphid(492..516);
 		
@@ -263,6 +261,8 @@ cIni = (gBehIni, gJeemIni, gSeenIni, gSadIni, gTahIni, gAinIni, gFehIni,
 		gKafIni, gGafIni, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni);
 cIniBe = (gBehIniBe, gJeemIniBe, gSeenIniBe, gSadIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
 		gKafIniBe, gGafIniBe, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
+cIniBeM1 = (gBehIniBeM1, gJeemIniBeM1, gSeenIniBeM1, gSadIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
+		gKafIniBeM1, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 cIniBeM1_kx = (gBehIniBeM1, gJeemIniBeM1, gSeenIniBeM1, gSadIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
 		gKafIniBeM1_alt, gGafIniBeM1_alt, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
 cIniBeM2 = (gBehIniBeM2, gJeemIniBeM2, gSeenIniBeM2, gSadIniBeM2, gTahIniBeM2, gAinIniBeM2, gFehIniBeM2,
@@ -454,7 +454,7 @@ gAlefFin  >  gAlefFin_lm	/  ^ (gLamIni_raw gLamMed_raw) MARKS  _ ;
 table(glyph)
 
 // Everything BUT lam:
-c_kgPreMm_alt = ( gKafIni_raw gGafIni_raw gKafMed_raw gKafIni_raw gKafMed_raw ) ;
+c_kgPreMm_alt = ( gKafIni_raw gGafIni_raw gKafMed_raw gGafMed_raw ) ;
 c_preMm_alt = ( gAinIni_raw gAinMed_raw gBehIni_raw gBehMed_raw
 	gHehDoIni_raw gHehDoMed_raw gFehIni_raw gFehMed_raw gHehGoalIni_raw gHehGoalMed_raw
 	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gMeemMed_alt_raw
@@ -507,77 +507,51 @@ pass(4) { MaxBackup = 50; MaxRuleLoop = 200 }
 
 #if (QUICKCOMPILE == 0)
 
-gBehIni_raw  gBehMed_raw  >  gBehIniBeM2  gBehMedHgF_be
-	/  _  MARKS  _  MARKS  cHehGoalFin;
 
-////gBehMed_raw  >  gBehMedHg_Be  /  ^ MPRECXT  _ MARKS  (gHehGoalFin gTehMarbutaGoalFin gHehGoalHamzaAboveFin);
+//////cMed_raw_noS  >  cMedBeM1_noS     /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  //  \u0633\u06a9\u0628\u0628\u0627
 
+//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMed MARKS  c_dkgal_postAlt;   //  \u0644\u0644\u0628\u0628\u0627
+//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMedBeNn;    // \u0633\u06a9\u0628\u0628\u0628\u0646
 
-cMed_raw_noS  >  cMedBeM1_noS     /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  //  \u0633\u06a9\u0628\u0628\u0627
-//cMed_raw_noS  >  cMedBeM1_noS_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  // ALT-KAF
-
-cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMed  c_dkgal_postAlt;
-cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMedBeNn;    // \u0633\u06a9\u0628\u0628\u0628\u0646
-cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  (gBehMedSn gBehMedBe  gBehMedBeHg);
-
-cMed_raw  >  cMedBeM2     /  ^ MPRECXT  _ MARKS  gBehMedBeM1;
-//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM1;	// ALT-KAF
-
-cMed_raw  >  cMedBeM1_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM2;
-cMed_raw  gBehMed  >  cMedBeM1_kx  gBehMedBeM2  /  ^ MPRECXT  _ MARKS  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
-cMed_raw  gBehMed  >  cMedBeM1_kx  gBehMedBeM2  /  ^ MPRECXT  _ MARKS  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
-
-cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMedBeM1;
-
-(gKafMed_raw gGafMed_raw)	>  (gKafMedBeM2 gGafMedBeM2)
-	/  ^ MPRECXT  _ gBehMed  MARKS  c_dkgal_postAlt;
-
-cMed_raw  >  cMedBeM2     /  ^  MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal;
-cMed_raw  >  cMedBeM2  /    ^ MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
-// For kinked kaf:
-//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
-//cMed_raw  >  cMedBeM2_kx  /  ^ MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
-
-(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBeM1 gSadMedBeM1) /  ^ MPRECXT  _ MARKS  cBehMed_postSmedBeM1;
-
-(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBe gSadMedBe)  / ^ MPRECXT  _ MARKS  cBehMed_postSBeM;
-
-// the rule below just keeps the next one from firing:
-////(gSeenMed gSadMed)  >  @1
-////		/  ^ MPRECXT  _ MARKS  (gBehMedBeF gBehMedSd, gBehMedTaF, gBehMedTaM, gBehMedAi, gBehMedFe gBehMedQf);
+//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  (gBehMedSn gBehMedBe  gBehMedBeHg);
+//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2;
 
 table(glyph)
+cMed_postBeM1 = (gBehMedBeM2  gBehMedSn  gBehMedBe  gBehMedBeHg);
 cBehMed_defaultEntrance = (cBehMed_postBeM  gBehMedHd);
 endtable;
 
-cMed_raw  >  cMedBe     / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
-//cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;  // ALT-KAF
 
-// Alternate kaf forms
-////cMed_raw  >  cMedSd_kx  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
-// ...replace with:
-cMed_raw  >  cMedSd  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKalt;
+
+/////cMed_raw  gBehMed  >  cMedBeM1  gBehMedBeM2  /  ^ MPRECXT  _ MARKS  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;  //     \u062c\u0639\u0628\u0628\u0627
+/////cMed_raw  gBehMed  >  cMedBeM1  gBehMedBeM2  /  ^ MPRECXT  _ MARKS  _ MARKS  (gBehMedBeNn  gBehMedBeM1);
+
+
+///////////(gKafMed_raw gGafMed_raw)	>  (gKafMedBeM2 gGafMedBeM2)  /  ^ MPRECXT  _ gBehMed  MARKS  c_dkgal_postAlt;  // \u0633\u06a9\u0628\u0644
+
+///////////cMed_raw  >  cMedBeM2  /  ^  MPRECXT  _ MARKS  gBehMed MARKS  c_dkgal;    // \u0644\u0637\u0628\u062f
+
+/////cMed_raw  >  cMedBeM2  /  ^  MPRECXT  _ MARKS  (gBehMedBeNn  gBehMedBeM1);   // \u0644\u0641\u0628\u0628\u0646
+
+// Initial and medial:
+gBehIni_raw  gBehMed_raw  >  gBehIniBeM2  gBehMedHgF_be  /  _  MARKS  _  MARKS  cHehGoalFin;
+																		// \u0644\u0641\u0628\u0628\u0628\u0628\u0628\u0633
+
+(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBeM1 gSadMedBeM1) /  ^ MPRECXT  _ MARKS  cBehMed_postSmedBeM1;
+(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBe gSadMedBe)  / ^ MPRECXT  _ MARKS  cBehMed_postSBe;
+
+gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
+
+// Use sad interface for rounded kafs:
+cMed_raw  >  cMedSd  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKround;
 
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
 
-////(cMed_raw gMeemMed_alt_raw)  >  (cMedKfX_kx gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed_alt;
-/// ??? (cMed_raw gMeemMed_alt_raw)  >  (cMedKfX gMeemMedKfX)  / ^ MPRECXT  _ MARKS cKafMed;
+cMed_raw  >  cMedBe     / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
+cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  cMed_postBeM1;
 
+cMed_raw  >  cMedMmX  / ^ MPRECXT  _  MARKS  cMeemMed_alt;
 
-gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
-// obsolete kludge:
-//--gMeemMed_raw  >  gMeemMedBeNn     / ^  gLamIni_raw MARKS  _ MARKS  gBehMedNn; // exception to rule below
-//--gMeemMed_raw  >  gMeemMedBeNn_alt  / ^  cIni_raw MARKS  _ MARKS  gBehMedNn; // 
-
-cMed_raw  >  cMedMmX_kx  / ^ MPRECXT  _  MARKS  cMeemMed_alt;
-
-/* ALT-KAF
-cMed_raw  >  cMedBeRe_kx  / ^ MPRECXT  _ MARKS  gBehMedRe;
-cMed_raw  >  cMedBeNn_kx  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
-cMed_raw  >  cMedBeHg_kx  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
-cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
-cMed_raw  >  cMedBe_kx  / ^ MPRECXT  _ MARKS  gBehMed  cKafMed_alt;
-*/
 cMed_raw  >  cMedBeRe  / ^ MPRECXT  _ MARKS  gBehMedRe;
 cMed_raw  >  cMedBeNn  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 cMed_raw  >  cMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
@@ -587,25 +561,8 @@ cMed_raw  >  cMedBe  / ^ MPRECXT  _ MARKS  gBehMed  cKafMed_alt;
 
 gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
 
-cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMedBeNn;
-cMed_raw  >  cMedBeM2_kx  / ^ MPRECXT  _  MARKS  gBehMed  MARKS  c_dkgal_postAlt;
-
-// TODO: do we need this? -
-//(gKafMed_alt_raw gGafMed_alt_raw)	>  (gKafMedBeM2 gGafMedBeM2)
-//	/ ^ MPRECXT _  MARKS  ^ gBehMed  MARKS  cADLK;
-
-// Alternate kaf forms (different from NGA) (ALT-KAF)
-/****
-(gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed; // collision fix testing
-(gKafMed_raw gGafMed_raw)	>  (gKafMedJm_alt gGafMedJm_alt)	/ ^ MPRECXT  _  MARKS  cJeemMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedSn_alt gGafMedSn_alt)	/ ^ MPRECXT  _  MARKS  cSeenMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedSd_alt gGafMedSd_alt)	/ ^ MPRECXT  _  MARKS  cSadMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedTaM_alt gGafMedTaM_alt)	/ ^ MPRECXT  _  MARKS  cTahMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedAi_alt gGafMedAi_alt)	/ ^ MPRECXT  _  MARKS  cAinMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedFe_alt gGafMedFe_alt)	/ ^ MPRECXT  _  MARKS  cFehMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedMm_alt gGafMedMm_alt)	/ ^ MPRECXT  _  MARKS  cMeemMed;
-(gKafMed_raw gGafMed_raw)	>  (gKafMedHd_alt gGafMedHd_alt)	/ ^ MPRECXT  _  MARKS  cHehDoMed;
-****/
+cMed_raw  >  cMedBeM2  / ^ MPRECXT  _ MARKS  (gBehMedBeM1 gBehMedBeNn);
+cMed_raw  >  cMedBeM2  / ^ MPRECXT  _ MARKS  gBehMed;  ///  MARKS  c_dkgal_postAlt; - superfluous context?
 
 
 // Basic rules
@@ -615,7 +572,6 @@ cMed_raw  >  cMedRe		/  ^ MPRECXT  _ MARKS  cRehFin;
 cMed_raw  >  cMedSn		/  ^ MPRECXT  _ MARKS  (cSeenFin cSeenMed);
 cMed_raw  >  cMedSd		/  ^ MPRECXT  _ MARKS  (cSadFin cSadMed);
 cMed_raw  >  cMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
-//cMed_raw  >  cMedTaM_kx	/  ^ MPRECXT  _ MARKS  cTahMed;  // ALT-KAF
 cMed_raw  >  cMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
 cMed_raw  >  cMedAi		/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 // The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
@@ -652,80 +608,44 @@ pass(5)
 
 #if (QUICKCOMPILE == 0)
 
-(gKafIni_raw gGafIni_raw)  >  (gKafIniBeM2 gGafIniBeM2)  /  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
+/////////(gKafIni_raw gGafIni_raw)  >  (gKafIniBeM2 gGafIniBeM2)  /  _ MARKS  gBehMed MARKS  c_dkgal_postAlt;
 
-cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
-//cIni_raw      >  cIniBeM2_kx  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);  // ALT-KAF (needed for collision testing)
+(gSeenIni_raw gSadIni_raw)  >  (gSeenIniBeM1 gSadIniBeM1) /  _ MARKS  cBehMed_postSiniBeM1;
+(gSeenIni_raw gSadIni_raw)  >  (gSeenIniBe gSadIniBe)     /  _ MARKS  cBehMed_postSBe;
 
+gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;  // before standard meem
 
-cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);
-//cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  // ALT-KAF
-
-cIni_raw      >  cIniBeHg_BeRe  / _ MARKS  gBehMedBeRe;
-
-/**** alternate kafs
-cIni_raw  >  cIniBeRe_kx  /  _ MARKS  gBehMedRe;
-cIni_raw  >  cIniBeNn_kx  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
-cIni_raw  >  cIniBeHg_kx  /  _ MARKS  gBehMedHgF;
-*****/
+cIni_raw  >  cIniBeHg_BeRe  / _ MARKS  gBehMedBeRe; // eg, \u0644\u0628\u0646\u0631
 
 cIni_raw  >  cIniBeRe  /  _ MARKS  gBehMedRe;
 cIni_raw  >  cIniBeNn  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 cIni_raw  >  cIniBeHg  /  _ MARKS  gBehMedHgF;
 
+// SS cases handled above:
+cIni_raw_noS  >  cIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
+cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  cMed_postBeM1;
 
-(gSeenIni_raw gSadIni_raw)  >  (gSeenIniBeM1 gSadIniBeM1)
-	/  _ MARKS  (gBehMedSn gBehMedBeM2 gBehMedBeF_ss gBehMedBe gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss
-					gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedBeHg);
+cIni_raw  >  cIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
 
-(gSeenIni_raw gSadIni_raw)  >  (gSeenIniBe gSadIniBe)  /  _ MARKS  cBehMed_postSBeM;
-
-//cIni_raw_noS  >  cIniBe_noS_kx                         /  _ MARKS  (cBehMed_postBeM gBehMedHd);  // ALT-KAF
-cIni_raw_noS  >  cIniBe_noS                            /  _ MARKS  (cBehMed_postBeM gBehMedHd);
-
-
-gBehIni_raw  >  gBehIniMmM  /  _ MARKS  cMeemMed;  // before standard meem
-
-gLamIni_raw  >  gLamIniMm /  _ MARKS  cMeemMed_alt; // exception to rule below
-
-//cIni_raw     >  cIniMmX_kx /  _ MARKS  cMeemMed_alt;  // ALT-KAF
+////gLamIni_raw  >  gLamIniMm /  _ MARKS  cMeemMed_alt; // exception to rule below - can never happen
 cIni_raw     >  cIniMmX /  _ MARKS  cMeemMed_alt;
 
 
+// Use a smaller form of the kaf before lam.
 // Do we really want this rule? If not comment out.
 (gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
 
-// Alternate kaf forms
-////cIni_raw  >  cIniSd_kx  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
-// ...replace with
-cIni_raw  >  cIniSd  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKalt;
-
-// GDL QUESTION
 (gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  (gKafFin gGafFin cKafMed);
-(gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)
-	/  _ MARKS (c_dkg_noKalt gKafMed gGafMed); // REVIEW: can this rule ever fire? - eg, \u06a9\u062f
+(gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)  /  _ MARKS  gDalFin;   // was c_dkg_noKalt;
 
-// Alternate kaf forms
-// TODO: make a feature out of these
-/***
-(gKafIni_raw gGafIni_raw)  >  (gKafIniJm_alt gGafIniJm_alt)  /  _ MARKS  gJeemMed MARKS  (cDalFin c_al_postKalt);
-     // exception to rule below:
-(gKafIni_raw gGafIni_raw)  >  (gKafIniJm gGafIniJm)          /  _ MARKS  gJeemMed;		// eg, \u06A9\u062C\u0644
-(gKafIni_raw gGafIni_raw)  >  (gKafIniJm_alt gGafIniJm_alt)  /  _ MARKS  cJeemMed;
-//(gKafIni_raw gGafIni_raw)>  (gKafIniSn_alt gGafIniSn_alt)  /  _ MARKS  cSeenMed;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniSd_alt gGafIniSd_alt)  /  _ MARKS  cSadMed;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniAi_alt gGafIniAi_alt)  /  _ MARKS  cAinMed;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniFe_alt gGafIniFe_alt)  /  _ MARKS  cFehMed;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniMm_alt gGafIniMm_alt)  /  _ MARKS  cMeemMed;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniHd_alt gGafIniHd_alt)  /  _ MARKS  cHehDoMed;
-***/
+// Use sad interface before rounded kafs:
+cIni_raw  >  cIniSd  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKround;
 
-cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_justAlt;
+//////cIni_raw  >  cIniKfX_kx  /  _ MARKS  cKafMed_justAlt;
 
 
 //cIni_raw_noS  >  cIniBeM1_noS_kx  /  _ MARKS  cBehMed_postBeM;  // ALT-KAF
-cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  cBehMed_postBeM;
-
+//////cIni_raw_noS  >  cIniBeM1_noS     /  _ MARKS  cBehMed_postBeM;
 
 
 // Basic rules
@@ -750,6 +670,7 @@ cIni_raw  >  cIniBy  	/ _ MARKS  cBariyehFin;
 
 cIni_raw  >  cIniBe		/ _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
 
+/***
 gBehIni_raw  >  gBehIniBeM2	/ _ MARKS  cBehFin;
 gBehIni_raw  >  gBehIniJm	/ _ MARKS  (cJeemFin cJeemMed);
 gBehIni_raw  >  gBehIniRe	/ _ MARKS  cRehFin;
@@ -767,6 +688,7 @@ gBehIni_raw  >  gBehIniHgM	/ _ MARKS  cHehGoalMed;
 gBehIni_raw  >  gBehIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed );
 gBehIni_raw  >  gBehIniCh 	/ _ MARKS  cChotiyehFin;
 gBehIni_raw  >  gBehIniBy  	/ _ MARKS  cBariyehFin;
+***/
 
 gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 

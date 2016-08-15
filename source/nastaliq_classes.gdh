@@ -354,7 +354,7 @@ c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTaF_ss gBehMedTaM_ss gBehMedAi_ss
 
 
 // Does not initiate alternate (kinked) kaf:
-c_dkg_noKalt = ( gDalFin    // gDalDotBelowSmallTahFin gDalTwoVertBelowSmallTahFin gThalDotBelowFin
+c_dkg_noKalt = ( gDalFin
 	gKafFin gGafFin 
 	gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSd gKafMedTaF
 	gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn gKafMedHgF gKafMedHd gKafMedCh 
@@ -363,19 +363,22 @@ c_dkg_noKalt = ( gDalFin    // gDalDotBelowSmallTahFin gDalTwoVertBelowSmallTahF
     gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedNn gGafMedHgF gGafMedHd gGafMedCh
     gGafMedBy gGafMedDk ) ;
 
-// initiates alternate (kinked) kaf:
-c_al_postKalt = (cAlefFin cLamFin cLamMed ) ;   // gLamAlefFin
+// initiates rounded kaf:
+c_al_postKround = (cAlefFin cLamFin cLamMed);
 
 // Requires alternate meem and kaf
-c_dkgal_postAlt = ( c_dkg_noKalt, c_al_postKalt ) ;
+c_dkgal_postAlt = ( c_dkg_noKalt, c_al_postKround );
 
 // Use when we are not generating kinked kafs:
-c_dkgal = (c_dkgal_postAlt,
-	gKafMedBe, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg,
-	gGafMedBe, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg);
+///c_dkgal = (c_dkgal_postAlt,
+///	gKafMedBe, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg,
+///	gGafMedBe, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg);
+
+c_dkgal = (cDalFin, cKafFin, cKafMed, c_al_postKround);
+
 
 // Alternate qaf and waw forms
-c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh) ;
+c_qw = (gQafFin gQafFin_stfhM gWawFin gWawFin_stfh);
 
 
 // Heh-doachashmee initial alternates (which are actually the default forms)
