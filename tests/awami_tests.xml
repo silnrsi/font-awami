@@ -1403,6 +1403,9 @@
     <test class="fset19" label="yeh w/ tail" rtl="True">
       <string>ۍ ۍۍۍ</string>
     </test>
+    <test class="fset21" label="Kashmiri yeh" rtl="True">
+      <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
+    </test>
     <test background="#55aaff" class="fset12" label="HONORIFICS" rtl="True">
       <string/>
     </test>
@@ -1431,11 +1434,8 @@
     <test class="fset19" label="high hamza alef" rtl="True">
       <string>ٵ فٵ شٵاٴ</string>
     </test>
-    <test class="fset19" label="kaf" rtl="True">
+    <test class="fset19" label="Arabic kaf" rtl="True">
       <string>ك ككك</string>
-    </test>
-    <test class="fset21" label="Kashmiri yeh" rtl="True">
-      <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
   </testgroup>
   <testgroup label="Features">
