@@ -427,7 +427,7 @@ c_preHgF_stfh = ( gSeenIni_raw gTahIni_raw gFehIni_raw gKafIni_raw gGafIni_raw
     gLamIni_raw gMeemIni_raw gHehGoalIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gKafMed_raw 
     gGafMed_raw gLamMed_raw gHehGoalMed_raw );
 c_preReF_jkl = ( gBehIni_raw gJeemIni_raw gKafIni_raw gGafIni_raw gLamIni_raw gKafMed_raw gGafMed_raw gLamMed_raw );   
-c_preReF_sshg = ( gSeenIni_raw gSadIni_raw gHehGoalIni_raw gBehMed_raw gSeenMed_raw gSadMed_raw );
+//c_preReF_sshg = ( gSeenIni_raw gSadIni_raw gHehGoalIni_raw gBehMed_raw gSeenMed_raw gSadMed_raw );
 c_preReF_hgM = (gHehGoalMed_raw);
 
 endtable;
@@ -436,7 +436,7 @@ endtable;
 gBehFin  >  gBehFin_bfkl	/  ^  c_preBe_bfkl MARKS  _;
 
 gRehFin  >  gRehFin_jkl		/  ^ c_preReF_jkl MARKS  _;
-gRehFin  >  gRehFin_sshg	/  ^ c_preReF_sshg MARKS  _;
+//gRehFin  >  gRehFin_sshg	/  ^ c_preReF_sshg MARKS  _;
 gRehFin  >  gRehFin_hgM		/  ^ c_preReF_hgM MARKS  _;
 
 // We've decided not to use the extra heh-goal-final form, since it is so similar.
