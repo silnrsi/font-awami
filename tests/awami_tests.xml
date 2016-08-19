@@ -246,7 +246,7 @@
       <string>نے ڋہ دسمبر 8491؁ کوں انسانی حقوق</string>
     </test>
   </testgroup>
-  <testgroup label="Shaping">
+  <testgroup label="Shaping rules">
     <test background="#55aaff" class="fset24" label="FINALS" rtl="True">
       <string/>
     </test>
@@ -646,6 +646,45 @@
     </test>
     <test class="fset24" label="initial heh-doachashmee" rtl="True">
       <string>دھا دھس</string>
+    </test>
+    <test background="#55aaff" label="BETA-1 FEEDBACK" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="dal + alef" rtl="True">
+      <string>پیدا</string>
+    </test>
+    <test class="fset24" label="reh + jeh" rtl="True">
+      <string>ورژن</string>
+    </test>
+    <test class="fset24" label="dal + heh-do" rtl="True">
+      <comment>spacing too close?</comment>
+      <string>ڈھال</string>
+    </test>
+    <test class="fset24" label="reh + heh-do" rtl="True">
+      <comment>too close?</comment>
+      <string>بوڑھا</string>
+    </test>
+    <test class="fset24" label="waw + alef" rtl="True">
+      <comment>Dieter: pull waw and alef together a bit</comment>
+      <string>تلوار</string>
+    </test>
+    <test class="fset24" label="reh + reh" rtl="True">
+      <string>ترجمہ</string>
+    </test>
+    <test class="fset24" label="alef + beh-form" rtl="True">
+      <string>اِنمی   اِنمنگ</string>
+    </test>
+    <test class="fset24" label="reh/waw/dal + yeh/peh/teh" rtl="True">
+      <comment>Eunice; also beh?</comment>
+      <string>شزدیو    زیربو۔   زیرے،   وزیر   دِیو   کھوغزیر    زِیزی</string>
+    </test>
+    <test class="fset24" label="isolate reh" rtl="True">
+      <comment>I guess this is okay because there is no space after the reh.</comment>
+      <string>رگسکتی</string>
+    </test>
+    <test class="fset24" label="overlaps" rtl="True">
+      <comment>Eunice - she doesn't' like the overlap</comment>
+      <string>رگسکتی تبل    کھیان٘ی بخستون     عالِم کُن   اِمام کُنی</string>
     </test>
   </testgroup>
   <testgroup label="Collisions">
@@ -1541,6 +1580,9 @@
     <test class="fset24" label="tmthyng" rtl="True">
       <string>تمتھیں</string>
     </test>
+    <test class="fset24" label="khyty" rtl="True">
+      <string>کھیتی</string>
+    </test>
   </testgroup>
   <testgroup label="nuqtas">
     <test label="say khay sheen zoa" rtl="True">
@@ -1884,7 +1926,10 @@
       <string>٫ ۝ ۪ ﴾﴿</string>
     </test>
   </testgroup>
-  <testgroup label="alpha2 - general">
+  <testgroup label="Review feedback - general">
+    <test background="#55aaff" class="fset24" label="ALPHA-2" rtl="True">
+      <string/>
+    </test>
     <test class="fset19" label="beh + yeh-F (Eunice)" rtl="True">
       <comment>She thinks the dot is too high; should be the same as the peh+waw.</comment>
       <string>پو بی میدپی</string>
@@ -1914,6 +1959,32 @@
     <test class="fset21" label="behI + meem" rtl="True">
       <string>اَیمِیم نمی</string>
     </test>
+    <test background="#55aaff" class="fset24" label="BETA-1" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="toothless seen not distinct" rtl="True">
+      <comment>Eunice; confused with jeh?</comment>
+      <string>شِسفونِ٘نگ</string>
+    </test>
+    <test class="fset24" label="seen + meem" rtl="True">
+      <comment>Eunice</comment>
+      <string>سمندرِنگ</string>
+    </test>
+    <test class="fset24" label="jeem + meem" rtl="True">
+      <comment>Dieter</comment>
+      <string>مترجمین</string>
+    </test>
+    <test class="fset24" label="jeem" rtl="True">
+      <comment>Dieter</comment>
+      <string>تمجید</string>
+    </test>
+    <test class="fset24" label="noon + zair" rtl="True">
+      <string>غدمفونِ٘نگ     سنہ نِ٘سی</string>
+    </test>
+    <test class="fset24" label="noon nuqta" rtl="True">
+      <comment>Eunice: nuqta is too far to the right on beM2 form.</comment>
+      <string>اوݩید  ݨید  ݨیب</string>
+    </test>
   </testgroup>
   <testgroup label="Special case positioning">
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
@@ -1939,6 +2010,13 @@
     </test>
     <test class="fset23" label="xalifa (Malachi - 10)" rtl="True">
       <string>اور خلیفة   |   پنے خلیفة   |   کہ خلیفة</string>
+    </test>
+    <test class="fset24" label="waw + beh + reh" rtl="True">
+      <string>اوپر</string>
+    </test>
+    <test class="fset24" label="reh + waw + overlap" rtl="True">
+      <comment>Dieter: if the waw wanders under the shin (a nice feature), then I would like to see the re and waw closer together.</comment>
+      <string>روشن</string>
     </test>
   </testgroup>
 </ftml>

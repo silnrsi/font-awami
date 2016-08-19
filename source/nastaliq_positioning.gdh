@@ -442,33 +442,12 @@ cPostKernable = (c_initial  c_isolate  cKernPunct) {
 
 cKernable = (c_isolate  c_final  cKernPunct)
 {
-	//// collision.kern = true;
 	dbgBbLeft = bb.left; dbgLsb = lsb;
 	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
 }
 
 
-
 c_jumpTail = ( cJeemFin, gAinFin );
-
-// TODO: do exclusion glyphs correctly.
-// TODO: don't use them for ngoeh
-////gKafMedSn		{ collexclude {glyph = g__kaf_exclude;		offsetx=kafExcludeS.x;	offsety=kafExcludeS.y;}};
-////gGafMedBe_alt	{ collexclude {glyph = g__kaf_alt_exclude;	offsetx=-100m;	offsety=750m;}};
-////gGafMedSn_alt	{ collexclude {glyph = g__kaf_alt_exclude;	offsetx=-200m;	offsety=650m;}};
-////gGafMed_short	{ collexclude {glyph = g__kaf_exclude;		offsetx=200m;	offsety=-200m;}};
-////gKafFin			{ collexclude {glyph = g__kaf_exclude;		offsetx=1800m;	offsety=0m;}};
-
-/*
-c__kaf_exclude = (g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, 
-	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
-	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
-	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
-	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude, g__kaf_exclude,
-	g__kaf_exclude, g__kaf_exclude, g__kaf_exclude);
-cls_excludingGlyphs = (cKafMed)
-	{collexclude {glyph = c__kaf_exclude; offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
-*/
 
 gKafMed {collexclude.glyph = g__kaf_exclude};
 gKafMedBe {collexclude.glyph = g__kaf_exclude};
@@ -677,14 +656,14 @@ cNuqtaLikeUpper { collision {
 
 
 //
-// Exception to special case below when there is a previous lam.
+// Exception to special case below when there is a previous lam/kaf.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
 	max.y = 1000m;
-} } / cLamIM cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
+} } / (cLamIM cKafIM) cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 
 // Special cases involving kaf tops - allow nuqtas to move further right than normal.
 cNuqtaLikeUpper { collision {
@@ -967,6 +946,13 @@ cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorifi
 		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
 
 
+// Nuqta + upper and lower diacritic
+// Eg, noon-nuqta + noon-ghunna-mark + zair (\u0646\u0658\u0650)
+cTakes_nUpperDia=B  cNuqtaUpper=N
+	cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}}
+	cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}}; 
+
+
 // attach to nuqta
 cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower? _=D {att.to==0};
@@ -1061,6 +1047,7 @@ endtable;
 // \u0627\u06CC\u0645\u0627
 gAlef  gBehIniMmX  gNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
 
+
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  gNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
 
@@ -1079,7 +1066,7 @@ cKernable { pairKern = kernPreKafNoSp }   /  _  MARKS  (gKaf  gGaf  cKafIni);
 cKernable { pairKern = kernPreShort } / _  MARKS  cNoJoin?  c_initial MARKS  c_final;
 
 
-// Bogus rule that will never fire (if we disable this pass):
+// Bogus rule that will never fire (for if we disable this pass):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
 
 endpass;  // 6
