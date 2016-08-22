@@ -747,13 +747,13 @@ cNuqtaLikeLower {
   sequence { class = 0; order = 0 } // don't enforce the order relative to the other glyphs
 } / _  c_jumpTail;
 
-// Nuqtas below a bariyeh cannot move up, and they don't flow diagonally.
+// Nuqtas below a bariyeh cannot move up, shouldn't need to move down, and they don't flow diagonally.
 cNuqtaLikeLower {
 	collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -400m;
 		max.x = 400m;
-		min.y = -100m;
+		min.y = -20m;
 		max.y = 0m;
   };
   sequence { class = 0; order = 0 }
@@ -1079,6 +1079,7 @@ endpass;  // 6
 if (collFix > 0)
 
 pass(7) // { CollisionFix = 4; AutoKern = true }
+
 
 // Set up diacritic collision fixes and kerning.
 
