@@ -686,6 +686,12 @@
       <comment>Eunice - she doesn't' like the overlap</comment>
       <string>رگسکتی تبل    کھیان٘ی بخستون     عالِم کُن   اِمام کُنی</string>
     </test>
+    <test class="fset24" label="alef + beh + meem" rtl="True">
+      <string>خاتمہ</string>
+    </test>
+    <test class="fset24" label="reh + beh + meem" rtl="True">
+      <string>خُداوندتُمہارا</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions">
     <test label="noon-smalltah + alef" rtl="True">
@@ -1214,6 +1220,9 @@
     <test class="fset14" label="tah gaf" rtl="True">
       <string>طگع</string>
     </test>
+    <test class="fset24" label="lam jeem kaf" rtl="True">
+      <string>لحُکُو</string>
+    </test>
     <test background="#55aaff" class="fset24" label="TIGHT SPACES" rtl="True">
       <string/>
     </test>
@@ -1222,6 +1231,12 @@
     </test>
     <test class="fset24" label="teh + zabar + kaf" rtl="True">
       <string>تَکر</string>
+    </test>
+    <test class="fset24" label="pesh + kaf + alef" rtl="True">
+      <string>حُکّام</string>
+    </test>
+    <test class="fset24" label="jeem + sheen + kaf" rtl="True">
+      <string>خشکی</string>
     </test>
   </testgroup>
   <testgroup label="Demo Poetry">
@@ -2015,6 +2030,9 @@
     <test class="fset24" label="collision" rtl="True">
       <string>جَتھّوں</string>
     </test>
+    <test class="fset24" label="collision" rtl="True">
+      <string>حَنُوؔک</string>
+    </test>
   </testgroup>
   <testgroup label="Special case positioning">
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
@@ -2047,6 +2065,9 @@
     <test class="fset24" label="reh + waw + overlap" rtl="True">
       <comment>Dieter: if the waw wanders under the shin (a nice feature), then I would like to see the re and waw closer together.</comment>
       <string>روشن</string>
+    </test>
+    <test class="fset24" label="jeem + upper nuqta" rtl="True">
+      <string>حشِیم  حنِم   حقِیر</string>
     </test>
   </testgroup>
 </ftml>

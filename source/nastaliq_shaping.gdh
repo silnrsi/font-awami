@@ -64,15 +64,19 @@ pass(1)
 //endif;
 
 	// Diacritic ordering
+	// Lower diacritics go first, in order of their mark class, then upper diacritics,
+	// in order of their mark class.
 	// We don't swap the glyphs, because that would mess up the original order,
 	// rather we delete and insert.
 	// (We move the position back before the first diacritic to allow the 
 	// combining rules below to fire. This shouldn't be a problem because they
 	// should never match a second time.)
 	
-	_  cMark1  >  @M:M  _  / ^ _ cMark234 cMark234?  _=M;
-	_  cMark2  >  @M:M  _  / ^ _ cMark34  cMark34?   _=M;
-	_  cMark3  >  @M:M  _  / ^ _ cMark4   cMark4?    _=M;
+	_  cMark1l  >  @M:M  _  / ^ _ cMark2l_1234u cMark2l_1234u? _=M;
+	_  cMark2l  >  @M:M  _  / ^ _ cMark1234u    cMark1234u?    _=M;
+	_  cMark1u  >  @M:M  _  / ^ _ cMark234u     cMark234u?     _=M;
+	_  cMark2u  >  @M:M  _  / ^ _ cMark34       cMark34?       _=M;
+	_  cMark3   >  @M:M  _  / ^ _ cMark4        cMark4?        _=M;
 
 	// Combine certain diacritics into single glyphs.
 	gShadda      cPostShadda      >  cShaddaPlus$3:(1 3)      _  /  _  cMark34? _;

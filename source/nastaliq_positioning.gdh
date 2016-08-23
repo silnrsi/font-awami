@@ -33,7 +33,7 @@ cursive_attach(jeem)
 cursive_attach(reh)
 cursive_attach(rehHgm)
 cursive_attach(rehJkl)
-cursive_attach(rehSshg)
+//cursive_attach(rehSshg)
 cursive_attach(seen)
 cursive_attach(sad)
 cursive_attach(tah)
@@ -713,6 +713,17 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / c_final _;
 
+/*** Special case: jeem followed by nuqta
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	margin = 250m;
+	min.x = -250m;
+	max.x = 200m;
+	min.y = -300m;
+	max.y = 1000m;
+} }  /  cJeemIni  cNuqtaLike?  cBase  _; 
+***/
+
 // Default case: nuqtas above (other than initial) can move more to the left than the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -889,6 +900,7 @@ table(positioning)
 
 
 // Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
+// But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
 #if DO_COL_FIX
 pass(5)
@@ -900,10 +912,13 @@ pass(3)
 // Attach diacritics
  
 table(glyph) { AttributeOverride = false }
-// Classes of nuqtas and things that attach closely like nuqtas:
+// Classes of nuqtas and things that attach closely like nuqtas.
+// These are basically defined for the purpose of ignoring in the context of attaching
+// diacritics to things.
 c_attLikeNqUpper = (cNuqtaLikeUpper); // includes small tah
 c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
-c_attLikeNqLowMid = (c_attLikeNqLower, cNuqtaLikeMiddle);
+c_attLikeNqLowMid = (c_attLikeNqLower, cNuqtaLikeMiddle,
+	g__kafTop_null); // diacs don't attach to this, so attach to the base even if this is there
 c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
 endtable;
 
