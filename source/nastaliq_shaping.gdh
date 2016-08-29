@@ -128,10 +128,6 @@ pass(2)
 endpass; // 1
 
 
-// nuqta slot attribute:
-// TODO: remove when we get rid of STRIP_NUQTAS
-#define nuqtaS user1
-
 pass(2)
 	// Special finals
 
@@ -159,7 +155,7 @@ cMed_raw_any = (cMed_raw, gMeemMed_alt_raw);
 
 
 // Note: these all have an extra beh form to account for the _SS alternate.
-cMed = (gBehMed, gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
+cMedADLK = (gBehMed, gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
 		gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
 cMedBeF = (gBehMedBeF, gBehMedBeF_ss, gJeemMedBeF, gSeenMedBeF, gSadMedBeF, gTahMedBeF, gAinMedBeF, gFehMedBeF,
 		gKafMedBeF, gGafMedBeF, gLamMedBeF, gMeemMedBeF, gHehGoalMedBeF, gHehDoMedBeF);
@@ -600,7 +596,7 @@ gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
 // Last resort:
 
-cMed_raw  >  cMed	/ ^ MPRECXT _  MARKS  (c_medial c_final);
+cMed_raw  >  cMedADLK	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
 
 endpass;

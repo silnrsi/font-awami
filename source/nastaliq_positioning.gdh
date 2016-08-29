@@ -892,7 +892,39 @@ endtable;
 #endif // DO_COL_FIX
 
 
+
 table(positioning)
+
+//
+//	KAF HEIGHT ADJUSTMENTS
+//
+
+table(glyph)
+cNonBaseTemp = (cNuqtaLike  g__kafTop_null)
+endtable;
+
+pass(5) {MaxRuleLoop = 50}
+
+#define NOTSET 12345  // some number that is not likely to be a real value
+
+
+c_initial {user2 = position.y}  c_final {user2 = position.y}   / _=I  MARKS2N  _=F;
+c_initial {user2 = position.y}  c_medial {user2 = position.y}  c_final {user2 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
+
+c_medial {user2 = NOTSET}  c_medial {user2 = position.y}   c_final {user2 = NOTSET}
+	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user2==0};
+
+c_medial {user2 = NOTSET}  c_medial {user2 = position.y}
+	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 {user2 == NOTSET};
+
+c_initial {user2 = position.y}  c_medial {user2 = position.y}  /  _=I  MARKS2N  _=M {user2==NOTSET} ;
+
+
+// Do this last:
+c_final {user2 = position.y}  /  _ {user2 == NOTSET};
+
+endpass;  // pass 5
+
 
 //
 //	DIACRITIC ATTACHMENT
@@ -903,7 +935,7 @@ table(positioning)
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
 #if DO_COL_FIX
-pass(5)
+pass(6)
 #else
 pass(3)
 #endif // DO_COL_FIX
@@ -1005,14 +1037,14 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
 
-endpass; // pos - 5 (or 3)
+endpass; // pos - 6 (or 3)
 
 
 // Kerning pair adjustments
 
-#define pairKern user2
+#define pairKern user3
 // currently not used
-#define marginSet user3
+#define marginSet user4
 
 // It doesn't appear that pair kerning is necessary right now.
 
@@ -1048,7 +1080,7 @@ gAlefFin { kernPreKafNoSp = -80m };
 endtable; // glyph
 
 
-pass(6)
+pass(7)
 
 // Special cases involving nuqtas.
 
@@ -1082,9 +1114,9 @@ cKernable { pairKern = kernPreShort } / _  MARKS  cNoJoin?  c_initial MARKS  c_f
 
 
 // Bogus rule that will never fire (for if we disable this pass):
-///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user2 = 10 };
+///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
 
-endpass;  // 6
+endpass;  // 7
 
 
 #if DO_COL_FIX
@@ -1093,7 +1125,7 @@ endpass;  // 6
 
 if (collFix > 0)
 
-pass(7) // { CollisionFix = 4; AutoKern = true }
+pass(8) // { CollisionFix = 4; AutoKern = true }
 
 
 // Set up diacritic collision fixes and kerning.
@@ -1276,7 +1308,8 @@ cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.gl
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
-endpass;
+
+endpass;  // pass 8
 
 endif; // (collFix > 0)
 
@@ -1284,7 +1317,7 @@ endif; // (collFix > 0)
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(8) { CollisionFix = 4; AutoKern = true }
+pass(9) { CollisionFix = 4; AutoKern = true }
 // Perform diacritic-related fixing.
 endpass;
 endif;
