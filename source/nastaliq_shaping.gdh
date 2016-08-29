@@ -934,14 +934,21 @@ gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR
 
 
 // If no other rule matches, than we do in fact need these nuqtas:
-g__noDot1u  >  g__dot1u;
-g__noDot2l  >  g__dot2l;
-g__dot2l_tail  >  g__dot2l;
+g__noDot1u		>	g__dot1u;
+g__noDot2l		>	g__dot2l;
+g__dot2l_tail	>	g__dot2l;
 
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
 cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+
+
+// Add a bogus null glyph in case we want to break the kafs into two pieces.
+// We need to do it now because we can't do insertions in the positioning table.
+
+cKafIM  _  >  @1  g__kafTop_null:1;
+
 
 // Special forms of letters
 
@@ -958,8 +965,6 @@ if (sukunAlt == jazmLeft)
 gJazm  >  gJazm_openleft;
 endif;
 
-// Experimental - kaf tops
-///cTakes_kafTopDia _  >  @1  g__kafTop:1;
 
 // Experimental - kaf + lam-bar
 

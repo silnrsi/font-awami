@@ -306,7 +306,7 @@ endtable; // feature
 
 // In positioning table, allow two nuqta-like glyphs for some glyphs that can have
 // nuqtas both above and below
-#define MARKS2N  cNuqtaLikeLower? cNuqtaLikeUpMid?  DIACS
+#define MARKS2N  cNuqtaLikeFirst? cNuqtaLikeSecond?  DIACS
 
 
 // SUBSTITUTION RULES

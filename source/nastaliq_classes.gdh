@@ -29,11 +29,13 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
+cKafTop = (g__kafTop_null, g__kafTop_short, g__kafTop_shorter, g__kafTop_tall);
+
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, gHighHamza, gHighHamzaArabic,
 	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
 	g__wavyHamza,
-	g__kafTop_null,
-	// g__kafTop, gMaddaAbove_low,
+	cKafTop,
+	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long); // g__gafStroke_short
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring,
 	gHamzaBelow, g__smallTahBelow, gWavyHamzaBelow,
@@ -41,6 +43,15 @@ cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring,
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, g__barRaised, g__barRaised_gaf, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
 cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2l);
+
+
+cNuqtaLikeFirst = (cNuqtaLikeLower,
+	// kaf-tops can come first when you have an alternate height ngoeh or kaf/gaf-ring:
+	cKafTop);
+cNuqtaLikeSecond = (cNuqtaLikeUpMid,
+	// these can come second when you have a gueh with an alternate height top:
+	g__dot2vl);
+
 
 // Diacritics
 // Note: hamzas are nuqta-like, not diacritics

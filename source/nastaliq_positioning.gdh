@@ -304,9 +304,9 @@ cTakes_squiggleDia
 	csquiggleDia { attach {to = @K; at = squiggleS; with = squiggleM } }
 	/ _=K  _=S;
 
-cTakes_gafStrokeDia
-	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
-	/ _=K  _=S;
+////cTakes_gafStrokeDia
+////	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
+////	/ _=K  _=S;
 
 // Use smallV AP if present, otherwise small-V will attach at nUpper - no longer used.
 ////cTakes_smallVDia
@@ -315,7 +315,7 @@ cTakes_gafStrokeDia
 
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
-	/ _=B  _=U;
+	/ _=B  g__kafTop_null?  _=U;
 
 cTakes_tahUpperDia
 	ctahUpperDia { attach {to = @B; at = tahUpperS; with = tahUpperM } }
@@ -325,11 +325,11 @@ cTakes_tahUpperDia
 cTakes_ringAndNUpperDia
 	cringDia { attach {to = @B; at = ringS; with = ringM } }
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
-	/ _=B  _=U _=R;
+	/ _=B  g__kafTop_null?  _=U _=R;
 
 cTakes_ringDia
 	cringDia { attach {to = @B; at = ringS; with = ringM } }
-	/ _=B  _=R;
+	/ _=B  g__kafTop_null?  _=R;
 
 // Odd situation, but just in case:
 c_isolate
@@ -341,11 +341,11 @@ c_isolate
 
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
-	/ _=B  _=L;
+	/ _=B  g__kafTop_null?  _=L;
 
 cTakes_n23LowerDia
 	cn23LowerDia { attach {to = @B; at = n23LowerS; with = n23LowerM } }
-	/ _=B  _=L;
+	/ _=B  g__kafTop_null?  _=L;
 
 cTakes_tahLowerDia
 	ctahLowerDia { attach {to = @B; at = tahLowerS; with = tahLowerM } }
@@ -991,9 +991,9 @@ cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; inse
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
-		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
+		/ ^ _=B  g__kafTop_null?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
-		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
+		/ ^ _=B  g__kafTop_null?  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // attach to diacritic
 cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}

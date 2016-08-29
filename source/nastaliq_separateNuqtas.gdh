@@ -49,8 +49,6 @@ gFeh				_	>	gFeh:1		g__dot1u:1;
 gQaf				_	>	gFeh:1		g__dot2u:1;
 gFehThreeDotsBelow	_	>	gFeh:1		g__dot3l:1;
 
-//gKaf					>	gKaf;
-
 /***
 if (debugGaf == 0)
 //gGaf					>	gGaf;
@@ -60,12 +58,13 @@ gGaf				_	>	gKafIni		g__gafStroke:1;
 endif;
 ***/
 
-gKaf				_	>	gKaf		g__kafTop_null:1;
-gGueh				_	>	gGaf		g__dot2vl:1;
-gNgoeh				_	>	gGaf		g__dot2u:1;
-gKafRing			_	>	gKaf		g__attachedRingMid:1;
-gGafRing			_	>	gGaf		g__attachedRingMid:1;
-gArabicKaf			_	>	gKaf		g__kafSquiggle:1;
+
+gKaf					>	gKaf;
+gGueh				_	>	gGaf	g__dot2vl:1;
+gNgoeh				_	>	gGaf	g__dot2u:1;
+gKafRing			_	>	gKaf	g__attachedRingMid:1;
+gGafRing			_	>	gGaf	g__attachedRingMid:1;
+gArabicKaf			_	>	gKaf	g__kafSquiggle:1;
 
 //gLam					>	gLam;
 gLamBar				_	>	gLam		g__bar:1;
