@@ -633,7 +633,7 @@ cIni_raw     >  cIniMmX /  _ MARKS  cMeemMed_alt;
 
 // Use a smaller form of the kaf before lam.
 // Do we really want this rule? If not comment out.
-///(gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
+////(gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  (gKafFin gGafFin cKafMed);
 (gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)  /  _ MARKS  gDalFin;   // was c_dkg_noKalt;
@@ -712,7 +712,7 @@ gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 		/  _ MARKS  _ MARKS  gSeenMed g__dot3u  (cKafMed_alt cKafMed);
 
 /// Eg, 062A 062E 0646 06AF 06A9
-gGafMedDk  >  gGafMed_short  /  _ MARKS  (gKafFin gGafFin cKafMed);
+////gGafMedDk  >  gGafMed_short  /  _ MARKS  (gKafFin gGafFin cKafMed);
 
 endpass; // 5
 

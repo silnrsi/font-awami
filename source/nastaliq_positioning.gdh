@@ -361,6 +361,8 @@ cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = he
 
 // TEMPORARY - fall-back attachment
 // Needed to test in Graphite1.
+(c_initial c_medial c_final)  g__kafTop_null;
+
 (c_initial c_medial c_final)  cNuqtaLike { attach {to = @1; at = zeroS; with = zeroM } };
 
 
@@ -891,6 +893,27 @@ endtable;
 
 #endif // DO_COL_FIX
 
+/*****  Not needed - the collision-fix pass sets all the positions accurately.
+table(glyph)
+cNonBaseTemp = (cNuqtaLike  g__kafTop_null)
+endtable;
+
+#define NOTSET 12345  // some number that is not likely to be a real value
+
+c_initial {user2 = position.y}  c_final {user2 = position.y}   / _=I  MARKS2N  _=F;
+c_initial {user2 = position.y}  c_medial {user2 = position.y}  c_final {user2 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
+
+c_medial {user2 = NOTSET}  c_medial {user2 = position.y}   c_final {user2 = NOTSET}
+	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user2==0};
+
+c_medial {user2 = NOTSET}  c_medial {user2 = position.y}
+	/ ^ cIniMed MARKS2N  _=M1 MARKS2N  _=M2 {user2 == NOTSET};
+
+c_initial {user2 = position.y}  c_medial {user2 = position.y}  /  _=I  MARKS2N  _=M {user2==NOTSET} ;
+
+// Do this last:
+c_final {user2 = position.y}  /  _ {user2 == NOTSET};
+*****/
 
 
 table(positioning)
@@ -900,30 +923,184 @@ table(positioning)
 //
 
 table(glyph)
-cNonBaseTemp = (cNuqtaLike  g__kafTop_null)
-endtable;
 
-pass(5) {MaxRuleLoop = 50}
+cKafIni_medium = (
+	gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBeRe, gKafIniBeNn, gKafIniBeHg,
+	gKafIniBe,  // place-holder for BeF
+	gKafIniJm, gKafIniRe, gKafIniSn, gKafIniSd, gKafIniTaM, gKafIniTaF,
+	gKafIniAi, gKafIniFe, gKafIniQf, gKafIniMm, gKafIniNn, gKafIniDk, 
+	gKafIniKf, gKafIniHgM, gKafIniHgF, gKafIniHd, gKafIniCh, gKafIniBy
+//	,
+//	gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
+//	gGafIniBe,  // place-holder for BeF
+//	gGafIniJm, gGafIniRe, gGafIniSn, gGafIniSd, gGafIniTaM, gGafIniTaF,
+//	gGafIniAi, gGafIniFe, gGafIniQf, gGafIniMm, gGafIniNn, gGafIniDk,
+//	gGafIniKf, gGafIniHgM, gGafIniHgF, gGafIniHd, gGafIniCh, gGafIniBy
+);
 
-#define NOTSET 12345  // some number that is not likely to be a real value
+cKafMed_medium = (
+	gKafMedBe, gKafMedBeM1, gKafMedBeM2, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg, gKafMedBeF,
+	gKafMedJm, gKafMedRe, gKafMedSn, gKafMedSd, gKafMedTaM, gKafMedTaF,
+	gKafMedAi, gKafMedFe, gKafMedQf, gKafMedMm, gKafMedNn, gKafMedDk,
+	gKafMedDk, // place-holder for Kf
+	gKafMedHgM, gKafMedHgF, gKafMedHd, gKafMedCh, gKafMedBy
+//	,
+//	gGafMedBe, gGafMedBeM1, gGafMedBeM2, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg, gGafMedBeF,
+//	gGafMedJm, gGafMedRe, gGafMedSn, gGafMedSd, gGafMedTaM, gGafMedTaF,
+//	gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedNn, gGafMedDk,
+//	gGafMedDk,  // place-holder for Kf
+//	gGafMedHgM, gGafMedHgF, gGafMedHd, gGafMedCh, gGafMedBy
+);
+
+cKafIM_medium = (cKafIni_medium, cKafMed_medium);
+
+cKafIni_base = (
+	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
+	gKafIniBe_base,   // place-holder for BeF
+	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
+	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
+	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base
+//	,
+//	gGafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
+//	gGafIniBe_base  // place-holder for BeF
+//	gGafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
+//	gGafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
+//	gGafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base,
+);
+
+cKafMed_base = (
+	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base,
+	gKafMedBeF_base,
+	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
+	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+	gKafMedDk_base,  // place-holder for Kf
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base
+//	,
+//	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base,
+//	gGafMedBeF_base,
+//	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
+//	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+//	gKafMedDk_base, // place-holder for Kf
+//	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base,
+);
+
+cKafIM_base = (cKafIni_base, cKafMed_base);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafIni_top_short = (
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_bj_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short
+//	,
+//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_short,
+//	g__gafTop_bj_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_shorter, 
+//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_short, g__gafTop_short, 
+//	g__kafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short
+);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafMed_top_short = (
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short
+//	,
+//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_short,
+//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
+//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
+//	g__kafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short
+);
+
+cKafIM_top_short = (cKafIni_top_short, cKafMed_top_short);
 
 
-c_initial {user2 = position.y}  c_final {user2 = position.y}   / _=I  MARKS2N  _=F;
-c_initial {user2 = position.y}  c_medial {user2 = position.y}  c_final {user2 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
+cKafIni_top_tall = (
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall
+//	,
+//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,  g__kafTop_tall,
+//	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+//	g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall
+);
 
-c_medial {user2 = NOTSET}  c_medial {user2 = position.y}   c_final {user2 = NOTSET}
-	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user2==0};
+cKafMed_top_tall = (
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall
+//	,
+//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_tall,
+//	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+//	g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall
+);
 
-c_medial {user2 = NOTSET}  c_medial {user2 = position.y}
-	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 {user2 == NOTSET};
+cKafIM_top_tall = (cKafIni_top_tall, cKafMed_top_tall);
 
-c_initial {user2 = position.y}  c_medial {user2 = position.y}  /  _=I  MARKS2N  _=M {user2==NOTSET} ;
+cKaf_top = (cKafIM_top_short, cKafIM_top_tall);
 
 
-// Do this last:
-c_final {user2 = position.y}  /  _ {user2 == NOTSET};
+
+cNuqtaUpperLarge = (g__dot3u, g__dot4u, g__smallTah);
+cNuqtaUpperSmall = (g__dot1u, g__dot2u);
+
+cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
+
+endtable;  // glyph
+
+
+pass(5)
+
+// Situations where tall kaf is needed
+
+cKafMed_medium  g__kafTop_null  
+	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+	/  cNuqtaUpperLarge  cDiacritic?  _=K  _=T;
+
+cKafMed_medium  g__kafTop_null  
+	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+	/  cBaseTall  MARKS  [cJeemMed  MARKS]?  _=K  _=T;
+
+cKafMed_medium  g__kafTop_null  
+	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+	/  cNuqtaLike  cDiacriticUpper  _=K  _=T;
+
+// Do we need this? Eg, beh + jeem + kaf...
+//cNuqtaLike  cKafMed_medium  g__kafTop_null  
+//	>  @N {shift.x = 150m}  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+//	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+
+// Two nuqtas under kaf, eg, sheen + teh + kaf
+cKafMed_medium  g__kafTop_null  
+	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+	/  cNuqtaLike  cDiacritic?  c_medial  cNuqtaLike  cDiacritic?  _=K  _=T;
+
+
+// Situations where default kaf is needed - don't shorten!
+
+cKafMed_medium  g__kafTop_null  >  @K  @T
+	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
+
+// Situations where short kaf is needed (except above)
+
+cKafIM_medium  g__kafTop_null
+	>	cKafIM_base  cKafIM_top_short$K //{att {to=@K; at=kafTopS; with=kafTopM}}
+	/  _=K {position.y > 1500m}  _=T;
 
 endpass;  // pass 5
+
+pass(6)
+
+// For some reason we have to do the kaf-top attachment separately from the substitution:
+cKafIM_base=B  cKaf_top {att {to=@B; at=kafTopS; with=kafTopM}};
+
+endpass;
 
 
 //
@@ -935,7 +1112,7 @@ endpass;  // pass 5
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
 #if DO_COL_FIX
-pass(6)
+pass(7)
 #else
 pass(3)
 #endif // DO_COL_FIX
@@ -1037,7 +1214,7 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
 
-endpass; // pos - 6 (or 3)
+endpass; // pos - 7 (or 3)
 
 
 // Kerning pair adjustments
@@ -1045,8 +1222,6 @@ endpass; // pos - 6 (or 3)
 #define pairKern user3
 // currently not used
 #define marginSet user4
-
-// It doesn't appear that pair kerning is necessary right now.
 
 
 table(glyph) { AttributeOverride = 1 }
@@ -1080,7 +1255,7 @@ gAlefFin { kernPreKafNoSp = -80m };
 endtable; // glyph
 
 
-pass(7)
+pass(8)
 
 // Special cases involving nuqtas.
 
@@ -1116,7 +1291,7 @@ cKernable { pairKern = kernPreShort } / _  MARKS  cNoJoin?  c_initial MARKS  c_f
 // Bogus rule that will never fire (for if we disable this pass):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
 
-endpass;  // 7
+endpass;  // 8
 
 
 #if DO_COL_FIX
@@ -1125,7 +1300,7 @@ endpass;  // 7
 
 if (collFix > 0)
 
-pass(8) // { CollisionFix = 4; AutoKern = true }
+pass(9) // { CollisionFix = 4; AutoKern = true }
 
 
 // Set up diacritic collision fixes and kerning.
@@ -1135,6 +1310,15 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
+
+
+cKafTop { collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = CLEAR_FIX(collision.flags);
+	};
+	sequence.class = 0
+};
+
 
 if (collFix >= 2)
 
@@ -1309,7 +1493,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
 
-endpass;  // pass 8
+endpass;  // pass 9
 
 endif; // (collFix > 0)
 
@@ -1317,7 +1501,7 @@ endif; // (collFix > 0)
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(9) { CollisionFix = 4; AutoKern = true }
+pass(10) { CollisionFix = 4; AutoKern = true }
 // Perform diacritic-related fixing.
 endpass;
 endif;
