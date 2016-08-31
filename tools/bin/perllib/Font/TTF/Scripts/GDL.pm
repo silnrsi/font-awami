@@ -311,9 +311,9 @@ sub make_name
         $gname =~ s/HehGoalHamzaAbove/HehGoalHamza/;
         $gname =~ s/BariyehHamzaAbove/BariyehHamza/;
         $gname =~ s/_kl/_jkl/;         # temp - to handle wrong names in Awami
-        $gname =~ s/.short/_short/;    # absGafMed.short -> gGafMed_short
-        $gname =~ s/.big/_big/;        # _hehHook.big -> g__hehHook_big
-        $gname =~ s/.small/_small/;    # _hehHook.small -> g__hehHook_small
+        $gname =~ s/\.short/_short/;    # absGafMed.short -> gGafMed_short
+        $gname =~ s/\.big/_big/;        # _hehHook.big -> g__hehHook_big
+        $gname =~ s/\.small/_small/;    # _hehHook.small -> g__hehHook_small
 
         $gname =~ s/\.(.)/uc($1)/oge;           # remove '.', uppercase first after
         $gname =~ s/_tt//;

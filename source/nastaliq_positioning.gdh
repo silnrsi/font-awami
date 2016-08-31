@@ -255,12 +255,6 @@ cTakes_hamzaAndN23LowerDia
 
 // Upper nuqta-like attachment
 
-// kaf-top
-/*
-cTakes_kafTopDia
-	ckafTopDia { attach {to = @K; at = kafTopS; with = kafTopM } }
-	/ _=K  _=T;
-*/
 
 ////gJeemFin  cNuqtaLike { attach {to = @J; at = point(574m, 1274m); with = nUpperM} }
 ////	/  gJeemMedJm=J  cNuqtaLike?  _=J  _=N;
@@ -608,8 +602,8 @@ endtable; // glyph
 cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET_IGNORE(collision.flags) };
 
 
-// Experimental - kaf-top is NEVER shifted
-///g__kafTop { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence
+g__kafTop_null { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence
+
 
 // Upper nuqtas
 
@@ -922,183 +916,70 @@ table(positioning)
 //	KAF HEIGHT ADJUSTMENTS
 //
 
-table(glyph)
-
-cKafIni_medium = (
-	gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBeRe, gKafIniBeNn, gKafIniBeHg,
-	gKafIniBe,  // place-holder for BeF
-	gKafIniJm, gKafIniRe, gKafIniSn, gKafIniSd, gKafIniTaM, gKafIniTaF,
-	gKafIniAi, gKafIniFe, gKafIniQf, gKafIniMm, gKafIniNn, gKafIniDk, 
-	gKafIniKf, gKafIniHgM, gKafIniHgF, gKafIniHd, gKafIniCh, gKafIniBy
-//	,
-//	gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
-//	gGafIniBe,  // place-holder for BeF
-//	gGafIniJm, gGafIniRe, gGafIniSn, gGafIniSd, gGafIniTaM, gGafIniTaF,
-//	gGafIniAi, gGafIniFe, gGafIniQf, gGafIniMm, gGafIniNn, gGafIniDk,
-//	gGafIniKf, gGafIniHgM, gGafIniHgF, gGafIniHd, gGafIniCh, gGafIniBy
-);
-
-cKafMed_medium = (
-	gKafMedBe, gKafMedBeM1, gKafMedBeM2, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg, gKafMedBeF,
-	gKafMedJm, gKafMedRe, gKafMedSn, gKafMedSd, gKafMedTaM, gKafMedTaF,
-	gKafMedAi, gKafMedFe, gKafMedQf, gKafMedMm, gKafMedNn, gKafMedDk,
-	gKafMedDk, // place-holder for Kf
-	gKafMedHgM, gKafMedHgF, gKafMedHd, gKafMedCh, gKafMedBy
-//	,
-//	gGafMedBe, gGafMedBeM1, gGafMedBeM2, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg, gGafMedBeF,
-//	gGafMedJm, gGafMedRe, gGafMedSn, gGafMedSd, gGafMedTaM, gGafMedTaF,
-//	gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedNn, gGafMedDk,
-//	gGafMedDk,  // place-holder for Kf
-//	gGafMedHgM, gGafMedHgF, gGafMedHd, gGafMedCh, gGafMedBy
-);
-
-cKafIM_medium = (cKafIni_medium, cKafMed_medium);
-
-cKafIni_base = (
-	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
-	gKafIniBe_base,   // place-holder for BeF
-	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
-	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
-	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base
-//	,
-//	gGafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
-//	gGafIniBe_base  // place-holder for BeF
-//	gGafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
-//	gGafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
-//	gGafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base,
-);
-
-cKafMed_base = (
-	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base,
-	gKafMedBeF_base,
-	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
-	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
-	gKafMedDk_base,  // place-holder for Kf
-	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base
-//	,
-//	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base,
-//	gGafMedBeF_base,
-//	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
-//	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
-//	gKafMedDk_base, // place-holder for Kf
-//	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base,
-);
-
-cKafIM_base = (cKafIni_base, cKafMed_base);
-
-// Note that for a few initials, we use the shorter versions instead of the short, and there are special
-// forms for By and Jm forms.
-cKafIni_top_short = (
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_bj_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_short, g__kafTop_short, 
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short
-//	,
-//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_short,
-//	g__gafTop_bj_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_shorter, 
-//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_short, g__gafTop_short, 
-//	g__kafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short
-);
-
-// Note that for a few initials, we use the shorter versions instead of the short, and there are special
-// forms for By and Jm forms.
-cKafMed_top_short = (
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short
-//	,
-//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_short,
-//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-//	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-//	g__kafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short
-);
-
-cKafIM_top_short = (cKafIni_top_short, cKafMed_top_short);
-
-
-cKafIni_top_tall = (
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall
-//	,
-//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,  g__kafTop_tall,
-//	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-//	g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall
-);
-
-cKafMed_top_tall = (
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall
-//	,
-//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_tall,
-//	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-//	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-//	g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall
-);
-
-cKafIM_top_tall = (cKafIni_top_tall, cKafMed_top_tall);
-
-cKaf_top = (cKafIM_top_short, cKafIM_top_tall);
-
-
-
-cNuqtaUpperLarge = (g__dot3u, g__dot4u, g__smallTah);
-cNuqtaUpperSmall = (g__dot1u, g__dot2u);
-
-cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
-
-endtable;  // glyph
-
-
 pass(5)
 
 // Situations where tall kaf is needed
 
-cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-	/  cNuqtaUpperLarge  cDiacritic?  _=K  _=T;
+cNuqtaUpperLarge  cKafMed_medium  g__kafTop_null  
+	>  @N  cKafMed_base$K  cKafMed_top_tall$K
+	/  _=N  cDiacritic?  _=K  _=T;
 
 cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-	/  cBaseTall  MARKS  [cJeemMed  MARKS]?  _=K  _=T;
+	>  cKafMed_base$K  cKafMed_top_tall$K
+	/  cBaseTall  MARKS  _=K  _=T;
 
-cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-	/  cNuqtaLike  cDiacriticUpper  _=K  _=T;
-
-// Do we need this? Eg, beh + jeem + kaf...
-//cNuqtaLike  cKafMed_medium  g__kafTop_null  
-//	>  @N {shift.x = 150m}  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-//	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+cNuqtaLike  cKafMed_medium  g__kafTop_null  
+	>  @N  cKafMed_base$K  cKafMed_top_tall$K
+	/  _=N  cDiacriticUpper  _=K  _=T;
 
 // Two nuqtas under kaf, eg, sheen + teh + kaf
-cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_tall$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-	/  cNuqtaLike  cDiacritic?  c_medial  cNuqtaLike  cDiacritic?  _=K  _=T;
-
+cNuqtaLikeUpper  cNuqtaLikeUpper  cKafMed_medium  g__kafTop_null  
+	>  @N1  @N2  cKafMed_base$K  cKafMed_top_tall$K
+	/  _=N1  cDiacritic?  c_medial  _=N2  cDiacritic?  _=K  _=T;
 
 // Situations where default kaf is needed - don't shorten!
 
 cKafMed_medium  g__kafTop_null  >  @K  @T
 	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
 
+
+// Situations where medium-short form is needed
+
+// Eg, teh + jeem + kaf...
+cNuqtaLike  cKafMed_medium  g__kafTop_null  
+	>  @N  cKafMed_base$K  cKafMed_top_medshort$K
+	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+
+// lam/tah + jeem + kaf...
+cKafMed_medium  g__kafTop_null  
+	>  cKafMed_base$K  cKafMed_top_medshort$K
+	/  cBaseTall cNuqtaLike? cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+
+
 // Situations where short kaf is needed (except above)
 
-cKafIM_medium  g__kafTop_null
-	>	cKafIM_base  cKafIM_top_short$K //{att {to=@K; at=kafTopS; with=kafTopM}}
-	/  _=K {position.y > 1500m}  _=T;
+cNuqta?  cDiacritic?  cKafIM_medium  g__kafTop_null
+	>	@N  @D  cKafIM_base$K  cKafIM_top_shorter$K
+	/  _=N  _=D  _=K {position.y > 1600m}  _=T;
+
+cNuqta?  cDiacritic?  cKafIM_medium  g__kafTop_null
+	>	@N  @D  cKafIM_base$K  cKafIM_top_short$K
+	/  _=N  _=D  _=K {position.y > 1450m}  _=T;
+
+
+// If a nuqta is not near a height-adjusted kaf, turn off collision fixing for next time around.
+cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;  // pass 5
 
+
 pass(6)
 
-// For some reason we have to do the kaf-top attachment separately from the substitution:
-cKafIM_base=B  cKaf_top {att {to=@B; at=kafTopS; with=kafTopM}};
+// Due to an infelicity in the Graphite engine, we can't subsitute and attach in the same rule,
+// so we have to do it later.
+
+cKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}};
+cKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}};
 
 endpass;
 
@@ -1488,10 +1369,10 @@ endif;
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 
+// Note that most nuqtas will have been previously marked not-fix, unless they are contiguous to
+// height-adjusted kafs.
 
-cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
-
 
 endpass;  // pass 9
 

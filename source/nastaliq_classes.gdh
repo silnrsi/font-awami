@@ -29,7 +29,10 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cKafTop = (g__kafTop_null, g__kafTop_short, g__kafTop_shorter, g__kafTop_tall);
+cKafTop = (g__kafTop_null, g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
+	g__kafTop_medshort, g__kafTop_bj_short, g__kafTop_bj_tall,
+	g__gafTop_short, g__gafTop_shorter, g__gafTop_tall,
+	g__gafTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
 
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, gHighHamza, gHighHamzaArabic,
 	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
@@ -472,6 +475,179 @@ cTakes_nUpperDia += (cHehDoIni_alt);
 
 cLamIM = (cLamIni cLamMed);
 cKafIM = (cKafIni cKafMed);
+
+
+// Kaf/gaf height adjustments
+
+cKafIni_medium = (
+	gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBeRe, gKafIniBeNn, gKafIniBeHg,
+	gKafIniBe,  // place-holder for BeF
+	gKafIniJm, gKafIniRe, gKafIniSn, gKafIniSd, gKafIniTaM, gKafIniTaF,
+	gKafIniAi, gKafIniFe, gKafIniQf, gKafIniMm, gKafIniNn, gKafIniDk, 
+	gKafIniKf, gKafIniHgM, gKafIniHgF, gKafIniHd, gKafIniCh, gKafIniBy,
+	gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
+	gGafIniBe,  // place-holder for BeF
+	gGafIniJm, gGafIniRe, gGafIniSn, gGafIniSd, gGafIniTaM, gGafIniTaF,
+	gGafIniAi, gGafIniFe, gGafIniQf, gGafIniMm, gGafIniNn, gGafIniDk,
+	gGafIniKf, gGafIniHgM, gGafIniHgF, gGafIniHd, gGafIniCh, gGafIniBy
+);
+
+cKafMed_medium = (
+	gKafMedBe, gKafMedBeM1, gKafMedBeM2, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg, gKafMedBeF,
+	gKafMedJm, gKafMedRe, gKafMedSn, gKafMedSd, gKafMedTaM, gKafMedTaF,
+	gKafMedAi, gKafMedFe, gKafMedQf, gKafMedMm, gKafMedNn, gKafMedDk,
+	gKafMedDk, // place-holder for Kf
+	gKafMedHgM, gKafMedHgF, gKafMedHd, gKafMedCh, gKafMedBy,
+	gGafMedBe, gGafMedBeM1, gGafMedBeM2, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg, gGafMedBeF,
+	gGafMedJm, gGafMedRe, gGafMedSn, gGafMedSd, gGafMedTaM, gGafMedTaF,
+	gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedNn, gGafMedDk,
+	gGafMedDk,  // place-holder for Kf
+	gGafMedHgM, gGafMedHgF, gGafMedHd, gGafMedCh, gGafMedBy
+);
+
+cKafIM_medium = (cKafIni_medium, cKafMed_medium);
+
+cKafIni_base = (
+	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
+	gKafIniBe_base,   // place-holder for BeF
+	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
+	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
+	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base,
+	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
+	gKafIniBe_base  // place-holder for BeF
+	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
+	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_base, gKafIniNn_base, gKafIniDk_base, 
+	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base
+);
+
+cKafMed_base = (
+	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
+	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
+	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+	gKafMedDk_base,  // place-holder for Kf
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base,
+	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
+	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
+	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+	gKafMedDk_base, // place-holder for Kf
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base
+);
+
+cKafIM_base = (cKafIni_base, cKafMed_base);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafIni_top_short = (
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_bj_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter, g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short,
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
+	g__gafTop_bj_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter, g__gafTop_short, g__gafTop_short, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short
+);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafMed_top_short = (
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_bj_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
+	g__gafTop_bj_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short
+);
+
+cKafIM_top_short = (cKafIni_top_short, cKafMed_top_short);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafIni_top_shorter = (
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_bj_short, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_bj_short,
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter,
+	g__gafTop_bj_short, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_bj_short
+);
+
+// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// forms for By and Jm forms.
+cKafMed_top_shorter = (
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_bj_short, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_short,
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_shorter,
+	g__gafTop_bj_short, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_short
+);
+
+cKafIM_top_shorter = (cKafIni_top_shorter, cKafMed_top_shorter);
+
+
+cKafIni_top_tall = (
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_bj_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_bj_tall,
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,  g__gafTop_tall,
+	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall
+);
+
+cKafMed_top_tall = (
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_bj_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,
+	g__gafTop_bj_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall
+);
+
+cKafIM_top_tall = (cKafIni_top_tall, cKafMed_top_tall);
+
+cKafIni_top_medshort = (
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
+	g__kafTop_bj_tall, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_bj_tall,
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,  g__gafTop_medshort,
+	g__gafTop_bj_tall, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_bj_tall
+);
+
+cKafMed_top_medshort = (
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
+	g__kafTop_bj_tall, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,
+	g__gafTop_bj_tall, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort
+);
+
+cKafIM_top_medshort = (cKafIni_top_medshort, cKafMed_top_medshort);
+
+cKaf_top = (cKafIM_top_short, cKafIM_top_shorter, cKafIM_top_tall, cKafIM_top_medshort);
+
+
+cNuqtaUpperLarge = (g__dot3u, g__dot4u, g__smallTah);
+cNuqtaUpperSmall = (g__dot1u, g__dot2u);
+
+cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
+
 
 endtable;  // glyph
 
