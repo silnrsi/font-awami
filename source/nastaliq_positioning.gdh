@@ -459,6 +459,7 @@ gKafMedFe {collexclude.glyph = g__kaf_exclude};
 gKafMedQf {collexclude.glyph = g__kaf_exclude};
 gKafMedMm {collexclude.glyph = g__kaf_exclude};
 gKafMedNn {collexclude.glyph = g__kaf_exclude};
+gKafMedHgM {collexclude.glyph = g__kaf_exclude};
 gKafMedHgF {collexclude.glyph = g__kaf_exclude};
 gKafMedHd {collexclude.glyph = g__kaf_exclude};
 gKafMedCh {collexclude.glyph = g__kaf_exclude};
@@ -481,6 +482,7 @@ gGafMedFe {collexclude.glyph = g__kaf_exclude};
 gGafMedQf {collexclude.glyph = g__kaf_exclude};
 gGafMedMm {collexclude.glyph = g__kaf_exclude};
 gGafMedNn {collexclude.glyph = g__kaf_exclude};
+gGafMedHgM {collexclude.glyph = g__kaf_exclude};
 gGafMedHgF {collexclude.glyph = g__kaf_exclude};
 gGafMedHd {collexclude.glyph = g__kaf_exclude};
 gGafMedCh {collexclude.glyph = g__kaf_exclude};
@@ -916,58 +918,93 @@ table(positioning)
 //	KAF HEIGHT ADJUSTMENTS
 //
 
+table(glyph)
+
+cNuqtaLikeUpperNoKT = (cNuqtaLikeUpper);
+cNuqtaLikeUpperNoKT -= (g__kafTop_null);
+
+c_narrow = (gBehMed gMeemMed gAinMed);
+
+endtable;
+
 pass(5)
 
-// Situations where tall kaf is needed
+// Collision fixing
 
+// Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  cKafMed_medium  g__kafTop_null  
 	>  @N  cKafMed_base$K  cKafMed_top_tall$K
 	/  _=N  cDiacritic?  _=K  _=T;
 
+// Tall: lam/tah + kaf
 cKafMed_medium  g__kafTop_null  
 	>  cKafMed_base$K  cKafMed_top_tall$K
 	/  cBaseTall  MARKS  _=K  _=T;
 
+// Tall: nuqta + diac + kaf
 cNuqtaLike  cKafMed_medium  g__kafTop_null  
 	>  @N  cKafMed_base$K  cKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  _=K  _=T;
 
-// Two nuqtas under kaf, eg, sheen + teh + kaf
-cNuqtaLikeUpper  cNuqtaLikeUpper  cKafMed_medium  g__kafTop_null  
+// Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
+cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  cKafMed_medium  g__kafTop_null  
 	>  @N1  @N2  cKafMed_base$K  cKafMed_top_tall$K
 	/  _=N1  cDiacritic?  c_medial  _=N2  cDiacritic?  _=K  _=T;
 
-// Situations where default kaf is needed - don't shorten!
-
+// Default: nuqta + diac + kaf
 cKafMed_medium  g__kafTop_null  >  @K  @T
 	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
 
+// Medium-short + short: gaf + ??? + kaf/gaf
+cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
+	>  cGafIM_base$G  cGafIM_top_short$G  cKafMed_base$K  cKafMed_top_medshort$K
+	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
-// Situations where medium-short form is needed
+// Gaf + kaf/gaf-medial => shorter
+cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
+	>  cGafIM_base$G  cGafIM_top_shorter$G  @K  @Tk
+	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K _=Tk;
 
-// Eg, teh + jeem + kaf...
-cNuqtaLike  cKafMed_medium  g__kafTop_null  
+// Gaf + kaf/gaf-final => short
+cGafIM_medium g__kafTop_null  (gKafFin gGafFin)
+	>  cGafIM_base$G  cGafIM_top_short$G  @K
+	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
+
+// Medium-short: lam/tah + jeem + kaf
+cBaseTall  cKafMed_medium  g__kafTop_null  
+	>  @B  cKafMed_base$K  cKafMed_top_medshort$K
+	/  _=B  cNuqtaLike? cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+
+// Medium-short: tah + beh/meem/ain + kaf...
+cTahIM  cKafMed_medium  g__kafTop_null  
+	>  @Ta  cKafMed_base$K  cKafMed_top_medshort$K
+	/  _=Ta cNuqtaLike? cDiacritic?  c_narrow cNuqtaLike? cDiacritic?  _=K  _=T;
+
+// Medium-short: nuqta + jeem + kaf...
+cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null  
 	>  @N  cKafMed_base$K  cKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
-// lam/tah + jeem + kaf...
-cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_medshort$K
-	/  cBaseTall cNuqtaLike? cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+// Short round form: tah + kaf + lam/alef
+cTahIM  cKafRound_medium  g__kafTop_null
+	>  @Ta  cKafRound_short  @Null
+	/  _=Ta MARKS  _=K MARKS  _=Null;
+
 
 
 // Situations where short kaf is needed (except above)
 
-cNuqta?  cDiacritic?  cKafIM_medium  g__kafTop_null
+cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	>	@N  @D  cKafIM_base$K  cKafIM_top_shorter$K
 	/  _=N  _=D  _=K {position.y > 1350m}  _=T;
 
-cNuqta?  cDiacritic?  cKafIM_medium  g__kafTop_null
+cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	>	@N  @D  cKafIM_base$K  cKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > 1200m}  _=T;
 
 
 // If a nuqta is not near a height-adjusted kaf, turn off collision fixing for next time around.
+// Note that this also turns it off for g__kafTop_null, which is fine.
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;  // pass 5
