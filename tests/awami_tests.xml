@@ -1166,9 +1166,6 @@
     <test class="fset9" label="...feh kaf seen..." rtl="True">
       <string>ارفَکشَد</string>
     </test>
-    <test class="fset9" label="lam jeem kaf..." rtl="True">
-      <string>الحکِیم</string>
-    </test>
     <test class="fset9" label="...noon kaf reh" rtl="True">
       <string>المُنکر</string>
     </test>
@@ -1193,21 +1190,6 @@
     <test class="fset10" label="tall example from Dieter" rtl="True">
       <string>کنگھجو</string>
     </test>
-    <test background="#55aaff" class="fset9" label="SEPARATE TOPS" rtl="True">
-      <string/>
-    </test>
-    <test class="fset9" label="1" rtl="True">
-      <string>کبر کبن کف کھس کو</string>
-    </test>
-    <test background="#55aaff" class="fset15" label="GAF STROKES" rtl="True">
-      <string/>
-    </test>
-    <test class="fset14" label="gaf strokes - initials" rtl="True">
-      <string>گا گب گد  گر گس گص  گط  گع  گف  گق  گل  گم  گن  گو  گھ  گہ  گہب  گے گبر  گبن گبب گنگو</string>
-    </test>
-    <test class="fset15" label="gaf strokes - medials" rtl="True">
-      <string>سگبگا فگر بگس مگصگے تگطگعگد لگفبگق قگلسگم سگپنگو بگتھگسہگہ بگبر مگبن تگبب</string>
-    </test>
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string/>
     </test>
@@ -1216,15 +1198,6 @@
     </test>
     <test class="fset15" label="gaf lam gaf" rtl="True">
       <string>گلگم</string>
-    </test>
-    <test class="fset15" label="gaf noon gaf" rtl="True">
-      <string>گنگو </string>
-    </test>
-    <test class="fset15" label="gaf heh gaf" rtl="True">
-      <string>گھگہگہ</string>
-    </test>
-    <test class="fset14" label="tah gaf" rtl="True">
-      <string>طگع</string>
     </test>
     <test class="fset24" label="lam jeem kaf" rtl="True">
       <string>لحُکُو</string>
@@ -1269,7 +1242,7 @@
       <string/>
     </test>
     <test class="fset24" label="sheen kaf" rtl="True">
-      <string>شکق</string>
+      <string>شکج</string>
     </test>
     <test class="fset24" label="sheen + kaf + jeem" rtl="True">
       <string>شگجل</string>
@@ -1277,17 +1250,17 @@
     <test class="fset24" label="tcheheh + kaf" rtl="True">
       <string>بݜکم</string>
     </test>
-    <test class="fset24" label="lam + kaf" rtl="True">
+    <test class="fset24" label="lam + kaf + seen" rtl="True">
       <string>ملکس</string>
     </test>
     <test class="fset24" label="lam + kaf + bariyeh" rtl="True">
       <string>لکے</string>
     </test>
     <test class="fset24" label="tah + kaf" rtl="True">
-      <string>لظکب</string>
+      <string>لظکب  ظگی</string>
     </test>
     <test class="fset24" label="nuqta + diac + kaf" rtl="True">
-      <string>ضُکد</string>
+      <string>ضُکد قَکے</string>
     </test>
     <test background="#55aaff" class="fset24" label="NEED MEDIUM-SHORT" rtl="True">
       <string/>
@@ -1295,11 +1268,47 @@
     <test class="fset24" label="teh +  hah + kaf" rtl="True">
       <string>تحکمو</string>
     </test>
+    <test class="fset24" label="feh + khah + gaf" rtl="True">
+      <string>فخگس</string>
+    </test>
     <test class="fset24" label="lam + jeem + kaf" rtl="True">
       <string>لجکو</string>
     </test>
     <test background="#ff0000" class="fset24" label="tah + jeem + gaf" rtl="True">
       <string>ظجگو</string>
+    </test>
+    <test class="fset24" label="tah + meem/ain + kaf" rtl="True">
+      <string>طعکو طمگر</string>
+    </test>
+    <test background="#ff0000" class="fset24" label="tah + beh + kaf" rtl="True">
+      <string>طنگسھی</string>
+    </test>
+    <test class="fset24" label="tah + kaf + lam/alef" rtl="True">
+      <string>لظَکل  ظگا</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="GAF + KAF/GAF" rtl="True">
+      <string/>
+    </test>
+    <test class="fset15" label="gaf + noon + gaf" rtl="True">
+      <string>گنگو   گمکس کتکر</string>
+    </test>
+    <test class="fset24" label="gaf + feh + kaf/gaf" rtl="True">
+      <string>گقکو </string>
+    </test>
+    <test class="fset24" label="gaf + lam + gaf" rtl="True">
+      <string>گلگو </string>
+    </test>
+    <test class="fset15" label="gaf + heh-do +  gaf" rtl="True">
+      <string>مگھگب</string>
+    </test>
+    <test class="fset24" label="gaf + hehgoal + kaf" rtl="True">
+      <string>گہکہ</string>
+    </test>
+    <test class="fset24" label="gaf + kaf-final" rtl="True">
+      <string>سگک</string>
+    </test>
+    <test class="fset24" label="gaf + kaf-medial" rtl="True">
+      <string>بگکس گگر</string>
     </test>
   </testgroup>
   <testgroup label="Demo Poetry">

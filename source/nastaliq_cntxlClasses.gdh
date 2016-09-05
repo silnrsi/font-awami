@@ -36,7 +36,8 @@ c_initial = (
 	gFehIniBy, gFehIniCh, gFehIniFe, gFehIniHd, gFehIniHgF, gFehIniHgM, gFehIniJm, gFehIniKfX, gFehIniMm,
 	gFehIniMmX, gFehIniNn, gFehIniQf, gFehIniRe, gFehIniSd, gFehIniSn, gFehIniTaF, gFehIniTaM,
 	
-	gKafIni, gKafIniAi, gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBy, gKafIniCh, gKafIniDk, gKafIniFe, gKafIniHd, gKafIniHgF, gKafIniJm,
+	gKafIni, gKafIniAi, gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBy, gKafIniCh, gKafIniDk, gKafIniFe, gKafIniHd, 
+	gKafIniHgM, gKafIniHgF, gKafIniJm,
 	gKafIniKf, gKafIniLm, gKafIniMm, gKafIniNn, gKafIniQf, gKafIniRe, gKafIniSd, gKafIniSn, gKafIniTaF, gKafIniTaM,
 	gKafIniBeRe, gKafIniBeNn, gKafIniBeHg,
 	
@@ -44,7 +45,8 @@ c_initial = (
 	gKafIniBeRe_alt, gKafIniFe_alt, gKafIniHd_alt, gKafIniHgM_alt, gKafIniJm_alt, gKafIniKfX_alt, gKafIniMm_alt,
 	gKafIniMmX_alt, gKafIniSd_alt, gKafIniSn_alt, gKafIniTaF_alt,
 
-	gGafIni, gGafIniAi, gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBy, gGafIniCh, gGafIniDk, gGafIniFe, gGafIniHd, gGafIniHgF, gGafIniJm, 
+	gGafIni, gGafIniAi, gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBy, gGafIniCh, gGafIniDk, gGafIniFe, gGafIniHd, 
+	gGafIniHgM, gGafIniHgF, gGafIniJm, 
 	gGafIniKf, gGafIniLm, gGafIniMm, gGafIniNn, gGafIniQf, gGafIniRe, gGafIniSd, gGafIniSn, gGafIniTaF, gGafIniTaM,
 	gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
 	
@@ -121,9 +123,6 @@ c_medial = (
 	gGafMedFe_alt, gGafMedHd_alt, gGafMedHgM_alt, gGafMedJm_alt, gGafMedMm_alt,
 	gGafMedSd_alt, gGafMedSn_alt, gGafMedTaM_alt,
 
-	// TODO: add other new non-alt forms
-	gGafMedHgM,
-	
 	gGafMed_short_OLD,	// special case
 		
 	gLamMed, gLamMedAl, gLamMedAi, gLamMedBe, gLamMedBeF, gLamMedBeHg, gLamMedBeM1, gLamMedBeM2, gLamMedBeNn, gLamMedBeRe,
