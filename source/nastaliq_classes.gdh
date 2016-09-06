@@ -34,6 +34,19 @@ cKafTop = (g__kafTop_null, g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
 	g__gafTop_short, g__gafTop_shorter, g__gafTop_tall,
 	g__gafTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
 
+g__kafTop_tall { nDelta = 150m };
+g__gafTop_tall { nDelta = 150m };
+g__kafTop_bj_tall { nDelta = 150m };
+g__gafTop_bj_tall { nDelta = 150m };
+g__kafTop_short { nDelta = -150m };
+g__gafTop_short { nDelta = -150m };
+g__kafTop_bj_short { nDelta = -150m };
+g__gafTop_bj_short { nDelta = -150m };
+g__kafTop_shorter { nDelta = -300m };
+g__gafTop_shorter { nDelta = -300m };
+g__kafTop_medshort { nDelta = 0m };
+g__gafTop_medshort { nDelta = 0m };
+
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, gHighHamza, gHighHamzaArabic,
 	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, g__peshWaw,
 	g__wavyHamza,
