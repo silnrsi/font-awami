@@ -1044,6 +1044,7 @@ cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	/  _=N  _=D  _=K {position.y > 1200m}  _=T;
 
 
+
 // If a nuqta is not near a height-adjusted kaf, turn off collision fixing for next time around.
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
@@ -1056,10 +1057,17 @@ pass(6)
 // Due to an infelicity in the Graphite engine, we can't subsitute and attach in the same rule,
 // so we have to do it later.
 
+// ngoeh nuqtas
 cKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
 cKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
+
+// rings
+cKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
+cKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
 
 cKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}};
 cKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}};
