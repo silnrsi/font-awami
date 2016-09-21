@@ -689,7 +689,18 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / (cLamIM cKafIM) cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 
+// Special case involving jeem + beh/seen - don't allow it to move right
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -250m;
+	max.x = 100m;
+	min.y = -300m;
+	max.y = 1000m;
+} } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
+
 // Special cases involving kaf tops - allow nuqtas to move further right than normal.
+// Remove for now - this is too extreme.
+/***
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
@@ -697,6 +708,7 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
+***/
 
 // Need more flexibility in getting away from kinked kafs
 // TODO: use a class including all kinked kafs.
@@ -716,7 +728,7 @@ cNuqtaLikeUpper { collision {
 	max.x = 350m;
 	min.y = -300m;
 	max.y = 1000m;
-} } / cJeemMed _ cDiacritic? cBehMed cNuqtaLikeUpper;
+} } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
 
 
 // Nuqtas on initials can be moved quite a bit to the right.
@@ -968,7 +980,7 @@ endtable;
 
 pass(5)
 
-// Collision fixing
+// Kaf-top collision fixing/prevention
 
 // Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  cKafMed_medium  g__kafTop_null  
@@ -1033,6 +1045,15 @@ cTahIM  cKafRound_medium  g__kafTop_null
 	>  @Ta  cKafRound_short  @Null
 	/  _=Ta MARKS  _=K MARKS  _=Null;
 
+// No change (\u062C\u0646\u06AF\u06CC)
+g__dot1u  cKafMed_medium  g__kafTop_null
+	>  @N /*coll-fix*/  @K  @T
+	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
+
+// Tall (\u062E\u064F\u0634\u06A9\u06CC)
+cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null
+	>  @N /*coll-fix*/  cKafMed_base$K  cKafMed_top_tall$K
+	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
 
 // Situations where short kaf is needed (except cases above)
