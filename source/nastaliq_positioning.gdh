@@ -590,7 +590,7 @@ cNuqtaLikeLower {
 		class = ORDER_LNUQTAS;	order = ORDER_LEFTDOWN;
 		above { xoffset = 100m;	weight = 400 };
 		below { xlimit = -50m;	weight = 500 }; // weight was 50
-		valign { height = 200m;	weight = 500 }
+		valign { height = 275m;	weight = 500 }
 	}
 };
 
@@ -601,10 +601,10 @@ cgafStrokeDia { collision { margin = 0; flags = 0 }; sequence { class = 0; order
 
 
 // Smaller nuqta glyphs need larger margins:
-g__dot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
-g__dot1l { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };		// was 150
-g__dot2u { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };		// was 125
-g__dot2l { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };		// was 125
+g__dot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };
+g__dot1l { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };
+g__dot2u { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };
+g__dot2l { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };
 
 
 cDiacriticUpper {
@@ -693,7 +693,7 @@ cNuqtaLikeUpper { collision {
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
-	max.x = 100m;
+	max.x = 100m;  // less than normal
 	min.y = -300m;
 	max.y = 1000m;
 } } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
@@ -1011,9 +1011,16 @@ cKafMed_medium  g__kafTop_null  >  @K  @T
 	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
 
 // Short + medium-short: gaf + ??? + kaf/gaf
+cGafIM_medium g__kafTop_null  cNuqtaLikeUpper  cKafMed_medium g__kafTop_null
+	>  cGafIM_base$G  cGafIM_top_shorter$G  
+			@Nfb {collision.max.y = 150m} // keep nuqta from hopping above kaf
+			cKafMed_base$K  cKafMed_top_medshort$K
+	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
+
 cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
 	>  cGafIM_base$G  cGafIM_top_shorter$G  cKafMed_base$K  cKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
+
 
 // Gaf + kaf/gaf-medial => shorter
 cGafIM_medium  g__kafTop_null  cKafMed_medium  g__kafTop_null
@@ -1037,7 +1044,8 @@ cTahIM  cKafMed_medium  g__kafTop_null
 
 // Medium-short: nuqta + jeem + kaf...
 cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null  
-	>  @N /*coll-fix*/  cKafMed_base$K  cKafMed_top_medshort$K
+	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}} // move right, not up
+			cKafMed_base$K  cKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Short round form: tah + kaf + lam/alef
@@ -1059,12 +1067,12 @@ cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null
 // Situations where short kaf is needed (except cases above)
 
 cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
-	>	@N  @D  cKafIM_base$K  cKafIM_top_shorter$K
-	/  _=N  _=D  _=K {position.y > 1300m}  _=T;
+	>	@N /*coll-fix*/  @D  cKafIM_base$K  cKafIM_top_shorter$K
+	/  _=N  _=D  _=K {position.y > 1350m}  _=T;
 
 cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
-	>	@N  @D  cKafIM_base$K  cKafIM_top_short$K
-	/  _=N  _=D  _=K {position.y > 1130m}  _=T;
+	>	@N /*coll-fix*/  @D  cKafIM_base$K  cKafIM_top_short$K
+	/  _=N  _=D  _=K {position.y > 1180m}  _=T;
 
 
 
@@ -1193,9 +1201,13 @@ cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; inse
 cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; insert=true}
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
+// Taller or shorter kafs - attach to top, not base
+cTakes_nUpperDia  cKafTopAdjusted  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; insert=true}
+		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
+
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
-		/ ^ _=B  cKafTop?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
+		/ ^ _=B  g__kafTop_null?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
 		/ ^ _=B  cKafTop?  c_attLikeNqUpMid?  _=D {att.to==0};
 

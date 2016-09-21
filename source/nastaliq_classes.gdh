@@ -29,10 +29,12 @@ cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cKafTop = (g__kafTop_null, g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
+cKafTopAdjusted = ( g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
 	g__kafTop_medshort, g__kafTop_bj_short, g__kafTop_bj_tall,
 	g__gafTop_short, g__gafTop_shorter, g__gafTop_tall,
 	g__gafTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
+
+cKafTop = (g__kafTop_null, cKafTopAdjusted);
 
 g__kafTop_tall { nDelta = 150m };
 g__gafTop_tall { nDelta = 150m };
