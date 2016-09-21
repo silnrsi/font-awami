@@ -458,6 +458,7 @@ gKafMedAi {collexclude.glyph = g__kaf_exclude};
 gKafMedFe {collexclude.glyph = g__kaf_exclude};
 gKafMedQf {collexclude.glyph = g__kaf_exclude};
 gKafMedMm {collexclude.glyph = g__kaf_exclude};
+gKafMedMmX {collexclude.glyph = g__kaf_exclude};
 gKafMedNn {collexclude.glyph = g__kaf_exclude};
 gKafMedHgM {collexclude.glyph = g__kaf_exclude};
 gKafMedHgF {collexclude.glyph = g__kaf_exclude};
@@ -481,6 +482,7 @@ gGafMedAi {collexclude.glyph = g__kaf_exclude};
 gGafMedFe {collexclude.glyph = g__kaf_exclude};
 gGafMedQf {collexclude.glyph = g__kaf_exclude};
 gGafMedMm {collexclude.glyph = g__kaf_exclude};
+gGafMedMmX {collexclude.glyph = g__kaf_exclude};
 gGafMedNn {collexclude.glyph = g__kaf_exclude};
 gGafMedHgM {collexclude.glyph = g__kaf_exclude};
 gGafMedHgF {collexclude.glyph = g__kaf_exclude};
@@ -508,6 +510,7 @@ gKafMedAi_base {collexclude.glyph = g__kaf_exclude};
 gKafMedFe_base {collexclude.glyph = g__kaf_exclude};
 gKafMedQf_base {collexclude.glyph = g__kaf_exclude};
 gKafMedMm_base {collexclude.glyph = g__kaf_exclude};
+gKafMedMmX_base {collexclude.glyph = g__kaf_exclude};
 gKafMedNn_base {collexclude.glyph = g__kaf_exclude};
 gKafMedDk_base {collexclude.glyph = g__kaf_exclude};
 gKafMedHgM_base {collexclude.glyph = g__kaf_exclude};
@@ -575,7 +578,7 @@ cNuqtaLikeUpper {
 		class = ORDER_UNUQTAS;	order = ORDER_LEFTDOWN;
 		above { xoffset = 100m;	weight = 400 };
 		below { xlimit = -50m;	weight = 50 };
-		valign { height = 200m;	weight = 500 }
+		valign { height = 275m;	weight = 500 }
 	}
 };
 
@@ -677,7 +680,6 @@ cNuqtaLikeUpper { collision {
 } } / cTahMed _ ;
 
 
-//
 // Exception to special case below when there is a previous lam/kaf.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -1002,9 +1004,9 @@ cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Gaf + kaf/gaf-medial => shorter
-cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
-	>  cGafIM_base$G  cGafIM_top_shorter$G  @K  @Tk
-	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K _=Tk;
+cGafIM_medium  g__kafTop_null  cKafMed_medium  g__kafTop_null
+	>  cGafIM_base$G  cGafIM_top_shorter$G  cKafMed_base$K  cKafMed_top_tall$K
+	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
 // Gaf + kaf/gaf-final => short
 cGafIM_medium g__kafTop_null  (gKafFin gGafFin)
@@ -1033,15 +1035,15 @@ cTahIM  cKafRound_medium  g__kafTop_null
 
 
 
-// Situations where short kaf is needed (except above)
+// Situations where short kaf is needed (except cases above)
 
 cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	>	@N  @D  cKafIM_base$K  cKafIM_top_shorter$K
-	/  _=N  _=D  _=K {position.y > 1350m}  _=T;
+	/  _=N  _=D  _=K {position.y > 1300m}  _=T;
 
 cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	>	@N  @D  cKafIM_base$K  cKafIM_top_short$K
-	/  _=N  _=D  _=K {position.y > 1200m}  _=T;
+	/  _=N  _=D  _=K {position.y > 1130m}  _=T;
 
 
 
@@ -1193,7 +1195,7 @@ endpass; // pos - 7 (or 3)
 
 #define pairKern user3
 // currently not used
-#define marginSet user4
+////#define marginSet user4  -- currently not used
 
 
 table(glyph) { AttributeOverride = 1 }
@@ -1232,32 +1234,39 @@ pass(8)
 // Special cases involving nuqtas.
 
 table(glyph)
-gNlWide = (g__dot2l  g__dot3l  g__dot4l);
+cNlWide = (g__dot2l  g__dot3l  g__dot4l);
+cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
+cRehFin_longtail = (gRehFin, gRehFin_hgM);
 endtable;
 
-// \u0631\u06CC\u0631
-(gDal gReh)  gBehIniRe  gNlWide {shift {x = 170m; y = -300m}}  gRehFin_jkl;
+// \u0631\u06CC\u0631, \u0634\u0632\u062F\u06CC\u0648
+cDRW_IF  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = 170m; y = -400m}}  (gRehFin_jkl cWawFin)
+	/  _=DR cDiacritic? _=B _=N cDiacritic?  _=RW;
+
+// \u063A\u0632\u06CC\u0631; see also pass below where the margin for the reh is reduced
+cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = -80m; y = 150m}}  (gRehFin_jkl cWawFin)
+	/  _=R cNuqtaLike? cDiacritic?  _=B _=N cDiacritic?  _=RW;
 
 // \u0627\u06CC\u0645\u0627
-gAlef  gBehIniMmX  gNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
+gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
 
 
 // Low priority special case:
-////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  gNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
+////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
 
 
 // Set up kerning pairs.
 
-cKernable { pairKern = kernPreAlef }  /  _  MARKS  cNoJoin?  (cAlefIso);
-cKernable { pairKern = kernPreDal  }  /  _  MARKS  cNoJoin?  (cDalIso);
-cKernable { pairKern = kernPreReh  }  /  _  MARKS  cNoJoin?  (cRehIso);
-cKernable { pairKern = kernPreWaw  }  /  _  MARKS  cNoJoin?  (cWawIso);
-cKernable { pairKern = kernPreLamAlef} / _  MARKS  cNoJoin?  (gLamAlef gLamIniAl);
+cKernable { pairKern = kernPreAlef }  /  _ ^ MARKS  cNoJoin? (cAlefIso);
+cKernable { pairKern = kernPreDal  }  /  _ ^ MARKS  cNoJoin? (cDalIso);
+cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cNoJoin? (cRehIso);
+cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cNoJoin? (cWawIso);
+cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cNoJoin? (gLamAlef gLamIniAl);
 
-cKernable { pairKern = kernPreKafNoSp }   /  _  MARKS  (gKaf  gGaf  cKafIni);
+cKernable { pairKern = kernPreKafNoSp }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni);
 
 // Before a two-letter sequence:
-cKernable { pairKern = kernPreShort } / _  MARKS  cNoJoin?  c_initial MARKS  c_final;
+cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_final;
 
 
 // Bogus rule that will never fire (for if we disable this pass):
@@ -1295,10 +1304,10 @@ cKafTop { collision {
 if (collFix >= 2)
 
 // For special cases:
-cKernable {collision {
-	flags = SET_FIX(collision.flags);
-	max.x = MAXKERN; min.x = MINKERN + minKernDelta;}}
-	/  _ {marginSet == 1}  cNuqtaLike?  DIACS  cPostKernable;
+////cKernable {collision {
+////	flags = SET_FIX(collision.flags);
+////	max.x = MAXKERN; min.x = MINKERN + minKernDelta;}}
+////	/  _ {marginSet == 1}  cNuqtaLike?  DIACS  cPostKernable;
 
 
 gNameMarker  { collision {
@@ -1346,6 +1355,15 @@ cDiacriticLower {
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 }  /  cBase  cNuqtaLikeUpper?  _;
 
+// These should always stay centered over the nuqta if any:
+(gNoonGhunnaMark g__smallV) { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	min.x = -50m;
+	max.x = 50m;
+	min.y = -300m;
+	max.y = 500m;
+} }  /  cNuqta  cDiacritic?  _;
 
 cDiacriticUpper { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -1414,6 +1432,16 @@ cIso { collision {
 
 // For short sequences (two base chars) ending with bariyeh,
 // kern against the bariyeh tail, not the initial.
+
+// Special case; also see previous pass where nuqtas are shifted up
+cRehFin_longtail { collision {
+ 	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = 50m;
+	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin); 
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);

@@ -206,7 +206,7 @@ cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
 cWawIso = (gWaw, gWawHamzaAbove, gWawRing);
-cWawFin = (gWawFin);
+cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza);		// bariyeh -> behIni + 2Nlower
 cBariyehFin = (gBariyehFin);
@@ -294,11 +294,11 @@ cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehG
     gHehGoalIniHd gHehGoalIniCh gHehGoalIniBy gHehGoalIniBe gHehGoalIniBeRe gHehGoalIniBeNn 
     gHehGoalIniBeHg gHehGoalIniMmX gHehGoalIniKfX ) ;
 cKafIni_gaf = (gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn 
-	gGafIniSd gGafIniTaF gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniNn 
+	gGafIniSd gGafIniTaF gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniMmX gGafIniNn 
 	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gKafIniBeNn gKafIniBeHg gGafIniKf
 	gGafIniBeRe gGafIniBeHg gGafIniBeNn gGafIniLm);
 cKafIni = ( gKafIni gKafIniBe /*gKafIniBeF*/ gKafIniBeM1 gKafIniBeM2 gKafIniJm gKafIniRe gKafIniSn 
-    gKafIniSd gKafIniTaF gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniNn 
+    gKafIniSd gKafIniTaF gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniMmX gKafIniNn 
     gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
 	gKafIniBeRe gKafIniBeHg gKafIniBeNn gKafIniLm
 	cKafIni_gaf) ;
@@ -355,10 +355,10 @@ cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
     gHehGoalMedHgM gHehGoalMedHd gHehGoalMedCh gHehGoalMedBy gHehGoalMedBe 
     gHehGoalMedBeRe gHehGoalMedBeNn gHehGoalMedBeHg gHehGoalMedMmX gHehGoalMedKfX ) ;
 cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn 
-	gGafMedSd gGafMedTaF gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedNn gGafMedHgM 
+	gGafMedSd gGafMedTaF gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedMmX gGafMedNn gGafMedHgM 
 	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg);
 cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn 
-    gKafMedSd gKafMedTaF gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn gKafMedHgM 
+    gKafMedSd gKafMedTaF gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM 
     gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
 	cKafMed_gaf) ;
 cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF 
@@ -499,7 +499,7 @@ cGafIni_medium = (
 	gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
 	gGafIniBe,  // place-holder for BeF
 	gGafIniJm, gGafIniRe, gGafIniSn, gGafIniSd, gGafIniTaM, gGafIniTaF,
-	gGafIniAi, gGafIniFe, gGafIniQf, gGafIniMm, gGafIniNn, gGafIniDk,
+	gGafIniAi, gGafIniFe, gGafIniQf, gGafIniMm, gGafIniMmX, gGafIniNn, gGafIniDk,
 	gGafIniKf, gGafIniHgM, gGafIniHgF, gGafIniHd, gGafIniCh, gGafIniBy
 );
 
@@ -507,7 +507,7 @@ cKafIni_medium = (
 	gKafIniBe, gKafIniBeM1, gKafIniBeM2, gKafIniBeRe, gKafIniBeNn, gKafIniBeHg,
 	gKafIniBe,  // place-holder for BeF
 	gKafIniJm, gKafIniRe, gKafIniSn, gKafIniSd, gKafIniTaM, gKafIniTaF,
-	gKafIniAi, gKafIniFe, gKafIniQf, gKafIniMm, gKafIniNn, gKafIniDk, 
+	gKafIniAi, gKafIniFe, gKafIniQf, gKafIniMm, gKafIniMmX, gKafIniNn, gKafIniDk, 
 	gKafIniKf, gKafIniHgM, gKafIniHgF, gKafIniHd, gKafIniCh, gKafIniBy,
 	cGafIni_medium
 );
@@ -515,7 +515,7 @@ cKafIni_medium = (
 cGafMed_medium = (
 	gGafMedBe, gGafMedBeM1, gGafMedBeM2, gGafMedBeRe, gGafMedBeNn, gGafMedBeHg, gGafMedBeF,
 	gGafMedJm, gGafMedRe, gGafMedSn, gGafMedSd, gGafMedTaM, gGafMedTaF,
-	gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedNn, gGafMedDk,
+	gGafMedAi, gGafMedFe, gGafMedQf, gGafMedMm, gGafMedMmX, gGafMedNn, gGafMedDk,
 	gGafMedDk,  // place-holder for Kf
 	gGafMedHgM, gGafMedHgF, gGafMedHd, gGafMedCh, gGafMedBy
 );
@@ -523,7 +523,7 @@ cGafMed_medium = (
 cKafMed_medium = (
 	gKafMedBe, gKafMedBeM1, gKafMedBeM2, gKafMedBeRe, gKafMedBeNn, gKafMedBeHg, gKafMedBeF,
 	gKafMedJm, gKafMedRe, gKafMedSn, gKafMedSd, gKafMedTaM, gKafMedTaF,
-	gKafMedAi, gKafMedFe, gKafMedQf, gKafMedMm, gKafMedNn, gKafMedDk,
+	gKafMedAi, gKafMedFe, gKafMedQf, gKafMedMm, gKafMedMmX, gKafMedNn, gKafMedDk,
 	gKafMedDk, // place-holder for Kf
 	gKafMedHgM, gKafMedHgF, gKafMedHd, gKafMedCh, gKafMedBy,
 	cGafMed_medium
@@ -536,7 +536,7 @@ cGafIni_base = (
 	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
 	gKafIniBe_base  // place-holder for BeF
 	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
-	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gGafIniMm_short, gKafIniNn_base, gKafIniDk_base, 
+	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gGafIniMm_short, gKafIniMmX_base, gKafIniNn_base, gKafIniDk_base, 
 	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base
 );
 
@@ -544,7 +544,7 @@ cKafIni_base = (
 	gKafIniBe_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeRe_base, gKafIniBeNn_base, gKafIniBeHg_base,
 	gKafIniBe_base,   // place-holder for BeF
 	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTaM_base, gKafIniTaF_base,
-	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_short, gKafIniNn_base, gKafIniDk_base, 
+	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_short, gKafIniMmX_base, gKafIniNn_base, gKafIniDk_base, 
 	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base,
 	cGafIni_base
 );
@@ -552,14 +552,14 @@ cKafIni_base = (
 cGafMed_base = (
 	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
 	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
-	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base, 
 	gKafMedDk_base, // place-holder for Kf
 	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base
 );
 cKafMed_base = (
 	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
 	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTaM_base, gKafMedTaF_base,
-	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedNn_base, gKafMedDk_base, 
+	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base, 
 	gKafMedDk_base,  // place-holder for Kf
 	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base,
 	cGafMed_base
@@ -573,14 +573,14 @@ cKafIM_base = (cKafIni_base, cKafMed_base);
 cGafIni_top_short = (
 	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
 	g__gafTop_bj_short,/*jm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter,/*taM*/ g__gafTop_shorter,/*taF*/ 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_m_bogus,/*mm*/ g__gafTop_short, g__gafTop_short, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_m_bogus,/*mm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, 
 	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short/*by*/
 );
 
 cKafIni_top_short = (
 	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
 	g__kafTop_bj_short,/*jm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter,/*taM*/ g__kafTop_shorter,/*taF*/
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_m_bogus,/*mm*/ g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_m_bogus,/*mm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, 
 	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short,/*by*/
 	cGafIni_top_short
 );
@@ -590,14 +590,14 @@ cKafIni_top_short = (
 cGafMed_top_short = (
 	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
 	g__gafTop_bj_short,/*jm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
+	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
 	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short
 );
 
 cKafMed_top_short = (
 	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
 	g__kafTop_bj_short,/*jm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
+	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
 	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
 	cGafMed_top_short
 );
@@ -610,14 +610,14 @@ cKafIM_top_short = (cKafIni_top_short, cKafMed_top_short);
 cGafIni_top_shorter = (
 	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter,
 	g__gafTop_bj_short,/*jm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
 	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_bj_short/*by*/
 );
 
 cKafIni_top_shorter = (
 	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
 	g__kafTop_bj_short,/*jm*/ g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__kafTop_shorter, g__kafTop_shorter, 
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
 	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_bj_short,/*by*/
 	cGafIni_top_shorter
 );
@@ -627,14 +627,14 @@ cKafIni_top_shorter = (
 cGafMed_top_shorter = (
 	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_shorter,
 	g__gafTop_bj_short,/*jm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
+	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
 	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_short
 );
 
 cKafMed_top_shorter = (
 	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
 	g__kafTop_bj_short,/*jm*/ g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
+	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__gafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
 	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_short,
 	cGafMed_top_shorter
 );
@@ -651,7 +651,7 @@ cKafIni_top_tall = (
 	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_bj_tall,--by
 	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,  g__gafTop_tall,
 	g__gafTop_bj_tall,--jm g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_m_bogus,--mm g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_m_bogus,--mm g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
 	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall--by
 );
 ***/
@@ -659,11 +659,11 @@ cKafIni_top_tall = (
 cKafMed_top_tall = (
 	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
 	g__kafTop_bj_tall,/*jm*/ g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
+	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
 	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
 	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,
 	g__gafTop_bj_tall,/*jm*/ g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, 
+	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__kafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
 	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall
 );
 
@@ -674,11 +674,11 @@ cKafMed_top_tall = (
 cKafIni_top_medshort = (
 	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
 	g__kafTop_bj_tall,--jm g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_m_bogus,--mm g__kafTop_medshort, g__kafTop_medshort, 
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_m_bogus,--mm g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
 	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_bj_tall,--by
 	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,  g__gafTop_medshort,
 	g__gafTop_bj_tall,--jm g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__kafTop_m_bogus,--mm g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__kafTop_m_bogus,--mm g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
 	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_bj_tall--by
 );
 ***/
@@ -686,11 +686,11 @@ cKafIni_top_medshort = (
 cKafMed_top_medshort = (
 	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
 	g__kafTop_bj_tall,/*jm*/ g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
+	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
 	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
 	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,
 	g__gafTop_bj_tall,/*jm*/ g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
+	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
 	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort
 );
 

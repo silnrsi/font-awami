@@ -32,7 +32,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset25" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>یخ </string>
+      <string>شخصیتو</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1244,6 +1244,9 @@
     <test class="fset24" label="gaf sheen teh gaf yeh" rtl="True">
       <string>گشتگی</string>
     </test>
+    <test class="fset24" label="kaf + meem-alt" rtl="True">
+      <string>مکمل</string>
+    </test>
     <test background="#55aaff" class="fset24" label="NEED TALL" rtl="True">
       <string/>
     </test>
@@ -1859,6 +1862,12 @@
     <test class="fset17" label="alef + madda + zabar" rtl="True">
       <string>آَ</string>
     </test>
+    <test background="#55aaff" class="fset24" label="KEEP CENTERED" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="nuqta + noon-ghunna mark" rtl="True">
+      <string>کھنِ٘نگ  چُھودونِن٘گ</string>
+    </test>
   </testgroup>
   <testgroup label="extended characters">
     <test background="#ff0000" label="kashmiri yeh - 0620" rtl="True">
@@ -2146,14 +2155,29 @@
     <test class="fset19" label="lam + qaf + kaf" rtl="True">
       <string>لقکھہ</string>
     </test>
-    <test background="#55aaff" class="fset19" label="PASS 13 (pos pass 6)" rtl="True">
+    <test background="#55aaff" class="fset19" label="PASS 15 (pos pass 8)" rtl="True">
       <string/>
     </test>
     <test class="fset19" label="reh/dal + yeh" rtl="True">
       <string>ریر رنر دیر دنر</string>
     </test>
+    <test class="fset24" label="dal + yeh + waw" rtl="True">
+      <string>شزدیو   دیُونگ</string>
+    </test>
+    <test class="fset24" label="waw + beh + waw" rtl="True">
+      <string>تھوبو</string>
+    </test>
+    <test class="fset24" label="dal + peh + waw" rtl="True">
+      <string>یودپوݩی</string>
+    </test>
     <test class="fset19" label="alef + yeh + meem" rtl="True">
       <string>ایمان انمان</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="PASSES 15 &amp; 16" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="ain + zain + yeh + reh" rtl="True">
+      <string>غزیر سہزیر</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
       <string/>
