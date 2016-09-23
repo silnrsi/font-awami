@@ -1195,7 +1195,7 @@
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string/>
     </test>
-    <test class="fset14" label="lam gaf gaf" rtl="True">
+    <test background="#ff0000" class="fset14" label="lam gaf gaf" rtl="True">
       <string>لگگ</string>
     </test>
     <test class="fset15" label="gaf lam gaf" rtl="True">
@@ -1344,6 +1344,21 @@
     </test>
     <test class="fset24" label="bug" rtl="True">
       <string>نگھنے</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="SHORTER" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="ykhty" rtl="True">
+      <string>یکھتے</string>
+    </test>
+    <test class="fset24" label="ktys" rtl="True">
+      <string>اِکتِیس</string>
+    </test>
+    <test class="fset24" label="long" rtl="True">
+      <string>کنسلٹنٹس</string>
+    </test>
+    <test class="fset24" label="gbs" rtl="True">
+      <string>گَبُس</string>
     </test>
   </testgroup>
   <testgroup label="Demo Poetry">
@@ -1804,6 +1819,9 @@
     </test>
     <test class="fset21" label="ZWNJ" rtl="True">
       <string>س‌ق‌لم سقلم</string>
+    </test>
+    <test class="fset24" label="kern after right quote mark" rtl="True">
+      <string>”تا</string>
     </test>
   </testgroup>
   <testgroup label="diacritics">
