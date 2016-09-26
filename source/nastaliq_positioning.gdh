@@ -148,14 +148,15 @@ cTakes_hamzaAndHehhookDia &= cTakes_hehhookDia;
 cTakes_ringAndNUpperDia = cTakes_nUpperDia;
 cTakes_ringAndNUpperDia &= cTakes_ringDia;
 
-endtable;
+endtable;  // glyph
+
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
 
 // X+NxL  Y+NyL  Z+Nz  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+NxL  Y+NyU  Z+NzL  Bariyeh
@@ -163,27 +164,27 @@ cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLo
 // the second lower nuqta.
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	c_medial   cHasUpperMaux   { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
-	cMedBy cNuqtaLower       { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLower       { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+NxL  Y+NyL  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  c_medial=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+NxL  Y+NyL  Z  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
-	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ cMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+NxL  Y+NyL  Bariyeh
 cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
-	cMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
 
 // X+Nx Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B _=L  DIACS  ^ cMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 
 
@@ -445,89 +446,9 @@ cKernable = (c_isolate  c_final  cKernPunct)
 
 c_jumpTail = ( cJeemFin, gAinFin );
 
-gKafMed {collexclude.glyph = g__kaf_exclude};
-gKafMedBe {collexclude.glyph = g__kaf_exclude};
-gKafMedBeF {collexclude.glyph = g__kaf_exclude};
-gKafMedBeM2 {collexclude.glyph = g__kaf_exclude};
-gKafMedJm {collexclude.glyph = g__kaf_exclude};
-gKafMedRe {collexclude.glyph = g__kaf_exclude};
-gKafMedSn {collexclude.glyph = g__kaf_exclude};
-gKafMedSd {collexclude.glyph = g__kaf_exclude};
-gKafMedTaF {collexclude.glyph = g__kaf_exclude};
-gKafMedAi {collexclude.glyph = g__kaf_exclude};
-gKafMedFe {collexclude.glyph = g__kaf_exclude};
-gKafMedQf {collexclude.glyph = g__kaf_exclude};
-gKafMedMm {collexclude.glyph = g__kaf_exclude};
-gKafMedMmX {collexclude.glyph = g__kaf_exclude};
-gKafMedNn {collexclude.glyph = g__kaf_exclude};
-gKafMedHgM {collexclude.glyph = g__kaf_exclude};
-gKafMedHgF {collexclude.glyph = g__kaf_exclude};
-gKafMedHd {collexclude.glyph = g__kaf_exclude};
-gKafMedCh {collexclude.glyph = g__kaf_exclude};
-gKafMedBy {collexclude.glyph = g__kaf_exclude};
-gKafMedDk {collexclude.glyph = g__kaf_exclude};
-gKafMedBeRe {collexclude.glyph = g__kaf_exclude};
-gKafMedBeNn {collexclude.glyph = g__kaf_exclude};
-gKafMedBeHg {collexclude.glyph = g__kaf_exclude};
-gGafMed {collexclude.glyph = g__kaf_exclude};
-gGafMedBe {collexclude.glyph = g__kaf_exclude};
-gGafMedBeF {collexclude.glyph = g__kaf_exclude};
-gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
-gGafMedJm {collexclude.glyph = g__kaf_exclude};
-gGafMedRe {collexclude.glyph = g__kaf_exclude};
-gGafMedSn {collexclude.glyph = g__kaf_exclude};
-gGafMedSd {collexclude.glyph = g__kaf_exclude};
-gGafMedTaF {collexclude.glyph = g__kaf_exclude};
-gGafMedAi {collexclude.glyph = g__kaf_exclude};
-gGafMedFe {collexclude.glyph = g__kaf_exclude};
-gGafMedQf {collexclude.glyph = g__kaf_exclude};
-gGafMedMm {collexclude.glyph = g__kaf_exclude};
-gGafMedMmX {collexclude.glyph = g__kaf_exclude};
-gGafMedNn {collexclude.glyph = g__kaf_exclude};
-gGafMedHgM {collexclude.glyph = g__kaf_exclude};
-gGafMedHgF {collexclude.glyph = g__kaf_exclude};
-gGafMedHd {collexclude.glyph = g__kaf_exclude};
-gGafMedCh {collexclude.glyph = g__kaf_exclude};
-gGafMedBy {collexclude.glyph = g__kaf_exclude};
-gGafMedDk {collexclude.glyph = g__kaf_exclude};
-gGafMedBeRe {collexclude.glyph = g__kaf_exclude};
-gGafMedBeNn {collexclude.glyph = g__kaf_exclude};
-gGafMedBeHg {collexclude.glyph = g__kaf_exclude};
-gKafMedBe_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeM1_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeM2_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeRe_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeNn_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeHg_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBeF_base {collexclude.glyph = g__kaf_exclude};
-gKafMedJm_base {collexclude.glyph = g__kaf_exclude};
-gKafMedRe_base {collexclude.glyph = g__kaf_exclude};
-gKafMedSn_base {collexclude.glyph = g__kaf_exclude};
-gKafMedSd_base {collexclude.glyph = g__kaf_exclude};
-gKafMedTaM_base {collexclude.glyph = g__kaf_exclude};
-gKafMedTaF_base {collexclude.glyph = g__kaf_exclude};
-gKafMedAi_base {collexclude.glyph = g__kaf_exclude};
-gKafMedFe_base {collexclude.glyph = g__kaf_exclude};
-gKafMedQf_base {collexclude.glyph = g__kaf_exclude};
-gKafMedMm_base {collexclude.glyph = g__kaf_exclude};
-gKafMedMmX_base {collexclude.glyph = g__kaf_exclude};
-gKafMedNn_base {collexclude.glyph = g__kaf_exclude};
-gKafMedDk_base {collexclude.glyph = g__kaf_exclude};
-gKafMedHgM_base {collexclude.glyph = g__kaf_exclude};
-gKafMedHgF_base {collexclude.glyph = g__kaf_exclude};
-gKafMedHd_base {collexclude.glyph = g__kaf_exclude};
-gKafMedCh_base {collexclude.glyph = g__kaf_exclude};
-gKafMedBy_base {collexclude.glyph = g__kaf_exclude};
-
-
-// Note gGafMed_short doesn't need an exclude glyph because it is tucked under the following kaf/gaf so there
-// isn't room for anything to jump above it anyway. - OBSOLETE
 
 cls_excludingGlyphs = (cKafMed cKafMed_base)
 	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
-
-gKafFin {collexclude.glyph = g__kaf_exclude};
-gGafFin {collexclude.glyph = g__kaf_exclude};
 
 cls_excludingGlyphs_kern = (gKafFin, gGafFin)
 	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
@@ -1092,7 +1013,7 @@ endpass;  // pass 5
 pass(6)
 
 // Due to an infelicity in the Graphite engine, we can't subsitute and attach in the same rule,
-// so we have to do it later.
+// so we have to do it in a separate pass.
 
 // ngoeh nuqtas
 cKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
@@ -1253,9 +1174,9 @@ gReh		{ kernPreAlef = -120m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = 
 gRehFin_jkl	{ kernPreAlef = -70m };
 gWaw		{ kernPreAlef = -80m };
 
-gRehFin { minKernDelta = -400m };
-gRehFin_jkl { minKernDelta = -400m };
-gRehFin_sshg { minKernDelta = -400m };
+gRehFin		{ minKernDelta = -400m };
+gRehFin_jkl	{ minKernDelta = -400m };
+//gRehFin_sshg { minKernDelta = -400m }; -- obsolete
 gRehFin_hgM { minKernDelta = -400m };
 
 // Don't let punctuation kern underneath following segment:
@@ -1308,7 +1229,7 @@ cKernable { pairKern = kernPreKafNoSp }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni);
 cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_final;
 
 
-// Bogus rule that will never fire (for if we disable this pass):
+// Bogus rule that will never fire (for if we disable this pass for debugging):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
 
 endpass;  // 8
