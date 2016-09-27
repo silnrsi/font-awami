@@ -1285,6 +1285,9 @@
     <test class="fset24" label="feh + khah + gaf" rtl="True">
       <string>فخگس</string>
     </test>
+    <test background="#ff0000" class="fset24" label="ain + jeem + meem + kaf" rtl="True">
+      <string>عجمگف</string>
+    </test>
     <test background="#55aaff" class="fset24" label="NEED MEDIUM-SHORT" rtl="True">
       <string/>
     </test>
@@ -1305,6 +1308,9 @@
     </test>
     <test class="fset24" label="tah + kaf + lam/alef" rtl="True">
       <string>لظَکل  ظگا</string>
+    </test>
+    <test class="fset24" label="tah-med + kaf" rtl="True">
+      <string>عطَگَف</string>
     </test>
     <test background="#55aaff" class="fset24" label="GAF + KAF/GAF" rtl="True">
       <string/>
@@ -1341,6 +1347,9 @@
     </test>
     <test class="fset24" label="kaf-ring + meem" rtl="True">
       <string>ګمنی</string>
+    </test>
+    <test class="fset24" label="gaf + diac + kaf/gaf" rtl="True">
+      <string>گَک گُگس</string>
     </test>
     <test class="fset24" label="bug" rtl="True">
       <string>نگھنے</string>
@@ -2199,6 +2208,12 @@
     <test class="fset19" label="alef + yeh + meem" rtl="True">
       <string>ایمان انمان</string>
     </test>
+    <test class="fset24" label="waw + beh + reh" rtl="True">
+      <string>اوپر</string>
+    </test>
+    <test class="fset24" label="gaf + upper-diac + gaf" rtl="True">
+      <string>گَک گُگ</string>
+    </test>
     <test background="#55aaff" class="fset24" label="PASSES 15 &amp; 16" rtl="True">
       <string/>
     </test>
@@ -2213,9 +2228,6 @@
     </test>
     <test class="fset23" label="xalifa (Malachi - 10)" rtl="True">
       <string>اور خلیفة   |   پنے خلیفة   |   کہ خلیفة</string>
-    </test>
-    <test class="fset24" label="waw + beh + reh" rtl="True">
-      <string>اوپر</string>
     </test>
     <test class="fset24" label="reh + waw + overlap" rtl="True">
       <comment>Dieter: if the waw wanders under the shin (a nice feature), then I would like to see the re and waw closer together.</comment>

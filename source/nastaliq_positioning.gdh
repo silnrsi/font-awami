@@ -1210,6 +1210,9 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 // \u0627\u06CC\u0645\u0627
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
 
+// \u06af\u064f\u06af
+cKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM cKafIM_base cKafFin);
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -1288,6 +1291,19 @@ chonorificDia { collision {
 	min.y = -50m;
 	max.y = 500m;
 } };
+
+// Diacritics attached to finals - move more to the left
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -400m;  // normally -250
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 500m;
+	};
+	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
+}  /  c_final  cNuqtaLikeLower?  _;
 
 // Diacritics attached to bases:
 cDiacriticUpper {
