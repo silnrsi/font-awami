@@ -52,9 +52,11 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 FONT_NAME = "Awami Nastaliq PreBeta2"
 FONT_FILENAME = "Awami_prebeta2.ttf"
 
-font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular'))
+font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
+				# remove buggy tables:
+				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}')
 				# for removing psnames:
-				####, cmd('psfix -s ${DEP} ${TGT}')
+				####, cmd('psfix -s ${DEP} ${TGT}')			  
      		),
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
