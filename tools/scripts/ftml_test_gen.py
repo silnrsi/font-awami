@@ -11,10 +11,10 @@ def run():
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
     #mode = "allbasecharforms"   # all forms of all letters
-    #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
-    mode = "basic_alldiac"      # same  characters as basicforms, with every diac
+    mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
+    #mode = "basic_alldiac"      # same characters as basicforms, with every diac
     #mode = "allbase_somediac"
-    #mode = "alldiac"
+    #mode = "alldiac"  # not implemented???
     
     fontScale = "200"
     
@@ -127,8 +127,15 @@ def expand_sequences(mode, basicSequences) :
     
     # Put the extra forms in the reverse order, since they always get added right after
     # the basic form.
-    if mode == "basicforms" or mode == "basic_somediac" or mode == "basic_alldiac":
+    if mode == "basicforms" :
         expand = {"kaf" : ["gaf"]}
+        expand_left = {}
+        changeKey = False
+        
+    elif mode == "basic_somediac" or mode == "basic_alldiac" :
+        expand = {"kaf" : ["gaf"],
+            "beh" : ["teh"]  # because diacritics attach differently to upper and lower nuqtas
+        }
         expand_left = {}
         changeKey = False
         
@@ -438,7 +445,8 @@ def output_ftml(mode, fontScale, filename, sequences) :
 
 def write_one_sequence(f, seq) :
     
-    contextCharI = "&#x0644;" # lam (arbitrary pre-context)
+    #contextCharI = "&#x0644;" # lam (arbitrary pre-context)
+    contextCharI = "&#x0639;" # ain (arbitrary pre-context)
     contextCharF = "&#x0641;" # feh (arbitrary post-context)
     seqLabel = ''
     seqUsvs = ''
