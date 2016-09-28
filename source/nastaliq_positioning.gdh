@@ -1002,6 +1002,13 @@ cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
 	/  _=N  _=D  _=K {position.y > 1135m}  _=T;
 
 
+// If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
+// back up if necessary.
+cNuqtaLikeUpper { shift.y = -300m; collision.margin -= 50m } / _ { position.y > 2800m };
+// Similarly for tall nuqtas below the line, if they also have a diacritic under them.
+cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
+	/ _ { position.y < -550m } cNuqtaLikeUpper? cDiacriticLower;
+
 
 // If a nuqta is not near a height-adjusted kaf, turn off collision fixing for next time around.
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
@@ -1234,6 +1241,10 @@ cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_
 
 // Bogus rule that will never fire (for if we disable this pass for debugging):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
+
+// Diacritics that extend above/below the line
+cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };
+cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 
 endpass;  // 8
 

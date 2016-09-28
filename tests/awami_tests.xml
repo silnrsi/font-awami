@@ -190,7 +190,10 @@
   </testgroup>
   <testgroup label="LTR stuff">
     <test class="fset21" label="Arabic numbers">
-      <string>١٢٣٤</string>
+      <string>١٢٣٤٥٦٧٨٩٠</string>
+    </test>
+    <test class="fset24" label="Eastern digits">
+      <string>۱۲۳۴۵۶۷۸۹۰</string>
     </test>
     <test class="fset21" label="Latin numbers">
       <string>1234</string>
@@ -1072,6 +1075,33 @@
     </test>
     <test class="fset21" label="lam-bar" rtl="True">
       <string>نکݪتی نکݪئی</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="LINE HEIGHT" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="teh meem ..." rtl="True">
+      <string>تمتھیں</string>
+    </test>
+    <test class="fset24" label="teh yeh ..." rtl="True">
+      <string>تِیمُتِھُیس</string>
+    </test>
+    <test class="fset24" label="teh jeem" rtl="True">
+      <string>تحفنحِیس</string>
+    </test>
+    <test class="fset24" label="sheen" rtl="True">
+      <string>شخصیتو</string>
+    </test>
+    <test class="fset24" label="long word" rtl="True">
+      <string>کنسلٹنٹس</string>
+    </test>
+    <test class="fset24" label="long word 2" rtl="True">
+      <string>قِیلِیقِیہصُوبِئیں</string>
+    </test>
+    <test class="fset24" label="pesh" rtl="True">
+      <string>جُھنجھلا</string>
+    </test>
+    <test class="fset24" label="very low diac" rtl="True">
+      <string>سݙِ نپِ نڜِ بڳِ</string>
     </test>
   </testgroup>
   <testgroup label="Collisions - possible">
