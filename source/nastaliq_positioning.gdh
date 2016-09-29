@@ -49,7 +49,6 @@ cursive_attach(chotiyeh)
 cursive_attach(chotiyehBfkl)
 cursive_attach(bariyeh)
 cursive_attach(lamKaf)
-cursive_attach(kafAlt)
 cursive_attach(qafWaw)
 cursive_attach(qafWawStfh)
 
@@ -630,16 +629,6 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 ***/
-
-// Need more flexibility in getting away from kinked kafs
-// TODO: use a class including all kinked kafs.
-g__dot3u { collision {
-	flags = SET_FIX(collision.flags);
-	min.x = -500m;
-	max.x = 250m;
-	min.y = -300m;
-	max.y = 1000m;
-} } / (gGafMedBe_alt gGafMedSn_alt gKafIniBeM2_alt)  cBase _ ;
 
 
 // Special case: jeem + teh/theh - allow more movement to get the nuqta on the jeem to the right of the nuqta on the beh form.

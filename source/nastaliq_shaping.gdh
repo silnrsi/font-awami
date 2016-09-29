@@ -208,10 +208,9 @@ csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, 
 		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
 
 cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTaF, gBehMedTaM, gBehMedAi, gBehMedFe,
-		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX,
-		gBehMedKfX);
+		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX);
 cBehMed_postSBe = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
-		gBehMedBy, gBehMedMmX, gBehMedKfX);
+		gBehMedBy, gBehMedMmX);
 cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTaF_ss,
 		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg,
 		gBehMedHgF_be, gBehMedBeRe);
@@ -483,7 +482,6 @@ csMed_raw  >  csMedBeRe  / ^ MPRECXT  _ MARKS  gBehMedRe;
 csMed_raw  >  csMedBeNn  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 csMed_raw  >  csMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
 csMed_raw  >  csMedBe  / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
-csMed_raw  >  csMedBe  / ^ MPRECXT  _ MARKS  gBehMed  cKafMed_alt;
 
 
 gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
