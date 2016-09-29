@@ -303,6 +303,7 @@ sub make_name
         $gname =~ s/\.behg/BeHg/;
         $gname =~ s/\.bere/BeRe/;
         $gname =~ s/\.benn/BeNn/;
+        $gname =~ s/\.bekf/BeKf/;
         $gname =~ s/Kaf/ArabicKaf/;
         $gname =~ s/ArabicKafRing/KafRing/;
         $gname =~ s/Keheh/Kaf/;
