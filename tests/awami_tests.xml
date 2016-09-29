@@ -139,9 +139,6 @@
     <test label="200E - LRM" rtl="True">
       <string>بچ‎بچا | بخشَݨ‎ہار</string>
     </test>
-    <test label="bug" rtl="True">
-      <string>آویزے</string>
-    </test>
     <test label="zwj" rtl="True">
       <string>‍ب‍ ‍قس ‍ظمش‍</string>
     </test>
@@ -172,7 +169,7 @@
     <test label="bug" rtl="True">
       <string>سنببن</string>
     </test>
-    <test background="#ff0000" label="bug" rtl="True">
+    <test label="bug" rtl="True">
       <string>اقوامِ متحدہ</string>
     </test>
     <test class="fset11" label="reh/zain nuqta positions" rtl="True">
@@ -341,6 +338,12 @@
     </test>
     <test class="fset24" label="gGafMed_short" rtl="True">
       <string>کُنگَکہ  تِخِنگِک</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="PRE-KAF" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="tah + kaf" rtl="True">
+      <string>سطکب سطل سطکا طبگع سطبگج</string>
     </test>
     <test background="#55aaff" class="fset24" label="BEH SEQUENCES" rtl="True">
       <string/>

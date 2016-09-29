@@ -514,6 +514,10 @@ csMed_raw  >  csMedBe	/  ^ MPRECXT  _ MARKS  cTehMarbutaFin;	// use pre-beh form
 
 gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT _  MARKS  gAlefFin_lm;
 
+// Special short form of tah before kaf:
+gTahMed_raw  >  gTahMedKf   /  ^ MPRECXT _  MARKS  (cKafMed cKafFin);
+gTahMed_raw  >  gTahMedBeKf /  ^ MPRECXT _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
+
 // No contextual forms for this glyph:
 gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
 
@@ -545,6 +549,10 @@ csIni_raw  >  csIniBeHg_BeRe  / _ MARKS  gBehMedBeRe; // eg, \u0644\u0628\u0646\
 csIni_raw  >  csIniBeRe  /  _ MARKS  gBehMedRe;
 csIni_raw  >  csIniBeNn  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 csIni_raw  >  csIniBeHg  /  _ MARKS  gBehMedHgF;
+
+// Special short form of tah before kaf:
+//gTahIni_raw  >  gTahIniKf /  _  MARKS  (cKafMed cKafFin); -- not implemented
+gTahIni_raw  >  gTahIniBeKf /  _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
 
 // SS cases handled above:
 csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
@@ -847,7 +855,7 @@ g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 
 if (hehDoachIni == heart)
 gHehDoIniQf  gWawFin  >  gHehDoIniQf_alt  gWawFin_stfh;
-cHehDoIni_noAlt  >  cHehDoIni_alt;
+csHehDoIni_noAlt  >  csHehDoIni_alt;
 endif;
 
 if (sukunAlt == jazmLeft)

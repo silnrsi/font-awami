@@ -446,7 +446,7 @@ cKernable = (c_isolate  c_final  cKernPunct)
 c_jumpTail = ( cJeemFin, gAinFin );
 
 
-cls_excludingGlyphs = (cKafMed cKafMed_base)
+cls_excludingGlyphs = (cKafMed csKafMed_base)
 	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
 cls_excludingGlyphs_kern = (gKafFin, gGafFin)
@@ -899,95 +899,95 @@ pass(5)
 // Kaf-top collision fixing/prevention
 
 // Tall: large-nuqta + kaf 
-cNuqtaUpperLarge  cKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF  cKafMed_base$K  cKafMed_top_tall$K
+cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
+	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacritic?  _=K  _=T;
 
 // Tall: lam/tah + kaf
-cKafMed_medium  g__kafTop_null  
-	>  cKafMed_base$K  cKafMed_top_tall$K
+csKafMed_medium  g__kafTop_null  
+	>  csKafMed_base$K  csKafMed_top_tall$K
 	/  cBaseTall  MARKS  _=K  _=T;
 
-cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF cKafMed_base$K  cKafMed_top_tall$K
+cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
+	>  @N STAYBELOWKAF csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N cBaseTall  MARKS  _=K  _=T;
 
 // Tall: nuqta + diac + kaf
-cNuqtaLike  cKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF  cKafMed_base$K  cKafMed_top_tall$K
+cNuqtaLike  csKafMed_medium  g__kafTop_null  
+	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  _=K  _=T;
 
 // Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
-cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  cKafMed_medium  g__kafTop_null  
-	>  @N1  @N2 STAYBELOWKAF  cKafMed_base$K  cKafMed_top_tall$K
+cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  csKafMed_medium  g__kafTop_null  
+	>  @N1  @N2 STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N1  cDiacritic?  c_medial  _=N2  cDiacritic?  _=K  _=T;
 
 // nuqta + diac + kaf => default
-cKafMed_medium  g__kafTop_null  >  @K  @T
+csKafMed_medium  g__kafTop_null  >  @K  @T
 	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
 
 // Short + medium-short: gaf + ??? + kaf/gaf
-cGafIM_medium g__kafTop_null  cNuqtaLikeUpper  cKafMed_medium g__kafTop_null
-	>  cGafIM_base$G  cGafIM_top_shorter$G  
+csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
+	>  csGafIM_base$G  csGafIM_top_shorter$G  
 			@Nfb STAYBELOWKAF // keep nuqta from hopping above kaf
-			cKafMed_base$K  cKafMed_top_medshort$K
+			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
-cGafIM_medium g__kafTop_null  cKafMed_medium g__kafTop_null
-	>  cGafIM_base$G  cGafIM_top_shorter$G  cKafMed_base$K  cKafMed_top_medshort$K
+csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 
 // Gaf + kaf/gaf-medial => shorter
-cGafIM_medium  g__kafTop_null  cKafMed_medium  g__kafTop_null
-	>  cGafIM_base$G  cGafIM_top_shorter$G  cKafMed_base$K  cKafMed_top_tall$K
+csGafIM_medium  g__kafTop_null  csKafMed_medium  g__kafTop_null
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
 // Gaf + kaf/gaf-final => short
-cGafIM_medium g__kafTop_null  (gKafFin gGafFin)
-	>  cGafIM_base$G  cGafIM_top_short$G  @K
+csGafIM_medium g__kafTop_null  (gKafFin gGafFin)
+	>  csGafIM_base$G  csGafIM_top_short$G  @K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
 
 // Medium-short: lam/tah + jeem + kaf
-cBaseTall  cKafMed_medium  g__kafTop_null  
-	>  @B  cKafMed_base$K  cKafMed_top_medshort$K
+cBaseTall  csKafMed_medium  g__kafTop_null  
+	>  @B  csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=B  cNuqtaLike? cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Medium-short: tah + beh/meem/ain + kaf...
-cTahIM  cKafMed_medium  g__kafTop_null  
-	>  @Ta  cKafMed_base$K  cKafMed_top_medshort$K
+cTahIM  csKafMed_medium  g__kafTop_null  
+	>  @Ta  csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=Ta cNuqtaLike? cDiacritic?  c_narrow cNuqtaLike? cDiacritic?  _=K  _=T;
 
 // Medium-short: nuqta + jeem + kaf...
-cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null  
+cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
 	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}} // move right, not up
-			cKafMed_base$K  cKafMed_top_medshort$K
+			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Short round form: tah + kaf + lam/alef
-cTahIM  cKafRound_medium  g__kafTop_null
-	>  @Ta  cKafRound_short  @Null
+cTahIM  csKafRound_medium  g__kafTop_null
+	>  @Ta  csKafRound_short  @Null
 	/  _=Ta MARKS  _=K MARKS  _=Null;
 
 // No change (\u062C\u0646\u06AF\u06CC)
-g__dot1u  cKafMed_medium  g__kafTop_null
+g__dot1u  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  @K  @T
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
 // Tall (\u062E\u064F\u0634\u06A9\u06CC)
-cNuqtaLikeUpperNoKT  cKafMed_medium  g__kafTop_null
-	>  @N STAYBELOWKAF  cKafMed_base$K  cKafMed_top_tall$K
+cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
+	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
 
 // Situations where short kaf is needed (except cases above)
 
-cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  cKafIM_base$K  cKafIM_top_shorter$K
+cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
+	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
 	/  _=N  _=D  _=K {position.y > 1350m}  _=T;
 
-cNuqtaLikeUpper?  cDiacritic?  cKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  cKafIM_base$K  cKafIM_top_short$K
+cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
+	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > 1135m}  _=T;
 
 
@@ -1012,19 +1012,19 @@ pass(6)
 // so we have to do it in a separate pass.
 
 // ngoeh nuqtas
-cKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
-cKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
 
 // rings
-cKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
-cKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
 
-cKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}};
-cKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}};
+csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}};
+csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}};
 
 endpass;
 
@@ -1207,7 +1207,7 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
 
 // \u06af\u064f\u06af
-cKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM cKafIM_base cKafFin);
+csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM csKafIM_base cKafFin);
 
 
 // Low priority special case:
