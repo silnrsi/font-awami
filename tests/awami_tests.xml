@@ -31,7 +31,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>جع جعب جیر جیہ</string>
+      <string>سنِنگ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1410,6 +1410,15 @@
     </test>
     <test class="fset24" label="gbs" rtl="True">
       <string>گَبُس</string>
+    </test>
+    <test background="#55aaff" class="fset24" label="DON'T CHANGE" rtl="True">
+      <string/>
+    </test>
+    <test class="fset24" label="single nuqta + gaf" rtl="True">
+      <string>جنگی</string>
+    </test>
+    <test class="fset24" label="2 single nuqtas + gaf + kaf" rtl="True">
+      <string>بِنِنگَکہ</string>
     </test>
   </testgroup>
   <testgroup label="Demo Poetry">

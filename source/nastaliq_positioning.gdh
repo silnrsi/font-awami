@@ -918,6 +918,11 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  _=K  _=T;
 
+// Don't change: single-nuqta + single-nuqta + kaf (eg, \u0628\u0650\u0646\u0650\u0646\u06AF\u064E\u06A9\u06C1)
+g__dot1u  g__dot1u  csKafMed_medium  g__kafTop_null  
+	>  @N1  @N2 STAYBELOWKAF  @K  @T
+	/  _=N1  cDiacritic?  c_medial  _=N2  cDiacritic? ^ _=K  _=T;
+
 // Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
 cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  csKafMed_medium  g__kafTop_null  
 	>  @N1  @N2 STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
