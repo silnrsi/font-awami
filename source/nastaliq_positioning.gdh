@@ -859,20 +859,27 @@ endtable;
 
 #define NOTSET 12345  // some number that is not likely to be a real value
 
-c_initial {user2 = position.y}  c_final {user2 = position.y}   / _=I  MARKS2N  _=F;
-c_initial {user2 = position.y}  c_medial {user2 = position.y}  c_final {user2 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
+c_initial {user6 = position.y}  c_final {user6 = position.y}   / _=I  MARKS2N  _=F;
+c_initial {user6 = position.y}  c_medial {user6 = position.y}  c_final {user6 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
 
-c_medial {user2 = NOTSET}  c_medial {user2 = position.y}   c_final {user2 = NOTSET}
-	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user2==0};
+c_medial {user6 = NOTSET}  c_medial {user6 = position.y}   c_final {user6 = NOTSET}
+	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user6==0};
 
-c_medial {user2 = NOTSET}  c_medial {user2 = position.y}
-	/ ^ cIniMed MARKS2N  _=M1 MARKS2N  _=M2 {user2 == NOTSET};
+c_medial {user6 = NOTSET}  c_medial {user6 = position.y}
+	/ ^ cIniMed MARKS2N  _=M1 MARKS2N  _=M2 {user6 == NOTSET};
 
-c_initial {user2 = position.y}  c_medial {user2 = position.y}  /  _=I  MARKS2N  _=M {user2==NOTSET} ;
+c_initial {user6 = position.y}  c_medial {user6 = position.y}  /  _=I  MARKS2N  _=M {user6==NOTSET} ;
 
 // Do this last:
-c_final {user2 = position.y}  /  _ {user2 == NOTSET};
+c_final {user6 = position.y}  /  _ {user6 == NOTSET};
 *****/
+
+
+#define pairKern user2
+#define tooHigh user3
+
+// currently not used
+////#define marginSet user4  -- currently not used
 
 
 table(positioning)
@@ -896,7 +903,7 @@ endtable;
 
 pass(5)
 
-// Kaf-top collision fixing/prevention
+// Kaf-top collision fixing/prevention and tall sequences
 
 // Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
@@ -1010,31 +1017,58 @@ cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flag
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
+/////c_initial {user5 = bb.top; user6 = position.y + bb.top};
+
+
 endpass;  // pass 5
 
 
+table(glyph)
+csFinal_regular = (gSeenFin, gChotiyehFin);
+csFinal_short = (gSeenFin_short, gChotiyehFin_short);
+endtable;
+
+if (shortFinals == 1)
 pass(6)
 
-// Due to an infelicity in the Graphite engine, we can't subsitute and attach in the same rule,
+c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > 2000m}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
+c_initial     c_medial  >  @I  @M {tooHigh = 1}   
+	/  _=I  {position.y + bb.top > 2500m}  cNuqtaLikeLower? (cNuqtaLikeUpper  cDiacriticUpper) cDiacriticLower? ^ _=M;
+c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > 3000m}  MARKS ^ _=M;
+
+csKafIM_base  c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {tooHigh == 1 || position.y > 1400m}  MARKS ^ _=M;
+
+c_medial      c_medial  >  @M1 @M2 {tooHigh = 1}  /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
+
+c_medial  csFinal_regular  >  @M  csFinal_short   /  _=M  {tooHigh == 1}  MARKS  _=F;
+
+endpass;  // 6
+endif;
+
+
+pass(7)
+
+// Due to an infelicity in the Graphite engine, we can't substitute and attach in the same rule,
 // so we have to do it in a separate pass.
 
 // ngoeh nuqtas
-csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
-csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
 
 // rings
 csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
-	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
+	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
-	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM } };
+	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
-csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}};
-csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}};
+csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
+csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true};
 
-// EXPERIMENT
-//gSeenFin  >  gSeenFin_short;
+
+c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}} gChotiyehFin_short {passKeySlot = true; insert = 1}  /  _ MARKS2N _=F;
+c_exit_seen     {att {to=@F; with=exit_seen;     at=entr_seen}}     gSeenFin_short {passKeySlot = true; insert = 1}      /  _ MARKS2N _=F;
 
 endpass;
 
@@ -1048,9 +1082,9 @@ endpass;
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
 #if DO_COL_FIX
-pass(7)
+pass(8)
 #else
-pass(3)
+pass(4)
 #endif // DO_COL_FIX
 
 
@@ -1154,15 +1188,10 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
 
-endpass; // pos - 7 (or 3)
+endpass; // pos - 8 (or 4)
 
 
 // Kerning pair adjustments
-
-#define pairKern user3
-// currently not used
-////#define marginSet user4  -- currently not used
-
 
 table(glyph) { AttributeOverride = 1 }
 
@@ -1195,7 +1224,7 @@ gAlefFin { kernPreKafNoSp = -80m };
 endtable; // glyph
 
 
-pass(8)
+pass(9)
 
 // Special cases involving nuqtas.
 
@@ -1245,7 +1274,7 @@ cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_
 cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 
-endpass;  // 8
+endpass;  // 9
 
 
 #if DO_COL_FIX
@@ -1254,7 +1283,7 @@ endpass;  // 8
 
 if (collFix > 0)
 
-pass(9) // { CollisionFix = 4; AutoKern = true }
+pass(10) // { CollisionFix = 4; AutoKern = true }
 
 
 // Set up diacritic collision fixes and kerning.
@@ -1487,7 +1516,7 @@ cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.gl
 
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
-endpass;  // pass 9
+endpass;  // pass 10
 
 endif; // (collFix > 0)
 
@@ -1495,7 +1524,7 @@ endif; // (collFix > 0)
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(10) { CollisionFix = 4; AutoKern = true }
+pass(11) { CollisionFix = 4; AutoKern = true }
 // Perform diacritic-related fixing.
 endpass;
 endif;
