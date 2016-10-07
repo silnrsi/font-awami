@@ -993,7 +993,7 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
 
-// Situations where short kaf is needed (except cases above)
+// Situations where short kaf is needed due to height (except cases above)
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
@@ -1017,15 +1017,16 @@ cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flag
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
-/////c_initial {user5 = bb.top; user6 = position.y + bb.top};
+// Debugging:
+c_initial {user5 = bb.top; user6 = position.y + bb.top};
 
 
 endpass;  // pass 5
 
 
 table(glyph)
-csFinal_regular = (gSeenFin, gChotiyehFin);
-csFinal_short = (gSeenFin_short, gChotiyehFin_short);
+csFinal_regular = (gSeenFin, gChotiyehFin, gNoonFin);
+csFinal_short = (gSeenFin_short, gChotiyehFin_short, gNoonFin_short);
 endtable;
 
 if (shortFinals == 1)
@@ -1067,8 +1068,22 @@ csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; pass
 csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true};
 
 
-c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}} gChotiyehFin_short {passKeySlot = true; insert = 1}  /  _ MARKS2N _=F;
-c_exit_seen     {att {to=@F; with=exit_seen;     at=entr_seen}}     gSeenFin_short {passKeySlot = true; insert = 1}      /  _ MARKS2N _=F;
+c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}}	gChotiyehFin_short {passKeySlot = true; insert = 1}	/  _ MARKS2N ^ _=F;
+
+c_exit_seen     {att {to=@F; with=exit_seen;     at=entr_seen}}     gSeenFin_short {passKeySlot = true; insert = 1}     /  _ MARKS2N ^ _=F;
+c_exit_noon     {att {to=@F; with=exit_noon;     at=entr_noon}}     gNoonFin_short {passKeySlot = true; insert = 1}     /  _ MARKS2N ^ _=F;
+
+csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
+csFinal_short  ctahUpperDia   {att {to=@F; at=tahUpperS; with=tahUpperM}}     / _=F  _;
+csFinal_short
+	cn23LowerDia {att {to=@F; at=n23LowerS; with=n23LowerM}; collision.flags = SET_FIX(collision.flags)}
+	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
+	/ _=F  _  _;
+csFinal_short
+	cNuqtaLikeLower {att {to=@F; at=n1LowerS; with=n1LowerM}}
+	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
+	/ _=F  _  _;
+csFinal_short  cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}  / _=F  _;
 
 endpass;
 

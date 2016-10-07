@@ -20,6 +20,7 @@
       <style feats="hamz=1" name="fset22"/>
       <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -31,7 +32,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>سنِنگ</string>
+      <string>ملککئ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1741,6 +1742,9 @@
     </test>
   </testgroup>
   <testgroup label="Tall sequences">
+    <test background="#55aaff" class="fset25" label="REAL EXAMPLES" rtl="True">
+      <string/>
+    </test>
     <test class="fset21" label="smjhty" rtl="True">
       <string>سمجھتے </string>
     </test>
@@ -1791,6 +1795,23 @@
     </test>
     <test class="fset24" label="khyty" rtl="True">
       <string>کھیتی</string>
+    </test>
+    <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
+      <string/>
+    </test>
+    <test class="fset25" label="w/ and w/o upper attachments" rtl="True">
+      <comment>These are fake words.</comment>
+      <string>سمجی شِمجی سُمجی</string>
+    </test>
+    <test class="fset25" label="with upper nuqta and diac" rtl="True">
+      <comment>The combination of nuqta and diac pushes it above the limit. Only one or the other isn't enough.</comment>
+      <string>تُمفلن تمفلن یُمفلن</string>
+    </test>
+    <test class="fset25" label="reattach upper nuqta-like" rtl="True">
+      <string>لجپفݩ لجپفئ شمجڻ</string>
+    </test>
+    <test class="fset25" label="reattach upper and lower nuqtas" rtl="True">
+      <string>لجپفښ لجپفڜ</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">
