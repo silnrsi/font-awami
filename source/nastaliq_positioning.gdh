@@ -1459,6 +1459,15 @@ cIso { collision {
 } }
 	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
+// EXPERIMENT - don't allow ANY overlap between words
+//cKernable { collision {
+//	flags = SET_FIX(collision.flags);
+//	flags = SET_KERN(collision.flags);
+//	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+//	max.x = MAXKERN; min.x = (@S.advance.x * -1) - collision.margin;
+//    // min/max.y are omitted for kernable glyphs
+//} }
+//	/  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
 // For short sequences (two base chars) ending with bariyeh,
 // kern against the bariyeh tail, not the initial.
