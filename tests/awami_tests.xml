@@ -32,7 +32,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>ملککئ</string>
+      <string>”خُوشخبری“ گ   ”خُوشخبری“ ل</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -449,7 +449,7 @@
       <string>بِسمِ اللہ الرَّ حمن الرَّ حࣿیمِ</string>
     </test>
     <test class="fset24" label="salaam ulena text" rtl="True">
-      <string>سلامُهُ عَلَینَا  |  سلامهُ علینا</string>
+      <string>سلامُهُ عَلَینَا  |  سلامهٗ علینا</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">

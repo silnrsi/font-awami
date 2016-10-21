@@ -421,10 +421,8 @@ c_initial {kernBbRightS = point(0m,0m) };
 c_final {kernBbLeftS = point(0m,0m) };
 c_isolate {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
-gComma {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
-gFullStop {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
-gSemicolon {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
-cKernPunct = (gComma gFullStop gSemicolon);
+cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark)
+	{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 endtable;
 
@@ -441,7 +439,6 @@ cKernable = (c_isolate  c_final  cKernPunct)
 	dbgBbLeft = bb.left; dbgLsb = lsb;
 	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
 }
-
 
 c_jumpTail = ( cJeemFin, gAinFin );
 
@@ -1309,6 +1306,9 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
 
+// Undo kludge above
+g_quotedblright { collision.flags = CLEAR_IGNORE(collision.flags) };
+
 
 cKafTop { collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -1389,8 +1389,8 @@ cDiacriticLower {
 (gNoonGhunnaMark g__smallV) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
-	min.x = -50m;
-	max.x = 50m;
+	min.x = -1m;
+	max.x = 1m;
 	min.y = -300m;
 	max.y = 500m;
 } }  /  cNuqta  cDiacritic?  _;
@@ -1501,7 +1501,7 @@ cKernable { collision {
 } }
 	/  _  cNuqtaLike?  DIACS  cNoJoin?  cPostKernable=N;
 
-cKernable { collision {
+(cKernable g_quotedblright) { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = STDMARGIN;
@@ -1509,16 +1509,9 @@ cKernable { collision {
     // min/max.y are omitted for kernable glyphs
 } };
 
-g_quotedblright  { collision {
-	flags = SET_FIX(collision.flags);
-	flags = SET_KERN(collision.flags);
-	margin = STDMARGIN;
-	max.x = MAXKERN; min.x = MINKERN;
-    // min/max.y are omitted for kernable glyphs
-} };
 
 /******
-endif;
+endif; // overlapKern == medium
 
 if (overlapKern == tight)
 
