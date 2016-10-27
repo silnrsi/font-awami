@@ -490,6 +490,9 @@ csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  (gBehMedBeM1 gBehMedBeNn);
 csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  gBehMed;  ///  MARKS  c_dkgal_postAlt; - superfluous context?
 
 
+gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  (cSeenMed cSeenFin);
+
+
 // Basic rules
 csMed_raw  >  csMedBeF	/  ^ MPRECXT  _ MARKS  cBehFin;
 csMed_raw  >  csMedJm	/  ^ MPRECXT  _ MARKS  (cJeemFin cJeemMed);
