@@ -1910,6 +1910,9 @@
     <test class="fset24" label="kern after right quote mark" rtl="True">
       <string>”تا</string>
     </test>
+    <test class="fset25" label="quotes" rtl="True">
+      <string>”لے اتی چو ن٘ا لہ فرُو...شزدے بیوس۔“</string>
+    </test>
   </testgroup>
   <testgroup label="diacritics">
     <test label="initial + D-above" rtl="True">
@@ -1977,6 +1980,15 @@
     </test>
     <test class="fset24" label="nuqta + noon-ghunna mark" rtl="True">
       <string>کھنِ٘نگ  چُھودونِن٘گ</string>
+    </test>
+    <test background="#55aaff" class="fset25" label="MLOWERC - before ain, yeh, jeem" rtl="True">
+      <string/>
+    </test>
+    <test class="fset25" label="kaf + gaf" rtl="True">
+      <string>کِع گِی گِج بکِع فگِی مکِج</string>
+    </test>
+    <test class="fset25" label="lam" rtl="True">
+      <string>لِع لِی لِج بلِع للِی سلِج</string>
     </test>
   </testgroup>
   <testgroup label="extended characters">

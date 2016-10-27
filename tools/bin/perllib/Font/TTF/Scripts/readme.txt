@@ -1,0 +1,1 @@
+When modifying GDL.pm, copy it to C:\FontUtils\Font-TTF-scripts\lib\Font\TTF\Scripts where it is actually run from.

@@ -801,7 +801,7 @@ cKernable { collision {
 
 cDiacritic { collision.flags = SET_IGNORE(collision.flags) };	// these have not been attached, so don't bother with them
 
-g_quotedblright { collision.flags = SET_IGNORE(collision.flags) }; // fix with kerning
+(g_quotedblright g_quotedblrightArab) { collision.flags = SET_IGNORE(collision.flags) }; // fix with kerning
 
 endpass; // 3
 
@@ -1307,7 +1307,7 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
 
 // Undo kludge above
-g_quotedblright { collision.flags = CLEAR_IGNORE(collision.flags) };
+(g_quotedblright g_quotedblrightArab) { collision.flags = CLEAR_IGNORE(collision.flags) };
 
 
 cKafTop { collision {
@@ -1326,6 +1326,19 @@ if (collFix >= 2)
 ////	max.x = MAXKERN; min.x = MINKERN + minKernDelta;}}
 ////	/  _ {marginSet == 1}  cNuqtaLike?  DIACS  cPostKernable;
 
+// Special cases
+/**
+cDiacriticUpper { collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 500m;
+	};
+	// Don't set sequence attributes; let the diac stay below the upper nuqta.
+}  /  cFehIni  cNuqtaLikeUpper  (cHehGoalMed cMeemMed)  cNuqtaLikeLower?  _;
+**/
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -1480,7 +1493,9 @@ cRehFin_longtail { collision {
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin); 
+	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin);
+
+
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
