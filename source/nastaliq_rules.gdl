@@ -254,18 +254,26 @@ wordSpacing {
 	}
 }
 
-shortFinals {
-	id = "sfin";
-	name.1033 = string("Short finals");
-	default = 1;
+shortForms {
+	id = "shrt";
+	name.1033 = string("Short forms");
+	default = 3;
     settings {
-        ffalse {
+        none {
             value = 0;
-            name.1033 = string("Off");
+            name.1033 = string("None");
         }
-        ftrue {
+        kaf {
             value = 1;
-            name.1033 = string("On");
+            name.1033 = string("Kafs and gafs");
+        }
+        finals {
+            value = 2;
+            name.1033 = string("Finals");
+        }
+        all {
+            value = 3;
+            name.1033 = string("All");
         }
     }
 }

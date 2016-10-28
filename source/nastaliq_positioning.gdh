@@ -1000,12 +1000,12 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
-	/  _=N  _=D  _=K {position.y > 1350m}  _=T;
+	/  _=N  _=D  _=K {position.y > 1350m && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_short$K
-	/  _=N  _=D  _=K {position.y > 1135m}  _=T;
+	/  _=N  _=D  _=K {position.y > 1135m && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
@@ -1028,11 +1028,11 @@ endpass;  // pass 5
 
 
 table(glyph)
-csFinal_regular = (gSeenFin, gChotiyehFin, gNoonFin);
-csFinal_short = (gSeenFin_short, gChotiyehFin_short, gNoonFin_short);
+csFinal_regular = (gSeenFin, gChotiyehFin, gNoonFin, gBariyehFin, gQafFin_stfhM);
+csFinal_short = (gSeenFin_short, gChotiyehFin_short, gNoonFin_short, gBariyehFin_short, gQafFin_stfhM_short);
 endtable;
 
-if (shortFinals == 1)
+if (shortForms >  1)
 pass(6)
 
 c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > 2000m}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
@@ -1071,10 +1071,24 @@ csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; pass
 csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true};
 
 
-c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}}	gChotiyehFin_short {passKeySlot = true; insert = 1}	/  _ MARKS2N ^ _=F;
+c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}}	gChotiyehFin_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
 
-c_exit_seen     {att {to=@F; with=exit_seen;     at=entr_seen}}     gSeenFin_short {passKeySlot = true; insert = 1}     /  _ MARKS2N ^ _=F;
-c_exit_noon     {att {to=@F; with=exit_noon;     at=entr_noon}}     gNoonFin_short {passKeySlot = true; insert = 1}     /  _ MARKS2N ^ _=F;
+table(glyph)
+// Use a slightly higher AP when attaching to a short bariyeh, to save a little more space:
+cby { exit_by_alt.x = exit_bariyeh.x + 12m; exit_by_alt.y = exit_bariyeh.y + 30m };
+endtable;
+
+c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+
+c_exit_seen     {att {to=@F; with=exit_seen;     at=entr_seen}}     gSeenFin_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_noon     {att {to=@F; with=exit_noon;     at=entr_noon}}     gNoonFin_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_qafWawStfh  {att {to=@F; with=exit_qafWawStfh; at=entr_qafWawStfh}} gQafFin_stfhM_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
 csFinal_short  ctahUpperDia   {att {to=@F; at=tahUpperS; with=tahUpperM}}     / _=F  _;
