@@ -21,7 +21,8 @@
       <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25"/>
-      <style feats="lval=1" name="fset26"/>
+      <style feats="lamv=1" name="fset27"/>
+      <style feats="snuq=1" name="fset28"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -168,8 +169,8 @@
     <test class="fset10" label="jesus3" rtl="True">
       <string>آپۜ</string>
     </test>
-    <test label="bug" rtl="True">
-      <string>سنببن</string>
+    <test class="fset28" label="bug" rtl="True">
+      <string>ڳخ</string>
     </test>
     <test label="bug" rtl="True">
       <string>اقوامِ متحدہ</string>
@@ -989,7 +990,7 @@
       <comment>The ordering of the nuqtas does not seem to reflect maxoverlap.</comment>
       <string>ابیجی</string>
     </test>
-    <test background="#ffaaff" label="beh + yeh + jeem" rtl="True">
+    <test label="beh + yeh + jeem" rtl="True">
       <comment>The centers of the first single-nuqta and the double-nuqta does not reflect minxoffset.</comment>
       <string>بِیج</string>
     </test>
@@ -997,7 +998,7 @@
       <comment>The double-nuqta is centered over the hamza - it should be further to the right.</comment>
       <string>کُنتؤ</string>
     </test>
-    <test background="#ffaaff" label="teh + noon + hah + sheen*2 + teh" rtl="True">
+    <test label="teh + noon + hah + sheen*2 + teh" rtl="True">
       <string>ارتنحششتا</string>
     </test>
     <test background="#00aaff" label="OVERLAPS" rtl="True">
@@ -1080,18 +1081,18 @@
     <test label="teh + zah" rtl="True">
       <string>اِنتظا</string>
     </test>
+    <test class="fset9" label="long word w/ collisions" rtl="True">
+      <string>قِیلِیقِیہصُوبِئیں</string>
+    </test>
+    <test class="fset21" label="lam-bar" rtl="True">
+      <string>نکݪتی نکݪئی</string>
+    </test>
     <test background="#ff0000" label="NO GOOD SOLUTION" rtl="True">
       <string/>
     </test>
     <test background="#ff0000" label="khah + noon + gaf" rtl="True">
       <comment>No good solution.</comment>
       <string>تِخِنگِک</string>
-    </test>
-    <test class="fset9" label="long word w/ collisions" rtl="True">
-      <string>قِیلِیقِیہصُوبِئیں</string>
-    </test>
-    <test class="fset21" label="lam-bar" rtl="True">
-      <string>نکݪتی نکݪئی</string>
     </test>
     <test background="#55aaff" class="fset24" label="LINE HEIGHT" rtl="True">
       <string/>
@@ -1130,11 +1131,6 @@
     </test>
     <test class="fset21" label="kaf + lam-bar 2" rtl="True">
       <string>نکݪتی نکݪئی</string>
-    </test>
-  </testgroup>
-  <testgroup label="Collisions - fix bases">
-    <test class="fset6" label="lam + kinked kaf" rtl="True">
-      <string>ملکیت</string>
     </test>
   </testgroup>
   <testgroup label="Overlaps">
@@ -1496,7 +1492,7 @@
     <test class="fset10" label="lam w/ small v" rtl="True">
       <string>ڵ ڵڵڵ</string>
     </test>
-    <test class="fset26" label="lam w/ small v - alt" rtl="True">
+    <test class="fset27" label="lam w/ small v - alt" rtl="True">
       <string>ڵ ڵڵڵ</string>
     </test>
     <test class="fset10" label="noon w/ small v" rtl="True">

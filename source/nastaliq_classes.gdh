@@ -7,6 +7,20 @@
 
 table(glyph) {MUnits = 2048};
 
+
+cDot1l = (g__dot1l, g__dot1l_small);
+cDot1u = (g__dot1u, g__dot1u_small);
+cDot2l = (g__dot2l, g__dot2l_small);
+cDot2u = (g__dot2u, g__dot2u_small);
+cDot2vl = (g__dot2vl, g__dot2vl_small);
+cDot2vu = (g__dot2vu, g__dot2vu_small);
+cDot3l = (g__dot3l, g__dot3l_small);
+cDot3u = (g__dot3u, g__dot3u_small);
+cDot3uD = (g__dot3uD, g__dot3uD_small);
+cDot4l = (g__dot4l, g__dot4l_small);
+cDot4u = (g__dot4u, g__dot4u_small);
+
+
 /* Treated as European numbers by default, which is probably okay.
 cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEasternFour,
 	gEasternFive, gEasternSix, gEasternSeven, gEasternEight, gEasternNine)
@@ -25,8 +39,10 @@ g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoi
 //	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
 
 
-cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u) ;
-cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l) ;
+cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u,
+	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small) ;
+cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l,
+	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cKafTopAdjusted = ( g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
@@ -70,10 +86,10 @@ cNuqtaLikeFirst = (cNuqtaLikeLower,
 	cKafTop);
 cNuqtaLikeSecond = (cNuqtaLikeUpMid,
 	// these can come second when you have a gueh with an alternate height top:
-	g__dot2vl);
+	cDot2vl);
 
 
-cNuqtaLikeLowerTall = (g__dot2vl, g__dot3l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow);
+cNuqtaLikeLowerTall = (cDot2vl, cDot3l, cDot4l, g__smallTahBelow, g__smallTah2dotsBelow);
 
 // Diacritics
 // Note: hamzas are nuqta-like, not diacritics
@@ -191,8 +207,8 @@ cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short); // gNoonRetroFin - not de
 cHehGoalFin = (gHehGoalFin);   // gHehGoalFin_stfh - no longer used
 cHehDoFin = (gHehDoFin);
 cChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short);
-cYehTailFin = (gYehTailFin, gYehTailFin_bfkl);
-cKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl);
+cYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin);
+cKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin);
 cTehMarbutaFin = (gTehMarbutaFin);
 
 // Right-link
@@ -686,8 +702,8 @@ csKafRound_medium = (gKafIni, gGafIni, gKafMed, gGafMed);
 csKafRound_short = (gKafIni_short, gGafIni_short, gKafMed_short, gGafMed_short);
 
 
-cNuqtaUpperLarge = (g__dot3u, g__dot4u, g__smallTah);
-cNuqtaUpperSmall = (g__dot1u, g__dot2u);
+cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah);
+cNuqtaUpperSmall = (cDot1u, cDot2u);
 
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
 

@@ -624,12 +624,26 @@ endpass; // 5
 
 table(glyph)
 
+cNuqta_normal = (g__dot1l, g__dot1u, g__dot2l, g__dot2u,
+	g__dot2vl, g__dot2vu, g__dot3l, g__dot3u, g__dot3uD,
+	g__dot4u, g__dot4l);
+
+cNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
+	g__dot2vl_small, g__dot2vu_small, g__dot3l_small, g__dot3u_small, g__dot3uD_small,
+	g__dot4u_small, g__dot4l_small);
+
+
 cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
 	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza, g__dot3l__dot3u);
 cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
 	g__attachedRing, g__dot2l, g__hehHook_small, g__dot3l);
 cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
 	g__dot2u, gHamzaAbove, gHamzaAbove, g__dot3u);
+
+cLowerNoUpper_small = (g__dot1l_small,	g__dot2vl_small,	g__dot1l_small,		g__hehHook_small,
+	g__attachedRing, g__dot2l_small, g__hehHook_small, g__dot3l_small);
+cUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_small,
+	g__dot2u_small, gHamzaAbove, gHamzaAbove, g__dot3u_small);
 
 cNuqtaLike += (cLowerUpper);
 
@@ -777,8 +791,9 @@ gChotiyeh	g__ring				>	gKashmiriYeh:(1 2)  _;
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 
-// Add dots to initial/medial chotiyeh
+(cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
 (cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
+
 (cBehIni  cBehMed)  g__dot2l__hamza  >  @1  gHamzaAbove:1;
 
 cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
@@ -792,6 +807,7 @@ gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 
 // Right-link
+//gBariyeh			_	>	gBehIni:1	g__dot2l:1_small  /  _ {smallNuqtas == 1}  _;
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1;
 //gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 absHamzaAbove:1;	// eventually replaced with beh + bariyeh
 
@@ -839,6 +855,21 @@ gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
 gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 
 
+if (smallNuqtas == 1)
+// Small nuqtas
+
+cNuqta_normal  >  cNuqta_small;
+
+g__noDot1u		>	g__dot1u_small;
+g__noDot2l		>	g__dot2l_small;
+g__dot2l_tail	>	g__dot2l_small;
+
+cLowerUpper  _  >  cLowerNoUpper_small  cUpperNoLower_small$1:1;
+
+else
+
+// See corresponding rules above.
+
 // If no other rule matches, than we do in fact need these nuqtas:
 g__noDot1u		>	g__dot1u;
 g__noDot2l		>	g__dot2l;
@@ -848,6 +879,8 @@ g__dot2l_tail	>	g__dot2l;
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
 cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+
+endif; // small nuqtas
 
 
 // Add a bogus null glyph in case we want to break the kafs into two pieces.

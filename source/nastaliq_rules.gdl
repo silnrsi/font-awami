@@ -270,6 +270,22 @@ shortFinals {
     }
 }
 
+smallNuqtas {
+	id = "snuq";
+	name.1033 = string("Small nuqtas");
+	default = 0;
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("Off");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("On");
+        }
+    }
+}
+
 collFix {
 	id = "agca";  // automatic glyph collision avoidance
 	name.1033 = string("Collision avoidance");
