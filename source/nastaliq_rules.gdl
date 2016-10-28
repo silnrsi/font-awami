@@ -164,6 +164,23 @@ hamzaAlt {
     default = 0;
 }
 
+lamValt {
+    id = "lamv";
+    name.1033 = string("Lam with V");
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("V over stem");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("V over bowl");
+        }
+    }
+    default = 0;
+}
+
+
 /***
 maddaAlt {
     id = "madd";

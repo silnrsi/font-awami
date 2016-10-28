@@ -307,6 +307,12 @@ cTakes_squiggleDia
 ////	g__smallV { attach {to = @B; at = smallVS; with = nUpperM } }
 ////	/ _=B  _=U;
 
+if (lamValt == 1)
+cTakes_smallValtDia
+	g__smallV { attach {to = @B; at = smallValtS; with = nUpperM } }
+	/ _=B  g__kafTop_null?  _=U;
+endif;
+
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
 	/ _=B  g__kafTop_null?  _=U;

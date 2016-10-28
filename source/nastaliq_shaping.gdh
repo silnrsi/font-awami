@@ -731,7 +731,12 @@ gKaf		g__kafSquiggle			>	gArabicKaf:(1 2)  _;
 
 //gLam								>	gLam;
 gLam		g__bar					>	gLamBar:(1 2)	_;
-gLam		g__smallV				>	gLamSmallV:(1 2)	_;
+
+if (lamValt == 1)
+gLam		g__smallV				>	gLamSmallV_alt:(1 2) _;
+else
+gLam		g__smallV				>	gLamSmallV:(1 2)     _;
+endif;
 
 //gMeem								>	gMeem;
 

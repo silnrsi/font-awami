@@ -21,6 +21,7 @@
       <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25"/>
+      <style feats="lval=1" name="fset26"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -1493,6 +1494,9 @@
       <string/>
     </test>
     <test class="fset10" label="lam w/ small v" rtl="True">
+      <string>ڵ ڵڵڵ</string>
+    </test>
+    <test class="fset26" label="lam w/ small v - alt" rtl="True">
       <string>ڵ ڵڵڵ</string>
     </test>
     <test class="fset10" label="noon w/ small v" rtl="True">
