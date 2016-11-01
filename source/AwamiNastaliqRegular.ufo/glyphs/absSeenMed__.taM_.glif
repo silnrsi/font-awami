@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absSeenMed.taM" format="1">
-  <advance width="1656"/>
+  <advance width="1657"/>
   <outline>
     <component base="absSeenMed.taF"/>
   </outline>
@@ -8,11 +8,24 @@
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
-    <real>0.656</real>
     <real>1</real>
     <real>0.6</real>
+    <real>0.845</real>
     <real>1</real>
   </array>
+  <key>com.adobe.type.autohint</key>
+  <data>
+  <hintSetList>
+    <hintset pointTag="lsb">
+      <hstem pos="68" width="252" />
+      <hstem pos="313" width="149" />
+      <hstem pos="337" width="125" />
+      <hstem pos="472" width="128" />
+      <hstem pos="588" width="150" />
+      <hstem pos="588" width="295" />
+    </hintset>
+  </hintSetList>
+  </data>
   </dict>
   </lib>
 </glyph>
