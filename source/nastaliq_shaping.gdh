@@ -331,6 +331,18 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 SK HG HH)  _  _  _  _
 	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=SK  _=HG  _=HH;
 
+// Salaam ulena
+
+gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small gUltaPesh
+		(g_zeronojoin g_nobreakspace)
+		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
+	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+
+
+gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
+		(g_zeronojoin g_nobreakspace)
+		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
+	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14) _ _ _ _ _ _ _ _ _ _ _ _ _;
 
 
 // And other common ligatures
