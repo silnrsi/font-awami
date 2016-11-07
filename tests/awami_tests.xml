@@ -23,6 +23,7 @@
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25"/>
       <style feats="lamv=1" name="fset27"/>
       <style feats="snuq=1" name="fset28"/>
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" name="fset29"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
@@ -164,7 +165,7 @@
       <string>یِسُوؔعۜ</string>
     </test>
     <test class="fset10" label="jesus2" rtl="True">
-      <string>عِیسٰیۜ</string>
+      <string>عِیسٰی سلامه علینا</string>
     </test>
     <test class="fset10" label="jesus3" rtl="True">
       <string>آپۜ</string>
@@ -455,6 +456,12 @@
     </test>
     <test class="fset24" label="salaam ulena text" rtl="True">
       <string>سلامُهُ عَلَینَا  |  سلامهٗ علینا</string>
+    </test>
+    <test class="fset29" label="salaam ulena" rtl="True">
+      <string>سلامهٗ‌علینا | سلامه علینا</string>
+    </test>
+    <test class="fset29" label="salaam ulena in context" rtl="True">
+      <string>عِیسٰی سلامه علینا اقیس</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
