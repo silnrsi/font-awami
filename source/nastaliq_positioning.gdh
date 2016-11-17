@@ -1283,7 +1283,7 @@ endtable;
 cDRW_IF  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = 170m; y = -400m}}  (gRehFin_jkl cWawFin)
 	/  _=DR cDiacritic? _=B _=N cDiacritic?  _=RW;
 
-// \u063A\u0632\u06CC\u0631; see also pass below where the margin for the reh is reduced
+// \u063A\u0632\u06CC\u0631; see also pass below where the margin for the reh is adjusted
 cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = -80m; y = 150m}}  (gRehFin_jkl cWawFin)
 	/  _=R cNuqtaLike? cDiacritic?  _=B _=N cDiacritic?  _=RW;
 
@@ -1515,10 +1515,16 @@ cIso { collision {
 //} }
 //	/  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
-// For short sequences (two base chars) ending with bariyeh,
-// kern against the bariyeh tail, not the initial.
-
 // Special case; also see previous pass where nuqtas are shifted up
+cRehFin_longtail { collision {
+ 	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = 130m;
+	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cDot3l cDiacritic? (gRehFin_jkl cWawFin);
+
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1529,7 +1535,8 @@ cRehFin_longtail { collision {
 	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin);
 
 
-
+// For short sequences (two base chars) ending with bariyeh,
+// kern against the bariyeh tail, not the initial.
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
