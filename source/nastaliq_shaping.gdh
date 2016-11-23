@@ -289,7 +289,7 @@ csIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniB
 cIMraw = (csIni_raw, csMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
 
 // Before alternate qaf/waw interface:
-cPreQwStfhM = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw);
+cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw);
 
 endtable;
 
@@ -358,10 +358,10 @@ gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  (c_initial c_medial)  MARKS  _;
 
-(gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfhM)  /  cPreQwStfhM  MARKS _;
+(gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfh)  /  cPreQwStfh  MARKS _;
 // Change feh to qaf for final qaf:
-gFehFin  >  gQafFin_stfhM                           /  cPreQwStfhM  MARKS  _  g__dot2u;
-gFehFin  >  gQafFin                                 /  _  g__dot2u;
+gFehFin  >  gQafFin_stfh                           /  cPreQwStfh  MARKS  _  g__dot2u;
+gFehFin  >  gQafFin                                /  _  g__dot2u;
 
 
 table(glyph)

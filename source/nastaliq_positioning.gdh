@@ -1029,9 +1029,9 @@ endpass;  // pass 5
 
 table(glyph)
 csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin, gBariyehFin,
-	gQafFin, gQafFin_stfhM, gLamFin, gMeemFin);
+	gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
 csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, gBariyehFin_short, 
-	gQafFin_short,gQafFin_stfhM_short, gLamFin_short, gMeemFin_short);
+	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 endtable;
 
 if (shortForms >  1)
@@ -1094,7 +1094,7 @@ c_exit_noon      {att {to=@F; with=exit_noon;      at=entr_noon}}   gNoonFin_sho
 	/  _ MARKS2N ^ _=F;
 c_exit_qafWaw    {att {to=@F; with=exit_qafWaw;    at=entr_qafWaw}} gQafFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWawStfh {att{to=@F;with=exit_qafWawStfh; at=entr_qafWawStfh}} gQafFin_stfhM_short {passKeySlot = true; insert = 1}
+c_exit_qafWawStfh {att{to=@F;with=exit_qafWawStfh; at=entr_qafWawStfh}} gQafFin_stfh_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_lamKaf     {att {to=@F; with=exit_lamKaf;   at=entr_lamKaf}} gLamFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
