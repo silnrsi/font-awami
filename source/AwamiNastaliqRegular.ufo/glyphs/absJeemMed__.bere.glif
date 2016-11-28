@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absJeemMed.bere" format="1">
-  <advance width="99"/>
+  <advance width="-124"/>
   <outline>
     <contour>
-      <point x="517" y="1061" type="curve" smooth="yes"/>
-      <point x="517" y="1141"/>
-      <point x="192" y="1133"/>
       <point x="-7" y="1133" type="curve" smooth="yes"/>
-      <point x="-55" y="1133"/>
-      <point x="-141" y="938"/>
+      <point x="-46" y="1133"/>
+      <point x="-124" y="1018"/>
+      <point x="-124" y="968" type="curve" smooth="yes"/>
+      <point x="-124" y="949"/>
+      <point x="-115" y="938"/>
       <point x="-95" y="938" type="curve" smooth="yes"/>
       <point x="248" y="938"/>
       <point x="328" y="929"/>
@@ -27,12 +27,15 @@
       <point x="468" y="965" type="curve" smooth="yes"/>
       <point x="513" y="1032"/>
       <point x="517" y="1053"/>
+      <point x="517" y="1061" type="curve" smooth="yes"/>
+      <point x="517" y="1141"/>
+      <point x="192" y="1133"/>
     </contour>
     <contour>
       <point x="0" y="722" type="move" name="exit_behPreReh"/>
     </contour>
     <contour>
-      <point x="-95" y="950" type="move" name="_exit_jeem"/>
+      <point x="-124" y="978" type="move" name="_exit_jeem"/>
     </contour>
     <contour>
       <point x="-216" y="1449" type="move" name="nUpper"/>
@@ -54,8 +57,8 @@
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
+    <real>0.967</real>
     <real>0.6</real>
-    <real>0.609</real>
     <real>1</real>
     <real>1</real>
   </array>
