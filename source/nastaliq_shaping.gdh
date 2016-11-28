@@ -918,8 +918,8 @@ endif;
 
 // kaf + lam-bar
 
-cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  MARKS  (cLamMed cLamFin)  _=B;
-cbarDia  >  g__barRaised  / (cKafIni cKafMed)  MARKS  (cLamMed cLamFin)  _=B;
+cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
+cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
 
 
 // See also subtending rules below.
