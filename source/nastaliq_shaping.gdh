@@ -289,7 +289,10 @@ csIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniB
 cIMraw = (csIni_raw, csMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
 
 // Before alternate qaf/waw interface:
-cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw gHehDoMed_raw);
+cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw, gHehDoMed_raw, gHehDoIni_raw);
+
+csQwFin = (gWawFin gQafFin);
+csQwFin_stfh = (gWawFin_stfh gQafFin_stfh);
 
 endtable;
 
@@ -358,7 +361,7 @@ gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  (c_initial c_medial)  MARKS  _;
 
-(gWawFin gQafFin)  >  (gWawFin_stfh gQafFin_stfh)  /  cPreQwStfh  MARKS _;
+csQwFin  >  csQwFin_stfh  /  cPreQwStfh  MARKS _;
 // Change feh to qaf for final qaf:
 gFehFin  >  gQafFin_stfh                           /  cPreQwStfh  MARKS  _  g__dot2u;
 gFehFin  >  gQafFin                                /  _  g__dot2u;
@@ -906,8 +909,8 @@ cKafIM  _  >  @1  g__kafTop_null:1;
 g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
 g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 
-if (hehDoachIni == heart)
-gHehDoIniQf  gWawFin  >  gHehDoIniQf_alt  gWawFin_stfh;
+if (hehDoachIni == round)
+gHehDoIniQf  csQwFin_stfh  >  gHehDoIniQf_alt  csQwFin  /  _=HD  cDiacritic?  _=QW;
 csHehDoIni_noAlt  >  csHehDoIni_alt;
 endif;
 

@@ -419,55 +419,55 @@ c_qw = (gQafFin gQafFin_stfh gWawFin gWawFin_stfh);
 
 // Heh-doachashmee initial alternates (which are actually the default forms)
 
-gHehDoIni_alt		{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMed.n1LowerS; nUpperS = gHehDoMed.nUpperS };
-gHehDoIniAi_alt		{ exit_ain = gHehDoMedAi.exit_ain; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
-gHehDoIniBe_alt		{ exit_beh = gHehDoMedBe.exit_beh; n1LowerS = gHehDoMedBe.n1LowerS; nUpperS = gHehDoMedBe.nUpperS };
-gHehDoIniBeF_alt	{ exit_behFinal = gHehDoMedBeF.exit_behFinal; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
-gHehDoIniBeM1_alt	{ exit_behLowTooth = gHehDoMedBeM1.exit_behLowTooth; n1LowerS = gHehDoMedBeM1.n1LowerS; nUpperS = gHehDoMedBeM1.nUpperS };
-gHehDoIniBeM2_alt	{ exit_behHighTooth = gHehDoMedBeM2.exit_behHighTooth; n1LowerS = gHehDoMedBeM2.n1LowerS; nUpperS = gHehDoMedBeM2.nUpperS };
-gHehDoIniBeHg_alt	{ exit_behLowTooth = gHehDoMedBeHg.exit_behLowTooth; n1LowerS = gHehDoMedBeHg.n1LowerS; nUpperS = gHehDoMedBeHg.nUpperS };
-gHehDoIniBeNn_alt	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
-gHehDoIniBeRe_alt	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
-gHehDoIniBy_alt		{ exit_bariyeh = gHehDoMedBy.exit_bariyeh; n1LowerS = gHehDoMedBy.n1LowerS; nUpperS = gHehDoMedBy.nUpperS };
-gHehDoIniCh_alt		{ exit_chotiyeh = gHehDoMedCh.exit_chotiyeh; n1LowerS = gHehDoMedCh.n1LowerS; nUpperS = gHehDoMedCh.nUpperS };
-gHehDoIniFe_alt		{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
-gHehDoIniHd_alt		{ exit_hehdoach = gHehDoMedHd.exit_hehdoach; n1LowerS = gHehDoMedHd.n1LowerS; nUpperS = gHehDoMedHd.nUpperS };
-gHehDoIniHgM_alt	{ exit_hehgoalMedial = gHehDoMedHgM.exit_hehgoalMedial; n1LowerS = gHehDoMedHgM.n1LowerS; nUpperS = gHehDoMedHgM.nUpperS };
-gHehDoIniHgF_alt	{ exit_hehgoalFinal = gHehDoMedHgF.exit_hehgoalFinal; n1LowerS = gHehDoMedHgF.n1LowerS; nUpperS = gHehDoMedHgF.nUpperS };
-gHehDoIniJm_alt		{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
-gHehDoIniRe_alt		{ exit_reh = gHehDoMedRe.exit_reh; n1LowerS = gHehDoMedRe.n1LowerS; nUpperS = gHehDoMedRe.nUpperS };
-gHehDoIniSd_alt		{ exit_sad = gHehDoMedSd.exit_sad; n1LowerS = gHehDoMedSd.n1LowerS; nUpperS = gHehDoMedSd.nUpperS };
-gHehDoIniSn_alt		{ exit_seen = gHehDoMedSn.exit_seen; n1LowerS = gHehDoMedSn.n1LowerS; nUpperS = gHehDoMedSn.nUpperS };
-gHehDoIniTaF_alt	{ exit_tah = gHehDoMedTaF.exit_tah; n1LowerS = gHehDoMedTaF.n1LowerS; nUpperS = gHehDoMedTaF.nUpperS };
-gHehDoIniTaM_alt	{ exit_tah = gHehDoMedTaM.exit_tah; n1LowerS = gHehDoMedTaM.n1LowerS; nUpperS = gHehDoMedTaM.nUpperS };
-gHehDoIniMm_alt		{ exit_meem = gHehDoMedMm.exit_meem; n1LowerS = gHehDoMedMm.n1LowerS; nUpperS = gHehDoMedMm.nUpperS };
-gHehDoIniMmX_alt	{ exit_meemAlt = gHehDoMedMmX.exit_meemAlt; n1LowerS = gHehDoMedMmX.n1LowerS; nUpperS = gHehDoMedMmX.nUpperS };
-gHehDoIniNn_alt		{ exit_noon = gHehDoMedNn.exit_noon; n1LowerS = gHehDoMedNn.n1LowerS; nUpperS = gHehDoMedNn.nUpperS };
-gHehDoIniQf_alt		{ exit_qafWawStfh = gHehDoMedQf.exit_qafWawStfh; n1LowerS = gHehDoMedQf.n1LowerS; nUpperS = gHehDoMedQf.nUpperS };
+gHehDoIni		{ exit_lamKaf = gHehDoMed.exit_lamKaf; n1LowerS = gHehDoMed.n1LowerS; nUpperS = gHehDoMed.nUpperS };
+gHehDoIniAi		{ exit_ain = gHehDoMedAi.exit_ain; n1LowerS = gHehDoMedAi.n1LowerS; nUpperS = gHehDoMedAi.nUpperS };
+gHehDoIniBe		{ exit_beh = gHehDoMedBe.exit_beh; n1LowerS = gHehDoMedBe.n1LowerS; nUpperS = gHehDoMedBe.nUpperS };
+gHehDoIniBeF	{ exit_behFinal = gHehDoMedBeF.exit_behFinal; n1LowerS = gHehDoMedBeF.n1LowerS; nUpperS = gHehDoMedBeF.nUpperS };
+gHehDoIniBeM1	{ exit_behLowTooth = gHehDoMedBeM1.exit_behLowTooth; n1LowerS = gHehDoMedBeM1.n1LowerS; nUpperS = gHehDoMedBeM1.nUpperS };
+gHehDoIniBeM2	{ exit_behHighTooth = gHehDoMedBeM2.exit_behHighTooth; n1LowerS = gHehDoMedBeM2.n1LowerS; nUpperS = gHehDoMedBeM2.nUpperS };
+gHehDoIniBeHg	{ exit_behLowTooth = gHehDoMedBeHg.exit_behLowTooth; n1LowerS = gHehDoMedBeHg.n1LowerS; nUpperS = gHehDoMedBeHg.nUpperS };
+gHehDoIniBeNn	{ exit_behPreNoon = gHehDoMedBeNn.exit_behPreNoon; n1LowerS = gHehDoMedBeNn.n1LowerS; nUpperS = gHehDoMedBeNn.nUpperS };
+gHehDoIniBeRe	{ exit_behPreReh = gHehDoMedBeRe.exit_behPreReh; n1LowerS = gHehDoMedBeRe.n1LowerS; nUpperS = gHehDoMedBeRe.nUpperS };
+gHehDoIniBy		{ exit_bariyeh = gHehDoMedBy.exit_bariyeh; n1LowerS = gHehDoMedBy.n1LowerS; nUpperS = gHehDoMedBy.nUpperS };
+gHehDoIniCh		{ exit_chotiyeh = gHehDoMedCh.exit_chotiyeh; n1LowerS = gHehDoMedCh.n1LowerS; nUpperS = gHehDoMedCh.nUpperS };
+gHehDoIniFe		{ exit_feh = gHehDoMedFe.exit_feh; n1LowerS = gHehDoMedFe.n1LowerS; nUpperS = gHehDoMedFe.nUpperS };
+gHehDoIniHd		{ exit_hehdoach = gHehDoMedHd.exit_hehdoach; n1LowerS = gHehDoMedHd.n1LowerS; nUpperS = gHehDoMedHd.nUpperS };
+gHehDoIniHgM	{ exit_hehgoalMedial = gHehDoMedHgM.exit_hehgoalMedial; n1LowerS = gHehDoMedHgM.n1LowerS; nUpperS = gHehDoMedHgM.nUpperS };
+gHehDoIniHgF	{ exit_hehgoalFinal = gHehDoMedHgF.exit_hehgoalFinal; n1LowerS = gHehDoMedHgF.n1LowerS; nUpperS = gHehDoMedHgF.nUpperS };
+gHehDoIniJm		{ exit_jeem = gHehDoMedJm.exit_jeem; n1LowerS = gHehDoMedJm.n1LowerS; nUpperS = gHehDoMedJm.nUpperS };
+gHehDoIniRe		{ exit_reh = gHehDoMedRe.exit_reh; n1LowerS = gHehDoMedRe.n1LowerS; nUpperS = gHehDoMedRe.nUpperS };
+gHehDoIniSd		{ exit_sad = gHehDoMedSd.exit_sad; n1LowerS = gHehDoMedSd.n1LowerS; nUpperS = gHehDoMedSd.nUpperS };
+gHehDoIniSn		{ exit_seen = gHehDoMedSn.exit_seen; n1LowerS = gHehDoMedSn.n1LowerS; nUpperS = gHehDoMedSn.nUpperS };
+gHehDoIniTaF	{ exit_tah = gHehDoMedTaF.exit_tah; n1LowerS = gHehDoMedTaF.n1LowerS; nUpperS = gHehDoMedTaF.nUpperS };
+gHehDoIniTaM	{ exit_tah = gHehDoMedTaM.exit_tah; n1LowerS = gHehDoMedTaM.n1LowerS; nUpperS = gHehDoMedTaM.nUpperS };
+gHehDoIniMm		{ exit_meem = gHehDoMedMm.exit_meem; n1LowerS = gHehDoMedMm.n1LowerS; nUpperS = gHehDoMedMm.nUpperS };
+gHehDoIniMmX	{ exit_meemAlt = gHehDoMedMmX.exit_meemAlt; n1LowerS = gHehDoMedMmX.n1LowerS; nUpperS = gHehDoMedMmX.nUpperS };
+gHehDoIniNn		{ exit_noon = gHehDoMedNn.exit_noon; n1LowerS = gHehDoMedNn.n1LowerS; nUpperS = gHehDoMedNn.nUpperS };
+gHehDoIniQf		{ exit_qafWawStfh = gHehDoMedQf.exit_qafWawStfh; n1LowerS = gHehDoMedQf.n1LowerS; nUpperS = gHehDoMedQf.nUpperS };
 
-c_exit_lamKaf		+=	(gHehDoIni_alt);
-c_exit_ain			+=	(gHehDoIniAi_alt);
-c_exit_beh			+=	(gHehDoIniBe_alt);
-c_exit_behFinal		+=	(gHehDoIniBeF_alt);
-c_exit_behLowTooth	+=	(gHehDoIniBeM1_alt, gHehDoIniBeHg_alt);
-c_exit_behHighTooth	+=	(gHehDoIniBeM2_alt);
-c_exit_behPreNoon	+=	(gHehDoIniBeNn_alt);
-c_exit_behPreReh	+=	(gHehDoIniBeRe_alt);
-c_exit_bariyeh		+=	(gHehDoIniBy_alt);
-c_exit_chotiyeh		+=	(gHehDoIniCh_alt);
-c_exit_feh			+=	(gHehDoIniFe_alt);
-c_exit_hehdoach		+=	(gHehDoIniHd_alt);
-c_exit_hehgoalMedial +=	(gHehDoIniHgM_alt);
-c_exit_hehgoalFinal	+=	(gHehDoIniHgF_alt);
-c_exit_jeem			+=	(gHehDoIniJm_alt);
-c_exit_reh			+=	(gHehDoIniRe_alt);
-c_exit_sad			+=	(gHehDoIniSd_alt);
-c_exit_seen			+=	(gHehDoIniSn_alt);
-c_exit_tah			+=	(gHehDoIniTaF_alt, gHehDoIniTaM_alt);
-c_exit_meem			+=	(gHehDoIniMm_alt);
-c_exit_meemAlt		+=	(gHehDoIniMmX_alt);
-c_exit_noon			+=	(gHehDoIniNn_alt);
-c_exit_qafWawStfh	+=	(gHehDoIniQf_alt);
+c_exit_lamKaf		+=	(gHehDoIni);
+c_exit_ain			+=	(gHehDoIniAi);
+c_exit_beh			+=	(gHehDoIniBe);
+c_exit_behFinal		+=	(gHehDoIniBeF);
+c_exit_behLowTooth	+=	(gHehDoIniBeM1, gHehDoIniBeHg);
+c_exit_behHighTooth	+=	(gHehDoIniBeM2);
+c_exit_behPreNoon	+=	(gHehDoIniBeNn);
+c_exit_behPreReh	+=	(gHehDoIniBeRe);
+c_exit_bariyeh		+=	(gHehDoIniBy);
+c_exit_chotiyeh		+=	(gHehDoIniCh);
+c_exit_feh			+=	(gHehDoIniFe);
+c_exit_hehdoach		+=	(gHehDoIniHd);
+c_exit_hehgoalMedial +=	(gHehDoIniHgM);
+c_exit_hehgoalFinal	+=	(gHehDoIniHgF);
+c_exit_jeem			+=	(gHehDoIniJm);
+c_exit_reh			+=	(gHehDoIniRe);
+c_exit_sad			+=	(gHehDoIniSd);
+c_exit_seen			+=	(gHehDoIniSn);
+c_exit_tah			+=	(gHehDoIniTaF, gHehDoIniTaM);
+c_exit_meem			+=	(gHehDoIniMm);
+c_exit_meemAlt		+=	(gHehDoIniMmX);
+c_exit_noon			+=	(gHehDoIniNn);
+c_exit_qafWawStfh	+=	(gHehDoIniQf);
 
 
 csHehDoIni_noAlt = (gHehDoIni gHehDoIniAi gHehDoIniBe gHehDoIniBeF gHehDoIniBeM1 gHehDoIniBeM2 gHehDoIniBeHg 
@@ -481,8 +481,8 @@ csHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt
 	gHehDoIniHd_alt gHehDoIniHgM_alt gHehDoIniHgF_alt gHehDoIniCh_alt gHehDoIniBy_alt);
 
 c_initial += (csHehDoIni_alt);
-cTakes_n1LowerDia += (csHehDoIni_alt);
-cTakes_nUpperDia += (csHehDoIni_alt);
+cTakes_n1LowerDia += (csHehDoIni_noAlt);
+cTakes_nUpperDia += (csHehDoIni_noAlt);
 
 
 cJeemIM = (cJeemIni cJeemMed);
