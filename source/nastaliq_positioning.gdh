@@ -612,7 +612,7 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / (cLamIM cKafIM) cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 
-// Special case involving jeem + beh/seen - don't allow it to move right
+// Special case involving jeem + beh/seen - don't allow nuqta to move right
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
@@ -1516,6 +1516,7 @@ cIso { collision {
 //	/  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
 // Special case; also see previous pass where nuqtas are shifted up
+// \u063A\u0632\u06CC\u0631
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1524,6 +1525,20 @@ cRehFin_longtail { collision {
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cDot3l cDiacritic? (gRehFin_jkl cWawFin);
+
+
+// Special case: \u062A\u0627\u0631\u06CC\u062E\u06CC
+// Don't allow the reh to kern underneath the lower nuqtas
+(gReh gRehDotBelow gWaw) { collision {
+ 	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN;
+	max.x = MAXKERN; min.x = -150m;
+    // min/max.y are omitted for kernable glyphs
+} }
+	cNuqtaLower {shift.y = 150m}
+	/  _=R  gBehIniJm  _=N;
+
 
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
