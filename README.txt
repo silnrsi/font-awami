@@ -1,0 +1,3 @@
+README
+Awami Nastaliq font
+===================
