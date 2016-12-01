@@ -995,25 +995,34 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
+// height at which to invoke various short forms
+#define SHORTERKAF_HT	2000m
+#define SHORTKAF_HT  	1300m
+#define PUSHDOWN		3000m
+#define PUSHUP			-630m
+#define SHORTFINAL2		2300m
+#define SHORTFINAL1		2900m
+#define	SHORTFINAL0		3100m
+#define SHORTFINAL_KAF	1600m
 
 // Situations where short kaf is needed due to height (except cases above)
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
-	/  _=N  _=D  _=K {position.y > 1350m && (shortForms == 1 || shortForms == 3)}  _=T;
+	/  _=N  _=D  _=K {position.y > SHORTERKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_short$K
-	/  _=N  _=D  _=K {position.y > 1135m && (shortForms == 1 || shortForms == 3)}  _=T;
+	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-cNuqtaLikeUpper { shift.y = -300m; collision.margin -= 50m } / _ { position.y > 2800m };
+cNuqtaLikeUpper { shift.y = -300m; collision.margin -= 50m } / _ { position.y > PUSHDOWN };
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
-	/ _ { position.y < -550m } cNuqtaLikeUpper? cDiacriticLower;
+	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
 
 
 // If a nuqta is not near a height-adjusted kaf, turn off collision fixing for next time around.
@@ -1037,12 +1046,15 @@ endtable;
 if (shortForms >  1)
 pass(6)
 
-c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > 2000m}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
+// high initial with both nuqta and diacritic:
+c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
+// high initial with nuqta OR diacritic
 c_initial     c_medial  >  @I  @M {tooHigh = 1}   
-	/  _=I  {position.y + bb.top > 2500m}  cNuqtaLikeLower? (cNuqtaLikeUpper  cDiacriticUpper) cDiacriticLower? ^ _=M;
-c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > 3000m}  MARKS ^ _=M;
+	/  _=I  {position.y + bb.top > SHORTFINAL1}  cNuqtaLikeLower? (cNuqtaLikeUpper  cDiacriticUpper) cDiacriticLower? ^ _=M;
+// high initial with no nuqta or diacritic
+c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > SHORTFINAL0}  MARKS ^ _=M;
 
-csKafIM_base  c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {tooHigh == 1 || position.y > 1400m}  MARKS ^ _=M;
+csKafIM_base  c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
 
 c_medial      c_medial  >  @M1 @M2 {tooHigh = 1}  /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
 

@@ -25,6 +25,8 @@
       <style feats="snuq=1" name="fset28"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" name="fset29"/>
       <style feats="hehk=1 olap=2" name="fset3"/>
+      <style feats="shrt=3" name="fset30"/>
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset31"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -1758,25 +1760,25 @@
     <test background="#55aaff" class="fset25" label="REAL EXAMPLES" rtl="True">
       <string/>
     </test>
-    <test class="fset21" label="smjhty" rtl="True">
+    <test class="fset30" label="smjhty" rtl="True">
       <string>سمجھتے </string>
     </test>
-    <test class="fset21" label="smjhny" rtl="True">
+    <test class="fset30" label="smjhny" rtl="True">
       <string>سمجھنے</string>
     </test>
-    <test class="fset21" label="smjhy" rtl="True">
+    <test class="fset30" label="smjhy" rtl="True">
       <string>سمجھی</string>
     </test>
-    <test class="fset21" label="smjha" rtl="True">
+    <test class="fset30" label="smjha" rtl="True">
       <string>سمجھا</string>
     </test>
-    <test class="fset21" label="tkmyl" rtl="True">
+    <test class="fset30" label="tkmyl" rtl="True">
       <string>تکمیل</string>
     </test>
-    <test class="fset21" label="kbhy" rtl="True">
+    <test class="fset30" label="kbhy" rtl="True">
       <string>کبھی</string>
     </test>
-    <test class="fset21" label="mkhn" rtl="True">
+    <test class="fset30" label="mkhn" rtl="True">
       <string>مکھن</string>
     </test>
     <test class="fset21" label="klymns" rtl="True">
@@ -1812,11 +1814,11 @@
     <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
       <string/>
     </test>
-    <test class="fset25" label="w/ and w/o upper attachments" rtl="True">
-      <comment>These are fake words.</comment>
+    <test class="fset30" label="w/ and w/o upper attachments" rtl="True">
+      <comment>These are fake words. The initial seen is right at the top of the line.</comment>
       <string>سمجی شِمجی سُمجی</string>
     </test>
-    <test class="fset25" label="with upper nuqta and diac" rtl="True">
+    <test class="fset30" label="with upper nuqta and diac" rtl="True">
       <comment>The combination of nuqta and diac pushes it above the limit. Only one or the other isn't enough.</comment>
       <string>تُمفلن تمفلن یُمفلن</string>
     </test>
@@ -1826,7 +1828,7 @@
     <test class="fset25" label="reattach upper and lower nuqtas" rtl="True">
       <string>لجپفښ لجپفڜ</string>
     </test>
-    <test class="fset25" label="seens" rtl="True">
+    <test class="fset30" label="seens" rtl="True">
       <string>سکیس کنسلٹنٹس مِنس تحفخِیس</string>
     </test>
     <test class="fset29" label="qafs" rtl="True">
@@ -1837,6 +1839,12 @@
     </test>
     <test class="fset29" label="lam, meem, noon" rtl="True">
       <string>کسجمل کسجلم کسجلن</string>
+    </test>
+    <test class="fset29" label="high kaf" rtl="True">
+      <string>دیکھئے</string>
+    </test>
+    <test class="fset31" label="push up lower diac" rtl="True">
+      <string>ڜپِ بڳِ</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">
