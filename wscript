@@ -15,8 +15,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.71'
-TTF_VERSION="0.710"
+VERSION='0.80'
+TTF_VERSION="0.800"
 COPYRIGHT='Copyright (c) 2014-2016, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -49,10 +49,8 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq PreBeta2"
-FONT_FILENAME = "Awami_prebeta2.ttf"
-
-TEMPSRC_FILENAME = "Awami_nohints.ttf"
+FONT_NAME = "Awami Nastaliq Beta2"
+FONT_FILENAME = "Awami_beta2.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
@@ -73,7 +71,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      version = TTF_VERSION,
      extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
      #tests = tests,
-     fret = fret(params = '-r -b'),  # -b = show octaboxes
+     fret = fret(params = '-r'),  # -b = show octaboxes
      woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
   )
 

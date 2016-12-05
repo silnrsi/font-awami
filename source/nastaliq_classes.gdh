@@ -50,7 +50,7 @@ cKafTopAdjusted = ( g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
 	g__gafTop_short, g__gafTop_shorter, g__gafTop_tall,
 	g__gafTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
 
-cKafTop = (g__kafTop_null, cKafTopAdjusted);
+cKafTop = (g__kafTop_null, cKafTopAdjusted, g__kafTop_m_bogus);
 
 g__kafTop_tall { nDelta = 150m };
 g__gafTop_tall { nDelta = 150m };

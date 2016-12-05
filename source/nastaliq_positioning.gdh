@@ -1043,22 +1043,23 @@ csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gN
 	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 endtable;
 
-if (shortForms >  1)
+if (shortForms > 1)
 pass(6)
 
 // high initial with both nuqta and diacritic:
-c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
+c_initial     c_medial  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
 // high initial with nuqta OR diacritic
 c_initial     c_medial  >  @I  @M {tooHigh = 1}   
 	/  _=I  {position.y + bb.top > SHORTFINAL1}  cNuqtaLikeLower? (cNuqtaLikeUpper  cDiacriticUpper) cDiacriticLower? ^ _=M;
 // high initial with no nuqta or diacritic
-c_initial     c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {position.y + bb.top > SHORTFINAL0}  MARKS ^ _=M;
+c_initial     c_medial  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFINAL0}  MARKS ^ _=M;
 
-csKafIM_base  c_medial  >  @I  @M {tooHigh = 1}   /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
+csKafIM_medium  c_medial  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
+csKafIM_base    c_medial  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
 
-c_medial      c_medial  >  @M1 @M2 {tooHigh = 1}  /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
+c_medial      c_medial  >  @M1 @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
 
-c_medial  csFinal_regular  >  @M  csFinal_short   /  _=M  {tooHigh == 1}  MARKS  _=F;
+c_medial  csFinal_regular  >  @M  csFinal_short    /  _=M  {tooHigh == 1}  MARKS  _=F;
 
 endpass;  // 6
 endif;

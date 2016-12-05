@@ -1106,6 +1106,10 @@
       <comment>No good solution.</comment>
       <string>تِخِنگِک</string>
     </test>
+    <test class="fset31" label="why is this a problem?" rtl="True">
+      <comment>Broken because the exclude glyph keeps the feh nuqta from moving north-east.</comment>
+      <string>بفمگف</string>
+    </test>
     <test background="#55aaff" class="fset24" label="LINE HEIGHT" rtl="True">
       <string/>
     </test>
@@ -1845,6 +1849,12 @@
     </test>
     <test class="fset31" label="push up lower diac" rtl="True">
       <string>ڜپِ بڳِ</string>
+    </test>
+    <test class="fset30" label="shorten finals" rtl="True">
+      <string>دیکھتی  کنسلٹنٹس  نگھنے  تکمیل</string>
+    </test>
+    <test class="fset31" label="kaf or final, not both" rtl="True">
+      <string>کمس</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">

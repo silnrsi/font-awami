@@ -5,13 +5,13 @@
     <columns comment="15%" label="20%" string="15%"/>
     <description>Test of Awami Basic Base Character Set</description>
     <fontscale>200</fontscale>
-    <fontsrc>local('Awami Nastaliq Beta1'), url(Awami_beta1.ttf)</fontsrc>
+    <fontsrc>local('Awami Nastaliq Beta2'), url(Awami_beta2.ttf)</fontsrc>
     <title>Test of Awami Basic Base Character Set</title>
     <styles><style feats=' ' name="default"/></styles>
   </head>
   <testgroup label="Alef form sequences">
-    <testgroup label="beh + alef" hello="blah blah">
-      <test rtl="True"><string><em>&#x0628;&#x0627;</em></string><comment>This is a comment</comment></test>
+    <testgroup label="beh + alef">
+      <test rtl="True"><string><em>&#x0628;&#x0627;</em></string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0628;&#x0627;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
@@ -2541,6 +2541,86 @@
       <test rtl="True"><string>&#x0644;<em>&#x06C1;&#x0628;&#x06C1;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
+    </testgroup>
+  </testgroup>
+  <testgroup label="Seen + seen + seen sequences">
+    <testgroup label="beh + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0628;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0628;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0628;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0628;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="jeem + seen + seen + seen">
+      <test rtl="True"><string><em>&#x062C;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x062C;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x062C;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x062C;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="seen + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0633;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0633;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0633;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0633;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="sad + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0635;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0635;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="tah + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0637;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0637;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="ain + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0639;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0639;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="feh + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0641;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0641;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="lam + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0644;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0644;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="meem + seen + seen + seen">
+      <test rtl="True"><string><em>&#x0645;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x0645;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="kaf + seen + seen + seen">
+      <test rtl="True"><string><em>&#x06A9;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A9;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x06A9;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A9;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="gaf + seen + seen + seen">
+      <test rtl="True"><string><em>&#x06AF;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06AF;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x06AF;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06AF;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehDo + seen + seen + seen">
+      <test rtl="True"><string><em>&#x06BE;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x06BE;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+    </testgroup>
+    <testgroup label="hehGoal + seen + seen + seen">
+      <test rtl="True"><string><em>&#x06C1;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C1;&#x0633;&#x0633;&#x0633;</em></string></test>
+      <test rtl="True"><string><em>&#x06C1;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C1;&#x0633;&#x0633;&#x0633;</em>&#x0641;</string></test>
     </testgroup>
   </testgroup>
 </ftml>

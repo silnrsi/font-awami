@@ -11,12 +11,13 @@ def run():
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
     #mode = "allbasecharforms"   # all forms of all letters
-    mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
-    #mode = "basic_alldiac"      # same characters as basicforms, with every diac
+    #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
+    mode = "basic_alldiac"      # same characters as basicforms, with every diac
     #mode = "allbase_somediac"
     #mode = "alldiac"  # not implemented???
     
     fontScale = "200"
+    #fontScale = "100"  # for waterfall file
     
     outputFilename = outputPath + "test_" + mode + ".xml"
  
@@ -116,7 +117,8 @@ def _generate_sub_sequences() :
         for char3 in ("kaf", "lam") :
             dualSubs.append(("alt-meem", char1, "meem-alt", char3))
             
-    # TODO: add kinked kaf forms
+    # generate seen + seen + seen
+    dualSubs.append(("multi-seen", "ANY", "seen", "seen", "seen"))
     
     return (dualSubs, rightSubs)
 
@@ -445,8 +447,8 @@ def output_ftml(mode, fontScale, filename, sequences) :
 
 def write_one_sequence(f, seq) :
     
-    #contextCharI = "&#x0644;" # lam (arbitrary pre-context)
-    contextCharI = "&#x0639;" # ain (arbitrary pre-context)
+    contextCharI = "&#x0644;" # lam (arbitrary pre-context)
+    #contextCharI = "&#x0639;" # ain (arbitrary pre-context)
     contextCharF = "&#x0641;" # feh (arbitrary post-context)
     seqLabel = ''
     seqUsvs = ''
@@ -750,7 +752,8 @@ def _group_name_format(charName) :
         "seen/sad+beh"  :   ('25',      'Seen/Sad + Beh',     2, 2),
         "beh+reh"       :   ('26',      'Beh + Reh',          2, 0),
         "beh+noon"      :   ('27',      'Beh + Noon',         2, 0),
-        "beh+hehGoal"   :   ('28',      'Beh + Heh-Goal',     2, 0)
+        "beh+hehGoal"   :   ('28',      'Beh + Heh-Goal',     2, 0),
+        "multi-seen"    :   ('29',      'Seen + seen + seen', 2, 0)
     }
             
     return groupNameFormat[charName]
@@ -802,7 +805,7 @@ def write_xml_header(f, mode, fontScale) :
     f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
     f.write('    <description>' + title + '</description>\n')
     f.write('    <fontscale>' + fontScale + '</fontscale>\n')
-    f.write('    <fontsrc>local(\'Awami Nastaliq Beta1\'), url(Awami_beta1.ttf)</fontsrc>\n')
+    f.write('    <fontsrc>local(\'Awami Nastaliq Beta2\'), url(Awami_beta2.ttf)</fontsrc>\n')
     f.write('    <title>' + title + '</title>\n')
     f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
     f.write('  </head>\n')
