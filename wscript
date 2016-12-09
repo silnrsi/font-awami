@@ -63,7 +63,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -c',
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', # -c',
                     depends = glob.glob('*.gdh')),
      ap = "source/AwamiNastaliqRegular_AP.xml",
      license = ofl('Awami','SIL'),
