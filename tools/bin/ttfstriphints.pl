@@ -50,10 +50,11 @@ else
 	{	delete $f->{$_};}
 	# remove all individual glyph hints:
 	$f->{'loca'}->glyphs_do(\&DoOneGlyph);
-	foreach (qw(maxZones maxTwilightPoints maxStorage maxFunctionDefs maxInstructionDefs maxStackElement maxSizeOfInstructions))
+	foreach (qw(maxTwilightPoints maxStorage maxFunctionDefs maxInstructionDefs maxStackElement maxSizeOfInstructions))
 	{
 		$f->{'maxp'}{$_} = 0;
-	}	
+	}
+    $f->{'maxp'}{'maxZones'} = 1; 
 }
 
 $f->out($ARGV[1]);
