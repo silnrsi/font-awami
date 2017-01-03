@@ -1070,20 +1070,24 @@ pass(7)
 // Due to an infelicity in the Graphite engine, we can't substitute and attach in the same rule,
 // so we have to do it in a separate pass.
 
+table(glyph)
+ckafTop_bjDia { kafTopM = point(kafTop_bjM.x, kafTop_bjM.y) }; // to avoid warnings; will never be used
+endtable;
+
 // ngoeh nuqtas
-csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
+cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
-csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true}
+cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}
 	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
 
 // rings
-csKafIM_base=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
-csKafIM_base=B  cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
-csKafIM_base=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
-csKafIM_base=B  cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM}; passKeySlot = true};
+cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
+cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
 
 c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}}
@@ -1095,7 +1099,7 @@ c_exit_chotiyehBfkl {att {to=@F; with=exit_chotiyehBfkl; at=entr_chotiyehBfkl}}
 
 table(glyph)
 // Use a slightly higher AP when attaching to a short bariyeh, to save a little more space:
-cby { exit_by_alt.x = exit_bariyeh.x + 12m; exit_by_alt.y = exit_bariyeh.y + 30m };
+c_exit_bariyeh { exit_by_alt.x = exit_bariyeh.x + 12m; exit_by_alt.y = exit_bariyeh.y + 30m };
 endtable;
 
 c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
@@ -1115,6 +1119,16 @@ c_exit_meem       {att {to=@F; with=exit_meem;     at=entr_meem}}   gMeemFin_sho
 	/  _ MARKS2N ^ _=F;
 
 
+
+table(glyph) {AttributeOverride = 0}
+// to avoid warnings; will never be used
+g__kafTop_null { nUpperS = point(0m,0m) };
+csFinal_short { hamzaUpperS = point(0m,0m); tahUpperS = point(0m,0m); n1LowerS = point(0m,0m); n23LowerS = point(0m,0m) };
+cNuqtaLikeUpper { nUpperM = point(0m,0m) };
+cNuqtaLikeLower { n1LowerM = point(0m,0m) };
+cIsoFin { n1LowerM = point(0m,0m); mUpperS = point(0m,0m) };
+cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
+endtable;
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
 csFinal_short  ctahUpperDia   {att {to=@F; at=tahUpperS; with=tahUpperM}}     / _=F  _;
@@ -1149,6 +1163,7 @@ pass(4)
 // Attach diacritics
  
 table(glyph) { AttributeOverride = false }
+
 // Classes of nuqtas and things that attach closely like nuqtas.
 // These are basically defined for the purpose of ignoring in the context of attaching
 // diacritics to things.
@@ -1157,6 +1172,11 @@ c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
 c_attLikeNqLowMid = (c_attLikeNqLower, cNuqtaLikeMiddle,
 	g__kafTop_null); // diacs don't attach to this, so attach to the base even if this is there
 c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
+
+// To avoid warnings in special-case attachment rules:
+gTahFin { n1LowerS = point(mLowerS.x, mLowerS.y) };
+gTehMarbutaFin  { n1LowerS = point(mLowerS.x, mLowerS.y) };
+
 endtable;
 
 
@@ -1329,6 +1349,8 @@ cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
 
 // Diacritics that extend above/below the line
+cDiacriticUpper  /  (cKafIni cKafMed)  _  ; // ... but not on kafs or gafs
+cDiacriticUpper  /  csKafIM_base  cKafTop  _;
 cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 

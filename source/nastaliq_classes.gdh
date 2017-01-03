@@ -206,9 +206,10 @@ cKafFin = (gKafFin, gGafFin);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short); // gNoonRetroFin - not defined
 cHehGoalFin = (gHehGoalFin);   // gHehGoalFin_stfh - no longer used
 cHehDoFin = (gHehDoFin);
-cChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehFin_bfkl_short);
-cYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin);
-cKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin);
+csChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehFin_bfkl_short);
+csYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin, gYehTailFin_bfkl);
+csKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin, gKashmiriYehFin_bfkl);
+cChotiyehFin = csChotiyehFin;
 cTehMarbutaFin = (gTehMarbutaFin);
 
 // Right-link

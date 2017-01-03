@@ -525,7 +525,7 @@ csMed_raw  >  csMedNn	/  ^ MPRECXT  _ MARKS  cNoonFin;
 csMed_raw  >  csMedHgF	/  ^ MPRECXT _  MARKS  cHehGoalFin;
 csMed_raw  >  csMedHgM	/  ^ MPRECXT _  MARKS  cHehGoalMed;
 csMed_raw  >  csMedHd	/  ^ MPRECXT _  MARKS  (gHehDoFin cHehDoMed);
-csMed_raw  >  csMedCh	/  ^ MPRECXT _  MARKS  cChotiyehFin;
+csMed_raw  >  csMedCh	/  ^ MPRECXT _  MARKS  csChotiyehFin;
 csMed_raw  >  csMedBy	/  ^ MPRECXT _  MARKS  cBariyehFin;
 
 csMed_raw  >  csMedBe	/  ^ MPRECXT  _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
@@ -811,11 +811,11 @@ gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 
 (cBehIni  cBehMed)  g__dot2l__hamza  >  @1  gHamzaAbove:1;
 
-cChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
-cChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
+csChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
+csChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
 
-cChotiyehFin  g__dot2l_tail  >  cYehTailFin:(1 2)  _;
-cChotiyehFin  g__ring  >  cKashmiriYehFin:(1 2)  _;
+csChotiyehFin  g__dot2l_tail  >  csYehTailFin:(1 2)  _;
+csChotiyehFin  g__ring  >  csKashmiriYehFin:(1 2)  _;
 
 
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
