@@ -2,62 +2,16 @@
 <glyph name="quotedblright.arab" format="1">
   <advance width="1043"/>
   <outline>
-    <contour>
-      <point x="976" y="1820" type="curve"/>
-      <point x="976" y="1942"/>
-      <point x="883" y="2019"/>
-      <point x="804" y="2019" type="curve" smooth="yes"/>
-      <point x="747" y="2019"/>
-      <point x="670" y="1981"/>
-      <point x="670" y="1902" type="curve" smooth="yes"/>
-      <point x="670" y="1835"/>
-      <point x="727" y="1796"/>
-      <point x="772" y="1796" type="curve" smooth="yes"/>
-      <point x="797" y="1796"/>
-      <point x="828" y="1812"/>
-      <point x="846" y="1812" type="curve" smooth="yes"/>
-      <point x="857" y="1812"/>
-      <point x="883" y="1801"/>
-      <point x="883" y="1750" type="curve" smooth="yes"/>
-      <point x="883" y="1643"/>
-      <point x="787" y="1585"/>
-      <point x="715" y="1543" type="curve"/>
-      <point x="715" y="1500" type="line"/>
-      <point x="792" y="1526"/>
-      <point x="976" y="1611"/>
-    </contour>
-    <contour>
-      <point x="497" y="1822" type="curve"/>
-      <point x="497" y="1945"/>
-      <point x="404" y="2022"/>
-      <point x="323" y="2022" type="curve" smooth="yes"/>
-      <point x="269" y="2022"/>
-      <point x="192" y="1983"/>
-      <point x="192" y="1904" type="curve" smooth="yes"/>
-      <point x="192" y="1837"/>
-      <point x="246" y="1799"/>
-      <point x="292" y="1799" type="curve" smooth="yes"/>
-      <point x="319" y="1799"/>
-      <point x="348" y="1814"/>
-      <point x="367" y="1814" type="curve" smooth="yes"/>
-      <point x="376" y="1814"/>
-      <point x="404" y="1804"/>
-      <point x="404" y="1753" type="curve" smooth="yes"/>
-      <point x="404" y="1644"/>
-      <point x="307" y="1587"/>
-      <point x="237" y="1544" type="curve"/>
-      <point x="237" y="1502" type="line"/>
-      <point x="314" y="1528"/>
-      <point x="497" y="1613"/>
-    </contour>
+    <component base="quotesinglbase.arab" xOffset="-1" yOffset="1818"/>
+    <component base="quotesinglbase.arab" xOffset="452" yOffset="1818"/>
   </outline>
   <lib>
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
-    <real>0.656</real>
-    <real>1</real>
+    <real>0.967</real>
     <real>0.6</real>
+    <real>1</real>
     <real>1</real>
   </array>
   </dict>
