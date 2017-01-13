@@ -15,11 +15,13 @@ table(glyph)
 
 cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide);
 
-cNoJoin = (cSpace g_zeronojoin);
+cNoJoin = (cSpace  c_zeronojoin  g_wordJoiner);
 
+// These are encoded as visible but removed (actually turned to ZWNBSP) when invisible:
 cInvisible = (g_leftToRightEmbedding  g_rightToLeftEmbedding  g_popDirectionalFormatting  g_leftToRightOverride
 	g_rightToLeftOverride  g_inhibitArabicFormShaping  g_activateArabicFormShaping g_leftToRightIsolate
-	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate);
+	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate
+	g_lineSeparator  g_paragraphSeparator  g_narrowNoBreakSpace  g_wordJoiner  g_ObjectReplChar);
 
 endtable;
 
@@ -46,6 +48,13 @@ endif;
 
 if (showInvis == 0)
 cInvisible  >  g_zeroWidthNoBreakSpace;
+endif;
+
+if (showInvis == 1)
+
+g_zeroWidthNoBreakSpace > g_zeroWidthNoBreakSpaceShowInv;
+g_zerojoin > g_zerojoinShowInv;
+g_zeronojoin > g_zeronojoinShowInv;
 endif;
 
 endpass;
@@ -112,13 +121,13 @@ pass(2)
 	// Create basic contextual forms. 
 	// Note that these rules delete the medial ZWJ without associating it with a visible glyph.
 	
-	cDualLinkIso  g_zerojoin?  cDualLinkIso   >  cDualLinkIni_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ _ ;
+	cDualLinkIso  c_zerojoin?  cDualLinkIso   >  cDualLinkIni_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ _ ;
 	
-	cDualLinkIso  g_zerojoin?  cRightLinkIso  >  cDualLinkIni_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkIso  c_zerojoin?  cRightLinkIso  >  cDualLinkIni_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ  _ ;
 		
-	cDualLinkFin  g_zerojoin?  cDualLinkIso   >  cDualLinkMed_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkFin  c_zerojoin?  cDualLinkIso   >  cDualLinkMed_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ  _ ;
 	
-	cDualLinkFin  g_zerojoin?  cRightLinkIso  >  cDualLinkMed_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ _ ;
+	cDualLinkFin  c_zerojoin?  cRightLinkIso  >  cDualLinkMed_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ _ ;
 
 endpass; // 1
 
@@ -286,7 +295,7 @@ csIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniB
 		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
 
 // Unprocessed initials and medials:
-cIMraw = (csIni_raw, csMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, g_zerojoin);
+cIMraw = (csIni_raw, csMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, c_zerojoin);
 
 // Before alternate qaf/waw interface:
 cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw, gHehDoMed_raw, gHehDoIni_raw);
@@ -337,13 +346,13 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 // Salaam ulena
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small gUltaPesh
-		(g_zeronojoin g_nobreakspace)
+		(c_zeronojoin g_nobreakspace)
 		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) _ _ _ _ _ _ _ _ _ _ _ _ _ _;
 
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
-		(g_zeronojoin g_nobreakspace)
+		(c_zeronojoin g_nobreakspace)
 		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14) _ _ _ _ _ _ _ _ _ _ _ _ _;
 
@@ -518,7 +527,7 @@ csMed_raw  >  csMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
 csMed_raw  >  csMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
 csMed_raw  >  csMedAi	/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 // The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
-csMed_raw  >  csMedFe	/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed g_zerojoin);
+csMed_raw  >  csMedFe	/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed c_zerojoin);
 csMed_raw  >  csMedQf	/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
 csMed_raw  >  csMedMm	/  ^ MPRECXT  _ MARKS  (cMeemFin cMeemMed);
 csMed_raw  >  csMedNn	/  ^ MPRECXT  _ MARKS  cNoonFin;
@@ -602,7 +611,7 @@ csIni_raw  >  csIniSd	/ _ MARKS  (cSadFin cSadMed);
 csIni_raw  >  csIniTaF	/ _ MARKS  cTahFin;
 csIni_raw  >  csIniTaM 	/ _ MARKS  cTahMed;
 csIni_raw  >  csIniAi	/ _ MARKS  (cAinFin cAinMed);
-csIni_raw  >  csIniFe	/ _ MARKS  (cFehFin cFehMed g_zerojoin);
+csIni_raw  >  csIniFe	/ _ MARKS  (cFehFin cFehMed c_zerojoin);
 csIni_raw  >  csIniQf	/ _ MARKS  c_qw; // qaf, waw
 csIni_raw  >  csIniMm	/ _ MARKS  (cMeemFin cMeemMed);
 csIni_raw  >  csIniNn	/ _ MARKS  (cNoonFin gNoonGhunnaFin);
