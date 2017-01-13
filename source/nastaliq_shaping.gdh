@@ -13,7 +13,10 @@ pass(1)
 
 table(glyph)
 
-cSpace = (g_space g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide);
+
+cVisSpace = (g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide g_spaceVisHair);
+
+cSpace = (g_space cVisSpace);
 
 cNoJoin = (cSpace  c_zeronojoin  g_wordJoiner);
 
@@ -21,29 +24,35 @@ cNoJoin = (cSpace  c_zeronojoin  g_wordJoiner);
 cInvisible = (g_leftToRightEmbedding  g_rightToLeftEmbedding  g_popDirectionalFormatting  g_leftToRightOverride
 	g_rightToLeftOverride  g_inhibitArabicFormShaping  g_activateArabicFormShaping g_leftToRightIsolate
 	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate
-	g_lineSeparator  g_paragraphSeparator  g_narrowNoBreakSpace  g_wordJoiner  g_ObjectReplChar);
+	g_lineSeparator  g_paragraphSeparator  g_wordJoiner  g_ObjectReplChar);
+
 
 endtable;
 
 
 if (showInvis == 1 && wordSpacing == xtight)
 g_space  >  g_spaceVisXtight;
+g_narrowNoBreakSpace  > g_spaceVisHair;
 endif;
 
 if (showInvis == 1 && wordSpacing == tight)
 g_space  >  g_spaceVisTight;
+g_narrowNoBreakSpace  > g_spaceVisHair;
 endif;
 
 if (showInvis == 1 && wordSpacing == medium)
 g_space  >  g_spaceVis;
+g_narrowNoBreakSpace  > g_spaceVisXtight;
 endif;
 
 if (showInvis == 1 && wordSpacing == wide)
 g_space  >  g_spaceVisWide;
+g_narrowNoBreakSpace  > g_spaceVisTight;
 endif;
 
 if (showInvis == 1 && wordSpacing == xwide)
 g_space  >  g_spaceVisXwide;
+g_narrowNoBreakSpace  > g_spaceVis;
 endif;
 
 if (showInvis == 0)
@@ -51,10 +60,7 @@ cInvisible  >  g_zeroWidthNoBreakSpace;
 endif;
 
 if (showInvis == 1)
-
-g_zeroWidthNoBreakSpace > g_zeroWidthNoBreakSpaceShowInv;
-g_zerojoin > g_zerojoinShowInv;
-g_zeronojoin > g_zeronojoinShowInv;
+cno_showInv  >  cshowInv;
 endif;
 
 endpass;
@@ -119,15 +125,14 @@ endpass;
 pass(2)
 
 	// Create basic contextual forms. 
-	// Note that these rules delete the medial ZWJ without associating it with a visible glyph.
 	
-	cDualLinkIso  c_zerojoin?  cDualLinkIso   >  cDualLinkIni_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ _ ;
+	cDualLinkIso  cDualLinkIso   >  cDualLinkIni_raw  cDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
 	
-	cDualLinkIso  c_zerojoin?  cRightLinkIso  >  cDualLinkIni_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkIso  cRightLinkIso  >  cDualLinkIni_raw  cRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
 		
-	cDualLinkFin  c_zerojoin?  cDualLinkIso   >  cDualLinkMed_raw  _  cDualLinkFin   /  _=B1 ^ MARKS  _=ZWJ  _ ;
+	cDualLinkFin  cDualLinkIso   >  cDualLinkMed_raw  cDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
 	
-	cDualLinkFin  c_zerojoin?  cRightLinkIso  >  cDualLinkMed_raw  _  cRightLinkFin  /  _=B1 ^ MARKS  _=ZWJ _ ;
+	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
 
 endpass; // 1
 

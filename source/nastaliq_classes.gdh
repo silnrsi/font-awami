@@ -119,6 +119,10 @@ cDiacriticLower = ( gZair, gKharizair, gDozair ) ;
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
+cPostNuqta1 = cDiacritic;
+cPostNuqta2 = (cDiacritic c_zerojoin);
+
+
 /*
 Classes for diacritic ordering:
 	cMark1 class contains shadda, hamza, mark noon ghunna

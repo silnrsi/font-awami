@@ -64,31 +64,34 @@ cursive_attach(qafWawStfh)
 // Last resort:
 (c_initial c_medial) {att.to=@L} (c_medial  c_final  c_zerojoin) {insert=1}  / _ MARKS2N ^ _=L ;
 
+// Note that this will not affect the width of visible spaces.
+
 if (wordSpacing == xtight)
-cSpace { advance.x = 70m; collision.flags = SET_ISSPACE(collision.flags) };
-g_narrowNoBreakSpace  { advance.x = 5m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+g_space { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == tight)
-cSpace { advance.x = 160m; collision.flags = SET_ISSPACE(collision.flags) };
 g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+g_space { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == medium)
-cSpace { advance.x = 230m; collision.flags = SET_ISSPACE(collision.flags) };
-g_narrowNoBreakSpace  { advance.x = 70m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace  { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
+g_space { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == wide)
-cSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
-g_narrowNoBreakSpace  { advance.x = 110m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace  { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
+g_space {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == xwide)
-cSpace {advance.x = 370m; collision.flags = SET_ISSPACE(collision.flags) };
-g_narrowNoBreakSpace  { advance.x = 230m; collision.flags = SET_ISSPACE(collision.flags) };
-
+g_narrowNoBreakSpace  { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
+g_space {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
+
+cVisSpace { collision.flags = SET_ISSPACE(collision.flags) };
 
 endpass; // 1
 
