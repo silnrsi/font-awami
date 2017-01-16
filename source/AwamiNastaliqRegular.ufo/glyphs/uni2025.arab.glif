@@ -2,42 +2,16 @@
 <glyph name="uni2025.arab" format="1">
   <advance width="1370"/>
   <outline>
-    <contour>
-      <point x="1136" y="85" type="curve" smooth="yes"/>
-      <point x="1136" y="149"/>
-      <point x="1084" y="195"/>
-      <point x="1026" y="195" type="curve" smooth="yes"/>
-      <point x="961" y="195"/>
-      <point x="914" y="148"/>
-      <point x="914" y="85" type="curve" smooth="yes"/>
-      <point x="914" y="24"/>
-      <point x="957" y="-30"/>
-      <point x="1026" y="-30" type="curve" smooth="yes"/>
-      <point x="1090" y="-30"/>
-      <point x="1136" y="24"/>
-    </contour>
-    <contour>
-      <point x="453" y="85" type="curve" smooth="yes"/>
-      <point x="453" y="149"/>
-      <point x="402" y="195"/>
-      <point x="343" y="195" type="curve" smooth="yes"/>
-      <point x="281" y="195"/>
-      <point x="233" y="148"/>
-      <point x="233" y="85" type="curve" smooth="yes"/>
-      <point x="233" y="24"/>
-      <point x="274" y="-30"/>
-      <point x="343" y="-30" type="curve" smooth="yes"/>
-      <point x="408" y="-30"/>
-      <point x="453" y="24"/>
-    </contour>
+    <component base="_nukta" xScale="0.70235" yScale="0.701266" xOffset="74" yOffset="90"/>
+    <component base="_nukta" xScale="0.70235" yScale="0.701266" xOffset="755" yOffset="90"/>
   </outline>
   <lib>
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
+    <real>0.967</real>
+    <real>0.6</real>
     <real>1</real>
-    <real>0.6</real>
-    <real>0.6</real>
     <real>1</real>
   </array>
   </dict>
