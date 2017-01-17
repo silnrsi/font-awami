@@ -27,6 +27,9 @@
       <style feats="hehk=1 olap=2" name="fset3"/>
       <style feats="shrt=3" name="fset30"/>
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset31"/>
+      <style feats="invs=1" name="fset32"/>
+      <style feats="wdsp=4" name="fset33"/>
+      <style feats="invs=1 wdsp=1" name="fset34"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -1943,6 +1946,34 @@
     </test>
     <test class="fset21" label="ZWNJ" rtl="True">
       <string>س‌ق‌لم سقلم</string>
+    </test>
+    <test class="fset32" label="ZWJ &amp; ZWNJ - visible" rtl="True">
+      <string>م‍ ق‍   ‍ش س‌ق‌لم</string>
+    </test>
+    <test class="fset31" label="zero-width no-break space" rtl="True">
+      <string>ب﻿م﻿س</string>
+    </test>
+    <test class="fset32" label="zero-width no-break space - visible" rtl="True">
+      <string>ب﻿م﻿س</string>
+    </test>
+    <test class="fset31" label="word joiner" rtl="True">
+      <comment>Acts just like a ZWNJ.</comment>
+      <string>س⁠ق⁠لم سقلم</string>
+    </test>
+    <test class="fset32" label="word joiner - visible" rtl="True">
+      <string>س⁠ق⁠لم سقلم</string>
+    </test>
+    <test class="fset31" label="narrow no-break space" rtl="True">
+      <string>ب ب ب</string>
+    </test>
+    <test class="fset32" label="narrow no-break space - visible" rtl="True">
+      <string>ب ب ب</string>
+    </test>
+    <test class="fset33" label="narrow no-break space - extra-wide" rtl="True">
+      <string>ب ب ب</string>
+    </test>
+    <test class="fset34" label="narrow no-break space - tight, visible" rtl="True">
+      <string>ب ب ب</string>
     </test>
     <test class="fset24" label="kern after right quote mark" rtl="True">
       <string>”تا</string>

@@ -564,6 +564,7 @@ cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET
 
 c_zerojoin   { collision.flags = SET_IGNORE(collision.flags) };
 c_zeronojoin { collision.flags = SET_IGNORE(collision.flags) };
+g_zeroWidthNoBreakSpaceShowInv  { collision.flags = SET_IGNORE(collision.flags) };
 
 
 g__kafTop_null { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence

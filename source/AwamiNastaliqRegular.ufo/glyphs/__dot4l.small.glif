@@ -2,7 +2,76 @@
 <glyph name="_dot4l.small" format="1">
   <advance width="0"/>
   <outline>
-    <component base="_nukta4" xScale="0.85" yScale="0.85" xOffset="-546" yOffset="-238"/>
+    <contour>
+      <point x="317" y="-206" type="curve" smooth="yes"/>
+      <point x="317" y="-194"/>
+      <point x="283" y="-184"/>
+      <point x="228" y="-128" type="curve" smooth="yes"/>
+      <point x="195" y="-95"/>
+      <point x="178" y="-71"/>
+      <point x="167" y="-55" type="curve"/>
+      <point x="211" y="-26"/>
+      <point x="308" y="79"/>
+      <point x="307" y="105" type="curve" smooth="yes"/>
+      <point x="307" y="116"/>
+      <point x="273" y="127"/>
+      <point x="218" y="182" type="curve" smooth="yes"/>
+      <point x="163" y="238"/>
+      <point x="152" y="271"/>
+      <point x="140" y="272" type="curve"/>
+      <point x="111" y="272"/>
+      <point x="-14" y="138"/>
+      <point x="-17" y="106" type="curve"/>
+      <point x="-32" y="117"/>
+      <point x="-54" y="133"/>
+      <point x="-82" y="161" type="curve" smooth="yes"/>
+      <point x="-137" y="217"/>
+      <point x="-148" y="250"/>
+      <point x="-160" y="251" type="curve"/>
+      <point x="-189" y="251"/>
+      <point x="-317" y="114"/>
+      <point x="-317" y="83" type="curve" smooth="yes"/>
+      <point x="-317" y="54"/>
+      <point x="-227" y="-41"/>
+      <point x="-176" y="-73" type="curve"/>
+      <point x="-223" y="-108"/>
+      <point x="-307" y="-202"/>
+      <point x="-307" y="-227" type="curve" smooth="yes" name="hr01"/>
+      <point x="-307" y="-264"/>
+      <point x="-176" y="-395"/>
+      <point x="-141" y="-395" type="curve" smooth="yes"/>
+      <point x="-115" y="-395"/>
+      <point x="-13" y="-290"/>
+      <point x="11" y="-243" type="curve"/>
+      <point x="48" y="-296"/>
+      <point x="132" y="-374"/>
+      <point x="159" y="-374" type="curve" smooth="yes"/>
+      <point x="188" y="-374"/>
+      <point x="318" y="-236"/>
+    </contour>
+    <contour>
+      <point x="-72" y="-150" type="curve"/>
+      <point x="-105" y="-116"/>
+      <point x="-122" y="-91"/>
+      <point x="-133" y="-76" type="curve"/>
+      <point x="-95" y="-52"/>
+      <point x="-19" y="28"/>
+      <point x="1" y="67" type="curve"/>
+      <point x="30" y="26"/>
+      <point x="86" y="-28"/>
+      <point x="123" y="-51" type="curve"/>
+      <point x="76" y="-86"/>
+      <point x="-5" y="-178"/>
+      <point x="-7" y="-205" type="curve"/>
+      <point x="-22" y="-194"/>
+      <point x="-44" y="-177"/>
+    </contour>
+    <contour>
+      <point x="0" y="-544" type="move" name="mLower"/>
+    </contour>
+    <contour>
+      <point x="0" y="264" type="move" name="_n23Lower"/>
+    </contour>
   </outline>
   <lib>
   <dict>
@@ -16,11 +85,17 @@
   <key>com.adobe.type.autohint</key>
   <data>
   <hintSetList>
-    <hintset pointTag="lsb">
+    <hintset pointTag="hr01">
       <hstem pos="-379" width="-21" />
+      <hstem pos="272" width="-17" />
       <hstem pos="382" width="-20" />
-      <vstem pos="-360" width="382" />
-      <vstem pos="-7" width="382" />
+      <vstem pos="-307" width="324" />
+    </hintset>
+    <hintset pointTag="hr02">
+      <hstem pos="-379" width="-21" />
+      <hstem pos="272" width="-17" />
+      <hstem pos="382" width="-20" />
+      <vstem pos="-7" width="324" />
     </hintset>
   </hintSetList>
   </data>

@@ -2,7 +2,29 @@
 <glyph name="absEasternZero.small" format="1">
   <advance width="851"/>
   <outline>
-    <component base="_nukta" xScale="0.825" yScale="0.825" xOffset="109" yOffset="554"/>
+    <contour>
+      <point x="583" y="555" type="curve" smooth="yes"/>
+      <point x="583" y="566"/>
+      <point x="550" y="577"/>
+      <point x="496" y="630" type="curve" smooth="yes"/>
+      <point x="442" y="684"/>
+      <point x="432" y="717"/>
+      <point x="420" y="717" type="curve" smooth="yes"/>
+      <point x="392" y="717"/>
+      <point x="267" y="585"/>
+      <point x="267" y="555" type="curve" smooth="yes"/>
+      <point x="267" y="520"/>
+      <point x="394" y="391"/>
+      <point x="430" y="391" type="curve" smooth="yes"/>
+      <point x="457" y="391"/>
+      <point x="583" y="525"/>
+    </contour>
+    <contour>
+      <point x="2" y="0" type="move" name="_digit"/>
+    </contour>
+    <contour>
+      <point x="851" y="0" type="move" name="digit"/>
+    </contour>
   </outline>
   <lib>
   <dict>
