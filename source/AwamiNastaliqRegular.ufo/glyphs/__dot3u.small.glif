@@ -2,61 +2,7 @@
 <glyph name="_dot3u.small" format="1">
   <advance width="0"/>
   <outline>
-    <contour>
-      <point x="312" y="10" type="curve" smooth="yes"/>
-      <point x="312" y="22"/>
-      <point x="277" y="32"/>
-      <point x="223" y="88" type="curve"/>
-      <point x="167" y="143"/>
-      <point x="157" y="178"/>
-      <point x="145" y="178" type="curve" smooth="yes"/>
-      <point x="115" y="178"/>
-      <point x="-9" y="45"/>
-      <point x="-13" y="11" type="curve"/>
-      <point x="-28" y="22"/>
-      <point x="-50" y="39"/>
-      <point x="-77" y="66" type="curve" smooth="yes"/>
-      <point x="-133" y="122"/>
-      <point x="-143" y="156"/>
-      <point x="-155" y="156" type="curve" smooth="yes" name="hr01"/>
-      <point x="-185" y="156"/>
-      <point x="-313" y="19"/>
-      <point x="-313" y="-11" type="curve" smooth="yes"/>
-      <point x="-313" y="-48"/>
-      <point x="-182" y="-179"/>
-      <point x="-146" y="-179" type="curve" smooth="yes"/>
-      <point x="-121" y="-179"/>
-      <point x="-19" y="-76"/>
-      <point x="6" y="-28" type="curve"/>
-      <point x="43" y="-81"/>
-      <point x="126" y="-158"/>
-      <point x="154" y="-158" type="curve" smooth="yes"/>
-      <point x="183" y="-158"/>
-      <point x="313" y="-20"/>
-    </contour>
-    <contour>
-      <point x="143" y="293" type="curve" smooth="yes"/>
-      <point x="143" y="305"/>
-      <point x="108" y="316"/>
-      <point x="54" y="371" type="curve" smooth="yes"/>
-      <point x="-2" y="427"/>
-      <point x="-13" y="461"/>
-      <point x="-24" y="461" type="curve" smooth="yes"/>
-      <point x="-53" y="461"/>
-      <point x="-182" y="324"/>
-      <point x="-182" y="293" type="curve" smooth="yes"/>
-      <point x="-182" y="258"/>
-      <point x="-51" y="126"/>
-      <point x="-14" y="126" type="curve" smooth="yes"/>
-      <point x="14" y="126"/>
-      <point x="144" y="264"/>
-    </contour>
-    <contour>
-      <point x="0" y="638" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="0" y="-140" type="move" name="_nUpper"/>
-    </contour>
+    <component base="_nukta3inv" xScale="0.85" yScale="0.85" xOffset="-520" yOffset="63"/>
   </outline>
   <lib>
   <dict>
@@ -70,9 +16,8 @@
   <key>com.adobe.type.autohint</key>
   <data>
   <hintSetList>
-    <hintset pointTag="hr01">
-      <hstem pos="-179" width="335" />
-      <hstem pos="461" width="-17" />
+    <hintset pointTag="lsb">
+      <hstem pos="-198" width="395" />
       <hstem pos="555" width="-20" />
     </hintset>
   </hintSetList>

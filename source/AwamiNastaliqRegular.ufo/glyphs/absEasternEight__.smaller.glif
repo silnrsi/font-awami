@@ -2,32 +2,7 @@
 <glyph name="absEasternEight.smaller" format="1">
   <advance width="392"/>
   <outline>
-    <contour>
-      <point x="7" y="6" type="curve" smooth="yes"/>
-      <point x="5" y="-2"/>
-      <point x="28" y="-12"/>
-      <point x="30" y="-2" type="curve" smooth="yes"/>
-      <point x="55" y="92"/>
-      <point x="150" y="388"/>
-      <point x="163" y="388" type="curve" smooth="yes"/>
-      <point x="189" y="388"/>
-      <point x="307" y="-2"/>
-      <point x="314" y="-2" type="curve" smooth="yes"/>
-      <point x="337" y="-2"/>
-      <point x="379" y="96"/>
-      <point x="379" y="111" type="curve"/>
-      <point x="379" y="135"/>
-      <point x="231" y="551"/>
-      <point x="197" y="551" type="curve" smooth="yes"/>
-      <point x="175" y="551"/>
-      <point x="42" y="146"/>
-    </contour>
-    <contour>
-      <point x="1" y="0" type="move" name="_digit"/>
-    </contour>
-    <contour>
-      <point x="393" y="0" type="move" name="digit"/>
-    </contour>
+    <component base="absEasternEight" xScale="0.4" yScale="0.4" xOffset="-3"/>
   </outline>
   <lib>
   <dict>
