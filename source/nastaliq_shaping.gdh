@@ -13,7 +13,6 @@ pass(1)
 
 table(glyph)
 
-
 cVisSpace = (g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide g_spaceVisHair);
 
 cSpace = (g_space cVisSpace);
@@ -26,33 +25,32 @@ cInvisible = (g_leftToRightEmbedding  g_rightToLeftEmbedding  g_popDirectionalFo
 	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate
 	g_lineSeparator  g_paragraphSeparator  g_wordJoiner  g_ObjectReplChar);
 
-
 endtable;
 
 
 if (showInvis == 1 && wordSpacing == xtight)
 g_space  >  g_spaceVisXtight;
-g_narrowNoBreakSpace  > g_spaceVisHair;
+g_narrowNoBreakSpace  >  g_spaceVisHair;
 endif;
 
 if (showInvis == 1 && wordSpacing == tight)
 g_space  >  g_spaceVisTight;
-g_narrowNoBreakSpace  > g_spaceVisHair;
+g_narrowNoBreakSpace  >  g_spaceVisHair;
 endif;
 
 if (showInvis == 1 && wordSpacing == medium)
 g_space  >  g_spaceVis;
-g_narrowNoBreakSpace  > g_spaceVisXtight;
+g_narrowNoBreakSpace  >  g_spaceVisXtight;
 endif;
 
 if (showInvis == 1 && wordSpacing == wide)
 g_space  >  g_spaceVisWide;
-g_narrowNoBreakSpace  > g_spaceVisTight;
+g_narrowNoBreakSpace  >  g_spaceVisTight;
 endif;
 
 if (showInvis == 1 && wordSpacing == xwide)
 g_space  >  g_spaceVisXwide;
-g_narrowNoBreakSpace  > g_spaceVis;
+g_narrowNoBreakSpace  >  g_spaceVis;
 endif;
 
 if (showInvis == 0)
@@ -62,6 +60,7 @@ endif;
 if (showInvis == 1)
 cno_showInv  >  cshowInv;
 endif;
+
 
 endpass;
 

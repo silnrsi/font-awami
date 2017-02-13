@@ -1364,6 +1364,8 @@ cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_
 // Diacritics that extend above/below the line
 cDiacriticUpper  /  (cKafIni cKafMed)  _  ; // ... but not on kafs or gafs
 cDiacriticUpper  /  csKafIM_base  cKafTop  _;
+cNuqtaUpper { shift.y = -200m  }
+	cDiacriticUpper { shift.y = -350m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 
@@ -1480,7 +1482,7 @@ cDiacriticLower {
 }  /  cBase  cNuqtaLikeUpper?  _;
 
 // These should always stay centered over the nuqta if any:
-(gNoonGhunnaMark g__smallV) { collision {
+(gNoonGhunnaMark g__smallV gKharizabar) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
 	min.x = -1m;
