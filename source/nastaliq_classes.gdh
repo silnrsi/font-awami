@@ -379,10 +379,10 @@ cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
     gHehGoalMedAi gHehGoalMedFe gHehGoalMedQf gHehGoalMedMm gHehGoalMedNn gHehGoalMedHgF 
     gHehGoalMedHgM gHehGoalMedHd gHehGoalMedCh gHehGoalMedBy gHehGoalMedBe 
     gHehGoalMedBeRe gHehGoalMedBeNn gHehGoalMedBeHg gHehGoalMedMmX ) ;
-cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn 
+cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM1 gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn 
 	gGafMedSd gGafMedTaF gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedMmX gGafMedNn gGafMedHgM 
 	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg);
-cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn 
+cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM1 gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn 
     gKafMedSd gKafMedTaF gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM 
     gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
 	cKafMed_gaf) ;
@@ -723,6 +723,7 @@ cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
 gKafMed {collexclude.glyph = g__kaf_exclude};
 gKafMedBe {collexclude.glyph = g__kaf_exclude};
 gKafMedBeF {collexclude.glyph = g__kaf_exclude};
+gKafMedBeM1 {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gKafMedJm {collexclude.glyph = g__kaf_exclude};
 gKafMedRe {collexclude.glyph = g__kaf_exclude};
@@ -747,6 +748,7 @@ gKafMedBeHg {collexclude.glyph = g__kaf_exclude};
 gGafMed {collexclude.glyph = g__kaf_exclude};
 gGafMedBe {collexclude.glyph = g__kaf_exclude};
 gGafMedBeF {collexclude.glyph = g__kaf_exclude};
+gGafMedBeM1 {collexclude.glyph = g__kaf_exclude};
 gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gGafMedJm {collexclude.glyph = g__kaf_exclude};
 gGafMedRe {collexclude.glyph = g__kaf_exclude};

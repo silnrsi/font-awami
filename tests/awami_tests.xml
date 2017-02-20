@@ -40,7 +40,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>تاریخی</string>
+      <string>وشّێن</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1674,6 +1674,10 @@
     <test class="fset21" label="Kashmiri yeh" rtl="True">
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
+    <test background="#ff557f" class="fset31" label="yeh w/ 2 dots above - 063E" rtl="True">
+      <comment>This showed up in the document Martin produced.</comment>
+      <string>ؾ بؾ</string>
+    </test>
     <test background="#55aaff" class="fset12" label="HONORIFICS" rtl="True">
       <string/>
     </test>
@@ -1704,6 +1708,12 @@
     </test>
     <test class="fset19" label="Arabic kaf" rtl="True">
       <string>ك ككك</string>
+    </test>
+    <test background="#55aaff" class="fset31" label="BALUCHI" rtl="True">
+      <string/>
+    </test>
+    <test background="#ff557f" class="fset31" label="yeh + small-V - O6CE" rtl="True">
+      <string>وشّێن</string>
     </test>
   </testgroup>
   <testgroup label="Features">
@@ -1858,6 +1868,9 @@
     </test>
     <test class="fset31" label="kaf or final, not both" rtl="True">
       <string>کمس</string>
+    </test>
+    <test class="fset31" label="push down diac and nuqta" rtl="True">
+      <string>شَجی</string>
     </test>
   </testgroup>
   <testgroup label="nuqtas">
@@ -2336,6 +2349,172 @@
     </test>
     <test class="fset24" label="odd" rtl="True">
       <string>دفعتہً</string>
+    </test>
+    <test background="#55aaff" class="fset31" label="BETA-2" rtl="True">
+      <string/>
+    </test>
+    <test background="#ffff00" class="fset31" label="kaf + alef" rtl="True">
+      <comment>Vertical stems should be more consistent and parallel.</comment>
+      <string>کیا</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="alt meem" rtl="True">
+      <comment>Initial alt meem should be more of a blob; too curved an entrance into the alef.</comment>
+      <string>ما بما</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="medial alt-meem" rtl="True">
+      <string>بما بمد</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="reh dal waw" rtl="True">
+      <comment>Final dal and isolate reh are very similar. Top of dal starts further to the right. Head of waw is too heavy; shrink head but keep the same height.</comment>
+      <string>ر د و یر ید یو</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="dal vs. reh" rtl="True">
+      <comment>Reh corner should be more curved; both should be wider. These shapes should be almost identical. Bottom should be more flat, like the reh.</comment>
+      <string>بد ر</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="reh" rtl="True">
+      <comment>More of an S shape to the first group of rehs. For second group, less like steps and more flowy.</comment>
+      <string>عر  لھز  سظݱ  سنڙ  جر  کڗ  سلژ</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="kaf + reh" rtl="True">
+      <comment>Needs to be more flowy, more vertical space between kaf and reh.</comment>
+      <string>کر</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="tahs" rtl="True">
+      <comment>Make left sides more consistent. Final is the more standard form. Get rid of open left sides. Make vertical stroke better.</comment>
+      <string>ط طب بطل</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="final alef" rtl="True">
+      <comment>Isolate alef is maybe too tall; final alef seems too short after kaf and gaf.</comment>
+      <string>کا گا ا با سا </string>
+    </test>
+    <test background="#ffff00" class="fset31" label="yeh w/ hamza" rtl="True">
+      <comment>Hamza should be bigger.</comment>
+      <string>ئد ئخ</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="initial jeems" rtl="True">
+      <comment>Some are still too narrow. Send Sheldon a sketch and get him to draw them.</comment>
+      <string>جس جق جر جو جبر</string>
+    </test>
+    <test background="#ffff00" class="fset31" label="pesh shape" rtl="True">
+      <comment>Should it look more like a waw?</comment>
+      <string>سُ</string>
+    </test>
+    <test background="#aaff7f" class="fset31" label="bariyeh" rtl="True">
+      <comment>Barieyeh should be flatter and entrance should be more angled.</comment>
+      <string>فے</string>
+    </test>
+    <test class="fset31" label="sad + meem" rtl="True">
+      <comment>Noori and Noto both have the sad much higher than the meem.</comment>
+      <string>صم بصم</string>
+    </test>
+    <test class="fset31" label="feh, qaf, waw heads" rtl="True">
+      <comment>Less saggy bottom on isolate waw and initial feh.</comment>
+      <string>و یو فق</string>
+    </test>
+    <test class="fset31" label="heh-goal hook shape" rtl="True">
+      <comment>Hook should be a little bigger and a different angle. Should be more of a blob</comment>
+      <string>ہپ</string>
+    </test>
+    <test class="fset31" label="noon + meem" rtl="True">
+      <comment>Right edge of beh form should not tilt up. Maybe can use absBehIni.mmM</comment>
+      <string>نم</string>
+    </test>
+    <test class="fset31" label="beh + meem" rtl="True">
+      <string>بمع</string>
+    </test>
+    <test class="fset31" label="hamza w/ diacritics" rtl="True">
+      <string>ءَ ءِ</string>
+    </test>
+    <test class="fset31" label="name marker" rtl="True">
+      <comment>Posiitioning needs attention. V-part is larger; left-most stroke is basically flat.</comment>
+      <string>مرؔ</string>
+    </test>
+    <test background="#aaffff" class="fset31" label="gaf strokes" rtl="True">
+      <comment>Top of strokes should be more even. Maybe okay for now.</comment>
+      <string>گ</string>
+    </test>
+    <test background="#aaffff" class="fset31" label="kaf vs. keheh" rtl="True">
+      <comment>Noori renders both with no squiggle. Is the difference hekpful to recognize different characters?</comment>
+      <string>ک ك</string>
+    </test>
+    <test class="fset31" label="small mark upper APs" rtl="True">
+      <comment>Drop by 1/3 of the distance.</comment>
+      <string>سݨُ ݩَ ݩُ</string>
+    </test>
+    <test class="fset31" label="beh + noon/qaf" rtl="True">
+      <comment>Beh nuqta should be lowered just before final qaf and noon. Not lam. Sheldon needs to research this more.</comment>
+      <string>ین سبق  فبق  جبو بل</string>
+    </test>
+    <test class="fset31" label="jeem + yeh" rtl="True">
+      <comment>Should nuqta be lower?</comment>
+      <string>جی بجی</string>
+    </test>
+    <test class="fset31" label="alef madda" rtl="True">
+      <comment>Madda is too heavy</comment>
+      <string>آ</string>
+    </test>
+    <test background="#aaffff" class="fset31" label="feh nuqta" rtl="True">
+      <comment>Line height rule is pushing one of the nuqtas down.</comment>
+      <string>فخ فس فط</string>
+    </test>
+    <test class="fset31" label="final &amp; initial kaf" rtl="True">
+      <comment>They should both use the wider wdith.</comment>
+      <string>بک ک</string>
+    </test>
+    <test class="fset31" label="nuqta and small tah" rtl="True">
+      <string>تڈ تذ</string>
+    </test>
+    <test class="fset31" label="dad nuqtas" rtl="True">
+      <comment>Nuqtas are too high.</comment>
+      <string>ۻۻۻ</string>
+    </test>
+    <test class="fset31" label="ghain nuqta" rtl="True">
+      <comment>Move nuqta more directly above head.</comment>
+      <string>غ</string>
+    </test>
+    <test class="fset31" label="aim + tah" rtl="True">
+      <comment>Inconsistencies. Make exit of ain a little thicker, like .sd form.</comment>
+      <string>عط عطس عص</string>
+    </test>
+    <test class="fset31" label="beh + heh-do" rtl="True">
+      <comment>Beh nuqta is too close to heh-doachashmee. Move it down.
+
+Is absBehIni.hd too thick at right edge?</comment>
+      <string>بھق پھق پکھق</string>
+    </test>
+    <test class="fset31" label="beh + kaf + alef" rtl="True">
+      <comment>Beh form a tiny bit shorter and tighter in - but only before the kaf/gaf.</comment>
+      <string>بکا ثکا  ثص</string>
+    </test>
+    <test class="fset31" label="beh + lam + meem" rtl="True">
+      <comment>Loosen lam connection. Make more like kaf.</comment>
+      <string>بلم بکم</string>
+    </test>
+    <test class="fset31" label="beF forms" rtl="True">
+      <comment>Smooth off beF forms.</comment>
+      <string>جت</string>
+    </test>
+    <test class="fset31" label="jeem + jeem" rtl="True">
+      <comment>First nuqta should be higher.</comment>
+      <string>جِچِ چِچِ</string>
+    </test>
+    <test background="#aaff7f" class="fset31" label="tah + diac" rtl="True">
+      <comment>Diacritics need to go above the stem, not the bowl.</comment>
+      <string>طَ طّ</string>
+    </test>
+    <test class="fset31" label="beh + kaf + yeh - bug" rtl="True">
+      <comment>collision!</comment>
+      <string>بکی بکي</string>
+    </test>
+    <test class="fset31" label="bug" rtl="True">
+      <string>یكڻنگ سنكنیب</string>
+    </test>
+    <test class="fset31" label="tight" rtl="True">
+      <string>یتیلے</string>
+    </test>
+    <test class="fset31" label="ugly" rtl="True">
+      <string>ستعفٰی</string>
     </test>
   </testgroup>
   <testgroup label="Special case positioning">

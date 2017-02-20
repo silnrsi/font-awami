@@ -781,13 +781,25 @@ cNuqtaLikeLower { collision {
 	flags = CLEAR_KERN(collision.flags);
 } } / _  g__kafTop_null? cDot2u;
 
+// There is a bug in the Graphite engine that mis-initializes the exclusion glyph that causes bugs in the
+// collision fixing.
+// For now, until this gets fixed, just set the exclusion glyph if a neighboring glyph has an upper nuqta.
+// Eventually, remove the context for the next two rules and merge them.
 cls_excludingGlyphs { collision {
 	flags = CLEAR_FIX(collision.flags);
 	flags = CLEAR_KERN(collision.flags);
 	exclude.glyph = collexclude.glyph;
 	exclude.offset.x = collexclude.offsetx;
 	exclude.offset.y = collexclude.offsety;
-} };
+} }  /  cNuqtaLikeUpper  cDiacritic?  _=EG;
+
+cls_excludingGlyphs { collision {
+	flags = CLEAR_FIX(collision.flags);
+	flags = CLEAR_KERN(collision.flags);
+	exclude.glyph = collexclude.glyph;
+	exclude.offset.x = collexclude.offsetx;
+	exclude.offset.y = collexclude.offsety;
+} }  /  _=EG  g__kafTop_null?  cDiacritic?  cBase  cNuqtaLower? cNuqtaUpper;
 
 cls_excludingGlyphs_kern { collision {
 	flags = SET_FIX(collision.flags);
@@ -798,8 +810,7 @@ cls_excludingGlyphs_kern { collision {
 	exclude.glyph = collexclude.glyph;
 	exclude.offset.x = collexclude.offsetx;
 	exclude.offset.y = collexclude.offsety;
-} };
-
+} }  /  cNuqtaLikeUpper  cDiacritic?  _=EG;
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
 // We actually set the kerning parameters in the final pass. But here, at least indicate
@@ -1482,7 +1493,7 @@ cDiacriticLower {
 }  /  cBase  cNuqtaLikeUpper?  _;
 
 // These should always stay centered over the nuqta if any:
-(gNoonGhunnaMark g__smallV gKharizabar) { collision {
+(gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
 	min.x = -1m;
