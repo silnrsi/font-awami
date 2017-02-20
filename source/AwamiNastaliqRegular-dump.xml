@@ -1,4 +1,4 @@
-<!-- Generated on Mon, 20 Feb 2017 16:43:31 +0000 by  -->
+<!-- Generated on Mon, 20 Feb 2017 21:30:34 +0000 by  -->
 
 <font>
 
@@ -46,7 +46,7 @@
 	<upm>2048</upm>
 	<ascender>[3429,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750]</ascender>
 	<descender>[-1287,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250,-250]</descender>
-	<cap_height>[2000,700,700,700,700,700,700,700,700,700,700,700,700,700,700,700]</cap_height>
+	<cap_height>[2016,700,700,700,700,700,700,700,700,700,700,700,700,700,700,700]</cap_height>
 	<x_height>[1972,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500]</x_height>
 	<default_width>[500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500]</default_width>
 	<slant_angle>0.0</slant_angle>
@@ -8165,9 +8165,10 @@
 			<node_count>19</node_count>
 			<node_hash>f1e40c523b05126cad6f62d7168722a16fe74b2152f19fc1dab1e7ae</node_hash>
 			<anchors>
-				<anchor>mUpper: 2031,1889</anchor>
+				<anchor>mUpper: 1870,1960</anchor>
 				<anchor>mLower: 639,-793</anchor>
 				<anchor>honorific: 310,1393</anchor>
+				<anchor>bogus: 1960,610</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>2472</width>
@@ -8177,16 +8178,17 @@
 		<glyph>
 			<name>absDad</name>
 			<note>None</note>
-			<node_count>17</node_count>
-			<node_hash>52ac491cdb8cb32fec7cc785577f4cdf7e69fe5d9a74a5509673d9db</node_hash>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>mUpper: 1755,2669</anchor>
-				<anchor>mLower: 645,-799</anchor>
-				<anchor>honorific: 310,1394</anchor>
+				<anchor>mUpper: 1855,2577</anchor>
+				<anchor>mLower: 645,-791</anchor>
+				<anchor>honorific: 310,1402</anchor>
 			</anchors>
-			<component_count>1</component_count>
+			<component_count>2</component_count>
 			<components>
-				<component>_nukta: delta: 1382.0,2256.0, scale: 1.0,1.0</component>
+				<component>_nukta: delta: 1502.0,2146.0, scale: 1.0,1.0</component>
+				<component>absSad: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>2438</width>
 			<unicode>0636</unicode>
@@ -8195,17 +8197,18 @@
 		<glyph>
 			<name>absDadDotBelow</name>
 			<note>None</note>
-			<node_count>17</node_count>
-			<node_hash>52ac491cdb8cb32fec7cc785577f4cdf7e69fe5d9a74a5509673d9db</node_hash>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>mUpper: 1755,2669</anchor>
+				<anchor>mUpper: 1855,2549</anchor>
 				<anchor>mLower: 645,-799</anchor>
 				<anchor>honorific: 310,1394</anchor>
 			</anchors>
-			<component_count>2</component_count>
+			<component_count>3</component_count>
 			<components>
-				<component>_nukta: delta: 1382.0,2256.0, scale: 1.0,1.0</component>
-				<component>_nukta: delta: 1725.0,310.0, scale: 1.0,1.0</component>
+				<component>_nukta: delta: 1502.0,2146.0, scale: 1.0,1.0</component>
+				<component>_nukta: delta: 1595.0,410.0, scale: 1.0,1.0</component>
+				<component>absSad: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>2438</width>
 			<unicode>06FB</unicode>
@@ -8217,9 +8220,9 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>nUpper: 1862,1944</anchor>
-				<anchor>n1Lower: 2061,416</anchor>
-				<anchor>mUpper: 1846,1955</anchor>
+				<anchor>nUpper: 1870,1960</anchor>
+				<anchor>n1Lower: 2048,644</anchor>
+				<anchor>mUpper: 1860,1970</anchor>
 				<anchor>mLower: 639,-793</anchor>
 				<anchor>honorific: 287,1393</anchor>
 				<anchor>_exit_sad: 1708,887</anchor>
@@ -8240,7 +8243,7 @@
 			<anchors>
 				<anchor>exit_lamKaf: 0,807</anchor>
 				<anchor>nUpper: 974,1297</anchor>
-				<anchor>n1Lower: 1066,-90</anchor>
+				<anchor>n1Lower: 1066,-40</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1554</width>
@@ -8255,7 +8258,7 @@
 			<anchors>
 				<anchor>exit_ain: 0,1052</anchor>
 				<anchor>nUpper: 1176,2173</anchor>
-				<anchor>n1Lower: 1268,791</anchor>
+				<anchor>n1Lower: 1268,841</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1753</width>
@@ -8270,7 +8273,7 @@
 			<anchors>
 				<anchor>exit_beh: 0,1592</anchor>
 				<anchor>nUpper: 785,2475</anchor>
-				<anchor>n1Lower: 877,1088</anchor>
+				<anchor>n1Lower: 877,1138</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1366</width>
@@ -8285,7 +8288,7 @@
 			<anchors>
 				<anchor>exit_behFinal: 0,494</anchor>
 				<anchor>nUpper: 1017,1543</anchor>
-				<anchor>n1Lower: 1110,158</anchor>
+				<anchor>n1Lower: 1110,208</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1596</width>
@@ -8300,7 +8303,7 @@
 			<anchors>
 				<anchor>exit_behLowTooth: 0,494</anchor>
 				<anchor>nUpper: 947,1415</anchor>
-				<anchor>n1Lower: 1040,41</anchor>
+				<anchor>n1Lower: 1040,91</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1526</width>
@@ -8315,7 +8318,7 @@
 			<anchors>
 				<anchor>exit_behLowTooth: -1,798</anchor>
 				<anchor>nUpper: 1038,1838</anchor>
-				<anchor>n1Lower: 1130,455</anchor>
+				<anchor>n1Lower: 1130,505</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1616</width>
@@ -8330,7 +8333,7 @@
 			<anchors>
 				<anchor>exit_behHighTooth: 0,630</anchor>
 				<anchor>nUpper: 906,1607</anchor>
-				<anchor>n1Lower: 998,209</anchor>
+				<anchor>n1Lower: 998,259</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1485</width>
@@ -8345,7 +8348,7 @@
 			<anchors>
 				<anchor>exit_behPreNoon: 0,1548</anchor>
 				<anchor>nUpper: 975,1916</anchor>
-				<anchor>n1Lower: 1058,529</anchor>
+				<anchor>n1Lower: 1058,579</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1543</width>
@@ -8360,7 +8363,7 @@
 			<anchors>
 				<anchor>exit_behPreReh: 0,722</anchor>
 				<anchor>nUpper: 784,1651</anchor>
-				<anchor>n1Lower: 876,267</anchor>
+				<anchor>n1Lower: 876,317</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1366</width>
@@ -8390,7 +8393,7 @@
 			<anchors>
 				<anchor>exit_chotiyeh: 0,816</anchor>
 				<anchor>nUpper: 1103,2090</anchor>
-				<anchor>n1Lower: 1196,701</anchor>
+				<anchor>n1Lower: 1196,751</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1677</width>
@@ -8405,7 +8408,7 @@
 			<anchors>
 				<anchor>exit_feh: 0,458</anchor>
 				<anchor>nUpper: 1115,1592</anchor>
-				<anchor>n1Lower: 1207,210</anchor>
+				<anchor>n1Lower: 1207,260</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1693</width>
@@ -8420,7 +8423,7 @@
 			<anchors>
 				<anchor>exit_hehdoach: 0,529</anchor>
 				<anchor>nUpper: 879,1545</anchor>
-				<anchor>n1Lower: 972,159</anchor>
+				<anchor>n1Lower: 972,209</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1457</width>
@@ -8435,7 +8438,7 @@
 			<anchors>
 				<anchor>exit_hehgoalMedial: 0,204</anchor>
 				<anchor>nUpper: 749,1573</anchor>
-				<anchor>n1Lower: 842,195</anchor>
+				<anchor>n1Lower: 842,245</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1334</width>
@@ -8450,7 +8453,7 @@
 			<anchors>
 				<anchor>exit_hehgoalFinal: 0,421</anchor>
 				<anchor>nUpper: 922,1214</anchor>
-				<anchor>n1Lower: 1014,-170</anchor>
+				<anchor>n1Lower: 1014,-120</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1506</width>
@@ -8465,7 +8468,7 @@
 			<anchors>
 				<anchor>exit_jeem: 0,1150</anchor>
 				<anchor>nUpper: 1121,2484</anchor>
-				<anchor>n1Lower: 1213,1098</anchor>
+				<anchor>n1Lower: 1213,1148</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1692</width>
@@ -8480,7 +8483,7 @@
 			<anchors>
 				<anchor>exit_meem: 0,1016</anchor>
 				<anchor>nUpper: 1011,2077</anchor>
-				<anchor>n1Lower: 1104,696</anchor>
+				<anchor>n1Lower: 1104,746</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1592</width>
@@ -8493,7 +8496,7 @@
 			<node_count>14</node_count>
 			<node_hash>64a92d4fd830aa98839f2e25b12b9f90f5f6a280b6bdf3719b54a731</node_hash>
 			<anchors>
-				<anchor>n1Lower: 961,254</anchor>
+				<anchor>n1Lower: 961,304</anchor>
 				<anchor>nUpper: 869,1636</anchor>
 				<anchor>exit_meemAlt: 0,586</anchor>
 			</anchors>
@@ -8510,7 +8513,7 @@
 			<anchors>
 				<anchor>nUpper: 787,2164</anchor>
 				<anchor>exit_noon: 0,1293</anchor>
-				<anchor>n1Lower: 880,743</anchor>
+				<anchor>n1Lower: 880,793</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8528,7 +8531,7 @@
 			<anchors>
 				<anchor>exit_qafWaw: 0,872</anchor>
 				<anchor>nUpper: 609,1824</anchor>
-				<anchor>n1Lower: 701,448</anchor>
+				<anchor>n1Lower: 701,498</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1188</width>
@@ -8543,7 +8546,7 @@
 			<anchors>
 				<anchor>exit_reh: 0,569</anchor>
 				<anchor>nUpper: 626,1395</anchor>
-				<anchor>n1Lower: 719,11</anchor>
+				<anchor>n1Lower: 719,61</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1206</width>
@@ -8559,7 +8562,7 @@
 				<anchor>_exit_sad: 1281,1198</anchor>
 				<anchor>exit_sad: 0,938</anchor>
 				<anchor>nUpper: 1473,2251</anchor>
-				<anchor>n1Lower: 1565,868</anchor>
+				<anchor>n1Lower: 1565,918</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>2049</width>
@@ -8573,7 +8576,7 @@
 			<node_hash>7ef9ebf3fa008b1ceb4f6e596ee06733ed370d9c8a1fe0c33d86c889</node_hash>
 			<anchors>
 				<anchor>exit_seen: 0,1339</anchor>
-				<anchor>n1Lower: 736,884</anchor>
+				<anchor>n1Lower: 736,934</anchor>
 				<anchor>nUpper: 643,2264</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8589,7 +8592,7 @@
 			<anchors>
 				<anchor>exit_tah: 0,454</anchor>
 				<anchor>nUpper: 1382,2005</anchor>
-				<anchor>n1Lower: 1474,624</anchor>
+				<anchor>n1Lower: 1474,674</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8607,7 +8610,7 @@
 			<anchors>
 				<anchor>exit_tah: 0,454</anchor>
 				<anchor>nUpper: 1382,2005</anchor>
-				<anchor>n1Lower: 1474,624</anchor>
+				<anchor>n1Lower: 1474,674</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1963</width>
@@ -8621,8 +8624,8 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_lamKaf: 0,807</anchor>
-				<anchor>nUpper: 974,1302</anchor>
-				<anchor>n1Lower: 1066,-99</anchor>
+				<anchor>nUpper: 974,1297</anchor>
+				<anchor>n1Lower: 1066,-49</anchor>
 				<anchor>_exit_sad: 789,246</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8640,7 +8643,7 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_ain: 0,1052</anchor>
-				<anchor>n1Lower: 1266,791</anchor>
+				<anchor>n1Lower: 1266,841</anchor>
 				<anchor>nUpper: 1174,2173</anchor>
 				<anchor>_exit_sad: 985,1122</anchor>
 			</anchors>
@@ -8661,7 +8664,7 @@
 				<anchor>exit_beh: 0,1592</anchor>
 				<anchor>nUpper: 785,2475</anchor>
 				<anchor>_exit_sad: 603,1420</anchor>
-				<anchor>n1Lower: 877,1088</anchor>
+				<anchor>n1Lower: 877,1138</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8678,8 +8681,8 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_behFinal: 0,494</anchor>
-				<anchor>n1Lower: 1110,158</anchor>
-				<anchor>nUpper: 937,1623</anchor>
+				<anchor>n1Lower: 1110,208</anchor>
+				<anchor>nUpper: 1017,1543</anchor>
 				<anchor>_exit_sad: 834,490</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8697,8 +8700,8 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_behLowTooth: 0,495</anchor>
-				<anchor>nUpper: 867,1495</anchor>
-				<anchor>n1Lower: 1040,41</anchor>
+				<anchor>nUpper: 947,1415</anchor>
+				<anchor>n1Lower: 1040,91</anchor>
 				<anchor>_exit_sad: 764,364</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8716,8 +8719,8 @@
 			<node_hash>f338249ebd906db23e9219d037f1f0ee6592e8881093ecc54cd96fdc</node_hash>
 			<anchors>
 				<anchor>exit_behLowTooth: 0,798</anchor>
-				<anchor>nUpper: 894,1979</anchor>
-				<anchor>n1Lower: 1066,517</anchor>
+				<anchor>nUpper: 974,1899</anchor>
+				<anchor>n1Lower: 1066,567</anchor>
 				<anchor>_exit_sad: 787,848</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8733,8 +8736,8 @@
 			<anchors>
 				<anchor>exit_behHighTooth: 0,630</anchor>
 				<anchor>_exit_sad: 716,547</anchor>
-				<anchor>n1Lower: 991,214</anchor>
-				<anchor>nUpper: 819,1679</anchor>
+				<anchor>n1Lower: 991,264</anchor>
+				<anchor>nUpper: 899,1599</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8751,8 +8754,8 @@
 			<node_hash>1f576e814364ee2f6f14c199eccdd8ef37d66cdd4c0d3cf093c4a487</node_hash>
 			<anchors>
 				<anchor>exit_behPreNoon: 0,1500</anchor>
-				<anchor>n1Lower: 971,547</anchor>
-				<anchor>nUpper: 798,2015</anchor>
+				<anchor>n1Lower: 971,597</anchor>
+				<anchor>nUpper: 898,1935</anchor>
 				<anchor>_exit_sad: 696,878</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8767,8 +8770,8 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_behPreReh: 0,722</anchor>
-				<anchor>nUpper: 704,1735</anchor>
-				<anchor>n1Lower: 876,267</anchor>
+				<anchor>nUpper: 784,1655</anchor>
+				<anchor>n1Lower: 876,317</anchor>
 				<anchor>_exit_sad: 599,605</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8787,7 +8790,7 @@
 			<anchors>
 				<anchor>exit_bariyeh: 0,376</anchor>
 				<anchor>n1Lower: 1176,-369</anchor>
-				<anchor>nUpper: 1133,1718</anchor>
+				<anchor>nUpper: 1213,1638</anchor>
 				<anchor>_exit_sad: 1025,590</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8801,8 +8804,8 @@
 			<node_count>14</node_count>
 			<node_hash>fd586f2620539e15d82ca14431e421c5096da1b22f398991f2af31b5</node_hash>
 			<anchors>
-				<anchor>nUpper: 1046,2183</anchor>
-				<anchor>n1Lower: 1219,720</anchor>
+				<anchor>nUpper: 1126,2103</anchor>
+				<anchor>n1Lower: 1219,820</anchor>
 				<anchor>_exit_sad: 941,1053</anchor>
 				<anchor>exit_chotiyeh: 0,829</anchor>
 			</anchors>
@@ -8818,8 +8821,8 @@
 			<node_hash>6de03cb0644053496190f2d50c8e7fa94561ed77ac9f131e350b4edf</node_hash>
 			<anchors>
 				<anchor>exit_feh: 0,458</anchor>
-				<anchor>nUpper: 1021,1716</anchor>
-				<anchor>n1Lower: 1194,254</anchor>
+				<anchor>nUpper: 1101,1636</anchor>
+				<anchor>n1Lower: 1194,354</anchor>
 				<anchor>_exit_sad: 919,586</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8833,9 +8836,9 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>n1Lower: 972,159</anchor>
+				<anchor>n1Lower: 972,209</anchor>
 				<anchor>_exit_sad: 689,492</anchor>
-				<anchor>nUpper: 799,1625</anchor>
+				<anchor>nUpper: 879,1545</anchor>
 				<anchor>exit_hehdoach: 0,529</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8852,9 +8855,9 @@
 			<node_count>16</node_count>
 			<node_hash>139d7537d6a6a06a17c7bb48c2cafa807b13f1906ef1ce2dc3643fa3</node_hash>
 			<anchors>
-				<anchor>n1Lower: 1163,-120</anchor>
+				<anchor>n1Lower: 1163,-70</anchor>
 				<anchor>_exit_sad: 883,211</anchor>
-				<anchor>nUpper: 990,1343</anchor>
+				<anchor>nUpper: 1070,1263</anchor>
 				<anchor>exit_hehgoalFinal: 0,416</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8868,9 +8871,9 @@
 			<node_count>14</node_count>
 			<node_hash>8f29645684e0e0494aa20bce65153ce4ef7abe8f7c832082a8c8e0e9</node_hash>
 			<anchors>
-				<anchor>n1Lower: 862,185</anchor>
+				<anchor>n1Lower: 862,235</anchor>
 				<anchor>_exit_sad: 585,517</anchor>
-				<anchor>nUpper: 690,1651</anchor>
+				<anchor>nUpper: 770,1571</anchor>
 				<anchor>exit_hehgoalMedial: 0,246</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -8885,9 +8888,9 @@
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
 				<anchor>exit_jeem: 0,1150</anchor>
-				<anchor>n1Lower: 1213,1098</anchor>
+				<anchor>n1Lower: 1213,1148</anchor>
 				<anchor>_exit_sad: 922,1433</anchor>
-				<anchor>nUpper: 1041,2564</anchor>
+				<anchor>nUpper: 1121,2484</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8903,9 +8906,9 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>n1Lower: 1102,696</anchor>
+				<anchor>n1Lower: 1102,746</anchor>
 				<anchor>_exit_sad: 823,1027</anchor>
-				<anchor>nUpper: 929,2159</anchor>
+				<anchor>nUpper: 1009,2079</anchor>
 				<anchor>exit_meem: 0,1016</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8922,9 +8925,9 @@
 			<node_count>0</node_count>
 			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
 			<anchors>
-				<anchor>n1Lower: 961,254</anchor>
+				<anchor>n1Lower: 961,304</anchor>
 				<anchor>_exit_sad: 683,585</anchor>
-				<anchor>nUpper: 789,1716</anchor>
+				<anchor>nUpper: 869,1636</anchor>
 				<anchor>exit_meemAlt: 0,585</anchor>
 			</anchors>
 			<component_count>1</component_count>
@@ -8942,7 +8945,7 @@
 			<node_hash>11bb19b3aafa8d9101c18bac906044cb4d3b857daf6aba14515a98c1</node_hash>
 			<anchors>
 				<anchor>exit_noon: 0,1293</anchor>
-				<anchor>n1Lower: 880,777</anchor>
+				<anchor>n1Lower: 880,827</anchor>
 				<anchor>_exit_sad: 597,1112</anchor>
 				<anchor>nUpper: 787,2164</anchor>
 			</anchors>
@@ -8959,8 +8962,8 @@
 			<anchors>
 				<anchor>_exit_sad: 420,777</anchor>
 				<anchor>exit_qafWaw: 0,872</anchor>
-				<anchor>nUpper: 531,1908</anchor>
-				<anchor>n1Lower: 704,450</anchor>
+				<anchor>nUpper: 611,1828</anchor>
+				<anchor>n1Lower: 704,500</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>420</width>
@@ -8975,8 +8978,8 @@
 			<anchors>
 				<anchor>exit_reh: 0,569</anchor>
 				<anchor>_exit_sad: 438,343</anchor>
-				<anchor>nUpper: 546,1474</anchor>
-				<anchor>n1Lower: 719,11</anchor>
+				<anchor>nUpper: 626,1395</anchor>
+				<anchor>n1Lower: 719,61</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -8994,8 +8997,8 @@
 			<anchors>
 				<anchor>_exit_sad: 1281,1197</anchor>
 				<anchor>exit_sad: 0,938</anchor>
-				<anchor>nUpper: 1393,2331</anchor>
-				<anchor>n1Lower: 1565,868</anchor>
+				<anchor>nUpper: 1473,2251</anchor>
+				<anchor>n1Lower: 1565,918</anchor>
 			</anchors>
 			<component_count>1</component_count>
 			<components>
@@ -9011,9 +9014,9 @@
 			<node_count>14</node_count>
 			<node_hash>a31a35fdd107ab735695b264b92200c45bcc9ec21633f5c7b8465caf</node_hash>
 			<anchors>
-				<anchor>nUpper: 589,2348</anchor>
+				<anchor>nUpper: 669,2268</anchor>
 				<anchor>exit_seen: 0,1336</anchor>
-				<anchor>n1Lower: 761,876</anchor>
+				<anchor>n1Lower: 761,936</anchor>
 				<anchor>_exit_sad: 478,1213</anchor>
 			</anchors>
 			<component_count>0</component_count>
@@ -9029,8 +9032,8 @@
 			<anchors>
 				<anchor>_exit_sad: 1281,408</anchor>
 				<anchor>exit_tah: 0,149</anchor>
-				<anchor>nUpper: 1386,1543</anchor>
-				<anchor>n1Lower: 1558,76</anchor>
+				<anchor>nUpper: 1466,1463</anchor>
+				<anchor>n1Lower: 1558,126</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1281</width>
@@ -9045,8 +9048,8 @@
 			<anchors>
 				<anchor>_exit_sad: 1271,982</anchor>
 				<anchor>exit_tah: 0,429</anchor>
-				<anchor>nUpper: 1380,2114</anchor>
-				<anchor>n1Lower: 1552,657</anchor>
+				<anchor>nUpper: 1460,2034</anchor>
+				<anchor>n1Lower: 1552,707</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>1271</width>
