@@ -30,6 +30,7 @@
       <style feats="invs=1" name="fset32"/>
       <style feats="wdsp=4" name="fset33"/>
       <style feats="invs=1 wdsp=1" name="fset34"/>
+      <style feats="cv85=1" name="fset35"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -1212,13 +1213,13 @@
     <test background="#55aaff" class="fset9" label="MEDIAL KAFS" rtl="True">
       <string/>
     </test>
-    <test class="fset9" label="meem lam kaf yeh" rtl="True">
+    <test class="fset30" label="meem lam kaf yeh" rtl="True">
       <string>ملکی</string>
     </test>
     <test class="fset9" label="seen gaf yeh noon dal" rtl="True">
       <string>سگیند</string>
     </test>
-    <test class="fset9" label="meem kaf meem lam" rtl="True">
+    <test class="fset30" label="meem kaf meem lam" rtl="True">
       <string>مکمل</string>
     </test>
     <test class="fset9" label="seen ngoeh dal bariyeh" rtl="True">
@@ -1732,6 +1733,9 @@
     <test class="fset22" label="alt hamza - chotiyeh" rtl="True">
       <string>ئ ئلئفئ</string>
     </test>
+    <test class="fset35" label="alt full stop" rtl="True">
+      <string>نِ نیا ز۔</string>
+    </test>
   </testgroup>
   <testgroup label="NFC / NFD">
     <test class="fset21" label="alef madda" rtl="True">
@@ -1873,7 +1877,7 @@
       <string>شَجی</string>
     </test>
   </testgroup>
-  <testgroup label="nuqtas">
+  <testgroup label="Nuqtas">
     <test label="say khay sheen zoa" rtl="True">
       <string>ثخشظ</string>
     </test>
@@ -1995,7 +1999,7 @@
       <string>”لے اتی چو ن٘ا لہ فرُو...شزدے بیوس۔“</string>
     </test>
   </testgroup>
-  <testgroup label="diacritics">
+  <testgroup label="Diacritics">
     <test label="initial + D-above" rtl="True">
       <string>سًب | عّجگ | طُکشو</string>
     </test>
@@ -2070,198 +2074,6 @@
     </test>
     <test class="fset25" label="lam" rtl="True">
       <string>لِع لِی لِج بلِع للِی سلِج</string>
-    </test>
-  </testgroup>
-  <testgroup label="extended characters">
-    <test background="#ff0000" label="kashmiri yeh - 0620" rtl="True">
-      <string>ؠ</string>
-    </test>
-    <test label="alif w/ maddah above - 0622" rtl="True">
-      <string>آ | بقآ | لآ</string>
-    </test>
-    <test label="alif w/ hamza above - 0623" rtl="True">
-      <string>أ | سفأ</string>
-    </test>
-    <test label="waw w/ hamza above - 0624" rtl="True">
-      <string>ؤ | لمؤ</string>
-    </test>
-    <test background="#ff0000" label="alif w/ hamza below - 0625" rtl="True">
-      <string>إ | تصإ</string>
-    </test>
-    <test label="yeh w/ hamza above - 0626" rtl="True">
-      <string>ئ | شئ | ئلم | بئج</string>
-    </test>
-    <test background="#ff0000" label="teh marbuta - 0629" rtl="True">
-      <string>ة | سة</string>
-    </test>
-    <test background="#ff0000" label="kaf - 0643" rtl="True">
-      <string>ك</string>
-    </test>
-    <test background="#55aaff" label="heh - 0647" rtl="True">
-      <comment>Is this needed, or is heh goal (06C1) all that is needed?</comment>
-      <string>ه</string>
-    </test>
-    <test background="#55aaff" label="yeh - 064A" rtl="True">
-      <string>ي | يل</string>
-    </test>
-    <test label="superscript alif - 0670" rtl="True">
-      <string>مٰ ظجٰب</string>
-    </test>
-    <test background="#ff0000" label="alef w/ wavy hamza above - 0672" rtl="True">
-      <string>ٲثم</string>
-    </test>
-    <test background="#ff0000" label="alif w/ wavy hamza below - 0673" rtl="True">
-      <string>ٳس</string>
-    </test>
-    <test background="#ff0000" label="high hamza alif - 0675" rtl="True">
-      <string>ٵق</string>
-    </test>
-    <test label="tteh - 0679" rtl="True">
-      <string>ٹ | ٹس | شٹع | مقٹ</string>
-    </test>
-    <test background="#ff0000" label="tteheh - 067A" rtl="True">
-      <string>ٺ | ٺج | </string>
-    </test>
-    <test background="#ff0000" label="beeh - 067B" rtl="True">
-      <string>ٻ | ٻس</string>
-    </test>
-    <test background="#ff0000" label="teh with ring - 067C" rtl="True">
-      <string>ټ | ټس</string>
-    </test>
-    <test background="#ff0000" label="teh w/ 3 dots above downwards - 067D" rtl="True">
-      <string>ٽ | ٽص</string>
-    </test>
-    <test label="peh - 067E" rtl="True">
-      <string>پ | پض | قپل | بمپ</string>
-    </test>
-    <test background="#ff0000" label="hah with hamza above - 0681" rtl="True">
-      <string>ځ | ځش</string>
-    </test>
-    <test background="#ff0000" label="nyeh - 0683" rtl="True">
-      <string>ڃ</string>
-    </test>
-    <test background="#ff0000" label="dyeh - 0684" rtl="True">
-      <string>ڄ</string>
-    </test>
-    <test background="#ff0000" label="hah w/ 3 dots above - 0685" rtl="True">
-      <string>څ | څط</string>
-    </test>
-    <test label="tcheh - 0686" rtl="True">
-      <string>چ | چش | لچت | بلچ</string>
-    </test>
-    <test background="#ff0000" label="tcheheh - 0687" rtl="True">
-      <string>ڇ | ڇص</string>
-    </test>
-    <test label="ddal - 0688 (dhal)" rtl="True">
-      <string>ڈ | لڈ</string>
-    </test>
-    <test background="#ff0000" label="dal with ring - 0689" rtl="True">
-      <string>ډ | سډ</string>
-    </test>
-    <test background="#ff0000" label="dal w/ 4 dots above - 0690" rtl="True">
-      <string>ڐ | جڐ</string>
-    </test>
-    <test label="rreh - 0691" rtl="True">
-      <string>ڑ | فبڑ</string>
-    </test>
-    <test background="#ff0000" label="reh with ring - 0693" rtl="True">
-      <string>ړ | سجړ</string>
-    </test>
-    <test background="#ff0000" label="reh w/ dot below and dot above - 0696" rtl="True">
-      <string>ږ | لمږ</string>
-    </test>
-    <test background="#ff0000" label="reh with 2 dots above - 0697" rtl="True">
-      <string>ڗ | سمڗ</string>
-    </test>
-    <test label="jeh - 0698 (tay)" rtl="True">
-      <string>ژ | تجژ</string>
-    </test>
-    <test background="#ff0000" label="reh w/ 4 dots above - 0699" rtl="True">
-      <string>ڙ | شڙ</string>
-    </test>
-    <test background="#ff0000" label="seen with dot below and dot above - 069A" rtl="True">
-      <string>ښ | بښ</string>
-    </test>
-    <test label="keheh (kaf) - 06a9" rtl="True">
-      <string>ک | مک</string>
-    </test>
-    <test background="#ff0000" label="kaf with ring - 06AB" rtl="True">
-      <string>ګ</string>
-    </test>
-    <test label="ghaf - 06AF" rtl="True">
-      <string>گق</string>
-    </test>
-    <test label="noon ghunna - 06BA" rtl="True">
-      <string>ں | ںم | صںق | عسں |</string>
-    </test>
-    <test background="#ff0000" label="noon with ring - 06BC" rtl="True">
-      <string>ڼ</string>
-    </test>
-    <test label="heh doachashmee - 06BE" rtl="True">
-      <string>ھ | سھچ</string>
-    </test>
-    <test background="#ff0000" label="heh with yeh above - 06C0" rtl="True">
-      <string>ۀ</string>
-    </test>
-    <test label="heh goal - 06C1" rtl="True">
-      <string>ہ | ہبش | طہب | جلہ</string>
-    </test>
-    <test background="#ffff00" label="heh goal with hamza above - 06C2" rtl="True">
-      <string>ۂ | تۂگ</string>
-    </test>
-    <test background="#ffff00" label="teh marbuta goal - 06C3" rtl="True">
-      <string>ۃ | ۃل | غۃب | سجۃ</string>
-    </test>
-    <test background="#ff0000" label="waw with ring - 06C4" rtl="True">
-      <string>ۄ | مسۄ</string>
-    </test>
-    <test background="#ff0000" label="kirghiz OE - 06C5" rtl="True">
-      <string>ۅ</string>
-    </test>
-    <test background="#ff0000" label="OE - 06C6" rtl="True">
-      <string>ۆ</string>
-    </test>
-    <test background="#ff0000" label="U - 06C7" rtl="True">
-      <string>ۇ | عۇ</string>
-    </test>
-    <test label="farsi yeh - 06CC" rtl="True">
-      <string>ی | یبج | میث | قکی</string>
-    </test>
-    <test background="#ff0000" label="yeh with tail - 06CD" rtl="True">
-      <string>ۍ</string>
-    </test>
-    <test background="#ff0000" label="E - 06D0 (yeh w/ 2 vertical dots)" rtl="True">
-      <string>ې | سې</string>
-    </test>
-    <test label="yeh barree - 06D2 (bariyah)" rtl="True">
-      <string>ے | بلے</string>
-    </test>
-    <test background="#ffff00" label="yeh barree w/ hamza above - 06D3" rtl="True">
-      <string>ۓ | مشۓ</string>
-    </test>
-    <test label="numbers" rtl="True">
-      <string>۰۱۲۳۴۵۶۷۸۹</string>
-    </test>
-    <test background="#ff0000" label="noon w/ small tah - 0768" rtl="True">
-      <string>ݨ</string>
-    </test>
-    <test background="#ff0000" label="noon w/ small v above - 0769" rtl="True">
-      <string>ݩ</string>
-    </test>
-    <test background="#ff0000" label="lam with bar - 076A" rtl="True">
-      <string>ݪ</string>
-    </test>
-    <test background="#ff0000" label="reh with hamza above - 076C" rtl="True">
-      <string>ݬ</string>
-    </test>
-    <test background="#ff0000" label="seen w/ 2 dots vertically - 076D " rtl="True">
-      <string>ݭ </string>
-    </test>
-    <test label="punctuation" rtl="True">
-      <string>۔ ، ؛ ؟ ٬</string>
-    </test>
-    <test background="#ff0000" label="punctuation - missing" rtl="True">
-      <string>٫ ۝ ۪ ﴾﴿</string>
     </test>
   </testgroup>
   <testgroup label="Review feedback - general">
@@ -2581,6 +2393,199 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset25" label="feh + low + upper diac" rtl="True">
       <string>فمَب  فہَف</string>
+    </test>
+  </testgroup>
+  <testgroup label="Punctuation"/>
+  <testgroup label="--- Extended characters">
+    <test background="#ff0000" label="kashmiri yeh - 0620" rtl="True">
+      <string>ؠ</string>
+    </test>
+    <test label="alif w/ maddah above - 0622" rtl="True">
+      <string>آ | بقآ | لآ</string>
+    </test>
+    <test label="alif w/ hamza above - 0623" rtl="True">
+      <string>أ | سفأ</string>
+    </test>
+    <test label="waw w/ hamza above - 0624" rtl="True">
+      <string>ؤ | لمؤ</string>
+    </test>
+    <test background="#ff0000" label="alif w/ hamza below - 0625" rtl="True">
+      <string>إ | تصإ</string>
+    </test>
+    <test label="yeh w/ hamza above - 0626" rtl="True">
+      <string>ئ | شئ | ئلم | بئج</string>
+    </test>
+    <test background="#ff0000" label="teh marbuta - 0629" rtl="True">
+      <string>ة | سة</string>
+    </test>
+    <test background="#ff0000" label="kaf - 0643" rtl="True">
+      <string>ك</string>
+    </test>
+    <test background="#55aaff" label="heh - 0647" rtl="True">
+      <comment>Is this needed, or is heh goal (06C1) all that is needed?</comment>
+      <string>ه</string>
+    </test>
+    <test background="#55aaff" label="yeh - 064A" rtl="True">
+      <string>ي | يل</string>
+    </test>
+    <test label="superscript alif - 0670" rtl="True">
+      <string>مٰ ظجٰب</string>
+    </test>
+    <test background="#ff0000" label="alef w/ wavy hamza above - 0672" rtl="True">
+      <string>ٲثم</string>
+    </test>
+    <test background="#ff0000" label="alif w/ wavy hamza below - 0673" rtl="True">
+      <string>ٳس</string>
+    </test>
+    <test background="#ff0000" label="high hamza alif - 0675" rtl="True">
+      <string>ٵق</string>
+    </test>
+    <test label="tteh - 0679" rtl="True">
+      <string>ٹ | ٹس | شٹع | مقٹ</string>
+    </test>
+    <test background="#ff0000" label="tteheh - 067A" rtl="True">
+      <string>ٺ | ٺج | </string>
+    </test>
+    <test background="#ff0000" label="beeh - 067B" rtl="True">
+      <string>ٻ | ٻس</string>
+    </test>
+    <test background="#ff0000" label="teh with ring - 067C" rtl="True">
+      <string>ټ | ټس</string>
+    </test>
+    <test background="#ff0000" label="teh w/ 3 dots above downwards - 067D" rtl="True">
+      <string>ٽ | ٽص</string>
+    </test>
+    <test label="peh - 067E" rtl="True">
+      <string>پ | پض | قپل | بمپ</string>
+    </test>
+    <test background="#ff0000" label="hah with hamza above - 0681" rtl="True">
+      <string>ځ | ځش</string>
+    </test>
+    <test background="#ff0000" label="nyeh - 0683" rtl="True">
+      <string>ڃ</string>
+    </test>
+    <test background="#ff0000" label="dyeh - 0684" rtl="True">
+      <string>ڄ</string>
+    </test>
+    <test background="#ff0000" label="hah w/ 3 dots above - 0685" rtl="True">
+      <string>څ | څط</string>
+    </test>
+    <test label="tcheh - 0686" rtl="True">
+      <string>چ | چش | لچت | بلچ</string>
+    </test>
+    <test background="#ff0000" label="tcheheh - 0687" rtl="True">
+      <string>ڇ | ڇص</string>
+    </test>
+    <test label="ddal - 0688 (dhal)" rtl="True">
+      <string>ڈ | لڈ</string>
+    </test>
+    <test background="#ff0000" label="dal with ring - 0689" rtl="True">
+      <string>ډ | سډ</string>
+    </test>
+    <test background="#ff0000" label="dal w/ 4 dots above - 0690" rtl="True">
+      <string>ڐ | جڐ</string>
+    </test>
+    <test label="rreh - 0691" rtl="True">
+      <string>ڑ | فبڑ</string>
+    </test>
+    <test background="#ff0000" label="reh with ring - 0693" rtl="True">
+      <string>ړ | سجړ</string>
+    </test>
+    <test background="#ff0000" label="reh w/ dot below and dot above - 0696" rtl="True">
+      <string>ږ | لمږ</string>
+    </test>
+    <test background="#ff0000" label="reh with 2 dots above - 0697" rtl="True">
+      <string>ڗ | سمڗ</string>
+    </test>
+    <test label="jeh - 0698 (tay)" rtl="True">
+      <string>ژ | تجژ</string>
+    </test>
+    <test background="#ff0000" label="reh w/ 4 dots above - 0699" rtl="True">
+      <string>ڙ | شڙ</string>
+    </test>
+    <test background="#ff0000" label="seen with dot below and dot above - 069A" rtl="True">
+      <string>ښ | بښ</string>
+    </test>
+    <test label="keheh (kaf) - 06a9" rtl="True">
+      <string>ک | مک</string>
+    </test>
+    <test background="#ff0000" label="kaf with ring - 06AB" rtl="True">
+      <string>ګ</string>
+    </test>
+    <test label="ghaf - 06AF" rtl="True">
+      <string>گق</string>
+    </test>
+    <test label="noon ghunna - 06BA" rtl="True">
+      <string>ں | ںم | صںق | عسں |</string>
+    </test>
+    <test background="#ff0000" label="noon with ring - 06BC" rtl="True">
+      <string>ڼ</string>
+    </test>
+    <test label="heh doachashmee - 06BE" rtl="True">
+      <string>ھ | سھچ</string>
+    </test>
+    <test background="#ff0000" label="heh with yeh above - 06C0" rtl="True">
+      <string>ۀ</string>
+    </test>
+    <test label="heh goal - 06C1" rtl="True">
+      <string>ہ | ہبش | طہب | جلہ</string>
+    </test>
+    <test background="#ffff00" label="heh goal with hamza above - 06C2" rtl="True">
+      <string>ۂ | تۂگ</string>
+    </test>
+    <test background="#ffff00" label="teh marbuta goal - 06C3" rtl="True">
+      <string>ۃ | ۃل | غۃب | سجۃ</string>
+    </test>
+    <test background="#ff0000" label="waw with ring - 06C4" rtl="True">
+      <string>ۄ | مسۄ</string>
+    </test>
+    <test background="#ff0000" label="kirghiz OE - 06C5" rtl="True">
+      <string>ۅ</string>
+    </test>
+    <test background="#ff0000" label="OE - 06C6" rtl="True">
+      <string>ۆ</string>
+    </test>
+    <test background="#ff0000" label="U - 06C7" rtl="True">
+      <string>ۇ | عۇ</string>
+    </test>
+    <test label="farsi yeh - 06CC" rtl="True">
+      <string>ی | یبج | میث | قکی</string>
+    </test>
+    <test background="#ff0000" label="yeh with tail - 06CD" rtl="True">
+      <string>ۍ</string>
+    </test>
+    <test background="#ff0000" label="E - 06D0 (yeh w/ 2 vertical dots)" rtl="True">
+      <string>ې | سې</string>
+    </test>
+    <test label="yeh barree - 06D2 (bariyah)" rtl="True">
+      <string>ے | بلے</string>
+    </test>
+    <test background="#ffff00" label="yeh barree w/ hamza above - 06D3" rtl="True">
+      <string>ۓ | مشۓ</string>
+    </test>
+    <test label="numbers" rtl="True">
+      <string>۰۱۲۳۴۵۶۷۸۹</string>
+    </test>
+    <test background="#ff0000" label="noon w/ small tah - 0768" rtl="True">
+      <string>ݨ</string>
+    </test>
+    <test background="#ff0000" label="noon w/ small v above - 0769" rtl="True">
+      <string>ݩ</string>
+    </test>
+    <test background="#ff0000" label="lam with bar - 076A" rtl="True">
+      <string>ݪ</string>
+    </test>
+    <test background="#ff0000" label="reh with hamza above - 076C" rtl="True">
+      <string>ݬ</string>
+    </test>
+    <test background="#ff0000" label="seen w/ 2 dots vertically - 076D " rtl="True">
+      <string>ݭ </string>
+    </test>
+    <test label="punctuation" rtl="True">
+      <string>۔ ، ؛ ؟ ٬</string>
+    </test>
+    <test background="#ff0000" label="punctuation - missing" rtl="True">
+      <string>٫ ۝ ۪ ﴾﴿</string>
     </test>
   </testgroup>
 </ftml>

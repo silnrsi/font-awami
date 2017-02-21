@@ -134,6 +134,42 @@ hehDoachIni {
     }
 }
 
+fullStopAlt {
+	id = "cv85";
+	name.1033 = string("Full stop");
+	settings {
+		fullStopDash {
+			value = 0;
+			name.1033 = string("Dash");
+		}
+		fullStopDot {
+			value = 1;
+			name.1033 = string("Dot");
+		}
+	}
+	default = fullStopDash;
+}
+
+punctAlt {
+	id = "punc";
+	name.1033 = string("Punctuation");
+	settings {
+		punctDefault {
+			value = 0;
+			name.1033 = string("Default");
+		}
+		punctArabic {
+			value = 1;
+			name.1033 = string("Arabic");
+		}
+		punctLatin {
+			value = 2;
+			name.1033 = string("Latin");
+		}
+	}
+	default = 0;
+}
+
 sukunAlt {
     id = "cv78";
     name.1033 = string("Sukun/jazm");

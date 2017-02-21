@@ -911,6 +911,13 @@ cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
 endif; // small nuqtas
 
 
+if (fullStopAlt == 1)
+
+gFullStop  >  gFullStopDot;
+
+endif;
+
+
 // Add a bogus null glyph in case we want to break the kafs into two pieces.
 // We need to do it now because we can't do insertions in the positioning table.
 
@@ -1022,10 +1029,25 @@ pass(7) {Direction = LEFT_TO_RIGHT}
 
 #include "cp1252.gdh"
 
-	// Convert symmetrical punctuation where there are not separate characters 
+if (punctAlt == punctDefault)
+	// Convert punctuation to either Latin or Arabic where there are not separate characters 
 	// for the two scripts:
-	cPunctLatin  >  @P  /  cLatin  _=P;
-	cPunctLatin  >  cPunctArabic;
+	csPunctLatin  >  @P  /  cLatin  _=P  cLatin;
+	csPunctLatin  >  @P  /  cSpace  _=P  cLatin;
+	csPunctLatin  >  @P  /  cLatin  _=P  cSpace;
+	csPunctLatin  >  csPunctArabic  /  ANY  _  ANY;  // not at beginning or end of segment.
+	csPunctLatin  >  @P  /  cLatin  _=P;
+	csPunctLatin  >  @P  /  _=P  cLatin;
+	csPunctLatin  >  csPunctArabic;
+endif;
+
+if (punctAlt == punctArabic)
+	csPunctLatin  >  csPunctArabic;
+endif;
+
+// if (punctAlt == punctLatin)
+//   No need to convert to Latin; that's what it comes in as.
+// endif;
 
 endpass; // 7
 
