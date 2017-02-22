@@ -92,6 +92,8 @@ g_space {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 cVisSpace { collision.flags = SET_ISSPACE(collision.flags) };
+cshowInv { collision.flags = SET_ISSPACE(collision.flags) };
+////cShowInvBoxes { collision.flags = SET_ISSPACE(collision.flags); advance.x = 0m };
 
 endpass; // 1
 
@@ -633,6 +635,19 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
+
+// Special case for beh/yeh + lam/kaf + heh-doachashmee - move nuqtas down and to the right
+cNuqtaLikeLower {
+	shift { x = -250m; y = -300m };
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -200m;
+		max.x = 350m;
+		min.y = -1000m;
+		max.y = 300m;
+	}
+}  /  (gBehIni gBehMed)  _=N  cDiacritic?  (gKafMedHd gGafMedHd gLamMedHd) g__kafTop_null?  cDiacritic?  
+			(cHehDoMed cHehDoFin);
 
 // Special cases involving kaf tops - allow nuqtas to move further right than normal.
 // Remove for now - this is too extreme.

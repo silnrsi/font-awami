@@ -58,6 +58,7 @@ cInvisible  >  g_zeroWidthNoBreakSpace;
 endif;
 
 if (showInvis == 1)
+g_zeroWidthNoBreakSpace  >  g_zeroWidthNoBreakSpaceShowInv_alt;  // vertical bar rather than box with letters
 cno_showInv  >  cshowInv;
 endif;
 

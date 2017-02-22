@@ -435,7 +435,7 @@
   </testgroup>
   <testgroup label="Ligatures">
     <test class="fset17" label="allah" rtl="True">
-      <string>اللہ اللّٰہ</string>
+      <string>اللہ اللّٰہ اللّٰہ</string>
     </test>
     <test class="fset21" label="FDF2" rtl="True">
       <string>ﷲ</string>
@@ -2000,6 +2000,12 @@
     <test class="fset25" label="quotes" rtl="True">
       <string>”لے اتی چو ن٘ا لہ فرُو...شزدے بیوس۔“</string>
     </test>
+    <test class="fset36" label="line/para sep - invisible" rtl="True">
+      <string>س ب ل</string>
+    </test>
+    <test class="fset32" label="line/para sep - visible" rtl="True">
+      <string>س ب ل</string>
+    </test>
   </testgroup>
   <testgroup label="Diacritics">
     <test label="initial + D-above" rtl="True">
@@ -2301,7 +2307,7 @@
       <comment>Beh nuqta is too close to heh-doachashmee. Move it down.
 
 Is absBehIni.hd too thick at right edge?</comment>
-      <string>بھق پھق پکھق</string>
+      <string>بھق پھم مبھب فپھق پکھو</string>
     </test>
     <test class="fset31" label="beh + kaf + alef" rtl="True">
       <comment>Beh form a tiny bit shorter and tighter in - but only before the kaf/gaf.</comment>
@@ -2336,6 +2342,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset31" label="ugly" rtl="True">
       <string>ستعفٰی</string>
     </test>
+    <test class="fset36" label="vertical stroke experiment" rtl="True">
+      <string>کو پانی کی طرح پاک صاف کر کے اُس میں حیاتِ نَو پھونک نہ دے؂۱۳؂۱۴، وہ سلطنتِ الٰہیہ میں داخل ہی نہیں ہو سک</string>
+    </test>
   </testgroup>
   <testgroup label="Special case positioning">
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
@@ -2346,6 +2355,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset24" label="jeem + noon/teh/sheen" rtl="True">
       <string>جنگی  خُشکی</string>
+    </test>
+    <test class="fset36" label="beh + kaf/lam + heh-doachashmee" rtl="True">
+      <string>بکِھ یُلّھف سبگَھ </string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 15 (pos pass 8)" rtl="True">
       <string/>
