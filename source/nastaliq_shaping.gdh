@@ -15,15 +15,16 @@ table(glyph)
 
 cVisSpace = (g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide g_spaceVisHair);
 
-cSpace = (g_space cVisSpace);
+cSpace = (g_space cVisSpace g_narrowNoBreakSpace);
 
-cNoJoin = (cSpace  c_zeronojoin  g_wordJoiner);
+cShowInvisibleZeroWidth = (cEmbedMarkers  g_lineSeparator  g_paragraphSeparator  g_wordJoiner);
+
+// Kern around these as if they were invisible:
+cKernIgnore = (cSpace  c_zeronojoin  g_zeroWidthNoBreakSpace  g_zeroWidthNoBreakSpaceShowInv
+	g_zeroWidthNoBreakSpaceShowInv_alt  cShowInvisibleZeroWidth);
 
 // These are encoded as visible but removed (actually turned to ZWNBSP) when invisible:
-cInvisible = (g_leftToRightEmbedding  g_rightToLeftEmbedding  g_popDirectionalFormatting  g_leftToRightOverride
-	g_rightToLeftOverride  g_inhibitArabicFormShaping  g_activateArabicFormShaping g_leftToRightIsolate
-	g_rightToLeftIsolate  g_firstStrongIsolate  g_popDirectionalIsolate
-	g_lineSeparator  g_paragraphSeparator  g_wordJoiner  g_ObjectReplChar);
+cInvisible =  (cShowInvisibleZeroWidth, g_ObjectReplChar);
 
 endtable;
 
@@ -58,7 +59,6 @@ cInvisible  >  g_zeroWidthNoBreakSpace;
 endif;
 
 if (showInvis == 1)
-g_zeroWidthNoBreakSpace  >  g_zeroWidthNoBreakSpaceShowInv_alt;  // vertical bar rather than box with letters
 cno_showInv  >  cshowInv;
 endif;
 

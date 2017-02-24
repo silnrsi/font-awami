@@ -33,6 +33,8 @@
       <style feats="cv85=1" name="fset35"/>
       <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 punc=0 shrt=0 snuq=0 wdsp=2" name="fset36"/>
       <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset37"/>
+      <style feats="invs=1 wdsp=4" name="fset38"/>
+      <style feats="wdsp=1" name="fset39"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -1975,24 +1977,23 @@
     <test class="fset32" label="zero-width no-break space - visible" rtl="True">
       <string>ب﻿م﻿س</string>
     </test>
-    <test class="fset31" label="word joiner" rtl="True">
-      <comment>Acts just like a ZWNJ.</comment>
-      <string>س⁠ق⁠لم سقلم</string>
+    <test class="fset31" label="space &amp; narrow no-break space - medium" rtl="True">
+      <string>ب ب ب</string>
     </test>
-    <test class="fset32" label="word joiner - visible" rtl="True">
-      <string>س⁠ق⁠لم سقلم</string>
+    <test class="fset32" label="space &amp; narrow no-break space - medium, visible" rtl="True">
+      <string>ب ب ب</string>
     </test>
-    <test class="fset31" label="narrow no-break space" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset33" label="space &amp; narrow no-break space - extra-wide" rtl="True">
+      <string>ب ب ب</string>
     </test>
-    <test class="fset32" label="narrow no-break space - visible" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset38" label="space &amp; narrow no-break space - extra-wide, visible" rtl="True">
+      <string>ب ب ب</string>
     </test>
-    <test class="fset33" label="narrow no-break space - extra-wide" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset39" label="space &amp; narrow no-break space - tight" rtl="True">
+      <string>ب ب ب</string>
     </test>
-    <test class="fset34" label="narrow no-break space - tight, visible" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset34" label="space &amp; narrow no-break space - tight, visible" rtl="True">
+      <string>ب ب ب</string>
     </test>
     <test class="fset24" label="kern after right quote mark" rtl="True">
       <string>”تا</string>
@@ -2000,11 +2001,36 @@
     <test class="fset25" label="quotes" rtl="True">
       <string>”لے اتی چو ن٘ا لہ فرُو...شزدے بیوس۔“</string>
     </test>
+    <test class="fset31" label="word joiner - invisible" rtl="True">
+      <comment>Acts just like a ZWNJ.</comment>
+      <string>س⁠ق⁠لم سقلم</string>
+    </test>
+    <test class="fset32" label="word joiner - visible" rtl="True">
+      <string>س⁠ق⁠لم سقلم</string>
+    </test>
     <test class="fset36" label="line/para sep - invisible" rtl="True">
       <string>س ب ل</string>
     </test>
     <test class="fset32" label="line/para sep - visible" rtl="True">
       <string>س ب ل</string>
+    </test>
+    <test class="fset36" label="LRE RLE LRI RLI - invisible" rtl="True">
+      <string>a ‪ب‬ ⁦xyz⁩ ا</string>
+    </test>
+    <test class="fset32" label="LRE RLE LRI RLI - visible" rtl="True">
+      <string>a ‪ب‬ ⁦xyz⁩ ا</string>
+    </test>
+    <test class="fset36" label="LRO LRE PDF LRI PRI - invisible" rtl="True">
+      <string>‎س بس‫لم‬یسک بس⁧لم⁩یسک</string>
+    </test>
+    <test class="fset32" label="LRO LRE PDF LRI PRI - visible" rtl="True">
+      <string>‎س بس‫لم‬یسک بس⁧لم⁩یسک</string>
+    </test>
+    <test class="fset36" label="RLM LRO - invisible" rtl="True">
+      <string>‏a ‭ل</string>
+    </test>
+    <test class="fset32" label="RLM LRO - visible" rtl="True">
+      <string>‏a ‭ل</string>
     </test>
   </testgroup>
   <testgroup label="Diacritics">

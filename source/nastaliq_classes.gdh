@@ -150,7 +150,13 @@ cMark34 = (cMark3 cMark4);
 cMark2l_1234u = (cMark2l, cMark1234u);
 
 cShowInvBoxes = (g_wordJoiner, g_paragraphSeparator, g_lineSeparator, g_zeroWidthNoBreakSpaceShowInv,
-	g_narrowNoBreakSpace); // TODO add more
+	g_narrowNoBreakSpace,
+	g_leftToRightIsolate_alt, g_rightToLeftIsolate_alt, g_firstStrongIsolate_alt, g_popDirectionalIsolate_alt);
+
+cEmbedMarkers = (g_leftToRightMark, g_rightToLeftMark, 
+	g_leftToRightEmbedding, g_rightToLeftEmbedding, g_popDirectionalFormatting,
+	g_leftToRightOverride, g_rightToLeftOverride,
+	g_leftToRightIsolate, g_rightToLeftIsolate, g_firstStrongIsolate, g_popDirectionalIsolate);
 
 
 // The "raw" forms indicate that initial/medial processing has not been done yet.

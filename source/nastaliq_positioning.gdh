@@ -91,9 +91,8 @@ g_narrowNoBreakSpace  { advance.x = 225m; collision.flags = SET_ISSPACE(collisio
 g_space {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
-cVisSpace { collision.flags = SET_ISSPACE(collision.flags) };
-cshowInv { collision.flags = SET_ISSPACE(collision.flags) };
-////cShowInvBoxes { collision.flags = SET_ISSPACE(collision.flags); advance.x = 0m };
+(cVisSpace  cshowInv  g_zeroWidthNoBreakSpaceShowInv_alt cShowInvBoxes cEmbedMarkers)
+	{ collision.flags = SET_ISSPACE(collision.flags) };
 
 endpass; // 1
 
@@ -1372,16 +1371,16 @@ csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM csK
 
 // Set up kerning pairs.
 
-cKernable { pairKern = kernPreAlef }  /  _ ^ MARKS  cNoJoin? (cAlefIso);
-cKernable { pairKern = kernPreDal  }  /  _ ^ MARKS  cNoJoin? (cDalIso);
-cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cNoJoin? (cRehIso);
-cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cNoJoin? (cWawIso);
-cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cNoJoin? (gLamAlef gLamIniAl);
+cKernable { pairKern = kernPreAlef }  /  _ ^ MARKS  cKernIgnore? (cAlefIso);
+cKernable { pairKern = kernPreDal  }  /  _ ^ MARKS  cKernIgnore? (cDalIso);
+cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cKernIgnore? (cRehIso);
+cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cKernIgnore? (cWawIso);
+cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamAlef gLamIniAl);
 
 cKernable { pairKern = kernPreKafNoSp }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni);
 
 // Before a two-letter sequence:
-cKernable { pairKern = kernPreShort } / _ ^ MARKS  cNoJoin?  c_initial MARKS  c_final;
+cKernable { pairKern = kernPreShort } / _ ^ MARKS  cKernIgnore?  c_initial MARKS  c_final;
 
 
 // Bogus rule that will never fire (for if we disable this pass for debugging):
@@ -1635,7 +1634,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  cNoJoin?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
+	/  _  cNuqtaLike?  DIACS  cKernIgnore?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
 		gBariyehFin=F;
 
 cKernable { collision {
@@ -1645,7 +1644,7 @@ cKernable { collision {
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  cNoJoin?  cPostKernable=N;
+	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
 
 (cKernable g_quotedblright) { collision {
 	flags = SET_FIX(collision.flags);
