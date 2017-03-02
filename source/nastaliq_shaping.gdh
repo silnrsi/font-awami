@@ -13,9 +13,21 @@ pass(1)
 
 table(glyph)
 
-cVisSpace = (g_spaceVis g_spaceVisXtight g_spaceVisTight g_spaceVisXwide g_spaceVisWide g_spaceVisHair);
+cVisSpace = (g_spaceVis  g_spaceVisXtight  g_spaceVisTight  g_spaceVisXwide  g_spaceVisWide  g_spaceVisHair
+	g_nobreakspaceShowInv_xtight  g_nobreakspaceShowInv_tight  g_nobreakspaceShowInv
+	g_nobreakspaceShowInv_wide  g_nobreakspaceShowInv_xwide);
 
-cSpace = (g_space cVisSpace g_narrowNoBreakSpace);
+cStdWidthSpace = (g_space, g_nobreakspace);
+
+cSpace = (g_space cVisSpace g_nobreakspace g_narrowNoBreakSpace);
+
+csSpMedInvis = (g_space, g_nobreakspace, g_narrowNoBreakSpace);
+
+csSpXtightVis	= (g_spaceVisXtight, g_nobreakspaceShowInv_xtight, g_spaceVisHair);
+csSpTightVis	= (g_spaceVisTight, g_nobreakspaceShowInv_tight, g_spaceVisHair);
+csSpMedVis		= (g_spaceVis, g_nobreakspaceShowInv, g_spaceVisXtight);
+csSpWideVis		= (g_spaceVisWide, g_nobreakspaceShowInv_wide, g_spaceVisTight);
+csSpXwideVis	= (g_spaceVisXwide, g_nobreakspaceShowInv_xwide, g_spaceVis);
 
 cShowInvisibleZeroWidth = (cEmbedMarkers  g_lineSeparator  g_paragraphSeparator  g_wordJoiner);
 
@@ -30,28 +42,23 @@ endtable;
 
 
 if (showInvis == 1 && wordSpacing == xtight)
-g_space  >  g_spaceVisXtight;
-g_narrowNoBreakSpace  >  g_spaceVisHair;
+csSpMedInvis  >  csSpXtightVis;
 endif;
 
 if (showInvis == 1 && wordSpacing == tight)
-g_space  >  g_spaceVisTight;
-g_narrowNoBreakSpace  >  g_spaceVisHair;
+csSpMedInvis  >  csSpTightVis;
 endif;
 
 if (showInvis == 1 && wordSpacing == medium)
-g_space  >  g_spaceVis;
-g_narrowNoBreakSpace  >  g_spaceVisXtight;
+csSpMedInvis  > csSpMedVis;
 endif;
 
 if (showInvis == 1 && wordSpacing == wide)
-g_space  >  g_spaceVisWide;
-g_narrowNoBreakSpace  >  g_spaceVisTight;
+csSpMedInvis  >  csSpWideVis;
 endif;
 
 if (showInvis == 1 && wordSpacing == xwide)
-g_space  >  g_spaceVisXwide;
-g_narrowNoBreakSpace  >  g_spaceVis;
+csSpMedInvis  >  csSpXwideVis;
 endif;
 
 if (showInvis == 0)
@@ -370,6 +377,9 @@ gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 ////gAlefMaddaAbove gGaf  >  g_alefMaddaGaf:(1 2)  _;
 
 
+/////////g_nobreakspace  >  g_space;
+
+
 // Finals
 
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
@@ -451,7 +461,7 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS
 // also see below
 gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
 
-endpass;
+endpass;  // 3
 
 	
 pass(4) { MaxBackup = 50; MaxRuleLoop = 200 }

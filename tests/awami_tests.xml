@@ -1968,6 +1968,9 @@
     <test class="fset21" label="ZWNJ" rtl="True">
       <string>س‌ق‌لم سقلم</string>
     </test>
+    <test class="fset36" label="ZWJ &amp; ZWNJ - invisible" rtl="True">
+      <string>م‍ ق‍   ‍ش س‌ق‌لم</string>
+    </test>
     <test class="fset32" label="ZWJ &amp; ZWNJ - visible" rtl="True">
       <string>م‍ ق‍   ‍ش س‌ق‌لم</string>
     </test>
@@ -1977,23 +1980,23 @@
     <test class="fset32" label="zero-width no-break space - visible" rtl="True">
       <string>ب﻿م﻿س</string>
     </test>
-    <test class="fset31" label="space &amp; narrow no-break space - medium" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset31" label="SP, NBSP, NNBSP - medium" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
-    <test class="fset32" label="space &amp; narrow no-break space - medium, visible" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset32" label="SP, NBSP, NNBSP - medium, visible" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
-    <test class="fset33" label="space &amp; narrow no-break space - extra-wide" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset33" label="SP, NBSP, NNBSP - extra-wide" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
-    <test class="fset38" label="space &amp; narrow no-break space - extra-wide, visible" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset38" label="SP, NBSP, NNBSP - extra-wide, visible" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
-    <test class="fset39" label="space &amp; narrow no-break space - tight" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset39" label="SP, NBSP, NNBSP - tight" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
-    <test class="fset34" label="space &amp; narrow no-break space - tight, visible" rtl="True">
-      <string>ب ب ب</string>
+    <test class="fset34" label="SP, NBSP, NNBSP - tight, visible" rtl="True">
+      <string>ب ب ب ب</string>
     </test>
     <test class="fset24" label="kern after right quote mark" rtl="True">
       <string>”تا</string>

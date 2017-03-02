@@ -68,27 +68,27 @@ cursive_attach(qafWawStfh)
 
 if (wordSpacing == xtight)
 g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
-g_space { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == tight)
 g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
-g_space { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == medium)
 g_narrowNoBreakSpace  { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
-g_space { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == wide)
 g_narrowNoBreakSpace  { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
-g_space {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == xwide)
 g_narrowNoBreakSpace  { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
-g_space {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 (cVisSpace  cshowInv  g_zeroWidthNoBreakSpaceShowInv_alt cShowInvBoxes cEmbedMarkers)
