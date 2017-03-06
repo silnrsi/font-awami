@@ -1278,6 +1278,10 @@ cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; in
 cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; insert=true}
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
+// Diacritics attach to tah above the stem, not where the nuqta goes:
+cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}; insert=true}
+		/  ^ _=B  c_attLikeNqUpper?  cDiacriticLower?  _=D {att.to==0};
+
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
 cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
 		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
@@ -1389,6 +1393,9 @@ cKernable { pairKern = kernPreShort } / _ ^ MARKS  cKernIgnore?  c_initial MARKS
 // Diacritics that extend above/below the line
 cDiacriticUpper  /  (cKafIni cKafMed)  _  ; // ... but not on kafs or gafs
 cDiacriticUpper  /  csKafIM_base  cKafTop  _;
+// For tahs, the diac is not attached to the nuqta, so don't move the nuqta down.
+cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y = -200m; collision.margin -= 20m }
+	/  _=T  _=N  _=D { position.y > 2800m };
 cNuqtaUpper { shift.y = -200m  }
 	cDiacriticUpper { shift.y = -350m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };

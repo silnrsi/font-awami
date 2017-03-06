@@ -35,6 +35,7 @@
       <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset37"/>
       <style feats="invs=1 wdsp=4" name="fset38"/>
       <style feats="wdsp=1" name="fset39"/>
+      <style feats="shrt=2" name="fset40"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -1868,17 +1869,25 @@
     <test class="fset29" label="high kaf" rtl="True">
       <string>دیکھئے</string>
     </test>
-    <test class="fset31" label="push up lower diac" rtl="True">
-      <string>ڜپِ بڳِ</string>
-    </test>
     <test class="fset30" label="shorten finals" rtl="True">
       <string>دیکھتی  کنسلٹنٹس  نگھنے  تکمیل</string>
     </test>
-    <test class="fset31" label="kaf or final, not both" rtl="True">
+    <test class="fset30" label="kaf or final, not both" rtl="True">
+      <string>کمس</string>
+    </test>
+    <test class="fset40" label="short final, not kaf" rtl="True">
+      <comment>The feature choose the short final, not the kaf.</comment>
       <string>کمس</string>
     </test>
     <test class="fset31" label="push down diac and nuqta" rtl="True">
       <string>شَجی</string>
+    </test>
+    <test class="fset36" label="push down diac on tah" rtl="True">
+      <comment>Don't move the nuqta!</comment>
+      <string>ظّے</string>
+    </test>
+    <test class="fset31" label="push up lower diac" rtl="True">
+      <string>ڜپِ بڳِ</string>
     </test>
   </testgroup>
   <testgroup label="Nuqtas">
@@ -2258,6 +2267,9 @@
       <comment>Should it look more like a waw?</comment>
       <string>سُ</string>
     </test>
+    <test background="#aaff7f" class="fset36" label="tah + diacritic" rtl="True">
+      <string>طَ بطُ  طُل ظَ سظُ  ظّے</string>
+    </test>
     <test background="#aaff7f" class="fset31" label="bariyeh" rtl="True">
       <comment>Barieyeh should be flatter and entrance should be more angled.</comment>
       <string>فے</string>
@@ -2356,10 +2368,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset31" label="jeem + jeem" rtl="True">
       <comment>First nuqta should be higher.</comment>
       <string>جِچِ چِچِ</string>
-    </test>
-    <test background="#aaff7f" class="fset31" label="tah + diac" rtl="True">
-      <comment>Diacritics need to go above the stem, not the bowl.</comment>
-      <string>طَ طّ</string>
     </test>
     <test class="fset31" label="beh + kaf + yeh - bug" rtl="True">
       <comment>collision!</comment>
