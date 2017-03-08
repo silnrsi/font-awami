@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absLamMed" format="1">
-  <advance width="635"/>
+  <advance width="639"/>
   <outline>
     <contour>
-      <point x="475" y="1405" type="curve" smooth="yes"/>
-      <point x="475" y="1191"/>
+      <point x="502" y="1413" type="curve" smooth="yes"/>
+      <point x="488" y="1199"/>
       <point x="498" y="934"/>
-      <point x="511" y="710" type="curve" smooth="yes"/>
+      <point x="511" y="710" type="curve"/>
       <point x="521" y="517"/>
       <point x="355" y="431"/>
       <point x="215" y="431" type="curve" smooth="yes"/>
@@ -15,7 +15,7 @@
       <point x="0" y="834" type="curve" smooth="yes"/>
       <point x="-3" y="917"/>
       <point x="-106" y="705"/>
-      <point x="-97" y="626" type="curve" smooth="yes"/>
+      <point x="-97" y="626" type="curve"/>
       <point x="-57" y="301"/>
       <point x="5" y="86"/>
       <point x="168" y="86" type="curve" smooth="yes"/>
@@ -29,16 +29,30 @@
       <point x="637" y="899"/>
       <point x="635" y="1004" type="curve" smooth="yes"/>
       <point x="631" y="1160"/>
-      <point x="623" y="1337"/>
-      <point x="613" y="1510" type="curve" smooth="yes"/>
-      <point x="604" y="1662"/>
-      <point x="626" y="1707"/>
-      <point x="631" y="1738" type="curve" smooth="yes"/>
-      <point x="635" y="1756"/>
-      <point x="614" y="1804"/>
-      <point x="595" y="1781" type="curve" smooth="yes"/>
-      <point x="557" y="1736"/>
-      <point x="475" y="1571"/>
+      <point x="639" y="1336"/>
+      <point x="646" y="1509" type="curve" smooth="yes"/>
+      <point x="652" y="1661"/>
+      <point x="673" y="1705"/>
+      <point x="680" y="1736" type="curve" smooth="yes"/>
+      <point x="684" y="1753"/>
+      <point x="666" y="1803"/>
+      <point x="646" y="1781" type="curve" smooth="yes"/>
+      <point x="606" y="1737"/>
+      <point x="513" y="1579"/>
+    </contour>
+    <contour>
+      <point x="634" y="1014" type="curve"/>
+      <point x="634" y="1013"/>
+      <point x="634" y="1013"/>
+      <point x="635" y="1013" type="curve" smooth="yes"/>
+      <point x="636" y="1013"/>
+      <point x="636" y="1013"/>
+      <point x="636" y="1014" type="curve" smooth="yes"/>
+      <point x="636" y="1015"/>
+      <point x="636" y="1015"/>
+      <point x="635" y="1015" type="curve" smooth="yes"/>
+      <point x="634" y="1015"/>
+      <point x="634" y="1015"/>
     </contour>
     <contour>
       <point x="0" y="844" type="move" name="exit_lamKaf"/>
@@ -53,16 +67,16 @@
       <point x="635" y="1014" type="move" name="_exit_lamKaf"/>
     </contour>
     <contour>
-      <point x="554" y="1360" type="move" name="bar"/>
+      <point x="565" y="1360" type="move" name="bar"/>
     </contour>
   </outline>
   <lib>
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
-    <real>0.656</real>
-    <real>1</real>
     <real>0.6</real>
+    <real>0.986</real>
+    <real>1</real>
     <real>1</real>
   </array>
   </dict>
