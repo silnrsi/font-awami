@@ -38,7 +38,7 @@ g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoi
 //gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
 //	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
 
-cno_showInv = (g_zeronojoin, g_zerojoin, g_zeroWidthNoBreakSpace);
+cno_showInv = (g_zeronojoin, g_zerojoin, g_zeroWidthNoBreakSpace, g_nobreakspace);
 
 c_zeronojoin = (g_zeronojoin, g_zeronojoinShowInv);
 c_zerojoin = (g_zerojoin, g_zerojoinShowInv);
@@ -50,25 +50,31 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l,
 	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cKafTopAdjusted = ( g__kafTop_short, g__kafTop_shorter, g__kafTop_tall,
-	g__kafTop_medshort, g__kafTop_bj_short, g__kafTop_bj_tall,
-	g__gafTop_short, g__gafTop_shorter, g__gafTop_tall,
-	g__gafTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
+cKafTopAltHt = ( g__kafIniTop_short, g__kafIniTop_shorter,
+	g__kafMedTop_short, g__kafMedTop_shorter, g__kafMedTop_tall,
+	g__kafMedTop_medshort, g__kafTop_bj_short, g__kafTop_bj_tall,
+	g__gafIniTop_short, g__gafIniTop_shorter, 
+	g__gafMedTop_short, g__gafMedTop_shorter, g__gafMedTop_tall,
+	g__gafMedTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
 
-cKafTop = (g__kafTop_null, cKafTopAdjusted, g__kafTop_m_bogus);
+cKafTop = (g__kafTop_null, cKafTopAltHt, g__kafTop_m_bogus);
 
-g__kafTop_tall { nDelta = 150m };
-g__gafTop_tall { nDelta = 150m };
+g__kafIniTop_short { nDelta = -150m };
+g__gafIniTop_short { nDelta = -150m };
+g__kafIniTop_shorter { nDelta = -300m };
+g__gafIniTop_shorter { nDelta = -300m };
+g__kafMedTop_tall { nDelta = 150m };
+g__gafMedTop_tall { nDelta = 150m };
 g__kafTop_bj_tall { nDelta = 150m };
 g__gafTop_bj_tall { nDelta = 150m };
-g__kafTop_short { nDelta = -150m };
-g__gafTop_short { nDelta = -150m };
+g__kafMedTop_short { nDelta = -150m };
+g__gafMedTop_short { nDelta = -150m };
 g__kafTop_bj_short { nDelta = -150m };
 g__gafTop_bj_short { nDelta = -150m };
-g__kafTop_shorter { nDelta = -300m };
-g__gafTop_shorter { nDelta = -300m };
-g__kafTop_medshort { nDelta = 0m };
-g__gafTop_medshort { nDelta = 0m };
+g__kafMedTop_shorter { nDelta = -300m };
+g__gafMedTop_shorter { nDelta = -300m };
+g__kafMedTop_medshort { nDelta = 0m };
+g__gafMedTop_medshort { nDelta = 0m };
 g__kafTop_m_bogus {nDelta = 0m };
 g__kafTop_null {nDelta = 0m };
 
@@ -248,7 +254,7 @@ cWawIso = (gWaw, gWawHamzaAbove, gWawRing);
 cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza);		// bariyeh -> behIni + 2Nlower
-cBariyehFin = (gBariyehFin, gBariyehFin_short);
+cBariyehFin = (gBariyehFin);
 
 
 // These classes must match each other.
@@ -588,34 +594,42 @@ csKafIM_base = (csKafIni_base, csKafMed_base);
 // Note that for a few initials, we use the shorter versions instead of the short, and there are special
 // forms for By and Jm forms.
 csGafIni_top_short = (
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
-	g__gafTop_bj_short,/*jm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_shorter,/*taM*/ g__gafTop_shorter,/*taF*/ 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__kafTop_m_bogus,/*mm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_bj_short/*by*/
+	g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short,
+	g__gafIniTop_short, g__gafIniTop_short, g__gafTop_bj_short,/*jm*/ g__gafIniTop_short, g__gafIniTop_short,
+	g__gafIniTop_short, g__gafIniTop_shorter,/*taM*/ g__gafIniTop_shorter,/*taF*/ g__gafIniTop_short, g__gafIniTop_short,
+	g__gafIniTop_short, g__kafTop_m_bogus,/*mm*/ g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short, 
+	g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short, g__gafIniTop_short,
+	g__gafTop_bj_short/*by*/
 );
 
 csKafIni_top_short = (
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_bj_short,/*jm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_shorter,/*taM*/ g__kafTop_shorter,/*taF*/
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_m_bogus,/*mm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, 
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_bj_short,/*by*/
+	g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short,
+	g__kafIniTop_short, g__kafIniTop_short, g__kafTop_bj_short,/*jm*/ g__kafIniTop_short, g__kafIniTop_short,
+	g__kafIniTop_short, g__kafIniTop_shorter,/*taM*/ g__kafIniTop_shorter,/*taF*/ g__kafIniTop_short, g__kafIniTop_short,
+	g__kafIniTop_short, g__kafTop_m_bogus,/*mm*/ g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short, 
+	g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short,
+	g__kafTop_bj_short,/*by*/
 	csGafIni_top_short
 );
 
 // Note that for a few initials, we use the shorter versions instead of the short, and there are special
 // forms for By and Jm forms.
 csGafMed_top_short = (
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short,
-	g__gafTop_bj_short,/*jm*/ g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, 
-	g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short, g__gafTop_short
+	g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short,
+	g__gafMedTop_short, g__gafMedTop_short, g__gafTop_bj_short,/*jm*/ g__gafMedTop_short, g__gafMedTop_short,
+	g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short,
+	g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, 
+	g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short, g__gafMedTop_short,
+	g__gafMedTop_short
 );
 
 csKafMed_top_short = (
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_bj_short,/*jm*/ g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, 
-	g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short, g__kafTop_short,
+	g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short,
+	g__kafMedTop_short, g__kafMedTop_short,	g__kafTop_bj_short,/*jm*/ g__kafMedTop_short, g__kafMedTop_short,
+	g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short,
+	g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, 
+	g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short, g__kafMedTop_short,
+	g__kafMedTop_short,
 	csGafMed_top_short
 );
 
@@ -625,34 +639,42 @@ csKafIM_top_short = (csKafIni_top_short, csKafMed_top_short);
 // Note that for a few initials, we use the shorter versions instead of the short, and there are special
 // forms for By and Jm forms.
 csGafIni_top_shorter = (
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter,
-	g__gafTop_bj_short,/*jm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_bj_short/*by*/
+	g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter,
+	g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafTop_bj_short,/*jm*/ g__gafIniTop_shorter, g__gafIniTop_shorter,
+	g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter,
+	g__gafIniTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, 
+	g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter,
+	g__gafTop_bj_short/*by*/
 );
 
 csKafIni_top_shorter = (
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_bj_short,/*jm*/ g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_m_bogus,/*mm*/ g__gafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_bj_short,/*by*/
+	g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter,
+	g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafTop_bj_short,/*jm*/ g__kafIniTop_shorter, g__kafIniTop_shorter,
+	g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter,
+	g__kafIniTop_shorter, g__kafTop_m_bogus,/*mm*/ g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, 
+	g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter, g__kafIniTop_shorter,
+	g__kafTop_bj_short,/*by*/
 	csGafIni_top_shorter
 );
 
 // Note that for a few initials, we use the shorter versions instead of the short, and there are special
 // forms for By and Jm forms.
 csGafMed_top_shorter = (
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__kafTop_shorter,
-	g__gafTop_bj_short,/*jm*/ g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, 
-	g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_shorter, g__gafTop_short
+	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter,
+	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafTop_bj_short,/*jm*/ g__gafMedTop_shorter, g__gafMedTop_shorter,
+	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter,
+	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, 
+	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter,
+	g__gafMedTop_short/*by*/
 );
 
 csKafMed_top_shorter = (
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_bj_short,/*jm*/ g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter,
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__gafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, 
-	g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_shorter, g__kafTop_short,
+	g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter,
+	g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafTop_bj_short,/*jm*/ g__kafMedTop_shorter, g__kafMedTop_shorter, 
+	g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter,
+	g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, 
+	g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter, g__kafMedTop_shorter,
+	g__kafMedTop_short,/*by*/
 	csGafMed_top_shorter
 );
 
@@ -662,26 +684,34 @@ csKafIM_top_shorter = (csKafIni_top_shorter, csKafMed_top_shorter);
 
 /*** not used
 csKafIni_top_tall = (
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_bj_tall,--jm g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_m_bogus,--mm/ g__kafTop_tall, g__kafTop_tall, 
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_bj_tall,--by
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,  g__gafTop_tall,
-	g__gafTop_bj_tall,--jm g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_m_bogus,--mm g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_bj_tall--by
+	g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall,
+	g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_bj_tall,--jm/ g__kafIniTop_tall, g__kafIniTop_tall,
+	g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall,
+	g__kafIniTop_tall, g__kafTop_m_bogus,--mm/ g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall,
+	g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall, g__kafIniTop_tall,
+	g__kafTop_bj_tall,--by/
+	g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall,
+	g__gafIniTop_tall,  g__gafIniTop_tall, g__gafIniTop_bj_tall,--jm/ g__gafIniTop_tall, g__gafTop_tall,
+	g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall,
+	g__gafIniTop_tall, g__gafTop_m_bogus,--mm/ g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, 
+	g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall, g__gafIniTop_tall,
+	g__gafTop_bj_tall--by/
 );
 ***/
 
 csKafMed_top_tall = (
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_bj_tall,/*jm*/ g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, 
-	g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall, g__kafTop_tall,
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall,
-	g__gafTop_bj_tall,/*jm*/ g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, 
-	g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall, g__gafTop_tall
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafTop_bj_tall,/*jm*/ g__kafMedTop_tall, g__kafMedTop_tall,
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, 
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,
+	g__kafMedTop_tall,
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafTop_bj_tall,/*jm*/ g__gafMedTop_tall, g__gafMedTop_tall,
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, 
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,
+	g__gafMedTop_tall
 );
 
 // not used - initials never need to be made taller
@@ -689,26 +719,34 @@ csKafMed_top_tall = (
 
 /*** not used
 csKafIni_top_medshort = (
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_bj_tall,--jm g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_m_bogus,--mm g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_bj_tall,--by
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,  g__gafTop_medshort,
-	g__gafTop_bj_tall,--jm g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_m_bogus,--mm g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_bj_tall--by
+	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,	g__kafIniTop_medshort,
+	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_bj_tall,--jm/ g__kafIniTop_medshort, g__kafIniTop_medshort,
+	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,
+	g__kafIniTop_medshort, g__kafIniTop_m_bogus,--mm/ g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,
+	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,
+	g__kafTop_bj_tall,--by/
+	g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort,
+	g__gafIniTop_medshort,  g__gafIniTop_medshort, g__gafTop_bj_tall,--jm/ g__gafIniTop_medshort, g__gafIniTop_medshort,
+	g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort,
+	g__gafIniTop_medshort, g__gafIniTop_m_bogus,--mm/ g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort,
+	g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort,
+	g__gafTop_bj_tall--by/
 );
 ***/
 
 csKafMed_top_medshort = (
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_bj_tall,/*jm*/ g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, 
-	g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort, g__kafTop_medshort,
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort,
-	g__gafTop_bj_tall,/*jm*/ g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, 
-	g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort, g__gafTop_medshort
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafTop_bj_tall,/*jm*/ g__kafMedTop_medshort, g__kafMedTop_medshort,
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, 
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
+	g__kafMedTop_medshort,
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort,
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafTop_bj_tall,/*jm*/ g__gafMedTop_medshort, g__gafMedTop_medshort,
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort,
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, 
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort,
+	g__gafMedTop_medshort
 );
 
 // not used - initials never need their diagonal stroke shortened

@@ -998,7 +998,7 @@ csGafIM_medium  g__kafTop_null  csKafMed_medium  g__kafTop_null
 	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
 // Gaf + kaf/gaf-final => short
-csGafIM_medium g__kafTop_null  (gKafFin gGafFin)
+csGafIM_medium  g__kafTop_null  (gKafFin gGafFin)
 	>  csGafIM_base$G  csGafIM_top_short$G  @K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
 
@@ -1034,7 +1034,7 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  c_medial  _=N  cDiacritic?  _=K  _=T;
 
 // height at which to invoke various short forms
-#define SHORTERKAF_HT	2000m
+#define SHORTERKAF_HT	1900m
 #define SHORTKAF_HT  	1300m
 #define PUSHDOWN		3000m
 #define PUSHUP			-630m
@@ -1051,7 +1051,7 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_short$K
+	>	@N STAYBELOWKAF  @D  csKafIM_base$K {user5 = bb.top; user6 = position.y + bb.top}  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
@@ -1070,14 +1070,13 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 // Debugging:
 c_initial {user5 = bb.top; user6 = position.y + bb.top};
 
-
 endpass;  // pass 5
 
 
 table(glyph)
-csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin, gBariyehFin,
+csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin,
 	gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
-csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, gBariyehFin_short, 
+csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, 
 	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 endtable;
 
@@ -1140,8 +1139,8 @@ table(glyph)
 c_exit_bariyeh { exit_by_alt.x = exit_bariyeh.x + 12m; exit_by_alt.y = exit_bariyeh.y + 30m };
 endtable;
 
-c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
-	/  _ MARKS2N ^ _=F;
+////c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
+////	/  _ MARKS2N ^ _=F;
 
 c_exit_seen      {att {to=@F; with=exit_seen;      at=entr_seen}}   gSeenFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
@@ -1289,7 +1288,7 @@ cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; inse
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Taller or shorter kafs - attach to top, not base
-cTakes_nUpperDia  cKafTopAdjusted  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; insert=true}
+cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; insert=true}
 		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
@@ -1586,6 +1585,17 @@ cIso { collision {
     // min/max.y are omitted for kernable glyphs
 } }
 	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
+
+// Don't let an isolate alef kern too far - it gets lost.
+gAlef { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _=A  cNuqtaLike?  DIACS  cPostKernable=N;
+
 
 // EXPERIMENT - don't allow ANY overlap between words
 //cKernable { collision {
