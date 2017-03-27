@@ -765,6 +765,13 @@ cNuqtaUpperSmall = (cDot1u, cDot2u);
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
 
 
+cLam_noBar_postKaf = (gLamMedBe, gLamMedBy, gLamFin);
+cLam_tallForBar_postKaf = (gLamMedBe_kfTall, gLamMedBy_kfTall, gLamFin_kfTall)
+
+cLam_noBar_postGaf = (gLamMedCh);
+cLam_tallForBar_postGaf = (gLamMedCh_gfTall)
+
+
 // Kaf exclusion glyphs
 
 gKafMed {collexclude.glyph = g__kaf_exclude};
