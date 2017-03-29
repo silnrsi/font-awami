@@ -953,8 +953,8 @@ endif;
 // kaf + lam-bar
 
 // a few special forms for real-life words we know about:
-cLam_noBar_postKaf  >  cLam_tallForBar_postKaf  /  (gKafIni gKafMed)  g__kafTop_null  MARKS  _  g__bar;
-cLam_noBar_postGaf  >  cLam_tallForBar_postGaf  /  (gGafIni gGafMed)  g__kafTop_null  MARKS  _  g__bar;
+cLam_noBar_postKaf  >  cLam_tallForBar_postKaf  /  (gKafIni gKafMed)  g__kafTop_null  MARKS  _  cbarDia;
+cLam_noBar_postGaf  >  cLam_tallForBar_postGaf  /  (gGafIni gGafMed)  g__kafTop_null  MARKS  _  cbarDia;
 
 cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
