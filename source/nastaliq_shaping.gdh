@@ -1047,14 +1047,18 @@ pass(7) {Direction = LEFT_TO_RIGHT}
 if (punctAlt == punctDefault)
 	// Convert punctuation to either Latin or Arabic where there are not separate characters 
 	// for the two scripts:
-	csPunctLatin  >  @P  /  cLatin  _=P  cLatin;
-	csPunctLatin  >  @P  /  cSpace  _=P  cLatin;
-	csPunctLatin  >  @P  /  cLatin  _=P  cSpace;
-	csPunctLatin  >  csPunctArabic  /  ANY  _  ANY;  // not at beginning or end of segment.
-	csPunctLatin  >  @P  /  cLatin  _=P;
-	csPunctLatin  >  @P  /  _=P  cLatin;
-	csPunctLatin  >  csPunctArabic;
+	// These contextual rules aren't quite right.
+////	csPunctLatin  >  @P  /  cLatin  _=P  cLatin;
+////	csPunctLatin  >  @P  /  cSpace  _=P  cLatin;
+////	csPunctLatin  >  @P  /  cLatin  _=P  cSpace;
+////	csPunctLatin  >  csPunctArabic  /  ANY  _  ANY;  // not at beginning or end of segment.
+////	csPunctLatin  >  @P  /  cLatin  _=P;
+////	csPunctLatin  >  @P  /  _=P  cLatin;
+////	csPunctLatin  >  csPunctArabic;
+
+	csPunctLatin  >  csPunctArabic  /  _ {directionality == 1};  // directionality is actually the segment direction
 endif;
+
 
 if (punctAlt == punctArabic)
 	csPunctLatin  >  csPunctArabic;
