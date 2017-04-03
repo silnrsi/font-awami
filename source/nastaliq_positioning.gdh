@@ -826,6 +826,9 @@ cls_excludingGlyphs_kern { collision {
 	exclude.offset.y = collexclude.offsety;
 } }  /  cNuqtaLikeUpper  cDiacritic?  _=EG;
 
+// Don't kern glyphs before the high hamza; retain the space.
+cKernable  (gHighHamza gHighHamzaArabic);
+
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
 // We actually set the kerning parameters in the final pass. But here, at least indicate
 // which glyphs can be kerned, which affects how shifting works around them.
@@ -1640,6 +1643,10 @@ cRehFin_longtail { collision {
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin);
+
+
+// Don't kern glyphs before the high hamza; retain the space.
+cKernable  (gHighHamza gHighHamzaArabic);
 
 
 // For short sequences (two base chars) ending with bariyeh,

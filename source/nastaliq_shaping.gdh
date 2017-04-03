@@ -694,9 +694,8 @@ pass(6)
 // Alterate (standard Arabic-style) hamza
 if (hamzaAlt == 1)
 
-(gHamzaAbove  gHighHamza)  >  (g__hamzaArabic  gHighHamzaArabic);
 gJeem    gHamzaAbove  >  gHah  g__hamzaArabic;
-(gAlef gWaw gChotiyeh gHehGoal gReh gJeem gBariyeh)  gHamzaAbove  >  @1  g__hamzaArabic;
+(gHamzaAbove  gHighHamza  g__highHamza)  >  (g__hamzaArabic  gHighHamzaArabic  g__highHamzaArabic);
 
 (gChotiyeh gChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
 (gHehGoal gHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
@@ -710,7 +709,7 @@ if (hehGoalHook == 1)
 cHehGoalMed  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
 endif;
 
-gAlef  gHighHamza  >  gHighHamzaAlefArabic:(1 2)  _;
+gAlef  g__highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 
 (cBehIni  cBehMed)  g__dot2l__hamza	>  @1  g__hamzaArabic:1;
 
@@ -857,7 +856,7 @@ gAlef		(gHamzaBelow g__hamza)	>	gAlefHamzaBelow:(1 2)  _;
 gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
 gAlef		g__wavyHamza			>	gAlefWavyHamzaAbove:(1 2)  _;
 gAlef		gWavyHamzaBelow			>	gAlefWavyHamzaBelow:(1 2)  _;
-gAlef		gHighHamza				>	gHighHamzaAlef:(1 2)  _;
+gAlef		g__highHamza			>	gHighHamzaAlef:(1 2)  _;
 
 //gDal								>	gDal;
 gDal		g__dot1u				>	gThal:(1 2)  _;
@@ -891,8 +890,12 @@ gWaw		g__peshWaw				>	gArabicU:(1 2)  _;
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
-gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 
+if (hamzaAlt == 1)
+gTehMarbutaGoal gHamzaAbove			>	gHehGoal  g__hamzaArabic;
+else
+gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
+endif;
 
 if (smallNuqtas == 1)
 // Small nuqtas

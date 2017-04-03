@@ -1743,6 +1743,9 @@
     <test class="fset22" label="alt hamza - chotiyeh" rtl="True">
       <string>ئ ئلئفئ</string>
     </test>
+    <test class="fset22" label="alt hamza - heh-yeh-above" rtl="True">
+      <string>ۀ بۀ ۀَ</string>
+    </test>
     <test class="fset35" label="alt full stop" rtl="True">
       <string>نِ نیا ز۔</string>
     </test>
@@ -1774,6 +1777,13 @@
     </test>
     <test class="fset19" label="bariyeh w/ hamza above" rtl="True">
       <string>ۓ  |  ۓ</string>
+    </test>
+    <test class="fset36" label="high hamzas" rtl="True">
+      <comment>0627 + 0674 is not canonically = 0675</comment>
+      <string>ٵ اٴ ٶ ٸ وٴ یٴ بٴب</string>
+    </test>
+    <test class="fset22" label="high hamzas - Arabic style" rtl="True">
+      <string>ٵ اٴ ٶ ٸ وٴ یٴ بٴب</string>
     </test>
   </testgroup>
   <testgroup label="Hand-code candidates">
