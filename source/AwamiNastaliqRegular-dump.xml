@@ -1,9 +1,9 @@
-<!-- Generated on Tue, 04 Apr 2017 13:59:11 +0000 by Peter Martin -->
+<!-- Generated on Tue, 04 Apr 2017 22:35:24 +0000 by  -->
 
 <font>
 
 	<!-- IDENTIFICATION -->
-	<file_name>/Users/martinpk/Documents/Fonts/ABS/font-awami/source/AwamiNastaliqRegular.vfb</file_name>
+	<file_name>C:\Awami-Git\source\AwamiNastaliqRegular.vfb</file_name>
 	<family_name>Awami Nastaliq</family_name>
 	<style_name>Regular</style_name>
 	<full_name>Awami Nastaliq</full_name>
@@ -3641,6 +3641,7 @@
 				<anchor>mLower: 205,-60</anchor>
 				<anchor>hamzaUpper: 200,2130</anchor>
 				<anchor>honorific: 23,2134</anchor>
+				<anchor>hamzaLower: 184,-80</anchor>
 			</anchors>
 			<component_count>0</component_count>
 			<width>465</width>
@@ -24978,6 +24979,24 @@
 				<component>absHehGoalFin: delta: 0.0,0.0, scale: 1.0,1.0</component>
 			</components>
 			<width>574</width>
+			<unicode></unicode>
+			<unicode_count>0</unicode_count>
+		</glyph>
+		<glyph>
+			<name>absHamzaBelow.arabic</name>
+			<note>None</note>
+			<node_count>0</node_count>
+			<node_hash>23f497f643e37257c3f7e54f049d8829c41103bb29bf8c0ba0d1df0a</node_hash>
+			<anchors>
+				<anchor>mUpper: -126,1886</anchor>
+				<anchor>_hamzaLower: 316,532</anchor>
+				<anchor>mLower: 316,-164</anchor>
+			</anchors>
+			<component_count>1</component_count>
+			<components>
+				<component>_hamza.arabic: delta: -94.0,-1590.0, scale: 1.0,1.0</component>
+			</components>
+			<width>0</width>
 			<unicode></unicode>
 			<unicode_count>0</unicode_count>
 		</glyph>
