@@ -663,28 +663,28 @@ endpass; // 5
 
 table(glyph)
 
-cNuqta_normal = (g__dot1l, g__dot1u, g__dot2l, g__dot2u,
+csNuqta_normal = (g__dot1l, g__dot1u, g__dot2l, g__dot2u,
 	g__dot2vl, g__dot2vu, g__dot3l, g__dot3u, g__dot3uD,
 	g__dot4u, g__dot4l);
 
-cNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
+csNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
 	g__dot2vl_small, g__dot2vu_small, g__dot3l_small, g__dot3u_small, g__dot3uD_small,
 	g__dot4u_small, g__dot4l_small);
 
 
-cLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
-	g__ring__dot2u, g__dot2l__hamza, g__hehHook__hamza, g__dot3l__dot3u);
-cLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
-	g__attachedRing, g__dot2l, g__hehHook_small, g__dot3l);
-cUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
-	g__dot2u, gHamzaAbove, gHamzaAbove, g__dot3u);
+csLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
+	g__ring__dot2u, g__dot2l__hamza, g__dot2l__smallV, g__hehHook__hamza, g__dot3l__dot3u);
+csLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
+	g__attachedRing, g__dot2l, 		g__dot2l,			g__hehHook_small, g__dot3l);
+csUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
+	g__dot2u, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u);
 
-cLowerNoUpper_small = (g__dot1l_small,	g__dot2vl_small,	g__dot1l_small,		g__hehHook_small,
-	g__attachedRing, g__dot2l_small, g__hehHook_small, g__dot3l_small);
-cUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_small,
-	g__dot2u_small, gHamzaAbove, gHamzaAbove, g__dot3u_small);
+csLowerNoUpper_small = (g__dot1l_small,	g__dot2vl_small,	g__dot1l_small,		g__hehHook_small,
+	g__attachedRing, g__dot2l_small, g__dot2l_small, g__hehHook_small, g__dot3l_small);
+csUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_small,
+	g__dot2u_small, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u_small);
 
-cNuqtaLike += (cLowerUpper);
+cNuqtaLike += (csLowerUpper);
 
 endtable; // glyph
 
@@ -824,6 +824,7 @@ gChotiyeh	g__noDot2l			>	gChotiyeh:(1 2)  _;
 gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
 gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
 gChotiyeh	g__dot2vl			>	gArabicE:(1 2)  _;
+gChotiyeh	g__dot2l__smallV	>	gYehSmallV:(1 2)  _;
 gChotiyeh	g__dot2l_tail		>	gYehTail:(1 2)  _;
 gChotiyeh	g__ring				>	gKashmiriYeh:(1 2)  _;
 
@@ -835,8 +836,9 @@ gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 
 (cBehIni  cBehMed)  g__dot2l__hamza  >  @1  gHamzaAbove:1;
 
-csChotiyehFin  g__noDot2l  >  @1:(1 2)  _;
-csChotiyehFin  g__dot2l__hamza  >  @1  gHamzaAbove;
+csChotiyehFin  g__noDot2l  			>  @1:(1 2)  _;
+csChotiyehFin  g__dot2l__hamza  	>  @1  gHamzaAbove;
+csChotiyehFin  g__dot2l__smallV		>  @1  g__smallV;
 
 csChotiyehFin  g__dot2l_tail  >  csYehTailFin:(1 2)  _;
 csChotiyehFin  g__ring  >  csKashmiriYehFin:(1 2)  _;
@@ -886,7 +888,7 @@ gWaw		(gHamzaAbove g__hamza)	>	gWawHamzaAbove:(1 2)  _;
 gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
 gWaw		g__barWaw				>	gKirghizOe:(1 2)   _;
 gWaw		g__smallV				>	gOe:(1 2)  _;
-gWaw		g__peshWaw				>	gArabicU:(1 2)  _;
+gWaw		gPeshWaw				>	gArabicU:(1 2)  _;
 
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 
@@ -901,13 +903,13 @@ endif;
 if (smallNuqtas == 1)
 // Small nuqtas
 
-cNuqta_normal  >  cNuqta_small;
+csNuqta_normal  >  csNuqta_small;
 
 g__noDot1u		>	g__dot1u_small;
 g__noDot2l		>	g__dot2l_small;
 g__dot2l_tail	>	g__dot2l_small;
 
-cLowerUpper  _  >  cLowerNoUpper_small  cUpperNoLower_small$1:1;
+csLowerUpper  _  >  csLowerNoUpper_small  csUpperNoLower_small$1:1;
 
 else
 
@@ -921,7 +923,7 @@ g__dot2l_tail	>	g__dot2l;
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
-cLowerUpper  _  >  cLowerNoUpper  cUpperNoLower$1:1;
+csLowerUpper  _  >  csLowerNoUpper  csUpperNoLower$1:1;
 
 endif; // small nuqtas
 

@@ -80,6 +80,16 @@ gKafIni { gafStrokeS = point(170m, 1340m) };
 gKafIniLm { gafStrokeS = point(160m, 2060m) };
 **/
 
+// Decide whether or not to keep these adjustments; if so, change the APs in the FontLab file:
+
+gBehIniQf { n1LowerS = point(333m, 81m); n23LowerS = point(417m, 81m) };
+gBehMedQf { n1LowerS = point(383m, 84m); n23LowerS = point(462m, 84m) };
+gBehMedQf_ss { n1LowerS = point(262m, 67m); n23LowerS = point(356m, 67m) };
+
+gBehIniNn { n1LowerS = point(282m, 295m); n23LowerS = point(427m, 170m) };
+gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
+gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
+
 
 endtable;
 
