@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Awami-WOFF-metadata.html
-Awami Nastaliq alpha2plus
+Awami Nastaliq Beta3
 This file is part of Awami font family (http://software.sil.org/awami/)
-and is Copyright (c) 2014 SIL International (http://www.sil.org/),
+and is Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
 with Reserved Font Names "Awami" and "SIL". This Font Software is licensed
 under the SIL Open Font License, Version 1.1. You should have received a copy
 of the license along with this Font Software. If this is not the case, go to
@@ -51,6 +51,36 @@ of the license along with this Font Software. If this is not the case, go to
       ChangeLog
       ----------
       (This should list both major and minor changes, most recent first.)
+      2017-Apr-10 (SIL NRSI team) Awami Nastaliq Beta3
+      - Beta3 release based on Beta2 feedback, including, but not limite to:
+           - Slope of many letters such as kaf and lams changed
+           - Adjustments to positioning of nuktas and diacritics
+           - Adjustments to connections
+           - Add U+06CE YEH WITH SMALL V
+           - Changed line height
+
+      2016-Dec-7 (SIL NRSI team) Awami Nastaliq Beta2
+      - Increased font size by 15%
+      - Redesigned seen forms
+      - Redesigned nuqtas, made a them little smaller and closer together
+      - Implemented feature to allow shorter kafs/gafs and some final forms (noon, seen, chotiyeh, bariyeh, qaf, meem, lam) when the sequences get very high
+      - Added feature to allow alternate position of V over lam
+      - Added Arabic style quote marks at a higher position than Latin
+      - Scaled subtending marks more appropriately
+      - Hand-tweaked some combinations to make more readable
+      - Added U+06B0 GAF WITH RING
+      - Added “salaam ulena” ligature
+      - Redesigned initial beh before meem
+      - Made nuqta positions on seens and sads more consistent
+      - Reworked ain connections
+      - Fixed shape of Arabic 4 and 5
+      - Adjusted various letter shapes
+
+      2016-Aug-1 (SIL NRSI team) Awami Nastaliq Beta1
+      - Beta1 release based on Alpha2 feedback
+      - Additional characters and features added
+
+
       
       2016-May-16 (SIL NRSI team) Awami Nastaliq Alpha2
       - Alpha2 release based on Alpha1 feedback
@@ -165,6 +195,6 @@ of the license along with this Font Software. If this is not the case, go to
 		</text>
     </license>
     <copyright>
-        <text lang="en">Copyright (c) 2014, SIL International (http://www.sil.org/)</text>
+        <text lang="en">Copyright (c) 2014-2017, SIL International (http://www.sil.org/)</text>
     </copyright>
 </metadata>
