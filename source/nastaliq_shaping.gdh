@@ -686,6 +686,9 @@ csUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_sm
 
 cNuqtaLike += (csLowerUpper);
 
+cHamzaUrdu = (gHamzaAbove  gHighHamza  g_highHamza  gHamzaBelow);
+cHamzaArabic = (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic  gHamzaBelowArabic);
+
 endtable; // glyph
 
 
@@ -694,8 +697,11 @@ pass(6)
 // Alterate (standard Arabic-style) hamza
 if (hamzaAlt == 1)
 
-gJeem    gHamzaAbove  >  gHah  g__hamzaArabic;
-(gHamzaAbove  gHighHamza  g_highHamza)  >  (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic);
+gJeem  gHamzaAbove				>  gHah  g__hamzaArabic;	// no nuqta
+gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
+// This version of the rule takes precedence over the rules below that substitute the composed isolates:
+c_isolate  cHamzaUrdu			>  @1  cHamzaArabic;
+cHamzaUrdu  >  cHamzaArabic;
 
 (gChotiyeh gChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
 (gHehGoal gHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
