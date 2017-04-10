@@ -15,9 +15,9 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.850'
-TTF_VERSION="0.850"
-COPYRIGHT='Copyright (c) 2014-2016, SIL International (http:/www.sil.org)'
+VERSION='0.900'
+TTF_VERSION="0.900"
+COPYRIGHT='Copyright (c) 2014-2017, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
@@ -49,8 +49,8 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq PreBeta3"
-FONT_FILENAME = "Awami_prebeta3.ttf"
+FONT_NAME = "Awami Nastaliq Beta3"
+FONT_FILENAME = "Awami_beta3.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
@@ -63,7 +63,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', # -c',
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -c',
                     depends = glob.glob('*.gdh')),
      ap = "source/AwamiNastaliqRegular_AP.xml",
      license = ofl('Awami','SIL'),
