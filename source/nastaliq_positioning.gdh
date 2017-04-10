@@ -16,6 +16,11 @@ pass(1)
 #define cursive_attach(P)  c_exit_##P {att {to=@L; with=exit_##P; at=entr_##P}} c_entr_##P {insert=1} / _ MARKS2N ^ _=L ;
 
 // Only used for beh so we don't need to allow upper and lower diacs:
+// E.g.,
+////	c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
+////		c_entr_behPreFinalHehGoal {insert=1} 
+////			/ _ MARKS ^ _=L ;
+
 #define cursive_attach2(P1, P2)  c_exit_##P1 {att {to=@L; with=exit_##P1; at=entr_##P2}} c_entr_##P2 {insert=1} / _ MARKS ^ _=L ;
 
 
@@ -27,6 +32,10 @@ cursive_attach(behFinal)
 cursive_attach(behHighTooth)
 cursive_attach(behLowTooth)
 cursive_attach2(behLowTooth, behPreFinalHehGoal)
+// Special case not handled by macro:
+c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
+	c_entr_behPreFinalHehGoal {insert=1} 
+	/ _  g__kafTop_null  g__attachedRingMid ^ _=L ;
 cursive_attach(behPreReh)
 cursive_attach(behPreNoon)
 cursive_attach(jeem)
