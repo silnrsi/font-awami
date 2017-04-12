@@ -15,8 +15,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.900'
-TTF_VERSION="0.900"
+VERSION='0.901'
+TTF_VERSION="0.901"
 COPYRIGHT='Copyright (c) 2014-2017, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -63,7 +63,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
      #source = create('temp/Awami_full.sfd',
      #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -c',
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
                     depends = glob.glob('*.gdh')),
      ap = "source/AwamiNastaliqRegular_AP.xml",
      license = ofl('Awami','SIL'),
