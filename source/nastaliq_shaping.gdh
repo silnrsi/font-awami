@@ -962,6 +962,10 @@ gJazm  >  gJazm_openleft;
 endif;
 
 
+// Mirroring - no, we aren't supposed to do this:
+////csNeedsMirror  >  csMirrored  /  _ {directionality == 1};  // directionality is actually the segment direction
+
+
 // kaf + lam-bar
 
 // a few special forms for real-life words we know about:
@@ -970,7 +974,6 @@ cLam_noBar_postGaf  >  cLam_tallForBar_postGaf  /  (gGafIni gGafMed)  g__kafTop_
 
 cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
-
 
 // See also subtending rules below.
 
@@ -1028,6 +1031,7 @@ cSign2 = (cSign2Small, cSign2Smaller);
 cSign1 = (cSign1Small, cSign1Smaller);
 
 cSignDigit = (cDigitAnySmall cDigitAnySmaller);
+
 
 endtable;
 
@@ -1111,6 +1115,7 @@ pass(6)
 
 endpass;
 ************/
+
 
 endtable;	// sub
 

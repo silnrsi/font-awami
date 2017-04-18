@@ -129,6 +129,12 @@ cPostNuqta1 = cDiacritic;
 cPostNuqta2 = (cDiacritic c_zerojoin);
 
 
+// Mirroring
+
+csNeedsMirror = (g_ornateLeftParen, g_ornateRightParen); // 2018, 2019, 201C, 201D, 201A, 
+csMirrored    = (g_ornateRightParen, g_ornateLeftParen);
+
+
 /*
 Classes for diacritic ordering:
 	cMark1 class contains shadda, hamza, mark noon ghunna

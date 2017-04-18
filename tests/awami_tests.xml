@@ -46,7 +46,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>متن درج  ⁦سب ا</string>
+      <string>بَچاﺅ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1012,7 +1012,7 @@
       <comment>The ordering of the nuqtas does not seem to reflect maxoverlap.</comment>
       <string>ابیجی</string>
     </test>
-    <test label="beh + yeh + jeem" rtl="True">
+    <test background="#ffff7f" label="beh + yeh + jeem" rtl="True">
       <comment>The centers of the first single-nuqta and the double-nuqta does not reflect minxoffset.</comment>
       <string>بِیج</string>
     </test>
@@ -1044,8 +1044,8 @@
     <test label="peh + chotiyeh + waw" rtl="True">
       <string>پِیُو</string>
     </test>
-    <test label="beh + chotiyeh + jeem" rtl="True">
-      <string>بیج</string>
+    <test background="#ffff7f" label="beh + chotiyeh + jeem" rtl="True">
+      <string>بیج بِیج</string>
     </test>
     <test label="teh + teh" rtl="True">
       <string>تِتو</string>
@@ -1059,7 +1059,7 @@
     <test label="yeh + beh + tail" rtl="True">
       <string>بھیجِئ</string>
     </test>
-    <test class="fset11" label="jeem + teh" rtl="True">
+    <test background="#ffff7f" class="fset11" label="jeem + teh - special case" rtl="True">
       <string>مختا لخئل جخثا</string>
     </test>
     <test background="#00aaff" label="DIACRITICS OUTSIDE NUQTAS" rtl="True">
@@ -1109,10 +1109,7 @@
     <test class="fset21" label="lam-bar" rtl="True">
       <string>نکݪتی نکݪئی</string>
     </test>
-    <test background="#ff0000" label="NO GOOD SOLUTION" rtl="True">
-      <string/>
-    </test>
-    <test background="#ff0000" label="khah + noon + gaf" rtl="True">
+    <test background="#ffff7f" label="khah + noon + gaf" rtl="True">
       <comment>No good solution.</comment>
       <string>تِخِنگِک</string>
     </test>
@@ -1146,6 +1143,9 @@
     </test>
     <test class="fset24" label="very low diac" rtl="True">
       <string>سݙِ نپِ نڜِ بڳِ</string>
+    </test>
+    <test background="#ff0000" label="NO GOOD SOLUTION" rtl="True">
+      <string/>
     </test>
   </testgroup>
   <testgroup label="Collisions - possible">
@@ -1911,6 +1911,12 @@
     <test class="fset31" label="push up lower diac" rtl="True">
       <string>ڜپِ بڳِ</string>
     </test>
+    <test class="fset36" label="S.Hindko - real word" rtl="True">
+      <string>قِیمتی</string>
+    </test>
+    <test class="fset36" label="S.Hindko - real word" rtl="True">
+      <string>تَکمیل</string>
+    </test>
   </testgroup>
   <testgroup label="Nuqtas">
     <test label="say khay sheen zoa" rtl="True">
@@ -2065,6 +2071,16 @@
     </test>
     <test class="fset32" label="RLM LRO - visible" rtl="True">
       <string>‏a ‭ل</string>
+    </test>
+    <test class="fset36" label="mirroring (RTL)" rtl="True">
+      <string>﴾سبا﴿</string>
+    </test>
+    <test class="fset36" label="no mirroring (LTR)">
+      <string>﴾abcdefg﴿</string>
+    </test>
+    <test class="fset36" label="no mirroring needed" rtl="True">
+      <comment>These looks wrong, but the mirroring should happen in the app.</comment>
+      <string>(ظکل) ‹xxx›</string>
     </test>
   </testgroup>
   <testgroup label="Diacritics">
@@ -2415,28 +2431,34 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
   </testgroup>
   <testgroup label="Special case positioning">
-    <test background="#55aaff" class="fset36" label="PASS 9" rtl="True">
+    <test background="#55aaff" class="fset36" label="PASS 8" rtl="True">
       <string/>
     </test>
-    <test class="fset36" label="kaf + ring + beh.hgF" rtl="True">
+    <test class="fset36" label="kaf + ring + beh.hgF [rule 66]" rtl="True">
       <string>ګٽه ګبہ</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
     </test>
-    <test class="fset19" label="lam + qaf + kaf" rtl="True">
+    <test class="fset19" label="lam + qaf + kaf [rule 28]" rtl="True">
       <string>لقکھہ</string>
     </test>
-    <test class="fset24" label="jeem + noon/teh/sheen" rtl="True">
+    <test class="fset24" label="jeem + noon/teh/sheen [rule 29-30]" rtl="True">
       <string>جنگی  خُشکی</string>
     </test>
-    <test class="fset36" label="beh + kaf/lam + heh-doachashmee" rtl="True">
+    <test class="fset36" label="khah + teh/theh [rule 30]" rtl="True">
+      <string>سختل</string>
+    </test>
+    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 35-37]" rtl="True">
       <string>بکِھ یُلّھف سبگَھ </string>
+    </test>
+    <test class="fset36" label="jeem + teh + alef/lam/kaf" rtl="True">
+      <string>مختا لخئل جخثا</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 16 (pos pass 8)" rtl="True">
       <string/>
     </test>
-    <test class="fset19" label="reh/dal + yeh" rtl="True">
+    <test class="fset19" label="reh/dal + yeh [rule 3]" rtl="True">
       <string>ریر رنر دیر دنر</string>
     </test>
     <test class="fset24" label="dal + yeh + waw" rtl="True">
@@ -2469,7 +2491,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset29" label="tarixi - reh + yeh + jeem" rtl="True">
       <string>تاریخی </string>
     </test>
-    <test background="#ff0000" class="fset36" label="isolate alef" rtl="True">
+    <test class="fset36" label="isolate alef" rtl="True">
       <string>اکٹّھی  الٹّھی  اسّھجی</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">

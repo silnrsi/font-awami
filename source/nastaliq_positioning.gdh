@@ -669,12 +669,29 @@ cNuqtaLikeUpper { collision {
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 ***/
 
+// Special case: khah + teh/theh + alef/lam - move teh/theh nuqtas above alef/lam
+/***
+cNuqtaLikeUpper { shift { x = -80m; y = -180m } }
+	(g__dot2u g__dot3u gHamzaAbove) { 
+		shift { x = 50m; y = 800m; };
+		collision {
+			flags = SET_FIX(collision.flags);
+			min.x = -250m;
+			max.x = 200m;
+			min.y = -300m;
+			max.y = 300m;
+		};
+		sequence.class = 0;
+	}
+	/ cJeemIM  _=N1  cDiacritic?  cBehMed  _=N2  cDiacritic?  (gAlefFin  cLamMed  gLamFin);
+***/	
 
-// Special case: jeem + teh/theh - allow more movement to get the nuqta on the jeem to the right of the nuqta on the beh form.
+
+// Special case: khah + teh/theh - allow more movement to get the nuqta on the jeem to the right of the nuqta on the beh form.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
-	max.x = 350m;
+	max.x = 350m;  // standard is 200m
 	min.y = -300m;
 	max.y = 1000m;
 } } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
@@ -803,6 +820,7 @@ cNuqtaLikeLower { collision {
 	flags = CLEAR_FIX(collision.flags);
 	flags = CLEAR_KERN(collision.flags);
 } } / _  g__kafTop_null? cDot2u;
+
 
 // There is a bug in the Graphite engine that mis-initializes the exclusion glyph that causes bugs in the
 // collision fixing.
@@ -1069,7 +1087,7 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-cNuqtaLikeUpper { shift.y = -300m; collision.margin -= 50m } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpper { shift.y = -250m; collision.margin -= 50m } / _ { position.y > PUSHDOWN };
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
 	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
@@ -1407,9 +1425,9 @@ cDiacriticUpper  /  csKafIM_base  cKafTop  _;
 // For tahs, the diac is not attached to the nuqta, so don't move the nuqta down.
 cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y = -200m; collision.margin -= 20m }
 	/  _=T  _=N  _=D { position.y > 2800m };
-cNuqtaUpper { shift.y = -200m  }
-	cDiacriticUpper { shift.y = -350m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
-cDiacriticUpper { shift.y = -350m; collision.margin -= 70m }  /  _ { position.y > 2800m };
+cNuqtaUpper { shift.y = -150m  }
+	cDiacriticUpper { shift.y = -300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
+cDiacriticUpper { shift.y = -300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 
 endpass;  // 9
@@ -1598,15 +1616,15 @@ cIso { collision {
 } }
 	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
-// Don't let an isolate alef kern too far - it gets lost.
+// Don't let an isolate alef kern too far - it's so thin that it looks odd and gets lost.
 gAlef { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
-	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+	max.x = MAXKERN; min.x = -275m + minKernDelta;    // = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _=A  cNuqtaLike?  DIACS  cPostKernable=N;
+	/  _=A  cNuqtaLike?  DIACS  cPostKernable=N;  // make context long enough for precendence 
 
 
 // EXPERIMENT - don't allow ANY overlap between words
@@ -1642,7 +1660,6 @@ cRehFin_longtail { collision {
 } }
 	cNuqtaLower {shift.y = 150m}
 	/  _=R  gBehIniJm  _=N;
-
 
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
