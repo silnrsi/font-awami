@@ -46,7 +46,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>بَچاﺅ</string>
+      <string>﴾آخری مُستند مَتّن﴿</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -2072,7 +2072,7 @@
     <test class="fset32" label="RLM LRO - visible" rtl="True">
       <string>‏a ‭ل</string>
     </test>
-    <test class="fset36" label="mirroring (RTL)" rtl="True">
+    <test class="fset36" label="mirroring (RTL) - NOT HAPPENING" rtl="True">
       <string>﴾سبا﴿</string>
     </test>
     <test class="fset36" label="no mirroring (LTR)">
@@ -2494,6 +2494,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="isolate alef" rtl="True">
       <string>اکٹّھی  الٹّھی  اسّھجی</string>
     </test>
+    <test class="fset25" label="feh + low + upper diac" rtl="True">
+      <string>فمَب  بفہَف</string>
+    </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
       <string/>
     </test>
@@ -2509,9 +2512,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset24" label="jeem + upper nuqta" rtl="True">
       <string>حشِیم  حنِم   حقِیر</string>
-    </test>
-    <test class="fset25" label="feh + low + upper diac" rtl="True">
-      <string>فمَب  فہَف</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">

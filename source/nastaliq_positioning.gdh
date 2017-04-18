@@ -1430,6 +1430,7 @@ cNuqtaUpper { shift.y = -150m  }
 cDiacriticUpper { shift.y = -300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1200m };
 
+
 endpass;  // 9
 
 
@@ -1483,6 +1484,21 @@ cDiacriticUpper { collision {
 	// Don't set sequence attributes; let the diac stay below the upper nuqta.
 }  /  cFehIni  cNuqtaLikeUpper  (cHehGoalMed cMeemMed)  cNuqtaLikeLower?  _;
 **/
+
+// Special case: the diac AP on the meem and heh-goal is pretty far to the right,
+// so they need to move left after a feh. Using the sequencing mechanism messes things up,
+// so turn it off for those.
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -250;
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 500m;
+	};
+	////sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
+}  / cFehIM  cNuqtaUpper  cDiacritic?  (cHehGoalMed  cMeemMed)  g__hehHook_small?  _;
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
