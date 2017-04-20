@@ -15,8 +15,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='Awami'
-VERSION='0.901'
-TTF_VERSION="0.901"
+VERSION='0.920'
+TTF_VERSION="0.920"
 COPYRIGHT='Copyright (c) 2014-2017, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
