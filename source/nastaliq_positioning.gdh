@@ -1367,8 +1367,8 @@ gRehFin_hgM { minKernDelta = -400m };
 cKernPunct { minKernDelta = MINKERN * -1 };
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
-gAlef { kernPreKafNoSp = -150m };
-gAlefFin { kernPreKafNoSp = -80m };
+///gAlef { kernPreKafNoSp = -150m };
+///gAlefFin { kernPreKafNoSp = -80m };
 
 endtable; // glyph
 
@@ -1410,7 +1410,8 @@ cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cKernIgnore? (cRehIso);
 cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cKernIgnore? (cWawIso);
 cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamAlef gLamIniAl);
 
-cKernable { pairKern = kernPreKafNoSp }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni);
+// Currently not being used:
+////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
 
 // Before a two-letter sequence:
 cKernable { pairKern = kernPreShort } / _ ^ MARKS  cKernIgnore?  c_initial MARKS  c_final;
@@ -1633,6 +1634,7 @@ cIso { collision {
 	/  cSpace  _  cNuqtaLike?  DIACS  cSpace=S  cPostKernable=N;
 
 // Don't let an isolate alef kern too far - it's so thin that it looks odd and gets lost.
+/****
 gAlef { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1640,7 +1642,8 @@ gAlef { collision {
 	max.x = MAXKERN; min.x = -275m + minKernDelta;    // = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _=A  cNuqtaLike?  DIACS  cPostKernable=N;  // make context long enough for precendence 
+	/  _=A  cNuqtaLike?  DIACS  cPostKernable=N;  // make context long enough for precedence 
+****/
 
 
 // EXPERIMENT - don't allow ANY overlap between words
@@ -1702,6 +1705,18 @@ cKernable { collision {
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  c_initial cNuqtaLike? DIACS [c_medial cNuqtaLike? DIACS]? 
 		gBariyehFin=F;
+
+// Special case: alef + kaf - set them a standard distance apart; don't use auto-kerning mechanism unless
+// absolutely necessary.
+(gAlef cAlefFin) { shift.x += -130m;
+	collision {
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = 150;  // max(0m, kernLsb + @N.kernRsb + pairKern);
+		max.x = MAXKERN; min.x = 0; /// MINKERN + minKernDelta;
+    	// min/max.y are omitted for kernable glyphs
+	}
+}  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIM=K;
 
 cKernable { collision {
 	flags = SET_FIX(collision.flags);

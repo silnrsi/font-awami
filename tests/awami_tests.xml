@@ -739,6 +739,9 @@
     <test class="fset24" label="waw + beh + meem" rtl="True">
       <string>یکھوتُمہا</string>
     </test>
+    <test class="fset36" label="alef kaf" rtl="True">
+      <string>اکطبس اکطب اکط</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions">
     <test label="noon-smalltah + alef" rtl="True">
@@ -2496,6 +2499,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset25" label="feh + low + upper diac" rtl="True">
       <string>فمَب  بفہَف</string>
+    </test>
+    <test class="fset36" label="alef (isolate) + kaf" rtl="True">
+      <string>اکطبس اکطب اکط</string>
+    </test>
+    <test class="fset36" label="alef (final) + kaf" rtl="True">
+      <string>ساکطبس ساکطب لاکط</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
       <string/>
