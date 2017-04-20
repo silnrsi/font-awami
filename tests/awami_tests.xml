@@ -2440,6 +2440,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="kaf + ring + beh.hgF [rule 66]" rtl="True">
       <string>ګٽه ګبہ</string>
     </test>
+    <test background="#55aaff" class="fset36" label="PASS 9" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="beh + yeh + jeem" rtl="True">
+      <string>بِیج بِیچ سپبڇ</string>
+    </test>
+    <test class="fset36" label="beh + beh + jeem" rtl="True">
+      <string>ببج ببچ ببِج</string>
+    </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
     </test>
@@ -2455,7 +2464,8 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 35-37]" rtl="True">
       <string>بکِھ یُلّھف سبگَھ </string>
     </test>
-    <test class="fset36" label="jeem + teh + alef/lam/kaf" rtl="True">
+    <test background="#ff0000" class="fset36" label="jeem + teh + alef/lam/kaf" rtl="True">
+      <comment>Turned this off - Sheldon doesn't like it.</comment>
       <string>مختا لخئل جخثا</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 16 (pos pass 8)" rtl="True">

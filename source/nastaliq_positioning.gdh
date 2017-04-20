@@ -358,6 +358,20 @@ c_isolate
 
 // Lower nuqta attachment
 
+// Special case: beh + beh + jeem - don't use special rule below, but do move center nutqa over a bit.
+(gBehIniBe gBehMedBe)
+	g__dot1l { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
+	gBehMedJm
+	g__dot1l { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift.x = 100m }
+	/   _=B1  _=N1  /*no diac*/  _=B2  _=N2  /*no diac*/  gJeemFin  cNuqtaLikeLower;
+
+// Special case: beh/yeh + beh/yeh + jeem/tcheh - move center nuqta down to the right of the jeem tail.
+(gBehIniBe gBehMedBe)
+	cNuqtaLikeLower { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
+	gBehMedJm
+	cNuqtaLikeLower { attach {to = @B2; at = nLowerTightS; with = n1LowerM } }
+	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLikeLower;
+
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	/ _=B  g__kafTop_null?  _=L;
