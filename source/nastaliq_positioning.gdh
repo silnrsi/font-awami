@@ -1209,6 +1209,10 @@ cNuqtaLikeUpper { nUpperM = point(0m,0m) };
 cNuqtaLikeLower { n1LowerM = point(0m,0m) };
 cIsoFin { n1LowerM = point(0m,0m); mUpperS = point(0m,0m) };
 cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
+// Temporary:
+g__kafIniTop_medshort { n1LowerS = point(0m, 0m) };
+g__gafIniTop_medshort { n1LowerS = point(0m, 0m) };
+
 endtable;
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
@@ -1511,7 +1515,7 @@ cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
-		min.x = -250;
+		min.x = -250m;
 		max.x = 250m;
 		min.y = -300m;
 		max.y = 500m;
@@ -1742,8 +1746,8 @@ cKernable { collision {
 	collision {
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = 150;  // max(0m, kernLsb + @N.kernRsb + pairKern);
-		max.x = MAXKERN; min.x = 0; /// MINKERN + minKernDelta;
+		margin = 150m;  // max(0m, kernLsb + @N.kernRsb + pairKern);
+		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIM=K;
