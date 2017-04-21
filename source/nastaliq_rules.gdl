@@ -73,14 +73,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 table(glyph) {AttributeOverride = 1};
 
 /**
-g__gafStroke {gafStrokeM = point(1370m, 1750m) };
-g__gafStroke_short {gafStrokeM = point(1370m, 1720m) };
-
-gKafIni { gafStrokeS = point(170m, 1340m) };
-gKafIniLm { gafStrokeS = point(160m, 2060m) };
-**/
-
-/**
 // These adjustments lower the beh/yeh nuqtas before final noon and qaf.
 // Sheldon says they don't want them.
 
@@ -93,9 +85,6 @@ gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 **/
 
-gBehMedJm { nLowerTightS = point(1300m, -200m) };
-gBehIniBe { nLowerTightS = point(400m, 440m) };
-gBehMedBe { nLowerTightS = point(300m, 440m) };
 
 endtable;
 

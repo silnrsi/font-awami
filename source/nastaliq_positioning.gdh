@@ -363,7 +363,7 @@ c_isolate
 	g__dot1l { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
 	gBehMedJm
 	g__dot1l { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift.x = 100m }
-	/   _=B1  _=N1  /*no diac*/  _=B2  _=N2  /*no diac*/  gJeemFin  cNuqtaLikeLower;
+	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  /*no diac*/  gJeemFin  cNuqtaLikeLower;
 
 // Special case: beh/yeh + beh/yeh + jeem/tcheh - move center nuqta down to the right of the jeem tail.
 (gBehIniBe gBehMedBe)
@@ -1335,6 +1335,10 @@ cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; inse
 cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; insert=true}
 		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 
+// Attaching standing-alef to lam
+(gLamFin cLamIM)=L  gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; insert=true};
+gLam=L  gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; insert=true};
+
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
 		/ ^ _=B  g__kafTop_null?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
@@ -1546,6 +1550,18 @@ cDiacriticUpper {
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  c_final  cNuqtaLikeLower?  _;
+
+(cLamIM gLamFin gLam) gKharizabar {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 500m;
+		margin = 70m;
+	}
+};
 
 // Diacritics attached to bases:
 cDiacriticUpper {
