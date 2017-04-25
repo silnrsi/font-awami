@@ -1015,7 +1015,7 @@
       <comment>The ordering of the nuqtas does not seem to reflect maxoverlap.</comment>
       <string>ابیجی</string>
     </test>
-    <test background="#ffff7f" label="beh + yeh + jeem" rtl="True">
+    <test label="beh + yeh + jeem" rtl="True">
       <comment>The centers of the first single-nuqta and the double-nuqta does not reflect minxoffset.</comment>
       <string>بِیج</string>
     </test>
@@ -1047,7 +1047,7 @@
     <test label="peh + chotiyeh + waw" rtl="True">
       <string>پِیُو</string>
     </test>
-    <test background="#ffff7f" label="beh + chotiyeh + jeem" rtl="True">
+    <test label="beh + chotiyeh + jeem" rtl="True">
       <string>بیج بِیج</string>
     </test>
     <test label="teh + teh" rtl="True">
@@ -2458,20 +2458,20 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
     </test>
-    <test class="fset19" label="lam + qaf + kaf [rule 28]" rtl="True">
+    <test class="fset19" label="lam + qaf + kaf [rule 30]" rtl="True">
       <string>لقکھہ</string>
     </test>
-    <test class="fset24" label="jeem + noon/teh/sheen [rule 29-30]" rtl="True">
+    <test class="fset24" label="jeem + noon/teh/sheen [rule 31-32]" rtl="True">
       <string>جنگی  خُشکی</string>
     </test>
-    <test class="fset36" label="khah + teh/theh [rule 30]" rtl="True">
+    <test class="fset36" label="khah + teh/theh [rule 44]" rtl="True">
       <string>سختل</string>
     </test>
-    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 35-37]" rtl="True">
+    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 37-39]" rtl="True">
       <string>بکِھ یُلّھف سبگَھ </string>
     </test>
-    <test background="#ff0000" class="fset36" label="jeem + teh + alef/lam/kaf" rtl="True">
-      <comment>Turned this off - Sheldon doesn't like it.</comment>
+    <test class="fset36" label="jeem + teh + alef/lam/kaf [rule 10]" rtl="True">
+      <comment>Shift nuqtas down into the space.</comment>
       <string>مختا لخئل جخثا</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 16 (pos pass 8)" rtl="True">

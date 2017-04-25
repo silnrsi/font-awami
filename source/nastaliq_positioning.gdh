@@ -640,6 +640,9 @@ cNuqtaLikeUpper { collision {
 } } / cTahMed _ ;
 
 
+// Special case: khah + teh/theh + kaf/lam/alef
+cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
+
 // Exception to special case below when there is a previous lam/kaf.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -649,7 +652,7 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / (cLamIM cKafIM) cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 
-// Special case involving jeem + beh/seen - don't allow nuqta to move right
+// Special case involving jeem + noon/teh/sheen - don't allow nuqta to move right
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
@@ -658,7 +661,7 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
 
-// Special case for beh/yeh + lam/kaf + heh-doachashmee - move nuqtas down and to the right
+// Special case for beh/yeh + kaf/lam + heh-doachashmee - move nuqtas down and to the right
 cNuqtaLikeLower {
 	shift { x = -250m; y = -300m };
 	collision {
@@ -709,6 +712,7 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
+
 
 
 // Nuqtas on initials can be moved quite a bit to the right.
