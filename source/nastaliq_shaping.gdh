@@ -109,7 +109,7 @@ pass(1)
 	(gYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
 
 	// Yay + hamza = hamzayay (move zair or zabar up out of the way):
-	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(cDualLinkIso cDualLinkFin) DIACS]?  _  _  _;
+	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(csDualLinkIso csDualLinkFin) DIACS]?  _  _  _;
 
 //if (maddaAlt == 0)
 //	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  gMaddaAbove_low:1  @2:2;
@@ -118,9 +118,9 @@ pass(1)
 //endif;
 
 	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
-	(cDualLinkFin cRightLinkFin cDualLinkIso cRightLinkIso)
-        c_nfd_noHamza=B  gHamzaAbove=H  >  @1  c_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
-    c_nfd_noHamza=B  gHamzaAbove=H  >  c_nfc_hamza:(B H)  _  /  ^ _  _;
+	(csDualLinkFin csRightLinkFin csDualLinkIso csRightLinkIso)
+        cs_nfd_noHamza=B  gHamzaAbove=H  >  @1  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
+    cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  _;
 
 	// Separate nuqtas and similar bits from bases.
 
@@ -133,13 +133,13 @@ pass(2)
 
 	// Create basic contextual forms. 
 	
-	cDualLinkIso  cDualLinkIso   >  cDualLinkIni_raw  cDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
+	csDualLinkIso  csDualLinkIso   >  csDualLinkIni_raw  csDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
 	
-	cDualLinkIso  cRightLinkIso  >  cDualLinkIni_raw  cRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
+	csDualLinkIso  csRightLinkIso  >  csDualLinkIni_raw  csRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
 		
-	cDualLinkFin  cDualLinkIso   >  cDualLinkMed_raw  cDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
+	csDualLinkFin  csDualLinkIso   >  csDualLinkMed_raw  csDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
 	
-	cDualLinkFin  cRightLinkIso  >  cDualLinkMed_raw  cRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
+	csDualLinkFin  csRightLinkIso  >  csDualLinkMed_raw  csRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
 
 endpass; // 1
 
