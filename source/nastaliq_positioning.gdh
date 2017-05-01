@@ -1546,6 +1546,18 @@ chonorificDia { collision {
 	max.y = 500m;
 } };
 
+gKharizabar {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -50m; 	// don't let them move too far to the left, away from the lam
+		max.x = 10m;	// the lam is on the right, so don't move that direction.
+		min.y = -50m;
+		max.y = 50m;
+		margin = 100m;
+	}
+} / (cLamIM gLamFin gLam) _ ;
+
 // Diacritics attached to finals - move more to the left
 cDiacriticUpper {
 	collision {
@@ -1558,18 +1570,6 @@ cDiacriticUpper {
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  c_final  cNuqtaLikeLower?  _;
-
-(cLamIM gLamFin gLam) gKharizabar {
-	collision {
-		flags = CLEAR_IGNORE(collision.flags);
-		flags = SET_FIX(collision.flags);
-		min.x = -250m;
-		max.x = 250m;
-		min.y = -300m;
-		max.y = 500m;
-		margin = 70m;
-	}
-};
 
 // Diacritics attached to bases:
 cDiacriticUpper {
