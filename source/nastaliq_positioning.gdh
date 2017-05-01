@@ -513,6 +513,7 @@ pass(3)
 #define STDMARGINWT_N2 200
 #define STDMARGIN_DIAC 200m
 #define STDMARGINWT_DIAC 400
+#define STDMARGIN_DIGIT 250m
 
 #define KERNMARGIN_TIGHT 150m
 #define KERNMARGIN_MED 300m
@@ -1396,6 +1397,26 @@ cKernPunct { minKernDelta = MINKERN * -1 };
 ///gAlef { kernPreKafNoSp = -150m };
 ///gAlefFin { kernPreKafNoSp = -80m };
 
+// Digits
+
+cDigitArabic  { kernPreZero = 0m; kernPreOne = 0m; kernPostOne = 0m };
+cDigitEastern { kernPreZero = 0m; kernPreOne = 0m; kernPostOne = 0m };
+
+gEasternSeven { kernPreZero = 125m };
+
+gOne { kernPreOne = 50m };
+gEasternOne { kernPreOne = 50m };
+gNine { kernPreOne = 50m };
+gEasternNine { kernPreOne = 50m };
+gSix { kernPreOne = 50m };
+gEasternSix { kernPreOne = 50m };
+
+gTwo { kernPostOne = 50m };
+gEasternTwo { kernPostOne = 50m };
+gThree { kernPostOne = 50m };
+gEasternThree { kernPostOne = 50m };
+
+
 endtable; // glyph
 
 
@@ -1441,6 +1462,13 @@ cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamAlef gLamI
 
 // Before a two-letter sequence:
 cKernable { pairKern = kernPreShort } / _ ^ MARKS  cKernIgnore?  c_initial MARKS  c_final;
+
+
+// Notice that with digits, which are LTR, we put the kern value on the opposite glyph, ie, the FOLLOWING
+// glyph which will be right-most when rendered.
+( gEasternZero  gZero ) { pairKern = @D.kernPreZero }   /  _  (cDigitEastern cDigitArabic)=D;
+( gEasternOne  gOne )   { pairKern = @D.kernPreOne }    /  _  (cDigitEastern cDigitArabic)=D;
+(cDigitEastern cDigitArabic) { pairKern = kernPostOne } /  _  ( gEasternOne  gOne );
 
 
 // Bogus rule that will never fire (for if we disable this pass for debugging):
@@ -1789,6 +1817,31 @@ cKernable { collision {
 
 endif;
 ******/
+
+// Digits can kern when they are next to each other.
+/***
+gEasternZero { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN_DIGIT + 130m;
+	max.x = MAXKERN; min.x = MINKERN;
+} }  /  _ gEasternSeven;
+***/
+
+cDigitArabic { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN_DIGIT + pairKern;
+	max.x = MAXKERN; min.x = MINKERN;
+} }  /  _ cDigitArabic;
+
+cDigitEastern { collision {
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = STDMARGIN_DIGIT + pairKern;
+	max.x = MAXKERN; min.x = MINKERN;
+} }  /  _ cDigitEastern;
+
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 
