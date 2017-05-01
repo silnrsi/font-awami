@@ -49,8 +49,8 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Beta3"
-FONT_FILENAME = "Awami_beta3.ttf"
+FONT_NAME = "Awami Nastaliq PreV1"
+FONT_FILENAME = "Awami_preV1.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
