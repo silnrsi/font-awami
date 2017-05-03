@@ -1784,6 +1784,9 @@ cKernable { collision {
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIM=K;
 
+// Don't kern before numbers
+cKernable  cKernIgnore?  cDigitAbsFullSize;
+
 cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1819,28 +1822,13 @@ endif;
 ******/
 
 // Digits can kern when they are next to each other.
-/***
-gEasternZero { collision {
-	flags = SET_FIX(collision.flags);
-	flags = SET_KERN(collision.flags);
-	margin = STDMARGIN_DIGIT + 130m;
-	max.x = MAXKERN; min.x = MINKERN;
-} }  /  _ gEasternSeven;
-***/
-
-cDigitArabic { collision {
+cDigitAbsFullSize { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = STDMARGIN_DIGIT + pairKern;
 	max.x = MAXKERN; min.x = MINKERN;
-} }  /  _ cDigitArabic;
+} }  /  _ cDigitAbsFullSize;
 
-cDigitEastern { collision {
-	flags = SET_FIX(collision.flags);
-	flags = SET_KERN(collision.flags);
-	margin = STDMARGIN_DIGIT + pairKern;
-	max.x = MAXKERN; min.x = MINKERN;
-} }  /  _ cDigitEastern;
 
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
