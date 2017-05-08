@@ -644,6 +644,16 @@ cNuqtaLikeUpper { collision {
 // Special case: khah + teh/theh + kaf/lam/alef
 cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
 
+// Special case: hah + teh + alef/lam
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -250m;
+	max.x = 200m;
+	min.y = -300m;
+	max.y = 300m; // don't let it pop up to the top of the alef/lam
+} } / (cJeemIM) cNuqtaLikeLower?  cDiacritic?  gBehMed  _ cDiacritic?  (cAlefFin cLamFin cLamMed);
+
+
 // Exception to special case below when there is a previous lam/kaf.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -812,7 +822,7 @@ g__hehHook_small { collision {
 	max.x = 50m;
 	min.y = -1000m;
 	max.y = 50m;
-} };
+} }  /  (c_initial c_medial)  _; // enough context to give it precedence
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeLower { collision {
