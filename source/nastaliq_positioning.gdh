@@ -32,7 +32,7 @@ cursive_attach(behFinal)
 cursive_attach(behHighTooth)
 cursive_attach(behLowTooth)
 cursive_attach2(behLowTooth, behPreFinalHehGoal)
-// Special case not handled by macro:
+// Special case not handled by macro due to attached-ring:
 c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
 	c_entr_behPreFinalHehGoal {insert=1} 
 	/ _  g__kafTop_null  g__attachedRingMid ^ _=L ;

@@ -122,6 +122,9 @@ pass(1)
         cs_nfd_noHamza=B  gHamzaAbove=H  >  @1  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
     cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  _;
 
+	// One common precomposed form:
+	gLamAlef  _  >  gLam:1  gAlef:1;
+
 	// Separate nuqtas and similar bits from bases.
 
 #include "nastaliq_separateNuqtas.gdh"
@@ -131,7 +134,7 @@ endpass;
 
 pass(2)
 
-	// Create basic contextual forms. 
+	// Create basic contextual forms.
 	
 	csDualLinkIso  csDualLinkIso   >  csDualLinkIni_raw  csDualLinkFin   /  _=B1 ^ MARKS  _=B2 ;
 	
