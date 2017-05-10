@@ -2,56 +2,16 @@
 <glyph name="absGafIni_short" format="1">
   <advance width="746"/>
   <outline>
-    <contour>
-      <point x="417" y="1891" type="curve" smooth="yes"/>
-      <point x="160" y="1705"/>
-      <point x="111" y="1667"/>
-      <point x="100" y="1498" type="curve" smooth="yes"/>
-      <point x="99" y="1480"/>
-      <point x="124" y="1458"/>
-      <point x="135" y="1473" type="curve" smooth="yes"/>
-      <point x="212" y="1573"/>
-      <point x="181" y="1526"/>
-      <point x="418" y="1700" type="curve" smooth="yes"/>
-      <point x="674" y="1889"/>
-      <point x="692" y="1927"/>
-      <point x="705" y="2102" type="curve" smooth="yes"/>
-      <point x="706" y="2119"/>
-      <point x="675" y="2144"/>
-      <point x="669" y="2127" type="curve" smooth="yes"/>
-      <point x="649" y="2072"/>
-      <point x="575" y="2005"/>
-    </contour>
-    <contour>
-      <point x="0" y="790" type="move" name="exit_lamKaf"/>
-    </contour>
-    <contour>
-      <point x="263" y="2041" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="246" y="-321" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="-90" y="1216" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="605" y="711" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="-95" y="1472" type="move" name="gafStroke"/>
-    </contour>
-    <contour>
-      <point x="714" y="1503" type="move" name="ring"/>
-    </contour>
     <component base="absKehehIni_short"/>
+    <component base="_gafStroke_shorter" xOffset="-310" yOffset="1735"/>
   </outline>
   <lib>
   <dict>
   <key>com.typemytype.robofont.mark</key>
   <array>
-    <real>0.656</real>
-    <real>1</real>
+    <real>0.967</real>
     <real>0.6</real>
+    <real>1</real>
     <real>1</real>
   </array>
   </dict>
