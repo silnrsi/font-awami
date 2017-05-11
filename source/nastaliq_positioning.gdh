@@ -1465,7 +1465,7 @@ cKernable { pairKern = kernPreAlef }  /  _ ^ MARKS  cKernIgnore? (cAlefIso);
 cKernable { pairKern = kernPreDal  }  /  _ ^ MARKS  cKernIgnore? (cDalIso);
 cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cKernIgnore? (cRehIso);
 cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cKernIgnore? (cWawIso);
-cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamAlef gLamIniAl);
+cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamIniAl);  // gLafAlef - no longer used
 
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;

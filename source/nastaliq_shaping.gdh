@@ -123,7 +123,7 @@ pass(1)
     cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  _;
 
 	// One common precomposed form:
-	gLamAlef  _  >  gLam:1  gAlef:1;
+	////gLamAlef  _  >  gLam:1  gAlef:1;
 
 	// Separate nuqtas and similar bits from bases.
 
@@ -431,7 +431,8 @@ c_preMm_alt = ( gAinIni_raw gAinMed_raw gBehIni_raw gBehMed_raw
 	gJeemIni_raw gJeemMed_raw gMeemIni_raw gMeemMed_raw gMeemMed_alt_raw
 	gSeenIni_raw gSeenMed_raw gSadIni_raw gSadMed_raw gTahIni_raw gTahMed_raw ) ;
 
-cADL_raw = (gDalFin gLamFin gLamAlefFin gAlefFin gLamMed_raw
+cADL_raw = (gDalFin gLamFin gAlefFin gLamMed_raw
+	//// gLamAlefFin - no longer used
 	//// gThalFin gDalTwoVertBelowSmallTahFin gDdalFin - no longer used
 	//gKafFin gGafFin gKafMed_raw gGafMed_raw - Sheldon says to take these out ("meem before kaf+alef/lam", 10 Feb 2016).
 );
@@ -954,7 +955,7 @@ cKafIM  _  >  @1  g__kafTop_null:1;
 // Special forms of letters
 
 g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
-g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
+////g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
 
 if (hehDoachIni == round)
 gHehDoIniQf  csQwFin_stfh  >  gHehDoIniQf_alt  csQwFin  /  _=HD  cDiacritic?  _=QW;
