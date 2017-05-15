@@ -1,0 +1,48 @@
+/*
+AwamiNastaliq-webfont-example.css
+AwamiNastaliq v1.000
+3 Jul 2017
+This file is part of Awami Nastaliq font family (http://software.sil.org/awami)
+and is Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
+with Reserved Font Names "Awami" and "SIL". This Font Software is licensed
+under the SIL Open Font License, Version 1.1. You should have received a copy
+of the license along with this Font Software. If this is not the case, go to
+(http://scripts.sil.org/OFL) for all the details including a FAQ.
+*/
+
+/* use AwamiNastaliq - Regular in .woff format */
+@font-face {
+  font-family: AwamiNastaliqRW;
+  src: url(AwamiNastaliq-Regular.woff);
+}
+
+
+/* set body to use Awami Nastaliq in .woff format */
+body {
+  font-family: AwamiNastaliqRW, sans-serif; text-align: left;
+    /* fall back to sans serif so that it's really obvious if the fonts don't load */
+}
+
+h1 {
+  font-family: AwamiNastaliqRW, sans-serif; text-align: left; font-size: 230%;
+}
+h2 {
+  font-family: AwamiNastaliqRW, sans-serif; text-align: left;font-size: 220%;
+}
+.rtl {
+  font-family: AwamiNastaliqRW, sans-serif; font-size: 200%; direction: rtl; text-align: right;
+    /* fall back to sans serif so that it's really obvious if the fonts don't load */
+}	
+.rtlb {
+  font-family: AwamiNastaliqRW, sans-serif; font-size: 200%; direction: rtl; text-align: right;
+    /* fall back to sans serif so that it's really obvious if the fonts don't load */
+}	
+.all {
+  font-family: AwamiNastaliqRW;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  font-size: 200%; direction: rtl; text-align: right;
+}
+
+	
