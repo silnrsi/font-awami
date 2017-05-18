@@ -845,10 +845,14 @@ cNuqtaLikeLower { collision {
 // Exclusion glyphs for space above kafs and gafs
 
 // For ngoeh, don't using the exclusion glyph - the nuqtas need to go right on top of the gaf.
-(cls_excludingGlyphs cls_excludingGlyphs_kern) { collision {
-	flags = CLEAR_FIX(collision.flags);
-	flags = CLEAR_KERN(collision.flags);
-} } / _  g__kafTop_null? cDot2u;
+//(cls_excludingGlyphs cls_excludingGlyphs_kern)
+(cKafIM cKafFin)
+		{ collision {
+			flags = CLEAR_FIX(collision.flags);
+			flags = CLEAR_KERN(collision.flags);
+		} } 
+	cDot2u { shift {x = 200m; y = -100m } }
+	/ _  g__kafTop_null? _;
 
 
 // There is a bug in the Graphite engine that mis-initializes the exclusion glyph that causes bugs in the
