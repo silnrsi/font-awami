@@ -1,5 +1,18 @@
 #!/usr/bin/python
-# this is a smith configuration file
+# Smith configuration file
+
+#	This file is part of the Awami Nastaliq font 
+#	(http://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
+# with Reserved Font Names "Awami" and "SIL".
+#
+# This Font Software is licensed under the SIL Open Font License,
+# Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (http://scripts.sil.org/OFL) for all the
+#	details including an FAQ.
+
 
 import glob
 
@@ -60,8 +73,6 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
 				# strip out bogus hints:
      		cmd('perl ../tools/bin/ttfstriphints.pl ${DEP} ${TGT}')
      		),
-     #source = create('temp/Awami_full.sfd',
-     #            cmd("${FFCOPYGLYPHS} -i ../DoulosSIL-R.ttf -r 21..7E -f ${SRC} ${TGT}", ['AwamiNastaliqRegular.ttf'])),
      source = "source/AwamiNastaliqRegular.ttf",
      graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
                     depends = glob.glob('*.gdh')),

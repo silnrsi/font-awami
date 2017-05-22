@@ -1,3 +1,19 @@
+# This file generates GDL code for the glyphs in a font.
+# It is a custom version that specially handles the glyph naming
+# conventions in the Awami Nastaliq font.
+
+#	This file is part of the Awami Nastaliq font 
+#	(http://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
+# with Reserved Font Names "Awami" and "SIL".
+#
+# This Font Software is licensed under the SIL Open Font License,
+# Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (http://scripts.sil.org/OFL) for all the
+#	details including an FAQ.
+
 package Font::TTF::Scripts::GDL;
 
 use Font::TTF::Font;
