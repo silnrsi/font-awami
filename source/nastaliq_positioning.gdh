@@ -1547,7 +1547,7 @@ cKafTop { collision {
 };
 
 
-if (collFix >= 2)
+if (collFix >= 3)
 
 // For special cases:
 ////cKernable {collision {
@@ -1583,6 +1583,21 @@ cDiacriticUpper {
 	};
 	////sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  / cFehIM  cNuqtaUpper  cDiacritic?  (cHehGoalMed  cMeemMed)  g__hehHook_small?  _;
+
+// Special case: lam/kaf + meem + upper diac
+cDiacriticUpper {
+	shift { x = 300m; y = -150m; };
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -200m;
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 200m;
+	};
+	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
+}  /  (cLamIM cKafIM)  g__kafTop_null?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _;
+
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);

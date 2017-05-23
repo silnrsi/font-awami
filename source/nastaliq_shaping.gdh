@@ -202,10 +202,8 @@ csMedSn = (gBehMedSn, gBehMedSn, gJeemMedSn, gSeenMedSn, gSadMedSn, gTahMedSn, g
 		gKafMedSn, gGafMedSn, gLamMedSn, gMeemMedSn, gHehGoalMedSn, gHehDoMedSn);
 csMedSd = (gBehMedSd, gBehMedSd_ss, gJeemMedSd, gSeenMedSd, gSadMedSd, gTahMedSd, gAinMedSd, gFehMedSd,
 		gKafMedSd, gGafMedSd, gLamMedSd, gMeemMedSd, gHehGoalMedSd, gHehDoMedSd);
-csMedTaF = (gBehMedTaF, gBehMedTaF_ss, gJeemMedTaF, gSeenMedTaF, gSadMedTaF, gTahMedTaF, gAinMedTaF, gFehMedTaF,
-		gKafMedTaF, gGafMedTaF, gLamMedTaF, gMeemMedTaF, gHehGoalMedTaF, gHehDoMedTaF);
-csMedTaM = (gBehMedTaM, gBehMedTaM_ss, gJeemMedTaM, gSeenMedTaM, gSadMedTaM, gTahMedTaM, gAinMedTaM, gFehMedTaM,
-		gKafMedTaM, gGafMedTaM, gLamMedTaM, gMeemMedTaM, gHehGoalMedTaM, gHehDoMedTaM);
+csMedTa = (gBehMedTa, gBehMedTa_ss, gJeemMedTa, gSeenMedTa, gSadMedTa, gTahMedTa, gAinMedTa, gFehMedTa,
+		gKafMedTa, gGafMedTa, gLamMedTa, gMeemMedTa, gHehGoalMedTa, gHehDoMedTa);
 csMedAi = (gBehMedAi, gBehMedAi_ss, gJeemMedAi, gSeenMedAi, gSadMedAi, gTahMedAi, gAinMedAi, gFehMedAi,
 		gKafMedAi, gGafMedAi, gLamMedAi, gMeemMedAi, gHehGoalMedAi, gHehDoMedAi);
 csMedFe = (gBehMedFe, gBehMedFe_ss, gJeemMedFe, gSeenMedFe, gSadMedFe, gTahMedFe, gAinMedFe, gFehMedFe,
@@ -246,15 +244,15 @@ csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, 
 		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
 		// gJeemMedBeKl uses the same intereface, but should not be included
 
-cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTaF, gBehMedTaM, gBehMedAi, gBehMedFe,
+cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTa, gBehMedAi, gBehMedFe,
 		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX);
 cBehMed_postSBe = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
 		gBehMedBy, gBehMedMmX);
-cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTaF_ss,
-		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg,
+cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
+		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg,
 		gBehMedHgF_be, gBehMedBeRe);
-cBehMed_postSiniBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTaF_ss, 
-		gBehMedTaM_ss, gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg);
+cBehMed_postSiniBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
+		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg);
 
 csIni_raw = (gBehIni_raw, gJeemIni_raw, gSeenIni_raw, gSadIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw,
 		gKafIni_raw, gGafIni_raw, gLamIni_raw, gMeemIni_raw, gHehGoalIni_raw, gHehDoIni_raw);
@@ -277,10 +275,8 @@ csIniSn = (gBehIniSn, gJeemIniSn, gSeenIniSn, gSadIniSn, gTahIniSn, gAinIniSn, g
 		gKafIniSn, gGafIniSn, gLamIniSn, gMeemIniSn, gHehGoalIniSn, gHehDoIniSn);
 csIniSd = (gBehIniSd, gJeemIniSd, gSeenIniSd, gSadIniSd, gTahIniSd, gAinIniSd, gFehIniSd,
 		gKafIniSd, gGafIniSd, gLamIniSd, gMeemIniSd, gHehGoalIniSd, gHehDoIniSd);
-csIniTaF = (gBehIniTaF, gJeemIniTaF, gSeenIniTaF, gSadIniTaF, gTahIniTaF, gAinIniTaF, gFehIniTaF,
-		gKafIniTaF, gGafIniTaF, gLamIniTaF, gMeemIniTaF, gHehGoalIniTaF, gHehDoIniTaF);
-csIniTaM = (gBehIniTaM, gJeemIniTaM, gSeenIniTaM, gSadIniTaM, gTahIniTaM, gAinIniTaM, gFehIniTaM,
-		gKafIniTaM, gGafIniTaM, gLamIniTaM, gMeemIniTaM, gHehGoalIniTaM, gHehDoIniTaM);
+csIniTa = (gBehIniTa, gJeemIniTa, gSeenIniTa, gSadIniTa, gTahIniTa, gAinIniTa, gFehIniTa,
+		gKafIniTa, gGafIniTa, gLamIniTa, gMeemIniTa, gHehGoalIniTa, gHehDoIniTa);
 csIniAi = (gBehIniAi, gJeemIniAi, gSeenIniAi, gSadIniAi, gTahIniAi, gAinIniAi, gFehIniAi,
 		gKafIniAi, gGafIniAi, gLamIniAi, gMeemIniAi, gHehGoalIniAi, gHehDoIniAi);
 csIniFe = (gBehIniFe, gJeemIniFe, gSeenIniFe, gSadIniFe, gTahIniFe, gAinIniFe, gFehIniFe,
@@ -557,8 +553,7 @@ csMed_raw  >  csMedJm	/  ^ MPRECXT  _ MARKS  (cJeemFin cJeemMed);
 csMed_raw  >  csMedRe	/  ^ MPRECXT  _ MARKS  cRehFin;
 csMed_raw  >  csMedSn	/  ^ MPRECXT  _ MARKS  (cSeenFin cSeenMed);
 csMed_raw  >  csMedSd	/  ^ MPRECXT  _ MARKS  (cSadFin cSadMed);
-csMed_raw  >  csMedTaF	/  ^ MPRECXT  _ MARKS  cTahFin;
-csMed_raw  >  csMedTaM	/  ^ MPRECXT  _ MARKS  cTahMed; 
+csMed_raw  >  csMedTa	/  ^ MPRECXT  _ MARKS  (cTahFin cTahMed);
 csMed_raw  >  csMedAi	/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 // The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
 csMed_raw  >  csMedFe	/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed c_zerojoin);
@@ -642,8 +637,7 @@ csIni_raw  >  csIniJm	/ _ MARKS  (cJeemFin cJeemMed);
 csIni_raw  >  csIniRe	/ _ MARKS  cRehFin;
 csIni_raw  >  csIniSn	/ _ MARKS  (cSeenFin cSeenMed);
 csIni_raw  >  csIniSd	/ _ MARKS  (cSadFin cSadMed);
-csIni_raw  >  csIniTaF	/ _ MARKS  cTahFin;
-csIni_raw  >  csIniTaM 	/ _ MARKS  cTahMed;
+csIni_raw  >  csIniTa	/ _ MARKS  (cTahFin cTahMed);
 csIni_raw  >  csIniAi	/ _ MARKS  (cAinFin cAinMed);
 csIni_raw  >  csIniFe	/ _ MARKS  (cFehFin cFehMed c_zerojoin);
 csIni_raw  >  csIniQf	/ _ MARKS  c_qw; // qaf, waw
