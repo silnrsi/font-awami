@@ -71,7 +71,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
 				# for removing psnames:
 				####cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
-     		cmd('perl ../tools/bin/ttfstriphints.pl ${DEP} ${TGT}')
+     		cmd('ttfstriphints ${DEP} ${TGT}') 
      		),
      source = "source/AwamiNastaliqRegular.ttf",
      graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
