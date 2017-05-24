@@ -1387,8 +1387,15 @@ cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; ins
 cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}
 	/ _=D1 ^ _=D2 {att.to==0};
 
-// Remove if we create a nuqta+smalltah glyph:
+// Not needed because we have a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
+
+// Hamzas that act like diacritics:
+cTakes_mTahUpperDia=B  cHamzaAbove {att {to=@B; at=mTahUpperS; with=hamzaUpperM} };	// tah
+cTakes_mUpperDia=B     cHamzaAbove {att {to=@B; at=mUpperS; with=hamzaUpperM} };
+cTakes_nUpperDia=B     cHamzaAbove {att {to=@B; at=nUpperS; with=hamzaUpperM} };
+cTakes_mLowerDia=B     cHamzaBelow {att {to=@B; at=mLowerS; with=hamzaLowerM} };
+cTakes_n1LowerDia=B    cHamzaBelow {att {to=@B; at=n1LowerS; with=hamzaLowerM} };
 
 
 endpass; // pos - 8 (or 4)
