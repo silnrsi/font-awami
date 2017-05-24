@@ -39,6 +39,12 @@ pass(1)
 
 #if (QUICKCOMPILE == 0)
 
+
+c_exit {att {to=@L; with=exit; at=entrance}} 
+	c_entrance {insert=1} 
+		/ _ MARKS ^ _=L ;
+
+/***
 cursive_attach(alef)
 cursive_attach(beh)
 cursive_attach(behFinal)
@@ -73,6 +79,7 @@ cursive_attach(bariyeh)
 cursive_attach(lamKaf)
 cursive_attach(qafWaw)
 cursive_attach(qafWawStfh)
+***/
 
 //  c_exit_qafWawStfh {  attach {to = @6; with = exit_qafWawStfh; at = entr_qafWawStfh; }  }  c_entr_qafWawStfh { insert = 1;  }  
 //              /  _  cNuqtaLikeLower  cNuqtaLikeUpMid  cDiacritic  cDiacritic  ^  _  ;" >
@@ -1203,32 +1210,32 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
 
-c_exit_chotiyeh {att {to=@F; with=exit_chotiyeh; at=entr_chotiyeh}}
+c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}
 	gChotiyehFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_chotiyehBfkl {att {to=@F; with=exit_chotiyehBfkl; at=entr_chotiyehBfkl}}
+c_exit_chotiyehBfkl {att {to=@F; with=exit; at=entrance}}
 	gChotiyehFin_bfkl_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 
 table(glyph)
 // Use a slightly higher AP when attaching to a short bariyeh, to save a little more space:
-c_exit_bariyeh { exit_by_alt.x = exit_bariyeh.x + 12m; exit_by_alt.y = exit_bariyeh.y + 30m };
+c_exit_bariyeh { exit_by_alt.x = exit.x + 12m; exit_by_alt.y = exit.y + 30m };
 endtable;
 
 ////c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
 ////	/  _ MARKS2N ^ _=F;
 
-c_exit_seen      {att {to=@F; with=exit_seen;      at=entr_seen}}   gSeenFin_short {passKeySlot = true; insert = 1}
+c_exit_seen      {att {to=@F; with=exit;  at=entrance}}  gSeenFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_noon      {att {to=@F; with=exit_noon;      at=entr_noon}}   gNoonFin_short {passKeySlot = true; insert = 1}
+c_exit_noon      {att {to=@F; with=exit;  at=entrance}}  gNoonFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWaw    {att {to=@F; with=exit_qafWaw;    at=entr_qafWaw}} gQafFin_short {passKeySlot = true; insert = 1}
+c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}  gQafFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWawStfh {att{to=@F;with=exit_qafWawStfh; at=entr_qafWawStfh}} gQafFin_stfh_short {passKeySlot = true; insert = 1}
+c_exit_qafWawStfh {att{to=@F; with=exit;  at=entrance}}  gQafFin_stfh_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_lamKaf     {att {to=@F; with=exit_lamKaf;   at=entr_lamKaf}} gLamFin_short {passKeySlot = true; insert = 1}
+c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}  gLamFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_meem       {att {to=@F; with=exit_meem;     at=entr_meem}}   gMeemFin_short {passKeySlot = true; insert = 1}
+c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 
 
