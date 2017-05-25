@@ -88,12 +88,14 @@ sub out_gdl
             # AWAMI
             if ($self->{'awami_names'} && (substr($pname,0,4) eq "exit" || substr($pname,0,5) eq "_exit"))
             {
-                # NOTE: Right now Awami exit APs are opposite from what we'd expect - 
+                # NOTE: Awami exit APs are opposite from what we'd expect - 
                 # the _ goes on the "stationary" glyph, which becomes "entr...".
                 if (substr($pname,0,4) eq "exit")
-                { $pname =~ s/exit/exit/; }
+                ###{ $pname =~ s/exit/exit/; }   ## separate cursive APs
+                { $pname = "exit"; }
                 else
-                { $pname =~ s/_exit/entr/; }
+                ###{ $pname =~ s/_exit/entr/; }  ## separate cursive APs
+                { $pname = "entrance"; }
             }
             else
             { $pname .= 'S' unless ($pname =~ s/^_(.*)/${1}M/o); }
@@ -157,9 +159,11 @@ sub out_classes
     my ($ligclasses) = $self->{'ligclasses'};
     my ($vecs) = $self->{'vecs'};
     my ($glyphs) = $self->{'glyphs'};
-    my ($l, $name, $count, $sep, $psname, $cl, $i, $c);
+    my ($l, $name, $name2, $count, $sep, $psname, $cl, $i, $c);
 
     $fh->print("\n\n/*-----   Classes   -----*/\n\n/* Attachment points */\n\n");
+    
+    $fh->print("c_exit = ();\nc_entrance = ();\n\n");
 
     foreach $l (sort keys %{$lists})
     {
@@ -175,7 +179,7 @@ sub out_classes
             if ($self->{'awami_names'})
             {
             	  if ( $exitAP )
-            	  { $name =~ s/exit/_exit/; } #
+            	  { $name =~ s/exit/_exit/; $name2 = "_exit"; }
             	  else
                 { $name = "Takes_$name"; }
             }
@@ -186,7 +190,10 @@ sub out_classes
         {   # diacritic
             $name =~ s/^_//o;  # remove the underscore
             if ($self->{'awami_names'})
-            { $name =~ s/exit/_entr/; }
+            {
+            	  if ( $exitAP )
+            	  { $name =~ s/exit/_entr/; $name2 = "_entrance"; }
+            }
         }
 
         $fh->print("#define HAS_c${name}Dia 1\n") if ($opts{'-defines'} && $name !~ m/^Takes/o);
@@ -206,9 +213,12 @@ sub out_classes
             { $sep = ", "; }
         }
         $fh->print(");\n\n");
+        
+        if ( $exitAP == 1 )
+        # Add exit or entrance class to the larger class.
+        { $fh->print("c${name2} += (c${name});\n\n"); }
 
         next unless defined $vecs->{$l};
-
 
         if (($self->{'awami_names'}) && ($exitAP == 1))
         { # omit "not" classes
