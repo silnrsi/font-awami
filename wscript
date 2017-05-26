@@ -66,15 +66,17 @@ FONT_NAME = "Awami Nastaliq PreV1"
 FONT_FILENAME = "Awami_preV1.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
-        # remove buggy tables:
-        cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-        # for removing psnames:
-        ####cmd('psfix -s ${DEP} ${TGT}'),
-        # strip out bogus hints:
-        cmd('ttfstriphints ${DEP} ${TGT}') 
-        ),
-    source = "source/AwamiNastaliqRegular.ttf",
-    graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
+				# remove buggy tables:
+				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
+				# for removing psnames:
+				####cmd('psfix -s ${DEP} ${TGT}'),
+				# strip out bogus hints:
+                cmd('ttfstriphints ${DEP} ${TGT}'),
+                cmd('ttfsubset ${DEP} ${TGT}'),
+                cmd('FTgrCompress ${DEP} ${TGT}')
+     		),
+     source = "source/AwamiNastaliqRegular.ttf",
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
                     depends = glob.glob('*.gdh')),
     ap = "source/AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
