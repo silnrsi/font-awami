@@ -741,61 +741,61 @@ endif; // hamzaAlt
 table(glyph)
 
 cs_behMark = (g__dot1l, g__dot2u, g__dot3u, g__smallTah, g__dot3l, g__dot2vl, g__ring__dot2u, g__dot2vu, g__dot3uD);
-cs_behRecomposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
+cs_behComposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
 
 cs_jeemMark = (
 	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow,
 	g__dot3u, gHamzaAbove);
-cs_jeemRecomposed = (
+cs_jeemComposed = (
 	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahBelow, gHahSmallTahTwoDots,
 	gHahThreeDotsAbove, gHahHamzaAbove);
 
 cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u);
-cs_seenRecomposed = (
+cs_seenComposed = (
 	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, 
 	gSeenThreeDotsBelowThreeDotsAbove);
 
 cs_sadMark = (g__dot1u, g__dot1l__dot1u);
-cs_sadRecomposed = (gDad, gDadDotBelow);
+cs_sadComposed = (gDad, gDadDotBelow);
 
 cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
-cs_fehRecomposed = (gFeh, gQaf, gFehThreeDotsBelow);
+cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow);
 
 cs_kafMark = (g__attachedRingMid, g__kafSquiggle);
-cs_kafRecomposed = (gKafRing, gArabicKaf);
+cs_kafComposed = (gKafRing, gArabicKaf);
 
 cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
-cs_gafRecomposed = (gGueh, gNgoeh, gGafRing);
+cs_gafComposed = (gGueh, gNgoeh, gGafRing);
 
 cs_noonMark = (g__dot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, g__dot1u_smallV, g__dot1u_ngMark); // g__noDot1u
-cs_noonRecomposed = (gNoon, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV, gNoonGhunna);
+cs_noonComposed = (gNoon, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV, gNoonGhunna);
 
 cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
-cs_hehGoalRecomposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
+cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
 
 cs_chotiyehMark = (g__noDot2l, g__dot2l__hamza, g__dot2l, g__dot2vl, g__dot2l__smallV, g__dot2l_tail, g__ring);
-cs_chotiyehRecomposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gYehTail, gKashmiriYeh);
+cs_chotiyehComposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gYehTail, gKashmiriYeh);
 
 ///cs_chotiyehFinMark2Dots = (g__dot2l__hamza, g__dot2l__smallV);
 ///cs_chotiyehFinMarkNoDots = (gHamzaAbove, g__smallV);
 
 ///cs_chotiyehFinMark = (g__noDot2l, g__dot2l_tail, g__ring);
-///cs_chotiyehFinRecomposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
+///cs_chotiyehFinComposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
 
 cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza, gWavyHamzaBelow, g_highHamza);
-cs_alefRecomposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
+cs_alefComposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
 	gAlefWavyHamzaBelow, gHighHamzaAlef);
 
 cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing, g__dot4u);
-cs_dalRecomposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, gDalRing, gDalFourDotsAbove);
+cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, gDalRing, gDalFourDotsAbove);
 
 cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
 	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots);
-cs_rehRecomposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
+cs_rehComposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
 	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 
 cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw);
-cs_wawRecomposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
+cs_wawComposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
 
 
 endtable; // glyph
@@ -805,22 +805,22 @@ endtable; // glyph
 
 // See also subtending rules below.
 
-gBeh		cs_behMark				>	cs_behRecomposed$2:(1 2)	_;
-gJeem		cs_jeemMark				>	cs_jeemRecomposed$2:(1 2)	_;
+gBeh		cs_behMark				>	cs_behComposed$2:(1 2)	_;
+gJeem		cs_jeemMark				>	cs_jeemComposed$2:(1 2)	_;
 gJeem								>	gHah;
-gSeen		cs_seenMark				>	cs_seenRecomposed$2:(1 2)	_;
+gSeen		cs_seenMark				>	cs_seenComposed$2:(1 2)	_;
 
 //gSad								>	gSad;
-gSad		cs_sadMark				>	cs_sadRecomposed$2:(1 2)	_;
+gSad		cs_sadMark				>	cs_sadComposed$2:(1 2)	_;
 //gTah								>	gTah;
 gTah		g__dot1u				>	gZah:(1 2)	_;
 //gAin								>	gAin;
 gAin		g__dot1u				>	gGhain:(1 2)	_;
-gFeh		cs_fehMark				>	cs_fehRecomposed$2:(1 2)	_;
+gFeh		cs_fehMark				>	cs_fehComposed$2:(1 2)	_;
 
 //gKaf								>	gKaf;
-gKaf		cs_kafMark				>	cs_kafRecomposed$2:(1 2)	_;
-gGaf		cs_gafMark				>	cs_gafRecomposed$2:(1 2)	_;
+gKaf		cs_kafMark				>	cs_kafComposed$2:(1 2)	_;
+gGaf		cs_gafMark				>	cs_gafComposed$2:(1 2)	_;
 
 // Remove squiggle from initial/medial forms.
 (cKafIni  cKafMed)  g__kafSquiggle	>	@1:(1 2)  _;
@@ -836,10 +836,10 @@ endif;
 
 //gMeem								>	gMeem;
 
-gNoon		cs_noonMark				>	cs_noonRecomposed$2:(1 2)	_;
+gNoon		cs_noonMark				>	cs_noonComposed$2:(1 2)	_;
 gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;
 
-gHehGoal	cs_hehGoalMark			>	cs_hehGoalRecomposed$2:(1 2)	_;
+gHehGoal	cs_hehGoalMark			>	cs_hehGoalComposed$2:(1 2)	_;
 
 // Remove hooks
 gHehGoalFin  g__hehHook_small  >  gHehGoalFin:(1 2)  _;
@@ -853,7 +853,7 @@ endif;
 
 //gHehDo				>	gHehDo;
 
-gChotiyeh	cs_chotiyehMark		>	cs_chotiyehRecomposed$2:(1 2)  _;
+gChotiyeh	cs_chotiyehMark		>	cs_chotiyehComposed$2:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
@@ -879,16 +879,16 @@ gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 //gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 absHamzaAbove:1;	// eventually replaced with beh + bariyeh
 
 //gAlef								>	gAlef;
-gAlef		cs_alefMark				>	cs_alefRecomposed$2:(1 2)  _;
+gAlef		cs_alefMark				>	cs_alefComposed$2:(1 2)  _;
 
 //gDal								>	gDal;
-gDal		cs_dalMark				>	cs_dalRecomposed$2:(1 2)  _;
+gDal		cs_dalMark				>	cs_dalComposed$2:(1 2)  _;
 
 //gReh								>	gReh;
-gReh		cs_rehMark				>	cs_rehRecomposed$2:(1 2)  _;
+gReh		cs_rehMark				>	cs_rehComposed$2:(1 2)  _;
 
 //gWaw								>	gWaw;
-gWaw		cs_wawMark				>	cs_wawRecomposed$2:(1 2)  _;
+gWaw		cs_wawMark				>	cs_wawComposed$2:(1 2)  _;
 
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
