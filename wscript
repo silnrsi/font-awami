@@ -66,25 +66,25 @@ FONT_NAME = "Awami Nastaliq PreV1"
 FONT_FILENAME = "Awami_preV1.ttf"
 
 font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
-				# remove buggy tables:
-				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-				# for removing psnames:
-				####cmd('psfix -s ${DEP} ${TGT}'),
-				# strip out bogus hints:
-     		cmd('ttfstriphints ${DEP} ${TGT}') 
-     		),
-     source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
+        # remove buggy tables:
+        cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
+        # for removing psnames:
+        ####cmd('psfix -s ${DEP} ${TGT}'),
+        # strip out bogus hints:
+        cmd('ttfstriphints ${DEP} ${TGT}') 
+        ),
+    source = "source/AwamiNastaliqRegular.ttf",
+    graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
                     depends = glob.glob('*.gdh')),
-     ap = "source/AwamiNastaliqRegular_AP.xml",
-     license = ofl('Awami','SIL'),
-     copyright = COPYRIGHT,
-     version = TTF_VERSION,
-     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
-     #tests = tests,
-     fret = fret(params = '-r'),  # -b = show octaboxes
-     woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
-  )
+    ap = "source/AwamiNastaliqRegular_AP.xml",
+    license = ofl('Awami','SIL'),
+    copyright = COPYRIGHT,
+    version = TTF_VERSION,
+    extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/FFcopyGlyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
+    #tests = tests,
+    fret = fret(params = '-r'),  # -b = show octaboxes
+    woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
+    )
 
 def configure(ctx) :
     ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
