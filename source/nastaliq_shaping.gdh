@@ -517,25 +517,25 @@ endtable;
 gBehIni_raw  gBehMed_raw  >  gBehIniBeM2  gBehMedHgF_be  /  _  MARKS  _  MARKS  cHehGoalFin;
 																		// \u0644\u0641\u0628\u0628\u0628\u0628\u0628\u0633
 
-(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBeM1 gSadMedBeM1) /  ^ MPRECXT  _ MARKS  cBehMed_postSmedBeM1;
-(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBe gSadMedBe)  / ^ MPRECXT  _ MARKS  cBehMed_postSBe;
+(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBeM1 gSadMedBeM1) / ^ MPRECXT  _ MARKS  cBehMed_postSmedBeM1;
+(gSeenMed_raw gSadMed_raw)  >  (gSeenMedBe gSadMedBe)     / ^ MPRECXT  _ MARKS  cBehMed_postSBe;
 
 gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
 
 // Use sad interface for rounded kafs:
-csMed_raw  >  csMedSd  /  ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKround;
+csMed_raw  >  csMedSd    / ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKround;
 
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
 
-csMed_raw  >  csMedBe     / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
-csMed_raw  >  csMedBeM1  /  ^ MPRECXT  _ MARKS  cMed_postBeM1;
+csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  cBehMed_defaultEntrance;
+csMed_raw  >  csMedBeM1  / ^ MPRECXT  _ MARKS  cMed_postBeM1;
 
-csMed_raw  >  csMedMmX  / ^ MPRECXT  _  MARKS  cMeemMed_alt;
+csMed_raw  >  csMedMmX   / ^ MPRECXT  _  MARKS  cMeemMed_alt;
 
 csMed_raw  >  csMedBeRe  / ^ MPRECXT  _ MARKS  gBehMedRe;
 csMed_raw  >  csMedBeNn  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 csMed_raw  >  csMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
-csMed_raw  >  csMedBe  / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
+csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
 
 
 gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
@@ -607,8 +607,8 @@ csIni_raw  >  csIniBeNn  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
 csIni_raw  >  csIniBeHg  /  _ MARKS  gBehMedHgF;
 
 // Special short form of tah before kaf:
-//gTahIni_raw  >  gTahIniKf /  _  MARKS  (cKafMed cKafFin); -- not implemented
-gTahIni_raw  >  gTahIniBeKf /  _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
+//gTahIni_raw  >  gTahIniKf  /  _  MARKS  (cKafMed cKafFin); -- not needed; we use a taller kaf instead
+gTahIni_raw  >  gTahIniBeKf  /  _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
 
 // SS cases handled above:
 csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
@@ -712,13 +712,10 @@ if (hamzaAlt == 1)
 
 gJeem  gHamzaAbove				>  gHah  g__hamzaArabic;	// no nuqta
 gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
-// This version of the rule takes precedence over the rules below that substitute the composed isolates:
-c_isolate  cHamzaUrdu			>  @1  cHamzaArabic;
-cHamzaUrdu  >  cHamzaArabic;
 
-(gChotiyeh gChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
-(gHehGoal gHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
-(gBariyeh gBariyehFin)		g__dot2l__hamza		>  @1  g__hamzaArabic;
+(gChotiyeh cChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
+(gHehGoal cHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
+(gBariyeh cBariyehFin)		g__dot2l__hamza		>  @1  g__hamzaArabic;
 
 cHehGoalIni  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
 if (hehGoalHook == 0)
@@ -733,70 +730,97 @@ gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 
 (cBehIni  cBehMed)  g__dot2l__hamza	>  @1  g__hamzaArabic:1;
 
+// This version of the rule takes precedence over the rules below that substitute the composed isolates
+// (an extra slot is include to ensure the precedence):
+c_isolate  cHamzaUrdu			>  @1  cHamzaArabic;
+cHamzaUrdu  >  cHamzaArabic;
+
 endif; // hamzaAlt
+
+
+table(glyph)
+
+cs_behMark = (g__dot1l, g__dot2u, g__dot3u, g__smallTah, g__dot3l, g__dot2vl, g__ring__dot2u, g__dot2vu, g__dot3uD);
+cs_behRecomposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
+
+cs_jeemMark = (
+	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow,
+	g__dot3u, gHamzaAbove);
+cs_jeemRecomposed = (
+	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahBelow, gHahSmallTahTwoDots,
+	gHahThreeDotsAbove, gHahHamzaAbove);
+
+cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u);
+cs_seenRecomposed = (
+	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, 
+	gSeenThreeDotsBelowThreeDotsAbove);
+
+cs_sadMark = (g__dot1u, g__dot1l__dot1u);
+cs_sadRecomposed = (gDad, gDadDotBelow);
+
+cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
+cs_fehRecomposed = (gFeh, gQaf, gFehThreeDotsBelow);
+
+cs_kafMark = (g__attachedRingMid, g__kafSquiggle);
+cs_kafRecomposed = (gKafRing, gArabicKaf);
+
+cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
+cs_gafRecomposed = (gGueh, gNgoeh, gGafRing);
+
+cs_noonMark = (g__dot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, g__dot1u_smallV, g__dot1u_ngMark); // g__noDot1u
+cs_noonRecomposed = (gNoon, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV, gNoonGhunna);
+
+cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
+cs_hehGoalRecomposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
+
+cs_chotiyehMark = (g__noDot2l, g__dot2l__hamza, g__dot2l, g__dot2vl, g__dot2l__smallV, g__dot2l_tail, g__ring);
+cs_chotiyehRecomposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gYehTail, gKashmiriYeh);
+
+///cs_chotiyehFinMark2Dots = (g__dot2l__hamza, g__dot2l__smallV);
+///cs_chotiyehFinMarkNoDots = (gHamzaAbove, g__smallV);
+
+///cs_chotiyehFinMark = (g__noDot2l, g__dot2l_tail, g__ring);
+///cs_chotiyehFinRecomposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
+
+cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza, gWavyHamzaBelow, g_highHamza);
+cs_alefRecomposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
+	gAlefWavyHamzaBelow, gHighHamzaAlef);
+
+cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing, g__dot4u);
+cs_dalRecomposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, gDalRing, gDalFourDotsAbove);
+
+cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
+	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots);
+cs_rehRecomposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
+	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
+
+cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw);
+cs_wawRecomposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
+
+
+endtable; // glyph
 
 // Recompose isolates.
 // These rules are the opposite of the rules in nastaliq_seqNuqtas.gdh.
 
 // See also subtending rules below.
 
-gBeh		g__dot1l				>	gBeh:(1 2)	_;
-gBeh		g__dot2u				>	gTeh:(1 2)	_;
-gBeh		g__dot3u				>	gTheh:(1 2)	_;
-gBeh		g__smallTah				>	gTteh:(1 2)	_;
-gBeh		g__dot3l				>	gPeh:(1 2)	_;
-gBeh		g__dot2vl				>	gBeeh:(1 2)	_;
-gBeh		g__ring__dot2u			>	gTehRing:(1 2)	_;
-gBeh		g__dot2vu				>	gTteheh:(1 2)  _;
-gBeh		g__dot3uD				>	gTehThreeDotsAboveDownwards:(1 2)  _;
-
-gJeem		g__dot1l				>	gJeem:(1 2)	_;
+gBeh		cs_behMark				>	cs_behRecomposed$2:(1 2)	_;
+gJeem		cs_jeemMark				>	cs_jeemRecomposed$2:(1 2)	_;
 gJeem								>	gHah;
-gJeem		g__dot1u				>	gKhah:(1 2)	_;
-gJeem		g__dot3l				>	gTcheh:(1 2)	_;
-gJeem		g__dot2vl				>	gDyeh:(1 2)	_;
-gJeem		g__dot2l				>	gNyeh:(1 2)	_;
-gJeem		g__dot4l				>	gTcheheh:(1 2)	_;
-gJeem		g__smallTahBelow		>	gHahSmallTahBelow:(1 2)  _;
-gJeem		g__smallTah2dotsBelow	>	gHahSmallTahTwoDots:(1 2)  _;
-gJeem		g__dot3u				>	gHahThreeDotsAbove:(1 2)  _;
-gJeem		gHamzaAbove				>	gHahHamzaAbove:(1 2)  _;
-
-//gSeen								>	gSeen;
-gSeen		g__dot3u				>	gSheen:(1 2)  _;
-gSeen		g__dot4u				>	gSeenFourDotsAbove:(1 2)  _;
-gSeen		g__dot1l__dot1u			>	gSeenDotBelowDotAbove:(1 2)  _;
-gSeen		g__smallTah2dots		>	gSeenSmallTahTwoDots:(1 2)  _;
-gSeen		g__dot2vu				>	gSeenTwoVertAbove:(1 2)  _;
-gSeen		g__dot3l__dot3u			>	gSeenThreeDotsBelowThreeDotsAbove:(1 2)  _;
+gSeen		cs_seenMark				>	cs_seenRecomposed$2:(1 2)	_;
 
 //gSad								>	gSad;
-gSad		g__dot1u				>	gDad:(1 2)	_;
-gSad		g__dot1l__dot1u			>	gDadDotBelow:(1 2)  _;
+gSad		cs_sadMark				>	cs_sadRecomposed$2:(1 2)	_;
 //gTah								>	gTah;
 gTah		g__dot1u				>	gZah:(1 2)	_;
 //gAin								>	gAin;
 gAin		g__dot1u				>	gGhain:(1 2)	_;
-gFeh		g__dot1u				>	gFeh:(1 2)	_;
-gFeh		g__dot2u				>	gQaf:(1 2)	_;
-gFeh		g__dot3l				>	gFehThreeDotsBelow:(1 2)  _;
+gFeh		cs_fehMark				>	cs_fehRecomposed$2:(1 2)	_;
 
 //gKaf								>	gKaf;
-
-/**
-if (debugGaf == 0)
-//gGaf								>	gGaf;
-else
-gGaf				_				>	gKafIni		g__gafStroke:1;
-//////(gGafMed0 gGafFin0)		_	>				(gKafMed_raw gKafFin)		g__gafStroke:1;
-endif;
-**/
-
-gGaf		g__dot2vl				>	gGueh:(1 2)	_;
-gGaf		g__dot2u				>	gNgoeh:(1 2)	_;
-gKaf		g__attachedRingMid		>	gKafRing:(1 2)	_;
-gGaf		g__attachedRingMid		>	gGafRing:(1 2)  _;
-gKaf		g__kafSquiggle			>	gArabicKaf:(1 2)  _;
+gKaf		cs_kafMark				>	cs_kafRecomposed$2:(1 2)	_;
+gGaf		cs_gafMark				>	cs_gafRecomposed$2:(1 2)	_;
 
 // Remove squiggle from initial/medial forms.
 (cKafIni  cKafMed)  g__kafSquiggle	>	@1:(1 2)  _;
@@ -812,20 +836,10 @@ endif;
 
 //gMeem								>	gMeem;
 
-gNoon		g__dot1u				>	gNoon:(1 2)	_;
-gNoon		g__dot1u_smallTah		>	gNoonRetro:(1 2)	_;
-gNoon		g__dot1l__dot1u			>	gNoonDotBelow:(1 2)	_;
-gNoon		g__smallTah				>	gRnoon:(1 2)	_;
-gNoon		g__dot1u_smallV			>	gNoonSmallV:(1 2)  _;
-//gNoon		g__noDot1u				>	gNoonGhunna:(1 2)  _;
-gNoon		g__dot1u_ngMark			>	gNoonGhunna:(1 2)  _;
+gNoon		cs_noonMark				>	cs_noonRecomposed$2:(1 2)	_;
+gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;
 
-gNoonFin  g__dot1u_ngMark  >  @1:(1 2)  _;
-
-gHehGoal	g__hehHook_small		>	gHehGoal:(1 2)	_;
-gHehGoal	g__hehHook__dot2u		>	gTehMarbutaGoal:(1 2)	_;
-gHehGoal	(gHamzaAbove g__hamza)	>	gHehGoalHamza:(1 2)	_;
-gHehGoal	g__hehHook__hamza		>	gHehGoalHamza:(1 2) _;
+gHehGoal	cs_hehGoalMark			>	cs_hehGoalRecomposed$2:(1 2)	_;
 
 // Remove hooks
 gHehGoalFin  g__hehHook_small  >  gHehGoalFin:(1 2)  _;
@@ -839,29 +853,22 @@ endif;
 
 //gHehDo				>	gHehDo;
 
-gChotiyeh	g__noDot2l			>	gChotiyeh:(1 2)  _;
-gChotiyeh	g__dot2l__hamza		>	gYehHamzaAbove:(1 2)  _;
-gChotiyeh	g__dot2l			>	gYeh:(1 2)  _;
-gChotiyeh	g__dot2vl			>	gArabicE:(1 2)  _;
-gChotiyeh	g__dot2l__smallV	>	gYehSmallV:(1 2)  _;
-gChotiyeh	g__dot2l_tail		>	gYehTail:(1 2)  _;
-gChotiyeh	g__ring				>	gKashmiriYeh:(1 2)  _;
+gChotiyeh	cs_chotiyehMark		>	cs_chotiyehRecomposed$2:(1 2)  _;
 
 gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
 gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 
-(cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
-(cBehIni  cBehMed)  g__noDot2l  >  @1  g__dot2l;
+cBehIM  g__noDot2l  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
+cBehIM  g__noDot2l  >  @1  g__dot2l;
 
-(cBehIni  cBehMed)  g__dot2l__hamza  >  @1  gHamzaAbove:1;
+cBehIM  g__dot2l__hamza  >  @1  gHamzaAbove:1;
 
-csChotiyehFin  g__noDot2l  			>  @1:(1 2)  _;
-csChotiyehFin  g__dot2l__hamza  	>  @1  gHamzaAbove;
-csChotiyehFin  g__dot2l__smallV		>  @1  g__smallV;
+csChotiyehFin  g__noDot2l			> 	@1:(1 2)  _;
+csChotiyehFin  g__dot2l__hamza		>	@1  gHamzaAbove;
+csChotiyehFin  g__dot2l__smallV		>	@1  g__smallV;
 
-csChotiyehFin  g__dot2l_tail  >  csYehTailFin:(1 2)  _;
-csChotiyehFin  g__ring  >  csKashmiriYehFin:(1 2)  _;
-
+csChotiyehFin  g__dot2l_tail		>	csYehTailFin:(1 2)  _;
+csChotiyehFin  g__ring				>	csKashmiriYehFin:(1 2)  _;
 
 gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
 gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
@@ -871,46 +878,19 @@ gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1;
 //gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 absHamzaAbove:1;	// eventually replaced with beh + bariyeh
 
-
 //gAlef								>	gAlef;
-gAlef		(gHamzaAbove g__hamza)	>	gAlefHamzaAbove:(1 2)  _;
-gAlef		(gHamzaBelow g__hamza)	>	gAlefHamzaBelow:(1 2)  _;
-gAlef		gMaddaAbove				>	gAlefMaddaAbove:(1 2)  _;
-gAlef		g__wavyHamza			>	gAlefWavyHamzaAbove:(1 2)  _;
-gAlef		gWavyHamzaBelow			>	gAlefWavyHamzaBelow:(1 2)  _;
-gAlef		g_highHamza				>	gHighHamzaAlef:(1 2)  _;
+gAlef		cs_alefMark				>	cs_alefRecomposed$2:(1 2)  _;
 
 //gDal								>	gDal;
-gDal		g__dot1u				>	gThal:(1 2)  _;
-gDal		g__smallTah				>	gDdal:(1 2)  _;
-gDal		g__dot1l__smallTah		>	gDalDotBelowSmallTah:(1 2)  _;
-gDal		g__dot2vl__smallTah		>	gDalTwoVertBelowSmallTah:(1 2)  _;
-gDal		g__dot1l				>	gThalDotBelow:(1 2)  _;
-gDal		g__attachedRing			>	gDalRing:(1 2)  _;
-gDal		g__dot4u				>	gDalFourDotsAbove:(1 2)  _;
+gDal		cs_dalMark				>	cs_dalRecomposed$2:(1 2)  _;
 
 //gReh								>	gReh;
-gReh		g__dot1u				>	gZain:(1 2)  _;
-gReh		g__smallTah				>	gRreh:(1 2)  _;
-gReh		g__dot3u				>	gJeh:(1 2)  _;
-gReh		g__dot1l				>	gRehDotBelow:(1 2)  _;
-gReh		g__dot1l__dot1u			>	gRehDotBelowDotAbove:(1 2)  _;
-gReh		g__dot2u				>	gRehTwoDotsAbove:(1 2)  _;
-gReh		g__attachedRing			>	gRehRing:(1 2)  _;
-gReh		g__dot4u				>	gRehFourDotsAbove:(1 2)  _;
-gReh		g__dot2vu				>	gRehTwoVertAbove:(1 2)  _;
-gReh		gHamzaAbove				>	gRehHamzaAbove:(1 2)  _;
-gReh		g__smallTah2dots		>	gRehSmallTahTwoDots:(1 2)  _;
+gReh		cs_rehMark				>	cs_rehRecomposed$2:(1 2)  _;
 
 //gWaw								>	gWaw;
-gWaw		(gHamzaAbove g__hamza)	>	gWawHamzaAbove:(1 2)  _;
-gWaw		g__attachedRingMid		>	gWawRing:(1 2)  _;
-gWaw		g__barWaw				>	gKirghizOe:(1 2)   _;
-gWaw		g__smallV				>	gOe:(1 2)  _;
-gWaw		gPeshWaw				>	gArabicU:(1 2)  _;
+gWaw		cs_wawMark				>	cs_wawRecomposed$2:(1 2)  _;
 
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
-
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
 
 if (hamzaAlt == 1)
@@ -944,7 +924,7 @@ g__dot2l_tail	>	g__dot2l;
 
 csLowerUpper  _  >  csLowerNoUpper  csUpperNoLower$1:1;
 
-endif; // small nuqtas
+endif; // no small nuqtas
 
 
 if (fullStopAlt == 1)

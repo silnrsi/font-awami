@@ -32,8 +32,8 @@ cDot3uD = (g__dot3uD, g__dot3uD_small);
 cDot4l = (g__dot4l, g__dot4l_small);
 cDot4u = (g__dot4u, g__dot4u_small);
 
-cHamzaAbove = (gHamzaAbove);
-cHamzaBelow = (gHamzaBelow, gWavyHamzaBelow);
+cHamzaAbove = (gHamzaAbove, g__wavyHamza);
+cHamzaBelow = (gHamzaBelow, gWavyHamzaBelow, gHamzaBelowArabic);
 
 
 /* Treated as European numbers by default, which is probably okay.
@@ -481,6 +481,7 @@ csHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt
 c_initial += (csHehDoIni_alt);
 
 
+cBehIM = (cBehIni cBehMed);
 cJeemIM = (cJeemIni cJeemMed);
 cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);
