@@ -60,7 +60,7 @@ sub out_gdl
         my ($ytop) = $f->{'hhea'}->read->{'Ascender'};
         my ($adv) = $f->{'hmtx'}->read->{'advance'}[$i];
         $sep = ' {';
-        foreach $p (keys %{$glyph->{'points'}})
+        foreach $p (sort keys %{$glyph->{'points'}})
         {
             my ($pname) = $p;
             my ($pt) = $glyph->{'points'}{$p};
