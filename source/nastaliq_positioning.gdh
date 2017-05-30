@@ -1485,6 +1485,10 @@ gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin
 // \u06af\u064f\u06af
 csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM csKafIM_base cKafFin);
 
+// \u06a9\u0648\u062a\u0645\u06c1\u0627
+//gWawFin { pairKern = 80m }
+//	/  _  gBehIniMm  cNuqtaLikeUpper?  gMeemMedHgM  gHehGoalMed  g__hehHook_small  cAlefFin;
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
