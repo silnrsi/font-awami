@@ -72,10 +72,11 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
 				####cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
      		cmd('ttfstriphints ${DEP} ${TGT}'),
-            cmd('ttfsubset ${DEP} ${TGT}')
+            cmd('ttfsubset -z glatinfo.txt ${DEP} ${TGT}'),
+            cmd('${GRCOMPRESS} ${DEP} ${TGT}')
      		),
      source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-v5 -D', #### -c',
                     depends = glob.glob('*.gdh')),
      ap = "source/AwamiNastaliqRegular_AP.xml",
      license = ofl('Awami','SIL'),
@@ -91,4 +92,5 @@ def configure(ctx) :
     ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
     ctx.env['FFCOPYGLYPHS'] = '../tools/bin/FFcopyGlyphs.py'
     ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
+    ctx.env['GRCOMPRESS'] = 'python ../tools/bin/ttfgrcompress.py'
 
