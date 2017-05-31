@@ -72,7 +72,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
 				####cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
      		cmd('ttfstriphints ${DEP} ${TGT}'),
-            cmd('ttfsubset -z glatinfo.txt ${DEP} ${TGT}'),
+            cmd('ttfsubset ${DEP} ${TGT}'),
             cmd('${GRCOMPRESS} ${DEP} ${TGT}')
      		),
      source = "source/AwamiNastaliqRegular.ttf",
