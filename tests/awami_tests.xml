@@ -2467,6 +2467,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
   </testgroup>
   <testgroup label="Special case positioning">
+    <test background="#55aaff" class="fset36" label="PASS 6 + 10" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="khah + teh/theh [rule 44]" rtl="True">
+      <string>سختل</string>
+    </test>
+    <test class="fset36" label="noon+small-V + gaf" rtl="True">
+      <string>ݙݩڳَر ݙݩک</string>
+    </test>
     <test background="#55aaff" class="fset36" label="PASS 8" rtl="True">
       <string/>
     </test>
@@ -2490,9 +2499,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset24" label="jeem + noon/teh/sheen [rule 31-32]" rtl="True">
       <string>جنگی  خُشکی</string>
-    </test>
-    <test class="fset36" label="khah + teh/theh [rule 44]" rtl="True">
-      <string>سختل</string>
     </test>
     <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 37-39]" rtl="True">
       <string>بکِھ یُلّھف سبگَھ </string>
