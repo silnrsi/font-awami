@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="seven.smaller" format="1">
+  <advance width="392"/>
+  <outline>
+    <contour>
+      <point x="186" y="-12" type="line" name="hr00"/>
+      <point x="144" y="-12" type="line"/>
+      <point x="299" y="455" type="line"/>
+      <point x="158" y="455" type="line"/>
+      <point x="125" y="455"/>
+      <point x="86" y="444"/>
+      <point x="62" y="425"/>
+      <point x="49" y="404"/>
+      <point x="44" y="392" type="qcurve"/>
+      <point x="32" y="397" type="line"/>
+      <point x="82" y="519" type="line"/>
+      <point x="360" y="519" type="line"/>
+      <point x="360" y="505" type="line"/>
+    </contour>
+    <contour>
+      <point x="1" y="0" type="move" name="_digit"/>
+    </contour>
+    <contour>
+      <point x="393" y="0" type="move" name="digit"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+  <array>
+    <real>0.656</real>
+    <real>1</real>
+    <real>0.6</real>
+    <real>1</real>
+  </array>
+  <key>com.adobe.type.autohint</key>
+  <data>
+  <hintSetList>
+    <hintset pointTag="hr00">
+      <hstem pos="-3" width="-9" />
+      <hstem pos="455" width="64" />
+    </hintset>
+  </hintSetList>
+  </data>
+  </dict>
+  </lib>
+</glyph>
