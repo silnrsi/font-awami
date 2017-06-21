@@ -920,9 +920,14 @@ g__noDot2l		>	g__dot2l;
 g__dot2l_tail	>	g__dot2l;
 
 
+// Wider beh forms for teh-ring:
+
+csBehNoRing  g__ring__dot2u  _  >  csBehTehRing  g__attachedRing  g__dot2u$1:1;
+
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
 csLowerUpper  _  >  csLowerNoUpper  csUpperNoLower$1:1;
+
 
 endif; // no small nuqtas
 

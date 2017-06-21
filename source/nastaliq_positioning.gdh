@@ -879,12 +879,12 @@ cNuqtaLikeLower { collision {
 
 // For ngoeh, don't using the exclusion glyph - the nuqtas need to go right on top of the gaf.
 //(cls_excludingGlyphs cls_excludingGlyphs_kern)
-(cKafIM cKafFin)
+cKafNoIso
 		{ collision {
 			flags = CLEAR_FIX(collision.flags);
 			flags = CLEAR_KERN(collision.flags);
 		} } 
-	cDot2u { shift {x = 200m; y = -100m } }
+	cDot2u { shift { x = 200m; y = -100m } }
 	/ _  g__kafTop_null? _;
 
 
@@ -1042,6 +1042,12 @@ pass(5)
 
 // Kaf-top collision fixing/prevention and tall sequences
 
+// Special case: alef-madda + kaf/gaf + final-heh-goal/beh/tah/feh - make kaf tall so alef-madda can squeeze in
+csKafIni_medium  g__kafTop_null
+	>  csKafIni_base$K  csKafIni_top_taller$K
+	/  gAlefMaddaAbove  _=K  _=T  MARKS (gHehGoalFin gBehFin_bfkl gTahFin gFehFin);
+
+
 // Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
@@ -1066,6 +1072,11 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 (g__dot1u_smallVKf g__dot1u_smallV)  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper?  _=K  _=T;
+
+// Tall: alef + diac + kaf
+cDiacriticUpper  csKafIni_medium  g__kafTop_null  
+	>  @D STAYBELOWKAF  csKafIni_base$K  csKafMed_top_tall$K
+	/  (gAlef cAlefFin)  _=D  _=K  _=T;
 
 // Don't change: single-nuqta + single-nuqta + kaf (eg, \u0628\u0650\u0646\u0650\u0646\u06AF\u064E\u06A9\u06C1)
 cDot1u  cDot1u  csKafMed_medium  g__kafTop_null  
@@ -1156,6 +1167,9 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
+// Like rule below, but don't move ngoeh nuqtas down so far, because (a) they are already pushed down a bit,
+// (b) they don't always get collision-fixed, and (c) the diagonal stroke of the gaf sticks up anyway.
+cNuqtaLikeUpper { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
 cNuqtaLikeUpper { shift.y = -250m; collision.margin -= 50m } / _ { position.y > PUSHDOWN };
@@ -1214,9 +1228,9 @@ endtable;
 
 // ngoeh nuqtas
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
-	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
+	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}
-	cNuqtaUpper { shift.x = @T.nDelta;  collision.flags = SET_FIX(collision.flags) };
+	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
 
 // rings
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
@@ -1501,7 +1515,7 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt  gAlefFin;
 
 // \u06af\u064f\u06af
-csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} (cKafIM csKafIM_base cKafFin);
+csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 
 // \u06a9\u0648\u062a\u0645\u06c1\u0627
 //gWawFin { pairKern = 80m }
@@ -1523,8 +1537,11 @@ cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamIniAl);  /
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
 
+gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  (cKafIni csKafIni_base cKafIso)
+	[MARKS  ANY]?;  // superfluous slots to increase precedence over two-letter sequence rule below
+
 // Before a two-letter sequence:
-cKernable { pairKern = kernPreShort } / _ ^ MARKS  cKernIgnore?  c_initial MARKS  c_final;
+cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  c_initial MARKS  c_final;
 
 
 // Notice that with digits, which are LTR, we put the kern value on the opposite glyph, ie, the FOLLOWING
@@ -1634,6 +1651,20 @@ cDiacriticUpper {
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  (cLamIM cKafIM)  g__kafTop_null?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _;
 
+
+// Special case: upper diacritic before kaf cannot move very far left; in fact, shift it right
+// Eg: \u0628\u06BE\u0627\u065E\u06AF\u06C1
+cDiacriticUpper {
+	shift.x = -200m;
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -100m; // less than normal
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 200m;  // less than normal
+		// don't bother with sequence attributes
+} }  /  (c_final c_medial c_isolate) _  (cKafNoIso cKafIso);	
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
