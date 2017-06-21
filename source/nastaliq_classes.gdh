@@ -267,7 +267,7 @@ cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefW
 				gAlefMaddaAbove);
 cAlefFin = (gAlefFin, gAlefFin_lm);
 
-cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gThalDotBelow, 
+cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, 
 	gDalRing, gDalFourDotsAbove);
 cDalFin = (gDalFin);
 
@@ -325,7 +325,7 @@ cs_nfc_hamza   = (gYehHamzaAbove, gHehGoalHamza);		// hamza-yay, hay-hamza
 cBehIni = ( gBehIni gBehIniBeM1 gBehIniBeM2 gBehIniJm gBehIniRe gBehIniSn gBehIniSd 
     gBehIniTa gBehIniAi gBehIniFe gBehIniQf gBehIniMm gBehIniNn 
     gBehIniHgF gBehIniHgM gBehIniHd gBehIniCh gBehIniBy gBehIniBe gBehIniBeRe 
-    gBehIniBeNn gBehIniMmX gBehIniMmM ) ;
+    gBehIniBeNn gBehIniMmX ) ;  // cBehIniMmM
 cJeemIni = ( gJeemIni gJeemIniBeM1 gJeemIniBeF gJeemIniBeM2 gJeemIniJm gJeemIniRe 
     gJeemIniSn gJeemIniSd gJeemIniTa gJeemIniAi gJeemIniFe gJeemIniQf 
     gJeemIniMm gJeemIniNn gJeemIniHgF gJeemIniHgM gJeemIniHd gJeemIniCh gJeemIniBy 
@@ -656,16 +656,16 @@ csKafIni_top_taller = (
 	g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller,
 	g__kafIniTop_taller, g__kafIniTop_taller, g__kafTop_m_bogus,/*jm*/ g__kafIniTop_taller, g__kafIniTop_taller,
 	g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller,
-	g__kafIniTop_taller, g__kafTop_m_bogus,/*mm*/ g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller,
-	g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller,
-	g__kafTop_m_bogus,/*by*/
+	g__kafTop_m_bogus,/*mm*/ g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller,
+	g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafIniTop_taller, g__kafTop_m_bogus,/*by*/
+
 	g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller,
 	g__gafIniTop_taller, g__gafIniTop_taller, g__kafTop_m_bogus,/*jm*/ g__gafIniTop_taller, g__gafIniTop_taller,
 	g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller,
-	g__gafIniTop_taller, g__kafTop_m_bogus,/*mm*/ g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, 
-	g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller,
-	g__kafTop_m_bogus/*by*/
+	g__kafTop_m_bogus,/*mm*/ g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller,
+	g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__gafIniTop_taller, g__kafTop_m_bogus/*by*/
 );
+
 
 csKafMed_top_tall = (
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, 	// Be,BeM1,BeM2,BeRe,BeNn
@@ -821,9 +821,9 @@ gGafFin {collexclude.glyph = g__kaf_exclude};
 
 
 // Teh-ring alternate forms:
-csBehNoRing = (gBehIniHd, gBehIniMmM, gBehMedHd, gBehMedJm, gBehMedMm, gBehMedMmX,
+csBehNoRing = (gBehIniHd, gBehMedHd, gBehMedJm, gBehMedMm, gBehMedMmX,
 	gBehMedNn, gBehMedNn_hgbm, gBehMedSn);
-csBehTehRing = (gBehIniHdR, gBehIniMmMR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
+csBehTehRing = (gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
 	gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR);
 
 endtable;  // glyph

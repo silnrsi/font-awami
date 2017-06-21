@@ -1,5 +1,5 @@
 /*
-    Glyph information for font Awami Nastaliq at Wed Jun 21 12:18:08 2017
+    Glyph information for font Awami Nastaliq at Wed Jun 21 13:32:16 2017
 */
 
 table(glyph) {MUnits = 2048};
@@ -935,7 +935,7 @@ gDalFourDotsAbove = glyphid(928) {honorificS = point(-460m, 2531m); kernBbLeftS 
 gDalRing = glyphid(929) {honorificS = point(-43m, 1633m); kernBbLeftS = point(103m, 185m); mLowerS = point(365m, -513m); mUpperS = point(308m, 1355m)};
 gDalTwoVertBelowSmallTah = glyphid(930) {honorificS = point(-173m, 2134m); kernBbLeftS = point(103m, 243m); kernBbRightS = point(721m, 551m); mLowerS = point(400m, -1234m); mUpperS = point(403m, 2282m)};
 gThal = glyphid(931) {honorificS = point(-170m, 1919m); kernBbLeftS = point(103m, 215m); kernBbRightS = point(715m, 537m); mLowerS = point(384m, -288m); mUpperS = point(384m, 1970m)};
-gThalDotBelow = glyphid(932) {honorificS = point(-89m, 1642m); kernBbLeftS = point(103m, 210m); kernBbRightS = point(715m, 583m); mLowerS = point(389m, -913m); mUpperS = point(384m, 1363m)};
+gDalDotBelow = glyphid(932) {honorificS = point(-89m, 1642m); kernBbLeftS = point(103m, 210m); kernBbRightS = point(715m, 583m); mLowerS = point(389m, -913m); mUpperS = point(384m, 1363m)};
 gDdal = glyphid(933) {honorificS = point(-173m, 2431m); kernBbLeftS = point(103m, 225m); kernBbRightS = point(715m, 583m); mLowerS = point(419m, -300m); mUpperS = point(419m, 2270m)};
 gDalFin = glyphid(934) {entrance = point(708m, 806m); honorificS = point(-11m, 1312m); kernBbLeftS = point(138m, 216m); mLowerS = point(493m, -320m); mUpperS = point(595m, 1306m); n1LowerS = point(507m, -305m); nUpLowS = point(-53m, 226m); nUpperS = point(607m, 1296m); ringS = point(423m, 89m); tahUpperS = point(590m, 1290m)};
 gWaw = glyphid(935) {barS = point(484m, 143m); hamzaUpperS = point(475m, 1318m); honorificS = point(14m, 1323m); mLowerS = point(358m, -320m); mUpperS = point(512m, 1312m)};
@@ -5203,7 +5203,7 @@ cTakes_honorificDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaAbo
     gArabicKaf, gKafRing, gGaf, gGueh, gNgoeh, gKafFin, gGafFin, gGafRing,
     gMeem, gMeemFin, gNoon, gNoonDotBelow, gRnoon, gNoonFin, gNoonGhunna, gNoonRetro,
     gNoonRing, gNoonSmallV, gNoonGhunnaFin, gHehDo, gHehDoFin, gDal, gDalDotBelowSmallTah, gDalFourDotsAbove,
-    gDalRing, gDalTwoVertBelowSmallTah, gThal, gThalDotBelow, gDdal, gDalFin, gWaw, gWawHamzaAbove,
+    gDalRing, gDalTwoVertBelowSmallTah, gThal, gDalDotBelow, gDdal, gDalFin, gWaw, gWawHamzaAbove,
     gWawRing, gArabicU, gOe, gKirghizOe, gWawFin, gWawFin_stfh, gReh, gZain,
     gJeh, gRreh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove, gRehRing,
     gRehSmallTahTwoDots, gRehTwoVertAbove, gRehFin, gRehFin_hgM, gRehFin_jkl, gRehFin_sshg, gTah, gZah,
@@ -5605,7 +5605,7 @@ cnTakes_kafTop_bjDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0
     g__kafIniTop_taller, g__gafIniTop_taller);
 
 cTakes_kernBbLeftDia = (gAlefMaddaAbove, gBariyehFin, gGhain, gDal, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalRing, gDalTwoVertBelowSmallTah,
-    gThal, gThalDotBelow, gDdal, gDalFin, gReh, gZain, gJeh, gRreh,
+    gThal, gDalDotBelow, gDdal, gDalFin, gReh, gZain, gJeh, gRreh,
     gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove, gRehRing, gRehSmallTahTwoDots, gRehTwoVertAbove,
     gRehFin, gRehFin_hgM, gRehFin_jkl, gRehFin_sshg, gTah, gZah, gTahFin, gTehMarbuta,
     gTehMarbutaGoal);
@@ -5771,7 +5771,7 @@ cTakes_kernBbRightDia = (gAlefMaddaAbove, gFehThreeDotsBelow, gQaf, gSeenDotBelo
     gGafIni, gGafIniAi, gGafIniBe, gGafIniBeHg, gGafIniBeM1, gGafIniBeM2, gGafIniBeNn, gGafIniBeRe,
     gGafIniBy, gGafIniCh, gGafIniFe, gGafIniHd, gGafIniHgF, gGafIniHgM, gGafIniJm, gGafIniKf,
     gGafIniMm, gGafIniMmX, gGafIniNn, gGafIniQf, gGafIniRe, gGafIniSd, gGafIniDk, gGafIniSn,
-    gGafIniTa, gGafMedBeRe, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalTwoVertBelowSmallTah, gThal, gThalDotBelow, gDdal,
+    gGafIniTa, gGafMedBeRe, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalTwoVertBelowSmallTah, gThal, gDalDotBelow, gDdal,
     gZain, gJeh, gRreh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove,
     gRehSmallTahTwoDots, gRehTwoVertAbove, gTehMarbuta, gTehMarbutaGoal, gKafIniAi_base, gKafIniBe_base, gKafIniBeHg_base, gKafIniBeM1_base,
     gKafIniBeM2_base, gKafIniBeNn_base, gKafIniBeRe_base, gKafIniBy_base, gKafIniCh_base, gKafIniFe_base, gKafIniHd_base, gKafIniHgF_base,
@@ -5866,7 +5866,7 @@ cTakes_mLowerDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaBelow,
     gKaf, gArabicKaf, gKafRing, gGaf, gGueh, gNgoeh, gKafFin, gGafFin,
     gGafRing, gMeem, gNoon, gNoonDotBelow, gRnoon, gNoonFin, gNoonGhunna, gNoonRetro,
     gNoonRing, gNoonSmallV, gNoonGhunnaFin, gHehDo, gHehDoFin, gDal, gDalDotBelowSmallTah, gDalFourDotsAbove,
-    gDalRing, gDalTwoVertBelowSmallTah, gThal, gThalDotBelow, gDdal, gDalFin, gWaw, gWawHamzaAbove,
+    gDalRing, gDalTwoVertBelowSmallTah, gThal, gDalDotBelow, gDdal, gDalFin, gWaw, gWawHamzaAbove,
     gWawRing, gArabicU, gOe, gKirghizOe, gWawFin, gWawFin_stfh, gReh, gZain,
     gJeh, gRreh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove, gRehRing,
     gRehSmallTahTwoDots, gRehTwoVertAbove, gRehFin, gRehFin_hgM, gRehFin_jkl, gRehFin_sshg, gTah, gZah,
@@ -6117,7 +6117,7 @@ cTakes_mUpperDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaAbove,
     gKaf, gArabicKaf, gKafRing, gGaf, gGueh, gNgoeh, gKafFin, gGafFin,
     gGafRing, g__gafStroke_long, g__gafStroke, gMeem, gMeemFin, gNoon, gNoonDotBelow, gRnoon,
     gNoonFin, gNoonGhunna, gNoonRetro, gNoonRing, gNoonSmallV, gNoonGhunnaFin, gHehDo, gHehDoFin,
-    gDal, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalRing, gDalTwoVertBelowSmallTah, gThal, gThalDotBelow, gDdal,
+    gDal, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalRing, gDalTwoVertBelowSmallTah, gThal, gDalDotBelow, gDdal,
     gDalFin, gWaw, gWawHamzaAbove, gWawRing, gArabicU, gOe, gKirghizOe, gWawFin,
     gWawFin_stfh, gReh, gZain, gJeh, gRreh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove,
     gRehFourDotsAbove, gRehHamzaAbove, gRehRing, gRehSmallTahTwoDots, gRehTwoVertAbove, gRehFin, gRehFin_hgM, gRehFin_jkl,
