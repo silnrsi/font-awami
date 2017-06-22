@@ -71,12 +71,12 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
 				# for removing psnames:
 				####cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
-                cmd('ttfstriphints ${DEP} ${TGT}'),
-                cmd('ttfsubset ${DEP} ${TGT}'),
-                cmd('FTgrCompress ${DEP} ${TGT}')
+				cmd('ttfstriphints ${DEP} ${TGT}'),
+				cmd('ttfsubset ${DEP} ${TGT}'),
+        cmd('psfcompressgr ${DEP} ${TGT}')
      		),
      source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D', ##### -c',
+     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D',  ##### -c',
                     depends = glob.glob('*.gdh')),
     ap = "source/AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
