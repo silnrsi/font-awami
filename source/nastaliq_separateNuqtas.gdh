@@ -18,49 +18,24 @@
 */
 
 
-gBeh				_	>	gBeh:1		g__dot1l:1;
-gTeh				_	>	gBeh:1		g__dot2u:1;
-gTheh				_	>	gBeh:1		g__dot3u:1;
-gTteh				_	>	gBeh:1		g__smallTah:1;
-gPeh				_	>	gBeh:1		g__dot3l:1;
-gBeeh				_	>	gBeh:1		g__dot2vl:1;
-gTehRing			_	>	gBeh:1		g__ring__dot2u:1;
-gTteheh				_	>	gBeh:1		g__dot2vu:1;
-gTehThreeDotsAboveDownwards  _
-						>	gBeh:1		g__dot3uD:1;
+cs_behComposed		_	>	gBeh:1		cs_behMark$1:1;
 
-gJeem				_	>	gJeem:1		g__dot1l:1;
 gHah  					>	gJeem;
-gKhah				_	>	gJeem:1		g__dot1u:1;
-gTcheh				_	>	gJeem:1		g__dot3l:1;
-gDyeh				_	>	gJeem:1		g__dot2vl:1;
-gNyeh				_	>	gJeem:1		g__dot2l:1;
-gTcheheh			_	>	gJeem:1		g__dot4l:1;
-gHahSmallTahBelow	_	>	gJeem:1		g__smallTahBelow:1;
-gHahSmallTahTwoDots	_	>	gJeem:1		g__smallTah2dotsBelow:1;
-gHahThreeDotsAbove	_	>	gJeem:1		g__dot3u:1;
-gHahHamzaAbove		_	>	gJeem:1		gHamzaAbove:1;
-
+cs_jeemComposed		_	>	gJeem:1		cs_jeemMark$1:1;
 
 //gSeen					>	gSeen;
-gSheen				_	>	gSeen:1		g__dot3u:1;
-gSeenFourDotsAbove	_	>	gSeen:1		g__dot4u:1;
-gSeenDotBelowDotAbove _	>	gSeen:1		g__dot1l__dot1u:1;
-gSeenSmallTahTwoDots  _	>	gSeen:1		g__smallTah2dots:1;
-gSeenTwoVertAbove	_	>	gSeen:1		g__dot2vu:1;
-gSeenThreeDotsBelowThreeDotsAbove _
-						>	gSeen:1		g__dot3l__dot3u:1;
+cs_seenComposed		_	>	gSeen:1		cs_seenMark$1:1;
 
 //gSad					>	gSad;
-gDad				_	>	gSad:1		g__dot1u:1;
-gDadDotBelow		_	>	gSad:1		g__dot1l__dot1u:1;
+cs_sadComposed		_	>	gSad:1		cs_sadMark$1:1;
+
 //gTah					>	gTah;
 gZah				_	>	gTah:1		g__dot1u:1;
+
 //gAin					>	gAin;
 gGhain				_	>	gAin:1		g__dot1u:1;
-gFeh				_	>	gFeh:1		g__dot1u:1;
-gQaf				_	>	gFeh:1		g__dot2u:1;
-gFehThreeDotsBelow	_	>	gFeh:1		g__dot3l:1;
+
+cs_fehComposed		_	>	gFeh:1		cs_fehMark$1:1;
 
 /***
 if (debugGaf == 0)
@@ -71,13 +46,9 @@ gGaf				_	>	gKafIni		g__gafStroke:1;
 endif;
 ***/
 
-
-gKaf					>	gKaf;
-gGueh				_	>	gGaf	g__dot2vl:1;
-gNgoeh				_	>	gGaf	g__dot2u:1;
-gKafRing			_	>	gKaf	g__attachedRingMid:1;
-gGafRing			_	>	gGaf	g__attachedRingMid:1;
-gArabicKaf			_	>	gKaf	g__kafSquiggle:1;
+//gKaf					>	gKaf;
+cs_kafComposed		_	>	gKaf:1		cs_kafMark$1:1;
+cs_gafComposed		_	>	gGaf:1		cs_gafMark$1:1;
 
 //gLam					>	gLam;
 gLamBar				_	>	gLam		g__bar:1;
@@ -85,12 +56,7 @@ gLamSmallV			_	>	gLam		g__smallV:1;
 
 //gMeem					>	gMeem;
 
-gNoon				_	>	gNoon:1		g__dot1u:1;
-gNoonGhunna			_	>	gNoon:1		g__dot1u_ngMark:1;
-gNoonRetro			_	>   gNoon:1		g__dot1u_smallTah:1;
-gNoonDotBelow		_	>	gNoon:1		g__dot1l__dot1u:1;
-gRnoon				_	>   gNoon:1		g__smallTah:1;
-gNoonSmallV			_	>	gNoon:1		g__dot1u_smallV:1;
+cs_noonComposed		_	>	gNoon:1		cs_noonMark$1:1;
 
 gHehGoal			_	>	gHehGoal:1	g__hehHook_small:1;
 gHehGoalHamza		_	>	gHehGoal:1	g__hehHook__hamza:1;
@@ -99,61 +65,29 @@ gHeh				_	>	gHehGoal:1	g__hehHook_small:1;
 
 //gHehDo				>	gHehDo;
 
-gChotiyeh			_	>	gChotiyeh:1		g__noDot2l:1;
-gYehHamzaAbove		_	>	gChotiyeh:1		g__dot2l__hamza:1;
-gYeh				_	>	gChotiyeh:1		g__dot2l:1;
-gArabicE			_	>	gChotiyeh:1		g__dot2vl:1;
-gYehSmallV			_	>	gChotiyeh:1		g__dot2l__smallV:1;
-gYehTail			_	>	gChotiyeh:1		g__dot2l_tail:1;
-gKashmiriYeh		_	>	gChotiyeh:1		g__ring:1;
+cs_chotiyehComposed	_	>	gChotiyeh:1	cs_chotiyehMark$1:1;
 
 
 // Bariyeh is officially right-link only, but in strange situations when it 
 // occurs word medially it is rendered as a beh?
 
-gBariyeh			_	>	gBariyeh:1		g__noDot2l:1;
-gBariyehHamza		_	>	gBariyeh:1		g__dot2l__hamza:1;
+gBariyeh			_	>	gBariyeh:1	g__noDot2l:1;
+gBariyehHamza		_	>	gBariyeh:1	g__dot2l__hamza:1;
 
 
 // Right-link
 
 //gAlef					>	gAlef;
-gAlefHamzaAbove		_	>	gAlef		gHamzaAbove:1;
-gAlefHamzaBelow		_	>	gAlef		gHamzaBelow:1;
-gAlefMaddaAbove		_	>	gAlef		gMaddaAbove:1;
-gAlefWavyHamzaAbove	_	>	gAlef		g__wavyHamza:1;
-gAlefWavyHamzaBelow	_	>	gAlef		gWavyHamzaBelow:1;
-gHighHamzaAlef		_	>	gAlef		g_highHamza:1;
+cs_alefComposed		_	>	gAlef:1		cs_alefMark$1:1;
 
 //gDal					>	gDal;
-gThal				_	>	gDal		g__dot1u:1;
-gDdal				_	>	gDal		g__smallTah:1;
-gDalDotBelowSmallTah _	>	gDal		g__dot1l__smallTah:1;
-gDalTwoVertBelowSmallTah
-					_	>	gDal		g__dot2vl__smallTah:1;
-gDalDotBelow		_	>	gDal		g__dot1l:1;
-gDalRing			_	>	gDal		g__attachedRing:1;
-gDalFourDotsAbove	_	>	gDal		g__dot4u:1;
+cs_dalComposed		_	>	gDal:1		cs_dalMark$1:1;
 
 //gReh					>	gReh;
-gZain				_	>	gReh		g__dot1u:1;
-gRreh				_	>	gReh		g__smallTah:1;
-gJeh				_	>	gReh		g__dot3u:1;
-gRehDotBelow		_	>	gReh		g__dot1l:1;
-gRehDotBelowDotAbove _	>	gReh		g__dot1l__dot1u:1;
-gRehTwoDotsAbove	_	>	gReh		g__dot2u:1;
-gRehRing			_	>	gReh		g__attachedRing:1;
-gRehFourDotsAbove	_	>	gReh		g__dot4u:1;
-gRehTwoVertAbove	_	>	gReh		g__dot2vu:1;
-gRehHamzaAbove		_	>	gReh		gHamzaAbove:1;
-gRehSmallTahTwoDots	_	>	gReh		g__smallTah2dots:1;
+cs_rehComposed		_	>	gReh:1		cs_rehMark$1:1;
 
 //gWaw					>	gWaw;
-gWawHamzaAbove		_	>	gWaw		gHamzaAbove:1;
-gWawRing			_	>	gWaw		g__attachedRingMid:1;
-gKirghizOe			_	>	gWaw		g__barWaw:1;
-gOe					_	>	gWaw		g__smallV:1;
-gArabicU			_	>	gWaw		gPeshWaw:1;
+cs_wawComposed		_	>	gWaw:1		cs_wawMark$1:1;
 
 gTehMarbutaGoal		_	>	gTehMarbutaGoal	g__dot2u:1;
 

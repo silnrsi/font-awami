@@ -738,70 +738,8 @@ cHamzaUrdu  >  cHamzaArabic;
 endif; // hamzaAlt
 
 
-table(glyph)
-
-cs_behMark = (g__dot1l, g__dot2u, g__dot3u, g__smallTah, g__dot3l, g__dot2vl, g__ring__dot2u, g__dot2vu, g__dot3uD);
-cs_behComposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
-
-cs_jeemMark = (
-	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow,
-	g__dot3u, gHamzaAbove);
-cs_jeemComposed = (
-	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahBelow, gHahSmallTahTwoDots,
-	gHahThreeDotsAbove, gHahHamzaAbove);
-
-cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u);
-cs_seenComposed = (
-	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, 
-	gSeenThreeDotsBelowThreeDotsAbove);
-
-cs_sadMark = (g__dot1u, g__dot1l__dot1u);
-cs_sadComposed = (gDad, gDadDotBelow);
-
-cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
-cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow);
-
-cs_kafMark = (g__attachedRingMid, g__kafSquiggle);
-cs_kafComposed = (gKafRing, gArabicKaf);
-
-cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
-cs_gafComposed = (gGueh, gNgoeh, gGafRing);
-
-cs_noonMark = (g__dot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, g__dot1u_smallV, g__dot1u_ngMark); // g__noDot1u
-cs_noonComposed = (gNoon, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV, gNoonGhunna);
-
-cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
-cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
-
-cs_chotiyehMark = (g__noDot2l, g__dot2l__hamza, g__dot2l, g__dot2vl, g__dot2l__smallV, g__dot2l_tail, g__ring);
-cs_chotiyehComposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gYehTail, gKashmiriYeh);
-
-///cs_chotiyehFinMark2Dots = (g__dot2l__hamza, g__dot2l__smallV);
-///cs_chotiyehFinMarkNoDots = (gHamzaAbove, g__smallV);
-
-///cs_chotiyehFinMark = (g__noDot2l, g__dot2l_tail, g__ring);
-///cs_chotiyehFinComposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
-
-cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza, gWavyHamzaBelow, g_highHamza);
-cs_alefComposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
-	gAlefWavyHamzaBelow, gHighHamzaAlef);
-
-cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing, g__dot4u);
-cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, gDalRing, gDalFourDotsAbove);
-
-cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
-	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots);
-cs_rehComposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
-	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
-
-cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw);
-cs_wawComposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
-
-
-endtable; // glyph
-
 // Recompose isolates.
-// These rules are the opposite of the rules in nastaliq_seqNuqtas.gdh.
+// These rules are the opposite of the rules in nastaliq_separateNuqtas.gdh.
 
 // See also subtending rules below.
 

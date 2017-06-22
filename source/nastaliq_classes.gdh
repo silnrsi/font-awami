@@ -74,7 +74,7 @@ cKafTopAltHt = ( g__kafIniTop_taller, g__kafIniTop_short, g__kafIniTop_shorter,
 
 cKafTop = (g__kafTop_null, cKafTopAltHt, g__kafTop_m_bogus);
 
-// Vertical difference in height of kaf tops:
+// Vertical difference in height of kaf tops (for adjusting ngoeh nuqtas):
 g__kafIniTop_taller { ktDelta = 250m };
 g__gafIniTop_taller { ktDelta = 250m };
 g__kafIniTop_short { ktDelta = -150m };
@@ -96,6 +96,7 @@ g__gafMedTop_medshort { ktDelta = 0m };
 g__kafTop_m_bogus {ktDelta = 0m };
 g__kafTop_null {ktDelta = 0m };
 
+// General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic,
 	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw,
 	g__wavyHamza, g__dot2l__hamza,
@@ -117,8 +118,8 @@ cNuqtaLikeSecond = (cNuqtaLikeUpMid,
 	// these can come second when you have a gueh with an alternate height top:
 	cDot2vl);
 
-
 cNuqtaLikeLowerTall = (cDot2vl, cDot3l, cDot4l, g__smallTahBelow, g__smallTah2dotsBelow);
+
 
 // Diacritics
 // Note: hamzas are nuqta-like, not diacritics
@@ -179,6 +180,7 @@ cMark234l = (cMark2l);
 cMark34 = (cMark3 cMark4);
 cMark2l_1234u = (cMark2l, cMark1234u);
 
+
 cShowInvBoxes = (g_wordJoiner, g_paragraphSeparator, g_lineSeparator, g_zeroWidthNoBreakSpaceShowInv,
 	g_narrowNoBreakSpace,
 	g_leftToRightIsolate_alt, g_rightToLeftIsolate_alt, g_firstStrongIsolate_alt, g_popDirectionalIsolate_alt);
@@ -189,6 +191,20 @@ cEmbedMarkers = (g_leftToRightMark, g_rightToLeftMark,
 	g_leftToRightIsolate, g_rightToLeftIsolate, g_firstStrongIsolate, g_popDirectionalIsolate);
 
 
+//-------------------------------------------------------------------------------------------
+//
+// NFD > NFC
+//
+
+// TODO: add more characters here: waw, alef...
+cs_nfd_noHamza = (gChotiyeh, gHehGoal);		// chotiyah, goal-hay
+cs_nfc_hamza   = (gYehHamzaAbove, gHehGoalHamza);		// hamza-yay, hay-hamza
+
+
+//-------------------------------------------------------------------------------------------
+//
+// Contextual shaping classes
+//
 // The "raw" forms indicate that initial/medial processing has not been done yet.
 
 gBehIni_raw = pseudo(postscript("absBehIni"));
@@ -309,18 +325,10 @@ csRightLinkIso = (	c_zerojoin,	gAlef,		gDal,		gReh,		gWaw		gTehMarbuta		gTehMarb
 csRightLinkFin = (	c_zerojoin,	gAlefFin,	gDalFin,	gRehFin,	gWawFin		gTehMarbutaFin	gTehMarbutaGoalFin,
 	gTehMarbutaFin);
 
-
-// NFD > NFC
-
-// TODO: add more characters here: waw, alef...
-cs_nfd_noHamza = (gChotiyeh, gHehGoal);		// chotiyah, goal-hay
-cs_nfc_hamza   = (gYehHamzaAbove, gHehGoalHamza);		// hamza-yay, hay-hamza
-
-
 // Basic classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
 
-// Classes of initials and medials
+// General (non-subsitution) classes of initials and medials
 
 cBehIni = ( gBehIni gBehIniBeM1 gBehIniBeM2 gBehIniJm gBehIniRe gBehIniSn gBehIniSd 
     gBehIniTa gBehIniAi gBehIniFe gBehIniQf gBehIniMm gBehIniNn 
@@ -438,6 +446,8 @@ cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
     gHehDoMedBeHg gHehDoMedMmX ) ;
 
 
+// Nastaliq-specific shaping
+
 c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss 
 	gBehMedQf_ss gBehMedHgF_be ) ;
 
@@ -493,8 +503,10 @@ cKafIM = (cKafIni cKafMed);
 //cKafNoIso = (cKafIM cKafFin csKafIM_base); -- see below
 cTahIM = (cTahIni cTahMed);
 
-
+//-------------------------------------------------------------------------------------------
+//
 // Kaf/gaf height adjustments
+//
 
 csGafIni_medium = (
 	gGafIniBe, gGafIniBeM1, gGafIniBeM2, gGafIniBeRe, gGafIniBeNn, gGafIniBeHg,
@@ -723,6 +735,73 @@ cKaf_top = (csKafIM_top_short, csKafIM_top_shorter, csKafIni_top_taller, csKafMe
 csKafRound_medium = (gKafIni, gGafIni, gKafMed, gGafMed);
 csKafRound_short = (gKafIni_short, gGafIni_short, gKafMed_short, gGafMed_short);
 
+//-------------------------------------------------------------------------------------------
+//
+// Isolate decomposing/recomposing
+//
+
+cs_behMark = (g__dot1l, g__dot2u, g__dot3u, g__smallTah, g__dot3l, g__dot2vl, g__ring__dot2u, g__dot2vu, g__dot3uD);
+cs_behComposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
+
+cs_jeemMark = (
+	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow,
+	g__dot3u, gHamzaAbove);
+cs_jeemComposed = (
+	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahBelow, gHahSmallTahTwoDots,
+	gHahThreeDotsAbove, gHahHamzaAbove);
+
+cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u);
+cs_seenComposed = (
+	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, 
+	gSeenThreeDotsBelowThreeDotsAbove);
+
+cs_sadMark = (g__dot1u, g__dot1l__dot1u);
+cs_sadComposed = (gDad, gDadDotBelow);
+
+cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
+cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow);
+
+cs_kafMark = (g__attachedRingMid, g__kafSquiggle);
+cs_kafComposed = (gKafRing, gArabicKaf);
+
+cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
+cs_gafComposed = (gGueh, gNgoeh, gGafRing);
+
+cs_noonMark = (g__dot1u, g__dot1u_ngMark, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, g__dot1u_smallV); // g__noDot1u
+cs_noonComposed = (gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV);
+
+cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
+cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
+
+cs_chotiyehMark = (g__noDot2l, g__dot2l__hamza, g__dot2l, g__dot2vl, g__dot2l__smallV, g__dot2l_tail, g__ring);
+cs_chotiyehComposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gYehTail, gKashmiriYeh);
+
+///cs_chotiyehFinMark2Dots = (g__dot2l__hamza, g__dot2l__smallV);
+///cs_chotiyehFinMarkNoDots = (gHamzaAbove, g__smallV);
+
+///cs_chotiyehFinMark = (g__noDot2l, g__dot2l_tail, g__ring);
+///cs_chotiyehFinComposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
+
+cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza, gWavyHamzaBelow, g_highHamza);
+cs_alefComposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
+	gAlefWavyHamzaBelow, gHighHamzaAlef);
+
+cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing, g__dot4u);
+cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, gDalRing, gDalFourDotsAbove);
+
+cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
+	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots);
+cs_rehComposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
+	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
+
+cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw);
+cs_wawComposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
+
+
+//-------------------------------------------------------------------------------------------
+//
+// Other stuff
+//
 
 cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah);
 cNuqtaUpperSmall = (cDot1u, cDot2u);
