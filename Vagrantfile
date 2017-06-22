@@ -1,7 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 # Vagrant file config to get the latest smith & friends
-# and to compile the grcompiler from trunk via a provisionning script.
+# put this in your project folder along with the provision.sh file referenced below.
+# last tested to work with vagrant version 1.9.5
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -14,14 +15,12 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
-
-  config.vm.hostname = "smith.local"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-   config.vm.box_check_update = true 
+  config.vm.box_check_update = true
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -37,32 +36,27 @@ Vagrant.configure(2) do |config|
   # your network.
   # config.vm.network "public_network"
 
-  # If true, then any SSH connections made will enable agent forwarding.
-  # Default value: false
-  config.ssh.forward_agent = true
-
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "smith-manual", "/usr/share/doc/smith-common/"
-
+  config.vm.synced_folder ".", "/smith", type: "virtualbox"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-     # Display the VirtualBox GUI when booting the machine
-     vb.gui = false  
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = false 
 
-     # Customize the amount of memory on the VM:
-     vb.memory = "2064"
+    # Customize the amount of memory on the VM:
+    vb.memory = "2024"
 
-     # Customize the amount of CPUs allocated:
-     vb.cpus = 2
+    # Customize the amount of CPUs allocated:
+    vb.cpus = 2
 
-     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
   end
   #
@@ -76,25 +70,40 @@ Vagrant.configure(2) do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
+  # config.ssh.forward_x11 = true
+
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-   config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+
+    # uncomment if you need to tweak colours 
+    # export VAGRANT_NO_COLOR="true"
+    
+    # turning off some automated apt-related stuff 
+    sudo systemctl stop apt-daily.service # disable run when system boot
+    sudo systemctl disable apt-daily.service # disable run when system boot
+    sudo systemctl stop apt-daily.timer   # disable timer run 
+    sudo systemctl disable apt-daily.timer   # disable timer run 
+
+    sleep 5 
 
     lsb_release -d
 
     cat /etc/apt/sources.list
 
-    sudo apt-get update -y -q
-    sudo apt-get upgrade -y -q
+    sudo dpkg-reconfigure locales -f noninteractive -p critical
 
-    sudo apt-get install -y -q less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion
+    sudo apt-get update -y -q
+    sudo apt-get upgrade -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
+
+    sudo apt-get install -q -y less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion software-properties-common
 
     SHELL
 
-  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+    config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # install and configure the smith-specific components
-  config.vm.provision :shell, :path => "provision.sh"
+    config.vm.provision :shell, :path => "provision.sh"
 
 end

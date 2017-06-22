@@ -1,61 +1,116 @@
 #!/usr/bin/env bash
-# A provisioning script to get the latest smith & friends
-# and to compile graphite from source 
+# A provisioning script for Vagrant to make it easier to get the latest smith & friends from the PPAs and/or source
+# This is designed to be called by the Vagrantfile. It expect to be in the same directory by default but if you want you can move it to tools/provision.sh and adjust the path in Vagrantfile. 
+
 
 export DEBIAN_FRONTEND=noninteractive
-
 set -e -o pipefail
 
-echo "Installing smith & friends (from the package repositories)"
+
+echo " "
+echo " "
+echo "Installing smith & friends"
+echo " "
 echo " "
 
 
-# this PPA is the production one
-sudo add-apt-repository -s -y ppa:silnrsi/smith 
+# the official smith PPA
+add-apt-repository -s -y ppa:silnrsi/smith
 
 # the official fontforge PPA
-sudo add-apt-repository -s -y ppa:fontforge/fontforge 
+add-apt-repository -s -y ppa:fontforge/fontforge
 
-apt-get update -y  
+# the TexLive 2016 backports PPA
+add-apt-repository ppa:jonathonf/texlive-2016
 
-sudo apt-get install -y smith fontforge 
+apt-get update -y -q
+apt-get upgrade -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
 
 
-echo "removing previous builds folder (if any)" 
+# toolchain components currently built from source
+
+
+# checking if we already have local checkouts 
+if [ -d /usr/local/builds/ ]
+then
+    echo "you already have previous builds, it's easier to delete them and start afresh."
+    rm -rf /usr/local/builds
+fi
+
+mkdir -p /usr/local/builds
+
+# graphite
+echo " "
+echo " "
+echo "Installing graphite from source"
+echo " "
 echo " "
 
-rm -rf ~/builds
+apt-get install asciidoc autotools-dev bsdmainutils build-essential cmake cmake-data cpp cpp-5 dblatex debhelper dh-exec dh-strip-nondeterminism docbook-xml docbook-xsl doxygen dpkg-dev fontconfig fontconfig-config fonts-dejavu-core fonttools g++ g++-5 gcc gcc-5 gettext graphviz groff-base intltool-debian libarchive-zip-perl libarchive13 libasan2 libatomic1 libavahi-client3 libavahi-common-data libavahi-common3 libblas-common libblas3 libc-dev-bin libc6-dev libcairo2 libcc1-0 libcdt5 libcgraph6 libcilkrts5 libclang1-3.6 libcroco3 libcups2 libcupsfilters1 libcupsimage2 libcurl3 libdatrie1 libfile-stripnondeterminism-perl libfontconfig1 libgcc-5-dev libgd3 libgfortran3 libgomp1 libgs9 libgs9-common libgvc6 libgvpr2 libharfbuzz-icu0 libharfbuzz0b libice6 libijs-0.35 libisl15 libitm1 libjbig0 libjbig2dec0 libjpeg-turbo8 libjpeg8 libjsoncpp1 libkpathsea6 liblapack3 liblcms2-2 libllvm3.6v5 liblsan0 libltdl7 libmpc3 libmpx0 libobjc-5-dev libobjc4 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpaper-utils libpaper1 libpathplan4 libpipeline1 libpixman-1-0 libpoppler58 libpotrace0 libptexenc1 libquadmath0 libsm6 libstdc++-5-dev libsynctex1 libtexlua52 libtexluajit2 libthai-data libthai0 libtiff5 libtimedate-perl libtsan0 libubsan0 libunistring0 libvpx3 libx11-6 libx11-data libxau6 libxaw7 libxcb-render0 libxcb-shm0 libxcb1 libxdmcp6 libxext6 libxi6 libxml2-utils libxmu6 libxpm4 libxrender1 libxslt1.1 libxt6 libzzip-0-13 linux-libc-dev make man-db po-debconf poppler-data preview-latex-style python-apt python-numpy sgml-data t1utils tex-common texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-recommended texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-math-extra texlive-pictures x11-common xdg-utils xsltproc libfreetype6-dev libfreetype6 -y -q
 
-echo "Creating builds folder"
-echo " "
-
-mkdir ~/builds
-cd ~/builds
-
-
-echo "Installing Graphite from source"
-echo " "
-
-sudo apt-get build-dep graphite2 -y 
-
+cd /usr/local/builds
 git clone https://github.com/silnrsi/graphite.git
-
 cd graphite
 mkdir build
 cd build
 cmake ..
 make
-sudo make install 
+make install
+ldconfig 
 
 
 echo " "
-echo "Done!" 
+echo " "
+echo "Installing Graphite-enabled HarfBuzz from source (with introspection)"
+echo " "
+apt-get install build-essential cmake gcc g++ libfreetype6-dev libglib2.0-dev libcairo2-dev automake libtool pkg-config ragel gtk-doc-tools -y -q
+apt-get install libgirepository1.0-dev python-gi -y -q
+cd /usr/local/builds
+git clone https://github.com/behdad/harfbuzz.git
+cd harfbuzz
+./autogen.sh --with-graphite2 --with-gobject --enable-introspection
+make
+make install
+cp ./src/*.typelib /usr/lib/`uname -i`-linux-gnu/girepository-1.0/
+ldconfig 
+
+
+
+# toolchain components installed from packages (both main repositories and PPAs)
+
+
+# smith itself 
+echo " "
+echo " "
+echo "Installing smith (downloading the dependencies will take a few minutes)"
+echo " "
+echo " "
+
+apt-get install smith -y -q
+
+echo " "
+echo "Done!"
 echo "smith & friends are now ready to use:"
 echo " "
-echo "type \"vagrant ssh\" to log into the VM"
-echo "type \"cd /vagrant\" to go to your shared work folder seen from smith and launch the smith commands"
+echo "version of core components:"
+echo " "
+echo "Smith: "
+apt-cache show smith | grep Version: 
+apt-cache show fontforge | grep Version: 
+hb-view --version
+echo " "
 echo " "
 
-
+echo "To go to the shared folder to run smith commands on your project, type:" 
+echo " "
+echo "vagrant ssh"
+echo "cd /smith"
+echo "smith distclean"
+echo "smith configure"
+echo "smith build"
+echo "smith alltests"
+echo "smith pdf"
+echo "smith zip"
+echo " "
 
 
