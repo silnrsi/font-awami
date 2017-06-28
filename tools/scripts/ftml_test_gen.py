@@ -11,19 +11,23 @@ def run():
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
     #mode = "allbasecharforms"   # all forms of all letters
-    #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
-    mode = "basic_alldiac"      # same characters as basicforms, with every diac
-    #mode = "allbase_somediac"
-    #mode = "alldiac"  # not implemented???
+    mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
+    #mode = "basic_alldiac"      # same characters as basicforms, with every diac
+    #mode = "allbase_somediac"   # not implemented
+    #mode = "alldiac"            # not implemented???
     
     fontScale = "200"
     #fontScale = "100"  # for waterfall file
     
     outputFilename = outputPath + "test_" + mode + ".xml"
- 
+
+    # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
+    # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
     basicSeq = generate_basic_sequences(mode)
     print "basicSeq =", basicSeq
-    
+
+    # Either add additional sequences to handle non-basic characters, or substitute non-basic characters for some
+    # of the basic ones.
     expandedSeq = expand_sequences(mode, basicSeq)
     print "expandedSeq =", expandedSeq
     
@@ -49,12 +53,13 @@ def generate_basic_sequences(mode) :
     
     (dualSubs, rightSubs) = _generate_sub_sequences()
     
-    # For debugging:
-    """dualConnecting = ["sad"]
+    # DEBUGGING:
+    """dualConnecting = ["beh", "lam"]
     rightConnecting = ["dal", "chotiyeh"]
     dualSubs = []
     rightSubs = []
     """
+
     
     sequences = []
     for dualChar1 in dualConnecting :
@@ -62,7 +67,7 @@ def generate_basic_sequences(mode) :
         
         seconds = []
         for dualChar2 in dualConnecting :
-            uniple = (dualChar1, dualChar2)  # NONE is a kludge to force a tuple
+            uniple = (dualChar1, dualChar2)
             seconds.append((uniple, "both", dualChar2))
             
         for dualList in dualSubs :
@@ -126,7 +131,7 @@ def _generate_sub_sequences() :
 
 
 def expand_sequences(mode, basicSequences) :
-    
+
     # Put the extra forms in the reverse order, since they always get added right after
     # the basic form.
     if mode == "basicforms" :
@@ -154,7 +159,7 @@ def expand_sequences(mode, basicSequences) :
                                         # gafRing - not needed for Nastaliq
             "lam"       :   ["lamSmallV", "lamBar"],
             "noon"      :   ["rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
-            "chotiyeh"  :   ["arabicE", "yehHamza"],
+            "chotiyeh"  :   ["arabicE", "yehSmallV", "yehHamza"],
             "hehGoal"   :   ["hehHamza", "arabicHeh"],
                 
             "reh"       :   ["reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot", "rehDotBelow", "jeh", "rreh", "zain"],
@@ -164,10 +169,9 @@ def expand_sequences(mode, basicSequences) :
             "tehMarGoal" :  ["hehYeh", "tehMarbuta"]
         }
         expand_left = {  # initial/medial forms of letters that have different finals
-            "beh"       :   ["rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "arabicEIM", "yehHamzaIM", "chotiyehIM"],
+            "beh"       :   ["rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
             "feh"       :   ["qafIM"]
         }
-        
         # Debugging:
         """expand = { "jeem" : ["khah", "hah"], "seen" : ["sheen"] }
         expand_left = { "beh" :   ["noonIM", "chotiyehIM"], }
@@ -180,10 +184,16 @@ def expand_sequences(mode, basicSequences) :
         expand_left = {}
 
     resultSeq = basicSequences
-    
+
     if mode == "allbasechars" :
         for key, expandList in expand.iteritems() :
             reverseList = _reverse_list(expandList)
+            """if key in expand_left.keys() :
+                reverseList_left = expand_left[key]
+                print 'reverseList_left =',reverseList_left
+                reverseList.extend(reverseList_left)
+                print 'reverseList = ', reverseList
+            """
             resultSeq = _substitute_bases(resultSeq, key, reverseList)
             
     else :
@@ -294,7 +304,9 @@ def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
 # end of _expand_one_char
 
 
-# Substitute an "expand" form for the basic form.
+# Substitute an "expand" form for the basic form of the key.
+# For instance, one item might be (('jeem', 'lam'), 'both', 'lam') which will be displayed under  'lam' key.
+# This might substitute (('jeem', 'lamBar'), 'both', 'lam').
 def _substitute_bases(sequences, key, expandList) :
     
     subList = [key] + expandList
@@ -444,6 +456,8 @@ def output_ftml(mode, fontScale, filename, sequences) :
     write_xml_closing(f)
     f.close()
 
+    print "\nOutput written to file: " + filename
+
 
 def write_one_sequence(f, seq) :
     
@@ -590,6 +604,8 @@ def _char_name_to_usv(charName) :
             "chotiyehIM":   '06CC',
             "yehHamza"  :   '0626',
             "yehHamzaIM":   '0626',
+            "yehSmallV" :   '06CE',
+            "yehSmallVIM" : '06CE',   
             "arabicE"   :   '06D0',
             "arabicEIM" :   '06D0',
         "bariyeh"       :   '06D2',
@@ -646,16 +662,17 @@ def _group_name_format(charName) :
         "peh"           :   ('02d',     'Peh form',     2, 2),
         "tteheh"        :   ('02e',     'Tteheh form',  2, 2),
         "beeh"          :   ('02f',     'Beeh form',    2, 2),
-        "tehRing"       :   ('02g',     'Teh with ring form',             2, 2),
-        "teh3down"      :   ('02h',     "Teh with 3 dots downward",       2, 2),
-        "noonIM"        :   ('02i0',     'Noon initial/medial form',       0, 2),
-        "noonGhunnaIM"  :   ('02i1',    'Noon-ghunna form',               0, 2),
-        "noonRetroIM"   :   ('02i2',    'Noon-retro initial/medial form', 0, 2),
-        "noonDotBelowIM":   ('02i3',    'Noon-dot-below form',            0, 2),
-        "rnoonIM"       :   ('02i4',    'Rnoon initial/medial form',      0, 2),
-        "chotiyehIM"    :   ('02j0',    'Chotiyeh initial/medial form',   0, 2),
-        "yehHamzaIM"    :   ('02j1',    'Yeh-hamza initial/medial form',  0, 2),
-        "arabicEIM"     :   ('02j2',    'Arabic E initial/medial form',   0, 2),
+        "tehRing"       :   ('02g',     'Teh with ring form',                   2, 2),
+        "teh3down"      :   ('02h',     'Teh with 3 dots downward',             2, 2),
+        "noonIM"        :   ('02i0',    'Noon initial/medial form',             0, 2),
+        "noonGhunnaIM"  :   ('02i1',    'Noon-ghunna form',                     0, 2),
+        "noonRetroIM"   :   ('02i2',    'Noon-retro initial/medial form',       0, 2),
+        "noonDotBelowIM":   ('02i3',    'Noon-dot-below form',                  0, 2),
+        "rnoonIM"       :   ('02i4',    'Rnoon initial/medial form',            0, 2),
+        "chotiyehIM"    :   ('02j0',    'Chotiyeh initial/medial form',         0, 2),
+        "yehHamzaIM"    :   ('02j1',    'Yeh-hamza initial/medial form',        0, 2),
+        "yehSmallVIM"   :   ('02j2',    'Yeh with small V initial/medial form', 0, 2),
+        "arabicEIM"     :   ('02j3',    'Arabic E initial/medial form',         0, 2),
         
         "jeem"          :   ('03',      'Jeem form',    2, 2),
         "hah"           :   ('03a',     'Hah form',     2, 2),
@@ -744,7 +761,8 @@ def _group_name_format(charName) :
        
         "chotiyeh"      :   ('22',      'Chotiyeh form',      2, 0),
         "yehHamza"      :   ('22a',     'Yeh-hamza form',     2, 0),
-        "arabicE"       :   ('22b',     'Arabic E form',      2, 0),
+        "yehSmallV"     :   ('22b',     'Yeh-small-V form',   2,  0),
+        "arabicE"       :   ('22c',     'Arabic E form',      2, 0),
 
         "bariyeh"       :   ('23',      'Bariyeh form',       2, 0),
             
@@ -805,7 +823,7 @@ def write_xml_header(f, mode, fontScale) :
     f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
     f.write('    <description>' + title + '</description>\n')
     f.write('    <fontscale>' + fontScale + '</fontscale>\n')
-    f.write('    <fontsrc>local(\'Awami Nastaliq Beta2\'), url(Awami_beta2.ttf)</fontsrc>\n')
+    f.write('    <fontsrc>local(\'Awami Nastaliq PreV1\'), url(Awami_preV1.ttf)</fontsrc>\n')
     f.write('    <title>' + title + '</title>\n')
     f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
     f.write('  </head>\n')
