@@ -18,7 +18,7 @@ import glob
 
 # set the default output folders
 out="results"
-DOCDIR="documentation"
+DOCDIR = ["documentation", "web"]
 OUTDIR="installers"
 ZIPDIR="releases"
 TESTDIR='tests'
@@ -63,9 +63,9 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
 FONT_NAME = "Awami Nastaliq PreV1"
-FONT_FILENAME = "Awami_preV1.ttf"
+FONT_FILENAME = "Awami_preV1"
 
-font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('Regular')),
+font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
 				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
 				# for removing psnames:
@@ -85,7 +85,7 @@ font(target = process(FONT_FILENAME, name(FONT_NAME, lang='en-US', subfamily=('R
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
     fret = fret(params = '-r'),  # -b = show octaboxes
-    woff = woff(params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
+    woff = woff('web/' + FONT_FILENAME + '.woff', params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
     )
 
 def configure(ctx) :
