@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Awami-WOFF-metadata.html
-Awami Nastaliq Beta3
+Awami Nastaliq
 This file is part of Awami font family (http://software.sil.org/awami/)
 and is Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
 with Reserved Font Names "Awami" and "SIL". This Font Software is licensed
@@ -24,20 +24,16 @@ of the license along with this Font Software. If this is not the case, go to
     </credits>
     <description>
         <text lang="en">
-			This file provides detailed information on the Awami Nastaliq font software. 
-			This information should be distributed along with the Awami Nastaliq font 
-			and any derivative works.
+			Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of 
+      languages of Southwest Asia, including but not limited to Urdu. This font is aimed 
+      at minority language support. This makes it unique among Nastaliq fonts.
 
-      We are currently working on a Nastaliq-style font which will be called 
-      Awami Nastaliq.
+      Awami means "of the people", "of the common population" or "public". 
 
-      Awami means "of the people", "of the common population" or "public". It is 
-      intended to be a font that can be used by a wide variety of languages of
-      Pakistan, including but not limited to Urdu.
-
-      The font does not cover the full Unicode Arabic repertoire. It only 
-      supports characters known to be used by languages in areas of the world using 
-      the Nastaliq style of Arabic script.
+      The Awami Nastaliq font does not provide complete coverage of all the characters 
+      defined in Unicode for Arabic script. Because the font style is specifically 
+      intended for languages using the Nastaliq style of southwest Asia, the character 
+      set for this font is aimed at those languages.
 
       This font makes use of state-of-the-art font technologies to support complex 
       typographic issues. Font smarts have been implemented using  Graphite only. We have 
@@ -46,11 +42,21 @@ of the license along with this Font Software. If this is not the case, go to
       One font from this typeface family is included in this release:
 
            * Awami Nastaliq Regular
-
       
       ChangeLog
       ----------
       (This should list both major and minor changes, most recent first.)
+      2017-Jul-7 (SIL NRSI team) Awami Nastaliq Version 1.000
+      - Adjusted spacing issues between some characters
+      - Adjusted anchors on many glyphs
+      - Adjusted digit kerning
+      - Adjusted design of Kafs/Gafs/Lams
+      - Adjusted meem connections
+      - Fixed hamza combining marks to attach properly
+      - Fixed font compression problems on OSX
+      - Changed design of U+061B
+      - Changed design of initial and medial U+067C 
+
       2017-Apr-11 (SIL NRSI team) Awami Nastaliq Beta3
       - Changed angle of vertical strokes on alef, lam, kaf, gaf, and tah forms
       - Increased the line height by 20%
@@ -88,8 +94,6 @@ of the license along with this Font Software. If this is not the case, go to
       2016-Aug-1 (SIL NRSI team) Awami Nastaliq Beta1
       - Beta1 release based on Alpha2 feedback
       - Additional characters and features added
-
-
       
       2016-May-16 (SIL NRSI team) Awami Nastaliq Alpha2
       - Alpha2 release based on Alpha1 feedback
@@ -101,13 +105,12 @@ of the license along with this Font Software. If this is not the case, go to
       2014-Sep-10 (SIL NRSI team) Awami Nastaliq Preliminary work
       - Preliminary design of isolate characters
 
-
 		</text>
     </description>
     <license url="http://scripts.sil.org/OFL"
              id="org.sil.ofl.1.1">
         <text lang="en">
-			Copyright (c) 2014, SIL International (http://scripts.sil.org), 
+			Copyright (c) 2014-2017, SIL International (http://scripts.sil.org), 
       with Reserved Font Names 'Awami' and 'SIL'.
       
       This Font Software is licensed under the SIL Open Font License, Version 1.1.

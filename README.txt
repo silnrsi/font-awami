@@ -5,23 +5,20 @@ Awami Nastaliq font
 Thank you for your interest in the Awami Nastaliq font.
 We hope you find it useful!
 
-The Awami Nastaliq font does not contain complete coverage of all the 
-characters defined in Unicode for Arabic script. The font is 
-intended to contain all the characters required for use by languages 
-which use this Nastaliq-style. 
+Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of 
+languages of Southwest Asia, including but not limited to Urdu. This font is aimed 
+at minority language support. This makes it unique among Nastaliq fonts.
 
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide 
-variety of languages of Southwest Asia, including but not limited to 
-Urdu. This font is aimed at minority language support. This makes it 
-unique among Nastaliq fonts. It does not contain complete coverage of 
-all the characters defined in Unicode for Arabic script. However, it
-should contain all the characters required for languages using this 
-style. 
+Awami means "of the people", "of the common population" or "public". 
 
-Font smarts are implemented using only the Graphite technology. A 
-number of glyph variations are accessible through font features available 
-via the Graphite technology. This font does not use the OpenType
-technology.
+The Awami Nastaliq font does not provide complete coverage of all the characters 
+defined in Unicode for Arabic script. Because the font style is specifically 
+intended for languages using the Nastaliq style of southwest Asia, the character 
+set for this font is aimed at those languages.
+
+This font makes use of state-of-the-art font technologies to support complex 
+typographic issues. Font smarts have been implemented using  Graphite only. We have 
+no current plans to support OpenType.
 
 Awami Nastaliq is released under the SIL Open Font License.
 Awami is a trademark of SIL International.

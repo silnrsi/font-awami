@@ -9,16 +9,16 @@ and any derivative works.
 Basic Font Information
 ----------------------
 
-We are currently working on a Nastaliq-style font which will be called 
-Awami Nastaliq.
+Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of 
+languages of Southwest Asia, including but not limited to Urdu. This font is aimed 
+at minority language support. This makes it unique among Nastaliq fonts.
 
-Awami means "of the people", "of the common population" or "public". It is 
-intended to be a font that can be used by a wide variety of languages of
-Pakistan, including but not limited to Urdu.
+Awami means "of the people", "of the common population" or "public". 
 
-The font does not cover the full Unicode Arabic repertoire. It only 
-supports characters known to be used by languages in areas of the world using 
-the Nastaliq style of Arabic script.
+The Awami Nastaliq font does not provide complete coverage of all the characters 
+defined in Unicode for Arabic script. Because the font style is specifically 
+intended for languages using the Nastaliq style of southwest Asia, the character 
+set for this font is aimed at those languages.
 
 This font makes use of state-of-the-art font technologies to support complex 
 typographic issues. Font smarts have been implemented using  Graphite only. We have 
@@ -28,9 +28,22 @@ One font from this typeface family is included in this release:
 
      * Awami Nastaliq Regular
 
+For detailed documentation see the contents of the 'documentation' folder.
+
 ChangeLog
 ---------
 (This should list both major and minor changes, most recent first.)
+
+2017-Jul-7 (SIL NRSI team) Awami Nastaliq Version 1.000
+- Adjusted spacing issues between some characters
+- Adjusted anchors on many glyphs
+- Adjusted digit kerning
+- Adjusted design of Kafs/Gafs/Lams
+- Adjusted meem connections
+- Fixed hamza combining marks to attach properly
+- Fixed font compression problems on OSX
+- Changed design of U+061B
+- Changed design of initial and medial U+067C 
 
 2017-Apr-11 (SIL NRSI team) Awami Nastaliq Beta3
 - Changed angle of vertical strokes on alef, lam, kaf, gaf, and tah forms
@@ -48,6 +61,7 @@ ChangeLog
 - Adjust size of spaces to match rescaling that happened in beta-2 version
 - Fixed bugs in hamza feature
 - Cleaned up positions of diacritics
+
 2016-Dec-7 (SIL NRSI team) Awami Nastaliq Beta2
 - Increased font size by 15%
 - Redesigned seen forms
@@ -86,12 +100,12 @@ be sure to add your name (N), email (E), web-address (W) and description
 (D). This list is sorted by last name in alphabetical order.)
 
 N: Peter Martin
-E: http://scripts.sil.org/support
+E: fonts@sil.org
 W: http://scripts.sil.org/
 D: Lead Designer
 
 N: Sharon Correll
-E: http://scripts.sil.org/support
+E: fonts@sil.org
 W: http://scripts.sil.org/
 D: Graphite code and build support
 
