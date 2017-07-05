@@ -388,7 +388,9 @@ cBehMed = ( gBehMed gBehMedBeM1 gBehMedBeF gBehMedBeM2 gBehMedJm gBehMedRe
     gBehMedSn gBehMedSd gBehMedTa gBehMedAi gBehMedFe gBehMedQf 
     gBehMedMm gBehMedNn gBehMedHgF gBehMedHgM gBehMedHd gBehMedCh gBehMedBy 
     gBehMedBe gBehMedBeRe gBehMedBeNn gBehMedBeHg gBehMedMmX gBehMedBeF_ss 
-    gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be ) ;
+    gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be
+	gBehMedNn_hgbm
+	gBehMedHdR gBehMedJmR gBehMedMmR gBehMedMmXR gBehMedNnR gBehMedNn_hgbmR gBehMedSnR ) ;
 cJeemMed = ( gJeemMed gJeemMedBeM1 gJeemMedBeF gJeemMedBeM2 gJeemMedJm gJeemMedRe 
     gJeemMedSn gJeemMedSd gJeemMedTa gJeemMedAi gJeemMedFe gJeemMedQf 
     gJeemMedMm gJeemMedNn gJeemMedHgF gJeemMedHgM gJeemMedHd gJeemMedCh gJeemMedBy 
@@ -496,6 +498,7 @@ c_initial += (csHehDoIni_alt);
 
 
 cBehIM = (cBehIni cBehMed);
+cBehMedNn = (gBehMedNn gBehMedNn_hgbm);
 cJeemIM = (cJeemIni cJeemMed);
 cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);

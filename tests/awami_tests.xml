@@ -36,6 +36,7 @@
       <style feats="invs=1 wdsp=4" name="fset38"/>
       <style feats="wdsp=1" name="fset39"/>
       <style feats="shrt=2" name="fset40"/>
+      <style feats="shrt=1" name="fset41"/>
       <style feats="olap=2" name="fset5"/>
       <style feats="hehk=1 olap=3" name="fset6"/>
       <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
@@ -46,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>بُّ⁠الٛعِزَّ</string>
+      <string>چھپئن</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -197,7 +198,7 @@
       <string>ودھارے  پڑھ  اہتھ  رکھڋ  سمجھ  جتھاں</string>
     </test>
     <test class="fset19" label="meem problems" rtl="True">
-      <string>بُّ⁠الٛعِزَّ</string>
+      <string>چھپئن</string>
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
@@ -238,6 +239,7 @@
       <string>۝۱ ۝۴۶ ۝۴۳۷ ۝۴۵۸</string>
     </test>
     <test class="fset21" label="Latin NFD">
+      <comment>Only combinations in CP 1252 are supported!!!</comment>
       <string>ábĉ̃</string>
     </test>
     <test class="fset21" label="Latin spacing">
@@ -303,7 +305,8 @@
     <test class="fset24" label="Alternate meem" rtl="True">
       <string>عما  سکمل  جمد  ظملا  فمل   ممݪ</string>
     </test>
-    <test class="fset24" label="gBehIniMmM" rtl="True">
+    <test class="fset24" label="gBehIniMmM - OBSOLETE" rtl="True">
+      <comment>This form is no longer used.</comment>
       <string>اِنمی یمبو</string>
     </test>
     <test class="fset24" label="gMeemMedBeNn_alt" rtl="True">
@@ -469,6 +472,7 @@
       <string>بِسمِ اللہ الرَّ حمن الرَّ حࣿیمِ</string>
     </test>
     <test class="fset24" label="salaam ulena text" rtl="True">
+      <comment>Just for comparing with the ligature</comment>
       <string>سلامُهُ عَلَینَا  |  سلامهٗ علینا</string>
     </test>
     <test class="fset29" label="salaam ulena" rtl="True">
@@ -625,7 +629,7 @@
       <string/>
     </test>
     <test class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
-      <comment>There is not enough space after the isolate waw.</comment>
+      <comment>Keep the isolate waw from overlapping much.</comment>
       <string>مشیت و مصلحت</string>
     </test>
     <test class="fset21" label="pa + k (Malachi - 6)" rtl="True">
@@ -633,7 +637,7 @@
       <string>پاک پاکیز اال</string>
     </test>
     <test class="fset21" label="full stop (Malachi - 7)" rtl="True">
-      <comment>Full stop way too close to the following word.</comment>
+      <comment>Keep the full stop from overlapping.</comment>
       <string>ہے۔ تھین</string>
     </test>
     <test class="fset19" label="comma (Sheldon)" rtl="True">
@@ -833,7 +837,7 @@
     <test label="bent gaf + sheen + teh" rtl="True">
       <string>نگشتر</string>
     </test>
-    <test label="bent kaf + teh" rtl="True">
+    <test background="#ff0000" label="bent kaf + teh" rtl="True">
       <string>کَتَنُن</string>
     </test>
     <test background="#00aaff" label="MULTIPLE" rtl="True">
@@ -1188,6 +1192,9 @@
     <test class="fset21" label="kaf + lam-bar 2" rtl="True">
       <string>نکݪتی نکݪئی</string>
     </test>
+    <test class="fset36" label="ain shadda jeem kaf" rtl="True">
+      <string>عّجگ عَجگ</string>
+    </test>
   </testgroup>
   <testgroup label="Overlaps">
     <test label="Saraiki UDHR p1" rtl="True">
@@ -1285,22 +1292,22 @@
     <test class="fset30" label="seq 1" rtl="True">
       <string>کھڻ سڱدے زندگی آسیہکنُوں پکڑ سَڳدیاں</string>
     </test>
-    <test class="fset9" label="seq 2" rtl="True">
+    <test class="fset30" label="seq 2" rtl="True">
       <string>کھلی المُنکر گرفتار ارفَکشَد گرفتار سرائِیکی</string>
     </test>
-    <test class="fset10" label="tall example from Dieter" rtl="True">
+    <test class="fset30" label="tall example from Dieter" rtl="True">
       <string>کنگھجو</string>
     </test>
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string/>
     </test>
     <test background="#ff0000" class="fset14" label="lam gaf gaf" rtl="True">
-      <string>لگگ</string>
+      <string>لگگ لگگس</string>
     </test>
     <test class="fset15" label="gaf lam gaf" rtl="True">
       <string>گلگم</string>
     </test>
-    <test class="fset24" label="lam jeem kaf" rtl="True">
+    <test background="#ff0000" class="fset24" label="lam jeem kaf" rtl="True">
       <string>لحُکُو</string>
     </test>
     <test background="#55aaff" class="fset24" label="TIGHT SPACES" rtl="True">
@@ -1324,37 +1331,37 @@
     <test background="#55aaff" class="fset24" label="TALL WORDS - INITIAL KAF" rtl="True">
       <string/>
     </test>
-    <test class="fset24" label="kaf beh heh yeh" rtl="True">
+    <test class="fset30" label="kaf beh heh yeh" rtl="True">
       <string>کبھی</string>
     </test>
-    <test class="fset24" label="kaf lam yeh meem..." rtl="True">
+    <test class="fset30" label="kaf lam yeh meem..." rtl="True">
       <string>کلیمنس</string>
     </test>
-    <test class="fset24" label="kaf noon seen..." rtl="True">
+    <test class="fset30" label="kaf noon seen..." rtl="True">
       <string>کنسلٹنٹس</string>
     </test>
-    <test class="fset24" label="kaf + meem" rtl="True">
+    <test class="fset30" label="kaf + meem" rtl="True">
       <string>کمڱمی</string>
     </test>
-    <test class="fset24" label="kaf-ring + meem" rtl="True">
+    <test class="fset30" label="kaf-ring + meem" rtl="True">
       <string>ګمڱمی</string>
     </test>
     <test background="#55aaff" class="fset24" label="TALL WORDS - MEDIAL KAF" rtl="True">
       <string/>
     </test>
-    <test class="fset24" label="teh kaf meem yeh lam" rtl="True">
+    <test class="fset30" label="teh kaf meem yeh lam" rtl="True">
       <string>تکمیل</string>
     </test>
-    <test class="fset24" label="gaf sheen teh gaf yeh" rtl="True">
+    <test class="fset30" label="gaf sheen teh gaf yeh" rtl="True">
       <string>گشتگی</string>
     </test>
-    <test class="fset24" label="kaf + meem-alt" rtl="True">
+    <test class="fset30" label="kaf + meem-alt" rtl="True">
       <string>مکمل</string>
     </test>
     <test background="#55aaff" class="fset24" label="NEED TALL" rtl="True">
       <string/>
     </test>
-    <test class="fset24" label="sheen kaf" rtl="True">
+    <test class="fset30" label="sheen kaf" rtl="True">
       <string>شکج</string>
     </test>
     <test class="fset24" label="sheen + kaf + jeem" rtl="True">
@@ -1423,7 +1430,7 @@
     <test class="fset24" label="gaf + lam + gaf" rtl="True">
       <string>گلگو </string>
     </test>
-    <test class="fset24" label="ngoeh + lam + gaf" rtl="True">
+    <test background="#ff0000" class="fset24" label="ngoeh + lam + gaf" rtl="True">
       <string>ڱلگو </string>
     </test>
     <test class="fset15" label="gaf + heh-do +  gaf" rtl="True">
@@ -1453,6 +1460,9 @@
     <test class="fset24" label="bug" rtl="True">
       <string>نگھنے</string>
     </test>
+    <test class="fset36" label="lam + kaf + kaf (Shina)" rtl="True">
+      <string>ملککئ</string>
+    </test>
     <test background="#55aaff" class="fset24" label="SHORTER" rtl="True">
       <string/>
     </test>
@@ -1462,10 +1472,16 @@
     <test class="fset24" label="ktys" rtl="True">
       <string>اِکتِیس</string>
     </test>
-    <test class="fset24" label="long" rtl="True">
+    <test class="fset30" label="long - kaf &amp; final" rtl="True">
       <string>کنسلٹنٹس</string>
     </test>
-    <test class="fset24" label="gbs" rtl="True">
+    <test class="fset41" label="long - kaf only" rtl="True">
+      <string>کنسلٹنٹس</string>
+    </test>
+    <test class="fset40" label="long - final only" rtl="True">
+      <string>کنسلٹنٹس</string>
+    </test>
+    <test class="fset30" label="gbs" rtl="True">
       <string>گَبُس</string>
     </test>
     <test background="#55aaff" class="fset24" label="DON'T CHANGE" rtl="True">
@@ -1524,6 +1540,7 @@
       <string>ڔ مڔ لڔ سڔ</string>
     </test>
     <test class="fset3" label="teh marbuta" rtl="True">
+      <comment>Because these are right-joining, a sequence of them uses all isolate forms.</comment>
       <string>ة ةةة</string>
     </test>
     <test class="fset6" label="noon dot below" rtl="True">
@@ -1667,7 +1684,7 @@
     <test class="fset21" label="hah w/ small tah &amp; two dots" rtl="True">
       <string>ݯ ݯݯݯ</string>
     </test>
-    <test class="fset21" label="hah w/ small tah below" rtl="True">
+    <test background="#ffaaff" class="fset21" label="hah w/ small tah below" rtl="True">
       <string>ݮ ݮݮݮ ݮلݮیݮ</string>
     </test>
     <test class="fset18" label="seen w/ dot above and below" rtl="True">
@@ -1689,9 +1706,11 @@
       <string>ڥ ڥڥڥ</string>
     </test>
     <test class="fset21" label="teh marbuta goal" rtl="True">
+      <comment>Right-joining only, tail form.</comment>
       <string>ۃ لۃ سۃ</string>
     </test>
     <test class="fset21" label="teh marbuta" rtl="True">
+      <comment>Right-joining only. round form.</comment>
       <string>ة مة لبة</string>
     </test>
     <test class="fset21" label="heh w/ hamza" rtl="True">
@@ -1751,6 +1770,10 @@
     <test class="fset3" label="Arabic yeh" rtl="True">
       <string>ي ييي</string>
     </test>
+    <test class="fset36" label="Arabic heh" rtl="True">
+      <comment>Behaves identically to heh-goal.</comment>
+      <string>ه ههه</string>
+    </test>
     <test class="fset19" label="high hamza alef" rtl="True">
       <string>ٵ فٵ شٵاٴ</string>
     </test>
@@ -1760,11 +1783,14 @@
     <test background="#55aaff" class="fset31" label="BALUCHI" rtl="True">
       <string/>
     </test>
-    <test background="#ff557f" class="fset31" label="yeh + small-V - O6CE" rtl="True">
+    <test class="fset31" label="yeh + small-V - O6CE" rtl="True">
       <string>وشّێن</string>
     </test>
   </testgroup>
   <testgroup label="Features">
+    <test class="fset36" label="hamza - default" rtl="True">
+      <string>ٔ أ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
+    </test>
     <test class="fset22" label="alt hamza - isolate" rtl="True">
       <string>ٔ أ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
     </test>
@@ -1785,6 +1811,9 @@
     </test>
     <test class="fset22" label="alt hamza below" rtl="True">
       <string>إ سإ رٕ</string>
+    </test>
+    <test class="fset36" label="full stop - default" rtl="True">
+      <string>نِ نیا ز۔</string>
     </test>
     <test class="fset35" label="alt full stop" rtl="True">
       <string>نِ نیا ز۔</string>
@@ -1813,7 +1842,7 @@
       <string>ۂ ۂۂۂ  |  ۂ ۂۂۂ</string>
     </test>
     <test class="fset19" label="bariyeh w/ hamza above" rtl="True">
-      <string>ۓ  |  ۓ</string>
+      <string>ۓ  سۓ   |  ۓ سۓ</string>
     </test>
     <test class="fset21" label="high hamza alef" rtl="True">
       <string>ٵ بٵ |  اٴ باٴ</string>
@@ -2121,7 +2150,7 @@
       <string>سًب | عّجگ | طُکشو</string>
     </test>
     <test label="initial + N-above + D-above" rtl="True">
-      <string>شٌب | ئْعت</string>
+      <string>شٌب | ئْعت | ݰُل</string>
     </test>
     <test label="initial + N-above + D-below" rtl="True">
       <string>غِقم</string>
@@ -2273,10 +2302,10 @@
     <test class="fset24" label="collision" rtl="True">
       <string>بیِچ</string>
     </test>
-    <test class="fset24" label="collision" rtl="True">
+    <test background="#ffaaff" class="fset24" label="collision" rtl="True">
       <string>تُمِّیم</string>
     </test>
-    <test class="fset24" label="collision" rtl="True">
+    <test background="#ffaaff" class="fset24" label="collision" rtl="True">
       <string>ثُمَّ</string>
     </test>
     <test class="fset24" label="collision" rtl="True">
@@ -2288,7 +2317,7 @@
     <test class="fset24" label="collision" rtl="True">
       <string>جَتھّوں</string>
     </test>
-    <test class="fset24" label="collision" rtl="True">
+    <test background="#ffaaff" class="fset24" label="collision" rtl="True">
       <string>حَنُوؔک</string>
     </test>
     <test class="fset24" label="odd" rtl="True">
@@ -2477,9 +2506,11 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string/>
     </test>
     <test class="fset36" label="khah + teh/theh [rules 98 &amp; 44]" rtl="True">
+      <comment>Substitute wider jeem.</comment>
       <string>سختل</string>
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
+      <comment>Use smaller nuqta and lower V</comment>
       <string>ݙݩڳَر ݙݩک</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 8" rtl="True">
@@ -2493,58 +2524,83 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string/>
     </test>
     <test class="fset36" label="beh + yeh + jeem [rule 190]" rtl="True">
-      <string>بِیج بِیچ سپبڇ</string>
+      <comment>Use an alternate AP, nLowerTight, for the middle nuqta.</comment>
+      <string>بِیج بِیچ سپبڇ ہیچ</string>
     </test>
     <test class="fset36" label="beh + beh + jeem [rule 188, 191]" rtl="True">
+      <comment>Use an alternate AP, nLowerTight, for the middle nuqta.</comment>
       <string>ببج ببچ ببِج</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
     </test>
-    <test class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
+    <test background="#aaaa7f" class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
       <string>لقکھہ</string>
     </test>
-    <test class="fset24" label="jeem + noon/teh/sheen [rule 40]" rtl="True">
+    <test background="#aaaa7f" class="fset24" label="jeem + noon/teh/sheen [rule 40]" rtl="True">
+      <comment>Don't allow nuqta to move as far right.</comment>
       <string>جنگی  خُشکی</string>
     </test>
-    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 45-47]" rtl="True">
+    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
+      <comment>Move nuqtas down and to the right.</comment>
       <string>بکِھ یُلّھف سبگَھ </string>
     </test>
-    <test class="fset36" label="jeem + teh + alef/lam/kaf [rule 10, 52]" rtl="True">
-      <comment>Shift nuqtas down into the space.</comment>
+    <test class="fset36" label="jeem + teh + alef/lam/kaf [rule 10]" rtl="True">
+      <comment>Shift nuqtas down into the space - not essential.</comment>
       <string>مختا لخئل جخثا</string>
     </test>
-    <test class="fset36" label="hah + teh + alef/lam/kaf [rule 14-18]" rtl="True">
+    <test background="#aaaa7f" class="fset36" label="hah + teh + alef/lam/kaf [rule 14-18]" rtl="True">
+      <comment>Prevent nuqtas from popping up to the top of the alef/lam.</comment>
       <string>حتا چتل</string>
     </test>
-    <test background="#55aaff" class="fset36" label="PASS 12 &amp; 16" rtl="True">
+    <test class="fset36" label="teh + jeem + kaf/gaf" rtl="True">
+      <string>تجک</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 12" rtl="True">
       <string/>
     </test>
     <test class="fset36" label="alef-madda + kaf" rtl="True">
+      <comment>Use tall kaf so alef-madda can squeeze in; also adjust kerning.</comment>
       <string>آکہ آگب آگس  آگ</string>
+    </test>
+    <test class="fset36" label="diac + jeem + diac + kaf" rtl="True">
+      <comment>The jeem is narrow so even a single nuqta requires a taller kaf.</comment>
+      <string>فخگس</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 15" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="beh/peh + 2 diacs + honorific" rtl="True">
+      <string>بّؑٔ</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 16 (pos pass 8)" rtl="True">
       <string/>
     </test>
     <test class="fset19" label="reh/dal + yeh [rule 3]" rtl="True">
+      <comment>Shift nuqtas down so bases can stay together.</comment>
       <string>ریر رنر دیر دنر</string>
     </test>
     <test class="fset24" label="dal + yeh + waw [rule 2-3]" rtl="True">
+      <comment>Shift nuqtas down so bases can stay together.</comment>
       <string>شزدیو   دیُونگ</string>
     </test>
     <test class="fset24" label="waw + beh + waw [rule 3]" rtl="True">
+      <comment>Shift nuqtas down so bases can stay together.</comment>
       <string>تھوبو</string>
-    </test>
-    <test class="fset24" label="dal + peh + waw [rule 3]" rtl="True">
-      <string>یودپوݩی</string>
-    </test>
-    <test class="fset19" label="alef + yeh + meem [rule 12]" rtl="True">
-      <string>ایمان انمان</string>
     </test>
     <test class="fset24" label="waw + beh + reh [rule 3]" rtl="True">
       <string>اوپر</string>
     </test>
+    <test class="fset24" label="dal + peh + waw [rule 3]" rtl="True">
+      <comment>Shift nuqtas down so bases can stay together.</comment>
+      <string>یودپوݩی</string>
+    </test>
+    <test class="fset19" label="alef + yeh + meem [rule 12]" rtl="True">
+      <comment>Shift nuqtas down so alef can stay close to beh.</comment>
+      <string>ایمان انمان</string>
+    </test>
     <test class="fset24" label="gaf + upper-diac + gaf [rule 13]" rtl="True">
+      <comment>Move diacritic to the right; there is no good place for it.</comment>
       <string>گَک گُگ</string>
     </test>
     <test background="#aaaa7f" class="fset36" label="waw + teh + meem + ..." rtl="True">
@@ -2554,24 +2610,29 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string/>
     </test>
     <test class="fset24" label="ain + zain + yeh + reh [rule 7, 48]" rtl="True">
+      <comment>Shift nuqtas up and right to avoid reh tail; also use a smaller margin for reh.</comment>
       <string>غزیر سہزیر</string>
     </test>
     <test background="#55aaff" class="fset29" label="PASS 17 (pos pass 10)" rtl="True">
       <string/>
     </test>
     <test class="fset29" label="tarixi - reh + yeh + jeem [rule 44]" rtl="True">
+      <comment>Move nuqtas up under beh form to avoid sitting on top of reh; don't allow reh to kern underneath.</comment>
       <string>تاریخی </string>
-    </test>
-    <test class="fset36" label="isolate alef [rule 569]" rtl="True">
-      <string>اکٹّھی  الٹّھی  اسّھجی</string>
     </test>
     <test class="fset25" label="feh + low + upper diac [rule 6-7]" rtl="True">
       <string>فمَب  بفہَف</string>
     </test>
+    <test class="fset36" label="isolate alef [rule 569]" rtl="True">
+      <comment>Set isolate alef and kaf a set distance apart; don't use auto-kerning.</comment>
+      <string>اکٹّھی  الٹّھی  اسّھجی</string>
+    </test>
     <test class="fset36" label="alef (isolate) + kaf [rule 569]" rtl="True">
+      <comment>Set alef and kaf a set distance apart; don't use auto-kerning.</comment>
       <string>اکطبس اکطب اکط</string>
     </test>
     <test class="fset36" label="alef (final) + kaf [rule 569]" rtl="True">
+      <comment>Set alef and kaf a set distance apart; don't use auto-kerning.</comment>
       <string>ساکطبس ساکطب لاکط</string>
     </test>
     <test class="fset36" label="lam/kaf + meem + diac [rule 11-15]" rtl="True">
@@ -2594,7 +2655,14 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>روشن</string>
     </test>
     <test class="fset24" label="jeem + upper nuqta" rtl="True">
-      <string>حشِیم  حنِم   حقِیر</string>
+      <string>حشِیم   حنِم   حقِیر</string>
+    </test>
+    <test class="fset36" label="lam + gaf + kaf" rtl="True">
+      <string>سلگکب</string>
+    </test>
+    <test class="fset36" label="waw + beh + meem..." rtl="True">
+      <comment>Add some kerning.</comment>
+      <string>کوتمہا</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">

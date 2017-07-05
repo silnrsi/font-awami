@@ -533,7 +533,7 @@ csMed_raw  >  csMedBeM1  / ^ MPRECXT  _ MARKS  cMed_postBeM1;
 csMed_raw  >  csMedMmX   / ^ MPRECXT  _  MARKS  cMeemMed_alt;
 
 csMed_raw  >  csMedBeRe  / ^ MPRECXT  _ MARKS  gBehMedRe;
-csMed_raw  >  csMedBeNn  / ^ MPRECXT  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
+csMed_raw  >  csMedBeNn  / ^ MPRECXT  _ MARKS  cBehMedNn;
 csMed_raw  >  csMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
 csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
 
@@ -603,7 +603,7 @@ gBehIni_raw  >  gBehIniMm  /  _ MARKS  cMeemMed;  // before standard meem
 csIni_raw  >  csIniBeHg_BeRe  / _ MARKS  gBehMedBeRe; // eg, \u0644\u0628\u0646\u0631
 
 csIni_raw  >  csIniBeRe  /  _ MARKS  gBehMedRe;
-csIni_raw  >  csIniBeNn  /  _ MARKS  (gBehMedNn gBehMedNn_hgbm);
+csIni_raw  >  csIniBeNn  /  _ MARKS  gBehIniNn;
 csIni_raw  >  csIniBeHg  /  _ MARKS  gBehMedHgF;
 
 // Special short form of tah before kaf:
