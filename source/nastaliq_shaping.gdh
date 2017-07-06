@@ -363,11 +363,11 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 // \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u0644\u0644\u06C1
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  gHehGoalFin  g__hehHook_small
 	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 HG HH) _  _  _
-	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=HG  _=HH;
+	/ (cIMraw cIsoFin) MARKS  _=L1  _=L2  _=HG  _=HH;
 
 (gLamIni_raw gLamMed_raw)  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small
 	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 SK HG HH)  _  _  _  _
-	/ (cIMraw c_final c_isolate) MARKS  _=L1  _=L2  _=SK  _=HG  _=HH;
+	/ (cIMraw cIsoFin) MARKS  _=L1  _=L2  _=SK  _=HG  _=HH;
 
 // Salaam ulena
 
@@ -397,7 +397,7 @@ gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 // Finals
 
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
-	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  (c_initial c_medial)  MARKS  _;
+	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  cIniMed  MARKS  _;
 
 csQwFin  >  csQwFin_stfh  /  cPreQwStfh  MARKS _;
 // Change feh to qaf for final qaf:
@@ -463,7 +463,7 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS  ^ _ MARKS  (cADLK cD
 gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS  ^ _ MARKS  cADLK;			// others
 
 // also see below
-gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  (c_medial cFinals);
+gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  cMedFin;
 ****/
 
 // Version of above rules if finals and medials are separated into separate passes:
@@ -575,13 +575,13 @@ gTahMed_raw  >  gTahMedKf   /  ^ MPRECXT _  MARKS  (cKafMed cKafFin);
 gTahMed_raw  >  gTahMedBeKf /  ^ MPRECXT _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
 
 // No contextual forms for this glyph:
-gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (c_medial c_final);
+gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (cMed  cFin);
 
 #endif // !QUICKCOMPILE
 
 // Last resort:
 
-csMed_raw  >  csMedADLK	/ ^ MPRECXT _  MARKS  (c_medial c_final);
+csMed_raw  >  csMedADLK	/ ^ MPRECXT _  MARKS  (cMed  cFin);
 
 
 endpass;
@@ -658,7 +658,7 @@ gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
 
 // Last resort:
 
-csIni_raw  >  csIni	/ _  MARKS  (c_medial c_final);
+csIni_raw  >  csIni	/ _  MARKS  cMedFin;
 
 
 // Final clean-ups
@@ -732,7 +732,7 @@ gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 
 // This version of the rule takes precedence over the rules below that substitute the composed isolates
 // (an extra slot is include to ensure the precedence):
-c_isolate  cHamzaUrdu			>  @1  cHamzaArabic;
+cIso  cHamzaUrdu			>  @1  cHamzaArabic;
 cHamzaUrdu  >  cHamzaArabic;
 
 endif; // hamzaAlt

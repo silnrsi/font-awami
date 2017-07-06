@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>چھپئن</string>
+      <string>گُنٚگے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -772,6 +772,9 @@
     </test>
     <test class="fset36" label="kaf + waw + teh + meem + heh-goal + alef" rtl="True">
       <string>اُن کو تمہارے</string>
+    </test>
+    <test class="fset36" label="reh/heh-goal + Arabic hamza" rtl="True">
+      <string>رء سہء</string>
     </test>
   </testgroup>
   <testgroup label="Collisions">
@@ -1927,6 +1930,9 @@
     <test class="fset36" label="S.Hindko - real word" rtl="True">
       <string>تَکمیل</string>
     </test>
+    <test class="fset36" label="Balochi words" rtl="True">
+      <string>فلؔسطینءَ فلُؔو</string>
+    </test>
     <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
       <string/>
     </test>
@@ -2605,6 +2611,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test background="#aaaa7f" class="fset36" label="waw + teh + meem + ..." rtl="True">
       <string>کوتمہا</string>
+    </test>
+    <test class="fset36" label="reh/hehgoal + Arabic hamza" rtl="True">
+      <string>رء  بہء</string>
     </test>
     <test background="#55aaff" class="fset24" label="PASSES 16 &amp; 17" rtl="True">
       <string/>

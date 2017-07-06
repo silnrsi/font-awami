@@ -256,26 +256,34 @@ gBehMed_SS_raw = pseudo(postscript("absBehMed.beF_ss"));  // absBehMed.beF_ss / 
 //gBariyehFin0 = pseudo(postscript("nlqBariyehFin"))		{nuqtaG = nNone};  -- defined above with dual-connectors
 
 
+cBehIso = (gBeh, gTeh, gTheh, gPeh, gTteh, gTteheh, gTehRing, gTehThreeDotsAboveDownwards, gBeeh);
 cBehFin = (gBehFin, gBehFin_bfkl) ;
-cJeemFin = (gJeemFin) ;
+cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
+cJeemFin = (gJeemFin);
+cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelowThreeDotsAbove);
 cSeenFin = (gSeenFin, gSeenFin_short);
+cSadIso = (gSad, gDad, gDadDotBelow);
 cSadFin = (gSadFin);
+cTahIso = (gTah, gZah);
 cTahFin = (gTahFin);
+cAinIso = (gAin, gGhain);
 cAinFin = (gAinFin);
+cFehIso = (gFeh, gFehThreeDotsBelow);
 cFehFin = (gFehFin);
+cQafIso = (gQaf);
 cQafFin = (gQafFin, gQafFin_stfh, gQafFin_short, gQafFin_stfh_short);
+cLamIso = (gLam, gLamBar);
 cLamFin = (gLamFin, gLamFin_short);
+cMeemIso = (gMeem);
 cMeemFin = (gMeemFin, gMeemFin_short);
-cKafFin = (gKafFin, gGafFin);
+cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow);
+cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
 cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf);
-cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short); // gNoonRetroFin - not defined
+cKafFin = (gKafFin, gGafFin);
+cHehGoalIso = (gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gAe, gHeh);
 cHehGoalFin = (gHehGoalFin, gTehMarbutaGoalFin);   // gHehGoalFin_stfh - no longer used
+cHehDoIso = (gHehDo);
 cHehDoFin = (gHehDoFin);
-csChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehFin_bfkl_short);
-csYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin, gYehTailFin_bfkl);
-csKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin, gKashmiriYehFin_bfkl);
-cChotiyehFin = csChotiyehFin;
-cTehMarbutaFin = (gTehMarbutaFin);
 
 // Right-link
 
@@ -291,11 +299,19 @@ cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove, gRehRing, gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
-cWawIso = (gWaw, gWawHamzaAbove, gWawRing);
+cWawIso = (gWaw, gWawHamzaAbove, gWawRing, gArabicU, gKirghizOe);
 cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza);		// bariyeh -> behIni + 2Nlower
 cBariyehFin = (gBariyehFin);
+
+csChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehFin_bfkl_short);
+csYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin, gYehTailFin_bfkl);
+csKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin, gKashmiriYehFin_bfkl);
+
+cChotiyehIso = (gChotiyeh, gYeh, gYehHamzaAbove, gYehTail, gKashmiriYeh);
+cChotiyehFin = csChotiyehFin;
+cTehMarbutaFin = (gTehMarbutaFin);
 
 
 // These classes must match each other.
@@ -325,15 +341,14 @@ csRightLinkIso = (	c_zerojoin,	gAlef,		gDal,		gReh,		gWaw		gTehMarbuta		gTehMarb
 csRightLinkFin = (	c_zerojoin,	gAlefFin,	gDalFin,	gRehFin,	gWawFin		gTehMarbutaFin	gTehMarbutaGoalFin,
 	gTehMarbutaFin);
 
-// Basic classes for contextual shaping:
-#include "nastaliq_cntxlClasses.gdh"
+
 
 // General (non-subsitution) classes of initials and medials
 
-cBehIni = ( gBehIni gBehIniBeM1 gBehIniBeM2 gBehIniJm gBehIniRe gBehIniSn gBehIniSd 
-    gBehIniTa gBehIniAi gBehIniFe gBehIniQf gBehIniMm gBehIniNn 
-    gBehIniHgF gBehIniHgM gBehIniHd gBehIniCh gBehIniBy gBehIniBe gBehIniBeRe 
-    gBehIniBeNn gBehIniMmX ) ;  // cBehIniMmM
+cBehIni = ( gBehIni, gBehIniAi, gBehIniBe, gBehIniBeHg, gBehIniBeM1, gBehIniBeM2, gBehIniBeNn, gBehIniBeRe,
+	gBehIniBy, gBehIniCh, gBehIniFe, gBehIniHd, gBehIniHgF, gBehIniHgM, gBehIniJm,
+	gBehIniMm, gBehIniMmX, gBehIniNn, gBehIniQf, gBehIniRe, gBehIniSd, gBehIniSn,
+	gBehIniTa, gBehIniHdR ) ;  // gBehIniMmM, gBehIniMmMR, -- obsolete
 cJeemIni = ( gJeemIni gJeemIniBeM1 gJeemIniBeF gJeemIniBeM2 gJeemIniJm gJeemIniRe 
     gJeemIniSn gJeemIniSd gJeemIniTa gJeemIniAi gJeemIniFe gJeemIniQf 
     gJeemIniMm gJeemIniNn gJeemIniHgF gJeemIniHgM gJeemIniHd gJeemIniCh gJeemIniBy 
@@ -363,6 +378,10 @@ cLamIni = ( gLamIni gLamIniBeM1 gLamIniBeM2 gLamIniJm gLamIniRe
     gLamIniSn gLamIniSd gLamIniTa gLamIniAi gLamIniFe gLamIniQf 
     gLamIniMm gLamIniNn gLamIniHgF gLamIniHgM gLamIniHd gLamIniCh gLamIniBy 
     gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl ) ;
+cMeemIni = ( gMeemIni, gMeemIniAi, gMeemIniBe, gMeemIniBeF, gMeemIniBeHg, gMeemIniBeM1, gMeemIniBeM2,
+	gMeemIniBeNn, gMeemIniBeRe, gMeemIniBeHg,
+	gMeemIniBy, gMeemIniCh, gMeemIniFe, gMeemIniHd, gMeemIniHgF, gMeemIniHgM, gMeemIniJm, gMeemIniMm,
+	gMeemIniMmX, gMeemIniNn, gMeemIniQf, gMeemIniRe, gMeemIniSd, gMeemIniSn, gMeemIniTa);
 cHehDoIni = ( gHehDoIni gHehDoIniBeM1 gHehDoIniBeF gHehDoIniBeM2 gHehDoIniJm 
     gHehDoIniRe gHehDoIniSn gHehDoIniSd gHehDoIniTa gHehDoIniAi 
     gHehDoIniFe gHehDoIniQf gHehDoIniMm gHehDoIniNn gHehDoIniHgF gHehDoIniHgM 
@@ -375,12 +394,10 @@ cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehG
     gHehGoalIniBeHg gHehGoalIniMmX ) ;
 cKafIni_gaf = (gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn 
 	gGafIniSd gGafIniTa gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniMmX gGafIniNn 
-	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gKafIniBeNn gKafIniBeHg gGafIniKf
-	gGafIniBeRe gGafIniBeHg gGafIniBeNn);
+	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gKafIniBeNn gKafIniBeHg gGafIniKf);
 cKafIni = ( gKafIni gKafIniBe /*gKafIniBeF*/ gKafIniBeM1 gKafIniBeM2 gKafIniJm gKafIniRe gKafIniSn 
     gKafIniSd gKafIniTa gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniMmX gKafIniNn 
     gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
-	gKafIniBeRe gKafIniBeHg gKafIniBeNn
 	cKafIni_gaf) ;
 
 
@@ -421,7 +438,7 @@ cFehMed = ( gFehMed gFehMedBeM1 gFehMedBeF gFehMedBeM2 gFehMedJm gFehMedRe
 cLamMed = ( gLamMed gLamMedBeM1 gLamMedBeF gLamMedBeM2 gLamMedJm gLamMedRe 
     gLamMedSn gLamMedSd gLamMedTa gLamMedAi gLamMedFe gLamMedQf 
     gLamMedMm gLamMedNn gLamMedHgF gLamMedHgM gLamMedHd gLamMedCh gLamMedBy 
-    gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg gLamMedAl ) ;
+    gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg gLamMedAl ) ;  // no MmX
 cMeemMed = ( gMeemMed gMeemMedBeM1 gMeemMedBeF gMeemMedBeM2 gMeemMedJm gMeemMedRe 
     gMeemMedSn gMeemMedSd gMeemMedTa gMeemMedAi gMeemMedFe gMeemMedQf 
     gMeemMedMm gMeemMedNn gMeemMedHgF gMeemMedHgM gMeemMedHd gMeemMedCh gMeemMedBy 
@@ -493,8 +510,6 @@ csHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt
 	gHehDoIniBeHg_alt gHehDoIniBeNn_alt gHehDoIniBeRe_alt gHehDoIniFe_alt gHehDoIniJm_alt gHehDoIniRe_alt gHehDoIniSd_alt
 	gHehDoIniSn_alt gHehDoIniTa_alt gHehDoIniMm_alt gHehDoIniMmX_alt gHehDoIniNn_alt gHehDoIniQf_alt
 	gHehDoIniHd_alt gHehDoIniHgM_alt gHehDoIniHgF_alt gHehDoIniCh_alt gHehDoIniBy_alt);
-
-c_initial += (csHehDoIni_alt);
 
 
 cBehIM = (cBehIni cBehMed);
@@ -907,6 +922,11 @@ csBehNoRing = (gBehIniHd, gBehMedHd, gBehMedJm, gBehMedMm, gBehMedMmX,
 	gBehMedNn, gBehMedNn_hgbm, gBehMedSn);
 csBehTehRing = (gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
 	gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR);
+
+
+// Basic classes for contextual shaping:
+#include "nastaliq_cntxlClasses.gdh"
+
 
 endtable;  // glyph
 

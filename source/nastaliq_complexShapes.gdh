@@ -29,11 +29,8 @@ gJeem  gHah  gKhah
 //gTcheh
 //gHahSmallTahBelow
 gHahSmallTahTwoDots  gHahThreeDotsAbove  gHahHamzaAbove
-gDal gThal gDdal gDalDotBelowSmallTah gDalTwoVertBelowSmallTah
-gThal
-//gReh
-gRreh  gJeh
-gZain
+gDal gThal gDdal gDalDotBelowSmallTah gDalTwoVertBelowSmallTah gDalDotBelow	gDalRing gDalFourDotsAbove
+gReh gZain gRreh gJeh gRehDotBelow gRehDotBelowDotAbove	gRehTwoDotsAbove gRehRing gRehFourDotsAbove gRehTwoVertAbove, gRehHamzaAbove gRehSmallTahTwoDots
 gSeen  gSheen  gSeenDotBelowDotAbove  gSeenSmallTahTwoDots  gSeenTwoVertAbove  gSeenThreeDotsBelowThreeDotsAbove
 gSad  gDad  gDadDotBelow
 gTah  gZah
@@ -50,7 +47,6 @@ gChotiyeh  gYeh  gArabicE  gYehTail  gKashmiriYeh
 gBariyeh  gBariyehHamza
 //gDalToa2Nuqtas  gDalToa2Nuqtas_fina
 
-gReh
 gRehFin_jkl  gRehFin_sshg  gRehFin  gRehFin_hgM
 gDalFin
 
@@ -385,13 +381,14 @@ gTahFin
 
 gBariyehFin
 
-gWaw
+cWawIso
 gWawFin
 gWawFin_stfh
 
-gZero gOne gTwo gThree gFour gFive gSix gSeven gEight gNine
-gEasternZero gEasternOne gEasternTwo gEasternThree gEasternFour 
-gEasternFive gEasternSix gEasternSeven gEasternEight gEasternNine
+//gZero  gOne
+gTwo gThree gFour gFive gSix gSeven gEight gNine
+//gEasternZero  gEasternOne
+gEasternTwo gEasternThree gEasternFour gEasternFive gEasternSix gEasternSeven gEasternEight gEasternNine
 
 ) {collision.complexFit = true}
 
