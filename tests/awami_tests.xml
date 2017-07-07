@@ -592,6 +592,9 @@
     <test class="fset9" label="isolate reh" rtl="True">
       <string>راردرررو</string>
     </test>
+    <test class="fset36" label="isolate reh forms" rtl="True">
+      <string>راږاردزڙݬو</string>
+    </test>
     <test class="fset9" label="final reh default" rtl="True">
       <string>عراطردمررفرو</string>
     </test>
@@ -605,7 +608,7 @@
       <string>بہرابہردلہرربہرو</string>
     </test>
     <test class="fset9" label="isolate lam-alef" rtl="True">
-      <string>لالالاادلارلاو</string>
+      <string>لالالااادلارلاو</string>
     </test>
     <test class="fset9" label="final lam-alef" rtl="True">
       <string>سلااسلادسلارسلاو</string>
@@ -616,8 +619,14 @@
     <test class="fset9" label="final dal" rtl="True">
       <string>لداطددسدرندو</string>
     </test>
+    <test class="fset36" label="isolate dal forms" rtl="True">
+      <string>داذاڈڊرڋوݙاڐډ</string>
+    </test>
     <test class="fset9" label="isolate waw" rtl="True">
       <string>واودوروو</string>
+    </test>
+    <test class="fset36" label="isolate waw forms" rtl="True">
+      <string>ۆاۄدورووۅۇ</string>
     </test>
     <test class="fset9" label="final waw" rtl="True">
       <string>لواطودسورنوو</string>
@@ -775,6 +784,9 @@
     </test>
     <test class="fset36" label="reh/heh-goal + Arabic hamza" rtl="True">
       <string>رء سہء</string>
+    </test>
+    <test class="fset36" label="reh-dot-dot bug" rtl="True">
+      <string>ږازاراڔاڑاژا    ږل﻿زل﻿رل﻿ڔل﻿ڑل﻿ژل   ږوزوروڔوڑوژو   </string>
     </test>
   </testgroup>
   <testgroup label="Collisions">

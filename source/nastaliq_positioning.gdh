@@ -1487,13 +1487,13 @@ cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
 	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;  // kernPreInitial = 0m };
 	minKernDelta = 0m };
 
-gDal		{ kernPreAlef = -60m };
+cDalIso		{ kernPreAlef = -60m };
 gDalFin		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m };
-gReh		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
+cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m };
-gWaw		{ kernPreAlef = -80m };
+gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
 gRehFin		{ minKernDelta = -400m };
 gRehFin_jkl	{ minKernDelta = -400m };
