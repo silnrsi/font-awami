@@ -908,8 +908,12 @@ endif;
 cLam_noBar_postKaf  >  cLam_tallForBar_postKaf  /  (gKafIni gKafMed)  g__kafTop_null  MARKS  _  cbarDia;
 cLam_noBar_postGaf  >  cLam_tallForBar_postGaf  /  (gGafIni gGafMed)  g__kafTop_null  MARKS  _  cbarDia;
 
+// use the normal bar for these; extra context to increase precedence
+cbarDia  >  @B  /  cKafIM  g__kafTop_null  MARKS  cLam_tallForBar  _=B;
+
 cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
+
 
 // See also subtending rules below.
 

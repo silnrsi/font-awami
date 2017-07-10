@@ -834,6 +834,8 @@ cLam_tallForBar_postKaf = (gLamMedBe_kfTall, gLamMedBy_kfTall, gLamFin_kfTall)
 cLam_noBar_postGaf = (gLamMedCh);
 cLam_tallForBar_postGaf = (gLamMedCh_gfTall)
 
+cLam_tallForBar = (cLam_tallForBar_postKaf, cLam_tallForBar_postGaf);
+
 cKafNoIso = (cKafIM cKafFin csKafIM_base);
 
 
