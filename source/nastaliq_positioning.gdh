@@ -776,7 +776,7 @@ cNuqtaLikeUpper { collision {
 	max.x = 350m; // more than normal
 	min.y = -300m;
 	max.y = 1000m;
-} } / cIni _;
+} } / cIni cNuqtaLikeLower? _;
 
 // Nuqtas on finals can be moved quite a bit to the left.
 cNuqtaLikeUpper { collision {
@@ -858,11 +858,12 @@ cNuqtaLikeLower {
 } / cIni?  _ {underBy == true};
 
 
-// Heh-hooks need to be kept centered under the base.
+// Heh-hooks need to be kept centered under the base. But because they are originally positioned quite a bit to the left
+// they can move right a lot. 400 lets it move to the right side of the heh-goal, and avoid a following jeem.
 g__hehHook_small { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -50m;
-	max.x = 50m;
+	max.x = 400m;
 	min.y = -1000m;
 	max.y = 50m;
 } }  /  cIniMed  _; // enough context to give it precedence
