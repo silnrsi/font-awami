@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>گُنٚگے</string>
+      <string>پھاٞݭت</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -2256,6 +2256,9 @@
     <test class="fset24" label="nuqta + noon-ghunna mark" rtl="True">
       <string>کھنِ٘نگ  چُھودونِن٘گ</string>
     </test>
+    <test class="fset36" label="alef + zabar-two-dots" rtl="True">
+      <string>آٞک داٞگ بھاٞگ</string>
+    </test>
     <test background="#55aaff" class="fset25" label="MLOWERC - before ain, yeh, jeem" rtl="True">
       <string/>
     </test>
@@ -2674,10 +2677,14 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>ساکطبس ساکطب لاکط</string>
     </test>
     <test class="fset36" label="lam/kaf + meem + diac [rule 11-15]" rtl="True">
+      <comment>Move diac to the left.</comment>
       <string>المُنلر گمَب</string>
     </test>
-    <test class="fset36" label="alef + diac + kaf [rule 16]" rtl="True">
+    <test class="fset36" label="alef + diac" rtl="True">
       <string>بھاٞگہ بھاَگہ داٞگ</string>
+    </test>
+    <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
+      <string>آٞک داٞگ بھاٞگ</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
       <string/>
@@ -2718,6 +2725,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset37" label="quotes">
       <string>abc's ب "xyz" blah "سک" «xxxم»</string>
+    </test>
+    <test class="fset36" label="kern don't shift" rtl="True">
+      <string> پروردۂ )پروردگار(</string>
+    </test>
+    <test class="fset36" label="kerning" rtl="True">
+      <string>سُنڑ)10دسمبر</string>
+    </test>
+    <test class="fset36" label="kerning" rtl="True">
+      <string>واده داتگێن نبی ائے؟» گوَشتی: «نه.»</string>
     </test>
   </testgroup>
   <testgroup label="--- Extended characters">

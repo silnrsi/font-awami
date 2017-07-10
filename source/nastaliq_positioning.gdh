@@ -480,7 +480,7 @@ cIni {kernBbRightS = point(0m,0m) };
 cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
-cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark)
+cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab)
 	{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 endtable;
@@ -611,6 +611,8 @@ c_zerojoin   { collision.flags = SET_IGNORE(collision.flags) };
 c_zeronojoin { collision.flags = SET_IGNORE(collision.flags) };
 g_zeroWidthNoBreakSpaceShowInv  { collision.flags = SET_IGNORE(collision.flags) };
 
+// Don't move nuqtas to adjust for punctuation; instead kern the punctuation.
+cKernPunct { collision.flags = SET_IGNORE(collision.flags) };
 
 g__kafTop_null { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make context long enough to give precedence
 
@@ -1633,6 +1635,7 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 (g_quotedblright g_quotedblrightArab) { collision.flags = CLEAR_IGNORE(collision.flags) };
 
 
+// Never shift these!! (even though they are thought of as "nuqta-like" for some purposes).
 cKafTop { collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = CLEAR_FIX(collision.flags);
@@ -1648,6 +1651,41 @@ if (collFix >= 3)
 ////	flags = SET_FIX(collision.flags);
 ////	max.x = MAXKERN; min.x = MINKERN + minKernDelta;}}
 ////	/  _ {marginSet == 1}  cNuqtaLike?  DIACS  cPostKernable;
+
+// Special case: alef + zabar-two-dots + kaf/gaf - cozy alef + zabar-two-dots up to kaf/gaf.
+(cAlefIso cAlefFin) {
+	collision {
+		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		//margin = max(0m, kernLsb + @K.kernRsb + pairKern  - 100m);
+		margin = 170m;
+		max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+    	// min/max.y are omitted for kernable glyphs
+ 	} }  /  _  gZabarTwoDots cKafIso=K;
+
+// Zabar-two-dots must stay centered over the alef.
+gZabarTwoDots {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = 60m;  // normally -250
+		max.x = 60m;
+		min.y = -100m;
+		max.y = 100m;
+		margin = 100m;  // cozy up
+	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
+
+// Other diacritics should be more or less centered.
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = 120m;  // normally -250
+		max.x = 60m;
+		min.y = -100m;
+		max.y = 100m;
+	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
 
 // Special cases
 /**
@@ -1737,7 +1775,8 @@ gKharizabar {
 	}
 } / (cLamIM gLamFin gLam) _ ;
 
-// Diacritics attached to finals - move more to the left
+
+// Diacritics attached to finals - allow them to move more to the left
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -1780,8 +1819,8 @@ cDiacriticLower {
 (gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
-	min.x = -1m;
-	max.x = 1m;
+	min.x = -10m;
+	max.x = 10m;
 	min.y = -300m;
 	max.y = 500m;
 } }  /  cNuqta  cDiacritic?  _;
@@ -1939,6 +1978,7 @@ cKernable { collision {
 cKernable  cKernIgnore?  cDigitAbsFullSize;
 
 cKernable { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
@@ -1948,6 +1988,7 @@ cKernable { collision {
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
 
 (cKernable g_quotedblright) { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = STDMARGIN;
@@ -1979,8 +2020,6 @@ cDigitAbsFullSize { collision {
 	margin = STDMARGIN_DIGIT + pairKern;
 	max.x = MAXKERN; min.x = MINKERN;
 } }  /  _ cDigitAbsFullSize;
-
-
 
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 
