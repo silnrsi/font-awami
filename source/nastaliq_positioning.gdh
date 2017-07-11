@@ -378,11 +378,18 @@ cIso
 
 // Lower nuqta attachment
 
+// Special case: situation below with small nuqtas
+(gBehIniBe gBehMedBe gHehGoalIniBe)
+	g__dot1l_small { attach {to = @B1; at = n1LowerS; with = n1LowerM } }
+	gBehMedJm
+	g__dot1l_small { attach {to = @B2; at = n1LowerS; with = n1LowerM } }
+	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLikeLower;
+
 // Special case: beh + beh + jeem - don't use special rule below, but do move center nutqa over a bit.
 (gBehIniBe gBehMedBe)
-	g__dot1l { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
+	cDot1l { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
 	gBehMedJm
-	g__dot1l { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift.x = 100m }
+	cDot1l { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift.x = 100m }
 	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  /*no diac*/  gJeemFin  cNuqtaLikeLower;
 
 // Special case: beh/yeh + beh/yeh + jeem/tcheh - move center nuqta down to the right of the jeem tail.
@@ -629,12 +636,14 @@ cNuqtaLikeUpper { collision.flags = COLL_FREEZE; sequence.class = 0 }  /  (gAlef
 
 // Small V over lam needs to stay nicely centered.
 g__smallV { collision {
-	flags = SET_FIX(collision.flags);
-	min.x = -50m;
-	max.x = 50m;
-	min.y = -300m;
-	max.y = 1000m;
-} }  /  (cLamIni cLamMed)  _;
+		flags = SET_FIX(collision.flags);
+		min.x = -50m;
+		max.x = 50m;
+		min.y = -300m;
+		max.y = 300m;
+	};
+	sequence.class = 0  // eg, \u0646\u0650\u06A9\u06B5
+  }  /  (cLamIM cLamFin)  _;
 
 	
 // Special case: if there is a nuqta before a zah, scootch the nuqta of the
@@ -728,7 +737,7 @@ cNuqtaLikeUpper { collision {
 // Special case: khah + teh/theh + alef/lam - move teh/theh nuqtas above alef/lam
 /***
 cNuqtaLikeUpper { shift { x = -80m; y = -180m } }
-	(g__dot2u g__dot3u gHamzaAbove) { 
+	(cDot2u  cDot3u  gHamzaAbove) { 
 		shift { x = 50m; y = 800m; };
 		collision {
 			flags = SET_FIX(collision.flags);
