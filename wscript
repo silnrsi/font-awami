@@ -27,7 +27,7 @@ TESTDIR='tests'
 # STANDARDS = 'reference'
 
 # set the font name, version, licensing and description
-APPNAME='Awami'
+APPNAME='AwamiNastaliq'
 VERSION='1.000'
 TTF_VERSION="1.000"
 COPYRIGHT='Copyright (c) 2014-2017, SIL International (http:/www.sil.org)'
