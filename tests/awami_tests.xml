@@ -45,9 +45,9 @@
     </styles>
   </head>
   <testgroup label="main">
-    <test background="#ffff7f" label="analyze" rtl="True">
+    <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>پھاٞݭت</string>
+      <string>؟“ کیا؟“ </string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -198,7 +198,7 @@
       <string>ودھارے  پڑھ  اہتھ  رکھڋ  سمجھ  جتھاں</string>
     </test>
     <test class="fset19" label="meem problems" rtl="True">
-      <string>چھپئن</string>
+      <string>جاٞوالاں سلوک کٞر دہ۔ </string>
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
@@ -1210,6 +1210,18 @@
     <test class="fset36" label="ain shadda jeem kaf" rtl="True">
       <string>عّجگ عَجگ</string>
     </test>
+    <test class="fset36" label="gueh + tcheheh" rtl="True">
+      <string>لڳڇ</string>
+    </test>
+    <test class="fset36" label="theh + lam-V" rtl="True">
+      <string>سڅڵف</string>
+    </test>
+    <test class="fset36" label="yeh-small-V + kaf-ring" rtl="True">
+      <string>لێمګف لںمڳف ݨمڱف</string>
+    </test>
+    <test class="fset36" label="theh + meem + kaf" rtl="True">
+      <string>ٽمکف ثمگف</string>
+    </test>
   </testgroup>
   <testgroup label="Overlaps">
     <test label="Saraiki UDHR p1" rtl="True">
@@ -1593,7 +1605,10 @@
     </test>
     <test class="fset36" label="kaf/gaf + lam-bar - real words" rtl="True">
       <comment>Marwari</comment>
-      <string>آنگݪی  اٹکݪ  خاکݪے  نکݪ  نکݪئی  نکݪتی  کݪ</string>
+      <string>آنگݪی  اٹکݪ  خاکݪے  نکݪ آنگݪی نکݪئی  نکݪتی  کݪ</string>
+    </test>
+    <test class="fset36" label="kaf + lam-bar - kludgy default forms" rtl="True">
+      <string>کݪس گݪب  کݪن گݪیم</string>
     </test>
     <test background="#00aaff" class="fset10" label="GOJRI" rtl="True">
       <string/>
@@ -1603,6 +1618,9 @@
     </test>
     <test class="fset27" label="lam w/ small v - alt" rtl="True">
       <string>ڵ ڵڵڵ</string>
+    </test>
+    <test class="fset36" label="Gojri words" rtl="True">
+      <string>ناڵ کوڵ نِکڵ</string>
     </test>
     <test class="fset10" label="noon w/ small v" rtl="True">
       <string>ݩ ݩݩݩ</string>
@@ -1776,6 +1794,10 @@
     <test background="#ff557f" class="fset31" label="yeh w/ 2 dots above - 063E" rtl="True">
       <comment>This showed up in the document Martin produced.</comment>
       <string>ؾ بؾ</string>
+    </test>
+    <test class="fset36" label="non-final noon ghunna" rtl="True">
+      <comment>Balti</comment>
+      <string>بون٘و</string>
     </test>
     <test background="#55aaff" class="fset12" label="HONORIFICS" rtl="True">
       <string/>
@@ -1953,13 +1975,16 @@
     <test class="fset30" label="khyty" rtl="True">
       <string>کھیتی</string>
     </test>
+    <test class="fset30" label="Saraiki" rtl="True">
+      <string>پُرکِیُسفِستُس</string>
+    </test>
     <test class="fset36" label="S.Hindko - real word" rtl="True">
       <string>قِیمتی</string>
     </test>
     <test class="fset36" label="S.Hindko - real word" rtl="True">
       <string>تَکمیل</string>
     </test>
-    <test class="fset36" label="Balochi words" rtl="True">
+    <test class="fset30" label="Balochi words" rtl="True">
       <string>فلؔسطینءَ فلُؔو</string>
     </test>
     <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
@@ -2013,6 +2038,33 @@
     </test>
     <test class="fset31" label="push up lower diac" rtl="True">
       <string>ڜپِ بڳِ</string>
+    </test>
+    <test class="fset30" label="Saraiki" rtl="True">
+      <string>پُچھیُسپُچھیُس</string>
+    </test>
+    <test class="fset30" label="Palula" rtl="True">
+      <string>تھئجلیࣿ</string>
+    </test>
+    <test class="fset30" label="Palula" rtl="True">
+      <string>گِھنئنیࣿ</string>
+    </test>
+    <test class="fset30" label="Palula" rtl="True">
+      <string>گِھنئنیمیࣿ</string>
+    </test>
+    <test class="fset30" label="Shina" rtl="True">
+      <string>مݜئجی</string>
+    </test>
+    <test class="fset30" label="Balochi" rtl="True">
+      <string>بُنگێج</string>
+    </test>
+    <test class="fset30" label="Balochi" rtl="True">
+      <string>بکشِتگێن</string>
+    </test>
+    <test class="fset41" label="Kalami" rtl="True">
+      <string>گھِنوگاں</string>
+    </test>
+    <test class="fset30" label="Kalami" rtl="True">
+      <string>شخصیتیں</string>
     </test>
   </testgroup>
   <testgroup label="Nuqtas">
@@ -2540,12 +2592,24 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
   </testgroup>
   <testgroup label="Special cases">
-    <test background="#55aaff" class="fset36" label="PASS 6 + 10" rtl="True">
+    <test background="#55aaff" class="fset36" label="PASS 6" rtl="True">
       <string/>
     </test>
-    <test class="fset36" label="khah + teh/theh [rules 98 &amp; 44]" rtl="True">
+    <test class="fset36" label="khah + teh/theh + alef/lam (only pass 6)" rtl="True">
       <comment>Substitute wider jeem.</comment>
       <string>سختل</string>
+    </test>
+    <test class="fset36" label="noon+small-V + gaf" rtl="True">
+      <string>لݩڳ لݩَکف</string>
+    </test>
+    <test class="fset36" label="noon/teh/theh + 2 diac + kaf" rtl="True">
+      <string>ستّْکج لتّْگہ جݨَگص</string>
+    </test>
+    <test class="fset36" label="nuqta + vowel-small-V + kaf/gaf" rtl="True">
+      <string>آبِانٚگُور تنٚگ جنٚگجُو</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 6 + 10" rtl="True">
+      <string/>
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
       <comment>Use smaller nuqta and lower V</comment>
@@ -2561,13 +2625,16 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset36" label="PASS 9" rtl="True">
       <string/>
     </test>
-    <test class="fset36" label="beh + yeh + jeem [rule 190]" rtl="True">
+    <test class="fset36" label="beh + yeh + jeem" rtl="True">
       <comment>Use an alternate AP, nLowerTight, for the middle nuqta.</comment>
       <string>بِیج بِیچ سپبڇ ہیچ</string>
     </test>
-    <test class="fset36" label="beh + beh + jeem [rule 188, 191]" rtl="True">
+    <test class="fset36" label="beh + beh + jeem" rtl="True">
       <comment>Use an alternate AP, nLowerTight, for the middle nuqta.</comment>
       <string>ببج ببچ ببِج</string>
+    </test>
+    <test class="fset28" label="beh + beh + jeem - small nuqtas" rtl="True">
+      <string>ببج بیچ ببِج</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
@@ -2709,6 +2776,18 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Add some kerning.</comment>
       <string>کوتمہا</string>
     </test>
+    <test class="fset36" label="khah + meem + pesh" rtl="True">
+      <string>خمُول</string>
+    </test>
+    <test class="fset36" label="lam + zair + peh + zair + yeh + jeem" rtl="True">
+      <string>لِپِیج</string>
+    </test>
+    <test class="fset36" label="jeem + diac + meem" rtl="True">
+      <string>چمّگے</string>
+    </test>
+    <test class="fset36" label="khah + noon-tah + alef" rtl="True">
+      <string>خݨا</string>
+    </test>
   </testgroup>
   <testgroup label="Punctuation">
     <test class="fset37" label="exclamation mark, colon, parens - Latin">
@@ -2734,6 +2813,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="kerning" rtl="True">
       <string>واده داتگێن نبی ائے؟» گوَشتی: «نه.»</string>
+    </test>
+    <test class="fset36" label="question mark + quote" rtl="True">
+      <string>؟“ کیا؟“ </string>
     </test>
   </testgroup>
   <testgroup label="--- Extended characters">

@@ -487,8 +487,9 @@ cIni {kernBbRightS = point(0m,0m) };
 cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
-cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab)
-	{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
+	g_quotedblleftArab g_quotedblrightArab)
+		{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 endtable;
 
@@ -709,7 +710,7 @@ cNuqtaLikeUpper { collision {
 } } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
 */
 
-// Special case for beh/yeh + kaf/lam + heh-doachashmee - move nuqtas down and to the right
+// Special case: beh/yeh + kaf/lam + heh-doachashmee - move nuqtas down and to the right
 cNuqtaLikeLower {
 	shift { x = -250m; y = -300m };
 	collision {
@@ -753,7 +754,7 @@ cNuqtaLikeUpper { shift { x = -80m; y = -180m } }
 
 
 // Special case: khah + teh/theh - allow more movement to get the nuqta on the jeem to the right of the nuqta on the beh form.
-/* NOT NEEDED
+/*** NOT NEEDED
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
@@ -761,9 +762,9 @@ cNuqtaLikeUpper { collision {
 	min.y = -300m;
 	max.y = 1000m;
 } } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
-*/
+**/
 
-// Special case: nuqta+small-V + kaf/gaf
+// Special case: nuqta-small-V + kaf/gaf
 g__dot1u_smallVKf {
 	shift { x= -130m; y = -230m };
 	collision {
@@ -773,9 +774,9 @@ g__dot1u_smallVKf {
 		max.x = 350m;  // standard is 200m
 		min.y = -300m;
 		max.y = 1000m;
-	}
-} /  _  (cKafMed cKafFin);
-
+	};
+	sequence.class = 0;
+} /  cIni  _  (cKafMed cKafFin);
 
 
 // Nuqtas on initials can be moved quite a bit to the right.
@@ -1104,7 +1105,7 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 // Tall: nuqta + diac + kaf
 cNuqtaLike  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
-	/  _=N  cDiacriticUpper  _=K  _=T;
+	/  _=N  cDiacriticUpper  cDiacriticUpper?  _=K  _=T;
 
 // Tall: nuqta+smallV + kaf
 (g__dot1u_smallVKf g__dot1u_smallV)  csKafMed_medium  g__kafTop_null  
@@ -1982,7 +1983,19 @@ cKernable { collision {
 		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
-}  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIM=K;
+}  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIMF=K;
+
+// omit kerning together for punctuation
+cKernPunct  {	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = 150m;  // max(0m, kernLsb + @N.kernRsb + pairKern);
+		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
+    	// min/max.y are omitted for kernable glyphs
+	}
+}   /  _  (cKernPunct  g_quotedblleftArab);
+
 
 // Don't kern before numbers
 cKernable  cKernIgnore?  cDigitAbsFullSize;
