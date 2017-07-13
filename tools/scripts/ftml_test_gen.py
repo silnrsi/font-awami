@@ -10,11 +10,11 @@ def run():
     
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
-    #mode = "allbasecharforms"   # all forms of all letters
-    mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
+    #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
+    #mode = "allbasecharforms"   # all forms of all letters - HUGE file
     #mode = "basic_alldiac"      # same characters as basicforms, with every diac
     #mode = "allbase_somediac"   # not implemented
-    #mode = "alldiac"            # not implemented???
+    mode = "alldiac"            # not implemented???
     
     fontScale = "200"
     #fontScale = "100"  # for waterfall file
@@ -823,7 +823,7 @@ def write_xml_header(f, mode, fontScale) :
     f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
     f.write('    <description>' + title + '</description>\n')
     f.write('    <fontscale>' + fontScale + '</fontscale>\n')
-    f.write('    <fontsrc>local(\'Awami Nastaliq PreV1\'), url(Awami_preV1.ttf)</fontsrc>\n')
+    f.write('    <fontsrc>local(\'Awami Nastaliq\'), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
     f.write('    <title>' + title + '</title>\n')
     f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
     f.write('  </head>\n')

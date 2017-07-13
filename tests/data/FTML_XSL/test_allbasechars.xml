@@ -5,7 +5,7 @@
     <columns comment="15%" label="20%" string="15%"/>
     <description>Test of All Awami Base Characters</description>
     <fontscale>200</fontscale>
-    <fontsrc>local('Awami Nastaliq Beta2'), url(Awami_beta2.ttf)</fontsrc>
+    <fontsrc>local('Awami Nastaliq'), url(AwamiNastaliq-Regular.ttf)</fontsrc>
     <title>Test of All Awami Base Characters</title>
     <styles><style feats=' ' name="default"/></styles>
   </head>
@@ -1670,57 +1670,57 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="seen3dots3dots + arabicE">
-      <test rtl="True"><string><em>&#x069C;&#x06D0;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06D0;</em></string></test>
+    <testgroup label="seen3dots3dots + yehSmallV">
+      <test rtl="True"><string><em>&#x069C;&#x06CE;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06CE;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="dadDotBelow + chotiyeh">
-      <test rtl="True"><string><em>&#x06FB;&#x06CC;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06FB;&#x06CC;</em></string></test>
+    <testgroup label="dadDotBelow + arabicE">
+      <test rtl="True"><string><em>&#x06FB;&#x06D0;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06FB;&#x06D0;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="tah + yehHamza">
-      <test rtl="True"><string><em>&#x0637;&#x0626;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0626;</em></string></test>
+    <testgroup label="tah + chotiyeh">
+      <test rtl="True"><string><em>&#x0637;&#x06CC;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x06CC;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="ghain + arabicE">
-      <test rtl="True"><string><em>&#x063A;&#x06D0;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x06D0;</em></string></test>
+    <testgroup label="ghain + yehHamza">
+      <test rtl="True"><string><em>&#x063A;&#x0626;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0626;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + chotiyeh">
-      <test rtl="True"><string><em>&#x0641;&#x06CC;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06CC;</em></string></test>
+    <testgroup label="feh + yehSmallV">
+      <test rtl="True"><string><em>&#x0641;&#x06CE;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06CE;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam + yehHamza">
-      <test rtl="True"><string><em>&#x0644;&#x0626;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0626;</em></string></test>
+    <testgroup label="lam + arabicE">
+      <test rtl="True"><string><em>&#x0644;&#x06D0;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06D0;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="meem + arabicE">
-      <test rtl="True"><string><em>&#x0645;&#x06D0;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06D0;</em></string></test>
+    <testgroup label="meem + chotiyeh">
+      <test rtl="True"><string><em>&#x0645;&#x06CC;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06CC;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="kafRing + chotiyeh">
-      <test rtl="True"><string><em>&#x06AB;&#x06CC;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06AB;&#x06CC;</em></string></test>
+    <testgroup label="kafRing + yehHamza">
+      <test rtl="True"><string><em>&#x06AB;&#x0626;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06AB;&#x0626;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="hehDo + yehHamza">
-      <test rtl="True"><string><em>&#x06BE;&#x0626;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0626;</em></string></test>
+    <testgroup label="hehDo + yehSmallV">
+      <test rtl="True"><string><em>&#x06BE;&#x06CE;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x06CE;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
