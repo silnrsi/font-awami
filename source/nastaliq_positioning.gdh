@@ -1965,6 +1965,7 @@ cKernable  (gHighHamza gHighHamzaArabic);
 // For short sequences (two base chars) ending with bariyeh,
 // kern against the bariyeh tail, not the initial.
 cKernable { collision {
+	flags = CLEAR_IGNORE(collision.flags);  // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0, kernLsb + 90m);  // 90m = bariyeh's rsb
