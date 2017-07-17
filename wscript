@@ -35,22 +35,22 @@ LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
 DESC_LONG = """
-We are currently working on a Nastaliq-style font which will be called 
-Awami Nastaliq.
+Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety 
+of languages of Southwest Asia, including but not limited to Urdu. This font 
+is aimed at minority language support. This makes it unique among Nastaliq fonts.
 
-Awami means "of the people", "of the common population" or "public". It is 
-intended to be a font that can be used by a wide variety of languages of
-Pakistan, including but not limited to Urdu.
+Awami means "of the people", "of the common population" or "public". 
 
-The font will not cover the full Unicode Arabic repertoire. It will only 
-support characters known to be used by languages in areas of the world using 
-the Nastaliq style of Arabic script.
+The Awami Nastaliq font does not provide complete coverage of all the characters 
+defined in Unicode for Arabic script. Because the font style is specifically 
+intended for languages using the Nastaliq style of southwest Asia, the character 
+set for this font is aimed at those languages.
 
-This font will make use of state-of-the-art font technologies to support complex 
-typographic issues. Font smarts will be implemented using  Graphite only. We have 
+This font makes use of state-of-the-art font technologies to support complex 
+typographic issues. Font smarts have been implemented using  Graphite only. We have 
 no current plans to support OpenType.
 
-One font from this typeface family will be included in this release:
+One font from this typeface family is included in this release:
      * Awami Nastaliq Regular
 
 Font sources are published in the repository and an open workflow is used for building, testing and releasing.

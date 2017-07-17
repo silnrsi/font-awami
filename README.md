@@ -11,10 +11,6 @@ This is an **unreleased development** effort currently focused on the following 
 
 See the [FONTLOG.txt](FONTLOG.txt) for information on this and previous releases.
 
-## Known issues
-
-Font compression does not yet work on OSX. We have had to release an uncompressed Graphite font in order for the font to render in XeTeX/XeLaTeX on OSX.
-
 ## License
 
 Awami Nastaliq is licensed under the SIL Open Font License. See [OFL.txt](OFL.txt) and [OFL-FAQ.txt](OFL-FAQ.txt) for details.
