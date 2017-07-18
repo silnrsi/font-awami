@@ -1,24 +1,26 @@
 # Awami Nastaliq Graphite Font
 
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of Southwest Asia, including but not limited to Urdu. This font is aimed at minority language support. This makes it unique among Nastaliq fonts.
+Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of southwest Asia, including but not limited to Urdu. This font is aimed at minority language support. This makes it unique among Nastaliq fonts.
 
 ## Project status [![Build Status](http://build.palaso.org/app/rest/builds/buildType:Fonts_Awami/statusIcon)](http://build.palaso.org/viewType.html?buildTypeId=Fonts_Awami&guest=1)  
 
-This is an **unreleased development** effort currently focused on the following goals:
+Awami Nastaliq v1.000 has been released. 
 
-- Implement shaping behavior and collision avoidance using [SIL Graphite](https://graphite.sil.org) technology.
-- Build the font using [SMITH](https://github.com/silnrsi/smith) toolchain.
-
-See the [FONTLOG.txt](FONTLOG.txt) for information on this and previous releases.
+We will be working on a new version of the font as we move toward a UFO-based workflow. The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](wscript).
 
 ## License
 
-Awami Nastaliq is licensed under the SIL Open Font License. See [OFL.txt](OFL.txt) and [OFL-FAQ.txt](OFL-FAQ.txt) for details.
+For copyright and licensing - including any Reserved Font Names - see [OFL.txt](OFL.txt).
+
+For practical information about modifying and redistributing this font see [OFL-FAQ.txt](OFL-FAQ.txt).
 
 ## See also
 
-For further information about this font, including Unicode ranges
-supported, Graphite and OpenType font features and how to use them,
-and licensing, please see the documentation on [the website](http://software.sil.org/awami/) or in the documentation
+For more details about this project, including changelog and acknowledgements see [FONTLOG.txt](FONTLOG.txt).
+
+For further information about this font, including Unicode ranges supported Graphite font features and how to use them, and licensing, please see the documentation on [the website](http://software.sil.org/awami/) or in the documentation
 subfolder of this font package.
+
+If you want to contribute to the project let us know.
+
 
