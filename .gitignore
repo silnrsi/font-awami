@@ -6,12 +6,22 @@
 .waf-*
 .lock-*
 results/**
+buildlinux2/**
+bin/**
+
+# gdl and graide
+$_temp.gdl
+gdlerr.txt
+graide_dbg_output.json
+graide_image*.png
+dbg_*.txt
 
 # general backup files
 *~
 *.swp
 *.autosave
 *(Autosaved)*
+
 
 # OS X
 *.DS_STORE
@@ -24,11 +34,18 @@ results/**
 .AppleDouble
 .LSOverride
 Icon?
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 # Windows
 Thumbs.db
-ehthumbs.db
 Desktop.ini
+$RECYCLE.BIN/
+Thumbs.db
+ehthumbs.db
 *.lnk
 
 
@@ -38,6 +55,7 @@ current.fpr
 # Editors
 *.bak
 *.vfbak
+*.~tt
 
 # Shares
 .AppleDB
@@ -52,9 +70,6 @@ $RECYCLE.BIN/
 # Fontforge temporary backups
 *.sfd-*
 
-# FontLab temporary file for TTF generation
-*.~tt
-
 # Opaque formats to keep out of git
 *.fog
 *.vfc
@@ -62,8 +77,10 @@ $RECYCLE.BIN/
 # generated releases
 *.zip
 *.tar.gz
-*.tar.xz
 *.tar.bz2
+*.tar.xz
+*.tgz
+*.tgx
 
 # installers
 *.exe
@@ -74,8 +91,10 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# VM stuff 
+# VM helpers
 .vagrant/
+.docker/
+*.log
 
 # Other
 .sass-cache/
