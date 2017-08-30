@@ -346,11 +346,10 @@ cTakes_squiggleDia
 ////	g__smallV { attach {to = @B; at = smallVS; with = nUpperM } }
 ////	/ _=B  _=U;
 
-if (lamValt == 1)
+// lamValt:
 cTakes_smallValtDia
 	g__smallV { attach {to = @B; at = smallValtS; with = nUpperM } }
-	/ _=B  g__kafTop_null?  _=U;
-endif;
+	/ _=B {lamValt == 1}  g__kafTop_null?  _=U;
 
 cTakes_nUpperDia
 	cnUpperDia { attach {to = @B; at = nUpperS; with = nUpperM } }
@@ -1325,6 +1324,7 @@ c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short {passKey
 
 
 table(glyph) {AttributeOverride = 0}
+
 // to avoid warnings; will never be used
 g__kafTop_null { nUpperS = point(0m,0m) };
 csFinal_short { hamzaUpperS = point(0m,0m); tahUpperS = point(0m,0m); n1LowerS = point(0m,0m); n23LowerS = point(0m,0m) };
@@ -1335,6 +1335,10 @@ cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
 // Temporary:
 g__kafIniTop_medshort { n1LowerS = point(0m, 0m) };
 g__gafIniTop_medshort { n1LowerS = point(0m, 0m) };
+
+// Intersection class:
+cTakes_smallV_short = csFinal_short;
+cTakes_smallV_short &= cTakes_smallValtDia;
 
 endtable;  // glyph
 
@@ -1348,7 +1352,8 @@ csFinal_short
 	cNuqtaLikeLower {att {to=@F; at=n1LowerS; with=n1LowerM}}
 	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
 	/ _=F  _  _;
-csFinal_short  cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}  / _=F  _;
+cTakes_smallV_short cNuqtaLikeUpper {att {to=@F; at=smallValtS; with=nUpperM}}  / _=F {lamValt == 1} _;
+csFinal_short       cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}     / _=F  _;
 
 endpass;
 

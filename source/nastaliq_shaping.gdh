@@ -926,7 +926,7 @@ gBehMed  g__dot1u_smallV  >  gBehMedKf_wide  g__dot1u_smallVKf   /  _  _  cDiacr
 g__dot1u_smallV  >  g__dot1u_smallVKf  /  _  (cKafMed  cKafFin);
 
 // noon + vowel-small-V -> noon-small-V
-g__dot1u  gVowelSmallV  >  g__dot1u_smallVKf  _  /  _  _ (cKafMed  cKafFin);
+g__dot1u  gVowelSmallV  >  g__dot1u_smallVKf:(1 2)  _  /  _  _ (cKafMed  cKafFin);
 
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  (cKafMed  cKafFin);
