@@ -200,6 +200,9 @@
     <test class="fset19" label="meem problems" rtl="True">
       <string>جاٞوالاں سلوک کٞر دہ۔ </string>
     </test>
+    <test class="fset36" label="varying initial heights" rtl="True">
+      <string>تھمبِئیں    تَھیلی    تھیلو    تھر    تھیلا    تھارا</string>
+    </test>
   </testgroup>
   <testgroup label="LTR stuff">
     <test class="fset21" label="Arabic numbers">
@@ -788,6 +791,48 @@
     <test class="fset36" label="reh-dot-dot bug" rtl="True">
       <string>ږازاراڔاڑاژا    ږل﻿زل﻿رل﻿ڔل﻿ڑل﻿ژل   ږوزوروڔوڑوژو   </string>
     </test>
+    <test background="#55aaff" class="fset36" label="PUNCTUATION" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="flat word" rtl="True">
+      <string>بب۔ بب، بب؛ بب! بب؟ ”بب“ ’بب‘ )بب(</string>
+    </test>
+    <test class="fset36" label="flat word - 2" rtl="True">
+      <string>بب۔“ بب،‘ بب‘! بب؟“ ’)بب(‘ ”)بب(“ )’بب‘( )”بب“(</string>
+    </test>
+    <test class="fset36" label="medium word" rtl="True">
+      <string>سعص۔ سعص، سعص؛ سعص! سعص؟ ”سعص“ ’سعص‘ )سعص(</string>
+    </test>
+    <test class="fset36" label="medium word - 2" rtl="True">
+      <string>سعص۔“ سعص،‘ سعص‘! سعص؟“ ’)سعص(‘ ”)سعص(“ )’سعص‘( )”سعص“(</string>
+    </test>
+    <test class="fset36" label="tall word" rtl="True">
+      <string>جحم۔ جحم، جحم؛ جحم! جحم؟ ”جحم“ ’جحم‘ )جحم(</string>
+    </test>
+    <test class="fset36" label="tall word - 2" rtl="True">
+      <string>جحم۔“ جحم،‘ جحم‘! جحم؟“ ’)جحم(‘ ”)جحم(“ )’جحم‘( )”جحم“(</string>
+    </test>
+    <test class="fset36" label="kaf...lam" rtl="True">
+      <string>کسل۔ کسل، کسل؛ کسل! کسل؟ ”کسل“ ’کسل‘ )کسل(</string>
+    </test>
+    <test class="fset36" label="kaf...lam - 2" rtl="True">
+      <string>کسل۔“ کسل،‘ کسل‘! کسل؟“ ’)کسل(‘ ”)کسل(“ )’کسل‘( )”کسل“(</string>
+    </test>
+    <test class="fset36" label="alef...waw" rtl="True">
+      <string>او۔ او، او؛ او! او؟ ”او“ ’او‘ )او(</string>
+    </test>
+    <test class="fset36" label="alef...waw - 2" rtl="True">
+      <string>۔“ او،‘ او‘! او؟“ ’)او(‘ ”)او(“ )’او‘( )”او“(</string>
+    </test>
+    <test class="fset36" label="lam...tah" rtl="True">
+      <string>لمط۔ لمط، لمط؛ لمط! لمط؟ ”لمط“ ’لمط‘ )لمط(</string>
+    </test>
+    <test class="fset36" label="lam...tah - 2" rtl="True">
+      <string>لمط۔“ لمط،‘ لمط‘! لمط؟“ ’)لمط(‘ ”)لمط(“ )’لمط‘( )”لمط“(</string>
+    </test>
+    <test class="fset36" label="heh-doachashmee" rtl="True">
+      <string>ھ۔ ھ، ھ؛ ھ! ھ؟ ”ھ“ ’ھ‘ )ھ(</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions">
     <test label="noon-smalltah + alef" rtl="True">
@@ -1247,6 +1292,9 @@
     </test>
     <test class="fset3" label="Urdu UDHR" rtl="True">
       <string> بچوں کو کس قسم کی تعلیم</string>
+    </test>
+    <test class="fset36" label="Shina p3" rtl="True">
+      <string>رسئ سخصیت تسلیم تھئ</string>
     </test>
   </testgroup>
   <testgroup label="Kaf tops">
@@ -2603,12 +2651,15 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>سختل</string>
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
+      <comment>Substitute a wider beh form.</comment>
       <string>لݩڳ لݩَکف</string>
     </test>
     <test class="fset36" label="noon/teh/theh + 2 diac + kaf" rtl="True">
+      <comment>Substitute a wider beh form.</comment>
       <string>ستّْکج لتّْگہ جݨَگص</string>
     </test>
     <test class="fset36" label="nuqta + vowel-small-V + kaf/gaf" rtl="True">
+      <comment>Substitute a wider beh form.</comment>
       <string>آبِانٚگُور تنٚگ جنٚگجُو</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 6 + 10" rtl="True">
@@ -2651,7 +2702,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
       <comment>Move nuqtas down and to the right.</comment>
-      <string>بکِھ یُلّھف سبگَھ </string>
+      <string>بکِھ یُلّھف بُکّھا</string>
     </test>
     <test class="fset36" label="jeem + teh + alef/lam/kaf [rule 10]" rtl="True">
       <comment>Shift nuqtas down into the space - not essential.</comment>

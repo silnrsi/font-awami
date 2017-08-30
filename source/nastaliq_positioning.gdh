@@ -488,21 +488,27 @@ cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
-	g_quotedblleftArab g_quotedblrightArab)
+	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab)
 		{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+
+cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
+	g_quotedblleft g_quotedblright g_quotedblleftArab g_quotedblrightArab);
+
+cQuoteArab = (g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab);
+cQuoteRightArab = (g_quoterightArab g_quotedblrightArab);
+cQuoteLeftArab = (g_quoteleftArab g_quotedblleftArab);
 
 endtable;
 
 
 table(glyph)
 
-cPostKernable = (cIni, cIso, cKernPunct) {
+cPostKernable = (cIso, cIni, cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
-cKernable = (cIso, cFin, cKernPunct)
-{
+cKernable = (cIso, cFin, cKernPunct) {
 	dbgBbLeft = bb.left; dbgLsb = lsb;
 	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
 }
@@ -510,13 +516,13 @@ cKernable = (cIso, cFin, cKernPunct)
 c_jumpTail = ( cJeemFin, gAinFin );
 
 
-cls_excludingGlyphs = (cKafMed csKafMed_base)
-	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
+cls_excludingGlyphs = (cKafMed csKafMed_base) {
+	collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
-cls_excludingGlyphs_kern = (gKafFin, gGafFin)
-	{collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
+cls_excludingGlyphs_kern = (gKafFin, gGafFin) {
+	collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
-endtable;
+endtable;  // glyph
 
 
 // Nuqta collision fixing
@@ -955,7 +961,8 @@ cls_excludingGlyphs_kern { collision {
 
 
 // Don't kern glyphs before the high hamza; retain the space.
-cKernable  (gHighHamza gHighHamzaArabic);
+// Move kerning special cases down to pass 10.
+////cKernable  (gHighHamza gHighHamzaArabic);
 
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
 // We actually set the kerning parameters in the final pass. But here, at least indicate
@@ -976,7 +983,7 @@ cIniMed { collision { flags = COLL_FREEZE } };
 
 cDiacritic { collision.flags = SET_IGNORE(collision.flags) };	// these have not been attached, so don't bother with them
 
-(g_quotedblright g_quotedblrightArab) { collision.flags = SET_IGNORE(collision.flags) }; // fix with kerning
+cQuoteArab { collision.flags = SET_IGNORE(collision.flags) }; // fix with kerning
 
 endpass; // 3
 
@@ -1217,7 +1224,7 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 cNuqtaLikeUpper { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-cNuqtaLikeUpper { shift.y = -250m; collision.margin -= 50m } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpper { shift.y = -250m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
 	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
@@ -1329,7 +1336,7 @@ cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
 g__kafIniTop_medshort { n1LowerS = point(0m, 0m) };
 g__gafIniTop_medshort { n1LowerS = point(0m, 0m) };
 
-endtable;
+endtable;  // glyph
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
 csFinal_short  ctahUpperDia   {att {to=@F; at=tahUpperS; with=tahUpperM}}     / _=F  _;
@@ -1378,7 +1385,7 @@ c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
 gTahFin { n1LowerS = point(mLowerS.x, mLowerS.y) };
 gTehMarbutaFin  { n1LowerS = point(mLowerS.x, mLowerS.y) };
 
-endtable;
+endtable;  // glyph
 
 
 /****
@@ -1498,7 +1505,8 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
-	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;  // kernPreInitial = 0m };
+	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;      // kernPreInitial = 0m;
+	kernPreExclam = 0m;
 	minKernDelta = 0m };
 
 cDalIso		{ kernPreAlef = -60m };
@@ -1540,6 +1548,14 @@ gEasternTwo { kernPostOne = 50m };
 gThree { kernPostOne = 50m };
 gEasternThree { kernPostOne = 50m };
 
+// Finals with little tails:
+gTah { kernPreExclam = -200m };
+cTahFin { kernPreExclam = -200m };
+gHehDo { kernPreExclam = -250m };
+cHehDoFin { kernPreExclam = -250m };
+gWaw { kernPreExclam = -150m };
+cWawFin { kernPreExclam = -150m };
+
 
 endtable; // glyph
 
@@ -1580,14 +1596,24 @@ csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
 
+// Special case: closing paren + quote
+// TURN ON FOR BUG:
+g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
+// The auto-kerning mechanism didn't want to fix this for some reason. Just do standard kerning.
+// TURN OFF FOR BUG:
+////cQuoteLeftArab { kern.x = -100m }
+////	/  g_parenleftArab  _;
+
+
 
 // Set up kerning pairs.
 
-cKernable { pairKern = kernPreAlef }  /  _ ^ MARKS  cKernIgnore? (cAlefIso);
-cKernable { pairKern = kernPreDal  }  /  _ ^ MARKS  cKernIgnore? (cDalIso);
-cKernable { pairKern = kernPreReh  }  /  _ ^ MARKS  cKernIgnore? (cRehIso);
-cKernable { pairKern = kernPreWaw  }  /  _ ^ MARKS  cKernIgnore? (cWawIso);
-cKernable { pairKern = kernPreLamAlef} / _ ^ MARKS  cKernIgnore? (gLamIniAl);  // gLafAlef - no longer used
+cKernable { pairKern = kernPreAlef }	/  _ ^ MARKS  cKernIgnore?  (cAlefIso);
+cKernable { pairKern = kernPreDal  }	/  _ ^ MARKS  cKernIgnore?  (cDalIso);
+cKernable { pairKern = kernPreReh  }	/  _ ^ MARKS  cKernIgnore?  (cRehIso);
+cKernable { pairKern = kernPreWaw  }	/  _ ^ MARKS  cKernIgnore?  (cWawIso);
+cKernable { pairKern = kernPreLamAlef}	/  _ ^ MARKS  cKernIgnore?  gLamIniAl;  // gLafAlef - no longer used
+cKernable { pairKern = kernPreExclam }	/  _ ^ MARKS  cKernIgnore?  g_exclamArab;
 
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
@@ -1643,8 +1669,8 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 // Kaf exclusion glyphs don't affect diacritics.
 (cls_excludingGlyphs cls_excludingGlyphs_kern) { collision.exclude.glyph = 0 };
 
-// Undo kludge above
-(g_quotedblright g_quotedblrightArab) { collision.flags = CLEAR_IGNORE(collision.flags) };
+// Undo kludge above that avoids shifting .
+cQuoteArab { collision.flags = CLEAR_IGNORE(collision.flags) };
 
 
 // Never shift these!! (even though they are thought of as "nuqta-like" for some purposes).
@@ -1688,7 +1714,7 @@ gZabarTwoDots {
 		margin = 100m;  // cozy up
 	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
 
-// Other diacritics should be more or less centered.
+// Other diacritics should be more or less centered over alef.
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -1750,9 +1776,9 @@ cDiacriticUpper {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		min.x = -100m; // less than normal
-		max.x = 250m;
+		max.x = 100m;  // 250
 		min.y = -300m;
-		max.y = 200m;  // less than normal
+		max.y = 400m;  // less than normal
 		// don't bother with sequence attributes
 } }  /  (cMed  cIso) _  (cKafNoIso cKafIso);	
 
@@ -1961,6 +1987,8 @@ cRehFin_longtail { collision {
 // Don't kern glyphs before the high hamza; retain the space.
 cKernable  (gHighHamza gHighHamzaArabic);
 
+// Don't kern before numbers
+cKernable  cKernIgnore?  cDigitAbsFullSize;
 
 // For short sequences (two base chars) ending with bariyeh,
 // kern against the bariyeh tail, not the initial.
@@ -1987,32 +2015,49 @@ cKernable { collision {
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIMF=K;
 
-// omit kerning together for punctuation
-cKernPunct  {	collision {
+// Don't kern very much before closing quotes.
+// PROBLEM: this rule is firing, but the resulting kerning never happens. Why? :-/
+// TURN ON FOR BUG:
+g_parenleftArab  { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @Q.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = min(0m, pairKern);
+}}
+	/  _  cNuqtaLike?  DIACS  cQuoteLeftArab=Q;
+
+
+
+// Omit kerning altogether between punctuation.
+cKernPunct { collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = 150m;  // max(0m, kernLsb + @N.kernRsb + pairKern);
+		margin = 150m;   //// max(0m, kernLsb + @P.kernRsb + pairKern);
 		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
-}   /  _  (cKernPunct  g_quotedblleftArab);
+}   /  _  cKernPunct=P;
+
+// Don't kern underneath a closing quote.
+cKernable { collision.flags = CLEAR_KERN(collision.flags) }
+	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
 
 
-// Don't kern before numbers
-cKernable  cKernIgnore?  cDigitAbsFullSize;
+// Default cases:
 
 cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
-	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
+	max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
 
-(cKernable g_quotedblright) { collision {
+cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -2071,5 +2116,5 @@ endif;
 
 /////#include "awami_tweaks.gdh"
 
-endtable;
+endtable;  // positioning
 
