@@ -396,7 +396,14 @@ cIso
 	cNuqtaLikeLower { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
 	gBehMedJm
 	cNuqtaLikeLower { attach {to = @B2; at = nLowerTightS; with = n1LowerM } }
-	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLikeLower;
+	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLike;
+
+// Special case: lower-nuqta + jeem + beh/yeh + jeem/hah/khah/tcheh - move center nuqta down to the right of the jeem tail.
+(gBehIniBe gBehMedBe gHehGoalIniBe gJeemMedBe)
+	cNuqtaLikeLower { attach {to = @B1; at = n1LowerS; with = n1LowerM } }
+	gBehMedJm
+	cNuqtaLikeLower { attach {to = @B2; at = nLowerTightS; with = n1LowerM } }
+	/   cNuqtaLikeLower  _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin;
 
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
@@ -837,7 +844,7 @@ g__attachedRing { collision.flags = COLL_FREEZE }  /  cBase  _ ;
 // Note that if we make the lower limit too low, the nuqtas will jump completely *below* 
 // the swash, which is not what we want. We want to be down and to the right.
 cNuqtaLikeLower {
-	shift.y = -800m; // do we want this?
+	//shift.y = -800m; // do we want this?
 	//shift.x = 200m; // since we are not using the sequence attrs, avoid it moving down and to the left of another nuqta
 	collision {
 		flags = SET_FIX(collision.flags);
