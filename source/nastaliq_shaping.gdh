@@ -568,11 +568,15 @@ csMed_raw  >  csMedBy	/  ^ MPRECXT _  MARKS  cBariyehFin;
 
 csMed_raw  >  csMedBe	/  ^ MPRECXT  _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
 
-gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT _  MARKS  gAlefFin_lm;
+gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT  _  MARKS  gAlefFin_lm;
 
 // Special short form of tah before kaf:
-gTahMed_raw  >  gTahMedKf   /  ^ MPRECXT _  MARKS  (cKafMed cKafFin);
-gTahMed_raw  >  gTahMedBeKf /  ^ MPRECXT _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
+gTahMed_raw  >  gTahMedKf   /  ^ MPRECXT  _  MARKS  cKafMF;
+gTahMed_raw  >  gTahMedBeKf /  ^ MPRECXT  _  MARKS  cBehMed MARKS  cKafMF;
+
+// Special short form of lam:
+gLamMed_raw  >  gLamMed_short  /  ^  MPRECXT  _  MARKS  gGafMedDk  MARKS  cKafMF;
+gLamMed_raw  >  gLamMed_short  /  ^  MPRECXT  _  MARKS  cKafMF g__attachedRingMid;
 
 // No contextual forms for this glyph:
 gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (cMed  cFin);
@@ -582,7 +586,6 @@ gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (cMed  cFin);
 // Last resort:
 
 csMed_raw  >  csMedADLK	/ ^ MPRECXT _  MARKS  (cMed  cFin);
-
 
 endpass;
 
@@ -607,8 +610,12 @@ csIni_raw  >  csIniBeNn  /  _ MARKS  cBehMedNn;
 csIni_raw  >  csIniBeHg  /  _ MARKS  gBehMedHgF;
 
 // Special short form of tah before kaf:
-gTahIni_raw  >  gTahIniKf  /  _  MARKS  (cKafMed cKafFin); 
-gTahIni_raw  >  gTahIniBeKf  /  _  MARKS  cBehMed MARKS  (cKafMed cKafFin);
+gTahIni_raw  >  gTahIniKf  /  _  MARKS  cKafMF; 
+gTahIni_raw  >  gTahIniBeKf  /  _  MARKS  cBehMed MARKS  cKafMF;
+
+// Special short form of lam:
+gLamIni_raw  > gLamIni_short  /  _  MARKS  gGafMedDk  MARKS  cKafMF;
+gLamIni_raw  > gLamIni_short  /  _  MARKS  cKafMF g__attachedRingMid;
 
 // SS cases handled above:
 csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
@@ -624,7 +631,7 @@ csIni_raw     >  csIniMmX /  _ MARKS  cMeemMed_alt;
 // Do we really want this rule? If not comment out.
 ////(gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  gLamFin;
 
-(gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  (gKafFin gGafFin cKafMed);
+(gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  cKafMF;
 (gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)  /  _ MARKS  gDalFin;   // was c_dkg_noKalt;
 
 // Use sad interface before rounded kafs:

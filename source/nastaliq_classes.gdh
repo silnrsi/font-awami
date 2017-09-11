@@ -379,7 +379,8 @@ cFehIni = ( gFehIni gFehIniBeM1 gFehIniBeF gFehIniBeM2 gFehIniJm gFehIniRe
 cLamIni = ( gLamIni gLamIniBeM1 gLamIniBeM2 gLamIniJm gLamIniRe 
     gLamIniSn gLamIniSd gLamIniTa gLamIniAi gLamIniFe gLamIniQf 
     gLamIniMm gLamIniNn gLamIniHgF gLamIniHgM gLamIniHd gLamIniCh gLamIniBy 
-    gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl ) ;
+    gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl
+	gLamIni_short ) ;
 cMeemIni = ( gMeemIni, gMeemIniAi, gMeemIniBe, gMeemIniBeF, gMeemIniBeHg, gMeemIniBeM1, gMeemIniBeM2,
 	gMeemIniBeNn, gMeemIniBeRe, gMeemIniBeHg,
 	gMeemIniBy, gMeemIniCh, gMeemIniFe, gMeemIniHd, gMeemIniHgF, gMeemIniHgM, gMeemIniJm, gMeemIniMm,
@@ -442,7 +443,8 @@ cLamMed = ( gLamMed gLamMedBeM1 gLamMedBeF gLamMedBeM2 gLamMedJm gLamMedRe
     gLamMedSn gLamMedSd gLamMedTa gLamMedAi gLamMedFe gLamMedQf 
     gLamMedMm gLamMedNn gLamMedHgF gLamMedHgM gLamMedHd gLamMedCh gLamMedBy 
     gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg 
-	gLamMedAl gLamMedCh_gfTall gLamMedBe_kfTall gLamMedBy_kfTall ) ;  // no MmX
+	gLamMedAl gLamMedCh_gfTall gLamMedBe_kfTall gLamMedBy_kfTall,	// no MmX
+	gLamMed_short );
 cMeemMed = ( gMeemMed gMeemMedBeM1 gMeemMedBeF gMeemMedBeM2 gMeemMedJm gMeemMedRe 
     gMeemMedSn gMeemMedSd gMeemMedTa gMeemMedAi gMeemMedFe gMeemMedQf 
     gMeemMedMm gMeemMedNn gMeemMedHgF gMeemMedHgM gMeemMedHd gMeemMedCh gMeemMedBy 
@@ -523,6 +525,7 @@ cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);
 cKafIM = (cKafIni cKafMed);
 cKafIMF = (cKafIni cKafMed cKafFin);
+cKafMF = (cKafMed cKafFin);
 //cKafNoIso = (cKafIM cKafFin csKafIM_base); -- see below
 cTahIM = (cTahIni cTahMed);
 
@@ -830,6 +833,7 @@ cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah);
 cNuqtaUpperSmall = (cDot1u, cDot2u);
 
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
+cBaseTall -= (gLamIni_short, gLamMed_short);
 
 
 cLam_noBar_postKaf = (gLamMedBe, gLamMedBy, gLamFin);
