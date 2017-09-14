@@ -793,8 +793,12 @@ cs_kafComposed = (gKafRing, gArabicKaf);
 cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
 cs_gafComposed = (gGueh, gNgoeh, gGafRing);
 
-cs_noonMark = (g__dot1u, g__dot1u_ngMark, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, g__dot1u_smallV); // g__noDot1u
-cs_noonComposed = (gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon, gNoonSmallV);
+cs_noonMark = (
+	g__dot1u, g__dot1u_ngMark, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah, 
+	g__dot1u_smallV, g__ring__dot1u); // g__noDot1u
+cs_noonComposed = (
+	gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon, 
+	gNoonSmallV, gNoonRing);
 
 cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
 cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);

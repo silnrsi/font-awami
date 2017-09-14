@@ -693,11 +693,14 @@ csNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
 
 
 csLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
-	g__ring__dot2u, g__dot2l__hamza, g__dot2l__smallV, g__hehHook__hamza, g__dot3l__dot3u);
+	g__ring__dot2u, g__dot2l__hamza, g__dot2l__smallV, g__hehHook__hamza, g__dot3l__dot3u,
+	g__ring__dot1u);
 csLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
-	g__attachedRing, g__dot2l, 		g__dot2l,			g__hehHook_small, g__dot3l);
+	g__attachedRing, g__dot2l, 		g__dot2l,			g__hehHook_small, g__dot3l,
+	g__attachedRing);
 csUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
-	g__dot2u, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u);
+	g__dot2u, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u,
+	g__dot1u);
 
 csLowerNoUpper_small = (g__dot1l_small,	g__dot2vl_small,	g__dot1l_small,		g__hehHook_small,
 	g__attachedRing, g__dot2l_small, g__dot2l_small, g__hehHook_small, g__dot3l_small);
@@ -708,6 +711,9 @@ cNuqtaLike += (csLowerUpper);
 
 cHamzaUrdu = (gHamzaAbove  gHighHamza  g_highHamza  gHamzaBelow);
 cHamzaArabic = (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic  gHamzaBelowArabic);
+
+csRingDot = (g__ring__dot1u, g__ring__dot2u);
+csNoRingDot = (g__dot1u, g__dot2u);
 
 endtable; // glyph
 
@@ -865,9 +871,9 @@ g__noDot2l		>	g__dot2l;
 g__dot2l_tail	>	g__dot2l;
 
 
-// Wider beh forms for teh-ring:
+// Wider beh forms for noon-ring or teh-ring:
 
-csBehNoRing  g__ring__dot2u  _  >  csBehTehRing  g__attachedRing  g__dot2u$1:1;
+csBehNoRing  csRingDot  _  >  csBehTehRing  g__attachedRing  csNoRingDot$2:2;
 
 // Break lower-and-upper-nuqta glyphs into two separate glyphs, so they can be positioned separately.
 
