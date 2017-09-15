@@ -2061,6 +2061,9 @@
     <test class="fset30" label="reattach upper and lower nuqtas" rtl="True">
       <string>لجپفښ لجپفڜ</string>
     </test>
+    <test class="fset30" label="reattach specials" rtl="True">
+      <string>سلججمڼ سلججمڵ</string>
+    </test>
     <test class="fset30" label="seens" rtl="True">
       <string>سکیس کنسلٹنٹس مِنس تحفخِیس</string>
     </test>
@@ -2652,10 +2655,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset36" label="PASS 6" rtl="True">
       <string/>
     </test>
-    <test class="fset36" label="khah + teh/theh + alef/lam (only pass 6)" rtl="True">
-      <comment>Substitute wider jeem.</comment>
-      <string>سختل</string>
-    </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
       <comment>Substitute a wider beh form.</comment>
       <string>لݩڳ لݩَکف</string>
@@ -2674,6 +2673,10 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
       <comment>Use smaller nuqta and lower V</comment>
       <string>ݙݩڳَر ݙݩک</string>
+    </test>
+    <test class="fset36" label="khah + teh/theh + alef/lam" rtl="True">
+      <comment>Substitute wider jeem.</comment>
+      <string>سختل</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 8" rtl="True">
       <string/>
@@ -2702,6 +2705,16 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
       <string/>
     </test>
+    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
+      <comment>Move nuqtas down and to the right.</comment>
+      <string>بکِھ یُلّھف بُکّھا</string>
+    </test>
+    <test class="fset36" label="teh + jeem + kaf/gaf" rtl="True">
+      <string>تجک</string>
+    </test>
+    <test class="fset28" label="beh + jeh + teh" rtl="True">
+      <string>لنژب</string>
+    </test>
     <test background="#aaaa7f" class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
       <string>لقکھہ</string>
     </test>
@@ -2709,20 +2722,13 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Don't allow nuqta to move as far right.</comment>
       <string>جنگی  خُشکی</string>
     </test>
-    <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
-      <comment>Move nuqtas down and to the right.</comment>
-      <string>بکِھ یُلّھف بُکّھا</string>
-    </test>
-    <test class="fset36" label="jeem + teh + alef/lam/kaf [rule 10]" rtl="True">
+    <test background="#aaaa7f" class="fset36" label="jeem + teh + alef/lam/kaf [rule 10]" rtl="True">
       <comment>Shift nuqtas down into the space - not essential.</comment>
       <string>مختا لخئل جخثا</string>
     </test>
     <test background="#aaaa7f" class="fset36" label="hah + teh + alef/lam/kaf [rule 14-18]" rtl="True">
       <comment>Prevent nuqtas from popping up to the top of the alef/lam.</comment>
       <string>حتا چتل</string>
-    </test>
-    <test class="fset36" label="teh + jeem + kaf/gaf" rtl="True">
-      <string>تجک</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 12" rtl="True">
       <string/>
@@ -2815,6 +2821,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
       <string>آٞک داٞگ بھاٞگ</string>
+    </test>
+    <test class="fset36" label="ambiguous zabar" rtl="True">
+      <string>گوَشتش</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
       <string/>

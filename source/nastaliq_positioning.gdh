@@ -579,6 +579,8 @@ cNuqtaLikeUpper {
 	}
 };
 
+csNuqta_small { sequence.valign.height = 250m };
+
 gHighHamza { sequence.class = 0 };
 
 cNuqtaLikeLower {
@@ -590,6 +592,8 @@ cNuqtaLikeLower {
 		valign { height = 275m;	weight = 500 }
 	}
 };
+
+g__hehHook_small { sequences.class = 0 };
 
 g__bar { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
 g__attachedRing { collision { margin = STDMARGIN; marginweight = STDMARGINWT } };
@@ -747,7 +751,7 @@ cNuqtaLikeUpper { collision {
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 ***/
 
-// Special case: khah + teh/theh + alef/lam - move teh/theh nuqtas above alef/lam
+// Special case: khah + teh/theh + alef/lam - move teh/theh nuqtas above alef/lam - no, we're not doing this
 /***
 cNuqtaLikeUpper { shift { x = -80m; y = -180m } }
 	(cDot2u  cDot3u  gHamzaAbove) { 
@@ -775,6 +779,16 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
 **/
+
+// Special case: beh + jeh + beh; the small-nuqta version is problematic.
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = 250m;  // don't let nuqta jump above beh
+	max.x = 200m;
+	min.y = -300m;
+	max.y = 1000m;
+} } /  cRehFin  _  cDiacritic?  cBehIso;
+
 
 // Special case: nuqta-small-V + kaf/gaf
 g__dot1u_smallVKf {
@@ -955,6 +969,7 @@ cls_excludingGlyphs_kern { collision {
 } }  /  cNuqtaLikeUpper  cDiacritic?  _=EG;
 
 // Special case: teh/theh + jeem + kaf
+// Include the exclusion glyph for this case as well, to avoid nuqtas on the jeem jumping up.
 cls_excludingGlyphs_kern { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1353,6 +1368,9 @@ g__gafIniTop_medshort { n1LowerS = point(0m, 0m) };
 cTakes_smallV_short = csFinal_short;
 cTakes_smallV_short &= cTakes_smallValtDia;
 
+cTakes_ring_short = csFinal_short;
+cTakes_ring_short &= cTakes_ringDia;
+
 endtable;  // glyph
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
@@ -1361,13 +1379,17 @@ csFinal_short
 	cn23LowerDia {att {to=@F; at=n23LowerS; with=n23LowerM}; collision.flags = SET_FIX(collision.flags)}
 	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
 	/ _=F  _  _;
+cTakes_ring_short
+	g__attachedRing {att {to=@F; at=ringS; with=ringM}}
+	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
+	/ _=F  _  _;
 csFinal_short
 	cNuqtaLikeLower {att {to=@F; at=n1LowerS; with=n1LowerM}}
 	cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}
 	/ _=F  _  _;
 cTakes_smallV_short cNuqtaLikeUpper {att {to=@F; at=smallValtS; with=nUpperM}}  / _=F {lamValt == 1} _;
 csFinal_short       cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}     / _=F  _;
-
+cTakes_ring_short	g__attachedRing {att {to=@F; at=ringS; with=ringM}}	  	   / _=F  _;
 endpass;
 
 
@@ -1505,12 +1527,14 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; ins
 // Not needed because we have a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
-// Hamzas that act like diacritics:
-cTakes_mTahUpperDia=B  cHamzaAbove {att {to=@B; at=mTahUpperS; with=hamzaUpperM} } /  _ ^ _;	// tah
-cTakes_mUpperDia=B     cHamzaAbove {att {to=@B; at=mUpperS; with=hamzaUpperM} }   /  _ ^ _;
-cTakes_nUpperDia=B     cHamzaAbove {att {to=@B; at=nUpperS; with=hamzaUpperM} }   /  _ ^ _;
-cTakes_mLowerDia=B     cHamzaBelow {att {to=@B; at=mLowerS; with=hamzaLowerM} }   /  _ ^ _;
-cTakes_n1LowerDia=B    cHamzaBelow {att {to=@B; at=n1LowerS; with=hamzaLowerM} }  /  _ ^ _;
+// Hamzas that act like diacritics (but don't reattach them if they're already attached):
+cTakes_hamzaUpperDia   cHamzaAbove  /  _ ^ _; // already attached
+cTakes_hamzaLowerDia   cHamzaAbove  /  _ ^ _;
+cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM} } /  _ ^ _ ;  // tah
+cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mUpperS; with=hamzaUpperM} } /  _ ^ _ ;
+cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ _ ;
+cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ _ ;
+cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ _ ;
 
 
 endpass; // pos - 8 (or 4)
@@ -1609,7 +1633,6 @@ csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 
 // Special case: reh + Arabic hamza
 (gReh gZain gHehGoalFin) { pairKern = 50m }  /  _  gArabicHamza;
-
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -1991,6 +2014,19 @@ cRehFin_longtail { collision {
 } }
 	cNuqtaLower {shift.y = 150m}
 	/  _=R  gBehIniJm  _=N;
+
+// Special case: \u06af\u0648\u064e\u0634\u062a\u0634
+// Use a little less kerning and push the diacritic down.
+(cWawFin cDalFin) { collision {
+ 		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = max(0m, kernLsb + @S.kernRsb + pairKern);
+		max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta + 100m);
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	cDiacriticUpper {shift.y = -200m}
+	/  _=F  _=D  gSeenIniBeM1=S  MARKS  gBehMedSn  MARKS  gSeenFin;
+
 
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);

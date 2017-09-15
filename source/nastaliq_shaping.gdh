@@ -242,7 +242,7 @@ csMedBeM1 = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, 
 		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
 csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
 		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
-		// gJeemMedBeKl uses the same intereface, but should not be included
+		// gJeemMedBeKl uses the same interface, but should not be included
 
 cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTa, gBehMedAi, gBehMedFe,
 		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX);
@@ -932,7 +932,7 @@ cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed c
 
 
 // Special case: khah + teh/theh + kaf/lam/alef
-/////////gJeemMedBeM2  >  gJeemMedBeKl  /  _=J  cNuqtaLikeUpper  gBehMed  cNuqtaLikeUpper;
+gJeemMedBeM2  >  gJeemMedBeKl  /  _=J  cNuqtaLikeUpper  gBehMed  cNuqtaLikeUpper;
 
 // Special case: nuqta+small-V + kaf/gaf
 gBehMed  g__dot1u_smallV  >  gBehMedKf_wide  g__dot1u_smallVKf   /  _  _  cDiacritic?  (cKafMed  cKafFin);
