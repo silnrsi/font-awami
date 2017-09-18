@@ -329,6 +329,7 @@ cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw, gHe
 csQwFin = (gWawFin gQafFin);
 csQwFin_stfh = (gWawFin_stfh gQafFin_stfh);
 
+
 endtable;
 
 
@@ -399,10 +400,10 @@ gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  cIniMed  MARKS  _;
 
-csQwFin  >  csQwFin_stfh  /  cPreQwStfh  MARKS _;
+csQwFin  >  csQwFin_stfh	/  cPreQwStfh  MARKS _;
 // Change feh to qaf for final qaf:
-gFehFin  >  gQafFin_stfh                           /  cPreQwStfh  MARKS  _  g__dot2u;
-gFehFin  >  gQafFin                                /  _  g__dot2u;
+gFehFin  >  gQafFin_stfh	/  cPreQwStfh  MARKS  _  (g__dot2u  g__noDot2u);
+gFehFin  >  gQafFin         /  _  (g__dot2u  g__noDot2u);
 
 
 table(glyph)
@@ -757,6 +758,7 @@ endif; // hamzaAlt
 // See also subtending rules below.
 
 gBeh		cs_behMark				>	cs_behComposed$2:(1 2)	_;
+gBeh								>	gDotlessBeh;
 gJeem		cs_jeemMark				>	cs_jeemComposed$2:(1 2)	_;
 gJeem								>	gHah;
 gSeen		cs_seenMark				>	cs_seenComposed$2:(1 2)	_;
@@ -767,7 +769,12 @@ gSad		cs_sadMark				>	cs_sadComposed$2:(1 2)	_;
 gTah		g__dot1u				>	gZah:(1 2)	_;
 //gAin								>	gAin;
 gAin		g__dot1u				>	gGhain:(1 2)	_;
+
+//gQaf								>	gQaf;
+csDotlessQaf_feh    g__noDot2u		>	csDotlessQaf_qaf:(1 2)  _;
+
 gFeh		cs_fehMark				>	cs_fehComposed$2:(1 2)	_;
+gFeh								>	gDotlessFeh;
 
 //gKaf								>	gKaf;
 gKaf		cs_kafMark				>	cs_kafComposed$2:(1 2)	_;
@@ -821,8 +828,8 @@ csChotiyehFin  g__dot2l__smallV		>	@1  g__smallV;
 csChotiyehFin  g__dot2l_tail		>	csYehTailFin:(1 2)  _;
 csChotiyehFin  g__ring				>	csKashmiriYehFin:(1 2)  _;
 
-gBariyehFin   g__noDot2l  >  @1:(1 2)  _;
-gBariyehFin   g__dot2l__hamza  >  @1  gHamzaAbove;
+gBariyehFin   g__noDot2l			>  @1:(1 2)  _;
+gBariyehFin   g__dot2l__hamza		>  @1  gHamzaAbove;
 
 // Right-link
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1_small  /  _ {smallNuqtas == 1}  _;
@@ -865,7 +872,7 @@ else
 
 // See corresponding rules above.
 
-// If no other rule matches, than we do in fact need these nuqtas:
+// If no other rule matches, then we do in fact need these nuqtas:
 g__noDot1u		>	g__dot1u;
 g__noDot2l		>	g__dot2l;
 g__dot2l_tail	>	g__dot2l;

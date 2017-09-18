@@ -1,5 +1,5 @@
 /*
-    Glyph information for font Awami Nastaliq at Mon Sep 18 13:48:16 2017
+    Glyph information for font Awami Nastaliq at Mon Sep 18 15:54:18 2017
 */
 
 table(glyph) {MUnits = 2048};
@@ -1534,6 +1534,9 @@ gPerMilleSign = glyphid(1527);
 g_arabicLetterMark = glyphid(1528);
 gSmallDotlessHeadOfKhah = glyphid(1529) {mUpperM = point(0m, -50m); mUpperS = point(0m, 684m)};
 gSmallLowMeem = glyphid(1530) {mLowerM = point(0m, 389m); mLowerS = point(32m, -674m)};
+gDotlessBeh = glyphid(1531) {honorificS = point(1224m, 884m); mLowerS = point(1240m, -330m); mUpperS = point(1221m, 536m)};
+gDotlessFeh = glyphid(1532) {honorificS = point(174m, 1391m); kernBbRightS = point(2383m, 957m); mLowerS = point(1204m, -320m); mUpperS = point(2176m, 1546m)};
+gDotlessQaf = glyphid(1533) {honorificS = point(308m, 1393m); mLowerS = point(721m, -918m); mUpperS = point(1359m, 1555m); nUpperS = point(1369m, 1545m)};
 
 
 /*-----   Classes   -----*/
@@ -5160,7 +5163,7 @@ cTakes_honorificDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaAbo
     gZah, gTahFin, gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gHehYehAbove, gHeh,
     gAe, gHehGoalFin, gTehMarbutaFin, gLigatureAllah, gLigatureLlah, gLigatureLlahFin, gArabicHamza, gSeenFin_short,
     gChotiyehFin_short, gNoonFin_short, gLamSmallV_alt, gQafFin_stfh_short, gChotiyehFin_bfkl_short, gLamFin_short, gQafFin_short, gMeemFin_short,
-    gLamFin_kfTall, gTehMarbutaGoalFin, gYehSmallV, gHighHamzaAlef, gHighHamzaAlefArabic);
+    gLamFin_kfTall, gTehMarbutaGoalFin, gYehSmallV, gHighHamzaAlef, gHighHamzaAlefArabic, gDotlessBeh, gDotlessFeh, gDotlessQaf);
 
 cnTakes_honorificDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0308, g_uni030A, g_uni030C, g_uni0327,
     gBehMed, gBehMedBeF_ss, gBehMedAi, gBehMedAi_ss, gBehMedBe, gBehMedBeF, gBehMedBeHg, gBehMedBeM1,
@@ -5653,7 +5656,7 @@ cTakes_kernBbRightDia = (gAlef, gAlefMaddaAbove, gFehThreeDotsBelow, gQaf, gSeen
     gKafIniCh_base, gKafIniFe_base, gKafIniHd_base, gKafIniHgF_base, gKafIniHgM_base, gKafIniJm_base, gKafIniKf_base, gKafIniMmX_base,
     gKafIniNn_base, gKafIniQf_base, gKafIniRe_base, gKafIniSd_base, gKafIniDk_base, gKafIniSn_base, gKafIniTa_base, g__kafIniTop_short,
     g__kafIniTop_shorter, g__gafIniTop_short, g__gafIniTop_shorter, gKafIni_short, gGafIni_short, gKafIniMm_short, gGafIniMm_short, g__kafTop_m_bogus,
-    gLamSmallV_alt);
+    gLamSmallV_alt, gDotlessFeh);
 
 cnTakes_kernBbRightDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0308, g_uni030A, g_uni030C, g_uni0327,
     gAlefFin, gAlefFin_lm, gBehFin, gBehFin_bfkl, gBehMed, gBehMedBeF_ss, gBehMedAi, gBehMedAi_ss,
@@ -5753,7 +5756,7 @@ cTakes_mLowerDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaBelow,
     g__dot3l, g__dot4l, g__hehHook_small, g__hehHook__dot2u, g__hehHook__hamza, g__smallTahBelow, g__smallTah2dotsBelow, g__dot2l__hamza,
     g__ring__dot2u, gSeenFin_short, gChotiyehFin_short, gNoonFin_short, g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small,
     g__dot4l_small, gLamSmallV_alt, gQafFin_stfh_short, gChotiyehFin_bfkl_short, gLamFin_short, gQafFin_short, gLamFin_kfTall, gTehMarbutaGoalFin,
-    gHamzaBelowArabic, g__dot2l__smallV, gSmallLowMeem);
+    gHamzaBelowArabic, g__dot2l__smallV, gSmallLowMeem, gDotlessBeh, gDotlessFeh, gDotlessQaf);
 
 cnTakes_mLowerDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0308, g_uni030A, g_uni030C, g_uni0327,
     gBehMed, gBehMedBeF_ss, gBehMedAi, gBehMedAi_ss, gBehMedBe, gBehMedBeF, gBehMedBeHg, gBehMedBeM1,
@@ -6010,7 +6013,7 @@ cTakes_mUpperDia = (g_circledash, gAlef, gAlefFin, gAlefFin_lm, gAlefHamzaAbove,
     g__hamza, g__hamzaArabic, g__wavyHamza, g__smallV, g__gafStroke_short, g__gafStroke_shorter, gSeenFin_short, gChotiyehFin_short,
     gNoonFin_short, g__dot1u, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small, gLamSmallV_alt,
     gQafFin_stfh_short, gChotiyehFin_bfkl_short, gLamFin_short, gQafFin_short, gMeemFin_short, gLamFin_kfTall, gHighHamzaArabic, gHighHamza,
-    gTehMarbutaGoalFin, gYehSmallV, g__dot1u_smallVKf, gSmallDotlessHeadOfKhah);
+    gTehMarbutaGoalFin, gYehSmallV, g__dot1u_smallVKf, gSmallDotlessHeadOfKhah, gDotlessBeh, gDotlessFeh, gDotlessQaf);
 
 cnTakes_mUpperDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0308, g_uni030A, g_uni030C, g_uni0327,
     gBehMed, gBehMedBeF_ss, gBehMedAi, gBehMedAi_ss, gBehMedBe, gBehMedBeF, gBehMedBeHg, gBehMedBeM1,
@@ -6939,7 +6942,7 @@ cTakes_nUpperDia = (gAlefFin, gAlefFin_lm, gBehFin, gBehFin_bfkl, gBehIni, gBehI
     g__gafMedTop_medshort, g__kafMedTop_short, g__gafMedTop_short, g__kafMedTop_shorter, g__gafMedTop_shorter, gLamMedCh_gfTall, gLamFin_kfTall, gLamMedBe_kfTall,
     gLamMedBy_kfTall, gTehMarbutaGoalFin, gJeemMedBeKl, gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
     gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR, g__kafIniTop_taller, g__gafIniTop_taller, gBehMedKf_wide, gTahMedKf, gLamIni_short,
-    gLamMed_short);
+    gLamMed_short, gDotlessQaf);
 
 cnTakes_nUpperDia = (g_gravecomb, g_acutecomb, g_uni0302, g_tildecomb, g_uni0308, g_uni030A, g_uni030C, g_uni0327,
     g__gafStroke_long, g__gafStroke, gNoonGhunnaFin, gLigatureLlahFin, g__Allah_lah, gNameMarker, gShadda, gShortVowelMark,
@@ -7650,6 +7653,6 @@ cwaw = (g__barWaw);
 
 endtable;
 
-#define MAXGLYPH 1530
+#define MAXGLYPH 1533
 
 #include "../source/nastaliq_rules.gdl"

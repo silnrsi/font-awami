@@ -18,6 +18,7 @@
 */
 
 
+gDotlessBeh				>	gBeh;
 cs_behComposed		_	>	gBeh:1		cs_behMark$1:1;
 
 gHah  					>	gJeem;
@@ -35,7 +36,10 @@ gZah				_	>	gTah:1		g__dot1u:1;
 //gAin					>	gAin;
 gGhain				_	>	gAin:1		g__dot1u:1;
 
+gDotlessFeh				>	gFeh;
+gDotlessQaf			_	>	gFeh:1		g__noDot2u:1;
 cs_fehComposed		_	>	gFeh:1		cs_fehMark$1:1;
+
 
 /***
 if (debugGaf == 0)
