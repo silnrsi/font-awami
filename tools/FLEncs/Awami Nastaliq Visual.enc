@@ -19,6 +19,8 @@ numbersign
 dollar
 percent
 absPercentSign
+absPerMilleSign
+absPerTenThousandSign
 ampersand
 quotesingle
 quotesingle.arab
@@ -340,6 +342,7 @@ zeronojoin.showInv
 zerojoin.showInv
 leftToRightMark
 rightToLeftMark
+arabicLetterMark
 hyphen
 hyphen.arab
 noBreakHyphen
@@ -395,6 +398,8 @@ absAlefMaddaAbove
 absAlefMaddaGaf
 absAlefWavyHamzaAbove
 absAlefWavyHamzaBelow
+absAlefTwoAbove
+absAlefThreeAbove
 absHighHamzaAlef
 absHighHamzaAlef.arabic
 
@@ -409,6 +414,7 @@ absTteheh
 absTehRing
 absTehThreeDotsAboveDownwards
 absBeeh
+absDotlessBeh
 
 absBehIni
 absBehIni.ai
@@ -476,6 +482,7 @@ absBehMed.ta
 absBehMed.ta_ss
 absFeh
 absFehThreeDotsBelow
+absDotlessFeh
 absFehFin
 absFehIni
 absFehIni.ai
@@ -526,13 +533,16 @@ absFehMed.sd
 absFehMed.sn
 absFehMed.ta
 absQaf
+absDotlessQaf
 absQafFin
 absQafFin.short
 absQafFin._stfh
 absQafFin._stfh.short
 nlqBariyeh
-nlqBariyehFin
 nlqBariyehHamzaAbove
+nlqBariyehTwoAbove
+nlqBariyehThreeAbove
+nlqBariyehFin
 absAin
 absGhain
 absMisraSign
@@ -585,11 +595,14 @@ absAinMed.re
 absAinMed.sd
 absAinMed.sn
 absAinMed.ta
+
 absHah
 absHahHamzaAbove
+absHahSmallTahAbove
 absHahSmallTahBelow
 absHahSmallTahTwoDots
 absHahThreeDotsAbove
+absHahFourBelow
 absJeem
 absKhah
 absTcheh
@@ -650,6 +663,7 @@ absJeemMed.ta
 absSad
 absDad
 absDadDotBelow
+absSadThreeDotsAbove
 absSadFin
 absSadIni
 absSadIni.ai
@@ -706,6 +720,7 @@ absSeenFourDotsAbove
 absSeenSmallTahTwoDots
 absSeenTwoVertAbove
 absSeenThreeDotsBelowThreeDotsAbove
+absSeenFourBelow
 absSeenFin
 absSeenFin.short
 absSeenIni
@@ -763,6 +778,10 @@ absYeh
 absYehHamzaAbove
 absE
 absYehSmallV
+absAlefMaksura
+absYehTwoAbove
+absYehThreeAbove
+absYehFourBelow
 nlqChotiyehFin
 nlqChotiyehFin.short
 nlqChotiyehFin._bfkl
@@ -837,6 +856,7 @@ absLamMed.ch_gfTall
 absKeheh
 absKaf
 absKafRing
+absKehehThreeDotsAbove
 absGaf
 absGueh
 absNgoeh
@@ -1177,6 +1197,7 @@ absDalTwoVertBelowSmallTah
 absThal
 absDalDotBelow
 absDdal
+absDul
 absDalFin
 
 absWaw
@@ -1185,6 +1206,9 @@ absWawRing
 absU
 absOe
 absKirghizOe
+absKirghizYu
+absWawTwoAbove
+absWawThreeAbove
 absWawFin
 absWawFin._stfh
 
@@ -1338,6 +1362,8 @@ absSmallHighRehHahMark
 absSmallHighSadMark
 absSmallHighSeen
 absSmallHighTah
+absSmallDotlessHeadOfKhah
+absSmallLowMeem
 absThousandsSeparator
 absVowelInvSmallV
 absVowelSmallV

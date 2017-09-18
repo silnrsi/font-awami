@@ -1686,7 +1686,7 @@ cNuqtaUpper { shift.y = -150m  }
 	cDiacriticUpper { shift.y = -300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y = -100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
 cDiacriticUpper { shift.y = -300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
-// -1350 permits a single diacritc under a standard bowl to remain at the standard position
+// -1350 permits a single diacritic under a standard bowl to remain at the standard position
 cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
 
 

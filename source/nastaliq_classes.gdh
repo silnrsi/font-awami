@@ -139,9 +139,10 @@ cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, 
     gDopesh, gUltaPesh, gNoonGhunnaMark, gMaddaAbove,
 	gVowelSmallV, gVowelInvSmallV, gZabarTwoDots, gShortVowelMark,
 	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
-    gSmallHighRehHahMark, gSmallHighSeen, gSmallHighTah, gNameMarker,
+    gSmallHighRehHahMark, gSmallHighSeen, gSmallHighTah, gSmallDotlessHeadOfKhah,
+	gNameMarker,
 	cShaddaPlus, cKharizabarPlus);
-cDiacriticLower = ( gZair, gKharizair, gDozair ) ;
+cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
@@ -187,7 +188,7 @@ cShowInvBoxes = (g_wordJoiner, g_paragraphSeparator, g_lineSeparator, g_zeroWidt
 	g_narrowNoBreakSpace,
 	g_leftToRightIsolate_alt, g_rightToLeftIsolate_alt, g_firstStrongIsolate_alt, g_popDirectionalIsolate_alt);
 
-cEmbedMarkers = (g_leftToRightMark, g_rightToLeftMark, 
+cEmbedMarkers = (g_leftToRightMark, g_rightToLeftMark, g_arabicLetterMark,
 	g_leftToRightEmbedding, g_rightToLeftEmbedding, g_popDirectionalFormatting,
 	g_leftToRightOverride, g_rightToLeftOverride,
 	g_leftToRightIsolate, g_rightToLeftIsolate, g_firstStrongIsolate, g_popDirectionalIsolate);
