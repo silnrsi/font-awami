@@ -926,14 +926,15 @@ cNuqtaLikeLower { collision {
 
 // Exclusion glyphs for space above kafs and gafs
 
-// For ngoeh, don't using the exclusion glyph - the nuqtas need to go right on top of the gaf.
+// For ngoeh or kaf w/ 3 dots, don't using the exclusion glyph - 
+// the nuqtas need to go right on top of the gaf.
 //(cls_excludingGlyphs cls_excludingGlyphs_kern)
 cKafNoIso
 		{ collision {
 			flags = CLEAR_FIX(collision.flags);
 			flags = CLEAR_KERN(collision.flags);
 		} } 
-	cDot2u { shift { x = 200m; y = -100m } }
+	(cDot2u cDot3u) { shift { x = 200m; y = -100m } }
 	/ _  g__kafTop_null? _;
 
 
@@ -1234,7 +1235,7 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 #define	SHORTFINAL0		3100m
 #define SHORTFINAL_KAF	1600m
 
-// Situations where short kaf is needed due to height (except cases above)
+// Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
@@ -1251,7 +1252,7 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 cNuqtaLikeUpper { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-cNuqtaLikeUpper { shift.y = -250m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpper { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
 	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
@@ -1676,18 +1677,20 @@ cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  c
 // Bogus rule that will never fire (for if we disable this pass for debugging):
 ///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
 
+
 // Diacritics that extend above/below the line
-cDiacriticUpper  /  (cKafIni cKafMed)  _  ; // ... but not on kafs or gafs
-cDiacriticUpper  /  csKafIM_base  cKafTop  _;
+
+cNuqtaLike?  cDiacriticUpper  /  (cKafIM csKafIM_base)  cKafTop  _  _;  // ... but not on kafs or gafs
+
 // For tahs, the diac is not attached to the nuqta, so don't move the nuqta down.
-cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y = -200m; collision.margin -= 20m }
+cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y -= 200m; collision.margin -= 20m }
 	/  _=T  _=N  _=D { position.y > 2800m };
-cNuqtaUpper { shift.y = -150m  }
-	cDiacriticUpper { shift.y = -300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
-cDiacriticUpper { shift.y = -100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
-cDiacriticUpper { shift.y = -300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
+cNuqtaUpper { shift.y -= 150m  }
+	cDiacriticUpper { shift.y -= 300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
+cDiacriticUpper { shift.y -= 100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
+cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 // -1350 permits a single diacritic under a standard bowl to remain at the standard position
-cDiacriticLower { shift.y = 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
+cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
 
 
 endpass;  // 9

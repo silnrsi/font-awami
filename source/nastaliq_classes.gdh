@@ -99,8 +99,8 @@ g__kafTop_null {ktDelta = 0m };
 
 // General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic,
-	g__smallV, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw,
-	g__wavyHamza, g__dot2l__hamza,
+	g__smallV, g__smallVinv,g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark,
+	g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__dot2l__hamza,
 	cKafTop,
 	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long); // g__gafStroke_short
@@ -260,21 +260,22 @@ gBehMed_SS_raw = pseudo(postscript("absBehMed.beF_ss"));  // absBehMed.beF_ss / 
 //gBariyehFin0 = pseudo(postscript("nlqBariyehFin"))		{nuqtaG = nNone};  -- defined above with dual-connectors
 
 
-cBehIso = (gBeh, gTeh, gTheh, gPeh, gTteh, gTteheh, gTehRing, gTehThreeDotsAboveDownwards, gBeeh);
+cBehIso = (gBeh, gTeh, gTheh, gPeh, gTteh, gTteheh, gTehRing, gTehThreeDotsAboveDownwards, gBeeh, gDotlessBeh);
 cBehFin = (gBehFin, gBehFin_bfkl) ;
-cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
+cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, gHahSmallTahAbove,
+	gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
 cJeemFin = (gJeemFin);
 cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelowThreeDotsAbove);
 cSeenFin = (gSeenFin, gSeenFin_short);
-cSadIso = (gSad, gDad, gDadDotBelow);
+cSadIso = (gSad, gDad, gDadDotBelow, gSadThreeDotsAbove);
 cSadFin = (gSadFin);
 cTahIso = (gTah, gZah);
 cTahFin = (gTahFin);
 cAinIso = (gAin, gGhain);
 cAinFin = (gAinFin);
-cFehIso = (gFeh, gFehThreeDotsBelow);
+cFehIso = (gFeh, gFehThreeDotsBelow, gDotlessFeh);
 cFehFin = (gFehFin);
-cQafIso = (gQaf);
+cQafIso = (gQaf, gDotlessQaf);
 cQafFin = (gQafFin, gQafFin_stfh, gQafFin_short, gQafFin_stfh_short);
 cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt);
 cLamFin = (gLamFin, gLamFin_short, gLamFin_kfTall);
@@ -282,7 +283,7 @@ cMeemIso = (gMeem);
 cMeemFin = (gMeemFin, gMeemFin_short);
 cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
-cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf);
+cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf, gKafThreeDotsAbove);
 cKafFin = (gKafFin, gGafFin);
 cHehGoalIso = (gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gHehYehAbove, gAe, gHeh);
 cHehGoalFin = (gHehGoalFin, gTehMarbutaGoalFin);   // gHehGoalFin_stfh - no longer used
@@ -296,14 +297,14 @@ cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefW
 cAlefFin = (gAlefFin, gAlefFin_lm);
 
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, 
-	gDalRing, gDalFourDotsAbove);
+	gDalRing, gDalFourDotsAbove, gDul);
 cDalFin = (gDalFin);
 
 cRehIso = (gReh, gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove, gRehRing, gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_sshg, gRehFin_hgM) ;
 
-cWawIso = (gWaw, gWawHamzaAbove, gWawRing, gArabicU, gOe, gKirghizOe);
+cWawIso = (gWaw, gWawHamzaAbove, gWawRing, gArabicU, gOe, gKirghizOe, gKirghizYu);
 cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza);		// bariyeh -> behIni + 2Nlower
@@ -313,7 +314,7 @@ csChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehF
 csYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin, gYehTailFin_bfkl);
 csKashmiriYehFin = (gKashmiriYehFin, gKashmiriYehFin_bfkl, gKashmiriYehFin, gKashmiriYehFin_bfkl);
 
-cChotiyehIso = (gChotiyeh, gYeh, gYehHamzaAbove, gArabicE, gYehTail, gKashmiriYeh, gYehSmallV);
+cChotiyehIso = (gChotiyeh, gYeh, gYehHamzaAbove, gArabicE, gYehTail, gKashmiriYeh, gYehSmallV, gAlefMaksura);
 cChotiyehFin = csChotiyehFin;
 cTehMarbutaFin = (gTehMarbutaFin);
 
@@ -776,25 +777,25 @@ cs_behMark = (g__dot1l, g__dot2u, g__dot3u, g__smallTah, g__dot3l, g__dot2vl, g_
 cs_behComposed = (gBeh, gTeh, gTheh, gTteh, gPeh, gBeeh, gTehRing, gTteheh, gTehThreeDotsAboveDownwards);
 
 cs_jeemMark = (
-	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTahBelow, g__smallTah2dotsBelow,
-	g__dot3u, gHamzaAbove);
+	g__dot1l, g__dot1u, g__dot3l, g__dot2vl, g__dot2l, g__dot4l, g__smallTah, g__smallTahBelow,
+	g__smallTah2dotsBelow, g__dot3u, gHamzaAbove);
 cs_jeemComposed = (
-	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahBelow, gHahSmallTahTwoDots,
-	gHahThreeDotsAbove, gHahHamzaAbove);
+	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahAbove, gHahSmallTahBelow,
+	gHahSmallTahTwoDots, gHahThreeDotsAbove, gHahHamzaAbove);
 
 cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u);
 cs_seenComposed = (
 	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, 
 	gSeenThreeDotsBelowThreeDotsAbove);
 
-cs_sadMark = (g__dot1u, g__dot1l__dot1u);
-cs_sadComposed = (gDad, gDadDotBelow);
+cs_sadMark = (g__dot1u, g__dot1l__dot1u, g__dot3u);
+cs_sadComposed = (gDad, gDadDotBelow, gSadThreeDotsAbove);
 
 cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
 cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow);
 
-cs_kafMark = (g__attachedRingMid, g__kafSquiggle);
-cs_kafComposed = (gKafRing, gArabicKaf);
+cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot3u);
+cs_kafComposed = (gKafRing, gArabicKaf, gKafThreeDotsAbove);
 
 cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
 cs_gafComposed = (gGueh, gNgoeh, gGafRing);
@@ -822,16 +823,18 @@ cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza, gW
 cs_alefComposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
 	gAlefWavyHamzaBelow, gHighHamzaAlef);
 
-cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing, g__dot4u);
-cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, gDalRing, gDalFourDotsAbove);
+cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing,
+	g__dot4u, g__dot3l);
+cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, gDalRing,
+	gDalFourDotsAbove, gDul);
 
 cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
 	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots);
 cs_rehComposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehRing,
 	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 
-cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw);
-cs_wawComposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU);
+cs_wawMark = (gHamzaAbove, g__hamza, g__attachedRingMid, g__barWaw, g__smallV, gPeshWaw, g__smallVinv);
+cs_wawComposed = (gWawHamzaAbove, gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gArabicU, gKirghizYu);
 
 
 //-------------------------------------------------------------------------------------------

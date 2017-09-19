@@ -1742,6 +1742,9 @@
     <test class="fset18" label="dal w/ four dots" rtl="True">
       <string>ڐ بڐ سڐ ڐِ بڐِ سڐِ</string>
     </test>
+    <test class="fset36" label="dul" rtl="True">
+      <string>ڎ بڎ سڎ ڎِ بڎِ سڎَ</string>
+    </test>
     <test label="reh w dot above and below" rtl="True">
       <string>ږ مږ لږ سږ سہږ</string>
     </test>
@@ -1776,6 +1779,12 @@
     <test class="fset12" label="kaf lower nuqtas + final tails" rtl="True">
       <string>کِع صکِع کِی فکِی کِج مکِج</string>
     </test>
+    <test class="fset36" label="kaf w/ three dots" rtl="True">
+      <string>ݣ ݣݣݣ</string>
+    </test>
+    <test class="fset36" label="dotless beh" rtl="True">
+      <string>ٮ ٮٮٮ </string>
+    </test>
     <test class="fset18" label="tteheh (teh w/ 2 vertical dots below" rtl="True">
       <string>ٺ ٺٺٺ</string>
     </test>
@@ -1794,6 +1803,9 @@
     <test background="#ffaaff" class="fset21" label="hah w/ small tah below" rtl="True">
       <string>ݮ ݮݮݮ ݮلݮیݮ</string>
     </test>
+    <test class="fset36" label="hah w/ small tah above" rtl="True">
+      <string>ݲ ݲݲݲ</string>
+    </test>
     <test class="fset18" label="seen w/ dot above and below" rtl="True">
       <string>ښ ښښښ</string>
     </test>
@@ -1809,8 +1821,17 @@
     <test class="fset24" label="dad w/ dot below (Khowar)" rtl="True">
       <string>ۻ ۻۻۻ</string>
     </test>
+    <test class="fset36" label="sad w/ three dots" rtl="True">
+      <string>ڞ ڞُڞڞِ</string>
+    </test>
     <test class="fset24" label="feh w/ 3 dots below (Khowar)" rtl="True">
       <string>ڥ ڥڥڥ</string>
+    </test>
+    <test class="fset36" label="dotless feh" rtl="True">
+      <string>ٱ ٱٱٱ</string>
+    </test>
+    <test class="fset36" label="dotless qaf" rtl="True">
+      <string>ڡ ڡڡڡ لڡ</string>
     </test>
     <test class="fset21" label="teh marbuta goal" rtl="True">
       <comment>Right-joining only, tail form.</comment>
@@ -1832,6 +1853,9 @@
     <test class="fset21" label="Arabic OE (waw w/ small V)" rtl="True">
       <string>ۆ قۆ ثۆُ</string>
     </test>
+    <test class="fset36" label="Kirghiz yu (waw w/ inverted V)" rtl="True">
+      <string>ۉ قۉ ثۉُ</string>
+    </test>
     <test class="fset21" label="Arabic U (waw w/ pesh-like mark)" rtl="True">
       <string>ۇ لجۇ صۇُ</string>
     </test>
@@ -1848,6 +1872,9 @@
     <test class="fset21" label="Kashmiri yeh" rtl="True">
       <string>ؠ ؠؠؠ ؠُقؠِسؠ</string>
     </test>
+    <test class="fset36" label="alef maksura" rtl="True">
+      <string>ى ىىى</string>
+    </test>
     <test background="#ff557f" class="fset31" label="yeh w/ 2 dots above - 063E" rtl="True">
       <comment>This showed up in the document Martin produced.</comment>
       <string>ؾ بؾ</string>
@@ -1855,15 +1882,6 @@
     <test class="fset36" label="non-final noon ghunna" rtl="True">
       <comment>Balti</comment>
       <string>بون٘و</string>
-    </test>
-    <test class="fset36" label="dotless beh" rtl="True">
-      <string>ٮ ٮٮٮ </string>
-    </test>
-    <test class="fset36" label="dotless feh" rtl="True">
-      <string>ٱ ٱٱٱ</string>
-    </test>
-    <test class="fset36" label="dotless qaf" rtl="True">
-      <string>ڡ ڡڡڡ لڡ</string>
     </test>
     <test background="#55aaff" class="fset12" label="HONORIFICS" rtl="True">
       <string/>
