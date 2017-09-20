@@ -828,8 +828,10 @@ csChotiyehFin  g__dot2l__smallV		>	@1  g__smallV;
 csChotiyehFin  g__dot2l_tail		>	csYehTailFin:(1 2)  _;
 csChotiyehFin  g__ring				>	csKashmiriYehFin:(1 2)  _;
 
-gBariyehFin   g__noDot2l			>  @1:(1 2)  _;
-gBariyehFin   g__dot2l__hamza		>  @1  gHamzaAbove;
+gBariyehFin   g__noDot2l			>	@1:(1 2)  _;
+gBariyehFin   g__dot2l__hamza		>	@1  gHamzaAbove;
+
+gBariyeh	  cs_bariyehMark		>	cs_bariyehComposed$2:(1 2)  _;
 
 // Right-link
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1_small  /  _ {smallNuqtas == 1}  _;

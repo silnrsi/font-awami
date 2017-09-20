@@ -337,6 +337,10 @@ cTakes_squiggleDia
 	csquiggleDia { attach {to = @K; at = squiggleS; with = squiggleM } }
 	/ _=K  _=S;
 
+cTakes_digitUpperDia
+	cdigitUpperDia { attach {to = @B; at = digitUpperS; with = digitUpperM } }
+	/ _=B  g__kafTop_null?  _=U;
+
 ////cTakes_gafStrokeDia
 ////	cgafStrokeDia { attach {to = @K; at = gafStrokeS; with = gafStrokeM } }
 ////	/ _=K  _=S;
