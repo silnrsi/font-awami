@@ -1,5 +1,5 @@
 /*
-    Glyph information for font Awami Nastaliq at Wed Sep 20 15:48:45 2017
+    Glyph information for font Awami Nastaliq at Mon Oct  2 16:19:40 2017
 */
 
 table(glyph) {MUnits = 2048};
@@ -1425,7 +1425,7 @@ gSeenMedQf = glyphid(1418) {entrance = point(1175m, 825m); exit = point(0m, 256m
 gSeenMedRe = glyphid(1419) {entrance = point(1182m, 825m); exit = point(1m, 492m); n1LowerS = point(761m, 166m); n23LowerS = point(773m, 155m); nUpperS = point(589m, 1048m); tahUpperS = point(577m, 1059m)};
 gSeenMedSd = glyphid(1420) {entrance = point(1833m, 825m); exit = point(0m, 36m); n1LowerS = point(1412m, 166m); n23LowerS = point(1424m, 155m); nUpperS = point(1240m, 1048m); tahUpperS = point(1228m, 1059m)};
 gSeenMedTa = glyphid(1421) {entrance = point(1906m, 825m); exit = point(0m, -108m); n1LowerS = point(1485m, 166m); n23LowerS = point(1496m, 155m); nUpperS = point(1312m, 1048m); tahUpperS = point(1301m, 1059m)};
-g_ligSalaamUlena = glyphid(1422);
+g_ligSalaamUlenaAlt = glyphid(1422);
 gChotiyehFin_bfkl_short = glyphid(1423) {entrance = point(1101m, 890m); alefS = point(690m, 1411m); digitUpperS = point(690m, 1211m); hamzaUpperS = point(400m, 1289m); honorificS = point(213m, 1391m); mLowerS = point(691m, -910m); mUpperS = point(368m, 1324m); n1LowerS = point(681m, -920m); n23LowerS = point(681m, -900m); nUpperS = point(360m, 1259m)};
 gLamFin_short = glyphid(1424) {entrance = point(1583m, 1185m); barS = point(1553m, 1651m); honorificS = point(285m, 1388m); mLowerS = point(635m, -910m); mUpperS = point(1590m, 2484m); n1LowerS = point(645m, -920m); nUpperS = point(1565m, 2471m); smallVS = point(1565m, 2440m); smallValtS = point(830m, 1199m)};
 gQafFin_short = glyphid(1425) {entrance = point(1517m, 800m); honorificS = point(319m, 1391m); mLowerS = point(706m, -810m); mUpperS = point(1308m, 1383m); n1LowerS = point(695m, -774m); nUpperS = point(1323m, 1372m)};
@@ -1559,6 +1559,7 @@ gBariyehTwoAbove = glyphid(1552) {honorificS = point(33m, 1992m); mLowerS = poin
 gBariyehThreeAbove = glyphid(1553) {honorificS = point(33m, 1992m); mLowerS = point(1528m, -286m); mUpperS = point(279m, 1478m)};
 gHahFourBelow = glyphid(1554) {honorificS = point(-41m, 1670m); mLowerS = point(753m, -918m); mUpperS = point(658m, 1619m)};
 gSeenFourAbove = glyphid(1555) {honorificS = point(312m, 2428m); mLowerS = point(645m, -918m); mUpperS = point(1482m, 2525m)};
+g_ligSalaamUlena = glyphid(1556);
 
 
 /*-----   Classes   -----*/
@@ -7711,6 +7712,8 @@ cai = (gBehIniAi, gBehMedAi, gFehIniAi, gFehMedAi, gAinIniAi, gAinMedAi, gJeemIn
 
 cal = (gLamIniAl, gLamMedAl);
 
+calt = (g_ligSalaamUlenaAlt);
+
 carab = (g_exclamArab, g_parenleftArab, g_parenrightArab, g_asteriskArab, g_colonArab, g_quoteleftArab, g_quoterightArab, g_quotedblrightArab,
     g_quotedblArab, g_quotesingleArab, g_slashArab, g_fractionArab, g_braceleftArab, g_barArab, g_bracketleftArab, g_backslashArab,
     g_bracketrightArab, g_bracerightArab, g_quotesinglbaseArab, g_quotedblbaseArab, g_ellipsisArab, g_uni2025Arab, g_perthousandArab, g_endashArab,
@@ -7890,6 +7893,6 @@ cwaw = (g__barWaw);
 
 endtable;
 
-#define MAXGLYPH 1555
+#define MAXGLYPH 1556
 
 #include "../source/nastaliq_rules.gdl"
