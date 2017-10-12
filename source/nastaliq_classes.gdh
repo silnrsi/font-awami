@@ -120,6 +120,9 @@ cNuqtaLikeSecond = (cNuqtaLikeUpMid,
 	// these can come second when you have a gueh with an alternate height top:
 	cDot2vl);
 
+cNuqtaLikeLower_jump = cNuqtaLikeLower;
+cNuqtaLikeLower_jump -= (g__hehHook_small, g__attachedRing, g__ring);
+
 cNuqtaLikeUpperTall = (cDot3u, cDot4l, g__smallTah, g__smallTah2dots, g__dot1u_smallV, g__dot1u_smallVKf,
 	g__dot1u_ngMark);
 cNuqtaLikeLowerTall = (cDot2vl, cDot3l, cDot4l, g__smallTahBelow, g__smallTah2dotsBelow);

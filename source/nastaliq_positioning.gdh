@@ -860,8 +860,8 @@ g__attachedRing { collision.flags = COLL_FREEZE }  /  cBase  _ ;
 
 // Nuqtas before certain finals can move down quite a bit to jump below swashes.
 // Note that if we make the lower limit too low, the nuqtas will jump completely *below* 
-// the swash, which is not what we want. We want to be down and to the right.
-cNuqtaLikeLower {
+// the swash, which is not what we want. We want it to be down and to the right.
+cNuqtaLikeLower_jump {
 	//shift.y = -800m; // do we want this?
 	//shift.x = 200m; // since we are not using the sequence attrs, avoid it moving down and to the left of another nuqta
 	collision {
