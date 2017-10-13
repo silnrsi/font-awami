@@ -94,9 +94,6 @@ Vagrant.configure(2) do |config|
 
     sudo dpkg-reconfigure locales -f noninteractive -p critical
 
-    sudo apt-get update -y -q
-    sudo apt-get upgrade -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
-
     sudo apt-get install -q -y less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion software-properties-common
 
     SHELL
