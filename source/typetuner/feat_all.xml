@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE all_features SYSTEM "feat_all.dtd">
+<all_features version="1.0">
+
+	<feature name="Heh-goal hook on medial heh goal" value="True" tag="HgHk">
+		<value name="False" tag="F">
+			<cmd name="gr_feat" args="{gr_hehk} 0"/>
+		</value>
+		<value name="True" tag="T">
+			<cmd name="null" args="null"/>
+		</value>
+	</feature>
+	
+	<feature name="Initial heh-doachashmee" value="Heart shape" tag="HeDo">
+		<value name="Heart shape" tag="Hrt">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Round" tag="Rnd">
+			<cmd name="gr_feat" args="{gr_hedo} 1"/>
+		</value>
+	</feature>
+	
+	<feature name="Lam with V" value="V over stem" tag="LamV">
+		<value name="V over stem" tag="Stem">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="V over bowl" tag="Bowl">
+			<cmd name="gr_feat" args="{gr_lamv} 1"/>
+		</value>
+	</feature>
+	
+	<feature name="Full stop" value="Dash" tag="FStop">
+		<value name="Dash" tag="Dash">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Dot" tag="Dot">
+			<cmd name="gr_feat" args="{gr_cv85} 1"/>
+		</value>
+	</feature>
+
+	<feature name="Punctuation" value="Default" tag="Punct">
+		<value name="Default" tag="Dflt">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Arabic" tag="Arab">
+			<cmd name="gr_feat" args="{gr_punc} 1"/>
+		</value>
+		<value name="Latin" tag="Latn">
+			<cmd name="gr_feat" args="{gr_punc} 2"/>
+		</value>
+	</feature>
+
+	<feature name="Sukun/jazm" value="Open down" tag="Sukun">
+		<value name="Open down" tag="Down">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Open left" tag="Left">
+			<cmd name="gr_feat" args="{gr_cv78} 2"/>
+		</value>
+	</feature>
+
+	<feature name="Hamza" value="Urdu style" tag="Hamza">
+		<value name="Urdu style" tag="Urdu">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Arabic style" tag="Arab">
+			<cmd name="gr_feat" args="{gr_hamz} 1"/>
+		</value>
+	</feature>
+
+	<feature name="Word spacing" value="Medium" tag="WdSp">
+		<value name="Extra tight" tag="XTit">
+			<cmd name="gr_feat" args="{gr_wdsp} 0"/>
+		</value>
+		<value name="Tight" tag="Tit">
+			<cmd name="gr_feat" args="{gr_wdsp} 1"/>
+		</value>
+		<value name="Medium" tag="Med">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Wide" tag="Wid">
+			<cmd name="gr_feat" args="{gr_wdsp} 3"/>
+		</value>
+		<value name="Extra wide" tag="XWid">
+			<cmd name="gr_feat" args="{gr_wdsp} 4"/>
+		</value>
+	</feature>
+
+	<feature name="Short forms" value="None" tag="Short">
+		<value name="None" tag="None">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Kafs and gafs" tag="Kaf">
+			<cmd name="gr_feat" args="{gr_shrt} 1"/>
+		</value>
+		<value name="Finals" tag="Fin">
+			<cmd name="gr_feat" args="{gr_shrt} 2"/>
+		</value>
+		<value name="All" tag="All">
+			<cmd name="gr_feat" args="{gr_shrt} 3"/>
+		</value>
+	</feature>
+
+	<feature name="Small nuqtas" value="False" tag="SmNuq">
+		<value name="False" tag="F">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="True" tag="T">
+			<cmd name="gr_feat" args="{gr_snuq} 1"/>
+		</value>
+	</feature>
+
+	<feature name="Collision fixing" value="On" tag="Coll">
+		<value name="Off" tag="Off">
+			<cmd name="gr_feat" args="{gr_agca} 0"/>
+		</value>
+		<value name="Kern only" tag="Kern">
+			<cmd name="gr_feat" args="{gr_agca} 1"/>
+		</value>
+		<value name="On" tag="On">
+			<cmd name="null" args="null"/>
+		</value>
+	</feature>
+
+
+	<interactions>
+
+	</interactions>
+
+
+	<cmd_blocks>
+		
+	</cmd_blocks>
+
+	<aliases>
+		<alias name='gr_agca' value='1634165601'/> <!-- 61 67 63 61 -->
+		<alias name='gr_cv85' value='1668692021'/> <!-- 63 76 38 35 -->
+		<alias name='gr_cv78' value='1668691768'/> <!-- 63 76 37 38 -->
+		<alias name='gr_hamz' value='1751215482'/> <!-- 68 61 6D 7A -->
+		<alias name='gr_hedo' value='1751475311'/> <!-- 68 65 64 6F -->
+		<alias name='gr_hehk' value='1751476331'/> <!-- 68 65 68 6B -->
+		<alias name='gr_lamv' value='1818324342'/> <!-- 6C 61 6D 76 -->
+		<alias name='gr_punc' value='1886744163'/> <!-- 70 75 6E 63 -->
+		<alias name='gr_shrt' value='1936224884'/> <!-- 73 68 72 74 -->
+		<alias name='gr_snuq' value='1936618865'/> <!-- 73 6E 75 71 -->
+		<alias name='gr_wdsp' value='2003071856'/> <!-- 77 64 73 70 -->
+	</aliases>
+	
+	<old_names>
+
+	</old_names>
+
+</all_features>
