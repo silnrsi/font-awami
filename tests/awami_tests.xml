@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>خلیفةُ</string>
+      <string>دیبا سہ کھوے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -201,7 +201,7 @@
       <string>جاٞوالاں سلوک کٞر دہ۔ </string>
     </test>
     <test class="fset36" label="varying initial heights" rtl="True">
-      <string>تھمبِئیں    تَھیلی    تھیلو    تھر    تھیلا    تھارا</string>
+      <string>دیبا سہ کھوے</string>
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
@@ -2109,6 +2109,9 @@
     </test>
     <test class="fset30" label="Balochi words" rtl="True">
       <string>فلؔسطینءَ فلُؔو</string>
+    </test>
+    <test class="fset30" label="high kaf w/ large nuqta - Urdu" rtl="True">
+      <string>شکستگی</string>
     </test>
     <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
       <string/>

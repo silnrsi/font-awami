@@ -498,7 +498,7 @@ cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
-	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab)
+	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab)
 		{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
@@ -1083,9 +1083,10 @@ c_final {user6 = position.y}  /  _ {user6 == NOTSET};
 
 #define pairKern user2
 #define tooHigh user3
+#define reattached user4
 
 // currently not used
-////#define marginSet user4  -- currently not used
+////#define marginSet user5  -- currently not used
 
 
 table(positioning)
@@ -1107,6 +1108,17 @@ endtable;
 // of nuqta behind/under a kaf.
 #define STAYBELOWKAF {collision {min.x = 0m; max.y = 300m}}
 
+// height at which to invoke various short forms
+#define SHORTERKAF_HT	1900m
+#define SHORTKAF_HT  	1350m
+#define PUSHDOWN		3280m
+#define PUSHUP			-630m
+#define SHORTFINAL2		2300m
+#define SHORTFINAL1		2900m
+#define	SHORTFINAL0		3100m
+#define SHORTFINAL_KAF	1600m
+
+
 pass(5)
 
 // Kaf-top collision fixing/prevention and tall sequences
@@ -1116,6 +1128,10 @@ csKafIni_medium  g__kafTop_null
 	>  csKafIni_base$K  csKafIni_top_taller$K
 	/  gAlefMaddaAbove  _=K  _=T  MARKS (gHehGoalFin gBehFin_bfkl gTahFin gFehFin cDalFin);
 
+// Very high kaf + large-nuqta - don't make taller
+cNuqtaUpperLarge  csKafIM_medium  g__kafTop_null
+	>	@N STAYBELOWKAF  @K {tooHigh = 1}  @T
+	/  _=N _=K {position.y > SHORTERKAF_HT}  _=T;
 
 // Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
@@ -1229,15 +1245,6 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
 
-// height at which to invoke various short forms
-#define SHORTERKAF_HT	1900m
-#define SHORTKAF_HT  	1300m
-#define PUSHDOWN		3280m
-#define PUSHUP			-630m
-#define SHORTFINAL2		2300m
-#define SHORTFINAL1		2900m
-#define	SHORTFINAL0		3100m
-#define SHORTFINAL_KAF	1600m
 
 // Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
@@ -1247,7 +1254,7 @@ cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
 
 
 cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  csKafIM_base$K {user5 = bb.top; user6 = position.y + bb.top}  csKafIM_top_short$K
+	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user5 = bb.top; user6 = position.y + bb.top}**/  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
@@ -1293,9 +1300,9 @@ cIni     cMed  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFI
 csKafIM_medium  cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
 csKafIM_base    cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
 
-cMed      cMed  >  @M1 @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
+cMed      cMed  >  @M1  @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
 
-cMed  csFinal_regular  >  @M  csFinal_short    /  _=M  {tooHigh == 1}  MARKS  _=F;
+cMed  csFinal_regular  >  @M  csFinal_short    /  _=M {tooHigh == 1}  MARKS  _=F;
 
 endpass;  // 6
 endif;
@@ -1322,9 +1329,16 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_b
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
+// kaf tops
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
+// Left-over rule from previous pass:
+// kaf tops before short finals - reprocess to attach to the short final
+cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}  csFinal_short {reattached=1}
+	/  ^ _=K  _=T  MARKS _=F {reattached==0};
+cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}  csFinal_short {reattached=1}
+	/  ^ _=K  _=T  MARKS _=F {reattached==0};
 
 c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}
 	gChotiyehFin_short {passKeySlot = true; insert = 1}
@@ -1689,7 +1703,7 @@ cNuqtaLike?  cDiacriticUpper  /  (cKafIM csKafIM_base)  cKafTop  _  _;  // ... b
 // For tahs, the diac is not attached to the nuqta, so don't move the nuqta down.
 cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y -= 200m; collision.margin -= 20m }
 	/  _=T  _=N  _=D { position.y > 2800m };
-cNuqtaUpper { shift.y -= 150m  }
+cNuqtaLikeUpper { shift.y -= 150m  }
 	cDiacriticUpper { shift.y -= 300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y -= 100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
 cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
