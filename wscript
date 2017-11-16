@@ -69,19 +69,21 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
 				# remove buggy tables:
 				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
 				# for removing psnames:
-				####cmd('psfix -s ${DEP} ${TGT}'),
+				########cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
 				cmd('ttfstriphints ${DEP} ${TGT}'),
 				cmd('ttfsubset ${DEP} ${TGT}'),
-        cmd('psfcompressgr ${DEP} ${TGT}')
+        cmd('psfcompressgr ${DEP} ${TGT}'),
+        cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
      		),
-     source = "source/AwamiNastaliqRegular.ttf",
-     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D',  ##### -c',
+    source = "source/AwamiNastaliqRegular.ttf",
+    graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -w3541',  ##### -c',
                     depends = glob.glob('*.gdh')),
     ap = "source/AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
     version = TTF_VERSION,
+    ###typetuner = "source/typetuner/feat_all.xml",
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
     fret = fret(params = '-r'),  # -b = show octaboxes
