@@ -1333,8 +1333,7 @@ cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
-// Left-over rule from previous pass:
-// kaf tops before short finals - reprocess to attach to the short final
+// Alt-height kaf tops before short finals - reprocess to attach to the short final
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}  csFinal_short {reattached=1}
 	/  ^ _=K  _=T  MARKS _=F {reattached==0};
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}  csFinal_short {reattached=1}
@@ -2085,7 +2084,7 @@ cKernable { collision {
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
 		margin = 150m;  // max(0m, kernLsb + @N.kernRsb + pairKern);
-		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
+		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIMF=K;
@@ -2118,6 +2117,17 @@ cKernPunct { collision {
 // Don't kern underneath a closing quote.
 cKernable { collision.flags = CLEAR_KERN(collision.flags) }
 	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
+
+// Account for overhang of initial kaf diagonal stroke.
+cKernable { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta - 800m);
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  _  cNuqtaLike?  DIACS  cKernIgnore?  (cKafIni  csKafIni_base  cKafIso)=N;
 
 
 // Default cases:

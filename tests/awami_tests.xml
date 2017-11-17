@@ -836,6 +836,9 @@
     <test class="fset36" label="heh-doachashmee" rtl="True">
       <string>ھ۔ ھ، ھ؛ ھ! ھ؟ ”ھ“ ’ھ‘ )ھ(</string>
     </test>
+    <test class="fset41" label="initial kafs" rtl="True">
+      <string>گم کبن‌ګ ڳجحشلن</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions">
     <test label="noon-smalltah + alef" rtl="True">
@@ -2194,6 +2197,12 @@
     </test>
     <test class="fset30" label="Kalami" rtl="True">
       <string>شخصیتیں</string>
+    </test>
+    <test class="fset30" label="tall preF kaf + short final" rtl="True">
+      <comment>Note that this example needs to re-attach both the tall gaf top AND the final short yeh.
+
+(This is not a real-life example.)</comment>
+      <string>سجحلمشَگی</string>
     </test>
   </testgroup>
   <testgroup label="Nuqtas">
