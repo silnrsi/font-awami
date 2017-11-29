@@ -773,13 +773,12 @@ gAin		g__dot1u				>	gGhain:(1 2)	_;
 //gQaf								>	gQaf;
 csDotlessQaf_feh    g__noDot2u		>	csDotlessQaf_qaf:(1 2)  _;
 
-gFeh		cs_fehMark				>	cs_fehComposed$2:(1 2)	_;
+gFeh		cs_fehMark				>	cs_fehComposed$2:(1 2)	_;   
 gFeh								>	gDotlessFeh;
 
-//gKaf								>	gKaf;
-gKaf		cs_kafMark				>	cs_kafComposed$2:(1 2)	_;
-gGaf		cs_gafMark				>	cs_gafComposed$2:(1 2)	_;
-
+//gKaf
+gKaf		cs_kafMark				>	cs_kafComposed$2:(1 2)  _;
+gGaf		cs_gafMark				>	cs_kafComposed$2:(1 2)  _;
 // Remove squiggle from initial/medial forms.
 (cKafIni  cKafMed)  g__kafSquiggle	>	@1:(1 2)  _;
 
@@ -793,6 +792,7 @@ gLam		g__smallV				>	gLamSmallV:(1 2)     _;
 endif;
 
 //gMeem								>	gMeem;
+(gMeem gMeemFin)  >  (gMeemLowdiac gMeemFinLowdiac)  /  _  cDiacriticLower;
 
 gNoon		cs_noonMark				>	cs_noonComposed$2:(1 2)	_;
 gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;

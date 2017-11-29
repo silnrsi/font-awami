@@ -1334,9 +1334,9 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
 // Alt-height kaf tops before short finals - reprocess to attach to the short final
-cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}  csFinal_short {reattached=1}
+cTakes_kafTop_bjDia=K  ckafTop_bjDia {att {to=@K; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}  csFinal_short {reattached=1}
 	/  ^ _=K  _=T  MARKS _=F {reattached==0};
-cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}  csFinal_short {reattached=1}
+cTakes_kafTopDia=K     cKaf_top      {att {to=@K; at=kafTopS;    with=kafTopM};    passKeySlot = true}  csFinal_short {reattached=1}
 	/  ^ _=K  _=T  MARKS _=F {reattached==0};
 
 c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}
