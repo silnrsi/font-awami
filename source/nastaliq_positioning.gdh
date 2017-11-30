@@ -502,11 +502,14 @@ cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark
 		{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
-	g_quotedblleft g_quotedblright g_quotedblleftArab g_quotedblrightArab);
+	g_quotedblleft g_quotedblright g_quotedblleftArab g_quotedblrightArab
+	g_quotedbl g_quotedblArab);
 
-cQuoteArab = (g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab);
+cQuoteArab = (g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab);
 cQuoteRightArab = (g_quoterightArab g_quotedblrightArab);
 cQuoteLeftArab = (g_quoteleftArab g_quotedblleftArab);
+
+cFullStop = (gFullStop gFullStopDot);
 
 endtable;
 
@@ -2102,6 +2105,16 @@ g_parenleftArab  { collision {
 	/  _  cNuqtaLike?  DIACS  cQuoteLeftArab=Q;
 
 
+// Tighten up kerning between full-stop and closing quote.
+cFullStop { collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = 150m;   //// max(0m, kernLsb + @Q.kernRsb + pairKern);
+		max.x = MAXKERN; min.x = -300m;  /// MINKERN + minKernDelta;
+    	// min/max.y are omitted for kernable glyphs
+	}
+}   /  _  cQuote=Q;
 
 // Omit kerning altogether between punctuation.
 cKernPunct { collision {
