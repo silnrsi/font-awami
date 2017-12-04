@@ -1567,7 +1567,7 @@ table(glyph) { AttributeOverride = 1 }
 
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
-cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreWaw = 0m;
+cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m; kernPreWaw = 0m;
 	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;      // kernPreInitial = 0m;
 	kernPreExclam = 0m;
 	minKernDelta = 0m };
@@ -1585,12 +1585,16 @@ gRehFin_jkl	{ minKernDelta = -400m };
 //gRehFin_sshg { minKernDelta = -400m }; -- obsolete
 gRehFin_hgM { minKernDelta = -400m };
 
+gAlef { kernPreZain = -60m };
+gAlefFin { kernPreZain = -60m };
+
 // Don't let punctuation kern underneath following segment:
 cKernPunct { minKernDelta = MINKERN * -1 };
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
 ///gAlef { kernPreKafNoSp = -150m };
 ///gAlefFin { kernPreKafNoSp = -80m };
+
 
 // Digits
 
@@ -1670,18 +1674,22 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 
 // Set up kerning pairs.
 
-cKernable { pairKern = kernPreAlef }	/  _ ^ MARKS  cKernIgnore?  (cAlefIso);
-cKernable { pairKern = kernPreDal  }	/  _ ^ MARKS  cKernIgnore?  (cDalIso);
-cKernable { pairKern = kernPreReh  }	/  _ ^ MARKS  cKernIgnore?  (cRehIso);
-cKernable { pairKern = kernPreWaw  }	/  _ ^ MARKS  cKernIgnore?  (cWawIso);
-cKernable { pairKern = kernPreLamAlef}	/  _ ^ MARKS  cKernIgnore?  gLamIniAl;  // gLafAlef - no longer used
-cKernable { pairKern = kernPreExclam }	/  _ ^ MARKS  cKernIgnore?  g_exclamArab;
+cKernable { pairKern = kernPreAlef }		/  _ ^ MARKS  cKernIgnore?  cAlefIso;
+cKernable { pairKern = kernPreDal  }		/  _ ^ MARKS  cKernIgnore?  cDalIso;
+cKernable { pairKern = kernPreZain }		/  _ ^ MARKS  cKernIgnore?  cZainIso;
+cKernable { pairKern = kernPreReh  }		/  _ ^ MARKS  cKernIgnore?  cRehIso;
+cKernable { pairKern = kernPreWaw  }		/  _ ^ MARKS  cKernIgnore?  cWawIso;
+cKernable { pairKern = kernPreLamAlef}		/  _ ^ MARKS  cKernIgnore?  gLamIniAl;  // gLafAlef - no longer used
+cKernable { pairKern = kernPreExclam }		/  _ ^ MARKS  cKernIgnore?  g_exclamArab;
 
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
 
 gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  (cKafIni csKafIni_base cKafIso)
 	[MARKS  ANY]?;  // superfluous slots to increase precedence over two-letter sequence rule below
+
+// Exception to pre-short rule:
+cRehIso { pairKern = -100m }            /  _ ^ MARKS  cKernIgnore?  cBehIni MARKS  cAlefFin;
 
 // Before a two-letter sequence:
 cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;
