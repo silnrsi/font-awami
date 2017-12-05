@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>دیبا سہ کھوے</string>
+      <string>چنڑی چنڑیل منشُور منظور</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -642,6 +642,12 @@
     </test>
     <test class="fset11" label="final reh overlap" rtl="True">
       <string>ہر شخص جر شخص عر شخص بہر شخص</string>
+    </test>
+    <test class="fset36" label="alef + reh/zain/etc." rtl="True">
+      <string>راز رار راژ راږ راڑ راڗ راݫ راڙ راݬ راݱ</string>
+    </test>
+    <test class="fset36" label="reh + beh + alef" rtl="True">
+      <string>ربا رنا ریا</string>
     </test>
     <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
       <string/>
@@ -2952,6 +2958,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="lots of lower nutqas (reversed)" rtl="True">
       <string>کہیجیخ</string>
+    </test>
+    <test background="#ffff00" class="fset36" label="jeem + beh + reh" rtl="True">
+      <string>جنر</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
