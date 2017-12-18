@@ -72,13 +72,14 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
 				########cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
 				cmd('ttfstriphints ${DEP} ${TGT}'),
-				cmd('ttfsubset ${DEP} ${TGT}'),
+				cmd('ttfsubset -s deva ${DEP} ${TGT}'),
         cmd('psfcompressgr ${DEP} ${TGT}'),
         cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
      		),
     source = "source/AwamiNastaliqRegular.ttf",
     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
                     depends = glob.glob('*.gdh')),
+    opentype = fea('source/simple.fea', no_make=1),
     ap = "source/AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
