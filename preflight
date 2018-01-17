@@ -1,0 +1,10 @@
+#!/bin/sh
+# Sample script for calling multiple routines on a project, typically prior to committing to a repository.
+# Place this in root of a project, adjust the font path, then set it to be executable by typing:
+# chmod +x preflight
+
+# This section contains commands used occasionally
+# psfsetpsnames -i tools/data/glyph_data.csv  source/Akatab-Regular_beta.ufo
+
+# This section contains commands that run every time
+psfnormalize source/AwamiNastaliq-Regular.ufo
