@@ -79,7 +79,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
     source = "source/AwamiNastaliqRegular.ttf",
     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
                     depends = glob.glob('*.gdh')),
-    opentype = fea('source/simple.fea', no_make=1),
+    opentype = fea('source/simple.fea', no_make=1, no_test=True),
     ap = "source/AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
