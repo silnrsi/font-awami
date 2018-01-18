@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 # Vagrant file config to get the latest smith & friends
 # put this in your project folder along with the provision.sh file referenced below.
-# last tested to work with vagrant version 1.9.5
+# last tested to work with vagrant version 2.0.1 and Virtualbox 5.1.30
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  ###config.vm.network "private_network", ip: "192.168.20.25"
+  # config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which is generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -42,12 +42,21 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/smith", type: "virtualbox"
 
+  config.vm.hostname = "smith"
+
+  # If you want you can also map the parent folder of all your local font working copies:
+  # for macOS users:
+  # config.vm.synced_folder "/Users/username/work/fonts/", "/smith", type: "virtualbox"
+  # for Ubuntu users:
+  # config.vm.synced_folder "/home/username/work/fonts/", "/smith", type: "virtualbox"
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
+
+    # Do not display the VirtualBox GUI when booting the machine
     vb.gui = false 
 
     # Customize the amount of memory on the VM:
@@ -56,21 +65,7 @@ Vagrant.configure(2) do |config|
     # Customize the amount of CPUs allocated:
     vb.cpus = 2
 
-    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-
   end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
-
-  # config.ssh.forward_x11 = true
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -93,6 +88,8 @@ Vagrant.configure(2) do |config|
     cat /etc/apt/sources.list
 
     sudo dpkg-reconfigure locales -f noninteractive -p critical
+
+    sudo apt-get update -q -y
 
     sudo apt-get install -q -y less vim-nox htop tree git mercurial subversion pydf wget curl bash-completion software-properties-common
 
