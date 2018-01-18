@@ -4,8 +4,8 @@
 //	Graphite classes for Latin characters
 
 /*
-	This file is part of the Awami Nastaliq font 
-	(http://software.sil.org/awami) and is 
+	This file is part of the Awami Nastaliq font
+	(http://software.sil.org/awami) and is
 	Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
 	with Reserved Font Names "Awami" and "SIL".
 
@@ -40,7 +40,7 @@ cLatin = (
 	g_Thorn  g_thorn  g_dotlessi  g_OE  g_oe  g_Scaron  g_scaron  g_Ydieresis  g_ydieresis  g_Zcaron  g_zcaron
 	g_florin
 
-	g_asciitilde  g_asciicircum  g_grave  g_circumflex  g_caron  g_ring  g_acute  g_cedilla  g_tilde  g_macron  g_dieresis
+	g_asciitilde  g_asciicircum  g_grave  g_circumflex  g_caron  g_ring  g_acute  g_cedilla  g_tilde  g_overscore  g_dieresis
 
 	g_parenleft  g_parenright  g_braceleft  g_braceright
 	g_comma  g_hyphenminus  g_period  g_colon  g_semicolon  g_periodcentered  g_sfthyphen
@@ -49,7 +49,7 @@ cLatin = (
 	g_quotesingle g_quoteleft  g_quoteright   g_quotesinglbase
 	g_quotedbl  g_quotedblleft  g_quotedblright  g_quotedblbase
 	g_guillemotleft  g_guillemotright  g_guilsinglleft  g_guilsinglright
-	g_question  g_questiondown  
+	g_question  g_questiondown
 	g_exclam  g_exclamdown
 
 	g_dagger  g_daggerdbl  g_bullet
@@ -71,9 +71,9 @@ csPunctArabic = carab;
 
 csPunctLatin = (g_exclam, g_parenleft, g_parenright, g_asterisk, g_colon, g_quoteleft, g_quoteright, g_quotedblright,
     g_quotedbl, g_quotesingle, g_slash, g_fraction, g_braceleft, g_bar, g_bracketleft, g_backslash,
-	g_bracketright, g_braceright, g_quotesinglbase, g_quotedblbase, g_ellipsis, g_uni2025, g_endash, 
-	g_emdash, g_periodcentered, g_plus, g_hyphenminus, g_less, g_equal, g_greater, g_guilsinglleft, 
-	g_bullet, g_guilsinglright, g_guillemotleft, g_sfthyphen, g_plusminus, g_bulletOperator, g_guillemotright, g_multiply, 
+	g_bracketright, g_braceright, g_quotesinglbase, g_quotedblbase, g_ellipsis, g_uni2025, g_endash,
+	g_emdash, g_periodcentered, g_plus, g_hyphenminus, g_less, g_equal, g_greater, g_guilsinglleft,
+	g_bullet, g_guilsinglright, g_guillemotleft, g_sfthyphen, g_plusminus, g_bulletOperator, g_guillemotright, g_multiply,
 	g_hyphen, g_noBreakHyphen, g_figureDash, g_horizontalBar, g_hyphenationPoint, g_minus, g_quotedblleft);
 
 

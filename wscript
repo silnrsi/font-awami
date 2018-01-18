@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # Smith configuration file
 
-#	This file is part of the Awami Nastaliq font 
-#	(http://software.sil.org/awami) and is 
+#	This file is part of the Awami Nastaliq font
+#	(http://software.sil.org/awami) and is
 #	Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
 # with Reserved Font Names "Awami" and "SIL".
 #
@@ -35,19 +35,19 @@ LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
 DESC_LONG = """
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety 
-of languages of Southwest Asia, including but not limited to Urdu. This font 
+Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety
+of languages of Southwest Asia, including but not limited to Urdu. This font
 is aimed at minority language support. This makes it unique among Nastaliq fonts.
 
-Awami means "of the people", "of the common population" or "public". 
+Awami means "of the people", "of the common population" or "public".
 
-The Awami Nastaliq font does not provide complete coverage of all the characters 
-defined in Unicode for Arabic script. Because the font style is specifically 
-intended for languages using the Nastaliq style of southwest Asia, the character 
+The Awami Nastaliq font does not provide complete coverage of all the characters
+defined in Unicode for Arabic script. Because the font style is specifically
+intended for languages using the Nastaliq style of southwest Asia, the character
 set for this font is aimed at those languages.
 
-This font makes use of state-of-the-art font technologies to support complex 
-typographic issues. Font smarts have been implemented using  Graphite only. We have 
+This font makes use of state-of-the-art font technologies to support complex
+typographic issues. Font smarts have been implemented using  Graphite only. We have
 no current plans to support OpenType.
 
 One font from this typeface family is included in this release:
@@ -76,11 +76,11 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
         cmd('psfcompressgr ${DEP} ${TGT}'),
         cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
      		),
-    source = "source/AwamiNastaliqRegular.ttf",
+    source = "source/AwamiNastaliq-Regular.ufo",
     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
                     depends = glob.glob('*.gdh')),
     opentype = fea('source/simple.fea', no_make=1, no_test=True),
-    ap = "source/AwamiNastaliqRegular_AP.xml",
+    ap = "AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
     version = TTF_VERSION,
@@ -95,4 +95,3 @@ def configure(ctx) :
     ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
     ctx.env['FFCOPYGLYPHS'] = '../tools/bin/ffcopyglyphs.py'
     ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
-

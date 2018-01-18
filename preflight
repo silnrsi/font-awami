@@ -7,4 +7,6 @@
 # psfsetpsnames -i tools/data/glyph_data.csv  source/Akatab-Regular_beta.ufo
 
 # This section contains commands that run every time
+psfsetglyphorder -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
+
 psfnormalize source/AwamiNastaliq-Regular.ufo
