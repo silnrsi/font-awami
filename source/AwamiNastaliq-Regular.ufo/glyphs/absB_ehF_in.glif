@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absBehFin" format="1">
+<glyph name="absBehFin" format="2">
   <advance width="2372"/>
+  <anchor x="2372" y="520" name="_exit_behFinal"/>
+  <anchor x="178" y="1395" name="honorific"/>
+  <anchor x="1207" y="-343" name="mLower"/>
+  <anchor x="1229" y="538" name="mUpper"/>
+  <anchor x="1217" y="-343" name="n1Lower"/>
+  <anchor x="1213" y="-335" name="n23Lower"/>
+  <anchor x="1220" y="692" name="nUpper"/>
+  <anchor x="1234" y="-8" name="ring"/>
+  <anchor x="1273" y="721" name="tahUpper"/>
   <outline>
     <component base="_beh"/>
-    <contour>
-      <point x="2372" y="520" type="move" name="_exit_behFinal"/>
-    </contour>
-    <contour>
-      <point x="178" y="1395" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="1207" y="-343" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="1229" y="538" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="1217" y="-343" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="1213" y="-335" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="1220" y="692" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1234" y="-8" type="move" name="ring"/>
-    </contour>
-    <contour>
-      <point x="1273" y="721" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>235</integer>
+        <integer>0</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.92,0,1,1</string>
+      <string>0.9216,0,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

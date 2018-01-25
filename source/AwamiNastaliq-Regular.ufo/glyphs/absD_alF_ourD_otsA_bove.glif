@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absDalFourDotsAbove" format="1">
+<glyph name="absDalFourDotsAbove" format="2">
   <advance width="819"/>
   <unicode hex="0690"/>
+  <anchor x="-460" y="2531" name="honorific"/>
+  <anchor x="103" y="215" name="kernBbLeft"/>
+  <anchor x="728" y="503" name="kernBbRight"/>
+  <anchor x="385" y="-205" name="mLower"/>
+  <anchor x="384" y="2352" name="mUpper"/>
   <outline>
     <component base="absDal"/>
     <component base="_nukta4" xOffset="-255" yOffset="1533"/>
-    <contour>
-      <point x="-460" y="2531" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="103" y="215" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="728" y="503" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="385" y="-205" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="384" y="2352" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absLamMed.ch" format="1">
+<glyph name="absLamMed.ch" format="2">
   <advance width="406"/>
+  <anchor x="406" y="1244" name="_exit_lamKaf"/>
+  <anchor x="345" y="1563" name="bar"/>
+  <anchor x="0" y="427" name="exit_chotiyehBfkl"/>
+  <anchor x="543" y="-923" name="mLowerC"/>
+  <anchor x="773" y="153" name="n1Lower"/>
+  <anchor x="360" y="2312" name="nUpper"/>
+  <anchor x="360" y="2292" name="smallV"/>
   <outline>
     <contour>
       <point x="272" y="1643" type="curve" smooth="yes"/>
@@ -37,34 +44,20 @@
       <point x="380" y="1968"/>
       <point x="282" y="1809"/>
     </contour>
-    <contour>
-      <point x="406" y="1244" type="move" name="_exit_lamKaf"/>
-    </contour>
-    <contour>
-      <point x="345" y="1563" type="move" name="bar"/>
-    </contour>
-    <contour>
-      <point x="0" y="427" type="move" name="exit_chotiyehBfkl"/>
-    </contour>
-    <contour>
-      <point x="543" y="-923" type="move" name="mLowerC"/>
-    </contour>
-    <contour>
-      <point x="773" y="153" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="360" y="2312" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="360" y="2292" type="move" name="smallV"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

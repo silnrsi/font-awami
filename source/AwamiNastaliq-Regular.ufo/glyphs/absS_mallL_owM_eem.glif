@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSmallLowMeem" format="1">
-  <advance width="0"/>
+<glyph name="absSmallLowMeem" format="2">
   <unicode hex="06ED"/>
+  <anchor x="0" y="389" name="_mLower"/>
+  <anchor x="32" y="-674" name="mLower"/>
   <outline>
     <contour>
       <point x="105" y="382" type="curve" smooth="yes"/>
@@ -32,19 +33,20 @@
       <point x="259" y="335"/>
       <point x="126" y="382"/>
     </contour>
-    <contour>
-      <point x="0" y="389" type="move" name="_mLower"/>
-    </contour>
-    <contour>
-      <point x="32" y="-674" type="move" name="mLower"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>0</integer>
+        <integer>243</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0,0.95,1,1</string>
+      <string>0,0.9529,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

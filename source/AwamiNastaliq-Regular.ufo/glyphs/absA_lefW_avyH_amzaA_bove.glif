@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absAlefWavyHamzaAbove" format="1">
+<glyph name="absAlefWavyHamzaAbove" format="2">
   <advance width="465"/>
   <unicode hex="0672"/>
+  <anchor x="147" y="483" name="bbKernLeft"/>
+  <anchor x="327" y="179" name="bbKernRight"/>
+  <anchor x="-115" y="2712" name="honorific"/>
+  <anchor x="235" y="2674" name="mUpper"/>
   <outline>
     <component base="absAlef"/>
     <component base="_wavyHamza" xOffset="-111" yOffset="362"/>
-    <contour>
-      <point x="147" y="483" type="move" name="bbKernLeft"/>
-    </contour>
-    <contour>
-      <point x="327" y="179" type="move" name="bbKernRight"/>
-    </contour>
-    <contour>
-      <point x="-115" y="2712" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="235" y="2674" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

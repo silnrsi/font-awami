@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absGafMed.bere" format="1">
+<glyph name="absGafMed.bere" format="2">
   <advance width="480"/>
+  <anchor x="480" y="686" name="_exit_lamKaf"/>
+  <anchor x="0" y="140" name="exit_behPreReh"/>
+  <anchor x="360" y="1836" name="kafExclude"/>
+  <anchor x="498" y="906" name="kernBbRight"/>
+  <anchor x="376" y="-276" name="n1Lower"/>
+  <anchor x="554" y="2210" name="nUpper"/>
+  <anchor x="1054" y="1653" name="ring"/>
   <outline>
     <component base="absKehehMed.bere"/>
     <component base="_gafStroke" xOffset="-75" yOffset="1769"/>
-    <contour>
-      <point x="480" y="686" type="move" name="_exit_lamKaf"/>
-    </contour>
-    <contour>
-      <point x="0" y="140" type="move" name="exit_behPreReh"/>
-    </contour>
-    <contour>
-      <point x="360" y="1836" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="498" y="906" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="376" y="-276" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="554" y="2210" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1054" y="1653" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

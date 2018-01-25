@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absBehIni.bere" format="1">
+<glyph name="absBehIni.bere" format="2">
   <advance width="419"/>
+  <anchor x="0" y="718" name="exit_behPreReh"/>
+  <anchor x="146" y="120" name="n1Lower"/>
+  <anchor x="294" y="117" name="n23Lower"/>
+  <anchor x="172" y="1103" name="nUpper"/>
+  <anchor x="16" y="353" name="ring"/>
+  <anchor x="146" y="1147" name="tahUpper"/>
   <outline>
     <contour>
       <point x="0" y="366" type="curve" smooth="yes"/>
@@ -19,31 +25,20 @@
       <point x="-47" y="716"/>
       <point x="-42" y="365"/>
     </contour>
-    <contour>
-      <point x="0" y="718" type="move" name="exit_behPreReh"/>
-    </contour>
-    <contour>
-      <point x="146" y="120" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="294" y="117" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="172" y="1103" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="16" y="353" type="move" name="ring"/>
-    </contour>
-    <contour>
-      <point x="146" y="1147" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

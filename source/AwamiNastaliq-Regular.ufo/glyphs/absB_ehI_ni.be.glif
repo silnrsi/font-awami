@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absBehIni.be" format="1">
+<glyph name="absBehIni.be" format="2">
   <advance width="419"/>
+  <anchor x="0" y="933" name="exit_beh"/>
+  <anchor x="222" y="440" name="n1Lower"/>
+  <anchor x="228" y="434" name="n23Lower"/>
+  <anchor x="400" y="440" name="nLowerTight"/>
+  <anchor x="133" y="1271" name="nUpper"/>
+  <anchor x="143" y="698" name="ring"/>
+  <anchor x="186" y="1294" name="tahUpper"/>
   <outline>
     <contour>
       <point x="314" y="1006" type="curve" smooth="yes"/>
@@ -19,34 +26,20 @@
       <point x="127" y="659"/>
       <point x="235" y="794"/>
     </contour>
-    <contour>
-      <point x="0" y="933" type="move" name="exit_beh"/>
-    </contour>
-    <contour>
-      <point x="222" y="440" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="228" y="434" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="400" y="440" type="move" name="nLowerTight"/>
-    </contour>
-    <contour>
-      <point x="133" y="1271" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="143" y="698" type="move" name="ring"/>
-    </contour>
-    <contour>
-      <point x="186" y="1294" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

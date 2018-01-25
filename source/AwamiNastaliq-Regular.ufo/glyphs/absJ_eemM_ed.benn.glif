@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absJeemMed.benn" format="1">
+<glyph name="absJeemMed.benn" format="2">
   <advance width="165"/>
+  <anchor x="165" y="1454" name="_exit_jeem"/>
+  <anchor x="0" y="1648" name="exit_behPreNoon"/>
+  <anchor x="252" y="2004" name="hamzaUpper"/>
+  <anchor x="529" y="538" name="n1Lower"/>
+  <anchor x="529" y="506" name="n23Lower"/>
+  <anchor x="228" y="1992" name="nUpper"/>
+  <anchor x="506" y="511" name="tahLower"/>
+  <anchor x="233" y="2017" name="tahUpper"/>
   <outline>
     <contour>
       <point x="282" y="1609" type="curve" smooth="yes"/>
@@ -34,37 +42,20 @@
       <point x="807" y="1617"/>
       <point x="481" y="1609"/>
     </contour>
-    <contour>
-      <point x="165" y="1454" type="move" name="_exit_jeem"/>
-    </contour>
-    <contour>
-      <point x="0" y="1648" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="252" y="2004" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="529" y="538" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="529" y="506" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="228" y="1992" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="506" y="511" type="move" name="tahLower"/>
-    </contour>
-    <contour>
-      <point x="233" y="2017" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

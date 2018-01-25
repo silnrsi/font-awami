@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSmallHighSeen" format="1">
-  <advance width="0"/>
+<glyph name="absSmallHighSeen" format="2">
   <unicode hex="06DC"/>
+  <anchor x="-1" y="-24" name="_honorific"/>
+  <anchor x="3" y="-28" name="_mUpper"/>
+  <anchor x="-1" y="789" name="mUpper"/>
   <outline>
     <contour>
       <point x="36" y="393" type="curve"/>
@@ -50,22 +52,20 @@
       <point x="-138" y="-52"/>
       <point x="36" y="101"/>
     </contour>
-    <contour>
-      <point x="-1" y="-24" type="move" name="_honorific"/>
-    </contour>
-    <contour>
-      <point x="3" y="-28" type="move" name="_mUpper"/>
-    </contour>
-    <contour>
-      <point x="-1" y="789" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

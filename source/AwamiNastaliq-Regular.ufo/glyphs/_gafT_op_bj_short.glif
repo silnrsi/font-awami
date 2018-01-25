@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="_gafTop_bj_short" format="1">
-  <advance width="0"/>
+<glyph name="_gafTop_bj_short" format="2">
+  <anchor x="-1" y="686" name="_kafTop_bj"/>
+  <anchor x="-785" y="358" name="exit_bariyeh"/>
+  <anchor x="-23" y="1865" name="gafStroke"/>
+  <anchor x="-10" y="1630" name="kafExclude"/>
+  <anchor x="391" y="-392" name="n1Lower"/>
+  <anchor x="188" y="1984" name="nUpper"/>
+  <anchor x="663" y="1476" name="ring"/>
   <outline>
     <component base="_kehehTop_bj_short"/>
     <component base="_gafStroke_short" xOffset="-466" yOffset="1588"/>
-    <contour>
-      <point x="-1" y="686" type="move" name="_kafTop_bj"/>
-    </contour>
-    <contour>
-      <point x="-785" y="358" type="move" name="exit_bariyeh"/>
-    </contour>
-    <contour>
-      <point x="-23" y="1865" type="move" name="gafStroke"/>
-    </contour>
-    <contour>
-      <point x="-10" y="1630" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="391" y="-392" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="188" y="1984" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="663" y="1476" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

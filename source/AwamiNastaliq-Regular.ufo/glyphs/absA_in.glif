@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absAin" format="1">
+<glyph name="absAin" format="2">
   <advance width="1615"/>
   <unicode hex="0639"/>
+  <anchor x="20" y="2040" name="honorific"/>
+  <anchor x="677" y="-918" name="mLower"/>
+  <anchor x="642" y="2016" name="mUpper"/>
   <outline>
     <contour>
       <point x="700" y="1715" type="curve" smooth="yes"/>
@@ -58,20 +61,13 @@
       <point x="103" y="-313"/>
       <point x="325" y="-600"/>
     </contour>
-    <contour>
-      <point x="20" y="2040" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="677" y="-918" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="642" y="2016" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <integer>1</integer>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
       <string>0.99,0.62,0.11,1</string>
     </dict>

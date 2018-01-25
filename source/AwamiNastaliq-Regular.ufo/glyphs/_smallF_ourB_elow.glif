@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="_smallFourBelow" format="1">
-  <advance width="0"/>
+<glyph name="_smallFourBelow" format="2">
+  <anchor x="28" y="692" name="_n1Lower"/>
+  <anchor x="28" y="-224" name="mLower"/>
   <outline>
     <component base="absEasternFour" xScale="0.45" yScale="0.45" xOffset="-260"/>
-    <contour>
-      <point x="28" y="692" type="move" name="_n1Lower"/>
-    </contour>
-    <contour>
-      <point x="28" y="-224" type="move" name="mLower"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>0</integer>
+        <integer>243</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0,0.95,1,1</string>
+      <string>0,0.9529,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

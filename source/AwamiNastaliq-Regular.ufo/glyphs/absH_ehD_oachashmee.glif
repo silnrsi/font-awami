@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absHehDoachashmee" format="1">
+<glyph name="absHehDoachashmee" format="2">
   <advance width="1172"/>
   <unicode hex="06BE"/>
+  <anchor x="-15" y="1680" name="honorific"/>
+  <anchor x="128" y="472" name="kernBbLeft"/>
+  <anchor x="476" y="-159" name="mLower"/>
+  <anchor x="494" y="1166" name="mUpper"/>
   <outline>
     <contour>
       <point x="534" y="846" type="curve" smooth="yes"/>
@@ -49,25 +53,20 @@
       <point x="504" y="136"/>
       <point x="660" y="571"/>
     </contour>
-    <contour>
-      <point x="-15" y="1680" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="128" y="472" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="476" y="-159" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="494" y="1166" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>235</integer>
+        <integer>0</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.92,0,1,1</string>
+      <string>0.9216,0,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

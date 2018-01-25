@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="_attachedRing" format="1">
-  <advance width="0"/>
+<glyph name="_attachedRing" format="2">
+  <anchor x="-18" y="352" name="_ring"/>
+  <anchor x="0" y="-195" name="mLower"/>
   <outline>
     <contour>
       <point x="38" y="448" type="curve" smooth="yes"/>
@@ -30,19 +31,20 @@
       <point x="-103" y="296"/>
       <point x="-61" y="340"/>
     </contour>
-    <contour>
-      <point x="-18" y="352" type="move" name="_ring"/>
-    </contour>
-    <contour>
-      <point x="0" y="-195" type="move" name="mLower"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

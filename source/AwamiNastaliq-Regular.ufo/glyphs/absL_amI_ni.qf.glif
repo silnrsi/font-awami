@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absLamIni.qf" format="1">
+<glyph name="absLamIni.qf" format="2">
   <advance width="507"/>
+  <anchor x="311" y="1572" name="bar"/>
+  <anchor x="0" y="812" name="exit_qafWaw"/>
+  <anchor x="485" y="646" name="n1Lower"/>
+  <anchor x="330" y="2442" name="nUpper"/>
+  <anchor x="330" y="2424" name="smallV"/>
   <outline>
     <contour>
       <point x="385" y="1871" type="curve" smooth="yes"/>
@@ -28,28 +33,20 @@
       <point x="384" y="1298"/>
       <point x="385" y="1646"/>
     </contour>
-    <contour>
-      <point x="311" y="1572" type="move" name="bar"/>
-    </contour>
-    <contour>
-      <point x="0" y="812" type="move" name="exit_qafWaw"/>
-    </contour>
-    <contour>
-      <point x="485" y="646" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="330" y="2442" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="330" y="2424" type="move" name="smallV"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absDotlessQaf" format="1">
+<glyph name="absDotlessQaf" format="2">
   <advance width="1695"/>
   <unicode hex="06A1"/>
+  <anchor x="308" y="1393" name="honorific"/>
+  <anchor x="721" y="-918" name="mLower"/>
+  <anchor x="1359" y="1555" name="mUpper"/>
+  <anchor x="1369" y="1545" name="nUpper"/>
   <outline>
     <component base="absQafFin"/>
-    <contour>
-      <point x="308" y="1393" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="721" y="-918" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="1359" y="1555" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="1369" y="1545" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <integer>1</integer>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
       <string>0.99,0.62,0.11,1</string>
     </dict>

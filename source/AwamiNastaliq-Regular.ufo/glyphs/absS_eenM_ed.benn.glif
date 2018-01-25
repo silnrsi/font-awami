@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSeenMed.benn" format="1">
+<glyph name="absSeenMed.benn" format="2">
   <advance width="1442"/>
+  <anchor x="1442" y="825" name="_exit_seen"/>
+  <anchor x="0" y="944" name="exit_behPreNoon"/>
+  <anchor x="1021" y="166" name="n1Lower"/>
+  <anchor x="1033" y="155" name="n23Lower"/>
+  <anchor x="849" y="1048" name="nUpper"/>
+  <anchor x="837" y="1059" name="tahUpper"/>
   <outline>
     <contour>
       <point x="576" y="399" type="curve" smooth="yes"/>
@@ -61,31 +67,113 @@
       <point x="385" y="90"/>
       <point x="448" y="399"/>
     </contour>
-    <contour>
-      <point x="1442" y="825" type="move" name="_exit_seen"/>
-    </contour>
-    <contour>
-      <point x="0" y="944" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="1021" y="166" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="1033" y="155" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="849" y="1048" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="837" y="1059" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
+      <key>com.schriftgestaltung.hints</key>
+      <array>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>78</integer>
+            <integer>290</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>360</integer>
+            <integer>171</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>388</integer>
+            <integer>143</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>543</integer>
+            <integer>147</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>676</integer>
+            <integer>173</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+        <dict>
+          <key>horizontal</key>
+          <true/>
+          <key>options</key>
+          <integer>0</integer>
+          <key>place</key>
+          <array>
+            <integer>676</integer>
+            <integer>339</integer>
+          </array>
+          <key>stem</key>
+          <integer>-2</integer>
+          <key>type</key>
+          <string/>
+        </dict>
+      </array>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

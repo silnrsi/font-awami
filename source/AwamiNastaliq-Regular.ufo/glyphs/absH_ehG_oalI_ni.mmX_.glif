@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absHehGoalIni.mmX" format="1">
+<glyph name="absHehGoalIni.mmX" format="2">
   <advance width="846"/>
+  <anchor x="0" y="533" name="exit_meemAlt"/>
+  <anchor x="477" y="1284" name="hamzaUpper"/>
+  <anchor x="420" y="22" name="hehhook"/>
+  <anchor x="420" y="372" name="n1Lower"/>
+  <anchor x="467" y="1294" name="nUpper"/>
   <outline>
     <contour>
       <point x="75" y="524" type="curve" smooth="yes"/>
@@ -28,28 +33,20 @@
       <point x="-3" y="492"/>
       <point x="76" y="501"/>
     </contour>
-    <contour>
-      <point x="0" y="533" type="move" name="exit_meemAlt"/>
-    </contour>
-    <contour>
-      <point x="477" y="1284" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="420" y="22" type="move" name="hehhook"/>
-    </contour>
-    <contour>
-      <point x="420" y="372" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="467" y="1294" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

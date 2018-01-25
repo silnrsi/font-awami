@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absGafIni.be" format="1">
+<glyph name="absGafIni.be" format="2">
   <advance width="1444"/>
+  <anchor x="0" y="165" name="exit_beh"/>
+  <anchor x="359" y="1877" name="kafExclude"/>
+  <anchor x="1294" y="868" name="kernBbRight"/>
+  <anchor x="393" y="-244" name="n1Lower"/>
+  <anchor x="572" y="2200" name="nUpper"/>
+  <anchor x="1052" y="1653" name="ring"/>
   <outline>
     <component base="absKehehIni.be"/>
     <component base="_gafStroke" xOffset="-77" yOffset="1769"/>
-    <contour>
-      <point x="0" y="165" type="move" name="exit_beh"/>
-    </contour>
-    <contour>
-      <point x="359" y="1877" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="1294" y="868" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="393" y="-244" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="572" y="2200" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1052" y="1653" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absRehFin._hgM" format="1">
+<glyph name="absRehFin._hgM" format="2">
   <advance width="566"/>
+  <anchor x="566" y="854" name="_exit_rehHgm"/>
+  <anchor x="47" y="850" name="hamzaUpper"/>
+  <anchor x="-254" y="1630" name="honorific"/>
+  <anchor x="138" y="229" name="kernBbLeft"/>
+  <anchor x="411" y="-379" name="mLower"/>
+  <anchor x="61" y="861" name="mUpper"/>
+  <anchor x="395" y="-352" name="n1Lower"/>
+  <anchor x="63" y="845" name="nUpper"/>
+  <anchor x="304" y="100" name="ring"/>
+  <anchor x="43" y="836" name="tahUpper"/>
   <outline>
     <contour>
       <point x="566" y="844" type="curve" smooth="yes"/>
@@ -16,43 +26,20 @@
       <point x="609" y="554"/>
       <point x="611" y="876"/>
     </contour>
-    <contour>
-      <point x="566" y="854" type="move" name="_exit_rehHgm"/>
-    </contour>
-    <contour>
-      <point x="47" y="850" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="-254" y="1630" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="138" y="229" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="411" y="-379" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="61" y="861" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="395" y="-352" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="63" y="845" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="304" y="100" type="move" name="ring"/>
-    </contour>
-    <contour>
-      <point x="43" y="836" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

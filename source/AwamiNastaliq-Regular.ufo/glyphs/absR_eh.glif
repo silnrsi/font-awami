@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absReh" format="1">
+<glyph name="absReh" format="2">
   <advance width="864"/>
   <unicode hex="0631"/>
+  <anchor x="510" y="1307" name="hamzaUpper"/>
+  <anchor x="-77" y="1574" name="honorific"/>
+  <anchor x="137" y="153" name="kernBbLeft"/>
+  <anchor x="277" y="-310" name="mLower"/>
+  <anchor x="692" y="1290" name="mUpper"/>
   <outline>
     <contour>
       <point x="708" y="970" type="curve" smooth="yes"/>
@@ -20,26 +25,13 @@
       <point x="761" y="989"/>
       <point x="714" y="992"/>
     </contour>
-    <contour>
-      <point x="510" y="1307" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="-77" y="1574" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="137" y="153" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="277" y="-310" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="692" y="1290" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <integer>1</integer>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
       <string>0.99,0.62,0.11,1</string>
     </dict>

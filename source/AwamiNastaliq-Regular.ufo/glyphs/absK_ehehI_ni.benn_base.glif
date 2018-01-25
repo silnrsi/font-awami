@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absKehehIni.benn_base" format="1">
+<glyph name="absKehehIni.benn_base" format="2">
   <advance width="1680"/>
+  <anchor x="0" y="747" name="exit_behPreNoon"/>
+  <anchor x="465" y="1670" name="gafStroke"/>
+  <anchor x="474" y="1425" name="kafExclude"/>
+  <anchor x="513" y="470" name="kafTop"/>
+  <anchor x="1530" y="888" name="kernBbRight"/>
+  <anchor x="516" y="-265" name="n1Lower"/>
+  <anchor x="540" y="1938" name="nUpper"/>
+  <anchor x="1208" y="1656" name="ring"/>
   <outline>
     <contour>
       <point x="645" y="544" type="curve" smooth="yes"/>
@@ -25,37 +33,20 @@
       <point x="352" y="-89"/>
       <point x="610" y="178"/>
     </contour>
-    <contour>
-      <point x="0" y="747" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="465" y="1670" type="move" name="gafStroke"/>
-    </contour>
-    <contour>
-      <point x="474" y="1425" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="513" y="470" type="move" name="kafTop"/>
-    </contour>
-    <contour>
-      <point x="1530" y="888" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="516" y="-265" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="540" y="1938" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1208" y="1656" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

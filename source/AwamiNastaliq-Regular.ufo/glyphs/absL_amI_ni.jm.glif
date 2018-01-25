@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absLamIni.jm" format="1">
+<glyph name="absLamIni.jm" format="2">
   <advance width="1015"/>
+  <anchor x="813" y="2433" name="bar"/>
+  <anchor x="0" y="1206" name="exit_jeem"/>
+  <anchor x="1412" y="37" name="mLowerC"/>
+  <anchor x="572" y="1280" name="n1Lower"/>
+  <anchor x="825" y="3298" name="nUpper"/>
+  <anchor x="825" y="3278" name="smallV"/>
   <outline>
     <contour>
       <point x="880" y="2657" type="curve" smooth="yes"/>
@@ -31,31 +37,20 @@
       <point x="879" y="2513"/>
       <point x="880" y="2587"/>
     </contour>
-    <contour>
-      <point x="813" y="2433" type="move" name="bar"/>
-    </contour>
-    <contour>
-      <point x="0" y="1206" type="move" name="exit_jeem"/>
-    </contour>
-    <contour>
-      <point x="1412" y="37" type="move" name="mLowerC"/>
-    </contour>
-    <contour>
-      <point x="572" y="1280" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="825" y="3298" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="825" y="3278" type="move" name="smallV"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

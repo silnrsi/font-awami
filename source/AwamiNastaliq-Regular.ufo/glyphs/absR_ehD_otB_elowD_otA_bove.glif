@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absRehDotBelowDotAbove" format="1">
+<glyph name="absRehDotBelowDotAbove" format="2">
   <advance width="864"/>
   <unicode hex="0696"/>
+  <anchor x="-84" y="2018" name="honorific"/>
+  <anchor x="137" y="214" name="kernBbLeft"/>
+  <anchor x="760" y="601" name="kernBbRight"/>
+  <anchor x="500" y="-931" name="mLower"/>
+  <anchor x="740" y="1938" name="mUpper"/>
   <outline>
     <component base="_nukta" xOffset="345" yOffset="1512"/>
     <component base="_dot1l" xOffset="487" yOffset="-526"/>
     <component base="absReh"/>
-    <contour>
-      <point x="-84" y="2018" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="137" y="214" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="760" y="601" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="500" y="-931" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="740" y="1938" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

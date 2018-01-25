@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absLigatureLlahFin" format="1">
+<glyph name="absLigatureLlahFin" format="2">
   <advance width="1803"/>
+  <anchor x="1803" y="1139" name="_exit_lamKaf"/>
+  <anchor x="94" y="1416" name="honorific"/>
+  <anchor x="513" y="-194" name="mLower"/>
+  <anchor x="619" y="1200" name="mUpper"/>
   <outline>
     <contour>
       <point x="1669" y="1538" type="curve" smooth="yes"/>
@@ -43,25 +47,20 @@
     <component base="_Allah_lah" xOffset="-97" yOffset="174"/>
     <component base="absShadda" xOffset="1226" yOffset="1749"/>
     <component base="nlqKharizabar" yScale="0.75" xOffset="1214" yOffset="2140"/>
-    <contour>
-      <point x="1803" y="1139" type="move" name="_exit_lamKaf"/>
-    </contour>
-    <contour>
-      <point x="94" y="1416" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="513" y="-194" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="619" y="1200" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

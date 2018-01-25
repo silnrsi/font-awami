@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="_hamza.arabic" format="1">
-  <advance width="0"/>
+<glyph name="_hamza.arabic" format="2">
+  <anchor x="393" y="1633" name="_hamzaUpper"/>
+  <anchor x="393" y="2328" name="mUpper"/>
   <outline>
     <contour>
       <point x="642" y="1876" type="curve" smooth="yes"/>
@@ -45,19 +46,20 @@
       <point x="371" y="1730"/>
       <point x="527" y="1794"/>
     </contour>
-    <contour>
-      <point x="393" y="1633" type="move" name="_hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="393" y="2328" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

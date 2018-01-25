@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSeenFin.short" format="1">
+<glyph name="absSeenFin.short" format="2">
   <advance width="2271"/>
+  <anchor x="2271" y="1146" name="_exit_seen"/>
+  <anchor x="296" y="1393" name="honorific"/>
+  <anchor x="708" y="-1119" name="mLower"/>
+  <anchor x="1761" y="1470" name="mUpper"/>
+  <anchor x="1950" y="550" name="n1Lower"/>
+  <anchor x="1960" y="560" name="n23Lower"/>
+  <anchor x="1781" y="1465" name="nUpper"/>
+  <anchor x="1761" y="1449" name="tahUpper"/>
   <outline>
     <contour>
       <point x="1533" y="944" type="curve" smooth="yes"/>
@@ -61,37 +69,20 @@
       <point x="1691" y="1095"/>
       <point x="1657" y="944"/>
     </contour>
-    <contour>
-      <point x="2271" y="1146" type="move" name="_exit_seen"/>
-    </contour>
-    <contour>
-      <point x="296" y="1393" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="708" y="-1119" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="1761" y="1470" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="1950" y="550" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="1960" y="560" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="1781" y="1465" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1761" y="1449" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>235</integer>
+        <integer>0</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.92,0,1,1</string>
+      <string>0.9216,0,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

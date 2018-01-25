@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absHehDoachashmeeMed.benn" format="1">
+<glyph name="absHehDoachashmeeMed.benn" format="2">
   <advance width="797"/>
+  <anchor x="797" y="1501" name="_exit_hehdoach"/>
+  <anchor x="0" y="1631" name="exit_behPreNoon"/>
+  <anchor x="816" y="760" name="n1Lower"/>
+  <anchor x="549" y="2028" name="nUpper"/>
   <outline>
     <contour>
       <point x="599" y="1708" type="curve" smooth="yes"/>
@@ -57,25 +61,20 @@
       <point x="506" y="793"/>
       <point x="654" y="1424"/>
     </contour>
-    <contour>
-      <point x="797" y="1501" type="move" name="_exit_hehdoach"/>
-    </contour>
-    <contour>
-      <point x="0" y="1631" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="816" y="760" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="549" y="2028" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

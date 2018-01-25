@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSeenFourDotsAbove" format="1">
+<glyph name="absSeenFourDotsAbove" format="2">
   <advance width="2178"/>
   <unicode hex="075C"/>
+  <anchor x="304" y="2428" name="honorific"/>
+  <anchor x="645" y="-918" name="mLower"/>
+  <anchor x="1277" y="2766" name="mUpper"/>
   <outline>
     <component base="absSeen"/>
     <component base="_nukta4" xOffset="631" yOffset="1929"/>
-    <contour>
-      <point x="304" y="2428" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="645" y="-918" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="1277" y="2766" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

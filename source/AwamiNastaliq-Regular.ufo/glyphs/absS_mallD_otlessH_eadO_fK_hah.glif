@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSmallDotlessHeadOfKhah" format="1">
-  <advance width="0"/>
+<glyph name="absSmallDotlessHeadOfKhah" format="2">
   <unicode hex="06E1"/>
+  <anchor x="0" y="-50" name="_mUpper"/>
+  <anchor x="0" y="684" name="mUpper"/>
   <outline>
     <contour>
       <point x="122" y="319" type="curve" smooth="yes"/>
@@ -35,19 +36,20 @@
       <point x="-20" y="339"/>
       <point x="122" y="346"/>
     </contour>
-    <contour>
-      <point x="0" y="-50" type="move" name="_mUpper"/>
-    </contour>
-    <contour>
-      <point x="0" y="684" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>0</integer>
+        <integer>243</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0,0.95,1,1</string>
+      <string>0,0.9529,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

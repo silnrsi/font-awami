@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absTahMed.jm" format="1">
+<glyph name="absTahMed.jm" format="2">
   <advance width="661"/>
+  <anchor x="661" y="1617" name="_exit_tah"/>
+  <anchor x="0" y="1159" name="exit_jeem"/>
+  <anchor x="610" y="3483" name="mTahUpper"/>
+  <anchor x="580" y="1230" name="n1Lower"/>
+  <anchor x="974" y="2561" name="nUpper"/>
   <outline>
     <component base="absTahIni.jm"/>
-    <contour>
-      <point x="661" y="1617" type="move" name="_exit_tah"/>
-    </contour>
-    <contour>
-      <point x="0" y="1159" type="move" name="exit_jeem"/>
-    </contour>
-    <contour>
-      <point x="610" y="3483" type="move" name="mTahUpper"/>
-    </contour>
-    <contour>
-      <point x="580" y="1230" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="974" y="2561" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

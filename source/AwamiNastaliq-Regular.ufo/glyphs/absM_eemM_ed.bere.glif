@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absMeemMed.bere" format="1">
+<glyph name="absMeemMed.bere" format="2">
   <advance width="530"/>
+  <anchor x="530" y="1069" name="_exit_meem"/>
+  <anchor x="0" y="722" name="exit_behPreReh"/>
+  <anchor x="776" y="508" name="n1Lower"/>
+  <anchor x="766" y="1602" name="nUpper"/>
   <outline>
     <contour>
       <point x="895" y="839" type="curve"/>
@@ -31,25 +35,20 @@
       <point x="660" y="862"/>
       <point x="829" y="792"/>
     </contour>
-    <contour>
-      <point x="530" y="1069" type="move" name="_exit_meem"/>
-    </contour>
-    <contour>
-      <point x="0" y="722" type="move" name="exit_behPreReh"/>
-    </contour>
-    <contour>
-      <point x="776" y="508" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="766" y="1602" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

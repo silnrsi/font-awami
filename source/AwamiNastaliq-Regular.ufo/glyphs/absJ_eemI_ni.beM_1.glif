@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absJeemIni.beM1" format="1">
+<glyph name="absJeemIni.beM1" format="2">
   <advance width="1148"/>
+  <anchor x="0" y="798" name="exit_behLowTooth"/>
+  <anchor x="636" y="1832" name="hamzaUpper"/>
+  <anchor x="676" y="405" name="n1Lower"/>
+  <anchor x="630" y="405" name="n23Lower"/>
+  <anchor x="629" y="1820" name="nUpper"/>
+  <anchor x="653" y="414" name="tahLower"/>
+  <anchor x="616" y="1834" name="tahUpper"/>
   <outline>
     <contour>
       <point x="301" y="604" type="curve" smooth="yes"/>
@@ -49,34 +56,20 @@
       <point x="45" y="664"/>
       <point x="139" y="604"/>
     </contour>
-    <contour>
-      <point x="0" y="798" type="move" name="exit_behLowTooth"/>
-    </contour>
-    <contour>
-      <point x="636" y="1832" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="676" y="405" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="630" y="405" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="629" y="1820" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="653" y="414" type="move" name="tahLower"/>
-    </contour>
-    <contour>
-      <point x="616" y="1834" type="move" name="tahUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

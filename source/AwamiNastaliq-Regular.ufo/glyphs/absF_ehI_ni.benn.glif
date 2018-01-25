@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absFehIni.benn" format="1">
+<glyph name="absFehIni.benn" format="2">
   <advance width="779"/>
+  <anchor x="0" y="1599" name="exit_behPreNoon"/>
+  <anchor x="468" y="480" name="n1Lower"/>
+  <anchor x="444" y="468" name="n23Lower"/>
+  <anchor x="462" y="2163" name="nUpper"/>
   <outline>
     <contour>
       <point x="578" y="1282" type="curve" smooth="yes"/>
@@ -34,25 +38,20 @@
       <point x="571" y="1316"/>
       <point x="578" y="1301"/>
     </contour>
-    <contour>
-      <point x="0" y="1599" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="468" y="480" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="444" y="468" type="move" name="n23Lower"/>
-    </contour>
-    <contour>
-      <point x="462" y="2163" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

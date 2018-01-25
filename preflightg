@@ -7,8 +7,14 @@
 # psfsetpsnames -i tools/data/glyph_data.csv  source/Akatab-Regular_beta.ufo
 
 # This section contains commands that run every time
-psfglyphs2ufo source/AwamiNastaliqRegular.glyphs source
+echo
+echo "Converting Glyphs to UFO3..."
+psfglyphs2ufo source/AwamiNastaliq-Regular.glyphs source
 
-psfsetglyphorder -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
+echo
+echo "Setting glyph order..."
+psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
 
-psfnormalize source/AwamiNastaliq-Regular.ufo
+echo
+echo "Normalising UFO..."
+psfnormalize -p checkfix=fix source/AwamiNastaliq-Regular.ufo

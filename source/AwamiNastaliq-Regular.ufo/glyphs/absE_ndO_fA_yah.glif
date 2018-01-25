@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absEndOfAyah" format="1">
+<glyph name="absEndOfAyah" format="2">
   <advance width="1642"/>
   <unicode hex="06DD"/>
+  <anchor x="632" y="369" name="digit"/>
+  <anchor x="593" y="310" name="digit_small"/>
   <outline>
     <contour>
       <point x="1539" y="159" type="curve"/>
@@ -347,19 +349,20 @@
       <point x="652" y="7"/>
       <point x="660" y="18"/>
     </contour>
-    <contour>
-      <point x="632" y="369" type="move" name="digit"/>
-    </contour>
-    <contour>
-      <point x="593" y="310" type="move" name="digit_small"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

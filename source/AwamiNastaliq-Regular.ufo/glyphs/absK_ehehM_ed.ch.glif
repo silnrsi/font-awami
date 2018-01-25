@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absKehehMed.ch" format="1">
+<glyph name="absKehehMed.ch" format="2">
   <advance width="378"/>
+  <anchor x="378" y="686" name="_exit_lamKaf"/>
+  <anchor x="0" y="-182" name="exit_chotiyehBfkl"/>
+  <anchor x="257" y="1376" name="kafExclude"/>
+  <anchor x="511" y="-1525" name="mLowerC"/>
+  <anchor x="781" y="-494" name="n1Lower"/>
+  <anchor x="609" y="1903" name="nUpper"/>
+  <anchor x="952" y="1653" name="ring"/>
   <outline>
     <contour>
       <point x="387" y="1043" type="curve" smooth="yes"/>
@@ -34,34 +41,20 @@
       <point x="378" y="832"/>
       <point x="382" y="967"/>
     </contour>
-    <contour>
-      <point x="378" y="686" type="move" name="_exit_lamKaf"/>
-    </contour>
-    <contour>
-      <point x="0" y="-182" type="move" name="exit_chotiyehBfkl"/>
-    </contour>
-    <contour>
-      <point x="257" y="1376" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="511" y="-1525" type="move" name="mLowerC"/>
-    </contour>
-    <contour>
-      <point x="781" y="-494" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="609" y="1903" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="952" y="1653" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

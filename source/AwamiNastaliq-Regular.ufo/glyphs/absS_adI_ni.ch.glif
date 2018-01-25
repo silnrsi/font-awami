@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absSadIni.ch" format="1">
+<glyph name="absSadIni.ch" format="2">
   <advance width="1677"/>
+  <anchor x="0" y="816" name="exit_chotiyeh"/>
+  <anchor x="1196" y="751" name="n1Lower"/>
+  <anchor x="1103" y="2090" name="nUpper"/>
   <outline>
     <contour>
       <point x="965" y="1021" type="curve" smooth="yes"/>
@@ -40,22 +43,20 @@
       <point x="638" y="1228"/>
       <point x="736" y="1021"/>
     </contour>
-    <contour>
-      <point x="0" y="816" type="move" name="exit_chotiyeh"/>
-    </contour>
-    <contour>
-      <point x="1196" y="751" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="1103" y="2090" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

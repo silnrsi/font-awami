@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absLam" format="1">
+<glyph name="absLam" format="2">
   <advance width="1731"/>
   <unicode hex="0644"/>
+  <anchor x="291" y="1396" name="honorific"/>
+  <anchor x="645" y="-920" name="mLower"/>
+  <anchor x="1565" y="2671" name="mUpper"/>
   <outline>
     <contour>
       <point x="1443" y="537" type="curve" smooth="yes"/>
@@ -35,20 +38,13 @@
       <point x="1456" y="1521"/>
       <point x="1501" y="965"/>
     </contour>
-    <contour>
-      <point x="291" y="1396" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="645" y="-920" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="1565" y="2671" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <integer>1</integer>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
       <string>0.99,0.62,0.11,1</string>
     </dict>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="nlqBariyehThreeAbove" format="1">
+<glyph name="nlqBariyehThreeAbove" format="2">
   <advance width="3055"/>
   <unicode hex="077B"/>
+  <anchor x="33" y="1992" name="honorific"/>
+  <anchor x="1528" y="-286" name="mLower"/>
+  <anchor x="279" y="1478" name="mUpper"/>
   <outline>
     <component base="nlqBariyeh" xOffset="253"/>
     <component base="absEasternThree" xScale="0.45" yScale="0.45" xOffset="56" yOffset="628"/>
-    <contour>
-      <point x="33" y="1992" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="1528" y="-286" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="279" y="1478" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>0</integer>
+        <integer>243</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0,0.95,1,1</string>
+      <string>0,0.9529,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

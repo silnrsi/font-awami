@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absKehehIni.ta_base" format="1">
+<glyph name="absKehehIni.ta_base" format="2">
   <advance width="1928"/>
+  <anchor x="0" y="-183" name="exit_tah"/>
+  <anchor x="792" y="1486" name="gafStroke"/>
+  <anchor x="791" y="1090" name="kafExclude"/>
+  <anchor x="827" y="470" name="kafTop"/>
+  <anchor x="1778" y="737" name="kernBbRight"/>
+  <anchor x="880" y="-305" name="n1Lower"/>
+  <anchor x="868" y="1738" name="nUpper"/>
+  <anchor x="1522" y="1656" name="ring"/>
   <outline>
     <contour>
       <point x="959" y="544" type="curve" smooth="yes"/>
@@ -16,37 +24,20 @@
       <point x="589" y="-55"/>
       <point x="933" y="275"/>
     </contour>
-    <contour>
-      <point x="0" y="-183" type="move" name="exit_tah"/>
-    </contour>
-    <contour>
-      <point x="792" y="1486" type="move" name="gafStroke"/>
-    </contour>
-    <contour>
-      <point x="791" y="1090" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="827" y="470" type="move" name="kafTop"/>
-    </contour>
-    <contour>
-      <point x="1778" y="737" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="880" y="-305" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="868" y="1738" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1522" y="1656" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

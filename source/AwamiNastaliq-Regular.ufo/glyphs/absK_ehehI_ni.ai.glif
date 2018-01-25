@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absKehehIni.ai" format="1">
+<glyph name="absKehehIni.ai" format="2">
   <advance width="1588"/>
+  <anchor x="0" y="7" name="exit_ain"/>
+  <anchor x="501" y="1411" name="kafExclude"/>
+  <anchor x="1438" y="859" name="kernBbRight"/>
+  <anchor x="966" y="-1228" name="mLowerC"/>
+  <anchor x="580" y="-265" name="n1Lower"/>
+  <anchor x="853" y="1903" name="nUpper"/>
+  <anchor x="1196" y="1653" name="ring"/>
   <outline>
     <contour>
       <point x="641" y="1045" type="curve" smooth="yes"/>
@@ -34,34 +41,20 @@
       <point x="615" y="400"/>
       <point x="634" y="816"/>
     </contour>
-    <contour>
-      <point x="0" y="7" type="move" name="exit_ain"/>
-    </contour>
-    <contour>
-      <point x="501" y="1411" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="1438" y="859" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="966" y="-1228" type="move" name="mLowerC"/>
-    </contour>
-    <contour>
-      <point x="580" y="-265" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="853" y="1903" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="1196" y="1653" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

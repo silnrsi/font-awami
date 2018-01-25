@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="nlqBariyehFin" format="1">
+<glyph name="nlqBariyehFin" format="2">
   <advance width="2792"/>
+  <anchor x="123" y="491" name="_exit_bariyeh"/>
+  <anchor x="-12" y="585" name="digitUpper"/>
+  <anchor x="98" y="826" name="hamzaUpper"/>
+  <anchor x="146" y="1569" name="honorific"/>
+  <anchor x="169" y="363" name="kernBbLeft"/>
+  <anchor x="1400" y="-105" name="mLower"/>
+  <anchor x="118" y="841" name="mUpper"/>
+  <anchor x="1387" y="-94" name="n1Lower"/>
+  <anchor x="1316" y="-94" name="nByCenterLower"/>
+  <anchor x="741" y="-94" name="nByLeftLower"/>
+  <anchor x="971" y="-94" name="nByMidLeftLower"/>
+  <anchor x="1776" y="-94" name="nByMidRightLower"/>
+  <anchor x="2006" y="-94" name="nByRightLower"/>
+  <anchor x="78" y="810" name="nUpper"/>
   <outline>
     <contour>
       <point x="1084" y="-10" type="curve" smooth="yes"/>
@@ -22,55 +36,20 @@
       <point x="-1" y="119"/>
       <point x="239" y="-10"/>
     </contour>
-    <contour>
-      <point x="123" y="491" type="move" name="_exit_bariyeh"/>
-    </contour>
-    <contour>
-      <point x="-12" y="585" type="move" name="digitUpper"/>
-    </contour>
-    <contour>
-      <point x="98" y="826" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="146" y="1569" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="169" y="363" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="1400" y="-105" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="118" y="841" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="1387" y="-94" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="1316" y="-94" type="move" name="nByCenterLower"/>
-    </contour>
-    <contour>
-      <point x="741" y="-94" type="move" name="nByLeftLower"/>
-    </contour>
-    <contour>
-      <point x="971" y="-94" type="move" name="nByMidLeftLower"/>
-    </contour>
-    <contour>
-      <point x="1776" y="-94" type="move" name="nByMidRightLower"/>
-    </contour>
-    <contour>
-      <point x="2006" y="-94" type="move" name="nByRightLower"/>
-    </contour>
-    <contour>
-      <point x="78" y="810" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

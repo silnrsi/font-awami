@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absAlefFin._lm" format="1">
+<glyph name="absAlefFin._lm" format="2">
   <advance width="253"/>
+  <anchor x="253" y="85" name="_exit_alef"/>
+  <anchor x="172" y="-271" name="hamzaLower"/>
+  <anchor x="218" y="1863" name="hamzaUpper"/>
+  <anchor x="72" y="2034" name="honorific"/>
+  <anchor x="170" y="1502" name="kernBbLeft"/>
+  <anchor x="168" y="-289" name="mLower"/>
+  <anchor x="201" y="1822" name="mUpper"/>
+  <anchor x="164" y="-290" name="n1Lower"/>
+  <anchor x="243" y="1895" name="nUpper"/>
   <outline>
     <component base="absAlef" xOffset="-2" yOffset="-104"/>
-    <contour>
-      <point x="253" y="85" type="move" name="_exit_alef"/>
-    </contour>
-    <contour>
-      <point x="172" y="-271" type="move" name="hamzaLower"/>
-    </contour>
-    <contour>
-      <point x="218" y="1863" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="72" y="2034" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="170" y="1502" type="move" name="kernBbLeft"/>
-    </contour>
-    <contour>
-      <point x="168" y="-289" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="201" y="1822" type="move" name="mUpper"/>
-    </contour>
-    <contour>
-      <point x="164" y="-290" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="243" y="1895" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

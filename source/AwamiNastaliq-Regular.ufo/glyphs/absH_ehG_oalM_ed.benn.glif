@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absHehGoalMed.benn" format="1">
+<glyph name="absHehGoalMed.benn" format="2">
   <advance width="804"/>
+  <anchor x="804" y="943" name="_exit_hehgoalMedial"/>
+  <anchor x="0" y="1689" name="exit_behPreNoon"/>
+  <anchor x="429" y="1754" name="hamzaUpper"/>
+  <anchor x="684" y="282" name="hehhook"/>
+  <anchor x="704" y="682" name="n1Lower"/>
+  <anchor x="400" y="1709" name="nUpper"/>
   <outline>
     <contour>
       <point x="154" y="822" type="curve" smooth="yes"/>
@@ -31,31 +37,20 @@
       <point x="-108" y="977"/>
       <point x="-28" y="822"/>
     </contour>
-    <contour>
-      <point x="804" y="943" type="move" name="_exit_hehgoalMedial"/>
-    </contour>
-    <contour>
-      <point x="0" y="1689" type="move" name="exit_behPreNoon"/>
-    </contour>
-    <contour>
-      <point x="429" y="1754" type="move" name="hamzaUpper"/>
-    </contour>
-    <contour>
-      <point x="684" y="282" type="move" name="hehhook"/>
-    </contour>
-    <contour>
-      <point x="704" y="682" type="move" name="n1Lower"/>
-    </contour>
-    <contour>
-      <point x="400" y="1709" type="move" name="nUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>235</integer>
+        <integer>0</integer>
+        <integer>255</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.92,0,1,1</string>
+      <string>0.9216,0,1,0.0039</string>
     </dict>
   </lib>
 </glyph>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absHahSmallTahAbove" format="1">
+<glyph name="absHahSmallTahAbove" format="2">
   <advance width="1681"/>
   <unicode hex="0772"/>
+  <anchor x="-123" y="2569" name="honorific"/>
+  <anchor x="735" y="-918" name="mLower"/>
+  <anchor x="628" y="2595" name="mUpper"/>
   <outline>
     <component base="absHah"/>
     <component base="_smallTah" xOffset="222" yOffset="1967"/>
-    <contour>
-      <point x="-123" y="2569" type="move" name="honorific"/>
-    </contour>
-    <contour>
-      <point x="735" y="-918" type="move" name="mLower"/>
-    </contour>
-    <contour>
-      <point x="628" y="2595" type="move" name="mUpper"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>

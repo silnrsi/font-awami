@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="_kehehIniTop_short" format="1">
-  <advance width="0"/>
+<glyph name="_kehehIniTop_short" format="2">
+  <anchor x="-52" y="312" name="_kafTop"/>
+  <anchor x="-44" y="1433" name="gafStroke"/>
+  <anchor x="-45" y="1201" name="kafExclude"/>
+  <anchor x="104" y="761" name="kernBbRight"/>
+  <anchor x="415" y="-1347" name="mLowerC"/>
+  <anchor x="341" y="1625" name="nUpper"/>
+  <anchor x="614" y="1314" name="ring"/>
   <outline>
     <contour>
       <point x="-52" y="302" type="curve" smooth="yes"/>
@@ -28,34 +34,20 @@
       <point x="-53" y="459"/>
       <point x="-48" y="426"/>
     </contour>
-    <contour>
-      <point x="-52" y="312" type="move" name="_kafTop"/>
-    </contour>
-    <contour>
-      <point x="-44" y="1433" type="move" name="gafStroke"/>
-    </contour>
-    <contour>
-      <point x="-45" y="1201" type="move" name="kafExclude"/>
-    </contour>
-    <contour>
-      <point x="104" y="761" type="move" name="kernBbRight"/>
-    </contour>
-    <contour>
-      <point x="415" y="-1347" type="move" name="mLowerC"/>
-    </contour>
-    <contour>
-      <point x="341" y="1625" type="move" name="nUpper"/>
-    </contour>
-    <contour>
-      <point x="614" y="1314" type="move" name="ring"/>
-    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <array>
+        <integer>31</integer>
+        <integer>255</integer>
+        <integer>0</integer>
+        <integer>1</integer>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018-01-18 17:35:03 +0000</string>
+      <string>2018/01/18 17:35:03</string>
       <key>public.markColor</key>
-      <string>0.12,1,0,1</string>
+      <string>0.1216,1,0,0.0039</string>
     </dict>
   </lib>
 </glyph>
