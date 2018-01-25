@@ -1,5 +1,5 @@
 {
-.appVersion = "1108";
+.appVersion = "1107";
 classes = (
 {
 code = "";
@@ -1600,6 +1600,24 @@ absSeenFourAbove,
 ligSalaamUlena,
 absMeemFin.short,
 absMeem.lowdiac
+);
+},
+{
+name = openTypeNameVersion;
+value = "Version 1.000";
+},
+{
+name = codePageRanges;
+value = (
+1252,
+1256
+);
+},
+{
+name = unicodeRanges;
+value = (
+0,
+13
 );
 }
 );
