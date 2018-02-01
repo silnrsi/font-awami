@@ -251,8 +251,9 @@ sub out_classes
 
     foreach $cl (sort {classcmp($a, $b)} keys %{$classes})
     {
-    	  if ($self->{'awami_names'} && (substr($cl,0,3) eq "no_"))
-    	  { # Don't output the "not" classes for Awami
+    	  #if ($self->{'awami_names'} && (substr($cl,0,3) eq "no_"))
+    	  if (1 == 2)  # false
+    	  { # Don't output the "not" classes for Awami - yes, go ahead and generate them.
     	  } else
     	  {
             $fh->print("#define HAS_c$cl 1\n") if ($opts{'-defines'} && $cl !~ m/^no_/o);
