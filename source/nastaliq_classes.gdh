@@ -54,7 +54,7 @@ g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoi
 //gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
 //	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
 
-cno_showInv = (g_zeronojoin, g_zerojoin, g_zeroWidthNoBreakSpace, g_nobreakspace);
+/////cno_showInv = (g_zeronojoin, g_zerojoin, g_zeroWidthNoBreakSpace, g_nobreakspace);
 
 c_zeronojoin = (g_zeronojoin, g_zeronojoinShowInv);
 c_zerojoin = (g_zerojoin, g_zerojoinShowInv);
