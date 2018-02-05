@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>چنڑی چنڑیل منشُور منظور</string>
+      <string>طُس مفپلُس بیکُس</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -288,7 +288,7 @@
       <string>سق  لفو  ڇھق</string>
     </test>
     <test class="fset24" label="gRehFin - default" rtl="True">
-      <string>عر  لھز  سظݱ    سنڙ</string>
+      <string>عر  لھز  سظݱ   سنڙ</string>
     </test>
     <test class="fset24" label="gRehFin_sshg" rtl="True">
       <string>ہر  جسڑ  بنر  سضڙ    لبر  مز</string>
@@ -648,6 +648,16 @@
     </test>
     <test class="fset36" label="reh + beh + alef" rtl="True">
       <string>ربا رنا ریا</string>
+    </test>
+    <test class="fset36" label="isolate beh" rtl="True">
+      <string>وت سوپ رب لرټ دب مذٹ</string>
+    </test>
+    <test class="fset36" label="reh-small-tah + yeh" rtl="True">
+      <comment>Collisions between a final and initial (with no space) are handled by kerning, not shifting.</comment>
+      <string>چُنڑیل </string>
+    </test>
+    <test class="fset36" label="coll-fix ranges" rtl="True">
+      <string>بیوک رک تھینس رو جمکلنیج</string>
     </test>
     <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
       <string/>
@@ -2811,6 +2821,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset28" label="beh + jeh + teh" rtl="True">
       <string>لنژب</string>
     </test>
+    <test class="fset36" label="jeem + noon/teh + reh" rtl="True">
+      <string>جنر ختر حٹر</string>
+    </test>
+    <test class="fset36" label="beh + lam + yeh" rtl="True">
+      <string>سمبلی ہپکی</string>
+    </test>
     <test background="#aaaa7f" class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
       <string>لقکھہ</string>
     </test>
@@ -2825,6 +2841,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#aaaa7f" class="fset36" label="hah + teh + alef/lam/kaf [rule 14-18]" rtl="True">
       <comment>Prevent nuqtas from popping up to the top of the alef/lam.</comment>
       <string>حتا چتل</string>
+    </test>
+    <test background="#aaaa7f" class="fset22" label="hamza-yeh - Arabic hamza" rtl="True">
+      <string>ئ</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 12" rtl="True">
       <string/>
@@ -2889,12 +2908,25 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset29" label="PASS 17 (pos pass 10)" rtl="True">
       <string/>
     </test>
+    <test class="fset25" label="feh + low + upper diac [rule 6-7]" rtl="True">
+      <string>فمَب  بفہَف</string>
+    </test>
+    <test class="fset36" label="lam/kaf + meem + diac [rule 11-15]" rtl="True">
+      <comment>Move diac to the left.</comment>
+      <string>المُنلر گمَب</string>
+    </test>
+    <test class="fset36" label="alef + diac" rtl="True">
+      <string>بھاٞگہ بھاَگہ داٞگ</string>
+    </test>
+    <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
+      <string>آٞک داٞگ بھاٞگ</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
+      <string/>
+    </test>
     <test class="fset29" label="tarixi - reh + yeh + jeem [rule 44]" rtl="True">
       <comment>Move nuqtas up under beh form to avoid sitting on top of reh; don't allow reh to kern underneath.</comment>
       <string>تاریخی </string>
-    </test>
-    <test class="fset25" label="feh + low + upper diac [rule 6-7]" rtl="True">
-      <string>فمَب  بفہَف</string>
     </test>
     <test class="fset36" label="isolate alef [rule 569]" rtl="True">
       <comment>Set isolate alef and kaf a set distance apart; don't use auto-kerning.</comment>
@@ -2907,16 +2939,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="alef (final) + kaf [rule 569]" rtl="True">
       <comment>Set alef and kaf a set distance apart; don't use auto-kerning.</comment>
       <string>ساکطبس ساکطب لاکط</string>
-    </test>
-    <test class="fset36" label="lam/kaf + meem + diac [rule 11-15]" rtl="True">
-      <comment>Move diac to the left.</comment>
-      <string>المُنلر گمَب</string>
-    </test>
-    <test class="fset36" label="alef + diac" rtl="True">
-      <string>بھاٞگہ بھاَگہ داٞگ</string>
-    </test>
-    <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
-      <string>آٞک داٞگ بھاٞگ</string>
     </test>
     <test class="fset36" label="ambiguous zabar" rtl="True">
       <string>گوَشتش</string>
@@ -2944,7 +2966,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Add some kerning.</comment>
       <string>کوتمہا</string>
     </test>
-    <test class="fset36" label="khah + meem + pesh" rtl="True">
+    <test background="#ff0000" class="fset36" label="khah + meem + pesh" rtl="True">
       <string>خمُول</string>
     </test>
     <test class="fset36" label="lam + zair + peh + zair + yeh + jeem" rtl="True">
@@ -2958,9 +2980,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="lots of lower nutqas (reversed)" rtl="True">
       <string>کہیجیخ</string>
-    </test>
-    <test background="#ffff00" class="fset36" label="jeem + beh + reh" rtl="True">
-      <string>جنر</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">

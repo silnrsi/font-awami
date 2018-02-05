@@ -799,7 +799,7 @@ cNuqtaLikeUpper { collision {
 
 // Special case: nuqta-small-V + kaf/gaf
 g__dot1u_smallVKf {
-	shift { x= -130m; y = -230m };
+	shift { x = -130m; y = -230m };
 	collision {
 		margin = 80m;
 		flags = SET_FIX(collision.flags);
@@ -811,12 +811,38 @@ g__dot1u_smallVKf {
 	sequence.class = 0;
 } /  cIni  _  (cKafMed cKafFin);
 
+// Special case: jeem + noon/teh/theh + reh
+cNuqtaLikeUpper {
+	shift { x = 150m; y = 150m };
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 200m;
+		min.y = -300m;
+		max.y = 1000m;
+		margin = 250m;  // standard is 150m
+	} }
+	/  gJeemIniBeRe MARKS  gBehMedRe _=N;
+
+// Special case: beh + lam + jeem
+cNuqtaLikeLower {
+	shift { x = -150m; y = 80m };
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 200m;
+		min.y = -300m;
+		max.y = 1000m;
+		margin = 250m;  // standard is 150m
+	} }
+	/  gBehMed _=N DIACS (gKafMedCh gGafMedCh gLamMedCh);
+
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -250m;
-	max.x = 350m; // more than normal
+	max.x = 350m; // more than normal (200)
 	min.y = -300m;
 	max.y = 1000m;
 } } / cIni cNuqtaLikeLower? _;
@@ -824,7 +850,7 @@ cNuqtaLikeUpper { collision {
 // Nuqtas on finals can be moved quite a bit to the left.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
-	min.x = -500m;   // more than normal
+	min.x = -500m;   // more than normal (-250)
 	max.x = 200m;
 	min.y = -300m;
 	max.y = 1000m;
@@ -1852,7 +1878,7 @@ cDiacriticUpper {
 		min.y = -300m;
 		max.y = 400m;  // less than normal
 		// don't bother with sequence attributes
-} }  /  (cMed  cIso) _  (cKafNoIso cKafIso);	
+} }  /  (cMed  cIso) _  (cKafNoIso cKafIso);
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
