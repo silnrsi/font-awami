@@ -73,8 +73,8 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
 				# strip out bogus hints:
 				cmd('ttfstriphints ${DEP} ${TGT}'),
 				cmd('ttfsubset -s deva ${DEP} ${TGT}'),
-        cmd('psfcompressgr ${DEP} ${TGT}'),
-        cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
+				cmd('psfcompressgr ${DEP} ${TGT}'),
+				cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
      		),
     source = "source/AwamiNastaliq-Regular.ufo",
     graphite = gdl('awami.gdl', master = 'source/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
