@@ -5,7 +5,9 @@ DisplayStrings = (
 "/absJeemIni.by",
 "/absJeemIni.hd",
 "/absJeemIni.ch",
-"/absJeemIni.mmX"
+"/absJeemIni.mmX",
+"/absAlefMaddaAbove",
+"/absAlef"
 );
 classes = (
 {
@@ -29457,7 +29459,7 @@ unicode = 0625;
 {
 color = (31,255,0,1);
 glyphname = absAlefMaddaAbove;
-lastChange = "2018-02-06 16:11:54 +0000";
+lastChange = "2018-02-15 17:41:35 +0000";
 layers = (
 {
 anchors = (
@@ -29468,10 +29470,6 @@ position = "{-192, 2589}";
 {
 name = kernBbLeft;
 position = "{161, 1150}";
-},
-{
-name = kernBbRight;
-position = "{527, 1156}";
 },
 {
 name = mLower;
@@ -29492,7 +29490,7 @@ transform = "{1, 0, 0, 1, 0, -318}";
 }
 );
 layerId = UUID0;
-width = 665;
+width = 485;
 }
 );
 unicode = 0622;
