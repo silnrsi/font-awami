@@ -1852,6 +1852,20 @@ cDiacriticUpper {
 	////sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  / cFehIM  cNuqtaUpper  cDiacritic?  (cHehGoalMed  cMeemMed)  g__hehHook_small?  _;
 
+// Special case: lam/kaf + meem = upper diac + qaf - move diac up and to the left
+cDiacriticUpper {
+	shift { x = 300m; y = 350m; };
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -200m;
+		max.x = 250m;
+		min.y = -300m;
+		max.y = 200m;
+	};
+	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
+}  /  (cLamIM cKafIM)  g__kafTop_null?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _  cFehMed;
+
 // Special case: lam/kaf + meem + upper diac - move diac to the left
 cDiacriticUpper {
 	shift { x = 300m; y = -150m; };
