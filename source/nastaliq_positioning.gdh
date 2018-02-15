@@ -837,6 +837,18 @@ cNuqtaLikeLower {
 	} }
 	/  gBehMed _=N DIACS (gKafMedCh gGafMedCh gLamMedCh);
 
+// Special case: teh/theh + heh-goal + hamza
+// Nuqtas on finals can be moved quite a bit to the left.
+gHamzaAbove { 
+	shift { x = 370m; y = -300m };
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -500m;   // more than normal (-250)
+		max.x = 200m;
+		min.y = -300m;
+		max.y = 1000m;
+	} }
+	/  gBehMedHgF  cNuqtaLikeUpper  gHehGoalFin _;
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {

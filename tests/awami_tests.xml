@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>طُس مفپلُس بیکُس</string>
+      <string>بے حد بےحد بس حد </string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -2486,6 +2486,13 @@
     <test class="fset36" label="lam + standing-alef" rtl="True">
       <string>لٰملٰجلٰ لٰسلٰفلٰ لٰ</string>
     </test>
+    <test background="#55aaff" class="fset36" label="SHADDA" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="shadda" rtl="True">
+      <comment>real words</comment>
+      <string>مقدّس بِبَچّے</string>
+    </test>
   </testgroup>
   <testgroup label="Review feedback - general">
     <test background="#55aaff" class="fset24" label="ALPHA-2" rtl="True">
@@ -2827,6 +2834,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="beh + lam + yeh" rtl="True">
       <string>سمبلی ہپکی</string>
     </test>
+    <test class="fset36" label="teh/theh + heh-goal + hamza" rtl="True">
+      <string>رشتۂ</string>
+    </test>
     <test background="#aaaa7f" class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
       <string>لقکھہ</string>
     </test>
@@ -2911,9 +2921,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset25" label="feh + low + upper diac [rule 6-7]" rtl="True">
       <string>فمَب  بفہَف</string>
     </test>
-    <test class="fset36" label="lam/kaf + meem + diac [rule 11-15]" rtl="True">
+    <test class="fset36" label="lam/kaf + meem + upper" rtl="True">
       <comment>Move diac to the left.</comment>
       <string>المُنلر گمَب</string>
+    </test>
+    <test class="fset36" label="lam/kaf + meem + upper + qaf" rtl="True">
+      <string>المُقدّس</string>
     </test>
     <test class="fset36" label="alef + diac" rtl="True">
       <string>بھاٞگہ بھاَگہ داٞگ</string>
