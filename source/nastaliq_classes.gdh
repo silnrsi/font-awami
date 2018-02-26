@@ -874,6 +874,10 @@ cLam_tallForBar = (cLam_tallForBar_postKaf, cLam_tallForBar_postGaf);
 
 cKafNoIso = (cKafIM cKafFin csKafIM_base);
 
+// We could add isolates and finals to this class, but it is currently only used
+// for letters that get very high.
+cVerticalStem = (cLamIni cLamMed cTahIni cTahMed);
+
 
 // Kaf exclusion glyphs
 

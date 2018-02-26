@@ -1835,6 +1835,19 @@ cDiacriticUpper {
 		max.y = 100m;
 	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
 
+// Diacritics should stay centered over tah and lam vertical stems.
+// Eg: tah pesh seen
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -5m;  // normally -250
+		max.x = 5m;
+		min.y = -100m;
+		max.y = 100m;
+	} }  /  cVerticalStem  _  cBase;  // increase precedence
+
+
 // Special cases
 /**
 cDiacriticUpper { collision {
