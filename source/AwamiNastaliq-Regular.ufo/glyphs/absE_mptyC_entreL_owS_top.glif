@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absEmptyCentreLowStop" format="2">
-  <advance width="1495"/>
+  <advance width="600"/>
+  <unicode hex="06EA"/>
+  <anchor x="0" y="310" name="_mLower"/>
+  <anchor x="0" y="-520" name="mLower"/>
   <outline>
-    <component base=".notdef"/>
+    <contour>
+      <point x="0" y="300" type="line"/>
+      <point x="-300" y="0" type="line"/>
+      <point x="0" y="-300" type="line"/>
+      <point x="300" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="0" y="160" type="line"/>
+      <point x="160" y="0" type="line"/>
+      <point x="0" y="-160" type="line"/>
+      <point x="-160" y="0" type="line"/>
+    </contour>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ColorIndex</key>
+      <integer>6</integer>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018/01/18 17:35:03</string>
+      <string>2018/02/28 21:46:36</string>
+      <key>public.markColor</key>
+      <string>0,0.67,0.91,1</string>
     </dict>
   </lib>
 </glyph>
