@@ -11,8 +11,10 @@ DisplayStrings = (
 /absSeenIni.ch,
 /absPageSign.4,
 "",
-/absEmptyCentreLowStop,
-/absHahSmallTahBelow
+/absHahSmallTahBelow,
+/absSmallUprightRectangularZero,
+/absMaddaAbove,
+/absZwarakay
 );
 classes = (
 {
@@ -172073,13 +172075,13 @@ width = 0;
 {
 color = 6;
 glyphname = absZwarakay;
-lastChange = "2018-02-28 18:17:13 +0000";
+lastChange = "2018-02-28 23:02:20 +0000";
 layers = (
 {
 anchors = (
 {
 name = _mUpper;
-position = "{0, 121}";
+position = "{0, 91}";
 },
 {
 name = mUpper;
@@ -172239,17 +172241,17 @@ unicode = 0659;
 {
 color = 6;
 glyphname = absSmallUprightRectangularZero;
-lastChange = "2018-02-28 21:31:23 +0000";
+lastChange = "2018-02-28 22:27:44 +0000";
 layers = (
 {
 anchors = (
 {
 name = _mUpper;
-position = "{193, -19}";
+position = "{4, -10}";
 },
 {
 name = mUpper;
-position = "{198, 750}";
+position = "{0, 700}";
 }
 );
 layerId = UUID0;
@@ -172257,35 +172259,35 @@ paths = (
 {
 closed = 1;
 nodes = (
-"363 124 OFFCURVE",
-"306 -9 OFFCURVE",
-"193 -9 CURVE SMOOTH",
-"90 -9 OFFCURVE",
-"29 123 OFFCURVE",
-"29 255 CURVE SMOOTH",
-"29 423 OFFCURVE",
-"105 530 OFFCURVE",
-"198 530 CURVE SMOOTH",
-"286 530 OFFCURVE",
-"363 428 OFFCURVE",
-"363 263 CURVE SMOOTH"
+"156 72 OFFCURVE",
+"106 0 OFFCURVE",
+"-4 0 CURVE SMOOTH",
+"-114 0 OFFCURVE",
+"-158 72 OFFCURVE",
+"-158 240 CURVE SMOOTH",
+"-158 389 OFFCURVE",
+"-109 480 OFFCURVE",
+"1 480 CURVE SMOOTH",
+"111 480 OFFCURVE",
+"156 389 OFFCURVE",
+"156 240 CURVE SMOOTH"
 );
 },
 {
 closed = 1;
 nodes = (
-"290 418 OFFCURVE",
-"255 495 OFFCURVE",
-"197 495 CURVE SMOOTH",
-"154 495 OFFCURVE",
-"102 455 OFFCURVE",
-"102 247 CURVE SMOOTH",
-"102 93 OFFCURVE",
-"141 25 OFFCURVE",
-"194 25 CURVE SMOOTH",
-"250 25 OFFCURVE",
-"290 79 OFFCURVE",
-"290 281 CURVE SMOOTH"
+"88 358 OFFCURVE",
+"58 445 OFFCURVE",
+"0 445 CURVE SMOOTH",
+"-58 445 OFFCURVE",
+"-90 358 OFFCURVE",
+"-90 240 CURVE SMOOTH",
+"-90 103 OFFCURVE",
+"-61 34 OFFCURVE",
+"-3 34 CURVE SMOOTH",
+"55 34 OFFCURVE",
+"88 103 OFFCURVE",
+"88 240 CURVE SMOOTH"
 );
 }
 );
@@ -172298,9 +172300,23 @@ unicode = 06E0;
 color = 6;
 export = 0;
 glyphname = _wasla;
-lastChange = "2018-02-28 17:30:38 +0000";
+lastChange = "2018-02-28 22:41:23 +0000";
 layers = (
 {
+anchors = (
+{
+name = _mUpper;
+position = "{250, 2243}";
+},
+{
+name = _nUpper;
+position = "{240, 2235}";
+},
+{
+name = mUpper;
+position = "{250, 2957}";
+}
+);
 background = {
 paths = (
 {
