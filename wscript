@@ -72,6 +72,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
 				########cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:
 				cmd('ttfstriphints ${DEP} ${TGT}'),
+				cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
 				cmd('ttfsubset -s deva ${DEP} ${TGT}'),
 				cmd('psfcompressgr ${DEP} ${TGT}'),
 				cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
@@ -95,3 +96,4 @@ def configure(ctx) :
     ctx.env['MAKE_GDL'] = 'perl -I ../tools/bin/perllib ../tools/bin/awami_makegdl'
     ctx.env['FFCOPYGLYPHS'] = '../tools/bin/ffcopyglyphs.py'
     ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
+    ctx.find_program('ttfautohint')
