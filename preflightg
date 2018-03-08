@@ -3,18 +3,10 @@
 # Place this in root of a project, adjust the font path, then set it to be executable by typing:
 # chmod +x preflight
 
-# This section contains commands used occasionally
-# psfsetpsnames -i tools/data/glyph_data.csv  source/Akatab-Regular_beta.ufo
-
 # This section contains commands that run every time
 echo
 echo "Converting Glyphs to UFO3..."
 psfglyphs2ufo source/AwamiNastaliq-Regular.glyphs source
 
-echo
-echo "Setting glyph order..."
-psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
-
-echo
-echo "Normalising UFO..."
-psfnormalize -p checkfix=fix source/AwamiNastaliq-Regular.ufo
+# Continue with normal preflight
+./preflight
