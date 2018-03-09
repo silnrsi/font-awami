@@ -988,8 +988,8 @@ cDigitAnySmaller = (cDigitLatin_smaller, cDigitArabic_smaller, cDigitEastern_sma
 cDigitAbsFullSize = (cDigitArabic, cDigitEastern);
 
 
-cSignTakes4 = (gYearSign gNumberSign gPageSign); // small
-cSign4 = (gYearSign4 gNumberSign4 gPageSign4);
+cSignTakes4 = (gYearSign gNumberSign gPageSign gSamvat); // small
+cSign4 = (gYearSign4 gNumberSign4 gPageSign4 gSamvat);
 
 cSignTakes3Small = (gYearSign gNumberSign gPageSign);
 cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);

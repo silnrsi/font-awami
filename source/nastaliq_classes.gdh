@@ -146,8 +146,9 @@ cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, 
 	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
     gSmallHighRehHahMark, gSmallHighSeen, gSmallHighTah, gSmallDotlessHeadOfKhah,
 	gNameMarker,
-	cShaddaPlus, cKharizabarPlus);
-cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem ) ;
+	cShaddaPlus, cKharizabarPlus, 
+	gSmallUprightRectangularZero, gZwarakay);
+cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem, gEmptyCentreLowStop ) ;
 
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
@@ -297,7 +298,8 @@ cHehDoFin = (gHehDoFin);
 // Right-link
 
 cAlefIso = (gAlef, gAlefHamzaAbove, gAlefHamzaBelow, gAlefWavyHamzaAbove, gAlefWavyHamzaBelow,
-				gAlefMaddaAbove, gHighHamzaAlef, gHighHamzaAlefArabic, gAlefTwoAbove, gAlefThreeAbove);
+				gAlefMaddaAbove, gHighHamzaAlef, gHighHamzaAlefArabic, gAlefTwoAbove, gAlefThreeAbove,
+                gAlefWasla);
 cAlefFin = (gAlefFin, gAlefFin_lm);
 
 cDalIso = (gDal, gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow,
@@ -407,10 +409,12 @@ cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehG
     gHehGoalIniBeHg gHehGoalIniMmX ) ;
 cKafIni_gaf = (gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn
 	gGafIniSd gGafIniTa gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniMmX gGafIniNn
-	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gGafIniBeNn gGafIniBeHg gGafIniKf);
+	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gGafIniBeNn gGafIniBeHg gGafIniKf
+	gGafIniMm_short);
 cKafIni = ( gKafIni gKafIniBe /*gKafIniBeF*/ gKafIniBeM1 gKafIniBeM2 gKafIniJm gKafIniRe gKafIniSn
     gKafIniSd gKafIniTa gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniMmX gKafIniNn
     gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
+	gKafIniMm_short
 	cKafIni_gaf) ;
 
 
@@ -662,7 +666,7 @@ csKafMed_top_short = (
 csGafIM_top_short = (csGafIni_top_short, csGafMed_top_short);
 csKafIM_top_short = (csKafIni_top_short, csKafMed_top_short);
 
-// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// Note that for a few initials, we use the short versions instead of the shorter, and there are special
 // forms for By and Jm forms.
 csGafIni_top_shorter = (
 	g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter, g__gafIniTop_shorter,
@@ -681,7 +685,7 @@ csKafIni_top_shorter = (
 	csGafIni_top_shorter
 );
 
-// Note that for a few initials, we use the shorter versions instead of the short, and there are special
+// Note that for a few initials, we use the short versions instead of the shorter, and there are special
 // forms for By and Jm forms.
 csGafMed_top_shorter = (
 	g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter, g__gafMedTop_shorter,
@@ -829,9 +833,9 @@ cs_chotiyehComposed = (gChotiyeh, gYehHamzaAbove, gYeh, gArabicE, gYehSmallV, gY
 ///cs_chotiyehFinComposed = (csChotiyehFin, csYehTailFin, csKashmiriYehFin);
 
 cs_alefMark = (gHamzaAbove, g__hamza, gHamzaBelow, gMaddaAbove, g__wavyHamza,
-	gWavyHamzaBelow, g_highHamza, g__smallTwoAbove, g__smallThreeAbove);
+	gWavyHamzaBelow, g_highHamza, g__smallTwoAbove, g__smallThreeAbove, g__wasla);
 cs_alefComposed = (gAlefHamzaAbove, gAlefHamzaAbove, gAlefHamzaBelow, gAlefMaddaAbove, gAlefWavyHamzaAbove,
-	gAlefWavyHamzaBelow, gHighHamzaAlef, gAlefTwoAbove, gAlefThreeAbove);
+	gAlefWavyHamzaBelow, gHighHamzaAlef, gAlefTwoAbove, gAlefThreeAbove, gAlefWasla);
 
 cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing,
 	g__dot4u, g__dot3l);
