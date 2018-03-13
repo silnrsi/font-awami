@@ -1271,10 +1271,10 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
-// Short round form: tah + kaf + lam/alef
-cTahIM  csKafRound_medium  g__kafTop_null
-	>  @Ta  csKafRound_short  @Null
-	/  _=Ta MARKS  _=K MARKS  _=Null;
+// Short round form: tah + kaf + lam/alef - not needed
+////cTahIM  csKafRound_medium  g__kafTop_null
+////	>  @Ta  csKafRound_short  @Null
+////	/  _=Ta MARKS  _=K MARKS  _=Null;
 
 // No change (\u062C\u0646\u06AF\u06CC)
 cDot1u  csKafMed_medium  g__kafTop_null
