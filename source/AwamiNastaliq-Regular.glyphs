@@ -6,7 +6,7 @@ DisplayStrings = (
 /absSeenMed.mm,
 /absMeemMed.hd,
 /absKehehIni/absKehehIni_short,
-/absKehehIni.sd_base
+/absSadIni.nn/absSadMed.nn
 );
 classes = (
 {
@@ -57196,13 +57196,13 @@ unicode = 06FB;
 {
 color = (31,255,0,1);
 glyphname = absSadFin;
-lastChange = "2018-03-19 16:25:51 +0000";
+lastChange = "2018-03-19 17:25:10 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_sad;
-position = "{1638, 894}";
+position = "{1798, 908}";
 },
 {
 name = honorific;
@@ -58730,7 +58730,7 @@ width = 1452;
 {
 color = (31,255,0,1);
 glyphname = absSadIni.nn;
-lastChange = "2018-03-19 15:21:07 +0000";
+lastChange = "2018-03-19 17:30:17 +0000";
 layers = (
 {
 anchors = (
@@ -58740,11 +58740,11 @@ position = "{0, 1293}";
 },
 {
 name = n1Lower;
-position = "{880, 827}";
+position = "{903, 803}";
 },
 {
 name = nUpper;
-position = "{787, 2164}";
+position = "{821, 2222}";
 }
 );
 components = (
@@ -61704,13 +61704,13 @@ width = 789;
 {
 color = (31,255,0,1);
 glyphname = absSadMed.nn;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 17:23:21 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_sad;
-position = "{597, 1112}";
+position = "{703, 1113}";
 },
 {
 name = exit_noon;
@@ -61718,14 +61718,14 @@ position = "{0, 1293}";
 },
 {
 name = n1Lower;
-position = "{880, 827}";
+position = "{903, 803}";
 },
 {
 name = nUpper;
-position = "{787, 2164}";
+position = "{821, 2222}";
 }
 );
-layerId = UUID0;
+background = {
 paths = (
 {
 closed = 1;
@@ -61760,13 +61760,13 @@ nodes = (
 "1151 1741 OFFCURVE",
 "1193 1653 OFFCURVE",
 "1182 1623 CURVE SMOOTH",
-"1173 1596 OFFCURVE",
+"1172 1596 OFFCURVE",
 "1015 1449 OFFCURVE",
 "566 1449 CURVE SMOOTH",
 "523 1449 OFFCURVE",
 "496 1452 OFFCURVE",
 "476 1458 CURVE SMOOTH",
-"443 1467 OFFCURVE",
+"443 1468 OFFCURVE",
 "443 1480 OFFCURVE",
 "417 1480 CURVE SMOOTH",
 "342 1480 OFFCURVE",
@@ -61775,7 +61775,55 @@ nodes = (
 );
 }
 );
-width = 597;
+};
+layerId = UUID0;
+paths = (
+{
+closed = 1;
+nodes = (
+"38 1234 OFFCURVE",
+"28 1283 OFFCURVE",
+"0 1283 CURVE SMOOTH",
+"-20 1283 OFFCURVE",
+"39 1025 OFFCURVE",
+"72 1025 CURVE SMOOTH",
+"244 1025 OFFCURVE",
+"345 1268 OFFCURVE",
+"382 1268 CURVE SMOOTH",
+"420 1268 OFFCURVE",
+"508 1103 OFFCURVE",
+"703 1103 CURVE SMOOTH",
+"990 1103 OFFCURVE",
+"1262 1403 OFFCURVE",
+"1262 1773 CURVE SMOOTH",
+"1262 1828 OFFCURVE",
+"1224 1922 OFFCURVE",
+"1121 1922 CURVE SMOOTH",
+"879 1922 OFFCURVE",
+"675 1606 OFFCURVE",
+"538 1417 CURVE",
+"538 1417 OFFCURVE",
+"587 1409 OFFCURVE",
+"605 1395 CURVE",
+"748 1602 OFFCURVE",
+"899 1741 OFFCURVE",
+"1034 1741 CURVE SMOOTH",
+"1151 1741 OFFCURVE",
+"1193 1653 OFFCURVE",
+"1182 1623 CURVE SMOOTH",
+"1173 1596 OFFCURVE",
+"1023 1403 OFFCURVE",
+"695 1403 CURVE SMOOTH",
+"536 1403 OFFCURVE",
+"486 1480 OFFCURVE",
+"417 1480 CURVE SMOOTH",
+"342 1480 OFFCURVE",
+"290 1234 OFFCURVE",
+"164 1234 CURVE SMOOTH"
+);
+}
+);
+width = 703;
 }
 );
 },
