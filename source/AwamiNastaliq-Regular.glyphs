@@ -7,9 +7,9 @@ DisplayStrings = (
 /absMeemMed.hd,
 /absKehehIni/absKehehIni_short,
 /absQafFin,
-/absWaw/absWawFin,
+/absWaw/absWaw/absWawFin,
 /absWaw,
-"/absBehIni.qf/absBehMed.qf/absBehMed.qf_ss/absFehIni.qf/absAinIni.qf  /absAinMed.qf  /absJeemIni.qf     /absJeemMed.qf  /absSadMed.qf/absSadIni.qf   /absSadMed.qf  .   /absLamIni.qf/absLamMed.qf/absKehehIni.qf/absKehehMed.qf/absMeemIni.qf/absMeemMed.qf/absHehDoachashmeeIni.qf_alt/absHehGoalIni.qf/absHehGoalMed.qf"
+"/absBehIni.qf/absBehMed.qf/absBehMed.qf_ss/absFehIni.qf/absAinIni.qf  /absAinMed.qf  /absJeemIni.qf     /absJeemMed.qf  /absSadIni.qf   /absSadMed.qf   /absLamIni.qf/absLamMed.qf/absKehehIni.qf/absKehehMed.qf/absMeemIni.qf/absMeemMed.qf/absHehDoachashmeeIni.qf_alt/absHehGoalIni.qf  /absHehGoalMed.qf"
 );
 classes = (
 {
@@ -32337,13 +32337,13 @@ width = 572;
 {
 color = (31,255,0,1);
 glyphname = absBehIni.qf;
-lastChange = "2018-03-19 19:59:12 +0000";
+lastChange = "2018-03-19 21:25:38 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 790}";
+position = "{-20, 562}";
 },
 {
 name = n1Lower;
@@ -32439,9 +32439,9 @@ nodes = (
 "171 951 OFFCURVE",
 "0 780 CURVE SMOOTH",
 "-164 616 OFFCURVE",
-"2 435 OFFCURVE",
-"2 502 CURVE SMOOTH",
-"2 667 OFFCURVE",
+"0 435 OFFCURVE",
+"0 502 CURVE SMOOTH",
+"0 667 OFFCURVE",
 "347 889 OFFCURVE",
 "347 1446 CURVE SMOOTH"
 );
@@ -35953,7 +35953,7 @@ width = 580;
 {
 color = (31,255,0,1);
 glyphname = absBehMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:06:53 +0000";
 layers = (
 {
 anchors = (
@@ -35963,7 +35963,7 @@ position = "{500, 1235}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 725}";
+position = "{0, 484}";
 },
 {
 name = n1Lower;
@@ -36061,6 +36061,23 @@ nodes = (
 "567 1205 OFFCURVE",
 "500 1225 CURVE SMOOTH"
 );
+},
+{
+closed = 1;
+nodes = (
+"353 1269 OFFCURVE",
+"268 819 OFFCURVE",
+"0 715 CURVE SMOOTH",
+"-36 701 OFFCURVE",
+"-72 420 OFFCURVE",
+"0 474 CURVE SMOOTH",
+"135 576 OFFCURVE",
+"293 1062 OFFCURVE",
+"500 999 CURVE SMOOTH",
+"567 979 OFFCURVE",
+"567 1205 OFFCURVE",
+"500 1225 CURVE SMOOTH"
+);
 }
 );
 };
@@ -36073,9 +36090,9 @@ nodes = (
 "268 819 OFFCURVE",
 "0 715 CURVE SMOOTH",
 "-36 701 OFFCURVE",
-"-76 432 OFFCURVE",
+"-28 449 OFFCURVE",
 "0 474 CURVE SMOOTH",
-"144 554 OFFCURVE",
+"164 621 OFFCURVE",
 "293 1062 OFFCURVE",
 "500 999 CURVE SMOOTH",
 "567 979 OFFCURVE",
@@ -36091,7 +36108,7 @@ width = 500;
 {
 color = (235,0,255,1);
 glyphname = absBehMed.qf_ss;
-lastChange = "2018-03-19 19:56:36 +0000";
+lastChange = "2018-03-19 20:53:17 +0000";
 layers = (
 {
 anchors = (
@@ -36101,7 +36118,7 @@ position = "{325, 1041}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 766}";
+position = "{0, 524}";
 },
 {
 name = n1Lower;
@@ -39147,7 +39164,7 @@ width = 538;
 {
 color = (31,255,0,1);
 glyphname = absFehIni.qf;
-lastChange = "2018-03-19 19:56:55 +0000";
+lastChange = "2018-03-19 21:25:25 +0000";
 layers = (
 {
 anchors = (
@@ -39157,7 +39174,7 @@ position = "{-245, 254}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 881}";
+position = "{-20, 713}";
 },
 {
 name = hamzaUpper;
@@ -39254,9 +39271,9 @@ nodes = (
 "79 950 OFFCURVE",
 "0 871 CURVE SMOOTH",
 "-163 707 OFFCURVE",
-"3 526 OFFCURVE",
-"3 593 CURVE SMOOTH",
-"3 791 OFFCURVE",
+"0 586 OFFCURVE",
+"0 653 CURVE SMOOTH",
+"0 851 OFFCURVE",
 "407 997 OFFCURVE",
 "407 1359 CURVE SMOOTH",
 "407 1541 OFFCURVE",
@@ -42651,13 +42668,13 @@ unicode = 0642;
 {
 color = (31,255,0,1);
 glyphname = absQafFin;
-lastChange = "2018-03-19 19:52:31 +0000";
+lastChange = "2018-03-19 20:57:18 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{1580, 933}";
+position = "{1566, 728}";
 },
 {
 name = honorific;
@@ -42678,6 +42695,10 @@ position = "{695, -918}";
 {
 name = nUpper;
 position = "{1369, 1545}";
+},
+{
+name = oldexit;
+position = "{1576, 929}";
 }
 );
 background = {
@@ -42738,11 +42759,20 @@ paths = (
 {
 closed = 1;
 nodes = (
+"1564 726 LINE",
+"1568 726 LINE",
+"1568 730 LINE",
+"1564 730 LINE"
+);
+},
+{
+closed = 1;
+nodes = (
 "1315 1225 OFFCURVE",
 "1229 1221 OFFCURVE",
 "1172 1003 CURVE SMOOTH",
-"1070 639 OFFCURVE",
-"1223 548 OFFCURVE",
+"1076 637 OFFCURVE",
+"1222 549 OFFCURVE",
 "1453 649 CURVE SMOOTH",
 "1497 668 OFFCURVE",
 "1496 616 OFFCURVE",
@@ -42751,7 +42781,7 @@ nodes = (
 "1228 -260 OFFCURVE",
 "703 -260 CURVE SMOOTH",
 "161 -260 OFFCURVE",
-"164 397 OFFCURVE",
+"158 399 OFFCURVE",
 "340 853 CURVE SMOOTH",
 "352 883 OFFCURVE",
 "323 905 OFFCURVE",
@@ -42768,15 +42798,6 @@ nodes = (
 "1592 1076 OFFCURVE",
 "1471 1225 OFFCURVE",
 "1369 1225 CURVE SMOOTH"
-);
-},
-{
-closed = 1;
-nodes = (
-"1578 931 LINE",
-"1582 931 LINE",
-"1582 935 LINE",
-"1578 935 LINE"
 );
 }
 );
@@ -45962,13 +45983,13 @@ width = 1086;
 {
 color = 8;
 glyphname = absAinIni.qf;
-lastChange = "2018-03-19 18:58:48 +0000";
+lastChange = "2018-03-19 21:25:11 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 961}";
+position = "{-20, 733}";
 },
 {
 name = n1Lower;
@@ -46041,9 +46062,9 @@ nodes = (
 "244 1196 OFFCURVE",
 "0 951 CURVE SMOOTH",
 "-163 787 OFFCURVE",
-"3 606 OFFCURVE",
-"3 673 CURVE SMOOTH",
-"3 935 OFFCURVE",
+"0 606 OFFCURVE",
+"0 673 CURVE SMOOTH",
+"0 935 OFFCURVE",
 "779 1421 OFFCURVE",
 "975 1518 CURVE SMOOTH",
 "1022 1541 OFFCURVE",
@@ -49130,7 +49151,7 @@ width = 237;
 {
 color = (31,255,0,1);
 glyphname = absAinMed.qf;
-lastChange = "2018-03-19 20:06:03 +0000";
+lastChange = "2018-03-19 21:24:49 +0000";
 layers = (
 {
 anchors = (
@@ -49140,7 +49161,7 @@ position = "{247, 1055}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 778}";
+position = "{-20, 550}";
 },
 {
 name = n1Lower;
@@ -49208,9 +49229,9 @@ nodes = (
 "105 873 OFFCURVE",
 "0 768 CURVE SMOOTH",
 "-163 605 OFFCURVE",
-"3 422 OFFCURVE",
-"3 490 CURVE SMOOTH",
-"3 640 OFFCURVE",
+"0 422 OFFCURVE",
+"0 490 CURVE SMOOTH",
+"0 640 OFFCURVE",
 "478 1134 OFFCURVE",
 "478 1280 CURVE SMOOTH"
 );
@@ -53273,13 +53294,13 @@ width = 897;
 {
 color = (31,255,0,1);
 glyphname = absJeemIni.qf;
-lastChange = "2018-03-19 20:04:44 +0000";
+lastChange = "2018-03-19 21:24:24 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 794}";
+position = "{-20, 566}";
 },
 {
 name = hamzaUpper;
@@ -53357,9 +53378,9 @@ nodes = (
 "146 930 OFFCURVE",
 "0 784 CURVE SMOOTH",
 "-163 621 OFFCURVE",
-"3 438 OFFCURVE",
-"3 506 CURVE SMOOTH",
-"3 716 OFFCURVE",
+"0 438 OFFCURVE",
+"0 506 CURVE SMOOTH",
+"0 716 OFFCURVE",
 "354 829 OFFCURVE",
 "553 1288 CURVE SMOOTH",
 "585 1362 OFFCURVE",
@@ -56158,7 +56179,7 @@ width = 5;
 {
 color = (31,255,0,1);
 glyphname = absJeemMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:11:20 +0000";
 layers = (
 {
 anchors = (
@@ -56168,7 +56189,7 @@ position = "{-14, 1211}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 714}";
+position = "{0, 471}";
 },
 {
 name = hamzaUpper;
@@ -58838,13 +58859,13 @@ width = 1366;
 {
 color = (31,255,0,1);
 glyphname = absSadIni.qf;
-lastChange = "2018-03-19 15:21:35 +0000";
+lastChange = "2018-03-19 20:36:48 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 872}";
+position = "{0, 591}";
 },
 {
 name = n1Lower;
@@ -61908,7 +61929,7 @@ width = 703;
 {
 color = (31,255,0,1);
 glyphname = absSadMed.qf;
-lastChange = "2018-03-19 19:54:58 +0000";
+lastChange = "2018-03-19 21:11:47 +0000";
 layers = (
 {
 anchors = (
@@ -61918,7 +61939,7 @@ position = "{594, 778}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 832}";
+position = "{0, 591}";
 },
 {
 name = n1Lower;
@@ -72754,7 +72775,7 @@ width = 575;
 {
 color = (31,255,0,1);
 glyphname = absLamIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:24:08 +0000";
 layers = (
 {
 anchors = (
@@ -72764,7 +72785,7 @@ position = "{311, 1572}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 812}";
+position = "{-20, 584}";
 },
 {
 name = n1Lower;
@@ -72836,9 +72857,9 @@ nodes = (
 "79 881 OFFCURVE",
 "0 802 CURVE SMOOTH",
 "-163 638 OFFCURVE",
-"13 457 OFFCURVE",
-"13 524 CURVE SMOOTH",
-"13 654 OFFCURVE",
+"0 457 OFFCURVE",
+"0 524 CURVE SMOOTH",
+"0 654 OFFCURVE",
 "275 801 OFFCURVE",
 "335 1075 CURVE SMOOTH",
 "384 1298 OFFCURVE",
@@ -76190,7 +76211,7 @@ width = 542;
 {
 color = (31,255,0,1);
 glyphname = absLamMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:38:00 +0000";
 layers = (
 {
 anchors = (
@@ -76204,7 +76225,7 @@ position = "{333, 1705}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 716}";
+position = "{0, 495}";
 },
 {
 name = n1Lower;
@@ -76281,10 +76302,10 @@ nodes = (
 "250 996 OFFCURVE",
 "164 835 OFFCURVE",
 "0 706 CURVE SMOOTH",
-"-5 703 OFFCURVE",
-"2 476 OFFCURVE",
-"11 485 CURVE SMOOTH",
-"217 691 OFFCURVE",
+"-63 656 OFFCURVE",
+"-45 440 OFFCURVE",
+"0 485 CURVE SMOOTH",
+"206 691 OFFCURVE",
 "290 870 OFFCURVE",
 "328 1077 CURVE",
 "344 1036 OFFCURVE",
@@ -80365,13 +80386,13 @@ width = 1361;
 {
 color = 3;
 glyphname = absKehehIni.qf;
-lastChange = "2018-03-08 23:23:34 +0000";
+lastChange = "2018-03-19 21:27:02 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 111}";
+position = "{-20, -116}";
 },
 {
 name = kafExclude;
@@ -80460,9 +80481,9 @@ nodes = (
 "-69 107 OFFCURVE",
 "-69 -43 CURVE SMOOTH",
 "-69 -169 OFFCURVE",
-"13 -213 OFFCURVE",
-"13 -176 CURVE SMOOTH",
-"13 7 OFFCURVE",
+"0 -213 OFFCURVE",
+"0 -176 CURVE SMOOTH",
+"0 7 OFFCURVE",
 "169 83 OFFCURVE",
 "235 241 CURVE SMOOTH",
 "342 498 OFFCURVE",
@@ -84271,7 +84292,7 @@ width = 555;
 {
 color = (31,255,0,1);
 glyphname = absKehehMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:56:11 +0000";
 layers = (
 {
 anchors = (
@@ -84281,7 +84302,7 @@ position = "{417, 686}";
 },
 {
 name = exit_qafWaw;
-position = "{0, -81}";
+position = "{1, -322}";
 },
 {
 name = kafExclude;
@@ -91100,13 +91121,13 @@ width = 953;
 {
 color = (31,255,0,1);
 glyphname = absMeemIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:28:01 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 777}";
+position = "{-20, 550}";
 },
 {
 name = n1Lower;
@@ -91147,9 +91168,9 @@ nodes = (
 "55 822 OFFCURVE",
 "0 767 CURVE SMOOTH",
 "-163 604 OFFCURVE",
-"13 422 OFFCURVE",
-"13 490 CURVE SMOOTH",
-"13 634 OFFCURVE",
+"0 422 OFFCURVE",
+"0 490 CURVE SMOOTH",
+"0 634 OFFCURVE",
 "187 684 OFFCURVE",
 "269 874 CURVE SMOOTH"
 );
@@ -94152,7 +94173,7 @@ width = 531;
 {
 color = (31,255,0,1);
 glyphname = absMeemMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:27:47 +0000";
 layers = (
 {
 anchors = (
@@ -94162,7 +94183,7 @@ position = "{343, 1259}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 777}";
+position = "{-20, 550}";
 },
 {
 name = n1Lower;
@@ -94254,9 +94275,9 @@ nodes = (
 "55 822 OFFCURVE",
 "0 767 CURVE SMOOTH",
 "-163 604 OFFCURVE",
-"13 422 OFFCURVE",
-"13 490 CURVE SMOOTH",
-"13 634 OFFCURVE",
+"0 422 OFFCURVE",
+"0 490 CURVE SMOOTH",
+"0 634 OFFCURVE",
 "187 684 OFFCURVE",
 "269 874 CURVE SMOOTH",
 "299 942 OFFCURVE",
@@ -97401,13 +97422,13 @@ width = 971;
 {
 color = (31,255,0,1);
 glyphname = absHehDoachashmeeIni.qf_alt;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:28:14 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 835}";
+position = "{-20, 607}";
 },
 {
 name = n1Lower;
@@ -97462,10 +97483,10 @@ nodes = (
 "421 1160 OFFCURVE",
 "118 943 OFFCURVE",
 "0 825 CURVE SMOOTH",
-"-108 716 OFFCURVE",
-"13 459 OFFCURVE",
-"13 547 CURVE SMOOTH",
-"13 765 OFFCURVE",
+"-153 672 OFFCURVE",
+"0 459 OFFCURVE",
+"0 547 CURVE SMOOTH",
+"0 765 OFFCURVE",
 "517 1023 OFFCURVE",
 "517 1432 CURVE SMOOTH"
 );
@@ -103892,7 +103913,7 @@ width = 711;
 {
 color = 1;
 glyphname = absWaw;
-lastChange = "2018-03-19 20:06:24 +0000";
+lastChange = "2018-03-19 21:35:22 +0000";
 layers = (
 {
 anchors = (
@@ -103963,18 +103984,18 @@ nodes = (
 "425 981 OFFCURVE",
 "367 765 CURVE SMOOTH",
 "278 433 OFFCURVE",
-"402 370 OFFCURVE",
+"400 375 OFFCURVE",
 "635 458 CURVE SMOOTH",
-"652 465 OFFCURVE",
+"652 464 OFFCURVE",
 "659 450 OFFCURVE",
 "659 431 CURVE SMOOTH",
 "659 295 OFFCURVE",
-"267 106 OFFCURVE",
+"268 103 OFFCURVE",
 "114 40 CURVE SMOOTH",
 "92 31 OFFCURVE",
 "110 -10 OFFCURVE",
 "132 -9 CURVE SMOOTH",
-"227 -6 OFFCURVE",
+"227 -5 OFFCURVE",
 "515 34 OFFCURVE",
 "545 64 CURVE SMOOTH",
 "593 112 OFFCURVE",
@@ -103983,17 +104004,6 @@ nodes = (
 "756 756 OFFCURVE",
 "691 992 OFFCURVE",
 "543 992 CURVE SMOOTH"
-);
-},
-{
-closed = 1;
-nodes = (
-"736 744 LINE",
-"737 744 OFFCURVE",
-"737 744 OFFCURVE",
-"738 744 CURVE",
-"738 746 LINE",
-"736 746 LINE"
 );
 }
 );
@@ -104227,13 +104237,13 @@ unicode = 06C5;
 {
 color = (31,255,0,1);
 glyphname = absWawFin;
-lastChange = "2018-03-19 20:08:02 +0000";
+lastChange = "2018-03-19 21:35:08 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{737, 745}";
+position = "{725, 543}";
 },
 {
 name = bar;
@@ -113759,13 +113769,13 @@ width = 915;
 {
 color = (31,255,0,1);
 glyphname = absHehGoalIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:28:30 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 872}";
+position = "{-20, 644}";
 },
 {
 name = hamzaUpper;
@@ -113784,7 +113794,7 @@ name = nUpper;
 position = "{337, 1568}";
 }
 );
-layerId = UUID0;
+background = {
 paths = (
 {
 closed = 1;
@@ -113813,6 +113823,39 @@ nodes = (
 "-38 833 OFFCURVE",
 "-5 491 OFFCURVE",
 "13 585 CURVE SMOOTH"
+);
+}
+);
+};
+layerId = UUID0;
+paths = (
+{
+closed = 1;
+nodes = (
+"8 799 OFFCURVE",
+"250 1068 OFFCURVE",
+"304 1068 CURVE SMOOTH",
+"328 1068 OFFCURVE",
+"390 946 OFFCURVE",
+"445 946 CURVE SMOOTH",
+"536 946 OFFCURVE",
+"613 1072 OFFCURVE",
+"613 1159 CURVE SMOOTH",
+"613 1205 OFFCURVE",
+"597 1241 OFFCURVE",
+"567 1241 CURVE SMOOTH",
+"527 1241 OFFCURVE",
+"505 1119 OFFCURVE",
+"470 1119 CURVE SMOOTH",
+"436 1119 OFFCURVE",
+"381 1248 OFFCURVE",
+"337 1248 CURVE SMOOTH",
+"230 1248 OFFCURVE",
+"173 998 OFFCURVE",
+"0 862 CURVE SMOOTH",
+"-182 719 OFFCURVE",
+"-3 507 OFFCURVE",
+"0 584 CURVE SMOOTH"
 );
 }
 );
@@ -115970,7 +116013,7 @@ width = 644;
 {
 color = (31,255,0,1);
 glyphname = absHehGoalMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 21:33:36 +0000";
 layers = (
 {
 anchors = (
@@ -115980,7 +116023,7 @@ position = "{543, 638}";
 },
 {
 name = exit_qafWaw;
-position = "{0, 769}";
+position = "{-20, 542}";
 },
 {
 name = hamzaUpper;
@@ -116004,7 +116047,7 @@ paths = (
 {
 closed = 1;
 nodes = (
-"13 526 OFFCURVE",
+"0 526 OFFCURVE",
 "236 961 OFFCURVE",
 "342 961 CURVE SMOOTH",
 "478 961 OFFCURVE",
@@ -116020,8 +116063,8 @@ nodes = (
 "267 1004 OFFCURVE",
 "0 759 CURVE SMOOTH",
 "-170 603 OFFCURVE",
-"13 414 OFFCURVE",
-"13 482 CURVE SMOOTH"
+"0 414 OFFCURVE",
+"0 482 CURVE SMOOTH"
 );
 }
 );
