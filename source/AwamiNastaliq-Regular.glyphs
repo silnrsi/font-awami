@@ -6,7 +6,10 @@ DisplayStrings = (
 /absSeenMed.mm,
 /absMeemMed.hd,
 /absKehehIni/absKehehIni_short,
-/absSadIni.nn/absSadMed.nn
+/absQafFin,
+/absWaw/absWawFin,
+/absWaw,
+"/absBehIni.qf/absBehMed.qf/absBehMed.qf_ss/absFehIni.qf/absAinIni.qf  /absAinMed.qf  /absJeemIni.qf     /absJeemMed.qf  /absSadMed.qf/absSadIni.qf   /absSadMed.qf  .   /absLamIni.qf/absLamMed.qf/absKehehIni.qf/absKehehMed.qf/absMeemIni.qf/absMeemMed.qf/absHehDoachashmeeIni.qf_alt/absHehGoalIni.qf/absHehGoalMed.qf"
 );
 classes = (
 {
@@ -32334,7 +32337,7 @@ width = 572;
 {
 color = (31,255,0,1);
 glyphname = absBehIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 19:59:12 +0000";
 layers = (
 {
 anchors = (
@@ -32398,6 +32401,26 @@ nodes = (
 "237 817 OFFCURVE",
 "274 817 CURVE SMOOTH"
 );
+},
+{
+closed = 1;
+nodes = (
+"347 1685 OFFCURVE",
+"370 1722 OFFCURVE",
+"349 1722 CURVE SMOOTH",
+"331 1722 OFFCURVE",
+"223 1536 OFFCURVE",
+"209 1341 CURVE SMOOTH",
+"185 1004 OFFCURVE",
+"171 951 OFFCURVE",
+"0 780 CURVE SMOOTH",
+"-164 616 OFFCURVE",
+"12 435 OFFCURVE",
+"12 503 CURVE SMOOTH",
+"12 668 OFFCURVE",
+"347 889 OFFCURVE",
+"347 1446 CURVE SMOOTH"
+);
 }
 );
 };
@@ -32416,9 +32439,9 @@ nodes = (
 "171 951 OFFCURVE",
 "0 780 CURVE SMOOTH",
 "-164 616 OFFCURVE",
-"12 435 OFFCURVE",
-"12 503 CURVE SMOOTH",
-"12 668 OFFCURVE",
+"2 435 OFFCURVE",
+"2 502 CURVE SMOOTH",
+"2 667 OFFCURVE",
 "347 889 OFFCURVE",
 "347 1446 CURVE SMOOTH"
 );
@@ -36068,7 +36091,7 @@ width = 500;
 {
 color = (235,0,255,1);
 glyphname = absBehMed.qf_ss;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 19:56:36 +0000";
 layers = (
 {
 anchors = (
@@ -39124,13 +39147,33 @@ width = 538;
 {
 color = (31,255,0,1);
 glyphname = absFehIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 19:56:55 +0000";
 layers = (
 {
 anchors = (
 {
+name = bar;
+position = "{-245, 254}";
+},
+{
 name = exit_qafWaw;
 position = "{0, 881}";
+},
+{
+name = hamzaUpper;
+position = "{-254, 1429}";
+},
+{
+name = honorific;
+position = "{-715, 1434}";
+},
+{
+name = mLower;
+position = "{-371, -209}";
+},
+{
+name = mUpper;
+position = "{-217, 1423}";
 },
 {
 name = n1Lower;
@@ -39173,6 +39216,32 @@ nodes = (
 "274 847 OFFCURVE",
 "274 1082 CURVE SMOOTH"
 );
+},
+{
+closed = 1;
+nodes = (
+"310 1114 OFFCURVE",
+"79 950 OFFCURVE",
+"0 871 CURVE SMOOTH",
+"-163 707 OFFCURVE",
+"13 526 OFFCURVE",
+"13 593 CURVE SMOOTH",
+"13 791 OFFCURVE",
+"407 997 OFFCURVE",
+"407 1359 CURVE SMOOTH",
+"407 1541 OFFCURVE",
+"342 1777 OFFCURVE",
+"194 1777 CURVE SMOOTH",
+"140 1777 OFFCURVE",
+"76 1766 OFFCURVE",
+"18 1550 CURVE SMOOTH",
+"-71 1218 OFFCURVE",
+"53 1155 OFFCURVE",
+"286 1243 CURVE SMOOTH",
+"303 1250 OFFCURVE",
+"310 1235 OFFCURVE",
+"310 1216 CURVE SMOOTH"
+);
 }
 );
 };
@@ -39185,9 +39254,9 @@ nodes = (
 "79 950 OFFCURVE",
 "0 871 CURVE SMOOTH",
 "-163 707 OFFCURVE",
-"13 526 OFFCURVE",
-"13 593 CURVE SMOOTH",
-"13 791 OFFCURVE",
+"3 526 OFFCURVE",
+"3 593 CURVE SMOOTH",
+"3 791 OFFCURVE",
 "407 997 OFFCURVE",
 "407 1359 CURVE SMOOTH",
 "407 1541 OFFCURVE",
@@ -42582,13 +42651,13 @@ unicode = 0642;
 {
 color = (31,255,0,1);
 glyphname = absQafFin;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 19:52:31 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{1563, 973}";
+position = "{1580, 933}";
 },
 {
 name = honorific;
@@ -42699,6 +42768,15 @@ nodes = (
 "1592 1076 OFFCURVE",
 "1471 1225 OFFCURVE",
 "1369 1225 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"1578 931 LINE",
+"1582 931 LINE",
+"1582 935 LINE",
+"1578 935 LINE"
 );
 }
 );
@@ -45884,7 +45962,7 @@ width = 1086;
 {
 color = 8;
 glyphname = absAinIni.qf;
-lastChange = "2018-03-16 18:01:06 +0000";
+lastChange = "2018-03-19 18:58:48 +0000";
 layers = (
 {
 anchors = (
@@ -45963,9 +46041,9 @@ nodes = (
 "244 1196 OFFCURVE",
 "0 951 CURVE SMOOTH",
 "-163 787 OFFCURVE",
-"13 606 OFFCURVE",
-"13 673 CURVE SMOOTH",
-"13 935 OFFCURVE",
+"3 606 OFFCURVE",
+"3 673 CURVE SMOOTH",
+"3 935 OFFCURVE",
 "779 1421 OFFCURVE",
 "975 1518 CURVE SMOOTH",
 "1022 1541 OFFCURVE",
@@ -49052,7 +49130,7 @@ width = 237;
 {
 color = (31,255,0,1);
 glyphname = absAinMed.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:06:03 +0000";
 layers = (
 {
 anchors = (
@@ -49130,9 +49208,9 @@ nodes = (
 "105 873 OFFCURVE",
 "0 768 CURVE SMOOTH",
 "-163 605 OFFCURVE",
-"13 423 OFFCURVE",
-"13 491 CURVE SMOOTH",
-"13 641 OFFCURVE",
+"3 422 OFFCURVE",
+"3 490 CURVE SMOOTH",
+"3 640 OFFCURVE",
 "478 1134 OFFCURVE",
 "478 1280 CURVE SMOOTH"
 );
@@ -53195,7 +53273,7 @@ width = 897;
 {
 color = (31,255,0,1);
 glyphname = absJeemIni.qf;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:04:44 +0000";
 layers = (
 {
 anchors = (
@@ -53279,9 +53357,9 @@ nodes = (
 "146 930 OFFCURVE",
 "0 784 CURVE SMOOTH",
 "-163 621 OFFCURVE",
-"13 439 OFFCURVE",
-"13 507 CURVE SMOOTH",
-"13 717 OFFCURVE",
+"3 438 OFFCURVE",
+"3 506 CURVE SMOOTH",
+"3 716 OFFCURVE",
 "354 829 OFFCURVE",
 "553 1288 CURVE SMOOTH",
 "585 1362 OFFCURVE",
@@ -61830,7 +61908,7 @@ width = 703;
 {
 color = (31,255,0,1);
 glyphname = absSadMed.qf;
-lastChange = "2018-03-19 15:30:49 +0000";
+lastChange = "2018-03-19 19:54:58 +0000";
 layers = (
 {
 anchors = (
@@ -103814,7 +103892,7 @@ width = 711;
 {
 color = 1;
 glyphname = absWaw;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:06:24 +0000";
 layers = (
 {
 anchors = (
@@ -103905,6 +103983,17 @@ nodes = (
 "756 756 OFFCURVE",
 "691 992 OFFCURVE",
 "543 992 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"736 744 LINE",
+"737 744 OFFCURVE",
+"737 744 OFFCURVE",
+"738 744 CURVE",
+"738 746 LINE",
+"736 746 LINE"
 );
 }
 );
@@ -104138,13 +104227,13 @@ unicode = 06C5;
 {
 color = (31,255,0,1);
 glyphname = absWawFin;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-19 20:08:02 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{729, 790}";
+position = "{737, 745}";
 },
 {
 name = bar;
