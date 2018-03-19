@@ -7,7 +7,7 @@ DisplayStrings = (
 /absMeemMed.hd,
 /absKehehIni/absKehehIni_short,
 /absQafFin,
-/absWaw/absWaw/absWawFin,
+/absWaw/absWawFin,
 /absWaw,
 "/absBehIni.qf/absBehMed.qf/absBehMed.qf_ss/absFehIni.qf/absAinIni.qf  /absAinMed.qf  /absJeemIni.qf     /absJeemMed.qf  /absSadIni.qf   /absSadMed.qf   /absLamIni.qf/absLamMed.qf/absKehehIni.qf/absKehehMed.qf/absMeemIni.qf/absMeemMed.qf/absHehDoachashmeeIni.qf_alt/absHehGoalIni.qf  /absHehGoalMed.qf"
 );
@@ -42668,13 +42668,13 @@ unicode = 0642;
 {
 color = (31,255,0,1);
 glyphname = absQafFin;
-lastChange = "2018-03-19 20:57:18 +0000";
+lastChange = "2018-03-19 22:00:46 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{1566, 728}";
+position = "{1561, 727}";
 },
 {
 name = honorific;
@@ -42695,10 +42695,6 @@ position = "{695, -918}";
 {
 name = nUpper;
 position = "{1369, 1545}";
-},
-{
-name = oldexit;
-position = "{1576, 929}";
 }
 );
 background = {
@@ -42756,15 +42752,6 @@ nodes = (
 };
 layerId = UUID0;
 paths = (
-{
-closed = 1;
-nodes = (
-"1564 726 LINE",
-"1568 726 LINE",
-"1568 730 LINE",
-"1564 730 LINE"
-);
-},
 {
 closed = 1;
 nodes = (
@@ -104237,13 +104224,13 @@ unicode = 06C5;
 {
 color = (31,255,0,1);
 glyphname = absWawFin;
-lastChange = "2018-03-19 21:35:08 +0000";
+lastChange = "2018-03-19 21:59:22 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_qafWaw;
-position = "{725, 543}";
+position = "{725, 513}";
 },
 {
 name = bar;
