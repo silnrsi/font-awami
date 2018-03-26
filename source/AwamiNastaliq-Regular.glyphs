@@ -4,7 +4,9 @@ DisplayStrings = (
 /absKehehMed.dk_base,
 /_kehehMedTop_medshort,
 /_kehehMedTop_short,
-/absKehehMed.ai
+/absKehehMed.ai,
+/_gafMedTop_medshort,
+/_gafMedTop_tall
 );
 classes = (
 {
@@ -137603,7 +137605,7 @@ width = 1132;
 {
 color = 3;
 glyphname = absKehehIni.jm_base;
-lastChange = "2018-03-22 21:51:53 +0000";
+lastChange = "2018-03-26 21:06:57 +0000";
 layers = (
 {
 anchors = (
@@ -144218,7 +144220,7 @@ width = 0;
 {
 color = (31,255,0,1);
 glyphname = _kehehMedTop_tall;
-lastChange = "2018-03-26 20:11:53 +0000";
+lastChange = "2018-03-26 21:26:36 +0000";
 layers = (
 {
 anchors = (
@@ -144231,12 +144233,8 @@ name = exit_ain;
 position = "{-545, -112}";
 },
 {
-name = gafStroke;
-position = "{-47, 1720}";
-},
-{
 name = kafExclude;
-position = "{-44, 1579}";
+position = "{-44, 1669}";
 },
 {
 name = mLowerC;
@@ -144248,11 +144246,11 @@ position = "{35, -383}";
 },
 {
 name = nUpper;
-position = "{431, 2045}";
+position = "{431, 2125}";
 },
 {
 name = ring;
-position = "{653, 1713}";
+position = "{653, 1793}";
 }
 );
 background = {
@@ -144300,24 +144298,24 @@ nodes = (
 "145 604 OFFCURVE",
 "147 713 CURVE SMOOTH",
 "150 863 OFFCURVE",
-"145 798 OFFCURVE",
-"145 1040 CURVE SMOOTH",
-"145 1391 OFFCURVE",
-"205 1410 OFFCURVE",
-"503 1623 CURVE SMOOTH",
-"909 1913 OFFCURVE",
-"974 1986 OFFCURVE",
-"985 2190 CURVE SMOOTH",
-"986 2208 OFFCURVE",
-"958 2230 OFFCURVE",
-"949 2215 CURVE SMOOTH",
-"864 2073 OFFCURVE",
-"828 2041 OFFCURVE",
-"510 1813 CURVE SMOOTH",
-"231 1613 OFFCURVE",
-"0 1326 OFFCURVE",
-"0 888 CURVE SMOOTH",
-"0 841 OFFCURVE",
+"145 878 OFFCURVE",
+"145 1120 CURVE SMOOTH",
+"145 1471 OFFCURVE",
+"205 1490 OFFCURVE",
+"503 1703 CURVE SMOOTH",
+"909 1993 OFFCURVE",
+"974 2066 OFFCURVE",
+"985 2270 CURVE SMOOTH",
+"986 2288 OFFCURVE",
+"958 2310 OFFCURVE",
+"949 2295 CURVE SMOOTH",
+"864 2153 OFFCURVE",
+"828 2121 OFFCURVE",
+"510 1893 CURVE SMOOTH",
+"231 1693 OFFCURVE",
+"0 1406 OFFCURVE",
+"0 968 CURVE SMOOTH",
+"0 921 OFFCURVE",
 "-1 380 OFFCURVE",
 "-1 340 CURVE SMOOTH"
 );
@@ -145105,7 +145103,7 @@ width = 0;
 {
 color = (31,255,0,1);
 glyphname = _gafMedTop_tall;
-lastChange = "2018-03-26 20:12:06 +0000";
+lastChange = "2018-03-26 21:27:02 +0000";
 layers = (
 {
 anchors = (
@@ -145118,12 +145116,8 @@ name = exit_ain;
 position = "{-544, -112}";
 },
 {
-name = gafStroke;
-position = "{-46, 1720}";
-},
-{
 name = kafExclude;
-position = "{-43, 1809}";
+position = "{-43, 1890}";
 },
 {
 name = mLowerC;
@@ -145135,11 +145129,11 @@ position = "{35, -383}";
 },
 {
 name = nUpper;
-position = "{224, 2276}";
+position = "{224, 2356}";
 },
 {
 name = ring;
-position = "{653, 1713}";
+position = "{653, 1793}";
 }
 );
 components = (
@@ -168312,7 +168306,7 @@ width = 619;
 {
 color = (31,255,0,1);
 glyphname = _kehehMedTop_medshort;
-lastChange = "2018-03-26 20:52:11 +0000";
+lastChange = "2018-03-26 21:18:11 +0000";
 layers = (
 {
 anchors = (
@@ -168330,7 +168324,7 @@ position = "{377, 2016}";
 },
 {
 name = ring;
-position = "{628, 1694}";
+position = "{588, 1654}";
 }
 );
 background = {
@@ -168407,18 +168401,18 @@ nodes = (
 "94 927 OFFCURVE",
 "94 1116 CURVE SMOOTH",
 "94 1300 OFFCURVE",
-"145 1365 OFFCURVE",
-"478 1604 CURVE SMOOTH",
-"884 1895 OFFCURVE",
-"976 1957 OFFCURVE",
-"990 2201 CURVE SMOOTH",
-"991 2219 OFFCURVE",
-"963 2241 OFFCURVE",
-"954 2226 CURVE SMOOTH",
-"871 2087 OFFCURVE",
-"852 2057 OFFCURVE",
-"485 1794 CURVE SMOOTH",
-"206 1594 OFFCURVE",
+"105 1325 OFFCURVE",
+"438 1564 CURVE SMOOTH",
+"844 1855 OFFCURVE",
+"898 1933 OFFCURVE",
+"910 2141 CURVE SMOOTH",
+"911 2159 OFFCURVE",
+"883 2181 OFFCURVE",
+"874 2166 CURVE SMOOTH",
+"791 2027 OFFCURVE",
+"772 1989 OFFCURVE",
+"445 1754 CURVE SMOOTH",
+"166 1554 OFFCURVE",
 "-55 1328 OFFCURVE",
 "-55 779 CURVE SMOOTH",
 "-55 732 OFFCURVE",
@@ -168434,7 +168428,7 @@ width = 0;
 {
 color = (31,255,0,1);
 glyphname = _gafMedTop_medshort;
-lastChange = "2018-03-26 20:52:34 +0000";
+lastChange = "2018-03-26 21:18:21 +0000";
 layers = (
 {
 anchors = (
@@ -168452,7 +168446,7 @@ position = "{148, 2212}";
 },
 {
 name = ring;
-position = "{628, 1694}";
+position = "{588, 1654}";
 }
 );
 components = (
