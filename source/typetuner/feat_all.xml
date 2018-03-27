@@ -122,6 +122,14 @@
 		</value>
 	</feature>
 
+	<feature name="Show invisible characters" value="False" tag="Invis">
+		<value name="False" tag="F">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="True" tag="T">
+			<cmd name="gr_feat" args="{gr_invs} 1"/>
+		</value>
+	</feature>
 
 	<interactions>
 
@@ -139,6 +147,7 @@
 		<alias name='gr_hamz' value='1751215482'/> <!-- 68 61 6D 7A -->
 		<alias name='gr_hedo' value='1751475311'/> <!-- 68 65 64 6F -->
 		<alias name='gr_hehk' value='1751476331'/> <!-- 68 65 68 6B -->
+		<alias name='gr_invs' value='1768846963'/> <!-- 69 6E 76 73 -->
 		<alias name='gr_lamv' value='1818324342'/> <!-- 6C 61 6D 76 -->
 		<alias name='gr_punc' value='1886744163'/> <!-- 70 75 6E 63 -->
 		<alias name='gr_shrt' value='1936224884'/> <!-- 73 68 72 74 -->
