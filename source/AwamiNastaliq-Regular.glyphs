@@ -1,5 +1,11 @@
 {
 .appVersion = "1075";
+DisplayStrings = (
+/absLamThreeDots,
+/absLam,
+/absLamSmallV,
+/absRehTwoDotsAbove
+);
 classes = (
 {
 code = "";
@@ -70627,7 +70633,7 @@ unicode = 076A;
 {
 color = (235,0,255,1);
 glyphname = absLamSmallV;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-27 21:51:21 +0000";
 layers = (
 {
 anchors = (
@@ -104824,7 +104830,7 @@ unicode = 0696;
 {
 color = (31,255,0,1);
 glyphname = absRehTwoDotsAbove;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-27 21:52:19 +0000";
 layers = (
 {
 anchors = (
@@ -176522,6 +176528,40 @@ layerId = UUID0;
 width = 961;
 }
 );
+},
+{
+glyphname = absLamThreeDots;
+lastChange = "2018-03-27 21:52:59 +0000";
+layers = (
+{
+anchors = (
+{
+name = honorific;
+position = "{291, 1396}";
+},
+{
+name = mLower;
+position = "{645, -920}";
+},
+{
+name = mUpper;
+position = "{1514, 3688}";
+}
+);
+components = (
+{
+name = absLam;
+},
+{
+name = _nukta3inv;
+transform = "{1, 0, 0, 1, 943, 2971}";
+}
+);
+layerId = UUID0;
+width = 1731;
+}
+);
+unicode = 06B7;
 }
 );
 instances = (
