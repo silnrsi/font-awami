@@ -1800,17 +1800,70 @@ unicode = 0021;
 {
 color = (31,255,0,1);
 glyphname = exclam.arab;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-03-27 12:04:33 +0000";
 layers = (
 {
-components = (
+background = {
+paths = (
 {
-name = absAlef;
-transform = "{1.25, 0, 0, 0.8, 23, 253}";
+closed = 1;
+nodes = (
+"416.36 129.6 OFFCURVE",
+"390.76 137.92 OFFCURVE",
+"349.16 178.88 CURVE SMOOTH",
+"307.56 221.12 OFFCURVE",
+"299.24 246.08 OFFCURVE",
+"290.28 246.72 CURVE SMOOTH",
+"268.52 246.72 OFFCURVE",
+"171.88 143.68 OFFCURVE",
+"171.88 120.64 CURVE SMOOTH",
+"171.88 93.76 OFFCURVE",
+"270.44 -6.08 OFFCURVE",
+"297.96 -6.08 CURVE SMOOTH",
+"319.08 -6.08 OFFCURVE",
+"417 97.6 OFFCURVE",
+"416.36 120.64 CURVE SMOOTH"
+);
 },
 {
+closed = 1;
+nodes = (
+"225.5 1097 OFFCURVE",
+"259.25 855.4 OFFCURVE",
+"239.25 638.6 CURVE SMOOTH",
+"225.5 487.4 OFFCURVE",
+"175.5 437.8 OFFCURVE",
+"164.25 408.2 CURVE SMOOTH",
+"159.25 393.8 OFFCURVE",
+"199.25 361.8 OFFCURVE",
+"216.75 377.8 CURVE SMOOTH",
+"274.25 429 OFFCURVE",
+"389.25 665.8 OFFCURVE",
+"415.5 941 CURVE SMOOTH",
+"429.25 1086.6 OFFCURVE",
+"431.75 1242.6 OFFCURVE",
+"431.75 1423.4 CURVE SMOOTH",
+"431.75 1545 OFFCURVE",
+"470.5 1579.4 OFFCURVE",
+"479.25 1604.2 CURVE SMOOTH",
+"485.5 1618.6 OFFCURVE",
+"463 1657.8 OFFCURVE",
+"438 1640.2 CURVE SMOOTH",
+"386.75 1606.6 OFFCURVE",
+"265.5 1478.6 OFFCURVE",
+"251.75 1345.8 CURVE SMOOTH"
+);
+}
+);
+};
+components = (
+{
 name = _nukta;
-transform = "{0.64, 0, 0, 0.64, 49, 120}";
+transform = "{0.7, 0, 0, 0.7, 60, 85}";
+},
+{
+name = absAlef;
+transform = "{1.25, 0, 0, 0.8, 90, 240}";
 }
 );
 layerId = UUID0;
