@@ -1286,25 +1286,29 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
 
+// No change: never make shorter after a kaf/gaf.
+cNuqtaLikeUpperNoKT?  cKafMed  g__kafTop_null
+	>	@N  @K  @T
+	/  cKafTop  _=N  cDiacritic?  _=K  _=T;
+
 
 // Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
-cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  csKafIM_base$K  csKafIM_top_shorter$K
-	/  _=N  _=D  _=K {position.y > SHORTERKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
+cNuqtaLikeUpperNoKT?  csKafIM_medium  g__kafTop_null
+	>	@N STAYBELOWKAF  csKafIM_base$K  csKafIM_top_shorter$K
+	/  _=N  cDiacritic?  _=K {position.y > SHORTERKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
-
-cNuqtaLikeUpper?  cDiacritic?  csKafIM_medium  g__kafTop_null
+cNuqtaLikeUpperNoKT?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user5 = bb.top; user6 = position.y + bb.top}**/  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 // Like rule below, but don't move ngoeh nuqtas down so far, because (a) they are already pushed down a bit,
 // (b) they don't always get collision-fixed, and (c) the diagonal stroke of the gaf sticks up anyway.
-cNuqtaLikeUpper { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
+cNuqtaLikeUpperNoKT { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-cNuqtaLikeUpper { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpperNoKT { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
 	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
@@ -1358,6 +1362,11 @@ table(glyph)
 ckafTop_bjDia { kafTopM = point(kafTop_bjM.x, kafTop_bjM.y) }; // to avoid warnings; will never be used
 endtable;
 
+
+// Special case - the short kaf tops don't work for .jm for, so substitute special forms.
+gKafMedJm_base (g__kafMedTop_short g__gafMedTop_short)  >  (gKafMedJm_short gGafMedJm_short)$2 g__kafTop_m_bogus  / ^ _ _;
+
+
 // ngoeh nuqtas
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
 	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
@@ -1369,6 +1378,26 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_b
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
+
+(gKafIniMm_short gKafMedJm_short gKafMedJm_tall)  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; passKeySlot = true }
+	/  _=K  g__kafTop_m_bogus  _=R;
+
+
+// BUG: Where there are two kafs in a row with a ring on the first, the ring will not get attached.
+
+
+// medial kaf bases - re-attach previous to medial kaf base
+cTakes_kafTop_bjDia {att {to=@K2; with=exit; at=entrance}}  
+	ckafTop_bjDia {att {to=@K1; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
+	csKafMed_base {insert=1}
+	/ _=K1  _=T  MARKS ^ _=K2;
+
+cTakes_kafTopDia {att {to=@K2; with=exit; at=entrance}}  
+	cKaf_top {att {to=@K1; at=kafTopS; with=kafTopM}; passKeySlot = true}
+	csKafMed_base {insert=1}
+	/ _=K1  _=T  MARKS ^ _=K2;
+
+cIniMed {att {to=@K; with=exit; at=entrance}}  csKafMed_base {insert=1} / _=P  MARKS2N ^ _=K;
 
 // kaf tops
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
@@ -2163,7 +2192,7 @@ cKernable { collision {
 		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
-}  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafIMF=K;
+}  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoIso=K;
 
 // Don't kern very much before closing quotes.
 // PROBLEM: this rule is firing, but the resulting kerning never happens. Why? :-/
