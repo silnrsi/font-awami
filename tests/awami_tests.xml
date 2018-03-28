@@ -232,6 +232,9 @@
     <test class="fset19" label="footnote sign">
       <string>؂1 ؂12 ؂٣٤</string>
     </test>
+    <test class="fset36" label="samvat">
+      <string>؄1973</string>
+    </test>
     <test class="fset19" label="end of ayah - Latin">
       <string>۝8 ۝88 ۝888 ۝56 ۝482</string>
     </test>
@@ -263,6 +266,9 @@
     <test class="fset21" label="year sign in context" rtl="True">
       <comment>Note that no app should pass data like this, because it mixes RTL and LTR data.</comment>
       <string>نے ڋہ دسمبر 8491؁ کوں انسانی حقوق</string>
+    </test>
+    <test class="fset36" label="samvat - RTL" rtl="True">
+      <string>٥٤٩١؄</string>
     </test>
   </testgroup>
   <testgroup label="Shaping rules">
@@ -489,6 +495,9 @@
     </test>
     <test class="fset29" label="salaam ulena in context" rtl="True">
       <string>عِیسٰی سلامه علینا اقیس</string>
+    </test>
+    <test class="fset36" label="rial - in context" rtl="True">
+      <string>ساف ﷼ بمل</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
@@ -1332,7 +1341,7 @@
     <test class="fset24" label="kaf + diac" rtl="True">
       <string>حکُمو ملگَی</string>
     </test>
-    <test class="fset9" label="gaf heh-do noon" rtl="True">
+    <test class="fset41" label="gaf heh-do noon" rtl="True">
       <string>گھن کھڻ</string>
     </test>
     <test class="fset9" label="kaf heh-do lam yeh" rtl="True">
@@ -1368,7 +1377,7 @@
     <test class="fset30" label="meem lam kaf yeh" rtl="True">
       <string>ملکی</string>
     </test>
-    <test class="fset9" label="seen gaf yeh noon dal" rtl="True">
+    <test class="fset30" label="seen gaf yeh noon dal" rtl="True">
       <string>سگیند</string>
     </test>
     <test class="fset30" label="meem kaf meem lam" rtl="True">
@@ -1494,7 +1503,7 @@
     <test class="fset24" label="nuqta + diac + kaf" rtl="True">
       <string>ضُکد قَکے</string>
     </test>
-    <test class="fset24" label="nuqta + kaf-ring + bariyeh" rtl="True">
+    <test background="#ff0000" class="fset24" label="nuqta + kaf-ring + bariyeh" rtl="True">
       <string>قَګے</string>
     </test>
     <test class="fset24" label="feh + khah + gaf" rtl="True">
@@ -1524,7 +1533,7 @@
     <test class="fset24" label="tah + kaf + lam/alef" rtl="True">
       <string>لظَکل  ظگا</string>
     </test>
-    <test class="fset24" label="tah-med + kaf" rtl="True">
+    <test background="#ff007f" class="fset24" label="tah-med + kaf" rtl="True">
       <string>عطَگَف</string>
     </test>
     <test background="#55aaff" class="fset24" label="GAF + KAF/GAF" rtl="True">
@@ -1575,10 +1584,10 @@
     <test background="#55aaff" class="fset24" label="SHORTER" rtl="True">
       <string/>
     </test>
-    <test class="fset24" label="ykhty" rtl="True">
+    <test class="fset41" label="ykhty" rtl="True">
       <string>یکھتے</string>
     </test>
-    <test class="fset24" label="ktys" rtl="True">
+    <test class="fset41" label="ktys" rtl="True">
       <string>اِکتِیس</string>
     </test>
     <test class="fset30" label="long - kaf &amp; final" rtl="True">
@@ -1592,6 +1601,9 @@
     </test>
     <test class="fset30" label="gbs" rtl="True">
       <string>گَبُس</string>
+    </test>
+    <test class="fset41" label="short and shorter" rtl="True">
+      <string>مکعججی سکعس</string>
     </test>
     <test background="#55aaff" class="fset24" label="DON'T CHANGE" rtl="True">
       <string/>
@@ -1611,13 +1623,24 @@
     </test>
     <test class="fset41" label="initials" rtl="True">
       <comment>I don't there is any way to get the following forms: .benn, .bere, .behg, .by, .ch, .hgF, .nn, .qf, .re</comment>
-      <string>کعجق آکب آکد کبنجس کبنبجق گتفج آکف گملبج کگجمج گمسج کصجم کشجغ کطجق گہجم گھمج</string>
+      <string>کعجق آکب آکد کبنجس کبنبجق گتفج آکف گملبج کگجمج گمسج کصجم کشجغ کطجق گہجم گھمج </string>
+    </test>
+    <test class="fset41" label="initials - special cases" rtl="True">
+      <string>کجمبحے کمسجی</string>
+    </test>
+    <test class="fset41" label="initials - tall before final" rtl="True">
+      <string>شَکے شُکن</string>
     </test>
     <test class="fset41" label="medials" rtl="True">
+      <comment>No way to generate .by form.</comment>
       <string>شَکع شَکب ݩکد بکبنجسج مکبنبجقج سگتفج ݩکف صگملبج بکگجمج تگمسج مکصجم پکشجغ بکطجق سگہجم ݩگھ</string>
     </test>
-    <test class="fset36" label="medials" rtl="True">
+    <test class="fset36" label="medials - tall" rtl="True">
+      <comment>These are all tall because of the nuqtas and marks on the previous character.</comment>
       <string>شَکبن شگبر ݩکبن څگے ݩکی شگہ ثکن څگق ݩکر</string>
+    </test>
+    <test class="fset41" label="medial - special cases" rtl="True">
+      <string>شَکجمبحے سکجمبحے مگمسجی بکگجمج کگممج شُگے</string>
     </test>
   </testgroup>
   <testgroup label="Demo Poetry">
@@ -1910,6 +1933,9 @@
     <test class="fset36" label="non-final noon ghunna" rtl="True">
       <comment>Balti</comment>
       <string>بون٘و</string>
+    </test>
+    <test class="fset36" label="lam w/ three dots" rtl="True">
+      <string>ڷ ڷڷڷ</string>
     </test>
     <test background="#55aaff" class="fset31" label="BALUCHI" rtl="True">
       <string/>
@@ -2471,6 +2497,9 @@
     <test class="fset36" label="alef + zabar-two-dots" rtl="True">
       <string>آٞک داٞگ بھاٞگ</string>
     </test>
+    <test class="fset36" label="over tah and lam" rtl="True">
+      <string>طُس لّمجن</string>
+    </test>
     <test background="#55aaff" class="fset25" label="MLOWERC - before ain, yeh, jeem" rtl="True">
       <string/>
     </test>
@@ -2492,6 +2521,9 @@
     <test class="fset36" label="shadda" rtl="True">
       <comment>real words</comment>
       <string>مقدّس بِبَچّے</string>
+    </test>
+    <test class="fset36" label="zwarakay" rtl="True">
+      <string>قٙبٙسٙمٙبٙ ݪ</string>
     </test>
   </testgroup>
   <testgroup label="Review feedback - general">
