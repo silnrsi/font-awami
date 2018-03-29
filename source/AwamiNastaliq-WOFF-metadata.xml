@@ -3,24 +3,24 @@
 Awami-WOFF-metadata.html
 Awami Nastaliq
 This file is part of Awami font family (http://software.sil.org/awami/)
-and is Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
+and is Copyright (c) 2014-2018 SIL International (http://www.sil.org/),
 with Reserved Font Names "Awami" and "SIL". This Font Software is licensed
 under the SIL Open Font License, Version 1.1. You should have received a copy
 of the license along with this Font Software. If this is not the case, go to
 (http://scripts.sil.org/OFL) for all the details including a FAQ.
 -->
 <metadata version="1.0">
-    <uniqueid id="org.sil.fonts.awami.1.000" />
+    <uniqueid id="org.sil.fonts.awami.1.100" />
     <vendor name="SIL International" url="http://scripts.sil.org" />
     <credits>
         <credit
             name="Sharon Correll"
             url="http://scripts.sil.org/"
-            role="Graphite code and build support />
+            role="Script engineering, font design, and build support" />
         <credit
             name="Peter Martin"
             url="http://scripts.sil.org/"
-            role="Lead Designer />
+            role="Lead Designer" />
     </credits>
     <description>
         <text lang="en">
@@ -36,7 +36,7 @@ of the license along with this Font Software. If this is not the case, go to
       set for this font is aimed at those languages.
 
       This font makes use of state-of-the-art font technologies to support complex 
-      typographic issues. Font smarts have been implemented using  Graphite only. We have 
+      typographic issues. Font smarts have been implemented using Graphite only. We have 
       no current plans to support OpenType.
 
       One font from this typeface family is included in this release:
@@ -46,6 +46,25 @@ of the license along with this Font Software. If this is not the case, go to
       ChangeLog
       ----------
       (This should list both major and minor changes, most recent first.)
+      2018-Apr-03 (SIL NRSI team) Awami Nastaliq Version 1.100
+      - Added characters: U+0604, U+0609, U+060A, U+060B, U+061C, U+0649, U+0659,
+      	U+066E, U+066F, U+0671, U+068E, U+069E, U+06A1, U+06B7, U+06C9, U+06E0,
+      	U+06E1, U+06EA, U+06ED, U+0763, U+0772, U+0773, U+0774, U+0775, U+0776,
+      	U+0777, U+0778, U+0779,	U+077A, U+077B, U+077C, U+077D, U+FDFC
+      - Adjusted shapes of sad, heh-doachashmee, some jeem forms, initial ains,
+      	and alternate-height kafs and gafs
+      - Improved shape of shadda
+      - Fixed right side-bearing problems with kafs, gafs, seens, and bariyeh
+      - Made bariyeh right-joining only
+      - Many small glyph shape improvements
+      - Improved collision handling for special cases 
+      - Added an omitted feature to TypeTuner capability
+      - Redesigned salaam ulena ligature
+      - Improved punctuation kerning
+      - Include auto-hinting for Latin characters
+      - Fixed bug in noon-ring implementation
+      - Fixed positioning problems in end of ayah
+      
       2017-Jul-17 (SIL NRSI team) Awami Nastaliq Version 1.000
       - Adjusted spacing issues between some characters
       - Adjusted anchors on many glyphs
@@ -207,7 +226,7 @@ of the license along with this Font Software. If this is not the case, go to
 		</text>
     </license>
     <copyright>
-        <text lang="en">Copyright (c) 2014-2017, SIL International (http://www.sil.org/)</text>
+        <text lang="en">Copyright (c) 2014-2018, SIL International (http://www.sil.org/)</text>
     </copyright>
     <trademark>
     	<text lang="en">Awami Nastaliq is a trademark of SIL International. </text>

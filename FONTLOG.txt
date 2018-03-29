@@ -36,6 +36,25 @@ ChangeLog
 ---------
 (This should list both major and minor changes, most recent first.)
 
+2018-Apr-03 (SIL NRSI team) Awami Nastaliq Version 1.100
+- Added characters: U+0604, U+0609, U+060A, U+060B, U+061C, U+0649, U+0659,
+	U+066E, U+066F, U+0671, U+068E, U+069E, U+06A1, U+06B7, U+06C9, U+06E0,
+	U+06E1, U+06EA, U+06ED, U+0763, U+0772, U+0773, U+0774, U+0775, U+0776,
+	U+0777, U+0778, U+0779,	U+077A, U+077B, U+077C, U+077D, U+FDFC
+- Adjusted shapes of sad, heh-doachashmee, some jeem forms, initial ains,
+	and alternate-height kafs and gafs
+- Improved shape of shadda
+- Fixed right side-bearing problems with kafs, gafs, seens, and bariyeh
+- Made bariyeh right-joining only
+- Many small glyph shape improvements
+- Improved collision handling for special cases 
+- Added an omitted feature to TypeTuner capability
+- Redesigned salaam ulena ligature
+- Improved punctuation kerning
+- Include auto-hinting for Latin characters
+- Fixed bug in noon-ring implementation
+- Fixed positioning problems in end of ayah
+
 2017-Jul-17 (SIL NRSI team) Awami Nastaliq Version 1.000
 - Adjusted spacing issues between some characters
 - Adjusted anchors on many glyphs
@@ -68,7 +87,9 @@ ChangeLog
 - Increased font size by 15%
 - Redesigned seen forms
 - Redesigned nuqtas, made a them little smaller and closer together
-- Implemented feature to allow shorter kafs/gafs and some final forms (noon, seen, chotiyeh, bariyeh, qaf, meem, lam) when the sequences get very high
+- Implemented feature to allow shorter kafs/gafs and some final forms 
+  (noon, seen, chotiyeh, bariyeh, qaf, meem, lam) when the sequences 
+  get very high
 - Added feature to allow alternate position of V over lam
 - Added Arabic style quote marks at a higher position than Latin
 - Scaled subtending marks more appropriately
@@ -104,7 +125,7 @@ be sure to add your name (N), email (E), web-address (W) and description
 N: Sharon Correll
 E: fonts@sil.org
 W: http://scripts.sil.org/
-D: Graphite programming and build support
+D: Script engineering, font design, and build support
 
 N: Peter Martin
 E: fonts@sil.org
