@@ -2797,6 +2797,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
   </testgroup>
   <testgroup label="Special cases">
+    <test background="#55aaff" class="fset36" label="PASS 4 and 5" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="short tah" rtl="True">
+      <string>طکس تظگق</string>
+    </test>
+    <test class="fset36" label="short lam" rtl="True">
+      <string>لګس للگک</string>
+    </test>
     <test background="#55aaff" class="fset36" label="PASS 6" rtl="True">
       <string/>
     </test>
