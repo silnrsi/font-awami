@@ -3,7 +3,7 @@
 
 #	This file is part of the Awami Nastaliq font
 #	(http://software.sil.org/awami) and is
-#	Copyright (c) 2014-2017 SIL International (http://www.sil.org/),
+#	Copyright (c) 2014-2018 SIL International (http://www.sil.org/),
 # with Reserved Font Names "Awami" and "SIL".
 #
 # This Font Software is licensed under the SIL Open Font License,
@@ -27,10 +27,10 @@ TESTDIR='tests'
 # STANDARDS = 'reference'
 
 # set the font name, version, licensing and description
-APPNAME='AwamiNastaliq Dev'
-VERSION='1.010'
-TTF_VERSION="1.010"
-COPYRIGHT='Copyright (c) 2014-2017, SIL International (http:/www.sil.org)'
+APPNAME='AwamiNastaliq'      ####
+VERSION='1.100'              ####
+TTF_VERSION="1.100"          ####
+COPYRIGHT='Copyright (c) 2014-2018, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
@@ -62,8 +62,8 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Dev"
-FONT_FILENAME = "AwamiNastaliq-Dev"
+FONT_NAME = "Awami Nastaliq"     ####
+FONT_FILENAME = "AwamiNastaliq-Regular"  ####
 
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
@@ -85,7 +85,6 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
     version = TTF_VERSION,
-    ###typetuner = "source/typetuner/feat_all.xml",
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
     fret = fret(params = '-r'),  # -b = show octaboxes
