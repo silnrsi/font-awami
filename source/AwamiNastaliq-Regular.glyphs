@@ -4,7 +4,8 @@ DisplayStrings = (
 "/absTahMed.hd    /absTahIni.ch  /absTahMed.ch   /absTahMed.mmX",
 /absBehIni.qf/absBehMed.qf/absBehMed.qf_ss/absFehIni.qf/absFehMed.qf/absAinIni.qf/absAinMed.qf/absJeemIni.qf/absJeemMed.qf/absSadIni.qf/absSadMed.qf/absSeenIni.qf/absSeenMed.qf/absLamIni.qf/absLamMed.qf,
 /absQafFin/absQafFin.short/absQafFin._stfh/absQafFin._stfh.short,
-/absAinIni/absAinIni.ai/absAinIni.be/absAinIni.fe/absAinIni.hgM/absAinIni.jm/absAinIni.qf/absAinIni.sn/absAinIni.ta
+/absAinIni/absAinIni.ai/absAinIni.be/absAinIni.fe/absAinIni.hgM/absAinIni.jm/absAinIni.qf/absAinIni.sn/absAinIni.ta,
+/exclam.arab/absQuestionMark
 );
 classes = (
 {
@@ -1798,7 +1799,7 @@ unicode = 0021;
 {
 color = (31,255,0,1);
 glyphname = exclam.arab;
-lastChange = "2018-03-27 12:04:33 +0000";
+lastChange = "2018-04-02 08:56:46 +0000";
 layers = (
 {
 background = {
@@ -117853,7 +117854,7 @@ unicode = 061B;
 {
 color = (31,255,0,1);
 glyphname = absQuestionMark;
-lastChange = "2018-01-18 17:35:03 +0000";
+lastChange = "2018-04-02 09:00:48 +0000";
 layers = (
 {
 anchors = (
@@ -117929,17 +117930,27 @@ nodes = (
 "728 1148 OFFCURVE",
 "738 1178 CURVE SMOOTH"
 );
-}
-);
-};
-components = (
+},
 {
-name = _nukta;
-transform = "{0.64, 0, 0, 0.64, 159, 108}";
-}
+closed = 1;
+nodes = (
+"526.36 117.6 OFFCURVE",
+"500.76 125.92 OFFCURVE",
+"459.16 166.88 CURVE SMOOTH",
+"417.56 209.12 OFFCURVE",
+"409.24 234.08 OFFCURVE",
+"400.28 234.72 CURVE SMOOTH",
+"378.52 234.72 OFFCURVE",
+"281.88 131.68 OFFCURVE",
+"281.88 108.64 CURVE SMOOTH",
+"281.88 81.76 OFFCURVE",
+"380.44 -18.08 OFFCURVE",
+"407.96 -18.08 CURVE SMOOTH",
+"429.08 -18.08 OFFCURVE",
+"527 85.6 OFFCURVE",
+"526.36 108.64 CURVE SMOOTH"
 );
-layerId = UUID0;
-paths = (
+},
 {
 closed = 1;
 nodes = (
@@ -117964,7 +117975,40 @@ nodes = (
 );
 }
 );
-width = 680;
+};
+components = (
+{
+name = _nukta;
+transform = "{0.7, 0, 0, 0.7, 130, 85}";
+}
+);
+layerId = UUID0;
+paths = (
+{
+closed = 1;
+nodes = (
+"965 1755 OFFCURVE",
+"103 1695 OFFCURVE",
+"103 1227 CURVE SMOOTH",
+"103 904 OFFCURVE",
+"481 778 OFFCURVE",
+"368 376 CURVE SMOOTH",
+"359 344 OFFCURVE",
+"463 375 OFFCURVE",
+"471 404 CURVE SMOOTH",
+"611 912 OFFCURVE",
+"344 955 OFFCURVE",
+"344 1200 CURVE SMOOTH",
+"344 1617 OFFCURVE",
+"823 1645 OFFCURVE",
+"692 1346 CURVE SMOOTH",
+"670 1296 OFFCURVE",
+"837 1382 OFFCURVE",
+"849 1417 CURVE SMOOTH"
+);
+}
+);
+width = 963;
 }
 );
 unicode = 061F;
