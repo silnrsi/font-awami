@@ -17,7 +17,7 @@ intended for languages using the Nastaliq style of southwest Asia, the character
 set for this font is aimed at those languages.
 
 This font makes use of state-of-the-art font technologies to support complex 
-typographic issues. Font smarts have been implemented using  Graphite only. We have 
+typographic issues. Font smarts have been implemented using Graphite only. We have 
 no current plans to support OpenType.
 
 Awami Nastaliq is released under the SIL Open Font License.
