@@ -51,6 +51,7 @@ my $page;
 my ($curry, $page);
 my ($upem) = $font->{'head'}{'unitsPerEm'};
 my ($post) = $font->{'post'}->read;
+my ($cmap) = $font->{'cmap'}->read;
 my (@lines) = sort { $a <=> $b || $a cmp $b } keys %{$json};
 foreach my $k (@lines)
 {
@@ -67,6 +68,19 @@ foreach my $k (@lines)
     {
         next if ($glyph->[0] eq '_adv_');
         my ($gid) = $post->{'STRINGS'}{$glyph->[0]};
+        if (!defined $gid)
+        {
+            if ($glyph->[0] =~ m/^glyph[0]*([0-9]+?)$/o)
+            {
+                $gid = $1;
+            } elsif ($glyph->[0] =~ m/^uni([0-9A-Fa-f]+)$/o)
+            {
+                $gid = $cmap->ms_lookup(hex($1));
+            } elsif ($glyph->[0] eq 'space')
+            {
+                $gid = 3;
+            }
+        }
         my ($x) = $glyph->[1] * $opts{'size'} / $upem + $currx;
         my ($y) = $glyph->[2] * $opts{'size'} / $upem + $curry;
         if ($x < $maxx)
