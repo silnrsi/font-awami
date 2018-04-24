@@ -27,9 +27,9 @@ TESTDIR='tests'
 # STANDARDS = 'reference'
 
 # set the font name, version, licensing and description
-APPNAME='AwamiNastaliq-Dev'      #### AwamiNastaliq
-VERSION='1.150'              ####
-TTF_VERSION="1.150"          ####
+APPNAME='AwamiNastaliq'      #### AwamiNastaliq
+VERSION='1.101'              ####
+TTF_VERSION="1.101"          ####
 COPYRIGHT='Copyright (c) 2014-2018, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -62,8 +62,8 @@ DEBPKG = 'fonts-awami'
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
-FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
+FONT_NAME = "Awami Nastaliq"     #### Awami Nastaliq
+FONT_FILENAME = "AwamiNastaliq-Regular"  #### AwamiNastaliq-Regular
 
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
