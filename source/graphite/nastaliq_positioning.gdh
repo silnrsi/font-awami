@@ -1635,7 +1635,8 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m; kernPreWaw = 0m;
-	kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;      // kernPreInitial = 0m;
+	kernPreJeemAinIso = -130m; kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;
+    // kernPreInitial = 0m;
 	kernPreExclam = 0m;
 	minKernDelta = 0m };
 
@@ -1644,7 +1645,7 @@ gDalFin		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
-gRehFin_jkl	{ kernPreAlef = -70m };
+gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150 };
 gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
 gRehFin		{ minKernDelta = -400m };
@@ -1737,6 +1738,10 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 ////cQuoteLeftArab { kern.x = -100m }
 ////	/  g_parenleftArab  _;
 
+// Special case: yeh + beh + yeh - spread nuqtas out
+g__dot2l { shift { x = -130m; y = -170m; } }
+	g__dot1l { shift { x = 50m; y = -220m } }
+	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
 
 
 // Set up kerning pairs.
@@ -1746,6 +1751,7 @@ cKernable { pairKern = kernPreDal  }		/  _ ^ MARKS  cKernIgnore?  cDalIso;
 cKernable { pairKern = kernPreZain }		/  _ ^ MARKS  cKernIgnore?  cZainIso;
 cKernable { pairKern = kernPreReh  }		/  _ ^ MARKS  cKernIgnore?  cRehIso;
 cKernable { pairKern = kernPreWaw  }		/  _ ^ MARKS  cKernIgnore?  cWawIso;
+cKernable { pairKern = kernPreJeemAinIso }	/  _ ^ MARKS  cKernIgnore?  (cJeemIso cAinIso);
 cKernable { pairKern = kernPreLamAlef}		/  _ ^ MARKS  cKernIgnore?  gLamIniAl;  // gLafAlef - no longer used
 cKernable { pairKern = kernPreExclam }		/  _ ^ MARKS  cKernIgnore?  g_exclamArab;
 
@@ -1947,6 +1953,19 @@ cDiacriticUpper {
 		max.y = 400m;  // less than normal
 		// don't bother with sequence attributes
 } }  /  (cMed  cIso) _  (cKafNoIso cKafIso);
+
+// Special case: keep pesh under follow kaf; nuqta on noon pushes it up too far.
+// In fact, might as well apply this to tehs and other diacs as well.
+cNuqtaUpperSmall { shift { x = -150m; y = -200m };
+		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
+	cDiacriticUpper { shift { x = -200m; y = -100m } }
+	/  gBehIni  _=N  ^ _=D  csKafIM_base;
+
+cNuqtaUpper { shift.y = -100m }
+	cDiacriticUpper { shift { x = -150m; y = -150m };
+		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
+	/  gSeenIni  _=N  ^ _=D  csKafIM_base;
+
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);

@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>بے حد بےحد بس حد </string>
+      <string>نُمُو نُمو </string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -822,6 +822,12 @@
     <test class="fset36" label="reh-dot-dot bug" rtl="True">
       <string>ږازاراڔاڑاژا    ږل﻿زل﻿رل﻿ڔل﻿ڑل﻿ژل   ږوزوروڔوڑوژو   </string>
     </test>
+    <test background="#55aaff" class="fset36" label="POST V1 FEEDBACK" rtl="True">
+      <string/>
+    </test>
+    <test class="fset36" label="reh + isolate jeem/ain" rtl="True">
+      <string>چرچ چرع رج</string>
+    </test>
     <test background="#55aaff" class="fset36" label="PUNCTUATION" rtl="True">
       <string/>
     </test>
@@ -1350,7 +1356,7 @@
     <test class="fset9" label="kaf yeh teh yeh" rtl="True">
       <string>کیتی</string>
     </test>
-    <test class="fset9" label="gaf heh-do yeh-hamza noon" rtl="True">
+    <test class="fset30" label="gaf heh-do yeh-hamza noon" rtl="True">
       <string>ڱھئن</string>
     </test>
     <test class="fset9" label="kaf noon/yeh waw noon-gunna" rtl="True">
@@ -1413,8 +1419,8 @@
     <test class="fset30" label="seq 2" rtl="True">
       <string>کھلی المُنکر گرفتار ارفَکشَد گرفتار سرائِیکی</string>
     </test>
-    <test class="fset30" label="tall example from Dieter" rtl="True">
-      <string>کنگھجو</string>
+    <test class="fset30" label="tall examples from Dieter" rtl="True">
+      <string>کنگھجو برانگیختگی</string>
     </test>
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string/>
@@ -1569,7 +1575,7 @@
     <test class="fset24" label="kaf meem ..." rtl="True">
       <string>کمنی</string>
     </test>
-    <test class="fset24" label="kaf-ring + meem" rtl="True">
+    <test class="fset40" label="kaf-ring + meem" rtl="True">
       <string>ګمنی</string>
     </test>
     <test class="fset24" label="gaf + diac + kaf/gaf" rtl="True">
@@ -1587,7 +1593,7 @@
     <test class="fset41" label="ykhty" rtl="True">
       <string>یکھتے</string>
     </test>
-    <test class="fset41" label="ktys" rtl="True">
+    <test class="fset30" label="ktys" rtl="True">
       <string>اِکتِیس</string>
     </test>
     <test class="fset30" label="long - kaf &amp; final" rtl="True">
@@ -2017,10 +2023,10 @@
   </testgroup>
   <testgroup label="Features">
     <test class="fset36" label="hamza - default" rtl="True">
-      <string>ٔ أ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
+      <string>ٔ أ أ ؤ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
     </test>
     <test class="fset22" label="alt hamza - isolate" rtl="True">
-      <string>ٔ أ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
+      <string>ٔ أ أ ؤ ؤ ئ ۂ ۓ ٵ ݬ ځ</string>
     </test>
     <test class="fset22" label="alt hamza - right-connecting" rtl="True">
       <string>سأ صؤ مۂ بۓ جٵ قݬ</string>
@@ -2806,7 +2812,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="short lam" rtl="True">
       <string>لګس للگک</string>
     </test>
-    <test background="#55aaff" class="fset36" label="PASS 6" rtl="True">
+    <test background="#55aaff" class="fset36" label="PASS 6 - alternate glyphs" rtl="True">
       <string/>
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
@@ -2839,7 +2845,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>obsolete case</comment>
       <string>ګٽه ګبہ</string>
     </test>
-    <test background="#55aaff" class="fset36" label="PASS 9" rtl="True">
+    <test background="#55aaff" class="fset36" label="PASS 9 - attach  nuqtas" rtl="True">
       <string/>
     </test>
     <test class="fset36" label="beh + yeh + jeem" rtl="True">
@@ -2856,7 +2862,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="jeem + yeh + jeem" rtl="True">
       <string>کہیجیخ</string>
     </test>
-    <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3)" rtl="True">
+    <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3) - collision settings" rtl="True">
       <string/>
     </test>
     <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
@@ -2949,6 +2955,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="reh/hehgoal + Arabic hamza" rtl="True">
       <string>رء  بہء</string>
     </test>
+    <test class="fset36" label="yeh + beh + yeh" rtl="True">
+      <string>بیبی</string>
+    </test>
     <test background="#55aaff" class="fset24" label="PASSES 16 &amp; 17" rtl="True">
       <string/>
     </test>
@@ -2974,6 +2983,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
       <string>آٞک داٞگ بھاٞگ</string>
+    </test>
+    <test class="fset36" label="noon/teh + pesh + kaf" rtl="True">
+      <string>نُکّڑ تَگف شُکر</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
       <string/>
@@ -3034,6 +3046,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="lots of lower nutqas (reversed)" rtl="True">
       <string>کہیجیخ</string>
+    </test>
+    <test class="fset36" label="noon + teh + yeh" rtl="True">
+      <string>نتیس</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
