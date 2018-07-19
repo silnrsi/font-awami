@@ -1318,6 +1318,7 @@ cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flag
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
+
 // Debugging:
 //////cIni {user5 = bb.top; user6 = position.y + bb.top};
 
@@ -1794,6 +1795,10 @@ cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y 
 cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
 
 
+// Give name-marker (takhalus) a minumum height.
+gNameMarker { shift.y += max(0, 2200 - position.y); };
+
+
 endpass;  // 9
 
 
@@ -2249,8 +2254,19 @@ cKernPunct { collision {
 }   /  _  cKernPunct=P;
 
 // Don't kern underneath a closing quote.
-cKernable { collision.flags = CLEAR_KERN(collision.flags) }
-	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
+////cKernable { collision.flags = CLEAR_KERN(collision.flags) }
+////	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
+
+cKernable { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @Q.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = 0;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab=Q;
+
 
 // Account for overhang of initial kaf diagonal stroke.
 cKernable { collision {

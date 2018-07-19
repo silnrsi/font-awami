@@ -2468,13 +2468,16 @@
       <string>آتُؑ سسٌؑ بجؑ ففُؑ سیَّؑ عنُٰؑ</string>
     </test>
     <test class="fset15" label="exception - 'app'" rtl="True">
-      <string>آپؑ</string>
+      <string>آپؑ آبؒ</string>
     </test>
     <test class="fset21" label="small reh dad" rtl="True">
       <string>اصغرؓ</string>
     </test>
     <test class="fset21" label="small high seen on yeh (Malachi - 5)" rtl="True">
       <string>عیسٰیۜ کا</string>
+    </test>
+    <test class="fset36" label="small high reh hah" rtl="True">
+      <string>مرقسؒ</string>
     </test>
     <test class="fset36" label="takhalus" rtl="True">
       <string>غنؔی   توکبؔیر   بلوؔچتا   سدؔون محمّؔدؐ   احؤؔدؐ   یِسُوؔع</string>
@@ -2984,7 +2987,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
       <string>آٞک داٞگ بھاٞگ</string>
     </test>
-    <test class="fset36" label="noon/teh + pesh + kaf" rtl="True">
+    <test class="fset36" label="noon/teh/sheen + pesh + kaf" rtl="True">
       <string>نُکّڑ تَگف شُکر</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
@@ -3078,6 +3081,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="question mark + quote" rtl="True">
       <string>؟“ کیا؟“ </string>
+    </test>
+    <test class="fset36" label="honorific + quote" rtl="True">
+      <string>”اصغؒ“ ”اصغؑ“</string>
+    </test>
+    <test class="fset36" label="don't kern under quote" rtl="True">
+      <string>کر“</string>
     </test>
   </testgroup>
   <testgroup label="--- Extended characters">
