@@ -1646,7 +1646,7 @@ gDalFin		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
-gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150 };
+gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
 gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
 gRehFin		{ minKernDelta = -400m };
@@ -1727,6 +1727,12 @@ csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 
 // Special case: reh + Arabic hamza
 (gReh gZain gHehGoalFin) { pairKern = 50m }  /  _  gArabicHamza;
+
+// Special case: feh/qaf + diac + kaf/gaf
+cNuqtaUpper { shift { x = -100m; y = -100m } }
+	cDiacriticUpper { shift.x = -250m }
+	/  cFehIni  _=N  _=D  (cKafMed csKafMed_base);
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
