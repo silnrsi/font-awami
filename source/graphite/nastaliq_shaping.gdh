@@ -841,7 +841,7 @@ gBariyeh	  cs_bariyehMark		>	cs_bariyehComposed$2:(1 2)  _;
 //gArabicBariyehHamzaFin0 _	>	pseudo(postscript("nlqBariyehHamza")):1	 absHamzaAbove:1;	// eventually replaced with beh + bariyeh
 
 //gAlef								>	gAlef;
-gAlef		cs_alefMark				>	cs_alefComposed$2:(1 2)  _;
+gAlef		cs_alefMark2Prec		>	cs_alefComposed2Prec$2:(1 2)  _;
 
 //gDal								>	gDal;
 gDal		cs_dalMark				>	cs_dalComposed$2:(1 2)  _;
@@ -850,7 +850,7 @@ gDal		cs_dalMark				>	cs_dalComposed$2:(1 2)  _;
 gReh		cs_rehMark				>	cs_rehComposed$2:(1 2)  _;
 
 //gWaw								>	gWaw;
-gWaw		cs_wawMark				>	cs_wawComposed$2:(1 2)  _;
+gWaw		cs_wawMark2Prec			>	cs_wawComposed2Prec$2:(1 2)  _;
 
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;

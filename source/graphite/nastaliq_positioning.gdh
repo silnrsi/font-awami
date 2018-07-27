@@ -1318,6 +1318,7 @@ cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flag
 // Note that this also turns it off for g__kafTop_null, which is fine (although it should already be off).
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
+
 // Debugging:
 //////cIni {user5 = bb.top; user6 = position.y + bb.top};
 
@@ -1645,7 +1646,7 @@ gDalFin		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
-gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150 };
+gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
 gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
 gRehFin		{ minKernDelta = -400m };
@@ -1727,6 +1728,12 @@ csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 // Special case: reh + Arabic hamza
 (gReh gZain gHehGoalFin) { pairKern = 50m }  /  _  gArabicHamza;
 
+// Special case: feh/qaf + diac + kaf/gaf
+cNuqtaUpper { shift { x = -100m; y = -100m } }
+	cDiacriticUpper { shift.x = -250m }
+	/  cFehIni  _=N  _=D  (cKafMed csKafMed_base);
+
+
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
 
@@ -1792,6 +1799,10 @@ cDiacriticUpper { shift.y -= 100m; collision.margin -= 150m } /  cKafIM  cNuqtaL
 cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 // -1350 permits a single diacritic under a standard bowl to remain at the standard position
 cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
+
+
+// Give name-marker (takhalus) a minumum height.
+gNameMarker { shift.y += max(0, 2200 - position.y); };
 
 
 endpass;  // 9
@@ -2249,8 +2260,19 @@ cKernPunct { collision {
 }   /  _  cKernPunct=P;
 
 // Don't kern underneath a closing quote.
-cKernable { collision.flags = CLEAR_KERN(collision.flags) }
-	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
+////cKernable { collision.flags = CLEAR_KERN(collision.flags) }
+////	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab;
+
+cKernable { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @Q.kernRsb + pairKern);
+	max.x = MAXKERN; min.x = 0;
+    // min/max.y are omitted for kernable glyphs
+} }
+	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab=Q;
+
 
 // Account for overhang of initial kaf diagonal stroke.
 cKernable { collision {

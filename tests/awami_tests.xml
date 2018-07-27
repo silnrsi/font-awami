@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>نُمُو نُمو </string>
+      <string>علمُ علمَ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1254,6 +1254,9 @@
       <comment>Broken because the exclude glyph keeps the feh nuqta from moving north-east.</comment>
       <string>بفمگف</string>
     </test>
+    <test class="fset36" label="no sequencing - noon + tah" rtl="True">
+      <string>نتیجہ</string>
+    </test>
     <test background="#55aaff" class="fset24" label="LINE HEIGHT" rtl="True">
       <string/>
     </test>
@@ -1392,7 +1395,7 @@
     <test class="fset9" label="seen ngoeh dal bariyeh" rtl="True">
       <string>سڱدے</string>
     </test>
-    <test class="fset9" label="2-3rds down" rtl="True">
+    <test class="fset30" label="2-3rds down" rtl="True">
       <string>آسیہکنُوں</string>
     </test>
     <test class="fset9" label="...feh kaf seen..." rtl="True">
@@ -1506,7 +1509,7 @@
     <test class="fset24" label="tah + kaf" rtl="True">
       <string>ظکب لظکب ظگی طکک</string>
     </test>
-    <test class="fset24" label="nuqta + diac + kaf" rtl="True">
+    <test background="#aa00ff" class="fset24" label="nuqta + diac + kaf" rtl="True">
       <string>ضُکد قَکے</string>
     </test>
     <test background="#ff0000" class="fset24" label="nuqta + kaf-ring + bariyeh" rtl="True">
@@ -1533,7 +1536,7 @@
     <test class="fset24" label="tah + meem/ain + kaf" rtl="True">
       <string>طعکو طمگر</string>
     </test>
-    <test class="fset24" label="tah + beh + kaf" rtl="True">
+    <test background="#ff5500" class="fset24" label="tah + beh + kaf" rtl="True">
       <string>طنگسھی</string>
     </test>
     <test class="fset24" label="tah + kaf + lam/alef" rtl="True">
@@ -1557,7 +1560,7 @@
     <test background="#ff0000" class="fset24" label="ngoeh + lam + gaf" rtl="True">
       <string>ڱلگو </string>
     </test>
-    <test class="fset15" label="gaf + heh-do +  gaf" rtl="True">
+    <test background="#ff5500" class="fset15" label="gaf + heh-do +  gaf" rtl="True">
       <string>مگھگب</string>
     </test>
     <test class="fset24" label="gaf + hehgoal + kaf" rtl="True">
@@ -2468,13 +2471,16 @@
       <string>آتُؑ سسٌؑ بجؑ ففُؑ سیَّؑ عنُٰؑ</string>
     </test>
     <test class="fset15" label="exception - 'app'" rtl="True">
-      <string>آپؑ</string>
+      <string>آپؑ آبؒ</string>
     </test>
     <test class="fset21" label="small reh dad" rtl="True">
       <string>اصغرؓ</string>
     </test>
     <test class="fset21" label="small high seen on yeh (Malachi - 5)" rtl="True">
       <string>عیسٰیۜ کا</string>
+    </test>
+    <test class="fset36" label="small high reh hah" rtl="True">
+      <string>مرقسؒ</string>
     </test>
     <test class="fset36" label="takhalus" rtl="True">
       <string>غنؔی   توکبؔیر   بلوؔچتا   سدؔون محمّؔدؐ   احؤؔدؐ   یِسُوؔع</string>
@@ -2984,7 +2990,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="alef + zabar-two-dots + kaf/gaf" rtl="True">
       <string>آٞک داٞگ بھاٞگ</string>
     </test>
-    <test class="fset36" label="noon/teh + pesh + kaf" rtl="True">
+    <test class="fset36" label="noon/teh/sheen + pesh + kaf" rtl="True">
       <string>نُکّڑ تَگف شُکر</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
@@ -3078,6 +3084,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="question mark + quote" rtl="True">
       <string>؟“ کیا؟“ </string>
+    </test>
+    <test class="fset36" label="honorific + quote" rtl="True">
+      <string>”اصغؒ“ ”اصغؑ“</string>
+    </test>
+    <test class="fset36" label="don't kern under quote" rtl="True">
+      <string>کر“</string>
     </test>
   </testgroup>
   <testgroup label="--- Extended characters">
