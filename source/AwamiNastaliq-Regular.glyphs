@@ -1,5 +1,9 @@
 {
 .appVersion = "1141";
+DisplayStrings = (
+"/_kehehMedTop_medshort",
+"/_gafMedTop_medshort"
+);
 classes = (
 {
 code = "";
@@ -170095,7 +170099,7 @@ width = 0;
 {
 color = (31,255,0,1);
 glyphname = _gafMedTop_medshort;
-lastChange = "2018-03-27 21:24:09 +0000";
+lastChange = "2018-07-27 16:12:01 +0000";
 layers = (
 {
 anchors = (
@@ -170122,8 +170126,7 @@ name = _gafStroke_shorter;
 transform = "{1, 0, 0, 1, -494, 1846}";
 },
 {
-name = _kehehIniTop_shorter;
-transform = "{1, 0, 0, 1, -14, 415}";
+name = _kehehMedTop_medshort;
 }
 );
 layerId = UUID0;
