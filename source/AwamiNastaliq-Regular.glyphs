@@ -1,5 +1,8 @@
 {
 .appVersion = "1141";
+DisplayStrings = (
+"/absAlefMaddaAbove"
+);
 classes = (
 {
 code = "";
@@ -29661,7 +29664,7 @@ unicode = 0625;
 {
 color = (31,255,0,1);
 glyphname = absAlefMaddaAbove;
-lastChange = "2018-02-28 17:14:12 +0000";
+lastChange = "2018-08-03 18:50:47 +0000";
 layers = (
 {
 anchors = (
@@ -29672,6 +29675,10 @@ position = "{-192, 2589}";
 {
 name = kernBbLeft;
 position = "{161, 1150}";
+},
+{
+name = kernBbRight;
+position = "{327, 1150}";
 },
 {
 name = mLower;
