@@ -1139,7 +1139,7 @@ table(positioning)
 table(glyph)
 
 cNuqtaLikeUpperNoKT = (cNuqtaLikeUpper);
-cNuqtaLikeUpperNoKT -= (g__kafTop_null);
+cNuqtaLikeUpperNoKT -= (cKafTop);
 
 c_narrow = (gBehMed gMeemMed gAinMed);
 
@@ -1334,6 +1334,21 @@ endtable;
 
 if (shortForms > 1)
 pass(6)
+
+// Special case: \u0628\u0631\u0627\u0646\u06AF\u06CC\u062E\u062A\u06AF\u06CC
+// Note that this is quite a rare word, and it is questionable how generally useful
+// these rules are for other contexts. 
+// Consider whether we want to get rid of these rules.
+gBehIni {shift.y = -150m}  gKafMedBe_base {tooHigh = 1; shift.y = -50m}  cKafTop {shift.y = -150m} 
+	/ _=B  MARKS  ^ _=K {position.y > 2800} _=T;
+
+gJeemMedBeKl  {shift { x = 105m; y = -130m } } gBehMed {tooHigh = 1}
+	/  _=J {tooHigh == 1} cNuqtaUpper  ^  _=B  cNuqtaUpper  csKafMed_base;
+
+(gKafMedCh gGafMedCh gKafMedCh_base)  gChotiyehFin_bfkl
+	>	@K { shift { x = 140m; y = -220m } }  gChotiyehFin_bfkl_short
+	/	_=K {tooHigh == 1} cKafTop  MARKS  _=C;
+
 
 // high initial with both nuqta and diacritic:
 cIni     cMed  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
@@ -1635,8 +1650,9 @@ table(glyph) { AttributeOverride = 1 }
 
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
-cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m; kernPreWaw = 0m;
-	kernPreJeemAinIso = -130m; kernPreLamAlef = 0m; kernPreKafNoSp = 0m; kernPreShort = 0m;
+cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m;
+	kernPreWaw = 0m; kernPreJeemAinIso = -130m; kernPreLamAlef = 0m; kernPreKafNoSp = 0m;
+	kernPreShort = 0m;
     // kernPreInitial = 0m;
 	kernPreExclam = 0m;
 	minKernDelta = 0m };
@@ -1793,7 +1809,7 @@ cNuqtaLike?  cDiacriticUpper  /  (cKafIM csKafIM_base)  cKafTop  _  _;  // ... b
 // For tahs, the diac is not attached to the nuqta, so don't move the nuqta down.
 cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y -= 200m; collision.margin -= 20m }
 	/  _=T  _=N  _=D { position.y > 2800m };
-cNuqtaLikeUpper { shift.y -= 150m  }
+cNuqtaLikeUpperNoKT { shift.y -= 150m  }
 	cDiacriticUpper { shift.y -= 300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y -= 100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
 cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y > 2800m };

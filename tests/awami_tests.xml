@@ -828,6 +828,21 @@
     <test class="fset36" label="reh + isolate jeem/ain" rtl="True">
       <string>چرچ چرع رج</string>
     </test>
+    <test class="fset36" label="reh + alef madda" rtl="True">
+      <string>رآ زآ سرآ بزآ بہژآ سڑآ بڙآ بہزآ</string>
+    </test>
+    <test class="fset36" label="dah + alef madda" rtl="True">
+      <string>دآ ذآ سدآ بݙآ فڐآ</string>
+    </test>
+    <test class="fset36" label="waw + alef madda" rtl="True">
+      <string>وآ ؤآ ۆدآ بۇآ فۄآ</string>
+    </test>
+    <test class="fset36" label="alef + alef madda" rtl="True">
+      <string>اآ أآ</string>
+    </test>
+    <test class="fset36" label="bariyeh + alef madda" rtl="True">
+      <string>ےآ ۓآ</string>
+    </test>
     <test background="#55aaff" class="fset36" label="PUNCTUATION" rtl="True">
       <string/>
     </test>
@@ -1423,7 +1438,7 @@
       <string>کھلی المُنکر گرفتار ارفَکشَد گرفتار سرائِیکی</string>
     </test>
     <test class="fset30" label="tall examples from Dieter" rtl="True">
-      <string>کنگھجو برانگیختگی</string>
+      <string>کنگھجو برانگیختگی نگیختگی</string>
     </test>
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string/>
@@ -1530,13 +1545,13 @@
     <test class="fset24" label="lam + jeem + kaf" rtl="True">
       <string>لجکُو  لجڱِو</string>
     </test>
-    <test background="#ff0000" class="fset24" label="tah + jeem + gaf" rtl="True">
+    <test class="fset24" label="tah + jeem + gaf" rtl="True">
       <string>ظجگو</string>
     </test>
     <test class="fset24" label="tah + meem/ain + kaf" rtl="True">
       <string>طعکو طمگر</string>
     </test>
-    <test background="#ff5500" class="fset24" label="tah + beh + kaf" rtl="True">
+    <test class="fset24" label="tah + beh + kaf" rtl="True">
       <string>طنگسھی</string>
     </test>
     <test class="fset24" label="tah + kaf + lam/alef" rtl="True">
@@ -1560,7 +1575,7 @@
     <test background="#ff0000" class="fset24" label="ngoeh + lam + gaf" rtl="True">
       <string>ڱلگو </string>
     </test>
-    <test background="#ff5500" class="fset15" label="gaf + heh-do +  gaf" rtl="True">
+    <test class="fset15" label="gaf + heh-do +  gaf" rtl="True">
       <string>مگھگب</string>
     </test>
     <test class="fset24" label="gaf + hehgoal + kaf" rtl="True">
@@ -2918,6 +2933,13 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="diac + jeem + diac + kaf" rtl="True">
       <comment>The jeem is narrow so even a single nuqta requires a taller kaf.</comment>
       <string>فخگس</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 13" rtl="True">
+      <string/>
+    </test>
+    <test class="fset30" label="really tall word" rtl="True">
+      <comment>Even the short forms don't quite deal with this one.</comment>
+      <string>برانگیختگی</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 15" rtl="True">
       <string/>

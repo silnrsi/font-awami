@@ -1,5 +1,5 @@
 /*
-    Glyph information for font Awami Nastaliq Dev at Wed Jul 25 15:40:54 2018
+    Glyph information for font Awami Dev at Fri Aug  3 15:23:16 2018
 */
 
 table(glyph) {MUnits = 2048};
@@ -384,7 +384,7 @@ gAlefFin = glyphid(377) {entrance = point(273m, 750m); digitUpperS = point(100m,
 gAlefFin_lm = glyphid(378) {entrance = point(253m, 85m); hamzaLowerS = point(172m, -271m); hamzaUpperS = point(218m, 1863m); honorificS = point(72m, 2034m); kernBbLeftS = point(170m, 1502m); mLowerS = point(168m, -289m); mUpperS = point(201m, 1822m); n1LowerS = point(164m, -290m); nUpperS = point(243m, 1895m)};
 gAlefHamzaAbove = glyphid(379) {honorificS = point(72m, 2850m); mUpperS = point(252m, 2675m)};
 gAlefHamzaBelow = glyphid(380) {honorificS = point(80m, 2303m); mLowerS = point(279m, -780m); mUpperS = point(237m, 2160m)};
-gAlefMaddaAbove = glyphid(381) {honorificS = point(-192m, 2589m); kernBbLeftS = point(161m, 1150m); mLowerS = point(239m, -164m); mUpperS = point(253m, 2488m)};
+gAlefMaddaAbove = glyphid(381) {honorificS = point(-192m, 2589m); kernBbLeftS = point(161m, 1150m); kernBbRightS = point(327m, 1150m); mLowerS = point(239m, -164m); mUpperS = point(253m, 2488m)};
 gAlefWavyHamzaAbove = glyphid(382) {bbKernLeftS = point(147m, 483m); bbKernRightS = point(327m, 179m); honorificS = point(-115m, 2712m); mUpperS = point(235m, 2674m)};
 gAlefWavyHamzaBelow = glyphid(383) {bbKernLeftS = point(147m, 1987m); bbKernRightS = point(327m, 2029m); honorificS = point(37m, 2317m); mLowerS = point(281m, -790m); mUpperS = point(276m, 2240m)};
 gAlefTwoAbove = glyphid(384) {hamzaLowerS = point(420m, -70m); honorificS = point(116m, 2457m); mLowerS = point(430m, -60m); mUpperS = point(355m, 2457m)};
@@ -5987,25 +5987,26 @@ cnTakes_kernBbLeftDia = (g_zero_small, g_one_small, g_two_small, g_three_small, 
     g__hamzaArabic, g__wavyHamza, g__wasla, g__smallV, g__smallVinv, g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove,
     g__smallFourBelow, g__kafIniTop_medshort, g__gafIniTop_medshort, gPesh001);
 
-cTakes_kernBbRightDia = (gQuestionMark, gAlef, gFehThreeDotsBelow, gDotlessFeh, gQaf, gBariyeh, gBariyehHamza, gBariyehFin,
-    gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelowThreeDotsAbove, gSeenIniAi,
-    gSeenIniBe, gSeenIniBeF, gSeenIniBeHg, gSeenIniBeM1, gSeenIniBeM2, gSeenIniBeNn, gSeenIniBeRe, gSeenIniBy,
-    gSeenIniCh, gSeenIniFe, gSeenIniHd, gSeenIniHgF, gSeenIniHgM, gSeenIniJm, gSeenIniMm, gSeenIniMmX,
-    gSeenIniNn, gSeenIniQf, gSeenIniRe, gSeenIniSd, gSeenIniSn, gSeenIniTa, gLamBar, gLamSmallV,
-    gLamSmallV_alt, gKaf, gArabicKaf, gKafRing, gKafThreeDotsAbove, gGaf, gGueh, gNgoeh,
-    gGafRing, gKafIni, gKafIni_short, gKafIniAi, gKafIniBe, gKafIniBeHg, gKafIniBeM1, gKafIniBeM2,
-    gKafIniBeNn, gKafIniBeRe, gKafIniBy, gKafIniCh, gKafIniDk, gKafIniFe, gKafIniHd, gKafIniHgF,
-    gKafIniHgM, gKafIniJm, gKafIniKf, gKafIniMm, gKafIniMm_short, gKafIniMmX, gKafIniNn, gKafIniQf,
-    gKafIniRe, gKafIniSd, gKafIniSn, gKafIniTa, gKafMedBeRe, gGafIni, gGafIni_short, gGafIniAi,
-    gGafIniBe, gGafIniBeHg, gGafIniBeM1, gGafIniBeM2, gGafIniBeNn, gGafIniBeRe, gGafIniBy, gGafIniCh,
-    gGafIniDk, gGafIniFe, gGafIniHd, gGafIniHgF, gGafIniHgM, gGafIniJm, gGafIniKf, gGafIniMm,
-    gGafIniMm_short, gGafIniMmX, gGafIniNn, gGafIniQf, gGafIniRe, gGafIniSd, gGafIniSn, gGafIniTa,
-    gGafMedBeRe, gKafIniAi_base, gKafIniBe_base, gKafIniBeHg_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeNn_base, gKafIniBeRe_base,
-    gKafIniBy_base, gKafIniCh_base, gKafIniDk_base, gKafIniFe_base, gKafIniHd_base, gKafIniHgF_base, gKafIniHgM_base, gKafIniJm_base,
-    gKafIniKf_base, gKafIniMmX_base, gKafIniNn_base, gKafIniQf_base, gKafIniRe_base, gKafIniSd_base, gKafIniSn_base, gKafIniTa_base,
-    g__kafIniTop_short, g__kafIniTop_shorter, g__kafTop_m_bogus, gDalDotBelow, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalTwoVertBelowSmallTah, gThal,
-    gDdal, gDul, gWawHamzaAbove, gKirghizOe, gZain, gJeh, gRreh, gRehDotBelow,
-    gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove, gRehSmallTahTwoDots, gRehTwoVertAbove, gTehMarbuta, gTehMarbutaGoal);
+cTakes_kernBbRightDia = (gQuestionMark, gAlef, gAlefMaddaAbove, gFehThreeDotsBelow, gDotlessFeh, gQaf, gBariyeh, gBariyehHamza,
+    gBariyehFin, gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelowThreeDotsAbove,
+    gSeenIniAi, gSeenIniBe, gSeenIniBeF, gSeenIniBeHg, gSeenIniBeM1, gSeenIniBeM2, gSeenIniBeNn, gSeenIniBeRe,
+    gSeenIniBy, gSeenIniCh, gSeenIniFe, gSeenIniHd, gSeenIniHgF, gSeenIniHgM, gSeenIniJm, gSeenIniMm,
+    gSeenIniMmX, gSeenIniNn, gSeenIniQf, gSeenIniRe, gSeenIniSd, gSeenIniSn, gSeenIniTa, gLamBar,
+    gLamSmallV, gLamSmallV_alt, gKaf, gArabicKaf, gKafRing, gKafThreeDotsAbove, gGaf, gGueh,
+    gNgoeh, gGafRing, gKafIni, gKafIni_short, gKafIniAi, gKafIniBe, gKafIniBeHg, gKafIniBeM1,
+    gKafIniBeM2, gKafIniBeNn, gKafIniBeRe, gKafIniBy, gKafIniCh, gKafIniDk, gKafIniFe, gKafIniHd,
+    gKafIniHgF, gKafIniHgM, gKafIniJm, gKafIniKf, gKafIniMm, gKafIniMm_short, gKafIniMmX, gKafIniNn,
+    gKafIniQf, gKafIniRe, gKafIniSd, gKafIniSn, gKafIniTa, gKafMedBeRe, gGafIni, gGafIni_short,
+    gGafIniAi, gGafIniBe, gGafIniBeHg, gGafIniBeM1, gGafIniBeM2, gGafIniBeNn, gGafIniBeRe, gGafIniBy,
+    gGafIniCh, gGafIniDk, gGafIniFe, gGafIniHd, gGafIniHgF, gGafIniHgM, gGafIniJm, gGafIniKf,
+    gGafIniMm, gGafIniMm_short, gGafIniMmX, gGafIniNn, gGafIniQf, gGafIniRe, gGafIniSd, gGafIniSn,
+    gGafIniTa, gGafMedBeRe, gKafIniAi_base, gKafIniBe_base, gKafIniBeHg_base, gKafIniBeM1_base, gKafIniBeM2_base, gKafIniBeNn_base,
+    gKafIniBeRe_base, gKafIniBy_base, gKafIniCh_base, gKafIniDk_base, gKafIniFe_base, gKafIniHd_base, gKafIniHgF_base, gKafIniHgM_base,
+    gKafIniJm_base, gKafIniKf_base, gKafIniMmX_base, gKafIniNn_base, gKafIniQf_base, gKafIniRe_base, gKafIniSd_base, gKafIniSn_base,
+    gKafIniTa_base, g__kafIniTop_short, g__kafIniTop_shorter, g__kafTop_m_bogus, gDalDotBelow, gDalDotBelowSmallTah, gDalFourDotsAbove, gDalTwoVertBelowSmallTah,
+    gThal, gDdal, gDul, gWawHamzaAbove, gKirghizOe, gZain, gJeh, gRreh,
+    gRehDotBelow, gRehDotBelowDotAbove, gRehTwoDotsAbove, gRehFourDotsAbove, gRehHamzaAbove, gRehSmallTahTwoDots, gRehTwoVertAbove, gTehMarbuta,
+    gTehMarbutaGoal);
 
 cnTakes_kernBbRightDia = (g_zero_small, g_one_small, g_two_small, g_three_small, g_four_small, g_five_small, g_six_small, g_seven_small,
     g_eight_small, g_nine_small, g_zero_smaller, g_one_smaller, g_two_smaller, g_three_smaller, g_four_smaller, g_five_smaller,
