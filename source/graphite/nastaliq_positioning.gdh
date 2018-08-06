@@ -609,6 +609,7 @@ cgafStrokeDia { collision { margin = 0; flags = 0 }; sequence { class = 0; order
 
 
 // Smaller nuqta glyphs need larger margins:
+cNuqta { collision {margin = STDMARGIN;    marginweight = STDMARGINWT_N2} };
 cDot1u { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };
 cDot1l { collision {margin = STDMARGIN_N1; marginweight = STDMARGINWT_N1} };
 cDot2u { collision {margin = STDMARGIN_N2; marginweight = STDMARGINWT_N2} };
@@ -1337,7 +1338,7 @@ pass(6)
 
 // Special case: \u0628\u0631\u0627\u0646\u06AF\u06CC\u062E\u062A\u06AF\u06CC
 // Note that this is quite a rare word, and it is questionable how generally useful
-// these rules are for other contexts. 
+// these rules are for other contexts.
 // Consider whether we want to get rid of these rules.
 gBehIni {shift.y = -150m}  gKafMedBe_base {tooHigh = 1; shift.y = -50m}  cKafTop {shift.y = -150m} 
 	/ _=B  MARKS  ^ _=K {position.y > 2800} _=T;
