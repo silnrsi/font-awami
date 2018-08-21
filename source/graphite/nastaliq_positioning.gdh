@@ -851,6 +851,24 @@ gHamzaAbove {
 	} }
 	/  gBehMedHgF  cNuqtaLikeUpper  gHehGoalFin _;
 
+
+// Use a different sequencing class for low-tooth nuqtas.
+table(glyph)
+cLowNuqta = (gBehMedAi, gBehIniBeM1, gBehMedBeM1, gBehMedFe, gBehMedSd, gBehMedTa, gBehIniBeNn, gSeenIniBeM1, gSeenMedBeM1);  // gBehMedAi??
+endtable;
+
+cNuqtaLikeUpper {
+	collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 200m;
+		min.y = -300m;
+		max.y = 1000m;
+	};
+	sequence.class = 5;
+}  /  cLowNuqta  _=N;
+
+
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -1303,6 +1321,9 @@ cNuqtaLikeUpperNoKT?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user5 = bb.top; user6 = position.y + bb.top}**/  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
+
+// Don't shift down, because previous glyph is higher anyway.
+cNuqtaLikeUpperNoKT  /  (cLamIM cKafIM cTahIM) MARKS  cMed _ { position.y > PUSHDOWN };
 
 // Like rule below, but don't move ngoeh nuqtas down so far, because (a) they are already pushed down a bit,
 // (b) they don't always get collision-fixed, and (c) the diagonal stroke of the gaf sticks up anyway.
@@ -1762,10 +1783,13 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 ////cQuoteLeftArab { kern.x = -100m }
 ////	/  g_parenleftArab  _;
 
-// Special case: yeh + beh + yeh - spread nuqtas out
-g__dot2l { shift { x = -130m; y = -170m; } }
-	g__dot1l { shift { x = 50m; y = -220m } }
-	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
+// Special case: yeh + beh + yeh - spread nuqtas out - not needed with new pos for gBehMedCh
+////g__dot2l { shift { x = -130m; y = -170m; } }
+////	g__dot1l { shift { x = 50m; y = -220m } }
+////	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
+
+
+cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;
 
 
 // Set up kerning pairs.
@@ -1789,7 +1813,7 @@ gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  (cKafIni csKaf
 cRehIso { pairKern = -100m }            /  _ ^ MARKS  cKernIgnore?  cBehIni MARKS  cAlefFin;
 
 // Before a two-letter sequence:
-cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;
+/////cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;
 
 
 // Notice that with digits, which are LTR, we put the kern value on the opposite glyph, ie, the FOLLOWING

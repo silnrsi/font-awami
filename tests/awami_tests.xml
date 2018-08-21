@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>را پہلا را یہلا را بہلا</string>
+      <string>لبف لنف</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -201,7 +201,7 @@
       <string>جاٞوالاں سلوک کٞر دہ۔ </string>
     </test>
     <test class="fset36" label="varying initial heights" rtl="True">
-      <string>دیبا سہ کھوے</string>
+      <string>لبف لتف</string>
     </test>
   </testgroup>
   <testgroup label="LTR stuff">
@@ -328,7 +328,7 @@
       <string/>
     </test>
     <test class="fset24" label="gBehMedXX_ss" rtl="True">
-      <string>ستب  ضبط  کشنف</string>
+      <string>ستب  ضبط  کشنف فصیق</string>
     </test>
     <test class="fset24" label="gBehMedNn_hgbm" rtl="True">
       <string>سنببن  متن  کَتَنُن</string>
@@ -456,7 +456,7 @@
   </testgroup>
   <testgroup label="Ligatures">
     <test class="fset17" label="allah" rtl="True">
-      <string>اللہ اللّٰہ اللّٰہ</string>
+      <string>اللہ اللّٰہ اللّٰه</string>
     </test>
     <test class="fset21" label="FDF2" rtl="True">
       <string>ﷲ</string>
@@ -465,12 +465,13 @@
       <string>الحَمْدللہ</string>
     </test>
     <test class="fset19" label="final alef" rtl="True">
-      <string>نعوذ باللہ</string>
+      <string>نعوذ بالله</string>
     </test>
     <test class="fset21" label="final connecting form" rtl="True">
       <string>سَللہ بجللّٰہ</string>
     </test>
     <test class="fset19" label="diac on lig" rtl="True">
+      <comment>The zair on the final heh-goal of the word Allah does not prevent the ligature.</comment>
       <string>بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیم</string>
     </test>
     <test class="fset21" label="after space - no ligature" rtl="True">
@@ -2905,6 +2906,10 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="teh/theh + heh-goal + hamza" rtl="True">
       <string>رشتۂ</string>
     </test>
+    <test class="fset36" label="noon/teh + feh" rtl="True">
+      <comment>Turn off sequencing so noon/teh nuqta is lower.</comment>
+      <string>لنف لتفس</string>
+    </test>
     <test background="#aaaa7f" class="fset19" label="lam + qaf + kaf [rule 38]" rtl="True">
       <string>لقکھہ</string>
     </test>
@@ -2983,7 +2988,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="reh/hehgoal + Arabic hamza" rtl="True">
       <string>رء  بہء</string>
     </test>
-    <test class="fset36" label="yeh + beh + yeh" rtl="True">
+    <test background="#aaaa7f" class="fset36" label="yeh + beh + yeh" rtl="True">
       <string>بیبی</string>
     </test>
     <test background="#55aaff" class="fset24" label="PASSES 16 &amp; 17" rtl="True">
