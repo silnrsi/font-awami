@@ -6,7 +6,7 @@
 # This section contains commands that run every time
 echo
 echo "Converting Glyphs to UFO3..."
-psfglyphs2ufo source/AwamiNastaliq-Regular.glyphs source
+psfglyphs2ufo --nofea source/AwamiNastaliq-Regular.glyphs source
 
 # Continue with normal preflight
 ./preflight
