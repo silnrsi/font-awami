@@ -1,5 +1,11 @@
 {
 .appVersion = "1161";
+DisplayStrings = (
+"/absSeenMed.beM2",
+"/absSadMed.beM2",
+"/absBehMed.beM1",
+"/absBehMed.fe_ss"
+);
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
 {
@@ -1611,25 +1617,14 @@ value = SIL;
 {
 name = trademark;
 value = "Awami Nastaliq is a trademark of SIL International.";
-},
-{
-name = "Disable Last Change";
-value = 1;
 }
 );
-date = "2018-08-23 19:53:38 +0000";
+date = "2018-08-24 19:10:21 +0000";
 designer = "Peter Martin, SIL International";
 designerURL = "http://scripts.sil.org";
 disablesAutomaticAlignment = 1;
 disablesNiceNames = 1;
 familyName = "Awami Nastaliq";
-featurePrefixes = (
-{
-code = "";
-disabled = 1;
-name = Prefix;
-}
-);
 fontMaster = (
 {
 alignmentZones = (
@@ -40390,12 +40385,14 @@ width = 718;
 {
 color = (31,255,0,1);
 glyphname = absBehMed.fe_ss;
+lastChange = "2018-08-24 20:20:48 +0000";
 layers = (
 {
+background = {
 anchors = (
 {
 name = _exit_behLowTooth;
-position = "{585, 1394}";
+position = "{561, 1401}";
 },
 {
 name = exit_feh;
@@ -40422,54 +40419,144 @@ name = tahUpper;
 position = "{377, 2272}";
 }
 );
-background = {
 paths = (
 {
 closed = 1;
 nodes = (
-"464 1261 LINE",
-"464 1170 OFFCURVE",
-"317 953 OFFCURVE",
-"137 953 CURVE SMOOTH",
-"80 953 OFFCURVE",
-"53 961 OFFCURVE",
-"0 989 CURVE SMOOTH",
-"-4 991 OFFCURVE",
-"-4 830 OFFCURVE",
-"0 828 CURVE SMOOTH",
-"42 800 OFFCURVE",
-"83 783 OFFCURVE",
-"130 783 CURVE SMOOTH",
-"331 783 OFFCURVE",
-"515 1164 OFFCURVE",
-"515 1260 CURVE"
+"290 991 OFFCURVE",
+"415 1112 OFFCURVE",
+"549 1304 CURVE SMOOTH",
+"585 1356 OFFCURVE",
+"609 1538 OFFCURVE",
+"549 1469 CURVE SMOOTH",
+"393 1290 OFFCURVE",
+"323 1096 OFFCURVE",
+"0 1137 CURVE SMOOTH",
+"-39 1142 OFFCURVE",
+"-126 991 OFFCURVE",
+"-90 991 CURVE SMOOTH"
 );
 },
 {
 closed = 1;
 nodes = (
-"464 1261 LINE",
-"464 1170 OFFCURVE",
-"317 953 OFFCURVE",
-"137 953 CURVE SMOOTH",
-"80 953 OFFCURVE",
-"54 962 OFFCURVE",
-"0 989 CURVE SMOOTH",
-"-30 1004 OFFCURVE",
-"-105 880 OFFCURVE",
-"-78 862 CURVE SMOOTH",
-"-8 815 OFFCURVE",
-"90 796 OFFCURVE",
-"131 796 CURVE SMOOTH",
-"332 796 OFFCURVE",
-"515 1164 OFFCURVE",
-"515 1260 CURVE"
+"1062 1553 OFFCURVE",
+"1195 1388 OFFCURVE",
+"1378 1388 CURVE SMOOTH",
+"1702 1388 OFFCURVE",
+"1936 1740 OFFCURVE",
+"1936 2058 CURVE SMOOTH",
+"1936 2113 OFFCURVE",
+"1905 2206 OFFCURVE",
+"1797 2206 CURVE SMOOTH",
+"1553 2206 OFFCURVE",
+"1356 1891 OFFCURVE",
+"1207 1701 CURVE",
+"1207 1701 OFFCURVE",
+"1268 1680 OFFCURVE",
+"1280 1680 CURVE",
+"1406 1864 OFFCURVE",
+"1568 2025 OFFCURVE",
+"1702 2025 CURVE SMOOTH",
+"1820 2025 OFFCURVE",
+"1867 1937 OFFCURVE",
+"1857 1907 CURVE SMOOTH",
+"1848 1881 OFFCURVE",
+"1698 1688 OFFCURVE",
+"1369 1688 CURVE SMOOTH",
+"1235 1688 OFFCURVE",
+"1140 1764 OFFCURVE",
+"1086 1764 CURVE SMOOTH",
+"1018 1764 OFFCURVE",
+"926 1548 OFFCURVE",
+"869 1548 CURVE SMOOTH",
+"808 1548 OFFCURVE",
+"769 1596 OFFCURVE",
+"716 1596 CURVE SMOOTH",
+"666 1596 OFFCURVE",
+"642 1569 OFFCURVE",
+"549 1469 CURVE SMOOTH",
+"523 1441 OFFCURVE",
+"531 1277 OFFCURVE",
+"549 1304 CURVE SMOOTH",
+"585 1358 OFFCURVE",
+"619 1408 OFFCURVE",
+"651 1408 CURVE SMOOTH",
+"686 1408 OFFCURVE",
+"773 1346 OFFCURVE",
+"810 1346 CURVE SMOOTH",
+"888 1346 OFFCURVE",
+"998 1553 OFFCURVE",
+"1031 1553 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"464 951 LINE",
+"464 860 OFFCURVE",
+"317 643 OFFCURVE",
+"137 643 CURVE SMOOTH",
+"80 643 OFFCURVE",
+"54 652 OFFCURVE",
+"0 679 CURVE SMOOTH",
+"-4 681 OFFCURVE",
+"-4 520 OFFCURVE",
+"0 518 CURVE SMOOTH",
+"45 495 OFFCURVE",
+"83 473 OFFCURVE",
+"130 473 CURVE SMOOTH",
+"331 473 OFFCURVE",
+"515 854 OFFCURVE",
+"515 950 CURVE"
+);
+},
+{
+closed = 1;
+nodes = (
+"464 981 LINE",
+"464 890 OFFCURVE",
+"317 673 OFFCURVE",
+"137 673 CURVE SMOOTH",
+"80 673 OFFCURVE",
+"54 682 OFFCURVE",
+"0 709 CURVE SMOOTH",
+"-30 724 OFFCURVE",
+"-105 600 OFFCURVE",
+"-78 582 CURVE SMOOTH",
+"-8 535 OFFCURVE",
+"90 516 OFFCURVE",
+"131 516 CURVE SMOOTH",
+"332 516 OFFCURVE",
+"515 884 OFFCURVE",
+"515 980 CURVE"
 );
 }
 );
 };
 layerId = master01;
 paths = (
+{
+closed = 1;
+nodes = (
+"464 981 LINE",
+"464 890 OFFCURVE",
+"317 673 OFFCURVE",
+"137 673 CURVE SMOOTH",
+"80 673 OFFCURVE",
+"54 682 OFFCURVE",
+"0 709 CURVE SMOOTH",
+"-30 724 OFFCURVE",
+"-105 600 OFFCURVE",
+"-78 582 CURVE SMOOTH",
+"-8 535 OFFCURVE",
+"90 516 OFFCURVE",
+"131 516 CURVE SMOOTH",
+"332 516 OFFCURVE",
+"515 884 OFFCURVE",
+"515 980 CURVE"
+);
+},
 {
 closed = 1;
 nodes = (
@@ -42608,12 +42695,13 @@ width = 700;
 {
 color = (31,255,0,1);
 glyphname = absBehMed.qf;
+lastChange = "2018-08-24 19:48:42 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_beh;
-position = "{500, 1235}";
+position = "{500, 1225}";
 },
 {
 name = exit_qafWaw;

@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absBehMed.fe_ss" format="2">
   <advance width="586"/>
-  <anchor x="585" y="1394" name="_exit_behLowTooth"/>
-  <anchor x="0" y="1147" name="exit_feh"/>
-  <anchor x="299" y="673" name="n1Lower"/>
-  <anchor x="316" y="655" name="n23Lower"/>
-  <anchor x="354" y="2249" name="nUpper"/>
-  <anchor x="153" y="995" name="ring"/>
-  <anchor x="377" y="2272" name="tahUpper"/>
   <outline>
+    <contour>
+      <point x="515" y="980" type="curve"/>
+      <point x="464" y="981" type="line"/>
+      <point x="464" y="890"/>
+      <point x="317" y="673"/>
+      <point x="137" y="673" type="curve" smooth="yes"/>
+      <point x="80" y="673"/>
+      <point x="54" y="682"/>
+      <point x="0" y="709" type="curve" smooth="yes"/>
+      <point x="-30" y="724"/>
+      <point x="-105" y="600"/>
+      <point x="-78" y="582" type="curve" smooth="yes"/>
+      <point x="-8" y="535"/>
+      <point x="90" y="516"/>
+      <point x="131" y="516" type="curve" smooth="yes"/>
+      <point x="332" y="516"/>
+      <point x="515" y="884"/>
+    </contour>
     <contour>
       <point x="592" y="1449" type="curve"/>
       <point x="534" y="1450" type="line"/>
@@ -24,6 +35,8 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2018/08/24 20:20:48</string>
       <key>public.markColor</key>
       <string>0.122,1,0,0.004</string>
     </dict>
