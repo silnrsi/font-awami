@@ -4,7 +4,9 @@ DisplayStrings = (
 "/absSeenMed.beM2",
 "/absSadMed.beM2",
 "/absBehMed.beM1",
-"/absBehMed.fe_ss"
+"/absBehMed.fe_ss",
+"/absBehMed.ai_ss",
+"/absBehMed.sd_ss"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -40385,9 +40387,19 @@ width = 718;
 {
 color = (31,255,0,1);
 glyphname = absBehMed.fe_ss;
-lastChange = "2018-08-24 20:20:48 +0000";
+lastChange = "2018-10-10 16:02:48 +0000";
 layers = (
 {
+anchors = (
+{
+name = _exit_behLowTooth;
+position = "{580, 1392}";
+},
+{
+name = exit_feh;
+position = "{0, 1147}";
+}
+);
 background = {
 anchors = (
 {
@@ -40536,27 +40548,6 @@ nodes = (
 };
 layerId = master01;
 paths = (
-{
-closed = 1;
-nodes = (
-"464 981 LINE",
-"464 890 OFFCURVE",
-"317 673 OFFCURVE",
-"137 673 CURVE SMOOTH",
-"80 673 OFFCURVE",
-"54 682 OFFCURVE",
-"0 709 CURVE SMOOTH",
-"-30 724 OFFCURVE",
-"-105 600 OFFCURVE",
-"-78 582 CURVE SMOOTH",
-"-8 535 OFFCURVE",
-"90 516 OFFCURVE",
-"131 516 CURVE SMOOTH",
-"332 516 OFFCURVE",
-"515 884 OFFCURVE",
-"515 980 CURVE"
-);
-},
 {
 closed = 1;
 nodes = (
