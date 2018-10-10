@@ -6,7 +6,9 @@ DisplayStrings = (
 "/absBehMed.beM1",
 "/absBehMed.fe_ss",
 "/absBehMed.ai_ss",
-"/absBehMed.sd_ss"
+"/absBehMed.sd_ss",
+"/absBehMed.fe_ss",
+"/absSeenIni.beM2"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -40387,7 +40389,7 @@ width = 718;
 {
 color = (31,255,0,1);
 glyphname = absBehMed.fe_ss;
-lastChange = "2018-10-10 16:02:48 +0000";
+lastChange = "2018-10-10 16:44:26 +0000";
 layers = (
 {
 anchors = (
@@ -40398,14 +40400,26 @@ position = "{580, 1392}";
 {
 name = exit_feh;
 position = "{0, 1147}";
+},
+{
+name = n1Lower;
+position = "{565, 759}";
+},
+{
+name = n23Lower;
+position = "{578, 741}";
+},
+{
+name = nUpper;
+position = "{354, 2249}";
+},
+{
+name = tahUpper;
+position = "{377, 2272}";
 }
 );
 background = {
 anchors = (
-{
-name = _exit_behLowTooth;
-position = "{561, 1401}";
-},
 {
 name = exit_feh;
 position = "{0, 1147}";
@@ -40419,16 +40433,8 @@ name = n23Lower;
 position = "{316, 655}";
 },
 {
-name = nUpper;
-position = "{354, 2249}";
-},
-{
 name = ring;
 position = "{153, 995}";
-},
-{
-name = tahUpper;
-position = "{377, 2272}";
 }
 );
 paths = (
@@ -40542,6 +40548,76 @@ nodes = (
 "332 516 OFFCURVE",
 "515 884 OFFCURVE",
 "515 980 CURVE"
+);
+},
+{
+closed = 1;
+nodes = (
+"1375 2455 OFFCURVE",
+"1382 2435 OFFCURVE",
+"1445 2435 CURVE SMOOTH",
+"1582 2435 OFFCURVE",
+"1674 2719 OFFCURVE",
+"1692 2844 CURVE SMOOTH",
+"1694 2858 OFFCURVE",
+"1656 2879 OFFCURVE",
+"1654 2866 CURVE SMOOTH",
+"1632 2726 OFFCURVE",
+"1558 2596 OFFCURVE",
+"1485 2596 CURVE SMOOTH",
+"1405 2596 OFFCURVE",
+"1394 2668 OFFCURVE",
+"1365 2668 CURVE SMOOTH",
+"1306 2668 OFFCURVE",
+"1271 2471 OFFCURVE",
+"1147 2471 CURVE SMOOTH",
+"1066 2471 OFFCURVE",
+"1056 2544 OFFCURVE",
+"1027 2544 CURVE SMOOTH",
+"968 2544 OFFCURVE",
+"935 2381 OFFCURVE",
+"857 2381 CURVE SMOOTH",
+"808 2381 OFFCURVE",
+"786 2429 OFFCURVE",
+"726 2429 CURVE SMOOTH",
+"665 2429 OFFCURVE",
+"624 2390 OFFCURVE",
+"549 2306 CURVE SMOOTH",
+"523 2277 OFFCURVE",
+"532 2115 OFFCURVE",
+"549 2141 CURVE SMOOTH",
+"589 2202 OFFCURVE",
+"657 2255 OFFCURVE",
+"705 2255 CURVE SMOOTH",
+"754 2255 OFFCURVE",
+"787 2214 OFFCURVE",
+"831 2214 CURVE SMOOTH",
+"961 2214 OFFCURVE",
+"1011 2345 OFFCURVE",
+"1046 2345 CURVE SMOOTH",
+"1068 2345 OFFCURVE",
+"1075 2324 OFFCURVE",
+"1138 2324 CURVE SMOOTH",
+"1268 2324 OFFCURVE",
+"1318 2455 OFFCURVE",
+"1353 2455 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"290 1828 OFFCURVE",
+"416 1948 OFFCURVE",
+"549 2141 CURVE SMOOTH",
+"585 2193 OFFCURVE",
+"609 2375 OFFCURVE",
+"549 2306 CURVE SMOOTH",
+"393 2127 OFFCURVE",
+"323 1933 OFFCURVE",
+"0 1974 CURVE SMOOTH",
+"-39 1979 OFFCURVE",
+"-126 1828 OFFCURVE",
+"-90 1828 CURVE SMOOTH"
 );
 }
 );
