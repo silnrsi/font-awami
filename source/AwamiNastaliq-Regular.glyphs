@@ -1,17 +1,9 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absBehMed.fe_ss",
-"/absBehMed.ai_ss",
-"/absBehMed.sd_ss",
-"/absBehMed.qf_ss",
-"/absBehMed.ta_ss",
-"/absBehMed.beF_ss",
-"/absBehMed.fe_ss",
-"/absSadMed.be",
-"/absBehMed.jm",
-"/absSadMed.be",
-"/absBehMed.fe"
+"/absBehMed",
+"/absAlefFin",
+"/absBehMed.kf_wide"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -34757,6 +34749,7 @@ unicode = 0627;
 {
 color = (31,255,0,1);
 glyphname = absAlefFin;
+lastChange = "2018-10-12 19:26:54 +0000";
 layers = (
 {
 anchors = (
@@ -34802,30 +34795,49 @@ paths = (
 {
 closed = 1;
 nodes = (
-"269 749 OFFCURVE",
-"275 1110 OFFCURVE",
-"294 1367 CURVE SMOOTH",
-"299 1433 OFFCURVE",
-"323 1535 OFFCURVE",
-"342 1573 CURVE SMOOTH",
-"352 1592 OFFCURVE",
-"325 1640 OFFCURVE",
-"306 1617 CURVE SMOOTH",
-"260 1562 OFFCURVE",
-"204 1434 OFFCURVE",
-"190 1338 CURVE SMOOTH",
-"170 1203 OFFCURVE",
-"158 610 OFFCURVE",
-"176 429 CURVE SMOOTH",
-"183 360 OFFCURVE",
-"279 492 OFFCURVE",
-"273 637 CURVE SMOOTH"
+"1468 749 OFFCURVE",
+"1475 1110 OFFCURVE",
+"1494 1367 CURVE SMOOTH",
+"1499 1433 OFFCURVE",
+"1522 1535 OFFCURVE",
+"1542 1573 CURVE SMOOTH",
+"1552 1592 OFFCURVE",
+"1525 1640 OFFCURVE",
+"1506 1617 CURVE SMOOTH",
+"1460 1562 OFFCURVE",
+"1404 1434 OFFCURVE",
+"1390 1338 CURVE SMOOTH",
+"1370 1203 OFFCURVE",
+"1358 610 OFFCURVE",
+"1376 429 CURVE SMOOTH",
+"1383 360 OFFCURVE",
+"1479 492 OFFCURVE",
+"1473 637 CURVE SMOOTH"
 );
-}
+},
+{
+closed = 1;
+nodes = (
+"744 424 OFFCURVE",
+"656 328 OFFCURVE",
+"506 330 CURVE SMOOTH",
+"334 332 OFFCURVE",
+"282 520 OFFCURVE",
+"273 740 CURVE SMOOTH",
+"270 810 OFFCURVE",
+"169 673 OFFCURVE",
+"178 583 CURVE SMOOTH",
+"218 179 OFFCURVE",
+"272 -10 OFFCURVE",
+"426 -10 CURVE SMOOTH",
+"608 -10 OFFCURVE",
+"727 208 OFFCURVE",
+"810 332 CURVE SMOOTH",
+"826 356 OFFCURVE",
+"831 520 OFFCURVE",
+"810 497 CURVE SMOOTH"
 );
-};
-layerId = master01;
-paths = (
+},
 {
 closed = 1;
 nodes = (
@@ -34847,6 +34859,36 @@ nodes = (
 "183 463 OFFCURVE",
 "279 595 OFFCURVE",
 "273 740 CURVE SMOOTH"
+);
+}
+);
+};
+layerId = master01;
+paths = (
+{
+closed = 1;
+nodes = (
+"269 854 OFFCURVE",
+"276 1215 OFFCURVE",
+"295 1472 CURVE SMOOTH",
+"300 1538 OFFCURVE",
+"323 1640 OFFCURVE",
+"343 1678 CURVE SMOOTH",
+"353 1697 OFFCURVE",
+"326 1745 OFFCURVE",
+"307 1722 CURVE SMOOTH",
+"261 1667 OFFCURVE",
+"205 1539 OFFCURVE",
+"191 1443 CURVE SMOOTH",
+"164 1254 OFFCURVE",
+"151 911 OFFCURVE",
+"179 585 CURVE SMOOTH",
+"191 455 OFFCURVE",
+"210 328 OFFCURVE",
+"236 213 CURVE SMOOTH",
+"271 61 OFFCURVE",
+"285 489 OFFCURVE",
+"274 742 CURVE SMOOTH"
 );
 }
 );
