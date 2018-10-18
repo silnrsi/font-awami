@@ -2,8 +2,7 @@
 .appVersion = "1161";
 DisplayStrings = (
 "/absBehMed",
-"/absAlefFin",
-""
+"/absAlefFin"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -38974,7 +38973,7 @@ width = 537;
 {
 color = (0,243,255,1);
 glyphname = absBehMed.kf_wide;
-lastChange = "2018-10-15 19:04:56 +0000";
+lastChange = "2018-10-18 18:55:32 +0000";
 layers = (
 {
 anchors = (
@@ -39106,35 +39105,6 @@ nodes = (
 "803 425 OFFCURVE",
 "808 589 OFFCURVE",
 "787 566 CURVE SMOOTH"
-);
-},
-{
-closed = 1;
-nodes = (
-"1 938 OFFCURVE",
-"3 1299 OFFCURVE",
-"22 1556 CURVE SMOOTH",
-"27 1622 OFFCURVE",
-"50 1724 OFFCURVE",
-"70 1762 CURVE SMOOTH",
-"80 1781 OFFCURVE",
-"53 1829 OFFCURVE",
-"34 1806 CURVE SMOOTH",
-"-12 1751 OFFCURVE",
-"-68 1623 OFFCURVE",
-"-82 1527 CURVE SMOOTH",
-"-110 1338 OFFCURVE",
-"-123 992 OFFCURVE",
-"-101 666 CURVE SMOOTH",
-"-84 411 OFFCURVE",
-"21 104 OFFCURVE",
-"145 99 CURVE SMOOTH",
-"255 95 OFFCURVE",
-"194 220 OFFCURVE",
-"70 451 CURVE SMOOTH",
-"27 531 OFFCURVE",
-"9 646 OFFCURVE",
-"4 826 CURVE SMOOTH"
 );
 }
 );
@@ -45404,7 +45374,7 @@ width = 2236;
 {
 color = (31,255,0,1);
 glyphname = absFehIni;
-lastChange = "2018-10-17 20:09:38 +0000";
+lastChange = "2018-10-18 17:56:45 +0000";
 layers = (
 {
 anchors = (
@@ -45425,7 +45395,7 @@ name = nUpper;
 position = "{495, 1500}";
 }
 );
-layerId = master01;
+background = {
 paths = (
 {
 closed = 1;
@@ -45434,6 +45404,42 @@ nodes = (
 "429 410 OFFCURVE",
 "230 410 CURVE SMOOTH",
 "63 410 OFFCURVE",
+"10 551 OFFCURVE",
+"0 819 CURVE SMOOTH",
+"-3 902 OFFCURVE",
+"-99 741 OFFCURVE",
+"-94 662 CURVE SMOOTH",
+"-72 337 OFFCURVE",
+"20 66 OFFCURVE",
+"219 66 CURVE SMOOTH",
+"530 66 OFFCURVE",
+"708 551 OFFCURVE",
+"708 761 CURVE SMOOTH",
+"708 943 OFFCURVE",
+"643 1179 OFFCURVE",
+"495 1179 CURVE SMOOTH",
+"441 1179 OFFCURVE",
+"377 1168 OFFCURVE",
+"319 952 CURVE SMOOTH",
+"230 620 OFFCURVE",
+"352 562 OFFCURVE",
+"587 645 CURVE SMOOTH",
+"604 651 OFFCURVE",
+"611 637 OFFCURVE",
+"611 618 CURVE SMOOTH"
+);
+}
+);
+};
+layerId = master01;
+paths = (
+{
+closed = 1;
+nodes = (
+"611 489 OFFCURVE",
+"399 370 OFFCURVE",
+"230 370 CURVE SMOOTH",
+"73 370 OFFCURVE",
 "10 551 OFFCURVE",
 "0 819 CURVE SMOOTH",
 "-3 902 OFFCURVE",
@@ -67979,7 +67985,7 @@ width = 1964;
 {
 color = (31,255,0,1);
 glyphname = absSadMed;
-lastChange = "2018-10-17 21:42:57 +0000";
+lastChange = "2018-10-18 17:46:42 +0000";
 layers = (
 {
 anchors = (
@@ -68137,12 +68143,12 @@ nodes = (
 "659 614 OFFCURVE",
 "606 614 CURVE SMOOTH",
 "526 614 OFFCURVE",
-"501 387 OFFCURVE",
-"346 387 CURVE SMOOTH",
-"179 387 OFFCURVE",
-"11 519 OFFCURVE",
+"436 334 OFFCURVE",
+"281 334 CURVE SMOOTH",
+"114 334 OFFCURVE",
+"12 519 OFFCURVE",
 "0 797 CURVE SMOOTH",
-"-3 880 OFFCURVE",
+"-4 880 OFFCURVE",
 "-97 666 OFFCURVE",
 "-91 587 CURVE SMOOTH",
 "-67 262 OFFCURVE",
@@ -128914,12 +128920,13 @@ width = 1282;
 {
 color = (235,0,255,1);
 glyphname = absHehDoachashmeeIni.ai;
+lastChange = "2018-10-18 18:33:33 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_ain;
-position = "{0, 1063}";
+position = "{0, 1068}";
 },
 {
 name = n1Lower;
@@ -130603,6 +130610,7 @@ width = 867;
 {
 color = (31,255,0,1);
 glyphname = absHehDoachashmeeMed.beM2;
+lastChange = "2018-10-18 18:42:44 +0000";
 layers = (
 {
 anchors = (
@@ -144176,12 +144184,13 @@ width = 514;
 {
 color = (31,255,0,1);
 glyphname = absTahIni.mmX;
+lastChange = "2018-10-18 18:25:56 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_meemAlt;
-position = "{0, 608}";
+position = "{0, 591}";
 },
 {
 name = mTahUpper;
@@ -146631,7 +146640,7 @@ width = 920;
 {
 color = (31,255,0,1);
 glyphname = absHehGoalIni;
-lastChange = "2018-10-17 21:37:24 +0000";
+lastChange = "2018-10-18 18:53:58 +0000";
 layers = (
 {
 anchors = (
@@ -146698,7 +146707,7 @@ nodes = (
 "-97 688 OFFCURVE",
 "-91 608 CURVE SMOOTH",
 "-67 283 OFFCURVE",
-"11 68 OFFCURVE",
+"31 68 OFFCURVE",
 "215 68 CURVE SMOOTH"
 );
 }
