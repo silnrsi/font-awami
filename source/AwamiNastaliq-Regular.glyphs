@@ -1,8 +1,9 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absBehMed",
-"/absAlefFin"
+"/absAlef/absAlef/absAlefFin._lm",
+"/absLamMed.al",
+"/nlqBariyehFin"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -34930,24 +34931,25 @@ width = 273;
 {
 color = (31,255,0,1);
 glyphname = absAlefFin._lm;
+lastChange = "2018-10-19 21:10:58 +0000";
 layers = (
 {
 anchors = (
 {
 name = _exit_alef;
-position = "{253, 85}";
+position = "{253, 189}";
 },
 {
 name = hamzaLower;
-position = "{172, -271}";
+position = "{172, -171}";
 },
 {
 name = hamzaUpper;
-position = "{218, 1863}";
+position = "{218, 1967}";
 },
 {
 name = honorific;
-position = "{72, 2034}";
+position = "{72, 2134}";
 },
 {
 name = kernBbLeft;
@@ -34955,19 +34957,19 @@ position = "{170, 1502}";
 },
 {
 name = mLower;
-position = "{168, -289}";
+position = "{168, -189}";
 },
 {
 name = mUpper;
-position = "{201, 1822}";
+position = "{201, 1926}";
 },
 {
 name = n1Lower;
-position = "{164, -290}";
+position = "{164, -190}";
 },
 {
 name = nUpper;
-position = "{243, 1895}";
+position = "{243, 1999}";
 }
 );
 background = {
@@ -35039,36 +35041,36 @@ nodes = (
 {
 closed = 1;
 nodes = (
-"726 1632 OFFCURVE",
-"747 1676 OFFCURVE",
-"755 1707 CURVE SMOOTH",
-"760 1726 OFFCURVE",
-"743 1775 OFFCURVE",
-"721 1753 CURVE SMOOTH",
-"679 1711 OFFCURVE",
-"588 1550 OFFCURVE",
-"577 1384 CURVE SMOOTH",
-"566 1213 OFFCURVE",
-"588 545 OFFCURVE",
-"554 385 CURVE SMOOTH",
-"527 258 OFFCURVE",
-"457 74 OFFCURVE",
-"273 74 CURVE SMOOTH",
-"132 74 OFFCURVE",
-"88 115 OFFCURVE",
-"17 160 CURVE SMOOTH",
-"5 168 OFFCURVE",
-"-10 136 OFFCURVE",
-"-2 116 CURVE SMOOTH",
-"28 42 OFFCURVE",
-"140 -122 OFFCURVE",
-"275 -122 CURVE SMOOTH",
-"534 -122 OFFCURVE",
-"678 425 OFFCURVE",
-"696 808 CURVE SMOOTH",
-"705 991 OFFCURVE",
-"713 1255 OFFCURVE",
-"721 1480 CURVE SMOOTH"
+"726 1736 OFFCURVE",
+"747 1780 OFFCURVE",
+"755 1811 CURVE SMOOTH",
+"760 1830 OFFCURVE",
+"743 1879 OFFCURVE",
+"721 1857 CURVE SMOOTH",
+"679 1815 OFFCURVE",
+"588 1654 OFFCURVE",
+"577 1488 CURVE SMOOTH",
+"566 1317 OFFCURVE",
+"588 649 OFFCURVE",
+"554 489 CURVE SMOOTH",
+"527 362 OFFCURVE",
+"457 178 OFFCURVE",
+"273 178 CURVE SMOOTH",
+"132 178 OFFCURVE",
+"87 217 OFFCURVE",
+"17 264 CURVE SMOOTH",
+"5 272 OFFCURVE",
+"-10 240 OFFCURVE",
+"-2 220 CURVE SMOOTH",
+"28 146 OFFCURVE",
+"140 -18 OFFCURVE",
+"275 -18 CURVE SMOOTH",
+"534 -18 OFFCURVE",
+"677 529 OFFCURVE",
+"696 912 CURVE SMOOTH",
+"705 1095 OFFCURVE",
+"714 1359 OFFCURVE",
+"721 1584 CURVE SMOOTH"
 );
 }
 );
@@ -35076,7 +35078,7 @@ nodes = (
 components = (
 {
 name = absAlef;
-transform = "{1, 0, 0, 1, -2, -104}";
+transform = "{1, 0, 0, 1, -2, 0}";
 }
 );
 layerId = master01;
@@ -102537,12 +102539,13 @@ width = 1361;
 {
 color = (247,255,0,255);
 glyphname = absKehehIni.qf;
+lastChange = "2018-10-19 20:34:48 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{-20, -116}";
+position = "{0, -116}";
 },
 {
 name = kafExclude;
@@ -102550,19 +102553,19 @@ position = "{221, 1285}";
 },
 {
 name = kernBbRight;
-position = "{1064, 956}";
+position = "{1084, 956}";
 },
 {
 name = n1Lower;
-position = "{392, -120}";
+position = "{412, -120}";
 },
 {
 name = nUpper;
-position = "{579, 1903}";
+position = "{599, 1903}";
 },
 {
 name = ring;
-position = "{922, 1653}";
+position = "{942, 1653}";
 }
 );
 background = {
@@ -102641,36 +102644,36 @@ paths = (
 {
 closed = 1;
 nodes = (
-"373 1257 OFFCURVE",
-"439 1324 OFFCURVE",
-"772 1563 CURVE SMOOTH",
-"1178 1854 OFFCURVE",
-"1299 1946 OFFCURVE",
-"1314 2190 CURVE SMOOTH",
-"1315 2208 OFFCURVE",
-"1287 2230 OFFCURVE",
-"1278 2215 CURVE SMOOTH",
-"1193 2077 OFFCURVE",
-"1157 2024 OFFCURVE",
-"779 1753 CURVE SMOOTH",
-"500 1553 OFFCURVE",
-"208 1205 OFFCURVE",
-"208 707 CURVE SMOOTH",
-"208 390 OFFCURVE",
-"200 323 OFFCURVE",
-"170 269 CURVE SMOOTH",
-"125 187 OFFCURVE",
-"28 118 OFFCURVE",
-"-10 97 CURVE SMOOTH",
-"-83 57 OFFCURVE",
-"-50 -150 OFFCURVE",
-"-20 -126 CURVE SMOOTH",
-"61 -62 OFFCURVE",
-"169 83 OFFCURVE",
-"235 241 CURVE SMOOTH",
-"342 498 OFFCURVE",
-"359 812 OFFCURVE",
-"366 1044 CURVE SMOOTH"
+"392 1257 OFFCURVE",
+"459 1324 OFFCURVE",
+"792 1563 CURVE SMOOTH",
+"1198 1854 OFFCURVE",
+"1320 1946 OFFCURVE",
+"1334 2190 CURVE SMOOTH",
+"1335 2208 OFFCURVE",
+"1307 2230 OFFCURVE",
+"1298 2215 CURVE SMOOTH",
+"1215 2076 OFFCURVE",
+"1177 2024 OFFCURVE",
+"799 1753 CURVE SMOOTH",
+"520 1553 OFFCURVE",
+"228 1205 OFFCURVE",
+"228 707 CURVE SMOOTH",
+"228 390 OFFCURVE",
+"220 323 OFFCURVE",
+"190 269 CURVE SMOOTH",
+"145 187 OFFCURVE",
+"48 118 OFFCURVE",
+"10 97 CURVE SMOOTH",
+"-63 57 OFFCURVE",
+"-30 -150 OFFCURVE",
+"0 -126 CURVE SMOOTH",
+"81 -62 OFFCURVE",
+"189 83 OFFCURVE",
+"255 241 CURVE SMOOTH",
+"362 498 OFFCURVE",
+"379 812 OFFCURVE",
+"386 1044 CURVE SMOOTH"
 );
 }
 );
@@ -106790,6 +106793,7 @@ width = 555;
 {
 color = (31,255,0,1);
 glyphname = absKehehMed.qf;
+lastChange = "2018-10-19 20:32:29 +0000";
 layers = (
 {
 anchors = (
@@ -106799,7 +106803,7 @@ position = "{417, 686}";
 },
 {
 name = exit_qafWaw;
-position = "{1, -322}";
+position = "{0, -322}";
 },
 {
 name = kafExclude;
@@ -109839,12 +109843,13 @@ width = 1361;
 {
 color = (31,255,0,1);
 glyphname = absGafIni.qf;
+lastChange = "2018-10-19 20:35:55 +0000";
 layers = (
 {
 anchors = (
 {
 name = exit_qafWaw;
-position = "{0, 111}";
+position = "{0, -116}";
 },
 {
 name = kafExclude;
@@ -109852,19 +109857,19 @@ position = "{199, 1695}";
 },
 {
 name = kernBbRight;
-position = "{1064, 885}";
+position = "{1084, 885}";
 },
 {
 name = n1Lower;
-position = "{392, -120}";
+position = "{412, -120}";
 },
 {
 name = nUpper;
-position = "{428, 2200}";
+position = "{448, 2200}";
 },
 {
 name = ring;
-position = "{922, 1653}";
+position = "{942, 1653}";
 }
 );
 background = {
@@ -111635,6 +111640,7 @@ width = 555;
 {
 color = (31,255,0,1);
 glyphname = absGafMed.qf;
+lastChange = "2018-10-19 20:32:50 +0000";
 layers = (
 {
 anchors = (
@@ -111644,7 +111650,7 @@ position = "{417, 686}";
 },
 {
 name = exit_qafWaw;
-position = "{0, -81}";
+position = "{0, -322}";
 },
 {
 name = kafExclude;
@@ -138916,6 +138922,7 @@ unicode = 076B;
 {
 color = (31,255,0,1);
 glyphname = absRehFin;
+lastChange = "2018-10-19 20:25:31 +0000";
 layers = (
 {
 anchors = (
@@ -138925,7 +138932,7 @@ position = "{477, 636}";
 },
 {
 name = hamzaUpper;
-position = "{121, 785}";
+position = "{380, 976}";
 },
 {
 name = honorific;
@@ -138941,7 +138948,7 @@ position = "{273, -444}";
 },
 {
 name = mUpper;
-position = "{110, 796}";
+position = "{370, 986}";
 },
 {
 name = n1Lower;
@@ -138949,7 +138956,7 @@ position = "{255, -423}";
 },
 {
 name = nUpper;
-position = "{122, 803}";
+position = "{380, 986}";
 },
 {
 name = ring;
@@ -138957,7 +138964,7 @@ position = "{237, 54}";
 },
 {
 name = tahUpper;
-position = "{105, 785}";
+position = "{370, 976}";
 }
 );
 background = {
@@ -139008,6 +139015,7 @@ width = 477;
 {
 color = (31,255,0,1);
 glyphname = absRehFin._hgM;
+lastChange = "2018-10-19 20:27:33 +0000";
 layers = (
 {
 anchors = (
@@ -139017,7 +139025,7 @@ position = "{566, 854}";
 },
 {
 name = hamzaUpper;
-position = "{47, 850}";
+position = "{169, 980}";
 },
 {
 name = honorific;
@@ -139033,7 +139041,7 @@ position = "{411, -379}";
 },
 {
 name = mUpper;
-position = "{61, 861}";
+position = "{181, 980}";
 },
 {
 name = n1Lower;
@@ -139041,7 +139049,7 @@ position = "{395, -352}";
 },
 {
 name = nUpper;
-position = "{63, 845}";
+position = "{181, 969}";
 },
 {
 name = ring;
@@ -139049,7 +139057,7 @@ position = "{304, 100}";
 },
 {
 name = tahUpper;
-position = "{43, 836}";
+position = "{169, 969}";
 }
 );
 background = {
