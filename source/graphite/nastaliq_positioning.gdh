@@ -1173,9 +1173,9 @@ endtable;
 #define SHORTKAF_HT  	1350m
 #define PUSHDOWN		3280m
 #define PUSHUP			-630m
-#define SHORTFINAL2		2300m
-#define SHORTFINAL1		2900m
-#define	SHORTFINAL0		3100m
+#define SHORTFINAL2		2700m
+#define SHORTFINAL1		3050m
+#define SHORTFINAL0		3650m
 #define SHORTFINAL_KAF	1600m
 
 
@@ -1342,7 +1342,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 
 // Debugging:
-//////cIni {user5 = bb.top; user6 = position.y + bb.top};
+cIni {user5 = position.y; user6 = position.y + bb.bottom; user7 = position.y + bb.top};
 
 endpass;  // pass 5
 
@@ -1373,12 +1373,14 @@ gJeemMedBeKl  {shift { x = 105m; y = -130m } } gBehMed {tooHigh = 1}
 
 
 // high initial with both nuqta and diacritic:
-cIni     cMed  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpper  cDiacriticUpper ^ _=M;
+cIni     cMed  >  @I  @M {tooHigh = 1}    
+	/  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpperNoKT  cDiacriticUpper ^ _=M;
 // high initial with nuqta OR diacritic
 cIni     cMed  >  @I  @M {tooHigh = 1}   
-	/  _=I  {position.y + bb.top > SHORTFINAL1}  cNuqtaLikeLower? (cNuqtaLikeUpper  cDiacriticUpper) cDiacriticLower? ^ _=M;
+	/  _=I  {position.y + bb.top > SHORTFINAL1}  cNuqtaLikeLower? (cNuqtaLikeUpperNoKT  cDiacriticUpper) cDiacriticLower? ^ _=M;
 // high initial with no nuqta or diacritic
-cIni     cMed  >  @I  @M {tooHigh = 1}    /  _=I  {position.y + bb.top > SHORTFINAL0}  MARKS ^ _=M;
+cIni     cMed  >  @I  @M {tooHigh = 1}
+	/  _=I  {position.y + bb.top > SHORTFINAL0}  g__kafTop_null? cNuqtaLikeLower? cDiacriticLower? ^ _=M;
 
 csKafIM_medium  cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
 csKafIM_base    cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
@@ -1771,6 +1773,23 @@ cNuqtaUpper { shift { x = -100m; y = -100m } }
 	cDiacriticUpper { shift.x = -250m }
 	/  cFehIni  _=N  _=D  (cKafMed csKafMed_base);
 
+// Special case: initial beh/peh/yeh + beh/peh/yeh
+// Leave FIX off for the right-most nuqtas so they don't shift back.
+cNlWide { shift { x = 300m; y = -200m } }
+	cNuqtaLower { shift { x = 350m; y = -200m } }  // we don't expect collisions
+	/  (gBehIniBe gBehIniBeM1 gBehIniBeRe) _=N1 cDiacritic? 
+		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedRe) _=N2; 
+cNuqtaLower { shift { x = 200m; y = -200m } }
+	cNuqtaLower {
+		shift { x = 300m; y = -200m }
+		// ; collision.flags = SET_FIX(collision.flags) -- hopefully don't need this
+	}
+	/  gBehIniBe  _=N1 cDiacritic?  (gBehMedAi gBehMedFe gBehMedSd)  _=N2;
+//cNlWide { shift { x = 350m; y = -200m } }
+//	cNuqtaLower { shift { x = 250m; y = -250m }; collision.flags = SET_FIX(collision.flags) }
+//	cNuqtaLower { shift { x = 250m; y = -250m }; collision.flags = SET_FIX(collision.flags) }
+//	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2 [cDiacritic?  gRehFin _=N3]?; 
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -2008,9 +2027,9 @@ cDiacriticUpper {
 
 // Special case: keep pesh under follow kaf; nuqta on noon pushes it up too far.
 // In fact, might as well apply this to tehs and other diacs as well.
-cNuqtaUpperSmall { shift { x = -150m; y = -200m };
-		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
-	cDiacriticUpper { shift { x = -200m; y = -100m } }
+cNuqtaUpperSmall { shift { x = -100m; y = -200m } }
+	cDiacriticUpper { shift { x = -130m; y = -70m };
+		collision { min.x = -50m; max.y = 50m; margin = 100m } } // keep it from moving backcollision
 	/  gBehIni  _=N  ^ _=D  csKafIM_base;
 
 cNuqtaUpper { shift.y = -100m }
