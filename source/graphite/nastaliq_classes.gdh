@@ -253,6 +253,7 @@ gHehDoMed_raw = pseudo(postscript("absHehDoachashmeeMed"));
 gChotiyehMed_raw = pseudo(postscript("absBehMed"));
 
 gMeemMed_alt_raw = pseudo(postscript("absMeemMed._alt"));
+// Obsolete:
 gBehMed_SS_raw = pseudo(postscript("absBehMed.beF_ss"));  // absBehMed.beF_ss / absBehMed._ss
 
 
@@ -490,8 +491,8 @@ cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
 
 // Nastaliq-specific shaping
 
-c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss
-	gBehMedQf_ss gBehMedHgF_be ) ;
+// OBSOLETE
+//c_Med_ss = ( gBehMedBeF_ss gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be ) ;
 
 
 // Does not initiate alternate (kinked) kaf:
@@ -830,8 +831,8 @@ cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
 cs_gafComposed = (gGueh, gNgoeh, gGafRing);
 
 cs_noonMark = (
-	g__dot1u, g__dot1u_ngMark, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah,
-	g__dot1u_smallV, g__ring__dot1u); // g__noDot1u
+	g__dot1u, g__noDot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah,
+	g__dot1u_smallV, g__ring__dot1u); // g__dot1u_ngMark
 cs_noonComposed = (
 	gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon,
 	gNoonSmallV, gNoonRing);

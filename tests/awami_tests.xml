@@ -2,52 +2,53 @@
 <?xml-stylesheet type="text/xsl" href="Testing.xsl"?>
 <ftml version="1.0">
   <head>
-    <columns comment="30%" label="25%" string="45%"/>
+    <columns comment="30%" label="25%" string="45%" />
     <fontsrc>url(..\results\Awami_gr.ttf)</fontsrc>
     <styles>
-      <style feats="=0 agca=3 dbsp=0 hehk=1 olap=2" name="fset10"/>
-      <style feats="agca=3 dbsp=0 hehk=1 wdsp=2" name="fset11"/>
-      <style feats="=0 agca=3 dbsp=0 hehk=1 wdsp=2" name="fset12"/>
-      <style feats="dbsp=1 wdsp=4" name="fset13"/>
-      <style feats="agca=3 dbgf=1 dbsp=0 hedo=0 hehk=1 wdsp=2" name="fset14"/>
-      <style feats="=0 agca=3 dbgf=1 dbsp=0 hedo=0 hehk=1 wdsp=2" name="fset15"/>
-      <style feats="=0 agca=3 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset16"/>
-      <style feats="agca=3 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset17"/>
-      <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 madd=0 wdsp=2" name="fset18"/>
-      <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset19"/>
-      <style feats="hehk=0 olap=2" name="fset2"/>
-      <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset21"/>
-      <style feats="hamz=1" name="fset22"/>
-      <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23"/>
-      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24"/>
-      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25"/>
-      <style feats="lamv=1" name="fset27"/>
-      <style feats="snuq=1" name="fset28"/>
-      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" name="fset29"/>
-      <style feats="hehk=1 olap=2" name="fset3"/>
-      <style feats="shrt=3" name="fset30"/>
-      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset31"/>
-      <style feats="invs=1" name="fset32"/>
-      <style feats="wdsp=4" name="fset33"/>
-      <style feats="invs=1 wdsp=1" name="fset34"/>
-      <style feats="cv85=1" name="fset35"/>
-      <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 punc=0 shrt=0 snuq=0 wdsp=2" name="fset36"/>
-      <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset37"/>
-      <style feats="invs=1 wdsp=4" name="fset38"/>
-      <style feats="wdsp=1" name="fset39"/>
-      <style feats="shrt=2" name="fset40"/>
-      <style feats="shrt=1" name="fset41"/>
-      <style feats="olap=2" name="fset5"/>
-      <style feats="hehk=1 olap=3" name="fset6"/>
-      <style feats="agca=3 hehk=1 olap=2" name="fset7"/>
-      <style feats="=0 agca=3 hehk=1 olap=2" name="fset8"/>
-      <style feats="agca=3 dbsp=0 hehk=1 olap=2" name="fset9"/>
+      <style feats="=0 agca=3 dbsp=0 hehk=1 olap=2" name="fset10" />
+      <style feats="agca=3 dbsp=0 hehk=1 wdsp=2" name="fset11" />
+      <style feats="=0 agca=3 dbsp=0 hehk=1 wdsp=2" name="fset12" />
+      <style feats="dbsp=1 wdsp=4" name="fset13" />
+      <style feats="agca=3 dbgf=1 dbsp=0 hedo=0 hehk=1 wdsp=2" name="fset14" />
+      <style feats="=0 agca=3 dbgf=1 dbsp=0 hedo=0 hehk=1 wdsp=2" name="fset15" />
+      <style feats="=0 agca=3 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset16" />
+      <style feats="agca=3 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset17" />
+      <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 madd=0 wdsp=2" name="fset18" />
+      <style feats="=0 agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset19" />
+      <style feats="hehk=0 olap=2" name="fset2" />
+      <style feats="agca=3 cv78=1 dbgf=1 hedo=0 hehk=1 invs=0 wdsp=2" name="fset21" />
+      <style feats="hamz=1" name="fset22" />
+      <style feats="agca=3 cv78=1 dbgf=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset23" />
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 wdsp=2" name="fset24" />
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 sfin=1 wdsp=2" name="fset25" />
+      <style feats="lamv=1" name="fset27" />
+      <style feats="snuq=1" name="fset28" />
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" name="fset29" />
+      <style feats="hehk=1 olap=2" name="fset3" />
+      <style feats="shrt=3" name="fset30" />
+      <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset31" />
+      <style feats="invs=1" name="fset32" />
+      <style feats="wdsp=4" name="fset33" />
+      <style feats="invs=1 wdsp=1" name="fset34" />
+      <style feats="cv85=1" name="fset35" />
+      <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 punc=0 shrt=0 snuq=0 wdsp=2" name="fset36" />
+      <style feats="agca=3 cv78=1 cv85=0 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=0 snuq=0 wdsp=2" name="fset37" />
+      <style feats="invs=1 wdsp=4" name="fset38" />
+      <style feats="wdsp=1" name="fset39" />
+      <style feats="shrt=2" name="fset40" />
+      <style feats="shrt=1" name="fset41" />
+      <style feats="olap=2" name="fset5" />
+      <style feats="hehk=1 olap=3" name="fset6" />
+      <style feats="agca=3 hehk=1 olap=2" name="fset7" />
+      <style feats="=0 agca=3 hehk=1 olap=2" name="fset8" />
+      <style feats="agca=3 dbsp=0 hehk=1 olap=2" name="fset9" />
     </styles>
   </head>
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>لبف لنف</string>
+      <string>پیدا پیغام پیٹ بیتُ پیس پیسج  یبسل بیسم
+گلِیل</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -203,6 +204,9 @@
     <test class="fset36" label="varying initial heights" rtl="True">
       <string>لبف لتف</string>
     </test>
+    <test label="into alef-final" rtl="True">
+      <string>سبا صبا فبا  .</string>
+    </test>
   </testgroup>
   <testgroup label="LTR stuff">
     <test class="fset21" label="Arabic numbers">
@@ -252,10 +256,10 @@
       <string>The quick brown fox jumps over the lazy dog.</string>
     </test>
     <test background="#55aaff" class="fset21" label="RIGHT-TO-LEFT VERSIONS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#55aaff" class="fset21" label="as needed for buggy apps" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset21" label="page sign - RTL" rtl="True">
       <string>5432؀</string>
@@ -273,7 +277,7 @@
   </testgroup>
   <testgroup label="Shaping rules">
     <test background="#55aaff" class="fset24" label="FINALS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="gBehFin - default" rtl="True">
       <string>ملت  سب  عټ</string>
@@ -306,7 +310,7 @@
       <string>جر  کڗ بگڗ  لژ  بر</string>
     </test>
     <test background="#55aaff" class="fset24" label="MEEM" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="Standard meem" rtl="True">
       <string>قلمل  کمبن  فمس  کمگ  ممک</string>
@@ -325,7 +329,7 @@
       <string>هم سمِ مدام علومِ نام کئوم </string>
     </test>
     <test background="#55aaff" class="fset24" label="BEH" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="gBehMedXX_ss" rtl="True">
       <string>ستب  ضبط  کشنف فصیق</string>
@@ -346,13 +350,13 @@
       <string>جبہ جنبر عببہ لبہ</string>
     </test>
     <test background="#55aaff" class="fset24" label="LAM" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="lam+alef" rtl="True">
       <string>لا  بلا  سلامُهُ  اعلان</string>
     </test>
     <test background="#55aaff" class="fset24" label="KAF / GAF" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="Default - uses sad interface" rtl="True">
       <string>لکا  عکل  قکا  نکݪئی  مُشکِل</string>
@@ -373,7 +377,7 @@
       <string>کُنگَکہ  تِخِنگِک</string>
     </test>
     <test background="#55aaff" class="fset24" label="PRE-KAF" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="tah + kaf" rtl="True">
       <string>ظکک سطکب سطل سطکا لظگمس</string>
@@ -391,7 +395,7 @@
       <string>ݪگک بݪگگم علګف لګج سلګ  لګس</string>
     </test>
     <test background="#55aaff" class="fset24" label="BEH SEQUENCES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="be - gSeenMedBe" rtl="True">
       <string>پسیجتے  </string>
@@ -418,7 +422,7 @@
       <string>سب  لفت</string>
     </test>
     <test background="#55aaff" class="fset24" label="SEEN/SAD + BEH" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="gSeen/SadMedBeM1" rtl="True">
       <string>لسبب   مصیب  کسبتہ</string>
@@ -436,7 +440,7 @@
       <string>سُشسَس</string>
     </test>
     <test background="#55aaff" class="fset24" label="PRE-BEH" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="cIniBeHg_BeRe" rtl="True">
       <string>ببنر  جبنر  سبنر  صبنر  طبنر  عبنر  فبنر  کبنر  لبنر  مبنر  ہبنر  ھبنر</string>
@@ -452,6 +456,9 @@
     </test>
     <test class="fset24" label="_ cBehMed_postBeM" rtl="True">
       <string>لبم  طبج  لبھ</string>
+    </test>
+    <test label="sad + beh + ain/feh/..." rtl="True">
+      <string>صنف صبع صیق صپص صنط صنب</string>
     </test>
   </testgroup>
   <testgroup label="Ligatures">
@@ -600,7 +607,7 @@
       <string>لوندے ٻال بچیاں کیتے عزت دی حیاتی دا ضامن ہووے اتے اوندے وچ ضرورت دے</string>
     </test>
     <test background="#55aaff" class="fset9" label="RIGHT-CONNECTING FORM TESTS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset9" label="isolate alef" rtl="True">
       <string>ااداراو</string>
@@ -670,7 +677,7 @@
       <string>بیوک رک تھینس رو جمکلنیج</string>
     </test>
     <test background="#00aaff" class="fset21" label="ALPHA-2 FEEDBACK" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset21" label="isolate waw + long seq (Malachi - 4)" rtl="True">
       <comment>Keep the isolate waw from overlapping much.</comment>
@@ -749,7 +756,7 @@
       <string>اقوام متحدای جر ٣٩١١ نل اسمبلیس منڙوحقوقوں ۱۰۳ منݜوری اعلان ٧٠٨٧ تھین ۔</string>
     </test>
     <test background="#55aaff" label="BETA-1 FEEDBACK" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="dal + alef" rtl="True">
       <string>پیدا</string>
@@ -803,7 +810,7 @@
       <string>اکطبس اکطب اکط</string>
     </test>
     <test background="#55aaff" class="fset36" label="BETA-3 FEEDBACK" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="kaf + waw + beh + heh-doachashemee" rtl="True">
       <string>قوموں کوبھی چُن لِیاہے</string>
@@ -824,7 +831,7 @@
       <string>ږازاراڔاڑاژا    ږل﻿زل﻿رل﻿ڔل﻿ڑل﻿ژل   ږوزوروڔوڑوژو   </string>
     </test>
     <test background="#55aaff" class="fset36" label="POST V1 FEEDBACK" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="reh + isolate jeem/ain" rtl="True">
       <string>چرچ چرع رج</string>
@@ -845,7 +852,7 @@
       <string>ےآ ۓآ</string>
     </test>
     <test background="#55aaff" class="fset36" label="PUNCTUATION" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="flat word" rtl="True">
       <string>بب۔ بب، بب؛ بب! بب؟ ”بب“ ’بب‘ )بب(</string>
@@ -898,7 +905,7 @@
       <string>بݨاوِیں</string>
     </test>
     <test background="#00aaff" label="NUQTA / NUQTA" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="sheen + teh" rtl="True">
       <string>کشتِیک</string>
@@ -951,7 +958,7 @@
       <string>وپوپئی</string>
     </test>
     <test background="#00aaff" label="KAF + NUQTA" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="bent gaf + sheen + teh" rtl="True">
       <string>نگشتر</string>
@@ -960,7 +967,7 @@
       <string>کَتَنُن</string>
     </test>
     <test background="#00aaff" label="MULTIPLE" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="yeh + waw" rtl="True">
       <string>اِیویں</string>
@@ -969,7 +976,7 @@
       <string>بَچِّئے</string>
     </test>
     <test background="#00aaff" label="TRICKY SPACES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="alef + noon + kaf" rtl="True">
       <string>انکا</string>
@@ -998,7 +1005,7 @@
       <string>تِتؤ</string>
     </test>
     <test background="#55aaff" label="SCRAPING" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="noon + gaf" rtl="True">
       <string>کُنگَکہ</string>
@@ -1014,7 +1021,7 @@
       <string>آقتا</string>
     </test>
     <test background="#00aaff" label="KERNING" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="reh + chotiyeh + jeem" rtl="True">
       <string>اکڑِیج</string>
@@ -1058,7 +1065,7 @@
       <string>اپِیکُو</string>
     </test>
     <test background="#00aaff" label="KERN AND SHIFT" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="theh + waw + teh" rtl="True">
       <comment>The kerning is done too late to let the triple-nuqta move to the left.</comment>
@@ -1071,7 +1078,7 @@
       <string>تفریق </string>
     </test>
     <test background="#00aaff" label="JUMPABLE" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="noon + noon + gaf" rtl="True">
       <comment>Why is the nuqta jumping the gaf?</comment>
@@ -1085,7 +1092,7 @@
       <string>شثشک</string>
     </test>
     <test background="#00aaff" label="BARIYEH" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset3" label="simple hehhook" rtl="True">
       <string>ہے</string>
@@ -1124,7 +1131,7 @@
       <string>پِیچھے</string>
     </test>
     <test background="#00aaff" label="DIACRITICS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="2 shaddas" rtl="True">
       <string>اِفّتّح</string>
@@ -1144,7 +1151,7 @@
       <string>ایتِھنز</string>
     </test>
     <test background="#00aaff" label="ALMOST NO ADJUSTMENT" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="alef-madda tey" rtl="True">
       <comment>The adjustment is so small you can't really see it.</comment>
@@ -1155,7 +1162,7 @@
       <string>السَقدَ</string>
     </test>
     <test background="#00aaff" label="DIAGONALS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="sheen + sheen + teh" rtl="True">
       <comment>The offset between the second triple-nuqta and the double-nuqta is not what I would expect from minxoffset = 150m.</comment>
@@ -1177,13 +1184,13 @@
       <string>ارتنحششتا</string>
     </test>
     <test background="#00aaff" label="OVERLAPS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="overlap + shift" rtl="True">
       <string>بگینہ تُند</string>
     </test>
     <test background="#00aaff" label="NUQTAS VERY CLOSE" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="beh + beh + tcheh" rtl="True">
       <string>بِبَچّے</string>
@@ -1216,7 +1223,7 @@
       <string>مختا لخئل جخثا</string>
     </test>
     <test background="#00aaff" label="DIACRITICS OUTSIDE NUQTAS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="zair + following chotiyeh" rtl="True">
       <comment>Is it a problem that the zair is not to the right of the following nuqta?</comment>
@@ -1226,7 +1233,7 @@
       <string>بیلِیو</string>
     </test>
     <test background="#00aaff" label="KAF TOP SPECIAL CASES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="alef + teh + kaf" rtl="True">
       <comment>Should be easy to fix.</comment>
@@ -1248,7 +1255,7 @@
       <string>صمڱ</string>
     </test>
     <test background="#00aaff" label="OTHER SPECIAL CASES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="beh + yeh + final jeem" rtl="True">
       <string>بِیج</string>
@@ -1274,7 +1281,7 @@
       <string>نتیجہ</string>
     </test>
     <test background="#55aaff" class="fset24" label="LINE HEIGHT" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="teh meem ..." rtl="True">
       <string>تمتھیں</string>
@@ -1301,7 +1308,7 @@
       <string>سݙِ نپِ نڜِ بڳِ</string>
     </test>
     <test background="#ff0000" label="NO GOOD SOLUTION" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="IUC 41 paper examples" rtl="True">
       <string>بِیج تخششتا  بیِجیل </string>
@@ -1397,7 +1404,7 @@
       <string>پکڑ</string>
     </test>
     <test background="#55aaff" class="fset9" label="MEDIAL KAFS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="meem lam kaf yeh" rtl="True">
       <string>ملکی</string>
@@ -1430,7 +1437,7 @@
       <string>سَڳسیں</string>
     </test>
     <test background="#55aaff" class="fset9" label="TALL WORDS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="seq 1" rtl="True">
       <string>کھڻ سڱدے زندگی آسیہکنُوں پکڑ سَڳدیاں</string>
@@ -1442,7 +1449,7 @@
       <string>کنگھجو برانگیختگی نگیختگی</string>
     </test>
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#ff0000" class="fset14" label="lam gaf gaf" rtl="True">
       <string>لگگ لگگس</string>
@@ -1454,7 +1461,7 @@
       <string>لحُکُو</string>
     </test>
     <test background="#55aaff" class="fset24" label="TIGHT SPACES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="qaf + teh + yeh + kaf" rtl="True">
       <string>قتیکہ</string>
@@ -1472,7 +1479,7 @@
       <string>جنگی جتگی خُشکی</string>
     </test>
     <test background="#55aaff" class="fset24" label="TALL WORDS - INITIAL KAF" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="kaf beh heh yeh" rtl="True">
       <string>کبھی</string>
@@ -1490,7 +1497,7 @@
       <string>ګمڱمی</string>
     </test>
     <test background="#55aaff" class="fset24" label="TALL WORDS - MEDIAL KAF" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="teh kaf meem yeh lam" rtl="True">
       <string>تکمیل</string>
@@ -1502,7 +1509,7 @@
       <string>مکمل</string>
     </test>
     <test background="#55aaff" class="fset24" label="NEED TALL" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="sheen kaf" rtl="True">
       <string>شکج</string>
@@ -1538,7 +1545,7 @@
       <string>عجمگف</string>
     </test>
     <test background="#55aaff" class="fset24" label="NEED MEDIUM-SHORT" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#ff0000" class="fset24" label="teh +  hah + kaf" rtl="True">
       <string>تحکمو  تحڱسر</string>
@@ -1562,7 +1569,7 @@
       <string>عطَگَف</string>
     </test>
     <test background="#55aaff" class="fset24" label="GAF + KAF/GAF" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#ffff7f" class="fset15" label="gaf + noon + gaf" rtl="True">
       <string>گنگو   ڱمکس کتکر</string>
@@ -1607,7 +1614,7 @@
       <string>ملککئ</string>
     </test>
     <test background="#55aaff" class="fset24" label="SHORTER" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset41" label="ykhty" rtl="True">
       <string>یکھتے</string>
@@ -1631,7 +1638,7 @@
       <string>مکعججی سکعس</string>
     </test>
     <test background="#55aaff" class="fset24" label="DON'T CHANGE" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="single nuqta + gaf" rtl="True">
       <string>جنگی</string>
@@ -1640,7 +1647,7 @@
       <string>بِنِنگَکہ</string>
     </test>
     <test background="#55aaff" class="fset36" label="ALL FORMS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset41" label="shape execeptions" rtl="True">
       <comment>I don't know of any way to get the alt-height initial kaf before the bariyeh.</comment>
@@ -1681,7 +1688,7 @@
   </testgroup>
   <testgroup label="Minority characters">
     <test background="#00aaff" label="SARAIKI" rtl="True">
-      <string/>
+      <string />
     </test>
     <test label="noon-retro (noon-tah)" rtl="True">
       <string>ݨ ݨسݨلݨ</string>
@@ -1741,7 +1748,7 @@
       <string>کݪس گݪب  کݪن گݪیم</string>
     </test>
     <test background="#00aaff" class="fset10" label="GOJRI" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset10" label="lam w/ small v" rtl="True">
       <string>ڵ ڵڵڵ</string>
@@ -1756,7 +1763,7 @@
       <string>ݩ ݩݩݩ</string>
     </test>
     <test background="#00aaff" class="fset10" label="BALTI" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset10" label="reh w/ two dots above" rtl="True">
       <string>ڗ مڗ لڗ سڗ لہڗ</string>
@@ -1771,7 +1778,7 @@
       <string>ݜ ݜݜݜ</string>
     </test>
     <test background="#55aaff" class="fset17" label="RINGS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset17" label="waw w/ ring" rtl="True">
       <string>ۄ سۄ عۄ ۄِ سۄِ عۄِ</string>
@@ -1813,7 +1820,7 @@
       <string>ڼ ڼڼڼ</string>
     </test>
     <test background="#00aaff" label="OTHER" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset18" label="dal w/ four dots" rtl="True">
       <string>ڐ بڐ سڐ ڐِ بڐِ سڐِ</string>
@@ -1962,14 +1969,17 @@
     <test class="fset36" label="lam w/ three dots" rtl="True">
       <string>ڷ ڷڷڷ</string>
     </test>
+    <test label="noon ghunna" rtl="True">
+      <string>ں ںںں</string>
+    </test>
     <test background="#55aaff" class="fset31" label="BALUCHI" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset31" label="yeh + small-V - O6CE" rtl="True">
       <string>وشّێن</string>
     </test>
     <test background="#55aaff" class="fset12" label="HONORIFICS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset12" label="small high seen" rtl="True">
       <string>عِیسٰیۜ عِیسیٰۜ</string>
@@ -1988,7 +1998,7 @@
       <string>عِندِکَؑ عَلَیَؑ سختَئجِدہُؑ</string>
     </test>
     <test background="#55aaff" class="fset19" label="STANDARD ARABIC CHARS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset3" label="Arabic yeh" rtl="True">
       <string>ي ييي</string>
@@ -2004,7 +2014,7 @@
       <string>ك ككك</string>
     </test>
     <test background="#55aaff" class="fset36" label="CHARS WITH DIGIT MARKS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="alef w/ 2 above" rtl="True">
       <string>ݳِ سݳ بݳَ</string>
@@ -2121,7 +2131,7 @@
   </testgroup>
   <testgroup label="Tall sequences">
     <test background="#55aaff" class="fset25" label="REAL EXAMPLES" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="smjhty" rtl="True">
       <string>سمجھتے </string>
@@ -2190,7 +2200,7 @@
       <string>شکستگی</string>
     </test>
     <test background="#55aaff" class="fset25" label="SHORT FINALS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="w/ and w/o upper attachments" rtl="True">
       <comment>These are fake words. The initial seen is right at the top of the line.</comment>
@@ -2331,7 +2341,7 @@
       <string>برابر</string>
     </test>
     <test background="#55aaff" class="fset23" label="BARIYEH" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset23" label="X+NxL  Y+NyU  Z+NzL  Bariyeh" rtl="True">
       <string>جشبے ڇئبے </string>
@@ -2478,7 +2488,7 @@
       <string>ڈَ سڈَ ݙّ فݙّ ڑُ یڑُ</string>
     </test>
     <test background="#55aaff" class="fset15" label="HONORIFICS" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset15" label="small high seen" rtl="True">
       <string>عِیسٰیۜ عِیسیٰۜ</string>
@@ -2502,7 +2512,7 @@
       <string>غنؔی   توکبؔیر   بلوؔچتا   سدؔون محمّؔدؐ   احؤؔدؐ   یِسُوؔع</string>
     </test>
     <test background="#55aaff" class="fset16" label="ENFORCE ORDER" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset16" label="zabar + shadda" rtl="True">
       <string>سبَّ</string>
@@ -2517,7 +2527,7 @@
       <string>آَ</string>
     </test>
     <test background="#55aaff" class="fset24" label="KEEP CENTERED" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="nuqta + noon-ghunna mark" rtl="True">
       <string>کھنِ٘نگ  چُھودونِن٘گ</string>
@@ -2529,7 +2539,7 @@
       <string>طُس لّمجن</string>
     </test>
     <test background="#55aaff" class="fset25" label="MLOWERC - before ain, yeh, jeem" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset25" label="kaf + gaf" rtl="True">
       <string>کِع گِی گِج بکِع فگِی مکِج</string>
@@ -2538,13 +2548,13 @@
       <string>لِع لِی لِج بلِع للِی سلِج</string>
     </test>
     <test background="#55aaff" class="fset36" label="MUPPERLAM" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="lam + standing-alef" rtl="True">
       <string>لٰملٰجلٰ لٰسلٰفلٰ لٰ</string>
     </test>
     <test background="#55aaff" class="fset36" label="SHADDA" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="shadda" rtl="True">
       <comment>real words</comment>
@@ -2556,7 +2566,7 @@
   </testgroup>
   <testgroup label="Review feedback - general">
     <test background="#55aaff" class="fset24" label="ALPHA-2" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset19" label="beh + yeh-F (Eunice)" rtl="True">
       <comment>She thinks the dot is too high; should be the same as the peh+waw.</comment>
@@ -2588,7 +2598,7 @@
       <string>اَیمِیم نمی</string>
     </test>
     <test background="#55aaff" class="fset24" label="BETA-1" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="toothless seen not distinct" rtl="True">
       <comment>Eunice; confused with jeh?</comment>
@@ -2641,7 +2651,7 @@
       <string>دفعتہً</string>
     </test>
     <test background="#55aaff" class="fset31" label="BETA-2" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#ffff00" class="fset31" label="kaf + alef" rtl="True">
       <comment>Vertical stems should be more consistent and parallel.</comment>
@@ -2818,7 +2828,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>چم بم </string>
     </test>
     <test background="#55aaff" class="fset36" label="V 1.0" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="beh + jeem + noon" rtl="True">
       <string>بچپن</string>
@@ -2826,7 +2836,7 @@ Is absBehIni.hd too thick at right edge?</comment>
   </testgroup>
   <testgroup label="Special cases">
     <test background="#55aaff" class="fset36" label="PASS 4 and 5" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="short tah" rtl="True">
       <string>طکس تظگق</string>
@@ -2835,7 +2845,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>لګس للگک</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 6 - alternate glyphs" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
       <comment>Substitute a wider beh form.</comment>
@@ -2850,7 +2860,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>آبِانٚگُور تنٚگ جنٚگجُو</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 6 + 10" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="noon+small-V + gaf" rtl="True">
       <comment>Use smaller nuqta and lower V</comment>
@@ -2861,14 +2871,14 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>سختل</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 8" rtl="True">
-      <string/>
+      <string />
     </test>
     <test background="#aaaa7f" class="fset36" label="kaf + ring + beh.hgF [rule 66]" rtl="True">
       <comment>obsolete case</comment>
       <string>ګٽه ګبہ</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 9 - attach  nuqtas" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="beh + yeh + jeem" rtl="True">
       <comment>Use an alternate AP, nLowerTight, for the middle nuqta.</comment>
@@ -2885,7 +2895,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>کہیجیخ</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3) - collision settings" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
       <comment>Move nuqtas down and to the right.</comment>
@@ -2929,7 +2939,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>ئ</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 12" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="alef-madda + kaf" rtl="True">
       <comment>Use tall kaf so alef-madda can squeeze in; also adjust kerning.</comment>
@@ -2940,20 +2950,20 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>فخگس</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 13" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset30" label="really tall word" rtl="True">
       <comment>Even the short forms don't quite deal with this one.</comment>
       <string>برانگیختگی</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 15" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset36" label="beh/peh + 2 diacs + honorific" rtl="True">
       <string>بّؑٔ</string>
     </test>
     <test background="#55aaff" class="fset19" label="PASS 16 (pos pass 8)" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset19" label="reh/dal + yeh [rule 3]" rtl="True">
       <comment>Shift nuqtas down so bases can stay together.</comment>
@@ -2991,15 +3001,24 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#aaaa7f" class="fset36" label="yeh + beh + yeh" rtl="True">
       <string>بیبی</string>
     </test>
+    <test label="yeh/peh + yeh/peh" rtl="True">
+      <string>پیغام پپعا پیفا  یپصا ییعا </string>
+    </test>
+    <test label="beh/yeh/peh + beh/yeh/peh" rtl="True">
+      <string>پبعا یبصا بپفا بیھا ببعا </string>
+    </test>
+    <test label="peh + yeh + reh" rtl="True">
+      <string>پَیر پیُږ  پِیړ</string>
+    </test>
     <test background="#55aaff" class="fset24" label="PASSES 16 &amp; 17" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset24" label="ain + zain + yeh + reh [rule 7, 48]" rtl="True">
       <comment>Shift nuqtas up and right to avoid reh tail; also use a smaller margin for reh.</comment>
       <string>غزیر سہزیر</string>
     </test>
     <test background="#55aaff" class="fset29" label="PASS 17 (pos pass 10)" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset25" label="feh + low + upper diac [rule 6-7]" rtl="True">
       <string>فمَب  بفہَف</string>
@@ -3021,7 +3040,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>نُکّڑ تَگف شُکر</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset29" label="tarixi - reh + yeh + jeem [rule 44]" rtl="True">
       <comment>Move nuqtas up under beh form to avoid sitting on top of reh; don't allow reh to kern underneath.</comment>
@@ -3043,7 +3062,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <string>گوَشتش</string>
     </test>
     <test background="#55aaff" class="fset19" label="NOT HANDLED" rtl="True">
-      <string/>
+      <string />
     </test>
     <test class="fset19" label="reh + yeh" rtl="True">
       <string>طریقہ طرنقہ</string>
