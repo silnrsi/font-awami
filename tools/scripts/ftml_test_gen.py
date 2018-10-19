@@ -6,7 +6,7 @@ import copy
 
 def run():
     
-    outputPath = "C:\\Awami-Git\\tests\\data\\FTML_XSL\\"
+    outputPath = "C:\\Awami\\tests\\data\\FTML_XSL\\"
     
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
@@ -14,7 +14,7 @@ def run():
     #mode = "allbasecharforms"   # all forms of all letters - HUGE file
     #mode = "basic_alldiac"      # same characters as basicforms, with every diac
     #mode = "allbase_somediac"   # not implemented
-    mode = "alldiac"            # not implemented???
+    #mode = "alldiac"            # not implemented???
     
     fontScale = "200"
     #fontScale = "100"  # for waterfall file
@@ -24,23 +24,23 @@ def run():
     # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
     # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
     basicSeq = generate_basic_sequences(mode)
-    print "basicSeq =", basicSeq
+    print("basicSeq =", basicSeq)
 
     # Either add additional sequences to handle non-basic characters, or substitute non-basic characters for some
     # of the basic ones.
     expandedSeq = expand_sequences(mode, basicSeq)
-    print "expandedSeq =", expandedSeq
+    print("expandedSeq =", expandedSeq)
     
     seqWDiacritics = insert_diacritics(mode, expandedSeq)
-    print "seqWDiacritics =", seqWDiacritics
+    print("seqWDiacritics =", seqWDiacritics)
     
     groupedSeq = organize_sequences_by_group(mode, seqWDiacritics)
-    print "groupedSeq =", groupedSeq
+    print("groupedSeq =", groupedSeq)
     
     output_ftml(mode, fontScale, outputFilename, groupedSeq)
     
-    print ""
-    print "Done"
+    print("")
+    print("Done")
 
 # end of run    
 
@@ -186,32 +186,32 @@ def expand_sequences(mode, basicSequences) :
     resultSeq = basicSequences
 
     if mode == "allbasechars" :
-        for key, expandList in expand.iteritems() :
+        for key, expandList in expand.items() :
             reverseList = _reverse_list(expandList)
             """if key in expand_left.keys() :
                 reverseList_left = expand_left[key]
-                print 'reverseList_left =',reverseList_left
+                print('reverseList_left =',reverseList_left)
                 reverseList.extend(reverseList_left)
-                print 'reverseList = ', reverseList
+                print('reverseList = ', reverseList)
             """
             resultSeq = _substitute_bases(resultSeq, key, reverseList)
             
     else :
-        for key, value in expand.iteritems() :
+        for key, value in expand.items() :
             for expandChar in value :
                 resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "copy", changeKey)
                 
-        for key, value in expand_left.iteritems() :
+        for key, value in expand_left.items() :
             for expandChar in value :
                 resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "left", changeKey)
     
-        #print "after _add_set_starting_with: ",resultSeq
+        #print("after _add_set_starting_with: ",resultSeq)
     
-        for key, value in expand.iteritems() :
+        for key, value in expand.items() :
             for expandChar in value :
                 resultSeq = _expand_one_char(resultSeq, key, expandChar, "copy")
     
-        for key, value in expand_left.iteritems() :
+        for key, value in expand_left.items() :
             for expandChar in value :
                 resultSeq = _expand_one_char(resultSeq, key, expandChar, "left")
      
@@ -230,7 +230,7 @@ def _is_dual(oldIsDual, setIsDual) :
 
 
 def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKey) :
-    print "_add_set_starting_with", basicChar, expandChar, setIsDual
+    print("_add_set_starting_with", basicChar, expandChar, setIsDual)
     i = 0
     for (char1, charList) in sequences :
         if char1 == basicChar :
@@ -240,7 +240,7 @@ def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKe
                 newIsDual = _is_dual(isDual, setIsDual)
                 newTuple = tuple([expandChar] + list(charTuple[1:]))
                 newStuff = (newTuple, newIsDual, newKey)
-                print "adding",newStuff
+                print("adding", newStuff)
                 newList.append(newStuff)
             sequences.insert(i+1, (expandChar, newList))
             break
@@ -251,22 +251,22 @@ def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKe
 
         
 def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
-    #print "exanding " + basicChar +" to " + expandChar
+    #print("exanding " + basicChar +" to " + expandChar)
     newStuff = []
     iChar1 = 0
     for (char1, charData) in sequences :
-        #print "char1=",char1
+        #print("char1=",char1)
         
         iTuple = 0
         skip = 0
         for (charTuple, isDual, groupName) in charData :
-            #print charTuple
+            #print(charTuple)
             if skip > 0 :
                 # This was a new sequence that was just inserted.
                 skip = skip - 1
-                #print "skipping charTuple:",charTuple
+                #print("skipping charTuple:",charTuple)
             else :
-                #print "maybe copying charTuple:", charTuple
+                #print("maybe copying charTuple:", charTuple)
                 newList = []
                 foundOneToExpand = False
                 iChar = 0
@@ -275,7 +275,7 @@ def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
                         # we only want to substitute left-connecting glyphs, and this is a final
                         newList.append(remChar)
                     elif remChar == basicChar and iChar > 0 : # if iChar == 0, first char is redundant with char1 key
-                        #print iChar,basicChar," - expand this"
+                        #print(iChar,basicChar," - expand this")
                         newList.append(expandChar)  # substitute expandChar, the similarly formed character
                         foundOneToExpand = True
                     else :
@@ -283,19 +283,19 @@ def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
                     iChar = iChar + 1
             
                 if foundOneToExpand :
-                    #print "inserting ", newList
+                    #print("inserting ", newList)
                     newIsDual = _is_dual(isDual, setIsDual)
                     newGroup = expandChar if groupName == basicChar else groupName
                     charData.insert(iTuple + skip + 1, (tuple(newList), newIsDual, newGroup)) # insert after this one
                     skip = skip + 1
-                    #print "skip=",skip
+                    #print("skip=",skip)
             
             iTuple = iTuple + 1
                 
         #charData.extend(newStuff)
         sequences[iChar1] = (char1, charData)
         
-        #print "### sequences=",sequences
+        #print("### sequences=", sequences)
         
         iChar1 = iChar1 + 1
         
@@ -313,7 +313,7 @@ def _substitute_bases(sequences, key, expandList) :
     maxC = len(subList)
     nextC = 0
     for (char1, charData) in sequences :
-        #print "char1=",char1
+        #print("char1=", char1)
         iData = 0
         for (charTuple, isDual, groupName) in charData :
             charList = list(charTuple)
@@ -357,7 +357,7 @@ def insert_diacritics(mode, sequences) :
            
         # convert dictionary to tuple of (key, list)
         resultSeq = []
-        for (char1, charData) in resultDict.iteritems() :
+        for (char1, charData) in resultDict.items() :
             resultSeq.append((char1, charData))
         
     return resultSeq
@@ -368,9 +368,9 @@ def insert_diacritics(mode, sequences) :
 def _insert_diacritic(sequences, seqWDiacritics, diacChar) :
     
     for (char1, charData) in sequences :
-        if not seqWDiacritics.has_key(char1) : seqWDiacritics[char1] = []
+        if not char1 in seqWDiacritics: seqWDiacritics[char1] = []
         newCharData = seqWDiacritics[char1]
-        for (charTuple, isDual, groupName) in charData :
+        for (charTuple, isDual, groupName) in charData:
             newCharList = []
             for char in charTuple :
                 newCharList.append(char)
@@ -405,7 +405,7 @@ def organize_sequences_by_group(mode, expandedSeq) :
 
             key = sortVal + diacSortVal + "_" + groupName + diacGroupNameExt
         
-            if not resultSeq.has_key(key) :
+            if not key in resultSeq :
                 resultSeq[key] = []
             
             #if charTuple[1] == "NONE" :
@@ -456,7 +456,7 @@ def output_ftml(mode, fontScale, filename, sequences) :
     write_xml_closing(f)
     f.close()
 
-    print "\nOutput written to file: " + filename
+    print("\nOutput written to file: " + filename)
 
 
 def write_one_sequence(f, seq) :

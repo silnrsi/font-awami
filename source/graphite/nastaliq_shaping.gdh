@@ -190,6 +190,7 @@ cMed_raw_any = (csMed_raw, gMeemMed_alt_raw);
 
 
 // Note: these all have an extra beh form to account for the _SS alternate.
+// Eventually we can get rid of them since we are no longer using the _SS alternates.
 csMedADLK = (gBehMed, gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
 		gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
 csMedBeF = (gBehMedBeF, gBehMedBeF_ss, gJeemMedBeF, gSeenMedBeF, gSadMedBeF, gTahMedBeF, gAinMedBeF, gFehMedBeF,
@@ -238,6 +239,7 @@ csMedMmX = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMe
 		gKafMedMmX, gGafMedMmX, gLamMedMm, gMeemMedMmX, gHehGoalMedMmX, gHehDoMedMmX);
 
 // Note: these include an extra beh form to account for the _SS alternate
+// Eventually we can get rid of them since we are no longer using the _SS alternates.
 csMedBeM1 = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
 		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
 csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
@@ -246,6 +248,7 @@ csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, 
 
 cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTa, gBehMedAi, gBehMedFe,
 		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX);
+// OBSOLETE:
 cBehMed_postSBe = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
 		gBehMedBy, gBehMedMmX);
 cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
@@ -464,8 +467,8 @@ endtable;
 gMeemMed_raw  >  gMeemMed_alt_raw  /  c_kgPreMm_alt  MARKS  ^ _ MARKS  (cADLK cDalFin); // kafs and ghafs
 gMeemMed_raw  >  gMeemMed_alt_raw  /  c_preMm_alt   MARKS  ^ _ MARKS  cADLK;			// others
 
-// also see below
-gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  cMedFin;
+// OBSOLETE:
+//gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  cMedFin;
 ****/
 
 // Version of above rules if finals and medials are separated into separate passes:
@@ -475,8 +478,8 @@ gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  ^ _ MARKS  cMedFin;
 
 gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS ^ cADL_raw;
 
-// also see below
-gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
+// Obsolete way of using high-tooth behs sometimes after seen & sad 
+//gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
 
 endpass;  // 3
 
@@ -539,8 +542,8 @@ csMed_raw  >  csMedBeNn  / ^ MPRECXT  _ MARKS  cBehMedNn;
 csMed_raw  >  csMedBeHg  / ^ MPRECXT  _ MARKS  (gBehMedHgF gBehMedBeRe);
 csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  cBehMed_postBeM;
 
-
-gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
+// Obsolete way of using using high-tooth behs after seens and sads:
+//gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  gBehMedRe;
 
 csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  (gBehMedBeM1 gBehMedBeNn);
 csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  gBehMed;  ///  MARKS  c_dkgal_postAlt; - superfluous context?
@@ -619,9 +622,12 @@ gTahIni_raw  >  gTahIniBeKf  /  _  MARKS  cBehMed MARKS  cKafMF;
 gLamIni_raw  >  gLamIni_short  /  _  MARKS  gGafMedDk  MARKS  cKafMF;
 gLamIni_raw  >  gLamIni_short  /  _  MARKS  cKafMF g__attachedRingMid;
 
-// SS cases handled above:
-csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
-csIni_raw_noS  >  csIniBeM1_noS     /  _ MARKS  cMed_postBeM1;
+// // Obsolete way of using high-tooth behs sometimes after seen & sad 
+//csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
+//csIni_raw_noS  >  csIniBeM1_noS     /  _ MARKS  cMed_postBeM1;
+
+csIni_raw  >  csIniBe        /  _ MARKS  cBehMed_defaultEntrance;
+csIni_raw  >  csIniBeM1      /  _ MARKS  cMed_postBeM1;
 
 csIni_raw  >  csIniBeM2  /  _ MARKS  (gBehMed gBehMedBeM1 gBehMedBeNn);
 
@@ -797,7 +803,8 @@ endif;
 (gMeem gMeemFin)  >  (gMeemLowdiac gMeemFinLowdiac)  /  _  cDiacriticLower;
 
 gNoon		cs_noonMark				>	cs_noonComposed$2:(1 2)	_;
-gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;
+//gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;  // obsolete
+(cBehIM gNoonFin)  g__noDot1u		>	@1:(1 2)  _;
 
 gHehGoal	cs_hehGoalMark			>	cs_hehGoalComposed$2:(1 2)	_;
 
