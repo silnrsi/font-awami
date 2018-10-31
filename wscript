@@ -28,8 +28,8 @@ TESTDIR='tests'
 
 # set the font name, version, licensing and description
 APPNAME='AwamiNastaliq-Dev'      #### AwamiNastaliq
-VERSION='1.150'              ####
-TTF_VERSION="1.150"          ####
+VERSION='1.151'              ####
+TTF_VERSION="1.151"          ####
 COPYRIGHT='Copyright (c) 2014-2018, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
@@ -87,7 +87,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
     version = TTF_VERSION,
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
-    fret = fret(params = '-r'),  # -b = show octaboxes
+    fret = fret(params = '-r -b'),  # -b = show octaboxes
     woff = woff('web/' + FONT_FILENAME + '.woff', params = '-v ' + VERSION + ' -m ../source/AwamiNastaliq-WOFF-metadata.xml'),
     )
 
