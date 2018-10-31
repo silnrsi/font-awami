@@ -47,8 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>پیدا پیغام پیٹ بیتُ پیس پیسج  یبسل بیسم
-گلِیل</string>
+      <string>واجبُ سبَبُ بّ بَ جت لث ٹ ټ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1645,6 +1644,12 @@
     </test>
     <test class="fset24" label="2 single nuqtas + gaf + kaf" rtl="True">
       <string>بِنِنگَکہ</string>
+    </test>
+    <test label="short lam before high kaf" rtl="True">
+      <string>لکھی لکھتے </string>
+    </test>
+    <test label="normal lam before low kaf" rtl="True">
+      <string>بلکہ لکڑی لگے</string>
     </test>
     <test background="#55aaff" class="fset36" label="ALL FORMS" rtl="True">
       <string />

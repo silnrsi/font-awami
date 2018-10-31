@@ -1198,6 +1198,11 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacritic?  _=K  _=T;
 
+// Don't change kaf, rather shorten lam:
+(gLamIni gLamMed)  cKafMed>  (gLamIni_short  gLamMed_short) @K
+	/  _=L  MARKS  _=K
+			g__kafTop_null;  // include the extra slot for precedence
+
 // Tall: lam/tah + kaf
 // TODO: move cBaseTall back into context
 cBaseTall  csKafMed_medium  g__kafTop_null  

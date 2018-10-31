@@ -99,12 +99,6 @@ gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 **/
 
-gGafIniQf {exit = point(0m, -70m) };
-gGafMedQf {exit = point(0m, -260m) };
-
-gRehFin { mUpperS = point(370m, 986m) };
-gRehFin_hgM { mUpperS = point(181m, 981m) };
-
 endtable;
 
 
@@ -317,7 +311,7 @@ wordSpacing {
 shortForms {
 	id = "shrt";
 	name.1033 = string("Short forms");
-	default = 3;
+	default = 0;
     settings {
         none {
             value = 0;
