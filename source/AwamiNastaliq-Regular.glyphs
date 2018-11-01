@@ -2,7 +2,8 @@
 .appVersion = "1161";
 DisplayStrings = (
 "/_verticalStroke",
-"/absYu/absWawDotAbove/absWawTwoDotsAbove/absVe"
+"/absYu/absWawDotAbove",
+"/_verticalStroke"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -172906,7 +172907,7 @@ unicode = 06B7;
 {
 color = 6;
 glyphname = absYu;
-lastChange = "2018-10-31 21:12:33 +0000";
+lastChange = "2018-11-01 13:59:58 +0000";
 layers = (
 {
 anchors = (
@@ -172920,7 +172921,7 @@ position = "{358, -320}";
 },
 {
 name = mUpper;
-position = "{542, 2104}";
+position = "{542, 2074}";
 }
 );
 components = (
@@ -172929,7 +172930,7 @@ name = absWaw;
 },
 {
 name = _verticalStroke;
-transform = "{1, 0, 0, 1, 515, 1362}";
+transform = "{1, 0, 0, 1, 515, 1332}";
 }
 );
 layerId = master01;
@@ -173073,7 +173074,7 @@ width = 0;
 {
 color = 6;
 glyphname = absVe;
-lastChange = "2018-10-31 21:35:53 +0000";
+lastChange = "2018-11-01 13:55:38 +0000";
 layers = (
 {
 anchors = (
@@ -173103,11 +173104,12 @@ layerId = master01;
 width = 860;
 }
 );
+unicode = 06CB;
 },
 {
 color = 6;
 glyphname = absWawTwoDotsAbove;
-lastChange = "2018-10-31 21:36:34 +0000";
+lastChange = "2018-11-01 13:56:25 +0000";
 layers = (
 {
 anchors = (
@@ -173137,6 +173139,7 @@ layerId = master01;
 width = 860;
 }
 );
+unicode = 06CA;
 },
 {
 color = 6;
@@ -173176,17 +173179,17 @@ unicode = 06CF;
 {
 color = (0,171,232,255);
 glyphname = _verticalStroke;
-lastChange = "2018-10-31 21:13:53 +0000";
+lastChange = "2018-11-01 13:59:27 +0000";
 layers = (
 {
 anchors = (
 {
-name = _mUpper;
-position = "{0, -98}";
+name = _nUpper;
+position = "{0, -48}";
 },
 {
 name = mUpper;
-position = "{0, 736}";
+position = "{0, 726}";
 }
 );
 background = {
@@ -173244,23 +173247,23 @@ paths = (
 {
 closed = 1;
 nodes = (
-"-62 45 OFFCURVE",
-"-41 -3 OFFCURVE",
-"-64 -72 CURVE SMOOTH",
-"-71 -93 OFFCURVE",
-"-20 -101 OFFCURVE",
-"-8 -89 CURVE SMOOTH",
-"31 -52 OFFCURVE",
+"-63 45 OFFCURVE",
+"-41 7 OFFCURVE",
+"-64 -62 CURVE SMOOTH",
+"-71 -83 OFFCURVE",
+"-20 -91 OFFCURVE",
+"-8 -79 CURVE SMOOTH",
+"30 -41 OFFCURVE",
 "49 33 OFFCURVE",
 "54 189 CURVE SMOOTH",
-"61 401 OFFCURVE",
-"58 443 OFFCURVE",
-"75 497 CURVE SMOOTH",
-"82 519 OFFCURVE",
-"31 525 OFFCURVE",
-"19 514 CURVE SMOOTH",
-"-20 477 OFFCURVE",
-"-48 393 OFFCURVE",
+"61 391 OFFCURVE",
+"58 433 OFFCURVE",
+"75 487 CURVE SMOOTH",
+"82 509 OFFCURVE",
+"31 515 OFFCURVE",
+"19 504 CURVE SMOOTH",
+"-21 468 OFFCURVE",
+"-48 383 OFFCURVE",
 "-54 247 CURVE SMOOTH"
 );
 }
