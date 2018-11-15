@@ -1234,6 +1234,8 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 	/  _=N  cDiacriticUpper?  _=K  _=T;
 
 // Tall: alef + diac + kaf
+// (This rule does not really need to include the kaf+bariyeh combination,
+// but the end result is pretty much the same.)
 cDiacriticUpper  csKafIni_medium  g__kafTop_null  
 	>  @D STAYBELOWKAF  csKafIni_base$K  csKafMed_top_tall$K
 	/  (gAlef cAlefFin)  _=D  _=K  _=T;
