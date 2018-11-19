@@ -10,7 +10,9 @@ DisplayStrings = (
 "/absSeenMed.jm",
 "/absJeemMed.re",
 "/absSeenIni.jm_flat/absSeenMed.jm_flat",
-"/absSeenIni.jm/absSeenMed.jm"
+"/absSeenIni.jm/absSeenMed.jm",
+"/absSheen/absSeenDotBelowDotAbove/absSeenFourDotsAbove/absSeenSmallTahTwoDots/absSeenTwoVertAbove/absSeenThreeDotsBelowThreeDotsAbove/_smallVinv/absSeenInvertedVAbove/absSeenFourAbove",
+"/absKeheh/absKaf/absKehehThreeDotsAbove/absKafTwoDotsAbove"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -71887,6 +71889,7 @@ unicode = 0634;
 {
 color = (31,255,0,1);
 glyphname = absSeenDotBelowDotAbove;
+lastChange = "2018-11-19 16:20:57 +0000";
 layers = (
 {
 anchors = (
@@ -71904,7 +71907,7 @@ position = "{645, -918}";
 },
 {
 name = mUpper;
-position = "{1488, 2449}";
+position = "{1668, 2449}";
 }
 );
 components = (
@@ -98691,6 +98694,7 @@ width = 406;
 {
 color = (252,158,28,255);
 glyphname = absKeheh;
+lastChange = "2018-11-19 16:16:42 +0000";
 layers = (
 {
 anchors = (
@@ -98818,7 +98822,7 @@ layerId = master01;
 width = 3210;
 }
 );
-unicode = 06A9;
+unicode = 077F;
 },
 {
 color = (31,255,0,1);
@@ -99093,6 +99097,7 @@ unicode = 06AB;
 {
 color = (31,255,0,1);
 glyphname = absKehehThreeDotsAbove;
+lastChange = "2018-11-19 17:28:54 +0000";
 layers = (
 {
 anchors = (
@@ -99106,7 +99111,7 @@ position = "{1163, 921}";
 },
 {
 name = kafExclude;
-position = "{2053, 2063}";
+position = "{2432, 3135}";
 },
 {
 name = kernBbRight;
@@ -173353,6 +173358,136 @@ nodes = (
 }
 );
 width = 0;
+}
+);
+},
+{
+color = (31,255,0,1);
+glyphname = absSeenInvertedVAbove;
+lastChange = "2018-11-19 17:07:47 +0000";
+layers = (
+{
+anchors = (
+{
+name = honorific;
+position = "{312, 2428}";
+},
+{
+name = kernBbRight;
+position = "{2020, 680}";
+},
+{
+name = mLower;
+position = "{645, -918}";
+},
+{
+name = mUpper;
+position = "{1482, 2525}";
+}
+);
+components = (
+{
+name = absSeen;
+},
+{
+name = _smallVinv;
+transform = "{1, 0, 0, 1, 1555, 1772}";
+}
+);
+layerId = master01;
+width = 2124;
+}
+);
+unicode = 077E;
+},
+{
+color = (31,255,0,1);
+glyphname = absKafTwoDotsAbove;
+lastChange = "2018-11-19 17:28:48 +0000";
+layers = (
+{
+anchors = (
+{
+name = _exit_lamKaf;
+position = "{2227, 767}";
+},
+{
+name = honorific;
+position = "{1163, 1459}";
+},
+{
+name = kafExclude;
+position = "{2372, 2961}";
+},
+{
+name = kernBbRight;
+position = "{3160, 1108}";
+},
+{
+name = mLower;
+position = "{1153, -320}";
+},
+{
+name = mUpper;
+position = "{1984, 2949}";
+},
+{
+name = n1Lower;
+position = "{1163, -330}";
+}
+);
+background = {
+paths = (
+{
+closed = 1;
+nodes = (
+"2258 -36 OFFCURVE",
+"2503 359 OFFCURVE",
+"2503 711 CURVE SMOOTH",
+"2503 870 OFFCURVE",
+"2493 1074 OFFCURVE",
+"2482 1270 CURVE SMOOTH",
+"2470 1478 OFFCURVE",
+"2502 1510 OFFCURVE",
+"2484 1510 CURVE SMOOTH",
+"2468 1510 OFFCURVE",
+"2362 1349 OFFCURVE",
+"2362 1179 CURVE SMOOTH",
+"2362 993 OFFCURVE",
+"2385 769 OFFCURVE",
+"2393 574 CURVE",
+"2400 377 OFFCURVE",
+"2273 262 OFFCURVE",
+"2156 262 CURVE SMOOTH",
+"2011 262 OFFCURVE",
+"1966 376 OFFCURVE",
+"1956 618 CURVE SMOOTH",
+"1953 690 OFFCURVE",
+"1864 506 OFFCURVE",
+"1872 437 CURVE SMOOTH",
+"1906 155 OFFCURVE",
+"1958 -36 OFFCURVE",
+"2100 -36 CURVE SMOOTH"
+);
+}
+);
+};
+components = (
+{
+name = _kaf;
+transform = "{1, 0, 0, 1, -236, 0}";
+},
+{
+name = _kafSquiggle;
+transform = "{1, 0, 0, 1, 1129, 284}";
+},
+{
+name = _nukta2;
+transform = "{1, 0, 0, 1, 1380, 2520}";
+}
+);
+layerId = master01;
+width = 3310;
 }
 );
 },

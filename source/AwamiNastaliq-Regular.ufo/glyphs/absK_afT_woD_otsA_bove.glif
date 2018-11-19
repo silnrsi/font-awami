@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="absKehehThreeDotsAbove" format="2">
+<glyph name="absKafTwoDotsAbove" format="2">
   <advance width="3310"/>
-  <unicode hex="0763"/>
   <anchor x="2227" y="767" name="_exit_lamKaf"/>
-  <anchor x="1163" y="921" name="honorific"/>
-  <anchor x="2432" y="3135" name="kafExclude"/>
+  <anchor x="1163" y="1459" name="honorific"/>
+  <anchor x="2372" y="2961" name="kafExclude"/>
   <anchor x="3160" y="1108" name="kernBbRight"/>
   <anchor x="1153" y="-320" name="mLower"/>
-  <anchor x="1984" y="3285" name="mUpper"/>
+  <anchor x="1984" y="2949" name="mUpper"/>
   <anchor x="1163" y="-330" name="n1Lower"/>
-  <anchor x="1163" y="687" name="nUpper"/>
   <outline>
     <component base="_kaf" xOffset="-236"/>
-    <component base="_nukta3inv" xOffset="1399" yOffset="2596"/>
+    <component base="_kafSquiggle" xOffset="1129" yOffset="284"/>
+    <component base="_nukta2" xOffset="1380" yOffset="2520"/>
   </outline>
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2018/11/19 17:28:54</string>
+      <string>2018/11/19 17:28:48</string>
       <key>public.markColor</key>
       <string>0.122,1,0,0.004</string>
     </dict>
