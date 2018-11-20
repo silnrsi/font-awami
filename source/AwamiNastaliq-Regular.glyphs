@@ -11,8 +11,7 @@ DisplayStrings = (
 "/absJeemMed.re",
 "/absSeenIni.jm_flat/absSeenMed.jm_flat",
 "/absSeenIni.jm/absSeenMed.jm",
-"/absSheen/absSeenDotBelowDotAbove/absSeenFourDotsAbove/absSeenSmallTahTwoDots/absSeenTwoVertAbove/absSeenThreeDotsBelowThreeDotsAbove/_smallVinv/absSeenInvertedVAbove/absSeenFourAbove",
-"/absKaf/absKehehThreeDotsAbove"
+"/absKehehFin/absKehehFin_squiggle"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -98827,6 +98826,7 @@ unicode = 06A9;
 {
 color = (31,255,0,1);
 glyphname = absKaf;
+lastChange = "2018-11-20 14:38:53 +0000";
 layers = (
 {
 anchors = (
@@ -98950,7 +98950,7 @@ transform = "{1, 0, 0, 1, -236, 0}";
 },
 {
 name = _kafSquiggle;
-transform = "{1, 0, 0, 1, 1129, 284}";
+transform = "{1, 0, 0, 1, 1129, 250}";
 }
 );
 layerId = master01;
@@ -176927,6 +176927,135 @@ nodes = (
 }
 );
 width = 1471;
+}
+);
+},
+{
+color = (31,255,0,1);
+glyphname = absKehehFin_squiggle;
+lastChange = "2018-11-20 14:42:12 +0000";
+layers = (
+{
+anchors = (
+{
+name = _exit_lamKaf;
+position = "{2209, 956}";
+},
+{
+name = gafStroke;
+position = "{2078, 2280}";
+},
+{
+name = honorific;
+position = "{1163, 1441}";
+},
+{
+name = kafExclude;
+position = "{2072, 1883}";
+},
+{
+name = mLower;
+position = "{1153, -320}";
+},
+{
+name = mUpper;
+position = "{2160, 2370}";
+},
+{
+name = n1Lower;
+position = "{1163, -330}";
+},
+{
+name = nUpper;
+position = "{2137, 2387}";
+},
+{
+name = ring;
+position = "{2927, 2318}";
+}
+);
+background = {
+paths = (
+{
+closed = 1;
+nodes = (
+"1926 429 OFFCURVE",
+"1479 330 OFFCURVE",
+"999 330 CURVE SMOOTH",
+"678 330 OFFCURVE",
+"154 345 OFFCURVE",
+"235 794 CURVE SMOOTH",
+"239 818 OFFCURVE",
+"184 836 OFFCURVE",
+"176 813 CURVE SMOOTH",
+"-107 8 OFFCURVE",
+"518 -10 OFFCURVE",
+"871 -10 CURVE SMOOTH",
+"1418 -10 OFFCURVE",
+"1897 82 OFFCURVE",
+"2110 598 CURVE SMOOTH",
+"2149 693 OFFCURVE",
+"2209 809 OFFCURVE",
+"2209 946 CURVE SMOOTH",
+"2209 1141 OFFCURVE",
+"2247 1559 OFFCURVE",
+"2248 1593 CURVE SMOOTH",
+"2258 1925 OFFCURVE",
+"2422 1979 OFFCURVE",
+"2768 2228 CURVE SMOOTH",
+"3174 2520 OFFCURVE",
+"3295 2611 OFFCURVE",
+"3310 2855 CURVE SMOOTH",
+"3311 2873 OFFCURVE",
+"3283 2895 OFFCURVE",
+"3274 2880 CURVE SMOOTH",
+"3189 2742 OFFCURVE",
+"3152 2697 OFFCURVE",
+"2775 2424 CURVE SMOOTH",
+"2334 2106 OFFCURVE",
+"2110 1764 OFFCURVE",
+"2110 1488 CURVE SMOOTH",
+"2110 887 OFFCURVE",
+"2095 716 OFFCURVE",
+"2036 616 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"2272 536 OFFCURVE",
+"2220 667 OFFCURVE",
+"2209 946 CURVE SMOOTH",
+"2206 1028 OFFCURVE",
+"2103 817 OFFCURVE",
+"2112 738 CURVE",
+"2152 413 OFFCURVE",
+"2204 190 OFFCURVE",
+"2368 190 CURVE SMOOTH",
+"2508 190 OFFCURVE",
+"2662 355 OFFCURVE",
+"2723 781 CURVE SMOOTH",
+"2725 795 OFFCURVE",
+"2700 809 OFFCURVE",
+"2698 796 CURVE",
+"2664 634 OFFCURVE",
+"2547 536 OFFCURVE",
+"2439 536 CURVE SMOOTH"
+);
+}
+);
+};
+components = (
+{
+name = _kafSquiggle;
+transform = "{1, 0, 0, 1, 1110, 250}";
+},
+{
+name = absKehehFin;
+}
+);
+layerId = master01;
+width = 2209;
 }
 );
 }
