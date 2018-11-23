@@ -14,15 +14,16 @@ def run():
     parser.add_argument("-o","--output",default=r"C:\Awami\tests\data\FTML_XSL",help="Where to write output files")
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
-    parser.add_argument("-s","--scale",default=200,help="font scale [200]")
+    parser.add_argument("-s","--scale",default=200,type=int,help="font scale [200]")
 
     args = parser.parse_args()
 
     modes = []
     for m in args.mode:
         if m == "all":
-            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac"
-                          "allbase_somediac", "alldiac"])
+            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac",
+                          "alldiac"])
+        # "allbase_somediac" currently isn't supported
         else:
             modes.append(m)
 
@@ -56,8 +57,15 @@ def run():
         
         groupedSeq = organize_sequences_by_group(mode, seqWDiacritics)
         print("groupedSeq =", groupedSeq)
-        
-        output_ftml(mode, args.scale, outputFilename, groupedSeq)
+
+        if not len(groupedSeq):
+            continue
+
+        if args.text:
+            pass
+        else:
+            gen = FTML(outputFilename)
+            output(gen, mode, args.scale, groupedSeq)
         print("")
 
     print("Done")
@@ -206,6 +214,10 @@ def expand_sequences(mode, basicSequences) :
     elif mode == "alldiac" :
         expand = {}
         expand_left = {}
+
+    else:
+        print("ERROR: Unexpected mode: " + mode)
+        return []
 
     resultSeq = basicSequences
 
@@ -448,12 +460,105 @@ def organize_sequences_by_group(mode, expandedSeq) :
 
 # end of organize_sequences_by_group
 
+class FTML(object):
+    def __init__(self, fname):
+        self.f = codecs.open(fname, 'w', 'utf-8')
 
-def output_ftml(mode, fontScale, filename, sequences) :
+    def close(self):
+        self.f.close()
+
+    def write_header(self, mode, fontScale):
+        if mode == "basicforms" :
+            title = "Test of Awami Basic Base Character Set"
+        elif mode == "allbasechars" :
+            title = "Test of All Awami Base Characters"
+        elif mode == "allbasecharforms" :
+            title = "Test of Awami - All Forms of All Base Characters"
+        elif mode == "basic_somediac" :
+            title = "Test of Awami - Basic Forms with Diacritics"
+        elif mode == "basic_alldiac" :
+            title = "Test of Awami - Basic Forms with All Diacritics"
+        elif mode == "all_diac" :
+            title = "Test of Awami - All Diacritics"
+        else :
+            title = "Test of Awami Rendering (???)"
+            
+        self.f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        self.f.write('<?xml-stylesheet type="text/xsl" href="ftml.xsl"?>\n')
+        self.f.write('<ftml version="1.0">\n')
+        self.f.write('  <head>\n')
+        self.f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
+        self.f.write('    <description>' + title + '</description>\n')
+        self.f.write('    <fontscale>' + str(fontScale) + '</fontscale>\n')
+        self.f.write('    <fontsrc>local(\'Awami Nastaliq\'), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
+        self.f.write('    <title>' + title + '</title>\n')
+        self.f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
+        self.f.write('  </head>\n')
+
+    def write_closing(self):
+        self.f.write('</ftml>\n')
+
+    def start_group(self, label):
+        self.f.write('  <testgroup label="' + label + '">\n')
+
+    def end_group(self):
+        self.f.write('  </testgroup>\n')
+
+    def write_one_sequence(self, seq, contextCharI, contextCharF) :
+        
+        seqLabel = ''
+        seqUsvs = ''
+        plusSep = ''
+        ###seqLabel = char1
+        ###seqUsvs = '&#x' + _char_name_to_usv(char1) + ';'
+        (moreChars, isDual) = seq
+        for nextChar in moreChars :
+            if nextChar != 'NONE' :
+                seqLabel = seqLabel + plusSep + _char_name_to_label(nextChar)
+                seqUsvs = seqUsvs + '&#x' + _char_name_to_usv(nextChar) + ';'
+                plusSep = ' + '
+                
+        #barSep = "  |  "
+        
+        #f.write('    <test label="' + seqLabel + '" rtl="True" class="default">\n')
+        self.f.write('    <testgroup label="' + seqLabel + '">\n')  # second level testgroup
+        
+        mainStr = "<em>" + seqUsvs + "</em>"
+        colCnt = 0
+        if isDual == "left" :
+            # no final forms - add blank cells
+            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
+            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
+            colCnt = colCnt + 2
+        if isDual == "right" or isDual == "both" :
+            self.f.write('      <test rtl="True"><string>' + mainStr)  # IF
+            #f.write('      <comment></comment>\n')
+            self.f.write('</string></test>\n')
+            self.f.write('      <test rtl="True"><string>' + contextCharI + mainStr + '</string></test>\n')   # MF
+            colCnt = colCnt + 2
+        if isDual == "left" or isDual == "both" :
+            # Showing only the left connections is used for medial forms of qaf, yeh, noon, etc. that
+            # are "extra" forms of other basic characters.
+            ##if isDual == "both" :
+            ##    f.write(barSep)
+            self.f.write('      <test rtl="True"><string>' + mainStr + contextCharF + '</string></test>\n')  # IM
+            self.f.write('      <test rtl="True"><string>' + contextCharI + mainStr + contextCharF + '</string></test>\n')   # MM
+            colCnt = colCnt + 2
+            
+        while colCnt < 4 :
+            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')  # empty cell
+            colCnt = colCnt + 1
+            
+        self.f.write('    </testgroup>\n')
+    
+
+def output(gen, mode, fontScale, sequences) :
     #import codecs
 
-    f = codecs.open(filename, 'w', 'utf-8')
-    write_xml_header(f, mode, fontScale)
+    contextCharI = "&#x0644;" # lam (arbitrary pre-context)
+    #contextCharI = "&#x0639;" # ain (arbitrary pre-context)
+    contextCharF = "&#x0641;" # feh (arbitrary post-context)
+    gen.write_header(mode, fontScale)
 
     for key in sequences :
         (sortValBogus, groupName) = key.split('_')
@@ -470,71 +575,18 @@ def output_ftml(mode, fontScale, filename, sequences) :
             (diacSortValBogus, diacLabel) = _diac_group_name_format(diacGroupName)
             label = label + " with " + diacLabel
 
-        f.write('  <testgroup label="' + label + '">\n')
+        gen.start_group(label)
         
         keySeq = sequences[key]
         
         for seq in sequences[key] :
-            write_one_sequence(f, seq)
+            gen.write_one_sequence(seq, contextCharI, contextCharF)
         
-        f.write('  </testgroup>\n')
+        gen.end_group()
             
-    write_xml_closing(f)
-    f.close()
+    gen.write_closing()
+    gen.close()
 
-    print("\nOutput written to file: " + filename)
-
-
-def write_one_sequence(f, seq) :
-    
-    contextCharI = "&#x0644;" # lam (arbitrary pre-context)
-    #contextCharI = "&#x0639;" # ain (arbitrary pre-context)
-    contextCharF = "&#x0641;" # feh (arbitrary post-context)
-    seqLabel = ''
-    seqUsvs = ''
-    plusSep = ''
-    ###seqLabel = char1
-    ###seqUsvs = '&#x' + _char_name_to_usv(char1) + ';'
-    (moreChars, isDual) = seq
-    for nextChar in moreChars :
-        if nextChar != 'NONE' :
-            seqLabel = seqLabel + plusSep + _char_name_to_label(nextChar)
-            seqUsvs = seqUsvs + '&#x' + _char_name_to_usv(nextChar) + ';'
-            plusSep = ' + '
-            
-    #barSep = "  |  "
-    
-    #f.write('    <test label="' + seqLabel + '" rtl="True" class="default">\n')
-    f.write('    <testgroup label="' + seqLabel + '">\n')  # second level testgroup
-    
-    mainStr = "<em>" + seqUsvs + "</em>"
-    colCnt = 0
-    if isDual == "left" :
-        # no final forms - add blank cells
-        f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
-        f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
-        colCnt = colCnt + 2
-    if isDual == "right" or isDual == "both" :
-        f.write('      <test rtl="True"><string>' + mainStr)  # IF
-        #f.write('      <comment></comment>\n')
-        f.write('</string></test>\n')
-        f.write('      <test rtl="True"><string>' + contextCharI + mainStr + '</string></test>\n')   # MF
-        colCnt = colCnt + 2
-    if isDual == "left" or isDual == "both" :
-        # Showing only the left connections is used for medial forms of qaf, yeh, noon, etc. that
-        # are "extra" forms of other basic characters.
-        ##if isDual == "both" :
-        ##    f.write(barSep)
-        f.write('      <test rtl="True"><string>' + mainStr + contextCharF + '</string></test>\n')  # IM
-        f.write('      <test rtl="True"><string>' + contextCharI + mainStr + contextCharF + '</string></test>\n')   # MM
-        colCnt = colCnt + 2
-        
-    while colCnt < 4 :
-        f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')  # empty cell
-        colCnt = colCnt + 1
-        
-    f.write('    </testgroup>\n')
-    
 def _char_name_to_usv(charName) :
     charNameToUsv = {
         "alef"          :   '0627',
@@ -736,7 +788,7 @@ def _group_name_format(charName) :
         "yehHamzaIM"    :   ('02y1',    'Yeh-hamza initial/medial form',        0, 2),
         "yehSmallVIM"   :   ('02y2',    'Yeh with small V initial/medial form', 0, 2),
         "arabicEIM"     :   ('02y3',    'Arabic E initial/medial form',         0, 2),
-        "alefMaksura"   :   ('02y4',    'Alef maksura initial/medial form',     0, 2),
+        "alefMaksuraIM" :   ('02y4',    'Alef maksura initial/medial form',     0, 2),
         
         "jeem"          :   ('03',      'Jeem form',    2, 2),
         "hah"           :   ('03a',     'Hah form',     2, 2),
@@ -890,41 +942,6 @@ def _diac_group_name_format(diacName) :
     }
     return groupNameFormat[diacName]
     
-# end of _diac_group_name_format
-
-
-def write_xml_header(f, mode, fontScale) :
-   
-    if mode == "basicforms" :
-        title = "Test of Awami Basic Base Character Set"
-    elif mode == "allbasechars" :
-        title = "Test of All Awami Base Characters"
-    elif mode == "allbasecharforms" :
-        title = "Test of Awami - All Forms of All Base Characters"
-    elif mode == "basic_somediac" :
-        title = "Test of Awami - Basic Forms with Diacritics"
-    elif mode == "basic_alldiac" :
-        title = "Test of Awami - Basic Forms with All Diacritics"
-    elif mode == "all_diac" :
-        title = "Test of Awami - All Diacritics"
-    else :
-        title = "Test of Awami Rendering (???)"
-        
-    f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-    f.write('<?xml-stylesheet type="text/xsl" href="ftml.xsl"?>\n')
-    f.write('<ftml version="1.0">\n')
-    f.write('  <head>\n')
-    f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
-    f.write('    <description>' + title + '</description>\n')
-    f.write('    <fontscale>' + fontScale + '</fontscale>\n')
-    f.write('    <fontsrc>local(\'Awami Nastaliq\'), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
-    f.write('    <title>' + title + '</title>\n')
-    f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
-    f.write('  </head>\n')
-
-def write_xml_closing(f) :
-    f.write('</ftml>\n')
-
 
 # Top level
 
