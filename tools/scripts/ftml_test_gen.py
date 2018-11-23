@@ -1,13 +1,31 @@
+#!/usr/bin/python
+
 # Generate FTML test data files
 
 import collections
 import codecs
 import copy
+import argparse
+import os
 
 def run():
-    
-    outputPath = "C:\\Awami\\tests\\data\\FTML_XSL\\"
-    
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-o","--output",default=r"C:\Awami\tests\data\FTML_XSL",help="Where to write output files")
+    parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
+    parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
+    parser.add_argument("-s","--scale",default=200,help="font scale [200]")
+
+    args = parser.parse_args()
+
+    modes = []
+    for m in args.mode:
+        if m == "all":
+            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac"
+                          "allbase_somediac", "alldiac"])
+        else:
+            modes.append(m)
+
     #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
     #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
     #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
@@ -19,27 +37,29 @@ def run():
     fontScale = "200"
     #fontScale = "100"  # for waterfall file
     
-    outputFilename = outputPath + "test_" + mode + ".xml"
+    for mode in modes:
+        print("Mode: " + mode)
+        outputFilename = os.path.join(args.output, "test_"+mode+".xml")
 
-    # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
-    # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
-    basicSeq = generate_basic_sequences(mode)
-    print("basicSeq =", basicSeq)
+        # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
+        # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
+        basicSeq = generate_basic_sequences(mode)
+        print("basicSeq =", basicSeq)
 
-    # Either add additional sequences to handle non-basic characters, or substitute non-basic characters for some
-    # of the basic ones.
-    expandedSeq = expand_sequences(mode, basicSeq)
-    print("expandedSeq =", expandedSeq)
-    
-    seqWDiacritics = insert_diacritics(mode, expandedSeq)
-    print("seqWDiacritics =", seqWDiacritics)
-    
-    groupedSeq = organize_sequences_by_group(mode, seqWDiacritics)
-    print("groupedSeq =", groupedSeq)
-    
-    output_ftml(mode, fontScale, outputFilename, groupedSeq)
-    
-    print("")
+        # Either add additional sequences to handle non-basic characters, or substitute non-basic characters for some
+        # of the basic ones.
+        expandedSeq = expand_sequences(mode, basicSeq)
+        print("expandedSeq =", expandedSeq)
+        
+        seqWDiacritics = insert_diacritics(mode, expandedSeq)
+        print("seqWDiacritics =", seqWDiacritics)
+        
+        groupedSeq = organize_sequences_by_group(mode, seqWDiacritics)
+        print("groupedSeq =", groupedSeq)
+        
+        output_ftml(mode, args.scale, outputFilename, groupedSeq)
+        print("")
+
     print("Done")
 
 # end of run    
