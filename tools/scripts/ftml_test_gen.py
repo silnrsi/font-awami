@@ -74,13 +74,13 @@ def generate_basic_sequences(mode) :
     (dualSubs, rightSubs) = _generate_sub_sequences()
     
     # DEBUGGING:
-    """dualConnecting = ["beh", "lam"]
-    rightConnecting = ["dal", "chotiyeh"]
+    """
+    dualConnecting = ["feh", "lam", "ain"]
+    rightConnecting = ["alef", "qaf", "chotiyeh"]
     dualSubs = []
     rightSubs = []
     """
 
-    
     sequences = []
     for dualChar1 in dualConnecting :
         ###if dualChar1 != "beh" and dualChar1 != "jeem" : continue
@@ -168,34 +168,38 @@ def expand_sequences(mode, basicSequences) :
         
     elif mode == "allbasecharforms" or mode == "allbasechars" :
         expand = {
-            "beh"       :   ["teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
-            "jeem"      :   ["hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
-            "seen"      :   ["seen3dots3dots", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
-            "sad"       :   ["dadDotBelow", "dad"],
+        	"alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
+            "beh"       :   ["dotlessBeh", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
+            "jeem"      :   ["hah4below", "hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
+            "seen"      :   ["seen4", "seenInvV", "seen3dots3dots", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
+            "sad"       :   ["sad3dots", "dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ghain"],
-            "feh"       :   ["feh3dots"],
-            "kaf"       :   ["kafRing", "ngoeh", "gueh", "gaf"],
+            "feh"       :   ["dotlessFeh", "feh3dots"],
+            "qaf"       :   ["dotlessQaf"],
+            "kaf"       :   ["keheh3dots", "keheh2dots", "kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
-            "lam"       :   ["lamSmallV", "lamBar"],
-            "noon"      :   ["rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
-            "chotiyeh"  :   ["arabicE", "yehSmallV", "yehHamza"],
+            "lam"       :   ["lam3dots", "lamSmallV", "lamBar"],
+            "noon"      :   ["noonRing", "rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
+            "chotiyeh"  :   ["yeh4below", "yeh3", "yeh2", "alefMaksura", "arabicE", "yehSmallV", "yehHamza"],
+            "bariyeh"   :   ["bariyeh3", "bariyeh2"],
             "hehGoal"   :   ["hehHamza", "arabicHeh"],
                 
             "reh"       :   ["reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot", "rehDotBelow", "jeh", "rreh", "zain"],
-            "dal"       :   ["dal4dots", "dalRing", "dal2dotsVTah", "dalDotTah", "ddal", "thal"],
+            "dal"       :   ["dul", "dal4dots", "dalRing", "dal2dotsVTah", "dalDotTah", "ddal", "thal"],
                                         # dalDotBelow - not really needed for Nastaliq
-            "waw"       :   ["wawRing", "wawHamza"],
+            "waw"       :   ["waw3", "waw2", "waw2dots", "wawDot", "yu", "ve", "kirghizYu", "wawRing", "wawHamza"],
             "tehMarGoal" :  ["hehYeh", "tehMarbuta"]
         }
+        # Note: these are not used for allbasechars mode.
         expand_left = {  # initial/medial forms of letters that have different finals
-            "beh"       :   ["rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
-            "feh"       :   ["qafIM"]
+            "beh"       :   ["noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
+            "feh"       :   ["dotlessQafIM", "qafIM"]
         }
         # Debugging:
-        """expand = { "jeem" : ["khah", "hah"], "seen" : ["sheen"] }
-        expand_left = { "beh" :   ["noonIM", "chotiyehIM"], }
-        """
+        #expand = { "jeem" : ["khah", "hah"], "seen" : ["sheen"] }
+        #expand_left = { "beh" :   ["noonIM", "chotiyehIM"], }
+
         
         changeKey = True
         
@@ -208,7 +212,9 @@ def expand_sequences(mode, basicSequences) :
     if mode == "allbasechars" :
         for key, expandList in expand.items() :
             reverseList = _reverse_list(expandList)
-            """if key in expand_left.keys() :
+            """ We don't include the initial/medial forms with different finals, (eg, noon for beh)
+                because then we don't get the finals we expect.
+            if key in expand_left.keys() :
                 reverseList_left = expand_left[key]
                 print('reverseList_left =',reverseList_left)
                 reverseList.extend(reverseList_left)
@@ -532,6 +538,10 @@ def write_one_sequence(f, seq) :
 def _char_name_to_usv(charName) :
     charNameToUsv = {
         "alef"          :   '0627',
+            "alefMadda" :   '0622',
+            "alefWasla" :   '0671',
+            "alef2"     :   '0773',
+            "alef3"     :   '0774',
         "beh"           :   '0628',
             "teh"       :   '062A',
             "theh"      :   '062B',
@@ -541,6 +551,7 @@ def _char_name_to_usv(charName) :
             "beeh"      :   '067B',
             "tehRing"   :   '067C',
             "teh3down"  :   '067D',
+            "dotlessBeh":   '066E',
         "jeem"          :   '062C',
             "hah"       :   '062D',
             "khah"      :   '062E',
@@ -551,6 +562,7 @@ def _char_name_to_usv(charName) :
             "hah3dots"  :   '0685',
             "hahTah"    :   '076E',
             "hahTah2smd":   '076F',
+            "hah4below" :   '077C',
         "dal"           :   '062F',
             "thal"      :   '0630',
             "ddal"      :   '0688',
@@ -559,6 +571,7 @@ def _char_name_to_usv(charName) :
             "dal2dotsVTah": '0759',
             "dalRing"   :   '0689',
             "dal4dots"  :   '0690',
+            "dul"       :   '068E',
         "reh"           :   '0631',
             "zain"      :   '0632',
             "rreh"      :   '0691',
@@ -578,20 +591,27 @@ def _char_name_to_usv(charName) :
             "seen2dotsV"  : '076D',
             "seenTah2smd" : '0770',
             "seen3dots3dots" : '069C',
+            "seenInvV"  :   '077E',
+            "seen4"     :   '077D',
         "sad"           :   '0635',
             "dad"       :   '0636',
             "dadDotBelow" : '06FB',
+            "sad3dots"  :   '069E',
         "tah"           :   '0637',
             "zah"       :   '0638',
         "ain"           :   '0639',
             "ghain"     :   '063A',
         "feh"           :   '0641',
             "feh3dots"  :   '06A5',
+            "dotlessFeh":   '06A1',
         "qaf"           :   '0642',
             "qafIM"     :   '0642',
+            "dotlessQaf":   '066F',
+            "dotlessQafIM":	'066F',
         "lam"           :   '0644',
             "lamBar"    :   '076A',
             "lamSmallV" :   '06B5',
+            "lam3dots"  :   '06B7',
         "meem"          :   '0645',
         "meem-alt"      :   '0645',
         "noon"          :   '0646',
@@ -604,14 +624,25 @@ def _char_name_to_usv(charName) :
             "noonDotBelowIM":   '06B9',
             "rnoon"         :   '06BB',
             "rnoonIM"       :   '06BB',
+            "noonRing"      :   '06BC',
+            "noonRingIM"    :   '06BC',
         "waw"           :   '0648',
             "wawHamza"  :   '0624',
             "wawRing"   :   '06C4',
+            "kirghizYu" :   '06C9',
+            "ve"        :   '06CB',
+            "yu"        :   '06C8',
+            "wawDot"    :   '06CF',
+            "waw2dots"  :   '06CA',
+            "waw2"      :   '0778',
+            "waw3"      :   '0779',
         "kaf"           :   '06A9',
             "gaf"       :   '06AF',
             "gueh"      :   '06B3',
             "ngoeh"     :   '06B1',
             "kafRing"   :   '06AB',
+            "keheh2dots":   '077F',
+            "keheh3dots":   '0763',
             "gafRing"   :   '06B0',
         "hehDo"         :   '06BE',
         "hehGoal"       :   '06C1',
@@ -628,8 +659,14 @@ def _char_name_to_usv(charName) :
             "yehSmallVIM" : '06CE',   
             "arabicE"   :   '06D0',
             "arabicEIM" :   '06D0',
+            "alefMaksura" : '0649',
+            "alefMaksuraIM":'0649',
+            "yeh2"      :   '0775',
+            "yeh3"      :   '0776',
+            "yeh4below" :   '0777',
         "bariyeh"       :   '06D2',
-            
+            "bariyeh2"  :   '077A',
+            "bariyeh3"  :   '077B',
             
         "zabar"         :   '064E',
         "pesh"          :   '064F',
@@ -673,7 +710,11 @@ def _reverse_list(aList) :
 
 def _group_name_format(charName) :
     groupNameFormat = {
-        "alef"          :   ('01',      'Alef form',    2, 0),
+        "alef"          :   ('01',      'Alef form',        2, 0),
+        "alefMadda"     :   ('01a',     'Alef madda form',  2, 0),
+        "alefWasla"     :   ('01b',     'Alef wasla form',	2, 0),
+        "alef2"         :   ('01c',     'Alef with 2',      2, 0),
+        "alef3"         :   ('01d',     'Alef with 3',      2, 0),
             
         "beh"           :   ('02',      'Beh form',     2, 2),
         "teh"           :   ('02a',     'Teh form',     2, 2),
@@ -684,26 +725,30 @@ def _group_name_format(charName) :
         "beeh"          :   ('02f',     'Beeh form',    2, 2),
         "tehRing"       :   ('02g',     'Teh with ring form',                   2, 2),
         "teh3down"      :   ('02h',     'Teh with 3 dots downward',             2, 2),
-        "noonIM"        :   ('02i0',    'Noon initial/medial form',             0, 2),
-        "noonGhunnaIM"  :   ('02i1',    'Noon-ghunna form',                     0, 2),
-        "noonRetroIM"   :   ('02i2',    'Noon-retro initial/medial form',       0, 2),
-        "noonDotBelowIM":   ('02i3',    'Noon-dot-below form',                  0, 2),
-        "rnoonIM"       :   ('02i4',    'Rnoon initial/medial form',            0, 2),
-        "chotiyehIM"    :   ('02j0',    'Chotiyeh initial/medial form',         0, 2),
-        "yehHamzaIM"    :   ('02j1',    'Yeh-hamza initial/medial form',        0, 2),
-        "yehSmallVIM"   :   ('02j2',    'Yeh with small V initial/medial form', 0, 2),
-        "arabicEIM"     :   ('02j3',    'Arabic E initial/medial form',         0, 2),
+        "dotlessBeh"    :   ('02i',     'Dotless beh',                          2, 2),
+        "noonIM"        :   ('02x0',    'Noon initial/medial form',             0, 2),
+        "noonGhunnaIM"  :   ('02x1',    'Noon-ghunna form',                     0, 2),
+        "noonRetroIM"   :   ('02x2',    'Noon-retro initial/medial form',       0, 2),
+        "noonDotBelowIM":   ('02x3',    'Noon-dot-below form',                  0, 2),
+        "rnoonIM"       :   ('02x4',    'Rnoon initial/medial form',            0, 2),
+        "noonRingIM"    :   ('02x5',    'Noon-ring initial/medial form',        0, 2),
+        "chotiyehIM"    :   ('02y0',    'Chotiyeh initial/medial form',         0, 2),
+        "yehHamzaIM"    :   ('02y1',    'Yeh-hamza initial/medial form',        0, 2),
+        "yehSmallVIM"   :   ('02y2',    'Yeh with small V initial/medial form', 0, 2),
+        "arabicEIM"     :   ('02y3',    'Arabic E initial/medial form',         0, 2),
+        "alefMaksura"   :   ('02y4',    'Alef maksura initial/medial form',     0, 2),
         
         "jeem"          :   ('03',      'Jeem form',    2, 2),
         "hah"           :   ('03a',     'Hah form',     2, 2),
         "khah"          :   ('03b',     'Khah form',    2, 2),
         "tcheh"         :   ('03c',     'Tcheh form',   2, 2),
         "dyeh"          :   ('03d',     'Dyeh form',    2, 2),
-        "tcheheh"       :   ('03e',     'Khah form',    2, 2),
-        "hahHamza"      :   ('03f',     'Tcheh form',   2, 2),
-        "hah3dots"      :   ('03g',     'Dyeh form',    2, 2),
-        "hahTah"        :   ('03h',     'Tcheh form',   2, 2),
-        "hahTah2smd"    :   ('03i',     'Dyeh form',    2, 2),
+        "tcheheh"       :   ('03e',     'Tcheheh form',                     2, 2),
+        "hahHamza"      :   ('03f',     'Hah hamza form',                   2, 2),
+        "hah3dots"      :   ('03g',     'Hah with 3 dots form',             2, 2),
+        "hahTah"        :   ('03h',     'Hah with tah form',                2, 2),
+        "hahTah2smd"    :   ('03i',     'Hah with tah and small dots form', 2, 2),
+        "hah4below"     :   ('03j',     'Hah with 4 below',                 2, 2),
         
         "dal"           :   ('04',      'Dal form',     2, 0),
         "thal"          :   ('04a',     'Thal form',    2, 0),
@@ -712,6 +757,7 @@ def _group_name_format(charName) :
         "dal2dotsVTah"  :   ('04d',     'Dal with 2 dots vertically and tah', 2, 0),
         "dalRing"       :   ('04e',     'Dal with ring',        2, 0),
         "dal4dots"      :   ('04f',     'Dal with four dots',   2, 0),
+        "dul"           :   ('04g',     'Dul',                  2, 0),
         "dalDotBelow"   :   ('04z',     'Dal with dot below',   2, 0),   # not needed for Nastaliq, but requested via email
             
         "reh"           :   ('05',      'Reh form',     2, 0),
@@ -729,26 +775,38 @@ def _group_name_format(charName) :
         
         "seen"          :   ('06',      'Seen form',    2, 2),
         "sheen"         :   ('06a',     'Sheen form',   2, 2),
-        "seenDotDot"    :   ('06b',     'Seen with dot above and below',     2, 2),
-        "seen4dots"     :   ('06c',     'Seen with four dots',               2, 2),
-        "seen2dotsV"    :   ('06d',     'Seen with two dots vertically',     2, 2),
-        "seenTah2smd"   :   ('06e',     'Seen with tah and two small dots',  2, 2),
+        "seenDotDot"    :   ('06b',     'Seen with dot above and below', 2, 2),
+        "seen4dots"     :   ('06c',     'Seen with four dots',           2, 2),
+        "seen2dotsV"    :   ('06d',     'Seen with two dots vertically',        2, 2),
+        "seenTah2smd"   :   ('06e',     'Seen with tah and two small dots',     2, 2),
         "seen3dots3dots":   ('06f',     'Seen with three lower and upper dots', 2, 2),
+        "seenInvV"      :   ('06g',     'Seen with inverted V', 2, 2),
+        "seen4"         :   ('06h',     'Seen with 4',          2, 2),
             
         "sad"           :   ('07',      'Sad form',     2, 2),
         "dad"           :   ('07a',     'Dad form',     2, 2),
         "dadDotBelow"   :   ('07b',     'Dad with dot below', 2, 2),
+        "sad3dots"      :   ('07c',     'Sad with 3 dots',    2, 2),
+
         "tah"           :   ('08',      'Tah form',     2, 2),
         "zah"           :   ('08a',     'Zah form',     2, 2),
+
         "ain"           :   ('09',      'Ain form',     2, 2),
         "ghain"         :   ('09a',     'Ghain form',   2, 2),
+
         "feh"           :   ('10',      'Feh form',     2, 2),
-        "qafIM"         :   ('10a',     'Qaf initial/medial form',      0, 2),
-        "feh3dots"      :   ('10b',     'Feh with three dots below',    2, 2),
-        "qaf"           :   ('11',      'Qaf form',     2, 0),
-        "lam"           :   ('12',      'Lam form',     2, 2),
+        "qafIM"         :   ('10a',     'Qaf initial/medial form',          0, 2),
+        "feh3dots"      :   ('10b',     'Feh with three dots below',        2, 2),
+        "dotlessFeh"    :   ('10c',     'Dotless feh',                      2, 2),
+        "dotlessQafIM"  :   ('10d',     'Dotless qaf initial/medial form',	0, 2),
+        "qaf"           :   ('11',      'Qaf form',         2, 0),
+        "dotlessQaf"    :   ('11a',     'Dotless qaf form',	2, 0),
+
+        "lam"           :   ('12',      'Lam form',         2, 2),
         "lamBar"        :   ('12a',     'Lam with bar',     2, 2),
         "lamSmallV"     :   ('12b',     'Lam with small V', 2, 2),
+        "lam3dots"      :   ('12c',     'Lam with 3 dots',  2, 2),
+
         "meem"          :   ('13',      'Meem form',        2, 2),
         "alt-meem"      :   ('14',      'Alternate meem',   2, 2),
         
@@ -757,18 +815,28 @@ def _group_name_format(charName) :
         "noonRetro"     :   ('15b',     'Noon-retro form',      2, 0),
         "noonDotBelow"  :   ('15c',     'Noon-dot-below form',  2, 0),
         "rnoon"         :   ('15d',     'Rnoon form',           2, 0),
+        "noonRing"      :   ('15e',     "Noon-ring",            2, 0),
         
         "waw"           :   ('16',      'Waw form',             2, 0),
         "wawHamza"      :   ('16a',     'Waw-hamza form',       2, 0),
         "wawRing"       :   ('16b',     'Waw-ring form',        2, 0),
+        "kirghizYu"     :   ('16c',     'Kirghiz Yu form',      2, 0),
+        "ve"            :   ('16d',     'Ve form',              2, 0),
+        "yu"            :   ('16e',     'Yu form',              2, 0),
+        "wawDot"        :   ('16f',     'Waw with dot form',    2, 0),
+        "waw2dots"      :   ('16g',     'Waw with 2 dots',      2, 0),
+        "waw2"          :   ('16h',     'Waw with 2',           2, 0),
+        "waw3"          :   ('16i',     'Waw with 3',           2, 0),
         
         "kaf"           :   ('17',      'Kaf form',         2, 2),
         "gaf"           :   ('18',      'Gaf form',         2, 2),
         "gueh"          :   ('18a',     'Gueh form',        2, 2),
         "ngoeh"         :   ('18b',     'Ngoeh form',       2, 2),
         "kafRing"       :   ('18c',     'Kaf-ring form',    2, 2),
+        "keheh2dots"    :   ('18d',     'Keheh with 2 dots',2, 2),
+        "keheh3dots"    :   ('18e',     'Keheh with 3 dots',2, 2),
         "gafRing"       :   ('18z',     'Gaf-ring form',    2, 2),  # not really needed for Nastaliq
-        
+
         "hehDo"         :   ('19',      'Heh-Doachashmee form', 2, 2),
         
         "hehGoal"       :   ('20',      'Heh-Goal form',        2, 2),
@@ -781,10 +849,16 @@ def _group_name_format(charName) :
        
         "chotiyeh"      :   ('22',      'Chotiyeh form',      2, 0),
         "yehHamza"      :   ('22a',     'Yeh-hamza form',     2, 0),
-        "yehSmallV"     :   ('22b',     'Yeh-small-V form',   2,  0),
+        "yehSmallV"     :   ('22b',     'Yeh-small-V form',   2, 0),
         "arabicE"       :   ('22c',     'Arabic E form',      2, 0),
+        "alefMaksura"   :   ('22d',     'Alef maksura form',  2, 0),
+        "yeh2"          :   ('22e',     'Yeh with 2',         2, 0),
+        "yeh3"          :   ('22f',     'Yeh with 3',         2, 0),
+        "yeh4below"     :   ('22g',     'Yeh with 4 below',   2, 0),
 
         "bariyeh"       :   ('23',      'Bariyeh form',       2, 0),
+        "bariyeh2"      :   ('23a',     'Bariyeh with 2',     2, 0),
+        "bariyeh3"      :   ('23b',     'Bariyeh with 3',     2, 0),
             
         "multi-beh"     :   ('24',      'Multiple Beh',       2, 2),
         "seen/sad+beh"  :   ('25',      'Seen/Sad + Beh',     2, 2),
