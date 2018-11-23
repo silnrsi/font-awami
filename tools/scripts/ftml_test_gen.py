@@ -40,7 +40,7 @@ def run():
     
     for mode in modes:
         print("Mode: " + mode)
-        outputFilename = os.path.join(args.output, "test_"+mode+".xml")
+        outputFilename = os.path.join(args.output, "test_" + mode + (".txt" if args.text else ".xml"))
 
         # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
         # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
@@ -62,10 +62,10 @@ def run():
             continue
 
         if args.text:
-            pass
+            gen = Text(outputFilename)
         else:
             gen = FTML(outputFilename)
-            output(gen, mode, args.scale, groupedSeq)
+        output(gen, mode, args.scale, groupedSeq)
         print("")
 
     print("Done")
@@ -550,7 +550,33 @@ class FTML(object):
             colCnt = colCnt + 1
             
         self.f.write('    </testgroup>\n')
-    
+
+class Text(FTML):
+
+    def write_header(self, mode, fontscale):
+        pass
+
+    def write_closing(self):
+        pass
+
+    def start_group(self, label):
+        pass
+
+    def end_group(self):
+        pass
+
+    def write_one_sequence(self, seq, contextCharI, contextCharF) :
+        cI = unichr(int(contextCharI[3:-1], 16))
+        cF = unichr(int(contextCharF[3:-1], 16))
+        (chars, dual) = seq
+        s = u"".join(unichr(int(_char_name_to_usv(c), 16)) for c in chars if c != 'NONE')
+        if dual == "right" or dual == "both":
+            self.f.write(s+"\n")
+            self.f.write(cI+s+"\n")
+        if dual == "left" or dual == "both":
+            self.f.write(s+cF+"\n")
+            self.f.write(cI+s+cF+"\n")
+
 
 def output(gen, mode, fontScale, sequences) :
     #import codecs
