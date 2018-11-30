@@ -2,7 +2,10 @@
 .appVersion = "1161";
 DisplayStrings = (
 "/absMeemMed/absMeemMed.ai/absMeemMed.be/absMeemMed.beF/absMeemMed.behg/absMeemMed.beM1/absMeemMed.beM2/absMeemMed.benn/absMeemMed.bere/absMeemMed.by/absMeemMed.ch/absMeemMed.fe/absMeemMed.hd/absMeemMed.hgF/absMeemMed.hgM/absMeemMed.jm/absMeemMed.mm/absMeemMed.mmX/absMeemMed.nn/absMeemMed.qf/absMeemMed.re/absMeemMed.sd/absMeemMed.sn/absMeemMed.ta",
-"/absBehIni.mm/absBehMed.mm/absBehMed.mmR/absFehIni.mm/absFehMed.mm/absAinIni.mm/absAinMed.mm/absJeemIni.mm/absJeemMed.mm/absSadIni.mm/absSadMed.mm/absSeenIni.mm/absSeenMed.mm/absLamIni.mm/absLamMed.mm/absKehehIni.mm/absKehehIni.mm_short/absKehehMed.mm/absGafIni.mm/absGafIni.mm_short/absGafMed.mm/absKehehMed.mm_base/absMeemIni.mm/absMeemMed.mm/absHehDoachashmeeIni.mm/absHehDoachashmeeMed.mm/absHehDoachashmeeIni.mm_alt/absTahIni.mm/absTahMed.mm/absHehGoalIni.mm/absHehGoalMed.mm"
+"/absBehIni.mm/absBehMed.mm/absBehMed.mmR/absFehIni.mm/absFehMed.mm/absAinIni.mm/absAinMed.mm/absJeemIni.mm/absJeemMed.mm/absSadIni.mm/absSadMed.mm/absSeenIni.mm/absSeenMed.mm/absLamIni.mm/absLamMed.mm/absKehehIni.mm/absKehehIni.mm_short/absKehehMed.mm/absGafIni.mm/absGafIni.mm_short/absGafMed.mm/absKehehMed.mm_base/absMeemIni.mm/absMeemMed.mm/absHehDoachashmeeIni.mm/absHehDoachashmeeMed.mm/absHehDoachashmeeIni.mm_alt/absTahIni.mm/absTahMed.mm/absHehGoalIni.mm/absHehGoalMed.mm",
+"/_kehehTop_m_bogus",
+"/absKehehIni.mm_short",
+"/absSheen/absSeenDotBelowDotAbove/absSeenFourDotsAbove/absSeenSmallTahTwoDots/absSeenTwoVertAbove/absSeenThreeDotsBelowThreeDotsAbove/absSeenFourAbove/absSeenFin"
 );
 copyright = "Copyright (c) 2014-2018, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -71864,7 +71867,7 @@ nodes = (
 components = (
 {
 name = _nukta3inv;
-transform = "{1, 0, 0, 1, 684, 2023}";
+transform = "{1, 0, 0, 1, 1057, 2023}";
 },
 {
 name = absSeen;
@@ -71947,7 +71950,7 @@ name = absSeen;
 },
 {
 name = _nukta4;
-transform = "{1, 0, 0, 1, 631, 1929}";
+transform = "{1, 0, 0, 1, 1057, 1929}";
 }
 );
 layerId = master01;
@@ -72079,11 +72082,11 @@ name = absSeen;
 },
 {
 name = _nukta2;
-transform = "{0.4, 0, 0, 0.4, 1225, 1557}";
+transform = "{0.4, 0, 0, 0.4, 1415, 1737}";
 },
 {
 name = _smallTah;
-transform = "{1, 0, 0, 1, 1120, 1960}";
+transform = "{1, 0, 0, 1, 1310, 2140}";
 }
 );
 layerId = master01;
@@ -72121,7 +72124,7 @@ name = absSeen;
 },
 {
 name = _nukta2v;
-transform = "{1, 0, 0, 1, 1096, 1896}";
+transform = "{1, 0, 0, 1, 1296, 2126}";
 }
 );
 layerId = master01;
@@ -72197,7 +72200,7 @@ name = absSeen;
 },
 {
 name = absEasternFour;
-transform = "{0.45, 0, 0, 0.45, 1239, 1556}";
+transform = "{0.45, 0, 0, 0.45, 1389, 1596}";
 }
 );
 layerId = master01;
@@ -102465,6 +102468,10 @@ name = kafExclude;
 position = "{177, 1234}";
 },
 {
+name = kafTop;
+position = "{145, 385}";
+},
+{
 name = kernBbRight;
 position = "{1005, 974}";
 },
@@ -106474,6 +106481,10 @@ name = kafExclude;
 position = "{855, 1119}";
 },
 {
+name = kafTop;
+position = "{884, 800}";
+},
+{
 name = nUpper;
 position = "{1174, 1743}";
 },
@@ -107832,9 +107843,9 @@ nodes = (
 "154 1205 OFFCURVE",
 "154 707 CURVE SMOOTH",
 "154 312 OFFCURVE",
-"174 63 OFFCURVE",
+"177 60 OFFCURVE",
 "0 -67 CURVE SMOOTH",
-"-18 -81 OFFCURVE",
+"-21 -82 OFFCURVE",
 "-35 -240 OFFCURVE",
 "0 -218 CURVE SMOOTH",
 "158 -118 OFFCURVE",
@@ -109941,6 +109952,10 @@ name = kafExclude;
 position = "{177, 1234}";
 },
 {
+name = kafTop;
+position = "{135, 395}";
+},
+{
 name = kernBbRight;
 position = "{1005, 1010}";
 },
@@ -111785,6 +111800,10 @@ position = "{0, -146}";
 {
 name = kafExclude;
 position = "{820, 1640}";
+},
+{
+name = kafTop;
+position = "{897, 748}";
 },
 {
 name = nUpper;
@@ -115507,9 +115526,9 @@ nodes = (
 "72 473 OFFCURVE",
 "72 408 CURVE SMOOTH",
 "72 345 OFFCURVE",
-"67 300 OFFCURVE",
+"72 294 OFFCURVE",
 "0 243 CURVE SMOOTH",
-"-20 226 OFFCURVE",
+"-21 228 OFFCURVE",
 "-35 71 OFFCURVE",
 "0 92 CURVE SMOOTH",
 "74 136 OFFCURVE",
@@ -122321,7 +122340,7 @@ layers = (
 anchors = (
 {
 name = _kafTop;
-position = "{26, 1462}";
+position = "{26, 1461}";
 },
 {
 name = gafStroke;
