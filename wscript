@@ -26,44 +26,31 @@ TESTDIR='tests'
 # TESTRESULTSDIR = 'results/tests'
 # STANDARDS = 'reference'
 
-# set the font name, version, licensing and description
-APPNAME='AwamiNastaliq-Dev'      #### AwamiNastaliq
-VERSION='1.151'              ####
-TTF_VERSION="1.151"          ####
+# set package name
+APPNAME='AwamiNastaliq-Beta'      #### AwamiNastaliq
+
+# set the font family name
+FAMILY='AwamiNastaliq'
+
+##VERSION='1.151'              # Now taken directly from the font
+##TTF_VERSION="1.151"          # 
+
 COPYRIGHT='Copyright (c) 2014-2018, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
 DESC_SHORT = "Smart Unicode font for the Nastaliq script"
-DESC_LONG = """
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety
-of languages of Southwest Asia, including but not limited to Urdu. This font
-is aimed at minority language support. This makes it unique among Nastaliq fonts.
-
-Awami means "of the people", "of the common population" or "public".
-
-The Awami Nastaliq font does not provide complete coverage of all the characters
-defined in Unicode for Arabic script. Because the font style is specifically
-intended for languages using the Nastaliq style of southwest Asia, the character
-set for this font is aimed at those languages.
-
-This font makes use of state-of-the-art font technologies to support complex
-typographic issues. Font smarts have been implemented using  Graphite only. We have
-no current plans to support OpenType.
-
-One font from this typeface family is included in this release:
-     * Awami Nastaliq Regular
-
-Font sources are published in the repository and an open workflow is used for building, testing and releasing.
-"""
 DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
+
+# Get version info from Regular UFO; must be first function call:
+getufoinfo('source/' + FAMILY + '-Regular' + '.ufo')
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
-FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
+FONT_NAME = "Awami Nastaliq Beta v.1.160"     #### Awami Nastaliq
+FONT_FILENAME = "AwamiNastaliq-Beta1.160"  #### AwamiNastaliq-Regular
 
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
@@ -84,7 +71,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
     ap = "AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
-    version = TTF_VERSION,
+    version = VERSION,   # TTF_VERSION
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
     fret = fret(params = '-r -b'),  # -b = show octaboxes
