@@ -80,8 +80,8 @@ g__kafIniTop_taller { ktDelta = 250m };
 g__gafIniTop_taller { ktDelta = 250m };
 g__kafIniTop_short { ktDelta = -150m };
 g__gafIniTop_short { ktDelta = -150m };
-g__kafIniTop_shorter { ktDelta = -300m };
-g__gafIniTop_shorter { ktDelta = -300m };
+g__kafIniTop_shorter { ktDelta = -200m };
+g__gafIniTop_shorter { ktDelta = -200m };
 g__kafMedTop_tall { ktDelta = 150m };
 g__gafMedTop_tall { ktDelta = 150m };
 g__kafTop_bj_tall { ktDelta = 150m };
@@ -90,8 +90,8 @@ g__kafMedTop_short { ktDelta = -150m };
 g__gafMedTop_short { ktDelta = -150m };
 g__kafTop_bj_short { ktDelta = -150m };
 g__gafTop_bj_short { ktDelta = -150m };
-g__kafMedTop_shorter { ktDelta = -300m };
-g__gafMedTop_shorter { ktDelta = -300m };
+g__kafMedTop_shorter { ktDelta = -270m };
+g__gafMedTop_shorter { ktDelta = -270m };
 g__kafMedTop_medshort { ktDelta = 0m };
 g__gafMedTop_medshort { ktDelta = 0m };
 g__kafTop_m_bogus {ktDelta = 0m };
@@ -100,7 +100,7 @@ g__kafTop_null {ktDelta = 0m };
 // General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic,
 	g__smallV, g__smallVinv,g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark,
-	g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__dot2l__hamza,
+	g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__dot2l__hamza, g__verticalStroke,
 	cKafTop,
 	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long, // g__gafStroke_short
@@ -271,7 +271,8 @@ cBehFin = (gBehFin, gBehFin_bfkl) ;
 cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, gHahSmallTahAbove,
 	gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
 cJeemFin = (gJeemFin);
-cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelowThreeDotsAbove);
+cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
+	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
 cSeenFin = (gSeenFin, gSeenFin_short);
 cSadIso = (gSad, gDad, gDadDotBelow, gSadThreeDotsAbove);
 cSadFin = (gSadFin);
@@ -289,8 +290,8 @@ cMeemIso = (gMeem);
 cMeemFin = (gMeemFin, gMeemFin_short);
 cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
-cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf, gKafThreeDotsAbove);
-cKafFin = (gKafFin, gGafFin);
+cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
+cKafFin = (gKafFin, gGafFin, gKafFin_squiggle);
 cHehGoalIso = (gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gHehYehAbove, gAe, gHeh);
 cHehGoalFin = (gHehGoalFin, gTehMarbutaGoalFin);   // gHehGoalFin_stfh - no longer used
 cHehDoIso = (gHehDo);
@@ -313,7 +314,8 @@ cZainIso = (gZain, gRreh, gJeh, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove, gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 cRehFin = (gRehFin, gRehFin_jkl, gRehFin_hgM) ; // gRehFin_sshg -- obsolete
 
-cWawIso = (gWaw, gWawHamzaAbove, gWawRing, gArabicU, gOe, gKirghizOe, gKirghizYu, gWawTwoAbove, gWawThreeAbove);
+cWawIso = (gWaw, gWawHamzaAbove, gWawRing, gArabicU, gOe, gKirghizOe, gKirghizYu, 
+	gYu, gWawDotAbove, gWawTwoDotsAbove, gVe, gWawTwoAbove, gWawThreeAbove);
 cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza, gBariyehTwoAbove, gBariyehThreeAbove);		// bariyeh -> behIni + 2Nlower
@@ -369,124 +371,124 @@ cJeemIni = ( gJeemIni gJeemIniBeM1 gJeemIniBeF gJeemIniBeM2 gJeemIniJm gJeemIniR
     gJeemIniMm gJeemIniNn gJeemIniHgF gJeemIniHgM gJeemIniHd gJeemIniCh gJeemIniBy
     gJeemIniBe gJeemIniBeRe gJeemIniBeNn gJeemIniBeHg gJeemIniMmX ) ;
 cSeenIni = ( gSeenIni gSeenIniBeM1 gSeenIniBeF gSeenIniBeM2 gSeenIniJm gSeenIniRe
-    gSeenIniSn gSeenIniSd gSeenIniTa gSeenIniAi gSeenIniFe gSeenIniQf
-    gSeenIniMm gSeenIniNn gSeenIniHgF gSeenIniHgM gSeenIniHd gSeenIniCh gSeenIniBy
-    gSeenIniBe gSeenIniBeRe gSeenIniBeNn gSeenIniBeHg gSeenIniMmX ) ;
+	gSeenIniSn gSeenIniSd gSeenIniTa gSeenIniAi gSeenIniFe gSeenIniQf
+	gSeenIniMm gSeenIniNn gSeenIniHgF gSeenIniHgM gSeenIniHd gSeenIniCh gSeenIniBy
+	gSeenIniBe gSeenIniBeRe gSeenIniBeNn gSeenIniBeHg gSeenIniMmX
+	 gSeenIniJm_flat ) ;
 cSadIni = ( gSadIni gSadIniBeM1 gSadIniBeF gSadIniBeM2 gSadIniJm gSadIniRe
-    gSadIniSn gSadIniSd gSadIniTa gSadIniAi gSadIniFe gSadIniQf
-    gSadIniMm gSadIniNn gSadIniHgF gSadIniHgM gSadIniHd gSadIniCh gSadIniBy
-    gSadIniBe gSadIniBeRe gSadIniBeNn gSadIniBeHg gSadIniMmX ) ;
+	gSadIniSn gSadIniSd gSadIniTa gSadIniAi gSadIniFe gSadIniQf
+	gSadIniMm gSadIniNn gSadIniHgF gSadIniHgM gSadIniHd gSadIniCh gSadIniBy
+	gSadIniBe gSadIniBeRe gSadIniBeNn gSadIniBeHg gSadIniMmX ) ;
 cTahIni = ( gTahIni gTahIniBeM1 gTahIniBeF gTahIniBeM2 gTahIniJm gTahIniRe
-    gTahIniSn gTahIniSd gTahIniTa gTahIniAi gTahIniFe gTahIniQf
-    gTahIniMm gTahIniNn gTahIniHgF gTahIniHgM gTahIniHd gTahIniCh gTahIniBy
-    gTahIniBe gTahIniBeRe gTahIniBeNn gTahIniBeHg gTahIniMmX,
+	gTahIniSn gTahIniSd gTahIniTa gTahIniAi gTahIniFe gTahIniQf
+	gTahIniMm gTahIniNn gTahIniHgF gTahIniHgM gTahIniHd gTahIniCh gTahIniBy
+	gTahIniBe gTahIniBeRe gTahIniBeNn gTahIniBeHg gTahIniMmX,
 	gTahIniKf gTahIniBeKf ) ;
 cAinIni = ( gAinIni gAinIniBeM1 gAinIniBeF gAinIniBeM2 gAinIniJm gAinIniRe
-    gAinIniSn gAinIniSd gAinIniTa gAinIniAi gAinIniFe gAinIniQf
-    gAinIniMm gAinIniNn gAinIniHgF gAinIniHgM gAinIniHd gAinIniCh gAinIniBy
-    gAinIniBe gAinIniBeRe gAinIniBeNn gAinIniBeHg gAinIniMmX ) ;
+	gAinIniSn gAinIniSd gAinIniTa gAinIniAi gAinIniFe gAinIniQf
+	gAinIniMm gAinIniNn gAinIniHgF gAinIniHgM gAinIniHd gAinIniCh gAinIniBy
+	gAinIniBe gAinIniBeRe gAinIniBeNn gAinIniBeHg gAinIniMmX ) ;
 cFehIni = ( gFehIni gFehIniBeM1 gFehIniBeF gFehIniBeM2 gFehIniJm gFehIniRe
-    gFehIniSn gFehIniSd gFehIniTa gFehIniAi gFehIniFe gFehIniQf
-    gFehIniMm gFehIniNn gFehIniHgF gFehIniHgM gFehIniHd gFehIniCh gFehIniBy
-    gFehIniBe gFehIniBeRe gFehIniBeNn gFehIniBeHg gFehIniMmX ) ;
+	gFehIniSn gFehIniSd gFehIniTa gFehIniAi gFehIniFe gFehIniQf
+	gFehIniMm gFehIniNn gFehIniHgF gFehIniHgM gFehIniHd gFehIniCh gFehIniBy
+	gFehIniBe gFehIniBeRe gFehIniBeNn gFehIniBeHg gFehIniMmX ) ;
 cLamIni = ( gLamIni gLamIniBeM1 gLamIniBeM2 gLamIniJm gLamIniRe
-    gLamIniSn gLamIniSd gLamIniTa gLamIniAi gLamIniFe gLamIniQf
-    gLamIniMm gLamIniNn gLamIniHgF gLamIniHgM gLamIniHd gLamIniCh gLamIniBy
-    gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl
+	gLamIniSn gLamIniSd gLamIniTa gLamIniAi gLamIniFe gLamIniQf
+	gLamIniMm gLamIniNn gLamIniHgF gLamIniHgM gLamIniHd gLamIniCh gLamIniBy
+	gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl
 	gLamIni_short ) ;
 cMeemIni = ( gMeemIni, gMeemIniAi, gMeemIniBe, gMeemIniBeF, gMeemIniBeHg, gMeemIniBeM1, gMeemIniBeM2,
 	gMeemIniBeNn, gMeemIniBeRe, gMeemIniBeHg,
 	gMeemIniBy, gMeemIniCh, gMeemIniFe, gMeemIniHd, gMeemIniHgF, gMeemIniHgM, gMeemIniJm, gMeemIniMm,
 	gMeemIniMmX, gMeemIniNn, gMeemIniQf, gMeemIniRe, gMeemIniSd, gMeemIniSn, gMeemIniTa);
 cHehDoIni = ( gHehDoIni gHehDoIniBeM1 gHehDoIniBeF gHehDoIniBeM2 gHehDoIniJm
-    gHehDoIniRe gHehDoIniSn gHehDoIniSd gHehDoIniTa gHehDoIniAi
-    gHehDoIniFe gHehDoIniQf gHehDoIniMm gHehDoIniNn gHehDoIniHgF gHehDoIniHgM
-    gHehDoIniHd gHehDoIniCh gHehDoIniBy gHehDoIniBe gHehDoIniBeRe gHehDoIniBeNn
-    gHehDoIniBeHg gHehDoIniMmX ) ;
+	gHehDoIniRe gHehDoIniSn gHehDoIniSd gHehDoIniTa gHehDoIniAi
+	gHehDoIniFe gHehDoIniQf gHehDoIniMm gHehDoIniNn gHehDoIniHgF gHehDoIniHgM
+	gHehDoIniHd gHehDoIniCh gHehDoIniBy gHehDoIniBe gHehDoIniBeRe gHehDoIniBeNn
+	gHehDoIniBeHg gHehDoIniMmX ) ;
 cHehGoalIni = ( gHehGoalIni gHehGoalIniBeM1 gHehGoalIniBeF gHehGoalIniBeM2 gHehGoalIniJm
-    gHehGoalIniRe gHehGoalIniSn gHehGoalIniSd gHehGoalIniTa gHehGoalIniAi
-    gHehGoalIniFe gHehGoalIniQf gHehGoalIniMm gHehGoalIniNn gHehGoalIniHgF gHehGoalIniHgM
-    gHehGoalIniHd gHehGoalIniCh gHehGoalIniBy gHehGoalIniBe gHehGoalIniBeRe gHehGoalIniBeNn
-    gHehGoalIniBeHg gHehGoalIniMmX ) ;
+	gHehGoalIniRe gHehGoalIniSn gHehGoalIniSd gHehGoalIniTa gHehGoalIniAi
+	gHehGoalIniFe gHehGoalIniQf gHehGoalIniMm gHehGoalIniNn gHehGoalIniHgF gHehGoalIniHgM
+	gHehGoalIniHd gHehGoalIniCh gHehGoalIniBy gHehGoalIniBe gHehGoalIniBeRe gHehGoalIniBeNn
+	gHehGoalIniBeHg gHehGoalIniMmX ) ;
 cKafIni_gaf = (gGafIni gGafIniBe /*gGafIniBeF*/ gGafIniBeM1 gGafIniBeM2 gGafIniJm gGafIniRe gGafIniSn
 	gGafIniSd gGafIniTa gGafIniAi gGafIniFe gGafIniQf gGafIniMm gGafIniMmX gGafIniNn
 	gGafIniHgM gGafIniHgF gGafIniHd gGafIniCh gGafIniBy gGafIniDk gGafIniBeRe gGafIniBeNn gGafIniBeHg gGafIniKf
 	gGafIniMm_short);
 cKafIni = ( gKafIni gKafIniBe /*gKafIniBeF*/ gKafIniBeM1 gKafIniBeM2 gKafIniJm gKafIniRe gKafIniSn
-    gKafIniSd gKafIniTa gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniMmX gKafIniNn
-    gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
+	gKafIniSd gKafIniTa gKafIniAi gKafIniFe gKafIniQf gKafIniMm gKafIniMmX gKafIniNn
+	gKafIniHgM gKafIniHgF gKafIniHd gKafIniCh gKafIniBy gKafIniDk gKafIniBeRe gKafIniBeNn gKafIniBeHg gKafIniKf
 	gKafIniMm_short
 	cKafIni_gaf) ;
 
 
 cBehMed = ( gBehMed gBehMedBeM1 gBehMedBeF gBehMedBeM2 gBehMedJm gBehMedRe
-    gBehMedSn gBehMedSd gBehMedTa gBehMedAi gBehMedFe gBehMedQf
-    gBehMedMm gBehMedNn gBehMedHgF gBehMedHgM gBehMedHd gBehMedCh gBehMedBy
-    gBehMedBe gBehMedBeRe gBehMedBeNn gBehMedBeHg gBehMedMmX gBehMedBeF_ss
-    gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be
+	gBehMedSn gBehMedSd gBehMedTa gBehMedAi gBehMedFe gBehMedQf
+	gBehMedMm gBehMedNn gBehMedHgF gBehMedHgM gBehMedHd gBehMedCh gBehMedBy
+	gBehMedBe gBehMedBeRe gBehMedBeNn gBehMedBeHg gBehMedMmX gBehMedBeF_ss
+	gBehMedSd_ss gBehMedTa_ss gBehMedAi_ss gBehMedFe_ss gBehMedQf_ss gBehMedHgF_be
 	gBehMedNn_hgbm
 	gBehMedHdR gBehMedJmR gBehMedMmR gBehMedMmXR gBehMedNnR gBehMedNn_hgbmR gBehMedSnR
 	gBehMedKf_wide ) ;
 cJeemMed = ( gJeemMed gJeemMedBeM1 gJeemMedBeF gJeemMedBeM2 gJeemMedJm gJeemMedRe
-    gJeemMedSn gJeemMedSd gJeemMedTa gJeemMedAi gJeemMedFe gJeemMedQf
-    gJeemMedMm gJeemMedNn gJeemMedHgF gJeemMedHgM gJeemMedHd gJeemMedCh gJeemMedBy
-    gJeemMedBe gJeemMedBeRe gJeemMedBeNn gJeemMedBeHg gJeemMedMmX
+	gJeemMedSn gJeemMedSd gJeemMedTa gJeemMedAi gJeemMedFe gJeemMedQf
+	gJeemMedMm gJeemMedNn gJeemMedHgF gJeemMedHgM gJeemMedHd gJeemMedCh gJeemMedBy
+	gJeemMedBe gJeemMedBeRe gJeemMedBeNn gJeemMedBeHg gJeemMedMmX
 	gJeemMedBeKl ) ;
 cSeenMed = ( gSeenMed gSeenMedBeM1 gSeenMedBeF gSeenMedBeM2 gSeenMedJm gSeenMedRe
-    gSeenMedSn gSeenMedSd gSeenMedTa gSeenMedAi gSeenMedFe gSeenMedQf
-    gSeenMedMm gSeenMedNn gSeenMedHgF gSeenMedHgM gSeenMedHd gSeenMedCh gSeenMedBy
-    gSeenMedBe gSeenMedBeRe gSeenMedBeNn gSeenMedBeHg gSeenMedMmX
-	gSeenMedSn_sn ) ;
+	gSeenMedSn gSeenMedSd gSeenMedTa gSeenMedAi gSeenMedFe gSeenMedQf
+	gSeenMedMm gSeenMedNn gSeenMedHgF gSeenMedHgM gSeenMedHd gSeenMedCh gSeenMedBy
+	gSeenMedBe gSeenMedBeRe gSeenMedBeNn gSeenMedBeHg gSeenMedMmX
+	gSeenMedSn_sn gSeenMedJm_flat ) ;
 cSadMed = ( gSadMed gSadMedBeM1 gSadMedBeF gSadMedBeM2 gSadMedJm gSadMedRe
-    gSadMedSn gSadMedSd gSadMedTa gSadMedAi gSadMedFe gSadMedQf
-    gSadMedMm gSadMedNn gSadMedHgF gSadMedHgM gSadMedHd gSadMedCh gSadMedBy
-    gSadMedBe gSadMedBeRe gSadMedBeNn gSadMedBeHg gSadMedMmX ) ;
+	gSadMedSn gSadMedSd gSadMedTa gSadMedAi gSadMedFe gSadMedQf
+	gSadMedMm gSadMedNn gSadMedHgF gSadMedHgM gSadMedHd gSadMedCh gSadMedBy
+	gSadMedBe gSadMedBeRe gSadMedBeNn gSadMedBeHg gSadMedMmX ) ;
 cAinMed = ( gAinMed gAinMedBeM1 gAinMedBeF gAinMedBeM2 gAinMedJm gAinMedRe
-    gAinMedSn gAinMedSd gAinMedTa gAinMedAi gAinMedFe gAinMedQf
-    gAinMedMm gAinMedNn gAinMedHgF gAinMedHgM gAinMedHd gAinMedCh gAinMedBy
-    gAinMedBe gAinMedBeRe gAinMedBeNn gAinMedBeHg gAinMedMmX ) ;
+	gAinMedSn gAinMedSd gAinMedTa gAinMedAi gAinMedFe gAinMedQf
+	gAinMedMm gAinMedNn gAinMedHgF gAinMedHgM gAinMedHd gAinMedCh gAinMedBy
+	gAinMedBe gAinMedBeRe gAinMedBeNn gAinMedBeHg gAinMedMmX ) ;
 cTahMed = ( gTahMed gTahMedBeM1 gTahMedBeF gTahMedBeM2 gTahMedJm gTahMedRe
-    gTahMedSn gTahMedSd gTahMedTa gTahMedAi gTahMedFe gTahMedQf
-    gTahMedMm gTahMedNn gTahMedHgF gTahMedHgM gTahMedHd gTahMedCh gTahMedBy
-    gTahMedBe gTahMedBeRe gTahMedBeNn gTahMedBeHg gTahMedMmX
+	gTahMedSn gTahMedSd gTahMedTa gTahMedAi gTahMedFe gTahMedQf
+	gTahMedMm gTahMedNn gTahMedHgF gTahMedHgM gTahMedHd gTahMedCh gTahMedBy
+	gTahMedBe gTahMedBeRe gTahMedBeNn gTahMedBeHg gTahMedMmX
 	gTahMedKf gTahMedBeKf ) ;
 cFehMed = ( gFehMed gFehMedBeM1 gFehMedBeF gFehMedBeM2 gFehMedJm gFehMedRe
-    gFehMedSn gFehMedSd gFehMedTa gFehMedAi gFehMedFe gFehMedQf
-    gFehMedMm gFehMedNn gFehMedHgF gFehMedHgM gFehMedHd gFehMedCh gFehMedBy
-    gFehMedBe gFehMedBeRe gFehMedBeNn gFehMedBeHg gFehMedMmX ) ;
+	gFehMedSn gFehMedSd gFehMedTa gFehMedAi gFehMedFe gFehMedQf
+	gFehMedMm gFehMedNn gFehMedHgF gFehMedHgM gFehMedHd gFehMedCh gFehMedBy
+	gFehMedBe gFehMedBeRe gFehMedBeNn gFehMedBeHg gFehMedMmX ) ;
 cLamMed = ( gLamMed gLamMedBeM1 gLamMedBeF gLamMedBeM2 gLamMedJm gLamMedRe
-    gLamMedSn gLamMedSd gLamMedTa gLamMedAi gLamMedFe gLamMedQf
-    gLamMedMm gLamMedNn gLamMedHgF gLamMedHgM gLamMedHd gLamMedCh gLamMedBy
-    gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg
+	gLamMedSn gLamMedSd gLamMedTa gLamMedAi gLamMedFe gLamMedQf
+	gLamMedMm gLamMedNn gLamMedHgF gLamMedHgM gLamMedHd gLamMedCh gLamMedBy
+	gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg
 	gLamMedAl gLamMedCh_gfTall gLamMedBe_kfTall gLamMedBy_kfTall,	// no MmX
 	gLamMed_short );
 cMeemMed = ( gMeemMed gMeemMedBeM1 gMeemMedBeF gMeemMedBeM2 gMeemMedJm gMeemMedRe
-    gMeemMedSn gMeemMedSd gMeemMedTa gMeemMedAi gMeemMedFe gMeemMedQf
-    gMeemMedMm gMeemMedNn gMeemMedHgF gMeemMedHgM gMeemMedHd gMeemMedCh gMeemMedBy
-    gMeemMedBe gMeemMedBeRe gMeemMedBeNn gMeemMedBeHg gMeemMedMmX ) ;
+	gMeemMedSn gMeemMedSd gMeemMedTa gMeemMedAi gMeemMedFe gMeemMedQf
+	gMeemMedMm gMeemMedNn gMeemMedHgF gMeemMedHgM gMeemMedHd gMeemMedCh gMeemMedBy
+	gMeemMedBe gMeemMedBeRe gMeemMedBeNn gMeemMedBeHg gMeemMedMmX ) ;
 cMeemMed_alt = (gMeemMed_alt gMeemMedBeNn_alt);
 cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
-    gHehGoalMedJm gHehGoalMedRe gHehGoalMedSn gHehGoalMedSd gHehGoalMedTa
-    gHehGoalMedAi gHehGoalMedFe gHehGoalMedQf gHehGoalMedMm gHehGoalMedNn gHehGoalMedHgF
-    gHehGoalMedHgM gHehGoalMedHd gHehGoalMedCh gHehGoalMedBy gHehGoalMedBe
-    gHehGoalMedBeRe gHehGoalMedBeNn gHehGoalMedBeHg gHehGoalMedMmX ) ;
+	gHehGoalMedJm gHehGoalMedRe gHehGoalMedSn gHehGoalMedSd gHehGoalMedTa
+	gHehGoalMedAi gHehGoalMedFe gHehGoalMedQf gHehGoalMedMm gHehGoalMedNn gHehGoalMedHgF
+	gHehGoalMedHgM gHehGoalMedHd gHehGoalMedCh gHehGoalMedBy gHehGoalMedBe
+	gHehGoalMedBeRe gHehGoalMedBeNn gHehGoalMedBeHg gHehGoalMedMmX ) ;
 cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM1 gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn
 	gGafMedSd gGafMedTa gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedMmX gGafMedNn gGafMedHgM
 	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg
-	gGafMedJm_short gGafMedJm_tall
-	);
+	gGafMedJm_short gGafMedJm_tall gGafMedKf_lm );
 cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM1 gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn
-    gKafMedSd gKafMedTa gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM
-    gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
+	gKafMedSd gKafMedTa gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM
+	gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
 	gKafMedJm_short gKafMedJm_tall
-	cKafMed_gaf) ;
+	cKafMed_gaf ) ;
 cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
-    gHehDoMedBeM2 gHehDoMedJm gHehDoMedRe gHehDoMedSn
-    gHehDoMedSd gHehDoMedTa gHehDoMedAi
-    gHehDoMedFe gHehDoMedQf gHehDoMedMm gHehDoMedNn
-    gHehDoMedHgF gHehDoMedHgM gHehDoMedHd gHehDoMedCh
-    gHehDoMedBy gHehDoMedBe gHehDoMedBeRe gHehDoMedBeNn
-    gHehDoMedBeHg gHehDoMedMmX ) ;
+	gHehDoMedBeM2 gHehDoMedJm gHehDoMedRe gHehDoMedSn
+	gHehDoMedSd gHehDoMedTa gHehDoMedAi
+	gHehDoMedFe gHehDoMedQf gHehDoMedMm gHehDoMedNn
+	gHehDoMedHgF gHehDoMedHgM gHehDoMedHd gHehDoMedCh
+	gHehDoMedBy gHehDoMedBe gHehDoMedBeRe gHehDoMedBeNn
+	gHehDoMedBeHg gHehDoMedMmX ) ;
 
 
 // Nastaliq-specific shaping
@@ -497,7 +499,7 @@ cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
 
 // Does not initiate alternate (kinked) kaf:
 c_dkg_noKalt = ( gDalFin
-	gKafFin gGafFin
+	gKafFin gGafFin gKafFin_squiggle
 	gKafMedBeF gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSd gKafMedTa
 	gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedNn gKafMedHgF gKafMedHd gKafMedCh
 	gKafMedBy gKafMedDk
@@ -798,6 +800,9 @@ cKaf_top = (csKafIM_top_short, csKafIM_top_shorter, csKafIni_top_taller, csKafMe
 csKafRound_medium = (gKafIni, gGafIni, gKafMed, gGafMed);
 csKafRound_short = (gKafIni_short, gGafIni_short, gKafMed_short, gGafMed_short);
 
+
+cLam_short = (gLamIni_short, gLamMed_short);
+
 //-------------------------------------------------------------------------------------------
 //
 // Isolate decomposing/recomposing
@@ -813,10 +818,11 @@ cs_jeemComposed = (
 	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahAbove, gHahSmallTahBelow,
 	gHahSmallTahTwoDots, gHahThreeDotsAbove, gHahHamzaAbove, gHahFourBelow);
 
-cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l__dot3u, g__smallFourAbove);
+cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu,
+	g__dot3l__dot3u, g__smallVinv, g__smallFourAbove);
 cs_seenComposed = (
 	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
-	gSeenThreeDotsBelowThreeDotsAbove, gSeenFourAbove);
+	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
 
 cs_sadMark = (g__dot1u, g__dot1l__dot1u, g__dot3u);
 cs_sadComposed = (gDad, gDadDotBelow, gSadThreeDotsAbove);
@@ -824,8 +830,8 @@ cs_sadComposed = (gDad, gDadDotBelow, gSadThreeDotsAbove);
 cs_fehMark = (g__dot1u, g__dot2u, g__dot3l);
 cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow);
 
-cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot3u);
-cs_kafComposed = (gKafRing, gArabicKaf, gKafThreeDotsAbove);
+cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot3u, g__dot2u);
+cs_kafComposed = (gKafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
 
 cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
 cs_gafComposed = (gGueh, gNgoeh, gGafRing);
@@ -871,9 +877,9 @@ cs_rehComposed = (gZain, gRreh, gJeh, gRehDotBelow, gRehDotBelowDotAbove, gRehTw
 	gRehFourDotsAbove, gRehTwoVertAbove, gRehHamzaAbove, gRehSmallTahTwoDots);
 
 cs_wawMark = (gHamzaAbove, g__attachedRingMid, g__barWaw, g__smallV, g__smallVinv, gPeshWaw,
-	g__smallTwoAbove, g__smallThreeAbove);
+	g__verticalStroke, g__dot1u, g__dot2u, g__dot3u, g__smallTwoAbove, g__smallThreeAbove);
 cs_wawComposed = (gWawHamzaAbove, gWawRing, gKirghizOe, gOe, gKirghizYu, gArabicU,
-	gWawTwoAbove, gWawThreeAbove);
+	gYu, gWawDotAbove, gWawTwoDotsAbove, gVe, gWawTwoAbove, gWawThreeAbove);
 // For creating precomposed forms:
 cs_wawMark2Prec = (cs_wawMark, g__hamza);
 cs_wawComposed2Prec = (cs_wawComposed, gWawHamzaAbove);
@@ -965,6 +971,7 @@ gGafMedDk {collexclude.glyph = g__kaf_exclude};
 gGafMedBeRe {collexclude.glyph = g__kaf_exclude};
 gGafMedBeNn {collexclude.glyph = g__kaf_exclude};
 gGafMedBeHg {collexclude.glyph = g__kaf_exclude};
+gGafMedKf_lm {collexclude.glyph = g__kaf_exclude};
 gKafMedBe_base {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM1_base {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM2_base {collexclude.glyph = g__kaf_exclude};
@@ -992,6 +999,7 @@ gKafMedBy_base {collexclude.glyph = g__kaf_exclude};
 
 gKafFin {collexclude.glyph = g__kaf_exclude};
 gGafFin {collexclude.glyph = g__kaf_exclude};
+gKafFin_squiggle {collexclude.glyph = g__kaf_exclude};
 
 
 // Teh-ring alternate forms:

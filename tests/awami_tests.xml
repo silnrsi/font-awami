@@ -47,7 +47,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>واجبُ سبَبُ بّ بَ جت لث ٹ ټ</string>
+      <string>اُگے اگے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1450,7 +1450,10 @@
     <test background="#55aaff" class="fset14" label="COLLISIONS" rtl="True">
       <string />
     </test>
-    <test background="#ff0000" class="fset14" label="lam gaf gaf" rtl="True">
+    <test label="lam + gaf + kaf" rtl="True">
+      <string>لُگّک لگکس بلگک بلگکس</string>
+    </test>
+    <test class="fset14" label="lam gaf gaf" rtl="True">
       <string>لگگ لگگس</string>
     </test>
     <test class="fset15" label="gaf lam gaf" rtl="True">
@@ -1870,6 +1873,9 @@
     <test class="fset36" label="kaf w/ three dots" rtl="True">
       <string>ݣ ݣݣݣ</string>
     </test>
+    <test label="kaf w/ 2 dots" rtl="True">
+      <string>ݿ ݿسݿمݿلݿ</string>
+    </test>
     <test class="fset36" label="dotless beh" rtl="True">
       <string>ٮ ٮٮٮ </string>
     </test>
@@ -1906,6 +1912,9 @@
     <test class="fset24" label="seen w/ 3 dots above and below (Palula)" rtl="True">
       <string>ڜ ڜڜڜ</string>
     </test>
+    <test label="seen w/ inverted V (Marwari/Khowar)" rtl="True">
+      <string>ݾ ݾݾݾ ݾبݾلݾ</string>
+    </test>
     <test class="fset24" label="dad w/ dot below (Khowar)" rtl="True">
       <string>ۻ ۻۻۻ</string>
     </test>
@@ -1915,11 +1924,14 @@
     <test class="fset24" label="feh w/ 3 dots below (Khowar)" rtl="True">
       <string>ڥ ڥڥڥ</string>
     </test>
-    <test class="fset36" label="dotless feh" rtl="True">
+    <test class="fset36" label="alef wasla" rtl="True">
       <string>ٱ ٱٱٱ</string>
     </test>
-    <test class="fset36" label="dotless qaf" rtl="True">
+    <test class="fset36" label="dotless feh" rtl="True">
       <string>ڡ ڡڡڡ لڡ</string>
+    </test>
+    <test label="dotless qaf" rtl="True">
+      <string>ٯ ٯٯٯ لٯ</string>
     </test>
     <test class="fset21" label="teh marbuta goal" rtl="True">
       <comment>Right-joining only, tail form.</comment>
@@ -1946,6 +1958,18 @@
     </test>
     <test class="fset21" label="Arabic U (waw w/ pesh-like mark)" rtl="True">
       <string>ۇ لجۇ صۇُ</string>
+    </test>
+    <test label="yu (waw with vertical stroke) (Uyghur)" rtl="True">
+      <string>ۈ قۈ ثۈُ</string>
+    </test>
+    <test label="waw w/ dot above" rtl="True">
+      <string>ۏ لجۏ صۏُ</string>
+    </test>
+    <test label="waw w/ two dots above" rtl="True">
+      <string>ۊ سۊ فۊَ</string>
+    </test>
+    <test label="ve (waw w/ three dots)" rtl="True">
+      <string>ۋ سۋ فۋَ</string>
     </test>
     <test class="fset24" label="Arabic E (yeh w/ 2 dots vertically below)" rtl="True">
       <string>ې ېېې</string>
@@ -2899,6 +2923,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset36" label="jeem + yeh + jeem" rtl="True">
       <string>کہیجیخ</string>
     </test>
+    <test label="heh-goal + final ain" rtl="True">
+      <string>لہع</string>
+    </test>
     <test background="#55aaff" class="fset19" label="PASS 10 (pos pass 3) - collision settings" rtl="True">
       <string />
     </test>
@@ -2954,12 +2981,24 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>The jeem is narrow so even a single nuqta requires a taller kaf.</comment>
       <string>فخگس</string>
     </test>
-    <test background="#55aaff" class="fset36" label="PASS 13" rtl="True">
-      <string />
+    <test label="lam + diac + kaf" rtl="True">
+      <string>لُگب ملُکس ڵُکب مڷُگر</string>
     </test>
-    <test class="fset30" label="really tall word" rtl="True">
+    <test background="#aaaa7f" class="fset30" label="really tall word" rtl="True">
       <comment>Even the short forms don't quite deal with this one.</comment>
       <string>برانگیختگی</string>
+    </test>
+    <test label="lam + gaf + kaf" rtl="True">
+      <string>بلگُکِس لگِکر</string>
+    </test>
+    <test background="#55aaff" label="PASS 12 &amp; 14" rtl="True">
+      <string />
+    </test>
+    <test label="lam-V + kaf" rtl="True">
+      <string>ڵُکب لؕگص</string>
+    </test>
+    <test background="#55aaff" class="fset36" label="PASS 14" rtl="True">
+      <string />
     </test>
     <test background="#55aaff" class="fset36" label="PASS 15" rtl="True">
       <string />
@@ -3043,6 +3082,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset36" label="noon/teh/sheen + pesh + kaf" rtl="True">
       <string>نُکّڑ تَگف شُکر</string>
+    </test>
+    <test label="lam + diac + kaf" rtl="True">
+      <string>لُک لُکب ملُک ملُکس</string>
     </test>
     <test background="#55aaff" class="fset36" label="PASS 18 (pos pass11)" rtl="True">
       <string />

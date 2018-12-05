@@ -18,6 +18,32 @@
 */
 
 
+/*
+	Summary of passes:
+
+	Substitution:
+	1 - diacritic ordering, NFC/NFD, separating nuqtas from bases
+	2 - basic contextual forms (initial, medial, final)
+	3 - finals, special ligatures
+	4 - medials
+	5 - initials
+	6 - recompose isolates, wide forms
+	7 - LTR rules, subtending marks, punctuation
+	Positioning:
+	8 (1) - cursive attachment
+	9 (2) - nuqta attachment
+	10 (3) - set up collision avoidance for nuqtas
+	11 (4) - perform collision avoidance for nuqtas
+	12 (5) - substitute kaf tops
+	13 (6) - substitute short forms
+	14 (7) - attach kaf tops, reattachments for short forms
+	15 (8) - diacritic attachment
+	16 (9) - nuqta special cases, kerning pairs, diacritics above the line
+	17 (10) - set up collision avoidance for diacs, kerning, special  cases
+	18 (11) - perform collision avoidance
+*/
+
+
 // Standard definitions and abbreviations:
 #include "stddef.gdh"
 
@@ -99,11 +125,16 @@ gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 **/
 
+// EXPERIMENTS:
+
+
+
 endtable;
 
 
 #include "nastaliq_classes.gdh"
 #include "latin_awami.gdh"
+
 
 
 #if DO_COL_FIX
@@ -309,9 +340,9 @@ wordSpacing {
 }
 
 shortForms {
-	id = "shrt";
-	name.1033 = string("Short forms");
-	default = 0;
+    id = "shrt";
+    name.1033 = string("Short forms");
+    default = 0;
     settings {
         none {
             value = 0;

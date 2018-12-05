@@ -434,6 +434,8 @@ gChotiyehFin  >  gChotiyehFin_bfkl  /  ^ c_preChF_bfkl MARKS  _ ;
 
 gAlefFin  >  gAlefFin_lm	/  ^ (gLamIni_raw gLamMed_raw) MARKS  _ ;
 
+gKafFin  >  gKafFin_squiggle  /  _  g__dot2u;
+
 
 // Situations where characters before have an effect:
 
@@ -449,12 +451,16 @@ c_preMm_alt = ( gAinIni_raw gAinMed_raw gBehIni_raw gBehMed_raw
 cADL_raw = (gDalFin gLamFin gAlefFin gLamMed_raw
 	//// gLamAlefFin - no longer used
 	//// gThalFin gDalTwoVertBelowSmallTahFin gDdalFin - no longer used
-	//gKafFin gGafFin gKafMed_raw gGafMed_raw - Sheldon says to take these out ("meem before kaf+alef/lam", 10 Feb 2016).
+	//cKafFin gKafMed_raw gGafMed_raw - Sheldon says to take these out ("meem before kaf+alef/lam", 10 Feb 2016).
 );
 
 c_preBehSS_raw = (gSeenIni_raw gSadIni_raw gSeenMed_raw gSadMed_raw);
 
 c_preBehNn_hgbm = (gHehGoalIni gHehGoalIniBeNn gBehMed gBehMedBeNn gMeemIni gMeemIniBeNn)
+
+c_jeem_flag = (gJeemMed gJeemMedAi gJeemMedBe gJeemMedBeF gJeemMedBeHg gJeemMedBeM1 gJeemMedBeM2 gJeemMedBeKl
+	gJeemMedBeNn gJeemMedBeRe gJeemMedFe gJeemMedHgF gJeemMedHgM gJeemMedNn gJeemMedQf gJeemMedSd gJeemMedSn
+	gJeemMedTa);
 
 endtable;
 
@@ -551,6 +557,9 @@ csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  gBehMed;  ///  MARKS  c_dkgal_pos
 
 gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  (cSeenMed cSeenFin);
 
+// Tighter form of seen before flat-topped jeems:
+gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flag;
+
 
 // Basic rules
 csMed_raw  >  csMedBeF	/  ^ MPRECXT  _ MARKS  cBehFin;
@@ -645,6 +654,9 @@ csIni_raw     >  csIniMmX /  _ MARKS  cMeemMed_alt;
 // Use sad interface before rounded kafs:
 csIni_raw  >  csIniSd  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKround;
 
+// Tighter form of seen before flat-topped jeems:
+gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  c_jeem_flag;
+
 
 // Basic rules
 csIni_raw  >  csIniBeM2F / _ MARKS  cBehFin;
@@ -684,7 +696,7 @@ gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 
 
 /// Eg, 062A 062E 0646 06AF 06A9
-////gGafMedDk  >  gGafMed_short_OLD  /  _ MARKS  (gKafFin gGafFin cKafMed);
+////gGafMedDk  >  gGafMed_short_OLD  /  _ MARKS  (cKafFin cKafMed);
 
 endpass; // 5
 

@@ -20,7 +20,7 @@
 
 table(positioning)
 
-pass(1)
+pass(1)  // 8
 
 //
 //	CURSIVE ATTACHMENT
@@ -123,7 +123,7 @@ endif;
 (cVisSpace  cshowInv  g_zeroWidthNoBreakSpaceShowInv_alt cShowInvBoxes cEmbedMarkers)
 	{ collision.flags = SET_ISSPACE(collision.flags) };
 
-endpass; // 1
+endpass;  // 1 (8)
 
 endtable;	// positioning
 
@@ -148,7 +148,7 @@ endtable;
 
 table(positioning)
 
-pass(2)
+pass(2)  // 9
 
 // Use wider spaces for Latin text.
 cSpace {advance.x += 200m}  /  _  cLatin;
@@ -421,7 +421,13 @@ cTakes_tahLowerDia
 	ctahLowerDia { attach {to = @B; at = tahLowerS; with = tahLowerM } }
 	/ _=B  _=U;
 
-// Hehhook
+// Special case: heh-hook plus final ain
+cTakes_hehhookDia  
+	g__hehHook_small  { attach {to = @B; at = hehhookS; with = hehhookM };
+		shift {x = 130m; y = 140m} }
+	/ _=B  _=H;
+
+// Heh-hook
 cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = hehhookM } }
 	/ _=B  _=H;
 
@@ -480,7 +486,7 @@ cSign2=S
 cSign1=S
 	cSignDigit { attach {to=@S;  at=digitS; with=digitM }; insert = true};
 
-endpass;  // 2
+endpass;  // 2 (9)
 
 endtable;  // pos
 
@@ -532,7 +538,7 @@ c_jumpTail = ( cJeemFin, gAinFin );
 cls_excludingGlyphs = (cKafMed csKafMed_base) {
 	collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
-cls_excludingGlyphs_kern = (gKafFin, gGafFin) {
+cls_excludingGlyphs_kern = (cKafFin) {
 	collexclude {offsetx = kafExcludeS.x; offsety = kafExcludeS.y}};
 
 endtable;  // glyph
@@ -544,7 +550,7 @@ table(positioning)
 
 if (collFix > 0)
 
-pass(3)
+pass(3)  // 10
 
 // Set up for collision fixing
 
@@ -961,12 +967,12 @@ cNuqtaLikeLower {
 
 
 // Heh-hooks need to be kept centered under the base. But because they are originally positioned quite a bit to the left
-// they can move right a lot. 400 lets it move to the right side of the heh-goal, and avoid a following jeem.
+// they can move right a lot. 400 lets it move to the right side of the heh-goal, and avoid a following jeem or ain.
 g__hehHook_small { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -50m;
 	max.x = 400m;
-	min.y = -1000m;
+	min.y = -100m;  // nuqtas use 1000m
 	max.y = 50m;
 } }  /  cIniMed  _; // enough context to give it precedence
 
@@ -1072,17 +1078,20 @@ cDiacritic { collision.flags = SET_IGNORE(collision.flags) };	// these have not 
 
 cQuoteArab { collision.flags = SET_IGNORE(collision.flags) }; // fix with kerning
 
-endpass; // 3
+endpass;  // 3 (10)
 
 endif; // (collFix > 0)
 
 
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 if (collFix > 1)
-pass(4) { CollisionFix = 5 }
+pass(4) { CollisionFix = 5 }  // 11
+
 // Perform base + nuqta collision fixing. Any failures leave for now.
-endpass;
+
+endpass;  // 4 (11)
 endif;
+
 
 /**************************************
 
@@ -1179,7 +1188,7 @@ endtable;
 #define SHORTFINAL_KAF	1600m
 
 
-pass(5)
+pass(5)  // 12
 
 // Kaf-top collision fixing/prevention and tall sequences
 
@@ -1198,10 +1207,20 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacritic?  _=K  _=T;
 
+// Special case: Lam + diac + kaf - shorten lam AND heighten kaf
+(gLamIni gLamMed) csKafMed_medium  g__kafTop_null  
+	>  cLam_short  csKafMed_base$K  csKafMed_top_tall$K
+	/  _=L  (cDiacritic g__smallV g__smallTah)  cDiacritic?   _=K  _=T;
+
 // Don't change kaf, rather shorten lam:
-(gLamIni gLamMed)  cKafMed>  (gLamIni_short  gLamMed_short) @K
-	/  _=L  MARKS  _=K
-			g__kafTop_null;  // include the extra slot for precedence
+(gLamIni gLamMed)  (cKafMed cKafFin)  >  cLam_short @K
+	/  _=L cDiacritic? _=K
+			g__kafTop_null?;  // include the extra slot for precedence
+
+// Tall: after gGafMedKf_lm - lam + gaf + kaf combination
+csKafMed_medium  g__kafTop_null  
+	>  csKafMed_base$K  csKafMed_top_tall$K
+	/  gGafMedKf_lm  g__kafTop_null cDiacritic?  _=K  _=T;
 
 // Tall: lam/tah + kaf
 // TODO: move cBaseTall back into context
@@ -1210,7 +1229,7 @@ cBaseTall  csKafMed_medium  g__kafTop_null
 	/  _=B1  MARKS  _=K  _=T;
 
 // Tall: short-lam + kaf + ring (short-lams are ALMOST short enough to fit under kaf-rings, but not quite)
-(gLamIni_short gLamMed_short)  csKafMed_medium  g__kafTop_null
+cLam_short  csKafMed_medium  g__kafTop_null
 	>  @L  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=L  MARKS  _=K  _=T  g__attachedRingMid;
 
@@ -1276,8 +1295,12 @@ csGafIM_medium  g__kafTop_null  csKafMed_medium  g__kafTop_null
 	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
+// Lam + gaf + kaf/gaf => special form of gaf
+gGafMedDk  >  gGafMedKf_lm
+	/  cLam_short MARKS  _=G  g__kafTop_null  cNuqtaLike? cDiacritic?  cKafMF g__kafTop_null?;
+
 // Gaf + kaf/gaf-final => short
-csGafIM_medium  g__kafTop_null  (gKafFin gGafFin)
+csGafIM_medium  g__kafTop_null  cKafFin
 	>  csGafIM_base$G  csGafIM_top_short$G  @K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
 
@@ -1351,7 +1374,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 // Debugging:
 cIni {user5 = position.y; user6 = position.y + bb.bottom; user7 = position.y + bb.top};
 
-endpass;  // pass 5
+endpass;  // 5 (12)
 
 
 table(glyph)
@@ -1361,8 +1384,9 @@ csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gN
 	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 endtable;
 
+
 if (shortForms > 1)
-pass(6)
+pass(6)  // 13
 
 // Special case: \u0628\u0631\u0627\u0646\u06AF\u06CC\u062E\u062A\u06AF\u06CC
 // Note that this is quite a rare word, and it is questionable how generally useful
@@ -1396,11 +1420,11 @@ cMed      cMed  >  @M1  @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2
 
 cMed  csFinal_regular  >  @M  csFinal_short    /  _=M {tooHigh == 1}  MARKS  _=F;
 
-endpass;  // 6
+endpass;  // 6 (13)
 endif;
 
 
-pass(7)
+pass(7)  // 14
 
 // Due to an infelicity in the Graphite engine, we can't substitute and attach in the same rule,
 // so we have to do it in a separate pass.
@@ -1412,6 +1436,18 @@ endtable;
 
 // Special case - the short kaf tops don't work for .jm for, so substitute special forms.
 gKafMedJm_base (g__kafMedTop_short g__gafMedTop_short)  >  (gKafMedJm_short gGafMedJm_short)$2 g__kafTop_m_bogus  / ^ _ _;
+
+// Special case: reattach to the short lam (because it is a different width).
+cIniMed {att {to=@L; with=exit; at=entrance}}  cLam_short {insert = 1}
+	/  _=P  MARKS2N ^ _=L;
+
+// Special case: reattach nuqta-like things (small V, small tah) to short lam.
+cLam_short (g__smallV g__smallTah) { attach {to = @L; at = nUpperS; with = nUpperM }; shift.x = -130m; }
+	/  _=L  _=V  cDiacritic? ^ cBase;  // precedence
+
+// Special case: reattach the short lam before the adjusted gaf (because the gaf is a different width).
+cLam_short {att {to = @G; at = entrance; with = exit}}  gGafMedKf_lm {insert = 1}
+	/  _=L  MARKS ^ _=G;
 
 
 // ngoeh nuqtas
@@ -1445,6 +1481,8 @@ cTakes_kafTopDia {att {to=@K2; with=exit; at=entrance}}
 	/ _=K1  _=T  MARKS ^ _=K2;
 
 cIniMed {att {to=@K; with=exit; at=entrance}}  csKafMed_base {insert=1} / _=P  MARKS2N ^ _=K;
+
+
 
 // kaf tops
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
@@ -1525,7 +1563,8 @@ csFinal_short
 cTakes_smallV_short cNuqtaLikeUpper {att {to=@F; at=smallValtS; with=nUpperM}}  / _=F {lamValt == 1} _;
 csFinal_short       cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}     / _=F  _;
 cTakes_ring_short	g__attachedRing {att {to=@F; at=ringS; with=ringM}}	  	   / _=F  _;
-endpass;
+
+endpass;  // pos - 7 (14)
 
 
 //
@@ -1537,7 +1576,7 @@ endpass;
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
 #if DO_COL_FIX
-pass(8)
+pass(8)  // 15
 #else
 pass(4)
 #endif // DO_COL_FIX
@@ -1672,7 +1711,7 @@ cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); 
 cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ _ ;
 
 
-endpass; // pos - 8 (or 4)
+endpass; // pos - 8 (15)
 
 
 // Kerning pair adjustments
@@ -1743,7 +1782,7 @@ cWawFin { kernPreExclam = -150m };
 endtable; // glyph
 
 
-pass(9)
+pass(9)  // 16
 
 // Special cases involving nuqtas.
 
@@ -1861,9 +1900,9 @@ cNuqtaLike?  cDiacriticUpper  /  (cKafIM csKafIM_base)  cKafTop  _  _;  // ... b
 cTahIM  cNuqtaUpper  cDiacriticUpper  { shift.y -= 200m; collision.margin -= 20m }
 	/  _=T  _=N  _=D { position.y > 2800m };
 cNuqtaLikeUpperNoKT { shift.y -= 150m  }
-	cDiacriticUpper { shift.y -= 300m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
+	cDiacriticUpper { shift.y -= 200m; collision.margin -= 20m }  /  _=N  _=D { position.y > 2800m };
 cDiacriticUpper { shift.y -= 100m; collision.margin -= 150m } /  cKafIM  cNuqtaLikeUpper?  _ { position.y > 2800m };
-cDiacriticUpper { shift.y -= 300m; collision.margin -= 70m }  /  _ { position.y > 2800m };
+cDiacriticUpper { shift.y -= 200m; collision.margin -= 70m }  /  _ { position.y > 2800m };
 // -1350 permits a single diacritic under a standard bowl to remain at the standard position
 cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y < -1350m }; // was -1200
 
@@ -1872,7 +1911,7 @@ cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y 
 gNameMarker { shift.y += max(0, 2200 - position.y); };
 
 
-endpass;  // 9
+endpass;  // 9 (16)
 
 
 #if DO_COL_FIX
@@ -1881,7 +1920,7 @@ endpass;  // 9
 
 if (collFix > 0)
 
-pass(10) // { CollisionFix = 4; AutoKern = true }
+pass(10) // { CollisionFix = 4; AutoKern = true }  // 17
 
 
 // Set up diacritic collision fixes and kerning.
@@ -1948,6 +1987,18 @@ cDiacriticUpper {
 		max.y = 100m;
 	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
 
+// Diacritics should stay centered over short-lam stems, but they may need to move a little.
+// Eg: lam pesh kaf
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -5m;  // normally -250
+		max.x = 100m;
+		min.y = -100m;
+		max.y = 200m;
+	} }  /  (gLamIni_short gLamMed_short)  _  cKafMF;  // increase precedence
+
 // Diacritics should stay centered over tah and lam vertical stems.
 // Eg: tah pesh seen
 cDiacriticUpper {
@@ -1957,7 +2008,7 @@ cDiacriticUpper {
 		min.x = -5m;  // normally -250
 		max.x = 5m;
 		min.y = -100m;
-		max.y = 100m;
+		max.y = 200m;
 	} }  /  cVerticalStem  _  cBase;  // increase precedence
 
 
@@ -2406,7 +2457,7 @@ cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.gl
 
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
-endpass;  // pass 10
+endpass;  // pos - 10 (17)
 
 endif; // (collFix > 0)
 
@@ -2414,9 +2465,11 @@ endif; // (collFix > 0)
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(11) { CollisionFix = 4; AutoKern = true }
+pass(11) { CollisionFix = 4; AutoKern = true }  // 18
+
 // Perform diacritic-related fixing.
-endpass;
+
+endpass;  // 11 (18)
 endif;
 
 #endif // DO_COL_FIX
