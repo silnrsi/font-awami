@@ -49,8 +49,8 @@ getufoinfo('source/' + FAMILY + '-Regular' + '.ufo')
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Beta v.1.160"     #### Awami Nastaliq
-FONT_FILENAME = "AwamiNastaliq-Beta1.160"  #### AwamiNastaliq-Regular
+FONT_NAME = "Awami Nastaliq Beta v.1.190"  #### Awami Nastaliq
+FONT_FILENAME = "AwamiNastaliq-Beta1.190"  #### AwamiNastaliq-Regular
 
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
@@ -71,7 +71,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
     ap = "AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
     copyright = COPYRIGHT,
-    version = VERSION,   # TTF_VERSION
+    version = VERSION,
     extra_srcs = ['tools/bin/awami_makegdl', 'tools/bin/ffcopyglyphs.py', 'tools/bin/perllib/Font/TTF/Scripts/GDL.pm'], ## 'DoulosSIL-R.ttf'],
     #tests = tests,
     fret = fret(params = '-r -b'),  # -b = show octaboxes
