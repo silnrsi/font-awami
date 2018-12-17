@@ -27,13 +27,10 @@ TESTDIR='tests'
 # STANDARDS = 'reference'
 
 # set package name
-APPNAME='AwamiNastaliq-Beta'      #### AwamiNastaliq
+APPNAME='AwamiNastaliq-Dev'      #### AwamiNastaliq
 
 # set the font family name
 FAMILY='AwamiNastaliq'
-
-##VERSION='1.151'              # Now taken directly from the font
-##TTF_VERSION="1.151"          # 
 
 COPYRIGHT='Copyright (c) 2014-2018, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
@@ -43,14 +40,17 @@ DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
-getufoinfo('source/' + FAMILY + '-Regular' + '.ufo')
+###getufoinfo('source/' + FAMILY + '-Regular' + '.ufo')
+
+VERSION='1.191'              # Now taken directly from the font
+##TTF_VERSION="1.151"          # 
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Beta v.1.190"  #### Awami Nastaliq
-FONT_FILENAME = "AwamiNastaliq-Beta1.190"  #### AwamiNastaliq-Regular
+FONT_NAME = "Awami Nastaliq Dev"  #### Awami Nastaliq
+FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
 
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
