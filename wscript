@@ -65,6 +65,7 @@ font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subf
 				cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
      		),
     source = "source/AwamiNastaliq-Regular.ufo",
+    params = "--removeOverlap",
     graphite = gdl('awami.gdl', master = 'source/graphite/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
                     depends = glob.glob('*.gdh')),
     opentype = fea('source/simple.fea', no_make=1, no_test=True),

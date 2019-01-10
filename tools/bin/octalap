@@ -1,0 +1,370 @@
+#!/usr/bin/python3
+
+from beziers.path import BezierPath
+from beziers.line import Line
+from beziers.point import Point
+from beziers.affinetransformation import AffineTransformation
+from fontTools.ttLib import TTFont
+from collections import namedtuple
+from math import isclose, floor
+import argparse
+from multiprocessing import Pool
+
+class _Object():
+    pass
+
+OctaScore = namedtuple("OctaScore", "left right score")
+subbox_map = {'left' : 'xi', 'right': 'xa', 'bottom': 'yi', 'top': 'ya',
+              'diagNegMin': 'si', 'diagNegMax': 'sa', 'diagPosMin': 'di', 'diagPosMax': 'da'}
+scalings = {'x': lambda o, v: (v - o.xi) / (o.xa - o.xi),
+            'y': lambda o, v: (v - o.yi) / (o.ya - o.yi),
+            's': lambda o, v: (v - o.xi - o.yi) / (o.xa + o.ya - o.xi - o.yi),
+            'd': lambda o, v: (v - o.xi + o.ya) / (o.xa - o.yi - o.xi + o.ya)}
+
+class Octabox(object):
+    def __init__(self, segs, subbox=None, scale=None, **kw):
+        self.segs = segs
+        for a in 'xysd':
+            setattr(self, a+'i', 1e6)
+            setattr(self, a+'a', -1e6)
+        if len(self.segs):
+            for s in segs:
+                self._update_box(s[0])
+                self._update_box(s[-1])
+                if len(s) == 3:
+                    self._update_curve(s, 'x', lambda p: p.x)
+                    self._update_curve(s, 'y', lambda p: p.y)
+                    self._update_curve(s, 's', lambda p: p.x + p.y)
+                    self._update_curve(s, 'd', lambda p: p.x - p.y)
+        elif subbox is not None and scale is not None:
+            for k, v in subbox_map.items():
+                r = getattr(subbox, k, 0.) / 255.
+                if v.startswith('d'):
+                    val = (scale.xi - scale.ya) * (1-r) + (scale.xa - scale.yi) * r
+                elif v.startswith('s'):
+                    val = (scale.xi + scale.yi) * (1-r) + (scale.xa + scale.ya) * r
+                elif v.startswith('x'):
+                    val = scale.xi * (1-r) + scale.xa * r
+                elif v.startswith('y'):
+                    val = scale.yi * (1-r) + scale.ya * r
+                setattr(self, v, val)
+        for k, v in kw.items():
+            setattr(self, k, v)
+        for k in 'xysd':
+            a = getattr(self, k+'a')
+            i = getattr(self, k+'i')
+            if i == 1e6:
+                i = 0
+                setattr(self, k+'i', i)
+            if a < i:
+                a = i
+                setattr(self, k+'a', a)
+
+    def __str__(self):
+        return "[({},{}), ({},{}), ({},{}), ({},{})]".format(self.xi, self.xa,
+                self.yi, self.ya, self.si, self.sa, self.di, self.da)
+
+    def _update_curve(self, s, attrib, fn):
+        d2 = fn(s[0]) - 2*fn(s[1]) + fn(s[2])
+        if isclose(d2, 0):
+            return
+        t = (fn(s[0]) - fn(s[1])) / d2
+        if 0 <= t <= 1:
+            p = s.pointAtTime(t)
+            if fn(p) < getattr(self, attrib+"i"):
+                setattr(self, attrib+"i", fn(p))
+            if fn(p) > getattr(self, attrib+"a"):
+                setattr(self, attrib+"a", fn(p))
+
+    def _update_box(self, p):
+        if p.x < self.xi:
+            self.xi = p.x
+        if p.x > self.xa:
+            self.xa = p.x
+        if p.y < self.yi:
+            self.yi = p.y
+        if p.y > self.ya:
+            self.ya = p.y
+        if p.x + p.y < self.si:
+            self.si = p.x + p.y
+        if p.x + p.y > self.sa:
+            self.sa = p.x + p.y
+        if p.x - p.y < self.di:
+            self.di = p.x - p.y
+        if p.x - p.y > self.da:
+            self.da = p.x - p.y
+
+    @property
+    def area(self):
+        a = (self.xa - self.xi) * (self.ya - self.yi)
+        c = (self.ya - self.xi + self.di) ** 2 + (self.xa - self.sa + self.ya) ** 2
+        c += (self.xa - self.da - self.yi) ** 2 + (self.si - self.xi - self.yi) ** 2
+        return a - 0.5 * c
+
+    def bestcut(self, args=None):
+        currbest = OctaScore(self, None, self.area)
+        for x,d in enumerate(((1, 0), (0, 1), (-1, 1), (1, 1))):
+            splitline = Line(Point(d[0]*self.xi, d[1]*self.yi), Point(d[0]*self.xa, d[1]*self.ya))
+            for sl in findshifts(self.segs, splitline):
+                r, l = splitWith(self.segs, sl)
+                rightbox = Octabox(r)
+                leftbox = Octabox(l)
+                score = rightbox.area + leftbox.area
+                if args is not None and args.detail & 8:
+                    print("    {}:L[{}, {}], R[{}, {}]".format("xysd"[x], leftbox.area, sum(s.area for s in leftbox.segs),
+                        rightbox.area, sum(s.area for s in rightbox.segs)))
+                if score < currbest.score:
+                    currbest = OctaScore(leftbox, rightbox, score)
+        return currbest
+
+
+def splitWith(segs, splitline, args=None):
+    trans = splitline.alignmentTransformation()
+    lefts = []
+    rights = []
+    splits = []
+    for _s in segs:
+        s = _s.transformed(trans)
+        roots = s._findRoots("y")
+        if len(roots) == 2:
+            l, r = s.splitAtTime(roots[0])
+            (rights if s.start.y < 0 else lefts).append(l)
+            l, r = r.splitAtTime(roots[1])
+            (rights if s.end.y < 0 else lefts).append(r)
+            splits.append((l.start.x, (l.start.x < s.start.x) ^ (s.start.y < 0)))
+            splits.append((l.end.x, (l.end.x > s.end.x) ^ (s.start.y < 0)))
+        elif len(roots) == 1:
+            l, r = s.splitAtTime(roots[0])
+            if s.start.y < 0:
+                rights.append(l)
+                lefts.append(r)
+                splits.append((r.start.x, True))
+            else:
+                lefts.append(l)
+                rights.append(r)
+                splits.append((r.start.x, False))
+        elif s.start.y < 0 or s.end.y < 0:
+            rights.append(s)
+        else:
+            lefts.append(s)
+    backt = AffineTransformation()
+    backt.apply_backwards(trans)
+    backt.invert()
+    if args is not None and args.detail & 8:
+        print("      ", [(Point(s[0], 0).transformed(backt), s[1]) for s in sorted(splits)])
+    curr = False
+    lastP = None
+    for x, d in sorted(splits):
+        newP = Point(x, 0)
+        if d != curr:
+            curr = d
+        if lastP is None:
+            lastP = newP
+            continue
+        l = Line(lastP, newP)
+        r = Line(newP, lastP)
+        if not d:
+            rights.append(l)
+            lefts.append(r)
+        lastP = newP
+    rights = [s.transformed(backt) for s in rights]
+    lefts = [s.transformed(backt) for s in lefts]
+    return (rights, lefts)
+
+Bound = namedtuple("Bound", "x y max slope")
+
+def _same_bounds(b1, b2):
+    if b1.max == b2.max:
+        return False
+    if isclose(b1.x, b2.x) and isclose(b1.y, b2.y):
+        return b1.slope * b2.slope >= 0
+    return False
+
+def _addBound(bounds, bound):
+    return [b for b in bounds if not _same_bounds(b, bound)]
+        
+def findshifts(segs, splitline):
+    trans = splitline.alignmentTransformation()
+    bounds = []
+    maxy = -1e6
+    miny = 1e6
+    for _s in segs:
+        s = _s.transformed(trans)
+        if len(s) == 2:
+            bounds = _addBound(bounds, Bound(s[0].x, s[0].y, s[0].y > s[1].y, s.slope))
+            bounds = _addBound(bounds, Bound(s[1].x, s[1].y, s[1].y >= s[0].y, s.slope))
+            maxy = max(maxy, s[0].y, s[1].y)
+            miny = min(miny, s[0].y, s[1].y)
+        elif len(s) == 3:
+            d2 = s[0].y-2*s[1].y+s[2].y
+            if not isclose(d2, 0.):
+                rt = (s[0].y-s[1].y)/d2
+                if 0 <= rt <= 1.:
+                    p = s.pointAtTime(rt)
+                    bounds.append(Bound(p.x, p.y, d2 < 0., 0.))
+                    maxy = max(maxy, s[0].y, s[2].y, p.y)
+                    miny = min(miny, s[0].y, s[2].y, p.y)
+                    continue
+            bounds = _addBound(bounds, Bound(s[0].x, s[0].y, s[0].y > s[2].y, s.derivative()[0].slope))
+            bounds = _addBound(bounds, Bound(s[2].x, s[2].y, s[2].y >= s[0].y, s.derivative()[1].slope))
+            maxy = max(maxy, s[0].y, s[2].y)
+            miny = min(miny, s[0].y, s[2].y)
+    backt = AffineTransformation()
+    backt.apply_backwards(trans)
+    backt.invert()
+    last = None
+    for b in sorted(bounds, key=lambda b:(b[1], b)):
+        if last is not None and isclose(last, b[1]):
+            continue
+        res = splitline.transformed(trans)
+        res[0].y += b.y
+        res[1].y += b.y
+        yield res.transformed(backt)
+        last = b[1]
+    for y in range(int(miny), int(maxy), 20):
+        res = splitline.transformed(trans)
+        res[0].y += y
+        res[1].y += y
+        yield res.transformed(backt)
+
+def isEncompassed(inside, outside):
+    for s in inside.asSegments():
+        if not outside.pointIsInside(s[0]):
+            return False
+    return True
+
+def removeEncompassed(paths):
+    res = []
+    for i in range(len(paths)):
+        p1 = paths[i]
+        for p2 in res + paths[i+1:]:
+            if isEncompassed(p1, p2):
+                # print(".", end="", flush=True)
+                break
+        else:
+            res.append(p1)
+    return res
+
+def processone(f, hasOctaBoxes, n):
+    g = f['glyf'][n]
+    bs = BezierPath.fromFonttoolsGlyph(g, gset, f['glyf'])
+#    for b in bs:
+#        b.removeOverlap()
+    bs = removeEncompassed(bs)
+    segs = sum((b.asSegments() for b in bs), [])
+    area = sum(s.area for s in segs)
+    start = Octabox(segs)
+    curr = [start]
+    for i in range(15):
+        best = OctaScore(start, None, 0)
+        bestj = -1
+        for j, c in enumerate(curr):
+            b = c.bestcut(args)
+            score = c.area - (b.left.area + (b.right.area if b.right is not None else 0))
+            if score > best.score:
+                best = b
+                bestj = j
+        if bestj >= 0:
+            if args.threshold > 0. and score < args.threshold ** 2:
+                break
+            if len(best.left.segs):
+                curr[bestj] = best.left
+                if best.right is not None:
+                    curr.append(best.right)
+            elif best.right is not None and len(best.right.segs):
+                curr[bestj] = best.right
+    return (curr, n, start)
+
+def outputone(f, start, hasOctaBoxes, args, curr, n):
+    g = f['glyf'][n]
+    boxarea = sum(c.area for c in curr)
+    area = sum(sum(s.area for s in c.segs) for c in curr)
+    if hasOctaBoxes:
+        bboxbase = f['Glat'].attributes[n].octabox
+        obase = Octabox([], xi = g.xMin, xa = g.xMax, yi = g.yMin, ya = g.yMax)
+        for k, v in subbox_map.items():
+            if not hasattr(bboxbase, k):
+                continue
+            r = getattr(bboxbase, k, 0.) / 255.
+            if v.startswith('d'):
+                setattr(obase, v, (obase.xi - obase.ya) * (1-r) + (obase.xa - obase.yi) * r)
+            elif v.startswith('s'):
+                setattr(obase, v, (obase.xi + obase.yi) * (1-r) + (obase.xa + obase.ya) * r)
+        bboxes = bboxbase.subboxes
+        bbox_area = 0
+        for b in bboxes:
+            o = Octabox([], b, scale=obase)
+            bbox_area += o.area
+        if bbox_area == 0:
+            bbox_area = obase.area
+        if args.detail & 2:
+            print("{}: {} -> {}[{}] vs {}[{}] - {}".format(n, start.area, boxarea, len(curr), bbox_area, len(bboxes), area))
+        if args.output and len(bboxes):
+            # put back new results
+            if boxarea > bbox_area and args.detail & 1:
+                print("{}: Worse {}[{}] vs {}[{}]".format(n, boxarea, len(curr), bbox_area, len(bboxes)))
+            newboxes = []
+            for c in curr:
+                newb = _Object()
+                for k, v in subbox_map.items():
+                    val = int(scalings[v[0]](obase, getattr(c, v)) * 255. + 0.5)
+                    setattr(newb, k, val)
+                newboxes.append(newb)
+            bboxbase.subboxes = newboxes
+            bboxbase.subboxBitmap = (1 << len(newboxes)) - 1
+    elif args.detail & 2:
+        print("{}: {} -> {}[{}] - {}".format(n, start.area, boxarea, len(curr), area))
+    if args.detail & 2:
+        for c in curr:
+            segarea = sum(s.area for s in c.segs)
+            print("  "+str(c), c.area, segarea)
+
+def multiprocessone(a):
+    return processone(*a)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("infont",help="Font to process")
+parser.add_argument("-g","--glyph",action="append",help="Glyphs names to process")
+parser.add_argument("-d","--detail",default=0,type=int,help="Give details: 0-points either side of split")
+parser.add_argument("-y","--ysplit",type=int,help="y-coord for split")
+parser.add_argument("-t","--threshold",type=int,default=20,help="Stop making boxes if improvement less than this em units squared")
+parser.add_argument("-o","--output",help="Output font")
+parser.add_argument("-q","--quick",action="store_true",help="Reduce processing time")
+parser.add_argument("-j","--jobs",type=int,help="How many parallel processes or 0 for arbitrary")
+args = parser.parse_args()
+
+f = TTFont(args.infont)
+gset = f.getGlyphSet()
+if args.glyph is None or not len(args.glyph):
+    args.glyph = f.getGlyphNames()
+hasOctaBoxes = f['Glat'].hasOctaboxes
+if args.jobs is not None:
+    pool = Pool(args.jobs or None)
+    def multiproc(jobs):
+        ress = pool.imap_unordered(multiprocessone, ((f, hasOctaBoxes, n) for n in jobs))
+        for curr, n, start in ress:
+            outputone(f, start, hasOctaBoxes, args, curr, n)
+    process = multiproc
+else:
+    def singleproc(jobs):
+        for n in jobs:
+            (curr, _, start) = processone(f, hasOctaBoxes, n)
+            outputone(f, start, hasOctaBoxes, args, curr, n)
+    process = singleproc
+
+jobs = []
+for n in args.glyph:
+    g = f['glyf'][n]
+    if g.numberOfContours == 0:
+        continue
+    if args.quick and hasOctaBoxes and not len(f['Glat'].attributes[n].octabox.subboxes):
+        continue
+    jobs.append(n)
+process(jobs)
+if args.jobs is not None:
+    pool.close()
+    pool.join()
+
+if args.output:
+    f.save(args.output)
+
