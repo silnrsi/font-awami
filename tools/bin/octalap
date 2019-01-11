@@ -265,7 +265,7 @@ def processone(f, hasOctaBoxes, n):
                 best = b
                 bestj = j
         if bestj >= 0:
-            if args.threshold > 0. and score < args.threshold ** 2:
+            if args.threshold > 0. and best.score < args.threshold ** 2:
                 break
             if len(best.left.segs):
                 curr[bestj] = best.left
@@ -308,13 +308,19 @@ def outputone(f, start, hasOctaBoxes, args, curr, n):
                 newb = _Object()
                 for k, v in subbox_map.items():
                     val = int(scalings[v[0]](obase, getattr(c, v)) * 255. + 0.5)
+                    if val < 0:
+                        val = 0
+                        print("Clipping {} to 0 for {} in {}".format(val, v, n))
+                    elif val > 255:
+                        val = 255
+                        print("Clipping {} to 255 for {} in {}".format(val, v, n))
                     setattr(newb, k, val)
                 newboxes.append(newb)
             bboxbase.subboxes = newboxes
             bboxbase.subboxBitmap = (1 << len(newboxes)) - 1
     elif args.detail & 2:
         print("{}: {} -> {}[{}] - {}".format(n, start.area, boxarea, len(curr), area))
-    if args.detail & 2:
+    if args.detail & 4:
         for c in curr:
             segarea = sum(s.area for s in c.segs)
             print("  "+str(c), c.area, segarea)
@@ -327,7 +333,7 @@ parser.add_argument("infont",help="Font to process")
 parser.add_argument("-g","--glyph",action="append",help="Glyphs names to process")
 parser.add_argument("-d","--detail",default=0,type=int,help="Give details: 0-points either side of split")
 parser.add_argument("-y","--ysplit",type=int,help="y-coord for split")
-parser.add_argument("-t","--threshold",type=int,default=20,help="Stop making boxes if improvement less than this em units squared")
+parser.add_argument("-t","--threshold",type=int,default=150,help="Stop making boxes if improvement less than this em units squared")
 parser.add_argument("-o","--output",help="Output font")
 parser.add_argument("-q","--quick",action="store_true",help="Reduce processing time")
 parser.add_argument("-j","--jobs",type=int,help="How many parallel processes or 0 for arbitrary")
@@ -360,6 +366,7 @@ for n in args.glyph:
     if args.quick and hasOctaBoxes and not len(f['Glat'].attributes[n].octabox.subboxes):
         continue
     jobs.append(n)
+print("Processing {} glyphs".format(len(jobs)))
 process(jobs)
 if args.jobs is not None:
     pool.close()
