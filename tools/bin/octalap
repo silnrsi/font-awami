@@ -22,7 +22,10 @@ scalings = {'x': lambda o, v: (v - o.xi) / (o.xa - o.xi),
             'd': lambda o, v: (v - o.xi + o.ya) / (o.xa - o.yi - o.xi + o.ya)}
 
 class Octabox(object):
+    """Holds a list of segments and calculates its bounding octabox"""
     def __init__(self, segs, subbox=None, scale=None, **kw):
+        """ Either pass in a list of segments or a fonttools.Glat.octabox.subbox
+            And/or you can supplement with explicit xa, xi type values"""
         self.segs = segs
         for a in 'xysd':
             setattr(self, a+'i', 1e6)
@@ -96,12 +99,15 @@ class Octabox(object):
 
     @property
     def area(self):
+        """ Returns the area of the octabox. """
         a = (self.xa - self.xi) * (self.ya - self.yi)
         c = (self.ya - self.xi + self.di) ** 2 + (self.xa - self.sa + self.ya) ** 2
         c += (self.xa - self.da - self.yi) ** 2 + (self.si - self.xi - self.yi) ** 2
         return a - 0.5 * c
 
     def bestcut(self, args=None):
+        """ Find the best line that cuts this octabox and its segments so that the
+            resulting two bounding octaboxes (of the two sets of segments) is minimised."""
         currbest = OctaScore(self, None, self.area)
         for x,d in enumerate(((1, 0), (0, 1), (-1, 1), (1, 1))):
             splitline = Line(Point(d[0]*self.xi, d[1]*self.yi), Point(d[0]*self.xa, d[1]*self.ya))
@@ -119,21 +125,28 @@ class Octabox(object):
 
 
 def splitWith(segs, splitline, args=None):
+    """ Splits a list of segments given a straight splitting line. Returns
+        2 lists of segments such that the resulting segments are closed paths. """
     trans = splitline.alignmentTransformation()
     lefts = []
     rights = []
     splits = []
     for _s in segs:
+        # transform so splitline is horizontal and is y=0
         s = _s.transformed(trans)
         roots = s._findRoots("y")
+        # does y=0 cut this segment?
         if len(roots) == 2:
+            # chop a quadratic cuver and put parts in left and right collection
             l, r = s.splitAtTime(roots[0])
             (rights if s.start.y < 0 else lefts).append(l)
             l, r = r.splitAtTime(roots[1])
             (rights if s.end.y < 0 else lefts).append(r)
+            # keep split points so we can add joinup lines later
             splits.append((l.start.x, (l.start.x < s.start.x) ^ (s.start.y < 0)))
             splits.append((l.end.x, (l.end.x > s.end.x) ^ (s.start.y < 0)))
         elif len(roots) == 1:
+            # chop a straight line
             l, r = s.splitAtTime(roots[0])
             if s.start.y < 0:
                 rights.append(l)
@@ -143,10 +156,12 @@ def splitWith(segs, splitline, args=None):
                 lefts.append(l)
                 rights.append(r)
                 splits.append((r.start.x, False))
+        # otherwise no cut and simply allocate the segment
         elif s.start.y < 0 or s.end.y < 0:
             rights.append(s)
         else:
             lefts.append(s)
+    # to convert from y=0 back to original co-ordinates
     backt = AffineTransformation()
     backt.apply_backwards(trans)
     backt.invert()
@@ -154,6 +169,8 @@ def splitWith(segs, splitline, args=None):
         print("      ", [(Point(s[0], 0).transformed(backt), s[1]) for s in sorted(splits)])
     curr = False
     lastP = None
+    # find adjacent pairs of bounding points on the splitline and join them up on either side
+    # thus making closed paths, even if the segments aren't end to start all the way round.
     for x, d in sorted(splits):
         newP = Point(x, 0)
         if d != curr:
@@ -174,6 +191,9 @@ def splitWith(segs, splitline, args=None):
 Bound = namedtuple("Bound", "x y max slope")
 
 def _same_bounds(b1, b2):
+    """ Calculate if a point is 'inline' with a point we have already seen.
+        If the point is close and the slopes are both in the same direction, then
+        we say yes. The points must also be at opposite ends of the segment. """
     if b1.max == b2.max:
         return False
     if isclose(b1.x, b2.x) and isclose(b1.y, b2.y):
@@ -184,15 +204,20 @@ def _addBound(bounds, bound):
     return [b for b in bounds if not _same_bounds(b, bound)]
         
 def findshifts(segs, splitline):
+    """ Yields lines which are possible positions of splitline. This includes
+        all maxima and minima on the segments list and also every 20 units. """
     trans = splitline.alignmentTransformation()
     bounds = []
     maxy = -1e6
     miny = 1e6
     for _s in segs:
+        # rotate segment so dealing purely in y, the splitline is in effect horizontal
         s = _s.transformed(trans)
+        # add segment ends or any maxima to the list of possible positions
         if len(s) == 2:
             bounds = _addBound(bounds, Bound(s[0].x, s[0].y, s[0].y > s[1].y, s.slope))
             bounds = _addBound(bounds, Bound(s[1].x, s[1].y, s[1].y >= s[0].y, s.slope))
+            # collect overall segment list extrema in y
             maxy = max(maxy, s[0].y, s[1].y)
             miny = min(miny, s[0].y, s[1].y)
         elif len(s) == 3:
@@ -209,10 +234,12 @@ def findshifts(segs, splitline):
             bounds = _addBound(bounds, Bound(s[2].x, s[2].y, s[2].y >= s[0].y, s.derivative()[1].slope))
             maxy = max(maxy, s[0].y, s[2].y)
             miny = min(miny, s[0].y, s[2].y)
+    # create transform back from horizontal to original direction
     backt = AffineTransformation()
     backt.apply_backwards(trans)
     backt.invert()
     last = None
+    # yield each of the calculated bounds as a splitline
     for b in sorted(bounds, key=lambda b:(b[1], b)):
         if last is not None and isclose(last, b[1]):
             continue
@@ -221,6 +248,7 @@ def findshifts(segs, splitline):
         res[1].y += b.y
         yield res.transformed(backt)
         last = b[1]
+    # Now yield every 20 em units as a splitline
     for y in range(int(miny), int(maxy), 20):
         res = splitline.transformed(trans)
         res[0].y += y
@@ -228,12 +256,14 @@ def findshifts(segs, splitline):
         yield res.transformed(backt)
 
 def isEncompassed(inside, outside):
+    """ Is inside completely enclosed by outside path? """
     for s in inside.asSegments():
         if not outside.pointIsInside(s[0]):
             return False
     return True
 
 def removeEncompassed(paths):
+    """ Remove all completely enclosed paths """
     res = []
     for i in range(len(paths)):
         p1 = paths[i]
@@ -246,6 +276,8 @@ def removeEncompassed(paths):
     return res
 
 def processone(f, hasOctaBoxes, n):
+    """ Process a single glyph to calculate the best set of Octabox objects
+        to cover this glyph. """
     g = f['glyf'][n]
     bs = BezierPath.fromFonttoolsGlyph(g, gset, f['glyf'])
 #    for b in bs:
@@ -260,10 +292,12 @@ def processone(f, hasOctaBoxes, n):
         bestj = -1
         for j, c in enumerate(curr):
             b = c.bestcut(args)
+            # how much does the best cut of this octabox reduce the area of that octabox?
             score = c.area - (b.left.area + (b.right.area if b.right is not None else 0))
             if score > best.score:
                 best = b
                 bestj = j
+        # Update list of octaboxes with the best split
         if bestj >= 0:
             if args.threshold > 0. and best.score < args.threshold ** 2:
                 break
@@ -276,12 +310,16 @@ def processone(f, hasOctaBoxes, n):
     return (curr, n, start)
 
 def outputone(f, start, hasOctaBoxes, args, curr, n):
+    """ Updates a glyph with the set of Octabox objects as subboxes, if an output
+        file is requested. Also does textual results reporting. """
     g = f['glyf'][n]
     boxarea = sum(c.area for c in curr)
     area = sum(sum(s.area for s in c.segs) for c in curr)
     if hasOctaBoxes:
         bboxbase = f['Glat'].attributes[n].octabox
         obase = Octabox([], xi = g.xMin, xa = g.xMax, yi = g.yMin, ya = g.yMax)
+        # Convert Graphite scaled subbox into an Octabox
+        # Can't use Octabox constructor because the bounding octabox has different bounds for scaling
         for k, v in subbox_map.items():
             if not hasattr(bboxbase, k):
                 continue
@@ -306,6 +344,7 @@ def outputone(f, start, hasOctaBoxes, args, curr, n):
             newboxes = []
             for c in curr:
                 newb = _Object()
+                # convert from Octabox into subbox - (should this be a method in Octabox?)
                 for k, v in subbox_map.items():
                     val = int(scalings[v[0]](obase, getattr(c, v)) * 255. + 0.5)
                     if val < 0:
@@ -335,7 +374,7 @@ parser.add_argument("-d","--detail",default=0,type=int,help="Give details: 0-poi
 parser.add_argument("-y","--ysplit",type=int,help="y-coord for split")
 parser.add_argument("-t","--threshold",type=int,default=150,help="Stop making boxes if improvement less than this em units squared")
 parser.add_argument("-o","--output",help="Output font")
-parser.add_argument("-q","--quick",action="store_true",help="Reduce processing time")
+parser.add_argument("-q","--quick",action="store_true",help="Onlyl process glyphs that have subboxes already")
 parser.add_argument("-j","--jobs",type=int,help="How many parallel processes or 0 for arbitrary")
 args = parser.parse_args()
 
