@@ -7,7 +7,7 @@ from beziers.affinetransformation import AffineTransformation
 from fontTools.ttLib import TTFont
 from collections import namedtuple
 from math import isclose, floor
-import argparse
+import argparse, json
 from multiprocessing import Pool
 
 class _Object():
@@ -66,6 +66,9 @@ class Octabox(object):
     def __str__(self):
         return "[({},{}), ({},{}), ({},{}), ({},{})]".format(self.xi, self.xa,
                 self.yi, self.ya, self.si, self.sa, self.di, self.da)
+
+    def as_tuple(self):
+        return tuple([self.xi, self.xa, self.yi, self.ya, self.si, self.sa, self.di, self.da])
 
     def _update_curve(self, s, attrib, fn):
         d2 = fn(s[0]) - 2*fn(s[1]) + fn(s[2])
@@ -201,7 +204,11 @@ def _same_bounds(b1, b2):
     return False
 
 def _addBound(bounds, bound):
-    return [b for b in bounds if not _same_bounds(b, bound)]
+    return []
+    if any(True for b in bounds if _same_bounds(b, bound)):
+        return bounds
+    else:
+        return bounds + [bound]
         
 def findshifts(segs, splitline):
     """ Yields lines which are possible positions of splitline. This includes
@@ -246,10 +253,10 @@ def findshifts(segs, splitline):
         res = splitline.transformed(trans)
         res[0].y += b.y
         res[1].y += b.y
-        yield res.transformed(backt)
+#        yield res.transformed(backt)
         last = b[1]
     # Now yield every 20 em units as a splitline
-    for y in range(int(miny), int(maxy), 20):
+    for y in range(int(miny), int(maxy), max(20, int((maxy - miny) * .05))):
         res = splitline.transformed(trans)
         res[0].y += y
         res[1].y += y
@@ -275,9 +282,7 @@ def removeEncompassed(paths):
             res.append(p1)
     return res
 
-def processone(f, hasOctaBoxes, n):
-    """ Process a single glyph to calculate the best set of Octabox objects
-        to cover this glyph. """
+def calcStart(f, n):
     g = f['glyf'][n]
     bs = BezierPath.fromFonttoolsGlyph(g, gset, f['glyf'])
 #    for b in bs:
@@ -286,6 +291,12 @@ def processone(f, hasOctaBoxes, n):
     segs = sum((b.asSegments() for b in bs), [])
     area = sum(s.area for s in segs)
     start = Octabox(segs)
+    return start
+
+def processone(f, hasOctaBoxes, n):
+    """ Process a single glyph to calculate the best set of Octabox objects
+        to cover this glyph. """
+    start = calcStart(f, n)
     curr = [start]
     for i in range(15):
         best = OctaScore(start, None, 0)
@@ -309,7 +320,7 @@ def processone(f, hasOctaBoxes, n):
                 curr[bestj] = best.right
     return (curr, n, start)
 
-def outputone(f, start, hasOctaBoxes, args, curr, n):
+def outputone(f, outjson, start, hasOctaBoxes, args, curr, n):
     """ Updates a glyph with the set of Octabox objects as subboxes, if an output
         file is requested. Also does textual results reporting. """
     g = f['glyf'][n]
@@ -337,7 +348,9 @@ def outputone(f, start, hasOctaBoxes, args, curr, n):
             bbox_area = obase.area
         if args.detail & 2:
             print("{}: {} -> {}[{}] vs {}[{}] - {}".format(n, start.area, boxarea, len(curr), bbox_area, len(bboxes), area))
-        if args.output and len(bboxes):
+        if outjson:
+            g.json = curr
+        elif args.output and len(bboxes):
             # put back new results
             if boxarea > bbox_area and args.detail & 1:
                 print("{}: Worse {}[{}] vs {}[{}]".format(n, boxarea, len(curr), bbox_area, len(bboxes)))
@@ -369,11 +382,12 @@ def multiprocessone(a):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("infont",help="Font to process")
+parser.add_argument("-m","--merge",help="json file to merge in. Stops calculation")
 parser.add_argument("-g","--glyph",action="append",help="Glyphs names to process")
 parser.add_argument("-d","--detail",default=0,type=int,help="Give details: 0-points either side of split")
 parser.add_argument("-y","--ysplit",type=int,help="y-coord for split")
 parser.add_argument("-t","--threshold",type=int,default=150,help="Stop making boxes if improvement less than this em units squared")
-parser.add_argument("-o","--output",help="Output font")
+parser.add_argument("-o","--output",help="Output font or json")
 parser.add_argument("-q","--quick",action="store_true",help="Onlyl process glyphs that have subboxes already")
 parser.add_argument("-j","--jobs",type=int,help="How many parallel processes or 0 for arbitrary")
 args = parser.parse_args()
@@ -383,34 +397,53 @@ gset = f.getGlyphSet()
 if args.glyph is None or not len(args.glyph):
     args.glyph = f.getGlyphNames()
 hasOctaBoxes = f['Glat'].hasOctaboxes
-if args.jobs is not None:
-    pool = Pool(args.jobs or None)
-    def multiproc(jobs):
-        ress = pool.imap_unordered(multiprocessone, ((f, hasOctaBoxes, n) for n in jobs))
-        for curr, n, start in ress:
-            outputone(f, start, hasOctaBoxes, args, curr, n)
-    process = multiproc
+if args.merge is None:
+    outjson = args.output.lower().endswith(".json")
+    if args.jobs is not None:
+        pool = Pool(args.jobs or None)
+        def multiproc(jobs):
+            ress = pool.imap_unordered(multiprocessone, ((f, hasOctaBoxes, n) for n in jobs))
+            for curr, n, start in ress:
+                outputone(f, outjson, start, hasOctaBoxes, args, curr, n)
+        process = multiproc
+    else:
+        def singleproc(jobs):
+            for n in jobs:
+                (curr, _, start) = processone(f, hasOctaBoxes, n)
+                outputone(f, start, hasOctaBoxes, args, curr, n)
+        process = singleproc
+
+    jobs = []
+    for n in args.glyph:
+        g = f['glyf'][n]
+        if g.numberOfContours == 0:
+            continue
+        if args.quick and hasOctaBoxes and not len(f['Glat'].attributes[n].octabox.subboxes):
+            continue
+        jobs.append(n)
+    print("Processing {} glyphs".format(len(jobs)))
+    process(jobs)
+    if args.jobs is not None:
+        pool.close()
+        pool.join()
+
+    if args.output:
+        if outjson:
+            res = {}
+            for n in f['glyf'].keys():
+                g = f['glyf'][n]
+                if hasattr(g, 'json'):
+                    res[n] = [x.as_tuple() for x in g.json]
+            with open(args.output, "w") as outf:
+                json.dump(res, outf, indent=4)
+        else:
+            f.save(args.output)
 else:
-    def singleproc(jobs):
-        for n in jobs:
-            (curr, _, start) = processone(f, hasOctaBoxes, n)
-            outputone(f, start, hasOctaBoxes, args, curr, n)
-    process = singleproc
-
-jobs = []
-for n in args.glyph:
-    g = f['glyf'][n]
-    if g.numberOfContours == 0:
-        continue
-    if args.quick and hasOctaBoxes and not len(f['Glat'].attributes[n].octabox.subboxes):
-        continue
-    jobs.append(n)
-print("Processing {} glyphs".format(len(jobs)))
-process(jobs)
-if args.jobs is not None:
-    pool.close()
-    pool.join()
-
-if args.output:
-    f.save(args.output)
-
+    with open(args.merge, "r") as inf:
+        res = json.load(inf)
+        for n, vals in res.items():
+            start = calcStart(f, n)
+            curr = [Octabox([], **dict(zip("xi xa yi ya si sa di da".split(' '), v))) for v in vals]
+            outputone(f, False, start, hasOctaBoxes, args, curr, n)
+        if args.output:
+            f.save(args.output)
