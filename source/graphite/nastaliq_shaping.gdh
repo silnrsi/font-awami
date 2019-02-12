@@ -964,15 +964,21 @@ cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed c
 // Special case: khah + teh/theh + kaf/lam/alef
 gJeemMedBeM2  >  gJeemMedBeKl  /  _=J  cNuqtaLikeUpper  gBehMed  cNuqtaLikeUpper;
 
-// Special case: nuqta+small-V + kaf/gaf
-gBehMed  g__dot1u_smallV  >  gBehMedKf_wide  g__dot1u_smallVKf   /  _  _  cDiacritic?  (cKafMed  cKafFin);
-g__dot1u_smallV  >  g__dot1u_smallVKf  /  _  (cKafMed  cKafFin);
+// Special case: nuqta-small-V + kaf/gaf
+gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf   
+	/  _  _  cDiacritic?  (cKafMed  cKafFin);
+csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
+
+// Special case: high-tooth nuqta-small-V + beh + kaf/gaf
+g__dot1u_smallV  >  g__dot1u_smallVKf
+	/  gBehMedBeM2  _=NV  cDiacritic?  cBehMed  MARKS  cKafMF;
 
 // noon + vowel-small-V -> noon-small-V
-g__dot1u  gVowelSmallV  >  g__dot1u_smallVKf:(1 2)  _  /  _  _ (cKafMed  cKafFin);
+g__dot1u  gVowelSmallV  >  g__dot1u_smallVKf:(N V)  _
+	/  _=N  _=V  [cBehMed MARKS]?  cKafMF;
 
 // Special case: nuqta + diac(s)
-gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  (cKafMed  cKafFin);
+gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
 
 
 endpass;

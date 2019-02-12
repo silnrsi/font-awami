@@ -68,7 +68,7 @@ cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
 cKafTopAltHt = ( g__kafIniTop_taller, g__kafIniTop_short, g__kafIniTop_shorter,
 	g__kafMedTop_short, g__kafMedTop_shorter, g__kafMedTop_tall,
-	g__kafMedTop_medshort, g__kafTop_bj_short, g__kafTop_bj_tall,
+	g__kafMedTop_medshort, g__kafTop_bj_short, g__kafTop_jm_tall,
 	g__gafIniTop_taller, g__gafIniTop_short, g__gafIniTop_shorter, 
 	g__gafMedTop_short, g__gafMedTop_shorter, g__gafMedTop_tall,
 	g__gafMedTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
@@ -84,7 +84,7 @@ g__kafIniTop_shorter { ktDelta = -200m };
 g__gafIniTop_shorter { ktDelta = -200m };
 g__kafMedTop_tall { ktDelta = 150m };
 g__gafMedTop_tall { ktDelta = 150m };
-g__kafTop_bj_tall { ktDelta = 150m };
+g__kafTop_jm_tall { ktDelta = 150m };
 g__gafTop_bj_tall { ktDelta = 150m };
 g__kafMedTop_short { ktDelta = -150m };
 g__gafMedTop_short { ktDelta = -150m };
@@ -94,13 +94,14 @@ g__kafMedTop_shorter { ktDelta = -270m };
 g__gafMedTop_shorter { ktDelta = -270m };
 g__kafMedTop_medshort { ktDelta = 0m };
 g__gafMedTop_medshort { ktDelta = 0m };
-g__kafTop_m_bogus {ktDelta = 0m };
-g__kafTop_null {ktDelta = 0m };
+g__kafTop_m_bogus { ktDelta = 0m };
+g__kafTop_null { ktDelta = 0m };
+g__kafTop_by_tall { ktDelta = 0m }; // currently not used, just to avoid compilation error
 
 // General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic,
-	g__smallV, g__smallVinv,g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark,
-	g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__dot2l__hamza, g__verticalStroke,
+	g__smallV, g__smallVinv,g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_smallTah, g__dot1u_smallTahKf,
+	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__dot2l__hamza, g__verticalStroke,
 	cKafTop,
 	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long, // g__gafStroke_short
@@ -123,8 +124,8 @@ cNuqtaLikeSecond = (cNuqtaLikeUpMid,
 cNuqtaLikeLower_jump = cNuqtaLikeLower;
 cNuqtaLikeLower_jump -= (g__hehHook_small, g__attachedRing, g__ring);
 
-cNuqtaLikeUpperTall = (cDot3u, cDot4l, g__smallTah, g__smallTah2dots, g__dot1u_smallV, g__dot1u_smallVKf,
-	g__dot1u_ngMark);
+cNuqtaLikeUpperTall = (cDot3u, cDot4l, g__smallTah, g__smallTah2dots, g__dot1u_smallV,
+	g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_smallTah, g__dot1u_smallTahKf, g__dot1u_ngMark);
 cNuqtaLikeLowerTall = (cDot2vl, cDot3l, cDot4l, g__smallTahBelow, g__smallTah2dotsBelow);
 
 
@@ -286,8 +287,8 @@ cQafIso = (gQaf, gDotlessQaf);
 cQafFin = (gQafFin, gQafFin_stfh, gQafFin_short, gQafFin_stfh_short);
 cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt, gLamThreeDots);
 cLamFin = (gLamFin, gLamFin_short, gLamFin_kfTall);
-cMeemIso = (gMeem);
-cMeemFin = (gMeemFin, gMeemFin_short);
+cMeemIso = (gMeem, gMeemLowdiac);
+cMeemFin = (gMeemFin, gMeemFin_short, gMeemFinLowdiac);
 cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
 cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
@@ -541,12 +542,14 @@ csHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt
 cBehIM = (cBehIni cBehMed);
 cBehMedNn = (gBehMedNn gBehMedNn_hgbm);
 cJeemIM = (cJeemIni cJeemMed);
+cAinIM = (cAinIni cAinMed);
 cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);
 cKafIM = (cKafIni cKafMed);
 cKafMF = (cKafMed cKafFin);
 //cKafNoIso = (cKafIM cKafFin csKafIM_base); -- see below
 cTahIM = (cTahIni cTahMed);
+cMeemMF = (cMeemMed cMeemFin);
 
 
 csDotlessQaf_feh = (gFeh, gQafFin, gQafFin_stfh, cFehIM);
@@ -616,14 +619,14 @@ csGafMed_base = (
 	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTa_base,
 	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base,
 	// gGafMedKf - does not exist
-	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gGafMedBy /*no change*/
 );
 csKafMed_base = (
 	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base, gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
 	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSd_base, gKafMedTa_base,
 	gKafMedAi_base, gKafMedFe_base, gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base,
 	// gKafMedKf - does not exist
-	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy_base,
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base, gKafMedBy /*no change*/ ,
 	csGafMed_base
 );
 
@@ -740,18 +743,20 @@ csKafIni_top_taller = (
 
 csKafMed_top_tall = (
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, 	// Be,BeM1,BeM2,BeRe,BeNn
-	g__kafMedTop_tall, g__kafMedTop_tall, g__kafTop_bj_tall,/*jm*/ g__kafMedTop_tall, g__kafMedTop_tall, // BeHg,BeF,Jm,Re,Sn
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafTop_jm_tall,/*jm*/ g__kafMedTop_tall, g__kafMedTop_tall, // BeHg,BeF,Jm,Re,Sn
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,      // Sd, Ta, Ai, Fe, Qf
-	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, 					// Mm, MmX,Nn, Dk,
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, 						// Mm, MmX,Nn, Dk,
 	// g__kafMedTop_tall -- Dk
-	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafTop_bj_tall,	   // HgM, HgF, Hd, Ch, By
+	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,							// HgM, HgF, Hd, Ch, 
+	g__kafTop_m_bogus,	  // By
 
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,	// Be,BeM1,BeM2,BeRe,BeNn
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafTop_bj_tall,/*jm*/ g__gafMedTop_tall, g__gafMedTop_tall, // BeHg,BeF,Jm,Re,Sn
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,       // Sd, Ta, Ai, Fe, Qf
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,					 // Mm, MmX,Nn, Dk,
 	// g__gafMedTop_tall - no Dk
-	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafTop_bj_tall	// HgM, HgF, Hd, Ch, By
+	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, 	// HgM, HgF, Hd, Ch,
+	g__kafTop_m_bogus	// By
 );
 
 // not used:
@@ -764,7 +769,7 @@ csKafIni_top_medshort = (
 	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_bj_tall,--jm/ g__kafIniTop_medshort, g__kafIniTop_medshort,
 	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,
 	g__kafIniTop_m_bogus,--mm/ g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,
-	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafTop_bj_tall,--by/
+	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafTop_jm_tall,--by/
 
 	g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, g__gafIniTop_medshort, 
 	// g__gafIniTop_medshort, -- no beF
@@ -777,7 +782,7 @@ csKafIni_top_medshort = (
 
 csKafMed_top_medshort = (
 	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
-	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafTop_bj_tall,/*jm*/ g__kafMedTop_medshort, g__kafMedTop_medshort,
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafTop_jm_tall,/*jm*/ g__kafMedTop_medshort, g__kafMedTop_medshort,
 	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
 	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
 	// g__kafMedTop_medshort, -- Dk
@@ -893,7 +898,7 @@ cs_bariyehComposed = (gBariyeh, gBariyehHamza, gBariyehTwoAbove, gBariyehThreeAb
 // Other stuff
 //
 
-cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah);
+cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah, g__dot1u_smallTah);
 cNuqtaUpperSmall = (cDot1u, cDot2u);
 
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
@@ -913,6 +918,9 @@ cKafNoIso = (cKafIM cKafFin csKafIM_base);
 // We could add isolates and finals to this class, but it is currently only used
 // for letters that get very high.
 cVerticalStem = (cLamIni cLamMed cTahIni cTahMed);
+
+csNuqtaPlusMark = (g__dot1u_smallV, g__dot1u_smallTah);
+csNuqtaPlusMarkKf = (g__dot1u_smallVKf, g__dot1u_smallTahKf);
 
 
 // Kaf exclusion glyphs

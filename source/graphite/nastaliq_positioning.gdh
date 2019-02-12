@@ -39,10 +39,20 @@ pass(1)  // 8
 
 #if (QUICKCOMPILE == 0)
 
+// The sequence width is used to determine kerning limits (for instance, avoiding kerning
+// a very short sequence under a longer/higher sequence). It will not be completely
+// accurate if glyphs of a different width are later substituted.
+#define seqWidth user5
 
-c_exit {att {to=@L; with=exit; at=entrance}} 
-	c_entrance {insert=1} 
-		/ _ MARKS2N ^ _=L ;
+c_exit { att {to=@N; with=exit; at=entrance} } 
+	c_entrance { insert=1; 
+			seqWidth = @P.advance.x + @P.seqWidth  // for measuring sequences
+		} 
+		/ _=P MARKS2N ^ _=N ;
+
+// For measuring sequences:
+cFin { seqWidth += advance.x };
+cIso { seqWidth = advance.x };
 
 /***
 cursive_attach(alef)
@@ -174,6 +184,9 @@ g__smallTah { nUpperMaux = point(tahUpperM.x, tahUpperM.y + 1m) };
 g__smallTah2dots { nUpperMaux = point(tahUpperM.x, tahUpperM.y + 1m) };
 g__smallV  { nUpperMaux = point(nUpperM.x, nUpperM.y + 1m) };
 
+// To avoid compiler warnings:
+gArabicKafTwoDotsAbove { nUpperS = mUpperS };
+
 
 // Intersection classes:
 
@@ -191,37 +204,39 @@ endtable;  // glyph
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
 
-// X+NxL  Y+NyL  Z+Nz  Bariyeh
-cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+// X+Nl(large) Y  Z  Bariyeh
+
+// X+Nl  Y+Nl  Z+Nl  Bariyeh
+cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
-// X+NxL  Y+NyU  Z+NzL  Bariyeh
+// X+Nl  Y+Nu  Z+Nl  Bariyeh
 // Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
 // the second lower nuqta.
-cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cMed   cHasUpperMaux   { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
-	csMedBy cNuqtaLower       { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cMed   cHasUpperMaux    { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
+	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
-// X+NxL  Y+NyL  Bariyeh
-cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+// X+Nl  Y  Z+Nl Bariyeh
+cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  cMed=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
-// X+NxL  Y+NyL  Z  Bariyeh
-cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+// X+Nl  Y+Nl  Z  Bariyeh
+cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
 	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
-// X+NxL  Y+NyL  Bariyeh
-cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
+// X+Nl  Y+Nl  Bariyeh
+cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
 
-// X+Nx Y Bariyeh 
-cTakes_nLowerDia  cNuqtaLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+// X+N Y Bariyeh 
+cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 
@@ -520,12 +535,13 @@ cFullStop = (gFullStop gFullStopDot);
 endtable;
 
 
-table(glyph)
+table(glyph) {AttributeOverride = 1}
 
 cPostKernable = (cIso, cIni, cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
+
 
 cKernable = (cIso, cFin, cKernPunct) {
 	dbgBbLeft = bb.left; dbgLsb = lsb;
@@ -1134,19 +1150,19 @@ endtable;
 
 #define NOTSET 12345  // some number that is not likely to be a real value
 
-c_initial {user6 = position.y}  c_final {user6 = position.y}   / _=I  MARKS2N  _=F;
-c_initial {user6 = position.y}  c_medial {user6 = position.y}  c_final {user6 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
+c_initial {user7 = position.y}  c_final {user7 = position.y}   / _=I  MARKS2N  _=F;
+c_initial {user7 = position.y}  c_medial {user7 = position.y}  c_final {user7 = position.y} / _=I MARKS2N  _=M MARKS2N _=F;
 
-c_medial {user6 = NOTSET}  c_medial {user6 = position.y}   c_final {user6 = NOTSET}
-	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user6==0};
+c_medial {user7 = NOTSET}  c_medial {user6 = position.y}   c_final {user7 = NOTSET}
+	/ ^ cIniMed cNonBaseTemp?  _=M1  cNonBaseTemp?  _=M2 cNonBaseTemp?  _=F {user7==0};
 
-c_medial {user6 = NOTSET}  c_medial {user6 = position.y}
-	/ ^ cIniMed MARKS2N  _=M1 MARKS2N  _=M2 {user6 == NOTSET};
+c_medial {user7 = NOTSET}  c_medial {user7 = position.y}
+	/ ^ cIniMed MARKS2N  _=M1 MARKS2N  _=M2 {user7 == NOTSET};
 
-c_initial {user6 = position.y}  c_medial {user6 = position.y}  /  _=I  MARKS2N  _=M {user6==NOTSET} ;
+c_initial {user7 = position.y}  c_medial {user7 = position.y}  /  _=I  MARKS2N  _=M {user7==NOTSET} ;
 
 // Do this last:
-c_final {user6 = position.y}  /  _ {user6 == NOTSET};
+c_final {user7 = position.y}  /  _ {user7 == NOTSET};
 *****/
 
 
@@ -1155,7 +1171,7 @@ c_final {user6 = position.y}  /  _ {user6 == NOTSET};
 #define reattached user4
 
 // currently not used
-////#define marginSet user5  -- currently not used
+////#define marginSet user6  -- currently not used
 
 
 table(positioning)
@@ -1213,6 +1229,7 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 	/  _=L  (cDiacritic g__smallV g__smallTah)  cDiacritic?   _=K  _=T;
 
 // Don't change kaf, rather shorten lam:
+// \u0645\u0644\u06AF\u064E\u06CC
 (gLamIni gLamMed)  (cKafMed cKafFin)  >  cLam_short @K
 	/  _=L cDiacritic? _=K
 			g__kafTop_null?;  // include the extra slot for precedence
@@ -1247,8 +1264,8 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  cDiacriticUpper?  _=K  _=T;
 
-// Tall: nuqta+smallV + kaf
-(g__dot1u_smallVKf g__dot1u_smallV)  csKafMed_medium  g__kafTop_null  
+// Tall: nuqta-smallV + kaf, nuqta-smallTah + kaf
+(csNuqtaPlusMark csNuqtaPlusMarkKf)  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper?  _=K  _=T;
 
@@ -1267,7 +1284,7 @@ cDot1u  cDot1u  csKafMed_medium  g__kafTop_null
 // Don't change: single-nuqta + single-nuqta + kaf (eg, \u0628\u0650\u0646\u0650\u0646\u06AF\u064E\u06A9\u06C1)
 cDot1u  cDot1u  csKafMed_medium  g__kafTop_null  
 	>  @N1  @N2 STAYBELOWKAF  @K  @T
-	/  _=N1  cDiacritic?  cMed  _=N2  cDiacritic? ^ _=K  _=T;
+	/  _=N1  cDiacritic?  cMed ^ _=N2  cDiacritic? _=K  _=T;
 
 // Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
 cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  csKafMed_medium  g__kafTop_null  
@@ -1285,7 +1302,7 @@ csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
-csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
+csKafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
 	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
@@ -1340,6 +1357,11 @@ cNuqtaLikeUpperNoKT?  cKafMed  g__kafTop_null
 	>	@N  @K  @T
 	/  cKafTop  _=N  cDiacritic?  _=K  _=T;
 
+// No change: don't make shorter after a narrow substantial base with nuqta or diac
+(cNuqtaLikeUpperNoKT cDiacritic)  cKafMed  g__kafTop_null
+	>	@N STAYBELOWKAF  @K  @T
+	/  (cFehIM cAinIM cJeemIM) _=N  _=K  _=T;
+
 
 // Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
@@ -1348,7 +1370,7 @@ cNuqtaLikeUpperNoKT?  csKafIM_medium  g__kafTop_null
 	/  _=N  cDiacritic?  _=K {position.y > SHORTERKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 cNuqtaLikeUpperNoKT?  cDiacritic?  csKafIM_medium  g__kafTop_null
-	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user5 = bb.top; user6 = position.y + bb.top}**/  csKafIM_top_short$K
+	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user6 = bb.top; user7 = position.y + bb.top}**/  csKafIM_top_short$K
 	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
@@ -1372,7 +1394,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 
 // Debugging:
-cIni {user5 = position.y; user6 = position.y + bb.bottom; user7 = position.y + bb.top};
+cIni {user6 = position.y; user7 = position.y + bb.bottom; user8 = position.y + bb.top};
 
 endpass;  // 5 (12)
 
@@ -1393,7 +1415,7 @@ pass(6)  // 13
 // these rules are for other contexts.
 // Consider whether we want to get rid of these rules.
 gBehIni {shift.y = -150m}  gKafMedBe_base {tooHigh = 1; shift.y = -50m}  cKafTop {shift.y = -150m} 
-	/ _=B  MARKS  ^ _=K {position.y > 2800} _=T;
+	/ _=B  MARKS  ^ _=K {position.y > 2800m} _=T;
 
 gJeemMedBeKl  {shift { x = 105m; y = -130m } } gBehMed {tooHigh = 1}
 	/  _=J {tooHigh == 1} cNuqtaUpper  ^  _=B  cNuqtaUpper  csKafMed_base;
@@ -1534,8 +1556,8 @@ cNuqtaLikeLower { n1LowerM = point(0m,0m) };
 cIsoFin { n1LowerM = point(0m,0m); mUpperS = point(0m,0m) };
 cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
 // Temporary:
-g__kafIniTop_medshort { n1LowerS = point(0m, 0m) };
-g__gafIniTop_medshort { n1LowerS = point(0m, 0m) };
+//g__kafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
+g__gafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
 
 // Intersection class:
 cTakes_smallV_short = csFinal_short;
@@ -1599,6 +1621,17 @@ c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
 gTahFin { n1LowerS = point(mLowerS.x, mLowerS.y) };
 gTehMarbutaFin  { n1LowerS = point(mLowerS.x, mLowerS.y) };
 
+
+// For attachments after lam/feh/ain:
+cMeemMF { nUpperS_left.x = nUpperS.x - 250m; nUpperS_left.y = nUpperS.y - 300m };
+
+// For special cases involving nuqtas:
+cNuWide = (cDot2u  cDot3u  cDot4u);
+cNlWide = (cDot2l  cDot3l  cDot4l);
+cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
+cRehFin_longtail = (gRehFin, gRehFin_hgM);
+
+
 endtable;  // glyph
 
 
@@ -1619,6 +1652,13 @@ cDiacriticUpper=D  chonorificDia=H {att {to=@D; at=honorificS; with=honorificM};
 	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true; shift {x = 800m; y=400m} }
 		/ ^  _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
+
+// Special cases: initial-lam/feh/ain + meem + diac (medial lam has a little more space to the left):
+cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; insert=true}
+		/ (gLamIniMm)  MARKS  _=M  _=D;
+// Special case: wide nuqta + meem + diac
+cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; insert=true}
+		/ cNuWide  cDiacritic?  _=M  _=D;
 
 // diacritic AND honorific attached to final base or its nuqta;
 // honorific is positioned off to the left
@@ -1644,6 +1684,14 @@ cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorifi
 // honorific attached to final base w/o upper diac
 cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
 		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
+
+// Special rules for reh + zair
+// Word-medially it attaches at the normal place.
+cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerS; with=mLowerM}; insert=true}
+	/  _=R  _=D  cIsoIni;
+
+// Otherwise, it is word-final, so attaches it further to the left.
+cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; insert=true};
 
 
 // Nuqta + upper and lower diacritic
@@ -1692,7 +1740,7 @@ cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; inse
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
 		/ ^ _=B  cKafTop?  c_attLikeNqUpMid?  _=D {att.to==0};
 
-// attach to diacritic
+// Attach to diacritic
 cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}
 	/ _=D1 ^ _=D2 {att.to==0};
 cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}
@@ -1709,7 +1757,6 @@ cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); 
 cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ _ ;
 cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ _ ;
 cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ _ ;
-
 
 endpass; // pos - 8 (15)
 
@@ -1744,7 +1791,7 @@ gAlef { kernPreZain = -60m };
 gAlefFin { kernPreZain = -60m };
 
 // Don't let punctuation kern underneath following segment:
-cKernPunct { minKernDelta = MINKERN * -1 };
+cKernPunct { minKernDelta = MINKERN * -1 };  // cancels out MINKERN
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
 ///gAlef { kernPreKafNoSp = -150m };
@@ -1786,12 +1833,6 @@ pass(9)  // 16
 
 // Special cases involving nuqtas.
 
-table(glyph)
-cNlWide = (cDot2l  cDot3l  cDot4l);
-cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
-cRehFin_longtail = (gRehFin, gRehFin_hgM);
-endtable;
-
 // Special case: \u0631\u06CC\u0631, \u0634\u0632\u062F\u06CC\u0648
 cDRW_IF  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = 170m; y = -400m}}  (gRehFin_jkl cWawFin)
 	/  _=DR cDiacritic? _=B _=N cDiacritic?  _=RW;
@@ -1823,8 +1864,11 @@ cNuqtaUpper { shift { x = -100m; y = -100m } }
 // Leave FIX off for the right-most nuqtas so they don't shift back.
 cNlWide { shift { x = 300m; y = -200m } }
 	cNuqtaLower { shift { x = 350m; y = -200m } }  // we don't expect collisions
-	/  (gBehIniBe gBehIniBeM1 gBehIniBeRe) _=N1 cDiacritic? 
-		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedRe) _=N2; 
+	/  (gBehIniBe gBehIniBeM1) _=N1 cDiacritic? 
+		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn) _=N2;
+cNlWide { shift { x = 300m; y = -130m } }
+	cNuqtaLower { shift { x = 300m; y = -360m } }  // avoid the final reh
+	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2;
 cNuqtaLower { shift { x = 200m; y = -200m } }
 	cNuqtaLower {
 		shift { x = 300m; y = -200m }
@@ -1889,7 +1933,7 @@ cRehIso { pairKern = -100m }            /  _ ^ MARKS  cKernIgnore?  cBehIni MARK
 
 
 // Bogus rule that will never fire (for if we disable this pass for debugging):
-///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user4 = 10 };
+///////////////gRrehFin_jkl cDiacritic cDiacritic cDiacritic { user6 = 10 };
 
 
 // Diacritics that extend above/below the line
@@ -2090,6 +2134,8 @@ cNuqtaUpperSmall { shift { x = -100m; y = -200m } }
 		collision { min.x = -50m; max.y = 50m; margin = 100m } } // keep it from moving backcollision
 	/  gBehIni  _=N  ^ _=D  csKafIM_base;
 
+// Special case: heh-hook + lower diac + lower nuqta + bariyeh
+
 cNuqtaUpper { shift.y = -100m }
 	cDiacriticUpper { shift { x = -150m; y = -150m };
 		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
@@ -2143,13 +2189,14 @@ cDiacriticUpper {
 
 // Diacritics attached to bases:
 cDiacriticUpper {
+	shift.x = 175m;
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		min.x = -250m;
 		max.x = 250m;
-		min.y = -300m;
-		max.y = 500m;
+		//min.y = -300m;
+		//max.y = 500m;
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  cBase  cNuqtaLikeLower?  _;
@@ -2163,12 +2210,13 @@ cDiacriticLower {
 		max.x = 300m;
 		min.y = -1200m; // needed to get below nuqtas for sure; eg \u062A\u0648\u0641\u0650\u06CC\u0642
 		max.y = 300m;
+		margin = 50m;
 	};
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 }  /  cBase  cNuqtaLikeUpper?  _;
 
 // These should always stay centered over the nuqta if any:
-(gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm) { collision {
+(gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm gShadda) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
 	min.x = -10m;
@@ -2199,6 +2247,7 @@ cDiacriticLower { collision {
 endif; // (collfix >= 2) - shift fixes
 
 
+// KERNING
 // Isolate and final forms can be kerned, as indicated by glyph attribute collision.flags.
 
 /******
@@ -2398,7 +2447,10 @@ cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
-	max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta - 800m);
+	max.x = MAXKERN;
+	min.x = min(0m, MINKERN + minKernDelta - 800m
+		+ max(0m, 2000m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost; 2000 is arbitrary
+		);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  (cKafIni  csKafIni_base  cKafIso)=N;

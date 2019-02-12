@@ -125,16 +125,10 @@ gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 **/
 
-// EXPERIMENTS:
-
-
-
-endtable;
-
+gAlefWasla { kernBbRightS = point(327m, 1150m) };
 
 #include "nastaliq_classes.gdh"
 #include "latin_awami.gdh"
-
 
 
 #if DO_COL_FIX
@@ -142,6 +136,39 @@ endtable;
 #include "nastaliq_complexShapes.gdh"
 
 #endif // DO_COL_FIX
+
+
+// EXPERIMENTS AND BUG FIXES:
+
+/****
+gSeenIniJm_flat { nUpperS = point(623m, 2052m) };
+
+gRehFin_hgM { mLowerWfS = point(-244m, -872m) };
+gRehFin { mLowerWfS = point(-401m, -1004m) };
+gRehFin_jkl { mLowerWfS.x = 193 };
+
+
+gHehGoalIniBeF { hehhookS.x = 750m };  // 670
+gHehGoalIniRe { hehhookS.x = 398m };   // 238
+gHehGoalIniAi { hehhookS.x = 862m };   // 792
+gHehGoalIniFe { hehhookS = point(881m, -72m) };    // 711
+gHehGoalIniNn { hehHookS = point(603m, 462m) };    // 503,512
+
+gHehGoalMedNn { hehhookS = point(604m, 296m) };    // 524, 366
+gHehGoalMedMm { hehhookS = point(763m, 416m) };    // 663, 446
+
+gHehGoalIniSn { hehhookS = point(485m, 588m) };    // 275
+gHehGoalIniSd { hehhookS = point(1204m, 814m) };    // 1024
+*****/
+
+
+gHehGoalFin { hamzaUpperS = point(281m, 957m) };
+
+
+
+
+endtable;
+
 
 
 // FEATURES
