@@ -442,6 +442,7 @@ else:
     with open(args.merge, "r") as inf:
         res = json.load(inf)
         for n, vals in res.items():
+            if n not in f: continue
             start = calcStart(f, n)
             curr = [Octabox([], **dict(zip("xi xa yi ya si sa di da".split(' '), v))) for v in vals]
             outputone(f, False, start, hasOctaBoxes, args, curr, n)
