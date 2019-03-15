@@ -55,7 +55,7 @@ FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
 font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
 				# remove buggy tables:
 				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-                cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/octabox.json"),
+				cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/octabox.json"),
 				# for removing psnames:
 				########cmd('psfix -s ${DEP} ${TGT}'),
 				# strip out bogus hints:

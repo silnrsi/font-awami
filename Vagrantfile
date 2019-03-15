@@ -42,7 +42,7 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/smith", type: "virtualbox"
   # Hunspell project:
-  config.vm.synced_folder "../WS_Tech/Hunspell", "/hunspell", type: "virtualbox"
+  config.vm.synced_folder "../ChordTeam/Hunspell", "/hunspell", type: "virtualbox"
 
   config.vm.hostname = "smith"
 

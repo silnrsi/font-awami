@@ -35,7 +35,7 @@ def run():
     #mode = "allbase_somediac"   # not implemented
     #mode = "alldiac"            # not implemented???
     
-    fontScale = "200"
+    fontScale = int(args.scale)
     #fontScale = "100"  # for waterfall file
     
     for mode in modes:
@@ -65,7 +65,7 @@ def run():
             gen = Text(outputFilename)
         else:
             gen = FTML(outputFilename)
-        output(gen, mode, args.scale, groupedSeq)
+        output(gen, mode, fontScale, groupedSeq)
         print("")
 
     print("Done")
