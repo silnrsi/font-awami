@@ -7,13 +7,14 @@ try:
 except:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'pythonlib'))
     from beziers.path import BezierPath
-    
+
+from beziers.utils import isclose
 from beziers.line import Line
 from beziers.point import Point
 from beziers.affinetransformation import AffineTransformation
 from fontTools.ttLib import TTFont
 from collections import namedtuple
-from math import isclose, floor
+from math import floor
 import argparse, json
 from multiprocessing import Pool
 
