@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 
-from beziers.path import BezierPath
+import sys, os
+
+try:
+    from beziers.path import BezierPath
+except:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'pythonlib'))
+    from beziers.path import BezierPath
+    
 from beziers.line import Line
 from beziers.point import Point
 from beziers.affinetransformation import AffineTransformation
