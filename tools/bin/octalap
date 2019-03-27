@@ -369,11 +369,11 @@ def outputone(f, outjson, start, hasOctaBoxes, args, curr, n):
                 for k, v in subbox_map.items():
                     val = int(scalings[v[0]](obase, getattr(c, v)) * 255. + 0.5)
                     if val < 0:
-                        val = 0
                         print("Clipping {} to 0 for {} in {}".format(val, v, n))
+                        val = 0
                     elif val > 255:
-                        val = 255
                         print("Clipping {} to 255 for {} in {}".format(val, v, n))
+                        val = 255
                     setattr(newb, k, val)
                 newboxes.append(newb)
             bboxbase.subboxes = newboxes

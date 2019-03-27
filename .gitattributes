@@ -45,6 +45,8 @@ preflight text eol=lf
 preflightg text eol=lf
 wscript text eol=lf
 
+tools/bin/** text eol=lf
+
 # Declare text files that will stay in LF (i.e. not expected to be used on Windows)
 *.sh text eol=lf
 *.sfd text eol=lf
