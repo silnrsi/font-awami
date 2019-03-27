@@ -85,3 +85,4 @@ def configure(ctx) :
     ctx.env['FFCOPYGLYPHS'] = '../tools/bin/ffcopyglyphs.py'
     ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
     ctx.find_program('ttfautohint')
+    ctx.env['FRET'] = 'perl ../tools/bin/fret'
