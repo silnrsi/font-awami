@@ -2,12 +2,9 @@
 
 import sys, os
 
-try:
-    from beziers.path import BezierPath
-except:
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'pythonlib'))
-    from beziers.path import BezierPath
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'pythonlib'))
 
+from beziers.path import BezierPath
 from beziers.utils import isclose
 from beziers.line import Line
 from beziers.point import Point
