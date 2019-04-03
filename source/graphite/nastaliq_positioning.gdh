@@ -2131,7 +2131,7 @@ cDiacriticUpper {
 // In fact, might as well apply this to tehs and other diacs as well.
 cNuqtaUpperSmall { shift { x = -100m; y = -200m } }
 	cDiacriticUpper { shift { x = -130m; y = -70m };
-		collision { min.x = -50m; max.y = 50m; margin = 100m } } // keep it from moving backcollision
+		collision { min.x = -50m; max.y = 50m; margin = 100m } } // keep it from moving back
 	/  gBehIni  _=N  ^ _=D  csKafIM_base;
 
 // Special case: heh-hook + lower diac + lower nuqta + bariyeh

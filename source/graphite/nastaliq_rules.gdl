@@ -14,7 +14,7 @@
 
 	You should have received a copy of the license along with this Font Software.
 	If this is not the case, go to (http://scripts.sil.org/OFL) for all the
-	details including an FAQ.
+	details including an FAQ.help
 */
 
 
@@ -72,8 +72,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 //      COLL_ISCOL       32		// this glyph has a collision
 //      COLL_KNOWN       64		// we've figured out what's happening with this glyph
 #define COLL_ISSPACE    128		// treat this glyph as a space for the purposes of kerning
-////#define COLL_JUMPABLE   128 -- obsolete
-////#define COLL_OVERLAP    256 -- obsolete
 
 #define setbits(f,m,v) (f & (~m)) | v
 
@@ -125,7 +123,6 @@ gBehMedNn { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 **/
 
-gAlefWasla { kernBbRightS = point(327m, 1150m) };
 
 #include "nastaliq_classes.gdh"
 #include "latin_awami.gdh"
@@ -160,11 +157,6 @@ gHehGoalMedMm { hehhookS = point(763m, 416m) };    // 663, 446
 gHehGoalIniSn { hehhookS = point(485m, 588m) };    // 275
 gHehGoalIniSd { hehhookS = point(1204m, 814m) };    // 1024
 *****/
-
-
-gHehGoalFin { hamzaUpperS = point(281m, 957m) };
-
-
 
 
 endtable;
@@ -426,6 +418,8 @@ collFix {
     }
 }
 
+/***
+Obsolete feature:
 showInvis {
 	id = "invs";
 	name.1033 = string("Show invisible characters");	
@@ -441,6 +435,7 @@ showInvis {
         }
     }
 }
+***/
 
 /***
 debugGaf {

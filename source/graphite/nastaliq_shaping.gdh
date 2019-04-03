@@ -55,34 +55,30 @@ cInvisible =  (cShowInvisibleZeroWidth, g_ObjectReplChar);
 endtable;
 
 
+/***
+// obsolete feature:
 if (showInvis == 1 && wordSpacing == xtight)
 csSpMedInvis  >  csSpXtightVis;
 endif;
-
 if (showInvis == 1 && wordSpacing == tight)
 csSpMedInvis  >  csSpTightVis;
 endif;
-
 if (showInvis == 1 && wordSpacing == medium)
 csSpMedInvis  > csSpMedVis;
 endif;
-
 if (showInvis == 1 && wordSpacing == wide)
 csSpMedInvis  >  csSpWideVis;
 endif;
-
 if (showInvis == 1 && wordSpacing == xwide)
 csSpMedInvis  >  csSpXwideVis;
 endif;
-
 if (showInvis == 0)
 cInvisible  >  g_zeroWidthNoBreakSpace;
 endif;
-
 if (showInvis == 1)
 cno_showInv  >  cshowInv;
 endif;
-
+***/
 
 endpass;
 
@@ -1092,12 +1088,12 @@ endif;
 
 endpass; // 7
 
+// I don't think this is quite right:
+/************
 	// In theory, the rules above should be adequate to handle subtending marks.
 	// But there is a bug where some applications don't put these in the right
 	// direction. So we provide right-to-left rules as well.
 
-// I don't think this is quite right:
-/************
 pass(6)
 
 	cDigitAny  cDigitAny  cDigitAny  cDigitAny  cSignTakes4  >
