@@ -2,7 +2,9 @@
 .appVersion = "1161";
 DisplayStrings = (
 "/absRehSmallVBelow",
-"/absFeh/absVeh"
+"/absFeh/absVeh",
+"/_smallVBelow",
+"/absRehDotBelow/absRehDotBelowDotAbove/_smallV/absRehSmallVBelow"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -173001,7 +173003,7 @@ position = "{760, 744}";
 },
 {
 name = mLower;
-position = "{500, -961}";
+position = "{400, -961}";
 },
 {
 name = mUpper;
@@ -173014,7 +173016,7 @@ name = absReh;
 },
 {
 name = _smallV;
-transform = "{1, 0, 0, 1, 461, -727}";
+transform = "{1, 0, 0, 1, 391, -727}";
 }
 );
 layerId = master01;
@@ -177087,6 +177089,31 @@ nodes = (
 );
 }
 );
+width = 0;
+}
+);
+},
+{
+color = (31,255,0,1);
+glyphname = _smallVBelow;
+layers = (
+{
+anchors = (
+{
+name = _mLower;
+position = "{0, -219}";
+},
+{
+name = nLower;
+position = "{3, 430}";
+}
+);
+components = (
+{
+name = _smallV;
+}
+);
+layerId = master01;
 width = 0;
 }
 );
