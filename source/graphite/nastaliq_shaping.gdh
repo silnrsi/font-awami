@@ -760,7 +760,7 @@ gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 (cBehIni  cBehMed)  g__dot2l__hamza	>  @1  g__hamzaArabic:1;
 
 // This version of the rule takes precedence over the rules below that substitute the composed isolates
-// (an extra slot is include to ensure the precedence):
+// (an extra slot is included to ensure the precedence):
 cIso  cHamzaUrdu			>  @1  cHamzaArabic;
 cHamzaUrdu  >  cHamzaArabic;
 
