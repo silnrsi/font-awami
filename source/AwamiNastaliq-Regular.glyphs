@@ -1,5 +1,9 @@
 {
 .appVersion = "1161";
+DisplayStrings = (
+"/absRehSmallVBelow",
+"/absFeh/absVeh"
+);
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
 {
@@ -172905,6 +172909,119 @@ nodes = (
 width = 0;
 }
 );
+},
+{
+color = (252,158,28,255);
+glyphname = absVeh;
+layers = (
+{
+anchors = (
+{
+name = honorific;
+position = "{174, 1391}";
+},
+{
+name = mLower;
+position = "{1204, -320}";
+},
+{
+name = mUpper;
+position = "{2118, 2554}";
+}
+);
+background = {
+paths = (
+{
+closed = 1;
+nodes = (
+"2165 569 OFFCURVE",
+"1884 639 OFFCURVE",
+"1964 930 CURVE SMOOTH",
+"2007 1084 LINE",
+"2044 1221 OFFCURVE",
+"2099 1237 OFFCURVE",
+"2153 1237 CURVE SMOOTH",
+"2285 1237 OFFCURVE",
+"2384 1019 OFFCURVE",
+"2384 789 CURVE SMOOTH",
+"2384 277 OFFCURVE",
+"1992 -1 OFFCURVE",
+"957 -1 CURVE SMOOTH",
+"53 -1 OFFCURVE",
+"20 289 OFFCURVE",
+"176 815 CURVE SMOOTH",
+"183 838 OFFCURVE",
+"232 796 OFFCURVE",
+"228 772 CURVE SMOOTH",
+"140 315 OFFCURVE",
+"752 345 OFFCURVE",
+"1125 345 CURVE SMOOTH",
+"1795 345 OFFCURVE",
+"2303 492 OFFCURVE",
+"2303 652 CURVE SMOOTH",
+"2303 690 OFFCURVE",
+"2292 723 OFFCURVE",
+"2246 741 CURVE"
+);
+}
+);
+};
+components = (
+{
+name = absDotlessFeh;
+},
+{
+name = _nukta3inv;
+transform = "{1, 0, 0, 1, 1533, 1832}";
+}
+);
+layerId = master01;
+width = 2487;
+}
+);
+unicode = 06A4;
+},
+{
+color = (31,255,0,1);
+glyphname = absRehSmallVBelow;
+layers = (
+{
+anchors = (
+{
+name = honorific;
+position = "{-109, 1624}";
+},
+{
+name = kernBbLeft;
+position = "{137, 202}";
+},
+{
+name = kernBbRight;
+position = "{760, 744}";
+},
+{
+name = mLower;
+position = "{500, -961}";
+},
+{
+name = mUpper;
+position = "{353, 1028}";
+}
+);
+components = (
+{
+name = absReh;
+},
+{
+name = _smallV;
+transform = "{1, 0, 0, 1, 461, -727}";
+}
+);
+layerId = master01;
+width = 864;
+}
+);
+unicode = 0695;
 },
 {
 color = (31,255,0,1);
