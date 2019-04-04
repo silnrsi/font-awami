@@ -45,6 +45,8 @@ DEBPKG = 'fonts-awami'
 VERSION='1.900'              # Now taken directly from the font
 ##TTF_VERSION="1.151"          # 
 
+opts = preprocess_args({'opt' : '-d'})
+
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
@@ -52,19 +54,26 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 FONT_NAME = "Awami Nastaliq"  #### Awami Nastaliq
 FONT_FILENAME = "AwamiNastaliq-Regular"  #### AwamiNastaliq-Regular
 
-font(target = process(FONT_FILENAME + '.ttf', name(FONT_NAME, lang='en-US', subfamily=('Regular')),
-				# remove buggy tables:
-				cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-				cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/octabox.json"),
-				# for removing psnames:
-				####cmd('psfix -s ${DEP} ${TGT}'),
-				# strip out bogus hints:
-			  cmd('ttfstriphints ${DEP} ${TGT}'),
-				####cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
-				##########cmd('ttfsubset -s deva ${DEP} ${TGT}'),
-				cmd('psfcompressgr ${DEP} ${TGT}'),
-				cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
-     		),
+cmds = [
+    name(FONT_NAME, lang='en-US', subfamily = 'Regular'),
+    # remove buggy tables:
+    cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
+    cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/octabox.json"),
+    # for removing psnames:
+    ####cmd('psfix -s ${DEP} ${TGT}'),
+]
+
+if '-d' not in opts:
+    cmds.append(cmd('ttfsubset -s deva ${DEP} ${TGT}'))
+
+cmds.extend([
+    # strip out bogus hints:
+    ####cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
+    cmd('ttfstriphints ${DEP} ${TGT}'),
+    cmd('psfcompressgr -q ${DEP} ${TGT}'),
+    cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")])
+
+font(target = process(FONT_FILENAME + '.ttf', *cmds),
     source = "source/AwamiNastaliq-Regular.ufo",
     params = "--removeOverlap",
     graphite = gdl('awami.gdl', master = 'source/graphite/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
