@@ -1635,6 +1635,12 @@ cRehFin_longtail = (gRehFin, gRehFin_hgM);
 endtable;  // glyph
 
 
+// To make it easy to change whether or not we allow insertions before diacritics:
+#define SETDIACINS
+// ...which is more efficient but equivalent to:
+//#define SETDIACINS insert=false
+
+
 /****
 // Alternate approach to honorifics with diacritics - attach them to the diacritic:
 table(glyph)
@@ -1642,56 +1648,56 @@ gZabar { honorificS = point(-200m, 300m) };
 gPesh { honorificS = point(-200m, 300m) };
 endtable;
 
-cDiacriticUpper=D  chonorificDia=H {att {to=@D; at=honorificS; with=honorificM}; insert=true}
+cDiacriticUpper=D  chonorificDia=H {att {to=@D; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^ _  _ {att.to==0};
 ****/
 
 // Special case: beh/peh + upper diacs + honorific - move honorific further off to the left
 // (it normally goes where upper diacs go).
 (cBehFin gBeh)=B  cNuqtaLikeUpper=N
-	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
-	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true; shift {x = 800m; y=400m} }
+	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; SETDIACINS}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; shift {x = 800m; y=400m}; SETDIACINS }
 		/ ^  _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 // Special cases: initial-lam/feh/ain + meem + diac (medial lam has a little more space to the left):
-cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; insert=true}
+cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; SETDIACINS}
 		/ (gLamIniMm)  MARKS  _=M  _=D;
 // Special case: wide nuqta + meem + diac
-cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; insert=true}
+cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; SETDIACINS}
 		/ cNuWide  cDiacritic?  _=M  _=D;
 
 // diacritic AND honorific attached to final base or its nuqta;
 // honorific is positioned off to the left
 cIsoFin=B  cNuqtaLikeUpper=N
-	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
-	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; SETDIACINS}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^  _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 cIsoFin=B  
-	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
-	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; SETDIACINS}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 // honorific attached to final beh with lower nuqtas, w/o upper diac - 
 // uses standard upper nuqta location raised a little higher
-cBehFin=B  chonorificDia=H {att {to=@B; at {x=nUpperS.x; y=nUpperS.y + 300m}; with=honorificM}; insert=true}
+cBehFin=B  chonorificDia=H {att {to=@B; at {x=nUpperS.x; y=nUpperS.y + 300m}; with=honorificM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=H {att.to==0};
 
 // honorific attached to final base w/o upper diac
-cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
 
 // honorific attached to final base w/o upper diac
-cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; insert=true}
+cTakes_honorificDia=B  chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  c_attLikeNqUpper?  cDiacriticLower?  _=H {att.to==0};
 
 // Special rules for reh + zair
 // Word-medially it attaches at the normal place.
-cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerS; with=mLowerM}; insert=true}
+cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerS; with=mLowerM}; SETDIACINS}
 	/  _=R  _=D  cIsoIni;
 
 // Otherwise, it is word-final, so attaches it further to the left.
-cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; insert=true};
+cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; SETDIACINS};
 
 
 // Nuqta + upper and lower diacritic
@@ -1702,48 +1708,48 @@ cTakes_nUpperDia=B  cNuqtaUpper=N
 
 
 // attach to nuqta
-cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; insert=true}
+cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower? _=D {att.to==0};
-cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; with=mLowerM}; insert=true}
+cTakes_mLowerDia  c_attLikeNqLower=N  cDiacriticLower {att {to=@N; at=mLowerS; with=mLowerM}; SETDIACINS}
 		/ ^ _=B  _=N  c_attLikeNqUpMid?  _=D {att.to==0};
 
 
 // Special contextual cases - eg, kaf/lam followed by tailed final 
-cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; insert=true}
+cTakes_mLowerCDia=B  cDiacriticLower {att {to=@B; at=mLowerCS; with=mLowerM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0}  (gAinFin gChotiyehFin gChotiyehFin_bfkl gJeemFin);
 
 // Only a few glyphs attach the small alef at a special place.
-cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; insert=true}
+cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Diacritics attach to tah above the stem, not where the nuqta goes:
-cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}; insert=true}
+cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}; SETDIACINS}
 		/  ^ _=B  c_attLikeNqUpper?  cDiacriticLower?  _=D {att.to==0};
 
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
-cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; insert=true}
+cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
-cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; insert=true}
+cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Taller or shorter kafs - attach to top, not base
-cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; insert=true}
+cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 
 // Attaching standing-alef to lam
-(gLamFin cLamIM)=L  gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; insert=true};
-gLam=L  gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; insert=true};
+(gLamFin cLamIM)=L  gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+gLam=L  gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
-cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; insert=true}
+cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  g__kafTop_null?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
-cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; insert=true}
+cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; SETDIACINS}
 		/ ^ _=B  cKafTop?  c_attLikeNqUpMid?  _=D {att.to==0};
 
 // Attach to diacritic
-cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; insert=true}
+cDiacriticUpper=D1  cDiacriticUpper {att {to=@D1; at=mUpperS; with=mUpperM}; SETDIACINS}
 	/ _=D1 ^ _=D2 {att.to==0};
-cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; insert=true}
+cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; SETDIACINS}
 	/ _=D1 ^ _=D2 {att.to==0};
 
 // Not needed because we have a nuqta+smalltah glyph:
