@@ -301,6 +301,7 @@ def calcStart(f, n):
 def processone(f, hasOctaBoxes, n):
     """ Process a single glyph to calculate the best set of Octabox objects
         to cover this glyph. """
+    print(n,"...")
     start = calcStart(f, n)
     curr = [start]
     for i in range(15):

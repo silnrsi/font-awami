@@ -29,7 +29,7 @@ gBeh  gTeh  gTheh  gTteh  gPeh  gTehRing  gTteheh  gTehThreeDotsAboveDownwards  
 gJeem  gHah  gKhah
 //gTcheh
 //gHahSmallTahBelow
-gHahSmallTahTwoDots  gHahThreeDotsAbove  gHahHamzaAbove  gHahSmallTahAbove  gHahFourBelow
+gHahSmallTahTwoDots  gHahThreeDotsAbove  gHahHamzaAbove  gHahSmallTahAbove  gHahSmallTahBelow  gHahFourBelow
 gDal  gThal  gDdal  gDalDotBelowSmallTah  gDalTwoVertBelowSmallTah  gDalDotBelow	 gDalRing
 	gDalFourDotsAbove  gDul
 gReh  gZain  gRreh  gJeh  gRehDotBelow  gRehDotBelowDotAbove  gRehTwoDotsAbove  gRehRing  gRehFourDotsAbove gRehTwoVertAbove gRehHamzaAbove gRehSmallTahTwoDots
@@ -40,20 +40,21 @@ gTah  gZah
 gAin  gGhain
 gFeh  gQaf  gFehThreeDotsBelow gDotlessFeh gDotlessQaf
 gLam  gLamBar  gLamSmallV  gLamThreeDots
-gMeem 
-gNoon  gNoonGhunna  gRnoon  gNoonSmallV
+gMeem  gMeemLowdiac
+gNoon  gNoonGhunna  gRnoon  gNoonSmallV  gNoonDotBelow  gNoonRing
 //gWaw
 gKirghizOe  gKirghizYu  gYu  gWawDotAbove  gWawTwoDotsAbove  gVe  gWawTwoAbove  gWawThreeAbove
 gKaf  gGaf  gKafRing  gKafThreeDotsAbove  gGafRing  gNgoeh  gGueh  gArabicKaf  gArabicKafTwoDotsAbove  // gGafRing
 //gHehGoal
-gTehMarbutaGoal  gHehGoalHamza
-gChotiyeh  gYeh  gArabicE  gYehTail  gKashmiriYeh  gAlefMaksura
+gTehMarbutaGoal  gHehGoalHamza  gHehYehAbove
+gChotiyeh  gYeh  gArabicE  gYehTail  gKashmiriYeh  gAlefMaksura  gYehSmallV
 	gYehTwoAbove  gYehThreeAbove  gYehFourBelow
 gBariyeh  gBariyehHamza  gBariyehTwoAbove  gBariyehThreeAbove
 //gDalToa2Nuqtas  gDalToa2Nuqtas_fina
 
 gRehFin_jkl  gRehFin  gRehFin_hgM   //gRehFin_sshg - obsolete
 gDalFin
+gLigatureAllah
 
 gAinIniSd  // ???
 gAinIniTa  // ???
@@ -67,7 +68,7 @@ gAinMedTa  // ???
 gAinFin
 
 //gAlef // ???
-gAlefMaddaAbove  gAlefWasla
+gAlefMaddaAbove  gAlefWasla  gAlefWavyHamzaAbove  gAlefWavyHamzaBelow  gHighHamzaAlef  gHighHamzaAlefArabic
 //gAlefHamzaFin // obsolete
 //gAlefMaddaFin // obsolete
 gAlefFin  // more curved than you'd think
@@ -105,6 +106,8 @@ gBehFin  gBehFin_bfkl
 
 gChotiyehFin_bfkl
 gChotiyehFin
+gChotiyehFin_short
+gChotiyehFin_bfkl_short
 gYehTailFin
 gYehTailFin_bfkl
 gKashmiriYehFin
@@ -128,6 +131,7 @@ gHehDoIniTa
 gHehDoMedCh
 gHehDoMedBy
 gHehDoMedJm
+gHehDoMedMm
 gHehDoMedSd
 gHehDoMedTa
 //gHehDoFin
@@ -272,13 +276,13 @@ gLamMedQf  // ??
 gLamMedMm
 gLamMedNn
 gLamMedHgF
-gLamMedBy
-gLamMedBe
+gLamMedBy  gLamMedBy_kfTall
+gLamMedBe  gLamMedBe_kfTall
 gLamMedBeRe
 gLamMedBeNn
 gLamMedBeHg
 
-gLamFin
+gLamFin  gLamFin_kfTall  gLamFin_short  gLamSmallV_alt
 
 //gLamAlefFin
 //gLamAlefMadda
@@ -304,9 +308,11 @@ gMeemMedHgM   // ??
 gMeemMedBy    // ??
 gMeemMedBeNn
 
-gMeemFin  gMeemFinLowdiac
+gMeemFin
+gMeemFinLowdiac  
 
 gNoonFin
+gNoonFin_short
 gNoonGhunnaFin
 
 gSeenIni
@@ -334,7 +340,7 @@ gSeenMedJm_flat
 //gSeenMedRe  // ??
 gSeenMedSd 
 gSeenMedTa
-//gSeenMedAi
+gSeenMedAi
 //gSeenMedFe
 gSeenMedHgF    // ??
 //gSeenMedHgM
@@ -346,6 +352,7 @@ gSeenMedBeHg  // ??
 gSeenMedMmX  // ??
 
 gSeenFin
+gSeenFin_short
 
 gSadIni
 gSadIniBeM1
@@ -357,7 +364,7 @@ gSadIniTa
 gSadIniAi  // ??
 gSadIniFe
 gSadIniQf
-//gSadIniMm
+gSadIniMm
 //gSadIniNn
 gSadIniHgF
 gSadIniHgM
@@ -379,7 +386,7 @@ gSadMedTa
 gSadMedAi  // ??
 gSadMedFe
 gSadMedQf  // ??
-//gSadMedMm
+gSadMedMm
 //gSadMedNn
 gSadMedHgF
 gSadMedHgM
