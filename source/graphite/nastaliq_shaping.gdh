@@ -970,8 +970,8 @@ g__dot1u_smallV  >  g__dot1u_smallVKf
 	/  gBehMedBeM2  _=NV  cDiacritic?  cBehMed  MARKS  cKafMF;
 
 // noon + vowel-small-V -> noon-small-V
-g__dot1u  gVowelSmallV  >  g__dot1u_smallVKf:(N V)  _
-	/  _=N  _=V  [cBehMed MARKS]?  cKafMF;
+g__dot1u  (gVowelSmallV gNoonGhunnaMark)   >  (g__dot1u_smallVKf g__dot1u_ngMark)$M:(N M)  _
+	/  _=N  cDiacritic? _=M  [cBehMed MARKS]?  cKafMF;
 
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;

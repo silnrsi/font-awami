@@ -545,6 +545,7 @@ cJeemIM = (cJeemIni cJeemMed);
 cAinIM = (cAinIni cAinMed);
 cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);
+cLamMF = (cLamMed cLamFin);
 cKafIM = (cKafIni cKafMed);
 cKafMF = (cKafMed cKafFin);
 //cKafNoIso = (cKafIM cKafFin csKafIM_base); -- see below
@@ -602,7 +603,7 @@ csGafIni_base = (
 	// gGafIniBeF - does not exist
 	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTa_base,
 	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gGafIniMm_short, gKafIniMmX_base, gKafIniNn_base, gKafIniDk_base,
-	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base
+	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gGafIniBy /*no change*/
 );
 
 csKafIni_base = (
@@ -610,7 +611,7 @@ csKafIni_base = (
 	// gKafIniBeF - does not exist
 	gKafIniJm_base, gKafIniRe_base, gKafIniSn_base, gKafIniSd_base, gKafIniTa_base,
 	gKafIniAi_base, gKafIniFe_base, gKafIniQf_base, gKafIniMm_short, gKafIniMmX_base, gKafIniNn_base, gKafIniDk_base,
-	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy_base,
+	gKafIniKf_base,	gKafIniHgM_base, gKafIniHgF_base, gKafIniHd_base, gKafIniCh_base, gKafIniBy, /*no change*/
 	csGafIni_base
 );
 

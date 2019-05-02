@@ -50,9 +50,13 @@ c_exit { att {to=@N; with=exit; at=entrance} }
 		} 
 		/ _=P MARKS2N ^ _=N ;
 
-// For measuring sequences:
+// For measuring sequences. Note that the longer the sequence length, the more it 
+// can be kerned under the following sequence.
+cRehFin { seqWidth += advance.x - 300m };           // I don't understand why 300 makes these work more similarly to the others
 cFin { seqWidth += advance.x };
-cIso { seqWidth = advance.x };
+cIso { seqWidth += @P.advance.x + @P.seqWidth }		// no space - same sequence
+	/  (cIso cFin)=P MARKS2N  _=N;       
+cIso { seqWidth = advance.x };                      // start a new sequence after space or at very beginning
 
 /***
 cursive_attach(alef)
@@ -1270,10 +1274,9 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 	/  _=N  cDiacriticUpper?  _=K  _=T;
 
 // Tall: alef + diac + kaf
-// (This rule does not really need to include the kaf+bariyeh combination,
-// but the end result is pretty much the same.)
+// (Note that the kaf+bariyeh makes no change.)
 cDiacriticUpper  csKafIni_medium  g__kafTop_null  
-	>  @D STAYBELOWKAF  csKafIni_base$K  csKafMed_top_tall$K
+	>  @D STAYBELOWKAF  csKafIni_base$K  csKafIni_top_taller$K
 	/  (gAlef cAlefFin)  _=D  _=K  _=T;
 
 // Special case: exception to rule below when form before kaf is a jeem (eg, \u0641\u062E\u06AF\u0633):
@@ -1302,8 +1305,9 @@ csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
+// Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
-	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_medshort$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 
@@ -1665,6 +1669,9 @@ cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; SETDIACINS
 // Special case: wide nuqta + meem + diac
 cMeemMF  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; SETDIACINS}
 		/ cNuWide  cDiacritic?  _=M  _=D;
+// Special case: lam/kaf + meem + diac
+cMeemFin  cDiacriticUpper {att {to=@M; at=nUpperS_left; with=mUpperM}; SETDIACINS}
+		/ (cLamIM cKafIM)  MARKS  _=M  _=D;
 
 // diacritic AND honorific attached to final base or its nuqta;
 // honorific is positioned off to the left
@@ -1886,7 +1893,6 @@ cNuqtaLower { shift { x = 200m; y = -200m } }
 //	cNuqtaLower { shift { x = 250m; y = -250m }; collision.flags = SET_FIX(collision.flags) }
 //	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2 [cDiacritic?  gRehFin _=N3]?; 
 
-
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
 
@@ -1902,6 +1908,15 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 ////g__dot2l { shift { x = -130m; y = -170m; } }
 ////	g__dot1l { shift { x = 50m; y = -220m } }
 ////	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
+
+// Special case: jeem + noon/teh + shadda + noon/teh
+gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50} }
+	/ cJeemIM  gBehMedBeM1  cNuqtaLower?  _=S  gBehMedBeM2 _=N  cDiacritic?  gBehMed  cNuqta  cKafMF;
+
+// Special case: zair + beh + bariyeh
+gZair { shift.y = 200m }
+	/  _=Z gBehMedBy  MARKS  gBariyehFin;
+
 
 
 cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;
@@ -1921,7 +1936,17 @@ cKernable { pairKern = kernPreExclam }		/  _ ^ MARKS  cKernIgnore?  g_exclamArab
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
 
-gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  (cKafIni csKafIni_base cKafIso)
+
+table(glyph)
+// The kerning rule below doesn't apply to a kaf before a bariyeh, 
+// although I'm not sure how much practical difference it makes.
+cKafKludge = (cKafIni csKafIni_base cKafIso);  // kludge because these glyphs are in the classes twice
+cKafKludge -= (gKafIniBy gGafIniBy );
+cKafNoBy = cKafKludge;
+cKafNoBy -= (gKafIniBy gGafIniBy);
+endtable;
+
+gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  cKafNoBy
 	[MARKS  ANY]?;  // superfluous slots to increase precedence over two-letter sequence rule below
 
 // Exception to pre-short rule:
@@ -2147,6 +2172,18 @@ cNuqtaUpper { shift.y = -100m }
 		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
 	/  gSeenIni  _=N  ^ _=D  csKafIM_base;
 
+// Special case: kaf + alt-meem + diac + lam
+cDiacriticUpper {
+	shift.y += 700m;
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -50m;  // normally -250
+		max.x = 50m;   // normally 250
+		min.y = -100m;
+		max.y = 200m
+	} }
+	/  cKafIM  cKafTop  DIACS  gMeemMed_alt  _=D  (cAlefFin  cLamMF);
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -2193,16 +2230,21 @@ cDiacriticUpper {
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  cFin  cNuqtaLikeLower?  _;
 
+//table(glyph)
+//cBaseDontShiftDiac = cBase;
+//cBaseDontShiftDiac -= (cIso, cMeemMed_alt, cIni);
+//endtable;
+
 // Diacritics attached to bases:
 cDiacriticUpper {
-	shift.x = 175m;
+	//////shift.x = 175m;   // I think this was a mistake, so I am removing it.
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		min.x = -250m;
 		max.x = 250m;
-		//min.y = -300m;
-		//max.y = 500m;
+		min.y = -300m;   // These two lines were commented out,
+		max.y = 500m;    // but surely we need them. I think it was a mistake.
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
 }  /  cBase  cNuqtaLikeLower?  _;
@@ -2221,6 +2263,18 @@ cDiacriticLower {
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 }  /  cBase  cNuqtaLikeUpper?  _;
 
+
+table(glyph)
+cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gKhah, gHahThreeDotsAbove,
+	gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
+	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove, gDad, gZah, gGhain,
+	gFeh, gQaf, gLamSmallV, gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRetro,
+	gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalFourDotsAbove,
+	gWawDotAbove, gWawTwoDotsAbove, gWawTwoAbove, gWawThreeAbove, gZain,gRreh, gJeh, gRehDotBelowDotAbove,
+	gRehTwoDotsAbove, gRehTwoVertAbove, gRehSmallTahTwoDots, gYehSmallV, gYehTwoAbove, gYehThreeAbove,
+	gBariyehTwoAbove, gBariyehThreeAbove );
+endtable;
+
 // These should always stay centered over the nuqta if any:
 (gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm gShadda) { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -2229,7 +2283,7 @@ cDiacriticLower {
 	max.x = 10m;
 	min.y = -300m;
 	max.y = 500m;
-} }  /  cNuqta  cDiacritic?  _;
+} }  /  (cNuqta cIsoWithUpperNuqta)  cDiacritic?  _;
 
 cDiacriticUpper { collision {
 	flags = CLEAR_IGNORE(collision.flags);
@@ -2455,7 +2509,8 @@ cKernable { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
-		+ max(0m, 2000m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost; 2000 is arbitrary
+		+ max(0m, 1850m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
+									// 1850 is somewhat arbitrary but gives the best results
 		);
     // min/max.y are omitted for kernable glyphs
 } }
