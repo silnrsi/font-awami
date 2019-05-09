@@ -969,9 +969,11 @@ csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
 g__dot1u_smallV  >  g__dot1u_smallVKf
 	/  gBehMedBeM2  _=NV  cDiacritic?  cBehMed  MARKS  cKafMF;
 
-// noon + vowel-small-V -> noon-small-V
+// Special case: noon + vowel-small-V -> noon-small-V
+g__dot1u  (gVowelSmallV gNoonGhunnaMark)  gBehMed  >  (g__dot1u_smallVKf g__dot1u_ngMark)$M:(N M)  _  gBehMedKf_wide
+	/  _=N  cDiacritic? _=M  _=B MARKS  cKafMF;
 g__dot1u  (gVowelSmallV gNoonGhunnaMark)   >  (g__dot1u_smallVKf g__dot1u_ngMark)$M:(N M)  _
-	/  _=N  cDiacritic? _=M  [cBehMed MARKS]?  cKafMF;
+	/  _=N  cDiacritic? _=M  cKafMF;
 
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;

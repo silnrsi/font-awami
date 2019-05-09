@@ -428,6 +428,12 @@ cIso
 	cNuqtaLikeLower { attach {to = @B2; at = nLowerTightS; with = n1LowerM } }
 	/   cNuqtaLikeLower  _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin;
 
+// Special case: yeh + beh + hah/khah - the nuqtas get tangled due to collision and the possibility of
+// the lower nuqtas moving down by the jeem tail, which turns off the sequence mechanism.
+(gBehIniBe gBehMedBe) cNuqtaLower { attach {to = @B1; at = n1LowerS; with = n1LowerM }; shift {x = -100m; y = 100m} }
+	gBehMedJm  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50; y = -230m} }
+	/ _=B1  _=N1  _=B2  _=N2  gJeemFin;
+
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
 	/ _=B  g__kafTop_null?  _=L;
@@ -440,7 +446,7 @@ cTakes_tahLowerDia
 	ctahLowerDia { attach {to = @B; at = tahLowerS; with = tahLowerM } }
 	/ _=B  _=U;
 
-// Special case: heh-hook plus final ain
+// Special case: heh-hook plus final ain - where's the ain?
 cTakes_hehhookDia  
 	g__hehHook_small  { attach {to = @B; at = hehhookS; with = hehhookM };
 		shift {x = 130m; y = 140m} }
@@ -877,7 +883,6 @@ gHamzaAbove {
 	} }
 	/  gBehMedHgF  cNuqtaLikeUpper  gHehGoalFin _;
 
-
 // Use a different sequencing class for low-tooth nuqtas.
 table(glyph)
 cLowNuqta = (gBehMedAi, gBehIniBeM1, gBehMedBeM1, gBehMedFe, gBehMedSd, gBehMedTa, gBehIniBeNn, gSeenIniBeM1, gSeenMedBeM1);  // gBehMedAi??
@@ -894,6 +899,19 @@ cNuqtaLikeUpper {
 	sequence.class = 5;
 }  /  cLowNuqta  _=N;
 
+// Special case: flat glyph + nuqta + lam/kaf + base+nuqta
+// Normally the second nuqta would push the first one up, but the lam/kaf breaks the sequencing.
+// (In theory this COULD be a problem if the nuqta before the lam/kaf needs sequencing with a
+// previous glyph, but hard to imagine...)
+cNuqtaUpper { collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 350m; // more than normal (200)
+		min.y = -300m;
+		max.y = 1000m;
+	};
+	sequence.class = 0;
+}	/  (gBehIni gBehMed gSeenIni gSadIni)  _=N  cDiacritic?  (cKafMed  cLamMed) MARKS  (cMed cFin) cNuqtaUpper;
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
@@ -986,6 +1004,16 @@ cNuqtaLikeLower {
 } / cIni?  _ {underBy == true};
 
 
+// If there's a remote chance that the heh-hook will collide with a bariyeh, let it move down a lot.
+g__hehHook_small { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -50m;
+	max.x = 400m;
+	min.y = -1000m;  // nuqtas use 1000m
+	max.y = 50m;
+} }  /  _=H  cMed MARKS  [cMed MARKS]? cBariyehFin;
+
+
 // Heh-hooks need to be kept centered under the base. But because they are originally positioned quite a bit to the left
 // they can move right a lot. 400 lets it move to the right side of the heh-goal, and avoid a following jeem or ain.
 g__hehHook_small { collision {
@@ -1058,6 +1086,7 @@ cls_excludingGlyphs_kern { collision {
 	exclude.offset.x = collexclude.offsetx;
 	exclude.offset.y = collexclude.offsety;
 } }  /  cNuqtaLikeUpper  cDiacritic?  _=EG;
+
 
 // Special case: teh/theh + jeem + kaf
 // Include the exclusion glyph for this case as well, to avoid nuqtas on the jeem jumping up.
@@ -1234,9 +1263,8 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 
 // Don't change kaf, rather shorten lam:
 // \u0645\u0644\u06AF\u064E\u06CC
-(gLamIni gLamMed)  (cKafMed cKafFin)  >  cLam_short @K
-	/  _=L cDiacritic? _=K
-			g__kafTop_null?;  // include the extra slot for precedence
+(gLamIni gLamMed)  >  cLam_short
+	/  _=L cDiacritic? (cKafMed cKafFin) g__kafTop_null?;  // include the extra slot for precedence
 
 // Tall: after gGafMedKf_lm - lam + gaf + kaf combination
 csKafMed_medium  g__kafTop_null  
@@ -1891,7 +1919,12 @@ cNuqtaLower { shift { x = 200m; y = -200m } }
 //cNlWide { shift { x = 350m; y = -200m } }
 //	cNuqtaLower { shift { x = 250m; y = -250m }; collision.flags = SET_FIX(collision.flags) }
 //	cNuqtaLower { shift { x = 250m; y = -250m }; collision.flags = SET_FIX(collision.flags) }
-//	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2 [cDiacritic?  gRehFin _=N3]?; 
+//	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2 [cDiacritic?  gRehFin _=N3]?;
+
+// Special case: jeem/khah + meem/beh/heh-goal (narrow) + upper diac
+cDiacriticUpper { shift.x = 250m }
+	/  cJeemIM  MARKS  (cMeemMed cBehMed cHehGoalMed)  cNuqtaLower?  _=D;
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -1914,8 +1947,8 @@ gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50
 	/ cJeemIM  gBehMedBeM1  cNuqtaLower?  _=S  gBehMedBeM2 _=N  cDiacritic?  gBehMed  cNuqta  cKafMF;
 
 // Special case: zair + beh + bariyeh
-gZair { shift.y = 200m }
-	/  _=Z gBehMedBy  MARKS  gBariyehFin;
+////gZair { shift.y = 200m }
+////	/  _=Z gBehMedBy  MARKS  gBariyehFin;
 
 
 
@@ -2185,6 +2218,10 @@ cDiacriticUpper {
 	} }
 	/  cKafIM  cKafTop  DIACS  gMeemMed_alt  _=D  (cAlefFin  cLamMF);
 
+// Special case: khah + sheen; this is used in a key word in a certain language, so make it pretty. :-)
+cNuqtaLikeUpper {shift.x = -100m}  cNuqtaLikeUpper {shift.x = 100m}
+	/  gJeemMedSn  _=N1  cDiacritic?  cSeenMed  _=N2;
+
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
@@ -2257,7 +2294,7 @@ cDiacriticLower {
 		min.x = -300m; // making this larger than ideal fixes \u0628\u0650\u06CC\u062C
 		max.x = 300m;
 		min.y = -1200m; // needed to get below nuqtas for sure; eg \u062A\u0648\u0641\u0650\u06CC\u0642
-		max.y = 300m;
+		max.y = 300m;    // CHANGE BACK TO 300
 		margin = 50m;
 	};
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
