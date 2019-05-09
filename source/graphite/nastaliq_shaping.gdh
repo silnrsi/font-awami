@@ -55,8 +55,9 @@ cInvisible =  (cShowInvisibleZeroWidth, g_ObjectReplChar);
 endtable;
 
 
+
+// obsolete feature
 /***
-// obsolete feature:
 if (showInvis == 1 && wordSpacing == xtight)
 csSpMedInvis  >  csSpXtightVis;
 endif;
@@ -72,13 +73,15 @@ endif;
 if (showInvis == 1 && wordSpacing == xwide)
 csSpMedInvis  >  csSpXwideVis;
 endif;
-if (showInvis == 0)
-cInvisible  >  g_zeroWidthNoBreakSpace;
-endif;
+
 if (showInvis == 1)
 cno_showInv  >  cshowInv;
 endif;
 ***/
+
+//if (showInvis == 0)
+cInvisible  >  g_zeroWidthNoBreakSpace;
+//endif;
 
 endpass;
 
