@@ -2096,7 +2096,7 @@ cDiacriticUpper {
 	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
 
 // Diacritics should stay centered over short-lam stems, but they may need to move a little.
-// Eg: lam pesh kaf
+// Eg: lam + pesh + kaf
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -2108,7 +2108,7 @@ cDiacriticUpper {
 	} }  /  (gLamIni_short gLamMed_short)  _  cKafMF;  // increase precedence
 
 // Diacritics should stay centered over tah and lam vertical stems.
-// Eg: tah pesh seen
+// Eg: tah + pesh + seen
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -2179,19 +2179,21 @@ cDiacriticUpper {
 
 // Special case: upper diacritic before kaf cannot move very far left; in fact, shift it right
 // Eg: \u0628\u06BE\u0627\u065E\u06AF\u06C1
+// I can't figure out why this rule is needed, and shifting the diac right causes collisions
+// (\u0644\u06be\u064e\u06a9\u0641). The movement limits are probably okay though.
 cDiacriticUpper {
-	shift.x = -200m;
+	//shift.x = -150m;
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
-		min.x = -100m; // less than normal
+		min.x = -300m;
 		max.x = 100m;  // 250
 		min.y = -300m;
 		max.y = 400m;  // less than normal
 		// don't bother with sequence attributes
 } }  /  (cMed  cIso) _  (cKafNoIso cKafIso);
 
-// Special case: keep pesh under follow kaf; nuqta on noon pushes it up too far.
+// Special case: keep pesh under following kaf; nuqta on noon pushes it up too far.
 // In fact, might as well apply this to tehs and other diacs as well.
 cNuqtaUpperSmall { shift { x = -100m; y = -200m } }
 	cDiacriticUpper { shift { x = -130m; y = -70m };
@@ -2199,7 +2201,6 @@ cNuqtaUpperSmall { shift { x = -100m; y = -200m } }
 	/  gBehIni  _=N  ^ _=D  csKafIM_base;
 
 // Special case: heh-hook + lower diac + lower nuqta + bariyeh
-
 cNuqtaUpper { shift.y = -100m }
 	cDiacriticUpper { shift { x = -150m; y = -150m };
 		collision { min.x = -50m; max.y = 50m } } // keep it from moving back
