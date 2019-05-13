@@ -1,18 +1,15 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absLamMed.jm",
-"/absHehGoalMed",
 "/absKehehMed.jm",
-"/absJeemIni",
-"/absTahIni",
 "/absTahIni.kf",
 "/absBehMed.kf_wide",
 "/absKehehMed.hgM",
 "",
 "/absLamSmallV/absLamThreeDots/absLamSmallTah",
 "/absLamIni_short",
-"/absTahIni.kf/absTahMed.kf"
+"/absTahIni.kf/absTahMed.kf",
+"/absLamFin/absLamFin._kfTall"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -92112,7 +92109,7 @@ position = "{631, -910}";
 },
 {
 name = mUpper;
-position = "{1570, 2682}";
+position = "{1561, 2698}";
 },
 {
 name = n1Lower;
@@ -92124,11 +92121,15 @@ position = "{1561, 2671}";
 },
 {
 name = smallV;
-position = "{1560, 2683}";
+position = "{1561, 2684}";
 },
 {
 name = smallValt;
 position = "{826, 1204}";
+},
+{
+name = tahUpper;
+position = "{1561, 2657}";
 }
 );
 components = (
@@ -92257,7 +92258,7 @@ name = smallV;
 position = "{584, 2128}";
 },
 {
-name = tahUper;
+name = tahUpper;
 position = "{584, 2109}";
 }
 );
@@ -98718,6 +98719,14 @@ position = "{256, 58}";
 {
 name = nUpper;
 position = "{337, 2726}";
+},
+{
+name = smallV;
+position = "{337, 2698}";
+},
+{
+name = tahUpper;
+position = "{337, 2669}";
 }
 );
 layerId = master01;
@@ -98793,6 +98802,14 @@ position = "{1176, -323}";
 {
 name = nUpper;
 position = "{869, 2977}";
+},
+{
+name = smallV;
+position = "{869, 2915}";
+},
+{
+name = tahUpper;
+position = "{869, 2850}";
 }
 );
 layerId = master01;
@@ -98871,6 +98888,14 @@ position = "{773, 153}";
 {
 name = nUpper;
 position = "{360, 3362}";
+},
+{
+name = smallV;
+position = "{360, 3298}";
+},
+{
+name = tahUpper;
+position = "{360, 3236}";
 }
 );
 layerId = master01;
@@ -143473,7 +143498,7 @@ position = "{0, 680}";
 },
 {
 name = mTahUpper;
-position = "{1038, 1920}";
+position = "{1146, 1840}";
 },
 {
 name = n1Lower;
@@ -143670,7 +143695,7 @@ position = "{0, 680}";
 },
 {
 name = mTahUpper;
-position = "{1038, 1920}";
+position = "{1146, 1840}";
 },
 {
 name = n1Lower;
