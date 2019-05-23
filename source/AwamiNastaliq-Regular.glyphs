@@ -11,7 +11,9 @@ DisplayStrings = (
 "/radical",
 "/radical.rtl",
 "/radical/radical.rtl 01",
-"/absLamIni_short"
+"/absLamIni_short",
+"/radical.rtl 123",
+"/radical/radical.rtl"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -173043,26 +173045,46 @@ unicode = 077E;
 glyphname = radical;
 layers = (
 {
+background = {
+paths = (
+{
+closed = 1;
+nodes = (
+"1444 1543 LINE",
+"1444 1616 LINE",
+"1251 1616 LINE",
+"856 175 LINE",
+"386 1094 LINE",
+"103 952 LINE",
+"143 880 LINE",
+"292 954 LINE",
+"813 -73 LINE",
+"885 -73 LINE",
+"1323 1543 LINE"
+);
+}
+);
+};
 layerId = master01;
 paths = (
 {
 closed = 1;
 nodes = (
-"1593 1625 LINE",
-"1593 1707 LINE",
-"1379 1707 LINE",
-"940 105 LINE",
-"418 1127 LINE",
-"104 969 LINE",
-"148 889 LINE",
-"313 971 LINE",
-"893 -170 LINE",
-"972 -170 LINE",
-"1459 1625 LINE"
+"292 954 LINE",
+"814 -73 LINE",
+"886 -73 LINE",
+"1324 1543 LINE",
+"1444 1543 LINE",
+"1444 1616 LINE",
+"1251 1616 LINE",
+"867 198 LINE",
+"401 1106 LINE",
+"103 952 LINE",
+"144 880 LINE"
 );
 }
 );
-width = 1593;
+width = 1444;
 }
 );
 unicode = 221A;
@@ -173076,21 +173098,21 @@ paths = (
 {
 closed = 1;
 nodes = (
-"1490 969 LINE",
-"1175 1127 LINE",
-"652 105 LINE",
-"215 1706 LINE",
-"0 1706 LINE",
-"0 1626 LINE",
-"134 1626 LINE",
-"620 -170 LINE",
-"700 -170 LINE",
-"1280 971 LINE",
-"1445 889 LINE"
+"1341 952 LINE",
+"1043 1106 LINE",
+"577 198 LINE",
+"193 1616 LINE",
+"0 1616 LINE",
+"0 1543 LINE",
+"120 1543 LINE",
+"558 -73 LINE",
+"630 -73 LINE",
+"1152 954 LINE",
+"1300 880 LINE"
 );
 }
 );
-width = 1593;
+width = 1444;
 }
 );
 },
