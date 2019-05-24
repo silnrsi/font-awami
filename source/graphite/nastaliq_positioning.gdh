@@ -1318,7 +1318,7 @@ cDot1u  cDot1u  csKafMed_medium  g__kafTop_null
 	/  _=N1  cDiacritic?  cMed ^ _=N2  cDiacritic? _=K  _=T;
 
 // Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
-cNuqtaLikeUpperNoKT  cNuqtaLikeUpper  csKafMed_medium  g__kafTop_null  
+cNuqtaLikeUpperNoKT  cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
 	>  @N1  @N2 STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N1  cDiacritic?  cMed  _=N2  cDiacritic?  _=K  _=T;
 
@@ -1340,9 +1340,13 @@ csKafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
 
 
 // Gaf + kaf/gaf-medial => shorter
-csGafIM_medium  g__kafTop_null  csKafMed_medium  g__kafTop_null
+csGafIM_medium g__kafTop_null  csKafMed_medium  g__kafTop_null
 	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
+// same as above but with a short gaf - still needs a tall following kaf
+csKafMed_medium  g__kafTop_null
+	>  csKafMed_base$K  csKafMed_top_tall$K
+	/  gKafMedDk_base g__gafMedTop_short  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
 // Lam + gaf + kaf/gaf => special form of gaf
 gGafMedDk  >  gGafMedKf_lm
@@ -1403,7 +1407,7 @@ cNuqtaLikeUpperNoKT?  csKafIM_medium  g__kafTop_null
 
 cNuqtaLikeUpperNoKT?  cDiacritic?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @D  csKafIM_base$K /**{user6 = bb.top; user7 = position.y + bb.top}**/  csKafIM_top_short$K
-	/  _=N  _=D  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
+	/  _=N  _=D  ^  _=K {position.y > SHORTKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
 
 
 // Don't shift down, because previous glyph is higher anyway.
@@ -1496,7 +1500,8 @@ cIniMed {att {to=@L; with=exit; at=entrance}}  cLam_short {insert = 1}
 	/  _=P  MARKS2N ^ _=L;
 
 // Special case: reattach nuqta-like things (small V, small tah) to short lam.
-cLam_short (g__smallV g__smallTah) { attach {to = @L; at = nUpperS; with = nUpperM }; shift.x = -130m; }
+cLam_short (g__smallV g__smallTah) { attach {to = @L; at = nUpperS; with = nUpperM };
+		shift.x = -100m }
 	/  _=L  _=V  cDiacritic? ^ cBase;  // precedence
 
 // Special case: reattach the short lam before the adjusted gaf (because the gaf is a different width).
@@ -1793,11 +1798,11 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; SET
 // Hamzas that act like diacritics (but don't reattach them if they're already attached):
 cTakes_hamzaUpperDia   cHamzaAbove  /  _ ^ _; // already attached
 cTakes_hamzaLowerDia   cHamzaAbove  /  _ ^ _;
-cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM} } /  _ ^ _ ;  // tah
-cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mUpperS; with=hamzaUpperM} } /  _ ^ _ ;
-cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ _ ;
-cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ _ ;
-cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ _ ;
+cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM}} / _^ cNuqtaLikeLower?_ ;  // tah
+cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mUpperS; with=hamzaUpperM} } /  _ ^ cNuqtaLikeLower? _ ;
+cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ cNuqtaLikeLower? _ ;
+cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
+cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
 
 endpass; // pos - 8 (15)
 
@@ -2223,6 +2228,10 @@ cDiacriticUpper {
 cNuqtaLikeUpper {shift.x = -100m}  cNuqtaLikeUpper {shift.x = 100m}
 	/  gJeemMedSn  _=N1  cDiacritic?  cSeenMed  _=N2;
 
+// Special case: upper nuqta + short kaf/gaf
+cNuqtaLikeUpperNoKT { collision.flags = SET_FIX(collision.flags) }
+	/  _=N  cDiacritic?  csKafMed_base;
+
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
@@ -2306,7 +2315,8 @@ table(glyph)
 cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gKhah, gHahThreeDotsAbove,
 	gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
 	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove, gDad, gZah, gGhain,
-	gFeh, gQaf, gLamSmallV, gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRetro,
+	gFeh, gQaf, gLamSmallV, gLamThreeDots, gLamSmallTah, 
+	gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRetro,
 	gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalFourDotsAbove,
 	gWawDotAbove, gWawTwoDotsAbove, gWawTwoAbove, gWawThreeAbove, gZain,gRreh, gJeh, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove, gRehTwoVertAbove, gRehSmallTahTwoDots, gYehSmallV, gYehTwoAbove, gYehThreeAbove,
