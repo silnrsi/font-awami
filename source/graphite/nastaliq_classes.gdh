@@ -154,7 +154,7 @@ cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem, gEmptyCentreLowSt
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
-cPostNuqta1 = cDiacritic;
+cPostNuqta1 = (cDiacritic cHamzaAbove cHamzaBelow);  // hamzas can be nuqta-like or diacritics
 cPostNuqta2 = (cDiacritic c_zerojoin);
 
 
@@ -285,7 +285,7 @@ cFehIso = (gFeh, gFehThreeDotsBelow, gDotlessFeh);
 cFehFin = (gFehFin);
 cQafIso = (gQaf, gDotlessQaf);
 cQafFin = (gQafFin, gQafFin_stfh, gQafFin_short, gQafFin_stfh_short);
-cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt, gLamThreeDots);
+cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt, gLamThreeDots, gLamSmallTah);
 cLamFin = (gLamFin, gLamFin_short, gLamFin_kfTall);
 cMeemIso = (gMeem, gMeemLowdiac);
 cMeemFin = (gMeemFin, gMeemFin_short, gMeemFinLowdiac);
@@ -919,6 +919,8 @@ cKafNoIso = (cKafIM cKafFin csKafIM_base);
 // We could add isolates and finals to this class, but it is currently only used
 // for letters that get very high.
 cVerticalStem = (cLamIni cLamMed cTahIni cTahMed);
+// Nuqta-like things don't have to stay centered over this one:
+cVerticalStem -= (gTahIniKf gTahMedKf);
 
 csNuqtaPlusMark = (g__dot1u_smallV, g__dot1u_smallTah);
 csNuqtaPlusMarkKf = (g__dot1u_smallVKf, g__dot1u_smallTahKf);

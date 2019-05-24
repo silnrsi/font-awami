@@ -590,6 +590,7 @@ gTahMed_raw  >  gTahMedBeKf /  ^ MPRECXT  _  MARKS  cBehMed MARKS  cKafMF;
 // Special short form of lam:
 gLamMed_raw  >  gLamMed_short  /  ^  MPRECXT  _  MARKS  gGafMedDk  MARKS  cKafMF;
 gLamMed_raw  >  gLamMed_short  /  ^  MPRECXT  _  MARKS  cKafMF g__attachedRingMid;
+gLamMed_raw  >  gLamMed_short  /  ^  MPRECXT  _  cNuqtaLikeUpper  cDiacritic?  cKafMF;
 
 // No contextual forms for this glyph:
 gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (cMed  cFin);
@@ -629,6 +630,7 @@ gTahIni_raw  >  gTahIniBeKf  /  _  MARKS  cBehMed MARKS  cKafMF;
 // Special short form of lam:
 gLamIni_raw  >  gLamIni_short  /  _  MARKS  gGafMedDk  MARKS  cKafMF;
 gLamIni_raw  >  gLamIni_short  /  _  MARKS  cKafMF g__attachedRingMid;
+gLamIni_raw  >  gLamIni_short  /  _  cNuqtaLikeUpper  cDiacritic?  cKafMF;
 
 // // Obsolete way of using high-tooth behs sometimes after seen & sad 
 //csIni_raw_noS  >  csIniBe_noS       /  _ MARKS  cBehMed_defaultEntrance;
@@ -803,6 +805,7 @@ gGaf		cs_gafMark				>	cs_gafComposed$2:(1 2)  _;
 //gLam								>	gLam;
 gLam		g__bar					>	gLamBar:(1 2)	_;
 gLam		g__dot3u				>	gLamThreeDots:(1 2)  _;
+gLam		g__smallTah				>	gLamSmallTah:(1 2)  _;
 
 if (lamValt == 1)
 gLam		g__smallV				>	gLamSmallV_alt:(1 2) _;
@@ -981,7 +984,6 @@ g__dot1u  (gVowelSmallV gNoonGhunnaMark)   >  (g__dot1u_smallVKf g__dot1u_ngMark
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
 
-
 endpass;
 
 table(glyph)
@@ -1082,7 +1084,6 @@ if (punctAlt == punctDefault)
 	csPunctLatin  >  csPunctArabic  /  _ {directionality == 1};  // directionality is actually the segment direction
 endif;
 
-
 if (punctAlt == punctArabic)
 	csPunctLatin  >  csPunctArabic;
 endif;
@@ -1090,6 +1091,8 @@ endif;
 // if (punctAlt == punctLatin)
 //   No need to convert to Latin; that's what it comes in as.
 // endif;
+
+    g_radical  >  g_radicalRtl   /  _ {directionality == 1};
 
 endpass; // 7
 
