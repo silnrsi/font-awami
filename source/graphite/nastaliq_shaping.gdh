@@ -559,19 +559,34 @@ gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  
 // Tighter form of seen before flat-topped jeems:
 gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flag;
 
+table(glyph)
+cNormalEntry = (gKafMed_raw gGafMed_raw);
+cLowEntry = (gKafMedJm_lowentry gGafMedJm_lowentry);
+cNeedLowKaf = (gBehIni_raw, gBehMed_raw, gSeenIni_raw, gSeenMed_raw, gSadIni_raw, gSadMed_raw);
+endtable;
+
+// Lower-entry pre-jeem kaf:
+cNormalEntry  >  cLowEntry
+	/  ^ cNeedLowKaf  cNuqtaUpperLarge  cDiacritic?  _=K  MARKS  cJeemMF;
+cNormalEntry  >  cLowEntry
+	/  ^ (gFehIni_raw gFehMed_raw) cNuqtaLikeUpper  cDiacritic?  _=K  MARKS  cJeemMF;
+cNormalEntry  >  cLowEntry
+	/  ^ (gKafIni_raw gKafMed_raw) MARKS  cDiacritic?  _=K  MARKS  cJeemMF;
+
+// Don't need to handle gaf, lam, or tah because they will result in taller versions anyway (pass 12).
 
 // Basic rules
 csMed_raw  >  csMedBeF	/  ^ MPRECXT  _ MARKS  cBehFin;
-csMed_raw  >  csMedJm	/  ^ MPRECXT  _ MARKS  (cJeemFin cJeemMed);
+csMed_raw  >  csMedJm	/  ^ MPRECXT  _ MARKS  cJeemMF;
 csMed_raw  >  csMedRe	/  ^ MPRECXT  _ MARKS  cRehFin;
-csMed_raw  >  csMedSn	/  ^ MPRECXT  _ MARKS  (cSeenFin cSeenMed);
-csMed_raw  >  csMedSd	/  ^ MPRECXT  _ MARKS  (cSadFin cSadMed);
+csMed_raw  >  csMedSn	/  ^ MPRECXT  _ MARKS  cSeenMF;
+csMed_raw  >  csMedSd	/  ^ MPRECXT  _ MARKS  cSadMF;
 csMed_raw  >  csMedTa	/  ^ MPRECXT  _ MARKS  (cTahFin cTahMed);
 csMed_raw  >  csMedAi	/  ^ MPRECXT  _ MARKS  (cAinFin cAinMed);
 // The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
 csMed_raw  >  csMedFe	/  ^ MPRECXT  _ MARKS  (cFehFin cFehMed c_zerojoin);
 csMed_raw  >  csMedQf	/  ^ MPRECXT  _ MARKS  c_qw; // qaf, waw
-csMed_raw  >  csMedMm	/  ^ MPRECXT  _ MARKS  (cMeemFin cMeemMed);
+csMed_raw  >  csMedMm	/  ^ MPRECXT  _ MARKS  cMeemMF;
 csMed_raw  >  csMedNn	/  ^ MPRECXT  _ MARKS  cNoonFin;
 csMed_raw  >  csMedHgF	/  ^ MPRECXT _  MARKS  cHehGoalFin;
 csMed_raw  >  csMedHgM	/  ^ MPRECXT _  MARKS  cHehGoalMed;

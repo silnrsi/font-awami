@@ -477,11 +477,11 @@ cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
 cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM1 gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn
 	gGafMedSd gGafMedTa gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedMmX gGafMedNn gGafMedHgM
 	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg
-	gGafMedJm_short gGafMedJm_tall gGafMedKf_lm );
+	gGafMedJm_lowentry gGafMedJm_short gGafMedJm_tall gGafMedKf_lm );
 cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM1 gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn
 	gKafMedSd gKafMedTa gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM
 	gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
-	gKafMedJm_short gKafMedJm_tall
+	gKafMedJm_lowentry gKafMedJm_short gKafMedJm_tall
 	cKafMed_gaf ) ;
 cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
 	gHehDoMedBeM2 gHehDoMedJm gHehDoMedRe gHehDoMedSn
@@ -542,6 +542,7 @@ csHehDoIni_alt = (gHehDoIni_alt gHehDoIniAi_alt gHehDoIniBe_alt gHehDoIniBeF_alt
 cBehIM = (cBehIni cBehMed);
 cBehMedNn = (gBehMedNn gBehMedNn_hgbm);
 cJeemIM = (cJeemIni cJeemMed);
+cJeemMF = (cJeemMed cJeemFin);
 cAinIM = (cAinIni cAinMed);
 cFehIM = (cFehIni cFehMed);
 cLamIM = (cLamIni cLamMed);
@@ -551,6 +552,8 @@ cKafMF = (cKafMed cKafFin);
 //cKafNoIso = (cKafIM cKafFin csKafIM_base); -- see below
 cTahIM = (cTahIni cTahMed);
 cMeemMF = (cMeemMed cMeemFin);
+cSeenMF = (cSeenMed cSeenFin);
+cSadMF = (cSadMed cSadFin);
 
 
 csDotlessQaf_feh = (gFeh, gQafFin, gQafFin_stfh, cFehIM);
@@ -899,7 +902,8 @@ cs_bariyehComposed = (gBariyeh, gBariyehHamza, gBariyehTwoAbove, gBariyehThreeAb
 // Other stuff
 //
 
-cNuqtaUpperLarge = (cDot3u, cDot4u, g__smallTah, g__dot1u_smallTah);
+cNuqtaUpperLarge = (cDot3u, cDot4u, g__dot2vu, g__smallTah, g__smallTah2dots, g__dot1u_smallTah, 
+	g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark, g__dot2l__hamza, g__verticalStroke);
 cNuqtaUpperSmall = (cDot1u, cDot2u);
 
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
@@ -934,6 +938,7 @@ gKafMedBeF {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM1 {collexclude.glyph = g__kaf_exclude};
 gKafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gKafMedJm {collexclude.glyph = g__kaf_exclude};
+gKafMedJm_lowentry {collexclude.glyph = g__kaf_exclude};
 gKafMedJm_short {collexclude.glyph = g__kaf_exclude};
 gKafMedJm_tall {collexclude.glyph = g__kaf_exclude};
 gKafMedRe {collexclude.glyph = g__kaf_exclude};
@@ -961,6 +966,7 @@ gGafMedBeF {collexclude.glyph = g__kaf_exclude};
 gGafMedBeM1 {collexclude.glyph = g__kaf_exclude};
 gGafMedBeM2 {collexclude.glyph = g__kaf_exclude};
 gGafMedJm {collexclude.glyph = g__kaf_exclude};
+gGafMedJm_lowentry {collexclude.glyph = g__kaf_exclude};
 gGafMedJm_short {collexclude.glyph = g__kaf_exclude};
 gGafMedJm_tall {collexclude.glyph = g__kaf_exclude};
 gGafMedRe {collexclude.glyph = g__kaf_exclude};
