@@ -9,8 +9,7 @@ DisplayStrings = (
 "/absKehehMed.jm_lowentry",
 "/_dot1u/absKehehMed.jm",
 "/absKehehMed.ai",
-"/absAinMed",
-"/absJeemIni"
+"/absGafMed.hgF/absGafMed.hgM/absGafMed.jm/absGafMed.jm_lowentry/absGafMed.jm_short/absGafMed.jm_tall/absGafMed.kf_lm/absGafMed.mm"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -111780,7 +111779,7 @@ layers = (
 anchors = (
 {
 name = _exit_lamKaf;
-position = "{961, 533}";
+position = "{961, 994}";
 },
 {
 name = exit_jeem;
@@ -111788,7 +111787,7 @@ position = "{0, -146}";
 },
 {
 name = kafExclude;
-position = "{820, 1800}";
+position = "{855, 1279}";
 },
 {
 name = mLowerC;
@@ -111800,20 +111799,76 @@ position = "{1000, -336}";
 },
 {
 name = nUpper;
-position = "{1017, 2210}";
+position = "{1004, 2379}";
 },
 {
 name = ring;
-position = "{1517, 1653}";
+position = "{1517, 1783}";
 }
 );
+background = {
+paths = (
+{
+closed = 1;
+nodes = (
+"1790 2076 OFFCURVE",
+"1752 2024 OFFCURVE",
+"1374 1753 CURVE SMOOTH",
+"1095 1553 OFFCURVE",
+"809 1205 OFFCURVE",
+"809 769 CURVE SMOOTH",
+"809 711 OFFCURVE",
+"807 616 OFFCURVE",
+"786 580 CURVE SMOOTH",
+"637 323 OFFCURVE",
+"0 361 OFFCURVE",
+"0 -156 CURVE SMOOTH",
+"0 -169 OFFCURVE",
+"33 -151 OFFCURVE",
+"38 -138 CURVE SMOOTH",
+"183 247 OFFCURVE",
+"631 112 OFFCURVE",
+"843 548 CURVE SMOOTH",
+"891 647 OFFCURVE",
+"961 829 OFFCURVE",
+"961 1044 CURVE SMOOTH",
+"961 1257 OFFCURVE",
+"1034 1324 OFFCURVE",
+"1367 1563 CURVE SMOOTH",
+"1773 1854 OFFCURVE",
+"1895 1946 OFFCURVE",
+"1909 2190 CURVE SMOOTH",
+"1910 2208 OFFCURVE",
+"1882 2230 OFFCURVE",
+"1873 2215 CURVE SMOOTH"
+);
+},
+{
+closed = 1;
+nodes = (
+"873 268 OFFCURVE",
+"971 351 OFFCURVE",
+"964 523 CURVE SMOOTH",
+"959 653 OFFCURVE",
+"961 840 OFFCURVE",
+"961 1044 CURVE SMOOTH",
+"961 1069 OFFCURVE",
+"853 633 OFFCURVE",
+"853 602 CURVE SMOOTH",
+"853 474 OFFCURVE",
+"864 340 OFFCURVE",
+"867 315 CURVE SMOOTH"
+);
+}
+);
+};
 components = (
 {
-name = absKehehMed.jm_lowentry;
+name = absKehehMed.jm;
 },
 {
 name = _gafStroke;
-transform = "{1, 0, 0, 1, 388, 1769}";
+transform = "{1, 0, 0, 1, 392, 1897}";
 }
 );
 layerId = master01;
@@ -111858,7 +111913,7 @@ name = absKehehMed.jm_short;
 },
 {
 name = _gafStroke_short;
-transform = "{1, 0, 0, 1, 459, 1682}";
+transform = "{1, 0, 0, 1, 406, 1616}";
 }
 );
 layerId = master01;
@@ -173166,6 +173221,55 @@ width = 1731;
 }
 );
 unicode = 08C7;
+},
+{
+color = (31,255,0,1);
+glyphname = absGafMed.jm_lowentry;
+layers = (
+{
+anchors = (
+{
+name = _exit_lamKaf;
+position = "{961, 533}";
+},
+{
+name = exit_jeem;
+position = "{0, -146}";
+},
+{
+name = kafExclude;
+position = "{820, 1800}";
+},
+{
+name = mLowerC;
+position = "{1412, -1391}";
+},
+{
+name = n1Lower;
+position = "{1000, -336}";
+},
+{
+name = nUpper;
+position = "{1017, 2210}";
+},
+{
+name = ring;
+position = "{1517, 1653}";
+}
+);
+components = (
+{
+name = absKehehMed.jm_lowentry;
+},
+{
+name = _gafStroke;
+transform = "{1, 0, 0, 1, 393, 1822}";
+}
+);
+layerId = master01;
+width = 961;
+}
+);
 },
 {
 color = (31,255,0,1);
