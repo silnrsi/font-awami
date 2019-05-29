@@ -1836,7 +1836,8 @@ cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
 gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
-gRehFin		{ minKernDelta = -400m };
+//cRehIso		{ minKernDelta = -200m };
+//gRehFin		{ minKernDelta = -200m };
 gRehFin_jkl	{ minKernDelta = -400m };
 //gRehFin_sshg { minKernDelta = -400m }; -- obsolete
 gRehFin_hgM { minKernDelta = -400m };
@@ -2469,7 +2470,7 @@ cRehFin_longtail { collision {
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = 50m;
+	margin = 80m;
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2565,8 +2566,8 @@ cKernable { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
-		+ max(0m, 1850m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
-									// 1850 is somewhat arbitrary but gives the best results
+		+ max(0m, 1400m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
+									// 1400 is somewhat arbitrary but gives the best results (was 1850)
 		);
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2580,7 +2581,10 @@ cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
-	max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta);
+	max.x = MAXKERN;
+	min.x = min(0m, MINKERN - 800m + minKernDelta
+		+ max(0m, 1200 - seqWidth)   // see above
+	);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
