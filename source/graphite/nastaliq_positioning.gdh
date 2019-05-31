@@ -1246,7 +1246,7 @@ csKafIni_medium  g__kafTop_null
 	>  csKafIni_base$K  csKafIni_top_taller$K
 	/  gAlefMaddaAbove  _=K  _=T  MARKS (gHehGoalFin gBehFin_bfkl gTahFin gFehFin cDalFin);
 
-// Very high kaf + large-nuqta - don't make taller
+// Very high kaf + large-nuqta - don't make taller, it's already too high
 cNuqtaUpperLarge  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @K {tooHigh = 1}  @T
 	/  _=N _=K {position.y > SHORTERKAF_HT}  _=T;
@@ -1263,8 +1263,8 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 
 // Don't change kaf, rather shorten lam:
 // \u0645\u0644\u06AF\u064E\u06CC
-(gLamIni gLamMed)  >  cLam_short
-	/  _=L cDiacritic? (cKafMed cKafFin) g__kafTop_null?;  // include the extra slot for precedence
+(gLamIni gLamMed)  (cKafMed cKafFin)  >  cLam_short  @K
+	/  _=L cDiacritic?  _=K  g__kafTop_null?;  // include the extra slot for precedence
 
 // Tall: after gGafMedKf_lm - lam + gaf + kaf combination
 csKafMed_medium  g__kafTop_null  
@@ -1301,11 +1301,16 @@ cNuqtaLike  csKafMed_medium  g__kafTop_null
 	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper?  _=K  _=T;
 
+// Exception to rule below, because there is no 'taller' form for pre-meem:
+cDiacriticUpper  gKafIniMm  g__kafTop_null  
+	>  @D STAYBELOWKAF  @K  @T
+	/  (gAlef cAlefFin)  _=D  _=K {position.y < 1100m} _=T;
+
 // Tall: alef + diac + kaf
 // (Note that the kaf+bariyeh makes no change.)
 cDiacriticUpper  csKafIni_medium  g__kafTop_null  
 	>  @D STAYBELOWKAF  csKafIni_base$K  csKafIni_top_taller$K
-	/  (gAlef cAlefFin)  _=D  _=K  _=T;
+	/  (gAlef cAlefFin)  _=D  _=K {position.y < 1100m} _=T;
 
 // Special case: exception to rule below when form before kaf is a jeem (eg, \u0641\u062E\u06AF\u0633):
 cDot1u  cDot1u  csKafMed_medium  g__kafTop_null  
@@ -1401,6 +1406,9 @@ cNuqtaLikeUpperNoKT?  cKafMed  g__kafTop_null
 
 // Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
+// Notice that we never substitute a shorter kaf for gKafMedJm_lowentry, because it is used when we need extra 
+// vertical space.
+
 cNuqtaLikeUpperNoKT?  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  csKafIM_base$K  csKafIM_top_shorter$K
 	/  _=N  cDiacritic?  _=K {position.y > SHORTERKAF_HT && (shortForms == 1 || shortForms == 3)}  _=T;
@@ -1492,7 +1500,7 @@ ckafTop_bjDia { kafTopM = point(kafTop_bjM.x, kafTop_bjM.y) }; // to avoid warni
 endtable;
 
 
-// Special case - the short kaf tops don't work for .jm for, so substitute special forms.
+// Special case - the short kaf tops don't work for .jm form, so substitute special forms.
 gKafMedJm_base (g__kafMedTop_short g__gafMedTop_short)  >  (gKafMedJm_short gGafMedJm_short)$2 g__kafTop_m_bogus  / ^ _ _;
 
 // Special case: reattach to the short lam (because it is a different width).
@@ -1828,7 +1836,8 @@ cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
 gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
 
-gRehFin		{ minKernDelta = -400m };
+//cRehIso		{ minKernDelta = -200m };
+//gRehFin		{ minKernDelta = -200m };
 gRehFin_jkl	{ minKernDelta = -400m };
 //gRehFin_sshg { minKernDelta = -400m }; -- obsolete
 gRehFin_hgM { minKernDelta = -400m };
@@ -2461,7 +2470,7 @@ cRehFin_longtail { collision {
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = 50m;
+	margin = 80m;
 	max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2557,8 +2566,8 @@ cKernable { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
-		+ max(0m, 1850m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
-									// 1850 is somewhat arbitrary but gives the best results
+		+ max(0m, 1400m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
+									// 1400 is somewhat arbitrary but gives the best results (was 1850)
 		);
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2572,7 +2581,10 @@ cKernable { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
-	max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta);
+	max.x = MAXKERN;
+	min.x = min(0m, MINKERN - 800m + minKernDelta
+		+ max(0m, 1200 - seqWidth)   // see above
+	);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
