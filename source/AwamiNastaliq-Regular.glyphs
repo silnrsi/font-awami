@@ -1,7 +1,8 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absLamIni/absLamIni_short/absLamIni.al/absLamIni.ai/absLamIni.be/absLamIni.behg/absLamIni.beM1/absLamIni.beM2/absLamIni.benn/absLamIni.bere/absLamIni.by/absLamIni.ch/absLamIni.fe/absLamIni.hd/absLamIni.hgF/absLamIni.hgM/absLamIni.jm/absLamIni.mm/absLamIni.nn/absLamIni.qf/absLamIni.re/absLamIni.sd/absLamIni.sn/absLamIni.ta"
+"/absAlefHamzaBelow",
+"/absAlef/absAlefHamzaAbove/absAlefHamzaBelow/absAlefMaddaAbove/absAlefWavyHamzaAbove/absAlefWavyHamzaBelow/absAlefTwoAbove/absAlefThreeAbove/absHighHamzaAlef/absHighHamzaAlef.arabic/absAlefWasla"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -35097,6 +35098,14 @@ name = honorific;
 position = "{72, 2850}";
 },
 {
+name = kernBbLeft;
+position = "{177, 1014}";
+},
+{
+name = kernBbRight;
+position = "{327, 983}";
+},
+{
 name = mUpper;
 position = "{252, 2675}";
 }
@@ -35111,7 +35120,7 @@ transform = "{1, 0, 0, 1, 253, 710}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 unicode = 0623;
@@ -35125,6 +35134,14 @@ anchors = (
 {
 name = honorific;
 position = "{80, 2303}";
+},
+{
+name = kernBbLeft;
+position = "{160, 1132}";
+},
+{
+name = kernBbRight;
+position = "{327, 955}";
 },
 {
 name = mLower;
@@ -35145,7 +35162,7 @@ transform = "{1, 0, 0, 1, 253, -1820}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 unicode = 0625;
@@ -35200,11 +35217,11 @@ layers = (
 anchors = (
 {
 name = bbKernLeft;
-position = "{147, 483}";
+position = "{161, 653}";
 },
 {
 name = bbKernRight;
-position = "{327, 179}";
+position = "{327, 849}";
 },
 {
 name = honorific;
@@ -35225,7 +35242,7 @@ transform = "{1, 0, 0, 1, -111, 362}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 unicode = 0672;
@@ -35238,11 +35255,11 @@ layers = (
 anchors = (
 {
 name = bbKernLeft;
-position = "{147, 1987}";
+position = "{161, 1137}";
 },
 {
 name = bbKernRight;
-position = "{327, 2029}";
+position = "{327, 1459}";
 },
 {
 name = honorific;
@@ -35267,7 +35284,7 @@ transform = "{1, 0, 0, 1, -109, -2191}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 unicode = 0673;
@@ -35280,33 +35297,41 @@ layers = (
 anchors = (
 {
 name = hamzaLower;
-position = "{420, -70}";
+position = "{359, -70}";
 },
 {
 name = honorific;
-position = "{116, 2457}";
+position = "{55, 2457}";
+},
+{
+name = kernBbLeft;
+position = "{161, 1119}";
+},
+{
+name = kernBbRight;
+position = "{485, 1059}";
 },
 {
 name = mLower;
-position = "{430, -60}";
+position = "{369, -60}";
 },
 {
 name = mUpper;
-position = "{355, 2457}";
+position = "{294, 2457}";
 }
 );
 components = (
 {
 name = absAlef;
-transform = "{1, 0, 0, 1, 226, 0}";
+transform = "{1, 0, 0, 1, 165, 0}";
 },
 {
-name = absEasternThree;
-transform = "{0.45, 0, 0, 0.45, 56, 1564}";
+name = absEasternTwo;
+transform = "{0.45, 0, 0, 0.45, 56, 1572}";
 }
 );
 layerId = master01;
-width = 696;
+width = 635;
 }
 );
 unicode = 0773;
@@ -35324,6 +35349,14 @@ position = "{398, -62}";
 {
 name = honorific;
 position = "{98, 2457}";
+},
+{
+name = kernBbLeft;
+position = "{161, 1183}";
+},
+{
+name = kernBbRight;
+position = "{536, 1163}";
 },
 {
 name = mLower;
@@ -35345,7 +35378,7 @@ transform = "{0.45, 0, 0, 0.45, 56, 1564}";
 }
 );
 layerId = master01;
-width = 704;
+width = 696;
 }
 );
 unicode = 0774;
@@ -35359,6 +35392,14 @@ anchors = (
 {
 name = honorific;
 position = "{51, 2827}";
+},
+{
+name = kernBbLeft;
+position = "{161, 1512}";
+},
+{
+name = kernBbRight;
+position = "{327, 1156}";
 }
 );
 components = (
@@ -35371,7 +35412,7 @@ transform = "{1, 0, 0, 1, 598, 743}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 unicode = 0675;
@@ -35385,6 +35426,10 @@ anchors = (
 {
 name = honorific;
 position = "{44, 2775}";
+},
+{
+name = kernBbRight;
+position = "{161, 1591}";
 }
 );
 components = (
@@ -35397,7 +35442,7 @@ transform = "{1, 0, 0, 1, 207, 371}";
 }
 );
 layerId = master01;
-width = 465;
+width = 478;
 }
 );
 },
@@ -35438,7 +35483,7 @@ transform = "{1, 0, 0, 1, 230, -320}";
 }
 );
 layerId = master01;
-width = 478;
+width = 485;
 }
 );
 unicode = 0671;
