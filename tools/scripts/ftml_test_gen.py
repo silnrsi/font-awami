@@ -14,16 +14,27 @@ def run():
     parser.add_argument("-o","--output",default=r"C:\Awami\tests\data\FTML_XSL",help="Where to write output files")
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
+    parser.add_argument("-f","--font",default=r"Awami Nastaliq",help="Name of font to use")
     parser.add_argument("-s","--scale",default=200,type=int,help="font scale [200]")
 
     args = parser.parse_args()
+    
+    modeArgs = []
+    for i in range(len(args.mode)):
+        if i == 0 and args.mode[i] == "all" and len(args.mode) > 1:
+            pass
+        else:
+        	  modeArgs.append(args.mode[i])
 
     modes = []
-    for m in args.mode:
+    for m in modeArgs:
         if m == "all":
-            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac",
-                          "alldiac"])
-        # "allbase_somediac" currently isn't supported
+            if len(modeArgs) <= 1 or modeArgs[1] == "all":
+		            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac",
+		                          "alldiac"])
+		            # "allbase_somediac" currently isn't supported
+            else:
+		            pass  # ignore all
         else:
             modes.append(m)
 
@@ -35,9 +46,12 @@ def run():
     #mode = "allbase_somediac"   # not implemented
     #mode = "alldiac"            # not implemented???
     
+    fontName = args.font
     fontScale = int(args.scale)
     #fontScale = "100"  # for waterfall file
     
+    print(modes)
+
     for mode in modes:
         print("Mode: " + mode)
         outputFilename = os.path.join(args.output, "test_" + mode + (".txt" if args.text else ".xml"))
@@ -65,7 +79,7 @@ def run():
             gen = Text(outputFilename)
         else:
             gen = FTML(outputFilename)
-        output(gen, mode, fontScale, groupedSeq)
+        output(gen, mode, fontName, fontScale, groupedSeq)
         print("")
 
     print("Done")
@@ -183,17 +197,17 @@ def expand_sequences(mode, basicSequences) :
             "sad"       :   ["sad3dots", "dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ghain"],
-            "feh"       :   ["dotlessFeh", "feh3dots"],
+            "feh"       :   ["dotlessFeh", "feh3dotsB", "feh3dotsA"],
             "qaf"       :   ["dotlessQaf"],
             "kaf"       :   ["keheh3dots", "keheh2dots", "kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
-            "lam"       :   ["lam3dots", "lamSmallV", "lamBar"],
+            "lam"       :   ["lamTah", "lam3dots", "lamSmallV", "lamBar"],
             "noon"      :   ["noonRing", "rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
             "chotiyeh"  :   ["yeh4below", "yeh3", "yeh2", "alefMaksura", "arabicE", "yehSmallV", "yehHamza"],
             "bariyeh"   :   ["bariyeh3", "bariyeh2"],
             "hehGoal"   :   ["hehHamza", "arabicHeh"],
                 
-            "reh"       :   ["reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot", "rehDotBelow", "jeh", "rreh", "zain"],
+            "reh"       :   ["rehSmallVbelow", "reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot", "rehDotBelow", "jeh", "rreh", "zain"],
             "dal"       :   ["dul", "dal4dots", "dalRing", "dal2dotsVTah", "dalDotTah", "ddal", "thal"],
                                         # dalDotBelow - not really needed for Nastaliq
             "waw"       :   ["waw3", "waw2", "waw2dots", "wawDot", "yu", "ve", "kirghizYu", "wawRing", "wawHamza"],
@@ -467,7 +481,7 @@ class FTML(object):
     def close(self):
         self.f.close()
 
-    def write_header(self, mode, fontScale):
+    def write_header(self, mode, fontName, fontScale):
         if mode == "basicforms" :
             title = "Test of Awami Basic Base Character Set"
         elif mode == "allbasechars" :
@@ -490,7 +504,7 @@ class FTML(object):
         self.f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
         self.f.write('    <description>' + title + '</description>\n')
         self.f.write('    <fontscale>' + str(fontScale) + '</fontscale>\n')
-        self.f.write('    <fontsrc>local(\'Awami Nastaliq\'), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
+        self.f.write('    <fontsrc>local(' + fontName + '), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
         self.f.write('    <title>' + title + '</title>\n')
         self.f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
         self.f.write('  </head>\n')
@@ -578,13 +592,13 @@ class Text(FTML):
             self.f.write(cI+s+cF+"\n")
 
 
-def output(gen, mode, fontScale, sequences) :
+def output(gen, mode, fontName, fontScale, sequences) :
     #import codecs
 
     contextCharI = "&#x0644;" # lam (arbitrary pre-context)
     #contextCharI = "&#x0639;" # ain (arbitrary pre-context)
     contextCharF = "&#x0641;" # feh (arbitrary post-context)
-    gen.write_header(mode, fontScale)
+    gen.write_header(mode, fontName, fontScale)
 
     for key in sequences :
         (sortValBogus, groupName) = key.split('_')
@@ -662,6 +676,7 @@ def _char_name_to_usv(charName) :
             "rehRing"   :   '0693',
             "rehTah2smd" :  '0771',
             "reh2dotsV" :   '076B',
+            "rehSmallVbelow" : '0695',
         "seen"          :   '0633',
             "sheen"     :   '0634',
             "seenDotDot":   '069A',
@@ -680,7 +695,8 @@ def _char_name_to_usv(charName) :
         "ain"           :   '0639',
             "ghain"     :   '063A',
         "feh"           :   '0641',
-            "feh3dots"  :   '06A5',
+            "feh3dotsA" :   '06A4',
+            "feh3dotsB" :   '06A5',
             "dotlessFeh":   '06A1',
         "qaf"           :   '0642',
             "qafIM"     :   '0642',
@@ -690,6 +706,7 @@ def _char_name_to_usv(charName) :
             "lamBar"    :   '076A',
             "lamSmallV" :   '06B5',
             "lam3dots"  :   '06B7',
+            "lamTah"    :   '08C7',
         "meem"          :   '0645',
         "meem-alt"      :   '0645',
         "noon"          :   '0646',
@@ -850,6 +867,7 @@ def _group_name_format(charName) :
         "rehRing"       :   ('05i',     'Reh with ring',                    2, 0),
         "rehTah2smd"    :   ('05j',     'Reh with tah and two small dots',  2, 0),
         "reh2dotsV"     :   ('05k',     'Reh with two dots vertically',     2, 0),
+        "rehSmallVbelow" :  ('05l',			'Reh with small V below',           2, 0),
         
         "seen"          :   ('06',      'Seen form',    2, 2),
         "sheen"         :   ('06a',     'Sheen form',   2, 2),
@@ -874,19 +892,21 @@ def _group_name_format(charName) :
 
         "feh"           :   ('10',      'Feh form',     2, 2),
         "qafIM"         :   ('10a',     'Qaf initial/medial form',          0, 2),
-        "feh3dots"      :   ('10b',     'Feh with three dots below',        2, 2),
-        "dotlessFeh"    :   ('10c',     'Dotless feh',                      2, 2),
-        "dotlessQafIM"  :   ('10d',     'Dotless qaf initial/medial form',	0, 2),
-        "qaf"           :   ('11',      'Qaf form',         2, 0),
-        "dotlessQaf"    :   ('11a',     'Dotless qaf form',	2, 0),
+        "feh3dotsA"     :   ('10b'      'Feh with three dots above',        2, 2),
+        "feh3dotsB"     :   ('10c',     'Feh with three dots below',        2, 2),
+        "dotlessFeh"    :   ('10d',     'Dotless feh',                      2, 2),
+        "dotlessQafIM"  :   ('10e',     'Dotless qaf initial/medial form',	0, 2),
+        "qaf"           :   ('11',      'Qaf form',         		2, 0),
+        "dotlessQaf"    :   ('11a',     'Dotless qaf form',			2, 0),
 
-        "lam"           :   ('12',      'Lam form',         2, 2),
-        "lamBar"        :   ('12a',     'Lam with bar',     2, 2),
-        "lamSmallV"     :   ('12b',     'Lam with small V', 2, 2),
-        "lam3dots"      :   ('12c',     'Lam with 3 dots',  2, 2),
+        "lam"           :   ('12',      'Lam form',         		2, 2),
+        "lamBar"        :   ('12a',     'Lam with bar',     		2, 2),
+        "lamSmallV"     :   ('12b',     'Lam with small V', 		2, 2),
+        "lam3dots"      :   ('12c',     'Lam with 3 dots',  		2, 2),
+        "lamTah"        :   ('12d',     'Lam with small tah',		2, 2),
 
-        "meem"          :   ('13',      'Meem form',        2, 2),
-        "alt-meem"      :   ('14',      'Alternate meem',   2, 2),
+        "meem"          :   ('13',      'Meem form',        		2, 2),
+        "alt-meem"      :   ('14',      'Alternate meem',   		2, 2),
         
         "noon"          :   ('15',      'Noon form',            2, 0),
         "noonGhunna"    :   ('15a',     'Noon-ghunna form',     2, 0),
