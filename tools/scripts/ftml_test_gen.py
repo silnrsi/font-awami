@@ -38,13 +38,14 @@ def run():
         else:
             modes.append(m)
 
-    #mode = "basicforms"         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
-    #mode = "allbasechars"       # some contextual forms of all letters - make sure nuqtas are generated
-    #mode = "basic_somediac"     # same characters as basicforms, each with an upper and lower diac
-    #mode = "allbasecharforms"   # all forms of all letters - HUGE file
-    #mode = "basic_alldiac"      # same characters as basicforms, with every diac
-    #mode = "allbase_somediac"   # not implemented
-    #mode = "alldiac"            # not implemented???
+    # Debugging:
+    #modes = ["basicforms"]         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
+    #modes = ["allbasechars"]       # some contextual forms of all letters - make sure nuqtas are generated
+    #modes = ["basic_somediac"]     # same characters as basicforms, each with an upper and lower diac
+    #modes = ["allbasecharforms"]   # all forms of all letters - HUGE file
+    #modes = ["basic_alldiac"]      # same characters as basicforms, with every diac
+    #modes = ["allbase_somediac"]   # not implemented
+    #modes = ["alldiac"]            # not implemented???
     
     fontName = args.font
     fontScale = int(args.scale)
@@ -197,7 +198,7 @@ def expand_sequences(mode, basicSequences) :
             "sad"       :   ["sad3dots", "dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ghain"],
-            "feh"       :   ["dotlessFeh", "feh3dotsB", "feh3dotsA"],
+            "feh"       :   ["dotlessFeh", "feh3dotsBelow", "feh3dotsAbove"],
             "qaf"       :   ["dotlessQaf"],
             "kaf"       :   ["keheh3dots", "keheh2dots", "kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
@@ -695,8 +696,8 @@ def _char_name_to_usv(charName) :
         "ain"           :   '0639',
             "ghain"     :   '063A',
         "feh"           :   '0641',
-            "feh3dotsA" :   '06A4',
-            "feh3dotsB" :   '06A5',
+            "feh3dotsAbove" :   '06A4',
+            "feh3dotsBelow" :   '06A5',
             "dotlessFeh":   '06A1',
         "qaf"           :   '0642',
             "qafIM"     :   '0642',
@@ -867,7 +868,7 @@ def _group_name_format(charName) :
         "rehRing"       :   ('05i',     'Reh with ring',                    2, 0),
         "rehTah2smd"    :   ('05j',     'Reh with tah and two small dots',  2, 0),
         "reh2dotsV"     :   ('05k',     'Reh with two dots vertically',     2, 0),
-        "rehSmallVbelow" :  ('05l',			'Reh with small V below',           2, 0),
+        "rehSmallVbelow" :  ('05l',		'Reh with small V below',           2, 0),
         
         "seen"          :   ('06',      'Seen form',    2, 2),
         "sheen"         :   ('06a',     'Sheen form',   2, 2),
@@ -892,8 +893,8 @@ def _group_name_format(charName) :
 
         "feh"           :   ('10',      'Feh form',     2, 2),
         "qafIM"         :   ('10a',     'Qaf initial/medial form',          0, 2),
-        "feh3dotsA"     :   ('10b'      'Feh with three dots above',        2, 2),
-        "feh3dotsB"     :   ('10c',     'Feh with three dots below',        2, 2),
+        "feh3dotsAbove" :   ('10b',     'Feh with three dots above',        2, 2),
+        "feh3dotsBelow" :   ('10c',     'Feh with three dots below',        2, 2),
         "dotlessFeh"    :   ('10d',     'Dotless feh',                      2, 2),
         "dotlessQafIM"  :   ('10e',     'Dotless qaf initial/medial form',	0, 2),
         "qaf"           :   ('11',      'Qaf form',         		2, 0),

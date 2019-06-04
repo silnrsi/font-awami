@@ -5,7 +5,7 @@
     <columns comment="15%" label="20%" string="15%"/>
     <description>Test of All Awami Base Characters</description>
     <fontscale>200</fontscale>
-    <fontsrc>local('Awami Nastaliq Beta v.1.190'), url(AwamiNastaliq-Beta1.190.ttf)</fontsrc>
+    <fontsrc>local(Awami Nastaliq), url(AwamiNastaliq-Regular.ttf)</fontsrc>
     <title>Test of All Awami Base Characters</title>
     <styles><style feats=' ' name="default"/></styles>
   </head>
@@ -46,15 +46,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="dotlessFeh + alefWasla">
-      <test rtl="True"><string><em>&#x06A1;&#x0671;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0671;</em></string></test>
+    <testgroup label="feh3dotsB + alefWasla">
+      <test rtl="True"><string><em>&#x06A5;&#x0671;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0671;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lamSmallV + alef3">
-      <test rtl="True"><string><em>&#x06B5;&#x0774;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0774;</em></string></test>
+    <testgroup label="lam + alef3">
+      <test rtl="True"><string><em>&#x0644;&#x0774;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0774;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -120,17 +120,17 @@
       <test rtl="True"><string><em>&#x063A;&#x0628;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0628;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="dotlessFeh + dotlessBeh">
-      <test rtl="True"><string><em>&#x06A1;&#x066E;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x066E;</em></string></test>
-      <test rtl="True"><string><em>&#x06A1;&#x066E;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x066E;</em>&#x0641;</string></test>
+    <testgroup label="feh + dotlessBeh">
+      <test rtl="True"><string><em>&#x0641;&#x066E;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x066E;</em></string></test>
+      <test rtl="True"><string><em>&#x0641;&#x066E;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x066E;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamSmallV + teh3down">
-      <test rtl="True"><string><em>&#x06B5;&#x067D;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x067D;</em></string></test>
-      <test rtl="True"><string><em>&#x06B5;&#x067D;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x067D;</em>&#x0641;</string></test>
+    <testgroup label="lamTah + teh3down">
+      <test rtl="True"><string><em>&#x08C7;&#x067D;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x067D;</em></string></test>
+      <test rtl="True"><string><em>&#x08C7;&#x067D;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x067D;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + tehRing">
       <test rtl="True"><string><em>&#x0645;&#x067C;</em></string></test>
@@ -194,17 +194,17 @@
       <test rtl="True"><string><em>&#x0639;&#x0686;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x0686;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh + dyeh">
-      <test rtl="True"><string><em>&#x0641;&#x0684;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0684;</em></string></test>
-      <test rtl="True"><string><em>&#x0641;&#x0684;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0684;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsA + dyeh">
+      <test rtl="True"><string><em>&#x06A4;&#x0684;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0684;</em></string></test>
+      <test rtl="True"><string><em>&#x06A4;&#x0684;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0684;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam3dots + tcheheh">
-      <test rtl="True"><string><em>&#x06B7;&#x0687;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0687;</em></string></test>
-      <test rtl="True"><string><em>&#x06B7;&#x0687;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0687;</em>&#x0641;</string></test>
+    <testgroup label="lam + tcheheh">
+      <test rtl="True"><string><em>&#x0644;&#x0687;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0687;</em></string></test>
+      <test rtl="True"><string><em>&#x0644;&#x0687;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0687;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + hahHamza">
       <test rtl="True"><string><em>&#x0645;&#x0681;</em></string></test>
@@ -268,15 +268,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + dal2dotsVTah">
-      <test rtl="True"><string><em>&#x0641;&#x0759;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0759;</em></string></test>
+    <testgroup label="dotlessFeh + dal2dotsVTah">
+      <test rtl="True"><string><em>&#x06A1;&#x0759;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0759;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam3dots + dal4dots">
-      <test rtl="True"><string><em>&#x06B7;&#x0690;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0690;</em></string></test>
+    <testgroup label="lamBar + dal4dots">
+      <test rtl="True"><string><em>&#x076A;&#x0690;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x0690;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -342,39 +342,39 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh3dots + reh">
-      <test rtl="True"><string><em>&#x06A5;&#x0631;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0631;</em></string></test>
+    <testgroup label="feh + rehSmallVbelow">
+      <test rtl="True"><string><em>&#x0641;&#x0695;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0695;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam + rreh">
-      <test rtl="True"><string><em>&#x0644;&#x0691;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0691;</em></string></test>
+    <testgroup label="lamSmallV + zain">
+      <test rtl="True"><string><em>&#x06B5;&#x0632;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0632;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="meem + rehDotBelow">
-      <test rtl="True"><string><em>&#x0645;&#x0694;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x0694;</em></string></test>
+    <testgroup label="meem + jeh">
+      <test rtl="True"><string><em>&#x0645;&#x0698;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x0698;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="kaf + reh2dots">
-      <test rtl="True"><string><em>&#x06A9;&#x0697;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A9;&#x0697;</em></string></test>
+    <testgroup label="kaf + rehDotDot">
+      <test rtl="True"><string><em>&#x06A9;&#x0696;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A9;&#x0696;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="hehDo + rehHamza">
-      <test rtl="True"><string><em>&#x06BE;&#x076C;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x076C;</em></string></test>
+    <testgroup label="hehDo + reh4dots">
+      <test rtl="True"><string><em>&#x06BE;&#x0699;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0699;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="hehGoal + rehTah2smd">
-      <test rtl="True"><string><em>&#x06C1;&#x0771;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C1;&#x0771;</em></string></test>
+    <testgroup label="hehGoal + rehRing">
+      <test rtl="True"><string><em>&#x06C1;&#x0693;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C1;&#x0693;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -416,17 +416,17 @@
       <test rtl="True"><string><em>&#x063A;&#x075C;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x063A;&#x075C;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + seenInvV">
+    <testgroup label="feh3dotsB + seenInvV">
       <test rtl="True"><string><em>&#x06A5;&#x077E;</em></string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077E;</em></string></test>
       <test rtl="True"><string><em>&#x06A5;&#x077E;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077E;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam + seenDotDot">
-      <test rtl="True"><string><em>&#x0644;&#x069A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x069A;</em></string></test>
-      <test rtl="True"><string><em>&#x0644;&#x069A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x069A;</em>&#x0641;</string></test>
+    <testgroup label="lamBar + seenDotDot">
+      <test rtl="True"><string><em>&#x076A;&#x069A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x069A;</em></string></test>
+      <test rtl="True"><string><em>&#x076A;&#x069A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x069A;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + seen3dots3dots">
       <test rtl="True"><string><em>&#x0645;&#x069C;</em></string></test>
@@ -496,11 +496,11 @@
       <test rtl="True"><string><em>&#x06A1;&#x0636;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0636;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamBar + dadDotBelow">
-      <test rtl="True"><string><em>&#x076A;&#x06FB;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06FB;</em></string></test>
-      <test rtl="True"><string><em>&#x076A;&#x06FB;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06FB;</em>&#x0641;</string></test>
+    <testgroup label="lamSmallV + dadDotBelow">
+      <test rtl="True"><string><em>&#x06B5;&#x06FB;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x06FB;</em></string></test>
+      <test rtl="True"><string><em>&#x06B5;&#x06FB;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x06FB;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + sad3dots">
       <test rtl="True"><string><em>&#x0645;&#x069E;</em></string></test>
@@ -570,11 +570,11 @@
       <test rtl="True"><string><em>&#x0641;&#x0638;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0638;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamSmallV + tah">
-      <test rtl="True"><string><em>&#x06B5;&#x0637;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0637;</em></string></test>
-      <test rtl="True"><string><em>&#x06B5;&#x0637;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0637;</em>&#x0641;</string></test>
+    <testgroup label="lam3dots + tah">
+      <test rtl="True"><string><em>&#x06B7;&#x0637;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0637;</em></string></test>
+      <test rtl="True"><string><em>&#x06B7;&#x0637;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0637;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + zah">
       <test rtl="True"><string><em>&#x0645;&#x0638;</em></string></test>
@@ -638,17 +638,17 @@
       <test rtl="True"><string><em>&#x0639;&#x063A;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x063A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + ghain">
-      <test rtl="True"><string><em>&#x06A5;&#x063A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x063A;</em></string></test>
-      <test rtl="True"><string><em>&#x06A5;&#x063A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x063A;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsA + ghain">
+      <test rtl="True"><string><em>&#x06A4;&#x063A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x063A;</em></string></test>
+      <test rtl="True"><string><em>&#x06A4;&#x063A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x063A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam3dots + ain">
-      <test rtl="True"><string><em>&#x06B7;&#x0639;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0639;</em></string></test>
-      <test rtl="True"><string><em>&#x06B7;&#x0639;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0639;</em>&#x0641;</string></test>
+    <testgroup label="lamTah + ain">
+      <test rtl="True"><string><em>&#x08C7;&#x0639;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x0639;</em></string></test>
+      <test rtl="True"><string><em>&#x08C7;&#x0639;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x0639;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + ghain">
       <test rtl="True"><string><em>&#x0645;&#x063A;</em></string></test>
@@ -682,71 +682,71 @@
       <test rtl="True"><string><em>&#x067C;&#x0641;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x067C;&#x0641;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hahTah + feh3dots">
-      <test rtl="True"><string><em>&#x076E;&#x06A5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076E;&#x06A5;</em></string></test>
-      <test rtl="True"><string><em>&#x076E;&#x06A5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076E;&#x06A5;</em>&#x0641;</string></test>
+    <testgroup label="hahTah + feh3dotsA">
+      <test rtl="True"><string><em>&#x076E;&#x06A4;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076E;&#x06A4;</em></string></test>
+      <test rtl="True"><string><em>&#x076E;&#x06A4;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076E;&#x06A4;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="seen3dots3dots + dotlessFeh">
-      <test rtl="True"><string><em>&#x069C;&#x06A1;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06A1;</em></string></test>
-      <test rtl="True"><string><em>&#x069C;&#x06A1;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06A1;</em>&#x0641;</string></test>
+    <testgroup label="seen3dots3dots + feh3dotsB">
+      <test rtl="True"><string><em>&#x069C;&#x06A5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06A5;</em></string></test>
+      <test rtl="True"><string><em>&#x069C;&#x06A5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069C;&#x06A5;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="sad3dots + feh3dots">
-      <test rtl="True"><string><em>&#x069E;&#x06A5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x06A5;</em></string></test>
-      <test rtl="True"><string><em>&#x069E;&#x06A5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x06A5;</em>&#x0641;</string></test>
+    <testgroup label="sad3dots + feh">
+      <test rtl="True"><string><em>&#x069E;&#x0641;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0641;</em></string></test>
+      <test rtl="True"><string><em>&#x069E;&#x0641;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0641;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="zah + feh">
-      <test rtl="True"><string><em>&#x0638;&#x0641;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0638;&#x0641;</em></string></test>
-      <test rtl="True"><string><em>&#x0638;&#x0641;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0638;&#x0641;</em>&#x0641;</string></test>
+    <testgroup label="zah + feh3dotsB">
+      <test rtl="True"><string><em>&#x0638;&#x06A5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0638;&#x06A5;</em></string></test>
+      <test rtl="True"><string><em>&#x0638;&#x06A5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0638;&#x06A5;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="ain + feh3dots">
-      <test rtl="True"><string><em>&#x0639;&#x06A5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x06A5;</em></string></test>
-      <test rtl="True"><string><em>&#x0639;&#x06A5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x06A5;</em>&#x0641;</string></test>
+    <testgroup label="ain + dotlessFeh">
+      <test rtl="True"><string><em>&#x0639;&#x06A1;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x06A1;</em></string></test>
+      <test rtl="True"><string><em>&#x0639;&#x06A1;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0639;&#x06A1;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="dotlessFeh + feh">
-      <test rtl="True"><string><em>&#x06A1;&#x0641;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0641;</em></string></test>
-      <test rtl="True"><string><em>&#x06A1;&#x0641;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0641;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsB + dotlessFeh">
+      <test rtl="True"><string><em>&#x06A5;&#x06A1;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06A1;</em></string></test>
+      <test rtl="True"><string><em>&#x06A5;&#x06A1;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06A1;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam + feh3dots">
-      <test rtl="True"><string><em>&#x0644;&#x06A5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06A5;</em></string></test>
-      <test rtl="True"><string><em>&#x0644;&#x06A5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06A5;</em>&#x0641;</string></test>
+    <testgroup label="lam + feh">
+      <test rtl="True"><string><em>&#x0644;&#x0641;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0641;</em></string></test>
+      <test rtl="True"><string><em>&#x0644;&#x0641;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0641;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="meem + dotlessFeh">
-      <test rtl="True"><string><em>&#x0645;&#x06A1;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06A1;</em></string></test>
-      <test rtl="True"><string><em>&#x0645;&#x06A1;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06A1;</em>&#x0641;</string></test>
+    <testgroup label="meem + feh3dotsA">
+      <test rtl="True"><string><em>&#x0645;&#x06A4;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06A4;</em></string></test>
+      <test rtl="True"><string><em>&#x0645;&#x06A4;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06A4;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="gueh + feh">
-      <test rtl="True"><string><em>&#x06B3;&#x0641;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B3;&#x0641;</em></string></test>
-      <test rtl="True"><string><em>&#x06B3;&#x0641;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B3;&#x0641;</em>&#x0641;</string></test>
+    <testgroup label="gueh + feh3dotsB">
+      <test rtl="True"><string><em>&#x06B3;&#x06A5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B3;&#x06A5;</em></string></test>
+      <test rtl="True"><string><em>&#x06B3;&#x06A5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B3;&#x06A5;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hehDo + feh3dots">
-      <test rtl="True"><string><em>&#x06BE;&#x06A5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x06A5;</em></string></test>
-      <test rtl="True"><string><em>&#x06BE;&#x06A5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x06A5;</em>&#x0641;</string></test>
+    <testgroup label="hehDo + dotlessFeh">
+      <test rtl="True"><string><em>&#x06BE;&#x06A1;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x06A1;</em></string></test>
+      <test rtl="True"><string><em>&#x06BE;&#x06A1;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x06A1;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="arabicHeh + dotlessFeh">
-      <test rtl="True"><string><em>&#x0647;&#x06A1;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0647;&#x06A1;</em></string></test>
-      <test rtl="True"><string><em>&#x0647;&#x06A1;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0647;&#x06A1;</em>&#x0641;</string></test>
+    <testgroup label="arabicHeh + feh">
+      <test rtl="True"><string><em>&#x0647;&#x0641;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0647;&#x0641;</em></string></test>
+      <test rtl="True"><string><em>&#x0647;&#x0641;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0647;&#x0641;</em>&#x0641;</string></test>
     </testgroup>
   </testgroup>
   <testgroup label="Qaf form sequences">
@@ -786,15 +786,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="dotlessFeh + qaf">
-      <test rtl="True"><string><em>&#x06A1;&#x0642;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0642;</em></string></test>
+    <testgroup label="feh3dotsA + qaf">
+      <test rtl="True"><string><em>&#x06A4;&#x0642;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0642;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lamBar + dotlessQaf">
-      <test rtl="True"><string><em>&#x076A;&#x066F;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x066F;</em></string></test>
+    <testgroup label="lam3dots + dotlessQaf">
+      <test rtl="True"><string><em>&#x06B7;&#x066F;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x066F;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -836,35 +836,35 @@
       <test rtl="True"><string><em>&#x076F;&#x06B5;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x076F;&#x06B5;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="seenInvV + lam">
-      <test rtl="True"><string><em>&#x077E;&#x0644;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x077E;&#x0644;</em></string></test>
-      <test rtl="True"><string><em>&#x077E;&#x0644;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x077E;&#x0644;</em>&#x0641;</string></test>
+    <testgroup label="seenInvV + lamTah">
+      <test rtl="True"><string><em>&#x077E;&#x08C7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x077E;&#x08C7;</em></string></test>
+      <test rtl="True"><string><em>&#x077E;&#x08C7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x077E;&#x08C7;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="sad + lamSmallV">
-      <test rtl="True"><string><em>&#x0635;&#x06B5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x06B5;</em></string></test>
-      <test rtl="True"><string><em>&#x0635;&#x06B5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x06B5;</em>&#x0641;</string></test>
+    <testgroup label="sad + lamBar">
+      <test rtl="True"><string><em>&#x0635;&#x076A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x076A;</em></string></test>
+      <test rtl="True"><string><em>&#x0635;&#x076A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0635;&#x076A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="tah + lam">
-      <test rtl="True"><string><em>&#x0637;&#x0644;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0644;</em></string></test>
-      <test rtl="True"><string><em>&#x0637;&#x0644;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0644;</em>&#x0641;</string></test>
+    <testgroup label="tah + lam3dots">
+      <test rtl="True"><string><em>&#x0637;&#x06B7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x06B7;</em></string></test>
+      <test rtl="True"><string><em>&#x0637;&#x06B7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x06B7;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="ghain + lamSmallV">
-      <test rtl="True"><string><em>&#x063A;&#x06B5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x06B5;</em></string></test>
-      <test rtl="True"><string><em>&#x063A;&#x06B5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x06B5;</em>&#x0641;</string></test>
+    <testgroup label="ghain + lam">
+      <test rtl="True"><string><em>&#x063A;&#x0644;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0644;</em></string></test>
+      <test rtl="True"><string><em>&#x063A;&#x0644;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0644;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + lam">
-      <test rtl="True"><string><em>&#x06A5;&#x0644;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0644;</em></string></test>
-      <test rtl="True"><string><em>&#x06A5;&#x0644;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0644;</em>&#x0641;</string></test>
+    <testgroup label="feh + lamSmallV">
+      <test rtl="True"><string><em>&#x0641;&#x06B5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06B5;</em></string></test>
+      <test rtl="True"><string><em>&#x0641;&#x06B5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06B5;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="lamBar + lamSmallV">
       <test rtl="True"><string><em>&#x076A;&#x06B5;</em></string></test>
@@ -878,23 +878,23 @@
       <test rtl="True"><string><em>&#x0645;&#x06B5;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0645;&#x06B5;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="ngoeh + lam">
-      <test rtl="True"><string><em>&#x06B1;&#x0644;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B1;&#x0644;</em></string></test>
-      <test rtl="True"><string><em>&#x06B1;&#x0644;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B1;&#x0644;</em>&#x0641;</string></test>
+    <testgroup label="ngoeh + lamTah">
+      <test rtl="True"><string><em>&#x06B1;&#x08C7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B1;&#x08C7;</em></string></test>
+      <test rtl="True"><string><em>&#x06B1;&#x08C7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B1;&#x08C7;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hehDo + lamBar">
-      <test rtl="True"><string><em>&#x06BE;&#x076A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x076A;</em></string></test>
-      <test rtl="True"><string><em>&#x06BE;&#x076A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x076A;</em>&#x0641;</string></test>
+    <testgroup label="hehDo + lam">
+      <test rtl="True"><string><em>&#x06BE;&#x0644;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0644;</em></string></test>
+      <test rtl="True"><string><em>&#x06BE;&#x0644;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0644;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hehHamza + lam3dots">
-      <test rtl="True"><string><em>&#x06C2;&#x06B7;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x06B7;</em></string></test>
-      <test rtl="True"><string><em>&#x06C2;&#x06B7;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x06B7;</em>&#x0641;</string></test>
+    <testgroup label="hehHamza + lamSmallV">
+      <test rtl="True"><string><em>&#x06C2;&#x06B5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x06B5;</em></string></test>
+      <test rtl="True"><string><em>&#x06C2;&#x06B5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x06B5;</em>&#x0641;</string></test>
     </testgroup>
   </testgroup>
   <testgroup label="Meem form sequences">
@@ -934,11 +934,11 @@
       <test rtl="True"><string><em>&#x0639;&#x0645;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x0645;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="dotlessFeh + meem">
-      <test rtl="True"><string><em>&#x06A1;&#x0645;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0645;</em></string></test>
-      <test rtl="True"><string><em>&#x06A1;&#x0645;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0645;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsA + meem">
+      <test rtl="True"><string><em>&#x06A4;&#x0645;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0645;</em></string></test>
+      <test rtl="True"><string><em>&#x06A4;&#x0645;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0645;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="lam3dots + meem">
       <test rtl="True"><string><em>&#x06B7;&#x0645;</em></string></test>
@@ -1026,11 +1026,11 @@
       <test rtl="True"><string><em>&#x069A;&#x0645;&#x077F;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x069A;&#x0645;&#x077F;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="seen4dots + meem-alt + lamBar">
-      <test rtl="True"><string><em>&#x075C;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x075C;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string><em>&#x075C;&#x0645;&#x076A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x075C;&#x0645;&#x076A;</em>&#x0641;</string></test>
+    <testgroup label="seen4dots + meem-alt + lam">
+      <test rtl="True"><string><em>&#x075C;&#x0645;&#x0644;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x075C;&#x0645;&#x0644;</em></string></test>
+      <test rtl="True"><string><em>&#x075C;&#x0645;&#x0644;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x075C;&#x0645;&#x0644;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="seenDotDot + meem-alt + alef">
       <test rtl="True"><string><em>&#x069A;&#x0645;&#x0627;</em></string></test>
@@ -1050,11 +1050,11 @@
       <test rtl="True"><string><em>&#x06FB;&#x0645;&#x06A9;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06FB;&#x0645;&#x06A9;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="sad3dots + meem-alt + lam3dots">
-      <test rtl="True"><string><em>&#x069E;&#x0645;&#x06B7;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0645;&#x06B7;</em></string></test>
-      <test rtl="True"><string><em>&#x069E;&#x0645;&#x06B7;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0645;&#x06B7;</em>&#x0641;</string></test>
+    <testgroup label="sad3dots + meem-alt + lamSmallV">
+      <test rtl="True"><string><em>&#x069E;&#x0645;&#x06B5;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0645;&#x06B5;</em></string></test>
+      <test rtl="True"><string><em>&#x069E;&#x0645;&#x06B5;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x0645;&#x06B5;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="dad + meem-alt + alefWasla">
       <test rtl="True"><string><em>&#x0636;&#x0645;&#x0671;</em></string></test>
@@ -1074,11 +1074,11 @@
       <test rtl="True"><string><em>&#x0638;&#x0645;&#x06B3;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0638;&#x0645;&#x06B3;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="tah + meem-alt + lamBar">
-      <test rtl="True"><string><em>&#x0637;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string><em>&#x0637;&#x0645;&#x076A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0645;&#x076A;</em>&#x0641;</string></test>
+    <testgroup label="tah + meem-alt + lamTah">
+      <test rtl="True"><string><em>&#x0637;&#x0645;&#x08C7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0645;&#x08C7;</em></string></test>
+      <test rtl="True"><string><em>&#x0637;&#x0645;&#x08C7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0637;&#x0645;&#x08C7;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="tah + meem-alt + alef3">
       <test rtl="True"><string><em>&#x0637;&#x0645;&#x0774;</em></string></test>
@@ -1098,11 +1098,11 @@
       <test rtl="True"><string><em>&#x0639;&#x0645;&#x06AB;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x0645;&#x06AB;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="ghain + meem-alt + lam3dots">
-      <test rtl="True"><string><em>&#x063A;&#x0645;&#x06B7;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0645;&#x06B7;</em></string></test>
-      <test rtl="True"><string><em>&#x063A;&#x0645;&#x06B7;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0645;&#x06B7;</em>&#x0641;</string></test>
+    <testgroup label="ghain + meem-alt + lamBar">
+      <test rtl="True"><string><em>&#x063A;&#x0645;&#x076A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0645;&#x076A;</em></string></test>
+      <test rtl="True"><string><em>&#x063A;&#x0645;&#x076A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0645;&#x076A;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="ghain + meem-alt + alefMadda">
       <test rtl="True"><string><em>&#x063A;&#x0645;&#x0622;</em></string></test>
@@ -1122,21 +1122,21 @@
       <test rtl="True"><string><em>&#x06A1;&#x0645;&#x0763;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0645;&#x0763;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh + meem-alt + lamBar">
-      <test rtl="True"><string><em>&#x0641;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0645;&#x076A;</em></string></test>
-      <test rtl="True"><string><em>&#x0641;&#x0645;&#x076A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0645;&#x076A;</em>&#x0641;</string></test>
+    <testgroup label="feh + meem-alt + lam3dots">
+      <test rtl="True"><string><em>&#x0641;&#x0645;&#x06B7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0645;&#x06B7;</em></string></test>
+      <test rtl="True"><string><em>&#x0641;&#x0645;&#x06B7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0645;&#x06B7;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="dotlessFeh + meem-alt + alef2">
-      <test rtl="True"><string><em>&#x06A1;&#x0645;&#x0773;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0645;&#x0773;</em></string></test>
+    <testgroup label="feh3dotsB + meem-alt + alef2">
+      <test rtl="True"><string><em>&#x06A5;&#x0645;&#x0773;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0645;&#x0773;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + meem-alt + dalRing">
-      <test rtl="True"><string><em>&#x0641;&#x0645;&#x0689;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0645;&#x0689;</em></string></test>
+    <testgroup label="dotlessFeh + meem-alt + dalRing">
+      <test rtl="True"><string><em>&#x06A1;&#x0645;&#x0689;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0645;&#x0689;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1170,11 +1170,11 @@
       <test rtl="True"><string><em>&#x06BE;&#x0645;&#x06AB;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0645;&#x06AB;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hehDo + meem-alt + lamSmallV">
-      <test rtl="True"><string><em>&#x06BE;&#x0645;&#x06B5;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0645;&#x06B5;</em></string></test>
-      <test rtl="True"><string><em>&#x06BE;&#x0645;&#x06B5;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0645;&#x06B5;</em>&#x0641;</string></test>
+    <testgroup label="hehDo + meem-alt + lamBar">
+      <test rtl="True"><string><em>&#x06BE;&#x0645;&#x076A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0645;&#x076A;</em></string></test>
+      <test rtl="True"><string><em>&#x06BE;&#x0645;&#x076A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x0645;&#x076A;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="hehDo + meem-alt + alef3">
       <test rtl="True"><string><em>&#x06BE;&#x0645;&#x0774;</em></string></test>
@@ -1194,11 +1194,11 @@
       <test rtl="True"><string><em>&#x0647;&#x0645;&#x0763;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0647;&#x0645;&#x0763;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="hehHamza + meem-alt + lam">
-      <test rtl="True"><string><em>&#x06C2;&#x0645;&#x0644;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x0645;&#x0644;</em></string></test>
-      <test rtl="True"><string><em>&#x06C2;&#x0645;&#x0644;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x0645;&#x0644;</em>&#x0641;</string></test>
+    <testgroup label="hehHamza + meem-alt + lam3dots">
+      <test rtl="True"><string><em>&#x06C2;&#x0645;&#x06B7;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x0645;&#x06B7;</em></string></test>
+      <test rtl="True"><string><em>&#x06C2;&#x0645;&#x06B7;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x0645;&#x06B7;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="hehHamza + meem-alt + alefMadda">
       <test rtl="True"><string><em>&#x06C2;&#x0645;&#x0622;</em></string></test>
@@ -1250,15 +1250,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + noon">
-      <test rtl="True"><string><em>&#x0641;&#x0646;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0646;</em></string></test>
+    <testgroup label="feh3dotsA + noon">
+      <test rtl="True"><string><em>&#x06A4;&#x0646;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0646;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lamBar + noonRetro">
-      <test rtl="True"><string><em>&#x076A;&#x0768;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x0768;</em></string></test>
+    <testgroup label="lamSmallV + noonRetro">
+      <test rtl="True"><string><em>&#x06B5;&#x0768;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0768;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1324,15 +1324,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + wawDot">
-      <test rtl="True"><string><em>&#x0641;&#x06CF;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06CF;</em></string></test>
+    <testgroup label="feh3dotsB + wawDot">
+      <test rtl="True"><string><em>&#x06A5;&#x06CF;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06CF;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lamSmallV + waw2dots">
-      <test rtl="True"><string><em>&#x06B5;&#x06CA;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x06CA;</em></string></test>
+    <testgroup label="lamTah + waw2dots">
+      <test rtl="True"><string><em>&#x08C7;&#x06CA;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x06CA;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1398,17 +1398,17 @@
       <test rtl="True"><string><em>&#x063A;&#x06B1;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x063A;&#x06B1;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh + keheh2dots">
-      <test rtl="True"><string><em>&#x0641;&#x077F;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x077F;</em></string></test>
-      <test rtl="True"><string><em>&#x0641;&#x077F;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x077F;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsB + keheh2dots">
+      <test rtl="True"><string><em>&#x06A5;&#x077F;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077F;</em></string></test>
+      <test rtl="True"><string><em>&#x06A5;&#x077F;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077F;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam + kaf">
-      <test rtl="True"><string><em>&#x0644;&#x06A9;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06A9;</em></string></test>
-      <test rtl="True"><string><em>&#x0644;&#x06A9;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06A9;</em>&#x0641;</string></test>
+    <testgroup label="lamTah + kaf">
+      <test rtl="True"><string><em>&#x08C7;&#x06A9;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x06A9;</em></string></test>
+      <test rtl="True"><string><em>&#x08C7;&#x06A9;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x06A9;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + gaf">
       <test rtl="True"><string><em>&#x0645;&#x06AF;</em></string></test>
@@ -1472,17 +1472,17 @@
       <test rtl="True"><string><em>&#x0639;&#x06BE;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x06BE;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + hehDo">
-      <test rtl="True"><string><em>&#x06A5;&#x06BE;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06BE;</em></string></test>
-      <test rtl="True"><string><em>&#x06A5;&#x06BE;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06BE;</em>&#x0641;</string></test>
+    <testgroup label="dotlessFeh + hehDo">
+      <test rtl="True"><string><em>&#x06A1;&#x06BE;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x06BE;</em></string></test>
+      <test rtl="True"><string><em>&#x06A1;&#x06BE;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x06BE;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamBar + hehDo">
-      <test rtl="True"><string><em>&#x076A;&#x06BE;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06BE;</em></string></test>
-      <test rtl="True"><string><em>&#x076A;&#x06BE;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06BE;</em>&#x0641;</string></test>
+    <testgroup label="lam + hehDo">
+      <test rtl="True"><string><em>&#x0644;&#x06BE;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06BE;</em></string></test>
+      <test rtl="True"><string><em>&#x0644;&#x06BE;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x06BE;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + hehDo">
       <test rtl="True"><string><em>&#x0645;&#x06BE;</em></string></test>
@@ -1546,17 +1546,17 @@
       <test rtl="True"><string><em>&#x063A;&#x0647;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0647;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="dotlessFeh + hehGoal">
-      <test rtl="True"><string><em>&#x06A1;&#x06C1;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x06C1;</em></string></test>
-      <test rtl="True"><string><em>&#x06A1;&#x06C1;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x06C1;</em>&#x0641;</string></test>
+    <testgroup label="feh + hehGoal">
+      <test rtl="True"><string><em>&#x0641;&#x06C1;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06C1;</em></string></test>
+      <test rtl="True"><string><em>&#x0641;&#x06C1;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x06C1;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamSmallV + hehHamza">
-      <test rtl="True"><string><em>&#x06B5;&#x06C2;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x06C2;</em></string></test>
-      <test rtl="True"><string><em>&#x06B5;&#x06C2;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x06C2;</em>&#x0641;</string></test>
+    <testgroup label="lamBar + hehHamza">
+      <test rtl="True"><string><em>&#x076A;&#x06C2;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06C2;</em></string></test>
+      <test rtl="True"><string><em>&#x076A;&#x06C2;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x06C2;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + arabicHeh">
       <test rtl="True"><string><em>&#x0645;&#x0647;</em></string></test>
@@ -1620,15 +1620,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh3dots + tehMarbuta">
+    <testgroup label="feh3dotsB + tehMarbuta">
       <test rtl="True"><string><em>&#x06A5;&#x0629;</em></string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x0629;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lamSmallV + tehMarbuta">
-      <test rtl="True"><string><em>&#x06B5;&#x0629;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x0629;</em></string></test>
+    <testgroup label="lam3dots + tehMarbuta">
+      <test rtl="True"><string><em>&#x06B7;&#x0629;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x0629;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1694,15 +1694,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="dotlessFeh + yeh3">
-      <test rtl="True"><string><em>&#x06A1;&#x0776;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x0776;</em></string></test>
+    <testgroup label="feh + yeh3">
+      <test rtl="True"><string><em>&#x0641;&#x0776;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0776;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam + yeh4below">
-      <test rtl="True"><string><em>&#x0644;&#x0777;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x0777;</em></string></test>
+    <testgroup label="lamBar + yeh4below">
+      <test rtl="True"><string><em>&#x076A;&#x0777;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x0777;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1768,15 +1768,15 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh3dots + bariyeh">
-      <test rtl="True"><string><em>&#x06A5;&#x06D2;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x06D2;</em></string></test>
+    <testgroup label="dotlessFeh + bariyeh">
+      <test rtl="True"><string><em>&#x06A1;&#x06D2;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A1;&#x06D2;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam3dots + bariyeh2">
-      <test rtl="True"><string><em>&#x06B7;&#x077A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x077A;</em></string></test>
+    <testgroup label="lam + bariyeh2">
+      <test rtl="True"><string><em>&#x0644;&#x077A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x077A;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -1878,29 +1878,29 @@
       <test rtl="True"><string><em>&#x063A;&#x0679;&#x067E;&#x067A;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x063A;&#x0679;&#x067E;&#x067A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh + beh + teh">
-      <test rtl="True"><string><em>&#x0641;&#x0628;&#x062A;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0628;&#x062A;</em></string></test>
-      <test rtl="True"><string><em>&#x0641;&#x0628;&#x062A;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x0628;&#x062A;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsA + beh + teh">
+      <test rtl="True"><string><em>&#x06A4;&#x0628;&#x062A;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0628;&#x062A;</em></string></test>
+      <test rtl="True"><string><em>&#x06A4;&#x0628;&#x062A;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x0628;&#x062A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + theh + tteh + peh">
+    <testgroup label="feh3dotsB + theh + tteh + peh">
       <test rtl="True"><string><em>&#x06A5;&#x062B;&#x0679;&#x067E;</em></string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x062B;&#x0679;&#x067E;</em></string></test>
       <test rtl="True"><string><em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam3dots + dotlessBeh + beh">
-      <test rtl="True"><string><em>&#x06B7;&#x066E;&#x0628;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x066E;&#x0628;</em></string></test>
-      <test rtl="True"><string><em>&#x06B7;&#x066E;&#x0628;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x066E;&#x0628;</em>&#x0641;</string></test>
+    <testgroup label="lamSmallV + dotlessBeh + beh">
+      <test rtl="True"><string><em>&#x06B5;&#x066E;&#x0628;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x066E;&#x0628;</em></string></test>
+      <test rtl="True"><string><em>&#x06B5;&#x066E;&#x0628;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B5;&#x066E;&#x0628;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lam + teh + theh + tteh">
-      <test rtl="True"><string><em>&#x0644;&#x062A;&#x062B;&#x0679;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x062A;&#x062B;&#x0679;</em></string></test>
-      <test rtl="True"><string><em>&#x0644;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+    <testgroup label="lam3dots + teh + theh + tteh">
+      <test rtl="True"><string><em>&#x06B7;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x062A;&#x062B;&#x0679;</em></string></test>
+      <test rtl="True"><string><em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + teh3down + dotlessBeh">
       <test rtl="True"><string><em>&#x0645;&#x067D;&#x066E;</em></string></test>
@@ -1970,11 +1970,11 @@
       <test rtl="True"><string><em>&#x077E;&#x067C;&#x063A;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x077E;&#x067C;&#x063A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="seen4 + teh3down + feh">
-      <test rtl="True"><string><em>&#x077D;&#x067D;&#x0641;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x077D;&#x067D;&#x0641;</em></string></test>
-      <test rtl="True"><string><em>&#x077D;&#x067D;&#x0641;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x077D;&#x067D;&#x0641;</em>&#x0641;</string></test>
+    <testgroup label="seen4 + teh3down + dotlessFeh">
+      <test rtl="True"><string><em>&#x077D;&#x067D;&#x06A1;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x077D;&#x067D;&#x06A1;</em></string></test>
+      <test rtl="True"><string><em>&#x077D;&#x067D;&#x06A1;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x077D;&#x067D;&#x06A1;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="seen + dotlessBeh + qaf">
       <test rtl="True"><string><em>&#x0633;&#x066E;&#x0642;</em></string></test>
@@ -2006,11 +2006,11 @@
       <test rtl="True"><string><em>&#x06FB;&#x0679;&#x063A;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x06FB;&#x0679;&#x063A;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="sad3dots + peh + dotlessFeh">
-      <test rtl="True"><string><em>&#x069E;&#x067E;&#x06A1;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x067E;&#x06A1;</em></string></test>
-      <test rtl="True"><string><em>&#x069E;&#x067E;&#x06A1;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x067E;&#x06A1;</em>&#x0641;</string></test>
+    <testgroup label="sad3dots + peh + feh3dotsA">
+      <test rtl="True"><string><em>&#x069E;&#x067E;&#x06A4;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x067E;&#x06A4;</em></string></test>
+      <test rtl="True"><string><em>&#x069E;&#x067E;&#x06A4;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x069E;&#x067E;&#x06A4;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="sad + tteheh + qaf">
       <test rtl="True"><string><em>&#x0635;&#x067A;&#x0642;</em></string></test>
@@ -2062,39 +2062,39 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh + beeh + zain">
-      <test rtl="True"><string><em>&#x0641;&#x067B;&#x0632;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x067B;&#x0632;</em></string></test>
+    <testgroup label="feh + beeh + reh">
+      <test rtl="True"><string><em>&#x0641;&#x067B;&#x0631;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0641;&#x067B;&#x0631;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam + tteheh + jeh">
-      <test rtl="True"><string><em>&#x0644;&#x067A;&#x0698;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x067A;&#x0698;</em></string></test>
+    <testgroup label="lam + tteheh + rreh">
+      <test rtl="True"><string><em>&#x0644;&#x067A;&#x0691;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0644;&#x067A;&#x0691;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="meem + peh + rehDotDot">
-      <test rtl="True"><string><em>&#x0645;&#x067E;&#x0696;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x067E;&#x0696;</em></string></test>
+    <testgroup label="meem + peh + rehDotBelow">
+      <test rtl="True"><string><em>&#x0645;&#x067E;&#x0694;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x0645;&#x067E;&#x0694;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="gaf + tteh + reh4dots">
-      <test rtl="True"><string><em>&#x06AF;&#x0679;&#x0699;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06AF;&#x0679;&#x0699;</em></string></test>
+    <testgroup label="gaf + tteh + reh2dots">
+      <test rtl="True"><string><em>&#x06AF;&#x0679;&#x0697;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06AF;&#x0679;&#x0697;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="hehDo + theh + rehRing">
-      <test rtl="True"><string><em>&#x06BE;&#x062B;&#x0693;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x062B;&#x0693;</em></string></test>
+    <testgroup label="hehDo + theh + rehHamza">
+      <test rtl="True"><string><em>&#x06BE;&#x062B;&#x076C;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06BE;&#x062B;&#x076C;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="hehHamza + teh + reh2dotsV">
-      <test rtl="True"><string><em>&#x06C2;&#x062A;&#x076B;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x062A;&#x076B;</em></string></test>
+    <testgroup label="hehHamza + teh + rehTah2smd">
+      <test rtl="True"><string><em>&#x06C2;&#x062A;&#x0771;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06C2;&#x062A;&#x0771;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -2142,9 +2142,9 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="lam3dots + peh + noonDotBelow">
-      <test rtl="True"><string><em>&#x06B7;&#x067E;&#x06B9;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06B7;&#x067E;&#x06B9;</em></string></test>
+    <testgroup label="lamTah + peh + noonDotBelow">
+      <test rtl="True"><string><em>&#x08C7;&#x067E;&#x06B9;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x067E;&#x06B9;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -2210,9 +2210,9 @@
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
-    <testgroup label="feh3dots + tehRing + arabicHeh">
-      <test rtl="True"><string><em>&#x06A5;&#x067C;&#x0647;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x067C;&#x0647;</em></string></test>
+    <testgroup label="feh3dotsA + tehRing + arabicHeh">
+      <test rtl="True"><string><em>&#x06A4;&#x067C;&#x0647;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x067C;&#x0647;</em></string></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
       <test rtl="True" background="#cfcfcf"><string/></test>
     </testgroup>
@@ -2284,17 +2284,17 @@
       <test rtl="True"><string><em>&#x0639;&#x076D;&#x0770;&#x069C;</em>&#x0641;</string></test>
       <test rtl="True"><string>&#x0644;<em>&#x0639;&#x076D;&#x0770;&#x069C;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="feh3dots + seen4 + seen + sheen">
-      <test rtl="True"><string><em>&#x06A5;&#x077D;&#x0633;&#x0634;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077D;&#x0633;&#x0634;</em></string></test>
-      <test rtl="True"><string><em>&#x06A5;&#x077D;&#x0633;&#x0634;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x06A5;&#x077D;&#x0633;&#x0634;</em>&#x0641;</string></test>
+    <testgroup label="feh3dotsA + seen4 + seen + sheen">
+      <test rtl="True"><string><em>&#x06A4;&#x077D;&#x0633;&#x0634;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x077D;&#x0633;&#x0634;</em></string></test>
+      <test rtl="True"><string><em>&#x06A4;&#x077D;&#x0633;&#x0634;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x06A4;&#x077D;&#x0633;&#x0634;</em>&#x0641;</string></test>
     </testgroup>
-    <testgroup label="lamBar + seen4dots + seen2dotsV + seenTah2smd">
-      <test rtl="True"><string><em>&#x076A;&#x075C;&#x076D;&#x0770;</em></string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x075C;&#x076D;&#x0770;</em></string></test>
-      <test rtl="True"><string><em>&#x076A;&#x075C;&#x076D;&#x0770;</em>&#x0641;</string></test>
-      <test rtl="True"><string>&#x0644;<em>&#x076A;&#x075C;&#x076D;&#x0770;</em>&#x0641;</string></test>
+    <testgroup label="lamTah + seen4dots + seen2dotsV + seenTah2smd">
+      <test rtl="True"><string><em>&#x08C7;&#x075C;&#x076D;&#x0770;</em></string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x075C;&#x076D;&#x0770;</em></string></test>
+      <test rtl="True"><string><em>&#x08C7;&#x075C;&#x076D;&#x0770;</em>&#x0641;</string></test>
+      <test rtl="True"><string>&#x0644;<em>&#x08C7;&#x075C;&#x076D;&#x0770;</em>&#x0641;</string></test>
     </testgroup>
     <testgroup label="meem + seenInvV + seen4 + seen">
       <test rtl="True"><string><em>&#x0645;&#x077E;&#x077D;&#x0633;</em></string></test>
