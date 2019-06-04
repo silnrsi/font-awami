@@ -158,6 +158,28 @@ gHehGoalIniSn { hehhookS = point(485m, 588m) };    // 275
 gHehGoalIniSd { hehhookS = point(1204m, 814m) };    // 1024
 *****/
 
+// Define in font:
+g__smallTahBelow { nByLowerM = point(200m, 530m) };  // this is the one that is most likely to be actually used
+
+// To avoid compiler errors:
+gHamzaBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+gHamzaBelowArabic { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+gWavyHamzaBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+g__attachedRing { nByLowerM = point(0m, 0m) };
+g__ring { nByLowerM = point(0m, 0m) };
+g__smallTah2dotsBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+g__dot2l_tail { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+
+gDotlessQaf { n1LowerS = mLowerS };
+gKafIniSd { n1LowerS = mLowerS };  // ADD
+
+g__smallVBelow { mLowerS = point(0, -350m) };    // FIX and ADD
+
+//gKafMedJm_short { n1LowerS = point(1500m, -100m) };  // ADD
+gKafMedJm_short { n1LowerS = point(1000m, -300m) }; 
+gKafMedJm_tall { n1LowerS = point(1000m, -336m) };  // ADD - bogus glyph
+gGafMedJm_short { n1LowerS = point(1500m, -100m) };  // ADD
+gGafMedJm_tall { n1LowerS = point(1000m, -336m) };  // ADD - bogus glyph
 
 endtable;
 

@@ -560,17 +560,19 @@ gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  
 gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flag;
 
 table(glyph)
-cNormalEntry = (gKafMed_raw gGafMed_raw);
-cLowEntry = (gKafMedJm_lowentry gGafMedJm_lowentry);
+cKjNormalEntry = (gKafMed_raw gGafMed_raw);
+cKjLowEntry = (gKafMedJm_lowentry gGafMedJm_lowentry);
 cNeedLowKaf = (gBehIni_raw, gBehMed_raw, gSeenIni_raw, gSeenMed_raw, gSadIni_raw, gSadMed_raw);
 endtable;
 
-// Lower-entry pre-jeem kaf:
-cNormalEntry  >  cLowEntry
+// Lower-entry pre-jeem kaf - ideally these cases would be handled by the tall-kaf rules, but that would
+// mean duplicating a bunch of the rules or multiplying classes, given that this tall kaf is not created
+// by using a separate top.
+cKjNormalEntry  >  cKjLowEntry
 	/  ^ cNeedLowKaf  cNuqtaUpperLarge  cDiacritic?  _=K  MARKS  cJeemMF;
-cNormalEntry  >  cLowEntry
+cKjNormalEntry  >  cKjLowEntry
 	/  ^ (gFehIni_raw gFehMed_raw) cNuqtaLikeUpper  cDiacritic?  _=K  MARKS  cJeemMF;
-cNormalEntry  >  cLowEntry
+cKjNormalEntry  >  cKjLowEntry
 	/  ^ (gKafIni_raw gKafMed_raw) MARKS  cDiacritic?  _=K  MARKS  cJeemMF;
 
 // Don't need to handle gaf, lam, or tah because they will result in taller versions anyway (pass 12).

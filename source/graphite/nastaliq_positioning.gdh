@@ -431,7 +431,7 @@ cIso
 // Special case: yeh + beh + hah/khah - the nuqtas get tangled due to collision and the possibility of
 // the lower nuqtas moving down by the jeem tail, which turns off the sequence mechanism.
 (gBehIniBe gBehMedBe) cNuqtaLower { attach {to = @B1; at = n1LowerS; with = n1LowerM }; shift {x = -100m; y = 100m} }
-	gBehMedJm  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50; y = -230m} }
+	gBehMedJm  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50m; y = -230m} }
 	/ _=B1  _=N1  _=B2  _=N2  gJeemFin;
 
 cTakes_n1LowerDia
@@ -1339,8 +1339,8 @@ csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
 // Maybe not needed, but it does help avoid the kafs touching.
-csKafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_medshort$K
+csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafmed_top_medshort_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 
@@ -1504,7 +1504,7 @@ endtable;
 gKafMedJm_base (g__kafMedTop_short g__gafMedTop_short)  >  (gKafMedJm_short gGafMedJm_short)$2 g__kafTop_m_bogus  / ^ _ _;
 
 // Special case: reattach to the short lam (because it is a different width).
-cIniMed {att {to=@L; with=exit; at=entrance}}  cLam_short {insert = 1}
+cIniMed {att {to=@L; with=exit; at=entrance}}  gLamMed_short {insert = 1}
 	/  _=P  MARKS2N ^ _=L;
 
 // Special case: reattach nuqta-like things (small V, small tah) to short lam.
@@ -1829,18 +1829,19 @@ cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m
 	minKernDelta = 0m };
 
 cDalIso		{ kernPreAlef = -60m };
-gDalFin		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m };
-cRehIso		{ kernPreAlef = -90m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
+cDalFin		{ kernPreAlef = -50m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m };
+cRehIso		{ kernPreAlef = -50m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
-gWaw		{ kernPreAlef = -80m; kernPreReh = 40m };
+gWaw		{ kernPreAlef = -30m; kernPreReh = 40m };
 
+//gDalFin		{ minKernDelta = -200m };
 //cRehIso		{ minKernDelta = -200m };
-//gRehFin		{ minKernDelta = -200m };
-gRehFin_jkl	{ minKernDelta = -400m };
+//gRehFin_jkl	{ minKernDelta = -400m };
 //gRehFin_sshg { minKernDelta = -400m }; -- obsolete
-gRehFin_hgM { minKernDelta = -400m };
+gRehFin		{ minKernDelta = -400m; kernPreAlef = -70m };   // long tail
+gRehFin_hgM { minKernDelta = -400m; kernPreAlef = -70m };	// long tail
 
 gAlef { kernPreZain = -60m };
 gAlefFin { kernPreZain = -60m };
@@ -1939,6 +1940,10 @@ cNuqtaLower { shift { x = 200m; y = -200m } }
 cDiacriticUpper { shift.x = 250m }
 	/  cJeemIM  MARKS  (cMeemMed cBehMed cHehGoalMed)  cNuqtaLower?  _=D;
 
+// Special case: kerning - reh + feh/qaf + reh
+(gRehFin_jkl gReh gDalFin) { pairKern += 150m }
+	/  _=R  (gFehIniRe gHehDoIniRe);
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -1957,13 +1962,13 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 ////	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
 
 // Special case: jeem + noon/teh + shadda + noon/teh
-gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50} }
+gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50m} }
 	/ cJeemIM  gBehMedBeM1  cNuqtaLower?  _=S  gBehMedBeM2 _=N  cDiacritic?  gBehMed  cNuqta  cKafMF;
 
-// Special case: zair + beh + bariyeh
-////gZair { shift.y = 200m }
-////	/  _=Z gBehMedBy  MARKS  gBariyehFin;
-
+// Special case: zair + beh/yeh + bariyeh. The sequencing gets confused because the diacritic is
+// higher than the nuqta (below the bariyeh tail).
+gZair { shift {x=-200m; y=250m } }  cNuqtaLikeLower { sequence.class = 0; shift.x = 200m }
+	/  _=Z gBehMedBy  _=N  cDiacritic?  gBariyehFin;
 
 
 cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;
@@ -1997,7 +2002,7 @@ gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  cKafNoBy
 	[MARKS  ANY]?;  // superfluous slots to increase precedence over two-letter sequence rule below
 
 // Exception to pre-short rule:
-cRehIso { pairKern = -100m }            /  _ ^ MARKS  cKernIgnore?  cBehIni MARKS  cAlefFin;
+cRehIso { pairKern = -40m }          /  _ ^ MARKS  cKernIgnore?  cBehIni MARKS  cAlefFin;
 
 // Before a two-letter sequence:
 /////cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;
@@ -2314,7 +2319,7 @@ cDiacriticLower {
 		max.x = 300m;
 		min.y = -1200m; // needed to get below nuqtas for sure; eg \u062A\u0648\u0641\u0650\u06CC\u0642
 		max.y = 300m;    // CHANGE BACK TO 300
-		margin = 50m;
+		//margin = 50m; // don't know why this was here
 	};
 	sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; }
 }  /  cBase  cNuqtaLikeUpper?  _;
@@ -2558,6 +2563,11 @@ cKernable { collision {
 	/	_  cNuqtaLike?  DIACS  cKernIgnore?  cQuoteLeftArab=Q;
 
 
+table(glyph)
+cKafNoPreLam = (cKafIni  csKafIni_base  cKafIso);
+cKafNoPreLam -= (gKafIni gGafIni);   // remove rounded pre-lam form
+endtable;
+
 // Account for overhang of initial kaf diagonal stroke.
 cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
@@ -2566,12 +2576,12 @@ cKernable { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
-		+ max(0m, 1400m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
-									// 1400 is somewhat arbitrary but gives the best results (was 1850)
+		+ max(0m, 1050m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
+									// 1050 is somewhat arbitrary but gives the best results (was 1850)
 		);
     // min/max.y are omitted for kernable glyphs
 } }
-	/  _  cNuqtaLike?  DIACS  cKernIgnore?  (cKafIni  csKafIni_base  cKafIso)=N;
+	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
 
 
 // Default cases:
@@ -2582,8 +2592,8 @@ cKernable { collision {
 	flags = SET_KERN(collision.flags);
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
-	min.x = min(0m, MINKERN - 800m + minKernDelta
-		+ max(0m, 1200 - seqWidth)   // see above
+	min.x = min(0m, MINKERN - 500m + minKernDelta
+		+ max(0m, 1250 - seqWidth)   // see above
 	);
     // min/max.y are omitted for kernable glyphs
 } }
