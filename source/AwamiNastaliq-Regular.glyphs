@@ -1,7 +1,8 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absAlef/absAlefHamzaAbove/absAlefHamzaBelow/absAlefMaddaAbove/absAlefWavyHamzaAbove/absAlefWavyHamzaBelow/absAlefTwoAbove/absAlefThreeAbove/absHighHamzaAlef/absHighHamzaAlef.arabic/absAlefWasla"
+"/absAlefWasla",
+"/absAlefMaddaAbove/absAlefWasla"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -35215,16 +35216,16 @@ layers = (
 {
 anchors = (
 {
-name = bbKernLeft;
+name = honorific;
+position = "{-115, 2712}";
+},
+{
+name = kernBbLeft;
 position = "{161, 653}";
 },
 {
-name = bbKernRight;
+name = kernBbRight;
 position = "{327, 849}";
-},
-{
-name = honorific;
-position = "{-115, 2712}";
 },
 {
 name = mUpper;
@@ -35253,16 +35254,16 @@ layers = (
 {
 anchors = (
 {
-name = bbKernLeft;
+name = honorific;
+position = "{37, 2317}";
+},
+{
+name = kernBbLeft;
 position = "{161, 1137}";
 },
 {
-name = bbKernRight;
+name = kernBbRight;
 position = "{327, 1459}";
-},
-{
-name = honorific;
-position = "{37, 2317}";
 },
 {
 name = mLower;
@@ -35427,8 +35428,12 @@ name = honorific;
 position = "{44, 2775}";
 },
 {
+name = kernBbLeft;
+position = "{161, 1546}";
+},
+{
 name = kernBbRight;
-position = "{161, 1591}";
+position = "{327, 1003}";
 }
 );
 components = (
