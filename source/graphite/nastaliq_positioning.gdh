@@ -1501,6 +1501,7 @@ endtable;
 
 
 // Special case - the short kaf tops don't work for .jm form, so substitute special forms.
+// Is this rule needed??
 gKafMedJm_base (g__kafMedTop_short g__gafMedTop_short)  >  (gKafMedJm_short gGafMedJm_short)$2 g__kafTop_m_bogus  / ^ _ _;
 
 // Special case: reattach to the short lam (because it is a different width).
@@ -1665,6 +1666,13 @@ c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
 // To avoid warnings in special-case attachment rules:
 gTahFin { n1LowerS = point(mLowerS.x, mLowerS.y) };
 gTehMarbutaFin  { n1LowerS = point(mLowerS.x, mLowerS.y) };
+gHamzaBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+gHamzaBelowArabic { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+gWavyHamzaBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+g__smallTah2dotsBelow { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+g__dot2l_tail { nByLowerM = point(n1LowerM.x, n1LowerM.x + 200) };
+g__attachedRing { nByLowerM = point(0m, 0m) };
+g__ring { nByLowerM = point(0m, 0m) };
 
 
 // For attachments after lam/feh/ain:
@@ -2245,6 +2253,19 @@ cNuqtaLikeUpper {shift.x = -100m}  cNuqtaLikeUpper {shift.x = 100m}
 // Special case: upper nuqta + short kaf/gaf
 cNuqtaLikeUpperNoKT { collision.flags = SET_FIX(collision.flags) }
 	/  _=N  cDiacritic?  csKafMed_base;
+
+// Special case: dal + noon
+gDal { collision {
+		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = STDMARGIN + 100m;
+		max.x = MAXKERN; min.x = MINKERN;
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	/  _=D  gBehIniBeM2 g__dot1u  gBehMed  MARKS  gAlefFin;
+
+
 
 gNameMarker  { collision {
 	flags = CLEAR_IGNORE(collision.flags);
