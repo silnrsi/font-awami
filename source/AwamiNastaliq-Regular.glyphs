@@ -1,8 +1,7 @@
 {
 .appVersion = "1161";
 DisplayStrings = (
-"/absAlefWasla",
-"/absAlefMaddaAbove/absAlefWasla"
+"/absDotlessQaf"
 );
 copyright = "Copyright (c) 2014-2019, SIL International (http://www.sil.org) with Reserved Font Names \"Awami\" and \"SIL\".";
 customParameters = (
@@ -37508,15 +37507,15 @@ position = "{0, 418}";
 },
 {
 name = n1Lower;
-position = "{407, -193}";
+position = "{257, -193}";
 },
 {
 name = n23Lower;
-position = "{417, -183}";
+position = "{267, -183}";
 },
 {
 name = nUpper;
-position = "{492, 873}";
+position = "{252, 873}";
 },
 {
 name = ring;
@@ -37524,7 +37523,7 @@ position = "{118, 14}";
 },
 {
 name = tahUpper;
-position = "{482, 863}";
+position = "{262, 863}";
 }
 );
 components = (
@@ -50916,6 +50915,10 @@ position = "{721, -918}";
 {
 name = mUpper;
 position = "{1359, 1555}";
+},
+{
+name = n1Lower;
+position = "{721, -928}";
 },
 {
 name = nUpper;
@@ -103292,6 +103295,10 @@ name = mLower;
 position = "{864, -216}";
 },
 {
+name = n1Lower;
+position = "{864, -226}";
+},
+{
 name = nUpper;
 position = "{1244, 1903}";
 },
@@ -106555,6 +106562,10 @@ name = kafTop;
 position = "{884, 800}";
 },
 {
+name = n1Lower;
+position = "{1000, -300}";
+},
+{
 name = nUpper;
 position = "{1174, 1743}";
 },
@@ -106639,6 +106650,10 @@ position = "{0, -146}";
 {
 name = kafExclude;
 position = "{855, 1529}";
+},
+{
+name = n1Lower;
+position = "{1000, -336}";
 },
 {
 name = nUpper;
@@ -111932,6 +111947,10 @@ name = kafTop;
 position = "{897, 748}";
 },
 {
+name = n1Lower;
+position = "{1500, -100}";
+},
+{
 name = nUpper;
 position = "{1017, 2050}";
 },
@@ -111971,6 +111990,10 @@ position = "{0, -146}";
 {
 name = kafExclude;
 position = "{820, 2050}";
+},
+{
+name = n1Lower;
+position = "{1000, -336}";
 },
 {
 name = nUpper;
@@ -115417,6 +115440,10 @@ position = "{859, 418}";
 {
 name = kernBbRight;
 position = "{1729, 880}";
+},
+{
+name = mLower;
+position = "{918, -278}";
 },
 {
 name = n1Lower;
@@ -145857,7 +145884,7 @@ position = "{574, 419}";
 },
 {
 name = hamzaUpper;
-position = "{281, 957}";
+position = "{281, 757}";
 },
 {
 name = honorific;
@@ -171171,6 +171198,10 @@ name = _mLower;
 position = "{391, 489}";
 },
 {
+name = _nByLower;
+position = "{200, 530}";
+},
+{
 name = _tahLower;
 position = "{400, 482}";
 },
@@ -177663,12 +177694,12 @@ layers = (
 {
 anchors = (
 {
-name = _mLower;
-position = "{0, -219}";
-},
-{
 name = _n1Lower;
 position = "{3, 430}";
+},
+{
+name = mLower;
+position = "{0, -219}";
 }
 );
 components = (
