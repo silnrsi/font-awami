@@ -2265,6 +2265,25 @@ gDal { collision {
 	} }
 	/  _=D  gBehIniBeM2 g__dot1u  gBehMed  MARKS  gAlefFin;
 
+table(glyph)
+cDiacKeepCentered = (gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm gShadda);
+cIM_BeM1 = (csIniBeM1 csMedBeM1); // high tooth
+endtable;
+
+// Special case: noon/teh + shadda + beh + kaf/gaf - needs to avoid kaf/gaf
+cNuqtaUpper {shift.y = -100m}
+	cDiacKeepCentered {
+		shift { x = -60m; y = -150m };
+		collision {
+			flags = CLEAR_IGNORE(collision.flags);
+			flags = SET_FIX(collision.flags);
+			min.x = -100m;
+			max.x = 100m;
+			min.y = -300m;
+			max.y = 800m;
+		}
+	}
+	/ cIM_BeM1 MARKS  gBehMedBeM2 _=N  _=D  (gBehMed gHehGoalMed) MARKS  cKafFin;
 
 
 gNameMarker  { collision {
@@ -2359,7 +2378,7 @@ cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gKhah,
 endtable;
 
 // These should always stay centered over the nuqta if any:
-(gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm gShadda) { collision {
+cDiacKeepCentered { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
 	min.x = -10m;
