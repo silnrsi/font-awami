@@ -1,12 +1,11 @@
 #!/bin/sh
-# Sample script for calling multiple routines on a project, typically prior to committing to a repository.
-# Place this in root of a project, adjust the font path, then set it to be executable by typing:
-# chmod +x preflight
+# Update UFO after any edits other than with FontForge and prior to commit
+
+echo
+echo "Normalising UFO..."
+psfnormalize -p checkfix=fix source/AwamiNastaliq-Regular.ufo
 
 echo
 echo "Setting glyph order..."
 psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
 
-echo
-echo "Normalising UFO..."
-psfnormalize -p checkfix=fix source/AwamiNastaliq-Regular.ufo

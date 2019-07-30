@@ -1,0 +1,11 @@
+#!/bin/sh
+# Update UFO after editing with FontForge and prior to commit
+
+echo
+echo "Fixing FontForge debris and normalizing UFOs..."
+psffixffglifs -p checkfix=fix source/AwamiNastaliq-Regular.ufo
+
+echo
+echo "Setting glyph order..."
+psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
+
