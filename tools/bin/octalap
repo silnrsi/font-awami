@@ -320,9 +320,9 @@ def processone(f, hasOctaBoxes, n):
                 break
             if len(best.left.segs):
                 curr[bestj] = best.left
-                if best.right is not None:
+                if best.right is not None and best.right.area > 0.:
                     curr.append(best.right)
-            elif best.right is not None and len(best.right.segs):
+            elif best.right is not None and best.right.area > 0. and len(best.right.segs):
                 curr[bestj] = best.right
     return (curr, n, start)
 
@@ -416,7 +416,7 @@ if args.merge is None:
         def singleproc(jobs):
             for n in jobs:
                 (curr, _, start) = processone(f, hasOctaBoxes, n)
-                outputone(f, start, hasOctaBoxes, args, curr, n)
+                outputone(f, outjson, start, hasOctaBoxes, args, curr, n)
         process = singleproc
 
     jobs = []
