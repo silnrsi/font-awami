@@ -35,7 +35,6 @@ FAMILY='AwamiNastaliq'
 COPYRIGHT='Copyright (c) 2014-2019, SIL International (http:/www.sil.org)'
 LICENSE='OFL.txt'
 
-DESC_SHORT = "Smart Unicode font for the Nastaliq script"
 DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
