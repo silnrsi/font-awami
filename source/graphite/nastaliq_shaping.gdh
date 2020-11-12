@@ -83,14 +83,13 @@ endif;
 cInvisible  >  g_zeroWidthNoBreakSpace;
 //endif;
 
-endpass;
+endpass;  // 1
 
 
 
 //
 //	BASIC CONTEXTUAL SHAPING - generate initial, medial, and final forms
 //
-
 
 pass(1)
 
@@ -142,7 +141,7 @@ pass(1)
 
 #include "nastaliq_separateNuqtas.gdh"
 
-endpass;
+endpass;  // 1
 
 
 pass(2)
@@ -157,7 +156,7 @@ pass(2)
 
 	csDualLinkFin  csRightLinkIso  >  csDualLinkMed_raw  csRightLinkFin  /  _=B1 ^ MARKS  _=B2 ;
 
-endpass; // 1
+endpass; // 2
 
 
 pass(2)
@@ -625,7 +624,7 @@ gMeemMed_alt_raw  >  gMeemMed_alt	/ ^ MPRECXT _  MARKS  (cMed  cFin);
 
 csMed_raw  >  csMedADLK	/ ^ MPRECXT _  MARKS  (cMed  cFin);
 
-endpass;
+endpass;  // 4
 
 
 pass(5)
@@ -723,7 +722,7 @@ gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 /// Eg, 062A 062E 0646 06AF 06A9
 ////gGafMedDk  >  gGafMed_short_OLD  /  _ MARKS  (cKafFin cKafMed);
 
-endpass; // 5
+endpass;  // 5
 
 
 table(glyph)
@@ -1008,7 +1007,8 @@ g__dot1u  (gVowelSmallV gNoonGhunnaMark)   >  (g__dot1u_smallVKf g__dot1u_ngMark
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
 
-endpass;
+endpass;  // 6
+
 
 table(glyph)
 
@@ -1147,7 +1147,7 @@ pass(6)
 
 	cDigitAny  cSignTakes1Smaller  >  cDigitAnySmaller  cSign1Smaller;
 
-endpass;
+endpass;  // 6
 ************/
 
 
