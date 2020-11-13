@@ -2342,10 +2342,10 @@ chonorificDia { collision {
 	flags = CLEAR_IGNORE(collision.flags);
 	flags = SET_FIX(collision.flags);
 	margin = 300m; marginweight = 500; // don't squeeze these in!
-	min.x = -250m;
+	min.x = -400m;
 	max.x = 0m;
 	min.y = -50m;
-	max.y = 500m;
+	max.y = 700m;
 } };
 
 gKharizabar {
