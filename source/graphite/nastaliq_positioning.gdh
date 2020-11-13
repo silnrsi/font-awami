@@ -554,7 +554,7 @@ cPostKernable = (cIso, cIni, cKernPunct) {
 };
 
 // Kludge because Graphite seems to have a problem figuring these out:
-g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
+///////g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
 
 
 cKernable = (cIso, cFin, cKernPunct) {
@@ -2281,6 +2281,33 @@ gAlefFin_lm { collision {
 	} }
 	/  _=A  gMeemIniBe gBehMedCh  cNuqtaLike?  gChotiyehFin;
 
+// Special case: reh + honorific needs more kerning
+gReh { collision {
+		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = max(0m, kernLsb + @N.kernRsb + pairKern);   ////  + 200m;  // looser than normal
+		max.x = MAXKERN; min.x = MINKERN;
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	/ _=R ^ chonorificDia  cKernIgnore?  cPostKernable=N;
+
+// Special case: alef + hamza + waw
+// The diacritic/harakat on the alef can collide with the segment following the waw/dal/reh,
+// so add some kerning margin.
+/***
+(gWaw gDal gReh) { collision {
+		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = max(0m, kernLsb + @N.kernRsb + pairKern) + 150m;  // looser than normal
+		max.x = MAXKERN; min.x = MINKERN;
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	/ gAlefFin (cNuqtaLikeUpper cDiacriticUpper) _=W  DIACS  cPostKernable=N;
+***/
+
+
 table(glyph)
 cDiacKeepCentered = (gNoonGhunnaMark g__smallV gKharizabar gKharizair gJazm gShadda g__shadda_zabar);  // add any other combinations
 cIM_BeM1 = (csIniBeM1 csMedBeM1); // high tooth
@@ -2392,6 +2419,16 @@ cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gKhah,
 	gRehTwoDotsAbove, gRehTwoVertAbove, gRehSmallTahTwoDots, gYehSmallV, gYehTwoAbove, gYehThreeAbove,
 	gBariyehTwoAbove, gBariyehThreeAbove );
 endtable;
+
+// These should always stay centered over the nuqta if any:
+gKharizair { collision {
+	flags = CLEAR_IGNORE(collision.flags);
+	flags = SET_FIX(collision.flags);
+	min.x = -10m;
+	max.x = 10m;
+	min.y = -1000m;  // needs quite a bit to clear final jeem
+	max.y = 300m;
+} }  /  (cNuqta cIsoWithUpperNuqta)  cDiacritic?  _;
 
 // These should always stay centered over the nuqta if any:
 cDiacKeepCentered { collision {
@@ -2640,8 +2677,8 @@ cKernable { collision {
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
 
 
-// Kludge to handle the fact that the font seems confused about the bounding boxes in the ellipsis.
-cKernable  / _ ^ g_ellipsisArab;
+// Kludge to handle the fact that the font seems confused about the bounding boxes in the ellipsis:
+///////cKernable  / _ ^ g_ellipsisArab;
 
 
 // Default cases:
