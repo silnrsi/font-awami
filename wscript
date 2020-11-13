@@ -39,7 +39,7 @@ DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
-getufoinfo('source/' + FAMILY + '-Regular' + '.ufo')
+getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
 
 #VERSION='2.001'   # taken directly from the font????????????????????
 
@@ -72,7 +72,7 @@ cmds.extend([
     cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")])
 
 font(target = process(FONT_FILENAME + '.ttf', *cmds),
-    source = "source/AwamiNastaliq-Regular.ufo",
+    source = "source/masters/AwamiNastaliq-Regular.ufo",
     params = "--removeOverlap",
     graphite = gdl('awami.gdl', master = 'source/graphite/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
                     depends = glob.glob('*.gdh')),
