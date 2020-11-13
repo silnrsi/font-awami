@@ -2,10 +2,20 @@
 # Update UFO after any edits other than with FontForge and prior to commit
 
 echo
-echo "Normalising UFO..."
-psfnormalize -p checkfix=fix source/AwamiNastaliq-Regular.ufo
+echo "Normalizing UFOs..."
+psfnormalize -p checkfix=fix source/masters/*-Regular.ufo  &
+#psfnormalize -p checkfix=fix source/masters/*-Bold.ufo    &
+wait
+
+# Do we need this???
+#
+#echo "Updating woff metadata xml file..."
+#psfmakewoffmetadata -q -n AwamiNastaliq -i org.sil.fonts source/masters/*-Regular.ufo -o "source/AwamiNastaliq-WOFF-metadata.xml"
 
 echo
 echo "Setting glyph order..."
-psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/AwamiNastaliq-Regular.ufo
+psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/masters/AwamiNastaliq-Regular.ufo
+# Sch version:
+###psfsetglyphorder -q -p checkfix=none -p backup=False --header DesignerOrder,DesignerOrder --field public.glyphOrder,com.schriftgestaltung.glyphOrder -i source/glyph_data.csv source/masters/*-Regular.ufo
 
+echo "preflight completed!"
