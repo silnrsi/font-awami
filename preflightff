@@ -3,8 +3,9 @@
 
 echo
 echo "Fixing FontForge debris and normalizing UFOs..."
-psffixffglifs -p checkfix=fix source/masters/AwamiNastaliq-Regular.ufo
+psffixffglifs -p checkfix=fix source/masters/*-Regular.ufo
+psffixffglifs -p checkfix=fix source/masters/*-Black.ufo
 
 echo
-echo "Setting glyph order..."
+echo "Updating glyph order in Regular..."
 psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/masters/AwamiNastaliq-Regular.ufo

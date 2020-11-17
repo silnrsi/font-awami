@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <designspace format="3">
-<axes>
-        <axis default="400.0" maximum="400.0" minimum="300.0" name="weight" tag="wght">
+    <axes>
+        <axis default="400.0" maximum="800.0" minimum="400.0" name="weight" tag="wght">
             <map input="400.0" output="400.0" />
-            <map input="300.0" output="300.0" />
+            <map input="800.0" output="800.0" />
             <labelname xml:lang="en">Weight</labelname>
         </axis>
         <axis default="100.0" maximum="100.0" minimum="100.0" name="width" tag="wdth">
@@ -16,7 +16,7 @@
         </axis>
     </axes>
     <sources>
-        <source name="Awami Nastaliq Regular" familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
+        <source name="AwamiNastaliq-Regular" familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
             <lib copy="1" />
             <groups copy="1" />
             <features copy="1" />
@@ -27,9 +27,23 @@
                 <dimension name="custom" xvalue="0.000000" />
             </location>
         </source>
+	<source name="AwamiNastaliq-Black" familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Black.ufo" stylename="Black">
+          <location>
+                <dimension name="weight" xvalue="800.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+	</source>
     </sources>
+
     <instances>
-        <instance familyname="Awami Nastaliq" stylename="Regular" filename="instances/AwamiNastaliq-Regular.ufo" name="AwamiNastaliq-Regular" postscriptfontname="AwamiNastaliq-Regular" stylemapfamilyname="AwamiNastaliq" stylemapstylename="regular">
+        <instance      familyname="Awami Nastaliq" 
+                             name="Awami Nastaliq Regular" 
+               stylemapfamilyname="Awami Nastaliq"
+                        stylename="Regular"
+                stylemapstylename="regular">
+               postscriptfontname="AwamiNastaliq-Regular"
+                         filename="instances/AwamiNastaliq-Regular.ufo" 
             <location>
                 <dimension name="weight" xvalue="400.000000" />
                 <dimension name="width" xvalue="100.000000" />
@@ -38,5 +52,50 @@
             <info />
             <kerning />
         </instance>
-  </instances>
+        <instance      familyname="Awami Nastaliq Book"
+                             name="Awami Nastaliq Book Regular"
+               stylemapfamilyname="Awami Nastaliq Book"
+                        stylename="Regular"
+                stylemapstylename="regular">
+               postscriptfontname="AwamiNastaliqBook-Regular"
+                         filename="instances/AwamiNastaliqBook-Regular.ufo"
+            <location>
+                <dimension name="weight" xvalue="500.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        <instance      familyname="Awami Nastaliq"
+                             name="Awami Nastaliq Bold"
+               stylemapfamilyname="Awami Nastaliq"
+                        stylename="Bold"
+                stylemapstylename="bold">
+               postscriptfontname="AwamiNastaliq-Bold"
+                         filename="instances/AwamiNastaliq-Bold.ufo"
+            <location>
+                <dimension name="weight" xvalue="700.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        <instance      familyname="Awami Nastaliq Book"
+                             name="Awami Nastaliq Book Bold"
+               stylemapfamilyname="Awami Nastaliq Book"
+                        stylename="Bold"
+                stylemapstylename="bold">
+               postscriptfontname="AwamiNastaliqBook-Bold"
+                         filename="instances/AwamiNastaliqBook-Bold.ufo"
+            <location>
+                <dimension name="weight" xvalue="800.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+    </instances>
 </designspace>
