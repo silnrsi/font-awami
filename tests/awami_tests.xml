@@ -530,6 +530,12 @@
     <test class="fset7654" label="alayhi es salam in context" rtl="True">
       <string>سیدنا علیہ‌السلام ب</string>
     </test>
+    <test class="fset7654" label="Thessalonians" rtl="True">
+      <string>تھسلُنیکیوں</string>
+    </test>
+    <test class="fset7654" label="Timothy" rtl="True">
+      <string>تیمُتھیُس</string>
+    </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
     <test label="alef + kaf" rtl="True">
@@ -698,6 +704,12 @@
     </test>
     <test label="coll-fix ranges" rtl="True">
       <string>بیوک رک تھینس رو جمکلنیج</string>
+    </test>
+    <test class="fset7654" label="reh + meem" rtl="True">
+      <string>گرم لازم دم</string>
+    </test>
+    <test class="fset7654" label="dal + initial jeem" rtl="True">
+      <string>گدحا  بدحف | لدخس</string>
     </test>
     <test background="#00aaff" class="fset23022" label="ALPHA-2 FEEDBACK" rtl="True">
       <string />
@@ -2522,9 +2534,6 @@
     <test class="fset30" label="knslttntts" rtl="True">
       <string>کنسلٹنٹس</string>
     </test>
-    <test class="fset30" label="hmjhky" rtl="True">
-      <string>حمجھخے</string>
-    </test>
     <test class="fset30" label="shkhsytw" rtl="True">
       <string>شخصیتو</string>
     </test>
@@ -2548,6 +2557,9 @@
     </test>
     <test class="fset30" label="high kaf w/ large nuqta - Urdu" rtl="True">
       <string>شکستگی</string>
+    </test>
+    <test class="fset30" label="hmjhky" rtl="True">
+      <string>حمجھخے</string>
     </test>
     <test background="#55aaff" class="fset23024" label="SHORT FINALS" rtl="True">
       <string />
@@ -2639,6 +2651,18 @@
     </test>
     <test class="fset30" label="Balochi - no" rtl="True">
       <string>بکشِتگێن</string>
+    </test>
+    <test background="#55aaff" class="fset7654" label="SHORT MEDIALS" rtl="True">
+      <string />
+    </test>
+    <test class="fset30" label="jeem bariyeh" rtl="True">
+      <string>رَکھحجے</string>
+    </test>
+    <test class="fset30" label="jeem bariyeh" rtl="True">
+      <string>نَکھیجے</string>
+    </test>
+    <test class="fset30" label="jeem bariyeh" rtl="True">
+      <string>گُمیجے کُمیجے گُھیجے</string>
     </test>
     <test background="#55aaff" class="fset7654" label="FROM DIETER" rtl="True">
       <string />
@@ -3544,8 +3568,24 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="lam + alef + meem" rtl="True">
       <string>سلامتی</string>
     </test>
-    <test class="fset7654" label="ellipsis kludge" rtl="True">
+    <test class="fset7654" label="final-meem + beh + yeh..." rtl="True">
+      <string>بنام بیڻمن</string>
+    </test>
+    <test background="#aaaa7f" class="fset7654" label="ellipsis kludge" rtl="True">
+      <comment>At one point it seemed like a special case was needed, but then the problem resolved itself.</comment>
       <string>ن… بس…ک</string>
+    </test>
+    <test background="#aaaa7f" class="fset7654" label="honorific" rtl="True">
+      <string>اصغرؓ عبرانی</string>
+    </test>
+    <test class="fset7654" label="reh + honorific" rtl="True">
+      <string>الیعزرؓ سو</string>
+    </test>
+    <test class="fset7654" label="reh + honorific" rtl="True">
+      <string>بختاورؒ میاں </string>
+    </test>
+    <test class="fset7654" label="reh + honorific + paren" rtl="True">
+      <string>نجّارؓ( </string>
     </test>
     <test background="#55aaff" label="NOT HANDLED" rtl="True">
       <string />
@@ -3588,11 +3628,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="reh + sp + tcheh + yeh" rtl="True">
       <string>بر چی</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="meem zabar noon" rtl="True">
-      <string>مَنسّی</string>
+    <test class="fset7654" label="alef + wavy-hamza + waw" rtl="True">
+      <comment>Dieter says this is too tight.</comment>
+      <string>چھٲونَس</string>
     </test>
-    <test background="#aaaa7f" class="fset7654" label="honorific" rtl="True">
-      <string>اصغرؓ عبر</string>
+    <test background="#ff0000" class="fset7654" label="alef heh-goal" rtl="True">
+      <string>کراہ نکلی</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
@@ -3628,6 +3669,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="don't kern under quote" rtl="True">
       <string>کر“</string>
+    </test>
+    <test class="fset7654" label="full stop before tall" rtl="True">
+      <string>گوَشتی۔ شخصیتو</string>
+    </test>
+    <test class="fset7654" label="comma before kaf" rtl="True">
+      <string>دار، کثمیر</string>
     </test>
   </testgroup>
   <testgroup label="--- Extended characters">

@@ -1452,6 +1452,9 @@ csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin,
 	gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
 csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, 
 	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
+
+csMed_regular = (gJeemMedBy);
+csMed_short = (gJeemMedBy_short);
 endtable;
 
 
@@ -1486,9 +1489,11 @@ cIni     cMed  >  @I  @M {tooHigh = 1}
 csKafIM_medium  cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
 csKafIM_base    cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
 
-cMed      cMed  >  @M1  @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;
+cMed  csMed_regular    >  @M  csMed_short {tooHigh = 1}  /  _=M {tooHigh == 1}  MARKS  _=F;
 
-cMed  csFinal_regular  >  @M  csFinal_short    /  _=M {tooHigh == 1}  MARKS  _=F;
+cMed  cMed             >  @M1 @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;  // propagate too-high flag to the end of the word
+
+cMed  csFinal_regular  >  @M  csFinal_short       /  _=M {tooHigh == 1}  MARKS  _=F;
 
 endpass;  // 6 (13)
 endif;
@@ -1581,25 +1586,27 @@ endtable;
 ////c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
 ////	/  _ MARKS2N ^ _=F;
 
-c_exit_seen      {att {to=@F; with=exit;  at=entrance}}  gSeenFin_short {passKeySlot = true; insert = 1}
+c_exit_seen      {att {to=@F; with=exit;  at=entrance}}  gSeenFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_noon      {att {to=@F; with=exit;  at=entrance}}  gNoonFin_short {passKeySlot = true; insert = 1}
+c_exit_noon      {att {to=@F; with=exit;  at=entrance}}  gNoonFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}  gQafFin_short {passKeySlot = true; insert = 1}
+c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}  gQafFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_qafWawStfh {att{to=@F; with=exit;  at=entrance}}  gQafFin_stfh_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}  gLamFin_short {passKeySlot = true; insert = 1}
+c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}  gLamFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short {passKeySlot = true; insert = 1}
+c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-
+c_exit_jeem       {att {to=@F; with=exit; at=entrance}}  gJeemMedBy_short   {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
 
 
 table(glyph) {AttributeOverride = 0}
 
 // to avoid warnings; will never be used
 g__kafTop_null { nUpperS = point(0m,0m) };
+g__kafTop_m_bogus { nUpperS = point(0m,0m) };
 csFinal_short { hamzaUpperS = point(0m,0m); tahUpperS = point(0m,0m); n1LowerS = point(0m,0m); n23LowerS = point(0m,0m) };
 cNuqtaLikeUpper { nUpperM = point(0m,0m) };
 cNuqtaLikeLower { n1LowerM = point(0m,0m) };
@@ -1608,6 +1615,9 @@ cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
 // Temporary:
 //g__kafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
 g__gafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
+
+
+g__kafTop_m_bogus { mUpperS = point(75m, 1545m) };
 
 // Intersection class:
 cTakes_smallV_short = csFinal_short;
@@ -1634,7 +1644,7 @@ csFinal_short
 	/ _=F  _  _;
 cTakes_smallV_short cNuqtaLikeUpper {att {to=@F; at=smallValtS; with=nUpperM}}  / _=F {lamValt == 1} _;
 csFinal_short       cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}     / _=F  _;
-cTakes_ring_short	g__attachedRing {att {to=@F; at=ringS; with=ringM}}	  	   / _=F  _;
+cTakes_ring_short	g__attachedRing {att {to=@F; at=ringS; with=ringM}}	  	  / _=F  _;
 
 endpass;  // pos - 7 (14)
 
@@ -1834,18 +1844,18 @@ table(glyph) { AttributeOverride = 1 }
 // alef, dal, reh, reh-sshg, reh-jkl, reh-???, waw, heh-goal, noon
 
 cKernable { kernPreAlef = 0m; kernPreDal = 0m; kernPreReh = 0m; kernPreZain = 0m;
-	kernPreWaw = 0m; kernPreJeemAinIso = -130m; kernPreLamAlef = 0m; kernPreKafNoSp = 0m;
-	kernPreShort = 0m;
-    // kernPreInitial = 0m;
-	kernPreExclam = 0m;
+	kernPreWaw = 0m; kernPreMeemJeem = 0m; kernPreJeemAinIso = -130m; kernPreLamAlef = 0m; 
+	kernPreKafNoSp = 0m; kernPreShort = 0m; kernPreExclam = 0m;
 	minKernDelta = 0m };
 
 cDalIso		{ kernPreAlef = -60m };
 cDalFin		{ kernPreAlef = -50m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m };
 cRehIso		{ kernPreAlef = -50m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw = -30m; kernPreLamAlef = -30m;
+				kernPreMeemJeem = 70m;
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
-gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m };
+gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m; kernPreMeemJeem = 60m };
+cDalFin      { kernPreMeemJeem = 70m };
 gWaw		{ kernPreAlef = -30m; kernPreReh = 40m };
 
 //gDalFin		{ minKernDelta = -200m };
@@ -1853,13 +1863,14 @@ gWaw		{ kernPreAlef = -30m; kernPreReh = 40m };
 //gRehFin_jkl	{ minKernDelta = -400m };
 //gRehFin_sshg { minKernDelta = -400m }; -- obsolete
 gRehFin		{ minKernDelta = -400m; kernPreAlef = -70m };   // long tail
-gRehFin_hgM { minKernDelta = -400m; kernPreAlef = -70m };	// long tail
+gRehFin_hgM { minKernDelta = -400m; kernPreAlef = -70m };	   // long tail
 
 gAlef { kernPreZain = -60m };
 gAlefFin { kernPreZain = -60m };
 
-// Don't let punctuation kern underneath following segment:
-cKernPunct { minKernDelta = MINKERN * -1 };  // cancels out MINKERN
+// Don't let punctuation kern underneath following segment;
+// removed Nov 2020; a slight amount of kerning is okay.
+//cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
 ///gAlef { kernPreKafNoSp = -150m };
@@ -1996,6 +2007,8 @@ cKernable { pairKern = kernPreWaw  }		/  _ ^ MARKS  cKernIgnore?  cWawIso;
 cKernable { pairKern = kernPreJeemAinIso }	/  _ ^ MARKS  cKernIgnore?  (cJeemIso cAinIso);
 cKernable { pairKern = kernPreLamAlef}		/  _ ^ MARKS  cKernIgnore?  gLamIniAl;  // gLafAlef - no longer used
 cKernable { pairKern = kernPreExclam }		/  _ ^ MARKS  cKernIgnore?  g_exclamArab;
+// Strictly speaking this should only apply to jeems that are right near the baseline, but too hard to test for:
+cKernable { pairKern = kernPreMeemJeem }     /  _ ^ MARKS  cKernIgnore?  (cMeemIso cJeemIni);
 
 // Currently not being used:
 ////cKernable { pairKern = kernPreKafNoSp + @K.position.y }   /  _ ^ MARKS  (gKaf  gGaf  cKafIni)=K;
@@ -2280,6 +2293,18 @@ gAlefFin_lm { collision {
     	// min/max.y are omitted for kernable glyphs
 	} }
 	/  _=A  gMeemIniBe gBehMedCh  cNuqtaLike?  gChotiyehFin;
+
+// Special case: final-meem + beh + yeh...
+// Ideally this should handle marks as well, but the real-life example did not include any.
+gMeem { collision {
+		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = max(0m, kernLsb + @B.kernRsb + pairKern) + 170m;  // looser than normal
+		max.x = MAXKERN; min.x = MINKERN;
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	/ _=M g_space gBehIniBeM1=B cNuqtaLike? gBehMedBe cNuqtaLike? gBehMedMm cNuqtaLike? gMeemMedNn;
 
 // Special case: reh + honorific needs more kerning
 gReh { collision {
@@ -2669,16 +2694,12 @@ cKernable { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
-		+ max(0m, 1050m - seqWidth) // the shorter this sequence, the less kerning we want so it doesn't get lost;
+		+ max(0m, 1050m - seqWidth)	// the shorter this sequence, the less kerning we want so it doesn't get lost;
 									// 1050 is somewhat arbitrary but gives the best results (was 1850)
 		);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
-
-
-// Kludge to handle the fact that the font seems confused about the bounding boxes in the ellipsis:
-///////cKernable  / _ ^ g_ellipsisArab;
 
 
 // Default cases:

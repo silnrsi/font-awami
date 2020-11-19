@@ -253,7 +253,7 @@ sub out_classes
     {
     	  #if ($self->{'awami_names'} && (substr($cl,0,3) eq "no_"))
     	  if (1 == 2)  # false
-    	  { # Don't output the "not" classes for Awami - yes, go ahead and generate them.
+    	  { # Don't output the "not" classes for Awami - but yes, go ahead and generate them.
     	  } else
     	  {
             $fh->print("#define HAS_c$cl 1\n") if ($opts{'-defines'} && $cl !~ m/^no_/o);
@@ -322,7 +322,7 @@ sub make_name
         # Eg, space -> g_space; absBehMed_ai -> gBehMedAi; nlqBariyehFin -> gBariyehFin
         # absJeemMed.fe_ss -> gJeemMedFe_SS
         $gname =~ s/#/hash/;  # special case?
-        $gname =~ s/abs/tt/;
+        $gname =~ s/abs/tt/;  # for deleting "abs" and "nlq"
         $gname =~ s/nlq/tt/;
         $gname = "g_" . $gname;
         
