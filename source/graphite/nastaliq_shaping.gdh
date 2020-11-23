@@ -176,165 +176,6 @@ endpass;	// 2
 //	FURTHER CONTEXTUAL SHAPING
 //
 
-table(glyph)
-
-// cs_ classes are ones that are used for substitution.
-
-csMed_raw = (gBehMed_raw, gBehMed_SS_raw, gJeemMed_raw, gSeenMed_raw, gSadMed_raw, gTahMed_raw,
-		gAinMed_raw, gFehMed_raw, gKafMed_raw, gGafMed_raw, gLamMed_raw, gMeemMed_raw,
-		gHehGoalMed_raw, gHehDoMed_raw);
-
-cMed_raw_any = (csMed_raw, gMeemMed_alt_raw);
-
-
-// Note: these all have an extra beh form to account for the _SS alternate.
-// Eventually we can get rid of them since we are no longer using the _SS alternates.
-csMedADLK = (gBehMed, gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
-		gKafMed, gGafMed, gLamMed, gMeemMed, gHehGoalMed, gHehDoMed);
-csMedBeF = (gBehMedBeF, gBehMedBeF_ss, gJeemMedBeF, gSeenMedBeF, gSadMedBeF, gTahMedBeF, gAinMedBeF, gFehMedBeF,
-		gKafMedBeF, gGafMedBeF, gLamMedBeF, gMeemMedBeF, gHehGoalMedBeF, gHehDoMedBeF);
-csMedJm = (gBehMedJm, gBehMedJm, gJeemMedJm, gSeenMedJm, gSadMedJm, gTahMedJm, gAinMedJm, gFehMedJm,
-		gKafMedJm, gGafMedJm, gLamMedJm, gMeemMedJm, gHehGoalMedJm, gHehDoMedJm);
-csMedRe = (gBehMedRe, gBehMedRe, gJeemMedRe, gSeenMedRe, gSadMedRe, gTahMedRe, gAinMedRe, gFehMedRe,
-		gKafMedRe, gGafMedRe, gLamMedRe, gMeemMedRe, gHehGoalMedRe, gHehDoMedRe);
-csMedSn = (gBehMedSn, gBehMedSn, gJeemMedSn, gSeenMedSn, gSadMedSn, gTahMedSn, gAinMedSn, gFehMedSn,
-		gKafMedSn, gGafMedSn, gLamMedSn, gMeemMedSn, gHehGoalMedSn, gHehDoMedSn);
-csMedSd = (gBehMedSd, gBehMedSd_ss, gJeemMedSd, gSeenMedSd, gSadMedSd, gTahMedSd, gAinMedSd, gFehMedSd,
-		gKafMedSd, gGafMedSd, gLamMedSd, gMeemMedSd, gHehGoalMedSd, gHehDoMedSd);
-csMedTa = (gBehMedTa, gBehMedTa_ss, gJeemMedTa, gSeenMedTa, gSadMedTa, gTahMedTa, gAinMedTa, gFehMedTa,
-		gKafMedTa, gGafMedTa, gLamMedTa, gMeemMedTa, gHehGoalMedTa, gHehDoMedTa);
-csMedAi = (gBehMedAi, gBehMedAi_ss, gJeemMedAi, gSeenMedAi, gSadMedAi, gTahMedAi, gAinMedAi, gFehMedAi,
-		gKafMedAi, gGafMedAi, gLamMedAi, gMeemMedAi, gHehGoalMedAi, gHehDoMedAi);
-csMedFe = (gBehMedFe, gBehMedFe_ss, gJeemMedFe, gSeenMedFe, gSadMedFe, gTahMedFe, gAinMedFe, gFehMedFe,
-		gKafMedFe, gGafMedFe, gLamMedFe, gMeemMedFe, gHehGoalMedFe, gHehDoMedFe);
-csMedQf = (gBehMedQf, gBehMedQf_ss, gJeemMedQf, gSeenMedQf, gSadMedQf, gTahMedQf, gAinMedQf, gFehMedQf,
-		gKafMedQf, gGafMedQf, gLamMedQf, gMeemMedQf, gHehGoalMedQf, gHehDoMedQf);
-csMedMm = (gBehMedMm, gBehMedMm, gJeemMedMm, gSeenMedMm, gSadMedMm, gTahMedMm, gAinMedMm, gFehMedMm,
-		gKafMedMm, gGafMedMm, gLamMedMm, gMeemMedMm, gHehGoalMedMm, gHehDoMedMm);
-csMedNn = (gBehMedNn, gBehMedNn, gJeemMedNn, gSeenMedNn, gSadMedNn, gTahMedNn, gAinMedNn, gFehMedNn,
-		gKafMedNn, gGafMedNn, gLamMedNn, gMeemMedNn, gHehGoalMedNn, gHehDoMedNn);
-csMedHgF = (gBehMedHgF, gBehMedHgF, gJeemMedHgF, gSeenMedHgF, gSadMedHgF, gTahMedHgF, gAinMedHgF, gFehMedHgF,
-		gKafMedHgF, gGafMedHgF, gLamMedHgF, gMeemMedHgF, gHehGoalMedHgF, gHehDoMedHgF);
-csMedHgM = (gBehMedHgM, gBehMedHgM, gJeemMedHgM, gSeenMedHgM, gSadMedHgM, gTahMedHgM, gAinMedHgM, gFehMedHgM,
-		gKafMedHgM, gGafMedHgM, gLamMedHgM, gMeemMedHgM, gHehGoalMedHgM, gHehDoMedHgM);
-csMedHd = (gBehMedHd, gBehMedHd, gJeemMedHd, gSeenMedHd, gSadMedHd, gTahMedHd, gAinMedHd, gFehMedHd,
-		gKafMedHd, gGafMedHd, gLamMedHd, gMeemMedHd, gHehGoalMedHd, gHehDoMedHd);
-csMedCh = (gBehMedCh, gBehMedCh, gJeemMedCh, gSeenMedCh, gSadMedCh, gTahMedCh, gAinMedCh, gFehMedCh,
-		gKafMedCh, gGafMedCh, gLamMedCh, gMeemMedCh, gHehGoalMedCh, gHehDoMedCh);
-csMedBy = (gBehMedBy, gBehMedBy, gJeemMedBy, gSeenMedBy, gSadMedBy, gTahMedBy, gAinMedBy, gFehMedBy,
-		gKafMedBy, gGafMedBy, gLamMedBy, gMeemMedBy, gHehGoalMedBy, gHehDoMedBy);
-csMedBe = (gBehMedBe, gBehMedBe, gJeemMedBe, gSeenMedBe, gSadMedBe, gTahMedBe, gAinMedBe, gFehMedBe,
-		gKafMedBe, gGafMedBe, gLamMedBe, gMeemMedBe, gHehGoalMedBe, gHehDoMedBe);
-csMedBeRe = (gBehMedBeRe, gBehMedBeRe, gJeemMedBeRe, gSeenMedBeRe, gSadMedBeRe, gTahMedBeRe, gAinMedBeRe, gFehMedBeRe,
-		gKafMedBeRe, gGafMedBeRe, gLamMedBeRe, gMeemMedBeRe, gHehGoalMedBeRe, gHehDoMedBeRe);
-csMedBeNn = (gBehMedBeNn, gBehMedBeNn, gJeemMedBeNn, gSeenMedBeNn, gSadMedBeNn, gTahMedBeNn, gAinMedBeNn, gFehMedBeNn,
-		gKafMedBeNn, gGafMedBeNn, gLamMedBeNn, gMeemMedBeNn, gHehGoalMedBeNn, gHehDoMedBeNn);
-csMedBeHg = (gBehMedBeHg, gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, gTahMedBeHg, gAinMedBeHg, gFehMedBeHg,
-		gKafMedBeHg, gGafMedBeHg, gLamMedBeHg, gMeemMedBeHg, gHehGoalMedBeHg, gHehDoMedBeHg);
-
-// NOTE gLamMedMm in this class:
-csMedMmX = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX, gFehMedMmX,
-		gKafMedMmX, gGafMedMmX, gLamMedMm, gMeemMedMmX, gHehGoalMedMmX, gHehDoMedMmX);
-
-// Note: these include an extra beh form to account for the _SS alternate
-// Eventually we can get rid of them since we are no longer using the _SS alternates.
-csMedBeM1 = (gBehMedBeM1, gBehMedBeM1, gJeemMedBeM1, gSeenMedBeM1, gSadMedBeM1, gTahMedBeM1, gAinMedBeM1, gFehMedBeM1,
-		gKafMedBeM1, gGafMedBeM1, gLamMedBeM1, gMeemMedBeM1, gHehGoalMedBeM1, gHehDoMedBeM1);
-csMedBeM2 = (gBehMedBeM2, gBehMedBeM2, gJeemMedBeM2, gSeenMedBeM2, gSadMedBeM2, gTahMedBeM2, gAinMedBeM2, gFehMedBeM2,
-		gKafMedBeM2, gGafMedBeM2, gLamMedBeM2, gMeemMedBeM2, gHehGoalMedBeM2, gHehDoMedBeM2);
-		// gJeemMedBeKl uses the same interface, but should not be included
-
-cBehMed_postBeM = (gBehMedBeF, gBehMedJm, gBehMedSd, gBehMedTa, gBehMedAi, gBehMedFe,
-		gBehMedQf, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh, gBehMedBy, gBehMedMmX);
-// OBSOLETE:
-cBehMed_postSBe = (gBehMedJm, gBehMedMm, gBehMedHgM, gBehMedHd, gBehMedCh,
-		gBehMedBy, gBehMedMmX);
-cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
-		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg,
-		gBehMedHgF_be, gBehMedBeRe);
-cBehMed_postSiniBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
-		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg);
-
-csIni_raw = (gBehIni_raw, gJeemIni_raw, gSeenIni_raw, gSadIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw,
-		gKafIni_raw, gGafIni_raw, gLamIni_raw, gMeemIni_raw, gHehGoalIni_raw, gHehDoIni_raw);
-
-csIni = (gBehIni, gJeemIni, gSeenIni, gSadIni, gTahIni, gAinIni, gFehIni,
-		gKafIni, gGafIni, gLamIni, gMeemIni, gHehGoalIni, gHehDoIni);
-csIniBe = (gBehIniBe, gJeemIniBe, gSeenIniBe, gSadIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
-		gKafIniBe, gGafIniBe, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
-csIniBeM1 = (gBehIniBeM1, gJeemIniBeM1, gSeenIniBeM1, gSadIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
-		gKafIniBeM1, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
-csIniBeM2 = (gBehIniBeM2, gJeemIniBeM2, gSeenIniBeM2, gSadIniBeM2, gTahIniBeM2, gAinIniBeM2, gFehIniBeM2,
-		gKafIniBeM2, gGafIniBeM2, gLamIniBeM2, gMeemIniBeM2, gHehGoalIniBeM2, gHehDoIniBeM2);
-csIniBeM2F = (gBehIniBeM2, gJeemIniBeF, gSeenIniBeF, gSadIniBeF, gTahIniBeF, gAinIniBeF, gFehIniBeM2,
-		gKafIniBeM2, gGafIniBeM2, gLamIniBeM2, gMeemIniBeF, gHehGoalIniBeF, gHehDoIniBeF);
-csIniJm = (gBehIniJm, gJeemIniJm, gSeenIniJm, gSadIniJm, gTahIniJm, gAinIniJm, gFehIniJm,
-		gKafIniJm, gGafIniJm, gLamIniJm, gMeemIniJm, gHehGoalIniJm, gHehDoIniJm);
-csIniRe = (gBehIniRe, gJeemIniRe, gSeenIniRe, gSadIniRe, gTahIniRe, gAinIniRe, gFehIniRe,
-		gKafIniRe, gGafIniRe, gLamIniRe, gMeemIniRe, gHehGoalIniRe, gHehDoIniRe);
-csIniSn = (gBehIniSn, gJeemIniSn, gSeenIniSn, gSadIniSn, gTahIniSn, gAinIniSn, gFehIniSn,
-		gKafIniSn, gGafIniSn, gLamIniSn, gMeemIniSn, gHehGoalIniSn, gHehDoIniSn);
-csIniSd = (gBehIniSd, gJeemIniSd, gSeenIniSd, gSadIniSd, gTahIniSd, gAinIniSd, gFehIniSd,
-		gKafIniSd, gGafIniSd, gLamIniSd, gMeemIniSd, gHehGoalIniSd, gHehDoIniSd);
-csIniTa = (gBehIniTa, gJeemIniTa, gSeenIniTa, gSadIniTa, gTahIniTa, gAinIniTa, gFehIniTa,
-		gKafIniTa, gGafIniTa, gLamIniTa, gMeemIniTa, gHehGoalIniTa, gHehDoIniTa);
-csIniAi = (gBehIniAi, gJeemIniAi, gSeenIniAi, gSadIniAi, gTahIniAi, gAinIniAi, gFehIniAi,
-		gKafIniAi, gGafIniAi, gLamIniAi, gMeemIniAi, gHehGoalIniAi, gHehDoIniAi);
-csIniFe = (gBehIniFe, gJeemIniFe, gSeenIniFe, gSadIniFe, gTahIniFe, gAinIniFe, gFehIniFe,
-		gKafIniFe, gGafIniFe, gLamIniFe, gMeemIniFe, gHehGoalIniFe, gHehDoIniFe);
-csIniQf = (gBehIniQf, gJeemIniQf, gSeenIniQf, gSadIniQf, gTahIniQf, gAinIniQf, gFehIniQf,
-		gKafIniQf, gGafIniQf, gLamIniQf, gMeemIniQf, gHehGoalIniQf, gHehDoIniQf);
-csIniMm = (gBehIniMm, gJeemIniMm, gSeenIniMm, gSadIniMm, gTahIniMm, gAinIniMm, gFehIniMm,
-		gKafIniMm, gGafIniMm, gLamIniMm, gMeemIniMm, gHehGoalIniMm, gHehDoIniMm);
-csIniNn = (gBehIniNn, gJeemIniNn, gSeenIniNn, gSadIniNn, gTahIniNn, gAinIniNn, gFehIniNn,
-		gKafIniNn, gGafIniNn, gLamIniNn, gMeemIniNn, gHehGoalIniNn, gHehDoIniNn);
-csIniHgF = (gBehIniHgF, gJeemIniHgF, gSeenIniHgF, gSadIniHgF, gTahIniHgF, gAinIniHgF, gFehIniHgF,
-		gKafIniHgF, gGafIniHgF, gLamIniHgF, gMeemIniHgF, gHehGoalIniHgF, gHehDoIniHgF);
-csIniHgM = (gBehIniHgM, gJeemIniHgM, gSeenIniHgM, gSadIniHgM, gTahIniHgM, gAinIniHgM, gFehIniHgM,
-		gKafIniHgM, gGafIniHgM, gLamIniHgM, gMeemIniHgM, gHehGoalIniHgM, gHehDoIniHgM);
-csIniHd = (gBehIniHd, gJeemIniHd, gSeenIniHd, gSadIniHd, gTahIniHd, gAinIniHd, gFehIniHd,
-		gKafIniHd, gGafIniHd, gLamIniHd, gMeemIniHd, gHehGoalIniHd, gHehDoIniHd);
-csIniCh = (gBehIniCh, gJeemIniCh, gSeenIniCh, gSadIniCh, gTahIniCh, gAinIniCh, gFehIniCh,
-		gKafIniCh, gGafIniCh, gLamIniCh, gMeemIniCh, gHehGoalIniCh, gHehDoIniCh);
-csIniBy = (gBehIniBy, gJeemIniBy, gSeenIniBy, gSadIniBy, gTahIniBy, gAinIniBy, gFehIniBy,
-		gKafIniBy, gGafIniBy, gLamIniBy, gMeemIniBy, gHehGoalIniBy, gHehDoIniBy);
-csIniBeRe = (gBehIniBeRe, gJeemIniBeRe, gSeenIniBeRe, gSadIniBeRe, gTahIniBeRe, gAinIniBeRe, gFehIniBeRe,
-		gKafIniBeRe, gGafIniBeRe, gLamIniBeRe, gMeemIniBeRe, gHehGoalIniBeRe, gHehDoIniBeRe);
-csIniBeNn = (gBehIniBeNn, gJeemIniBeNn, gSeenIniBeNn, gSadIniBeNn, gTahIniBeNn, gAinIniBeNn, gFehIniBeNn,
-		gKafIniBeNn, gGafIniBeNn, gLamIniBeNn, gMeemIniBeNn, gHehGoalIniBeNn, gHehDoIniBeNn);
-// Note there is no gBehIniBeHg:
-csIniBeHg = (gBehIniBeM2, gJeemIniBeHg, gSeenIniBeHg, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
-		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
-
-// Note gLamIni in these classes:
-csIniMmX = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,
-		gKafIniMmX, gGafIniMmX, gLamIni, gMeemIniMmX, gHehGoalIniMmX, gHehDoIniMmX);
-
-csIni_raw_noS = (gBehIni_raw, gJeemIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw,
-		gKafIni_raw, gGafIni_raw, gLamIni_raw, gMeemIni_raw, gHehGoalIni_raw, gHehDoIni_raw);
-csIniBe_noS = (gBehIniBe, gJeemIniBe, gTahIniBe, gAinIniBe, gFehIniBe,
-		gKafIniBe, gGafIniBe, gLamIniBe, gMeemIniBe, gHehGoalIniBe, gHehDoIniBe);
-
-csIniBeM1_noS = (gBehIniBeM1, gJeemIniBeM1, gTahIniBeM1, gAinIniBeM1, gFehIniBeM1,
-		gKafIniBeM1, gGafIniBeM1, gLamIniBeM1, gMeemIniBeM1, gHehGoalIniBeM1, gHehDoIniBeM1);
-
-// before gBehMedBeRe:
-csIniBeHg_BeRe = (gBehIniBeM1, gJeemIniBeHg, gSeenIniBeM1, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
-		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
-
-// Unprocessed initials and medials:
-cIMraw = (csIni_raw, csMed_raw, gMeemMed_alt_raw, gTehMarbutaGoal_raw, gHehGoalHamza_raw gBehMed_SS_raw, c_zerojoin);
-
-// Before alternate qaf/waw interface:
-cPreQwStfh = (gSeenIni_raw gTahIni_raw gSeenMed_raw gTahMed_raw gFehMed_raw, gHehDoMed_raw, gHehDoIni_raw);
-
-csQwFin = (gWawFin gQafFin);
-csQwFin_stfh = (gWawFin_stfh gQafFin_stfh);
-
-
-endtable;
-
-
 pass(3)
 
 // Lam-alef ligatures - not used
@@ -498,6 +339,15 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS
 
 // Obsolete way of using high-tooth behs sometimes after seen & sad 
 //gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
+
+
+// Insert a pseudo line-break glyph for recognition later in positioning table:
+
+// Debugger:
+//g_bar  (csIni_raw cBariyehIso)  _  >  @1  gStartOfLine:2  @2;
+
+ANY  /  ANY  _;
+ANY  _  >  gSOL:1  @1;
 
 endpass;  // 3
 

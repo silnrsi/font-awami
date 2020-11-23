@@ -1034,6 +1034,9 @@ csBehTehRing = (gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
 	gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR);
 
 
+gSOL = pseudo(postscript("NULL"));  // start of line
+
+
 // Basic classes for contextual shaping:
 #include "nastaliq_cntxlClasses.gdh"
 

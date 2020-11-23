@@ -907,9 +907,6 @@
     <test class="fset7654" label="lam-alef meem" rtl="True">
       <string>سلامتی</string>
     </test>
-    <test class="fset7654" label="exclamation mark" rtl="True">
-      <string>سنو! ہ! سر! ص! ھ! و!</string>
-    </test>
     <test background="#55aaff" label="PUNCTUATION" rtl="True">
       <string />
     </test>
@@ -964,11 +961,20 @@
     <test class="fset7654" label="alef" rtl="True">
       <string>واس وآس وإس وݳس</string>
     </test>
-    <test class="fset7654" label="yh jqwq" rtl="True">
-      <string>یہ حقوق</string>
+    <test class="fset7654" label="exclamation mark" rtl="True">
+      <string>سنو! ہ! سر! ص! ھ! و!</string>
+    </test>
+    <test class="fset7654" label="inter-word" rtl="True">
+      <string>کہے، تِھسّلُنیکی</string>
+    </test>
+    <test class="fset7654" label="inter-word" rtl="True">
+      <string>دار، کثمیر</string>
     </test>
     <test background="#55aaff" class="fset7654" label="MINIMIZING INTER-WORD OVERLAPS" rtl="True">
       <string> </string>
+    </test>
+    <test class="fset7654" label="yh jqwq" rtl="True">
+      <string>یہ حقوق</string>
     </test>
     <test class="fset7654" label="hrkfls" rtl="True">
       <string>ہرکفلس</string>
@@ -1023,6 +1029,21 @@
     </test>
     <test class="fset7654" label="2 tall  seqs" rtl="True">
       <string>کھیونگفی  </string>
+    </test>
+    <test background="#55aaff" class="fset7654" label="START OF LINE" rtl="True">
+      <string />
+    </test>
+    <test class="fset7654" label="beh + kaf" rtl="True">
+      <string>بکم بگف</string>
+    </test>
+    <test class="fset7654" label="alef + kaf" rtl="True">
+      <string>اکم اگف</string>
+    </test>
+    <test class="fset7654" label="initial + bariyeh" rtl="True">
+      <string>سےم گے</string>
+    </test>
+    <test class="fset7654" label="bariyeh" rtl="True">
+      <string>ےش</string>
     </test>
   </testgroup>
   <testgroup label="Collisions">

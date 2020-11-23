@@ -17,6 +17,12 @@
 	details including an FAQ.
 */
 
+table(glyph)
+cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
+	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab
+	g_ellipsisArab);
+endtable;
+
 
 table(positioning)
 
@@ -52,12 +58,15 @@ c_exit { att {to=@N; with=exit; at=entrance} }
 
 // For measuring sequences. Note that the longer the sequence length, the more it 
 // can be kerned under the following sequence.
-cRehFin { seqWidth += advance.x - 300m };           // I don't understand why 300 makes these work more similarly to the others
+cRehFin { seqWidth += advance.x - 300m };     // I don't understand why 300 makes these work more similarly to the others
 cFin { seqWidth += advance.x };
-cIso { seqWidth += @P.advance.x + @P.seqWidth }		// no space - same sequence
+cIso { seqWidth += @P.advance.x + @P.seqWidth }		  // no space - same sequence
 	/  (cIso cFin)=P MARKS2N  _=N;       
-cIso { seqWidth = advance.x };                      // start a new sequence after space or at very beginning
+cIso { seqWidth = advance.x };                          // start a new sequence after space or at very beginning
 
+cKernPunct { seqWidth += @P.advance.x + @P.seqWidth }   // yes, punctuation should be treated as part of the word sequence
+	/  (cIso cFin)=P MARKS2N  _=N; 
+  
 /***
 cursive_attach(alef)
 cursive_attach(beh)
@@ -528,10 +537,7 @@ cIni {kernBbRightS = point(0m,0m) };
 cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
-cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
-	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab
-	g_ellipsisArab)
-		{kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+cKernPunct {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
 	g_quotedblleft g_quotedblright g_quotedblleftArab g_quotedblrightArab
@@ -1698,7 +1704,6 @@ cNlWide = (cDot2l  cDot3l  cDot4l);
 cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
 cRehFin_longtail = (gRehFin, gRehFin_hgM);
 
-
 endtable;  // glyph
 
 
@@ -2664,7 +2669,7 @@ cKernPunct { collision {
 		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
-}   /  _  cKernPunct=P;
+}   /  _  cKernIgnore?  cKernPunct=P;
 
 // Don't kern underneath a closing quote.
 ////cKernable { collision.flags = CLEAR_KERN(collision.flags) }
@@ -2700,6 +2705,7 @@ cKernable { collision {
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
+
 
 
 // Default cases:
@@ -2763,10 +2769,22 @@ endpass;  // pos - 10 (17)
 endif; // (collFix > 0)
 
 
+pass(11)
+
+gBehIni     {advance.x += 360m}  /  gSOL  _=B cNuqtaLike? MARKS cKafMF;
+
+gAlef       {advance.x += 150m}  /  gSOL  _=A cNuqtaLike? MARKS (cKafIni cKafIso)=K;
+
+cBariyehFin {advance.x -= 200m}  /  gSOL  cIni cNuqtaLike? MARKS  _=By;
+cBariyehIso {advance.x -= 200m}  /  gSOL  _=By;
+
+endpass;
+
+
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(11) { CollisionFix = 4; AutoKern = true }  // 18
+pass(12) { CollisionFix = 4; AutoKern = true }  // 18
 
 // Perform diacritic-related fixing.
 
