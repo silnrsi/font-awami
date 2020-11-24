@@ -120,7 +120,7 @@ csMed_raw = (gBehMed_raw, gBehMed_SS_raw, gJeemMed_raw, gSeenMed_raw, gSadMed_ra
 
 cMed_raw_any = (csMed_raw, gMeemMed_alt_raw);
 
-
+// Contextual classes
 // Note: these all have an extra beh form to account for the _SS alternate.
 // Eventually we can get rid of them since we are no longer using the _SS alternates.
 csMedADLK = (gBehMed, gBehMed, gJeemMed, gSeenMed, gSadMed, gTahMed, gAinMed, gFehMed,
@@ -267,4 +267,3 @@ csQwFin_stfh = (gWawFin_stfh gQafFin_stfh);
 
 
 endtable; // glyph
-
