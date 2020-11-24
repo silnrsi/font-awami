@@ -1459,8 +1459,8 @@ csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin,
 csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, 
 	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 
-csMed_regular = (gJeemMedBy);
-csMed_short = (gJeemMedBy_short);
+csMed_regular = (gJeemMedBy, gBehMedQf);
+csMed_short = (gJeemMedBy_short, gBehMedQf_short);
 endtable;
 
 
@@ -1492,14 +1492,13 @@ cIni     cMed  >  @I  @M {tooHigh = 1}
 cIni     cMed  >  @I  @M {tooHigh = 1}
 	/  _=I  {position.y + bb.top > SHORTFINAL0}  g__kafTop_null? cNuqtaLikeLower? cDiacriticLower? ^ _=M;
 
-csKafIM_medium  cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
-csKafIM_base    cMed  >  @I  @M {tooHigh = 1}  /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
+csKafIM_medium  csMed_regular >  @I  csMed_short {tooHigh = 1} /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
+csKafIM_medium  cMed          >  @I  @M {tooHigh = 1}          /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF}  MARKS ^ _=M;
+csKafIM_base    cMed          >  @I  @M {tooHigh = 1}          /  _=I  {tooHigh == 1 || position.y > SHORTFINAL_KAF + 100m}  MARKS ^ _=M;
 
-cMed  csMed_regular    >  @M  csMed_short {tooHigh = 1}  /  _=M {tooHigh == 1}  MARKS  _=F;
-
-cMed  cMed             >  @M1 @M2 {tooHigh = 1}   /  _=M1 {tooHigh == 1}  MARKS ^ _=M2;  // propagate too-high flag to the end of the word
-
-cMed  csFinal_regular  >  @M  csFinal_short       /  _=M {tooHigh == 1}  MARKS  _=F;
+cMed  csMed_regular    >  @M  csMed_short {tooHigh = 1} /  _=M {tooHigh == 1}  MARKS  _=F;
+cMed  cMed             >  @M1 @M2 {tooHigh = 1}   / _=M1 {tooHigh == 1}  MARKS ^ _=M2; // propagate too-high flag to the end of the word
+cMed  csFinal_regular  >  @M  csFinal_short       / _=M  {tooHigh == 1}  MARKS  _=F;
 
 endpass;  // 6 (13)
 endif;
@@ -1605,6 +1604,8 @@ c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}  gLamFin_short      {pas
 c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_jeem       {att {to=@F; with=exit; at=entrance}}  gJeemMedBy_short   {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_beh        {att {to=@F; with=exit; at=entrance}}  gBehMedQf_short    {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 
 

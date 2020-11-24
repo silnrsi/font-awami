@@ -244,8 +244,8 @@ gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gHehGoalFin  g__hehHook_small
 // Tall words
 
 gBehIni_raw  g__dot2u  gHehDoMed_raw  gSeenMed_raw  gLamMed_raw  gPesh  gBehMed_raw  g__dot1u  gBehMed_raw
-	g__noDot2l  gKafMed_raw  gBehMed_raw  g__noDot2l  gWawFin  gNoon  g__noDot1u
-	>  g_wordThessalonians:(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16) _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ;
+	g__noDot2l  gKafMed_raw
+	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ ;
 
 gBehIni_raw  g__dot2u  gBehMed_raw  g__noDot2l  gMeemMed_raw  gPesh  gBehMed_raw  g__dot2u  gHehDoMed_raw  gBehMed_raw
 	g__noDot2l  gPesh  gSeenFin
@@ -437,6 +437,11 @@ cKjNormalEntry  >  cKjLowEntry
 	/  ^ (gFehIni_raw gFehMed_raw) cNuqtaLikeUpper  cDiacritic?  _=K  MARKS  cJeemMF;
 cKjNormalEntry  >  cKjLowEntry
 	/  ^ (gKafIni_raw gKafMed_raw) MARKS  cDiacritic?  _=K  MARKS  cJeemMF;
+
+
+// Special case: use short form
+gBehMed_raw  >  gBehMedQf_short  /  g_wordThessalonik  _=B  MARKS  gWawFin;
+
 
 // Don't need to handle gaf, lam, or tah because they will result in taller versions anyway (pass 12).
 
