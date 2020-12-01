@@ -54,7 +54,7 @@ c_exit { att {to=@N; with=exit; at=entrance} }
 	c_entrance { insert=1; 
 			seqWidth = @P.advance.x + @P.seqWidth  // for measuring sequences
 		} 
-		/ _=P MARKS2N ^ _=N ;
+		/ _=P MARKS2N ^ g_zerojoin? _=N ;
 
 // For measuring sequences. Note that the longer the sequence length, the more it 
 // can be kerned under the following sequence.
@@ -1448,7 +1448,7 @@ cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 
 
 // Debugging:
-cIni {user6 = position.y; user7 = position.y + bb.bottom; user8 = position.y + bb.top};
+//cIni {user6 = position.y; user7 = position.y + bb.bottom; user8 = position.y + bb.top};
 
 endpass;  // 5 (12)
 
@@ -1973,6 +1973,13 @@ cDiacriticUpper { shift.x = 250m }
 (gRehFin_jkl gReh gDalFin) { pairKern += 150m }
 	/  _=R  (gFehIniRe gHehDoIniRe);
 
+// Special cases: reh + yeh - shift yeh nuqtas left and reh down
+gRehFin_jkl {shift.y = -150m }   cNuqtaLower { shift {x = 250m; y = 150m}; collision.margin = 30m }
+	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 800m };
+gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 150m; y = 100m}; collision.margin = 30m }
+	/ _=R MARKS  cBehIni _=N { -500m < position.y && position.y < 0m } ;
+gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 180m; y = 80m}; collision.margin = 30m }
+	/ _=R cBehIni MARKS cBehMed _=N { -450m < position.y && position.y < 200m } ;
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -2594,7 +2601,6 @@ cRehFin_longtail { collision {
 	} }
 	cDiacriticUpper {shift.y = -200m}
 	/  _=F  _=D  gSeenIniBeM1=S  MARKS  gBehMedSn  MARKS  gSeenFin;
-
 
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);

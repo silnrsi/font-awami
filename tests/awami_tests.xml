@@ -533,8 +533,30 @@
     <test class="fset7654" label="Thessalonians" rtl="True">
       <string>تھسلُنیکیوں</string>
     </test>
+    <test background="#aaaa7f" class="fset7654" label="Thessalonians - original" rtl="True">
+      <string>تھسلُنیَکیوں</string>
+    </test>
+    <test background="#ff0000" class="fset40" label="Thessalonians - yeh lam noon-ghunna" rtl="True">
+      <string>تھسلُنیکیلں</string>
+    </test>
+    <test background="#ff0000" class="fset7654" label="Thessalonians - hehgoal bariyeh" rtl="True">
+      <string>تھسلُنیکے</string>
+    </test>
+    <test background="#ff0000" class="fset7654" label="Thessalonians - yeh" rtl="True">
+      <string>تھسلُنیکی</string>
+    </test>
     <test class="fset7654" label="Timothy" rtl="True">
       <string>تیمُتھیُس</string>
+    </test>
+    <test background="#aaaa7f" class="fset7654" label="Timothy - original" rtl="True">
+      <string>تیمُتھیُ‍س</string>
+    </test>
+    <test background="#ff0000" class="fset7654" label="almasih" rtl="True">
+      <comment>Christ</comment>
+      <string>المسیح</string>
+    </test>
+    <test class="fset7654" label="almasih - original" rtl="True">
+      <string>المسیَح</string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">
@@ -3015,6 +3037,9 @@
     <test label="zwarakay" rtl="True">
       <string>قٙبٙسٙمٙبٙ ݪ</string>
     </test>
+    <test class="fset7654" label="alahi" rtl="True">
+      <string>الٰہی</string>
+    </test>
   </testgroup>
   <testgroup label="Review feedback - general">
     <test background="#55aaff" class="fset23023" label="ALPHA-2" rtl="True">
@@ -3516,6 +3541,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="reh + qaf + reh" rtl="True">
       <comment>kerning</comment>
       <string>برقر</string>
+    </test>
+    <test class="fset7654" label="reh + yeh" rtl="True">
+      <string>پریشان  |  پریشانی</string>
+    </test>
+    <test class="fset7654" label="reh + yeh" rtl="True">
+      <string>مزید</string>
+    </test>
+    <test class="fset7654" label="reh + beh-like + yeh" rtl="True">
+      <string>پھرتیلا</string>
     </test>
     <test background="#55aaff" class="fset23023" label="PASSES 16 &amp; 17" rtl="True">
       <string />

@@ -241,16 +241,6 @@ gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gHehGoalFin  g__hehHook_small
 // Restore eventually if we use this:
 ////gAlefMaddaAbove gGaf  >  g_alefMaddaGaf:(1 2)  _;
 
-// Tall words
-
-gBehIni_raw  g__dot2u  gHehDoMed_raw  gSeenMed_raw  gLamMed_raw  gPesh  gBehMed_raw  g__dot1u  gBehMed_raw
-	g__noDot2l  gKafMed_raw
-	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ ;
-
-gBehIni_raw  g__dot2u  gBehMed_raw  g__noDot2l  gMeemMed_raw  gPesh  gBehMed_raw  g__dot2u  gHehDoMed_raw  gBehMed_raw
-	g__noDot2l  gPesh  gSeenFin
-	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _ ;
-
 
 // Finals
 
@@ -655,6 +645,27 @@ cIso  cHamzaUrdu			>  @1  cHamzaArabic;
 cHamzaUrdu  >  cHamzaArabic;
 
 endif; // hamzaAlt
+
+
+// Ligatures for tall words
+// We do this in this late pass (instead of in pass 3) because by now we've figured out the 
+// contextual shaping. Otherwise the variety of beh forms trips us up.
+
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  
+	gBehMed  g__noDot2l  gKafMedBe
+	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _ _ gBehMedQf;
+
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  gBehMed  g__noDot2l
+	>  g_wordThessaloni:(1 2 3 4 5 6 7 8 9 10) _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _ cKafMed;
+
+gBehIniBe  g__dot2u  gBehMedMm  g__noDot2l  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
+	g__noDot2l  gPesh  gSeenFin
+	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _ ;
+
+gBehMedQf  g__noDot2l  >  gBehMedQf_short  g__dot2l  /  g_wordThessalonik  _  _=N  gWawFin;
+gBehMedQf  cNuqtaLike  >  gBehMedQf_short  @N        /  g_wordThessalonik  _  _=N  gWawFin;
 
 
 // Recompose isolates.
