@@ -867,6 +867,10 @@ gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf
 	/  _  _  cDiacritic?  (cKafMed  cKafFin);
 csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
 
+// Special  case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
+gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm)                 MARKS  _=J cNuqtaLikeUpper MARKS  cKafMF;
+gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm) cNuqtaLikeUpper MARKS  _=J                 MARKS  cKafMF;
+
 // Special case: high-tooth nuqta-small-V + beh + kaf/gaf
 g__dot1u_smallV  >  g__dot1u_smallVKf
 	/  gBehMedBeM2  _=NV  cDiacritic?  cBehMed  MARKS  cKafMF;

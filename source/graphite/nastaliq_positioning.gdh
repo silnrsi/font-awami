@@ -1100,6 +1100,8 @@ cls_excludingGlyphs_kern { collision {
 
 // Special case: teh/theh + jeem + kaf
 // Include the exclusion glyph for this case as well, to avoid nuqtas on the jeem jumping up.
+// - no longer needed since we are using gJeemMedKf_wide
+/***
 cls_excludingGlyphs_kern { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -1110,7 +1112,7 @@ cls_excludingGlyphs_kern { collision {
 	exclude.offset.x = collexclude.offsetx;
 	exclude.offset.y = collexclude.offsety;
 } }  /  cNuqtaLikeUpper  cDiacritic?  cJeemMed  MARKS  _=EG;
-
+***/
 
 // Don't kern glyphs before the high hamza; retain the space.
 // Move kerning special cases down to pass 10.

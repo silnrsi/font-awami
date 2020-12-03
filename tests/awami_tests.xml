@@ -536,13 +536,13 @@
     <test background="#aaaa7f" class="fset7654" label="Thessalonians - original" rtl="True">
       <string>تھسلُنیَکیوں</string>
     </test>
-    <test background="#ff0000" class="fset40" label="Thessalonians - yeh lam noon-ghunna" rtl="True">
+    <test class="fset40" label="Thessalonians - yeh lam noon-ghunna" rtl="True">
       <string>تھسلُنیکیلں</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="Thessalonians - hehgoal bariyeh" rtl="True">
+    <test class="fset7654" label="Thessalonians - bariyeh" rtl="True">
       <string>تھسلُنیکے</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="Thessalonians - yeh" rtl="True">
+    <test class="fset7654" label="Thessalonians - yeh" rtl="True">
       <string>تھسلُنیکی</string>
     </test>
     <test class="fset7654" label="Timothy" rtl="True">
@@ -1695,7 +1695,7 @@
       <string>علاوہ مقررہ وقفوں کے ساتھ تعطیلات بھی</string>
     </test>
     <test class="fset3" label="Urdu UDHR" rtl="True">
-      <string> بچوں کو کس قسم کی تعلیم</string>
+      <string>بچوں کو کس قسم کی تعلیم</string>
     </test>
     <test label="Shina p3" rtl="True">
       <string>رسئ سخصیت تسلیم تھئ</string>
@@ -3342,6 +3342,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="noon + ng-mark + beh + kaf/gaf" rtl="True">
       <string> بینِ٘نگ  ننِ٘نگ  کھنِ٘نگ</string>
     </test>
+    <test class="fset7654" label="beh + khah + kaf" rtl="True">
+      <string>بخکَو</string>
+    </test>
+    <test label="teh + jeem + kaf/gaf" rtl="True">
+      <string>تجک</string>
+    </test>
     <test background="#55aaff" label="PASS 6 + 10" rtl="True">
       <string />
     </test>
@@ -3392,9 +3398,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="beh + kaf/lam + heh-doachashmee [rule 21-23]" rtl="True">
       <comment>Move nuqtas down and to the right.</comment>
       <string>بکِھ یُلّھف بُکّھا</string>
-    </test>
-    <test label="teh + jeem + kaf/gaf" rtl="True">
-      <string>تجک</string>
     </test>
     <test class="fset28" label="beh + jeh + teh" rtl="True">
       <string>لنژب</string>
