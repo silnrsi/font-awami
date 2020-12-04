@@ -2778,22 +2778,10 @@ endpass;  // pos - 10 (17)
 endif; // (collFix > 0)
 
 
-pass(11)
-
-gBehIni     {advance.x += 360m}  /  gSOL  _=B cNuqtaLike? MARKS cKafMF;
-
-gAlef       {advance.x += 150m}  /  gSOL  _=A cNuqtaLike? MARKS (cKafIni cKafIso)=K;
-
-cBariyehFin {advance.x -= 200m}  /  gSOL  cIni cNuqtaLike? MARKS  _=By;
-cBariyehIso {advance.x -= 200m}  /  gSOL  _=By;
-
-endpass;
-
-
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(12) { CollisionFix = 4; AutoKern = true }  // 18
+pass(11) { CollisionFix = 4; AutoKern = true }  // 18
 
 // Perform diacritic-related fixing.
 
@@ -2801,6 +2789,35 @@ endpass;  // 11 (18)
 endif;
 
 #endif // DO_COL_FIX
+
+
+// Fixes to even up right margin
+
+pass(12)  // 19
+
+gBehIni     {advance.x += 360m}  /  g_startOfLine  _=B cNuqtaLike? MARKS cKafMF;
+
+gAlef       {advance.x += 150m}  /  g_startOfLine  _=A cNuqtaLike? MARKS (cKafIni cKafIso)=K;
+
+cBariyehFin {advance.x -= 200m}  /  g_startOfLine  cIni cNuqtaLike? MARKS  _=By;
+cBariyehIso {advance.x -= 200m}  /  g_startOfLine  _=By;
+
+
+cKernable  { user6 = position.x }
+	cSpace  {
+		user6 = @N.position.x + @N.advancewidth;
+		user7 = @P.position.x - advancewidth;
+		user8 = user6 - user7 }
+
+	cPostKernable { user6 = position.x; user7 = advancewidth; user8 = user6 + user7 }
+
+		/  _=P  MARKS  _=S  _=N;
+
+
+endpass;  // pos - 12
+
+
+
 
 
 /////#include "awami_tweaks.gdh"

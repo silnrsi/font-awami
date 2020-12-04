@@ -301,7 +301,7 @@ c_preBehSS_raw = (gSeenIni_raw gSadIni_raw gSeenMed_raw gSadMed_raw);
 
 c_preBehNn_hgbm = (gHehGoalIni gHehGoalIniBeNn gBehMed gBehMedBeNn gMeemIni gMeemIniBeNn)
 
-c_jeem_flag = (gJeemMed gJeemMedAi gJeemMedBe gJeemMedBeF gJeemMedBeHg gJeemMedBeM1 gJeemMedBeM2 gJeemMedBeKl
+c_jeem_flat = (gJeemMed gJeemMedAi gJeemMedBe gJeemMedBeF gJeemMedBeHg gJeemMedBeM1 gJeemMedBeM2 gJeemMedBeKl
 	gJeemMedBeNn gJeemMedBeRe gJeemMedFe gJeemMedHgF gJeemMedHgM gJeemMedNn gJeemMedQf gJeemMedSd gJeemMedSn
 	gJeemMedTa);
 
@@ -334,10 +334,10 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS
 // Insert a pseudo line-break glyph for recognition later in positioning table:
 
 // Debugger:
-//g_bar  (csIni_raw cBariyehIso)  _  >  @1  gStartOfLine:2  @2;
+//g_bar  (csIni_raw cBariyehIso)  _  >  @1  g_startOfLine:2  @2;
 
 ANY  /  ANY  _;
-ANY  _  >  gSOL:1  @1;
+ANY  _  >  g_startOfLine:1  @1;
 
 endpass;  // 3
 
@@ -410,7 +410,7 @@ csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  gBehMed;  ///  MARKS  c_dkgal_pos
 gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  (cSeenMed cSeenFin);
 
 // Tighter form of seen before flat-topped jeems:
-gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flag;
+gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flat;
 
 table(glyph)
 cKjNormalEntry = (gKafMed_raw gGafMed_raw);
@@ -531,7 +531,7 @@ csIni_raw     >  csIniMmX /  _ MARKS  cMeemMed_alt;
 csIni_raw  >  csIniSd  /  ^ _  MARKS  (gKafMed gGafMed) MARKS  c_al_postKround;
 
 // Tighter form of seen before flat-topped jeems:
-gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  c_jeem_flag;
+gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  c_jeem_flat;
 
 
 // Basic rules
@@ -666,6 +666,9 @@ gBehIniBe  g__dot2u  gBehMedMm  g__noDot2l  gMeemMedBe  gPesh  gBehMedHd  g__dot
 
 gBehMedQf  g__noDot2l  >  gBehMedQf_short  g__dot2l  /  g_wordThessalonik  _  _=N  gWawFin;
 gBehMedQf  cNuqtaLike  >  gBehMedQf_short  @N        /  g_wordThessalonik  _  _=N  gWawFin;
+
+gAlef gLamIniMm gMeemMedSn  gSeenMedBe gBehMedJm g__noDot2l gJeemFin
+	>  g_wordAlmasih:(1 2 3 4 5 6 7) _ _ _ _ _ _ ;
 
 
 // Recompose isolates.

@@ -1034,7 +1034,7 @@ csBehTehRing = (gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
 	gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR);
 
 
-gSOL = pseudo(postscript("NULL")) {collision.flags = COLL_IGNORE};  // start of line
+g_startOfLine {collision.flags = COLL_IGNORE};
 
 
 // Basic classes for contextual shaping:

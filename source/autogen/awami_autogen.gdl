@@ -1,5 +1,5 @@
 /*
-    Glyph information for font Awami Nastaliq Dev at Thu Dec  3 15:42:55 2020
+    Glyph information for font Awami Nastaliq Dev at Fri Dec  4 09:59:23 2020
 */
 
 table(glyph) {MUnits = 2048};
@@ -1571,42 +1571,44 @@ gChotiyehFin_short = glyphid(1564) {entrance = point(1012m, 625m); alefS = point
 gPesh001 = glyphid(1565) {mUpperM = point(218m, 71m); mUpperS = point(219m, 774m)};
 g_radical = glyphid(1566);
 g_radicalRtl = glyphid(1567);
-g_testAinGafJeemMeem = glyphid(1568) {entrance = point(1804m, 2629m); gafStrokeM = point(1695m, 3395m)};
-g_testArabicKafSeenHehdo = glyphid(1569) {entrance = point(829m, 727m); exit = point(829m, 727m)};
-g_testSadBehLamNoon = glyphid(1570);
-g_wordBaghshish = glyphid(1571);
-g_wordBebeo = glyphid(1572);
-g_wordChamcho = glyphid(1573);
-g_wordChapchapa = glyphid(1574);
-g_wordChatakhna = glyphid(1575);
-g_wordChatakhneo = glyphid(1576);
-g_wordChataktein = glyphid(1577);
-g_wordChatneo = glyphid(1578);
-g_wordCheshteo = glyphid(1579);
-g_wordChesteya = glyphid(1580);
-g_wordChetakhnea = glyphid(1581);
-g_wordJallah = glyphid(1582);
-g_wordArabicKafnass = glyphid(1583);
-g_wordKhankna = glyphid(1584);
-g_wordLashqa = glyphid(1585);
-g_wordMaftesh = glyphid(1586);
-g_wordNastaleeq = glyphid(1587);
-g_wordPapeha = glyphid(1588);
-g_wordPapehay = glyphid(1589);
-g_wordPapeho = glyphid(1590);
-g_wordPecheed = glyphid(1591);
-g_wordPtahkhta = glyphid(1592);
-g_wordPtakhten = glyphid(1593);
-g_wordPucktagi = glyphid(1594);
-g_wordRahmatullah = glyphid(1595);
-g_wordRaziAllah = glyphid(1596);
-g_wordSepeo = glyphid(1597);
-g_wordSubuctey = glyphid(1598);
-g_wordTakta = glyphid(1599);
-g_wordThessaloni = glyphid(1600) {exit = point(0m, 1634m); n1LowerS = point(306m, 719m)};
-g_wordThessalonians = glyphid(1601);
-g_wordThessalonik = glyphid(1602) {exit = point(0m, 1013m); n1LowerS = point(806m, 662m)};
-g_wordTimothy = glyphid(1603);
+g_startOfLine = glyphid(1568);
+g_testAinGafJeemMeem = glyphid(1569) {entrance = point(1804m, 2629m); gafStrokeM = point(1695m, 3395m)};
+g_testArabicKafSeenHehdo = glyphid(1570) {entrance = point(829m, 727m); exit = point(829m, 727m)};
+g_testSadBehLamNoon = glyphid(1571);
+g_wordAlmasih = glyphid(1572);
+g_wordBaghshish = glyphid(1573);
+g_wordBebeo = glyphid(1574);
+g_wordChamcho = glyphid(1575);
+g_wordChapchapa = glyphid(1576);
+g_wordChatakhna = glyphid(1577);
+g_wordChatakhneo = glyphid(1578);
+g_wordChataktein = glyphid(1579);
+g_wordChatneo = glyphid(1580);
+g_wordCheshteo = glyphid(1581);
+g_wordChesteya = glyphid(1582);
+g_wordChetakhnea = glyphid(1583);
+g_wordJallah = glyphid(1584);
+g_wordArabicKafnass = glyphid(1585);
+g_wordKhankna = glyphid(1586);
+g_wordLashqa = glyphid(1587);
+g_wordMaftesh = glyphid(1588);
+g_wordNastaleeq = glyphid(1589);
+g_wordPapeha = glyphid(1590);
+g_wordPapehay = glyphid(1591);
+g_wordPapeho = glyphid(1592);
+g_wordPecheed = glyphid(1593);
+g_wordPtahkhta = glyphid(1594);
+g_wordPtakhten = glyphid(1595);
+g_wordPucktagi = glyphid(1596);
+g_wordRahmatullah = glyphid(1597);
+g_wordRaziAllah = glyphid(1598);
+g_wordSepeo = glyphid(1599);
+g_wordSubuctey = glyphid(1600);
+g_wordTakta = glyphid(1601);
+g_wordThessaloni = glyphid(1602) {exit = point(0m, 1634m); n1LowerS = point(306m, 719m)};
+g_wordThessalonians = glyphid(1603);
+g_wordThessalonik = glyphid(1604) {exit = point(0m, 1013m); n1LowerS = point(806m, 662m)};
+g_wordTimothy = glyphid(1605);
 
 
 /*-----   Classes   -----*/
@@ -8651,6 +8653,6 @@ cwaw = (g__barWaw);
 
 endtable;
 
-#define MAXGLYPH 1603
+#define MAXGLYPH 1605
 
 #include "../source/graphite/nastaliq_rules.gdl"
