@@ -27,10 +27,11 @@ nastaliq_cntxlClasses.gdh	Graphite classes for initial, medial, and final forms
 
 nastaliq_complexShapes.gdh	This file contains a single class of glyphs that need extra octabox 
 										metrics to handle their complex (concave) shape.
-										This allows collsion fixing to be adequately smart.
+										This allows collision fixing to be adequately smart.
 nastaliq_positioning.gdh	Graphite positioning rules for Awami Nastaliq
 
 nastaliq_separateNuqtas.gdh	Graphite rules to separate base forms from nuqtas (keeping the nuqtas in the glyph stream)
 
 nastaliq_shaping.gdh	Graphite substitution rules for Awami Nastaliq
 
+octabox.json	Used in wscript. See octalap.md in documentation folder
