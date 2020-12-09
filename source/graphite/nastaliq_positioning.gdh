@@ -559,7 +559,7 @@ cPostKernable = (cIso, cIni, cKernPunct) {
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
-// Kludge because Graphite seems to have a problem figuring these out:
+// Kludge because Graphite seems to have a problem figuring these out - nope, now seems to be working ok:
 ///////g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
 
 
@@ -1704,6 +1704,7 @@ cMeemMF { nUpperS_left.x = nUpperS.x - 250m; nUpperS_left.y = nUpperS.y - 300m }
 // For special cases involving nuqtas:
 cNuWide = (cDot2u  cDot3u  cDot4u);
 cNlWide = (cDot2l  cDot3l  cDot4l);
+cNuqtaWide = (cNuWide  cNlWide);
 cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
 cRehFin_longtail = (gRehFin, gRehFin_hgM);
 
@@ -1921,8 +1922,8 @@ pass(9)  // 16
 // Special cases involving nuqtas.
 
 // Special case: \u0631\u06CC\u0631, \u0634\u0632\u062F\u06CC\u0648
-cDRW_IF  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = 170m; y = -400m}}  (gRehFin_jkl cWawFin)
-	/  _=DR cDiacritic? _=B _=N cDiacritic?  _=RW;
+cNuqtaLikeLower {shift {x = 170m; y = -400m}}
+	/  cDRW_IF=DR MARKS  (gBehIniRe gBehIniQf)=B _=N cDiacritic?  (gRehFin_jkl cWawFin)=RW;
 
 // Special case: \u063A\u0632\u06CC\u0631; see also pass below where the margin for the reh is adjusted
 cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower {shift {x = -80m; y = 150m}}  (gRehFin_jkl cWawFin)
@@ -1976,12 +1977,18 @@ cDiacriticUpper { shift.x = 250m }
 	/  _=R  (gFehIniRe gHehDoIniRe);
 
 // Special cases: reh + yeh - shift yeh nuqtas left and reh down
-gRehFin_jkl {shift.y = -150m }   cNuqtaLower { shift {x = 250m; y = 150m}; collision.margin = 30m }
-	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 800m };
-gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 150m; y = 100m}; collision.margin = 30m }
-	/ _=R MARKS  cBehIni _=N { -500m < position.y && position.y < 0m } ;
-gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 180m; y = 80m}; collision.margin = 30m }
+gRehFin_jkl {shift.y = -150m }   cNuqtaLower { shift {x = 250m; y = 150m} }
+	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 300m };
+gRehFin  {shift.y = -150m }   
+	cNuqtaLower { shift {x = 50m; y = 100m} }
+	/ _=R MARKS  cBehIni _=N { -550m < position.y && position.y < 0m } ;
+gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 180m; y = 80m} }
 	/ _=R cBehIni MARKS cBehMed _=N { -450m < position.y && position.y < 200m } ;
+
+// Special case: keep nuqta from sitting on top of reh:
+//gRehFin_jkl { pairKern = 80m } cNuqtaLower {shift {x = -150m; y = 600m }} / _=R  cDiacritic?  gBehIniHd _=N;
+//gRehFin_jkl { pairKern = 80m } cNuqtaLower {shift {x = 200m }} / _=R  cDiacritic?  gBehIniHd _=N;
+
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -2041,18 +2048,34 @@ endtable;
 gAlefMaddaAbove { pairKern = -150m }  /  _ ^ MARKS  cKernIgnore?  cKafNoBy
 	[MARKS  ANY]?;  // superfluous slots to increase precedence over two-letter sequence rule below
 
+// Reh tweaking:
+
 // Exception to pre-short rule:
 cRehIso { pairKern = -40m }          /  _ ^ MARKS  cKernIgnore?  cBehIni MARKS  cAlefFin;
 
+(cRehIso gRehFin_jkl) { pairKern = 60m }  /  _=R  MARKS  gBehIniRe=B  MARKS  gRehFin_jkl;
+
+cRehIso { pairKern = 140m } /  _=R  MARKS  cSeenIso;
+
+cRehIso { pairKern = 150m } /  _=R  MARKS  (gFehIniMm gMeemIniMm gLamIniMm);
+
+(gReh gRehDotBelow gRehRing gWaw gWawRing gKirghizOe gDal gDalDotBelow gDalRing) { pairKern = 200m }
+	/  _=RWD cDiacriticLower? MARKS  cKafIso;
+
+
 // Before a two-letter sequence:
 /////cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;
-
 
 // Notice that with digits, which are LTR, we put the kern value on the opposite glyph, ie, the FOLLOWING
 // glyph which will be right-most when rendered.
 ( gEasternZero  gZero ) { pairKern = @D.kernPreZero }   /  _  (cDigitEastern cDigitArabic)=D;
 ( gEasternOne  gOne )   { pairKern = @D.kernPreOne }    /  _  (cDigitEastern cDigitArabic)=D;
 (cDigitEastern cDigitArabic) { pairKern = kernPostOne } /  _  ( gEasternOne  gOne );
+
+
+// Special case: kern a little tighter against a low-positioned teh/yeh/peh with wide nuqta:
+// I think this is only needed for preceding alefs.
+(cAlefFin cAlefIso) { pairKern -= 150m } /  _  MARKS cSpace?  cBehIni cNuqtaWide { 100m < position.y && position.y < 1900m };
 
 
 // Bogus rule that will never fire (for in case we disable this pass for debugging):
@@ -2088,7 +2111,6 @@ endpass;  // 9 (16)
 if (collFix > 0)
 
 pass(10) // { CollisionFix = 4; AutoKern = true }  // 17
-
 
 // Set up diacritic collision fixes and kerning.
 
@@ -2716,7 +2738,6 @@ cKernable { collision {
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
 
 
-
 // Default cases:
 
 cKernable { collision {
@@ -2803,21 +2824,14 @@ cBariyehFin {advance.x -= 200m}  /  g_startOfLine  cIni cNuqtaLike? MARKS  _=By;
 cBariyehIso {advance.x -= 200m}  /  g_startOfLine  _=By;
 
 
-cKernable  { user6 = position.x }
-	cSpace  {
-		user6 = @N.position.x + @N.advancewidth;
-		user7 = @P.position.x - advancewidth;
-		user8 = user6 - user7 }
+// Debugger:
+//cKernable { user6 = collision.fix.x };
 
-	cPostKernable { user6 = position.x; user7 = advancewidth; user8 = user6 + user7 }
-
-		/  _=P  MARKS  _=S  _=N;
-
+// When there is an overlap, a space should be a little wider:
+cSpace { advance.x += 110m }
+	/  cKernable { collision.fix.x < -300m } MARKS _=S;
 
 endpass;  // pos - 12
-
-
-
 
 
 /////#include "awami_tweaks.gdh"
