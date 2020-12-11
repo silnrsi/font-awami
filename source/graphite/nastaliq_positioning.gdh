@@ -455,11 +455,11 @@ cTakes_tahLowerDia
 	ctahLowerDia { attach {to = @B; at = tahLowerS; with = tahLowerM } }
 	/ _=B  _=U;
 
-// Special case: heh-hook plus final ain - where's the ain?
+// Special case: heh-hook plus final ain
 cTakes_hehhookDia  
 	g__hehHook_small  { attach {to = @B; at = hehhookS; with = hehhookM };
 		shift {x = 130m; y = 140m} }
-	/ _=B  _=H;
+	/ _=B  _=H  cAinFin;
 
 // Heh-hook
 cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = hehhookM } }
@@ -1815,9 +1815,12 @@ cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; SETD
 cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 
-// Attaching standing-alef to lam
-(gLamFin cLamIM)=L  gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
-gLam=L  gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
+// Attaching dagger-alef to lam:
+(gLamFin cLamIM)=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+gLam=L                 gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
+// dagger-alef is also slightly to the left:
+(cMeemFin cMeemMed)=M  gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+cMeemIso=M             gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; SETDIACINS}
@@ -1842,6 +1845,7 @@ cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); 
 cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ cNuqtaLikeLower? _ ;
 cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
 cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
+
 
 endpass; // pos - 8 (15)
 
@@ -1913,6 +1917,8 @@ cHehDoFin { kernPreExclam = -250m };
 gWaw { kernPreExclam = -70m };
 cWawFin { kernPreExclam = -70m };
 
+// Dal/reh/waw isolates with nothing above:
+DRW_F_noupper = (gReh gRehDotBelow gRehRing gWaw gWawRing gKirghizOe gDal gDalDotBelow gDalRing);
 
 endtable; // glyph
 
@@ -1986,9 +1992,13 @@ gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 180m; y = 80m} }
 	/ _=R cBehIni MARKS cBehMed _=N { -450m < position.y && position.y < 200m } ;
 
 // Special case: keep nuqta from sitting on top of reh:
+gRehFin_jkl { shift.y = -30m } cNuqtaLower {shift {x = 200m }} / _=R  cDiacritic?  gBehIniHd _=N;
+// another way to do it:
 //gRehFin_jkl { pairKern = 80m } cNuqtaLower {shift {x = -150m; y = 600m }} / _=R  cDiacritic?  gBehIniHd _=N;
-//gRehFin_jkl { pairKern = 80m } cNuqtaLower {shift {x = 200m }} / _=R  cDiacritic?  gBehIniHd _=N;
 
+// Special case: waw/dal/reh + jeem + yeh
+cNuqtaLower { shift { x = 130m; y = -500m } }    // OR cNuqtaLower { shift { x = 100m; y = 730m } } -- move it up instead
+	/ (DRW_F_noupper cWawFin cDalFin gRehFin_jkl) MARKS  gJeemIniCh _=N cDiacritic?  cChotiyehFin;
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
@@ -2059,8 +2069,7 @@ cRehIso { pairKern = 140m } /  _=R  MARKS  cSeenIso;
 
 cRehIso { pairKern = 150m } /  _=R  MARKS  (gFehIniMm gMeemIniMm gLamIniMm);
 
-(gReh gRehDotBelow gRehRing gWaw gWawRing gKirghizOe gDal gDalDotBelow gDalRing) { pairKern = 200m }
-	/  _=RWD cDiacriticLower? MARKS  cKafIso;
+DRW_F_noupper { pairKern = 200m }  /  _=RWD cDiacriticLower? MARKS  cKafIso;
 
 
 // Before a two-letter sequence:
@@ -2075,7 +2084,8 @@ cRehIso { pairKern = 150m } /  _=R  MARKS  (gFehIniMm gMeemIniMm gLamIniMm);
 
 // Special case: kern a little tighter against a low-positioned teh/yeh/peh with wide nuqta:
 // I think this is only needed for preceding alefs.
-(cAlefFin cAlefIso) { pairKern -= 150m } /  _  MARKS cSpace?  cBehIni cNuqtaWide { 100m < position.y && position.y < 1900m };
+(cAlefFin cAlefIso) { pairKern -= 150m }
+	/  _  MARKS cSpace?  cBehIni cNuqtaWide { 100m < position.y && position.y < 1900m };
 
 
 // Bogus rule that will never fire (for in case we disable this pass for debugging):
