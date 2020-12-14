@@ -107,7 +107,7 @@ cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArab
 	g__gafStroke, g__gafStroke_long, // g__gafStroke_short
 	g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring,
-	gHamzaBelow, gHamzaBelowArabic, g__smallTahBelow, gWavyHamzaBelow, g__smallVBelow,
+	gHamzaBelow, gHamzaBelowArabic, g__smallTahBelow, gWavyHamzaBelow, g__smallVBelow, g__smallVinvBelow, 
 	g__smallTah2dotsBelow, g__dot2l_tail, g__smallFourBelow);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, g__barRaised, g__barRaised_gaf, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
@@ -795,7 +795,7 @@ csKafmed_top_medshort_noGaf = (
 	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
 	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort,
 	// g__kafMedTop_medshort, -- Dk
-	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort
+	g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafMedTop_medshort, g__kafTop_null /*by-full form*/
 );
 
 csKafMed_top_medshort = (
@@ -805,7 +805,7 @@ csKafMed_top_medshort = (
 	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort,
 	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort,
 	// g__gafMedTop_medshort, -- Dk
-	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort
+	g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__gafMedTop_medshort, g__kafTop_null /*by-full form*/
 );
 
 // not used - initials never need their diagonal stroke shortened
@@ -884,9 +884,9 @@ cs_alefComposed2Prec = (cs_alefComposed, gAlefHamzaAbove);
 
 
 cs_dalMark = (g__dot1u, g__smallTah, g__dot1l__smallTah, g__dot2vl__smallTah, g__dot1l, g__attachedRing,
-	g__dot4u, g__dot3l);
+	g__dot4u, g__dot3l, g__smallVinvBelow);
 cs_dalComposed = (gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalDotBelow, gDalRing,
-	gDalFourDotsAbove, gDul);
+	gDalFourDotsAbove, gDul, gDalInvertedVBelow);
 
 cs_rehMark = (g__dot1u, g__smallTah, g__dot3u, g__dot1l, g__dot1l__dot1u, g__dot2u, g__attachedRing,
 	g__dot4u, g__dot2vu, gHamzaAbove, g__smallTah2dots, g__smallVBelow);
