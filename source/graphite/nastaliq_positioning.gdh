@@ -1386,7 +1386,7 @@ cTahIM  csKafMed_medium  g__kafTop_null
 
 // Medium-short: nuqta + jeem + kaf...
 cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
-	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}} // move right, not up
+	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}}   // move right, not up
 			csKafMed_base$K  csKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
@@ -1535,20 +1535,23 @@ cLam_short {att {to = @G; at = entrance; with = exit}}  gGafMedKf_lm {insert = 1
 
 
 // ngoeh nuqtas
+(gGafIniMm_short gGafMedJm_short gGafMedJm_tall) 
+	cNuqtaUpper { att { to=@K; at=nUpperS; with=nUpperM }; passKeySlot = true }
+	/  _=K  g__kafTop_m_bogus  _=N;
+
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}
 	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}
 	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
 
 // rings
+(gKafIniMm_short gKafMedJm_short gKafMedJm_tall)  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; passKeySlot = true }
+	/  _=K  g__kafTop_m_bogus  _=R;
+
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
-
-(gKafIniMm_short gKafMedJm_short gKafMedJm_tall)  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; passKeySlot = true }
-	/  _=K  g__kafTop_m_bogus  _=R;
-
 
 // BUG: Where there are two kafs in a row with a ring on the first, the ring will not get attached.
 
@@ -1805,6 +1808,13 @@ cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; SETDIACINS}
 cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}; SETDIACINS}
 		/  ^ _=B  c_attLikeNqUpper?  cDiacriticLower?  _=D {att.to==0};
 
+// Attaching dagger-alef to lam:
+(gLamFin cLamIM)=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+gLam=L                 gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
+// dagger-alef is also slightly to the left for meems:
+(cMeemIni cMeemMed)=M  gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+(cMeemFin cMeemIso)=M  gKharizabar {att {to=@M; at=mUpperS; with=mUpperLamM}; SETDIACINS};
+
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
 cTakes_mUpperDia=B  cDiacriticUpper {att {to=@B; at=mUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
@@ -1815,12 +1825,6 @@ cTakes_mLowerDia=B  cDiacriticLower {att {to=@B; at=mLowerS; with=mLowerM}; SETD
 cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mUpperM}; SETDIACINS}
 		/ ^ _=B  _=T  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 
-// Attaching dagger-alef to lam:
-(gLamFin cLamIM)=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
-gLam=L                 gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
-// dagger-alef is also slightly to the left:
-(cMeemFin cMeemMed)=M  gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
-cMeemIso=M             gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; SETDIACINS}
@@ -1868,7 +1872,7 @@ cRehIso		{ kernPreAlef = -50m; kernPreDal = -30m; kernPreReh = -30m; kernPreWaw 
 				// Before a two-letter sequence:
 				kernPreShort = 80m };
 gRehFin_jkl	{ kernPreAlef = -70m; kernPreJeemAinIso = -150m; kernPreMeemJeem = 60m };
-cDalFin      { kernPreMeemJeem = 70m };
+cDalFin     { kernPreMeemJeem = 70m };
 gWaw		{ kernPreAlef = -30m; kernPreReh = 40m };
 
 //gDalFin		{ minKernDelta = -200m };

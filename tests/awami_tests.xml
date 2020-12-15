@@ -41,7 +41,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>اسمٰعیلٰس</string>
+      <string>بھونچکے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1568,6 +1568,9 @@
     <test class="fset7654" label="Balti" rtl="True">
       <string>کھیربی</string>
     </test>
+    <test class="fset7654" label="vertical dots" rtl="True">
+      <string>ٻِیہوتا</string>
+    </test>
   </testgroup>
   <testgroup label="Collisions - possible">
     <test class="fset2" label="khah khah khah" rtl="True">
@@ -1850,7 +1853,12 @@
       <string>کمڱمی</string>
     </test>
     <test class="fset30" label="kaf-ring + meem" rtl="True">
+      <comment>The ring has to be reattached to the short full-form kaf.</comment>
       <string>ګمڱمی</string>
+    </test>
+    <test class="fset7654" label="init ngoeh + meem" rtl="True">
+      <comment>The nuqtas have to be reattached to the short full-form kaf.</comment>
+      <string>ڱمکمی</string>
     </test>
     <test background="#55aaff" class="fset23023" label="TALL WORDS - MEDIAL KAF" rtl="True">
       <string />
@@ -2210,6 +2218,12 @@
     <test label="noon w/ ring" rtl="True">
       <string>ڼ ڼڼڼ</string>
     </test>
+    <test background="#55aaff" label="BALUCHI" rtl="True">
+      <string> </string>
+    </test>
+    <test label="yeh + small-V - O6CE" rtl="True">
+      <string>وشّێن</string>
+    </test>
     <test background="#00aaff" label="OTHER" rtl="True">
       <string> </string>
     </test>
@@ -2374,10 +2388,6 @@
     <test label="alef maksura" rtl="True">
       <string>ى ىىى</string>
     </test>
-    <test background="#ff557f" label="yeh w/ 2 dots above - 063E" rtl="True">
-      <comment>This showed up in the document Martin produced.</comment>
-      <string>ؾ بؾ</string>
-    </test>
     <test label="non-final noon ghunna" rtl="True">
       <comment>Balti</comment>
       <string>بون٘و</string>
@@ -2388,18 +2398,19 @@
     <test label="noon ghunna" rtl="True">
       <string>ں ںںں</string>
     </test>
-    <test label="reh w/ small V (Sorani)" rtl="True">
-      <comment>Sorani Kurdish</comment>
-      <string>ڕ سڕ کڕ لہڕ</string>
-    </test>
     <test class="fset7654" label="lam w/ small tah (Punjabi)" rtl="True">
       <string>ࣇ ࣇࣇࣇ</string>
     </test>
-    <test background="#55aaff" label="BALUCHI" rtl="True">
-      <string> </string>
+    <test label="reh w/ small V below (Sorani)" rtl="True">
+      <comment>Sorani Kurdish</comment>
+      <string>ڕ سڕ کڕ لہڕ</string>
     </test>
-    <test label="yeh + small-V - O6CE" rtl="True">
-      <string>وشّێن</string>
+    <test class="fset7654" label="dal w/ inverted V below" rtl="True">
+      <string>ݚ سݚ</string>
+    </test>
+    <test background="#ff557f" label="yeh w/ 2 dots above - 063E" rtl="True">
+      <comment>This showed up in the document Martin produced.</comment>
+      <string>ؾ بؾ</string>
     </test>
     <test background="#55aaff" label="HONORIFICS" rtl="True">
       <string> </string>
@@ -3020,6 +3031,9 @@
     </test>
     <test label="lam + standing-alef" rtl="True">
       <string>لٰملٰجلٰ لٰسلٰفلٰ لٰ</string>
+    </test>
+    <test class="fset7654" label="meem + standing-alef" rtl="True">
+      <string>اسمٰعیل مٰ سمٰ مٰب</string>
     </test>
     <test background="#55aaff" label="SHADDA" rtl="True">
       <string />
@@ -3734,6 +3748,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test background="#aaaa7f" class="fset7654" label="heh-goal + yeh + beh" rtl="True">
       <string>ہییت ہیبت ہبیت ہببت</string>
+    </test>
+    <test class="fset7654" label="waw/dal/reh jeem yeh" rtl="True">
+      <string>کھوجی</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
