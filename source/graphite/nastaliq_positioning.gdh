@@ -1809,7 +1809,7 @@ cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}
 		/  ^ _=B  c_attLikeNqUpper?  cDiacriticLower?  _=D {att.to==0};
 
 // Attaching dagger-alef to lam:
-(gLamFin cLamIM)=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+cLamIMF=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
 gLam=L                 gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
 // dagger-alef is also slightly to the left for meems:
 (cMeemIni cMeemMed)=M  gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
@@ -2189,6 +2189,18 @@ cDiacriticUpper {
 		min.y = -100m;
 		max.y = 100m;
 	} }  /  (cAlefIso cAlefFin)  _  gMaddaAbove? cBase;  // increase precedence
+
+// Dagger-alef is slightly to the left of lam.
+// Eg: tah + pesh + seen
+gKharizabar {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -5m;  // normally -250
+		max.x = 5m;
+		min.y = -50m;
+		max.y = 50m;
+	} }  /  cLamIMF  _  cBase;  // increase precedence
 
 // Diacritics should stay centered over short-lam stems, but they may need to move a little.
 // Eg: lam + pesh + kaf
@@ -2842,6 +2854,8 @@ cBariyehIso {advance.x -= 200m}  /  g_startOfLine  _=By;
 //cKernable { user6 = collision.fix.x };
 
 // When there is an overlap, a space should be a little wider:
+cSpace { advance.x += 170m }
+	/  cKernable { collision.fix.x < -400m } MARKS _=S;
 cSpace { advance.x += 110m }
 	/  cKernable { collision.fix.x < -300m } MARKS _=S;
 
