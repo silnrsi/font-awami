@@ -41,7 +41,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>بھونچکے</string>
+      <string> حضرتِ یحیٰیؑ</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -1478,9 +1478,6 @@
     <test label="very low diac" rtl="True">
       <string>سݙِ نپِ نڜِ بڳِ</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="beeh yeh" rtl="True">
-      <string>ٻِیہوتا</string>
-    </test>
     <test background="#ff0000" label="NO GOOD SOLUTION" rtl="True">
       <string> </string>
     </test>
@@ -1567,9 +1564,6 @@
     </test>
     <test class="fset7654" label="Balti" rtl="True">
       <string>کھیربی</string>
-    </test>
-    <test class="fset7654" label="vertical dots" rtl="True">
-      <string>ٻِیہوتا</string>
     </test>
   </testgroup>
   <testgroup label="Collisions - possible">
@@ -1706,24 +1700,6 @@
     <test label="Shina p3" rtl="True">
       <string>رسئ سخصیت تسلیم تھئ</string>
     </test>
-    <test class="fset7654" label="Sheldon" rtl="True">
-      <string>وہ ہستی</string>
-    </test>
-    <test class="fset7654" label="Sheldon" rtl="True">
-      <string>حضرتِ یحیٰی</string>
-    </test>
-    <test background="#55aaff" class="fset7654" label="REH OVERLAPS" rtl="True">
-      <string />
-    </test>
-    <test class="fset7654" label="reh + kaf" rtl="True">
-      <string>رک</string>
-    </test>
-    <test class="fset7654" label="reh + kaf + beh" rtl="True">
-      <string>نرکب رکب ندکب</string>
-    </test>
-    <test class="fset7654" label="short + kaf" rtl="True">
-      <string>نرک رک ندک</string>
-    </test>
   </testgroup>
   <testgroup label="Kaf tops">
     <test class="fset30" label="kaf + diac" rtl="True">
@@ -1853,12 +1829,7 @@
       <string>کمڱمی</string>
     </test>
     <test class="fset30" label="kaf-ring + meem" rtl="True">
-      <comment>The ring has to be reattached to the short full-form kaf.</comment>
       <string>ګمڱمی</string>
-    </test>
-    <test class="fset7654" label="init ngoeh + meem" rtl="True">
-      <comment>The nuqtas have to be reattached to the short full-form kaf.</comment>
-      <string>ڱمکمی</string>
     </test>
     <test background="#55aaff" class="fset23023" label="TALL WORDS - MEDIAL KAF" rtl="True">
       <string />
@@ -2218,12 +2189,6 @@
     <test label="noon w/ ring" rtl="True">
       <string>ڼ ڼڼڼ</string>
     </test>
-    <test background="#55aaff" label="BALUCHI" rtl="True">
-      <string> </string>
-    </test>
-    <test label="yeh + small-V - O6CE" rtl="True">
-      <string>وشّێن</string>
-    </test>
     <test background="#00aaff" label="OTHER" rtl="True">
       <string> </string>
     </test>
@@ -2388,6 +2353,10 @@
     <test label="alef maksura" rtl="True">
       <string>ى ىىى</string>
     </test>
+    <test background="#ff557f" label="yeh w/ 2 dots above - 063E" rtl="True">
+      <comment>This showed up in the document Martin produced.</comment>
+      <string>ؾ بؾ</string>
+    </test>
     <test label="non-final noon ghunna" rtl="True">
       <comment>Balti</comment>
       <string>بون٘و</string>
@@ -2398,19 +2367,18 @@
     <test label="noon ghunna" rtl="True">
       <string>ں ںںں</string>
     </test>
-    <test class="fset7654" label="lam w/ small tah (Punjabi)" rtl="True">
-      <string>ࣇ ࣇࣇࣇ</string>
-    </test>
-    <test label="reh w/ small V below (Sorani)" rtl="True">
+    <test label="reh w/ small V (Sorani)" rtl="True">
       <comment>Sorani Kurdish</comment>
       <string>ڕ سڕ کڕ لہڕ</string>
     </test>
-    <test class="fset7654" label="dal w/ inverted V below" rtl="True">
-      <string>ݚ سݚ</string>
+    <test class="fset7654" label="lam w/ small tah (Punjabi)" rtl="True">
+      <string>ࣇ ࣇࣇࣇ</string>
     </test>
-    <test background="#ff557f" label="yeh w/ 2 dots above - 063E" rtl="True">
-      <comment>This showed up in the document Martin produced.</comment>
-      <string>ؾ بؾ</string>
+    <test background="#55aaff" label="BALUCHI" rtl="True">
+      <string> </string>
+    </test>
+    <test label="yeh + small-V - O6CE" rtl="True">
+      <string>وشّێن</string>
     </test>
     <test background="#55aaff" label="HONORIFICS" rtl="True">
       <string> </string>
@@ -3032,9 +3000,6 @@
     <test label="lam + standing-alef" rtl="True">
       <string>لٰملٰجلٰ لٰسلٰفلٰ لٰ</string>
     </test>
-    <test class="fset7654" label="meem + standing-alef" rtl="True">
-      <string>اسمٰعیل مٰ سمٰ مٰب</string>
-    </test>
     <test background="#55aaff" label="SHADDA" rtl="True">
       <string />
     </test>
@@ -3520,9 +3485,6 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Shift nuqtas down so bases can stay together.</comment>
       <string>ریر رنر دیر دنر</string>
     </test>
-    <test class="fset7654" label="reh + beh + reh" rtl="True">
-      <string>ریز زیر جزیرہ</string>
-    </test>
     <test label="dal + yeh + waw [rule 2-3]" rtl="True">
       <comment>Shift nuqtas down so bases can stay together.</comment>
       <string>شزدیو   دیُونگ</string>
@@ -3579,33 +3541,21 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="khah + meem/beh/heh-goal + pesh" rtl="True">
       <string>خمُول  لْخَیْرِ</string>
     </test>
+    <test background="#aaaa7f" class="fset7654" label="dyeh + yeh" rtl="True">
+      <string>ٻِیہوتا</string>
+    </test>
     <test class="fset7654" label="reh + qaf + reh" rtl="True">
       <comment>kerning</comment>
       <string>برقر</string>
     </test>
     <test class="fset7654" label="reh + yeh" rtl="True">
-      <string>پریشان  پریشانی</string>
+      <string>پریشان  |  پریشانی</string>
     </test>
     <test class="fset7654" label="reh + yeh" rtl="True">
       <string>مزید</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="reh + beh-like + yeh" rtl="True">
+    <test class="fset7654" label="reh + beh-like + yeh" rtl="True">
       <string>پھرتیلا</string>
-    </test>
-    <test class="fset7654" label="reh + beh etc (Lord)" rtl="True">
-      <string>پربھُو</string>
-    </test>
-    <test class="fset7654" label="alef + yeh/peh/teh" rtl="True">
-      <string>اتا انا واپس  |  کانا ایب</string>
-    </test>
-    <test class="fset7654" label="reh + qaf + meem" rtl="True">
-      <string>رلم  رقم  رمم </string>
-    </test>
-    <test class="fset7654" label="reh + seen" rtl="True">
-      <string>رس</string>
-    </test>
-    <test class="fset7654" label="dal/reh/waw + kaf" rtl="True">
-      <string>دک ڊک رِگ ۅگ</string>
     </test>
     <test background="#55aaff" class="fset23023" label="PASSES 16 &amp; 17" rtl="True">
       <string />
@@ -3739,18 +3689,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="reh + sp + tcheh + yeh" rtl="True">
       <string>بر چی</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="alef + wavy-hamza + waw" rtl="True">
+    <test class="fset7654" label="alef + wavy-hamza + waw" rtl="True">
       <comment>Dieter says this is too tight.</comment>
       <string>چھٲونَس</string>
     </test>
     <test background="#ff0000" class="fset7654" label="alef heh-goal" rtl="True">
-      <string>کراہ واپس  نکلی </string>
-    </test>
-    <test background="#aaaa7f" class="fset7654" label="heh-goal + yeh + beh" rtl="True">
-      <string>ہییت ہیبت ہبیت ہببت</string>
-    </test>
-    <test class="fset7654" label="waw/dal/reh jeem yeh" rtl="True">
-      <string>کھوجی</string>
+      <string>کراہ نکلی</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
