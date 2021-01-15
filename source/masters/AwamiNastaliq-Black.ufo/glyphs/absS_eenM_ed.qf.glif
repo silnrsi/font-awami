@@ -9,6 +9,12 @@
   <anchor x="736" y="1059" name="tahUpper"/>
   <outline>
     <contour>
+      <point x="0" y="257" type="curve" smooth="yes"/>
+      <point x="123" y="309"/>
+      <point x="225" y="362"/>
+      <point x="311" y="362" type="curve" smooth="yes"/>
+      <point x="394" y="362"/>
+      <point x="424" y="301"/>
       <point x="522" y="301" type="curve" smooth="yes"/>
       <point x="662" y="301"/>
       <point x="697" y="507"/>
@@ -51,12 +57,12 @@
       <point x="0" y="341" type="curve" smooth="yes"/>
       <point x="-10" y="335"/>
       <point x="-9" y="253"/>
-      <point x="0" y="257" type="curve" smooth="yes"/>
-      <point x="123" y="309"/>
-      <point x="225" y="362"/>
-      <point x="311" y="362" type="curve" smooth="yes"/>
-      <point x="394" y="362"/>
-      <point x="424" y="301"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
