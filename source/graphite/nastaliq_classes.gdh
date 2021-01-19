@@ -154,7 +154,7 @@ cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem, gEmptyCentreLowSt
 cDiacritic = (cDiacriticUpper cDiacriticLower);
 
 
-cPostNuqta1 = (cDiacritic cHamzaAbove cHamzaBelow);  // hamzas can be nuqta-like or diacritics
+cPostNuqta1 = (cDiacritic cHamzaAbove cHamzaBelow g__smallV);  // hamzas can be nuqta-like or diacritics
 cPostNuqta2 = (cDiacritic c_zerojoin);
 
 
@@ -271,7 +271,7 @@ cBehIso = (gBeh, gTeh, gTheh, gPeh, gTteh, gTteheh, gTehRing, gTehThreeDotsAbove
 cBehFin = (gBehFin, gBehFin_bfkl) ;
 cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, gHahSmallTahAbove,
 	gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
-cJeemFin = (gJeemFin);
+cJeemFin = (gJeemFin, gJeemFin_short);
 cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
 	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
 cSeenFin = (gSeenFin, gSeenFin_short);
@@ -280,7 +280,7 @@ cSadFin = (gSadFin);
 cTahIso = (gTah, gZah);
 cTahFin = (gTahFin);
 cAinIso = (gAin, gGhain);
-cAinFin = (gAinFin);
+cAinFin = (gAinFin, gAinFin_short);
 cFehIso = (gFeh, gFehThreeDotsBelow, gDotlessFeh);
 cFehFin = (gFehFin);
 cQafIso = (gQaf, gDotlessQaf);

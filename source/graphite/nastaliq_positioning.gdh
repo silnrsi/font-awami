@@ -1456,10 +1456,10 @@ endpass;  // 5 (12)
 
 
 table(glyph)
-csFinal_regular = (gSeenFin, gChotiyehFin, gChotiyehFin_bfkl, gNoonFin,
-	gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
-csFinal_short = (gSeenFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short, gNoonFin_short, 
-	gQafFin_short,gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
+csFinal_regular = (gSeenFin, gJeemFin, gAinFin, gChotiyehFin, gChotiyehFin_bfkl,
+	gNoonFin, gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
+csFinal_short = (gSeenFin_short, gJeemFin_short, gAinFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short,
+  gNoonFin_short, gQafFin_short, gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 
 csMed_regular = (gJeemMedBy, gBehMedQf);
 csMed_short = (gJeemMedBy_short, gBehMedQf_short);
@@ -1598,6 +1598,10 @@ endtable;
 
 c_exit_seen      {att {to=@F; with=exit;  at=entrance}}  gSeenFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
+c_exit_jeem      {att {to=@F; with=exit;  at=entrance}}  gJeemFin_short     {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_ain       {att {to=@F; with=exit;  at=entrance}}  gAinFin_short      {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
 c_exit_noon      {att {to=@F; with=exit;  at=entrance}}  gNoonFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}  gQafFin_short      {passKeySlot = true; insert = 1}
@@ -1617,8 +1621,8 @@ c_exit_beh        {att {to=@F; with=exit; at=entrance}}  gBehMedQf_short    {pas
 table(glyph) {AttributeOverride = 0}
 
 // to avoid warnings; will never be used
-g__kafTop_null { nUpperS = point(0m,0m) };
-g__kafTop_m_bogus { nUpperS = point(0m,0m) };
+g__kafTop_null { nUpperS = point(0m,0m); kafTopM = point(0m,0m) };
+g__kafTop_m_bogus { nUpperS = point(0m,0m); kafTopM = point(0m,0m); ringS = point(0m,0m) };
 csFinal_short { hamzaUpperS = point(0m,0m); tahUpperS = point(0m,0m); n1LowerS = point(0m,0m); n23LowerS = point(0m,0m) };
 cNuqtaLikeUpper { nUpperM = point(0m,0m) };
 cNuqtaLikeLower { n1LowerM = point(0m,0m) };
@@ -2000,9 +2004,10 @@ gRehFin_jkl { shift.y = -30m } cNuqtaLower {shift {x = 200m }} / _=R  cDiacritic
 // another way to do it:
 //gRehFin_jkl { pairKern = 80m } cNuqtaLower {shift {x = -150m; y = 600m }} / _=R  cDiacritic?  gBehIniHd _=N;
 
-// Special case: waw/dal/reh + jeem + yeh
-cNuqtaLower { shift { x = 130m; y = -500m } }    // OR cNuqtaLower { shift { x = 100m; y = 730m } } -- move it up instead
-	/ (DRW_F_noupper cWawFin cDalFin gRehFin_jkl) MARKS  gJeemIniCh _=N cDiacritic?  cChotiyehFin;
+// Special case: waw/dal/reh + jeem + yeh; no agreement on how to fix this
+//cNuqtaLower { shift { x = 130m; y = -500m } }      // move it down
+//cNuqtaLower { shift { x = 100m; y = 800m } }       // move it up
+//	/ (DRW_F_noupper cWawFin cDalFin gRehFin_jkl) MARKS  gJeemIniCh _=N cDiacritic?  cChotiyehFin;
 
 // Low priority special case:
 ////gRehFin {collision.margin = 50m; marginSet = 1}  gBehIniFe  cNlWide; /// {shift {x = 150m; y = 70m}; collision.margin = 50m};
