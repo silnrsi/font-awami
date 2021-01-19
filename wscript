@@ -22,12 +22,13 @@ DOCDIR = ["documentation", "web"]
 OUTDIR="installers"
 ZIPDIR="releases"
 TESTDIR='tests'
+genout = "generated/"
 # TESTSTRING=u'Hello World'
 # TESTRESULTSDIR = 'results/tests'
 # STANDARDS = 'reference'
 
 # set package name
-APPNAME='AwamiNastaliq-Dev'      #### AwamiNastaliq
+APPNAME='AwamiNastaliq'      #### AwamiNastaliq-Dev
 
 # set the font family name
 FAMILY='AwamiNastaliq'
@@ -70,12 +71,12 @@ cmds.extend([
     cmd('ttfstriphints ${DEP} ${TGT}'),
     cmd('psfcompressgr -q ${DEP} ${TGT}'),
     cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")])
-
+    
 font(target = process(FONT_FILENAME + '.ttf', *cmds),
     source = "source/masters/AwamiNastaliq-Regular.ufo",
     params = "--removeOverlap",
     graphite = gdl('awami.gdl', master = 'source/graphite/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
-                    depends = glob.glob('*.gdh')),
+        depends = glob.glob('*.gdh')),
     opentype = fea('source/simple.fea', no_make=1, no_test=True),
     ap = "AwamiNastaliqRegular_AP.xml",
     license = ofl('Awami','SIL'),
