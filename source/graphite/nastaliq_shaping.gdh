@@ -31,11 +31,11 @@ cVisSpace = (g_spaceVis  g_spaceVisXtight  g_spaceVisTight  g_spaceVisXwide  g_s
 	g_nobreakspaceShowInv_xtight  g_nobreakspaceShowInv_tight  g_nobreakspaceShowInv
 	g_nobreakspaceShowInv_wide  g_nobreakspaceShowInv_xwide);
 
-cStdWidthSpace = (g_space, g_nobreakspace);
+cStdWidthSpace = (g_space, g_nbspace);
 
-cSpace = (g_space cVisSpace g_nobreakspace g_narrowNoBreakSpace);
+cSpace = (g_space cVisSpace g_nbspace g_narrowNoBreakSpace);
 
-csSpMedInvis = (g_space, g_nobreakspace, g_narrowNoBreakSpace);
+csSpMedInvis = (g_space, g_nbspace, g_narrowNoBreakSpace);
 
 csSpXtightVis	= (g_spaceVisXtight, g_nobreakspaceShowInv_xtight, g_spaceVisHair);
 csSpTightVis	= (g_spaceVisTight, g_nobreakspaceShowInv_tight, g_spaceVisHair);
@@ -216,20 +216,20 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 // Salaam ulena
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small gUltaPesh
-		(c_zeronojoin g_nobreakspace)
+		(c_zeronojoin g_nbspace)
 		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) _ _ _ _ _ _ _ _ _ _ _ _ _ _;
 
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
-		(c_zeronojoin g_nobreakspace)
+		(c_zeronojoin g_nbspace)
 		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14) _ _ _ _ _ _ _ _ _ _ _ _ _;
 	
 // Alayhi-es-salam
 
 gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gHehGoalFin  g__hehHook_small
-		(c_zeronojoin g_nobreakspace)
+		(c_zeronojoin g_nbspace)
 		gAlef  gLamIni_raw  gSeenMed_raw  gLamMed_raw  gAlefFin  gMeem
 	> g_ligAlayhiAsSalam:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _;
 
