@@ -50,8 +50,8 @@ opts = preprocess_args({'opt' : '-d'})
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
                     ext='.pdf', shapers=1, supports=['.txt', '.ftml', '.xml'], replace=True)
 
-FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
-FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
+FONT_NAME = "Awami Nastaliq"     #### Awami Nastaliq Dev
+FONT_FILENAME = "AwamiNastaliq-Regular"  #### AwamiNastaliq-Dev
 
 cmds = [
     name(FONT_NAME, lang='en-US', subfamily = 'Regular'),
