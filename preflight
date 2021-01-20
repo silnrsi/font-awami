@@ -10,7 +10,7 @@ wait
 # Do we need this???
 #
 #echo "Updating woff metadata xml file..."
-#psfmakewoffmetadata -q -n AwamiNastaliq -i org.sil.fonts source/masters/*-Regular.ufo -o "source/AwamiNastaliq-WOFF-metadata.xml"
+psfmakewoffmetadata -q -n AwamiNastaliq -i org.sil.fonts source/masters/*-Regular.ufo -o "source/AwamiNastaliq-WOFF-metadata.xml"
 
 echo
 echo "Updating glyph order in Regular..."
