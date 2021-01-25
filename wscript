@@ -42,7 +42,7 @@ DEBPKG = 'fonts-awami'
 # Get version info from Regular UFO; must be first function call:
 getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
 
-#VERSION='2.001'   # taken directly from the font????????????????????
+#VERSION='2.101'   # taken directly from the font????????????????????
 
 opts = preprocess_args({'opt' : '-d'})
 
@@ -59,7 +59,7 @@ cmds = [
     cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
     cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox.json"),
     # for removing psnames:
-    ####cmd('psfix -s ${DEP} ${TGT}'),
+    #cmd('psfix -s ${DEP} ${TGT}'),
 ]
 
 if '-d' not in opts:
@@ -67,7 +67,7 @@ if '-d' not in opts:
 
 cmds.extend([
     # strip out bogus hints:
-    ####cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
+    #cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
     cmd('ttfstriphints ${DEP} ${TGT}'),
     cmd('psfcompressgr -q ${DEP} ${TGT}'),
     cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")])
