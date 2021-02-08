@@ -1967,7 +1967,7 @@ cNuqtaUpper { shift { x = -100m; y = -100m } }
 cNlWide { shift { x = 300m; y = -200m } }
 	cNuqtaLower { shift { x = 350m; y = -200m } }  // we don't expect collisions
 	/  (gBehIniBe gBehIniBeM1) _=N1 cDiacritic? 
-		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn) _=N2;
+		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedSnSn) _=N2;
 cNlWide { shift { x = 300m; y = -130m } }
 	cNuqtaLower { shift { x = 300m; y = -360m } }  // avoid the final reh
 	/  gBehIniBeRe _=N1 cDiacritic?  gBehMedRe _=N2;

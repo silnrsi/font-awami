@@ -302,7 +302,7 @@ c_preBehSS_raw = (gSeenIni_raw gSadIni_raw gSeenMed_raw gSadMed_raw);
 c_preBehNn_hgbm = (gHehGoalIni gHehGoalIniBeNn gBehMed gBehMedBeNn gMeemIni gMeemIniBeNn)
 
 c_jeem_flat = (gJeemMed gJeemMedAi gJeemMedBe gJeemMedBeF gJeemMedBeHg gJeemMedBeM1 gJeemMedBeM2 gJeemMedBeKl
-	gJeemMedBeNn gJeemMedBeRe gJeemMedFe gJeemMedHgF gJeemMedHgM gJeemMedNn gJeemMedQf gJeemMedSd gJeemMedSn
+	gJeemMedBeNn gJeemMedBeRe gJeemMedFe gJeemMedHgF gJeemMedHgM gJeemMedNn gJeemMedQf gJeemMedSd gJeemMedSn gJeemMedSnSn
 	gJeemMedTa);
 
 endtable;
@@ -352,16 +352,17 @@ pass(4) { MaxBackup = 50; MaxRuleLoop = 200 }
 #if (QUICKCOMPILE == 0)
 
 
-//////cMed_raw_noS  >  cMedBeM1_noS     /  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedBe gBehMedBeHg);  //  \u0633\u06a9\u0628\u0628\u0627
+//////cMed_raw_noS  >  cMedBeM1_noS
+//////		/  ^ MPRECXT  _ MARKS  (gBehMedBeM2 gBehMedSn gBehMedSnSn gBehMedBe gBehMedBeHg);  //  \u0633\u06a9\u0628\u0628\u0627
 
 //////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMed MARKS  c_dkgal_postAlt;   //  \u0644\u0644\u0628\u0628\u0627
 //////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2 MARKS  gBehMedBeNn;    // \u0633\u06a9\u0628\u0628\u0628\u0646
 
-//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  (gBehMedSn gBehMedBe  gBehMedBeHg);
+//////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  (gBehMedSn gBehMedSnSn gBehMedBe  gBehMedBeHg);
 //////cMed_raw  >  cMedBeM1  /  ^ MPRECXT  _ MARKS  gBehMedBeM2;
 
 table(glyph)
-cMed_postBeM1 = (gBehMedBeM2  gBehMedSn  gBehMedBe  gBehMedBeHg);
+cMed_postBeM1 = (gBehMedBeM2  gBehMedSn  gBehMedSnSn  gBehMedBe  gBehMedBeHg);
 cBehMed_defaultEntrance = (cBehMed_postBeM  gBehMedHd);
 endtable;
 
@@ -439,6 +440,7 @@ gBehMed_raw  >  gBehMedQf_short  /  g_wordThessalonik  _=B  MARKS  gWawFin;
 csMed_raw  >  csMedBeF	/  ^ MPRECXT  _ MARKS  cBehFin;
 csMed_raw  >  csMedJm	/  ^ MPRECXT  _ MARKS  cJeemMF;
 csMed_raw  >  csMedRe	/  ^ MPRECXT  _ MARKS  cRehFin;
+csMed_raw  >  csMedSnSn  /  ^ MPRECXT  _ MARKS  cSeenMedSn;
 csMed_raw  >  csMedSn	/  ^ MPRECXT  _ MARKS  cSeenMF;
 csMed_raw  >  csMedSd	/  ^ MPRECXT  _ MARKS  cSadMF;
 csMed_raw  >  csMedTa	/  ^ MPRECXT  _ MARKS  (cTahFin cTahMed);
@@ -535,26 +537,27 @@ gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  c_jeem_flat;
 
 
 // Basic rules
-csIni_raw  >  csIniBeM2F / _ MARKS  cBehFin;
-csIni_raw  >  csIniJm	/ _ MARKS  (cJeemFin cJeemMed);
-csIni_raw  >  csIniRe	/ _ MARKS  cRehFin;
-csIni_raw  >  csIniSn	/ _ MARKS  (cSeenFin cSeenMed);
-csIni_raw  >  csIniSd	/ _ MARKS  (cSadFin cSadMed);
-csIni_raw  >  csIniTa	/ _ MARKS  (cTahFin cTahMed);
-csIni_raw  >  csIniAi	/ _ MARKS  (cAinFin cAinMed);
-csIni_raw  >  csIniFe	/ _ MARKS  (cFehFin cFehMed c_zerojoin);
-csIni_raw  >  csIniQf	/ _ MARKS  c_qw; // qaf, waw
-csIni_raw  >  csIniMm	/ _ MARKS  (cMeemFin cMeemMed);
-csIni_raw  >  csIniNn	/ _ MARKS  (cNoonFin gNoonGhunnaFin);
-csIni_raw  >  csIniHgF	/ _ MARKS  cHehGoalFin;
-csIni_raw  >  csIniHgM	/ _ MARKS  cHehGoalMed;
-csIni_raw  >  csIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
-csIni_raw  >  csIniCh	/ _ MARKS  (cChotiyehFin);
-csIni_raw  >  csIniBy  	/ _ MARKS  cBariyehFin;
+csIni_raw  >  csIniBeM2F    / _ MARKS  cBehFin;
+csIni_raw  >  csIniJm	   / _ MARKS  (cJeemFin cJeemMed);
+csIni_raw  >  csIniRe	   / _ MARKS  cRehFin;
+csIni_raw  >  csIniSnSn     / _ MARKS  cSeenMedSn;
+csIni_raw  >  csIniSn	   / _ MARKS  (cSeenFin cSeenMed);
+csIni_raw  >  csIniSd       / _ MARKS  (cSadFin cSadMed);
+csIni_raw  >  csIniTa	   / _ MARKS  (cTahFin cTahMed);
+csIni_raw  >  csIniAi	   / _ MARKS  (cAinFin cAinMed);
+csIni_raw  >  csIniFe	   / _ MARKS  (cFehFin cFehMed c_zerojoin);
+csIni_raw  >  csIniQf       / _ MARKS  c_qw; // qaf, waw
+csIni_raw  >  csIniMm	   / _ MARKS  (cMeemFin cMeemMed);
+csIni_raw  >  csIniNn	   / _ MARKS  (cNoonFin gNoonGhunnaFin);
+csIni_raw  >  csIniHgF      / _ MARKS  cHehGoalFin;
+csIni_raw  >  csIniHgM      / _ MARKS  cHehGoalMed;
+csIni_raw  >  csIniHd       / _ MARKS  (cHehDoFin cHehDoMed);
+csIni_raw  >  csIniCh	   / _ MARKS  (cChotiyehFin);
+csIni_raw  >  csIniBy       / _ MARKS  cBariyehFin;
 
-csIni_raw  >  csIniBe	/ _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
+csIni_raw  >  csIniBe       / _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
 
-gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
+gLamIni_raw  >  gLamIniAl   / _ MARKS  gAlefFin_lm;
 
 #endif // !QUICKCOMPILE
 
