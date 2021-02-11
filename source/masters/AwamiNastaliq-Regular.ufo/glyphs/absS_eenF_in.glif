@@ -11,6 +11,18 @@
   <anchor x="1824" y="1792" name="tahUpper"/>
   <outline>
     <contour>
+      <point x="634" y="-600" type="curve" smooth="yes"/>
+      <point x="1163" y="-600"/>
+      <point x="1572" y="195"/>
+      <point x="1572" y="1075" type="curve"/>
+      <point x="1702" y="1075"/>
+      <point x="1750" y="1216"/>
+      <point x="1785" y="1216" type="curve" smooth="yes"/>
+      <point x="1807" y="1216"/>
+      <point x="1814" y="1195"/>
+      <point x="1877" y="1195" type="curve" smooth="yes"/>
+      <point x="2020" y="1195"/>
+      <point x="2086" y="1374"/>
       <point x="2121" y="1374" type="curve" smooth="yes"/>
       <point x="2152" y="1374"/>
       <point x="2169" y="1343"/>
@@ -53,18 +65,12 @@
       <point x="303" y="899" type="curve" smooth="yes"/>
       <point x="-76" y="184"/>
       <point x="111" y="-600"/>
-      <point x="634" y="-600" type="curve" smooth="yes"/>
-      <point x="1163" y="-600"/>
-      <point x="1572" y="195"/>
-      <point x="1572" y="1075" type="curve"/>
-      <point x="1702" y="1075"/>
-      <point x="1750" y="1216"/>
-      <point x="1785" y="1216" type="curve" smooth="yes"/>
-      <point x="1807" y="1216"/>
-      <point x="1814" y="1195"/>
-      <point x="1877" y="1195" type="curve" smooth="yes"/>
-      <point x="2020" y="1195"/>
-      <point x="2086" y="1374"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
