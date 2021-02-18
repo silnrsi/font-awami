@@ -2,11 +2,17 @@
 <glyph name="absPeh" format="2">
   <advance width="2583"/>
   <unicode hex="067E"/>
-  <anchor x="1219" y="946" name="honorific"/>
+  <anchor x="1219" y="1046" name="honorific"/>
   <anchor x="1239" y="-1232" name="mLower"/>
-  <anchor x="1224" y="888" name="mUpper"/>
+  <anchor x="1224" y="988" name="mUpper"/>
   <outline>
     <component base="_nukta3" xOffset="629" yOffset="-555"/>
     <component base="_beh"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
