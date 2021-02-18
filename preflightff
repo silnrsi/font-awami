@@ -9,3 +9,6 @@ psffixffglifs -p checkfix=fix source/masters/*-Black.ufo
 echo
 echo "Updating glyph order in Regular..."
 psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/masters/AwamiNastaliq-Regular.ufo
+
+echo "Syncing glyph orders, psnames, and other metadata to other UFOs..."
+psfsyncmasters -q source/*.designspace
