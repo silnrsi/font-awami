@@ -7,10 +7,6 @@ psfnormalize -p checkfix=fix source/masters/*-Regular.ufo  &
 psfnormalize -p checkfix=fix source/masters/*-Black.ufo    &
 wait
 
-
-echo "Syncing glyph orders, psnames, and other metadata to other UFOs..."
-psfsyncmasters -q source/*.designspace
-
 echo "Updating woff metadata xml file..."
 psfmakewoffmetadata -q -n AwamiNastaliq -i org.sil.fonts source/masters/*-Regular.ufo -o "source/AwamiNastaliq-WOFF-metadata.xml"
 
@@ -19,5 +15,8 @@ echo "Updating glyph order in Regular..."
 psfsetglyphorder -p checkfix=none -i source/glyphorder.txt source/masters/AwamiNastaliq-Regular.ufo
 # Sch version:
 ###psfsetglyphorder -q -p checkfix=none -p backup=False --header DesignerOrder,DesignerOrder --field public.glyphOrder,com.schriftgestaltung.glyphOrder -i source/glyph_data.csv source/masters/*-Regular.ufo
+
+echo "Syncing glyph orders, psnames, and other metadata to other UFOs..."
+psfsyncmasters -q source/*.designspace
 
 echo "preflight completed!"
