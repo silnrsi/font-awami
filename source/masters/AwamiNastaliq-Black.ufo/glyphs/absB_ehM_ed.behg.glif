@@ -6,9 +6,12 @@
   <anchor x="669" y="-35" name="n1Lower"/>
   <anchor x="679" y="-25" name="n23Lower"/>
   <anchor x="572" y="1679" name="nUpper"/>
-  <anchor x="251" y="274" name="ring"/>
+  <anchor x="251" y="177" name="ring"/>
   <outline>
     <contour>
+      <point x="252" y="193" type="curve" smooth="yes"/>
+      <point x="384" y="193"/>
+      <point x="573" y="609"/>
       <point x="573" y="675" type="curve" smooth="yes"/>
       <point x="573" y="724"/>
       <point x="491" y="792"/>
@@ -18,12 +21,15 @@
       <point x="0" y="498" type="curve" smooth="yes"/>
       <point x="-25" y="507"/>
       <point x="-75" y="453"/>
-      <point x="-59" y="437" type="curve" smooth="yes"/>
-      <point x="-11" y="389"/>
-      <point x="158" y="289"/>
-      <point x="251" y="289" type="curve" smooth="yes"/>
-      <point x="353" y="289"/>
-      <point x="573" y="609"/>
+      <point x="-59" y="437" type="curve"/>
+      <point x="-27" y="378"/>
+      <point x="109" y="193"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
