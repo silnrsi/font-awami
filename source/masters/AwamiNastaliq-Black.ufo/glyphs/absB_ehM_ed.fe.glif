@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absBehMed.fe" format="2">
   <advance width="718"/>
-  <anchor x="718" y="938" name="_exit_beh"/>
-  <anchor x="0" y="469" name="exit_feh"/>
+  <anchor x="718" y="945" name="_exit_beh"/>
+  <anchor x="-5" y="528" name="exit_feh"/>
   <anchor x="659" y="200" name="n1Lower"/>
   <anchor x="649" y="210" name="n23Lower"/>
   <anchor x="563" y="1167" name="nUpper"/>
-  <anchor x="407" y="468" name="ring"/>
+  <anchor x="409" y="404" name="ring"/>
   <anchor x="506" y="1177" name="tahUpper"/>
   <outline>
     <contour>
       <point x="-94" y="293" type="curve" smooth="yes"/>
-      <point x="432" y="293"/>
-      <point x="492" y="770"/>
-      <point x="718" y="702" type="curve" smooth="yes"/>
-      <point x="785" y="682"/>
-      <point x="785" y="908"/>
-      <point x="718" y="928" type="curve" smooth="yes"/>
-      <point x="550" y="978"/>
-      <point x="466" y="447"/>
-      <point x="101" y="447" type="curve" smooth="yes"/>
-      <point x="74" y="447"/>
-      <point x="37" y="450"/>
-      <point x="0" y="459" type="curve" smooth="yes"/>
-      <point x="-28" y="466"/>
-      <point x="-118" y="293"/>
+      <point x="421" y="293"/>
+      <point x="492" y="620"/>
+      <point x="718" y="552" type="curve" smooth="yes"/>
+      <point x="785" y="532"/>
+      <point x="785" y="915"/>
+      <point x="718" y="935" type="curve" smooth="yes"/>
+      <point x="550" y="985"/>
+      <point x="458" y="507"/>
+      <point x="93" y="507" type="curve" smooth="yes"/>
+      <point x="63" y="507"/>
+      <point x="30" y="510"/>
+      <point x="-5" y="518" type="curve" smooth="yes"/>
+      <point x="-79" y="534"/>
+      <point x="-146" y="293"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
