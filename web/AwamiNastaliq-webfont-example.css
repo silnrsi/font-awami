@@ -12,7 +12,11 @@ of the license along with this Font Software. If this is not the case, go to
 /* use AwamiNastaliq - Regular in .woff format */
 @font-face {
   font-family: AwamiNastaliqRW;
-  src: url(AwamiNastaliq-Regular.woff);
+  src: url(AwamiNastaliq-Regular.woff2);
+}
+@font-face {
+  font-family: AwamiNastaliqBW;
+  src: url(AwamiNastaliq-Bold.woff2);
 }
 
 
@@ -33,7 +37,7 @@ h2 {
     /* fall back to sans serif so that it's really obvious if the fonts don't load */
 }	
 .rtlb {
-  font-family: AwamiNastaliqRW, sans-serif; font-size: 200%; direction: rtl; text-align: right;
+  font-family: AwamiNastaliqBW, sans-serif; font-size: 200%; direction: rtl; text-align: right;
     /* fall back to sans serif so that it's really obvious if the fonts don't load */
 }	
 .all {
