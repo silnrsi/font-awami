@@ -11,7 +11,7 @@ import os
 def run():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-o","--output",default=r"C:\Awami\tests\data\FTML_XSL",help="Where to write output files")
+    parser.add_argument("-o","--output",default=r"C:\FontDev\Awami\tests\FTML_XSL",help="Where to write output files")
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
     parser.add_argument("-f","--font",default=r"Awami Nastaliq",help="Name of font to use")
@@ -146,7 +146,7 @@ def _generate_sub_sequences() :
     
     dualSubs.append(("multi-beh", "ANY", "beh", "beh"))          # beh+beh
     dualSubs.append(("multi-beh", "ANY", "beh", "beh", "beh"))   # beh+beh+beh
-    
+
     rightSubs.append(("beh+noon", "ANY", "beh", "noon"))         # beh+noon
     rightSubs.append(("beh+reh", "ANY", "beh", "reh"))           # beh+reh
     rightSubs.append(("beh+hehGoal", "ANY", "beh", "hehGoal"))   # beh+hehGoal
