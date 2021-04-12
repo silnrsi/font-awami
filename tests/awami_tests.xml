@@ -3673,6 +3673,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset7654" label="reh + honorific + paren" rtl="True">
       <string>نجّارؓ( </string>
     </test>
+    <test class="fset7654" label="alef + punct kerning" rtl="True">
+      <string>تھا۔ چمکتی</string>
+    </test>
+    <test class="fset7654" label="quote space high stuff" rtl="True">
+      <string>گا“ پریسکس</string>
+    </test>
+    <test class="fset7654" label="comma space high stuff" rtl="True">
+      <string>گا‘ پریسکس</string>
+    </test>
     <test background="#55aaff" label="NOT HANDLED" rtl="True">
       <string />
     </test>

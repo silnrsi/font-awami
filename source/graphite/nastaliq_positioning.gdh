@@ -17,10 +17,14 @@
 	details including an FAQ.
 */
 
+// Does full stop, comma, etc kern like a base char?
+#define KERNLOWPUNCT 1
+
 table(glyph)
-cKernPunct = (gComma gFullStop gSemicolon g_colonArab g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
-	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab
-	g_ellipsisArab);
+cLowPunct = ( gComma gFullStop gSemicolon g_colonArab g_ellipsisArab );
+cHighPunct = ( g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
+	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab );
+cKernPunct = ( cLowPunct  cHighPunct );
 endtable;
 
 
@@ -64,8 +68,11 @@ cIso { seqWidth += @P.advance.x + @P.seqWidth }		  // no space - same sequence
 	/  (cIso cFin)=P MARKS2N  _=N;       
 cIso { seqWidth = advance.x };                          // start a new sequence after space or at very beginning
 
-cKernPunct { seqWidth += @P.advance.x + @P.seqWidth }   // yes, punctuation should be treated as part of the word sequence
+#if KERNLOWPUNCT
+// low punctuation should be treated as part of the word sequence
+cLowPunct { seqWidth += @P.advance.x + @P.seqWidth }   
 	/  (cIso cFin)=P MARKS2N  _=N; 
+#endif
   
 /***
 cursive_attach(alef)
@@ -1890,8 +1897,11 @@ gAlef { kernPreZain = -60m };
 gAlefFin { kernPreZain = -60m };
 
 // Don't let punctuation kern underneath following segment;
-// removed Nov 2020; a slight amount of kerning is okay.
-//cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+#if KERNLOWPUNCT
+cHighPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+#else
+cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+#endif
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
 ///gAlef { kernPreKafNoSp = -150m };
@@ -2768,6 +2778,21 @@ cKernable { collision {
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
 
+
+// NEVER let even low punctuation kern underneath following segment when preceded by an alef.
+#if KERNLOWPUNCT
+cLowPunct  { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	max.x = MAXKERN;
+	//min.x = min(0m, -800m + 1250m )   // 800 = 500 + 300; see rule below and minKernDelta for punctuation
+	min.x = 0m
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernable=N;
+#endif
 
 // Default cases:
 
