@@ -64,8 +64,9 @@ cIso { seqWidth += @P.advance.x + @P.seqWidth }		  // no space - same sequence
 	/  (cIso cFin)=P MARKS2N  _=N;       
 cIso { seqWidth = advance.x };                          // start a new sequence after space or at very beginning
 
-cKernPunct { seqWidth += @P.advance.x + @P.seqWidth }   // yes, punctuation should be treated as part of the word sequence
-	/  (cIso cFin)=P MARKS2N  _=N; 
+// COMMENT OUT TO MAKE PUNCTUATION KERN DIFFERENTLY
+//cKernPunct { seqWidth += @P.advance.x + @P.seqWidth }   // yes, punctuation should be treated as part of the word sequence
+//	/  (cIso cFin)=P MARKS2N  _=N; 
   
 /***
 cursive_attach(alef)
@@ -1891,7 +1892,8 @@ gAlefFin { kernPreZain = -60m };
 
 // Don't let punctuation kern underneath following segment;
 // removed Nov 2020; a slight amount of kerning is okay.
-//cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+// COMMENT OUT TO MAKE PUNCTUATION KERN THE SAME AS BASE CHARS
+cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
 ///gAlef { kernPreKafNoSp = -150m };
