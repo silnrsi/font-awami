@@ -20,6 +20,7 @@
 // Does full stop, comma, etc kern like a base char?
 #define KERNLOWPUNCT 1
 
+
 table(glyph)
 cLowPunct = ( gComma gFullStop gSemicolon g_colonArab g_ellipsisArab );
 cHighPunct = ( g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
@@ -2779,8 +2780,9 @@ cKernable { collision {
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoPreLam=N;
 
 
-// NEVER let even low punctuation kern underneath following segment when preceded by an alef.
+// Don't let low punctuation kern very much underneath following segment when preceded by an alef.
 #if KERNLOWPUNCT
+
 cLowPunct  { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
@@ -2788,10 +2790,12 @@ cLowPunct  { collision {
 	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
 	max.x = MAXKERN;
 	//min.x = min(0m, -800m + 1250m )   // 800 = 500 + 300; see rule below and minKernDelta for punctuation
-	min.x = 0m
+	min.x = -1 * advance.x  // arbitrary, seems to work for real-life examples (wide glyphs, eg, full-stop, can kern a bit more)
     // min/max.y are omitted for kernable glyphs
 } }
 	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernable=N;
+
+
 #endif
 
 // Default cases:
@@ -2891,6 +2895,24 @@ cSpace { advance.x += 110m }
 
 endpass;  // pos - 12
 
+
+#if KERNLOWPUNCT
+
+if (collFix > 0)
+pass(13)  { CollisionFix = 1; AutoKern = true }  // 20
+
+//cLowPunct { collision.margin = 500m; passKeySlot = true } /
+//	(gAlefFin gAlef) cNuqtaLike?  DIACS  _ { collision.fix.x < 300m }  cKernIgnore?  cPostKernable=N;
+
+cLowPunct { collision.margin = 330m; passKeySlot = true } /  _ { collision.fix.x < 300m };
+
+cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
+cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
+
+endpass;  // 13
+endif;
+
+#endif
 
 /////#include "awami_tweaks.gdh"
 
