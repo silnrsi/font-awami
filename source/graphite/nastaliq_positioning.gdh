@@ -17,7 +17,7 @@
 	details including an FAQ.
 */
 
-// Does full stop, comma, etc kern like a base char?
+// Does full stop, comma, etc kern like a base char? (Using a flag here until we decide for sure what behavior we want.)
 #define KERNLOWPUNCT 1
 
 
@@ -2905,6 +2905,10 @@ pass(13)  { CollisionFix = 1; AutoKern = true }  // 20
 //	(gAlefFin gAlef) cNuqtaLike?  DIACS  _ { collision.fix.x < 300m }  cKernIgnore?  cPostKernable=N;
 
 cLowPunct { collision.margin = 330m; passKeySlot = true } /  _ { collision.fix.x < 300m };
+
+// Nothing else needs to be fixed, and we don't want to waste time trying.
+cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
+cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
 
 endpass;  // 13
 endif;
