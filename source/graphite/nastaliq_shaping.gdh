@@ -247,9 +247,9 @@ gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gHehGoalFin  g__hehHook_small
 (gAlef) // gAlefMaddaAbove gAlefHamzaAbove)
 	>  (gAlefFin /*gAlefMaddaFin gAlefHamzaFin*/)  /  cIniMed  MARKS  _;
 
-csQwFin  >  csQwFin_stfh	/  cPreQwStfh  MARKS _;
+csQwFin  >  csQwFin_stfh	/  cPreQw_stfh  MARKS _;
 // Change feh to qaf for final qaf:
-gFehFin  >  gQafFin_stfh	/  cPreQwStfh  MARKS  _  (g__dot2u  g__noDot2u);
+gFehFin  >  gQafFin_stfh	/  cPreQw_stfh  MARKS  _  (g__dot2u  g__noDot2u);
 gFehFin  >  gQafFin         /  _  (g__dot2u  g__noDot2u);
 
 
@@ -385,7 +385,7 @@ gBehIni_raw  gBehMed_raw  >  gBehIniBeM2  gBehMedHgF_be  /  _  MARKS  _  MARKS  
 
 gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  gBehMedNn;
 
-// Use sad interface for rounded kafs:
+// Use sad interface for round-bottom kafs:
 csMed_raw  >  csMedSd    / ^ MPRECXT  _  MARKS  (gKafMed gGafMed)  MARKS  c_al_postKround;
 
 (gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  (c_dkg_noKalt cKafMed);
@@ -413,19 +413,19 @@ gSeenMed_raw  >  gSeenMedSn_sn  / ^ (gSeenIni_raw gSeenMed_raw) MARKS  _ MARKS  
 gSeenMed_raw  >  gSeenMedJm_flat   /  ^ MPRECXT  _ MARKS  c_jeem_flat;
 
 table(glyph)
-cKjNormalEntry = (gKafMed_raw gGafMed_raw);
-cKjLowEntry = (gKafMedJm_lowentry gGafMedJm_lowentry);
+csKjNormalEntry = (gKafMed_raw gGafMed_raw);
+csKjLowEntry = (gKafMedJm_lowentry gGafMedJm_lowentry);
 cNeedLowKaf = (gBehIni_raw, gBehMed_raw, gSeenIni_raw, gSeenMed_raw, gSadIni_raw, gSadMed_raw);
 endtable;
 
 // Lower-entry pre-jeem kaf - ideally these cases would be handled by the tall-kaf rules, but that would
 // mean duplicating a bunch of the rules or multiplying classes, given that this tall kaf is not created
 // by using a separate top.
-cKjNormalEntry  >  cKjLowEntry
+csKjNormalEntry  >  csKjLowEntry
 	/  ^ cNeedLowKaf  cNuqtaUpperLarge  cDiacritic?  _=K  MARKS  cJeemMF;
-cKjNormalEntry  >  cKjLowEntry
+csKjNormalEntry  >  csKjLowEntry
 	/  ^ (gFehIni_raw gFehMed_raw) cNuqtaLikeUpper  cDiacritic?  _=K  MARKS  cJeemMF;
-cKjNormalEntry  >  cKjLowEntry
+csKjNormalEntry  >  csKjLowEntry
 	/  ^ (gKafIni_raw gKafMed_raw) MARKS  cDiacritic?  _=K  MARKS  cJeemMF;
 
 
@@ -552,9 +552,9 @@ csIni_raw  >  csIniHd  	/ _ MARKS  (cHehDoFin cHehDoMed);
 csIni_raw  >  csIniCh	/ _ MARKS  (cChotiyehFin);
 csIni_raw  >  csIniBy  	/ _ MARKS  cBariyehFin;
 
-csIni_raw  >  csIniBe	/ _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
+csIni_raw  >  csIniBe       / _ MARKS  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
 
-gLamIni_raw  >  gLamIniAl	/ _ MARKS  gAlefFin_lm;
+gLamIni_raw  >  gLamIniAl   / _ MARKS  gAlefFin_lm;
 
 #endif // !QUICKCOMPILE
 
@@ -605,8 +605,8 @@ csUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_sm
 
 cNuqtaLike += (csLowerUpper);
 
-cHamzaUrdu = (gHamzaAbove  gHighHamza  g_highHamza  gHamzaBelow);
-cHamzaArabic = (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic  gHamzaBelowArabic);
+csHamzaUrdu = (gHamzaAbove  gHighHamza  g_highHamza  gHamzaBelow);
+csHamzaArabic = (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic  gHamzaBelowArabic);
 
 csRingDot = (g__ring__dot1u, g__ring__dot2u);
 csNoRingDot = (g__dot1u, g__dot2u);
@@ -641,8 +641,8 @@ gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 
 // This version of the rule takes precedence over the rules below that substitute the composed isolates
 // (an extra slot is included to ensure the precedence):
-cIso  cHamzaUrdu			>  @1  cHamzaArabic;
-cHamzaUrdu  >  cHamzaArabic;
+cIso  csHamzaUrdu	>  @1  csHamzaArabic;
+csHamzaUrdu  >  csHamzaArabic;
 
 endif; // hamzaAlt
 

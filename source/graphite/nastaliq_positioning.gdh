@@ -17,7 +17,7 @@
 	details including an FAQ.
 */
 
-// Does full stop, comma, etc kern like a base char?
+// Does full stop, comma, etc kern like a base char? (Using a flag here until we decide for sure what behavior we want.)
 #define KERNLOWPUNCT 1
 
 
@@ -225,39 +225,50 @@ endtable;  // glyph
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
 
+table(glyph)
+cNuqtaLikeLowerNoRing = cNuqtaLikeLower;
+cNuqtaLikeLowerNoRing -= (g__attachedRing);
+endtable;
+
 // X+Nl(large) Y  Z  Bariyeh
 
 // X+Nl  Y+Nl  Z+Nl  Bariyeh
 cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y+Nu  Z+Nl  Bariyeh
 // Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
 // the second lower nuqta.
-cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cMed   cHasUpperMaux    { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y  Z+Nl Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  cMed=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Z  Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
 	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
 
-// X+N Y Bariyeh 
-cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+// X+Nl+Nu Y Bariyeh 
+cTakes_nLowerDia 
+	cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	cNuqtaLikeUpper { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B _=L _=U DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+
+// X+Nl Y Bariyeh 
+cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 
@@ -749,7 +760,8 @@ cNuqtaLikeUpper { collision {
 
 // Special case: khah + teh/theh + kaf/lam/alef
 // Not essential but it does look a little better.
-cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
+// If we decide to use this, we still need to turn on collision.fix.
+//////cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
 
 // Special case: hah + teh + alef/lam
 /* NOT NEEDED
@@ -2002,6 +2014,7 @@ cDiacriticUpper { shift.x = 250m }
 	/  _=R  (gFehIniRe gHehDoIniRe);
 
 // Special cases: reh + yeh - shift yeh nuqtas left and reh down
+// TODO: handle a bariyeh after the beh-ini (\u067E\u06CC\u0631\u06CE\u0646\u06D2)
 gRehFin_jkl {shift.y = -150m }   cNuqtaLower { shift {x = 250m; y = 150m} }
 	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 300m };
 gRehFin  {shift.y = -150m }   
@@ -2906,6 +2919,7 @@ pass(13)  { CollisionFix = 1; AutoKern = true }  // 20
 
 cLowPunct { collision.margin = 330m; passKeySlot = true } /  _ { collision.fix.x < 300m };
 
+// Nothing else needs to be fixed, and we don't want to waste time trying.
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
 
