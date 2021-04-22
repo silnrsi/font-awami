@@ -225,39 +225,50 @@ endtable;  // glyph
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
 
+table(glyph)
+cNuqtaLikeLowerNoRing = cNuqtaLikeLower;
+cNuqtaLikeLowerNoRing -= (g__attachedRing);
+endtable;
+
 // X+Nl(large) Y  Z  Bariyeh
 
 // X+Nl  Y+Nl  Z+Nl  Bariyeh
 cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y+Nu  Z+Nl  Bariyeh
 // Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
 // the second lower nuqta.
-cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cMed   cHasUpperMaux    { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y  Z+Nl Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  cMed=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Z  Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
 	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Bariyeh
-cTakes_nLowerDia cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
+cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
 
-// X+N Y Bariyeh 
-cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+// X+Nl+Nu Y Bariyeh 
+cTakes_nLowerDia 
+	cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
+	cNuqtaLikeUpper { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B _=L _=U DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+
+// X+Nl Y Bariyeh 
+cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 
@@ -749,7 +760,8 @@ cNuqtaLikeUpper { collision {
 
 // Special case: khah + teh/theh + kaf/lam/alef
 // Not essential but it does look a little better.
-cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
+// If we decide to use this, we still need to turn on collision.fix.
+//////cNuqtaLikeUpper { shift { x=-100m; y = -150m } }  /  gJeemMedBeKl  cNuqtaLikeUpper  cDiacritic?  gBehMed  _=N;
 
 // Special case: hah + teh + alef/lam
 /* NOT NEEDED
@@ -1360,7 +1372,7 @@ csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 
 // Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafmed_top_medshort_noGaf$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_medshort_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 

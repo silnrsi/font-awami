@@ -1114,7 +1114,7 @@
     <test label="zain + chotiyeh" rtl="True">
       <string>مزیئی</string>
     </test>
-    <test background="#ff0000" label="dal + nuqta" rtl="True">
+    <test label="dal + nuqta" rtl="True">
       <string>دِینِنگا</string>
     </test>
     <test label="dal + nuqta 2" rtl="True">
@@ -1139,9 +1139,6 @@
     </test>
     <test label="bent gaf + sheen + teh" rtl="True">
       <string>نگشتر</string>
-    </test>
-    <test background="#ff0000" label="bent kaf + teh" rtl="True">
-      <string>کَتَنُن</string>
     </test>
     <test background="#00aaff" label="MULTIPLE" rtl="True">
       <string> </string>
@@ -1320,7 +1317,7 @@
     <test label="small tah + zabar" rtl="True">
       <string>کَٹِتَنُٹ</string>
     </test>
-    <test background="#ff0000" label="lots of fun" rtl="True">
+    <test label="lots of fun" rtl="True">
       <comment>Same problem - the zabar is being marked FIX+IGNORE.</comment>
       <string>اَذِیَّتناک</string>
     </test>
@@ -1588,7 +1585,7 @@
     <test label="ain shadda jeem kaf" rtl="True">
       <string>عّجگ عَجگ</string>
     </test>
-    <test label="gueh + tcheheh" rtl="True">
+    <test background="#ff0000" label="gueh + tcheheh" rtl="True">
       <string>لڳڇ</string>
     </test>
     <test label="theh + lam-V" rtl="True">
@@ -1641,7 +1638,7 @@
     <test class="fset7654" label="yeh + ... + yeh (Balochi)" rtl="True">
       <string>یکّێن</string>
     </test>
-    <test class="fset7654" label="teh + yeh-smallV (Balochi)" rtl="True">
+    <test background="#ff0000" class="fset7654" label="teh + yeh-smallV (Balochi)" rtl="True">
       <string>لهتێن   اَجَبَّتێن</string>
     </test>
     <test class="fset7654" label="beh + beh  (Balochi)" rtl="True">
@@ -2819,6 +2816,15 @@
     </test>
     <test class="fset23028" label="X+NxL  Y+NyU  Z+NzL  Bariyeh" rtl="True">
       <string>جشبے ڇئبے </string>
+    </test>
+    <test class="fset7654" label="X+NxL+NxU  Y+N  Bariyeh" rtl="True">
+      <string>ێنے</string>
+    </test>
+    <test class="fset7654" label="X+ring  Y  Bariyeh" rtl="True">
+      <string>پیرټنے</string>
+    </test>
+    <test class="fset7654" label="X+ring  Bariyeh" rtl="True">
+      <string>ټے</string>
     </test>
     <test class="fset23023" label="sad forms - old" rtl="True">
       <string>ضط ۻط صَط صِط ۻِط</string>
