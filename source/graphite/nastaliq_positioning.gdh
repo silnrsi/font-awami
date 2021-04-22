@@ -578,6 +578,9 @@ cPostKernable = (cIso, cIni, cKernPunct) {
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
+cPostKernableNoPunct = cPostKernable;
+cPostKernableNoPunct -= (cKernPunct);
+
 // Kludge because Graphite seems to have a problem figuring these out - nope, now seems to be working ok:
 ///////g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
 
@@ -2806,7 +2809,7 @@ cLowPunct  { collision {
 	min.x = -1 * advance.x  // arbitrary, seems to work for real-life examples (wide glyphs, eg, full-stop, can kern a bit more)
     // min/max.y are omitted for kernable glyphs
 } }
-	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernable=N;
+	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernableNoPunct=N;
 
 
 #endif
