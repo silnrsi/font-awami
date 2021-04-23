@@ -578,6 +578,9 @@ cPostKernable = (cIso, cIni, cKernPunct) {
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
 };
 
+cPostKernableNoPunct = cPostKernable;  
+cPostKernableNoPunct -= (cKernPunct);
+
 // Kludge because Graphite seems to have a problem figuring these out - nope, now seems to be working ok:
 ///////g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
 
@@ -1909,7 +1912,7 @@ gRehFin_hgM { minKernDelta = -400m; kernPreAlef = -70m };	   // long tail
 gAlef { kernPreZain = -60m };
 gAlefFin { kernPreZain = -60m };
 
-// Don't let punctuation kern underneath following segment;
+// Don't let punctuation kern underneath the following segment;
 #if KERNLOWPUNCT
 cHighPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
 #else
@@ -2680,6 +2683,21 @@ cRehFin_longtail { collision {
 	cDiacriticUpper {shift.y = -200m}
 	/  _=F  _=D  gSeenIniBeM1=S  MARKS  gBehMedSn  MARKS  gSeenFin;
 
+// Special case: \u0633\u0631\u0641\u0631
+gRehFin { collision {
+ 		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = max(0m, kernLsb + @FA.kernRsb + pairKern + 65);
+		max.x = MAXKERN; min.x = min(0m, MINKERN - 500m + minKernDelta);
+    	// min/max.y are omitted for kernable glyphs
+	} }
+	/  _=R /*no marks*/  (gFehIniRe gAinIniRe)=FA  MARKS  cRehFin;
+
+// Special case: zain + isolate
+g__dot1u { shift.x -= 150m }
+	/ gRehFin  _=N  (gDal gWaw gAlef gSeen gTah gFeh gQaf gMeem gHehDo gHehGoal) ;
+
+
 cRehFin_longtail { collision {
  	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
@@ -2805,7 +2823,7 @@ cLowPunct  { collision {
 	min.x = -1 * advance.x  // arbitrary, seems to work for real-life examples (wide glyphs, eg, full-stop, can kern a bit more)
     // min/max.y are omitted for kernable glyphs
 } }
-	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernable=N;
+	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernableNoPunct=N;
 
 
 #endif
