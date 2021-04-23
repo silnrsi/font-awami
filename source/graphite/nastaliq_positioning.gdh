@@ -1239,7 +1239,7 @@ c_final {user7 = position.y}  /  _ {user7 == NOTSET};
 #define reattached user4
 
 // currently not used
-////#define marginSet user6  -- currently not used
+////#define marginSet user9  -- currently not used
 
 
 table(positioning)
@@ -2907,12 +2907,12 @@ endif;
 
 pass(12)  // 19
 
-gBehIni     {advance.x += 360m}  /  g_startOfLine  _=B cNuqtaLike? MARKS cKafMF;
+gBehIni     {advance.x += 360m}  /  _=B {startOfLine} cNuqtaLike? MARKS cKafMF;
 
-gAlef       {advance.x += 150m}  /  g_startOfLine  _=A cNuqtaLike? MARKS (cKafIni cKafIso)=K;
+gAlef       {advance.x += 150m}  /  _=A {startOfLine} cNuqtaLike? MARKS (cKafIni cKafIso)=K;
 
-cBariyehFin {advance.x -= 200m}  /  g_startOfLine  cIni cNuqtaLike? MARKS  _=By;
-cBariyehIso {advance.x -= 200m}  /  g_startOfLine  _=By;
+cBariyehFin {advance.x -= 200m}  /  cIni {startOfLine} cNuqtaLike? MARKS  _=By;
+cBariyehIso {advance.x -= 200m}  /  _=By {startOfLine};
 
 
 // Debugger:

@@ -331,13 +331,17 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS
 //gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
 
 
-// Insert a pseudo line-break glyph for recognition later in positioning table:
+// Insert a pseudo line-break glyph for recognition later in positioning table.
+// This is a good place to do this because none of the other rules are dealing with
+// initial forms.
+
+#define startOfLine user6
 
 // Debugger:
-//g_bar  (csIni_raw cBariyehIso)  _  >  @1  g_startOfLine:2  @2;
+//g_bar  (csIni_raw cBariyehIso)  >  @1  @2 {startOfLine = true};
 
-ANY  /  ANY  _;
-ANY  _  >  g_startOfLine:1  @1;
+ANY {startOfLine = false}  /  ANY  _;
+ANY {startOfLine = true};
 
 endpass;  // 3
 

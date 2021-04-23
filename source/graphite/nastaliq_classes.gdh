@@ -1035,7 +1035,7 @@ csBehTehRing = (gBehIniHdR, gBehMedHdR, gBehMedJmR, gBehMedMmR, gBehMedMmXR,
 	gBehMedNnR, gBehMedNn_hgbmR, gBehMedSnR);
 
 
-g_startOfLine {collision.flags = COLL_IGNORE};
+///g_startOfLine {collision.flags = COLL_IGNORE}; - no longer used
 
 
 // Basic classes for contextual shaping:
