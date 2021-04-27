@@ -33,16 +33,12 @@ APPNAME='AwamiNastaliq'      #### AwamiNastaliq-Dev
 # set the font family name
 FAMILY='AwamiNastaliq'
 
-COPYRIGHT='Copyright (c) 2014-2019, SIL International (http:/www.sil.org)'
-LICENSE='OFL.txt'
 
 DESC_NAME = "Awami-Nastaliq"
 DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
 getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
-
-#VERSION='2.001'   # taken directly from the font????????????????????
 
 opts = preprocess_args({'opt' : '-d'})
 
@@ -52,6 +48,8 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 
 #FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
 #FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
+
+ftmlTest('tools/ftml-smith.xsl')
 
 cmds = [
     #name('${DS:FILENAME_BASE}', lang='en-US', subfamily = 'Regular'),
@@ -91,9 +89,12 @@ designspace(dspace_file,
     #classes = 'source/classes.xml',
     #script='arab',
     pdf=fret(params = '-r -b'),     # -b = show octaboxes
-    woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml'),
+    woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml')
     )
 
+#VERSION='2.001'   # taken directly from the font????????????????????
+#COPYRIGHT='Copyright (c) 2014-2019, SIL International (http:/www.sil.org)'
+#LICENSE='OFL.txt'
 
 #font(target = process(FONT_FILENAME + '.ttf', *cmds),
 #    source = "source/masters/AwamiNastaliq-Regular.ufo",

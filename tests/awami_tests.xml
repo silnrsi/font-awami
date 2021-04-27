@@ -161,11 +161,8 @@
     <test label="goal hay" rtl="True">
       <string>ہلہب</string>
     </test>
-    <test background="#ff0000" label="Allah" rtl="True">
+    <test label="Allah" rtl="True">
       <string>اللہ</string>
-    </test>
-    <test background="#ff0000" label="Muhammad" rtl="True">
-      <string>اِڷ</string>
     </test>
     <test label="jesus1" rtl="True">
       <string>یِسُوؔعۜ</string>
@@ -281,7 +278,7 @@
     <test class="fset23023" label="gBehFin_bfkl" rtl="True">
       <string>فب  کٹ  یت</string>
     </test>
-    <test background="#ffff7f" class="fset23023" label="gChotiyehFin - default" rtl="True">
+    <test class="fset23023" label="gChotiyehFin - default" rtl="True">
       <string>لسی ڄئ</string>
     </test>
     <test class="fset23023" label="gChotiyehFin_bfkl" rtl="True">
@@ -1602,6 +1599,20 @@
     </test>
     <test label="jeem + peh + pesh + kaf" rtl="True">
       <string>همینچُک</string>
+    </test>
+  </testgroup>
+  <testgroup label="Demo">
+    <test class="fset7654" label="collision" rtl="True">
+      <string>آرتئَگِنتے</string>
+    </test>
+    <test class="fset7654" label="collision" rtl="True">
+      <string>آرتئَگِتے</string>
+    </test>
+    <test class="fset7654" label="collisions" rtl="True">
+      <string>بَخشِتئَگا |  تَئَگیں</string>
+    </test>
+    <test class="fset7654" label="collision - noon - gaf" rtl="True">
+      <string>تِخِنگِک</string>
     </test>
   </testgroup>
   <testgroup label="Sequencing">
