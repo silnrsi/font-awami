@@ -161,11 +161,8 @@
     <test label="goal hay" rtl="True">
       <string>ہلہب</string>
     </test>
-    <test background="#ff0000" label="Allah" rtl="True">
+    <test label="Allah" rtl="True">
       <string>اللہ</string>
-    </test>
-    <test background="#ff0000" label="Muhammad" rtl="True">
-      <string>اِڷ</string>
     </test>
     <test label="jesus1" rtl="True">
       <string>یِسُوؔعۜ</string>
@@ -281,7 +278,7 @@
     <test class="fset23023" label="gBehFin_bfkl" rtl="True">
       <string>فب  کٹ  یت</string>
     </test>
-    <test background="#ffff7f" class="fset23023" label="gChotiyehFin - default" rtl="True">
+    <test class="fset23023" label="gChotiyehFin - default" rtl="True">
       <string>لسی ڄئ</string>
     </test>
     <test class="fset23023" label="gChotiyehFin_bfkl" rtl="True">
@@ -1114,7 +1111,7 @@
     <test label="zain + chotiyeh" rtl="True">
       <string>مزیئی</string>
     </test>
-    <test label="dal + nuqta" rtl="True">
+    <test background="#ff0000" label="dal + nuqta" rtl="True">
       <string>دِینِنگا</string>
     </test>
     <test label="dal + nuqta 2" rtl="True">
@@ -1317,7 +1314,7 @@
     <test label="small tah + zabar" rtl="True">
       <string>کَٹِتَنُٹ</string>
     </test>
-    <test label="lots of fun" rtl="True">
+    <test background="#ff0000" label="lots of fun" rtl="True">
       <comment>Same problem - the zabar is being marked FIX+IGNORE.</comment>
       <string>اَذِیَّتناک</string>
     </test>
@@ -1599,6 +1596,20 @@
     </test>
     <test label="jeem + peh + pesh + kaf" rtl="True">
       <string>همینچُک</string>
+    </test>
+  </testgroup>
+  <testgroup label="Demo">
+    <test class="fset7654" label="collision" rtl="True">
+      <string>آرتئَگِنتے</string>
+    </test>
+    <test class="fset7654" label="collision" rtl="True">
+      <string>آرتئَگِتے</string>
+    </test>
+    <test class="fset7654" label="collisions" rtl="True">
+      <string>بَخشِتئَگا |  تَئَگیں</string>
+    </test>
+    <test class="fset7654" label="collision - noon - gaf" rtl="True">
+      <string>تِخِنگِک</string>
     </test>
   </testgroup>
   <testgroup label="Sequencing">
@@ -3699,6 +3710,12 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset7654" label="comma space high stuff" rtl="True">
       <string>گا‘ پریسکس</string>
+    </test>
+    <test class="fset7654" label="reh feh reh" rtl="True">
+      <string>سرفر  سرغر</string>
+    </test>
+    <test class="fset7654" label="zain + isolate" rtl="True">
+      <string>مزد شزم  طزہ</string>
     </test>
     <test background="#55aaff" label="NOT HANDLED" rtl="True">
       <string />
