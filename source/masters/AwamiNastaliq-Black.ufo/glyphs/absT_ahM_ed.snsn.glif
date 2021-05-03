@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absTahMed.snsn" format="2">
   <advance width="349"/>
-  <anchor x="349" y="849" name="_exit_tah"/>
-  <anchor x="0" y="558" name="exit_seenseen"/>
+  <anchor x="349" y="764" name="_exit_tah"/>
+  <anchor x="0" y="478" name="exit_seenseen"/>
   <anchor x="571" y="2639" name="mTahUpper"/>
-  <anchor x="327" y="469" name="n1Lower"/>
+  <anchor x="327" y="409" name="n1Lower"/>
   <anchor x="625" y="1837" name="nUpper"/>
   <outline>
     <contour>
@@ -28,11 +28,11 @@
       <point x="214" y="2136"/>
     </contour>
     <contour>
-      <point x="0" y="548" type="curve" smooth="yes"/>
-      <point x="350" y="761"/>
+      <point x="0" y="468" type="curve" smooth="yes"/>
+      <point x="345" y="689"/>
       <point x="797" y="1045"/>
       <point x="797" y="1342" type="curve" smooth="yes"/>
-      <point x="797" y="1463"/>
+      <point x="797" y="1466"/>
       <point x="750" y="1537"/>
       <point x="625" y="1537" type="curve" smooth="yes"/>
       <point x="305" y="1537"/>
@@ -48,10 +48,16 @@
       <point x="647" y="1296"/>
       <point x="647" y="1242" type="curve" smooth="yes"/>
       <point x="647" y="1085"/>
-      <point x="281" y="893"/>
+      <point x="287" y="884"/>
       <point x="0" y="715" type="curve" smooth="yes"/>
-      <point x="-38" y="691"/>
-      <point x="-26" y="533"/>
+      <point x="-46" y="688"/>
+      <point x="-83" y="415"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
