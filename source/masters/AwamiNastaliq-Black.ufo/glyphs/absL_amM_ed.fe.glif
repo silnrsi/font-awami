@@ -2,22 +2,22 @@
 <glyph name="absLamMed.fe" format="2">
   <advance width="649"/>
   <anchor x="649" y="1236" name="_exit_lamKaf"/>
-  <anchor x="588" y="1555" name="bar"/>
+  <anchor x="578" y="1555" name="bar"/>
   <anchor x="0" y="473" name="exit_feh"/>
   <anchor x="396" y="72" name="n1Lower"/>
-  <anchor x="603" y="2304" name="nUpper"/>
-  <anchor x="603" y="2284" name="smallV"/>
-  <anchor x="603" y="2264" name="tahUpper"/>
+  <anchor x="593" y="2304" name="nUpper"/>
+  <anchor x="593" y="2284" name="smallV"/>
+  <anchor x="593" y="2264" name="tahUpper"/>
   <outline>
     <contour>
-      <point x="111" y="451" type="curve" smooth="yes"/>
-      <point x="71" y="451"/>
-      <point x="37" y="454"/>
+      <point x="98" y="452" type="curve" smooth="yes"/>
+      <point x="68" y="452"/>
+      <point x="35" y="455"/>
       <point x="0" y="463" type="curve" smooth="yes"/>
-      <point x="-28" y="470"/>
-      <point x="-122" y="297"/>
-      <point x="-94" y="297" type="curve" smooth="yes"/>
-      <point x="188" y="297"/>
+      <point x="-74" y="479"/>
+      <point x="-141" y="250"/>
+      <point x="-89" y="238" type="curve" smooth="yes"/>
+      <point x="193" y="238"/>
       <point x="459" y="351"/>
       <point x="587" y="822" type="curve"/>
       <point x="603" y="780"/>
@@ -39,13 +39,19 @@
       <point x="683" y="2026"/>
       <point x="663" y="2004" type="curve" smooth="yes"/>
       <point x="624" y="1961"/>
-      <point x="525" y="1801"/>
-      <point x="515" y="1635" type="curve" smooth="yes"/>
-      <point x="497" y="1324"/>
-      <point x="509" y="1155"/>
-      <point x="507" y="931" type="curve" smooth="yes"/>
-      <point x="504" y="619"/>
-      <point x="314" y="451"/>
+      <point x="505" y="1791"/>
+      <point x="495" y="1625" type="curve" smooth="yes"/>
+      <point x="477" y="1314"/>
+      <point x="489" y="1155"/>
+      <point x="487" y="931" type="curve" smooth="yes"/>
+      <point x="484" y="619"/>
+      <point x="301" y="452"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>

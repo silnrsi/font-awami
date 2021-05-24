@@ -2,19 +2,19 @@
 <glyph name="absLamMed" format="2">
   <advance width="632"/>
   <anchor x="632" y="1013" name="_exit_lamKaf"/>
-  <anchor x="572" y="1332" name="bar"/>
+  <anchor x="562" y="1332" name="bar"/>
   <anchor x="0" y="844" name="exit_lamKaf"/>
   <anchor x="216" y="-225" name="n1Lower"/>
-  <anchor x="586" y="2081" name="nUpper"/>
-  <anchor x="586" y="2061" name="smallV"/>
-  <anchor x="586" y="2041" name="tahUpper"/>
+  <anchor x="576" y="2081" name="nUpper"/>
+  <anchor x="576" y="2061" name="smallV"/>
+  <anchor x="576" y="2041" name="tahUpper"/>
   <outline>
     <contour>
-      <point x="498" y="1412" type="curve" smooth="yes"/>
-      <point x="480" y="1101"/>
-      <point x="492" y="932"/>
-      <point x="490" y="708" type="curve" smooth="yes"/>
-      <point x="488" y="516"/>
+      <point x="478" y="1392" type="curve" smooth="yes"/>
+      <point x="460" y="1073"/>
+      <point x="473" y="1008"/>
+      <point x="470" y="708" type="curve" smooth="yes"/>
+      <point x="468" y="516"/>
       <point x="355" y="424"/>
       <point x="215" y="424" type="curve" smooth="yes"/>
       <point x="66" y="424"/>
@@ -45,7 +45,13 @@
       <point x="666" y="1803"/>
       <point x="646" y="1781" type="curve" smooth="yes"/>
       <point x="606" y="1737"/>
-      <point x="508" y="1578"/>
+      <point x="488" y="1558"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
