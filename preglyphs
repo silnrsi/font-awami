@@ -6,6 +6,7 @@ GLYPHS_FILE="$GLYPHS_FILE_STEM.glyphs"
 GLYPHS_FILE_COPY="$GLYPHS_FILE_STEM-copy.glyphs"
 
 # Make backup of .glyphs file
+echo "Making backup of .glyphs file..."
 cp $GLYPHS_FILE $GLYPHS_FILE_COPY
 
 # Create UFO from Glyphs file
