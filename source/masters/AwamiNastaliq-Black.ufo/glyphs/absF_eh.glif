@@ -2,11 +2,17 @@
 <glyph name="absFeh" format="2">
   <advance width="2670"/>
   <unicode hex="0641"/>
-  <anchor x="420" y="1391" name="honorific"/>
-  <anchor x="1204" y="-320" name="mLower"/>
+  <anchor x="403" y="1491" name="honorific"/>
+  <anchor x="1204" y="-220" name="mLower"/>
   <anchor x="2148" y="2394" name="mUpper"/>
   <outline>
-    <component base="_nukta" xOffset="1768" yOffset="2099"/>
+    <component base="_nukta" xOffset="1838" yOffset="2089"/>
     <component base="absDotlessFeh"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.98,0.36,0.67,1</string>
+    </dict>
+  </lib>
 </glyph>
