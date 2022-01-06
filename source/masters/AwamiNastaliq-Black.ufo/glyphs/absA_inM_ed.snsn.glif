@@ -3,26 +3,12 @@
   <advance width="267"/>
   <anchor x="267" y="1055" name="_exit_ain"/>
   <anchor x="0" y="510" name="exit_seenseen"/>
-  <anchor x="458" y="649" name="n1Lower"/>
-  <anchor x="272" y="1800" name="nUpper"/>
+  <anchor x="488" y="609" name="n1Lower"/>
+  <anchor x="278" y="1849" name="nUpper"/>
   <outline>
+    <component base="_ainMed" xOffset="-294" yOffset="533"/>
     <contour>
-      <point x="588" y="1239" type="curve" smooth="yes"/>
-      <point x="588" y="1413"/>
-      <point x="471" y="1519"/>
-      <point x="308" y="1519" type="curve" smooth="yes"/>
-      <point x="140" y="1519"/>
-      <point x="-86" y="1354"/>
-      <point x="-86" y="1312" type="curve" smooth="yes"/>
-      <point x="-86" y="1300"/>
-      <point x="-77" y="1286"/>
-      <point x="-70" y="1289" type="curve" smooth="yes"/>
-      <point x="-37" y="1304"/>
-      <point x="22" y="1314"/>
-      <point x="54" y="1314" type="curve" smooth="yes"/>
-      <point x="177" y="1314"/>
-      <point x="175" y="1137"/>
-      <point x="267" y="1045" type="curve"/>
+      <point x="267" y="1045" type="curve" smooth="yes"/>
       <point x="267" y="966"/>
       <point x="145" y="836"/>
       <point x="0" y="747" type="curve" smooth="yes"/>
@@ -30,7 +16,10 @@
       <point x="-54" y="463"/>
       <point x="0" y="500" type="curve" smooth="yes"/>
       <point x="320" y="720"/>
-      <point x="588" y="1015"/>
+      <point x="578" y="1115"/>
+      <point x="578" y="1389" type="curve" smooth="yes"/>
+      <point x="578" y="1443"/>
+      <point x="267" y="1110"/>
     </contour>
   </outline>
   <lib>
