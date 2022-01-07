@@ -923,13 +923,13 @@
     <test label="bariyeh + alef madda" rtl="True">
       <string>ےآ ۓآ</string>
     </test>
-    <test background="#ff0000" label="short seq before kaf - not implemented" rtl="True">
+    <test label="short seq before kaf" rtl="True">
       <string>ہرکفلس</string>
     </test>
     <test class="fset7654" label="reh + tcheh" rtl="True">
       <string> پر چی</string>
     </test>
-    <test background="#ff0000" class="fset7654" label="reh_jkl + jeem" rtl="True">
+    <test class="fset7654" label="reh_jkl + jeem" rtl="True">
       <string>ی سر چی کر جی پد چی سہر چی  کر حی لز جی پذ چی بز چی  لر جی</string>
     </test>
     <test class="fset7654" label="lam-alef meem" rtl="True">
@@ -1314,7 +1314,7 @@
     <test label="small tah + zabar" rtl="True">
       <string>کَٹِتَنُٹ</string>
     </test>
-    <test background="#ff0000" label="lots of fun" rtl="True">
+    <test label="lots of fun" rtl="True">
       <comment>Same problem - the zabar is being marked FIX+IGNORE.</comment>
       <string>اَذِیَّتناک</string>
     </test>
@@ -1582,7 +1582,7 @@
     <test label="ain shadda jeem kaf" rtl="True">
       <string>عّجگ عَجگ</string>
     </test>
-    <test background="#ff0000" label="gueh + tcheheh" rtl="True">
+    <test label="gueh + tcheheh" rtl="True">
       <string>لڳڇ</string>
     </test>
     <test label="theh + lam-V" rtl="True">
@@ -1610,6 +1610,44 @@
     </test>
     <test class="fset7654" label="collision - noon - gaf" rtl="True">
       <string>تِخِنگِک</string>
+    </test>
+  </testgroup>
+  <testgroup label="Test Sequences">
+    <test class="fset7654" label="ain gaf jeem meem" rtl="True">
+      <string>عگجم</string>
+    </test>
+    <test class="fset7654" label="alef tah hehgoal feh" rtl="True">
+      <string>اطہف</string>
+    </test>
+    <test class="fset7654" label="feh beh ain reh" rtl="True">
+      <string>قنعَڑ</string>
+    </test>
+    <test class="fset7654" label="jeem meem-alt lam waw" rtl="True">
+      <string>جملو</string>
+    </test>
+    <test class="fset7654" label="kaf seen hehdo" rtl="True">
+      <string>کشھ</string>
+    </test>
+    <test class="fset7654" label="sad beh lam noon" rtl="True">
+      <string>ضیلن</string>
+    </test>
+    <test class="fset7654" label="dal seen bariyeh" rtl="True">
+      <string>ذسے</string>
+    </test>
+    <test class="fset7654" label="hehgoal sad qaf" rtl="True">
+      <string>ہصق</string>
+    </test>
+    <test class="fset7654" label="meem kaf reh" rtl="True">
+      <string>مکر</string>
+    </test>
+    <test class="fset7654" label="upper nuqtas" rtl="True">
+      <string>شغقمف أ څۂڑ غنتض خئث څ ز نتثݩٹ</string>
+    </test>
+    <test class="fset7654" label="lower nuqtas" rtl="True">
+      <string>جیب ٻږ ڊ ݮپنڕ</string>
+    </test>
+    <test class="fset7654" label="seens" rtl="True">
+      <string>شل شر شم شہ لشل لشر لشم لشہ</string>
     </test>
   </testgroup>
   <testgroup label="Sequencing">

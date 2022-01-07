@@ -6,7 +6,7 @@
 /*
 	This file is part of the Awami Nastaliq font 
 	(http://software.sil.org/awami) and is 
-	Copyright (c) 2014-2021 SIL International (http://www.sil.org/),
+	Copyright (c) 2014-2022 SIL International (http://www.sil.org/),
 	with Reserved Font Names "Awami" and "SIL".
 
 	This Font Software is licensed under the SIL Open Font License,
@@ -809,7 +809,8 @@ csKafIni_top_taller = (
 );
 
 // Must match csKafMed_medium.
-csKafMed_top_tall = (
+
+csKafMed_top_tall_noGaf = (
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,                                       // Be,BeM1,BeM2
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,                    // BeRe,BeNn,BeHg,BeF
 	g__kafTop_jm_tall,/*jm*/ g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,              // Jm,Re,Sn,SnSn
@@ -817,8 +818,11 @@ csKafMed_top_tall = (
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, // Qf,Mm,MmX,Nn,Dk
 	// g__kafMedTop_tall -- no Kf
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,						         // HgM,HgF,Hd,Ch
-	g__kafTop_m_bogus,/*by*/	                                                                     // By
+	g__kafTop_m_bogus /*by*/	                                                                     // By
+);
 
+csKafMed_top_tall = (
+	csKafMed_top_tall_noGaf,
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,                                       // Be,BeM1,BeM2
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,                    // BeRe,BeNn,BeHg,BeF
 	g__gafTop_bj_tall,/*jm*/ g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall,              // Jm,Re,Sn,SnSn
@@ -830,10 +834,12 @@ csKafMed_top_tall = (
 );
 
 
+
+
 // not used:
 //csKafIM_top_tall = (csKafIni_top_taller, csKafMed_top_tall);
 
-/*** not used
+/*** not used, since the medshort form is only needed to deal with preceding glyphs
 // Must match csKafIni_medium.
 csKafIni_top_medshort = (
 	g__kafIniTop_medshort, g__kafIniTop_medshort, g__kafIniTop_medshort,

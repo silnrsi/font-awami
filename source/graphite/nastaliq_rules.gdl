@@ -6,7 +6,7 @@
 /*
 	This file is part of the Awami Nastaliq font 
 	(http://software.sil.org/awami) and is 
-	Copyright (c) 2014-2021 SIL International (http://www.sil.org/),
+	Copyright (c) 2014-2022 SIL International (http://www.sil.org/),
 	with Reserved Font Names "Awami" and "SIL".
 
 	This Font Software is licensed under the SIL Open Font License,
@@ -43,7 +43,6 @@
 	18 (11) - perform collision avoidance
 */
 
-
 // Standard definitions and abbreviations:
 #include "stddef.gdh"
 
@@ -58,6 +57,12 @@
 
 Bidi = true;
 ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
+
+// These values must match what are set in the master_... files:
+#define STYLE_REG      0
+#define STYLE_BOOK     1
+#define STYLE_BOLD     2
+#define STYLE_BOOKBOLD 3
 
 
 #if DO_COL_FIX

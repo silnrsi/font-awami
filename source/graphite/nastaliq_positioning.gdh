@@ -6,7 +6,7 @@
 /*
 	This file is part of the Awami Nastaliq font 
 	(http://software.sil.org/awami) and is 
-	Copyright (c) 2014-2021 SIL International (http://www.sil.org/),
+	Copyright (c) 2014-2022 SIL International (http://www.sil.org/),
 	with Reserved Font Names "Awami" and "SIL".
 
 	This Font Software is licensed under the SIL Open Font License,
@@ -955,6 +955,12 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } } / cIni cNuqtaLikeLower? _;
 
+table(glyph)
+cNarrowTop = (cFehIM gFehFin cLamIM gLamFin);
+cFinNotNarrow = cFin;
+cFinNotNarrow -= (gFehFin gLamFin);
+endtable;
+
 // Nuqtas on finals can be moved quite a bit to the left.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -962,7 +968,7 @@ cNuqtaLikeUpper { collision {
 	max.x = 200m;
 	min.y = -300m;
 	max.y = 1000m;
-} } /  cFin _;
+} } /  cFinNotNarrow _;
 
 /*** Special case: jeem followed by nuqta
 cNuqtaLikeUpper { collision {
@@ -974,6 +980,16 @@ cNuqtaLikeUpper { collision {
 	max.y = 1000m;
 } }  /  cJeemIni  cNuqtaLike?  cBase  _; 
 ***/
+
+// Above narrow glyphs with obvious centers, nuqtas shouldn't move far left or right.
+// WHAT ELSE SHOULD GO IN HERE????  Ain?
+cNuqtaLikeUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -80m;
+	max.x = 80m;
+	min.y = -300m;
+	max.y = 1000m;
+} }  /  cNarrowTop  _;
 
 // Default case: nuqtas above (other than initial) can move more to the left than the right.
 cNuqtaLikeUpper { collision {
@@ -1176,38 +1192,7 @@ pass(4) { CollisionFix = 5 }  // 11
 endpass;  // 4 (11)
 endif;
 
-
-/**************************************
-
-#define CHARSEQ cMed cNuqtaLike? cDiacritic?
-#define SEQ2 [[CHARSEQ]? CHARSEQ]?
-#define SEQ3 [[[CHARSEQ]? CHARSEQ]? CHARSEQ]?
-#define YBELOWBYEH -450
-
-if (collFix > 1)
-pass(4) { CollisionFix = 4 }
-
-// Next: adjust for nuqtas moved below a bariyeh.
-// Needed for, eg, \u0686\u067E\u0679\u06CC\u0646\u06D2
-
-cNuqtaLikeLower {
-	collision.max.y = 0m; // ideally this would be set to what it is shifted by already
-	sequence { class = ORDER_LNUQTAS_SUB_BYEH; order = 0 }
-}  / (c_medial c_initial)  _ {position.y < 0}  cDiacritic?  SEQ2 gBariyehFin;
-
-// Nuqtas still above a bariyeh need more flexibility; if they are initial, let them move right:
-cNuqtaLikeLower {
-	collision.max.x = 750m;
-	sequence.class = 0;
-}  / cIni  _ {position.y > 100m}  cDiacritic?  SEQ2 gBariyehFin;
-
-
-endpass;  // 4
-endif;    // collFix > 1
-
-*****************************************/
-
-endtable;
+endtable; // positioning
 
 #endif // DO_COL_FIX
 
@@ -1370,14 +1355,17 @@ csKafMed_medium  g__kafTop_null  >  @K  @T
 csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 	>  csGafIM_base$G  csGafIM_top_shorter$G  
 			@Nfb STAYBELOWKAF // keep nuqta from hopping above kaf
-			csKafMed_base$K  csKafMed_top_medshort$K
+			csKafMed_base$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
+
+csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_tall$K
+	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_medshort_noGaf$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_tall_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
-
 
 // Gaf + kaf/gaf-medial => shorter
 csGafIM_medium g__kafTop_null  csKafMed_medium  g__kafTop_null
@@ -1593,51 +1581,52 @@ cTakes_kafTopDia {att {to=@K2; with=exit; at=entrance}}
 cIniMed {att {to=@K; with=exit; at=entrance}}  csKafMed_base {insert=1} / _=P  MARKS2N ^ _=K;
 
 
-
 // kaf tops
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
 cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
 
-// Alt-height kaf tops before short finals - reprocess to attach to the short final
+// Alt-height kaf tops before short finals - reprocess to attach to the short final;
+// this is needed because attaching the kaf base to the final takes precedence over the rules above
+// that attach the tops.
 cTakes_kafTop_bjDia=K  ckafTop_bjDia {att {to=@K; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true}  csFinal_short {reattached=1}
 	/  ^ _=K  _=T  MARKS _=F {reattached==0};
 cTakes_kafTopDia=K     cKaf_top      {att {to=@K; at=kafTopS;    with=kafTopM};    passKeySlot = true}  csFinal_short {reattached=1}
 	/  ^ _=K  _=T  MARKS _=F {reattached==0};
 
-c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}
-	gChotiyehFin_short {passKeySlot = true; insert = 1}
-	/  _ MARKS2N ^ _=F;
-c_exit_chotiyehBfkl {att {to=@F; with=exit; at=entrance}}
-	gChotiyehFin_bfkl_short {passKeySlot = true; insert = 1}
-	/  _ MARKS2N ^ _=F;
 
+// Currently no short bariyeh
+/*******
 table(glyph)
 // Use a slightly higher AP when attaching to a short bariyeh, to save a little more space:
 c_exit_bariyeh { exit_by_alt.x = exit.x + 12m; exit_by_alt.y = exit.y + 30m };
 endtable;
+c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+*******/
 
-////c_exit_bariyeh {att {to=@F; with=exit_by_alt; at=entr_bariyeh}}	gBariyehFin_short {passKeySlot = true; insert = 1}
-////	/  _ MARKS2N ^ _=F;
-
-c_exit_seen      {att {to=@F; with=exit;  at=entrance}}  gSeenFin_short     {passKeySlot = true; insert = 1}
+c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}     gChotiyehFin_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_jeem      {att {to=@F; with=exit;  at=entrance}}  gJeemFin_short     {passKeySlot = true; insert = 1}
+c_exit_chotiyehBfkl {att {to=@F; with=exit; at=entrance}} gChotiyehFin_bfkl_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_ain       {att {to=@F; with=exit;  at=entrance}}  gAinFin_short      {passKeySlot = true; insert = 1}
+c_exit_seen      {att {to=@F; with=exit;  at=entrance}}   gSeenFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_noon      {att {to=@F; with=exit;  at=entrance}}  gNoonFin_short     {passKeySlot = true; insert = 1}
+c_exit_jeem      {att {to=@F; with=exit;  at=entrance}}   gJeemFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}  gQafFin_short      {passKeySlot = true; insert = 1}
+c_exit_ain       {att {to=@F; with=exit;  at=entrance}}   gAinFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_qafWawStfh {att{to=@F; with=exit;  at=entrance}}  gQafFin_stfh_short {passKeySlot = true; insert = 1}
+c_exit_noon      {att {to=@F; with=exit;  at=entrance}}   gNoonFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}  gLamFin_short      {passKeySlot = true; insert = 1}
+c_exit_qafWaw    {att {to=@F; with=exit;  at=entrance}}   gQafFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_meem       {att {to=@F; with=exit; at=entrance}}  gMeemFin_short     {passKeySlot = true; insert = 1}
+c_exit_qafWawStfh {att{to=@F; with=exit;  at=entrance}}   gQafFin_stfh_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_jeem       {att {to=@F; with=exit; at=entrance}}  gJeemMedBy_short   {passKeySlot = true; insert = 1}
+c_exit_lamKaf     {att {to=@F; with=exit; at=entrance}}   gLamFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_beh        {att {to=@F; with=exit; at=entrance}}  gBehMedQf_short    {passKeySlot = true; insert = 1}
+c_exit_meem       {att {to=@F; with=exit; at=entrance}}   gMeemFin_short     {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_jeem       {att {to=@F; with=exit; at=entrance}}   gJeemMedBy_short   {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_beh        {att {to=@F; with=exit; at=entrance}}   gBehMedQf_short    {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 
 
@@ -1666,6 +1655,8 @@ cTakes_ring_short = csFinal_short;
 cTakes_ring_short &= cTakes_ringDia;
 
 endtable;  // glyph
+
+// Reattach nuqta-like glyphs.
 
 csFinal_short  chamzaUpperDia {att {to=@F; at=hamzaUpperS; with=hamzaUpperM}} / _=F  _;
 csFinal_short  ctahUpperDia   {att {to=@F; at=tahUpperS; with=tahUpperM}}     / _=F  _;

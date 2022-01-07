@@ -3,7 +3,7 @@
 
 #	This file is part of the Awami Nastaliq font
 #	(http://software.sil.org/awami) and is
-#	Copyright (c) 2014-2018 SIL International (http://www.sil.org/),
+#	Copyright (c) 2014-2022 SIL International (http://www.sil.org/),
 # with Reserved Font Names "Awami" and "SIL".
 #
 # This Font Software is licensed under the SIL Open Font License,
@@ -55,7 +55,7 @@ cmds = [
     #name('${DS:FILENAME_BASE}', lang='en-US', subfamily = 'Regular'),
     # remove buggy tables:
     cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-    cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox.json"),
+    cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox_${DS:FILENAME_BASE}.json"),
     # for removing psnames:
     ####cmd('psfix -s ${DEP} ${TGT}'),
 ]
@@ -81,7 +81,8 @@ designspace(dspace_file,
     version=VERSION,  # Needed to ensure dev information on version string
 
     graphite = gdl(genout + '${DS:FILENAME_BASE}.gdl',
-    		master = 'source/graphite/nastaliq_rules.gdl', params='-D -w3541 -w2504 -w4510',  ##### -c',
+    		master = 'source/graphite/master_${DS:FILENAME_BASE}.gdl',
+    		params='-D -w3541 -w2504 -w4510 -e gdlerr_${DS:FILENAME_BASE}.txt',  ##### -c',
         depends = glob.glob('*.gdh')),
     
     opentype = fea('source/simple.fea', no_make=1, no_test=True),
