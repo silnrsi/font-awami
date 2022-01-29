@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absGafMed.by" format="2">
   <advance width="888"/>
-  <anchor x="888" y="592" name="_exit_lamKaf"/>
+  <anchor x="888" y="686" name="_exit_lamKaf"/>
   <anchor x="0" y="-393" name="exit_bariyeh"/>
   <anchor x="769" y="1874" name="kafExclude"/>
   <anchor x="1176" y="-1094" name="n1Lower"/>
@@ -11,4 +11,10 @@
     <component base="absKehehMed.by"/>
     <component base="_gafStroke" xOffset="331" yOffset="1769"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>

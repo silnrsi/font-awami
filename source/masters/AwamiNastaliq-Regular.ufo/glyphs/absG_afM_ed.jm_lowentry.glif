@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absGafMed.jm_lowentry" format="2">
   <advance width="961"/>
-  <anchor x="961" y="533" name="_exit_lamKaf"/>
+  <anchor x="964" y="583" name="_exit_lamKaf"/>
   <anchor x="0" y="-146" name="exit_jeem"/>
   <anchor x="820" y="1800" name="kafExclude"/>
   <anchor x="1412" y="-1391" name="mLowerC"/>
@@ -12,4 +12,10 @@
     <component base="absKehehMed.jm_lowentry"/>
     <component base="_gafStroke" xOffset="393" yOffset="1822"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
