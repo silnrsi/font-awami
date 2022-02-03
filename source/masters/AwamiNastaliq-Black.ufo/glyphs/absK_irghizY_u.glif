@@ -2,11 +2,17 @@
 <glyph name="absKirghizYu" format="2">
   <advance width="860"/>
   <unicode hex="06C9"/>
-  <anchor x="420" y="1975" name="honorific"/>
-  <anchor x="358" y="-320" name="mLower"/>
-  <anchor x="497" y="1990" name="mUpper"/>
+  <anchor x="420" y="2215" name="honorific"/>
+  <anchor x="358" y="-220" name="mLower"/>
+  <anchor x="497" y="2230" name="mUpper"/>
   <outline>
     <component base="absWaw"/>
-    <component base="_smallVinv" xOffset="490" yOffset="1346"/>
+    <component base="_smallVinv" xOffset="490" yOffset="1586"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>

@@ -2,11 +2,17 @@
 <glyph name="absWawRing" format="2">
   <advance width="1027"/>
   <unicode hex="06C4"/>
-  <anchor x="420" y="1396" name="honorific"/>
-  <anchor x="521" y="-320" name="mLower"/>
-  <anchor x="678" y="1310" name="mUpper"/>
+  <anchor x="420" y="1796" name="honorific"/>
+  <anchor x="521" y="-220" name="mLower"/>
+  <anchor x="662" y="1602" name="mUpper"/>
   <outline>
     <component base="absWaw" xOffset="167"/>
-    <component base="_attachedRing" xOffset="267" yOffset="-12"/>
+    <component base="_attachedRing" xOffset="162" yOffset="29"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
