@@ -4,9 +4,15 @@
   <unicode hex="0775"/>
   <anchor x="140" y="2064" name="honorific"/>
   <anchor x="635" y="-920" name="mLower"/>
-  <anchor x="800" y="2075" name="mUpper"/>
+  <anchor x="800" y="1975" name="mUpper"/>
   <outline>
     <component base="nlqChotiyeh"/>
-    <component base="absEasternTwo" xScale="0.45" yScale="0.45" xOffset="585" yOffset="1221"/>
+    <component base="absEasternTwo" xScale="0.45" yScale="0.45" xOffset="585" yOffset="1121"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>

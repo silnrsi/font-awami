@@ -3,10 +3,16 @@
   <advance width="1812"/>
   <unicode hex="0626"/>
   <anchor x="420" y="1793" name="honorific"/>
-  <anchor x="635" y="-920" name="mLower"/>
-  <anchor x="816" y="1953" name="mUpper"/>
+  <anchor x="675" y="-838" name="mLower"/>
+  <anchor x="816" y="1893" name="mUpper"/>
   <outline>
     <component base="nlqChotiyeh"/>
-    <component base="_hamza" xOffset="834" yOffset="128"/>
+    <component base="_hamza" xOffset="834" yOffset="68"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
