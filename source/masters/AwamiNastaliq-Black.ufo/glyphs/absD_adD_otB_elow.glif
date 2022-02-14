@@ -3,11 +3,17 @@
   <advance width="2472"/>
   <unicode hex="06FB"/>
   <anchor x="420" y="1394" name="honorific"/>
-  <anchor x="645" y="-918" name="mLower"/>
-  <anchor x="1855" y="2664" name="mUpper"/>
+  <anchor x="645" y="-818" name="mLower"/>
+  <anchor x="1905" y="2667" name="mUpper"/>
   <outline>
     <component base="absSad"/>
-    <component base="_dot1u" xOffset="1888" yOffset="2281"/>
-    <component base="_dot1l" xOffset="1978" yOffset="386"/>
+    <component base="_dot1l" xOffset="1978" yOffset="456"/>
+    <component base="_nukta" xOffset="1562" yOffset="2276"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
