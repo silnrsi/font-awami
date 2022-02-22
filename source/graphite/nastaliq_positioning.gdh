@@ -1449,7 +1449,11 @@ cNuqtaLikeUpperNoKT  /  (cLamIM cKafIM cTahIM) MARKS  cMed _ { position.y > PUSH
 cNuqtaLikeUpperNoKT { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
+#if (STYLE >= STYLE_BOLD)
+cNuqtaLikeUpperNoKT { shift.y = -100m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+#else
 cNuqtaLikeUpperNoKT { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+#endif
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
 	/ _ { position.y < PUSHUP } cNuqtaLikeUpper? cDiacriticLower;
@@ -1772,6 +1776,11 @@ cIsoFin=B  cNuqtaLikeUpper=N
 	cDiacriticUpper=D {att {to=@N; at=mUpperS; with=mUpperM}; SETDIACINS}
 	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
 		/ ^  _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
+
+cTakes_alefDia=B  
+	gKharizabar=D {att {to=@B; at=alefS; with=mUpperM}; SETDIACINS}
+	chonorificDia=H {att {to=@B; at=honorificS; with=honorificM}; SETDIACINS}
+		/ ^ _=B  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0}  _=H {att.to==0};
 
 cIsoFin=B  
 	cDiacriticUpper=D {att {to=@B; at=mUpperS; with=mUpperM}; SETDIACINS}
