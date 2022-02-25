@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="hyphen" format="2">
-  <advance width="682"/>
-  <unicode hex="2010"/>
+  <advance width="698"/>
+  <unicode hex="002D"/>
+  <anchor x="343" y="1000" name="U"/>
   <outline>
-    <component base="hyphenminus"/>
+    <contour>
+      <point x="658" y="368" type="line"/>
+      <point x="658" y="566" type="line"/>
+      <point x="39" y="566" type="line"/>
+      <point x="39" y="368" type="line"/>
+    </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
 </glyph>
