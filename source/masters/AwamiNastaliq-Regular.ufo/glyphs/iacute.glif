@@ -3,7 +3,13 @@
   <advance width="570"/>
   <unicode hex="00ED"/>
   <outline>
-    <component base="dotlessi"/>
-    <component base="acutecomb" xOffset="800"/>
+    <component base="idotless"/>
+    <component base="acutecomb.copy1" xOffset="800"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.85,0.26,0.06,1</string>
+    </dict>
+  </lib>
 </glyph>
