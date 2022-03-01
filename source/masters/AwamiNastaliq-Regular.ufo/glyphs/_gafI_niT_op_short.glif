@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="_gafIniTop_short" format="2">
+  <advance width="1000"/>
   <anchor x="-52" y="312" name="_kafTop"/>
   <anchor x="-125" y="1431" name="gafStroke"/>
-  <anchor x="2236" y="-1228" name="mLowerC"/>
   <anchor x="84" y="1804" name="nUpper"/>
   <anchor x="631" y="1365" name="ring"/>
   <outline>
     <component base="_kehehIniTop_short"/>
     <component base="_gafStroke_short" xOffset="-469" yOffset="1506"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
