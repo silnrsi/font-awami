@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="_gafTop_bj_short" format="2">
   <advance width="1000"/>
-  <anchor x="-1" y="686" name="_kafTop_bj"/>
+  <anchor x="0" y="676" name="_kafTop_bj"/>
   <anchor x="-785" y="358" name="exit_bariyeh"/>
   <anchor x="-23" y="1865" name="gafStroke"/>
   <anchor x="-10" y="1630" name="kafExclude"/>
@@ -10,6 +10,12 @@
   <anchor x="733" y="1531" name="ring"/>
   <outline>
     <component base="_kehehTop_bj_short"/>
-    <component base="_gafStroke_short" xOffset="-466" yOffset="1588"/>
+    <component base="_gafStroke_short" xOffset="-446" yOffset="1568"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>

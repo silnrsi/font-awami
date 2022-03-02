@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="_gafMedTop_shorter" format="2">
-  <advance width="1000"/>
-  <anchor x="-55" y="471" name="_kafTop"/>
-  <anchor x="36" y="1596" name="kafExclude"/>
-  <anchor x="422" y="-1347" name="mLowerC"/>
-  <anchor x="100" y="1924" name="nUpper"/>
-  <anchor x="598" y="1394" name="ring"/>
+  <advance width="1055"/>
+  <anchor x="0" y="471" name="_kafTop"/>
+  <anchor x="91" y="1596" name="kafExclude"/>
+  <anchor x="477" y="-1347" name="mLowerC"/>
+  <anchor x="155" y="1924" name="nUpper"/>
+  <anchor x="653" y="1394" name="ring"/>
   <outline>
     <component base="_kehehMedTop_shorter"/>
-    <component base="_gafStroke_short" xOffset="-502" yOffset="1537"/>
+    <component base="_gafStroke_short" xOffset="-540" yOffset="1427"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
