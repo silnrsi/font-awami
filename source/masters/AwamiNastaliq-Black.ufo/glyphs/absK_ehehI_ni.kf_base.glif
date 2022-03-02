@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absKehehIni.kf_base" format="2">
   <advance width="1486"/>
-  <anchor x="0" y="584" name="exit_lamKaf"/>
+  <anchor x="2" y="584" name="exit_lamKaf"/>
   <anchor x="437" y="1667" name="gafStroke"/>
   <anchor x="438" y="1293" name="kafExclude"/>
-  <anchor x="476" y="418" name="kafTop"/>
+  <anchor x="456" y="418" name="kafTop"/>
   <anchor x="1336" y="900" name="kernBbRight"/>
   <anchor x="520" y="-402" name="n1Lower"/>
   <anchor x="520" y="1856" name="nUpper"/>
@@ -12,4 +12,10 @@
   <outline>
     <component base="absKehehIni.dk_base"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
