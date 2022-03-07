@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="four.small" format="2">
-  <advance width="851"/>
-  <anchor x="2" y="0" name="_digit"/>
+  <advance width="852"/>
+  <anchor x="0" y="0" name="_digit"/>
   <anchor x="852" y="0" name="digit"/>
   <outline>
+    <component base="four" xScale="0.83" yScale="0.83"/>
     <contour>
       <point x="807" y="299" type="line"/>
       <point x="807" y="415" type="line"/>
@@ -26,7 +27,7 @@
   <lib>
     <dict>
       <key>public.markColor</key>
-      <string>0.97,1,0,1</string>
+      <string>0.99,0.62,0.11,1</string>
     </dict>
   </lib>
 </glyph>

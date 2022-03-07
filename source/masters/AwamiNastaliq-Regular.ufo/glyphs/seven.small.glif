@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="seven.small" format="2">
-  <advance width="851"/>
-  <anchor x="2" y="0" name="_digit"/>
+  <advance width="852"/>
+  <anchor x="0" y="0" name="_digit"/>
   <anchor x="852" y="0" name="digit"/>
   <outline>
-    <contour>
-      <point x="781" y="1096" type="line"/>
-      <point x="781" y="1127" type="line"/>
-      <point x="181" y="1127" type="line"/>
-      <point x="69" y="862" type="line"/>
-      <point x="95" y="852" type="line"/>
-      <point x="130" y="913"/>
-      <point x="156" y="990"/>
-      <point x="343" y="991" type="curve"/>
-      <point x="651" y="991" type="line"/>
-      <point x="314" y="-25" type="line"/>
-      <point x="406" y="-25" type="line"/>
-    </contour>
+    <component base="seven" xScale="0.83" yScale="0.83"/>
   </outline>
   <lib>
     <dict>
       <key>public.markColor</key>
-      <string>0.97,1,0,1</string>
+      <string>0.99,0.62,0.11,1</string>
     </dict>
   </lib>
 </glyph>
