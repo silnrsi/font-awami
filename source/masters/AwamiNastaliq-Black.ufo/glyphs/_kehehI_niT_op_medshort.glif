@@ -3,7 +3,7 @@
   <anchor x="-52" y="522" name="_kafTop"/>
   <anchor x="-52" y="1504" name="kafExclude"/>
   <anchor x="-8" y="1923" name="nUpper"/>
-  <anchor x="583" y="1646" name="ring"/>
+  <anchor x="583" y="1576" name="ring"/>
   <outline>
     <contour>
       <point x="509" y="1808" type="curve" smooth="yes"/>
@@ -17,12 +17,12 @@
       <point x="70" y="496"/>
       <point x="80" y="596" type="curve" smooth="yes"/>
       <point x="90" y="700"/>
-      <point x="102" y="866"/>
+      <point x="99" y="866"/>
       <point x="108" y="1092" type="curve" smooth="yes"/>
-      <point x="117" y="1444"/>
-      <point x="247" y="1426"/>
-      <point x="503" y="1611" type="curve" smooth="yes"/>
-      <point x="850" y="1863"/>
+      <point x="117" y="1324"/>
+      <point x="247" y="1358"/>
+      <point x="503" y="1543" type="curve" smooth="yes"/>
+      <point x="850" y="1795"/>
       <point x="918" y="1915"/>
       <point x="929" y="2123" type="curve" smooth="yes"/>
       <point x="930" y="2141"/>
@@ -32,10 +32,22 @@
       <point x="811" y="2033"/>
     </contour>
     <contour>
-      <point x="-256" y="839" type="line"/>
-      <point x="-256" y="679" type="line"/>
-      <point x="365" y="679" type="line"/>
-      <point x="365" y="839" type="line"/>
+      <point x="-221" y="774" type="line"/>
+      <point x="-108" y="661" type="line"/>
+      <point x="331" y="1100" type="line"/>
+      <point x="218" y="1213" type="line"/>
+    </contour>
+    <contour>
+      <point x="-108" y="1213" type="line"/>
+      <point x="-221" y="1100" type="line"/>
+      <point x="218" y="661" type="line"/>
+      <point x="331" y="774" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
 </glyph>
