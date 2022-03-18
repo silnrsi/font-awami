@@ -2,21 +2,12 @@ DOCUMENTATION
 Awami Nastaliq
 ========================
 
-This file describes the documentation files included with the Awami Nastaliq 
-font family. This information should be distributed along with the 
-Awami Nastaliq fonts and any derivative works.
+The documentation for this project is listed in index.html.
 
-Primary documentation for the Awami Nastaliq font family is on the Awami Nastaliq 
-website (http://software.sil.org/awami/).
+There are also PDF versions in the `pdf` folder.
 
-The AwamiNastaliq-features.pdf file illustrates the use of Graphite features.
+These are produced from markdown sources (in `source`) using pandoc,
+weasyprint, and custom python scripts. See the `makedocs` shell script
+in the main project folder.
 
-The AwamiNastaliq-features.odt file illustrates the use of Graphite features 
-(source file for the pdf).
-
-The AwamiNastaliq-typesample.pdf file gives a sample of all the characters in 
-the font.
-
-The AwamiNastaliq-typesample.odt file gives a sample of all the characters in 
-the font (source file for the pdf).
-
+FYI: Since Awami Nastaliq is a Graphite-only font, the pdfs are manually created using FireFox.
