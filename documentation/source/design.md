@@ -32,10 +32,12 @@ An example of some text is shown below.
 
 For a complete list of characters included in Awami Nastaliq, see [Character Set Support](charset.md).
 
-
+<!-- 
 ## Rendering the Allah ligature
 
 In certain types of literature, the name *Allah* and words related to this name are given unique rendering. For a list of the rendering rules, see [Rendering the Allah ligature](allah.md).
+
+-->
 
 ## Automatic collision-fixing
 

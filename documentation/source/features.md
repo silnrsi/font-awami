@@ -33,7 +33,6 @@ For applications that do not make use of Graphite features or the OpenType Chara
 
 There are some character shape differences in different languages which use the Arabic script. These can be accessed by using Graphite features.  
 
-
 Unless otherwise indicated, the first feature in a table is the default.
 
 #### Hook on medial heh-goal
@@ -41,7 +40,7 @@ Unless otherwise indicated, the first feature in a table is the default.
 <span class='affects'>Affects: U+06C1, U+06C2</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 True| <span dir="rtl" class='awami-R normal'>&#x628;<font color="red">&#x6C1;</font>&#x628; &#x628;<font color="red">&#x6C2;</font>&#x628;</span>| `hehk=1`
 False | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hehk" 0'>&#x628;<font color="red">&#x6C1;</font>&#x628; &#x628;<font color="red">&#x6C2;</font>&#x628;</span>| `hehk=0`
 
@@ -50,7 +49,7 @@ False | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "he
 <span class='affects'>Affects: U+06BE</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Heart shape | <span dir="rtl" class='awami-R normal'><font color="red">&#x6BE;</font>&#x627;</span> | `hedo=0`
 Round | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hedo" 1'><font color="red">&#x6BE;</font>&#x627;</span>| `hedo=1`
 
@@ -59,7 +58,7 @@ Round | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "he
 <span class='affects'>Affects: U+06B5</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 V over stem | <span dir="rtl" class='awami-R normal'><font color="red">&#x6B5;</font> &#x6B5;&#x628;&#x6B5;&#x628;<font color="red">&#x6B5;</font></span>| `lamv=0`
 V over bowl | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "lamv" 1'><font color="red">&#x6B5;</font> &#x6B5;&#x628;&#x6B5;&#x628;<font color="red">&#x6B5;</font></span>| `lamv=1`
 
@@ -68,7 +67,7 @@ V over bowl | <span dir="rtl" class='awami-R normal' style='font-feature-setting
 <span class='affects'>Affects: U+06D4</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Dash | <span dir="rtl" class='awami-R normal'>&#x62c;&#x62c;&#x62c;<font color="red">&#x6d4;</font></span>| `cv85=0`
 Dot | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv85" 1'>&#x62c;&#x62c;&#x62c;<font color="red">&#x6d4;</font></span>| `cv85=1`
 
@@ -89,7 +88,7 @@ Latin | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "pu
 <span class='affects'>Affects: U+0652</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Open down | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 1'>&#x628;&#x652; &#x25cc;&#x652;</span>| `cv78=1`
 Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 2'>&#x628;&#x652; &#x25cc;&#x652;</font></span>| `cv78=2`
 
@@ -136,7 +135,7 @@ On (default) | <span dir="rtl" class='awami-R normal' style='font-feature-settin
 #### Small nuqtas
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Off | <span dir="rtl" class='awami-R normal'>ݜۻڜڃغ</span>| `snuq=0`
 On | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "snuq" 1'>ݜۻڜڃغ</font></span>| `snuq=1`
 

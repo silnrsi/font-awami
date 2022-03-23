@@ -25,6 +25,30 @@
     <p>If you want to enter characters that are not supported by any system keyboard, and to access the full Unicode range, we suggest you use gucharmap, kcharselect on Ubuntu or similar software. Another method of entering some symbols is provided by a few applications such as Adobe InDesign. They can display a glyph palette that shows all the glyphs (symbols) in a font and allow you to enter them by clicking on the glyph you want.</p>
     <p>Other suggestions are listed here: <a href="http://scriptsource.org/entry/ytr8g8n6sw">Keyboard Systems Overview</a>.</p>
     <p>See <a href="charset.html">Character set support</a> for details of the Unicode characters supported by this font.</p>
+    <h3 id="keyman-keyboards">Keyman keyboards</h3>
+    <p><a href="https://keyman.com/">Keyman</a> provides quite a few keyboards for languages which use the Nastaliq style of Arabic script. Go to <a href="https://keyman.com/">Keyman.com</a>. Click on <strong>Keyboards</strong> and then type the language for which you wish to select a keyboard. It will offer you keyboard packages if any are available for that language.</p>
+    <h3 id="installing-an-urdu-keyboard">Installing an Urdu keyboard</h3>
+    <h4 id="on-windows-810">On Windows 8/10:</h4>
+    <ul>
+    <li>Open the Language control panel.</li>
+    <li>Click on <strong>Add a language</strong>.</li>
+    <li>Choose "Urdu (Pakistan)" and click <strong>OK</strong>.</li>
+    <li>Activate the keyboard using the Taskbar control or language bar.</li>
+    </ul>
+    <h4 id="on-windows-7">On Windows 7:</h4>
+    <ul>
+    <li>Open the Region and Language control panel.</li>
+    <li>Click on the <strong>Keyboards and Languages tab</strong>.</li>
+    <li>Choose <strong>Change keyboards...</strong></li>
+    <li>Choose <strong>Add...</strong></li>
+    <li>Select "Urdu (Islamic Republic of Pakistan)" and click <strong>OK</strong>.</li>
+    <li>Activate the keyboard using the Taskbar control or language bar.</li>
+    </ul>
+    <h4 id="to-see-a-visual-layout-for-the-keyboard">To see a visual layout for the keyboard:</h4>
+    <ul>
+    <li>Click on the <strong>Start Menu</strong>, choose <strong>All Programs</strong>, <strong>Accessories</strong>, <strong>Ease of Access</strong>, <strong>On-screen Keyboard</strong>.</li>
+    <li>On Windows 8/10: see <a href="http://windows.microsoft.com/en-us/windows-8/type-with-the-on-screen-keyboard">Use the On-Screen Keyboard (OSK) to type</a>.</li>
+    </ul>
     <h2 id="rendering-and-application-support">Rendering and application support</h2>
     <p>The Awami Nastaliq font requires software enabled with the very latest <a href="http://graphite.sil.org/">Graphite</a> engine (version 1.3.4+) in order to render correctly. The font does not support OpenType rendering. <strong>It will not work with standard software such as Microsoft Office</strong>.</p>
     <p>Currently, the only software that can render Awami Nastaliq are the <a href="https://www.mozilla.org/firefox">Firefox web browser</a>, the <a href="https://www.libreoffice.org/">LibreOffice suite</a>, <a href="https://www.tug.org/texlive/">XeTeX/XeLaTeX</a>, and linguistic software such as <a href="http://software.sil.org/fieldworks/">FieldWorks</a>, <a href="https://paratext.org/">Paratext</a>, and <a href="http://bloomlibrary.org/">Bloom</a>.</p>
@@ -46,14 +70,26 @@
     <p>Explanations of this parameter are at:</p>
     <p><a href="http://tug.org/pipermail/xetex/2016-February/026398.html">http://tug.org/pipermail/xetex/2016-February/026398.html</a> <a href="http://tug.org/pipermail/xetex/2016-February/026401.html">http://tug.org/pipermail/xetex/2016-February/026401.html</a> <a href="http://tug.org/pipermail/xetex/2016-February/026402.html">http://tug.org/pipermail/xetex/2016-February/026402.html</a> <a href="http://tug.org/pipermail/xetex/2016-February/026403.html">http://tug.org/pipermail/xetex/2016-February/026403.html</a> <a href="http://tug.org/pipermail/xetex/2016-February/026474.html">http://tug.org/pipermail/xetex/2016-February/026474.html</a></p>
     <p>This parameter should be set in a .tex file. The file could look something like:</p>
-    <p><code> %% Cross-space contextualization</p>
-    <p>% No cross-space contextualization. % This is how XeTeX behaves by default. % Most projects will use this setting. %= 0</p>
-    <p>% Some cross-space contextualization. % Spaces between words are adjusted, % but the rendering of individual words is not affected by the spaces. %= 1</p>
-    <p>% Full cross-space contextualization. % Spaces between words are adjusted, % and the rendering of individual words is affected by the spaces. %= 2 </code></p>
-    <p>You must uncomment the appropriate command! For Awami Nastaliq, you will likely want to uncomment the last line (= 2). That allows the full support for collision avoidance.</p>
+    <pre><code>    %% Cross-space contextualization
+    
+    % No cross-space contextualization.
+    % This is how XeTeX behaves by default.
+    % Most projects will use this setting.
+    % \XeTeXinterwordspaceshaping = 0
+    
+    % Some cross-space contextualization.
+    % Spaces between words are adjusted,
+    % but the rendering of individual words is not affected by the spaces.
+    % \XeTeXinterwordspaceshaping = 1
+    
+    % Full cross-space contextualization.
+    % Spaces between words are adjusted,
+    % and the rendering of individual words is affected by the spaces.
+    % \XeTeXinterwordspaceshaping = 2</code></pre>
+    <p>You must uncomment the appropriate command! For Awami Nastaliq, you will likely want to uncomment the last line (<code>\XeTeXinterwordspaceshaping = 2</code>). That allows the full support for collision avoidance.</p>
     <p>The above text (all comments and commented out statements) will give the same behaviour as before this feature was added to XeTeX, so existing users do not see any unexpected changes.</p>
     <h4 id="bidi-support">Bidi Support</h4>
-    <p>XeTeX in <a href="https://www.tug.org/texlive/">TeXLive 2017</a> uses the latest version of Harfbuzz (1.4.6) which fixes a bug in bidirectional data.</p>
+    <p>XeTeX in <a href="https://www.tug.org/texlive/">TeXLive 2017+</a> uses the latest version of Harfbuzz (1.4.6+) which fixes a bug in bidirectional data.</p>
     <h2 id="web-fonts">Web fonts</h2>
     <p>Web font versions of this font (in WOFF and WOFF2 formats) are available in the <code>web</code> folder. These can be copied to a web server and used as fonts on web pages. A very basic HTML/CSS demo page is also included. For more information on the options and techniques available for using these fonts on web pages see <a href="http://software.sil.org/fonts/webfonts">Using SIL Fonts on Web Pages</a>.</p>
     <h2 id="text-conversion">Text conversion</h2>

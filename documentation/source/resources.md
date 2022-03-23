@@ -25,6 +25,32 @@ Other suggestions are listed here: [Keyboard Systems Overview](http://scriptsour
 
 See [Character set support](charset.md) for details of the Unicode characters supported by this font.
 
+### Keyman keyboards
+
+[Keyman](https://keyman.com/) provides quite a few keyboards for languages which use the Nastaliq style of Arabic script. Go to [Keyman.com](https://keyman.com/). Click on **Keyboards** and then type the language for which you wish to select a keyboard. It will offer you keyboard packages if any are available for that language.
+
+### Installing an Urdu keyboard
+
+#### On Windows 8/10:
+- Open the Language control panel.
+- Click on **Add a language**.
+- Choose "Urdu (Pakistan)" and click **OK**.
+- Activate the keyboard using the Taskbar control or language bar.
+
+#### On Windows 7:
+- Open the Region and Language control panel.
+- Click on the **Keyboards and Languages tab**.
+- Choose **Change keyboards...**
+- Choose **Add...**
+- Select "Urdu (Islamic Republic of Pakistan)" and click **OK**.
+* Activate the keyboard using the Taskbar control or language bar.
+
+#### To see a visual layout for the keyboard:
+
+* Click on the **Start Menu**, choose **All Programs**, **Accessories**, **Ease of Access**, **On-screen Keyboard**.
+* On Windows 8/10: see [Use the On-Screen Keyboard (OSK) to type](http://windows.microsoft.com/en-us/windows-8/type-with-the-on-screen-keyboard).
+
+
 ## Rendering and application support
 
 The Awami Nastaliq font requires software enabled with the very latest [Graphite](http://graphite.sil.org/) engine (version 1.3.4+) in order to render correctly. The font does not support OpenType rendering. **It will not work with standard software such as Microsoft Office**. 
@@ -72,32 +98,32 @@ Explanations of this parameter are at:
 
 This parameter should be set in a .tex file. The file could look something like:
 
-<code>
+```
 %% Cross-space contextualization
 
 % No cross-space contextualization.
 % This is how XeTeX behaves by default.
 % Most projects will use this setting.
-%\XeTeXinterwordspaceshaping = 0
+% \XeTeXinterwordspaceshaping = 0
 
 % Some cross-space contextualization.
 % Spaces between words are adjusted,
 % but the rendering of individual words is not affected by the spaces.
-%\XeTeXinterwordspaceshaping = 1
+% \XeTeXinterwordspaceshaping = 1
 
 % Full cross-space contextualization.
 % Spaces between words are adjusted,
 % and the rendering of individual words is affected by the spaces.
-%\XeTeXinterwordspaceshaping = 2
-</code>
+% \XeTeXinterwordspaceshaping = 2
+```
 
-You must uncomment the appropriate command! For Awami Nastaliq, you will likely want to uncomment the last line (\XeTeXinterwordspaceshaping = 2). That allows the full support for collision avoidance.  
+You must uncomment the appropriate command! For Awami Nastaliq, you will likely want to uncomment the last line (`\XeTeXinterwordspaceshaping = 2`). That allows the full support for collision avoidance.  
 
 The above text (all comments and commented out statements) will give the same behaviour as before this feature was added to XeTeX, so existing users do not see any unexpected changes.
 
 #### Bidi Support
 
-XeTeX in [TeXLive 2017](https://www.tug.org/texlive/) uses the latest version of Harfbuzz (1.4.6) which fixes a bug in bidirectional data.
+XeTeX in [TeXLive 2017+](https://www.tug.org/texlive/) uses the latest version of Harfbuzz (1.4.6+) which fixes a bug in bidirectional data.
 
 ## Web fonts
 

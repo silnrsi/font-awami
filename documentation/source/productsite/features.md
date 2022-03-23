@@ -29,7 +29,6 @@ For applications that do not make use of Graphite features or the OpenType Chara
 
 There are some character shape differences in different languages which use the Arabic script. These can be accessed by using Graphite features.  
 
-
 Unless otherwise indicated, the first feature in a table is the default.
 
 #### Hook on medial heh-goal
@@ -37,36 +36,36 @@ Unless otherwise indicated, the first feature in a table is the default.
 <span class='affects'>Affects: U+06C1, U+06C2</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 True| <span dir="rtl" class='awami-R normal'>&#x628;<font color="red">&#x6C1;</font>&#x628; &#x628;<font color="red">&#x6C2;</font>&#x628;</span>| `hehk=1`
-False | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hehk" 0'>&#x628;<font color="red">&#x6C1;</font>&#x628; &#x628;<font color="red">&#x6C2;</font>&#x628;</span>| `hehk=0`
+False | <span dir="rtl" class='awami-hehk-0-R normal'>&#x628;<font color="red">&#x6C1;</font>&#x628; &#x628;<font color="red">&#x6C2;</font>&#x628;</span>| `hehk=0`
 
 #### Initial heh doachashmee
 
 <span class='affects'>Affects: U+06BE</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Heart shape | <span dir="rtl" class='awami-R normal'><font color="red">&#x6BE;</font>&#x627;</span> | `hedo=0`
-Round | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hedo" 1'><font color="red">&#x6BE;</font>&#x627;</span>| `hedo=1`
+Round | <span dir="rtl" class='awami-hedo-1-R normal'><font color="red">&#x6BE;</font>&#x627;</span>| `hedo=1`
 
 #### Lam with V 
 
 <span class='affects'>Affects: U+06B5</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 V over stem | <span dir="rtl" class='awami-R normal'><font color="red">&#x6B5;</font> &#x6B5;&#x628;&#x6B5;&#x628;<font color="red">&#x6B5;</font></span>| `lamv=0`
-V over bowl | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "lamv" 1'><font color="red">&#x6B5;</font> &#x6B5;&#x628;&#x6B5;&#x628;<font color="red">&#x6B5;</font></span>| `lamv=1`
+V over bowl | <span dir="rtl" class='awami-lamv-1-R normal'><font color="red">&#x6B5;</font> &#x6B5;&#x628;&#x6B5;&#x628;<font color="red">&#x6B5;</font></span>| `lamv=1`
 
 #### Full Stop 
 
 <span class='affects'>Affects: U+06D4</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Dash | <span dir="rtl" class='awami-R normal'>&#x62c;&#x62c;&#x62c;<font color="red">&#x6d4;</font></span>| `cv85=0`
-Dot | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv85" 1'>&#x62c;&#x62c;&#x62c;<font color="red">&#x6d4;</font></span>| `cv85=1`
+Dot | <span dir="rtl" class='awami-cv85-1-R normal'>&#x62c;&#x62c;&#x62c;<font color="red">&#x6d4;</font></span>| `cv85=1`
 
 #### Punctuation 
 
@@ -77,17 +76,17 @@ Default uses Arabic-style punctuation for right-to-left segments and Latin-style
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
 Default | <span dir="rtl" class='awami-R normal'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </span>| `punc=0`
-Arabic | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 1'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span> | `punc=1`
-Latin | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 2'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span>| `punc=2`
+Arabic | <span dir="rtl" class='awami-punc-1-R normal'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span> | `punc=1`
+Latin | <span dir="rtl" class='awami-punc-2-R normal'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span>| `punc=2`
 
 #### Sukun/jazm 
 
 <span class='affects'>Affects: U+0652</span>
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
-Open down | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 1'>&#x628;&#x652; &#x25cc;&#x652;</span>| `cv78=1`
-Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 2'>&#x628;&#x652; &#x25cc;&#x652;</font></span>| `cv78=2`
+------------- | ------ | ------------- 
+Open down | <span dir="rtl" class='awami-cv78-1-R normal'>&#x628;&#x652; &#x25cc;&#x652;</span>| `cv78=1`
+Open left | <span dir="rtl" class='awami-cv78-2-R normal'>&#x628;&#x652; &#x25cc;&#x652;</font></span>| `cv78=2`
 
 #### Hamza 
 
@@ -96,17 +95,17 @@ Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
 Urdu style | <span dir="rtl" class='awami-R normal'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</span>| `hamz=0`
-Arabic style | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hamz" 1'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</font></span>| `hamz=1`
+Arabic style | <span dir="rtl" class='awami-hamz-1-R normal'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</font></span>| `hamz=1`
 
 #### Word spacing 
 
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
-Extra tight | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "wdsp" 0'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=0`
-Tight | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "wdsp" 1'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=1`
+Extra tight | <span dir="rtl" class='awami-wdsp-0-R normal'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=0`
+Tight | <span dir="rtl" class='awami-wdsp-1-R normal'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=1`
 Medium (default) | <span dir="rtl" class='awami-R normal'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=2`
-Wide| <span dir="rtl" class='awami-R normal' style='font-feature-settings: "wdsp" 3'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=3`
-Extra wide| <span dir="rtl" class='awami-R normal' style='font-feature-settings: "wdsp" 4'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=4`
+Wide| <span dir="rtl" class='awami-wdsp-3-R normal'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=3`
+Extra wide| <span dir="rtl" class='awami-wdsp-4-R normal'>   کیوں جو انسانی حقوق کنوں</span>| `wdsp=4`
 
 #### Short forms 
 
@@ -114,27 +113,27 @@ Extra wide| <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
-All | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 3'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
+All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 None | <span dir="rtl" class='awami-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;&#x6CC; &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;&#x644;</span>| `shrt=0`
-Kafs and gafs | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 1'>>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
-Finals | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 2'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;<font color="red">&#x6CC;</font> &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=2`
-All | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 3'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
+Kafs and gafs | <span dir="rtl" class='awami-shrt-1-R normal'>>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
+Finals | <span dir="rtl" class='awami-shrt-2-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;<font color="red">&#x6CC;</font> &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=2`
+All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 
 #### Collision avoidance
 
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
-Off | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "agca" 0'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=0`
-Kern-only | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "agca" 1'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=1`
+Off | <span dir="rtl" class='awami-agca-0-R normal'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=0`
+Kern-only | <span dir="rtl" class='awami-agca-1-R normal'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=1`
 Not implemented | | `agca=2`
-On (default) | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "agca" 3'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=3`
+On (default) | <span dir="rtl" class='awami-agca-3-R normal'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=3`
 
 #### Small nuqtas
 
 Feature | Sample | Feature setting
-------------- | ---------------: | ------------- 
+------------- | ------ | ------------- 
 Off | <span dir="rtl" class='awami-R normal'>ݜۻڜڃغ</span>| `snuq=0`
-On | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "snuq" 1'>ݜۻڜڃغ</font></span>| `snuq=1`
+On | <span dir="rtl" class='awami-snuq-1-R normal'>ݜۻڜڃغ</font></span>| `snuq=1`
 
 ## End of Ayah and Subtending marks
 
@@ -176,3 +175,24 @@ These sentences come from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.
 
 
 
+[font id='awami-hehk-0' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='hehk 0']
+[font id='awami-hedo-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='hedo 1']
+[font id='awami-lamv-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='lamv 1']
+[font id='awami-cv85-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='cv85 1']
+[font id='awami-punc-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='punc 1']
+[font id='awami-punc-2' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='punc 2']
+[font id='awami-cv78-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='cv78 1']
+[font id='awami-cv78-2' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='cv78 2']
+[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='hamz 1']
+[font id='awami-wdsp-0' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='wdsp 0']
+[font id='awami-wdsp-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='wdsp 1']
+[font id='awami-wdsp-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='wdsp 3']
+[font id='awami-wdsp-4' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='wdsp 4']
+[font id='awami-shrt-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='shrt 3']
+[font id='awami-shrt-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='shrt 1']
+[font id='awami-shrt-2' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='shrt 2']
+[font id='awami-shrt-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='shrt 3']
+[font id='awami-agca-0' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='agca 0']
+[font id='awami-agca-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='agca 1']
+[font id='awami-agca-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='agca 3']
+[font id='awami-snuq-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1 feats='snuq 1']

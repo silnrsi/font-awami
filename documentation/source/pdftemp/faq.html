@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq - Frequently Asked Questions</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../assets/css/themepdf.css">
+    <link rel="stylesheet" href="../../assets/css/webfontsttf.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq - Frequently Asked Questions</h1>
+    </header>
+    <p>Many questions can be answered by consulting the following FAQ pages. Here are a few sample questions answered in each FAQ:</p>
+    <ul>
+    <li><a href="../../pdf/http://software.sil.org/fonts/faq">SIL fonts in general</a>
+    <ul>
+    <li><em>How can I type...?</em></li>
+    <li><em>How can I use font features?</em></li>
+    <li><em>Will you add support for character...?</em></li>
+    <li><em>Will you add support for script...?</em></li>
+    <li><em>WIll you help me...?</em></li>
+    </ul></li>
+    <li><a href="../../pdf/https://scripts.sil.org/OFL-FAQ_web">The SIL Open Font License (OFL-FAQ)</a>
+    <ul>
+    <li><em>Can I use this font for...?</em></li>
+    <li><em>Can I modify the font and then include it in...</em></li>
+    <li><em>If I use the font on a web page do I have to include an acknowledgement?</em></li>
+    <li>The full OFL-FAQ.txt is also included in the font package.</li>
+    </ul></li>
+    </ul>
+    <p>A generic FAQ for all of our Arabic scripts fonts can be found here: <a href="../../pdf/http://software.sil.org/arabicfonts/support/faq/">Arabic Fonts - FAQ</a>. FAQ's specific to Scheherazade New are found below.</p>
+    <h4 id="what-is-so-special-about-awami-nastaliq"><em>What is so special about Awami Nastaliq?</em></h4>
+    <p>This is the very first Nastaliq-style font with support for a wide range of languages, made possible by a flexible technology. This is the only freely-available font to provide an authentic Nastaliq style with kerned calligraphic segments.</p>
+    <p>This font is designed to work with the <a href="../../pdf/http://graphite.sil.org">Graphite</a> advanced font technology. To take advantage of the advanced typographic capabilities of this font, you must be using applications that provide an adequate level of support for Graphite. These advanced capabilities provide access to the variant character forms used in some languages. See <a href="../../pdf/features.pdf">Font features</a> and <a href="../../pdf/http://software.sil.org/awami/what-is-special/">What is Special About Awami Nastaliq?</a></p>
+    <h4 id="what-does-awami-mean"><em>What does Awami mean?</em></h4>
+    <p>Awami is an Urdu word meaning “of the people”, “of the common population” or “public”. Awami Nastaliq is an Arabic script font specifically intended for a wide variety of languages using the Nastaliq style of South Asia.</p>
+    <h4 id="what-characters-are-included-with-this-release"><em>What characters are included with this release?</em></h4>
+    <p>See <a href="../../pdf/charset.pdf">Character set support</a> for the full listing.</p>
+    <h4 id="i-notice-that-awami-nastaliq-is-missing-a-number-of-characters-that-i-would-like.-will-you-add-these"><em>I notice that Awami Nastaliq is missing a number of characters that I would like. Will you add these?</em></h4>
+    <p>It is impossible for us to add every glyph that every person desires, but we do place a high priority on adding complete coverage of all the characters defined in Unicode for languages that use the Nastaliq style of Arabic script (excluding the Arabic Presentation Forms blocks, which are not recommended for normal use). You can send us your requests, but please understand that we are unlikely to add symbols where the user base is very small, unless they have been accepted into Unicode.</p>
+    <h4 id="why-isnt-this-font-shaping-properly-in-microsoft-word-or-in-indesign"><em>Why isn't this font shaping properly in Microsoft Word or in InDesign?</em></h4>
+    <p>We have only implemented this font using the Graphite technology. You <em>must</em> be using applications which support Graphite in order to get the shaping. Please see the <a href="../../pdf/resources.pdf">Resources</a> page.</p>
+    <h4 id="why-have-you-only-implemented-this-font-in-graphite"><em>Why have you only implemented this font in Graphite?</em></h4>
+    <ol type="1">
+    <li>Graphite's basic positioning mechanisms are more powerful than OpenType's; but more importantly (2) Nastaliq makes extensive use of Graphite's automatic collision avoidance; and also (3) Graphite has more powerful development tools.</li>
+    </ol>
+    <p>Should OpenType engines gain the necessary collision avoidance support, then we would probably add OpenType support to Awami Nastaliq.</p>
+    <h4 id="awami-nastaliq-does-not-have-proper-spacing-or-collision-avoidance-in-xetex.-how-can-i-get-the-promised-collision-avoidance"><em>Awami Nastaliq does not have proper spacing or collision avoidance in XeTeX. How can I get the promised collision avoidance?</em></h4>
+    <p>There is a special new parameter in XeTeX to support the new Graphite collision avoidance. See <a href="../../pdf/resources.pdf">Resources</a> for help in getting that working.</p>
+    <h4 id="why-isnt-awami-nastaliq-working-in-xelatex"><em>Why isn't Awami Nastaliq working in XeLaTeX?</em></h4>
+    <p>Awami Nastaliq is a Graphite font. For OpenType fonts the font declaration would be:</p>
+    <pre><code>    \newfontfamily\fontnast[Script=Arabic]{Jameel Noori Nastaleeq}</code></pre>
+    <p>However, because this is a Graphite font, you need a different declaration:</p>
+    <pre><code>    \newfontfamily\urdufont[Renderer=Graphite]{Awami Nastaliq}</code></pre>
+    <p>It would also be useful to add <code>\XeTeXinterwordspaceshaping=1</code> to your file. Thus, you might have:</p>
+    <pre><code>    \XeTeXinterwordspaceshaping=1
+    \newfontfamily\urdufont[Renderer=Graphite]{Awami Nastaliq}</code></pre>
+    <h4 id="why-doesnt-awami-nastaliq-use-agl-adobe-glyph-list-names-i-cannot-copy-and-paste-from-a-pdf-using-awami-nastaliq-into-another-document.-there-is-a-lot-of-gibberish."><em>Why doesn't Awami Nastaliq use AGL (Adobe Glyph List) names? I cannot copy and paste from a pdf using Awami Nastaliq into another document. There is a lot of gibberish.</em></h4>
+    <p>In order to dynamically position the dots above and below the corresponding base forms, Awami Nastaliq separates the patterns of dots into their own nuqta glyphs. These nuqta glyphs have no possible AGL name because they do not correspond to any Unicode character. Therefore it is never going to be possible to extract a corresponding Unicode text stream from a sequence of Awami Nastaliq glyph names.</p>
+    <p>This does not mean it is impossible to copy and paste from a PDF. High quality PDF creation software will include the Unicode character text stream within the document, which makes copy and paste work regardless of the glyph names used by the font.</p>
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 2.200 and is copyright © 2014-2022 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>
