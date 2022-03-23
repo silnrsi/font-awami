@@ -2,17 +2,17 @@
 <glyph name="absNoon" format="2">
   <advance width="1673"/>
   <unicode hex="0646"/>
-  <anchor x="420" y="1391" name="honorific"/>
-  <anchor x="661" y="-840" name="mLower"/>
-  <anchor x="910" y="1084" name="mUpper"/>
+  <anchor x="400" y="1391" name="honorific"/>
+  <anchor x="641" y="-840" name="mLower"/>
+  <anchor x="890" y="1084" name="mUpper"/>
   <outline>
-    <component base="_nukta" xOffset="529" yOffset="666"/>
-    <component base="absNoonGhunna"/>
+    <component base="_nukta" xOffset="509" yOffset="666"/>
+    <component base="absNoonGhunna" xOffset="-20"/>
   </outline>
   <lib>
     <dict>
       <key>public.markColor</key>
-      <string>0.99,0.62,0.11,1</string>
+      <string>0.04,0.57,0.04,1</string>
     </dict>
   </lib>
 </glyph>
