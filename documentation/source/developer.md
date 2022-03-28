@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Developer information
-fontversion: 2.200
+fontversion: 3.000 Alpha
 ---
 
 Awami Nastaliq is a mature product. We are currently developing a bold version of the font. We will be releasing maintenance updates to fix bugs. 

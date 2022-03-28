@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Font Features
-fontversion: 2.200
+fontversion: 3.000 Alpha
 ---
 
 
@@ -159,23 +159,23 @@ U+0603 ARABIC SIGN SAFHA (page)<br>(U+202D U+0603 U+06F1 U+06F2 U+06F3 U+202C)| 
 
 ### Default
 
-This sentence comes from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.txt). All features are using the default. It includes **Hook on medial heh-goal** set to 'False', **Initial heh doachashmee** set to 'Heart shape', **Hamza** set to 'Urdu style', and **Word spacing** set to 'Medium'.
+This sentence comes from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.txt). All features are using the default. It includes **Hook on medial heh-goal** set to 'False', **Initial heh doachashmee** set to 'Heart shape', and **Hamza** set to 'Urdu style'.
 
 <p dir="RTL" align="right"><span dir="rtl" class='awami-R normal'>
-&#x627;&#x642;&#x648;&#x627;&#x645;&#x20;&#x645;&#x62a;&#x62d;&#x62f;&#x6c1;&#x20;&#x646;&#x6d2;&#x20;&#x6c1;&#x631;&#x20;&#x6a9;<font color="red">&#x6c1;</font>&#x6cc;&#x6ba;&#x20;&#x62f;&#x6d2;&#x20;&#x62d;&#x642;&#x648;&#x642;&#x20;&#x62f;&#x6cc;&#x20;&#x62d;&#x641;&#x627;&#x638;&#x62a;&#x20;&#x62a;&#x6d2;&#x20;&#x648;&#x62f;<font color="red">&#x6be;</font>&#x627;&#x631;&#x6d2;&#x20;&#x62f;&#x627;&#x20;&#x62c;&#x6be;&#x646;&#x688;&#x627;&#x20;&#x627;&#x686;&#x627;&#x631;&#x20;<font color="red">&#x6a9;</font>&#x6be;&#x6bb;&#x20;&#x62f;&#x627;&#x20;&#x627;&#x631;&#x627;&#x62f;&#x6c1;&#x20;&#x6a9;&#x6cc;&#x62a;&#x627;&#x20;&#x6c1;&#x648;&#x6d2;&#x6d4;&#x20;&#x627;&#x6cc;<font color="red">&#x6c1;</font>&#x648;&#x20;&#x684;&#x626;&#x6d2;&#x20;&#x648;&#x20;&#x62d;&#x634;&#x6cc;&#x627;&#x646;&#x6c1;&#x20;&#x6a9;&#x645;&#x627;&#x6ba;&#x20;&#x62f;&#x6cc;&#x20;&#x635;&#x648;&#x631;&#x62a;&#x20;&#x648;&#x686;&#x20;&#x638;&#x627;&#x6c1;&#x631;&#x20;&#x62a;&#x6be;<font color="red">&#x626;</font>&#x6cc;&#x20;&#x6c1;&#x6d2;
+&#x627;&#x642;&#x648;&#x627;&#x645;&#x20;&#x645;&#x62a;&#x62d;&#x62f;&#x6c1;&#x20;&#x646;&#x6d2;&#x20;&#x6c1;&#x631;&#x20;&#x6a9;<font color="red">&#x6c1;</font>&#x6cc;&#x6ba;&#x20;&#x62f;&#x6d2;&#x20;&#x62d;&#x642;&#x648;&#x642;&#x20;&#x62f;&#x6cc;&#x20;&#x62d;&#x641;&#x627;&#x638;&#x62a;&#x20;&#x62a;&#x6d2;&#x20;&#x648;&#x62f;<font color="red">&#x6be;</font>&#x627;&#x631;&#x6d2;&#x20;&#x62f;&#x627;&#x20;&#x62c;&#x6be;&#x646;&#x688;&#x627;&#x20;&#x627;&#x686;&#x627;&#x631;&#x20;&#x6a9;&#x6be;&#x6bb;&#x20;&#x62f;&#x627;&#x20;&#x627;&#x631;&#x627;&#x62f;&#x6c1;&#x20;&#x6a9;&#x6cc;&#x62a;&#x627;&#x20;&#x6c1;&#x648;&#x6d2;&#x6d4;&#x20;&#x627;&#x6cc;<font color="red">&#x6c1;</font>&#x648;&#x20;&#x684;<font color="red">&#x626;</font>&#x6d2;&#x20;&#x648;&#x20;&#x62d;&#x634;&#x6cc;&#x627;&#x646;&#x6c1;&#x20;&#x6a9;&#x645;&#x627;&#x6ba;&#x20;&#x62f;&#x6cc;&#x20;&#x635;&#x648;&#x631;&#x62a;&#x20;&#x648;&#x686;&#x20;&#x638;&#x627;&#x6c1;&#x631;&#x20;&#x62a;&#x6be;<font color="red">&#x626;</font>&#x6cc;&#x20;&#x6c1;&#x6d2;
 </span> </p>
 
 ### Features
 
-These sentences come from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.txt). It includes **Hook on medial heh-goal** set to 'True', **Initial heh doachashmee** set to 'Round', **Hamza** set to 'Arabic style', **Short forms** set to 'Kafs and gafs', and **Word spacing** set to 'Extra tight'.
+These sentences come from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.txt). It includes **Hook on medial heh-goal** set to 'True', **Initial heh doachashmee** set to 'Round', and **Hamza** set to 'Arabic style'.
 
-<p dir="RTL" align="right"><span dir="rtl" class='awami-R normal' style='font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "wdsp" 0, "shrt" 1'>
-&#x627;&#x642;&#x648;&#x627;&#x645;&#x20;&#x645;&#x62a;&#x62d;&#x62f;&#x6c1;&#x20;&#x646;&#x6d2;&#x20;&#x6c1;&#x631;&#x20;&#x6a9;<font color="red">&#x6c1;</font>&#x6cc;&#x6ba;&#x20;&#x62f;&#x6d2;&#x20;&#x62d;&#x642;&#x648;&#x642;&#x20;&#x62f;&#x6cc;&#x20;&#x62d;&#x641;&#x627;&#x638;&#x62a;&#x20;&#x62a;&#x6d2;&#x20;&#x648;&#x62f;<font color="red">&#x6be;</font>&#x627;&#x631;&#x6d2;&#x20;&#x62f;&#x627;&#x20;&#x62c;&#x6be;&#x646;&#x688;&#x627;&#x20;&#x627;&#x686;&#x627;&#x631;&#x20;<font color="red">&#x6a9;</font>&#x6be;&#x6bb;&#x20;&#x62f;&#x627;&#x20;&#x627;&#x631;&#x627;&#x62f;&#x6c1;&#x20;&#x6a9;&#x6cc;&#x62a;&#x627;&#x20;&#x6c1;&#x648;&#x6d2;&#x6d4;&#x20;&#x627;&#x6cc;<font color="red">&#x6c1;</font>&#x648;&#x20;&#x684;&#x626;&#x6d2;&#x20;&#x648;&#x20;&#x62d;&#x634;&#x6cc;&#x627;&#x646;&#x6c1;&#x20;&#x6a9;&#x645;&#x627;&#x6ba;&#x20;&#x62f;&#x6cc;&#x20;&#x635;&#x648;&#x631;&#x62a;&#x20;&#x648;&#x686;&#x20;&#x638;&#x627;&#x6c1;&#x631;&#x20;&#x62a;&#x6be;<font color="red">&#x626;</font>&#x6cc;&#x20;&#x6c1;&#x6d2;
-</span></p>
+<p dir="RTL" align="right"><span dir="rtl" class='awami-R normal' style='font-feature-settings: "hehk" 0, "hedo" 1, "hamz" 1'>
+&#x627;&#x642;&#x648;&#x627;&#x645;&#x20;&#x645;&#x62a;&#x62d;&#x62f;&#x6c1;&#x20;&#x646;&#x6d2;&#x20;&#x6c1;&#x631;&#x20;&#x6a9;<font color="red">&#x6c1;</font>&#x6cc;&#x6ba;&#x20;&#x62f;&#x6d2;&#x20;&#x62d;&#x642;&#x648;&#x642;&#x20;&#x62f;&#x6cc;&#x20;&#x62d;&#x641;&#x627;&#x638;&#x62a;&#x20;&#x62a;&#x6d2;&#x20;&#x648;&#x62f;<font color="red">&#x6be;</font>&#x627;&#x631;&#x6d2;&#x20;&#x62f;&#x627;&#x20;&#x62c;&#x6be;&#x646;&#x688;&#x627;&#x20;&#x627;&#x686;&#x627;&#x631;&#x20;&#x6a9;&#x6be;&#x6bb;&#x20;&#x62f;&#x627;&#x20;&#x627;&#x631;&#x627;&#x62f;&#x6c1;&#x20;&#x6a9;&#x6cc;&#x62a;&#x627;&#x20;&#x6c1;&#x648;&#x6d2;&#x6d4;&#x20;&#x627;&#x6cc;<font color="red">&#x6c1;</font>&#x648;&#x20;&#x684;<font color="red">&#x626;</font>&#x6d2;&#x20;&#x648;&#x20;&#x62d;&#x634;&#x6cc;&#x627;&#x646;&#x6c1;&#x20;&#x6a9;&#x645;&#x627;&#x6ba;&#x20;&#x62f;&#x6cc;&#x20;&#x635;&#x648;&#x631;&#x62a;&#x20;&#x648;&#x686;&#x20;&#x638;&#x627;&#x6c1;&#x631;&#x20;&#x62a;&#x6be;<font color="red">&#x626;</font>&#x6cc;&#x20;&#x6c1;&#x6d2;
+</span> </p>
 
 
 <!-- PRODUCT SITE ONLY
-[font id='awami' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' rtl=1]
+[font id='awami' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1]
 [font id='awamiL' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='100%' ltr=1]
 
 -->

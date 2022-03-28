@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Announcement
-fontversion: 2.200
+fontversion: 3.000 Alpha
 ---
 
 #### Changes

@@ -9,4 +9,21 @@ Open Font License, Version 1.1 (http://scripts.sil.org/OFL).
     src: url("../../../results/AwamiNastaliq-Regular.ttf") format("truetype");
 }
 .awami-R { font-family: AwamiNastaliq-R; direction: rtl; text-align: right;}
+@font-face {
+    font-family: AwamiNastaliq-B;
+    src: url("../../../results/AwamiNastaliq-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: AwamiNastaliqL-R;
+    src: url("../../../results/AwamiNastaliq-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: AwamiNastaliqL-B;
+    src: url("../../../results/AwamiNastaliq-Bold.ttf") format("truetype");
+}
+
+.awami-R { font-family: AwamiNastaliq-R; direction: rtl; text-align: right;}
+.awami-B { font-family: AwamiNastaliq-B; direction: rtl; text-align: right;}
+.awamiL-R { font-family: AwamiNastaliq-R; direction: ltr; text-align: left;}
+.awamiL-B { font-family: AwamiNastaliq-B; direction: ltr; text-align: left;}
 

@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - About
-fontversion: 2.200
+fontversion: 3.000 Alpha
 ---
 
 ## About this project
@@ -15,7 +15,7 @@ For more information on the visual characteristics of the font see [Design](desi
 
 ## Future plans
 
-This font is actively maintained and improved, and recent changes to its development process will enable more frequent releases.
+This font is actively maintained and improved, and recent changes to its development process will enable more frequent releases. We are actively working on adding an additional bold weight.
 
 The highest priorities for future additions and enhancements are mainly driven by:
 
