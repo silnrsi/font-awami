@@ -6,7 +6,9 @@ Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety 
 
 Awami Nastaliq v2.200 has been released. 
 
-Awami Nastaliq is a mature product with no major changes to Regular anticipated. We will be releasing maintenance updates to fix bugs. We also anticipate adding a Bold in addition to Regular. The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](wscript).
+Awami Nastaliq v2.800 is an alpha that includes bold weights for evaluation. It is not an official release.
+
+Awami Nastaliq is a mature product with no major changes to Regular anticipated. This font is actively maintained and improved, and recent changes to its development process will enable more frequent releases. We are actively working on adding an additional bold weight. The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](wscript).
 
 ## License
 
