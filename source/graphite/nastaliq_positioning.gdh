@@ -1708,7 +1708,7 @@ table(glyph) { AttributeOverride = false }
 c_attLikeNqUpper = (cNuqtaLikeUpper); // includes small tah
 c_attLikeNqLower = (cNuqtaLikeLower, g__hehHook_small);
 c_attLikeNqLowMid = (c_attLikeNqLower, cNuqtaLikeMiddle,
-	g__kafTop_null); // diacs don't attach to this, so attach to the base even if this is there
+	cKafTopInvis); // diacs don't attach to these, so attach to the base even if this is there
 c_attLikeNqUpMid = (c_attLikeNqUpper, cNuqtaLikeMiddle);
 
 // To avoid warnings in special-case attachment rules:
@@ -1855,7 +1855,7 @@ cTakes_nUpperDia  cKafTopAltHt  cDiacriticUpper {att {to=@T; at=nUpperS; with=mU
 
 // Attaching to initial/medial base - uses stationary nuqta APs.
 cTakes_nUpperDia=B  cDiacriticUpper {att {to=@B; at=nUpperS; with=mUpperM}; SETDIACINS}
-		/ ^ _=B  g__kafTop_null?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
+		/ ^ _=B  cKafTopInvis?  c_attLikeNqLowMid?  cDiacriticLower?  _=D {att.to==0};
 cTakes_n1LowerDia=B  cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}; SETDIACINS}
 		/ ^ _=B  cKafTop?  c_attLikeNqUpMid?  _=D {att.to==0};
 
@@ -1868,17 +1868,27 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; SET
 // Not needed because we have a nuqta+smalltah glyph:
 ////c_attLikeNqUpper=N  g__smallTah=T {att {to=@N; at=mUpperS; with=mUpperM} };
 
-// Hamzas that act like diacritics (but don't reattach them if they're already attached):
+endpass; // pos - 8 (15)
+
+
+#define OPT_LOWER  cNuqtaLikeLower? cDiacriticLower?
+pass(9)
+
+// Hamzas that act like diacritics (but don't reattach them if they're already attached).
+// Ideally these rules should handle a lower diacritic.
 cTakes_hamzaUpperDia   cHamzaAbove  /  _ ^ _; // already attached
 cTakes_hamzaLowerDia   cHamzaAbove  /  _ ^ _;
-cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM}} / _^ cNuqtaLikeLower?_ ;  // tah
-cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mUpperS; with=hamzaUpperM} } /  _ ^ cNuqtaLikeLower? _ ;
-cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} } /  _ ^ cNuqtaLikeLower? _ ;
-cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
-cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} } /  _ ^ cNuqtaLikeUpper? _ ;
+cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM}} / _ ^ OPT_LOWER _ ;  // tah
+cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mUpperS; with=hamzaUpperM} }  /  _ ^ OPT_LOWER _ ;
+cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} }  /  _ ^ OPT_LOWER _ ;
+cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} }  /  _ ^ OPT_LOWER _ ;
+cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} }  /  _ ^ OPT_LOWER _ ;
+cTakes_nUpperDia    cKafTopAltHt=T
+                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@T; at=nUpperS; with=hamzaUpperM} } / _ _ ^ OPT_LOWER _ ;
+cTakes_nUpperDia=K  cKafTopInvis
+                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@K; at=nUpperS; with=hamzaUpperM} } / _ _ ^ OPT_LOWER _ ;
 
-
-endpass; // pos - 8 (15)
+endpass; // pos - 9 (16)
 
 
 // Kerning pair adjustments
@@ -1957,7 +1967,7 @@ DRW_F_noupper = (gReh gRehDotBelow gRehRing gWaw gWawRing gKirghizOe gDal gDalDo
 endtable; // glyph
 
 
-pass(9)  // 16
+pass(10)  // 17
 
 // Special cases involving nuqtas.
 
@@ -2147,7 +2157,7 @@ cDiacriticLower { shift.y += 150m; collision.margin -= 70m }  /  _ { position.y 
 gNameMarker { shift.y += max(0, 2200 - position.y); };
 
 
-endpass;  // 9 (16)
+endpass;  // 10 (17)
 
 
 #if DO_COL_FIX
@@ -2156,7 +2166,7 @@ endpass;  // 9 (16)
 
 if (collFix > 0)
 
-pass(10) // { CollisionFix = 4; AutoKern = true }  // 17
+pass(11) // { CollisionFix = 4; AutoKern = true }  // 18
 
 // Set up diacritic collision fixes and kerning.
 
@@ -2300,7 +2310,7 @@ cDiacriticUpper {
 		max.y = 200m;
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
-}  /  (cLamIM cKafIM)  g__kafTop_null?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _  cFehMed;
+}  /  (cLamIM cKafIM)  cKafTopInvis?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _  cFehMed;
 
 // Special case: lam/kaf + meem + upper diac - move diac to the left
 cDiacriticUpper {
@@ -2314,7 +2324,7 @@ cDiacriticUpper {
 		max.y = 200m;
 	};
 	sequence { class = ORDER_UDIACS; proxClass = ORDER_UNUQTAS; order = ORDER_NOBELOW; }
-}  /  (cLamIM cKafIM)  g__kafTop_null?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _;
+}  /  (cLamIM cKafIM)  cKafTopInvis?  cNuqtaLikeLower?  cMeemMed  cNuqtaLikeLower?  _;
 
 // Special case: upper diacritic before kaf cannot move very far left; in fact, shift it right
 // Eg: \u0628\u06BE\u0627\u065E\u06AF\u06C1
@@ -2885,7 +2895,7 @@ cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.gl
 
 /////cKernable { collision.flags = CLEAR_FIX(collision.flags) }; - if kerning is done earlier
 
-endpass;  // pos - 10 (17)
+endpass;  // pos - 11 (18)
 
 endif; // (collFix > 0)
 
@@ -2893,11 +2903,11 @@ endif; // (collFix > 0)
 // We put the actual collision fixing a separate pass just because it makes debugging easier.
 
 if (collFix > 0)
-pass(11) { CollisionFix = 4; AutoKern = true }  // 18
+pass(12) { CollisionFix = 4; AutoKern = true }  // 19
 
 // Perform diacritic-related fixing.
 
-endpass;  // 11 (18)
+endpass;  // 12 (19)
 endif;
 
 #endif // DO_COL_FIX
@@ -2905,7 +2915,7 @@ endif;
 
 // Fixes to even up right margin
 
-pass(12)  // 19
+pass(13)  // 20
 
 gBehIni     {advance.x += 360m}  /  _=B {startOfLine} cNuqtaLike? MARKS cKafMF;
 
@@ -2924,13 +2934,13 @@ cSpace { advance.x += 170m }
 cSpace { advance.x += 110m }
 	/  cKernable { collision.fix.x < -300m } MARKS _=S;
 
-endpass;  // pos - 12
+endpass;  // pos - 13
 
 
 #if KERNLOWPUNCT
 
 if (collFix > 0)
-pass(13)  { CollisionFix = 1; AutoKern = true }  // 20
+pass(14)  { CollisionFix = 1; AutoKern = true }  // 21
 
 //cLowPunct { collision.margin = 500m; passKeySlot = true } /
 //	(gAlefFin gAlef) cNuqtaLike?  DIACS  _ { collision.fix.x < 300m }  cKernIgnore?  cPostKernable=N;
@@ -2941,7 +2951,7 @@ cLowPunct { collision.margin = 330m; passKeySlot = true } /  _ { collision.fix.x
 cNuqtaLike { collision.flags = CLEAR_FIX(collision.flags) };
 cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
 
-endpass;  // 13
+endpass;  // 14
 endif;
 
 #endif

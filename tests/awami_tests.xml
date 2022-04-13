@@ -20,6 +20,7 @@
       <style feats="wdsp=2 =0 agca=3 dbgf=1 dbsp=0 hedo=0 hehk=1" name="fset23029" />
       <style feats="wdsp=2 =0 agca=3 dbgf=1 hedo=0 hehk=1 invs=0" name="fset23030" />
       <style feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=0 snuq=0 agca=3 invs=0" name="fset23031" />
+      <style feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=3 snuq=0 agca=3" name="fset23032" />
       <style feats="snuq=1" name="fset28" />
       <style feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" name="fset29" />
       <style feats="hehk=1 olap=2" name="fset3" />
@@ -221,7 +222,7 @@
       <string>؁123</string>
     </test>
     <test label="number sign">
-      <string>؀1 ؀23 ؀346 ؀9876 </string>
+      <string>؀1 ؀23 ؀346 ؀9876 ؀١٣</string>
     </test>
     <test label="page sign">
       <string>؃1 ؃45 ؃345 ؃4567 ؃۵۷۰</string>
@@ -230,7 +231,7 @@
       <string>؂1 ؂12 ؂٣٤</string>
     </test>
     <test label="samvat">
-      <string>؄1973</string>
+      <string>؄1973 ؄١٨٣٠</string>
     </test>
     <test label="end of ayah - Latin">
       <string>۝8 ۝88 ۝888 ۝56 ۝482</string>
@@ -470,11 +471,26 @@
     </test>
   </testgroup>
   <testgroup label="Ligatures">
+    <test background="#55aaff" class="fset23032" label="ALLAH" rtl="True">
+      <string />
+    </test>
     <test label="allah" rtl="True">
       <string>اللہ اللّٰہ اللّٰه</string>
     </test>
     <test class="fset23022" label="FDF2" rtl="True">
       <string>ﷲ</string>
+    </test>
+    <test class="fset23032" label="end of word" rtl="True">
+      <string>فللہ الاللہ اَللہ</string>
+    </test>
+    <test class="fset23032" label="different from Sch" rtl="True">
+      <string>ٱللہ اللَّہ للّہ لِلّٰہٛ الِلہ</string>
+    </test>
+    <test class="fset23032" label="different from Sch - end of word" rtl="True">
+      <string>الٛاللّہٛ بِللّہ فِللَّہ</string>
+    </test>
+    <test background="#55aaff" class="fset23032" label="OTHER" rtl="True">
+      <string />
     </test>
     <test label="final dal" rtl="True">
       <string>الحَمْدللہ</string>
@@ -535,6 +551,9 @@
     </test>
     <test class="fset7654" label="jallajalalouhou text" rtl="True">
       <string>جَلّ جَلالُهُ</string>
+    </test>
+    <test background="#55aaff" class="fset23032" label="FLATTENING" rtl="True">
+      <string />
     </test>
     <test class="fset7654" label="Thessalonians" rtl="True">
       <string>تھسلُنیکیوں</string>
@@ -1640,6 +1659,9 @@
     <test class="fset7654" label="meem kaf reh" rtl="True">
       <string>مکر</string>
     </test>
+    <test class="fset7654" label="long sequence" rtl="True">
+      <string>عگجم اطہف قنعَڑ جملو کشھ ضیلن ذسے ہصق مکر</string>
+    </test>
     <test class="fset7654" label="upper nuqtas" rtl="True">
       <string>شغقمف أ څۂڑ غنتض خئث څ ز نتثݩٹ</string>
     </test>
@@ -2034,6 +2056,9 @@
     </test>
     <test class="fset7654" label="noon + gaf + kaf" rtl="True">
       <string>ڈونگکھییرنے </string>
+    </test>
+    <test class="fset30" label="kaf + jeem" rtl="True">
+      <string>مکخ شکج بکحمب بکحم شکجل شکم سقکخحی</string>
     </test>
     <test background="#55aaff" label="SHORTER" rtl="True">
       <string />
@@ -2592,6 +2617,9 @@
     <test class="fset22" label="high hamzas - Arabic style" rtl="True">
       <string>ٵ اٴ ٶ ٸ وٴ یٴ بٴب</string>
     </test>
+    <test class="fset23032" label="hamza plus diacritic" rtl="True">
+      <string>ۂِس سۂَا</string>
+    </test>
   </testgroup>
   <testgroup label="Hand-code candidates">
     <test class="fset7" label="noon-retro kaf" rtl="True">
@@ -3022,6 +3050,9 @@
     <test label="reh medial vs. final + lower diac" rtl="True">
       <string>سرِ سرِن</string>
     </test>
+    <test class="fset23032" label="kaf + hamza" rtl="True">
+      <string>سکٔب گِٔض نگٔجمل</string>
+    </test>
     <test background="#55aaff" class="fset23029" label="HONORIFICS" rtl="True">
       <string />
     </test>
@@ -3045,6 +3076,9 @@
     </test>
     <test label="takhalus" rtl="True">
       <string>غنؔی   توکبؔیر   بلوؔچتا   سدؔون محمّؔدؐ   احؤؔدؐ   یِسُوؔع</string>
+    </test>
+    <test class="fset7654" label="Moses" rtl="True">
+      <string>موسیٰؑ</string>
     </test>
     <test background="#55aaff" class="fset23030" label="ENFORCE ORDER" rtl="True">
       <string />

@@ -50,6 +50,10 @@ g__noDot2l = pseudo(postscript("_dot2l"));
 g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoid spurious warning
 
 
+////gHamzaUDiac = pseudo(postscript("absHamzaAbove")) { mUpperM = hamzaUpperM };
+////gHamzaLDiac = pseudo(postscript("absHamzaBelow")) { mLowerM = hamzaLowerM };
+
+
 // The version of the madda that is placed below the vowel - not currently used.
 //gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
 //	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
@@ -74,6 +78,7 @@ cKafTopAltHt = ( g__kafIniTop_taller, g__kafIniTop_short, g__kafIniTop_shorter, 
 	g__gafMedTop_medshort, g__gafTop_bj_short, g__gafTop_bj_tall);
 
 cKafTop = (g__kafTop_null, cKafTopAltHt, g__kafTop_m_bogus);
+cKafTopInvis = (g__kafTop_null, g__kafTop_m_bogus);
 
 // Vertical difference in height of kaf tops (for adjusting ngoeh nuqtas):
 g__kafIniTop_taller { ktDelta = 250m };
@@ -179,8 +184,8 @@ cMark1u = (gShadda, gNoonGhunnaMark, g__hamza, gHamzaAbove, g__wavyHamza
 cMark1l = (gHamzaBelow, gWavyHamzaBelow);
 cMark1 = (cMark1u, cMark1l);
 cMark2u = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar,
-	gJazm, gVowelInvSmallV, gVowelSmallV);
-cMark2l = (gZair, gDozair, gKharizair);
+	gJazm, gVowelInvSmallV, gVowelSmallV);   //gHamzaUDiac
+cMark2l = (gZair, gDozair, gKharizair,);     //gHamzaLDiac);
 cMark2 = (cMark2u, cMark2l);
 cMark3 = (gMaddaAbove);
 cMark4 = (gSmallHighRehDadMark, gSmallHighAinMark, gSmallHighSeen);

@@ -132,7 +132,7 @@ pass(1)
 	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
 	(csDualLinkFin csRightLinkFin csDualLinkIso csRightLinkIso)
         cs_nfd_noHamza=B  gHamzaAbove=H  >  @1  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
-    cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  _;
+    cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _;
 
 	// One common precomposed form:
 	////gLamAlef  _  >  gLam:1  gAlef:1;
@@ -329,6 +329,12 @@ gMeemMed_raw  >  gMeemMed_alt_raw  /  (c_kgPreMm_alt c_preMm_alt)  MARKS _ MARKS
 
 // Obsolete way of using high-tooth behs sometimes after seen & sad 
 //gBehMed_raw  >  gBehMed_SS_raw  / c_preBehSS_raw MARKS  _ ;
+
+
+////(gHamzaAbove gHamzaBelow)  /  cTakes_hamzaUpper _;
+////// Use the diacritic form of the hamza:
+////gHamzaBelow  >  gHamzaLDiac;
+////gHamzaAbove  _  >  _  gHamzaUDiac:1  /  _  cDiacriticLower? _ ;
 
 
 // Insert a pseudo line-break glyph for recognition later in positioning table.
@@ -749,7 +755,7 @@ gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
 cBehIM  g__noDot2l  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
 cBehIM  g__noDot2l  >  @1  g__dot2l;
 
-cBehIM  g__dot2l__hamza  >  @1  gHamzaAbove:1;
+//cBehIM  g__dot2l__hamza  _  >  @1  gHamzaAbove:1;  -- no, retain the 2 nuqtas
 
 csChotiyehFin  g__noDot2l			> 	@1:(1 2)  _;
 csChotiyehFin  g__dot2l__hamza		>	@1  gHamzaAbove;
@@ -861,7 +867,7 @@ cLam_noBar_postKaf  >  cLam_tallForBar_postKaf  /  (gKafIni gKafMed)  g__kafTop_
 cLam_noBar_postGaf  >  cLam_tallForBar_postGaf  /  (gGafIni gGafMed)  g__kafTop_null  MARKS  _  cbarDia;
 
 // use the normal bar for these; extra context to increase precedence
-cbarDia  >  @B  /  cKafIM  g__kafTop_null  MARKS  cLam_tallForBar  _=B;
+cbarDia  >  @B  /  cKafIM  cKafTopInvis  MARKS  cLam_tallForBar  _=B;
 
 cbarDia  >  g__barRaised_gaf  / (cKafIni_gaf cKafMed_gaf)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
 cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed cLamFin)  _=B;
