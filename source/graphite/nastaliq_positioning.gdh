@@ -555,7 +555,6 @@ table(glyph) {AttributeOverride = 0}
 cIni {kernBbRightS = point(0m,0m) };
 cFin {kernBbLeftS = point(0m,0m) };
 cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
-
 cKernPunct {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
 
 cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
@@ -2188,6 +2187,8 @@ cKafTop { collision {
 	sequence.class = 0
 };
 
+#define SET_MARGIN(X)         max(0m, kernLsb + @X.kernRsb + pairKern)
+#define SET_MARGIN_PLUS(X,Y)  max(0m, kernLsb + @X.kernRsb + pairKern + Y)
 
 if (collFix >= 3)
 
@@ -2203,7 +2204,7 @@ if (collFix >= 3)
 		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		//margin = max(0m, kernLsb + @K.kernRsb + pairKern  - 100m);
+		//margin = SET_MARGIN_PLUS(K, -100m)
 		margin = 170m;
 		max.x = MAXKERN; min.x = MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
@@ -2405,7 +2406,7 @@ gMeem { collision {
 		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = max(0m, kernLsb + @B.kernRsb + pairKern) + 170m;  // looser than normal
+		margin = SET_MARGIN_PLUS(B, 170m);  // looser than normal
 		max.x = MAXKERN; min.x = MINKERN;
     	// min/max.y are omitted for kernable glyphs
 	} }
@@ -2416,7 +2417,7 @@ gReh { collision {
 		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = max(0m, kernLsb + @N.kernRsb + pairKern);   ////  + 200m;  // looser than normal
+		margin = SET_MARGIN(N);  // +200 - no
 		max.x = MAXKERN; min.x = MINKERN;
     	// min/max.y are omitted for kernable glyphs
 	} }
@@ -2430,7 +2431,7 @@ gReh { collision {
 		//flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = max(0m, kernLsb + @N.kernRsb + pairKern) + 150m;  // looser than normal
+		margin = SET_MARGIN_PLUS(N, 150m);
 		max.x = MAXKERN; min.x = MINKERN;
     	// min/max.y are omitted for kernable glyphs
 	} }
@@ -2629,7 +2630,7 @@ if (overlapKern == medium)
 cIso { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	margin = SET_MARGIN(N);
 	max.x = MAXKERN; min.x = (@S.advance.x * -1) - collision.margin;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2640,7 +2641,7 @@ cIso { collision {
 gAlef { collision {
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	margin = SET_MARGIN(N);
 	max.x = MAXKERN; min.x = -275m + minKernDelta;    // = MINKERN + minKernDelta;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2652,7 +2653,7 @@ gAlef { collision {
 //cKernable { collision {
 //	flags = SET_FIX(collision.flags);
 //	flags = SET_KERN(collision.flags);
-//	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+//	margin = SET_MARGIN(N);
 //	max.x = MAXKERN; min.x = (@S.advance.x * -1) - collision.margin;
 //    // min/max.y are omitted for kernable glyphs
 //} }
@@ -2687,7 +2688,7 @@ cRehFin_longtail { collision {
 (cWawFin cDalFin) { collision {
  		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = max(0m, kernLsb + @S.kernRsb + pairKern);
+		margin = SET_MARGIN(S);
 		max.x = MAXKERN; min.x = min(0m, MINKERN + minKernDelta + 100m);
     	// min/max.y are omitted for kernable glyphs
 	} }
@@ -2698,7 +2699,7 @@ cRehFin_longtail { collision {
 gRehFin { collision {
  		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = max(0m, kernLsb + @FA.kernRsb + pairKern + 65);
+		margin = SET_MARGIN_PLUS(FA, 65m);
 		max.x = MAXKERN; min.x = min(0m, MINKERN - 500m + minKernDelta);
     	// min/max.y are omitted for kernable glyphs
 	} }
@@ -2744,7 +2745,7 @@ cKernable { collision {
 	collision {
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = 150m;  // max(0m, kernLsb + @N.kernRsb + pairKern);
+		margin = 150m;
 		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
@@ -2757,7 +2758,7 @@ g_parenleftArab  { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @Q.kernRsb + pairKern);
+	margin = SET_MARGIN(Q);
 	max.x = MAXKERN; min.x = min(0m, pairKern);
 }}
 	/  _  cNuqtaLike?  DIACS  cQuoteLeftArab=Q;
@@ -2768,7 +2769,7 @@ cFullStop { collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = 150m;   //// max(0m, kernLsb + @Q.kernRsb + pairKern);
+		margin = 150m;
 		max.x = MAXKERN; min.x = -300m;  /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
@@ -2779,7 +2780,7 @@ cKernPunct { collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
-		margin = 150m;   //// max(0m, kernLsb + @P.kernRsb + pairKern);
+		margin = 150m;
 		max.x = MAXKERN; min.x = 0m; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
@@ -2793,7 +2794,7 @@ cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @Q.kernRsb + pairKern);
+	margin = SET_MARGIN(Q);
 	max.x = MAXKERN; min.x = 0;
     // min/max.y are omitted for kernable glyphs
 } }
@@ -2810,7 +2811,7 @@ cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	margin = SET_MARGIN(N);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN + minKernDelta - 800m
 		+ max(0m, 1050m - seqWidth)	// the shorter this sequence, the less kerning we want so it doesn't get lost;
@@ -2828,7 +2829,7 @@ cLowPunct  { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	margin = SET_MARGIN(N);
 	max.x = MAXKERN;
 	//min.x = min(0m, -800m + 1250m )   // 800 = 500 + 300; see rule below and minKernDelta for punctuation
 	min.x = -1 * advance.x  // arbitrary, seems to work for real-life examples (wide glyphs, eg, full-stop, can kern a bit more)
@@ -2845,7 +2846,7 @@ cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
 	flags = SET_KERN(collision.flags);
-	margin = max(0m, kernLsb + @N.kernRsb + pairKern);
+	margin = SET_MARGIN(N);
 	max.x = MAXKERN;
 	min.x = min(0m, MINKERN - 500m + minKernDelta
 		+ max(0m, 1250 - seqWidth)   // see above

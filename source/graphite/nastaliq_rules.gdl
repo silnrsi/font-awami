@@ -80,7 +80,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 
 #define setbits(f,m,v) (f & (~m)) | v
 
-
 #define SET_FIX(f) 			setbits(f, COLL_FIX, COLL_FIX)
 #define CLEAR_FIX(f) 		setbits(f, COLL_FIX, 0)
 #define SET_IGNORE(f)		setbits(f, COLL_IGNORE, COLL_IGNORE)
