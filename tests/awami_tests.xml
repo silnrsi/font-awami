@@ -2195,7 +2195,7 @@
     <test label="alef-hamza" rtl="True">
       <string>بأ أ سإ إ جٲ ٲ</string>
     </test>
-    <test label="yeh-hamza" rtl="True">
+    <test background="#ff0000" label="yeh-hamza - 0626" rtl="True">
       <string>ئئئ ئ</string>
     </test>
     <test label="lam-bar" rtl="True">
@@ -2545,6 +2545,36 @@
     </test>
     <test label="seen w/ 4 above" rtl="True">
       <string>ݽ ݽݽݽ</string>
+    </test>
+    <test background="#55aaff" class="fset23032" label="YEHS" rtl="True">
+      <string />
+    </test>
+    <test class="fset23032" label="various yehs" rtl="True">
+      <string>ییی    ئئئ    ئئئ    ىىى    ييي    یٔیٔیٔ   </string>
+    </test>
+    <test class="fset23032" label="chotiyeh - 06CC" rtl="True">
+      <comment>Dots on initial &amp; medial</comment>
+      <string>ییی ی</string>
+    </test>
+    <test class="fset23032" label="Arabic yeh - 064A" rtl="True">
+      <comment>Dots on all forms</comment>
+      <string>ييي ي</string>
+    </test>
+    <test class="fset23032" label="alef maksura - 0649" rtl="True">
+      <comment>No dots on any forms</comment>
+      <string>ىىى ى</string>
+    </test>
+    <test class="fset23032" label="Arabic yeh w/ hamza - 064A + 0654 (NFD)" rtl="True">
+      <comment>No dots on any forms</comment>
+      <string>ئئئ ئ</string>
+    </test>
+    <test class="fset23032" label="yeh w/ hamza - 0626 (NFC)" rtl="True">
+      <comment>No dots on any forms</comment>
+      <string>ئئئ ئ</string>
+    </test>
+    <test class="fset23032" label="chotiyeh w/ hamza - 06CC+0654" rtl="True">
+      <comment>Dots on initial and medial</comment>
+      <string>یٔیٔیٔ یٔ</string>
     </test>
   </testgroup>
   <testgroup label="Features">

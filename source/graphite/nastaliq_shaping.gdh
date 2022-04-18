@@ -116,23 +116,23 @@ pass(1)
 	gShadda      cPostShadda      >  cShaddaPlus$3:(1 3)      _  /  _  cMark34? _;
 	gKharizabar  cPostKharizabar  >  cKharizabarPlus$3:(1 3)  _  /  _  cMark34? _;
 
-	// NFD -> NFC
-	////gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
-	(gYeh  gChotiyeh)  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
-
-	// Yay + hamza = hamzayay (move zair or zabar up out of the way):
-	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(csDualLinkIso csDualLinkFin) DIACS]?  _  _  _;
-
 //if (maddaAlt == 0)
 //	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  gMaddaAbove_low:1  @2:2;
 //else
 	gAlefMaddaAbove  cDiacriticUpper  _  >  gAlef:1  @2:2  gMaddaAbove:1;
 //endif;
 
-	// NFD -> NFC: combine hamzas on chotiyeh, heh-goal
+	// Yeh + hamza = hamzayay (move zair or zabar up out of the way):
+	gChotiyeh=Y  cDiacritic=D  gHamzaAbove=H  >  @Y  @H  @D  /  ^ [(csDualLinkIso csDualLinkFin) DIACS]?  _  _  _;
+
+	// NFD -> NFC: combine hamzas on heh-goal
 	(csDualLinkFin csRightLinkFin csDualLinkIso csRightLinkIso)
-        cs_nfd_noHamza=B  gHamzaAbove=H  >  @1  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;
+        cs_nfd_noHamza=B  gHamzaAbove=H  >  @1  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _  _;  // back up if possible
     cs_nfd_noHamza=B  gHamzaAbove=H  >  cs_nfc_hamza:(B H)  _  /  ^ _  DIACS  _;
+
+	////gAlef  gMaddaAbove  >  gAlefMaddaAbove:(1 2)  _  /  ^ _  _;
+	////gYeh  gHamzaAbove  >  gYehHamzaAbove:(1 2) _ /  ^ _  _;
+
 
 	// One common precomposed form:
 	////gLamAlef  _  >  gLam:1  gAlef:1;
@@ -217,18 +217,18 @@ gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_s
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small gUltaPesh
 		(c_zeronojoin g_nbspace)
-		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
+		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__dot2l_IM  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) _ _ _ _ _ _ _ _ _ _ _ _ _ _;
 
 
 gSeenIni_raw  gLamMed_raw  gAlefFin  gMeemIni_raw  gHehGoalFin  g__hehHook_small
 		(c_zeronojoin g_nbspace)
-		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gBehMed_raw  g__dot1u  gAlefFin
+		gAinIni_raw  gLamMed_raw  gBehMed_raw  g__dot2l_IM  gBehMed_raw  g__dot1u  gAlefFin
 	>	g_ligSalaamUlena:(1 2 3 4 5 6 7 8 9 10 11 12 13 14) _ _ _ _ _ _ _ _ _ _ _ _ _;
 	
 // Alayhi-es-salam
 
-gAinIni_raw  gLamMed_raw  gBehMed_raw  g__noDot2l  gHehGoalFin  g__hehHook_small
+gAinIni_raw  gLamMed_raw  gBehMed_raw  g__dot2l_IM  gHehGoalFin  g__hehHook_small
 		(c_zeronojoin g_nbspace)
 		gAlef  gLamIni_raw  gSeenMed_raw  gLamMed_raw  gAlefFin  gMeem
 	> g_ligAlayhiAsSalam:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _;
@@ -591,43 +591,6 @@ gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 endpass;  // 5
 
 
-table(glyph)
-
-csNuqta_normal = (g__dot1l, g__dot1u, g__dot2l, g__dot2u,
-	g__dot2vl, g__dot2vu, g__dot3l, g__dot3u, g__dot3uD,
-	g__dot4u, g__dot4l);
-
-csNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
-	g__dot2vl_small, g__dot2vu_small, g__dot3l_small, g__dot3u_small, g__dot3uD_small,
-	g__dot4u_small, g__dot4l_small);
-
-
-csLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
-	g__ring__dot2u, g__dot2l__hamza, g__dot2l__smallV, g__hehHook__hamza, g__dot3l__dot3u,
-	g__ring__dot1u);
-csLowerNoUpper = (g__dot1l,			g__dot2vl,			g__dot1l,		g__hehHook_small,
-	g__attachedRing, g__dot2l, 		g__dot2l,			g__hehHook_small, g__dot3l,
-	g__attachedRing);
-csUpperNoLower = (g__smallTah,		g__smallTah,		g__dot1u,		g__dot2u,
-	g__dot2u, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u,
-	g__dot1u);
-
-csLowerNoUpper_small = (g__dot1l_small,	g__dot2vl_small,	g__dot1l_small,		g__hehHook_small,
-	g__attachedRing, g__dot2l_small, g__dot2l_small, g__hehHook_small, g__dot3l_small, g__attachedRing);
-csUpperNoLower_small = (g__smallTah,		g__smallTah,		g__dot1u_small,		g__dot2u_small,
-	g__dot2u_small, gHamzaAbove, g__smallV, gHamzaAbove, g__dot3u_small, g__dot1u_small);
-
-cNuqtaLike += (csLowerUpper);
-
-csHamzaUrdu = (gHamzaAbove  gHighHamza  g_highHamza  gHamzaBelow);
-csHamzaArabic = (g__hamzaArabic  gHighHamzaArabic  g_highHamzaArabic  gHamzaBelowArabic);
-
-csRingDot = (g__ring__dot1u, g__ring__dot2u);
-csNoRingDot = (g__dot1u, g__dot2u);
-
-endtable; // glyph
-
-
 pass(6)
 
 // Alterate (standard Arabic-style) hamza
@@ -636,9 +599,9 @@ if (hamzaAlt == 1)
 gJeem  gHamzaAbove				>  gHah  g__hamzaArabic;	// no nuqta
 gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
 
-(gChotiyeh cChotiyehFin)	g__dot2l__hamza		>  @1  g__hamzaArabic;
+(gChotiyeh cChotiyehFin)		g__dot2l_IM__hamza	>  @1  g__hamzaArabic;
 (gHehGoal cHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
-(gBariyeh cBariyehFin)		g__dot2l__hamza		>  @1  g__hamzaArabic;
+(gBariyeh cBariyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
 
 cHehGoalIni  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
 if (hehGoalHook == 0)
@@ -651,7 +614,8 @@ endif;
 gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 (gAlef cAlefFin)  gHamzaBelow   >  @1  gHamzaBelowArabic;
 
-(cBehIni  cBehMed)  g__dot2l__hamza	>  @1  g__hamzaArabic:1;
+(cBehIni  cBehMed)  g__noDot2l__hamza			>  @1  g__hamzaArabic:1;
+(cBehIni  cBehMed)  g__dot2l_IM__hamza  _	>  @1  g__dot2l:2  g__hamzaArabic:2;
 
 // This version of the rule takes precedence over the rules below that substitute the composed isolates
 // (an extra slot is included to ensure the precedence):
@@ -666,22 +630,22 @@ endif; // hamzaAlt
 // contextual shaping. Otherwise the variety of beh forms trips us up.
 
 gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  
-	gBehMed  g__noDot2l  gKafMedBe
+	gBehMed  g__dot2l_IM  gKafMedBe
 	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ 
 	/  _ _ _ _ _ _ _ _ _ _ _ gBehMedQf;
 
 gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  gBehMed  
 	>  g_wordThessaloni:(1 2 3 4 5 6 7 8 9) _ _ _ _ _ _ _ _ 
-	/  _ _ _ _ _ _ _ _ _ g__noDot2l  cKafMed;
+	/  _ _ _ _ _ _ _ _ _  g__dot2l_IM  cKafMed;
 
-gBehIniBe  g__dot2u  gBehMedMm  g__noDot2l  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
-	g__noDot2l  gPesh  gSeenFin
+gBehIniBe  g__dot2u  gBehMedMm  g__dot2l_IM  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
+	g__dot2l_IM  gPesh  gSeenFin
 	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _ ;
 
 gBehMedQf  g__noDot2l  >  gBehMedQf_short  g__dot2l  /  g_wordThessalonik  _  _=N  gWawFin;
 gBehMedQf  cNuqtaLike  >  gBehMedQf_short  @N        /  g_wordThessalonik  _  _=N  gWawFin;
 
-gAlef gLamIniMm gMeemMedSn  gSeenMedBe gBehMedJm g__noDot2l gJeemFin
+gAlef  gLamIniMm  gMeemMedSn  gSeenMedBe  gBehMedJm  g__dot2l_IM  gJeemFin
 	>  g_wordAlmasih:(1 2 3 4 5 6 7) _ _ _ _ _ _ ;
 
 
@@ -747,27 +711,31 @@ endif;
 
 //gHehDo				>	gHehDo;
 
-gChotiyeh	cs_chotiyehMark		>	cs_chotiyehComposed$2:(1 2)  _;
+gChotiyeh=Y	gHamzaAbove=H								>	gYehHamzaAbove:(Y H) _;
+gChotiyeh=Y	(g__dot2l_IM  g__noDot2l)=D  gHamzaAbove=H	>	gYehHamzaAbove:(Y D H)  _  _;
+gChotiyeh	cs_chotiyehMark								>	cs_chotiyehComposed$2:(1 2)  _;
 
-gBariyeh	g__noDot2l			>	gBariyeh:(1 2)  _;
-gBariyeh	g__dot2l__hamza		>	gBariyeh  gHamzaAbove;
+gBariyeh  g__noDot2l				>	gBariyeh:(1 2)  _;
+gBariyeh  g__noDot2l__hamza		>	gBariyeh  gHamzaAbove;
 
-cBehIM  g__noDot2l  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
-cBehIM  g__noDot2l  >  @1  g__dot2l;
+cBehIM  g__dot2l_IM  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
+cBehIM  g__dot2l_IM  >  @1  g__dot2l;
 
-//cBehIM  g__dot2l__hamza  _  >  @1  gHamzaAbove:1;  -- no, retain the 2 nuqtas
+cBehIM  g__dot2l_IM__hamza  _	>  @1  g__dot2l:2  gHamzaAbove:2;
+cBehIM  g__noDot2l__hamza			>  @1  gHamzaAbove:2;
 
-csChotiyehFin  g__noDot2l			> 	@1:(1 2)  _;
-csChotiyehFin  g__dot2l__hamza		>	@1  gHamzaAbove;
-csChotiyehFin  g__dot2l__smallV		>	@1  g__smallV;
+csChotiyehFin  g__dot2l_IM			> 	@1:(1 2)  _;			// remove dots on final
+csChotiyehFin  g__dot2l_IM__hamza	>	@1  gHamzaAbove;		// remove dots on final
+csChotiyehFin  g__noDot2l__hamza		>	@1  gHamzaAbove;
+csChotiyehFin  g__dot2l__smallV		>	@1  g__smallV;		// ?????????????? do we need the dots?????
 
 csChotiyehFin  g__dot2l_tail		>	csYehTailFin:(1 2)  _;
-csChotiyehFin  g__ring				>	csKashmiriYehFin:(1 2)  _;
+csChotiyehFin  g__ring			>	csKashmiriYehFin:(1 2)  _;
 
 gBariyehFin   g__noDot2l			>	@1:(1 2)  _;
-gBariyehFin   g__dot2l__hamza		>	@1  gHamzaAbove;
+gBariyehFin   g__noDot2l__hamza	>	@1  gHamzaAbove;
 
-gBariyeh	  cs_bariyehMark		>	cs_bariyehComposed$2:(1 2)  _;
+gBariyeh	  cs_bariyehMark			>	cs_bariyehComposed$2:(1 2)  _;
 
 // Right-link
 //gBariyeh			_	>	gBehIni:1	g__dot2l:1_small  /  _ {smallNuqtas == 1}  _;
@@ -801,7 +769,7 @@ if (smallNuqtas == 1)
 csNuqta_normal  >  csNuqta_small;
 
 g__noDot1u		>	g__dot1u_small;
-g__noDot2l		>	g__dot2l_small;
+g__dot2l_IM		>	g__dot2l_small;
 g__dot2l_tail	>	g__dot2l_small;
 
 csLowerUpper  _  >  csLowerNoUpper_small  csUpperNoLower_small$1:1;
@@ -812,8 +780,11 @@ else
 
 // If no other rule matches, then we do in fact need these nuqtas:
 g__noDot1u		>	g__dot1u;
-g__noDot2l		>	g__dot2l;
+g__dot2l_IM		>	g__dot2l;
 g__dot2l_tail	>	g__dot2l;
+
+// This one goes away:
+ANY  g__noDot2l   >  @1:(1 2)  _;
 
 
 // Wider beh forms for noon-ring or teh-ring:
