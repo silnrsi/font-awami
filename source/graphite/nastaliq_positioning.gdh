@@ -82,10 +82,10 @@ cursive_attach(behFinal)
 cursive_attach(behHighTooth)
 cursive_attach(behLowTooth)
 cursive_attach2(behLowTooth, behPreFinalHehGoal)
-// Special case not handled by macro due to attached-ring:
+// Special cases not handled by macro due to attached-ring:
 c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
 	c_entr_behPreFinalHehGoal {insert=1} 
-	/ _  g__kafTop_null  g__attachedRingMid ^ _=L ;
+	/ _  g__kafTop_null  (g__attachedRingMid g__grafStroke) ^ _=L ;
 cursive_attach(behPreReh)
 cursive_attach(behPreNoon)
 cursive_attach(jeem)
@@ -420,6 +420,10 @@ cTakes_ringDia
 	cringDia { attach {to = @B; at = ringS; with = ringM } }
 	/ _=B  g__kafTop_null?  _=R;
 
+cTakes_grafDia
+	cgrafDia { attach {to = @B; at = grafS; with = grafM } }
+	/ _=B  g__kafTop_null?  _=GS;
+
 // Odd situation, but just in case:
 cIso
 	gMaddaAbove { attach {to = @B; at = mUpperS; with = mUpperM } }
@@ -716,6 +720,7 @@ g__kafTop_null { collision {flags = COLL_FREEZE} }  /  cBase  _ ;   // make cont
 
 // Gaf strokes are considered part of the base - they don't move.
 cgafStrokeDia { collision.flags = COLL_FREEZE }  /  cBase  _ ;     // make context long enough to give precedence
+g__grafStroke { collision.flags = COLL_FREEZE }  /  cBase  g__kafTop_null?  _ ;
 
 // Things on top of alefs should never move horizontally. For now, just don't let them move at all.
 // Also, don't force preceding nuqta-like things to move above them.
@@ -1558,8 +1563,13 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_b
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true}
 	cNuqtaUpper { shift.y += @T.ktDelta;  collision.flags = SET_FIX(collision.flags) };
 
-// rings
-(gKafIniMm_short gKafMedJm_short gKafMedJm_tall)  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; passKeySlot = true }
+table(glyph)
+cKafAltHt_full = (gKafIniMm_short  gGafIniMm_short  gKafMedJm_lowentry  gGafMedJm_lowentry);
+		// gKaf/GafMedJm_short, gKaf/GafMedJm_tall - not used?
+endtable;
+
+// ring
+cKafAltHt_full  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; passKeySlot = true }
 	/  _=K  g__kafTop_m_bogus  _=R;
 
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
@@ -1568,6 +1578,15 @@ cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
 // BUG: Where there are two kafs in a row with a ring on the first, the ring will not get attached.
+
+// graf
+cKafAltHt_full  g__grafStroke { attach { to=@K; at=grafS; with=grafM }; passKeySlot = true }
+	/  _=K  g__kafTop_m_bogus  _=R;
+
+cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
+	g__grafStroke { attach { to=@T; at=grafS; with=grafM }; passKeySlot = true };
+cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+	g__grafStroke { attach { to=@T; at=grafS; with=grafM }; passKeySlot = true };
 
 
 // medial kaf bases - re-attach previous to medial kaf base

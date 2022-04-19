@@ -110,7 +110,7 @@ cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArab
 	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__noDot2l__hamza, g__dot2l_IM__hamza,
 	g__verticalStroke, cKafTop,
 	//gMaddaAbove_low,
-	g__gafStroke, g__gafStroke_long, // g__gafStroke_short
+	g__gafStroke, g__gafStroke_long, g__grafStroke, // g__gafStroke_short
 	g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring, g__dot2l_IM, g__noDot2l,
 	gHamzaBelow, gHamzaBelowArabic, g__smallTahBelow, gWavyHamzaBelow, g__smallVBelow, g__smallVinvBelow, 
@@ -330,7 +330,7 @@ cMeemIso = (gMeem, gMeemLowdiac);
 cMeemFin = (gMeemFin, gMeemFin_short, gMeemFinLowdiac);
 cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
-cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
+cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gGraf, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
 cKafFin = (gKafFin, gGafFin, gKafFin_squiggle);
 cHehGoalIso = (gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gHehYehAbove, gAe, gHeh);
 cHehGoalFin = (gHehGoalFin, gTehMarbutaGoalFin);   // gHehGoalFin_stfh - no longer used
@@ -966,8 +966,8 @@ cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow, gVeh);
 cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot3u, g__dot2u);
 cs_kafComposed = (gKafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
 
-cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid);
-cs_gafComposed = (gGueh, gNgoeh, gGafRing);
+cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid, g__grafStroke);
+cs_gafComposed = (gGueh, gNgoeh, gGafRing, gGraf);
 
 cs_noonMark = (
 	g__dot1u, g__noDot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah,
