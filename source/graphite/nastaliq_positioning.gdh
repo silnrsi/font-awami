@@ -269,7 +269,7 @@ cTakes_nLowerDia
 
 // X+Nl Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
 
 
 
@@ -494,7 +494,7 @@ cTakes_hehhookDia  g__hehHook_small  { attach {to = @B; at = hehhookS; with = he
 
 // TEMPORARY - fall-back attachment
 // Needed to test in Graphite1.
-cIniMedFin  g__kafTop_null;
+//cIniMedFin  g__kafTop_null;
 
 cIniMedFin  cNuqtaLike { attach {to = @1; at = zeroS; with = zeroM } };
 
@@ -1363,12 +1363,12 @@ csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
 csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
-	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_tall$K
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base_noGaf$K  csKafMed_top_tall_noGaf$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Gaf + kaf/gaf-medial => shorter
@@ -1696,7 +1696,9 @@ csFinal_short
 	/ _=F  _  _;
 cTakes_smallV_short cNuqtaLikeUpper {att {to=@F; at=smallValtS; with=nUpperM}}  / _=F {lamValt == 1} _;
 csFinal_short       cNuqtaLikeUpper {att {to=@F; at=nUpperS; with=nUpperM}}     / _=F  _;
-cTakes_ring_short	g__attachedRing {att {to=@F; at=ringS; with=ringM}}	  	  / _=F  _;
+csFinal_short       cn23LowerDia    {att {to=@F; at=n23LowerS; with=n23LowerM}} / _=F  _;
+csFinal_short       cNuqtaLikeLower {att {to=@F; at=n1LowerS; with=n1LowerM}}   / _=F  _;
+cTakes_ring_short   g__attachedRing {att {to=@F; at=ringS; with=ringM}}         / _=F  _;
 
 endpass;  // pos - 7 (14)
 
