@@ -1895,7 +1895,7 @@ endpass; // pos - 8 (15)
 pass(9)
 
 // Hamzas that act like diacritics (but don't reattach them if they're already attached).
-// Ideally these rules should handle a lower diacritic.
+// Ideally these rules should handle 
 cTakes_hamzaUpperDia   cHamzaAbove  /  _ ^ _; // already attached
 cTakes_hamzaLowerDia   cHamzaAbove  /  _ ^ _;
 cTakes_mTahUpperDia=B  cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mTahUpperS; with=hamzaUpperM}} / _ ^ OPT_LOWER _ ;  // tah
@@ -1903,10 +1903,10 @@ cTakes_mUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); 
 cTakes_nUpperDia=B     cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@B; at=nUpperS; with=hamzaUpperM} }  /  _ ^ OPT_LOWER _ ;
 cTakes_mLowerDia=B     cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=mLowerS; with=hamzaLowerM} }  /  _ ^ OPT_LOWER _ ;
 cTakes_n1LowerDia=B    cHamzaBelow {collision.flags = SET_FIX(collision.flags); att {to=@B; at=n1LowerS;with=hamzaLowerM} }  /  _ ^ OPT_LOWER _ ;
-cTakes_nUpperDia    cKafTopAltHt=T
-                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@T; at=nUpperS; with=hamzaUpperM} } / _ _ ^ OPT_LOWER _ ;
-cTakes_nUpperDia=K  cKafTopInvis
-                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@K; at=nUpperS; with=hamzaUpperM} } / _ _ ^ OPT_LOWER _ ;
+cTakes_nUpperDia    cKafTopAltHt=T  cNuqtaLike4Kaf?
+                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@T; at=nUpperS; with=hamzaUpperM} } / _ _ _ ^ OPT_LOWER _ ;
+cTakes_nUpperDia=K  cKafTopInvis  cNuqtaLike4Kaf?
+                       cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@K; at=nUpperS; with=hamzaUpperM} } / _ _ _ ^ OPT_LOWER _ ;
 
 endpass; // pos - 9 (16)
 
