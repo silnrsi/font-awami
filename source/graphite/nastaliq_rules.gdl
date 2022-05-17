@@ -23,7 +23,7 @@
 
 	Substitution:
 	1 - diacritic ordering, NFC/NFD, separating nuqtas from bases
-	2 - basic contextual forms (initial, medial, final)
+	2 - basic contextual forms (initial, medial, final); special finals
 	3 - finals, special ligatures
 	4 - medials
 	5 - initials
@@ -38,9 +38,12 @@
 	13 (6) - substitute short forms
 	14 (7) - attach kaf tops, reattachments for short forms
 	15 (8) - diacritic attachment
-	16 (9) - nuqta special cases, kerning pairs, diacritics above the line
-	17 (10) - set up collision avoidance for diacs, kerning, special  cases
-	18 (11) - perform collision avoidance
+	16 (9) - hamzas that act like diacritics
+	17 (10) - nuqta special cases, kerning pairs, diacritics above the line
+	18 (11) - set up collision avoidance for diacs, kerning, special  cases
+	19 (12) - perform collision avoidance
+	20 (13) - even up right margin
+	21 (14) - punctuation kerning
 */
 
 // Standard definitions and abbreviations:

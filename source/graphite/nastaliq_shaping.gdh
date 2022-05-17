@@ -629,24 +629,60 @@ endif; // hamzaAlt
 // We do this in this late pass (instead of in pass 3) because by now we've figured out the 
 // contextual shaping. Otherwise the variety of beh forms trips us up.
 
+gBehIniHd  g__dot2u  gZair  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  
+	gBehMed  g__dot2lIM  gKafMedBe
+	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11 12) _ _ _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _ _ _ gBehMedQf;
 gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  
 	gBehMed  g__dot2lIM  gKafMedBe
 	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ 
 	/  _ _ _ _ _ _ _ _ _ _ _ gBehMedQf;
+gBehIniHd  g__dot2u  gZair  gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  
+	gBehMed  g__dot2lIM  gKafMedBe
+	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _ _ gBehMedQf;
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  
+	gBehMed  g__dot2lIM  gKafMedBe
+	>  g_wordThessalonik:(1 2 3 4 5 6 7 8 9 10) _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _ gBehMedQf;
 
+gBehIniHd  g__dot2u  gZair gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  gBehMed  
+	>  g_wordThessaloni:(1 2 3 4 5 6 7 8 9 10) _ _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
 gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gPesh  gBehMedBeM2  g__dot1u  gBehMed  
 	>  g_wordThessaloni:(1 2 3 4 5 6 7 8 9) _ _ _ _ _ _ _ _ 
 	/  _ _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
+gBehIniHd  g__dot2u  gZair gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  gBehMed  
+	>  g_wordThessaloni:(1 2 3 4 5 6 7 8 9) _ _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  gBehMed  
+	>  g_wordThessaloni:(1 2 3 4 5 6 7 8) _ _ _ _ _ _ _ 
+	/  _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
 
 gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
 	g__dot2lIM  gPesh  gSeenFin
 	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _ ;
-
+gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
+	g__dot2lIM  gSeenFin
+	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12) _ _ _ _ _ _ _ _ _ _ _ ;
+gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
+	g__dot2lIM  gPesh  gSeenFin
+	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12) _ _ _ _ _ _ _ _ _ _ _ ;
+gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
+	g__dot2lIM  gSeenFin
+	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11) _ _ _ _ _ _ _ _ _ _ ;
+	
 gBehMedQf  g__noDot2l  >  gBehMedQf_short  g__dot2l  /  g_wordThessalonik  _  _=N  gWawFin;
 gBehMedQf  cNuqtaLike  >  gBehMedQf_short  @N        /  g_wordThessalonik  _  _=N  gWawFin;
 
 gAlef  gLamIniMm  gMeemMedSn  gSeenMedBe  gBehMedJm  g__dot2lIM  gJeemFin
 	>  g_wordAlmasih:(1 2 3 4 5 6 7) _ _ _ _ _ _ ;
+gAlef  gLamIniMm  gMeemMedSn  gSeenMedBe  gBehMedJm  g__dot2lIM  gJeemFin
+	>  g_wordAlmasih:(1 2 3 4 5 6 7) _ _ _ _ _ _ ;
+
+// These sequences are on the tall side; force use of the short final.
+gNoonFin >  gNoonFin_short  /  gSeenIniMm  gMeemMedJm  gJeemMedHd  cNuqtaLike  gHehDoMedBeNn  _=N;
+gSadFin  >  gSadFin_short   /  gSeenIniJm_flat  cNuqtaLike  gJeemMedSd  cNuqtaLike  _=S;
 
 
 // Recompose isolates.
@@ -990,7 +1026,7 @@ endpass; // 7
 	// But there is a bug where some applications don't put these in the right
 	// direction. So we provide right-to-left rules as well.
 
-pass(6)
+pass(7)
 
 	cDigitAny  cDigitAny  cDigitAny  cDigitAny  cSignTakes4  >
 		cDigitAnySmall  cDigitAnySmall  cDigitAnySmall  cDigitAnySmall  cSign4;

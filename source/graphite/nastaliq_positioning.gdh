@@ -174,7 +174,7 @@ endtable;
 
 
 //
-//  NUQTA POSITIONING
+//  NUQTA ATTACHMENT
 //
 
 table(positioning)
@@ -451,7 +451,7 @@ cIso
 	cNuqtaLikeLower { attach {to = @B1; at = nLowerTightS; with = n1LowerM } }
 	gBehMedJm
 	cNuqtaLikeLower { attach {to = @B2; at = nLowerTightS; with = n1LowerM } }
-	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLike;
+	/   _=B1  _=N1  cDiacritic?  _=B2  _=N2  cDiacritic?  gJeemFin  cNuqtaLikeLower;
 
 // Special case: lower-nuqta + jeem + beh/yeh + jeem/hah/khah/tcheh - move center nuqta down to the right of the jeem tail.
 (gBehIniBe gBehMedBe gHehGoalIniBe gJeemMedBe)
@@ -1106,7 +1106,7 @@ cKafNoIso
 			flags = CLEAR_KERN(collision.flags);
 		} } 
 	(cDot2u cDot3u) { shift { x = 200m; y = -100m } }
-	/ _  g__kafTop_null? _;
+	/ ANY  _=K  g__kafTop_null? _=N; // the ANY increases the precedence
 
 
 // There is a bug in the Graphite engine that mis-initializes the exclusion glyph that causes bugs in the
@@ -1475,9 +1475,9 @@ endpass;  // 5 (12)
 
 
 table(glyph)
-csFinal_regular = (gSeenFin, gJeemFin, gAinFin, gChotiyehFin, gChotiyehFin_bfkl,
+csFinal_regular = (gSeenFin, gSadFin, gJeemFin, gAinFin, gChotiyehFin, gChotiyehFin_bfkl,
 	gNoonFin, gQafFin, gQafFin_stfh, gLamFin, gMeemFin);
-csFinal_short = (gSeenFin_short, gJeemFin_short, gAinFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short,
+csFinal_short = (gSeenFin_short, gSadFin_short, gJeemFin_short, gAinFin_short, gChotiyehFin_short, gChotiyehFin_bfkl_short,
   gNoonFin_short, gQafFin_short, gQafFin_stfh_short, gLamFin_short, gMeemFin_short);
 
 csMed_regular = (gJeemMedBy, gBehMedQf);
@@ -1631,6 +1631,8 @@ c_exit_chotiyeh {att {to=@F; with=exit; at=entrance}}     gChotiyehFin_short {pa
 c_exit_chotiyehBfkl {att {to=@F; with=exit; at=entrance}} gChotiyehFin_bfkl_short {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_seen      {att {to=@F; with=exit;  at=entrance}}   gSeenFin_short     {passKeySlot = true; insert = 1}
+	/  _ MARKS2N ^ _=F;
+c_exit_sad       {att {to=@F; with=exit;  at=entrance}}   gSadFin_short      {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
 c_exit_jeem      {att {to=@F; with=exit;  at=entrance}}   gJeemFin_short     {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
@@ -2937,6 +2939,8 @@ endif;
 
 // Fixes to even up right margin
 
+/******
+
 pass(13)  // 20
 
 gBehIni     {advance.x += 360m}  /  _=B {startOfLine} cNuqtaLike? MARKS cKafMF;
@@ -2958,9 +2962,11 @@ cSpace { advance.x += 110m }
 
 endpass;  // pos - 13
 
+****************/
 
 #if KERNLOWPUNCT
 
+/***************
 if (collFix > 0)
 pass(14)  { CollisionFix = 1; AutoKern = true }  // 21
 
@@ -2976,7 +2982,10 @@ cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
 endpass;  // 14
 endif;
 
+*************/
+
 #endif
+
 
 /////#include "awami_tweaks.gdh"
 
