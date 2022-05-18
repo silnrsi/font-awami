@@ -20,18 +20,6 @@
 
 table(glyph) {MUnits = 2048};
 
-cDot1l = (g__dot1l, g__dot1l_small);
-cDot1u = (g__dot1u, g__dot1u_small);
-cDot2l = (g__dot2l, g__dot2l_small);
-cDot2u = (g__dot2u, g__dot2u_small);
-cDot2vl = (g__dot2vl, g__dot2vl_small);
-cDot2vu = (g__dot2vu, g__dot2vu_small);
-cDot3l = (g__dot3l, g__dot3l_small);
-cDot3u = (g__dot3u, g__dot3u_small);
-cDot3uD = (g__dot3uD, g__dot3uD_small);
-cDot4l = (g__dot4l, g__dot4l_small);
-cDot4u = (g__dot4u, g__dot4u_small);
-
 cHamzaAbove = (gHamzaAbove, g__wavyHamza, g__hamzaArabic);
 cHamzaBelow = (gHamzaBelow, gWavyHamzaBelow, gHamzaBelowArabic);
 
@@ -53,6 +41,19 @@ g__dot2l_tail = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoi
 g__noDot2l__hamza = pseudo(postscript("_dot2lIM__hamza"));
 
 
+cDot1l = (g__dot1l, g__dot1l_small);
+cDot1u = (g__dot1u, g__dot1u_small);
+cDot2l = (g__dot2l, g__dot2l_small, g__dot2lIM, g__dot2l_tail);
+cDot2u = (g__dot2u, g__dot2u_small);
+cDot2vl = (g__dot2vl, g__dot2vl_small);
+cDot2vu = (g__dot2vu, g__dot2vu_small);
+cDot3l = (g__dot3l, g__dot3l_small);
+cDot3u = (g__dot3u, g__dot3u_small);
+cDot3uD = (g__dot3uD, g__dot3uD_small);
+cDot4l = (g__dot4l, g__dot4l_small);
+cDot4u = (g__dot4u, g__dot4u_small);
+
+
 // The version of the madda that is placed below the vowel - not currently used.
 //gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
 //	{ mUpperM = gMaddaAbove.mUpperM; mUpperS = gMaddaAbove.mUpperS; zeroM = point(0m, 0m) };
@@ -65,7 +66,7 @@ c_zerojoin = (g_zerojoin, g_zerojoinShowInv);
 
 cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u,
 	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small) ;
-cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot3l, g__dot4l,
+cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot2lIM, g__dot3l, g__dot4l,
 	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
@@ -406,7 +407,7 @@ csRightLinkFin = (	c_zerojoin,	gAlefFin,	gDalFin,	gRehFin,	gWawFin,	gBariyehFin,
 cBehIni = ( gBehIni, gBehIniAi, gBehIniBe, gBehIniBeM1, gBehIniBeM2, gBehIniBeNn, gBehIniBeRe,
 	gBehIniBy, gBehIniCh, gBehIniFe, gBehIniHd, gBehIniHgF, gBehIniHgM, gBehIniJm,
 	gBehIniMm, gBehIniMmX, gBehIniNn, gBehIniQf, gBehIniRe, gBehIniSd, gBehIniSn, gBehIniSnSn,
-	gBehIniTa, gBehIniHdR ) ;  // gBehIniMmM, gBehIniMmMR, -- obsolete
+	gBehIniTa, gBehIniHdR, gBehIniBe_jmF ) ;  // gBehIniMmM, gBehIniMmMR, -- obsolete
 cJeemIni = ( gJeemIni gJeemIniBeM1 gJeemIniBeF gJeemIniBeM2 gJeemIniJm gJeemIniRe
     gJeemIniSn gJeemIniSnSn gJeemIniSd gJeemIniTa gJeemIniAi gJeemIniFe gJeemIniQf
     gJeemIniMm gJeemIniNn gJeemIniHgF gJeemIniHgM gJeemIniHd gJeemIniCh gJeemIniBy

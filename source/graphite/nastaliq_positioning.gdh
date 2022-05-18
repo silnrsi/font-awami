@@ -462,8 +462,8 @@ cIso
 
 // Special case: yeh + beh + hah/khah - the nuqtas get tangled due to collision and the possibility of
 // the lower nuqtas moving down by the jeem tail, which turns off the sequence mechanism.
-(gBehIniBe gBehMedBe) cNuqtaLower { attach {to = @B1; at = n1LowerS; with = n1LowerM }; shift {x = -100m; y = 100m} }
-	gBehMedJm  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50m; y = -230m} }
+(gBehIniBe gBehIniBe_jmF gBehMedBe) cNuqtaLower { attach {to = @B1; at = n1LowerS; with = n1LowerM }; shift {x = -100m; y = 50m} }
+	(gBehMedJm gBehMedJmR)  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50m; y = -230m} }
 	/ _=B1  _=N1  _=B2  _=N2  gJeemFin;
 
 cTakes_n1LowerDia
@@ -805,7 +805,7 @@ cNuqtaLikeUpper { collision {
 
 // Special case: beh/yeh + kaf/lam + heh-doachashmee - move nuqtas down and to the right
 cNuqtaLikeLower {
-	shift { x = -250m; y = -300m };
+	shift { x = -75m; y = -75m };
 	collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -200m;

@@ -907,6 +907,12 @@ g__dot1u  (gVowelSmallV gNoonGhunnaMark)   >  (g__dot1u_smallVKf g__dot1u_ngMark
 // Special case: nuqta + diac(s)
 gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
 
+// Special case does not apply here:
+gBehIniBe  g__dot1l  gBehMedJm  g__dot1l  gJeemFin;  // ok, don't change
+// Special case: beh+beh+jeem
+gBehIniBe  gBehMedJm  >  gBehIniBe_jmF  gBehMedJmR
+	/ _=B1 ^ cNuqtaLikeLower cDiacritic?  _=B2 cNuqtaLikeLower cDiacritic?  gJeemFin;
+
 endpass;  // 6
 
 
