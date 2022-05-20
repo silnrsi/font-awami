@@ -1100,12 +1100,18 @@ cNuqtaLikeLower { collision {
 // For ngoeh or kaf w/ 3 dots, don't using the exclusion glyph - 
 // the nuqtas need to go right on top of the gaf.
 //(cls_excludingGlyphs cls_excludingGlyphs_kern)
-cKafNoIso
-		{ collision {
+cKafNoIso { collision {
 			flags = CLEAR_FIX(collision.flags);
 			flags = CLEAR_KERN(collision.flags);
-		} } 
-	(cDot2u cDot3u) { shift { x = 200m; y = -100m } }
+	} }
+	(cDot2u cDot3u) { collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;
+		max.x = 200m;
+		min.y = -100m;
+		max.y = 1000m;
+		// ;  shift { x = 200m; y = -100m }
+	} }
 	/ ANY  _=K  g__kafTop_null? _=N; // the ANY increases the precedence
 
 
@@ -2912,6 +2918,7 @@ cDigitAbsFullSize { collision {
 	max.x = MAXKERN; min.x = MINKERN;
 } }  /  _ cDigitAbsFullSize;
 
+// Diacritics aren't affected by the exclusion area above kafs:
 cls_excludingGlyphs { collision { flags = CLEAR_FIX(collision.flags); exclude.glyph = 0 }};
 
 // Note that most nuqtas will have been previously marked not-fix, unless they are contiguous to
