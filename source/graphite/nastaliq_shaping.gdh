@@ -842,7 +842,9 @@ endif;
 
 
 // Special case: kaf w/3 dots + kaf/gaf
-(gKafIniKf gKafMedDk)  _ >  (gKafIniKf_wide gKafMedKf_wide) g__kafTop_null:K  /  _=K  _  (cDot2u  cDot3u  cDot4u)  cDiacritic?  cKafMF;
+(gKafIniKf gKafMedDk)  _ >  (gKafIniKf_wide gKafMedKf_wide) g__kafTop_null:K  /  _=K  _  cNuqtaUpperWide  cDiacritic?  cKafMF;
+
+// Special case: gaf + kaf + bariyeh (second kaf has no tall form)
 
 
 // Add a bogus null glyph in case we want to break the kafs into two pieces.
@@ -894,9 +896,12 @@ gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf
 	/  _  _  cDiacritic?  (cKafMed  cKafFin);
 csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
 
-// Special  case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
+// Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
 gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm)                 MARKS  _=J cNuqtaLikeUpper MARKS  cKafMF;
 gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm) cNuqtaLikeUpper MARKS  _=J                 MARKS  cKafMF;
+
+// Special case: jeem w/3dots + kaf
+gJeemMed  cNuqtaUpperWide  >  gJeemMedKf_wide  cNuqtaUpperWideSmall  /  _=J  _=N  cDiacritic?  cKafMF;
 
 // Special case: high-tooth nuqta-small-V + beh + kaf/gaf
 g__dot1u_smallV  >  g__dot1u_smallVKf

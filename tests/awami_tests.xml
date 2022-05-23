@@ -1130,7 +1130,7 @@
     <test label="zain + chotiyeh" rtl="True">
       <string>مزیئی</string>
     </test>
-    <test background="#ff0000" label="dal + nuqta" rtl="True">
+    <test label="dal + nuqta" rtl="True">
       <string>دِینِنگا</string>
     </test>
     <test label="dal + nuqta 2" rtl="True">
@@ -1588,6 +1588,11 @@
       <string>کھیربی</string>
     </test>
   </testgroup>
+  <testgroup label="Collisions - small nuqtas">
+    <test class="fset23032" label="jeem w/3dots + kaf" rtl="True">
+      <string>سڅک</string>
+    </test>
+  </testgroup>
   <testgroup label="Collisions - possible">
     <test class="fset2" label="khah khah khah" rtl="True">
       <string>خخخ</string>
@@ -1601,8 +1606,8 @@
     <test label="ain shadda jeem kaf" rtl="True">
       <string>عّجگ عَجگ</string>
     </test>
-    <test label="gueh + tcheheh" rtl="True">
-      <string>لڳڇ</string>
+    <test background="#ff0000" label="gueh + tcheheh" rtl="True">
+      <string>لڳڇ لڳچ</string>
     </test>
     <test label="theh + lam-V" rtl="True">
       <string>سڅڵف</string>
@@ -1935,13 +1940,13 @@
     <test class="fset30" label="kaf + meem-alt" rtl="True">
       <string>مکمل</string>
     </test>
-    <test background="#55aaff" class="fset23023" label="NEED TALL" rtl="True">
+    <test background="#55aaff" class="fset23023" label="TALL FORMS" rtl="True">
       <string />
     </test>
     <test class="fset30" label="sheen kaf" rtl="True">
       <string>شکج</string>
     </test>
-    <test background="#ffff00" class="fset30" label="sheen + kaf + jeem" rtl="True">
+    <test class="fset30" label="sheen + kaf + jeem" rtl="True">
       <string>شگجل</string>
     </test>
     <test class="fset30" label="sheen + kaf + meem" rtl="True">
@@ -1966,7 +1971,7 @@
     <test label="kaf + jeem" rtl="True">
       <string>لٹکج چھݩکح شُگج گگخ</string>
     </test>
-    <test background="#aa00ff" class="fset30" label="nuqta + diac + kaf" rtl="True">
+    <test class="fset30" label="nuqta + diac + kaf" rtl="True">
       <string>ضُکد قَکے</string>
     </test>
     <test background="#ff0000" class="fset30" label="nuqta + kaf-ring + bariyeh" rtl="True">
@@ -1982,7 +1987,10 @@
       <comment>The last few examples are tall enough to not need any adjustment.</comment>
       <string>اَکب اُکف اَکم اَکع اُکمج</string>
     </test>
-    <test background="#55aaff" class="fset30" label="NEED MEDIUM-SHORT" rtl="True">
+    <test class="fset30" label="tah-med + kaf" rtl="True">
+      <string>عطَگَف</string>
+    </test>
+    <test background="#55aaff" class="fset30" label="MEDIUM-SHORT FORMS" rtl="True">
       <string />
     </test>
     <test class="fset30" label="teh +  hah + kaf" rtl="True">
@@ -2003,11 +2011,11 @@
     <test class="fset30" label="tah + kaf + lam/alef" rtl="True">
       <string>لظَکل  ظگا</string>
     </test>
-    <test background="#ff007f" class="fset30" label="tah-med + kaf" rtl="True">
-      <string>عطَگَف</string>
-    </test>
-    <test background="#ff0000" class="fset7654" label="pre-bariyeh - medial" rtl="True">
+    <test class="fset7654" label="pre-bariyeh - medial" rtl="True">
       <string>طَگے اَگگے</string>
+    </test>
+    <test class="fset23032" label="lam + meem + kaf" rtl="True">
+      <string>عَلَمِݣب عَلَمِݣ</string>
     </test>
     <test background="#55aaff" class="fset30" label="GAF + KAF/GAF" rtl="True">
       <string />
@@ -2021,7 +2029,7 @@
     <test class="fset30" label="gaf + lam + gaf" rtl="True">
       <string>گلگو </string>
     </test>
-    <test background="#ff0000" label="ngoeh + lam + gaf" rtl="True">
+    <test label="ngoeh + lam + gaf" rtl="True">
       <string>ڱلگو </string>
     </test>
     <test class="fset30" label="gaf + heh-do +  gaf" rtl="True">
@@ -3517,6 +3525,10 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test class="fset23032" label="kaf-3-dots + kaf" rtl="True">
       <string>ݣگس</string>
+    </test>
+    <test class="fset23032" label="jeem w/3 dots + kaf" rtl="True">
+      <comment>Burushaski data</comment>
+      <string>دِݽْڅِک</string>
     </test>
     <test background="#55aaff" label="PASS 6 + 10" rtl="True">
       <string />

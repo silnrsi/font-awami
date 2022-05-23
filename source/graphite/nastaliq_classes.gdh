@@ -70,6 +70,9 @@ cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot2lIM, g__dot3l, g__dot4l,
 	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
+cNuqtaUpperWide = (g__dot2u, g__dot3u, g__dot4u);
+cNuqtaUpperWideSmall = (g__dot2u_small, g__dot3u_small, g__dot4u_small);
+
 cKafTopAltHt = ( g__kafIniTop_taller, g__kafIniTop_short, g__kafIniTop_shorter, g__kafIniTop_medshort,
 	g__kafMedTop_short, g__kafMedTop_shorter, g__kafMedTop_tall,
 	g__kafMedTop_medshort, g__kafTop_bj_short, g__kafTop_jm_tall, //g__kafTop_by_tall,
@@ -715,6 +718,37 @@ csKafMed_base = (
 csGafIM_base = (csGafIni_base, csGafMed_base);
 csKafIM_base = (csKafIni_base, csKafMed_base);
 
+
+// For med-short and tall forms. The only difference is that these modify the .by form.
+
+csGafMed_baseT = (
+	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base,
+	gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
+	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSnSn_base, 
+	gKafMedSd_base, gKafMedTa_base, gKafMedAi_base, gKafMedFe_base,
+	gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base,
+	// gGafMedKf - does not exist
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base,
+	gKafMedBy_base, gKafMedKf_wide_base
+);
+csKafMed_baseT_noGaf = (
+	gKafMedBe_base, gKafMedBeM1_base, gKafMedBeM2_base,
+	gKafMedBeRe_base, gKafMedBeNn_base, gKafMedBeHg_base, gKafMedBeF_base,
+	gKafMedJm_base, gKafMedRe_base, gKafMedSn_base, gKafMedSnSn_base,
+	gKafMedSd_base, gKafMedTa_base, gKafMedAi_base, gKafMedFe_base,
+	gKafMedQf_base, gKafMedMm_base, gKafMedMmX_base, gKafMedNn_base, gKafMedDk_base,
+	// gKafMedKf - does not exist
+	gKafMedHgM_base, gKafMedHgF_base, gKafMedHd_base, gKafMedCh_base,
+	gKafMedBy_base, gKafMedKf_wide_base
+);
+csKafMed_baseT = (
+	csKafMed_baseT_noGaf,
+	csGafMed_baseT
+);
+
+csGafIM_baseT = (csGafIni_base, csGafMed_baseT);
+csKafIM_baseT = (csKafIni_base, csKafMed_baseT);
+
 // Note that for a few initials, we use the shorter versions instead of the short, and there are special
 // forms for By and Jm forms.
 // Must match csGafIni_medium.
@@ -868,7 +902,7 @@ csKafMed_top_tall_noGaf = (
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, // Qf,Mm,MmX,Nn,Dk
 	// g__kafMedTop_tall -- no Kf
 	g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall, g__kafMedTop_tall,                    // HgM,HgF,Hd,Ch
-	g__kafTop_m_bogus /*by*/, g__kafMedTop_tall                                                    // By, Kfwide
+	g__kafMedTop_tall, g__kafMedTop_tall                                                           // By, Kfwide
 );
 
 csKafMed_top_tall = (
@@ -880,7 +914,7 @@ csKafMed_top_tall = (
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, // Qf,Mm,MmX,Nn,Dk
 	// g__gafMedTop_tall - no Kf
 	g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, g__gafMedTop_tall, 	                 // HgM,HgF,Hd,Ch
-	g__kafTop_m_bogus/*by*/, g__gafMedTop_tall                                                      // By, Kf_wide
+	g__gafMedTop_tall, g__gafMedTop_tall                                                           // By, Kf_wide
 );
 
 

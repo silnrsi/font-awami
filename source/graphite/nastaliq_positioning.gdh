@@ -1024,8 +1024,8 @@ cNuqtaLikeLower_jump {
 	collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -200m;
-		max.x = 700m;	// a lot!
-		min.y = -1600m; // a lot!
+		max.x = 700m;    // a lot!
+		min.y = -1600m;  // a lot!
 		max.y = 300m;
   };
   sequence { class = 0; order = 0 } // don't enforce the order relative to the other glyphs
@@ -1035,7 +1035,7 @@ cNuqtaLikeLower_jump {
 cDot2vl {
 	collision {
 		flags = SET_FIX(collision.flags);
-		min.x = -50m;
+		min.x = -100m;
 		max.x = 150m;
 		min.y = -1000m;
 		max.y = 300m;
@@ -1283,12 +1283,12 @@ cNuqtaUpperLarge  csKafIM_medium  g__kafTop_null
 
 // Tall: large-nuqta + kaf 
 cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N  cDiacritic?  _=K  _=T;
 
 // Special case: Lam + diac + kaf - shorten lam AND heighten kaf
 (gLamIni gLamMed) csKafMed_medium  g__kafTop_null  
-	>  cLam_short  csKafMed_base$K  csKafMed_top_tall$K
+	>  cLam_short  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=L  (cDiacritic g__smallV g__smallTah)  cDiacritic?   _=K  _=T;
 
 // Don't change kaf, rather shorten lam:
@@ -1298,43 +1298,46 @@ cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null
 
 // Tall: after gGafMedKf_lm - lam + gaf + kaf combination
 csKafMed_medium  g__kafTop_null  
-	>  csKafMed_base$K  csKafMed_top_tall$K
+	>  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  gGafMedKf_lm  g__kafTop_null cDiacritic?  _=K  _=T;
 
 // Tall: lam/tah + kaf
 // TODO: move cBaseTall back into context
 cBaseTall  csKafMed_medium  g__kafTop_null  
-	>  @B1  csKafMed_base$K  csKafMed_top_tall$K
+	>  @B1  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=B1  MARKS  _=K  _=T;
 
 // Tall: short-lam + kaf + ring (short-lams are ALMOST short enough to fit under kaf-rings, but not quite)
 cLam_short  csKafMed_medium  g__kafTop_null
-	>  @L  csKafMed_base$K  csKafMed_top_tall$K
+	>  @L  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=L  MARKS  _=K  _=T  g__attachedRingMid;
 
 // Tall: tall kaf + kaf/gaf (note: does not apply to gaf + kaf)
 csKafMed_medium  g__kafTop_null
-	>  csKafMed_base$K2  csKafMed_top_tall$K2
+	>  csKafMed_baseT$K2  csKafMed_top_tall$K2
 	/  csKafIM_base g__kafMedTop_tall  MARKS  _=K2  _=T2;
 
 cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF csKafMed_base$K  csKafMed_top_tall$K
+	>  @N STAYBELOWKAF csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N cBaseTall  MARKS  _=K  _=T;
 
 // Tall: nuqta + diac + kaf
 cNuqtaLike  csKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  cDiacriticUpper?  _=K  _=T;
 
 // Tall: nuqta-smallV + kaf, nuqta-smallTah + kaf
 (csNuqtaPlusMark csNuqtaPlusMarkKf)  csKafMed_medium  g__kafTop_null  
-	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper?  _=K  _=T;
 
 // Exception to rule below, because there is no 'taller' form for pre-meem:
 cDiacriticUpper  gKafIniMm  g__kafTop_null  
 	>  @D STAYBELOWKAF  @K  @T
 	/  (gAlef cAlefFin)  _=D  _=K {position.y < 1100m} _=T;
+// Exception to rule below, because final bariyeh adds horizontal space:
+cDiacriticUpper  >  @D
+	/  (gAlef cAlefFin)  _=D  ^ csKafIni_medium {position.y < 1100m} g__kafTop_null  MARKS  cMed  MARKS  gBariyehFin;
 
 // Tall: alef + diac + kaf
 // (Note that the kaf+bariyeh makes no change.)
@@ -1344,7 +1347,7 @@ cDiacriticUpper  csKafIni_medium  g__kafTop_null
 
 // Special case: exception to rule below when form before kaf is a jeem (eg, \u0641\u062E\u06AF\u0633):
 cDot1u  cDot1u  csKafMed_medium  g__kafTop_null  
-	>  @N1  @N2 STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N1  @N2 STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N1  cDiacritic?  cJeemMed  _=N2  cDiacritic? ^ _=K  _=T;
 
 // Don't change: single-nuqta + single-nuqta + kaf (eg, \u0628\u0650\u0646\u0650\u0646\u06AF\u064E\u06A9\u06C1)
@@ -1354,7 +1357,7 @@ cDot1u  cDot1u  csKafMed_medium  g__kafTop_null
 
 // Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
 cNuqtaLikeUpperNoKT  cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
-	>  @N1  @N2 STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N1  @N2 STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N1  cDiacritic?  cMed  _=N2  cDiacritic?  _=K  _=T;
 
 // nuqta + diac + kaf => default
@@ -1365,25 +1368,25 @@ csKafMed_medium  g__kafTop_null  >  @K  @T
 csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
 	>  csGafIM_base$G  csGafIM_top_shorter$G  
 			@Nfb STAYBELOWKAF // keep nuqta from hopping above kaf
-			csKafMed_base$K  csKafMed_top_tall$K
+			csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
 
 csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
-	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall_noGaf$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Gaf + kaf/gaf-medial => shorter
 csGafIM_medium g__kafTop_null  csKafMed_medium  g__kafTop_null
-	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_base$K  csKafMed_top_tall$K
+	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=G _=Tg  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 // same as above but with a short gaf - still needs a tall following kaf
 csKafMed_medium  g__kafTop_null
-	>  csKafMed_base$K  csKafMed_top_tall$K
+	>  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  gKafMedDk_base g__gafMedTop_short  cNuqtaLike?  cDiacritic?  _=K _=Tk;
 
 // Lam + gaf + kaf/gaf => special form of gaf
@@ -1395,20 +1398,20 @@ csGafIM_medium  g__kafTop_null  cKafFin
 	>  csGafIM_base$G  csGafIM_top_short$G  @K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
 
-// Medium-short: lam/tah + jeem + kaf
+// Medium-short: lam/tah + jeem/meem + kaf
 cBaseTall  csKafMed_medium  g__kafTop_null  
-	>  @B  csKafMed_base$K  csKafMed_top_medshort$K
-	/  _=B  cNuqtaLike? cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+	>  @B  csKafMed_baseT$K  csKafMed_top_medshort$K
+	/  _=B  cNuqtaLike? cDiacritic?  (cJeemMed cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Medium-short: tah + beh/meem/ain + kaf...
 cTahIM  csKafMed_medium  g__kafTop_null  
-	>  @Ta  csKafMed_base$K  csKafMed_top_medshort$K
+	>  @Ta  csKafMed_baseT$K  csKafMed_top_medshort$K
 	/  _=Ta cNuqtaLike? cDiacritic?  c_narrow cNuqtaLike? cDiacritic?  _=K  _=T;
 
 // Medium-short: nuqta + jeem + kaf...
 cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
 	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}}   // move right, not up
-			csKafMed_base$K  csKafMed_top_medshort$K
+			csKafMed_baseT$K  csKafMed_top_medshort$K
 	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Short round form: tah + kaf + lam/alef - not needed
@@ -1423,7 +1426,7 @@ cDot1u  csKafMed_medium  g__kafTop_null
 
 // Tall (\u062E\u064F\u0634\u06A9\u06CC)
 cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
-	>  @N STAYBELOWKAF  csKafMed_base$K  csKafMed_top_tall$K
+	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
 
 // No change: never make shorter after a kaf/gaf.
