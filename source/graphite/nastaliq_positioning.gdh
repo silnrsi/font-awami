@@ -1592,7 +1592,8 @@ cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
 
-// BUG: Where there are two kafs in a row with a ring on the first, the ring will not get attached.
+// Where there are two kafs in a row with a ring/nuqta/graf stroke on the first, the latter will not get attached
+// in this pass. It gets fixed up in the later clean-up pass.
 
 // graf
 cKafAltHt_full  g__grafStroke { attach { to=@K; at=grafS; with=grafM }; passKeySlot = true }
@@ -1723,7 +1724,6 @@ endpass;  // pos - 7 (14)
 //
 //	DIACRITIC ATTACHMENT
 //
-
 
 // Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
@@ -1908,8 +1908,10 @@ cDiacriticLower=D1  cDiacriticLower {att {to=@D1; at=mLowerS; with=mLowerM}; SET
 endpass; // pos - 8 (15)
 
 
+// Left-over stuff
+
 #define OPT_LOWER  cNuqtaLikeLower? cDiacriticLower?
-pass(9)
+pass(9)  // 16
 
 // Hamzas that act like diacritics (but don't reattach them if they're already attached).
 // Ideally these rules should handle 
@@ -1924,6 +1926,16 @@ cTakes_nUpperDia    cKafTopAltHt=T  cNuqtaLike4Kaf?
                        cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@T; at=nUpperS; with=hamzaUpperM} } / _ _ _ ^ OPT_LOWER _ ;
 cTakes_nUpperDia=K  cKafTopInvis  cNuqtaLike4Kaf?
                        cHamzaAbove {collision.flags = SET_FIX(collision.flags); att {to=@K; at=nUpperS; with=hamzaUpperM} } / _ _ _ ^ OPT_LOWER _ ;
+                       
+                       
+// Nuqtas/ring/graf stroke will not be properly attached to a kaf-top when it is followed
+// by another kaf or gaf, due to the interaction of the rules. Just reattach them all.
+
+cKafTopAltHt=T  g__grafStroke { attach { to=@T; at=grafS;   with=grafM }};
+cKafTopAltHt=T  cringDia      { attach { to=@T; at=ringS;   with=ringM }};
+cKafTopAltHt    cNuqta        { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -450m; y = 270m } }
+	/  _=T  _=N  csKafMed_baseT  csKafMed_top_tall;
+cKafTopAltHt=T  cNuqta        { attach { to=@T; at=nUpperS; with=nUpperM }};
 
 endpass; // pos - 9 (16)
 
