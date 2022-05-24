@@ -42,7 +42,7 @@
   <testgroup label="main">
     <test background="#ffff7f" class="fset30" label="analyze" rtl="True">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>ٻیخئی     ٻیخئ</string>
+      <string>لفݣص  لفڱص   لفکص  </string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -3900,8 +3900,11 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test background="#55aaff" class="fset23032" label="TO FIX" rtl="True">
       <string />
     </test>
-    <test background="#ff0000" class="fset23032" label="vertical dots + zer + jeem" rtl="True">
+    <test class="fset23032" label="vertical dots + zer + jeem" rtl="True">
       <string>ٻِیج</string>
+    </test>
+    <test class="fset23032" label="graf + kaf" rtl="True">
+      <string>ݣگس ࣈگب ڱگس ࣈبجمحس</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">

@@ -1271,6 +1271,8 @@ pass(5)  // 12
 
 // Kaf-top collision fixing/prevention and tall sequences
 
+// This pass marks glyphs appropriate as needing fixing.
+
 // Special case: alef-madda + kaf/gaf + final-heh-goal/beh/tah/feh - make kaf tall so alef-madda can squeeze in
 csKafIni_medium  g__kafTop_null
 	>  csKafIni_base$K  csKafIni_top_taller$K
@@ -1377,7 +1379,7 @@ csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
 
 // Maybe not needed, but it does help avoid the kafs touching.
 csKafIM_medium g__kafTop_null  csKafMed_medium_noGaf g__kafTop_null
-	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall_noGaf$K
+	>  csKafIM_base$G  csKafIM_top_shorter$G  csKafMed_baseT_noGaf$K  csKafMed_top_tall_noGaf$K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 // Gaf + kaf/gaf-medial => shorter
@@ -1497,6 +1499,9 @@ endtable;
 if (shortForms > 1)
 pass(6)  // 13
 
+// This pass does the adjustments for tall words, including shifting nuqtas/marks down and 
+// substituting alternate height kafs.
+
 // Special case: \u0628\u0631\u0627\u0646\u06AF\u06CC\u062E\u062A\u06AF\u06CC
 // Note that this is quite a rare word, and it is questionable how generally useful
 // these rules are for other contexts.
@@ -1585,6 +1590,7 @@ cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_b
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
+
 
 // BUG: Where there are two kafs in a row with a ring on the first, the ring will not get attached.
 
