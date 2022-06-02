@@ -4,22 +4,12 @@
   <anchor x="16" y="-184" name="_tahUpper"/>
   <outline>
     <component base="_smallTah" xOffset="-400" yOffset="660"/>
-    <contour>
-      <point x="201" y="24" type="curve" smooth="yes"/>
-      <point x="201" y="38"/>
-      <point x="161" y="51"/>
-      <point x="97" y="115" type="curve" smooth="yes"/>
-      <point x="31" y="181"/>
-      <point x="18" y="221"/>
-      <point x="5" y="221" type="curve" smooth="yes"/>
-      <point x="-30" y="221"/>
-      <point x="-181" y="60"/>
-      <point x="-181" y="24" type="curve" smooth="yes"/>
-      <point x="-181" y="-18"/>
-      <point x="-26" y="-174"/>
-      <point x="16" y="-174" type="curve" smooth="yes"/>
-      <point x="49" y="-174"/>
-      <point x="202" y="-12"/>
-    </contour>
+    <component base="_nukta" xOffset="-372" yOffset="23"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
 </glyph>
