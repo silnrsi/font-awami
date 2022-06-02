@@ -659,6 +659,10 @@ gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  
 	>  g_wordThessaloni:(1 2 3 4 5 6 7 8) _ _ _ _ _ _ _ 
 	/  _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
 
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenFin
+	>  g_wordThess:(1 2 3 4) _ _ _
+	/  _ _ _ _;
+
 gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
 	g__dot2lIM  gPesh  gSeenFin
 	>  g_wordTimothy:(1 2 3 4 5 6 7 8 9 10 11 12 13) _ _ _ _ _ _ _ _ _ _ _ _ ;
@@ -848,7 +852,7 @@ endtable;
 
 // Special case: kaf w/3 dots + kaf/gaf; graf + kaf/gaf
 cKafKfNormal  _ >  cKafKfWide g__kafTop_null:K
-	/  _=K  _  (cNuqtaUpperWide  g__grafStroke)  cDiacritic?  cKafMF;
+	/  _=K  _  (csNuqtaUpperWide  g__grafStroke)  cDiacritic?  cKafMF;
 
 // Special case: gaf + kaf + bariyeh (second kaf has no tall form)
 
@@ -907,7 +911,15 @@ gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm)                 MARKS  _=
 gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm) cNuqtaLikeUpper MARKS  _=J                 MARKS  cKafMF;
 
 // Special case: jeem w/3dots + kaf/alef
-gJeemMed  cNuqtaUpperWide  >  gJeemMedKf_wide  cNuqtaUpperWideSmall  /  _=J  _=N  cDiacritic?  (cKafMF cAlefFin);
+gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  csNuqtaUpperWideSmallF  /  _=J  _=N  cDiacritic?  cKafMF;
+gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  @N                      / _=J  _=N  cDiacritic?  cAlefFin;
+
+// Special case: feh/ghain + jeem + kaf
+cNuqtaUpper  gJeemMed  >  csNuqtaUpperSmallF  gJeemMedKf_wide  /  (cFehIM cAinIM) _=N cDiacritic?    _=J  MARKS  cKafNoIso;
+             gJeemMed  >                      gJeemMedKf_wide  /  (cFehIM cAinIM)   cDiacriticUpper  _=J  MARKS  cKafNoIso;
+
+// Special case: tah + jeem + kaf/gaf
+gJeemMed  >  gJeemMedKf_wide  /  (gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
 
 // Special case: high-tooth nuqta-small-V + beh + kaf/gaf
 g__dot1u_smallV  >  g__dot1u_smallVKf

@@ -49,8 +49,6 @@
 // Standard definitions and abbreviations:
 #include "stddef.gdh"
 
-// Collision fixing:
-#define DO_COL_FIX 1
 
 // Separate the nuqtas on final glyphs from their bases: 
 #define SEP_FINAL_NUQTAS 0
@@ -67,8 +65,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define STYLE_BOLD     2
 #define STYLE_BOOKBOLD 3
 
-
-#if DO_COL_FIX
 
 #define COLL_FREEZE       0		// base - test for collisions but don't move this glyph; 
                            		// the default for a glyph in the START-END range
@@ -107,8 +103,6 @@ ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 #define AUTOKERN_FULL		1
 #define AUTOKERN_NOSPACE	2
 
-#endif // DO_COL_FIX
-
 // Nuqtas that are attached below a bariyeh:
 #define underBy user1
 
@@ -134,12 +128,7 @@ gBehMedNn_ss { n1LowerS = point(401m, 155m); n23LowerS = point(423m, 165m) };
 #include "nastaliq_classes.gdh"
 #include "latin_awami.gdh"
 
-
-#if DO_COL_FIX
-
 #include "nastaliq_complexShapes.gdh"
-
-#endif // DO_COL_FIX
 
 
 // EXPERIMENTS AND BUG FIXES:

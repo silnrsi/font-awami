@@ -55,6 +55,9 @@ cDot3uD = (g__dot3uD, g__dot3uD_small);
 cDot4l = (g__dot4l, g__dot4l_small);
 cDot4u = (g__dot4u, g__dot4u_small);
 
+// KLUDGE
+/////g__grafStrokeKT = pseudo(postscript("_grafStroke")) { grafM = g__grafStroke.grafM };
+/////cGrafStroke = (g__grafStroke, g__grafStrokeKT);
 
 // The version of the madda that is placed below the vowel - not currently used.
 //gMaddaAbove_low = pseudo(postscript("absMaddaAbove"))
@@ -66,14 +69,17 @@ c_zeronojoin = (g_zeronojoin, g_zeronojoinShowInv);
 c_zerojoin = (g_zerojoin, g_zerojoinShowInv);
 
 
+// "SmallF" refers to glyphs that are suitable for the small-nuqtas feature, not just smaller nuqtas like the single nuqta.
 cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u,
 	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot2lIM, g__dot3l, g__dot4l,
 	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
 
-cNuqtaUpperWide = (g__dot2u, g__dot3u, g__dot4u);
-cNuqtaUpperWideSmall = (g__dot2u_small, g__dot3u_small, g__dot4u_small);
+csNuqtaUpperSmallF = (g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD, g__dot4u,
+	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small) ;
+csNuqtaUpperWide = (g__dot2u, g__dot3u, g__dot4u);
+csNuqtaUpperWideSmallF = (g__dot2u_small, g__dot3u_small, g__dot4u_small);
 
 cKafTopAltHt = ( g__kafIniTop_taller, g__kafIniTop_short, g__kafIniTop_shorter, g__kafIniTop_medshort,
 	g__kafMedTop_short, g__kafMedTop_shorter, g__kafMedTop_tall,
@@ -115,7 +121,7 @@ cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArab
 	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__noDot2l__hamza, g__dot2lIM__hamza,
 	g__verticalStroke, cKafTop,
 	//gMaddaAbove_low,
-	g__gafStroke, g__gafStroke_long, g__grafStroke, // g__gafStroke_short
+	g__gafStroke, g__gafStroke_long, g__grafStroke,   // g__gafStroke_short
 	g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove);
 cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring, g__dot2lIM, g__noDot2l,
 	gHamzaBelow, gHamzaBelowArabic, g__smallTahBelow, gWavyHamzaBelow, g__smallVBelow, g__smallVinvBelow, 
@@ -527,11 +533,11 @@ cHehGoalMed = ( gHehGoalMed gHehGoalMedBeM1 gHehGoalMedBeF gHehGoalMedBeM2
 cKafMed_gaf = (gGafMed gGafMedBe gGafMedBeF gGafMedBeM1 gGafMedBeM2 gGafMedJm gGafMedRe gGafMedSn gGafMedSnSn
 	gGafMedSd gGafMedTa gGafMedAi gGafMedFe gGafMedQf gGafMedMm gGafMedMmX gGafMedNn gGafMedHgM
 	gGafMedHgF gGafMedHd gGafMedCh gGafMedBy gGafMedDk gGafMedBeRe gGafMedBeNn gGafMedBeHg
-	gGafMedJm_lowentry gGafMedJm_short gGafMedJm_tall gGafMedKf_lm );
+	gGafMedJm_lowentry gGafMedJm_short gGafMedJm_tall gGafMedKf_lm gGafMedKf_wide);
 cKafMed = ( gKafMed gKafMedBe gKafMedBeF gKafMedBeM1 gKafMedBeM2 gKafMedJm gKafMedRe gKafMedSn gKafMedSnSn
 	gKafMedSd gKafMedTa gKafMedAi gKafMedFe gKafMedQf gKafMedMm gKafMedMmX gKafMedNn gKafMedHgM
 	gKafMedHgF gKafMedHd gKafMedCh gKafMedBy gKafMedDk gKafMedBeRe gKafMedBeNn gKafMedBeHg
-	gKafMedJm_lowentry gKafMedJm_short gKafMedJm_tall
+	gKafMedJm_lowentry gKafMedJm_short gKafMedJm_tall gKafMedKf_wide
 	cKafMed_gaf ) ;
 cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
 	gHehDoMedBeM2 gHehDoMedJm gHehDoMedRe gHehDoMedSn gHehDoMedSnSn

@@ -548,8 +548,6 @@ endpass;  // 2 (9)
 endtable;  // pos
 
 
-#if DO_COL_FIX
-
 // Define fake right and left bounding boundaries that will be compared to the side-bearing marks
 // and used to determine the ideal margin/kerning.
 
@@ -763,6 +761,15 @@ cNuqtaLikeUpper { collision {
 	min.y = -200m;  // shouldn't need to move vertically either, at least by much
 	max.y = 300m;
 } } / cTahMed _ ;
+
+// Special case: fah/qaf + jeem(wide) + kaf: don't let feh nuqtas move above kaf stroke
+cNuqtaUpper { collision {
+	flags = SET_FIX(collision.flags);
+	min.x = -50m;   // don't it move left much
+	max.x = 150m;
+	min.y = -300m;
+	max.y = 0m;
+} } / cFehIM _=N  cDiacritic?  gJeemMedKf_wide;
 
 
 // Special case: khah + teh/theh + kaf/lam/alef
@@ -985,6 +992,9 @@ cNuqtaLikeUpper { collision {
 } }  /  cJeemIni  cNuqtaLike?  cBase  _; 
 ***/
 
+// Never shift the graf stroke.
+g__grafStroke { collision.flags = COLL_FREEZE }  /  cBase  g__kafTop_null?  _ ;  // add context to increase precedence, just in case
+
 // Above narrow glyphs with obvious centers, nuqtas shouldn't move far left or right.
 // WHAT ELSE SHOULD GO IN HERE????  Ain?
 cNuqtaLikeUpper { collision {
@@ -1064,7 +1074,7 @@ g__hehHook_small { collision {
 	max.x = 400m;
 	min.y = -1000m;  // nuqtas use 1000m
 	max.y = 50m;
-} }  /  _=H  cMed MARKS  [cMed MARKS]? cBariyehFin;
+} }  /  _=H  cDiacritic? cMed MARKS  [cMed MARKS]? cBariyehFin;
 
 
 // Heh-hooks need to be kept centered under the base. But because they are originally positioned quite a bit to the left
@@ -1204,7 +1214,6 @@ endif;
 
 endtable; // positioning
 
-#endif // DO_COL_FIX
 
 /*****  Not needed - the collision-fix pass sets all the positions accurately.
 table(glyph)
@@ -1400,10 +1409,10 @@ csGafIM_medium  g__kafTop_null  cKafFin
 	>  csGafIM_base$G  csGafIM_top_short$G  @K
 	/  _=G _=Tg  cNuqtaLike? cDiacritic? _=K;
 
-// Medium-short: lam/tah + jeem/meem + kaf
+// Medium-short: lam/tah + jeem/meem + kaf - do we need this with the wider jeem?
 cBaseTall  csKafMed_medium  g__kafTop_null  
 	>  @B  csKafMed_baseT$K  csKafMed_top_medshort$K
-	/  _=B  cNuqtaLike? cDiacritic?  (cJeemMed cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
+	/  _=B  cNuqtaLike? cDiacritic?  (/*cJeemMed*/ cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Medium-short: tah + beh/meem/ain + kaf...
 cTahIM  csKafMed_medium  g__kafTop_null  
@@ -1414,7 +1423,7 @@ cTahIM  csKafMed_medium  g__kafTop_null
 cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null  
 	>  @N {shift.x = -300m; collision {max.x = 600m; max.y = 200m}}   // move right, not up
 			csKafMed_baseT$K  csKafMed_top_medshort$K
-	/  _=N  cDiacritic?  cJeemMed  cNuqtaLike?  cDiacritic?  _=K  _=T;
+	/  _=N  cDiacritic?  cJeemMed_stdwidth  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Short round form: tah + kaf + lam/alef - not needed
 ////cTahIM  csKafRound_medium  g__kafTop_null
@@ -1588,12 +1597,14 @@ cKafAltHt_full  g__attachedRingMid { attach { to=@K; at=ringS; with=ringM }; pas
 
 cTakes_kafTop_bjDia=B  ckafTop_bjDia=T {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}}
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
-cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}
+cTakes_kafTopDia=B     cKaf_top=T      {att {to=@B; at=kafTopS;    with=kafTopM}}   // 26
 	g__attachedRingMid { attach { to=@T; at=ringS; with=ringM }; passKeySlot = true };
 
 
-// Where there are two kafs in a row with a ring/nuqta/graf stroke on the first, the latter will not get attached
-// in this pass. It gets fixed up in the later clean-up pass.
+// Where there are two kafs in a row with a ring/nuqta/graf-stroke on the first, the latter will not get attached
+// in this pass. This is because there is a conflict between the rule (above) that reattaches the ring/nuqta/graf-stroke
+// and the rule (below) that reattaches to the following kaf base. So we do the ring/nuqta/graf-stroke attachment
+// in a later clean-up pass.
 
 // graf
 cKafAltHt_full  g__grafStroke { attach { to=@K; at=grafS; with=grafM }; passKeySlot = true }
@@ -1611,17 +1622,17 @@ cTakes_kafTop_bjDia {att {to=@K2; with=exit; at=entrance}}
 	csKafMed_base {insert=1}
 	/ _=K1  _=T  MARKS ^ _=K2;
 
-cTakes_kafTopDia {att {to=@K2; with=exit; at=entrance}}  
+cTakes_kafTopDia {att {to=@K2; with=exit; at=entrance}}    // 38
 	cKaf_top {att {to=@K1; at=kafTopS; with=kafTopM}; passKeySlot = true}
 	csKafMed_base {insert=1}
 	/ _=K1  _=T  MARKS ^ _=K2;
 
-cIniMed {att {to=@K; with=exit; at=entrance}}  csKafMed_base {insert=1} / _=P  MARKS2N ^ _=K;
+cIniMed {att {to=@K; with=exit; at=entrance}}  csKafMed_base {insert=1} / _=P  MARKS2N ^ _=K;  // 53
 
 
 // kaf tops
 cTakes_kafTop_bjDia=B  ckafTop_bjDia {att {to=@B; at=kafTop_bjS; with=kafTop_bjM}; passKeySlot = true};
-cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};
+cTakes_kafTopDia=B     cKaf_top      {att {to=@B; at=kafTopS;    with=kafTopM};    passKeySlot = true};  // 55
 
 // Alt-height kaf tops before short finals - reprocess to attach to the short final;
 // this is needed because attaching the kaf base to the final takes precedence over the rules above
@@ -1728,12 +1739,7 @@ endpass;  // pos - 7 (14)
 // Order of glyphs: base, nuqta below, nuqta above, diacritics below, diacritics above
 // But if an upper diacritic is in a "closer" mark class (eg, cMark1), it can come before the lower diacritic.
 
-#if DO_COL_FIX
 pass(8)  // 15
-#else
-pass(4)
-#endif // DO_COL_FIX
-
 
 // Attach diacritics
  
@@ -1933,9 +1939,13 @@ cTakes_nUpperDia=K  cKafTopInvis  cNuqtaLike4Kaf?
 
 cKafTopAltHt=T  g__grafStroke { attach { to=@T; at=grafS;   with=grafM }};
 cKafTopAltHt=T  cringDia      { attach { to=@T; at=ringS;   with=ringM }};
-cKafTopAltHt    cNuqta        { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -450m; y = 270m } }
+// Special case: kaf-3-dots + kaf
+cKafTopAltHt    g__dot3u      { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -220m; y = 150m } }
+	/ gKafMedKf_wide_base _=T  _=N  cKafMed  g__kafTop_null;
+// Special case: ngoeh/graf + kef
+cKafTopAltHt    cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -450m; y = 270m } }
 	/  _=T  _=N  csKafMed_baseT  csKafMed_top_tall;
-cKafTopAltHt=T  cNuqta        { attach { to=@T; at=nUpperS; with=nUpperM }};
+cKafTopAltHt=T  cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }};
 
 endpass; // pos - 9 (16)
 
@@ -2031,7 +2041,7 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 // Special case: \u0627\u06CC\u0645\u0627
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt;
 
-// Special case: \u06af\u064f\u06af
+// Special case: gaf + pesh + gaf (\u06af\u064f\u06af)
 // Move diacritic to the right; there is no good place for it.
 csKafIM_base  cKafTop  cDiacriticUpper {shift {x = -800m; y = 100m}} cKafNoIso;
 
@@ -2119,6 +2129,9 @@ gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50
 // higher than the nuqta (below the bariyeh tail).
 gZair { shift {x=-200m; y=250m } }  cNuqtaLikeLower { sequence.class = 0; shift.x = 200m }
 	/  _=Z gBehMedBy  _=N  cDiacritic?  gBariyehFin;
+
+// Special case: feh/ain + wide-jeem + final-kaf
+
 
 
 cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;
@@ -2208,8 +2221,6 @@ gNameMarker { shift.y += max(0, 2200 - position.y); };
 
 endpass;  // 10 (17)
 
-
-#if DO_COL_FIX
 
 // Diacritic collision fixing and kerning
 
@@ -2888,7 +2899,7 @@ cLowPunct  { collision {
 	/  (gAlefFin gAlef) cNuqtaLike?  DIACS  _  cKernIgnore?  cPostKernableNoPunct=N;
 
 
-#endif
+#endif  // KERNLOWPUNCT
 
 // Default cases:
 
@@ -2961,8 +2972,6 @@ pass(12) { CollisionFix = 4; AutoKern = true }  // 19
 
 endpass;  // 12 (19)
 endif;
-
-#endif // DO_COL_FIX
 
 
 // Fixes to even up right margin

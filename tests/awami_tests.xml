@@ -1999,7 +1999,7 @@
     <test class="fset30" label="lam + jeem + kaf" rtl="True">
       <string>لجکُو  لجڱِو</string>
     </test>
-    <test class="fset30" label="tah + jeem + gaf" rtl="True">
+    <test background="#ffaa00" class="fset30" label="tah + jeem + gaf" rtl="True">
       <string>ظجگو</string>
     </test>
     <test class="fset30" label="tah + meem/ain + kaf" rtl="True">
@@ -2046,6 +2046,12 @@
     </test>
     <test class="fset30" label="gaf + meem + kaf" rtl="True">
       <string>گمکس</string>
+    </test>
+    <test class="fset23032" label="graf + gaf - extra attachment" rtl="True">
+      <string>سࣈگب</string>
+    </test>
+    <test class="fset23032" label="lam + kaf-ring + kaf - extra attachment" rtl="True">
+      <string>لګکم</string>
     </test>
     <test class="fset30" label="kaf meem ..." rtl="True">
       <string>کمنی</string>
@@ -3500,7 +3506,7 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Substitute a wider beh form.</comment>
       <string>لݩڳ لݩَکف</string>
     </test>
-    <test label="noon/teh/theh + 2 diac + kaf" rtl="True">
+    <test background="#ff0000" label="noon/teh/theh + 2 diac + kaf" rtl="True">
       <comment>Substitute a wider beh form.</comment>
       <string>ستّْکج لتّْگہ جݨَگص</string>
     </test>
@@ -3529,9 +3535,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test class="fset23032" label="kaf-3-dots + kaf" rtl="True">
       <string>ݣگس</string>
     </test>
+    <test class="fset23032" label="graf + kaf" rtl="True">
+      <string>سࣈگب</string>
+    </test>
     <test class="fset23032" label="jeem w/3 dots + kaf" rtl="True">
       <comment>Burushaski data</comment>
       <string>دِݽْڅِک</string>
+    </test>
+    <test class="fset23032" label="tah + jeem + kaf" rtl="True">
+      <string>ظجگو</string>
     </test>
     <test background="#55aaff" label="PASS 6 + 10" rtl="True">
       <string />
@@ -3546,6 +3558,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="khah + teh/theh + alef/lam" rtl="True">
       <comment>Substitute wider jeem.</comment>
       <string>سختل</string>
+    </test>
+    <test class="fset23032" label="feh/qaf + jeem + kaf" rtl="True">
+      <string>مَشقِچِݣ</string>
+    </test>
+    <test background="#55aaff" class="fset23032" label="PASS 6 + 17" rtl="True">
+      <string />
+    </test>
+    <test class="fset23032" label="feh/ain + jeem + kaf" rtl="True">
+      <string>مَشقِچِݣ   قِجݣ</string>
     </test>
     <test background="#55aaff" label="PASS 8" rtl="True">
       <string />
@@ -3663,7 +3684,16 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="wide nuqta + meem + diac" rtl="True">
       <string>تمُو</string>
     </test>
-    <test background="#55aaff" label="PASS 16 (pos pass 8)" rtl="True">
+    <test background="#55aaff" class="fset23032" label="PASS 16" rtl="True">
+      <string />
+    </test>
+    <test class="fset23032" label="ngoeh + kaf" rtl="True">
+      <string>ڱکس</string>
+    </test>
+    <test class="fset23032" label="kaf-3-dots + kaf" rtl="True">
+      <string>یݳئݣکݵ</string>
+    </test>
+    <test background="#55aaff" label="PASS 17 (pos pass 9)" rtl="True">
       <string />
     </test>
     <test label="reh/dal + yeh [rule 3]" rtl="True">
@@ -3746,14 +3776,17 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Field people can't agree on whether they want this.</comment>
       <string>لرجی</string>
     </test>
-    <test background="#55aaff" class="fset23023" label="PASSES 16 &amp; 17" rtl="True">
+    <test class="fset23032" label="ngoeh + gaf (also pass 6)" rtl="True">
+      <string>مڱگس</string>
+    </test>
+    <test background="#55aaff" class="fset23023" label="PASSES 17 &amp; 18" rtl="True">
       <string />
     </test>
     <test class="fset23023" label="ain + zain + yeh + reh [rule 7, 108]" rtl="True">
       <comment>Shift nuqtas up and right to avoid reh tail; also use a smaller margin for reh.</comment>
       <string>غزیر سہزیر</string>
     </test>
-    <test background="#55aaff" class="fset29" label="PASS 17 (pos pass 10)" rtl="True">
+    <test background="#55aaff" class="fset29" label="PASS 18 (pos pass 11)" rtl="True">
       <string />
     </test>
     <test class="fset23024" label="feh + low + upper diac" rtl="True">
@@ -3902,12 +3935,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test background="#55aaff" class="fset23032" label="TO FIX" rtl="True">
       <string />
-    </test>
-    <test class="fset23032" label="vertical dots + zer + jeem" rtl="True">
-      <string>ٻِیج</string>
-    </test>
-    <test class="fset23032" label="kaf-ring/graf/ngoeh + kaf" rtl="True">
-      <string>ݣگس ࣈگب مڱگس ګگمحس</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
