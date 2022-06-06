@@ -2976,8 +2976,6 @@ endif;
 
 // Fixes to even up right margin
 
-/******
-
 pass(13)  // 20
 
 gBehIni     {advance.x += 360m}  /  _=B {startOfLine} cNuqtaLike? MARKS cKafMF;
@@ -2999,11 +2997,9 @@ cSpace { advance.x += 110m }
 
 endpass;  // pos - 13
 
-****************/
 
 #if KERNLOWPUNCT
 
-/***************
 if (collFix > 0)
 pass(14)  { CollisionFix = 1; AutoKern = true }  // 21
 
@@ -3019,9 +3015,7 @@ cKernable  { collision.flags = CLEAR_FIX(collision.flags) };
 endpass;  // 14
 endif;
 
-*************/
-
-#endif
+#endif  // KERNLOWPUNCT
 
 
 /////#include "awami_tweaks.gdh"
