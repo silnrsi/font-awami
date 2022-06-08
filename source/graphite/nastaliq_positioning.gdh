@@ -1677,8 +1677,10 @@ c_exit_meem       {att {to=@F; with=exit; at=entrance}}   gMeemFin_short     {pa
 	/  _ MARKS2N ^ _=F;
 c_exit_jeem       {att {to=@F; with=exit; at=entrance}}   gJeemMedBy_short   {passKeySlot = true; insert = 1}
 	/  _ MARKS2N ^ _=F;
-c_exit_beh        {att {to=@F; with=exit; at=entrance}}   gBehMedQf_short    {passKeySlot = true; insert = 1}
-	/  _ MARKS2N ^ _=F;
+c_exit_beh        {att {to=@B; with=exit; at=entrance}}   
+	gBehMedQf_short {att {to=@Q; with=exit; at=entrance};                       passKeySlot = true; insert = 1}
+	(cQafFin cWawFin)
+	/  _ MARKS2N ^ _=B MARKS2N  _=Q;
 
 
 table(glyph) {AttributeOverride = 0}
