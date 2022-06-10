@@ -474,11 +474,14 @@
     <test background="#55aaff" class="fset23032" label="ALLAH" rtl="True">
       <string />
     </test>
-    <test label="allah" rtl="True">
-      <string>اللہ اللّٰہ اللّٰه</string>
-    </test>
     <test class="fset23022" label="FDF2" rtl="True">
       <string>ﷲ</string>
+    </test>
+    <test label="allah" rtl="True">
+      <string>اللّٰہ اللّٰه</string>
+    </test>
+    <test class="fset23032" label="dagger-alef + shadda" rtl="True">
+      <string>اللّٰه</string>
     </test>
     <test class="fset23032" label="end of word" rtl="True">
       <string>فللہ الاللہ اَللہ</string>
@@ -488,6 +491,12 @@
     </test>
     <test class="fset23032" label="different from Sch - end of word" rtl="True">
       <string>الٛاللّہٛ بِللّہ فِللَّہ</string>
+    </test>
+    <test background="#aad0ff" class="fset23032" label="NO ALLAH" rtl="True">
+      <string />
+    </test>
+    <test class="fset23032" label="missing shadda" rtl="True">
+      <string>اللہ</string>
     </test>
     <test background="#55aaff" class="fset23032" label="OTHER" rtl="True">
       <string />
@@ -582,6 +591,12 @@
     </test>
     <test class="fset7654" label="almasih - original" rtl="True">
       <string>المسیَح</string>
+    </test>
+    <test class="fset23032" label="khah + meem + jeem + heh-do" rtl="True">
+      <string>خَمجھا  خَمجھخو    خَمجھخے  خَمجھئی </string>
+    </test>
+    <test class="fset23032" label="khah + meem + hah + heh-do - no change" rtl="True">
+      <string>خَمحھا  خَمحھخو   خَمحھخے  خَمحھئی </string>
     </test>
   </testgroup>
   <testgroup label="Spacing and kerning">

@@ -1526,6 +1526,9 @@ gJeemMedBeKl  {shift { x = 105m; y = -130m } } gBehMed {tooHigh = 1}
 	/	_=K {tooHigh == 1} cKafTop  MARKS  _=C;
 
 
+// This sequence is tall:
+g_seqKhahMeemJeem  cMed  >  @KMJ  @M {tooHigh = 1}  /  _=KMJ ^ _=M;
+
 // high initial with both nuqta and diacritic:
 cIni     cMed  >  @I  @M {tooHigh = 1}    
 	/  _=I  {position.y + bb.top > SHORTFINAL2}  cNuqtaLikeUpperNoKT  cDiacriticUpper ^ _=M;

@@ -551,7 +551,8 @@ cHehDoMed = ( gHehDoMed gHehDoMedBeM1 gHehDoMedBeF
 	gHehDoMedFe gHehDoMedQf gHehDoMedMm gHehDoMedNn
 	gHehDoMedHgF gHehDoMedHgM gHehDoMedHd gHehDoMedCh
 	gHehDoMedBy gHehDoMedBe gHehDoMedBeRe gHehDoMedBeNn
-	gHehDoMedBeHg gHehDoMedMmX ) ;
+	gHehDoMedBeHg gHehDoMedMmX
+	gHehDoMed_short gHehDoMedBe_short gHehDoMedJm_short ) ;
 
 
 // Nastaliq-specific shaping
@@ -607,6 +608,7 @@ cJeemIM = (cJeemIni cJeemMed);
 cJeemMF = (cJeemMed cJeemFin);
 cAinIM = (cAinIni cAinMed);
 cFehIM = (cFehIni cFehMed);
+cHehDoMF = (cHehDoMed cHehDoFin);
 cLamIM = (cLamIni cLamMed);
 cLamMF = (cLamMed cLamFin);
 cLamIMF = (cLamIni cLamMed cLamFin);

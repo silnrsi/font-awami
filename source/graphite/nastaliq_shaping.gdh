@@ -689,6 +689,13 @@ gNoonFin >  gNoonFin_short  /  gSeenIniMm  gMeemMedJm  gJeemMedHd  cNuqtaLike  g
 gSadFin  >  gSadFin_short   /  gSeenIniJm_flat  cNuqtaLike  gJeemMedSd  cNuqtaLike  _=S;
 
 
+// khah + zabar + meem + jeem + heh-doachashmee is a root of many common tall words.
+gJeemIniMm  g__dot1u  gZabar  gMeemMedJm  gJeemMedHd  g__dot1l
+	>  g_seqKhahMeemJeem:(1 2 3 4 5 6) _ _ _ _ _
+	/  _ _ _ _ _ _ ^ cHehDoMF;
+(gHehDoMed gHehDoMedBe gHehDoMedJm)  >  (gHehDoMed_short gHehDoMedBe_short gHehDoMedJm_short)  /  g_seqKhahMeemJeem _;
+
+
 // Recompose isolates.
 // These rules are the opposite of the rules in nastaliq_separateNuqtas.gdh.
 
