@@ -2990,6 +2990,10 @@ gAlef       {advance.x += 150m}  /  _=A {startOfLine} cNuqtaLike? MARKS (cKafIni
 cBariyehFin {advance.x -= 200m}  /  cIni {startOfLine} cNuqtaLike? MARKS  _=By;
 cBariyehIso {advance.x -= 200m}  /  _=By {startOfLine};
 
+// Replace these with real glyphs. PDF needs real glyphs.
+g__dot2lIM        >  g__dot2l;
+g__dot2lIM_small  >  g__dot2l_small;
+
 
 // Debugger:
 //cKernable { user6 = collision.fix.x };
