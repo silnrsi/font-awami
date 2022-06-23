@@ -196,22 +196,29 @@ gLamMed_raw  gAlefHamzaFin  >  gLamAlefHamzaFin:(1 4)  _  /  _  g__bar? cDiacrit
 
 // Allah
 
-// Standard ligature
-gAlef  gLamIni_raw  gLamMed_raw  gHehGoalFin  g__hehHook_small
-	>  gLigatureAllah:(1 2 3 4 5) _  _  _  _;
-gAlef  gLamIni_raw  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small
-	>  gLigatureAllah:(1 2 3 4 5 6) _  _  _  _  _;
+table(glyph)
+cLamNoAllah = (gLamIni_raw gLamMed_raw);
+cLamAllah1 = (gLamIni_allah1 gLamMed_allah1);
+endtable;
 
-// After something other than an isolate alef,
-// eg, \u0628\u0627\u0644\u0644\u06C1,
-// \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u0644\u0644\u06C1
-(gLamIni_raw gLamMed_raw)  gLamMed_raw  gHehGoalFin  g__hehHook_small
-	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 HG HH) _  _  _
-	/ (cIMraw cIsoFin) MARKS  _=L1  _=L2  _=HG  _=HH;
+// Rule 3: isolate alef present, no shadda
+gAlef  gLamIni_raw  gLamMed_raw=L2  _  gHehGoalFin  g__hehHook_small
+	>  gAlef_allah  gLamIni_allah1  gLamMed_allah2  g__shadda_kharizabar:L2  gHehFin_allah:(Hg Hh)  _
+	/  _  MARKS  _=L1  gZair?  _=L2  _  _=Hg  _=Hh;
 
-(gLamIni_raw gLamMed_raw)  gLamMed_raw  g__shadda_kharizabar  gHehGoalFin  g__hehHook_small
-	>  (gLigatureLlah gLigatureLlahFin):(L1 L2 SK HG HH)  _  _  _  _
-	/ (cIMraw cIsoFin) MARKS  _=L1  _=L2  _=SK  _=HG  _=HH;
+// Rule 2:
+// lam-lam-shadda-daggeralef-heh
+cLamNoAllah  gLamMed_raw  gHehGoalFin  g__hehHook_small
+	>  cLamAllah1  gLamMed_allah2  gHehFin_allah:(Hg Hh)  _
+	/  _=L1  gZair?  _=L2  (g__shadda_kharizabar  g__shadda_zabar)  _=Hg  _=Hh;
+
+// lam-lam-shadda-heh
+cLamNoAllah  gLamMed_raw  gShadda  gHehGoalFin  g__hehHook_small
+	>  cLamAllah1  gLamMed_allah2  g__shadda_kharizabar:S gHehFin_allah:(Hg Hh)  _
+	/  _=L1  gZair?  _=L2  _=S  _=Hg  _=Hh;
+
+// Alef and shadda-kharizabar shapes are fixed in pass 5.
+
 
 // Salaam ulena
 
@@ -588,6 +595,11 @@ gBehMedNn  >  gBehMedNn_hgbm  /  c_preBehNn_hgbm  MARKS  _;
 /// Eg, 062A 062E 0646 06AF 06A9
 ////gGafMedDk  >  gGafMed_short_OLD  /  _ MARKS  (cKafFin cKafMed);
 
+// Handle a few special Allah forms:
+(gAlef  gAlefFin)  >  (gAlef_allah  gAlefFin_allah)  /  _  MARKS  gLamIni_allah1;
+g__shadda_kharizabar  >  g__shadda_kharizabar_allah  /  gLamMed_allah2  _;
+
+
 endpass;  // 5
 
 
@@ -659,9 +671,10 @@ gBehIniHd  g__dot2u  gHehDoMedSn  gSeenMed  gLamMedBeM1  gBehMedBeM2  g__dot1u  
 	>  g_wordThessaloni:(1 2 3 4 5 6 7 8) _ _ _ _ _ _ _ 
 	/  _ _ _ _ _ _ _ _  g__dot2lIM  cKafMed;
 
+gBehIniHd  g__dot2u  gHehDoMedSn  gSeenFin  (cNuqta cDiacritic);  // don't use the abbreviation
 gBehIniHd  g__dot2u  gHehDoMedSn  gSeenFin
 	>  g_wordThess:(1 2 3 4) _ _ _
-	/  _ _ _ _;
+	/  _ _ _ _ ;
 
 gBehIniBe  g__dot2u  gBehMedMm  g__dot2lIM  gMeemMedBe  gPesh  gBehMedHd  g__dot2u  gHehDoMedBeM1  gBehMedSn
 	g__dot2lIM  gPesh  gSeenFin

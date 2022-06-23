@@ -2092,7 +2092,7 @@ cDiacriticUpper { shift.x = 250m }
 
 // Special cases: reh + yeh - shift yeh nuqtas left and reh down
 // TODO: handle a bariyeh after the beh-ini (\u067E\u06CC\u0631\u06CE\u0646\u06D2)
-gRehFin_jkl {shift.y = -150m }   cNuqtaLower { shift {x = 250m; y = 150m} }
+gRehFin_jkl {shift.y = -200m }   cNuqtaLower { shift {x = 250m; y = -10m} }   // -300 was -150; -30 was 150m
 	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 300m };
 gRehFin  {shift.y = -150m }   
 	cNuqtaLower { shift {x = 50m; y = 100m} }

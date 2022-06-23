@@ -477,26 +477,41 @@
     <test class="fset23022" label="FDF2" rtl="True">
       <string>ﷲ</string>
     </test>
-    <test label="allah" rtl="True">
-      <string>اللّٰہ اللّٰه</string>
+    <test class="fset23032" label="no shadda, standard alef" rtl="True">
+      <string>اللہ  الله</string>
     </test>
-    <test class="fset23032" label="dagger-alef + shadda" rtl="True">
-      <string>اللّٰه</string>
+    <test label="only shadda" rtl="True">
+      <string>اللّہ اللّه</string>
+    </test>
+    <test class="fset23032" label="shadda + dagger-alef" rtl="True">
+      <string>اللّٰہ  اللّٰه</string>
+    </test>
+    <test class="fset23032" label="shadda + zabar" rtl="True">
+      <string>اللَّه  اللَّہ</string>
+    </test>
+    <test class="fset23032" label="zair" rtl="True">
+      <string>الِلّه</string>
     </test>
     <test class="fset23032" label="end of word" rtl="True">
-      <string>فللہ الاللہ اَللہ</string>
-    </test>
-    <test class="fset23032" label="different from Sch" rtl="True">
-      <string>ٱللہ اللَّہ للّہ لِلّٰہٛ الِلہ</string>
+      <string>فللّہ الاللّہ باَللّٰہ</string>
     </test>
     <test class="fset23032" label="different from Sch - end of word" rtl="True">
       <string>الٛاللّہٛ بِللّہ فِللَّہ</string>
     </test>
+    <test class="fset23032" label="alef w/ mark" rtl="True">
+      <string>اۜللہ</string>
+    </test>
+    <test class="fset23032" label="alef-wasla" rtl="True">
+      <string>ٱللہ       آلِلہ</string>
+    </test>
     <test background="#aad0ff" class="fset23032" label="NO ALLAH" rtl="True">
       <string />
     </test>
-    <test class="fset23032" label="missing shadda" rtl="True">
-      <string>اللہ</string>
+    <test class="fset23032" label="missing shadda, non-standard alef" rtl="True">
+      <string>اَللہ  باللہ  ٱللہ</string>
+    </test>
+    <test class="fset23032" label="invalid diacritic" rtl="True">
+      <string>الُلہ  اللَہ</string>
     </test>
     <test background="#55aaff" class="fset23032" label="OTHER" rtl="True">
       <string />
@@ -578,6 +593,9 @@
     </test>
     <test class="fset7654" label="Thessalonians - yeh" rtl="True">
       <string>تھسلُنیکی</string>
+    </test>
+    <test class="fset23032" label="Thess" rtl="True">
+      <string>تھس</string>
     </test>
     <test class="fset7654" label="Timothy" rtl="True">
       <string>تیمُتھیُس</string>

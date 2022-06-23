@@ -30,13 +30,13 @@ cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEaster
 		{ dir = DIR_ARABICNUMBER };
 */
 
-g_lrm = pseudo(postscript("space"), 0x200E);	// some data uses LRM incorrectly instead of ZWNJ to break context
+g_lrm = pseudo(postscript("space"), 0x200E);	// 1681 - some data uses LRM incorrectly instead of ZWNJ to break context
 
-g__noDot1u       = pseudo(postscript("_dot1u"));	    // no longer used
-g__noDot2u       = pseudo(postscript("_dot2u"));
-g__noDot2l       = pseudo(postscript("_dot2l"));			// IM bariyeh, anything else?
+g__noDot1u       = pseudo(postscript("_dot1u"));	    // 1682 -  no longer used
+g__noDot2u       = pseudo(postscript("_dot2u"));      // 1683
+g__noDot2l       = pseudo(postscript("_dot2l"));			// 1684 - IM bariyeh, anything else?
 g__noDot2l_small = pseudo(postscript("_dot2l.small"));
-g__dot2lIM       = pseudo(postscript("_dot2l")) 	    // chotiyeh
+g__dot2lIM       = pseudo(postscript("_dot2l")) 	    // 1686 - chotiyeh
 	{ nByLowerM = point(0m,194m); n23LowerM = point(0m,195m); mLowerS = point(0m,-424m) };
 g__dot2lIM_small = pseudo(postscript("_dot2l.small"))
 	{ nByLowerM = point(0m,159m); n23LowerM = point(0m,160m); mLowerS = point(0m,-393m) };
@@ -120,10 +120,10 @@ g__kafTop_by_tall_notused { ktDelta = 0m }; // currently not used, just to avoid
 
 
 // General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
-cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic,
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic, g__wasla,
 	g__smallV, g__smallVinv, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_smallTah, g__dot1u_smallTahKf,
 	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__noDot2l__hamza, g__dot2lIM__hamza,
-	g__verticalStroke, cKafTop,
+	g__verticalStroke, cKafTop, 
 	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long, g__grafStroke,   // g__gafStroke_short
 	g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove);
@@ -193,7 +193,7 @@ csNoRingDot = (g__dot1u, g__dot2u);
 // Diacritic combinations
 
 cPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
-cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar);
+cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar, g__shadda_kharizabar_allah);
 
 cPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
 cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
@@ -455,7 +455,8 @@ cLamIni = ( gLamIni gLamIniBeM1 gLamIniBeM2 gLamIniJm gLamIniRe
 	gLamIniSn gLamIniSnSn gLamIniSd gLamIniTa gLamIniAi gLamIniFe gLamIniQf
 	gLamIniMm gLamIniNn gLamIniHgF gLamIniHgM gLamIniHd gLamIniCh gLamIniBy
 	gLamIniBe gLamIniBeRe gLamIniBeNn gLamIniBeHg gLamIniAl
-	gLamIni_short ) ;
+	gLamIni_short
+	gLamIni_allah1 ) ;
 cMeemIni = ( gMeemIni, gMeemIniAi, gMeemIniBe, gMeemIniBeF, gMeemIniBeHg, gMeemIniBeM1, gMeemIniBeM2,
 	gMeemIniBeNn, gMeemIniBeRe, gMeemIniBeHg,
 	gMeemIniBy, gMeemIniCh, gMeemIniFe, gMeemIniHd, gMeemIniHgF, gMeemIniHgM, gMeemIniJm, gMeemIniMm,
@@ -525,7 +526,8 @@ cLamMed = ( gLamMed gLamMedBeM1 gLamMedBeF gLamMedBeM2 gLamMedJm gLamMedRe
 	gLamMedMm gLamMedNn gLamMedHgF gLamMedHgM gLamMedHd gLamMedCh gLamMedBy
 	gLamMedBe gLamMedBeRe gLamMedBeNn gLamMedBeHg
 	gLamMedAl gLamMedCh_gfTall gLamMedBe_kfTall gLamMedBy_kfTall,	// no MmX
-	gLamMed_short );
+	gLamMed_short
+	gLamMed_allah1 gLamMed_allah2 );
 cMeemMed = ( gMeemMed gMeemMedBeM1 gMeemMedBeF gMeemMedBeM2 gMeemMedJm gMeemMedRe
 	gMeemMedSn gMeemMedSnSn gMeemMedSd gMeemMedTa gMeemMedAi gMeemMedFe gMeemMedQf
 	gMeemMedMm gMeemMedNn gMeemMedHgF gMeemMedHgM gMeemMedHd gMeemMedCh gMeemMedBy
