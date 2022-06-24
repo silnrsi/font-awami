@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absAlefFin._lm" format="2">
   <advance width="253"/>
-  <anchor x="253" y="189" name="_exit_alef"/>
+  <anchor x="131" y="314" name="_exit_alef"/>
   <anchor x="172" y="-71" name="hamzaLower"/>
   <anchor x="218" y="1867" name="hamzaUpper"/>
   <anchor x="72" y="2034" name="honorific"/>
   <anchor x="170" y="1502" name="kernBbLeft"/>
+  <anchor x="345" y="987" name="kernBbRight"/>
   <anchor x="168" y="-89" name="mLower"/>
   <anchor x="201" y="1826" name="mUpper"/>
   <anchor x="164" y="-90" name="n1Lower"/>
   <anchor x="243" y="1899" name="nUpper"/>
   <outline>
-    <component base="absAlef" xOffset="-2"/>
+    <contour>
+      <point x="181" y="1366" type="curve" smooth="yes"/>
+      <point x="160" y="1055"/>
+      <point x="207" y="863"/>
+      <point x="191" y="592" type="curve" smooth="yes"/>
+      <point x="180" y="403"/>
+      <point x="140" y="341"/>
+      <point x="131" y="304" type="curve" smooth="yes"/>
+      <point x="127" y="286"/>
+      <point x="159" y="246"/>
+      <point x="173" y="266" type="curve" smooth="yes"/>
+      <point x="219" y="330"/>
+      <point x="331" y="626"/>
+      <point x="352" y="970" type="curve" smooth="yes"/>
+      <point x="363" y="1152"/>
+      <point x="345" y="1237"/>
+      <point x="345" y="1463" type="curve" smooth="yes"/>
+      <point x="345" y="1615"/>
+      <point x="376" y="1658"/>
+      <point x="383" y="1689" type="curve" smooth="yes"/>
+      <point x="388" y="1707"/>
+      <point x="370" y="1756"/>
+      <point x="350" y="1734" type="curve" smooth="yes"/>
+      <point x="309" y="1692"/>
+      <point x="192" y="1532"/>
+    </contour>
   </outline>
   <lib>
     <dict>
