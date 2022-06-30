@@ -85,10 +85,10 @@ as LibreOffice.org. They can display a glyph palette or input
 dialog that shows all the glyphs (symbols) in a font and allow you to enter
 them by clicking on the glyph you want.
 
+
 CONTACT
 ========
 For more information please visit the Awami Nastaliq page on SIL International's
 Computers and Writing systems website: http://software.sil.org/awami
 
 Support through the website: http://software.sil.org/awami/support
-
