@@ -1861,8 +1861,11 @@ cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; SETDIACINS
 // Eg, noon-nuqta + noon-ghunna-mark + zair (\u0646\u0658\u0650)
 cTakes_nUpperDia=B  cNuqtaUpper=N
 	cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}}
-	cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}}; 
+	cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}};
 
+// Diacritics on final noon need to be positioned higher
+cNoonFin  (g__dot1u g__dot2u)=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; shift.y = 300m; SETDIACINS}
+		/ ^ _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower? _=D {att.to==0};
 
 // attach to nuqta
 cTakes_mUpperDia  c_attLikeNqUpper=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; SETDIACINS}
