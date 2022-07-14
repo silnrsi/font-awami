@@ -867,6 +867,8 @@ endif;
 table(glyph)
 cKafKfNormal = (gKafIniKf      gGafIniKf      gKafMedDk      gGafMedDk);
 cKafKfWide   = (gKafIniKf_wide gGafIniKf_wide gKafMedKf_wide gGafMedKf_wide);
+
+cNarrowPreKaf = (gBehMed gJeemMed gAinMed gMeemMed gHehGoalMed gFehMed);
 endtable;
 
 
@@ -874,7 +876,18 @@ endtable;
 cKafKfNormal  _ >  cKafKfWide g__kafTop_null:K
 	/  _=K  _  (csNuqtaUpperWide  g__grafStroke)  cDiacritic?  cKafMF;
 
+// Special case: use a tall final kaf to keep the upper diacritic from having to jump above the kaf stroke
+// In a later pass, shift the nuqta and diacritic down.
+csKafFin  >  csKafFinTall  /
+	(cFehIM cAinIM) cNuqtaLikeUpper  cDiacriticUpper  cNarrowPreKaf  MARKS _=K;
+
+
 // Special case: gaf + kaf + bariyeh (second kaf has no tall form)
+
+// Tall final kaf
+csKafFin  >  csKafFinTall  /  cNuqtaUpperLarge  cDiacriticUpper  _=K;
+
+
 
 
 // Add a bogus null glyph in case we want to break the kafs into two pieces.
@@ -919,7 +932,9 @@ cbarDia  >  g__barRaised  / (cKafIni cKafMed)  g__kafTop_null  MARKS  (cLamMed c
 
 
 // Special case: khah + teh/theh + kaf/lam/alef
-gJeemMedBeM2  >  gJeemMedBeKl  /  _=J  cNuqtaLikeUpper  gBehMed  cNuqtaLikeUpper;
+gJeemMedBeM2  (g__dot3u g__dot4u)  >  gJeemMedBeKl  (g__dot3u_small g__dot4u_small)
+	/  _=J  _=N  gBehMed  (cNuqtaLikeUpper csLowerUpper) cDiacritic?  cKafMF;
+gJeemMedBeM2  >  gJeemMedBeKl  /  _=J  cNuqtaLikeUpper  gBehMed  (cNuqtaLikeUpper csLowerUpper);
 
 // Special case: nuqta-small-V + kaf/gaf
 gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf   
@@ -927,11 +942,23 @@ gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf
 csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
 
 // Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
-gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm)                 MARKS  _=J cNuqtaLikeUpper MARKS  cKafMF;
-gJeemMed  >  gJeemMedKf_wide  /  (gBehIniJm gBehMedJm) cNuqtaLikeUpper MARKS  _=J                 MARKS  cKafMF;
+gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
+	/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N cDiacritic?              cKafMF;
+gJeemMed  >  gJeemMedKf_wide
+	/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cKafMF;
+gJeemMed  >  gJeemMedKf_wide
+	/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cKafMF;
+
+// Same issue with a lam and stuff above it
+gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
+	/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N             cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
+gJeemMed  >  gJeemMedKf_wide
+	/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
+gJeemMed  >  gJeemMedKf_wide
+	/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cLamMF (cNuqtaLikeUpper cDiacriticUpper);
 
 // Special case: jeem w/3dots + kaf/alef
-gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  csNuqtaUpperWideSmallF  /  _=J  _=N  cDiacritic?  cKafMF;
+gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  csNuqtaUpperWideSmallF  / _=J  _=N  cDiacritic?  cKafMF;
 gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  @N                      / _=J  _=N  cDiacritic?  cAlefFin;
 
 // Special case: feh/ghain + jeem + kaf
@@ -940,6 +967,10 @@ cNuqtaUpper  gJeemMed  >  csNuqtaUpperSmallF  gJeemMedKf_wide  /  (cFehIM cAinIM
 
 // Special case: tah + jeem + kaf/gaf
 gJeemMed  >  gJeemMedKf_wide  /  (gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
+
+// Special case: teh + khah + lam + diac
+gJeemMed  >  gJeemMedKf_wide
+	/ gBehIniJm  (cNuqtaUpper csLowerUpper)  cDiacritic?  _=J  cNuqtaLikeUpper  cDiacritic?  cLamMed  cDiacritic;
 
 // Special case: high-tooth nuqta-small-V + beh + kaf/gaf
 g__dot1u_smallV  >  g__dot1u_smallVKf
@@ -959,6 +990,8 @@ gBehIniBe  g__dot1l  gBehMedJm  g__dot1l  gJeemFin;  // ok, don't change
 // Special case: beh+beh+jeem
 gBehIniBe  gBehMedJm  >  gBehIniBe_jmF  gBehMedJmR
 	/ _=B1 ^ cNuqtaLikeLower cDiacritic?  _=B2 cNuqtaLikeLower cDiacritic?  gJeemFin;
+
+// Special case: yeh + kaf + zair  TODO
 
 endpass;  // 6
 

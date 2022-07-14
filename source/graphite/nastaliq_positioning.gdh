@@ -700,6 +700,16 @@ cDiacriticLower {
 
 endtable; // glyph
 
+///////////////////
+
+// Special cases where collision avoidance SHOULD fix the problem but doesn't. Do it by hand.
+g__dot1u { shift.y = -150m; collision.flags = COLL_FREEZE }
+	/ gLamIniFe MARKS  gFehMed _=N  cKafMed;
+cNuqtaLikeUpper {shift {x = -150m; y = 130m}; collision.flags = COLL_FREEZE}  cNuqtaLikeUpper {shift.x = 150m}
+	/ gJeemMedBeM1  _=N1  gBehMedBe  cNuqtaLikeLower? _=N2;
+(g__dot2u g__dot3u) {collision.flags = COLL_FREEZE} / (gDalFin gKafFin) _=N ;
+
+///////////////////
 
 // Spaces serve as boundaries between collision ranges.
 cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET_IGNORE(collision.flags) };
@@ -795,7 +805,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } / (cLamIM cKafIM) cDiacritic?  cBase  _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 */
 
@@ -806,7 +816,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 100m;  // less than normal
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } / cJeemIM  cNuqtaLike?  cDiacritic?  (cBehMed cSeenMed)  _  ;
 */
 
@@ -817,7 +827,7 @@ cNuqtaLikeLower {
 		flags = SET_FIX(collision.flags);
 		min.x = -200m;
 		max.x = 350m;
-		min.y = -1000m;
+		min.y = -500m;
 		max.y = 300m;
 	}
 }  /  (gBehIni gBehMed)  _=N  cDiacritic?  (gKafMedHd gGafMedHd gLamMedHd) g__kafTop_null?  cDiacritic?  
@@ -831,7 +841,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 800m; // a lot more than normal
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } / _ cDiacritic? [cJeemMed cNuqta? cDiacritic?]? (cKafMed cKafFin);
 ***/
 
@@ -860,7 +870,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 350m;  // standard is 200m
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } / cJeemIM _ cDiacritic? cBehMed cNuqtaLikeUpper;
 **/
 
@@ -870,7 +880,7 @@ cNuqtaLikeUpper { collision {
 	min.x = 250m;  // don't let nuqta jump above beh
 	max.x = 200m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } /  gBehMedRe MARKS  cRehFin  _  cDiacritic?  cBehIso;
 
 
@@ -883,7 +893,7 @@ g__dot1u_smallVKf {
 		min.x = -250m;
 		max.x = 350m;  // standard is 200m
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 	};
 	sequence.class = 0;
 } /  cIni  _  (cKafMed cKafFin);
@@ -896,7 +906,7 @@ cNuqtaLikeUpper {
 		min.x = -250m;
 		max.x = 200m;
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 		margin = 250m;  // standard is 150m
 	} }
 	/  gJeemIniBeRe MARKS  gBehMedRe _=N;
@@ -909,7 +919,7 @@ cNuqtaLikeLower {
 		min.x = -250m;
 		max.x = 200m;
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 		margin = 250m;  // standard is 150m
 	} }
 	/  gBehMed _=N DIACS (gKafMedCh gGafMedCh gLamMedCh);
@@ -923,7 +933,7 @@ gHamzaAbove {
 		min.x = -500m;   // more than normal (-250)
 		max.x = 200m;
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 	} }
 	/  gBehMedHgF  cNuqtaLikeUpper  gHehGoalFin _;
 
@@ -938,7 +948,7 @@ cNuqtaLikeUpper {
 		min.x = -250m;
 		max.x = 200m;
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 	};
 	sequence.class = 5;
 }  /  cLowNuqta  _=N;
@@ -952,10 +962,30 @@ cNuqtaUpper { collision {
 		min.x = -250m;
 		max.x = 350m; // more than normal (200)
 		min.y = -300m;
-		max.y = 1000m;
+		max.y = 400m;
 	};
 	sequence.class = 0;
 }	/  (gBehIni gBehMed gSeenIni gSadIni)  _=N  cDiacritic?  (cKafMed  cLamMed) MARKS  (cMed cFin) cNuqtaUpper;
+
+// Special case: noon + hah-3dots - the nuqtas fit together too tightly
+cNuqtaLikeUpper { shift.x = -100m;
+		collision {
+			flags = SET_FIX(collision.flags);
+			margin = 300m;  // more than normal
+			min.x = -250m;
+			max.x = 200m;
+			min.y = -300m;
+			max.y = 400m
+		} }
+	cNuqtaLikeUpper { collision {
+			flags = SET_FIX(collision.flags);
+			margin = 300m;  // more than normal
+			min.x = -250m;
+			max.x = 200m;
+			min.y = -300m;
+			max.y = 400m;
+		} }
+/ gBehIniJm  _=N1  cDiacritic?  gJeemFin  _=N2;
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
@@ -963,7 +993,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 350m; // more than normal (200)
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } } / cIni cNuqtaLikeLower? _;
 
 table(glyph)
@@ -978,7 +1008,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -500m;   // more than normal (-250)
 	max.x = 200m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;   // was 1000, that's too much
 } } /  cFinNotNarrow _;
 
 /*** Special case: jeem followed by nuqta
@@ -988,7 +1018,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;
 } }  /  cJeemIni  cNuqtaLike?  cBase  _; 
 ***/
 
@@ -1002,7 +1032,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -80m;
 	max.x = 80m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m;  // was 1000, that's too much
 } }  /  cNarrowTop  _;
 
 // Default case: nuqtas above (other than initial) can move more to the left than the right.
@@ -1011,7 +1041,7 @@ cNuqtaLikeUpper { collision {
 	min.x = -250m;
 	max.x = 200m;
 	min.y = -300m;
-	max.y = 1000m;
+	max.y = 400m; // was 1000, that's too much
 } };
 
 
@@ -1047,7 +1077,7 @@ cDot2vl {
 		flags = SET_FIX(collision.flags);
 		min.x = -100m;
 		max.x = 150m;
-		min.y = -1000m;
+		min.y = -500m;
 		max.y = 300m;
   };
   sequence { class = 0; order = 0 } // don't enforce the order relative to the other glyphs
@@ -1092,7 +1122,7 @@ cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -200m;
 	max.x = 400m;  // 600 breaks \u067E\u0650\u06CC\u064F\u0648
-	min.y = -1000m;
+	min.y = -500m;
 	max.y = 300m;
 } }  /  cIni  _;
 
@@ -1101,7 +1131,7 @@ cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -200m;
 	max.x = 350m;   // making this 400 helps \u067E\u0650\u06CC\u0686\u06BE\u06D2 but breaks other things
-	min.y = -1000m;
+	min.y = -500m;
 	max.y = 300m;
 } };
 
@@ -1110,7 +1140,7 @@ cNuqtaLikeLower { collision {
 // For ngoeh or kaf w/ 3 dots, don't using the exclusion glyph - 
 // the nuqtas need to go right on top of the gaf.
 //(cls_excludingGlyphs cls_excludingGlyphs_kern)
-cKafNoIso { collision {
+cKafIM { collision {
 			flags = CLEAR_FIX(collision.flags);
 			flags = CLEAR_KERN(collision.flags);
 	} }
@@ -1119,7 +1149,7 @@ cKafNoIso { collision {
 		min.x = -250m;
 		max.x = 200m;
 		min.y = -100m;
-		max.y = 1000m;
+		max.y = 400m;   // was 1000, that's too high
 		// ;  shift { x = 200m; y = -100m }
 	} }
 	/ ANY  _=K  g__kafTop_null? _=N; // the ANY increases the precedence
@@ -1266,10 +1296,10 @@ endtable;
 #define STAYBELOWKAF {collision {min.x = 0m; max.y = 300m}}
 
 // height at which to invoke various short forms
-#define SHORTERKAF_HT	1900m
-#define SHORTKAF_HT  	1350m
-#define PUSHDOWN		3280m
-#define PUSHUP			-630m
+#define SHORTERKAF_HT	1900m  // height at which we need a shorter kaf
+#define SHORTKAF_HT  	1350m  // height at which we need a short kaf
+#define PUSHDOWN			3280m  // height at which to push down marks
+#define PUSHUP			-630m  // lower position at which to push up marks
 #define SHORTFINAL2		2700m
 #define SHORTFINAL1		3050m
 #define SHORTFINAL0		3650m
@@ -1292,10 +1322,15 @@ cNuqtaUpperLarge  csKafIM_medium  g__kafTop_null
 	>	@N STAYBELOWKAF  @K {tooHigh = 1}  @T
 	/  _=N _=K {position.y > SHORTERKAF_HT}  _=T;
 
-// Tall: large-nuqta + kaf 
+// Tall: large-nuqta + diacritic + kaf
 cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
-	/  _=N  cDiacritic?  _=K  _=T;
+	/  _=N  cDiacritic  _=K ^ _=T;
+
+// Keep medium: large-nuqta + kaf
+cNuqtaUpperLarge  csKafMed_medium  g__kafTop_null  
+	>  @N STAYBELOWKAF  @K  @T
+	/  _=N  cDiacritic?  _=K ^ _=T;
 
 // Special case: Lam + diac + kaf - shorten lam AND heighten kaf
 (gLamIni gLamMed) csKafMed_medium  g__kafTop_null  
@@ -1450,6 +1485,10 @@ cNuqtaLikeUpperNoKT?  cKafMed  g__kafTop_null
 	>	@N STAYBELOWKAF  @K  @T
 	/  (cFehIM cAinIM cJeemIM) _=N  _=K  _=T;
 
+// Preclude rule below that shortens the second kaf; don't want that after another kaf.
+cNuqtaLikeUpperNoKT?  csKafIM_medium  g__kafTop_null
+	>	@N  STAYBELOWKAF  @K  @T
+	/  cKafTopAltHt  _=N  cDiacritic?  ^  _=K  _=T;
 
 // Situations where short kaf is needed due to height (except cases above where we know it's not appropriate)
 
@@ -1507,6 +1546,17 @@ endtable;
 
 if (shortForms > 1)
 pass(6)  // 13
+
+// This is left over from pass 5(12). Sequences of kafs get complicated so it helps to
+// clean up in a separate pass.
+// Never follow a standard medium kaf with a short one. We're essentially undoing a rule triggered above.
+csKafMed_base_noGaf  g__kafMedTop_short  >  csKafIM_medium   g__kafTop_null
+	/  (gKafMedDk  gGafMedDk)  g__kafTop_null  MARKS  _=B  _=T;
+csKafMed_base_noGaf  g__gafMedTop_short  >  @B   g__gafMedTop_tall
+	/  (gKafMedDk  gGafMedDk)  g__kafTop_null  MARKS  _=B  _=T;
+csKafMed_base_noGaf  g__kafMedTop_short  >  @B   g__kafMedTop_tall
+	/  gKafMedDk_base  g__kafMedTop_tall   MARKS  _=B  _=T;
+
 
 // This pass does the adjustments for tall words, including shifting nuqtas/marks down and 
 // substituting alternate height kafs.
@@ -1955,6 +2005,13 @@ cKafTopAltHt    cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }; shif
 	/  _=T  _=N  csKafMed_baseT  csKafMed_top_tall;
 cKafTopAltHt=T  cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }};
 
+
+// Diacritic tweaks
+
+// Special case: nuqtas and diacritic get reversed to do narrowness of beh and kaf.
+cNuqtaLower {shift.x = -350m} cDiacriticLower {shift.x = 220m}
+	/ (gBehIni  gBehMed) _=N  cNuqtaLikeUpper? cDiacritic? (gKafMedJm gGafMedJm) g__kafTop_null _=D;
+
 endpass; // pos - 9 (16)
 
 
@@ -2138,11 +2195,20 @@ gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50
 gZair { shift {x=-200m; y=250m } }  cNuqtaLikeLower { sequence.class = 0; shift.x = 200m }
 	/  _=Z gBehMedBy  _=N  cDiacritic?  gBariyehFin;
 
+// Special case:
+cNuqtaLikeUpper {shift.y = -150m}  cDiacriticUpper {shift {x = -150m; y = -250m}}
+	/  (cFehIM cAinIM) _=N  _=D  cNarrowPreKaf  MARKS  csKafFinTall;
+
 // Special case: feh/ain + wide-jeem + final-kaf
 
 
+// Special case: kaf+3dots + kaf-fin
+g__dot3u { shift.x = -100m }
+	/ gKafMedKf_wide_base  g__kafMedTop_tall _=N  cDiacritic? gKafFin;
+
 
 cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;
+
 
 
 // Set up kerning pairs.
@@ -2326,14 +2392,28 @@ cDiacriticUpper {
 		max.y = 200m;
 	} }  /  (gLamIni_short gLamMed_short)  _  cKafMF;  // increase precedence
 
+// Special case: round kaf-3dots + lam + upper diacritic
+g__dot3u { shift {x=-200m; y=250m} }
+cDiacriticUpper {
+	collision {
+		flags = CLEAR_IGNORE(collision.flags);
+		flags = SET_FIX(collision.flags);
+		min.x = -250m;  // normally -250
+		max.x = 100m;  // might need to be off-center
+		min.y = -100m;
+		max.y = 200m;
+	} }
+	/ gKafIni  g__kafTop_null _=N cDiacritic?  cLamMed  _=D;
+
+
 // Diacritics should stay centered over tah and lam vertical stems.
 // Eg: tah + pesh + seen
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = SET_FIX(collision.flags);
-		min.x = -5m;  // normally -250
-		max.x = 5m;
+		min.x = -30m;  // normally -250
+		max.x = 30m;
 		min.y = -100m;
 		max.y = 200m;
 	} }  /  cVerticalStem  _  cBase;  // increase precedence
@@ -2819,6 +2899,18 @@ cKernable { collision {
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoIso=K;
+
+// Special case: kaf/jeem + reh-nuqta + beh-isolate
+gRehFin_jkl { shift.x += -130m;
+	collision {
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = 350m;
+		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
+    	// min/max.y are omitted for kernable glyphs
+	}
+}  /  _  cNuqtaLikeUpper?  DIACS  cKernIgnore?  cBehIso=K;
+
 
 // Don't kern very much before closing quotes.
 // PROBLEM: this rule is firing, but the resulting kerning never happens. Why? :-/

@@ -160,6 +160,9 @@ csNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
 	g__dot2vl_small, g__dot2vu_small, g__dot3l_small, g__dot3u_small, g__dot3uD_small,
 	g__dot4u_small, g__dot4l_small);
 
+// Don't include the single nuqta because it is small doesn't need to be made smaller.
+csNuqtaUpper_normal = (g__dot2u,       g__dot2vu,       g__dot3u,       g__dot3uD,       g__dot4u);
+csNuqtaUpper_small =  (g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small);
 
 csLowerUpper = (	g__dot1l__smallTah,	g__dot2vl__smallTah,	g__dot1l__dot1u,	g__hehHook__dot2u,
 	g__ring__dot2u, g__noDot2l__hamza, g__dot2lIM__smallV, g__hehHook__hamza, g__dot3l__dot3u,
@@ -625,6 +628,10 @@ cSadMF = (cSadMed cSadFin);
 
 csDotlessQaf_feh = (gFeh, gQafFin, gQafFin_stfh, cFehIM);
 csDotlessQaf_qaf = (gDotlessQaf, gQafFin, gQafFin_stfh, cFehIM);
+
+csKafFin = (gKafFin, gGafFin);
+csKafFinTall = (gKafFin_tall, gGafFin_tall);
+
 
 //-------------------------------------------------------------------------------------------
 //
@@ -1096,7 +1103,8 @@ cs_bariyehComposed = (gBariyeh, gBariyehHamza, gBariyehTwoAbove, gBariyehThreeAb
 //
 
 cNuqtaUpperLarge = (cDot3u, cDot4u, g__dot2vu, g__smallTah, g__smallTah2dots, g__dot1u_smallTah, 
-	g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark, g__dot2lIM__hamza, g__verticalStroke);
+	g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_ngMark, g__dot2lIM__hamza, g__verticalStroke
+	g__smallTah);
 cNuqtaUpperSmall = (cDot1u, cDot2u);
 
 cBaseTall = (cLamIni, cLamMed, cTahIni, cTahMed);
