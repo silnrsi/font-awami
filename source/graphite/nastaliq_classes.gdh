@@ -69,8 +69,8 @@ cDot4u = (g__dot4u, g__dot4u_small);
 
 /////cno_showInv = (g_zeronojoin, g_zerojoin, g_zeroWidthNoBreakSpace, g_nobreakspace);
 
-c_zeronojoin = (g_zeronojoin, g_zeronojoinShowInv);
-c_zerojoin = (g_zerojoin, g_zerojoinShowInv);
+c_zeronojoin = (g_zeronojoin );  // g_zeronojoinShowInv);
+c_zerojoin = (g_zerojoin);       // g_zerojoinShowInv);
 
 
 // "SmallF" refers to glyphs that are suitable for the small-nuqtas feature, not just smaller nuqtas like the single nuqta.
@@ -252,14 +252,15 @@ cMark34 = (cMark3 cMark4);
 cMark2l_1234u = (cMark2l, cMark1234u);
 
 
-cShowInvBoxes = (g_wordJoiner, g_paragraphSeparator, g_lineSeparator, g_zeroWidthNoBreakSpaceShowInv,
-	g_narrowNoBreakSpace,
-	g_leftToRightIsolate_alt, g_rightToLeftIsolate_alt, g_firstStrongIsolate_alt, g_popDirectionalIsolate_alt);
+cShowInvBoxes = (g_wordJoiner, g_paragraphSeparator, g_lineSeparator, g_narrowNoBreakSpace);
+// g_zeroWidthNoBreakSpaceShowInv,
+// g_leftToRightIsolate_alt, g_rightToLeftIsolate_alt, g_firstStrongIsolate_alt, g_popDirectionalIsolate_alt);
 
 cEmbedMarkers = (g_leftToRightMark, g_rightToLeftMark, g_arabicLetterMark,
 	g_leftToRightEmbedding, g_rightToLeftEmbedding, g_popDirectionalFormatting,
 	g_leftToRightOverride, g_rightToLeftOverride,
 	g_leftToRightIsolate, g_rightToLeftIsolate, g_firstStrongIsolate, g_popDirectionalIsolate);
+
 
 
 //-------------------------------------------------------------------------------------------

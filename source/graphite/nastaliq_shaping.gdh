@@ -27,14 +27,15 @@ pass(1)
 
 table(glyph)
 
-cVisSpace = (g_spaceVis  g_spaceVisXtight  g_spaceVisTight  g_spaceVisXwide  g_spaceVisWide  g_spaceVisHair
-	g_nobreakspaceShowInv_xtight  g_nobreakspaceShowInv_tight  g_nobreakspaceShowInv
-	g_nobreakspaceShowInv_wide  g_nobreakspaceShowInv_xwide);
+//cVisSpace = (g_spaceVis  g_spaceVisXtight  g_spaceVisTight  g_spaceVisXwide  g_spaceVisWide  g_spaceVisHair
+//	g_nobreakspaceShowInv_xtight  g_nobreakspaceShowInv_tight  g_nobreakspaceShowInv
+//	g_nobreakspaceShowInv_wide  g_nobreakspaceShowInv_xwide);
 
 cStdWidthSpace = (g_space, g_nbspace);
 
-cSpace = (g_space cVisSpace g_nbspace g_narrowNoBreakSpace);
+cSpace = (g_space  g_nbspace  g_narrowNoBreakSpace);
 
+/*** obsolete feature
 csSpMedInvis = (g_space, g_nbspace, g_narrowNoBreakSpace);
 
 csSpXtightVis	= (g_spaceVisXtight, g_nobreakspaceShowInv_xtight, g_spaceVisHair);
@@ -42,12 +43,14 @@ csSpTightVis	= (g_spaceVisTight, g_nobreakspaceShowInv_tight, g_spaceVisHair);
 csSpMedVis		= (g_spaceVis, g_nobreakspaceShowInv, g_spaceVisXtight);
 csSpWideVis		= (g_spaceVisWide, g_nobreakspaceShowInv_wide, g_spaceVisTight);
 csSpXwideVis	= (g_spaceVisXwide, g_nobreakspaceShowInv_xwide, g_spaceVis);
+***/
 
 cShowInvisibleZeroWidth = (cEmbedMarkers  g_lineSeparator  g_paragraphSeparator  g_wordJoiner);
 
 // Kern around these as if they were invisible:
-cKernIgnore = (cSpace  c_zeronojoin  g_zeroWidthNoBreakSpace  g_zeroWidthNoBreakSpaceShowInv
-	g_zeroWidthNoBreakSpaceShowInv_alt  cShowInvisibleZeroWidth);
+cKernIgnore = (cSpace  c_zeronojoin  g_zeroWidthNoBreakSpace  
+	// g_zeroWidthNoBreakSpaceShowInv  g_zeroWidthNoBreakSpaceShowInv_alt
+	cShowInvisibleZeroWidth);
 
 // These are encoded as visible but removed (actually turned to ZWNBSP) when invisible:
 cInvisible =  (cShowInvisibleZeroWidth, g_ObjectReplChar);
@@ -608,10 +611,13 @@ pass(6)
 // Alterate (standard Arabic-style) hamza
 if (hamzaAlt == 1)
 
+//csBaseHamzaUrdu  >  csBaseHamzaArabic;
+
 gJeem  gHamzaAbove				>  gHah  g__hamzaArabic;	// no nuqta
 gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
 
 (gChotiyeh cChotiyehFin)		g__dot2lIM__hamza	>  @1  g__hamzaArabic;
+(gChotiyeh cChotiyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
 (gHehGoal cHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
 (gBariyeh cBariyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
 
@@ -772,7 +778,7 @@ endif;
 //gHehDo				>	gHehDo;
 
 gChotiyeh=Y	gHamzaAbove=H								>	gYehHamzaAbove:(Y H) _;
-gChotiyeh=Y	(g__dot2lIM  g__noDot2l)=D  gHamzaAbove=H	>	gYehHamzaAbove:(Y D H)  _  _;
+gChotiyeh=Y	(g__dot2lIM  g__noDot2l)=D  gHamzaAbove=H		>	gYehHamzaAbove:(Y D H)  _  _;
 gChotiyeh	cs_chotiyehMark								>	cs_chotiyehComposed$2:(1 2)  _;
 
 gBariyeh  g__noDot2l				>	gBariyeh:(1 2)  _;

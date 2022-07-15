@@ -151,8 +151,9 @@ g_narrowNoBreakSpace  { advance.x = 225m; collision.flags = SET_ISSPACE(collisio
 cStdWidthSpace {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
-(cVisSpace  cshowInv  g_zeroWidthNoBreakSpaceShowInv_alt cShowInvBoxes cEmbedMarkers)
-	{ collision.flags = SET_ISSPACE(collision.flags) };
+// obsolete feature:
+//(cVisSpace  cshowInv  g_zeroWidthNoBreakSpaceShowInv_alt cShowInvBoxes cEmbedMarkers)
+//	{ collision.flags = SET_ISSPACE(collision.flags) };
 
 endpass;  // 1 (8)
 
@@ -716,7 +717,7 @@ cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET
 
 c_zerojoin   { collision.flags = SET_IGNORE(collision.flags) };
 c_zeronojoin { collision.flags = SET_IGNORE(collision.flags) };
-g_zeroWidthNoBreakSpaceShowInv  { collision.flags = SET_IGNORE(collision.flags) };
+//g_zeroWidthNoBreakSpaceShowInv  { collision.flags = SET_IGNORE(collision.flags) };
 
 // Don't move nuqtas to adjust for punctuation; instead kern the punctuation.
 cKernPunct { collision.flags = SET_IGNORE(collision.flags) };
