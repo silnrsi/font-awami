@@ -513,6 +513,9 @@
     <test label="invalid diacritic" rtl="True" class="fset23032">
       <string>الُلہ  اللَہ</string>
     </test>
+    <test label="ZWJ" rtl="True" class="fset23032">
+      <string>الل‍ہ</string>
+    </test>
     <test label="OTHER" background="#55aaff" rtl="True" class="fset23032">
       <string />
     </test>
@@ -583,7 +586,7 @@
       <string>تھسلُنیکیوں</string>
     </test>
     <test label="Thessalonians - original" background="#aaaa7f" rtl="True" class="fset7654">
-      <string>تھسلُنیَکیوں</string>
+      <string>تھسلُنی‍کیوں</string>
     </test>
     <test label="Thessalonians - yeh lam noon-ghunna" rtl="True" class="fset40">
       <string>تھسلُنیکیلں</string>
@@ -607,8 +610,8 @@
       <comment>Christ</comment>
       <string>المسیح</string>
     </test>
-    <test label="almasih - original" rtl="True" class="fset7654">
-      <string>المسیَح</string>
+    <test label="almasih - original (ZWJ)" rtl="True" class="fset7654">
+      <string>المسی‍ح</string>
     </test>
     <test label="khah + meem + jeem + heh-do" rtl="True" class="fset23032">
       <string>خَمجھا  خَمجھخو    خَمجھخے  خَمجھئی </string>
@@ -3075,11 +3078,15 @@
     </test>
   </testgroup>
   <testgroup label="Special chars - ZWJ, etc.">
-    <test label="ZWJ" rtl="True">
-      <string>س‍ق‍لم سقلم</string>
+    <test label="ZWJ - inter-sequence" rtl="True">
+      <comment>Medially, ZWJ is ignored except for ligatures</comment>
+      <string>س‍ق‍لم سقلم   یص‍گ‍ل یصگل</string>
     </test>
-    <test label="ZWJ - initial and final" rtl="True">
-      <string>م‍ ق‍ ‍ش</string>
+    <test label="ZWJ - single characters" rtl="True">
+      <string>م‍   ‍ش‍   ‍ی</string>
+    </test>
+    <test label="ZWJ - edge of sequence" rtl="True" class="fset23032">
+      <string>شع‍  ‍شع‍  ‍شع</string>
     </test>
     <test label="ZWNJ" rtl="True">
       <string>س‌ق‌لم سقلم</string>
@@ -3088,30 +3095,35 @@
       <string>م‍ ق‍   ‍ش س‌ق‌لم</string>
     </test>
     <test label="ZWJ &amp; ZWNJ - visible" rtl="True">
+      <comment>obsolete</comment>
       <string>م‍ ق‍   ‍ش س‌ق‌لم</string>
     </test>
     <test label="zero-width no-break space" rtl="True">
       <string>ب﻿م﻿س</string>
     </test>
     <test label="zero-width no-break space - visible" rtl="True">
+      <comment>obsolete</comment>
       <string>ب﻿م﻿س</string>
     </test>
     <test label="SP, NBSP, NNBSP - medium" rtl="True">
       <string>ب ب ب ب</string>
     </test>
     <test label="SP, NBSP, NNBSP - medium, visible" rtl="True">
+      <comment>obsolete</comment>
       <string>ب ب ب ب</string>
     </test>
     <test label="SP, NBSP, NNBSP - extra-wide" rtl="True" class="fset33">
       <string>ب ب ب ب</string>
     </test>
     <test label="SP, NBSP, NNBSP - extra-wide, visible" rtl="True" class="fset33">
+      <comment>obsolete</comment>
       <string>ب ب ب ب</string>
     </test>
     <test label="SP, NBSP, NNBSP - tight" rtl="True" class="fset39">
       <string>ب ب ب ب</string>
     </test>
     <test label="SP, NBSP, NNBSP - tight, visible" rtl="True" class="fset39">
+      <comment>obsolete</comment>
       <string>ب ب ب ب</string>
     </test>
     <test label="kern after right quote mark" rtl="True">
@@ -3137,12 +3149,14 @@
       <string>a ‪ب‬ ⁦xyz⁩ ا</string>
     </test>
     <test label="LRE RLE LRI RLI - visible" rtl="True">
+      <comment>obsolete</comment>
       <string>a ‪ب‬ ⁦xyz⁩ ا</string>
     </test>
     <test label="LRO LRE PDF LRI PRI - invisible" rtl="True">
       <string>‎س بس‫لم‬یسک بس⁧لم⁩یسک</string>
     </test>
     <test label="LRO LRE PDF LRI PRI - visible" rtl="True">
+      <comment>obsolete</comment>
       <string>‎س بس‫لم‬یسک بس⁧لم⁩یسک</string>
     </test>
     <test label="RLM LRO - invisible" rtl="True">

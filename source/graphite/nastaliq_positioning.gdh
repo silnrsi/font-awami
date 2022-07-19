@@ -689,8 +689,6 @@ cDiacriticUpper {
 
 gNoonGhunnaMark { collision.margin = 300m; marginweight = 300 }; // override
 
-cBase = (cIso, cIni, cMed, cFin, c_zerojoin);
-
 cDiacriticLower {
 	collision { margin = STDMARGIN_DIAC; marginweight = STDMARGINWT_DIAC }
 	//// ; sequence { class = ORDER_LDIACS; proxClass = ORDER_LNUQTAS; order = ORDER_NOABOVE; } - set in the rule
