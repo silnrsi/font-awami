@@ -1,98 +1,146 @@
 <?xml version='1.0' encoding='utf-8'?>
 <designspace format="3">
     <axes>
-        <axis default="400" maximum="900" minimum="400" name="weight" tag="wght">
-            <map input="400" output="400" />
-            <map input="900" output="900" />
+        <axis default="400.0" maximum="400.0" minimum="400.0" name="weight" tag="wght">
+            <map input="400.0" output="400.0" />
+            <map input="500.0" output="500.0" />
+            <map input="600.0" output="600.0" />
+            <map input="700.0" output="700.0" />
+            <map input="800.0" output="800.0" />
+            <map input="900.0" output="900.0" />
             <labelname xml:lang="en">Weight</labelname>
         </axis>
-        <axis default="100" maximum="100" minimum="100" name="width" tag="wdth">
-            <map input="100" output="100" />
+        <axis default="100.0" maximum="100.0" minimum="100.0" name="width" tag="wdth">
+            <map input="100.0" output="100.0" />
             <labelname xml:lang="en">Width</labelname>
         </axis>
-        <axis default="0" maximum="0" minimum="0" name="custom" tag="XXXX">
-            <map input="0" output="0" />
+        <axis default="0.0" maximum="0.0" minimum="0.0" name="custom" tag="XXXX">
+            <map input="0.0" output="0.0" />
             <labelname xml:lang="en">Custom</labelname>
         </axis>
     </axes>
+    
     <sources>
-        <source name="AwamiNastaliq-Regular" familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
+        <source familyname="Awami Nastaliq" name="AwamiNastaliq-Regular" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
             <lib copy="1" />
             <groups copy="1" />
             <features copy="1" />
             <info copy="1" />
             <location>
-                <dimension name="weight" xvalue="400" />
-                <dimension name="width" xvalue="100" />
-                <dimension name="custom" xvalue="0" />
+                <dimension name="weight" xvalue="400.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
             </location>
         </source>
-	<source name="AwamiNastaliq-Black" familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Black.ufo" stylename="Black">
+        
+        <source familyname="Awami Nastaliq" filename="masters/AwamiNastaliq-Black.ufo" name="AwamiNastaliq-Black" stylename="Black">
           <location>
-                <dimension name="weight" xvalue="900" />
-                <dimension name="width" xvalue="100" />
-                <dimension name="custom" xvalue="0" />
+                <dimension name="weight" xvalue="900.000000" />
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
             </location>
-	</source>
+        </source>
+    
     </sources>
 
     <instances>
+        <!-- Regular -->
         <instance      familyname="Awami Nastaliq"
-                             name="Awami Nastaliq Regular" 
+                         filename="instances/AwamiNastaliq-Regular.ufo"
+                             name="Awami Nastaliq Regular"
                stylemapfamilyname="Awami Nastaliq"
                         stylename="Regular"
                 stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliq-Regular"
-                         filename="instances/AwamiNastaliq-Regular.ufo">
+               postscriptfontname="AwamiNastaliq-Regular">
             <location>
-                <dimension name="weight" xvalue="400" />
-                <dimension name="width"  xvalue="100" />
-                <dimension name="custom" xvalue="0" />
+                <dimension name="weight" xvalue="400.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
             </location>
             <info />
             <kerning />
         </instance>
-        <instance      familyname="Awami Nastaliq Book"
-                             name="Awami Nastaliq Book Regular"
-               stylemapfamilyname="Awami Nastaliq Book"
-                        stylename="Regular"
-                stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliqBook-Regular"
-                         filename="instances/AwamiNastaliqBook-Regular.ufo">
-            <location>
-                <dimension name="weight" xvalue="500" />
-                <dimension name="width"  xvalue="100" />
-                <dimension name="custom" xvalue="0" />
-            </location>
-            <info />
-            <kerning />
-        </instance>
+        
+        <!-- Medium -->
         <instance      familyname="Awami Nastaliq"
+        	               filename="instances/AwamiNastaliq-Medium.ufo"
+                             name="Awami Nastaliq Medium"
+               stylemapfamilyname="Awami Nastaliq Medium"
+                        stylename="Medium"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiNastaliq-Medium">
+            <location>
+                <dimension name="weight" xvalue="500.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- SemiBold -->
+        <instance      familyname="Awami Nastaliq"
+        	               filename="instances/AwamiNastaliq-SemiBold.ufo"
+                             name="Awami Nastaliq SemiBold"
+               stylemapfamilyname="Awami Nastaliq SemiBold"
+                        stylename="SemiBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiNastaliq-SemiBold">
+            <location>
+                <dimension name="weight" xvalue="600.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- Bold -->
+        <instance      familyname="Awami Nastaliq"
+                         filename="instances/AwamiNastaliq-Bold.ufo"
                              name="Awami Nastaliq Bold"
                stylemapfamilyname="Awami Nastaliq"
                         stylename="Bold"
                 stylemapstylename="bold"
-               postscriptfontname="AwamiNastaliq-Bold"
-                         filename="instances/AwamiNastaliq-Bold.ufo">
+               postscriptfontname="AwamiNastaliq-Bold">
             <location>
-                <dimension name="weight" xvalue="700" />
-                <dimension name="width"  xvalue="100" />
-                <dimension name="custom" xvalue="0" />
+                <dimension name="weight" xvalue="700.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
             </location>
             <info />
             <kerning />
         </instance>
-        <instance      familyname="Awami Nastaliq Book"
-                             name="Awami Nastaliq Book Bold"
-               stylemapfamilyname="Awami Nastaliq Book"
-                        stylename="Bold"
-                stylemapstylename="bold"
-               postscriptfontname="AwamiNastaliqBook-Bold"
-                         filename="instances/AwamiNastaliqBook-Bold.ufo">
+        
+        <!-- ExtraBold -->
+        <instance      familyname="Awami Nastaliq"
+        	               filename="instances/AwamiNastaliq-ExtraBold.ufo"
+                             name="Awami Nastaliq ExtraBold"
+               stylemapfamilyname="Awami Nastaliq ExtraBold"
+                        stylename="ExtraBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiNastaliq-ExtraBold">
             <location>
-                <dimension name="weight" xvalue="900" />
-                <dimension name="width"  xvalue="100" />
-                <dimension name="custom" xvalue="0" />
+                <dimension name="weight" xvalue="800.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- Black -->
+        <instance      familyname="Awami Nastaliq"
+                         filename="instances/AwamiNastaliq-Black.ufo"
+                             name="Awami Nastaliq Black"
+               stylemapfamilyname="Awami Nastaliq Black"
+                        stylename="Black"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiNastaliq-Black">
+            <location>
+                <dimension name="weight" xvalue="900.000000" />
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
             </location>
             <info />
             <kerning />

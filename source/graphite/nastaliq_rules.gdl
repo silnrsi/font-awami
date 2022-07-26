@@ -60,10 +60,12 @@ Bidi = true;
 ScriptDirection = HORIZONTAL_RIGHT_TO_LEFT;
 
 // These values must match what are set in the master_... files:
-#define STYLE_REG      0
-#define STYLE_BOOK     1
-#define STYLE_BOLD     2
-#define STYLE_BOOKBOLD 3
+#define WT_REG      400
+#define WT_MED      500
+#define WT_SBOLD    600
+#define WT_BOLD     700
+#define WT_XBOLD    800
+#define WT_BLACK    900
 
 
 #define COLL_FREEZE       0		// base - test for collisions but don't move this glyph; 

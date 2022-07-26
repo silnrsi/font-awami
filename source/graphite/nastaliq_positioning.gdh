@@ -1511,7 +1511,7 @@ cNuqtaLikeUpperNoKT  /  (cLamIM cKafIM cTahIM) MARKS  cMed _ { position.y > PUSH
 cNuqtaLikeUpperNoKT { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKafTop  _ { position.y > PUSHDOWN };
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
-#if (STYLE >= STYLE_BOLD)
+#if (WEIGHT >= WT_BOLD)
 cNuqtaLikeUpperNoKT { shift.y = -100m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
 #else
 cNuqtaLikeUpperNoKT { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
