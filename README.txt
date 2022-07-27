@@ -38,9 +38,8 @@ TIPS
 As this font is distributed at no cost, we are unable to provide a 
 commercial level of personal technical support. The font has, however, 
 been through some testing on various platforms to be sure it works in most
-situations. In particular, it has been tested and shown to work on Windows 7,
-Windows 8 and Windows 10. Graphite capabilities have been tested on 
-Graphite-supported platforms.
+situations. In particular, it has been tested and shown to work on 
+Windows 10. Graphite capabilities have been tested on Graphite-supported platforms.
 
 If you do find a problem, please do report it through the website: 
 http://software.sil.org/awami/support.

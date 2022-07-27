@@ -7,9 +7,14 @@ Workarounds to current font technologies have been used to create Urdu-specific 
 
 Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of South Asia, including but not limited to Urdu. Lesser-known languages often require more vowel diacritics than Urdu. They may use a different set of base characters and diacritics, and the base characters often include more nuqtas to represent sounds that are not present in Urdu or standard Arabic. This font includes all the vowel diacritics and base characters (that we are aware of) required for languages using the Nastaliq style of Arabic script.
 
-One font from this typeface family is included in the *Awami Nastaliq* release:
-
+Six fonts from this typeface family are included in this release:
+      
 - Awami Nastaliq Regular
+- Awami Nastaliq Medium
+- Awami Nastaliq SemiBold
+- Awami Nastaliq Bold
+- Awami Nastaliq ExtraBold
+- Awami Nastaliq Black
 
 More detailed design information is available from [What is Special About Awami Nastaliq](http://software.sil.org/awami/what-is-special/)? 
 
@@ -27,12 +32,9 @@ An example of some text is shown below.
 
 For a complete list of characters included in Awami Nastaliq, see [Character Set Support](charset).
 
-<!-- 
 ## Rendering the Allah ligature
 
 In certain types of literature, the name *Allah* and words related to this name are given unique rendering. For a list of the rendering rules, see [Rendering the Allah ligature](allah).
-
--->
 
 ## Automatic collision-fixing
 

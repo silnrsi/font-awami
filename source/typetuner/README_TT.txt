@@ -17,7 +17,7 @@ intended for languages using the Nastaliq style of southwest Asia, the character
 set for this font is aimed at those languages.
 
 This font makes use of state-of-the-art font technologies to support complex 
-typographic issues. Font smarts have been implemented using  Graphite only. We have 
+typographic issues. Font smarts have been implemented using Graphite only. We have 
 no current plans to support OpenType.
 
 Awami Nastaliq is released under the SIL Open Font License.
@@ -43,15 +43,11 @@ is included in the package as feat_set_tuned.xml.
 By inspecting this file with a text editor you can determine 
 which alternate behaviors have been enabled.
 
-TIPS
-====
-
 As this font is distributed at no cost, we are unable to provide a 
 commercial level of personal technical support. The font has, however, 
 been through some testing on various platforms to be sure it works in most
-situations. In particular, it has been tested and shown to work on Windows 7,
-Windows 8 and Windows 10. Graphite capabilities have been tested on 
-Graphite-supported platforms.
+situations. In particular, it has been tested and shown to work on 
+Windows 10. Graphite capabilities have been tested on Graphite-supported platforms.
 
 If you do find a problem, please do report it through the website: 
 http://software.sil.org/awami/support.
@@ -96,9 +92,11 @@ as LibreOffice.org. They can display a glyph palette or input
 dialog that shows all the glyphs (symbols) in a font and allow you to enter
 them by clicking on the glyph you want.
 
+
 CONTACT
 ========
 For more information please visit the Awami Nastaliq page on SIL International's
 Computers and Writing systems website: http://software.sil.org/awami
 
 Support through the website: http://software.sil.org/awami/support
+

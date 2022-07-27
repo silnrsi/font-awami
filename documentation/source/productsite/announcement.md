@@ -1,13 +1,29 @@
 
+This version is a Beta and not currently available on software.sil.org
+
+Six fonts from this typeface family are now included in this release:
+      
+- Awami Nastaliq Regular
+- Awami Nastaliq Medium
+- Awami Nastaliq SemiBold
+- Awami Nastaliq Bold
+- Awami Nastaliq ExtraBold
+- Awami Nastaliq Black
+
 #### Changes
 
-- Improved spacing and kerning involving punctuation
-- Corrected nuqtas in dul character
-- Fixed collision bug that manifested itself in Paratext
-- Fixed other obscure bugs
-
-> **The changes to spacing and kerning are significant, and we highly recommend upgrading from version 2.100.**
-
+- Renamed Book weight to Medium and Book Bold weight to Black
+- Added SemiBold and ExtraBold weights
+- Added two characters:
+	- U+08C8 ARABIC LETTER GRAF
+	- U+069B ARABIC LETTER SEEN WITH THREE DOTS BELOW
+- Modified rules for generating Allah ligature
+- Fixed a bug affecting the right margin
+- Fixed a problem with the behavior of the yeh with hamza
+- Added a short version of the final sad
+- Added a special form of khah+zabar+meem+jeem+heh-doachashmee to avoid excessive height
+- Various improvements to bold forms and beh forms
+- Collision fixes
 
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 

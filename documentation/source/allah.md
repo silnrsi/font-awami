@@ -1,8 +1,7 @@
 ---
 title: Awami Nastaliq - Rendering the Allah ligature
-fontversion: 3.000 Alpha
+fontversion: 3.000 Beta
 ---
-
 
 In certain types of literature, the name *Allah* and words related to this name are given unique rendering. Unicode has a *presentation form* character (U+FDF2 ARABIC LIGATURE ALLAH ISOLATED FORM) that implements this rendering and, while this can work (in some fonts) for the word in isolation, it doesn’t help users obtain special rendering in other contexts where it is desired. 
 
@@ -24,16 +23,16 @@ Characters | → | Glyph | Comment
 <span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0644; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'> الله	</span> | Ligature is formed (U+0647)
 <span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0644; + &#x06c1;</span> | → | <span dir="rtl" class='awami-R normal'>اللہ	</span> | Ligature is formed (U+06C1)
 <span class='awamiL-R normal'>&#x202d;&#x0671; + &#x0644; + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'> ٱللّه </span> | Ligature is formed (not currently)
-<span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>اللَّه	</span> | Ligature is formed (not currently)
+<span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>اللَّه	</span> | Ligature is formed
 <span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0644; + &#x0651; + &#x0670; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>اللّٰه</span> | 	Ligature is formed
-<span class='awamiL-R normal'>&#x202d;&#x0644; + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>&#x0644;&#x0644;&#x0651;&#x0647;</span> | Ligature is formed (not currently)
+<span class='awamiL-R normal'>&#x202d;&#x0644; + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>&#x0644;&#x0644;&#x0651;&#x0647;</span> | Ligature is formed
 <span class='awamiL-R normal'>&#x202d;&#x0644; + ZWJ + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>&#x0644;&#x200D;&#x0644;&#x0651;&#x0647;</span> | Ligature is not formed
 <span class='awamiL-R normal'>&#x202d;&#x0644; + &#x0644; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>&#x0644;&#x0644;&#x0647;</span> | Ligature is not formed
-<span class='awamiL-R normal'>&#x202d;&#x0644; + &#x0650; + &#x0644; + &#x0651; + &#x0647; + &#x0652;</span> | → | <span dir="rtl" class='awami-R normal'>لِلّهْ	</span> | Ligature is formed (not currently)
-<span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0652; + &#x0627; + &#x0644; + &#x0644; + &#x0651; + &#x0647; + &#x0652;</span> | → | <span dir="rtl" class='awami-R normal'>الْاللّهْ	</span> | Ligature is formed (not currently)
-<span class='awamiL-R normal'>&#x202d;&#x0628; + &#x0650; + &#x0644; + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>بِللّه	</span> | Ligature is formed (not currently)
-<span class='awamiL-R normal'>&#x202d;&#x0641; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>فللَّه	</span> | Ligature is formed (not currently)
-<span class='awamiL-R normal'>&#x202d;&#x0641; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>فللَّه	</span> | Ligature is formed (not currently)
+<span class='awamiL-R normal'>&#x202d;&#x0644; + &#x0650; + &#x0644; + &#x0651; + &#x0647; + &#x0652;</span> | → | <span dir="rtl" class='awami-R normal'>لِلّهْ	</span> | Ligature is formed
+<span class='awamiL-R normal'>&#x202d;&#x0627; + &#x0644; + &#x0652; + &#x0627; + &#x0644; + &#x0644; + &#x0651; + &#x0647; + &#x0652;</span> | → | <span dir="rtl" class='awami-R normal'>الْاللّهْ	</span> | Ligature is formed
+<span class='awamiL-R normal'>&#x202d;&#x0628; + &#x0650; + &#x0644; + &#x0644; + &#x0651; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>بِللّه	</span> | Ligature is formed
+<span class='awamiL-R normal'>&#x202d;&#x0641; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>فللَّه	</span> | Ligature is formed
+<span class='awamiL-R normal'>&#x202d;&#x0641; + &#x0644; + &#x0644; + &#x0651; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>فللَّه	</span> | Ligature is formed
 <span class='awamiL-R normal'>&#x202d;&#x0641; + &#x0644; + &#x0644; + &#x064e; + &#x0647;</span> | → | <span dir="rtl" class='awami-R normal'>فللَه	</span> | Ligature is not formed
 
 

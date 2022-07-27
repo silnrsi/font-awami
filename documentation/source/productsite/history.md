@@ -1,4 +1,24 @@
 
+### 2022-Aug-1 (SIL WSTech team) Awami Nastaliq Version 2.900 (beta)
+- Renamed Book weight to Medium and Book Bold weight to Black
+- Added SemiBold and ExtraBold weights
+- Added two characters:
+	- U+08C8 ARABIC LETTER GRAF
+	- U+069B ARABIC LETTER SEEN WITH THREE DOTS BELOW
+- Modified rules for generating Allah ligature
+- Fixed a bug affecting the right margin
+- Fixed a problem with the behavior of the yeh with hamza
+- Added a short version of the final sad
+- Added a special form of khah+zabar+meem+jeem+heh-doachashmee to avoid excessive height
+- Various improvements to bold forms and beh forms
+- Collision fixes
+
+### 2022-Mar-30 (SIL WSTech team) Awami Nastaliq Version 2.800 (alpha)
+- Added Bold weight and Book and Book Bold versions
+- Changed the default value of the short forms feature to use all short forms
+- Flattened a couple of special ligatures
+- Changed dopesh to use 69 form consistently
+
 ### 2021-Apr-29 (SIL WSTech team) Awami Nastaliq Version 2.200
 - Improved spacing and kerning involving punctuation
 - Corrected nuqtas in dul character

@@ -2,7 +2,7 @@
 
 <font color="red">Note:</font> |
 ------------- | ---------------
-**This page will only display properly in new versions of Mozilla Firefox. Also, Graphite must be enabled. See the [instructions on how to enable Graphite in Firefox](http://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#cf8a0574).** |
+**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See the [instructions on how to enable Graphite in Firefox](http://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#cf8a0574).** |
 
 
 Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](http://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used.
@@ -115,7 +115,7 @@ Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
 All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 None | <span dir="rtl" class='awami-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;&#x6CC; &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;&#x644;</span>| `shrt=0`
-Kafs and gafs | <span dir="rtl" class='awami-shrt-1-R normal'>>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
+Kafs and gafs | <span dir="rtl" class='awami-shrt-1-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
 Finals | <span dir="rtl" class='awami-shrt-2-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;<font color="red">&#x6CC;</font> &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=2`
 All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 

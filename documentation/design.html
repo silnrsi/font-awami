@@ -18,9 +18,14 @@
     <p>The sloping nature of Nastaliq creates a great challenge: glyph collisions. A straightforward, naive layout of base glyphs, nuqtas, and diacritics will inevitably result in a rendering where the glyphs collide, forming ugly and even unreadable text. Fixing these collisions is exacerbated by the large number of glyphs and the complex positioning created by the sloping baseline.</p>
     <p>Workarounds to current font technologies have been used to create Urdu-specific fonts, but these approaches do not scale well when multiple languages and a variety of diacritics are needed. For this reason, SIL International has developed Awami Nastaliq, specifically intended to support lesser-known languages of South Asia (using an extended version of Graphite). While there are several fonts that support Urdu, this is the first Nastaliq-style font that supports a wide variety of lesser-known languages.</p>
     <p>Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of South Asia, including but not limited to Urdu. Lesser-known languages often require more vowel diacritics than Urdu. They may use a different set of base characters and diacritics, and the base characters often include more nuqtas to represent sounds that are not present in Urdu or standard Arabic. This font includes all the vowel diacritics and base characters (that we are aware of) required for languages using the Nastaliq style of Arabic script.</p>
-    <p>One font from this typeface family is included in the <em>Awami Nastaliq</em> release:</p>
+    <p>Six fonts from this typeface family are included in this release:</p>
     <ul>
     <li>Awami Nastaliq Regular</li>
+    <li>Awami Nastaliq Medium</li>
+    <li>Awami Nastaliq SemiBold</li>
+    <li>Awami Nastaliq Bold</li>
+    <li>Awami Nastaliq ExtraBold</li>
+    <li>Awami Nastaliq Black</li>
     </ul>
     <p>More detailed design information is available from <a href="http://software.sil.org/awami/what-is-special/">What is Special About Awami Nastaliq</a>?</p>
     <h2 id="type-samples">Type Samples</h2>
@@ -32,12 +37,8 @@
     </figcaption>
     <h2 id="character-set">Character Set</h2>
     <p>For a complete list of characters included in Awami Nastaliq, see <a href="charset.html">Character Set Support</a>.</p>
-    <!-- 
-    ## Rendering the Allah ligature
-    
-    In certain types of literature, the name *Allah* and words related to this name are given unique rendering. For a list of the rendering rules, see [Rendering the Allah ligature](allah.md).
-    
-    -->
+    <h2 id="rendering-the-allah-ligature">Rendering the Allah ligature</h2>
+    <p>In certain types of literature, the name <em>Allah</em> and words related to this name are given unique rendering. For a list of the rendering rules, see <a href="allah.html">Rendering the Allah ligature</a>.</p>
     <h2 id="automatic-collision-fixing">Automatic collision-fixing</h2>
     <p>To solve the problem of collisions, we have enhanced Graphite with an automatic collision-fixing capability. The Graphite engine makes use of a simplified form of the rendered glyphs to detect collisions, shift nuqtas and diacritics, and add kerning to create nicely laid-out text. Besides fixing collisions, the shape-based kerning mechanism can also create diagonal overlaps in the sloping text, as Nastaliq is traditionally written.</p>
     <h2 id="vowel-diacritical-marks">Vowel diacritical marks</h2>
@@ -45,7 +46,7 @@
     <h2 id="user-selectable-font-features">User-selectable Font Features</h2>
     <p>Alternate glyphs that are available through features are demonstrated in the <a href="features.html">Features</a> document.</p>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.000 Alpha and is copyright © 2014-2022 SIL International.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.000 Beta and is copyright © 2014-2022 SIL International.</p>
     </footer>
 </article>
 </div>
