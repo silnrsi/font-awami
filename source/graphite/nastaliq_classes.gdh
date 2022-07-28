@@ -23,6 +23,9 @@ table(glyph) {MUnits = 2048};
 cHamzaAbove = (gHamzaAbove, g__wavyHamza, g__hamzaArabic);
 cHamzaBelow = (gHamzaBelow, gWavyHamzaBelow, gHamzaBelowArabic);
 
+// Rename for GDL clarity:
+g_nbspace = g_uni00A0;
+
 
 /* Treated as European numbers by default, which is probably okay.
 cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEasternFour,
@@ -362,7 +365,7 @@ cJeemIso = (gJeem, gHah, gKhah, gTcheh, gNyeh, gDyeh, gTcheheh, gHahHamzaAbove, 
 	gHahSmallTahBelow, gHahSmallTahTwoDots, gHahThreeDotsAbove);
 cJeemFin = (gJeemFin, gJeemFin_short);
 cSeenIso = (gSeen, gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
-	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
+	gSeen3DotsBelow3DotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
 cSeenFin = (gSeenFin, gSeenFin_short);
 cSadIso = (gSad, gDad, gDadDotBelow, gSadThreeDotsAbove);
 cSadFin = (gSadFin, gSadFin_short);
@@ -1058,7 +1061,7 @@ cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu,
 	g__dot3l__dot3u, g__smallVinv, g__smallFourAbove);
 cs_seenComposed = (
 	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelow,
-	gSeenThreeDotsBelowThreeDotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
+	gSeen3DotsBelow3DotsAbove, gSeenInvertedVAbove, gSeenFourAbove);
 
 cs_sadMark = (g__dot1u, g__dot1l__dot1u, g__dot3u);
 cs_sadComposed = (gDad, gDadDotBelow, gSadThreeDotsAbove);
