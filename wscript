@@ -74,8 +74,8 @@ dspace_file = 'source/awami.designspace'
 
 # iterate over designspace
 designspace(dspace_file,
-    # -W resets weights to 400 and 700; not needed for axis-based
-    instanceparams='-l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
+    # -W resets weights to 400 and 700
+    instanceparams='-W -l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
     target = process('${DS:FILENAME_BASE}.ttf', *cmds),
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
