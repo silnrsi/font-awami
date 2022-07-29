@@ -787,7 +787,7 @@ gChotiyeh	cs_chotiyehMark								>	cs_chotiyehComposed$2:(1 2)  _;
 gBariyeh  g__noDot2l				>	gBariyeh:(1 2)  _;
 gBariyeh  g__noDot2l__hamza		>	gBariyeh  gHamzaAbove;
 
-cBehIM  g__dot2lIM  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
+////cBehIM  g__dot2lIM  >  @1  g__dot2l_small  /  _=B  _=N {smallNuqtas == 1};
 cBehIM  g__dot2lIM  >  @1  g__dot2l;
 
 cBehIM  g__dot2lIM__hamza  _	>  @1  g__dot2l:2  gHamzaAbove:2;
@@ -831,6 +831,7 @@ else
 gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 endif;
 
+/*****
 if (smallNuqtas == 1)
 // Small nuqtas
 
@@ -843,6 +844,7 @@ g__dot2l_tail	>	g__dot2l_small;
 csLowerUpper  _  >  csLowerNoUpper_small  csUpperNoLower_small$1:1;
 
 else
+******/
 
 // See corresponding rules above.
 
@@ -864,7 +866,7 @@ csBehNoRing  csRingDot  _  >  csBehTehRing  g__attachedRing  csNoRingDot$2:2;
 csLowerUpper  _  >  csLowerNoUpper  csUpperNoLower$1:1;
 
 
-endif; // no small nuqtas
+////endif; // no small nuqtas
 
 
 if (fullStopAlt == 1)
