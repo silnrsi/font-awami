@@ -7,14 +7,13 @@ Workarounds to current font technologies have been used to create Urdu-specific 
 
 Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of South Asia, including but not limited to Urdu. Lesser-known languages often require more vowel diacritics than Urdu. They may use a different set of base characters and diacritics, and the base characters often include more nuqtas to represent sounds that are not present in Urdu or standard Arabic. This font includes all the vowel diacritics and base characters (that we are aware of) required for languages using the Nastaliq style of Arabic script.
 
-Six fonts from this typeface family are included in this release:
+Five fonts from this typeface family are included in this release:
       
 - Awami Nastaliq Regular
 - Awami Nastaliq Medium
 - Awami Nastaliq SemiBold
 - Awami Nastaliq Bold
 - Awami Nastaliq ExtraBold
-- Awami Nastaliq Black
 
 More detailed design information is available from [What is Special About Awami Nastaliq](http://software.sil.org/awami/what-is-special/)? 
 
@@ -23,7 +22,11 @@ More detailed design information is available from [What is Special About Awami 
 Type samples showing some of the inventory of glyphs can be found here: 
 [Awami Nastaliq Type Sample](sample).
 
-An example of some text is shown below. 
+Examples of some text is shown below. 
+
+<img class='fullsize' alt='Lateef Sample - Seven weights' src='https://software.sil.org/lateef/wp-content/uploads/sites/30/2022/06/AwamiWeights.png' />
+[caption]<em>Awami Nastaliq Sample - Five weights</em>[/caption]
+
 
 <img class='fullsize' alt='Awami Nastaliq Sample - Genesis 11' src='https://software.sil.org/awami/wp-content/uploads/sites/33/2021/01/AwamiUrduGen11.png' />
 [caption]<em>Awami Nastaliq Sample - Genesis 11</em>[/caption]

@@ -5,19 +5,18 @@ fontversion: 3.000 Beta
 
 This version is a Beta and not currently available on software.sil.org
 
-Six fonts from this typeface family are now included in this release:
+Five fonts from this typeface family are now included in this release:
       
 - Awami Nastaliq Regular
 - Awami Nastaliq Medium
 - Awami Nastaliq SemiBold
 - Awami Nastaliq Bold
 - Awami Nastaliq ExtraBold
-- Awami Nastaliq Black
 
 #### Changes
 
-- Renamed Book weight to Medium and Book Bold weight to Black
-- Added SemiBold and ExtraBold weights
+- Renamed Book weight to Medium and Book Bold weight to ExtraBold
+- Added SemiBold weight
 - Added two characters:
 	- U+08C8 ARABIC LETTER GRAF
 	- U+069B ARABIC LETTER SEEN WITH THREE DOTS BELOW

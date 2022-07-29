@@ -4,8 +4,8 @@ fontversion: 3.000 Beta
 ---
 
 ### 2022-Aug-1 (SIL WSTech team) Awami Nastaliq Version 2.900 (beta)
-- Renamed Book weight to Medium and Book Bold weight to Black
-- Added SemiBold and ExtraBold weights
+- Renamed Book weight to Medium and Book Bold weight to ExtraBold
+- Added SemiBold weight
 - Added two characters:
 	- U+08C8 ARABIC LETTER GRAF
 	- U+069B ARABIC LETTER SEEN WITH THREE DOTS BELOW
