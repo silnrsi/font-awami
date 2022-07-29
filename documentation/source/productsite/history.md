@@ -12,6 +12,7 @@
 - Added a special form of khah+zabar+meem+jeem+heh-doachashmee to avoid excessive height
 - Various improvements to bold forms and beh forms
 - Collision fixes
+- Removed "Small nuqtas" feature
 
 ### 2022-Mar-30 (SIL WSTech team) Awami Nastaliq Version 2.800 (alpha)
 - Added Bold weight and Book and Book Bold versions

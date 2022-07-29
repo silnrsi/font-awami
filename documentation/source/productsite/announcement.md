@@ -23,6 +23,7 @@ Five fonts from this typeface family are now included in this release:
 - Added a special form of khah+zabar+meem+jeem+heh-doachashmee to avoid excessive height
 - Various improvements to bold forms and beh forms
 - Collision fixes
+- Removed "Small nuqtas" feature
 
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 

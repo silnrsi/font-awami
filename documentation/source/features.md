@@ -132,13 +132,6 @@ Kern-only | <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 Not implemented | | `agca=2`
 On (default) | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "agca" 3'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=3`
 
-#### Small nuqtas
-
-Feature | Sample | Feature setting
-------------- | ------ | ------------- 
-Off | <span dir="rtl" class='awami-R normal'>ݜۻڜڃغ</span>| `snuq=0`
-On | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "snuq" 1'>ݜۻڜڃغ</font></span>| `snuq=1`
-
 ## End of Ayah and Subtending marks
 
 *This is not technically a feature, but we find it useful to demonstrate the use of these characters.*

@@ -128,13 +128,6 @@ Kern-only | <span dir="rtl" class='awami-agca-1-R normal'><font color="red">&#x6
 Not implemented | | `agca=2`
 On (default) | <span dir="rtl" class='awami-agca-3-R normal'><font color="red">&#x67e;&#x6cc;</font>&#x679;&#x6cc; <font color="red">&#x627;&#x614;&#x628;&#x650;&#x6cc;</font>&#x62c;<font color="red">&#x6cc;&#x644;</font> &#x62a;&#x62d;<font color="red">&#x631;</font>&#x650;<font color="red">&#x6cc;</font>&#x62c;</span> | `agca=3`
 
-#### Small nuqtas
-
-Feature | Sample | Feature setting
-------------- | ------ | ------------- 
-Off | <span dir="rtl" class='awami-R normal'>ݜۻڜڃغ</span>| `snuq=0`
-On | <span dir="rtl" class='awami-snuq-1-R normal'>ݜۻڜڃغ</font></span>| `snuq=1`
-
 ## End of Ayah and Subtending marks
 
 *This is not technically a feature, but we find it useful to demonstrate the use of these characters.*
@@ -195,4 +188,3 @@ These sentences come from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.
 [font id='awami-agca-0' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='agca 0']
 [font id='awami-agca-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='agca 1']
 [font id='awami-agca-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='agca 3']
-[font id='awami-snuq-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='snuq 1']
