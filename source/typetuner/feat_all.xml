@@ -86,7 +86,7 @@
 		</value>
 	</feature>
 
-	<feature name="Short forms" value="None" tag="Short">
+	<feature name="Short forms" value="All" tag="Short">
 		<value name="None" tag="None">
 			<cmd name="null" args="null"/>
 		</value>
@@ -101,6 +101,7 @@
 		</value>
 	</feature>
 
+<!--
 	<feature name="Small nuqtas" value="False" tag="SmNuq">
 		<value name="False" tag="F">
 			<cmd name="null" args="null"/>
@@ -109,6 +110,7 @@
 			<cmd name="gr_feat" args="{gr_snuq} 1"/>
 		</value>
 	</feature>
+-->
 
 	<feature name="Collision fixing" value="On" tag="Coll">
 		<value name="Off" tag="Off">
@@ -141,7 +143,7 @@
 		<alias name='gr_lamv' value='1818324342'/> <!-- 6C 61 6D 76 -->
 		<alias name='gr_punc' value='1886744163'/> <!-- 70 75 6E 63 -->
 		<alias name='gr_shrt' value='1936224884'/> <!-- 73 68 72 74 -->
-		<alias name='gr_snuq' value='1936618865'/> <!-- 73 6E 75 71 -->
+<!--<alias name='gr_snuq' value='1936618865'/> -->  <!-- 73 6E 75 71 -->
 		<alias name='gr_wdsp' value='2003071856'/> <!-- 77 64 73 70 -->
 	</aliases>
 	
