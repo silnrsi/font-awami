@@ -40,7 +40,12 @@ DEBPKG = 'fonts-awami'
 # Get version info from Regular UFO; must be first function call:
 getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
 
-opts = preprocess_args({'opt' : '-d'})
+# smith project-specific options:
+#   -d          - debug: do not run ttfsubset
+#   --autohint  - autohint the font (otherwise hints are stripped)
+#   --noPSnames - remove psf names
+#   --regOnly   - build just Regular weight
+opts = preprocess_args({'opt' : '-d'}, {'opt': '--autohint'}, {'opt': '--noPSnames'}, {'opt': '--regOnly'})
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
@@ -56,19 +61,24 @@ cmds = [
     # remove buggy tables:
     cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
     cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox_${DS:FILENAME_BASE}.json"),
-    # for removing psnames:
-    ####cmd('psfix -s ${DEP} ${TGT}'),
 ]
+
+if '--noPSnames' in opts:
+    cmds.append(cmd('psfix -s ${DEP} ${TGT}'))
 
 if '-d' not in opts:
     cmds.append(cmd('ttfsubset -s deva ${DEP} ${TGT}'))
 
-cmds.extend([
+if '--autohint' in opts:
+    cmds.append(cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'))
+else:
     # strip out bogus hints:
-    ####cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'),
-    cmd('ttfstriphints ${DEP} ${TGT}'),
+    cmds.append(cmd('ttfstriphints ${DEP} ${TGT}'))
+
+cmds.extend([
     cmd('psfcompressgr -q ${DEP} ${TGT}'),
-    cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")])
+    cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
+])
     
 dspace_file = 'source/awami.designspace'
 
@@ -76,6 +86,7 @@ dspace_file = 'source/awami.designspace'
 designspace(dspace_file,
     # -W resets weights to 400 and 700
     instanceparams='-W -l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
+    instances = ['Awami Nastaliq Regular']  if '--regOnly' in opts else None,
     target = process('${DS:FILENAME_BASE}.ttf', *cmds),
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
