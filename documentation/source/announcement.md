@@ -1,9 +1,7 @@
 ---
 title: Awami Nastaliq - Announcement
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
-
-This version is a Beta and not currently available on software.sil.org
 
 Five fonts from this typeface family are now included in this release:
       

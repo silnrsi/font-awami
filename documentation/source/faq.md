@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Frequently Asked Questions
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
 
 Many questions can be answered by consulting the following FAQ pages. Here are a few sample questions answered in each FAQ:

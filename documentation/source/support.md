@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Support
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
 
 ## Support options

@@ -1,6 +1,4 @@
 
-This version is a Beta and not currently available on software.sil.org
-
 Five fonts from this typeface family are now included in this release:
       
 - Awami Nastaliq Regular

@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Design
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
 
 Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. For this reason, SIL's smart-font technology, [Graphite](http://graphite.sil.org), has been extended with some special capabilities to address the particular challenges of this beautiful but complicated form of writing.

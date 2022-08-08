@@ -1,9 +1,7 @@
 ---
 title: Awami Nastaliq - Developer information
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
-
-This font is actively maintained and improved, and recent changes to its development process will enable more frequent releases. We are actively working on adding additional heavier weights.
 
 ## Welcome font developers!
 
@@ -11,7 +9,7 @@ We welcome other developers who wish to get involved in supporting and enhancing
 
 ## Permissions granted by the OFL
 
-SIL’s fonts are licensed according to the terms of the [SIL Open Font License](https://scripts.sil.org/OFL). The OFL allows the fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. For details see the OFL.txt and OFL-FAQ.txt files in the package.
+SIL&rsquo;s fonts are licensed according to the terms of the [SIL Open Font License](https://scripts.sil.org/OFL). The OFL allows the fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. For details see the OFL.txt and OFL-FAQ.txt files in the package.
 
 ## Building the fonts from source code
 

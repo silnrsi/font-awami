@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Documentation
-fontversion: 3.000 Beta
+fontversion: 3.000
 ---
 
 Thank you for your interest in the Awami Nastaliq font. The Awami Nastaliq font does not provide complete coverage of all the characters defined in Unicode for Arabic script. Because the font style is specifically intended for languages using the Nastaliq style of Arabic script, the character set for this font is aimed at supporting those languages.
