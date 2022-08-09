@@ -13,7 +13,7 @@ The following character ranges are supported by this font:
 
 Unicode block | Awami Nastaliq support
 ------------- | ---------------
-Arabic 	| ✓ except for 0605..0608, 0616..061C, 061D..061E, 063B..0640, 065C..065D, 0676..0678, 067F..0680, 0682, 068C..068D, 068F, 0692, 069D, 069F..06A0, 06A2..06A3, 06A6..06A8, 06AA, 06AC..06AE, 06B2, 06B4, 06B6, 06B8, 06BD, 06BF, 06D1, 06D6..06DB, 06DE..06DF, 06E2..06E9, 06EB..06EC, 06EE..06EF, 06FA, 06FC..06FF
+Arabic 	| ✓ except for 0605..0608, 0616..061C, 061D..061E, 063B..0640, 065C..065D, 0676..0678, 067F..0680, 0682, 068C..068D, 068F, 0692, 069C..069D, 069F..06A0, 06A2..06A3, 06A6..06A8, 06AA, 06AC..06AE, 06B2, 06B4, 06B6, 06B8, 06BD, 06BF, 06D1, 06D6..06DB, 06DE..06DF, 06E2..06E9, 06EB..06EC, 06EE..06EF, 06FA, 06FC..06FF
 Arabic Supplement | ✓ except for 0750..0758, 075B, 075D..0762, 0764..0767
 Arabic Extended-A | ✓ only includes 08C7, 08C8, 08FF
 Arabic Extended-B | ✗ 
