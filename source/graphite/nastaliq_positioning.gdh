@@ -229,9 +229,10 @@ endtable;  // glyph
 table(glyph)
 cNuqtaLikeLowerNoRing = cNuqtaLikeLower;
 cNuqtaLikeLowerNoRing -= (g__attachedRing);
-endtable;
 
-// X+Nl(large) Y  Z  Bariyeh
+cTakes_lower = (cTakes_nLowerDia, cTakes_hehhookDia);
+
+endtable;
 
 // X+Nl  Y+Nl  Z+Nl  Bariyeh
 cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
@@ -248,13 +249,17 @@ cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at =
 	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y  Z+Nl Bariyeh
-cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
+cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
 	/ _=X _=Nx DIACS  cMed=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
 
+// X+Nl(large)  Y  Z  Bariyeh
+cTakes_nLowerDia  cNuqtaLowerLarge { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	/ _=X _=Nx DIACS  cMed=Y ^ cNuqtaLikeUpper? DIACS  csMedBy=Z cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+
 // X+Nl  Y+Nl  Z  Bariyeh
-cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	cTakes_nLowerDia cNuqtaLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
+cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
+	cTakes_lower cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
 	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Bariyeh
@@ -271,6 +276,7 @@ cTakes_nLowerDia
 // X+Nl Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
+
 
 
 
@@ -706,7 +712,7 @@ g__dot1u { shift.y = -150m; collision.flags = COLL_FREEZE }
 	/ gLamIniFe MARKS  gFehMed _=N  cKafMed;
 cNuqtaLikeUpper {shift {x = -150m; y = 130m}; collision.flags = COLL_FREEZE}  cNuqtaLikeUpper {shift.x = 150m}
 	/ gJeemMedBeM1  _=N1  gBehMedBe  cNuqtaLikeLower? _=N2;
-(g__dot2u g__dot3u) {collision.flags = COLL_FREEZE} / (gDalFin gKafFin) _=N ;
+////(g__dot2u g__dot3u) {collision.flags = COLL_FREEZE} / (gDalFin gKafFin) _=N ;   //// ####
 
 ///////////////////
 
@@ -1997,8 +2003,8 @@ cTakes_nUpperDia=K  cKafTopInvis  cNuqtaLike4Kaf?
 cKafTopAltHt=T  g__grafStroke { attach { to=@T; at=grafS;   with=grafM }};
 cKafTopAltHt=T  cringDia      { attach { to=@T; at=ringS;   with=ringM }};
 // Special case: kaf-3-dots + kaf
-cKafTopAltHt    g__dot3u      { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -220m; y = 150m } }
-	/ gKafMedKf_wide_base _=T  _=N  cKafMed  g__kafTop_null;
+////cKafTopAltHt    g__dot3u      { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -220m; y = 150m } }  //// ####
+////	/ gKafMedKf_wide_base _=T  _=N  cKafMed  g__kafTop_null;
 // Special case: ngoeh/graf + kef
 cKafTopAltHt    cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -450m; y = 270m } }
 	/  _=T  _=N  csKafMed_baseT  csKafMed_top_tall;
@@ -2008,8 +2014,8 @@ cKafTopAltHt=T  cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }};
 // Diacritic tweaks
 
 // Special case: nuqtas and diacritic get reversed to do narrowness of beh and kaf.
-cNuqtaLower {shift.x = -350m} cDiacriticLower {shift.x = 220m}
-	/ (gBehIni  gBehMed) _=N  cNuqtaLikeUpper? cDiacritic? (gKafMedJm gGafMedJm) g__kafTop_null _=D;
+////cNuqtaLower {shift.x = -350m} cDiacriticLower {shift.x = 220m}                   //// ####
+////	/ (gBehIni  gBehMed) _=N  cNuqtaLikeUpper? cDiacritic? (gKafMedJm gGafMedJm) g__kafTop_null _=D;
 
 endpass; // pos - 9 (16)
 
@@ -2195,8 +2201,8 @@ gZair { shift {x=-200m; y=250m } }  cNuqtaLikeLower { sequence.class = 0; shift.
 	/  _=Z gBehMedBy  _=N  cDiacritic?  gBariyehFin;
 
 // Special case:
-cNuqtaLikeUpper {shift.y = -150m}  cDiacriticUpper {shift {x = -150m; y = -250m}}
-	/  (cFehIM cAinIM) _=N  _=D  cNarrowPreKaf  MARKS  csKafFinTall;
+////cNuqtaLikeUpper {shift.y = -150m}  cDiacriticUpper {shift {x = -150m; y = -250m}}    //// ####
+////	/  (cFehIM cAinIM) _=N  _=D  cNarrowPreKaf  MARKS  csKafFinTall;
 
 // Special case: feh/ain + wide-jeem + final-kaf
 
