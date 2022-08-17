@@ -127,28 +127,39 @@ cIniMed {att.to=@L}  cMedFinZJ {insert=1}  / _ MARKS2N ^ _=L ;
 // Note that this will not affect the width of visible spaces.
 
 if (wordSpacing == xtight)
-g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
-cStdWidthSpace { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace       { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
+// Don't change these spaces; they are based on the em-square.
+//g_hairSpace          { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_thinSpace          { advance.x = 60m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == tight)
-g_narrowNoBreakSpace  { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
-cStdWidthSpace { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace       { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_hairSpace          { advance.x = 10m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_thinSpace          { advance.x = 100m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == medium)
-g_narrowNoBreakSpace  { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
-cStdWidthSpace { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace { advance.x = 75m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace       { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_hairSpace          { advance.x = 60m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_thinSpace          { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == wide)
-g_narrowNoBreakSpace  { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
-cStdWidthSpace {advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace { advance.x = 150m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace       { advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_hairSpace          { advance.x = 120m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_thinSpace          { advance.x = 2250m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 if (wordSpacing == xwide)
-g_narrowNoBreakSpace  { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
-cStdWidthSpace {advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
+g_narrowNoBreakSpace { advance.x = 225m; collision.flags = SET_ISSPACE(collision.flags) };
+cStdWidthSpace       { advance.x = 375m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_hairSpace          { advance.x = 175m; collision.flags = SET_ISSPACE(collision.flags) };
+//g_thinSpace          { advance.x = 300m; collision.flags = SET_ISSPACE(collision.flags) };
 endif;
 
 // obsolete feature:
@@ -584,6 +595,7 @@ table(glyph) {AttributeOverride = 1}
 cPostKernable = (cIso, cIni, cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
 	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
+////	dbgNaturalRsb = advancewidth - bb.right;
 };
 
 cPostKernableNoPunct = cPostKernable;  
@@ -622,8 +634,8 @@ pass(3)  // 10
 
 #define MAXKERN 5000m
 #define MINKERN -700m
-#define MINKERN_TIGHT -3000m
-#define MINKERN_WIDE -200m
+//#define MINKERN_TIGHT -3000m -- not used
+//#define MINKERN_WIDE -200m   -- not used
 #define STDMARGIN 150m
 #define STDMARGINWT 400
 #define STDMARGIN_N1 150m
@@ -634,9 +646,11 @@ pass(3)  // 10
 #define STDMARGINWT_DIAC 400
 #define STDMARGIN_DIGIT 250m
 
-#define KERNMARGIN_TIGHT 150m
-#define KERNMARGIN_MED 300m
-#define KERNMARGIN_WIDE 400m
+//#define KERNMARGIN_TIGHT 150m  -- not used
+//#define KERNMARGIN_MED 300m
+//#define KERNMARGIN_WIDE 400m
+
+#define KAFOVERHANG -800m
 
 
 #define ORDER_UNUQTAS 1
@@ -2900,7 +2914,7 @@ cKernable { collision {
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
 		margin = 150m;
-		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
+		max.x = MAXKERN; min.x = KAFOVERHANG; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLike?  DIACS  cKernIgnore?  cKafNoIso=K;
@@ -2911,7 +2925,7 @@ gRehFin_jkl { shift.x += -130m;
 		flags = SET_FIX(collision.flags);
 		flags = SET_KERN(collision.flags);
 		margin = 350m;
-		max.x = MAXKERN; min.x = -800m; /// MINKERN + minKernDelta;
+		max.x = MAXKERN; min.x = KAFOVERHANG; /// MINKERN + minKernDelta;
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLikeUpper?  DIACS  cKernIgnore?  cBehIso=K;
@@ -2979,9 +2993,9 @@ cKernable { collision {
 	flags = SET_KERN(collision.flags);
 	margin = SET_MARGIN(N);
 	max.x = MAXKERN;
-	min.x = min(0m, MINKERN + minKernDelta - 800m
+	min.x = min(0m, MINKERN + minKernDelta + KAFOVERHANG
 		+ max(0m, 1050m - seqWidth)	// the shorter this sequence, the less kerning we want so it doesn't get lost;
-									// 1050 is somewhat arbitrary but gives the best results (was 1850)
+								                // 1050 is somewhat arbitrary but gives the best results (was 1850)
 		);
     // min/max.y are omitted for kernable glyphs
 } }
@@ -3014,12 +3028,14 @@ cKernable { collision {
 	flags = SET_KERN(collision.flags);
 	margin = SET_MARGIN(N);
 	max.x = MAXKERN;
-	min.x = min(0m, MINKERN - 500m + minKernDelta
+	min.x = min(0m, MINKERN - 500m + minKernDelta    // what is -500???
 		+ max(0m, 1250 - seqWidth)   // see above
 	);
     // min/max.y are omitted for kernable glyphs
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
+
+gRehFin  g_bar; // TEMP experiment
 
 cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
