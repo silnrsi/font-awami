@@ -572,10 +572,10 @@ endtable;  // pos
 table(glyph) {AttributeOverride = 0}
 
 // Define for all needed glyphs where they have not been defined in the font.
-cIni {kernBbRightS = point(0m,0m) };
-cFin {kernBbLeftS = point(0m,0m) };
-cIso {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
-cKernPunct {kernBbRightS = point(0m,0m); kernBbLeftS = point(0m,0m) };
+cIni {kernAdvanceS = point(0m,0m) };
+cFin {kernOriginS = point(0m,0m) };
+cIso {kernAdvanceS = point(0m,0m); kernOriginS = point(0m,0m) };
+cKernPunct {kernAdvanceS = point(0m,0m); kernOriginS = point(0m,0m) };
 
 cQuote = (g_quoteleft g_quoteright g_quoteleftArab g_quoterightArab
 	g_quotedblleft g_quotedblright g_quotedblleftArab g_quotedblrightArab
@@ -594,7 +594,7 @@ table(glyph) {AttributeOverride = 1}
 
 cPostKernable = (cIso, cIni, cKernPunct) {
 	dbgBbRight = bb.right; dbgRsb = rsb; dbgAdv = advancewidth;
-	kernRsb = advancewidth - ((kernBbRightS.x == 0) ? bb.right : kernBbRightS.x);
+	kernRsb = advancewidth - ((kernAdvanceS.x == 0) ? bb.right : kernAdvanceS.x);
 ////	dbgNaturalRsb = advancewidth - bb.right;
 };
 
@@ -602,12 +602,12 @@ cPostKernableNoPunct = cPostKernable;
 cPostKernableNoPunct -= (cKernPunct);
 
 // Kludge because Graphite seems to have a problem figuring these out - nope, now seems to be working ok:
-///////g_ellipsisArab { kernBbRightS = point(1822m, 0m); kernRsb = aw - kernBbRightS.x };
+///////g_ellipsisArab { kernAdvanceS = point(1822m, 0m); kernRsb = aw - kernAdvanceS.x };
 
 
 cKernable = (cIso, cFin, cKernPunct) {
 	dbgBbLeft = bb.left; dbgLsb = lsb;
-	kernLsb = ((kernBbLeftS.x == 0) ? bb.left : kernBbLeftS.x);
+	kernLsb = ((kernOriginS.x == 0) ? bb.left : kernOriginS.x);
 }
 
 c_jumpTail = ( cJeemFin, gAinFin );
