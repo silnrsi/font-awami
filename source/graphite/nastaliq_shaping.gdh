@@ -424,7 +424,7 @@ csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  g_zwjMed?  cBehMed_postBeM;
 // Obsolete way of using using high-tooth behs after seens and sads:
 //gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  g_zwjMed?  gBehMedRe;
 
-csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  (gBehMedBeM1 gBehMedBeNn);
+csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  (gBehMedBeM1 gBehMedBeNn gBehMedTmF);
 csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  gBehMed;  ///  MARKS  c_dkgal_postAlt; - superfluous context?
 
 
@@ -457,25 +457,25 @@ gBehMed_raw  >  gBehMedQf_short  /  g_wordThessalonik  _=B  MARKS  gWawFin;  // 
 // Don't need to handle gaf, lam, or tah because they will result in taller versions anyway (pass 12).
 
 // Basic rules
-csMed_raw  >  csMedBeF	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cBehFin;
-csMed_raw  >  csMedJm	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cJeemMF;
-csMed_raw  >  csMedRe	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cRehFin;
-csMed_raw  >  csMedSnSn  /  ^ MPRECXT  _  MARKS  g_zwjMed?  cSeenMedSn;
-csMed_raw  >  csMedSn	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cSeenMF;
-csMed_raw  >  csMedSd	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cSadMF;
-csMed_raw  >  csMedTa	/  ^ MPRECXT  _  MARKS  g_zwjMed?  (cTahFin cTahMed);
-csMed_raw  >  csMedAi	/  ^ MPRECXT  _  MARKS  g_zwjMed?  (cAinFin cAinMed);
+csMed_raw  >  csMedBeF  /  ^ MPRECXT  _  MARKS  g_zwjMed?  cBehFin;
+csMed_raw  >  csMedJm   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cJeemMF;
+csMed_raw  >  csMedRe   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cRehFin;
+csMed_raw  >  csMedSnSn /  ^ MPRECXT  _  MARKS  g_zwjMed?  cSeenMedSn;
+csMed_raw  >  csMedSn   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cSeenMF;
+csMed_raw  >  csMedSd   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cSadMF;
+csMed_raw  >  csMedTa   /  ^ MPRECXT  _  MARKS  g_zwjMed?  (cTahFin cTahMed);
+csMed_raw  >  csMedAi   /  ^ MPRECXT  _  MARKS  g_zwjMed?  (cAinFin cAinMed);
 // The .fe forms are relatively "neutral" in shape and so are a good choice to precede the ZWJ:
-csMed_raw  >  csMedFe	/  ^ MPRECXT  _  MARKS  g_zwjMed?  (cFehFin cFehMed g_zwjFin);
-csMed_raw  >  csMedQf	/  ^ MPRECXT  _  MARKS  g_zwjMed?  c_qw; // qaf, waw
-csMed_raw  >  csMedMm	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cMeemMF;
-csMed_raw  >  csMedNn	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cNoonFin;
-csMed_raw  >  csMedHgF	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cHehGoalFin;
-csMed_raw  >  csMedHgM	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cHehGoalMed;
-csMed_raw  >  csMedHd	/  ^ MPRECXT  _  MARKS  g_zwjMed?  (gHehDoFin cHehDoMed);
-csMed_raw  >  csMedCh	/  ^ MPRECXT  _  MARKS  g_zwjMed?  csChotiyehFin;
-csMed_raw  >  csMedBy	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cBariyehFin;
-csMed_raw  >  csMedBe	/  ^ MPRECXT  _  MARKS  g_zwjMed?  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
+csMed_raw  >  csMedFe   /  ^ MPRECXT  _  MARKS  g_zwjMed?  (cFehFin cFehMed g_zwjFin);
+csMed_raw  >  csMedQf   /  ^ MPRECXT  _  MARKS  g_zwjMed?  c_qw; // qaf, waw
+csMed_raw  >  csMedMm   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cMeemMF;
+csMed_raw  >  csMedNn   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cNoonFin;
+csMed_raw  >  csMedHgF  /  ^ MPRECXT  _  MARKS  g_zwjMed?  cHehGoalFin;
+csMed_raw  >  csMedHgM  /  ^ MPRECXT  _  MARKS  g_zwjMed?  cHehGoalMed;
+csMed_raw  >  csMedHd   /  ^ MPRECXT  _  MARKS  g_zwjMed?  (gHehDoFin cHehDoMed);
+csMed_raw  >  csMedCh   /  ^ MPRECXT  _  MARKS  g_zwjMed?  csChotiyehFin;
+csMed_raw  >  csMedBy   /  ^ MPRECXT  _  MARKS  g_zwjMed?  cBariyehFin;
+csMed_raw  >  csMedADLK /  ^ MPRECXT  _  MARKS  g_zwjMed?  cTehMarbutaFin;  // use default interface before teh-marbuta
 
 gLamMed_raw  >  gLamMedAl	/  ^ MPRECXT  _  MARKS  g_zwjMed?  gAlefFin_lm;
 
@@ -535,7 +535,7 @@ gLamIni_raw  >  gLamIni_short  /  _  cNuqtaLikeUpper  cDiacritic?  g_zwjMed?  cK
 csIni_raw  >  csIniBe        /  _ MARKS  g_zwjMed?  cBehMed_defaultEntrance;
 csIni_raw  >  csIniBeM1      /  _ MARKS  g_zwjMed?  cMed_postBeM1;
 
-csIni_raw  >  csIniBeM2  /  _ MARKS  g_zwjMed?  (gBehMed gBehMedBeM1 gBehMedBeNn);
+csIni_raw  >  csIniBeM2  /  _ MARKS  g_zwjMed?  (gBehMed gBehMedBeM1 gBehMedBeNn gBehMedTmF);
 
 ////gLamIni_raw  >  gLamIniMm /  _ MARKS  g_zwjMed?  cMeemMed_alt; // exception to rule below - can never happen
 csIni_raw     >  csIniMmX /  _ MARKS  g_zwjMed?  cMeemMed_alt;
@@ -573,8 +573,7 @@ csIni_raw  >  csIniHgM      / _ MARKS  g_zwjMed?  cHehGoalMed;
 csIni_raw  >  csIniHd       / _ MARKS  g_zwjMed?  (cHehDoFin cHehDoMed);
 csIni_raw  >  csIniCh	   / _ MARKS  g_zwjMed?  (cChotiyehFin);
 csIni_raw  >  csIniBy       / _ MARKS  g_zwjMed?  cBariyehFin;
-
-csIni_raw  >  csIniBe       / _ MARKS  g_zwjMed?  cTehMarbutaFin;	// use pre-beh forms before teh-marbuta
+csIni_raw  >  csIni   		/ _ MARKS  g_zwjMed?  cTehMarbutaFin;   // use default interface before teh-marbuta
 
 gLamIni_raw  >  gLamIniAl   / _ MARKS  g_zwjMed?  gAlefFin_lm;
 
