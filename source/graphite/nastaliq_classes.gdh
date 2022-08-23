@@ -33,19 +33,22 @@ cEasternDigits = (gEasternZero, gEasternOne, gEasternTwo, gEasternThree, gEaster
 		{ dir = DIR_ARABICNUMBER };
 */
 
-g_lrm = pseudo(postscript("space"), 0x200E);	// 1681 - some data uses LRM incorrectly instead of ZWNJ to break context
+g_lrm = pseudo(postscript("space"), 0x200E);            // 1686 - some data uses LRM incorrectly instead of ZWNJ to break context
 
-g__noDot1u       = pseudo(postscript("_dot1u"));	    // 1682 -  no longer used
-g__noDot2u       = pseudo(postscript("_dot2u"));      // 1683
-g__noDot2l       = pseudo(postscript("_dot2l"));			// 1684 - IM bariyeh, anything else?
-g__noDot2l_small = pseudo(postscript("_dot2l.small"));
-g__dot2lIM       = pseudo(postscript("_dot2l")) 	    // 1686 - chotiyeh
+g__noDot1u       = pseudo(postscript("_dot1u"));	      // 1687 -  no longer used
+g__noDot2u       = pseudo(postscript("_dot2u"));        // 1688
+g__noDot2l       = pseudo(postscript("_dot2l"))         // 1689 - IM bariyeh, anything else?   g__dot2l
+	{ nByLowerM = point(0m, 194m) };	
+g__noDot2l_small = pseudo(postscript("_dot2l.small"));      // 1690
+g__dot2lIM       = pseudo(postscript("_dot2l")) 	          // 1691 - chotiyeh
 	{ nByLowerM = point(0m,194m); n23LowerM = point(0m,195m); mLowerS = point(0m,-424m) };
-g__dot2lIM_small = pseudo(postscript("_dot2l.small"))
+g__dot2lIM_small = pseudo(postscript("_dot2l.small"))       // 1692
 	{ nByLowerM = point(0m,159m); n23LowerM = point(0m,160m); mLowerS = point(0m,-393m) };
-g__dot2l_tail    = pseudo(postscript("_dot2l")) { mLowerS = point(0m,0m) }; // avoid spurious warning
+g__dot2l_tail    = pseudo(postscript("_dot2l"))             // 1693
+	{ mLowerS = point(0m,0m) }; // avoid spurious warning
 
-g__noDot2l__hamza = pseudo(postscript("_dot2lIM__hamza"));
+g__noDot2l__hamza = pseudo(postscript("_dot2lIM__hamza"))    // 1694
+	{ mUpperS = point(140m,1568m) };
 
 cn23LowerDia += (g__dot2lIM, g__dot2lIM_small);
 
@@ -209,11 +212,11 @@ csNoRingDot = (g__dot1u, g__dot2u);
 
 // Diacritic combinations
 
-cPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
-cShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar, g__shadda_kharizabar_allah);
+csPostShadda = (gZabar, gPesh, gDozabar, gDopesh, gKharizabar);
+csShaddaPlus = (g__shadda_zabar, g__shadda_pesh, g__shadda_dozabar, g__shadda_dopesh, g__shadda_kharizabar);
 
-cPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
-cKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
+csPostKharizabar = (gZabar, gPesh, gDozabar, gDopesh);
+csKharizabarPlus = (g__kharizabar_zabar, g__kharizabar_pesh, g__kharizabar_dozabar, g__kharizabar_dopesh);
 
 
 cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, gDozabar, 
@@ -222,7 +225,7 @@ cDiacriticUpper = ( gZabar, gPesh, gShadda, gJazm, gJazm_openleft, gKharizabar, 
 	gSmallHighSadMark, gSmallHighAinMark, gSmallHighRehDadMark, 
     gSmallHighRehHahMark, gSmallHighSeen, gSmallHighTah, gSmallDotlessHeadOfKhah,
 	gNameMarker,
-	cShaddaPlus, cKharizabarPlus, 
+	csShaddaPlus, g__shadda_kharizabar_allah, csKharizabarPlus, 
 	gSmallUprightRectangularZero, gZwarakay);
 cDiacriticLower = ( gZair, gKharizair, gDozair, gSmallLowMeem, gEmptyCentreLowStop ) ;
 

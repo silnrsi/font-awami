@@ -232,7 +232,7 @@ cTakes_hamzaAndHehhookDia &= cTakes_hehhookDia;
 cTakes_ringAndNUpperDia = cTakes_nUpperDia;
 cTakes_ringAndNUpperDia &= cTakes_ringDia;
 
-endtable;  // glyph
+endtable;  // glyph    g__noDot2l__hamza
 
 
 // Special bariyeh rules: move any nuqtas within three chars of a bariyeh down.
@@ -1570,7 +1570,7 @@ pass(6)  // 13
 // This is left over from pass 5(12). Sequences of kafs get complicated so it helps to
 // clean up in a separate pass.
 // Never follow a standard medium kaf with a short one. We're essentially undoing a rule triggered above.
-csKafMed_base_noGaf  g__kafMedTop_short  >  csKafIM_medium   g__kafTop_null
+csKafMed_base_noGaf  g__kafMedTop_short  >  csKafMed_medium_noGaf   g__kafTop_null
 	/  (gKafMedDk  gGafMedDk)  g__kafTop_null  MARKS  _=B  _=T;
 csKafMed_base_noGaf  g__gafMedTop_short  >  @B   g__gafMedTop_tall
 	/  (gKafMedDk  gGafMedDk)  g__kafTop_null  MARKS  _=B  _=T;
@@ -1758,7 +1758,7 @@ c_exit_beh        {att {to=@B; with=exit; at=entrance}}
 
 table(glyph) {AttributeOverride = 0}
 
-// to avoid warnings; will never be used
+// to avoid spurious warnings; will never be used
 g__kafTop_null { nUpperS = point(0m,0m); kafTopM = point(0m,0m) };
 g__kafTop_m_bogus { nUpperS = point(0m,0m); kafTopM = point(0m,0m); ringS = point(0m,0m) };
 csFinal_short { hamzaUpperS = point(0m,0m); tahUpperS = point(0m,0m); n1LowerS = point(0m,0m); n23LowerS = point(0m,0m) };
@@ -1766,6 +1766,10 @@ cNuqtaLikeUpper { nUpperM = point(0m,0m) };
 cNuqtaLikeLower { n1LowerM = point(0m,0m) };
 cIsoFin { n1LowerM = point(0m,0m); mUpperS = point(0m,0m) };
 cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
+cKafTop { grafS = point(0m, 0m); ringS = point(0m, 0m) };
+gKafIniMm_short { grafS = point(0m,0m) };
+gKafMedium_lowentry { grafS = point(0m,0m) };
+g__kafTop_by_tall_notused { grafS = point(0m,0m) };
 // Temporary:
 //g__kafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
 g__gafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
@@ -1781,6 +1785,7 @@ cTakes_ring_short = csFinal_short;
 cTakes_ring_short &= cTakes_ringDia;
 
 endtable;  // glyph
+
 
 // Reattach nuqta-like glyphs.
 
