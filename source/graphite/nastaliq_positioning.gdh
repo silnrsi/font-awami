@@ -1768,11 +1768,12 @@ cIsoFin { n1LowerM = point(0m,0m); mUpperS = point(0m,0m) };
 cKafTop { mUpperS = point(nUpperS.x,nUpperS.y); n1LowerS = point(0m, 0m) };
 cKafTop { grafS = point(0m, 0m); ringS = point(0m, 0m) };
 gKafIniMm_short { grafS = point(0m,0m) };
-gKafMedium_lowentry { grafS = point(0m,0m) };
-g__kafTop_by_tall_notused { grafS = point(0m,0m) };
+gKafMedJm_lowentry { grafS = point(0m,0m) };
+g__kafTop_by_tall_notused { grafS = point(0m,0m);  n1LowerS = point(0m,0m) };
 // Temporary:
 //g__kafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
 g__gafIniTop_medshort_notused { n1LowerS = point(0m, 0m) };
+g_space { honorificS = point(172m, 394m) };
 
 
 g__kafTop_m_bogus { mUpperS = point(75m, 1545m) };
@@ -2073,9 +2074,9 @@ gAlefFin { kernPreZain = -60m };
 
 // Don't let punctuation kern underneath the following segment;
 #if KERNLOWPUNCT
-cHighPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+cHighPunct { minKernDelta = MINKERN * -1   -  300m };  // cancels out MINKERN
 #else
-cKernPunct { minKernDelta = MINKERN * -1   -  300 };  // cancels out MINKERN
+cKernPunct { minKernDelta = MINKERN * -1   -  300m };  // cancels out MINKERN
 #endif
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:
@@ -2129,7 +2130,11 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 	/  _=R cNuqtaLike? cDiacritic?  _=B _=N cDiacritic?  _=RW;
 
 // Special case: \u0627\u06CC\u0645\u0627
+#if WT_BOLD > 650
+gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -800m}}  gMeemMed_alt;
+#else
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt;
+#endif
 
 // Special case: gaf + pesh + gaf (\u06af\u064f\u06af)
 // Move diacritic to the right; there is no good place for it.

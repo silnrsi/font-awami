@@ -37,8 +37,8 @@ g_lrm = pseudo(postscript("space"), 0x200E);            // 1686 - some data uses
 
 g__noDot1u       = pseudo(postscript("_dot1u"));	      // 1687 -  no longer used
 g__noDot2u       = pseudo(postscript("_dot2u"));        // 1688
-g__noDot2l       = pseudo(postscript("_dot2l"))         // 1689 - IM bariyeh, anything else?   g__dot2l
-	{ nByLowerM = point(0m, 194m) };	
+g__noDot2l       = pseudo(postscript("_dot2l"))         // 1689 - IM bariyeh, anything else?
+	{ nByLowerM = point(0m, 194m); mLowerS = point(0m, -424m) };	
 g__noDot2l_small = pseudo(postscript("_dot2l.small"));      // 1690
 g__dot2lIM       = pseudo(postscript("_dot2l")) 	          // 1691 - chotiyeh
 	{ nByLowerM = point(0m,194m); n23LowerM = point(0m,195m); mLowerS = point(0m,-424m) };
