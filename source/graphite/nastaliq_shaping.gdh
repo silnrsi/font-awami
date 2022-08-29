@@ -139,7 +139,15 @@ pass(1)
 
 	// One common precomposed form:
 	////gLamAlef  _  >  gLam:1  gAlef:1;
-
+	
+	// RenderingUnknown > RenderingGraphite trick:
+	g_R  g_e  g_n  g_d  g_e  g_r  g_i  g_n  g_g  g_U  g_n  g_k  g_n  g_o  g_w  g_n  _
+		>  @1  @2  @3  @4  @5  @6  @7  @8  @9  g_G  g_r  g_a  g_p  g_h  g_i  g_t  g_e:16;
+		
+	_  g_n  g_w  g_o  g_n  g_k  g_n  g_U  g_g  g_n  g_i  g_r  g_e  g_d  g_n  g_e  g_R
+		>  g_e:2  g_t  g_i  g_h  g_p  g_a  g_r  g_G  @9  @10  @11  @12  @13  @14  @15  @16  @17;
+		
+		
 	// Separate nuqtas and similar bits from bases.
 
 #include "nastaliq_separateNuqtas.gdh"
