@@ -3125,7 +3125,12 @@ g__dot2lIM_small  >  g__dot2l_small;
 // Debugger:
 //cKernable { user6 = collision.fix.x };
 
-// When there is an overlap, a space should be a little wider:
+// When there is an overlap, a space should be a little wider. Even more after a full-stop.
+
+cSpace { advance.x += 370m }
+	/  cFullStop { collision.fix.x < -400m } MARKS _=S;
+cSpace { advance.x += 310m }
+	/  cFullStop { collision.fix.x < -300m } MARKS _=S;
 cSpace { advance.x += 170m }
 	/  cKernable { collision.fix.x < -400m } MARKS _=S;
 cSpace { advance.x += 110m }
