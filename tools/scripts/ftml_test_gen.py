@@ -2,6 +2,11 @@
 
 # Generate FTML test data files
 
+# To add a new character:
+# - Add a code for it in the appropriate list in expandSequences().
+# - Add the corresponding USV mapping in _char_name_to_usv().
+# - Add the corresponding information in _group_name_format().
+
 import collections
 import codecs
 import copy
@@ -15,7 +20,7 @@ def run():
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
     parser.add_argument("-f","--font",default=r"Awami Nastaliq",help="Name of font to use")
-    parser.add_argument("-s","--scale",default=200,type=int,help="font scale [200]")
+    parser.add_argument("-s","--scale",default=300,type=int,help="font scale [300]")
 
     args = parser.parse_args()
     
@@ -98,8 +103,8 @@ def generate_basic_sequences(mode) :
     
     # DEBUGGING:
     """
-    dualConnecting = ["feh", "lam", "ain"]
-    rightConnecting = ["alef", "qaf", "chotiyeh"]
+    dualConnecting = ["feh", "lam", "jeem", "ain", "hehDo", "meem", "tah"]
+    rightConnecting = ["alef", "dal", "noon"]
     dualSubs = []
     rightSubs = []
     """
@@ -191,19 +196,19 @@ def expand_sequences(mode, basicSequences) :
         
     elif mode == "allbasecharforms" or mode == "allbasechars" :
         expand = {
-        	"alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
+            "alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
             "beh"       :   ["dotlessBeh", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
             "jeem"      :   ["hah4below", "hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
-            "seen"      :   ["seen4", "seenInvV", "seen3dots3dots", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
+            "seen"      :   ["seen4", "seenInvV", "seen3dots3dots", "seen3below", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
             "sad"       :   ["sad3dots", "dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ghain"],
             "feh"       :   ["dotlessFeh", "feh3dotsBelow", "feh3dotsAbove"],
             "qaf"       :   ["dotlessQaf"],
-            "kaf"       :   ["keheh3dots", "keheh2dots", "kafRing", "ngoeh", "gueh", "gaf"],
+            "kaf"       :   ["graf", "keheh3dots", "keheh2dots", "kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
             "lam"       :   ["lamTah", "lam3dots", "lamSmallV", "lamBar"],
-            "noon"      :   ["noonRing", "rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
+            "noon"      :   ["noonSmallV", "noonRing", "rnoon", "noonDotBelow", "noonRetro", "noonGhunna"],
             "chotiyeh"  :   ["yeh4below", "yeh3", "yeh2", "alefMaksura", "arabicE", "yehSmallV", "yehHamza"],
             "bariyeh"   :   ["bariyeh3", "bariyeh2"],
             "hehGoal"   :   ["hehHamza", "arabicHeh"],
@@ -216,7 +221,7 @@ def expand_sequences(mode, basicSequences) :
         }
         # Note: these are not used for allbasechars mode.
         expand_left = {  # initial/medial forms of letters that have different finals
-            "beh"       :   ["noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
+            "beh"       :   ["noonSmallVIM", "noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
             "feh"       :   ["dotlessQafIM", "qafIM"]
         }
         # Debugging:
@@ -506,6 +511,10 @@ class FTML(object):
         self.f.write('    <description>' + title + '</description>\n')
         self.f.write('    <fontscale>' + str(fontScale) + '</fontscale>\n')
         self.f.write('    <fontsrc>local(' + fontName + '), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
+        self.f.write('    <!--   <fontsrc>local(' + fontName + ' Medium), url(AwamiNastaliq-Medium.ttf)</fontsrc>   -->\n');
+        self.f.write('    <!--   <fontsrc>local(' + fontName + ' SemiBold), url(AwamiNastaliq-SemiBold.ttf)</fontsrc>   -->\n');
+        self.f.write('    <!--   <fontsrc>local(' + fontName + ' Bold), url(AwamiNastaliq-Bold.ttf)</fontsrc>   -->\n');
+        self.f.write('    <!--   <fontsrc>local(' + fontName + ' ExtraBold), url(AwamiNastaliq-ExtraBold.ttf)</fontsrc>   -->\n');
         self.f.write('    <title>' + title + '</title>\n')
         self.f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
         self.f.write('  </head>\n')
@@ -684,6 +693,7 @@ def _char_name_to_usv(charName) :
             "seen4dots" :   '075C',
             "seen2dotsV"  : '076D',
             "seenTah2smd" : '0770',
+            "seen3below":   '069B',	
             "seen3dots3dots" : '069C',
             "seenInvV"  :   '077E',
             "seen4"     :   '077D',
@@ -698,11 +708,11 @@ def _char_name_to_usv(charName) :
         "feh"           :   '0641',
             "feh3dotsAbove" :   '06A4',
             "feh3dotsBelow" :   '06A5',
-            "dotlessFeh":   '06A1',
-        "qaf"           :   '0642',
-            "qafIM"     :   '0642',
-            "dotlessQaf":   '066F',
-            "dotlessQafIM":	'066F',
+            "dotlessFeh"    :   '06A1',
+        "qaf"               :   '0642',
+            "qafIM"         :   '0642',
+            "dotlessQaf"    :   '066F',
+            "dotlessQafIM"  :	'066F',
         "lam"           :   '0644',
             "lamBar"    :   '076A',
             "lamSmallV" :   '06B5',
@@ -710,8 +720,8 @@ def _char_name_to_usv(charName) :
             "lamTah"    :   '08C7',
         "meem"          :   '0645',
         "meem-alt"      :   '0645',
-        "noon"          :   '0646',
-            "noonIM"    :   '0646',
+        "noon"              :   '0646',
+            "noonIM"        :   '0646',
             "noonGhunna"    :   '06BA',
             "noonGhunnaIM"  :   '06BA',
             "noonRetro"     :   '0768',
@@ -722,6 +732,8 @@ def _char_name_to_usv(charName) :
             "rnoonIM"       :   '06BB',
             "noonRing"      :   '06BC',
             "noonRingIM"    :   '06BC',
+            "noonSmallV"    :   '0769',
+            "noonSmallVIM"  :   '0769',
         "waw"           :   '0648',
             "wawHamza"  :   '0624',
             "wawRing"   :   '06C4',
@@ -740,6 +752,7 @@ def _char_name_to_usv(charName) :
             "keheh2dots":   '077F',
             "keheh3dots":   '0763',
             "gafRing"   :   '06B0',
+            "graf"      :   '08C8',
         "hehDo"         :   '06BE',
         "hehGoal"       :   '06C1',
             "arabicHeh" :   '0647',
@@ -805,6 +818,7 @@ def _reverse_list(aList) :
 
 
 def _group_name_format(charName) :
+    # code : { sort-key, label, final/medial count, initial/medial count }
     groupNameFormat = {
         "alef"          :   ('01',      'Alef form',        2, 0),
         "alefMadda"     :   ('01a',     'Alef madda form',  2, 0),
@@ -812,13 +826,13 @@ def _group_name_format(charName) :
         "alef2"         :   ('01c',     'Alef with 2',      2, 0),
         "alef3"         :   ('01d',     'Alef with 3',      2, 0),
             
-        "beh"           :   ('02',      'Beh form',     2, 2),
-        "teh"           :   ('02a',     'Teh form',     2, 2),
-        "theh"          :   ('02b',     'Theh form',    2, 2),
-        "tteh"          :   ('02c',     'Tteh form',    2, 2),
-        "peh"           :   ('02d',     'Peh form',     2, 2),
-        "tteheh"        :   ('02e',     'Tteheh form',  2, 2),
-        "beeh"          :   ('02f',     'Beeh form',    2, 2),
+        "beh"           :   ('02',      'Beh form',         2, 2),
+        "teh"           :   ('02a',     'Teh form',         2, 2),
+        "theh"          :   ('02b',     'Theh form',        2, 2),
+        "tteh"          :   ('02c',     'Tteh form',        2, 2),
+        "peh"           :   ('02d',     'Peh form',         2, 2),
+        "tteheh"        :   ('02e',     'Tteheh form',      2, 2),
+        "beeh"          :   ('02f',     'Beeh form',        2, 2),
         "tehRing"       :   ('02g',     'Teh with ring form',                   2, 2),
         "teh3down"      :   ('02h',     'Teh with 3 dots downward',             2, 2),
         "dotlessBeh"    :   ('02i',     'Dotless beh',                          2, 2),
@@ -828,6 +842,7 @@ def _group_name_format(charName) :
         "noonDotBelowIM":   ('02x3',    'Noon-dot-below form',                  0, 2),
         "rnoonIM"       :   ('02x4',    'Rnoon initial/medial form',            0, 2),
         "noonRingIM"    :   ('02x5',    'Noon-ring initial/medial form',        0, 2),
+        "noonSmallVIM"  :   ('02x6',    'Noon-small-V initial/medial form',     0, 2),
         "chotiyehIM"    :   ('02y0',    'Chotiyeh initial/medial form',         0, 2),
         "yehHamzaIM"    :   ('02y1',    'Yeh-hamza initial/medial form',        0, 2),
         "yehSmallVIM"   :   ('02y2',    'Yeh with small V initial/medial form', 0, 2),
@@ -849,7 +864,7 @@ def _group_name_format(charName) :
         "dal"           :   ('04',      'Dal form',     2, 0),
         "thal"          :   ('04a',     'Thal form',    2, 0),
         "ddal"          :   ('04b',     'Ddal',         2, 0),
-        "dalDotTah"     :   ('04c',     'Dal with tah and dot below',   2, 0),
+        "dalDotTah"     :   ('04c',     'Dal with tah and dot below',         2, 0),
         "dal2dotsVTah"  :   ('04d',     'Dal with 2 dots vertically and tah', 2, 0),
         "dalRing"       :   ('04e',     'Dal with ring',        2, 0),
         "dal4dots"      :   ('04f',     'Dal with four dots',   2, 0),
@@ -868,7 +883,7 @@ def _group_name_format(charName) :
         "rehRing"       :   ('05i',     'Reh with ring',                    2, 0),
         "rehTah2smd"    :   ('05j',     'Reh with tah and two small dots',  2, 0),
         "reh2dotsV"     :   ('05k',     'Reh with two dots vertically',     2, 0),
-        "rehSmallVbelow" :  ('05l',		'Reh with small V below',           2, 0),
+        "rehSmallVbelow" :  ('05l',		'Reh with small V below',             2, 0),
         
         "seen"          :   ('06',      'Seen form',    2, 2),
         "sheen"         :   ('06a',     'Sheen form',   2, 2),
@@ -876,12 +891,13 @@ def _group_name_format(charName) :
         "seen4dots"     :   ('06c',     'Seen with four dots',           2, 2),
         "seen2dotsV"    :   ('06d',     'Seen with two dots vertically',        2, 2),
         "seenTah2smd"   :   ('06e',     'Seen with tah and two small dots',     2, 2),
-        "seen3dots3dots":   ('06f',     'Seen with three lower and upper dots', 2, 2),
-        "seenInvV"      :   ('06g',     'Seen with inverted V', 2, 2),
-        "seen4"         :   ('06h',     'Seen with 4',          2, 2),
+        "seen3below"    :   ('06f',     'Seen with three dots below',           2, 2),
+        "seen3dots3dots":   ('06g',     'Seen with three lower and upper dots', 2, 2),
+        "seenInvV"      :   ('06h',     'Seen with inverted V', 2, 2),
+        "seen4"         :   ('06i',     'Seen with 4',          2, 2),
             
-        "sad"           :   ('07',      'Sad form',     2, 2),
-        "dad"           :   ('07a',     'Dad form',     2, 2),
+        "sad"           :   ('07',      'Sad form',           2, 2),
+        "dad"           :   ('07a',     'Dad form',           2, 2),
         "dadDotBelow"   :   ('07b',     'Dad with dot below', 2, 2),
         "sad3dots"      :   ('07c',     'Sad with 3 dots',    2, 2),
 
@@ -891,7 +907,7 @@ def _group_name_format(charName) :
         "ain"           :   ('09',      'Ain form',     2, 2),
         "ghain"         :   ('09a',     'Ghain form',   2, 2),
 
-        "feh"           :   ('10',      'Feh form',     2, 2),
+        "feh"           :   ('10',      'Feh form',                         2, 2),
         "qafIM"         :   ('10a',     'Qaf initial/medial form',          0, 2),
         "feh3dotsAbove" :   ('10b',     'Feh with three dots above',        2, 2),
         "feh3dotsBelow" :   ('10c',     'Feh with three dots below',        2, 2),
@@ -915,6 +931,7 @@ def _group_name_format(charName) :
         "noonDotBelow"  :   ('15c',     'Noon-dot-below form',  2, 0),
         "rnoon"         :   ('15d',     'Rnoon form',           2, 0),
         "noonRing"      :   ('15e',     "Noon-ring",            2, 0),
+        "noonSmallV"    :   ('15f',     "Noon-small-V form",    2, 0),
         
         "waw"           :   ('16',      'Waw form',             2, 0),
         "wawHamza"      :   ('16a',     'Waw-hamza form',       2, 0),
@@ -927,14 +944,15 @@ def _group_name_format(charName) :
         "waw2"          :   ('16h',     'Waw with 2',           2, 0),
         "waw3"          :   ('16i',     'Waw with 3',           2, 0),
         
-        "kaf"           :   ('17',      'Kaf form',         2, 2),
-        "gaf"           :   ('18',      'Gaf form',         2, 2),
-        "gueh"          :   ('18a',     'Gueh form',        2, 2),
-        "ngoeh"         :   ('18b',     'Ngoeh form',       2, 2),
-        "kafRing"       :   ('18c',     'Kaf-ring form',    2, 2),
-        "keheh2dots"    :   ('18d',     'Keheh with 2 dots',2, 2),
-        "keheh3dots"    :   ('18e',     'Keheh with 3 dots',2, 2),
-        "gafRing"       :   ('18z',     'Gaf-ring form',    2, 2),  # not really needed for Nastaliq
+        "kaf"           :   ('17',      'Kaf form',             2, 2),
+        "gaf"           :   ('18',      'Gaf form',             2, 2),
+        "gueh"          :   ('18a',     'Gueh form',            2, 2),
+        "ngoeh"         :   ('18b',     'Ngoeh form',           2, 2),
+        "kafRing"       :   ('18c',     'Kaf-ring form',        2, 2),
+        "keheh2dots"    :   ('18d',     'Keheh with 2 dots',    2, 2),
+        "keheh3dots"    :   ('18e',     'Keheh with 3 dots',    2, 2),
+        "graf"          :   ('18f',     'Graf',                 2, 2),
+        "gafRing"       :   ('18z',     'Gaf-ring form',        2, 2),  # not really needed for Nastaliq
 
         "hehDo"         :   ('19',      'Heh-Doachashmee form', 2, 2),
         
