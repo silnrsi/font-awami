@@ -417,7 +417,8 @@ gMeemMed_raw  >  gMeemMedBeNn_alt  / ^ c_preMm_alt MARKS  _  MARKS  g_zwjMed?  g
 // Use sad interface for round-bottom kafs:
 csMed_raw  >  csMedSd    / ^ MPRECXT  _  MARKS  g_zwjMed?  (gKafMed gGafMed)  MARKS  g_zwjMed?  c_al_postKround;
 
-(gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  g_zwjMed?  (c_dkg_noKalt cKafMed);
+(gKafMed_raw gGafMed_raw)  >  (gKafMedDk gGafMedDk)  / ^ MPRECXT _  MARKS  g_zwjMed?  (c_dkg_noKalt cKafMed gTehMarbutaFin);
+
 
 csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  g_zwjMed?  cBehMed_defaultEntrance;
 csMed_raw  >  csMedBeM1  / ^ MPRECXT  _ MARKS  g_zwjMed?  cMed_postBeM1;
@@ -457,7 +458,6 @@ csKjNormalEntry  >  csKjLowEntry
 	/  ^ (gFehIni_raw gFehMed_raw) cNuqtaLikeUpper  cDiacritic?  _=K  MARKS  g_zwjMed?  cJeemMF;
 csKjNormalEntry  >  csKjLowEntry
 	/  ^ (gKafIni_raw gKafMed_raw) MARKS  cDiacritic?  _=K  MARKS  g_zwjMed?  cJeemMF;
-
 
 // Special case: use short form
 gBehMed_raw  >  gBehMedQf_short  /  g_wordThessalonik  _=B  MARKS  gWawFin;  // don't include ZWJ; it prevents the ligature
@@ -554,14 +554,13 @@ csIni_raw     >  csIniMmX /  _ MARKS  g_zwjMed?  cMeemMed_alt;
 ////(gKafIni_raw gGafIni_raw)  >  (gKafIniLm  gGafIniLm)  /  _ MARKS  g_zwjMed?  gLamFin;
 
 (gKafIni_raw gGafIni_raw)  >  (gKafIniKf gGafIniKf)  /  _ MARKS  g_zwjMed?  cKafMF;
-(gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)  /  _ MARKS  g_zwjMed?  gDalFin;   // was c_dkg_noKalt;
+(gKafIni_raw gGafIni_raw)  >  (gKafIniDk gGafIniDk)  /  _ MARKS  g_zwjMed?  (gDalFin cTehMarbutaFin);   // was c_dkg_noKalt;
 
 // Use sad interface before rounded kafs:
 csIni_raw  >  csIniSd  /  ^ _  MARKS  g_zwjMed?  (gKafMed gGafMed) MARKS  g_zwjMed?  c_al_postKround;
 
 // Tighter form of seen before flat-topped jeems:
 gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  g_zwjMed?  c_jeem_flat;
-
 
 // Basic rules
 csIni_raw  >  csIniBeM2F    / _ MARKS  g_zwjMed?  cBehFin;
@@ -581,7 +580,7 @@ csIni_raw  >  csIniHgM      / _ MARKS  g_zwjMed?  cHehGoalMed;
 csIni_raw  >  csIniHd       / _ MARKS  g_zwjMed?  (cHehDoFin cHehDoMed);
 csIni_raw  >  csIniCh	   / _ MARKS  g_zwjMed?  (cChotiyehFin);
 csIni_raw  >  csIniBy       / _ MARKS  g_zwjMed?  cBariyehFin;
-csIni_raw  >  csIni   		/ _ MARKS  g_zwjMed?  cTehMarbutaFin;   // use default interface before teh-marbuta
+csIni_raw  >  csIni   	   / _ MARKS  g_zwjMed?  cTehMarbutaFin;   // use default interface before teh-marbuta
 
 gLamIni_raw  >  gLamIniAl   / _ MARKS  g_zwjMed?  gAlefFin_lm;
 
