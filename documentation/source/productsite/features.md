@@ -113,11 +113,10 @@ Extra wide| <span dir="rtl" class='awami-wdsp-4-R normal'>   کیوں جو ان�
 
 Feature | Sample | Feature setting
 ------------- | ---------------: | ------------- 
-All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
-None | <span dir="rtl" class='awami-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;&#x6CC; &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;&#x644;</span>| `shrt=0`
+None | <span dir="rtl" class='awami-shrt-0-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;&#x6CC; &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;&#x644;</span>| `shrt=0`
 Kafs and gafs | <span dir="rtl" class='awami-shrt-1-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
 Finals | <span dir="rtl" class='awami-shrt-2-R normal'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;<font color="red">&#x6CC;</font> &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=2`
-All | <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
+All (default)| <span dir="rtl" class='awami-shrt-3-R normal'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 
 #### Collision avoidance
 
@@ -181,7 +180,7 @@ These sentences come from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.
 [font id='awami-wdsp-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='wdsp 1']
 [font id='awami-wdsp-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='wdsp 3']
 [font id='awami-wdsp-4' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='wdsp 4']
-[font id='awami-shrt-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='shrt 3']
+[font id='awami-shrt-0' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='shrt 0']
 [font id='awami-shrt-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='shrt 1']
 [font id='awami-shrt-2' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='shrt 2']
 [font id='awami-shrt-3' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='shrt 3']

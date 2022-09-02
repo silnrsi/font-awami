@@ -44,9 +44,9 @@ Regular: <span class='awamiL-R normal'>◌̧ ◌̀ ◌́ ̂◌ ◌̃ ̈◌ ◌̊
 
 ### Greek and Coptic:
 
-Regular: <span class='awamiL-R normal'> none </span>
+Regular: <span class='awamiL-R normal'> &#x03C0; </span>
 
-**Bold**: <span class='awamiL-B normal'> none </span>
+**Bold**: <span class='awamiL-B normal'> &#x03C0; </span>
 
 
 ### General Punctuation, Superscripts and Subscripts, Supplemental Punctuation:
