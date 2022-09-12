@@ -719,16 +719,12 @@ cDiacriticLower {
 
 endtable; // glyph
 
-///////////////////
-
 // Special cases where collision avoidance SHOULD fix the problem but doesn't. Do it by hand.
-// TURN OFF TEMPORARILY FOR MARTIN'S TESTING
-///////g__dot1u { shift.y = -150m; collision.flags = COLL_FREEZE }
-///////	/ gLamIniFe MARKS  gFehMed _=N  cKafMed;
-///////cNuqtaLikeUpper {shift {x = -150m; y = 130m}; collision.flags = COLL_FREEZE}  cNuqtaLikeUpper {shift.x = 150m}
-///////	/ gJeemMedBeM1  _=N1  gBehMedBe  cNuqtaLikeLower? _=N2;
-///////(g__dot2u g__dot3u) {collision.flags = COLL_FREEZE} / (gDalFin gKafFin) _=N ;
-///////////////////
+g__dot1u { shift.y = -150m; collision.flags = COLL_FREEZE }
+	/ gLamIniFe MARKS  gFehMed _=N  cKafMed;
+cNuqtaLikeUpper {shift {x = -150m; y = 130m}; collision.flags = COLL_FREEZE}  cNuqtaLikeUpper {shift.x = 150m}
+	/ gJeemMedBeM1  _=N1  gBehMedBe  cNuqtaLikeLower? _=N2;
+(g__dot2u g__dot3u) {collision.flags = COLL_FREEZE} / (gDalFin gKafFin) _=N ;
 
 // Spaces serve as boundaries between collision ranges.
 cSpace { collision.flags = SET_START_END(collision.flags); collision.flags = SET_IGNORE(collision.flags) };
@@ -740,8 +736,8 @@ c_zeronojoin { collision.flags = SET_IGNORE(collision.flags) };
 // Don't move nuqtas to adjust for punctuation; instead kern the punctuation.
 cKernPunct { collision.flags = SET_IGNORE(collision.flags) };
 
-// TURN OFF TEMPORARILY FOR MARTIN'S TESTING
-/////g__kafTop_null { collision.flags = SET_IGNORE(collision.flags) }  /  cBase  _ ;   // make context long enough to give precedence
+
+g__kafTop_null { collision.flags = SET_IGNORE(collision.flags) }  /  cBase  _ ;   // make context long enough to give precedence
 g__kafTop_null { collision.flags = COLL_FREEZE }  /  cBase  _ ;
 
 // Upper nuqtas
