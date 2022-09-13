@@ -1933,6 +1933,8 @@ cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerS; with=mLowerM}; SETDIACINS}
 // Otherwise, it is word-final, so attaches it further to the left.
 cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; SETDIACINS};
 
+// Attaching zair to lam:
+cTakes_zairDia=L  gZair {att {to=@L; at=zairS; with=mLowerM}; SETDIACINS};
 
 // Nuqta + upper and lower diacritic
 // Eg, noon-nuqta + noon-ghunna-mark + zair (\u0646\u0658\u0650)
@@ -2032,6 +2034,8 @@ cKafTopAltHt    cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }; shif
 	/  _=T  _=N  csKafMed_baseT  csKafMed_top_tall;
 cKafTopAltHt=T  cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }};
 
+// Reattach to "short" (flatter) form.
+gBehMedQf_short=B  cNuqtaUpper { attach { to=@B; at=nUpperS; with=nUpperM } };
 
 // Diacritic tweaks
 
@@ -2075,9 +2079,9 @@ gAlefFin { kernPreZain = -60m };
 
 // Don't let punctuation kern underneath the following segment;
 #if KERNLOWPUNCT
-cHighPunct { minKernDelta = MINKERN * -1   -  300m };  // cancels out MINKERN
+cHighPunct { minKernDelta = MINKERN * -1   -  300m };  // =400 - cancels out MINKERN
 #else
-cKernPunct { minKernDelta = MINKERN * -1   -  300m };  // cancels out MINKERN
+cKernPunct { minKernDelta = MINKERN * -1   -  300m };  // =400 - cancels out MINKERN
 #endif
 
 // To account for the fact that the top edge of the kaf pushes the top of the alef away:

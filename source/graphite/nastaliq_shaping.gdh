@@ -462,6 +462,9 @@ csKjNormalEntry  >  csKjLowEntry
 // Special case: use short form
 gBehMed_raw  >  gBehMedQf_short  /  g_wordThessalonik  _=B  MARKS  gWawFin;  // don't include ZWJ; it prevents the ligature
 
+// Special case: use wide form
+gFehMed_raw  >  gFehMedKf_wide  /  ^ MPRECXT  _=F  MARKS  g_zwjMed?  cKafMF;
+
 // Don't need to handle gaf, lam, or tah because they will result in taller versions anyway (pass 12).
 
 // Basic rules
@@ -561,6 +564,9 @@ csIni_raw  >  csIniSd  /  ^ _  MARKS  g_zwjMed?  (gKafMed gGafMed) MARKS  g_zwjM
 
 // Tighter form of seen before flat-topped jeems:
 gSeenIni_raw  >  gSeenIniJm_flat   / _ MARKS  g_zwjMed?  c_jeem_flat;
+
+// Special case: use wide form
+gFehIni_raw  >  gFehIniKf_wide  /  _=F  MARKS  g_zwjMed?  cKafMF;
 
 // Basic rules
 csIni_raw  >  csIniBeM2F    / _ MARKS  g_zwjMed?  cBehFin;
