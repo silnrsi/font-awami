@@ -416,6 +416,7 @@ cWawFin = (gWawFin, gWawFin_stfh);
 
 cBariyehIso = (gBariyeh, gBariyehHamza, gBariyehTwoAbove, gBariyehThreeAbove);		// bariyeh -> behIni + 2Nlower
 cBariyehFin = (gBariyehFin);
+cBariyehIsoFin = (cBariyehIso  cBariyehFin);
 
 csChotiyehFin = (gChotiyehFin, gChotiyehFin_bfkl, gChotiyehFin_short, gChotiyehFin_bfkl_short);
 csYehTailFin = (gYehTailFin, gYehTailFin_bfkl, gYehTailFin, gYehTailFin_bfkl);

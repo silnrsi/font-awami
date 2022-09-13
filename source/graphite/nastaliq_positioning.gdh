@@ -1422,6 +1422,11 @@ cNuqtaLikeUpperNoKT  cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	>  @N1  @N2 STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N1  cDiacritic?  cMed  _=N2  cDiacritic?  _=K  _=T;
 
+// Tall: feh + nuqta/diac + kaf
+cNuqtaLikeUpperNoKT csKafMed_medium  g__kafTop_null
+	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
+	/  cFehIM  _=N  cDiacritic?  _=K  _=T;
+
 // nuqta + diac + kaf => default
 csKafMed_medium  g__kafTop_null  >  @K  @T
 	/  cNuqtaUpperSmall  cDiacritic  _=K  _=T;
@@ -2178,12 +2183,14 @@ cDiacriticUpper { shift.x = 250m }
 
 // Special cases: reh + yeh - shift yeh nuqtas left and reh down
 // TODO: handle a bariyeh after the beh-ini (\u067E\u06CC\u0631\u06CE\u0646\u06D2)
-gRehFin_jkl {shift.y = -200m }   cNuqtaLower { shift {x = 250m; y = -10m} }   // -300 was -150; -30 was 150m
+gRehFin_jkl {shift.y = -200m }   
+	cNuqtaLower { shift {x = 250m; y = -10m}; collision.flags = SET_FIX(collision.flags) }
 	/ _=R MARKS  cBehIni _=N { 0m < position.y && position.y < 300m };
 gRehFin  {shift.y = -150m }   
-	cNuqtaLower { shift {x = 50m; y = 100m} }
+	cNuqtaLower { shift {x = 50m; y = 100m}; collision.flags = SET_FIX(collision.flags) }
 	/ _=R MARKS  cBehIni _=N { -550m < position.y && position.y < 0m } ;
-gRehFin  {shift.y = -150m }   cNuqtaLower { shift {x = 180m; y = 80m} }
+gRehFin  {shift.y = -150m }
+	cNuqtaLower { shift {x = 180m; y = 80m}; collision.flags = SET_FIX(collision.flags) }
 	/ _=R cBehIni MARKS cBehMed _=N { -450m < position.y && position.y < 200m } ;
 
 // Special case: keep nuqta from sitting on top of reh:
@@ -2585,7 +2592,21 @@ gMeem { collision {
 		max.x = MAXKERN; min.x = MINKERN;
     	// min/max.y are omitted for kernable glyphs
 	} }
-	/ _=M g_space gBehIniBeM1=B cNuqtaLike? gBehMedBe cNuqtaLike? gBehMedMm cNuqtaLike? gMeemMedNn;
+	/ _=M  g_space  gBehIniBeM1=B  cNuqtaLike?  gBehMedBe  cNuqtaLike?  gBehMedMm  cNuqtaLike?  gMeemMedNn;
+
+// Special case: zain/rreh + bariyeh - keep the nuqta-like thing from being too close to the bariyeh
+gRehFin  { collision {
+			flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+			flags = SET_FIX(collision.flags);
+			flags = SET_KERN(collision.flags);
+			///margin = SET_MARGIN_PLUS(B, 50m);   // looser than normal
+			margin = 300m;
+			max.x = MAXKERN;
+			min.x = min(0m, MINKERN - 500m + minKernDelta    // what is -500???
+				+ max(0m, 1250m - seqWidth) )
+		} }
+	cNuqtaLikeUpper { shift { x = -100m; y = 100m } }
+	/ _=R _=N  [cIni MARKS]?  cBariyehIsoFin=B;
 
 // Special case: reh + honorific needs more kerning
 gReh { collision {
@@ -3042,8 +3063,6 @@ cKernable { collision {
 } }
 	/  _  cNuqtaLike?  DIACS  cKernIgnore?  cPostKernable=N;
 
-gRehFin  g_bar; // TEMP experiment
-
 cKernable { collision {
 	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
 	flags = SET_FIX(collision.flags);
@@ -3123,6 +3142,9 @@ g__dot2lIM_small  >  g__dot2l_small;
 
 // When there is an overlap, a space should be a little wider. Even more after a full-stop.
 
+// Special case: something about the shape of the seen allows too much kerning.
+cSpace { advance.x += 470m }
+	/  (gReh cRehFin cBariyehIsoFin) { collision.fix.x < -400m } MARKS _=S  cSeenIni;
 cSpace { advance.x += 370m }
 	/  cFullStop { collision.fix.x < -400m } MARKS _=S;
 cSpace { advance.x += 310m }

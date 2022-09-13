@@ -2010,6 +2010,9 @@
     <test label="jeem + noon/teh/sheen + kaf" rtl="True" class="fset30">
       <string>جنگی جتگی خُشکی</string>
     </test>
+    <test label="feh/kaf" rtl="True" class="fset23033">
+      <string>فکر</string>
+    </test>
     <test label="TALL WORDS - INITIAL KAF" background="#55aaff" rtl="True" class="fset23023">
       <string />
     </test>
@@ -3961,6 +3964,9 @@ Is absBehIni.hd too thick at right edge?</comment>
       <comment>Move nuqtas up under beh form to avoid sitting on top of reh; don't allow reh to kern underneath.</comment>
       <string>تاریخی </string>
     </test>
+    <test label="reh+tah + bariyeh" rtl="True" class="fset23033">
+      <string>بچھڑے بچھزے لڑکے  </string>
+    </test>
     <test label="isolate alef [rule 569]" rtl="True">
       <comment>Set isolate alef and kaf a set distance apart; don't use auto-kerning.</comment>
       <string>اکٹّھی  الٹّھی  اسّھجی</string>
@@ -4027,6 +4033,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="reh-nuqta + beh-isolate" rtl="True" class="fset23032">
       <string>گژَٹ</string>
+    </test>
+    <test label="PASS 20" background="#55aaff" rtl="True" class="fset23033">
+      <string />
+    </test>
+    <test label="reh + sp + seen" rtl="True" class="fset23033">
+      <string>اور شکرگزار</string>
+    </test>
+    <test label="bariyeh + sp + seen" rtl="True" class="fset23033">
+      <string>سے سُنیں</string>
     </test>
     <test label="NOT HANDLED" background="#55aaff" rtl="True">
       <string />
