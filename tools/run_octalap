@@ -1,13 +1,13 @@
 #!/bin/sh
 
 # Generate improved octaboxes and store in .json format
-./bin/octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Regular.json   ../results/AwamiNastaliq-Regular.ttf
+octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Regular.json   ../results/AwamiNastaliq-Regular.ttf
 
-./bin/octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Medium.json    ../results/AwamiNastaliq-Medium.ttf
+octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Medium.json    ../results/AwamiNastaliq-Medium.ttf
 
-./bin/octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-SemiBold.json  ../results/AwamiNastaliq-SemiBold.ttf
+octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-SemiBold.json  ../results/AwamiNastaliq-SemiBold.ttf
 
-./bin/octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Bold.json      ../results/AwamiNastaliq-Bold.ttf
+octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-Bold.json      ../results/AwamiNastaliq-Bold.ttf
 
-./bin/octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-ExtraBold.json ../results/AwamiNastaliq-ExtraBold.ttf
+octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-ExtraBold.json ../results/AwamiNastaliq-ExtraBold.ttf
 
