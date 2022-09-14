@@ -1934,7 +1934,8 @@ cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerS; with=mLowerM}; SETDIACINS}
 cTakes_mLowerWfDia=R  gZair {att {to=@R; at=mLowerWfS; with=mLowerM}; SETDIACINS};
 
 // Attaching zair to lam:
-cTakes_zairDia=L  gZair {att {to=@L; at=zairS; with=mLowerM}; SETDIACINS};
+cTakes_zairDia=L  gZair {att {to=@L; at=zairS; with=mLowerM}; SETDIACINS}
+	/  _=L  cNuqtaLike?  _=Z;
 
 // Nuqta + upper and lower diacritic
 // Eg, noon-nuqta + noon-ghunna-mark + zair (\u0646\u0658\u0650)
