@@ -13,6 +13,10 @@
 # which will have eol conversion applied according to core.autocrlf and core.eol 
 * text=auto
 
+# Any text files in tools/ or tools/bin, unless overridden by later rules, should be LF ending:
+tools/bin/**  eol=lf
+tools/*  eol=lf
+
 # Explicitly declare the below matches to be text files, to convert eols to CRLF when 
 # writing to the working copy, and to convert CRLF to LF eols when adding to the repo.
 
@@ -43,9 +47,6 @@
 *.xdvtxt text eol=lf
 *.xsl text eol=lf
 *.xml text eol=lf
-
-tools/bin/** text eol=lf
-tools/* text eol=lf
 
 # Declare text files that will stay in LF (i.e. not expected to be used on Windows)
 makedocs* text eol=lf
