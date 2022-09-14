@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Generate improved octaboxes and store in .json format
-tools/bin/octalap -j 0 -q -o source/graphite/octabox.json results/AwamiNastaliq-Dev.ttf
+octalap -j 0 -q -o source/graphite/octabox.json results/AwamiNastaliq-Dev.ttf
