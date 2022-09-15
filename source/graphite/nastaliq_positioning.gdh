@@ -1944,7 +1944,7 @@ cTakes_nUpperDia=B  cNuqtaUpper=N
 	cDiacriticLower {att {to=@B; at=n1LowerS; with=mLowerM}};
 
 // Diacritics on final noon need to be positioned higher
-cNoonFin  (g__dot1u g__dot2u)=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; shift.y = 300m; SETDIACINS}
+cNoonFin  (cDot1u  cDot2u)=N  cDiacriticUpper {att {to=@N; at=mUpperS; with=mUpperM}; shift.y = 300m; SETDIACINS}
 		/ ^ _=B  c_attLikeNqLowMid?  _=N  cDiacriticLower? _=D {att.to==0};
 
 // attach to nuqta
@@ -2028,7 +2028,7 @@ cTakes_nUpperDia=K  cKafTopInvis  cNuqtaLike4Kaf?
 cKafTopAltHt=T  g__grafStroke { attach { to=@T; at=grafS;   with=grafM }};
 cKafTopAltHt=T  cringDia      { attach { to=@T; at=ringS;   with=ringM }};
 // Special case: kaf-3-dots + kaf
-////cKafTopAltHt    g__dot3u      { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -220m; y = 150m } }  //// ####
+////cKafTopAltHt    cDot3u      { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -220m; y = 150m } }  //// ####
 ////	/ gKafMedKf_wide_base _=T  _=N  cKafMed  g__kafTop_null;
 // Special case: ngoeh/graf + kef
 cKafTopAltHt    cNuqtaUpper   { attach { to=@T; at=nUpperS; with=nUpperM }; shift { x = -450m; y = 270m } }
@@ -2220,12 +2220,12 @@ g_parenleftArab { pairKern = -200m }  /  _  cQuoteLeftArab;
 ////	/  g_parenleftArab  _;
 
 // Special case: yeh + beh + yeh - spread nuqtas out - not needed with new pos for gBehMedCh
-////g__dot2l { shift { x = -130m; y = -170m; } }
-////	g__dot1l { shift { x = 50m; y = -220m } }
+////cDot2l { shift { x = -130m; y = -170m; } }
+////	cDot1l { shift { x = 50m; y = -220m } }
 ////	/  gBehMedBe  _=N2  gBehMedCh  _=N1;
 
 // Special case: jeem + noon/teh + shadda + noon/teh
-gShadda { shift{ x = 10m; y=200m } } (g__dot1u g__dot2u) { shift{x = 230m; y=-50m} }
+gShadda { shift{ x = 10m; y=200m } } (cDot1u cDot2u) { shift{x = 230m; y=-50m} }
 	/ cJeemIM  gBehMedBeM1  cNuqtaLower?  _=S  gBehMedBeM2 _=N  cDiacritic?  gBehMed  cNuqta  cKafMF;
 
 // Special case: zair + beh/yeh + bariyeh. The sequencing gets confused because the diacritic is
@@ -2241,7 +2241,7 @@ gZair { shift {x=-200m; y=250m } }  cNuqtaLikeLower { sequence.class = 0; shift.
 
 
 // Special case: kaf+3dots + kaf-fin
-g__dot3u { shift.x = -100m }
+cDot3u { shift.x = -100m }
 	/ gKafMedKf_wide_base  g__kafMedTop_tall _=N  cDiacritic? gKafFin;
 
 
@@ -2431,7 +2431,7 @@ cDiacriticUpper {
 	} }  /  (gLamIni_short gLamMed_short)  _  cKafMF;  // increase precedence
 
 // Special case: round kaf-3dots + lam + upper diacritic
-g__dot3u { shift {x=-200m; y=250m} }
+cDot3u { shift {x=-200m; y=250m} }
 cDiacriticUpper {
 	collision {
 		flags = CLEAR_IGNORE(collision.flags);
@@ -2573,7 +2573,7 @@ gDal { collision {
 		max.x = MAXKERN; min.x = MINKERN;
     	// min/max.y are omitted for kernable glyphs
 	} }
-	/  _=D  gBehIniBeM2 g__dot1u  gBehMed  MARKS  gAlefFin;
+	/  _=D  gBehIniBeM2  cDot1u  gBehMed  MARKS  gAlefFin;
 
 // Special case: lam-alef + meem...
 // Ideally this should handle marks as well, but the real-life example did not include any.
@@ -2907,7 +2907,7 @@ gRehFin { collision {
 	/  _=R /*no marks*/  (gFehIniRe gAinIniRe)=FA  MARKS  cRehFin;
 
 // Special case: zain + isolate
-g__dot1u { shift.x -= 150m }
+cDot1u { shift.x -= 150m }
 	/ gRehFin  _=N  (gDal gWaw gAlef gSeen gTah gFeh gQaf gMeem gHehDo gHehGoal) ;
 
 

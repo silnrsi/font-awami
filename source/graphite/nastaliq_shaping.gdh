@@ -1013,6 +1013,13 @@ gBehIniBe  g__dot1l  gBehMedJm  g__dot1l  gJeemFin;  // ok, don't change
 // Special case: beh+beh+jeem
 gBehIniBe  gBehMedJm  >  gBehIniBe_jmF  gBehMedJmR
 	/ _=B1 ^ cNuqtaLikeLower cDiacritic?  _=B2 cNuqtaLikeLower cDiacritic?  gJeemFin;
+	
+// Special case: yeh/peh + yeh/peh: bold needs smaller nuqtas
+#if (WEIGHT >= WT_BOLD)
+(g__dot2l  g__dot3l  g__dot2lIM)  (g__dot2l  g__dot3l  g__dot2lIM)
+	>  (g__dot2l_small  g__dot3l_small  g__dot2l_small)  (g__dot2l_small  g__dot3l_small  g__dot2l_small)
+	/ (gBehIniBe gBehIniBeM1)  _  cDiacritic?  (gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedSnSn)  _;
+#endif
 
 // Special case: yeh + kaf + zair  TODO
 
