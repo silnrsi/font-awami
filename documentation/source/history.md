@@ -3,7 +3,7 @@ title: Awami Nastaliq - Version History
 fontversion: 3.000
 ---
 
-### 2022-Sep-xx (SIL WSTech team) Awami Nastaliq Version 3.000
+### 2022-Sep-21 (SIL WSTech team) Awami Nastaliq Version 3.000
 
 #### New
 - Added 4 weights -- Medium, SemiBold, Bold, and ExtraBold

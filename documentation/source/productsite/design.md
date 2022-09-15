@@ -24,7 +24,7 @@ Type samples showing some of the inventory of glyphs can be found here:
 
 Examples of some text is shown below. 
 
-<img class='fullsize' alt='Lateef Sample - Seven weights' src='https://software.sil.org/lateef/wp-content/uploads/sites/30/2022/06/AwamiWeights.png' />
+<img class='fullsize' alt='Lateef Sample - Five weights' src='https://software.sil.org/lateef/wp-content/uploads/sites/30/2022/06/AwamiWeights.png' />
 [caption]<em>Awami Nastaliq Sample - Five weights</em>[/caption]
 
 
