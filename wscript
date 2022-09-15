@@ -45,7 +45,7 @@ getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
 #   --autohint  - autohint the font (otherwise hints are stripped)
 #   --noPSnames - remove psf names
 #   --regOnly   - build just Regular weight
-opts = preprocess_args({'opt' : '-d'}, {'opt': '--autohint'}, {'opt': '--noPSnames'}, {'opt': '--regOnly'})
+opts = preprocess_args({'opt' : '-d'}, {'opt': '--autohint'}, {'opt': '--noPSnames'}, {'opt': '--regOnly'}, {'opt': '--boldOnly'})
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
@@ -79,6 +79,13 @@ cmds.extend([
     cmd('psfcompressgr -q ${DEP} ${TGT}'),
     cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
 ])
+
+if '--regOnly' in opts:
+    INST = ['Awami Nastaliq Regular']
+elif '--boldOnly' in opts:
+    INST = ['Awami Nastaliq Bold']
+else:
+    INST = None
     
 dspace_file = 'source/awami.designspace'
 
@@ -86,7 +93,7 @@ dspace_file = 'source/awami.designspace'
 designspace(dspace_file,
     # -W resets weights to 400 and 700
     instanceparams='-W -l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
-    instances = ['Awami Nastaliq Regular']  if '--regOnly' in opts else None,
+    instances = INST,
     target = process('${DS:FILENAME_BASE}.ttf', *cmds),
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
