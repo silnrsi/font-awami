@@ -245,6 +245,8 @@ cTakes_lower = (cTakes_nLowerDia, cTakes_hehhookDia);
 
 endtable;
 
+// TODO: handle g__kafTop_null consistently
+
 // X+Nl  Y+Nl  Z+Nl  Bariyeh
 cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
@@ -286,7 +288,7 @@ cTakes_nLowerDia
 
 // X+Nl Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
+	/ _=B  g__kafTop_null?  _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
 
 
 
@@ -2136,7 +2138,7 @@ cRehFin_longtail {collision.margin=30m}  (gBehIniRe gBehIniQf)  cNuqtaLikeLower 
 	/  _=R cNuqtaLike? cDiacritic?  _=B _=N cDiacritic?  _=RW;
 
 // Special case: \u0627\u06CC\u0645\u0627
-#if WEIGHT >= WT_BOLD
+#if (WEIGHT >= WT_BOLD)
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -800m}}  gMeemMed_alt;
 #else
 gAlef  gBehIniMmX  cNlWide {shift {x = 300m; y = -650m}}  gMeemMed_alt;
@@ -2920,6 +2922,23 @@ cRehFin_longtail { collision {
 } }
 	/  _=R  cNuqtaLike? cDiacritic?  (gBehIniRe gBehIniQf)  cNuqtaLikeLower cDiacritic? (gRehFin_jkl cWawFin);
 
+// Special case: kerning collision involving three sequences with an isolate in the middle;
+// limit how much the short inner sequence can kern.
+#if (WEIGHT < WT_BOLD)
+cIso { collision {
+	flags = CLEAR_IGNORE(collision.flags); // needed for punctuation
+	flags = SET_FIX(collision.flags);
+	flags = SET_KERN(collision.flags);
+	margin = SET_MARGIN(N);
+	max.x = MAXKERN;
+	min.x = min(0m, MINKERN - 500m + minKernDelta
+		+ max(0m, 1250m - seqWidth)
+		+ 250m  // kern less than normal
+	);
+    // min/max.y are omitted for kernable glyphs
+} }
+	/  cKernable DIACS  _=Iso  cNuqtaLike?  DIACS ^ cPostKernable=N;
+#endif
 
 // Don't kern glyphs before the high hamza; retain the space.
 cKernable  (gHighHamza gHighHamzaArabic);
@@ -3136,6 +3155,7 @@ gAlef       {advance.x += 150m}  /  _=A {startOfLine} cNuqtaLike? MARKS (cKafIni
 
 cBariyehFin {advance.x -= 200m}  /  cIni {startOfLine} cNuqtaLike? MARKS  _=By;
 cBariyehIso {advance.x -= 200m}  /  _=By {startOfLine};
+
 
 // Replace these with real glyphs. PDF needs real glyphs.
 g__dot2lIM        >  g__dot2l;

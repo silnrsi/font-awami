@@ -43,7 +43,7 @@
   <testgroup label="main">
     <test label="analyze" background="#ffff7f" rtl="True" class="fset30">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>ٱللّه   آللہ  ݴللہ  سلٱ</string>
+      <string> اُڳئے ڄئے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -401,7 +401,7 @@
     <test label="short lam" rtl="True">
       <string>ݪگک بݪگگم علګف لګج سلګ  لګس</string>
     </test>
-    <test label="short lam V / tah / 3 dots" rtl="True" class="fset7654">
+    <test label="short lam V / tah / 3 dots" background="#ff0000" rtl="True" class="fset7654">
       <string>ڵکق سڵگ ࣇک سࣇگ ڷکب سڷگ</string>
     </test>
     <test label="BEH SEQUENCES" background="#55aaff" rtl="True" class="fset23023">
@@ -1515,6 +1515,10 @@
     </test>
     <test label="no sequencing - noon + tah" background="#aaaa7f" rtl="True">
       <string>نتیجہ</string>
+    </test>
+    <test label="overkerning - three sequences" background="#ffaaff" rtl="True" class="fset23033">
+      <comment>Fixed using a special case</comment>
+      <string>ݙُوجھی</string>
     </test>
     <test label="LINE HEIGHT" background="#55aaff" rtl="True">
       <string> </string>
@@ -4036,6 +4040,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="reh-nuqta + beh-isolate" rtl="True" class="fset23032">
       <string>گژَٹ</string>
+    </test>
+    <test label="overkerning - three sequences" rtl="True" class="fset23033">
+      <string>ݙُوجھی</string>
     </test>
     <test label="PASS 20" background="#55aaff" rtl="True" class="fset23033">
       <string />
