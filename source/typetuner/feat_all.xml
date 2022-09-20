@@ -88,7 +88,7 @@
 
 	<feature name="Short forms" value="All" tag="Short">
 		<value name="None" tag="None">
-			<cmd name="null" args="null"/>
+			<cmd name="gr_feat" args="{gr_shrt} 0"/>
 		</value>
 		<value name="Kafs and gafs" tag="Kaf">
 			<cmd name="gr_feat" args="{gr_shrt} 1"/>
@@ -97,7 +97,7 @@
 			<cmd name="gr_feat" args="{gr_shrt} 2"/>
 		</value>
 		<value name="All" tag="All">
-			<cmd name="gr_feat" args="{gr_shrt} 3"/>
+			<cmd name="null" args="null"/>
 		</value>
 	</feature>
 
