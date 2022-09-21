@@ -158,9 +158,9 @@ Sample  | Feature setting
 
 
 <!-- PRODUCT SITE ONLY
-[font id='awamipar' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1]
 [font id='awami' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1]
 [font id='awamiL' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='100%' ltr=1]
+[font id='awamipar' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1]
 
 -->
 

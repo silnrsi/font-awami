@@ -29,12 +29,12 @@ Type samples showing some of the inventory of glyphs can be found here:
 Examples of some text is shown below. 
 
 ![Lateef Sample - Five weights](assets/images/AwamiWeights.png){.fullsize}
-<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/lateef/wp-content/uploads/sites/30/2022/06/AwamiWeights.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/lateef/wp-content/uploads/sites/33/2022/09/AwamiUrduGen11.png -->
 <figcaption>Awami Nastaliq Sample - Five weights</figcaption>
 
 
 ![Awami Nastaliq Sample - Genesis 11](assets/images/AwamiUrduGen11.png){.fullsize}
-<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2021/01/AwamiUrduGen11.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2022/09/AwamiUrduGen11.png -->
 <figcaption>Awami Nastaliq Sample - Genesis 11</figcaption>
 
 ## Character Set
