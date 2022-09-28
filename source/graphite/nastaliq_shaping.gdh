@@ -1012,7 +1012,7 @@ gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpp
 gBehIniBe  g__dot1l  gBehMedJm  g__dot1l  gJeemFin;  // ok, don't change
 // Special case: beh+beh+jeem
 gBehIniBe  gBehMedJm  >  gBehIniBe_jmF  gBehMedJmR
-	/ _=B1 ^ cNuqtaLikeLower cDiacritic?  _=B2 cNuqtaLikeLower cDiacritic?  gJeemFin;
+	/ _=B1 ^ cNuqtaLikeLower cDiacritic?  _=B2 cNuqtaLikeLower cDiacritic? ;  // gJeemFin; - really any jeem should do thia
 	
 // Special case: yeh/peh + yeh/peh: bold needs smaller nuqtas
 #if (WEIGHT >= WT_BOLD)

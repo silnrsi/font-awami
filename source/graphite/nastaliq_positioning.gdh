@@ -245,13 +245,13 @@ cTakes_lower = (cTakes_nLowerDia, cTakes_hehhookDia);
 
 endtable;
 
-// TODO: handle g__kafTop_null consistently
+// TODO: handle g__kafTop_null consistently; right now there is a bug in the compiler that makes this code crash.
 
 // X+Nl  Y+Nl  Z+Nl  Bariyeh
 cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
-	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS  _=Y  /*g__kafTop_null?*/  _=Ny DIACS  _=Z  /*g__kafTop_null?*/  _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y+Nu  Z+Nl  Bariyeh
 // Here we attach the upper nuqta too, since if we back up to attach it, it will reattach and mess up
@@ -259,36 +259,36 @@ cTakes_nLowerDia  cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByRi
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cMed   cHasUpperMaux    { attach {to = @Y; at = nUpperS; with = nUpperMaux } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
-	/ _=X _=Nx DIACS  _=Y _=Ny DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS  _=Y  /*g__kafTop_null?*/  _=Ny DIACS  _=Z   /*g__kafTop_null?*/ _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl  Y  Z+Nl Bariyeh
 cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
-	/ _=X _=Nx DIACS  cMed=Y DIACS  _=Z _=Nz DIACS  ^  gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS  cMed=Y  /*g__kafTop_null?*/  DIACS  _=Z  /*g__kafTop_null?*/  _=Nz DIACS  ^  gBariyehFin=By;
 
 // X+Nl(large)  Y  Z  Bariyeh
 cTakes_nLowerDia  cNuqtaLowerLarge { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	/ _=X _=Nx DIACS  cMed=Y ^ cNuqtaLikeUpper? DIACS  csMedBy=Z cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS ^ cMed=Y /*g__kafTop_null?*/ cNuqtaLikeUpper? DIACS  csMedBy=Z  /*g__kafTop_null?*/  cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Z  Bariyeh
 cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_lower cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
-	/ _=B1 _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B1  g__kafTop_null?  _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy /*g__kafTop_null?*/ cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Bariyeh
 cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
 	csMedBy cNuqtaLower { underBy = true; attach {to = @By; at = nByLeftLowerS; with = nByLowerM } }
-	/ _=X _=Nx DIACS  _=Y  _=Ny DIACS  ^ gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS  _=Y  /*g__kafTop_null?*/  _=Ny DIACS  ^ gBariyehFin=By;
 
 // X+Nl+Nu Y Bariyeh 
 cTakes_nLowerDia 
 	cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
 	cNuqtaLikeUpper { attach {to = @B; at = nUpperS; with = nUpperM } }
-	/ _=B _=L _=U DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B  g__kafTop_null?  _=L _=U DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B  g__kafTop_null?  _=L  DIACS  ^ csMedBy cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
+	/ _=B  g__kafTop_null?  _=L  DIACS  ^ csMedBy  cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
 
 
 
@@ -1139,7 +1139,7 @@ g__hehHook_small { collision {
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
 	min.x = -200m;
-	max.x = 400m;  // 600 breaks \u067E\u0650\u06CC\u064F\u0648
+	max.x = 600m;  // 600 breaks \u067E\u0650\u06CC\u064F\u0648
 	min.y = -500m;
 	max.y = 300m;
 } }  /  cIni  _;
