@@ -2354,7 +2354,7 @@ cSpace { collision.flags = SET_START_END(collision.flags) };  /// collision.flag
 cQuoteArab { collision.flags = CLEAR_IGNORE(collision.flags) };
 
 
-// Never shift these!! (even though they are thought of as "nuqta-like" for some purposes).
+// Never shift these!! (even though they are thought of as "nuqta-like" for some purposes)
 cKafTop { collision {
 		flags = CLEAR_IGNORE(collision.flags);
 		flags = CLEAR_FIX(collision.flags);
@@ -2937,7 +2937,7 @@ cIso { collision {
 	);
     // min/max.y are omitted for kernable glyphs
 } }
-	/  cKernable DIACS  _=Iso  cNuqtaLike?  DIACS ^ cPostKernable=N;
+	/  cKernable DIACS  _=Iso  cNuqtaLike?  DIACS ^ cPostKernableNoPunct=N;
 #endif
 
 // Don't kern glyphs before the high hamza; retain the space.
