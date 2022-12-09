@@ -25,7 +25,7 @@ Five fonts from this typeface family are now included in this release:
 - Fixed a bug affecting the right margin
 - Fixed a problem with the behavior of the yeh with hamza
 - Added a short version of the final sad
-- Various improvements to beh forms
+- Various improvements to beh/noon/teh/yeh forms
 - Collision fixes
 - Changed the default value of the short forms feature to use all short forms
 - Added a special form of khah+zabar+meem+jeem+heh-doachashmee to avoid excessive height
