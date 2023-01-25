@@ -3156,6 +3156,11 @@ gAlef       {advance.x += 150m}  /  _=A {startOfLine} cNuqtaLike? MARKS (cKafIni
 cBariyehFin {advance.x -= 200m}  /  cIni {startOfLine} cNuqtaLike? MARKS  _=By;
 cBariyehIso {advance.x -= 200m}  /  _=By {startOfLine};
 
+// To keep a peh from sticking out into the right margin - eg, \u067E\u0650\u06CC\u064F\u0648:
+(gBehIniMmX gBehIniCh)  {advance.x += max(0, @N.collision.fix.x) + 300m}  /  _=B {startOfLine} cNlWide=N;
+(gBehIniNn gBehIniQf)   {advance.x += max(0, @N.collision.fix.x) + 200m}  /  _=B {startOfLine} cNlWide=N;
+cBehIni    {advance.x += max(0, @N.collision.fix.x)}         /  _=B {startOfLine} cNlWide=N;
+
 
 // Replace these with real glyphs. PDF needs real glyphs.
 g__dot2lIM        >  g__dot2l;
