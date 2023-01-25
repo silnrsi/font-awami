@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Design
-fontversion: 3.000
+fontversion: 3.100
 ---
 
 Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. For this reason, SIL's smart-font technology, [Graphite](http://graphite.sil.org), has been extended with some special capabilities to address the particular challenges of this beautiful but complicated form of writing.
@@ -28,8 +28,8 @@ Type samples showing some of the inventory of glyphs can be found here:
 
 Examples of some text is shown below. 
 
-![Lateef Sample - Five weights](assets/images/AwamiWeights.png){.fullsize}
-<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/lateef/wp-content/uploads/sites/33/2022/09/AwamiUrduGen11.png -->
+![Awami Nastaliq Sample - Five weights](assets/images/AwamiWeights.png){.fullsize}
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2022/09/AwamiWeights.png -->
 <figcaption>Awami Nastaliq Sample - Five weights</figcaption>
 
 

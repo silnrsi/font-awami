@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - About
-fontversion: 3.000
+fontversion: 3.100
 ---
 
 ## About this project
