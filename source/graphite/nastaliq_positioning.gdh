@@ -1386,9 +1386,14 @@ cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 	/  _=N cBaseTall  MARKS  _=K  _=T;
 
 // Tall: nuqta + diac + kaf
-cNuqtaLike  csKafMed_medium  g__kafTop_null  
+cNuqtaLikeUpper  csKafMed_medium  g__kafTop_null  
 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 	/  _=N  cDiacriticUpper  cDiacriticUpper?  _=K  _=T;
+
+// Standard: nuqta OR diac + kaf
+(cNuqtaLikeUpper cDiacriticUpper) csKafMed_medium  g__kafTop_null
+	>  @ND STAYBELOWKAF  @K  @T
+	/  _=ND  _=K  _=T;
 
 // Tall: nuqta-smallV + kaf, nuqta-smallTah + kaf
 (csNuqtaPlusMark csNuqtaPlusMarkKf)  csKafMed_medium  g__kafTop_null  
