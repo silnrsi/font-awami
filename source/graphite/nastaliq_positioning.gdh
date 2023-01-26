@@ -232,6 +232,14 @@ cTakes_hamzaAndHehhookDia &= cTakes_hehhookDia;
 cTakes_ringAndNUpperDia = cTakes_nUpperDia;
 cTakes_ringAndNUpperDia &= cTakes_ringDia;
 
+
+// For special cases involving nuqtas:
+cNuWide = (cDot2u  cDot3u  cDot4u);
+cNlWide = (cDot2l  cDot3l  cDot4l);
+cNuqtaWide = (cNuWide  cNlWide);
+cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
+cRehFin_longtail = (gRehFin, gRehFin_hgM);
+
 endtable;  // glyph    g__noDot2l__hamza
 
 
@@ -1135,6 +1143,24 @@ g__hehHook_small { collision {
 	max.y = 50m;
 } }  /  cIniMed  _; // enough context to give it precedence
 
+// Special case: \u06cc\u067e\u0679\u0646\u0628
+cNlWide { collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -200m;
+		max.x = 600m;  // 600 breaks \u067E\u0650\u06CC\u064F\u0648
+		min.y = -500m;
+		max.y = 400m;
+	} }
+	cNlWide { collision {
+		flags = SET_FIX(collision.flags);
+		min.x = -300m;
+		max.x = 400m;
+		min.y = -600m;
+		max.y = 300m;
+	} }
+	/ gBehIniBeM2  _=N1 cDiacritic? gBehMedBeM1 _=N2;
+
+
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeLower { collision {
 	flags = SET_FIX(collision.flags);
@@ -1858,13 +1884,6 @@ g__ring { nByLowerM = point(0m, 0m) };
 // For attachments after lam/feh/ain:
 cMeemMF { nUpperS_left.x = nUpperS.x - 250m; nUpperS_left.y = nUpperS.y - 300m };
 
-// For special cases involving nuqtas:
-cNuWide = (cDot2u  cDot3u  cDot4u);
-cNlWide = (cDot2l  cDot3l  cDot4l);
-cNuqtaWide = (cNuWide  cNlWide);
-cDRW_IF = (cDalIso cDalFin cRehIso gRehFin_jkl cWawIso cWawFin);
-cRehFin_longtail = (gRehFin, gRehFin_hgM);
-
 endtable;  // glyph
 
 
@@ -2252,7 +2271,13 @@ cDot3u { shift.x = -100m }
 	/ gKafMedKf_wide_base  g__kafMedTop_tall _=N  cDiacritic? gKafFin;
 
 // Special case (very specific): \u0644\u06CC\u0679\u062A\u06D2
-(g__dot1l g__dot2l) {shift.y += 100m} / gBehMedBeM1 _ gBehMedBe cNuqtaLike gBehMedBy cNuqtaLike gBariyehFin;
+(g__dot1l g__dot2l) {
+		shift.y += 100m;
+		// in case it creates a new collsion! -
+		collision.flags = CLEAR_IGNORE(collision.flags);
+		collision.flags = SET_FIX(collision.flags);
+	}
+	/ gBehMedBeM1 _ gBehMedBe cNuqtaLike gBehMedBy cNuqtaLike gBariyehFin;
 
 
 cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short;

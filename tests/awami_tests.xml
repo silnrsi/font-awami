@@ -43,7 +43,7 @@
   <testgroup label="main">
     <test label="analyze" background="#ffff7f" rtl="True" class="fset30">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string>مُکھی </string>
+      <string>پیٹنے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -3765,6 +3765,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="noon + hah-3dots" rtl="True" class="fset23032">
       <string>ہَرَنْڅ  ثڅ  ݶڅ</string>
     </test>
+    <test label="peh + yeh" rtl="True" class="fset23033">
+      <string>پیٹنے</string>
+    </test>
     <test label="lam + qaf + kaf [rule 38]" background="#aaaa7f" rtl="True">
       <string>لقکھہ</string>
     </test>
@@ -3931,6 +3934,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="ngoeh + gaf (also pass 6)" rtl="True" class="fset23032">
       <string>مڱگس</string>
+    </test>
+    <test label="yeh + ... + bariyeh" rtl="True" class="fset23033">
+      <string>لیٹتے</string>
     </test>
     <test label="PASSES 17 &amp; 18" background="#55aaff" rtl="True" class="fset23023">
       <string />
@@ -4115,9 +4121,6 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="TO FIX" background="#55aaff" rtl="True" class="fset23032">
       <string />
-    </test>
-    <test label="yeh + ... + bariyeh" rtl="True" class="fset23033">
-      <string>لیٹتے</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
