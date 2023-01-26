@@ -43,7 +43,7 @@
   <testgroup label="main">
     <test label="analyze" background="#ffff7f" rtl="True" class="fset30">
       <comment>This test is mainly for figuring out what characters are in the data.</comment>
-      <string> اُڳئے ڄئے</string>
+      <string>لیٹتے</string>
     </test>
     <test label="kafI &amp; seenM" rtl="True">
       <string>کسس</string>
@@ -4056,6 +4056,15 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="bariyeh + sp + seen" rtl="True" class="fset23033">
       <string>سے سُنیں</string>
     </test>
+    <test label="[SOL] peh + meem-alt" rtl="True" class="fset23033">
+      <string>پمد</string>
+    </test>
+    <test label="[SOL] yeh + noon-final" rtl="True" class="fset23033">
+      <string>ین</string>
+    </test>
+    <test label="[SOL] peh + yeh" rtl="True" class="fset23033">
+      <string>پِیُو </string>
+    </test>
     <test label="NOT HANDLED" background="#55aaff" rtl="True">
       <string />
     </test>
@@ -4106,6 +4115,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="TO FIX" background="#55aaff" rtl="True" class="fset23032">
       <string />
+    </test>
+    <test label="yeh + ... + bariyeh" rtl="True" class="fset23033">
+      <string>لیٹتے</string>
     </test>
   </testgroup>
   <testgroup label="Punctuation">
