@@ -4,7 +4,7 @@ Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety 
 
 ## Project status [![Build Status](http://build.palaso.org/app/rest/builds/buildType:Fonts_Awami/statusIcon)](http://build.palaso.org/viewType.html?buildTypeId=Fonts_Awami&guest=1)  
 
-Awami Nastaliq v3.000 has been released. 
+Awami Nastaliq v3.100 has been released. 
 
 This font is actively maintained and improved, and recent changes to its development process will enable more frequent releases. The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](wscript).
 
