@@ -41,7 +41,7 @@ pass(1)  // 8
 
 // Only used for beh so we don't need to allow upper and lower diacs:
 // E.g.,
-////	c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
+////	c_exit_behHighT {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
 ////		c_entr_behPreFinalHehGoal {insert=1} 
 ////			/ _ MARKS ^ _=L ;
 
@@ -79,11 +79,11 @@ cLowPunct { seqWidth += @P.advance.x + @P.seqWidth }
 cursive_attach(alef)
 cursive_attach(beh)
 cursive_attach(behFinal)
-cursive_attach(behHighTooth)
-cursive_attach(behLowTooth)
-cursive_attach2(behLowTooth, behPreFinalHehGoal)
+cursive_attach(behHighTh)
+cursive_attach(behLowT)
+cursive_attach2(behHighT, behPreFinalHehGoal)
 // Special cases not handled by macro due to attached-ring:
-c_exit_behLowTooth {att {to=@L; with=exit_behLowTooth; at=entr_behPreFinalHehGoal}} 
+c_exit_behHighT {att {to=@L; with=exit_behHighT; at=entr_behPreFinalHehGoal}} 
 	c_entr_behPreFinalHehGoal {insert=1} 
 	/ _  g__kafTop_null  (g__attachedRingMid g__grafStroke) ^ _=L ;
 cursive_attach(behPreReh)
@@ -1501,7 +1501,7 @@ csGafIM_medium  g__kafTop_null  cKafFin
 // Medium-short: lam/tah + jeem/meem + kaf - do we need this with the wider jeem?
 cBaseTall  csKafMed_medium  g__kafTop_null  
 	>  @B  csKafMed_baseT$K  csKafMed_top_medshort$K
-	/  _=B  cNuqtaLike? cDiacritic?  (/*cJeemMed*/ cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
+	/  _=B  cNuqtaLike? cDiacritic?  (cJeemMed cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
 
 // Medium-short: tah + beh/meem/ain + kaf...
 cTahIM  csKafMed_medium  g__kafTop_null  
