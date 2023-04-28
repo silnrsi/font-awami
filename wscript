@@ -60,7 +60,7 @@ cmds = [
     #name('${DS:FILENAME_BASE}', lang='en-US', subfamily = 'Regular'),
     # remove buggy tables:
     cmd('ttftable -d hdmx,VDMX,LTSH ${DEP} ${TGT}'),
-    cmd('../tools/bin/octalap -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox_${DS:FILENAME_BASE}.json"),
+    cmd('${OCTALAP} -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox_${DS:FILENAME_BASE}.json"),
 ]
 
 if '--noPSnames' in opts:
@@ -122,3 +122,4 @@ def configure(ctx) :
     ctx.env['PDFSHAPED'] = 'perl ../tools/bin/pdfshaped.pl'
     ctx.find_program('ttfautohint')
     ctx.env['FRET'] = 'perl ../tools/bin/fret'
+    ctx.find_program('octalap')
