@@ -6,14 +6,14 @@ fontversion: 3.100
 
 <font color="red">Note:</font> |
 :------------ | -
-**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See the [instructions on how to enable Graphite in Firefox](http://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#cf8a0574).** |
+**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See the [instructions on how to enable Graphite in Firefox](https://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#cf8a0574).** |
 
 
-Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](http://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used.
+Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](https://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used.
 
 See [Using Font Features](https://software.sil.org/fonts/features/). Although that page is not targeted at Arabic script support, it does provide a comprehensive list of applications that make full use of both the OpenType and Graphite font technologies.
 
-See also [Arabic Fonts — Application Support](http://software.sil.org/arabicfonts/support/application-support/). It provides a fairly comprehensive list of applications that make full use of the [Graphite](http://graphite.sil.org) font technology.
+See also [Arabic Fonts — Application Support](https://software.sil.org/arabicfonts/support/application-support/). It provides a fairly comprehensive list of applications that make full use of the [Graphite](https://graphite.sil.org) font technology.
 
 This page uses web fonts (WOFF) to demonstrate font features. However, it will only display correctly in Mozilla Firefox. For a more concise example of how to use Awami Nastaliq as a web font see *AwamiNastaliq-webfont-example.html* in the font package web folder. 
 
@@ -23,11 +23,11 @@ This page uses web fonts (WOFF) to demonstrate font features. However, it will o
 
 These Arabic characters are intended to enclose or hold one or more digits. 
 
-Specific technical details of how to use them are discussed in the [Arabic fonts FAQ -- Subtending marks](http://software.sil.org/arabicfonts/support/faq#Ayah).
+Specific technical details of how to use them are discussed in the [Arabic fonts FAQ -- Subtending marks](https://software.sil.org/arabicfonts/support/faq#Ayah).
 
 ## Customizing with TypeTuner
 
-For applications that do not make use of Graphite features or the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](http://scripts.sil.org/ttw/fonts2go.cgi), then choose the variants and download your font.
+For applications that do not make use of Graphite features or the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](https://scripts.sil.org/ttw/fonts2go.cgi), then choose the variants and download your font.
 
 ### Character variants
 
@@ -149,7 +149,7 @@ U+0603 ARABIC SIGN SAFHA (page)<br>(U+202D U+0603 U+06F1 U+06F2 U+06F3 U+202C)| 
 
 ## Paragraph of text
 
-This sentence comes from the [Saraiki UDHR](http://unicode.org/udhr/d/udhr_skr.txt). 
+This sentence comes from the [Saraiki UDHR](https://www.unicode.org/udhr/d/udhr_skr.txt). 
 
 Sample  | Feature setting
 ---------------: | :---- 

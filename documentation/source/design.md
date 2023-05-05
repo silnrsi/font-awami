@@ -3,7 +3,7 @@ title: Awami Nastaliq - Design
 fontversion: 3.100
 ---
 
-Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. For this reason, SIL's smart-font technology, [Graphite](http://graphite.sil.org), has been extended with some special capabilities to address the particular challenges of this beautiful but complicated form of writing.
+Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. For this reason, SIL's smart-font technology, [Graphite](https://graphite.sil.org), has been extended with some special capabilities to address the particular challenges of this beautiful but complicated form of writing.
 
 The sloping nature of Nastaliq creates a great challenge: glyph collisions. A straightforward, naive layout of base glyphs, nuqtas, and diacritics will inevitably result in a rendering where the glyphs collide, forming ugly and even unreadable text. Fixing these collisions is exacerbated by the large number of glyphs and the complex positioning created by the sloping baseline.
 
@@ -19,7 +19,7 @@ Five fonts from this typeface family are included in this release:
 - Awami Nastaliq Bold
 - Awami Nastaliq ExtraBold
 
-More detailed design information is available from [What is Special About Awami Nastaliq](http://software.sil.org/awami/what-is-special/)? 
+More detailed design information is available from [What is Special About Awami Nastaliq](https://software.sil.org/awami/what-is-special/)? 
 
 ## Type Samples
 

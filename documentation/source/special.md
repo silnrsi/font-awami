@@ -5,7 +5,7 @@ fontversion: 3.100
 
 The Awami Nastaliq font was developed to support a wide variety of languages that are written using the Nastaliq style of Arabic script. Since at least the year 2000, SIL’s Writing Systems Technology team has received requests for a publication-quality Nastaliq font that is fully customizable and extensible, enabling support for minority languages. While there are a handful of Nastaliq-style fonts that support the Urdu language adequately, until recently there have been no fonts that handle the range of characters and diacritics needed for approximately twenty-five other languages of Pakistan, spoken by over 120 million people, as well as other languages in neighboring countries. The Awami Nastaliq font meets a long-standing need in this part of the world.
 
-The complexity of the sloping, calligraphic style makes the development of a truly flexible font quite challenging, and so Awami Nastaliq makes use of specially-designed mechanisms built into SIL’s Graphite font technology. For this reason, Awami Nastaliq requires applications that provide Graphite support. Such applications include the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](http://software.sil.org/fieldworks/), [Paratext 8+](https://pt8.paratext.org/), and [Bloom](http://bloomlibrary.org/).
+The complexity of the sloping, calligraphic style makes the development of a truly flexible font quite challenging, and so Awami Nastaliq makes use of specially-designed mechanisms built into SIL’s Graphite font technology. For this reason, Awami Nastaliq requires applications that provide Graphite support. Such applications include the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext 8+](https://pt8.paratext.org/), and [Bloom](http://bloomlibrary.org/).
 
 The following are some characteristics of Awami’s smart font rendering.
 
@@ -14,27 +14,27 @@ The following are some characteristics of Awami’s smart font rendering.
 Awami Nastaliq supports all the special characters known to be used by languages of Pakistan. Below we give examples of some of those characters and how they can appear with missing or incomplete support in other fonts. (The problems -- shown below in red -- are demonstrated using Awami, but they all show rendering failures actually encountered with other popular fonts.) For instance, where the character is completely missing from the font, the software may substitute a glyph from another Arabic font. In other cases, an isolate form is used with no contextual shaping.
 
 ![Seen with four dots - U+075C](assets/images/MissingLetters2_Palula_red.png){width=30%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/MissingLetters2_Palula_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/MissingLetters2_Palula_red.png -->
 <figcaption>Seen with four dots - U+075C (used in Shina and Palula)</figcaption>
 
 ![Rnoon - U+06BB (used in Saraiki and Palula)](assets/images/MissingLetters1_Saraiki_red.png){width=30%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/08/MissingLetters1_Saraiki_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/08/MissingLetters1_Saraiki_red.png -->
 <figcaption>Rnoon - U+06BB (used in Saraiki and Palula)</figcaption>
 
 ![Seen with three dots above and below - U+069C (used in Palula - notice that the yeh with sideways noon ghunna mark is also incorrect in one example.)](assets/images/MissingLetters5_Palula_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/08/MissingLetters5_Palula_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/08/MissingLetters5_Palula_red.png -->
 <figcaption>Seen with three dots above and below - U+069C (used in Palula - notice that the yeh with sideways noon ghunna mark is also incorrect in one example.)</figcaption>
 
 ![Yeh with small V above - U+06CE (used in Balochi)](assets/images/MissingLetters3_Balochi_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/MissingLetters3_Balochi_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/MissingLetters3_Balochi_red.png -->
 <figcaption>Yeh with small V above - U+06CE (used in Balochi)</figcaption>
 
 ![Hah with small tah and two dots below - U+076F (used in Khowar)](assets/images/MissingLetters6_Khowar_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2019/06/MissingLetters6_Khowar_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2019/06/MissingLetters6_Khowar_red.png -->
 <figcaption>Hah with small tah and two dots below - U+076F (used in Khowar)</figcaption>
 
 ![Seen with small tah and two dots below - U+0770 (used in Khowar)](assets/images/MissingLetters4_Khowar_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2019/06/MissingLetters4_Khowar_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2019/06/MissingLetters4_Khowar_red.png -->
 <figcaption>Seen with small tah and two dots below - U+0770 (used in Khowar)</figcaption>
 
 ## Diacritic support
@@ -44,16 +44,16 @@ The highly calligraphic and sloping style of Nastaliq makes proper handling of d
 Awami Nastaliq includes support for a wide variety of diacritics in combination with all the special characters available in the font. The images below demonstrate how Awami’s special glyph positioning mechanism allows the diacritics to be shifted to avoid collisions that might otherwise occur.
 
 ![Diacritic support](assets/images/DiacCollisions1_Marwari_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions1_Marwari_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions1_Marwari_red.png -->
 
 ![Diacritic support](assets/images/DiacCollisions2_Marwari_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions2_Marwari_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions2_Marwari_red.png -->
 
 ![Diacritic support](assets/images/DiacCollisions3_Brahui_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions3_Brahui_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions3_Brahui_red.png -->
 
 ![Diacritic support](assets/images/DiacCollisions4_Balochi_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions4_Balochi_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/DiacCollisions4_Balochi_red.png -->
 
 
 
@@ -62,13 +62,13 @@ Awami Nastaliq includes support for a wide variety of diacritics in combination 
 Graphite’s smart shape-based kerning mechanism is used to both avoid collisions between calligraphic sequences and to provide the correct spacing between words.
 
 ![Correct spacing](assets/images/Spacing1_Shina_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing1_Shina_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing1_Shina_red.png -->
 
 ![Correct spacing](assets/images/Spacing2_Palula_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing2_Palula_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing2_Palula_red.png -->
 
 ![Correct spacing](assets/images/Spacing3_Balochi_red.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing3_Balochi_red.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Spacing3_Balochi_red.png -->
 
 
 ## Diagonal cluster fitting
@@ -80,24 +80,24 @@ The images below show some segments and word sequences with the distinctive clus
 The following examples show cluster fitting within a single word.
 
 ![Diagonal cluster fitting](assets/images/Fitting1Word1_Balochi.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word1_Balochi.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word1_Balochi.png -->
 
 ![Diagonal cluster fitting](assets/images/Fitting1Word2_Palula.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word2_Palula.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word2_Palula.png -->
 
 ![Diagonal cluster fitting](assets/images/Fitting1Word3_Balochi.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word3_Balochi.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting1Word3_Balochi.png -->
 
 Cluster fitting also occurs between words.
 
 ![Cluster fitting also occurs between words](assets/images/Fitting2Words1_Balochi.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words1_Balochi.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words1_Balochi.png -->
 
 ![Cluster fitting also occurs between words](assets/images/Fitting2Words2_Balochi.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words2_Balochi.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words2_Balochi.png -->
 
 ![Cluster fitting also occurs between words](assets/images/Fitting2Words3_Palula.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words3_Palula.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Fitting2Words3_Palula.png -->
 
 ## Variable word spacing
 
@@ -106,38 +106,38 @@ Communities that use Nastaliq-style script can have varying preferences about ho
 For this reason, Awami Nastaliq allows the user to choose among five levels of word spacing, depending on the needs of the expected readership. The image below demonstrates the five levels of word spacing.
 
 ![Variable word spacing](assets/images/WordSpacing.png){width=28%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/WordSpacing.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/WordSpacing.png -->
 
 ## Alternate letter forms
 
 Awami Nastaliq provides alternate forms of the letters shown below. These alternates can be selected within LibreOffice by modifying the font name or in Firefox using CSS - see [Features Demo](features) for a description of how to use these features.
 
 ![Medial heh goal (with or without hook)](assets/images/Feature_hehk_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hehk_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hehk_color.png -->
 <figcaption>Medial heh goal (with or without hook)</figcaption>
 
 ![Initial heh doachashmee (round or heart-shaped)](assets/images/Feature_hedo_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hedo_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hedo_color.png -->
 <figcaption>Initial heh doachashmee (round or heart-shaped)</figcaption>
 
 ![Lam with V (V located over stem or bowl on isolate and final forms)](assets/images/Feature_lamv_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_lamv_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_lamv_color.png -->
 <figcaption>Lam with V (V located over stem or bowl on isolate and final forms)</figcaption>
 
 ![Full stop (dash-like or dot-like)](assets/images/Feature_cv85_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_cv85_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_cv85_color.png -->
 <figcaption>Full stop (dash-like or dot-like)</figcaption>
 
 ![Sukun/jazm (open down or open left)](assets/images/Feature_cv78_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_cv78_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_cv78_color.png -->
 <figcaption>Sukun/jazm (open down or open left)</figcaption>
 
 ![Hamza (Urdu- or Arabic-style)](assets/images/Feature_hamz_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hamz_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_hamz_color.png -->
 <figcaption>Hamza (Urdu- or Arabic-style)</figcaption>
 
 ![Small nuqtas - Larger nuqtas enhance readability, but can cause problems with glyph collisions. It is possible to use smaller glyphs on initial, medial, and final forms.](assets/images/Feature_snuq_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_snuq_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_snuq_color.png -->
 <figcaption>Small nuqtas - Larger nuqtas enhance readability, but can cause problems with glyph collisions. It is possible to use smaller glyphs on initial, medial, and final forms.</figcaption>
 
 
@@ -146,14 +146,14 @@ Awami Nastaliq provides alternate forms of the letters shown below. These altern
 The diagonal nature of the Nastaliq style causes some of the letter sequences to get quite tall, which can result in collisions with the previous line of text. Awami includes a feature to use shorter forms of some of the letters to help avoid this problem. Letters that can be shortened include kafs and gafs (at or near the beginning of the sequence) and final forms of noon, seen, chotiyeh, lam, meem, and qaf.
 
 ![Kafs and gafs](assets/images/Feature_shrt1_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt1_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt1_color.png -->
 <figcaption>Kafs and gafs</figcaption>
 
 ![Finals - noon, seen, chotiyeh, lam, meem, qaf](assets/images/Feature_shrt2_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt2_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt2_color.png -->
 <figcaption>Finals - noon, seen, chotiyeh, lam, meem, qaf</figcaption>
 
 ![Both](assets/images/Feature_shrt3_color.png){width=22%}
-<!-- PRODUCT SITE IMAGE SRC http://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt3_color.png -->
+<!-- PRODUCT SITE IMAGE SRC https://software.sil.org/awami/wp-content/uploads/sites/33/2017/07/Feature_shrt3_color.png -->
 <figcaption>Both</figcaption>
 
