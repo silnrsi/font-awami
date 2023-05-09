@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="passes-and-processing">Passes and Processing</h1>
+    <h2 id="substitution">Substitution</h2>
+    <p>As mentioned above, the substitution passes need to use backwards logic in order for the latter glyphs in the sequence to influence the previous ones. This happens particularly in passes 2-5.</p>
+    <p><strong>Pass 1:</strong> the nuqtas and similar glyph elements (those that are considered an intrinsic part of the character - hamzas, maddas, rings, small tahs, squiggles, etc.) are separated from the base. The class cNuqtaLike contains all these. Wrinkle: in some cases we insert a glyph that represents the lack of a nuqta, for instance for a dotless qaf.</p>
+    <p>We also reorder marks to reflect the desired order described in UTR #53 - Unicode Arabic Mark Reordering.</p>
+    <p>Wrinkle: we convert any NFD forms to NFC and then reprocess. Why??? I think it simplifies the code.</p>
+    <p><strong>Pass 2:</strong> here the final forms are created.</p>
+    <p>The initials and medials are replaced with pseudo-glyphs labeled “raw,” which helps us recognize which forms have been processed (or not) in later passes. There are separate initial and medial raw glyphs.</p>
+    <p><strong>Pass 3:</strong> we generate contextual forms for some finals, such as reh, beh, and chotiyeh.</p>
+    <p>We also create ligatures for sequences such as “Allah” and honorific phrases. We don’t handle tall sloping words ("Thessalonians," "Timothy") at this point because it works better to do this after we’ve generated the contextual forms.</p>
+    <p>A start-of-line slot attribute is set at the beginning of the sequence which is later used for adjusting the side-bearing of kafs and bariyehs (see pass 20).</p>
+    <p><strong>Pass 4:</strong> this is where medial forms are created. After replacing a medial, we use the GDL stream position marker (<code>^</code>) to back up the stream position to before the previous glyph.</p>
+    <p>All the rules are roughly of the form</p>
+    <pre><code>     medial-raw   &gt;   medial  /  ^  pre-context  _  medial-or-final;</code></pre>
+    <p>When we start pass 4, all the glyphs except the final are considered “raw”, so at first only the raw glyph just before the final will match any rule. After replacing that raw glyph with a medial, we back up the stream position to before the previous raw glyph. Now that newly-current raw glyph plus the following medial will match, and we back up again. The process continues until we have replaced the second glyph in the sequence. The first is handled by Pass 5.</p>
+    <p><strong>Pass 5:</strong> replace the initials.</p>
+    <p><strong>Pass 6:</strong> here we replace any remaining isolates with the forms that include the nuqtas. For instance, isolate seen + triple nuqta is turned into an isolate sheen.</p>
+    <p>On the other forms, we replace any combinations of upper+lower nuqtas (e.g., tteh, noon-ring) with separate glyphs for the upper and lower so that we can adjust their positions independently.</p>
+    <p>We insert a null kaf-top glyph which can be used to create the alternate-height kafs/gafs. We need to insert it during the substitution process since insertion is not allowed during positioning.</p>
+    <p>Now that we have all the contextual forms, it is a good time to generate ligatures for tall sloping words for which we specially designed forms, such as “Thessalonians” and “Timothy.”. Normally we do ligature placement in Pass 3, but (if I remember correctly) some of the sub-forms of “Thessalonians” (“Thessaloni”) would have to be handled by the medial-replacement rules, which would get complicated.</p>
+    <p>This pass also handles spanning signs for data in right-to-left order. (This shouldn’t be necessary, but some applications incorrectly pass this data in RTL order instead of LTR.)</p>
+    <p><strong>Pass 7:</strong> this is a left-to-right pass, so it assumes the data is being sent in left-to-right order. It handles spanning signs where the data is LTR and converting from Arabic and Latin punctuation, which is needed for Latin text. It also handles Latin diacritics.</p>
+    <p>Note that Latin data, which is supported by this font, will generally not match any of the rules in the right-to-left passes (1-6). Similarly, Arabic data will not match rules in Pass 7.</p>
+    <h2 id="positioning">Positioning</h2>
+    <p>(In the following discussion, the overall pass number of each pass is shown in parentheses, since that is what is shown in Graide.)</p>
+    <p><strong>Pass 1 (8):</strong> Basic cursive attachment happens at this point, using the “interfaces” described in <a href="dev_3_interfaces.html">Glyph Interfaces and Suffixes</a>.</p>
+    <p>Note that in the font itself, the attachment points are labeled specifically according the interface involved (e.g., <code>exit\_behFinal</code>, <code>\_exit\_meem</code>), but the step that auto-generates the GDL code from the font simplifies these down to simply <code>exit</code> and <code>entr</code>. The GDL rules know which forms to attach to which.</p>
+    <p>While we do the attachments, we keep a running calculation of the length of sequences and store it in a user-defined slot attribute <code>seqWidth</code> (<code>user5</code>). This is used later in the process to fine-tune kerning.</p>
+    <p>This is also a good opportunity to initialize some attributes on spaces since they are not involved in the cursive attachment.</p>
+    <h3 id="passes-9---11-nuqta-positioning">Passes 9 - 11: Nuqta positioning</h3>
+    <p><strong>Pass 2 (9):</strong> Next we attach nuqtas (and similar graphical elements that are considered inherent parts of characters).</p>
+    <p>The bariyeh requires a fair bit of special treatment because of the fact that nuqtas in preceding glyphs need to be attached below its tail. This can affect several characters prior to the bariyeh.</p>
+    <p>Other elements that need special attention are hamzas, bars, digits, rings, and hooks.</p>
+    <p>This pass is a convenient place to deal with spanning signs, since they don’t interact with nuqtas.</p>
+    <p><strong>Pass 3 (10):</strong> This pass is used to set the attributes that are used for collision fixing on the nuqtas and similar elements (rings, hooks, bars, etc.).</p>
+    <p>Before getting into the rules themselves, the glyph table is used to set a lot of default values of collision attributes. The class and order attributes indicate that the nuqtas are to be positioned closer to the base than diacritics, which are handled later. Of special note is the fact that nuqtas should be laid out in a sequence, and so we use the sequence attributes to define their relationships to each other. To further complicate the process, alternate-tooth behs are put in different sequence classes so that their associated nuqtas also alternate in height.</p>
+    <p>As a rule, nuqtas tend to be positioned slightly to the left of their base glyph. It’s okay for those on initials to be shifted further to the right if necessary.</p>
+    <p>There are quite a few special cases, where the legal destination box needs to be adjusted or the margin increased to make the result more clear. Sometimes the nuqtas are explicitly shifted before the collision avoidance algorithm is run.</p>
+    <p>In this pass, the exclusion glyphs come into play. They in effect extend the black space associated with a glyph so that the collision avoidance routine will treat the extended space as off-limits. Right now exclusion glyphs are used only for kafs and gafs. They extend the tops of the kafs and gafs so that nuqtas will not be placed above them.</p>
+    <p><strong>Pass 4 (11):</strong> The actual collision-fixing algorithm is run. It could be included as part of the previous pass, but using a separate pass for it makes debugging easier in Graide.</p>
+    <h3 id="passes-12---14-height-related-adjustments">Passes 12 - 14: Height-related adjustments</h3>
+    <p>For a more extensive discussion of kaf alternates, see below.</p>
+    <p>There are two user-defined slot attributes that are used for this mechanism: <code>tooHigh</code> (<code>user3</code>) is set to true when we recognize that a glyph is so high that it may extend above the ascent height defined for the font, risking being clipped or creating a collision with the line above. We use to the read-only position.y attribute to figure this out. <code>reattached</code> (<code>user4</code>) is needed because when we substitute short forms in pass 6, they effectively become detached from their previous glyph. The <code>reattached</code> attribute helps us keep manage the process of reattaching them.</p>
+    <p><strong>Pass 5 (12):</strong> First we substitute taller kafs in situations where we need them - where they are preceded by nuqtas and diacritics for which there is not space. (See <a href="dev_X_altkafs.html">Alternate Height Kafs and Gafs</a>).</p>
+    <p>Then we substitute shorter kafs in situations where the sequences get too high, or to avoid collisions between adjacent kafs and gafs.</p>
+    <p><images of default and alternate-height kafs></p>
+    <p>(It’s possible that it would make sense to move the kaf alternates before positioning the nuqtas. We do need to take the presence of nuqtas into account, but the exact position of them is usually not significant, except in a few special cases where nuqtas are shifted in addition to changing the height of the kafs. The kaf changes definitely need to happen after the cursive attachments, since we need to do that before we can figure out how high things are.)</p>
+    <p>Once nuqtas and similar elements have been positioned more-or-less correctly, we can turn off the collision fixing for most of them. The exceptions are the ones that are close to the adjusted kafs, since the new kafs may have created collisions that weren’t there before.</p>
+    <p><strong>Pass 6 (13):</strong> The main thing this pass does is to make adjustments for sequences that are too high. As an efficiency measure, the pass is not run if the feature is turned off.</p>
+    <p>One of the adjustments is the substitution of a short final form (see <a href="dev_X_shortfinals.html">Short Finals</a>). The tricky thing is that while the final form is the glyph that will be modified, it is the beginning of the sequence where we recognize that the sequence is too high. So during this pass we propagate the <code>tooHigh</code> flag from where we detect the problem down to the final glyph in the sequence.</p>
+    <p>Another kind of adjustment we make is to push down nuqtas and diacritics at the beginning of the word that stick up too high.</p>
+    <p><strong>Pass 7 (14):</strong> There are two kinds of attachments that need to happen in this pass.</p>
+    <p>First we attach the kaf bases to their preceding bases, if any. We have to do this in a separate pass from the one where the substitution was made, due to an infelicity in the Graphite engine.</p>
+    <p>Then we attach the alternate height kaf tops to their bases.</p>
+    <p>We also have to reattach sequences to any short final forms that have been substituted. Even though the attachment is still present in the data (in the sense of a reference to the parent glyph), it has to be redone in order to force the engine to recalculate the position of the penultimate base glyph. The same applies to nuqtas and similar elements.</p>
+    <p><image of unattached and attached short final></p>
+    <h3 id="passes-15---19-diacritic-positioning-and-kerning">Passes 15 - 19: Diacritic positioning and kerning</h3>
+    <p><strong>Pass 8 (15):</strong> Diacritics are attached. Most diacritics are attached using the mLower and mUpper AP pairs. Dagger alefs can also use the mUpperLam since it is positioned specially on the lam (slightly to the left). Diacritics on alternate-height kafs/gafs must be attached to the top, not the kaf base.</p>
+    <p>There are a few special positioning cases that are handled in this pass.</p>
+    <p><strong>Pass 9 (16):</strong> This is a pass that does two left-over things that are difficult to do in previous passes:</p>
+    <p>Hamzas sometimes behave like nuqtas and sometimes like diacritics. In this pass any hamzas that were not treated like nuqtas will be attached like diacritics.</p>
+    <p>Reattaching certain marks to alternate height kafs (normally occurring in the previous pass) doesn’t happen properly when the kaf is followed by another kaf or gaf, due to the complexity of the rules. In this pass we just reattach them all.</p>
+    <p><strong>Pass 10 (17):</strong> this pass sets up kerning pairs which will actually be used in the final collision-fixing pass. The kerning-pair mechanism makes use of a group of custom glyph attributes that are needed for specific tricky glyphs:</p>
+    <ul>
+    <li>kernPreAlef - kerning needed before isolate alef forms</li>
+    <li>kernPreDal - kerning needed before isolate dal, thal, etc</li>
+    <li>kernPreZain - kerning needed before isolate zain, jeh, etc.</li>
+    <li>kernPreReh - kerning needed before isolate reh forms (other than the ones included in the zain list)</li>
+    <li>kernPreWaw - kerning needed before isolate waw forms</li>
+    <li>kernPreJeemAinIso - kerning needed before isolate jeem and ain forms</li>
+    <li>kernPreLamAlef - kerning needed before lam-alef ligature</li>
+    <li>kernPreExclam - kerning needed before Arabic exclamation mark</li>
+    <li>kernPreMeemJeem - kerning needed before isolate meem or initial jeem</li>
+    </ul>
+    <p>These glyph attributes are set to zero for the vast majority of glyphs, but certain ones are assigned other values. There is also a user-defined slot attribute called <code>pairKern</code> that takes this value in the appropriate context. The <code>pairKern</code> attribute is available to all the rules that set up the kerning done by the collision-fixing mechanism. There are also a few situations where <code>pairKern</code> is set directly.</p>
+    <p><em>Example:</em> gWaw is assigned the glyph attribute <code>kernPreAlef = -30m</code>. When it is followed by an isolate alef form, the rule in pass 10 setting the <code>pairKern</code> slot attribute is fired:</p>
+    <p><code>cKernable { pairKern = kernPreAlef } /  _ ^ MARKS cKernIgnore? cAlefIso;</code></p>
+    <p>Then in pass 11, <code>pairKern</code> is used to calculate the <code>collision.margin</code> that is needed.</p>
+    <p>This pass also includes a lot of special cases where diacritics need to be shifted around that won’t be handled adequately by the collision fixing mechanism.</p>
+    <p><strong>Pass 11 (18):</strong> this pass sets up collision fixing parameters for diacritics and kernable glyphs.</p>
+    <p>There are quite a few special cases that are handled in this pass by adjusting the collision parameters.</p>
+    <p><strong>Pass 12 (19):</strong> this pass runs the collision fixing for diacritics and kerning. (Again, it could be included as part of the previous pass, but using a separate pass for it makes debugging easier in Graide.)</p>
+    <h2 id="final-passes">Final passes</h2>
+    <p>There are a few tricky bits that interact with the other passes such that it helps to move them into their own passes.</p>
+    <p><strong>Pass 13 (20):</strong> There are a handful of glyphs with shapes that need special treatment with regard to the right margin. Back in Pass 3 we marked the very first glyph in the data with a slot attribute called <code>startOfLine</code>. In this pass, any of certain initial glyphs are adjusted relative to the right (leading) margin by modifying their advance widths. For instance, the beh+kaf combination needs to be shifted left to accommodate the upper kaf stroke, rather than aligning the right side of the beh with the margin. Also there are some nuqtas on initial forms, such as the peh, that require the margin to be adjusted.</p>
+    <p><strong>Pass 14 (21):</strong> Certain low punctuation. This has to be done after the main kerning pass (pass 19) in order to correct over-kerning that happens there.</p>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

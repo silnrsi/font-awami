@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="alternating-beh-teeth">Alternating Beh Teeth</h1>
+    <p>One of the distinctive features of the Nastaliq style is the alternating beh teeth. A sequence of beh-like forms (including, of course, teh, theh, peh, medial noon, etc) will alternate between “high tooth” (point) and “low tooth” (bump) forms. Moreover, the last character in the sequence always takes a specific form depending on what follows it, and any others alternate backwards. (This is one of the reasons for the backwards logic mentioned previously.)</p>
+    <p>If you are thinking that it would be strange to have such a long sequence of beh forms, remember they are also used for teh, theh, peh, noon, yeh, and others, as shown below.</p>
+    <p>Which form the final beh glyph takes depends on what comes after. In the examples below, the bolded glyph is the one that affects the forms of the preceding glyphs.</p>
+    <ul>
+    <li>Beh + beh + beh + <strong>beh + beh</strong> &gt;&gt; initial-low-tooth + medial-low-tooth + medial-high-tooth + <strong>pre-final (low) + final</strong></li>
+    </ul>
+    <p><img src="assets/images/dev_doc/BehTeeth_bbbbb_marked.png" /></p>
+    <ul>
+    <li>Beh + beh + <strong>beh + seen</strong> &gt;&gt; initial-low-tooth + medial-low-tooth + <strong>medial high tooth + final-seen</strong></li>
+    </ul>
+    <p><img src="assets/images/dev_doc/BehTeeth_bbbs_marked.png" /></p>
+    <ul>
+    <li>Beh + beh + <strong>beh + feh</strong> &gt;&gt; initial-high-tooth + medial-high-tooth + <strong>medial-low-tooth + final-feh</strong></li>
+    </ul>
+    <p><img src="assets/images/dev_doc/BehTeeth_bbbf_marked.png" /></p>
+    <ul>
+    <li>Beh + beh + beh + <strong>beh + sad</strong> + qaf &gt;&gt; initial-low-tooth + medial-low-tooth + medial-high-tooth + <strong>medial-low-tooth + ain</strong> + qaf</li>
+    </ul>
+    <p><img src="assets/images/dev_doc/BehTeeth_bbbbaq_marked.png" /></p>
+    <ul>
+    <li>Lam + beh + beh + <strong>beh + seen</strong> &gt;&gt; initial-lam + medial-high-tooth + medial-low-tooth + <strong>medial-high-tooth + final-seen</strong></li>
+    </ul>
+    <p><img src="assets/images/dev_doc/BehTeeth_lbbbs_marked.png" /></p>
+    <p>In fact, the seen is the only character other than another beh form that is preceded by a high-tooth beh. Also note that the initial behs <em>match</em> the following tooth height rather than alternating. (I worked on this font for 9 years before I realized that. :-) )</p>
+    <p>What may be confusing about the design of the font is that the beh’s high tooth actually occurs on the preceding glyph. As shown below, glyphs with the .beM1 suffix have a high curved exit that functions as the high tooth of the following beh. Glyphs with the .beM2 suffix have a low bump at the exit that creates the low tooth of the following beh.</p>
+    <p><img src="assets/images/dev_doc/SadBehHighLowTeeth.png" /></p>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

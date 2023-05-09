@@ -123,6 +123,8 @@ code {
     background-color: #edf2f5;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.9rem;
+    padding-right: 0.2em;  /*SJC*/
+    padding-left: 0.2em;   /*SJC*/
 }
 
 td code {
@@ -150,6 +152,7 @@ figcaption {
     color: #6c757d;
     text-align: left;
     caption-side: bottom;
+    font-size: 90%;           /*SJC*/
 }
 
 table {
@@ -193,6 +196,8 @@ kbd{
 }
 
 footer {
+	  font-size: 85%;       /*SJC*/
+	  color: #6c757d;       /*SJC*/
     margin-top: 2rem;
     margin-bottom: 1rem;
 }

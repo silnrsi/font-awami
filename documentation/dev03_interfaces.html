@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="glyph-interfaces-and-suffixes">Glyph Interfaces and Suffixes</h1>
+    <p>The calligraphic nature of the Nastaliq style means that a distinctive visual connection is needed between any two characters. For instance, the connection between seen and sad is different from the connection between the seen and jeem or the seen and lam, so there needs to be separate forms of the seen to connect to each following character.</p>
+    <img src="assets/images/dev_doc/SeenForms_red.png" alt="Seen forms with various connections" />
+    <figcaption>
+    Seen forms with various connections
+    </figcaption>
+    <p>As a rule, the shape of the connection is determined by the second character of the pair, although there are exceptions. In some cases (especially for beh-like forms), there exist sequences of three characters, where the third character affects the shape of the first.</p>
+    <p>We define a set of “interfaces” which indicate the shape of the connection. The interface specifies the exit of the first glyph, the entrance to the second glyph, and the way they connect. Any two glyphs that are designed to support the interface should connect nicely.</p>
+    <p>For most characters, all of their medial/final forms will use the same interface for the entrance (ie, the shape of the right-hand side). For instance, the entrance of all the medial/final sads are identical, so any “sad”-type exit (left side) will attach to any medial or final sad entrance. The preceding glyphs have the .sd suffix indicating that they are designed with a “sad” exit to support the “sad” interface, so they can connect to a sad.</p>
+    <p>In the examples below, notice how any of the glyphs with sad exits (right-hand column) will connect with any of the sads (left-hand column):</p>
+    <img src="assets/images/dev_doc/SadInterface.png" alt="Sad interface entrances and exits" />
+    <figcaption>
+    Sad interface entrances and exits
+    </figcaption>
+    <p>Similarly, any of the glyphs with meem-style exits on the right will connect with any meem on the left.</p>
+    <img src="assets/images/dev_doc/MeemInterface.png" alt="Corresponding meem interface entrances and exits" />
+    <figcaption>
+    Corresponding meem interface entrances and exits
+    </figcaption>
+    <p>Of course there are exceptions and complications. The beh requires quite a few interfaces due to signficant variation in the beh forms. There is an alternate meem form that needs a different interface, as well as the “kashida”-style or toothless seen (which occurs before another seen). The heh-goal requires one interface for the medial and another for the final.</p>
+    <p>In addition, there are three suffixes that are each used for two distinct interfaces. The final chotiyeh, final qaf/waw, and reh have two final forms that are chosen based on the preceding glyph. (The final qaf and waw forms both use the .qf interfaces. There are two distinct connections, but it turns out that the forms of the qaf and waw do not need to be significantly different, so perhaps the interfaces could be merged.)</p>
+    <h2 id="suffixes-for-principal-interfaces">Suffixes for Principal Interfaces</h2>
+    <p>Here is a list of the interfaces identified by suffix and the glyphs they connect to:</p>
+    <ul>
+    <li>default (no suffix) - alef, lam, kaf, dal</li>
+    <li>.ai - ain</li>
+    <li>.be - beh (default)</li>
+    <li>.beM1 - high-tooth beh</li>
+    <li>.beM2 - low-tooth beh (including an alternate final beh)</li>
+    <li>.benn - beh that occurs before a final noon</li>
+    <li>.behg - beh that occurs before a final heh-goal</li>
+    <li>.bere - beh that occurs before a final reh</li>
+    <li>.beF - final beh (standard; an alternate final beh uses .beM2)</li>
+    <li>.by - bariyeh (final)</li>
+    <li>.ch - final chotiyeh (two interfaces)</li>
+    <li>.fe - feh (and medial qaf)</li>
+    <li>.hd - heh-doachaschmee</li>
+    <li>.hgM - medial heh-goal</li>
+    <li>.hgF - final heh-goal</li>
+    <li>.jm - jeem</li>
+    <li>.mm - meem (standard)</li>
+    <li>.mmX - alternate medial meem (round form)</li>
+    <li>.nn - final noon</li>
+    <li>.qf - final qaf and waw (two interfaces)</li>
+    <li>.re - reh (final) (two interfaces)</li>
+    <li>.sd - sad, also the rounded form of kaf that occurs before a lam and alef</li>
+    <li>.sn - seen (standard)</li>
+    <li>.snsn - flat “kashida”- style seen that occurs before another seen</li>
+    <li>.ta - tah</li>
+    <li>[.tmF - final teh marbuta - not currently used; instead we use the default forms here]</li>
+    </ul>
+    <p>These exist for virtually all dual-connecting characters, in both initial and medial forms. (Note that 25 interfaces * 2 contexts = 50 forms for each character class.)</p>
+    <p>Here we show <a href="dev_interfaceimages.html">images of all the interfaces listed above</a>.</p>
+    <h2 id="other-suffixes">Other Suffixes</h2>
+    <p>In addition to the suffixes corresponding to the principle interfaces, there are other suffixes that are used. An underscore in the suffix indicates the preceding character(s): - nn_hgbm - form of medial beh that occurs heh-goal, meem, etc. and final noon (see class c_preBehNn_hgbm) - sn_sn - flat toothless seen that occurs between two other seens - _stfh - form of final qaf and waw that follows initial seen, tah, etc. (see class cPreQw_stfh) - _bfkl - final forms of beh and chotiyeh that occur before beh, feh, kaf, etc. (see classes c_preBe_bfkl and c_preChF_bfkl) - _hgM - form of final reh that follows medial heh goal (see c_preReF_hgM) - _jkl - form of final reh that follow jeem, kaf, lam, and initial beh (see c_preReF_jkl)</p>
+    <ul>
+    <li>_sshg - form of final reh that follows seen, sad, or heh-goal (see c_preReF_sshg - currently not used)</li>
+    <li>XX_ss - beh forms following sad or seen - OBSOLETE</li>
+    <li>hgF_be - OBSOLETE</li>
+    </ul>
+    <p>Suffixes are used to indicate some special-purpose contextual forms as well:</p>
+    <ul>
+    <li>.al - used for lams that are followed by alef</li>
+    <li>.kf - short or wide forms that occur before a kaf/gaf, to avoid collisions</li>
+    <li>.bekl - wide form of jeem occurring before teh/theh + kaf/gaf/lam/alef, to avoid collisions</li>
+    <li>.bekf - short form of tah occurring before beh + kaf/gaf, to avoid collisions</li>
+    <li>.kf_lm - special form of gaf between a lam and kaf, to avoid collisions</li>
+    </ul>
+    <p>Other suffixes include:</p>
+    <ul>
+    <li>R - wider form to allow room for a ring</li>
+    <li>short</li>
+    <li>tall</li>
+    <li>flat</li>
+    <li>lowentry - tall kaf/gaf forms with adjusted AP to make it taller, used to avoid collisions</li>
+    <li>squiggle - kaf form with squiggle</li>
+    </ul>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

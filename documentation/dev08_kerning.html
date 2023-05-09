@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="kerning-and-overlaps">Kerning and Overlaps</h1>
+    <p>Kerning in Awami is rather complicated, being affected by a number of factors:</p>
+    <ul>
+    <li>The natural side-bearings of the two adjacent glyphs</li>
+    <li>Adjusted fake side-bearings (indicated by a special AP)</li>
+    <li>Pair kerning</li>
+    <li>The actual shape of the glyph (as calculated by the kerning slices)</li>
+    <li>The presence of spaces between the adjacent glyphs</li>
+    </ul>
+    <h2 id="case-1-natural-side-bearings">Case 1: natural side bearings</h2>
+    <p>A simple case to consider is dal + lam. The LSB of the dal = 97 and the RSB of the lam = 158. Together these add up to 255, which is the margin assigned to the dal. The collision avoidance mechanism uses that margin to maintain 255 units between the actual shapes of the two glyphs (which might be curved in interesting ways).</p>
+    <p>In the image below, the green area between the dal and the right-most jagged line represents the margin of 255 units. The two glyphs are kerned so that the left edge of the dal offset by the margin and the right edge of the lam just touch; this point is indicated in red. Notice that the slight curve in the lam causes the glyphs to be positioned more closely than they would be if the lam had a truly straight vertical side.</p>
+    <img src="assets/images/dev_doc/NaturalSideBearings.png" alt="Natural side bearings of dal and lam" />
+    <figcaption>
+    Natural side bearings of dal and lam.
+    </figcaption>
+    <h2 id="case-2-natural-side-bearings-plus-pair-kerning">Case 2: natural side bearings plus pair kerning</h2>
+    <p>Pair kerning is used to fine-tune spacing between certain glyphs. A useful example is waw + alef. The waw has an LSB of 98 and the alef has an RSB of 109. To this we add a pair-kerning value of -30 in order to tighten up the glyphs slightly. The margin assigned to the waw is 98 + 109 - 30 = 177.</p>
+    <p>The images below show the pair of the glyphs with and without the pair kerning.</p>
+    <img src="assets/images/dev_doc/SideBearingsPairKerning.png" alt="Waw and alef with and without pair kerning" />
+    <figcaption>
+    Waw and alef with and without pair kerning.
+    </figcaption>
+    <p>Part of our goal with pair kerning is to get spacing nicely consistent among characters like alef, dal, reh, and waw.</p>
+    <p>Pair kerning is implemented using a set of glyph attributes:</p>
+    <ul>
+    <li>kernPreAlef</li>
+    <li>kernPreDal</li>
+    <li>kernPreReh</li>
+    <li>kernPreZain</li>
+    <li>kernPreWaw</li>
+    <li>kernPreLamAlef</li>
+    <li>kernPreJeemAinIso (isolate jeem and ain)</li>
+    <li>kernPreExclam</li>
+    </ul>
+    <p>These attributes are set for glyphs that need special treatment before the relevant following glyphs. Then there is a corresponding set of rules that set a user-defined slot attribute called <code>pairKern</code> (<code>user2</code>) when triggered by the presence of the relevant glyphs. In addition, there are a handful of special rules that set the <code>pairKern</code> attribute for more specific cases. Pair kerning is applied in pass 17.</p>
+    <h2 id="case-3-adjusted-fake-right-side-bearing">Case 3: adjusted fake right side bearing</h2>
+    <p>This is where things get the most complicated. The kaf glyph serves as a useful illustration due to its distinctive shape:</p>
+    <img src="assets/images/dev_doc/KafShape.png" alt="Isolate kaf" />
+    <figcaption>
+    Isolate kaf
+    </figcaption>
+    <p>The side bearings of glyphs have a direct effect at the right and left margins. For the kaf, the right side bearing is slightly negative (shown in the diagram below), causing the upper tip of the kaf to protrude slightly into the right margin when it occurs at the beginning of a line. In the middle of the line, though, a very different kerning process needs to happen.</p>
+    <p>Because the built-in kerning process works with the actual, visible edge of the glyph, most preceding glyphs will be automatically kerned relative to the vertical stroke, not the actual bounding box, and this is what we want for proper Nastaliq-style kerning. But consider that without any special process, the negative RSB of the kaf (-101) would generally cancel out much of the LSB of the preceding glyph (usually about 103) and produce a margin of something close to zero, resulting in, e.g.,</p>
+    <img src="assets/images/dev_doc/KafBariyehBadKern.png" alt="Bad kerning of bariyeh and kaf" />
+    <figcaption>
+    Bad kerning of bariyeh and kaf
+    </figcaption>
+    <p>This is clearly unacceptable, so how do we indicate how much additional space is needed? One way would be to set a “kernPreKaf” pair kerning for every final glyph in the font, but it seemed preferable to find a way to indicate it as part of the kaf glyph itself (since the issue related to the shape of the kaf).</p>
+    <p>So what we do is define a point on the glyph that serves as a fake right edge of the bounding box for the sake of kerning. This is done using an attachment point (although it is not used for attachment, and the y coordinate is irrelevant) called <code>kernBbRight</code>. We set it inside the advance width, and the distance inside indicates the functional RSB that we want to use for the sake of kerning. The image below shows that placing the <code>kernBbRight</code> point at 3060 creates an RSB of 150.</p>
+    <img src="assets/images/dev_doc/KafKernDetail.png" alt="Side bearings and fake RSB for kaf" />
+    <figcaption>
+    Side bearings and fake RSB for kaf
+    </figcaption>
+    <p>When combined with the LSB of a typical preceding glyph (103), this results in a kerning margin of 253.</p>
+    <p>Note that this has the counterintuitive effect that the further right the point is located, the closer it will be to the advance width, and therefore the smaller the RSB and the tighter the kerning. The further left the point is located, the further the distance from the advance width and the looser the kerning. This is shown in the images below that correspond to the possible values of <code>kernBbRight</code> above.</p>
+    <img src="assets/images/dev_doc/KafBariyehKernSettings.png" alt="Effect of various values of kernBbRight on kerning tightness" />
+    <figcaption>
+    Effect of various values of kernBbRight on kerning tightness
+    </figcaption>
+    <p>Maybe a simpler approach would be to just hard-code a rule that sets a <code>pairKern</code> value to 251 for all glyphs that occur before a kaf, so that the margin factor of the kaf would end up = -101 + 251 = 150.</p>
+    <h2 id="case-4-adjusted-fake-left-side-bearing">Case 4: adjusted fake left side bearing</h2>
+    <p>A similar mechanism exists to handle kerning on the left side of a problematic glyph. An example of where it is used is the final reh. This form has a significant negative LSB to account for the extended tail, which means that there is a potential for the tail of the reh to extend significantly into the left margin:</p>
+    <img src="assets/images/dev_doc/RehLSB.png" alt="Reh&#39;s negative left side-bearing" />
+    <figcaption>
+    Reh's negative left side-bearing
+    </figcaption>
+    <p>Again, in the middle of a line, this negative number effectively cancels out the RSB on the following glyph, resulting in no margin.</p>
+    <p><img src="assets/images/dev_doc/RehLamBadKern.png" /></p>
+    <p>Creating an alternate side-bearing for the use of kerning fixes the problem.</p>
+    <p><img src="assets/images/dev_doc/RehLamGoodKern.png" /></p>
+    <p>(Note: I’d expect that there shouldn’t be much need for this mechanism on the left side of the glyph, due to the fact that the left-hand margin of the text is usually not so critical, so we should usually be okay with setting the LSB appropriately for kerning rather than the end of the line. But in fact there are quite a few glyphs that have <code>kernBbLeft</code> set. This might be worth reviewing.)</p>
+    <h2 id="case-5-intervening-spaces">Case 5: intervening spaces</h2>
+    <p>Spaces are handled by calculating the kerning as if the space is not there, and then simply adding the amount of space needed for the space character(s). The image below shows (right to left) no space, a narrow space, a standard space, and two spaces.</p>
+    <p><img src="assets/images/dev_doc/InterveningSpaces.png" /></p>
+    <h2 id="overlaps">Overlaps</h2>
+    <p>The Graphite kerning mechanism is also used to create overlapping diagonal segments, as is seen in proper (handwritten) Nastaliq calligraphy. A negative kerning value is used to move two segments closer together in order to create the overlap. The image below shows some overlaps:</p>
+    <img src="assets/images/dev_doc/Overlaps.png" alt="The brown areas indicate overlaps, typical of properly written Nastaliq." />
+    <figcaption>
+    The brown areas indicate overlaps, typical of properly written Nastaliq.
+    </figcaption>
+    <p>There are a number of tricks that we use to fine-tune the amount of overlap.</p>
+    <h3 id="minkern-and-minkerndelta">MINKERN and minKernDelta</h3>
+    <p>We define a global constant, a minimum kern that indicates the largest negative shift. (Originally the idea was to allow different degrees of kerning depending on the spacing tightness, but I ended up not using that approach.) The default <code>MINKERN</code> value is -700m, which permits a fairly small overlap (about the width of a waw), but other factors can also be included.</p>
+    <p>In a few situations we include a <code>minKernDelta</code> factor. For rehs with long tails, we use <code>minKernDelta</code> to allow extra kerning. For punctuation, we use it to cancel out <code>MINKERN</code> and thereby only allow an exact amount of kerning.</p>
+    <h3 id="short-sequences">Short sequences</h3>
+    <p>One of the challenges is that short sequences of one or two characters can get “lost” underneath longer following sequences. But longer sequences don’t have that problem so more kerning is appropriate.</p>
+    <p>For example, in the image below, the reh and beh+reh get lost under the sequence that follows them, while the longer sequences are okay:</p>
+    <img src="assets/images/dev_doc/ShortSeqFullKern.png" alt="The maximum kerning is less than ideal for short sequences." />
+    <figcaption>
+    The maximum kerning is less than ideal for short sequences.
+    </figcaption>
+    <p>To address this, we measure the length of a sequence as we attach glyphs; the <code>seqWidth</code> slot attribute keeps track of the total. If the sequence width on the final glyph is less than a certain value, that indicates a short sequence and the width is taken into account, but over a certain threshold, the width is ignored. (In other words, long sequences can’t necessarily be kerned as much as possible; other limits still apply.) These thresholds are rather arbitrary, determined by experimentation.</p>
+    <p>This shows the result with the kerning on the short sequences limited as described above:</p>
+    <img src="assets/images/dev_doc/ShortSeqFixedKern.png" alt="Restricting kerning for short sequences produces a better result." />
+    <figcaption>
+    Restricting kerning for short sequences produces a better result.
+    </figcaption>
+    <h3 id="low-punctuation">Low punctuation</h3>
+    <p>Another kerning issue involves low punctuation, such as commas, periods, etc. A design question is whether low punctuation should be kerned under the following sequence where possible, or whether punctuation should interrupt the overlapping. In other words, which of the two results below is preferable?</p>
+    <img src="assets/images/dev_doc/LowPunct.png" alt="Two approaches to kerning low punctuation" />
+    <figcaption>
+    Two approaches to kerning low punctuation
+    </figcaption>
+    <p>Currently we have implemented the first, where the full stop following the heh-goal+bariyeh kerns underneath the word starting with teh+ain. In order to achieve this, we include the punctuation within the sequence when we compute <code>seqWidth</code>.</p>
+    <p>Apparently we ran into a little problem where with the standard kerning mechanism, the punctuation can end up too tight. The cleanest way to fix that, unfortunately, was to create a little clean-up pass at the very end. Also unfortunately, I don’t have an example to show why this is necessary. I have a question whether it is in fact needed, but I don’t want to change it when nobody is complaining.</p>
+    <p>An unresolved question is whether the full stop should behave differently from other punctuation such as the comma. That is, should the full stop break the kerning even though other punctuation does not? Currently they are behaving identically.</p>
+    <p><em>Note: it may seem unnecessarily convoluted to use all these mechanisms to control kerning. But it seems that by using a mixture of rules, defined constants, and slot attributes, it has been possible to keep the number of rules down to a reasonable amount; otherwise I have a concern about exploding the list of rules and the finite state machines inside the font.</em></p>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

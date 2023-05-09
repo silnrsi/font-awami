@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="naming-conventions">Naming Conventions</h1>
+    <h2 id="class-names">Class names</h2>
+    <p>Identifiers starting with ‘c’ generally indicate a class. Those starting with ‘cs’ are classes used for substitution, and the elements of the class must match its corresponding class.</p>
+    <h2 id="glyph-names">Glyph names</h2>
+    <p>The names of glyphs in the UFO are of the form: &lt;script&gt;&lt;Base&gt;&lt;Seq-position&gt;.&lt;interface&gt;_&lt;other&gt;</p>
+    <ul>
+    <li>The &lt;script&gt; is usually “abs”, except when we are using Urdu character names, in which case it is “nlq” (eg, nlqChotiyeh). The script is omitted for glyphs that don’t represent characters, such as those that are only intended for attachment or to be used in compositions.</li>
+    <li>The &lt;Base&gt; is the character name, such as “Jeem” or “Seen.” (Note the use of “Keheh” and “Kaf” mentioned below.)</li>
+    <li>&lt;Seq-position&gt; is “Ini”, “Med”, “Fin”, or missing for isolate forms.</li>
+    <li>&lt;interface&gt; indicates the interface the glyph uses, as described above.</li>
+    <li>&lt;other&gt; indicates an alternate form, as described above.</li>
+    </ul>
+    <p>The corresponding GDL names are of the form: g&lt;Base&gt;&lt;Seq-position&gt;&lt;Interface&gt;_&lt;other&gt;.</p>
+    <p>For instance:</p>
+    <ul>
+    <li>absMeemIni.jm =&gt; gMeemIniJm</li>
+    <li>absSeenMed.bere =&gt; gSeenMedBeRe</li>
+    <li>absKehehMed.benn_base =&gt; gKafMedBeNn_base</li>
+    <li>nlqBariyehFin =&gt; gBariyehFin</li>
+    </ul>
+    <p>Note that we use “Keheh” in the UFO, since these are generally what the Unicode names use, but “Kaf” for the corresponding Graphite glyph names. Why? Because I first learned the name as “kaf” and that’s what I got used to :-) but our team policy is to use Unicode names for our glyph names wherever feasible.</p>
+    <p>There is a special form of the <strong>makegdl</strong> script called <strong>awami_makegdl</strong> that generates these glyph names. The awami_makegdl script sets a variable called <code>awami_names</code> to true. There is also a special form of <strong>gdl.pm</strong> Perl file that tests this variable and does special transformations that are Awami-specific. [ABS-1306]</p>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

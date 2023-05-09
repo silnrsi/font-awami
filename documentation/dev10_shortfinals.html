@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="short-finals">Short Finals</h1>
+    <p>Another technique to minimize sequence height is to use short versions of final forms. The following glyphs exist for this purpose:</p>
+    <ul>
+    <li>absJeemFin_short</li>
+    <li>absSeenFin_short</li>
+    <li>absSadFin_short</li>
+    <li>absAinFin_short</li>
+    <li>absQafFin_short, absQafFin_stfh_short</li>
+    <li>absLamFin_short</li>
+    <li>absMeemFin_short</li>
+    <li>absNoonFin_short</li>
+    <li>absChotiyehFin_short, absChotiyehFin_bfkl_short</li>
+    <li>absJeemMed.by_short - this is not a final form, but is used just before a bariyeh which is always a final form</li>
+    </ul>
+    <p>Sequences with and without short finals:</p>
+    <img src="assets/images/dev_doc/ShortFinals.png" alt="Short and normal finals" />
+    <figcaption>
+    Short and normal finals
+    </figcaption>
+    <p>The tricky thing about these forms is that the glyphs themselves are not the ones that are too high, rather it is a previous glyph in the sequence that is the problem. So this information must be recognized at the point of positioning that previous glyph and then propagated down the glyph stream. This is done using a user-defined slot attribute called <code>tooHigh</code> (<code>user3</code>).</p>
+    <p>These short forms are not created unless the “Short Forms” feature is set to “Finals” or “All.” (“All” is the default as of version 3.000.)</p>
+    <p>There are several defined constants that are used to recognize situations where short finals are needed:</p>
+    <ul>
+    <li><code>SHORTFINAL0</code> - for considering high form with no nuqta or diacritic</li>
+    <li><code>SHORTFINAL1</code> - for considering high form with one nuqta or diacritic</li>
+    <li><code>SHORTFINAL2</code> - for considering high forms with two or more nuqtas and/or diacritics</li>
+    <li>[also <code>SHORTFINAL_KAF</code> - for considering a high kaf]</li>
+    </ul>
+    <p>If the vertical position of the top of the bounding box of the glyph in question is higher than the constant, a short form is appropriate.</p>
+    <p>Note that short kafs and short finals are two different ways of solving the same problem. If the “Short Forms” feature is set to “All,” the result for a tall sequence may be a short kaf, a short final, or both--depending on the height of the sequence and whether the final character is one that can be shortened.</p>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>

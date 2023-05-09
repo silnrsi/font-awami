@@ -38,6 +38,31 @@ pandoc -s -f markdown-smart --template documentation/source/template.html docume
 echo "     > special.html"
 pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/special.md -o documentation/special.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
 
+echo "     >> developer documentation"
+
+echo "     > dev01_intro.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev01_intro.md -o documentation/dev01_intro.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev02_glyphset.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev02_glyphset.md -o documentation/dev02_glyphset.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev03_interfaces.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev03_interfaces.md -o documentation/dev03_interfaces.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev03a_interfaceimages.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev03a_interfaceimages.md -o documentation/dev03a_interfaceimages.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev04_behteeth.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev04_behteeth.md -o documentation/dev04_behteeth.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev05_namingconv.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev05_namingconv.md -o documentation/dev05_namingconv.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev06_passes.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev06_passes.md -o documentation/dev06_passes.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev07_collisions.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev07_collisions.md -o documentation/dev07_collisions.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev08_kerning.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev08_kerning.md -o documentation/dev08_kerning.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev09_altkafs.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev09_altkafs.md -o documentation/dev09_altkafs.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+echo "     > dev10_shortfinals.html"
+pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/dev10_shortfinals.md -o documentation/dev10_shortfinals.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
+
 echo "     >>> PDF (documentation/pdf/)"
 mkdir -p documentation/source/pdftemp
 
@@ -78,6 +103,41 @@ echo "     > special.html > special.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/special.md -o documentation/source/pdftemp/special.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/special.html documentation/pdf/special.pdf
 
+
+echo "     > dev01_intro.html > dev01_intro.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev01_intro.md -o documentation/source/pdftemp/dev01_intro.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev01_intro.html documentation/pdf/dev/dev01_intro.pdf
+echo "     > dev02_glyphset.html > dev02_glyphset.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev02_glyphset.md -o documentation/source/pdftemp/dev02_glyphset.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev02_glyphset.html documentation/pdf/dev/dev02_glyphset.pdf
+echo "     > dev03_interfaces.html > dev_3_interfaces.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev03_interfaces.md -o documentation/source/pdftemp/dev03_interfaces.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev03_interfaces.html documentation/pdf/dev/dev03_interfaces.pdf
+echo "     > dev03a_interfaceimages.html > dev03a_interfaceimages.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev03a_interfaceimages.md -o documentation/source/pdftemp/dev03a_interfaceimages.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev_interfaceimages.html documentation/pdf/dev/dev03a_interfaceimages.pdf
+echo "     > dev04_behteeth.html > dev04_behteeth.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev04_behteeth.md -o documentation/source/pdftemp/dev04_behteeth.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev04_behteeth.html documentation/pdf/dev/dev04_behteeth.pdf
+echo "     > dev05_namingconv.html > dev05_namingconv.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev05_namingconv.md -o documentation/source/pdftemp/dev05_namingconv.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev05_namingconv.html documentation/pdf/dev/dev05_namingconv.pdf
+echo "     > dev06_passes.html > dev06_passes.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev06_passes.md -o documentation/source/pdftemp/dev06_passes.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev06_passes.html documentation/pdf/dev/dev06_passes.pdf
+echo "     > dev07_collisions.html > dev07_collisions.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev07_collisions.md -o documentation/source/pdftemp/dev07_collisions.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev07_collisions.html documentation/pdf/dev/dev07_collisions.pdf
+echo "     > dev08_kerning.html > dev08_kerning.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev08_kerning.md -o documentation/source/pdftemp/dev08_kerning.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev08_kerning.html documentation/pdf/dev/dev08_kerning.pdf
+echo "     > dev09_altkafs.html > dev09_altkafs.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev09_altkafs.md -o documentation/source/pdftemp/dev09_altkafs.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev09_altkafs.html documentation/pdf/dev/dev09_altkafs.pdf
+echo "     > dev10_shortfinals.html > dev10_shortfinals.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev10_shortfinals.md -o documentation/source/pdftemp/dev10_shortfinals.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/dev10_shortfinals.html documentation/pdf/dev/dev10_shortfinals.pdf
+
 echo "     >>> PRODUCT SITE MARKDOWN (documentation/source/productsite/)"
 
 echo "     > about.md"
@@ -109,5 +169,7 @@ python3 documentation/source/makepsmd.py documentation/source/announcement.md do
 echo "     > special.md"
 python3 documentation/source/makepsmd.py documentation/source/special.md documentation/source/productsite/special.md -q
 echo "     Markdown source for other pages is in separate repo"
+
+
 
 echo "-----Completed!"

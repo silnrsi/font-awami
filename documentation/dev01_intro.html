@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Awami Nastaliq Developer Documentation</title>
+    <meta name="author" content="SIL Writing Systems Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/webfonts.css">
+</head>
+<body>
+<div class="container">
+<article class="article">
+    <header>
+        <h1 class="title">Awami Nastaliq Developer Documentation</h1>
+    </header>
+    <h1 id="intro">Intro</h1>
+    <p>The Awami Nastaliq font is designed to support the Nastaliq style of Arabic script for a wide variety of languages, particularly those used in Pakistan, that require the Nastaliq style. This sloping, calligraphic style has a variety of complexities that make rendering especially challenging. The sloping baseline in particular makes it difficult to predict and fix collisions, since there is no way to know the vertical position of any glyph before run-time when the full context of the glyph is known. Therefore Awami makes extensive use of Graphite’s automatic collision fixing algorithm both for adjustment of nuqta and diacritic positioning and for kerning.</p>
+    <p>Supporting a wide variety of languages in the Nastaliq style is particularly difficult using OpenType, and for this reason, Awami is implemented only using Graphite.</p>
+    <p>Arabic is always written in a cursive style and Nastaliq is no exception. So every rendering operation involves either an isolate or a sequence of connected characters ending with a final form. Rendering an isolate is fairly trivial; the complications arise from constructing the contextual sequences.</p>
+    <p>A phenomenon that shows up in various ways in Nastaliq rendering is the necessity for backwards logic. The forms at the end of a sequence of characters influence the preceding characters more than the other way around. For this reason Nastaliq shaping must be run backwards, starting with the last character in a contextual chain. On the other hand, there are aspects of positioning that must happen in a forward direction.</p>
+    <p><em>Assumptions:</em> This documentation assumes familiarity with Arabic script, behavior, and character names. It also assumes knowledge of Graphite, GDL, and Graphite's collision avoidance mechanism.</p>
+    <h3 id="contents">Contents</h3>
+    <ul>
+    <li><a href="dev02_glyphset.html">The Glyph Set</a> – Overview of how the glyphs are organized</li>
+    <li><a href="dev03_interfaces.html">Glyph Interfaces and Suffixes</a> – How the glyphs connect
+    <ul>
+    <li><a href="dev03a_interfaceimages.html">Interface Graphics</a> – Graphical images for the main interfaces</li>
+    </ul></li>
+    <li><a href="dev04_behteeth.html">Alternating Beh Teeth</a> – Special forms needed for sequences of beh, teh, theh, peh, noon, and yeh</li>
+    <li><a href="dev05_namingconv.html">Naming Conventions</a> – Classes and glyphs</li>
+    <li><a href="dev06_passes.html">Passes and Processing</a> – Summary of what each pass performs</li>
+    <li><a href="dev07_collision.html">Collision Fixing</a></li>
+    <li><a href="dev08_kerning.html">Kerning and Overlaps</a></li>
+    <li><a href="dev09_altkafs.html">Alternate Height Kafs and Gafs</a></li>
+    <li><a href="dev10_shortfinals.html">Short Finals</a></li>
+    </ul>
+    <!-- PRODUCT SITE ONLY
+    [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
+    [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+    -->
+    <footer class="footer">
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+    </footer>
+</article>
+</div>
+</body>
+</html>
