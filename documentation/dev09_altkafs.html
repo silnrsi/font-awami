@@ -58,6 +58,11 @@
     <figcaption>
     Short/shorter gafs used to avoid collisions with following kafs and gafs
     </figcaption>
+    <p>What happens when you need a tall kaf to avoid a collision, but this causes the text to be too high which would normally be solved using a short kaf? The answer is that fixing collisions is the priority, so a tall kaf is used.</p>
+    <img src="assets/images/dev_doc/TallKafTallSeq.png" alt="Tall sequence with tall kaf" />
+    <figcaption>
+    The sequence on the right uses a "shorter" kaf due to the height, but the center and left-most sequences use the standard and tall kaf (respectively) due to the presence of the sheen and diacritic.
+    </figcaption>
     <h2 id="special-cases-of-alternate-kafs">Special cases of alternate kafs</h2>
     <p>Some of the kaf forms do not lend themselves to this approach - they are shaped differently enough from the other forms, or are naturally enough shorter, that there is no good way to break them into base + top in a way that is consistent with the other kaf forms. For these, the kaf base is simply a complete form and it is followed by a glyph called <code>g__kafTop_m_bogus</code> in lieu of the top. (The reason for including this bogus glyph is that these special forms are created during the positioning pass, and glyph deletion is not possible at that point.) These unbroken forms are:</p>
     <ul>
@@ -66,7 +71,7 @@
     <li>gKafMedJm_tall, gGafMedJm_tall</li>
     <li>gKafMedJm_lowentry, gGafMedJm_lowentry - these have a lower entry AP for the previous glyph to be attached to, rather than a taller stem, which has the same effect of allowing extra space below the diagonal stroke</li>
     </ul>
-    <p>Compare the "lowered" and mormal forms below. Notice how the entry of the lowered form effectively creates a taller kaf.</p>
+    <p>Compare the "lowered" and normal forms below. Notice how the entry of the lowered form effectively creates a taller kaf.</p>
     <img src="assets/images/dev_doc/KafMedJmLowVsNormal.png" alt="Lowered and normal pre-jeem kaf" />
     <figcaption>
     Lowered and normal forms of the pre-jeem medial kaf.
@@ -78,7 +83,7 @@
     </ul>
     <h2 id="a-note-about-kaf-glyph-outline-vertical-positioning">A note about kaf glyph outline vertical positioning</h2>
     <p>You’ll notice that for most characters, the initials and medials appear to be at random or arbitrary vertical positions in the UFO files. This happened for historical reasons, and it’s generally not a problem because ultimately the vertical positioning is controlled by the attachment mechanism. In other words, initials and medials are always attached to a following (medial or final) glyph which effectively anchors their vertical position; until then they are essentially floating in space.</p>
-    <p>However, this was less than ideal when we started working with alternate height kafs. We use the <code>position</code> attribute to evaluate the vertical height of kafs that may need to be adjusted, and assume a standard height of the kaf stem and diagonal stroke. But if the outline of the kaf is not at a predictable position relative to that <code>position.y</code> attribute, we’d get unpredictable results. We could get around this by including the bounding box in the calculation, but it simplifies things to ensure that all the kaf glyphs are a consistent height from the baseline. Specifically, all the <code>\_exit_lamKaf</code> anchors are at exactly 686 in Regular and 720 in Bold, and the highest nodes are at 2214 in Regular and 2327 in Bold. (Exceptions are some kehehMed.jm forms that are handled specially.) This way we can build in an assumption of the absolute height of the kaf based on the <code>position.y</code> attribute.</p>
+    <p>However, this was less than ideal when we started working with alternate height kafs. We use the <code>position</code> attribute to evaluate the vertical height of kafs that may need to be adjusted, and assume a standard height of the kaf stem and diagonal stroke. But if the outline of the kaf is not at a predictable position relative to that <code>position.y</code> attribute, we’d get unpredictable results. We could get around this by including the bounding box in the calculation, but it simplifies things to ensure that all the kaf glyphs are a consistent height from the baseline. Specifically, all the <code>_exit_lamKaf</code> anchors are at exactly 686 in Regular and 720 in Bold, and the highest nodes are at 2214 in Regular and 2327 in Bold. (Exceptions are some kehehMed.jm forms that are handled specially.) This way we can build in an assumption of the absolute height of the kaf based on the <code>position.y</code> attribute.</p>
     <p>Another case where the position of the glyphs in the UFO matters is where the kaf-base (to which the alternate height kaf-top is attached) connects to the following glyph. We don’t reattach the kaf-base, so it needs to be in the exact position that the original kaf was. This is especially noticeable for the .snsn forms, whose interface is unforgiving.</p>
     <!-- PRODUCT SITE ONLY
     [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

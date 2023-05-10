@@ -35,14 +35,14 @@ Part of our goal with pair kerning is to get spacing nicely consistent among cha
 
 Pair kerning is implemented using a set of glyph attributes:
 
-- kernPreAlef
-- kernPreDal
-- kernPreReh
-- kernPreZain
-- kernPreWaw
-- kernPreLamAlef
-- kernPreJeemAinIso (isolate jeem and ain)
-- kernPreExclam
+- `kernPreAlef`
+- `kernPreDal`
+- `kernPreReh`
+- `kernPreZain`
+- `kernPreWaw`
+- `kernPreLamAlef`
+- `kernPreJeemAinIso` (isolate jeem and ain)
+- `kernPreExclam`
 
 These attributes are set for glyphs that need special treatment before the relevant following glyphs. Then there is a corresponding set of rules that set a user-defined slot attribute called `pairKern` (`user2`) when triggered by the presence of the relevant glyphs. In addition, there are a handful of special rules that set the `pairKern` attribute for more specific cases. Pair kerning is applied in pass 17.
 
@@ -55,12 +55,15 @@ This is where things get the most complicated. The kaf glyph serves as a useful 
 
 The side bearings of glyphs have a direct effect at the right and left margins. For the kaf, the right side bearing is slightly negative (shown in the diagram below), causing the upper tip of the kaf to protrude slightly into the right margin when it occurs at the beginning of a line. In the middle of the line, though, a very different kerning process needs to happen.
 
-Because the built-in kerning process works with the actual, visible edge of the glyph, most preceding glyphs will be automatically kerned relative to the vertical stroke, not the actual bounding box, and this is what we want for proper Nastaliq-style kerning. But consider that without any special process, the negative RSB of the kaf (-101) would generally cancel out much of the LSB of the preceding glyph (usually about 103) and produce a margin of something close to zero, resulting in, e.g.,
+![Kaf side bearings](assets/images/dev_doc/KafSideBearings.png)
+<figcaption>Kaf side bearings</figcaption>
+
+Because the built-in kerning process works with the actual, visible edge of the glyph, most preceding glyphs will be automatically kerned relative to the actual vertical stroke, not the official bounding box, and this is what we want for proper Nastaliq-style kerning. But consider that without any special process, the negative RSB of the kaf (-101) would generally cancel out much of the LSB of the preceding glyph (usually about 103) and produce a margin of something close to zero, resulting in, e.g.,
 
 ![Bad kerning of bariyeh and kaf](assets/images/dev_doc/KafBariyehBadKern.png)
 <figcaption>Bad kerning of bariyeh and kaf</figcaption>
 	
-This is clearly unacceptable, so how do we indicate how much additional space is needed? One way would be to set a “kernPreKaf” pair kerning for every final glyph in the font, but it seemed preferable to find a way to indicate it as part of the kaf glyph itself (since the issue related to the shape of the kaf).
+This is clearly unacceptable, so how do we indicate how much additional space is needed? One way would be to set a “kernPreKaf” pair kerning for every final/isolate glyph in the font, but it seemed preferable to find a way to indicate it as part of the kaf glyph itself (since the issue related to the shape of the kaf).
 
 So what we do is define a point on the glyph that serves as a fake right edge of the bounding box for the sake of kerning. This is done using an attachment point (although it is not used for attachment, and the y coordinate is irrelevant) called `kernBbRight`. We set it inside the advance width, and the distance inside indicates the functional RSB that we want to use for the sake of kerning. The image below shows that placing the `kernBbRight` point at 3060 creates an RSB of 150.
 
@@ -134,7 +137,7 @@ This shows the result with the kerning on the short sequences limited as describ
 Another kerning issue involves low punctuation, such as commas, periods, etc. A design question is whether low punctuation should be kerned under the following sequence where possible, or whether punctuation should interrupt the overlapping. In other words, which of the two results below is preferable?
 
 ![Two approaches to kerning low punctuation](assets/images/dev_doc/LowPunct.png)
-<figcaption>Two approaches to kerning low punctuation</figcaption>
+<figcaption>Two approaches to kerning low punctuation: in the top example the full stop is kerned as if it were any other character, but in the bottom it interrupts the overlapping.</figcaption>
 
 Currently we have implemented the first, where the full stop following the heh-goal+bariyeh kerns underneath the word starting with teh+ain. In order to achieve this, we include the punctuation within the sequence when we compute `seqWidth`. 
 

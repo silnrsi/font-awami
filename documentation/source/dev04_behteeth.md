@@ -33,7 +33,7 @@ Which form the final beh glyph takes depends on what comes after. In the example
 
 In fact, the seen is the only character other than another beh form that is preceded by a high-tooth beh. Also note that the initial behs _match_ the following tooth height rather than alternating. (I worked on this font for 9 years before I realized that. :-) )
 
-What may be confusing about the design of the font is that the beh’s high tooth actually occurs on the preceding glyph. As shown below, glyphs with the .beM1 suffix have a high curved exit that functions as the high tooth of the following beh. Glyphs with the .beM2 suffix have a low bump at the exit that creates the low tooth of the following beh.
+What may be confusing about the design of the font is that the beh’s high tooth actually occurs on the preceding glyph. As shown below, glyphs with the .beM1 suffix have a high pointed exit that functions as the high tooth of the following beh. Glyphs with the .beM2 suffix have a low bump at the exit that creates the low tooth of the following beh.
 
 ![](assets/images/dev_doc/SadBehHighLowTeeth.png)
 

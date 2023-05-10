@@ -30,12 +30,12 @@ These short forms are not created unless the “Short Forms” feature is set to
 
 There are several defined constants that are used to recognize situations where short finals are needed:
 
-- `SHORTFINAL0` - for  considering high form with no nuqta or diacritic
-- `SHORTFINAL1` - for considering high form with one nuqta or diacritic
+- `SHORTFINAL0` - for  considering high forms with no nuqta or diacritic
+- `SHORTFINAL1` - for considering high forms with one nuqta or diacritic
 - `SHORTFINAL2` - for considering high forms with two or more nuqtas and/or diacritics
-- [also `SHORTFINAL_KAF` - for considering a high kaf]
+- `SHORTFINAL_KAF` - for considering high kafs
 
-If the vertical position of the top of the bounding box of the glyph in question is higher than the constant, a short form is appropriate.
+If the vertical position of the top of the bounding box of the glyph in question is higher than the constant, a short final is appropriate. These values were determined empirically based on the ascent of the font and the sizes of various glyphs.
 
 Note that short kafs and short finals are two different ways of solving the same problem. If the “Short Forms” feature is set to “All,” the result for a tall sequence may be a short kaf, a short final, or both--depending on the height of the sequence and whether the final character is one that can be shortened.
 

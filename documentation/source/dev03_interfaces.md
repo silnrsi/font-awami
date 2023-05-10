@@ -21,7 +21,7 @@ In the examples below, notice how any of the glyphs with sad exits (right-hand c
 ![Sad interface entrances and exits](assets/images/dev_doc/SadInterface.png)
 <figcaption>Sad interface entrances and exits</figcaption>
 
-Similarly, any of the glyphs with meem-style exits on the right will connect with any meem on the left.
+Similarly, any of the glyphs on the right with meem-style exits will connect with any meem on the left.
 
 ![Corresponding meem interface entrances and exits](assets/images/dev_doc/MeemInterface.png)
 <figcaption>Corresponding meem interface entrances and exits</figcaption>
@@ -42,7 +42,7 @@ Here is a list of the interfaces identified by suffix and the glyphs they connec
 - .benn - beh that occurs before a final noon
 - .behg - beh that occurs before a final heh-goal
 - .bere - beh that occurs before a final reh
-- .beF - final beh (standard; an alternate final beh uses .beM2)
+- .beF - final beh (standard; there is an alternate final beh that uses .beM2)
 - .by - bariyeh (final)
 - .ch - final chotiyeh (two interfaces)
 - .fe - feh (and medial qaf)
@@ -55,7 +55,7 @@ Here is a list of the interfaces identified by suffix and the glyphs they connec
 - .nn - final noon
 - .qf - final qaf and waw (two interfaces)
 - .re - reh (final) (two interfaces)
-- .sd - sad, also the rounded form of kaf that occurs before a lam and alef
+- .sd - sad, also the rounded form of kaf that occurs before a lam or an alef
 - .sn - seen (standard)
 - .snsn - flat “kashida”- style seen that occurs before another seen
 - .ta - tah
@@ -63,19 +63,22 @@ Here is a list of the interfaces identified by suffix and the glyphs they connec
 
 These exist for virtually all dual-connecting characters, in both initial and medial forms. (Note that 25 interfaces * 2 contexts = 50 forms for each character class.)
 
-Here we show [images of all the interfaces listed above](dev_interfaceimages.md).
+Here we show [images of all the interfaces listed above](dev03a_interfaceimages.md).
 
 ## Other Suffixes
 
 In addition to the suffixes corresponding to the principle interfaces, there are other suffixes that are used. An underscore in the suffix indicates the preceding character(s):
-- nn_hgbm - form of medial beh that occurs heh-goal, meem, etc. and final noon (see class c_preBehNn_hgbm)
-- sn_sn - flat toothless seen that occurs between two other seens
-- \_stfh - form of final qaf and waw that follows initial seen, tah, etc. (see class cPreQw_stfh)
-- \_bfkl - final forms of beh and chotiyeh that occur before beh, feh, kaf, etc. (see classes c_preBe_bfkl and c_preChF_bfkl)
-- \_hgM - form of final reh that follows medial heh goal (see c_preReF_hgM)
-- \_jkl - form of final reh that follow jeem, kaf, lam, and initial beh (see c_preReF_jkl)
 
-- \_sshg - form of final reh that follows seen, sad, or heh-goal (see c_preReF_sshg - currently not used)
+- nn_hgbm - form of medial beh that occurs heh-goal, meem, etc. and final noon (see class `c_preBehNn_hgbm`)
+- sn_sn - flat toothless seen that occurs between two other seens
+- \_stfh - form of final qaf and waw that follows initial seen, tah, etc. (see class `cPreQw_stfh`)
+- \_bfkl - final forms of beh and chotiyeh that occur before beh, feh, kaf, etc. (see classes `c_preBe_bfkl` and `c_preChF_bfkl`)
+- \_hgM - form of final reh that follows medial heh goal (see `c_preReF_hgM`)
+- \_jkl - form of final reh that follow jeem, kaf, lam, and initial beh (see `c_preReF_jkl`)
+
+Obsolete interfaces:
+
+- \_sshg - form of final reh that follows seen, sad, or heh-goal (see `c_preReF_sshg` - currently not used)
 - XX_ss - beh forms following sad or seen - OBSOLETE
 - hgF_be - OBSOLETE
 

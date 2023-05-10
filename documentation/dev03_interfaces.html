@@ -28,7 +28,7 @@
     <figcaption>
     Sad interface entrances and exits
     </figcaption>
-    <p>Similarly, any of the glyphs with meem-style exits on the right will connect with any meem on the left.</p>
+    <p>Similarly, any of the glyphs on the right with meem-style exits will connect with any meem on the left.</p>
     <img src="assets/images/dev_doc/MeemInterface.png" alt="Corresponding meem interface entrances and exits" />
     <figcaption>
     Corresponding meem interface entrances and exits
@@ -46,7 +46,7 @@
     <li>.benn - beh that occurs before a final noon</li>
     <li>.behg - beh that occurs before a final heh-goal</li>
     <li>.bere - beh that occurs before a final reh</li>
-    <li>.beF - final beh (standard; an alternate final beh uses .beM2)</li>
+    <li>.beF - final beh (standard; there is an alternate final beh that uses .beM2)</li>
     <li>.by - bariyeh (final)</li>
     <li>.ch - final chotiyeh (two interfaces)</li>
     <li>.fe - feh (and medial qaf)</li>
@@ -59,18 +59,27 @@
     <li>.nn - final noon</li>
     <li>.qf - final qaf and waw (two interfaces)</li>
     <li>.re - reh (final) (two interfaces)</li>
-    <li>.sd - sad, also the rounded form of kaf that occurs before a lam and alef</li>
+    <li>.sd - sad, also the rounded form of kaf that occurs before a lam or an alef</li>
     <li>.sn - seen (standard)</li>
     <li>.snsn - flat “kashida”- style seen that occurs before another seen</li>
     <li>.ta - tah</li>
     <li>[.tmF - final teh marbuta - not currently used; instead we use the default forms here]</li>
     </ul>
     <p>These exist for virtually all dual-connecting characters, in both initial and medial forms. (Note that 25 interfaces * 2 contexts = 50 forms for each character class.)</p>
-    <p>Here we show <a href="dev_interfaceimages.html">images of all the interfaces listed above</a>.</p>
+    <p>Here we show <a href="dev03a_interfaceimages.html">images of all the interfaces listed above</a>.</p>
     <h2 id="other-suffixes">Other Suffixes</h2>
-    <p>In addition to the suffixes corresponding to the principle interfaces, there are other suffixes that are used. An underscore in the suffix indicates the preceding character(s): - nn_hgbm - form of medial beh that occurs heh-goal, meem, etc. and final noon (see class c_preBehNn_hgbm) - sn_sn - flat toothless seen that occurs between two other seens - _stfh - form of final qaf and waw that follows initial seen, tah, etc. (see class cPreQw_stfh) - _bfkl - final forms of beh and chotiyeh that occur before beh, feh, kaf, etc. (see classes c_preBe_bfkl and c_preChF_bfkl) - _hgM - form of final reh that follows medial heh goal (see c_preReF_hgM) - _jkl - form of final reh that follow jeem, kaf, lam, and initial beh (see c_preReF_jkl)</p>
+    <p>In addition to the suffixes corresponding to the principle interfaces, there are other suffixes that are used. An underscore in the suffix indicates the preceding character(s):</p>
     <ul>
-    <li>_sshg - form of final reh that follows seen, sad, or heh-goal (see c_preReF_sshg - currently not used)</li>
+    <li>nn_hgbm - form of medial beh that occurs heh-goal, meem, etc. and final noon (see class <code>c_preBehNn_hgbm</code>)</li>
+    <li>sn_sn - flat toothless seen that occurs between two other seens</li>
+    <li>_stfh - form of final qaf and waw that follows initial seen, tah, etc. (see class <code>cPreQw_stfh</code>)</li>
+    <li>_bfkl - final forms of beh and chotiyeh that occur before beh, feh, kaf, etc. (see classes <code>c_preBe_bfkl</code> and <code>c_preChF_bfkl</code>)</li>
+    <li>_hgM - form of final reh that follows medial heh goal (see <code>c_preReF_hgM</code>)</li>
+    <li>_jkl - form of final reh that follow jeem, kaf, lam, and initial beh (see <code>c_preReF_jkl</code>)</li>
+    </ul>
+    <p>Obsolete interfaces:</p>
+    <ul>
+    <li>_sshg - form of final reh that follows seen, sad, or heh-goal (see <code>c_preReF_sshg</code> - currently not used)</li>
     <li>XX_ss - beh forms following sad or seen - OBSOLETE</li>
     <li>hgF_be - OBSOLETE</li>
     </ul>

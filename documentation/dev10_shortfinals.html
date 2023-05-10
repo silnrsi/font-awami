@@ -37,12 +37,12 @@
     <p>These short forms are not created unless the “Short Forms” feature is set to “Finals” or “All.” (“All” is the default as of version 3.000.)</p>
     <p>There are several defined constants that are used to recognize situations where short finals are needed:</p>
     <ul>
-    <li><code>SHORTFINAL0</code> - for considering high form with no nuqta or diacritic</li>
-    <li><code>SHORTFINAL1</code> - for considering high form with one nuqta or diacritic</li>
+    <li><code>SHORTFINAL0</code> - for considering high forms with no nuqta or diacritic</li>
+    <li><code>SHORTFINAL1</code> - for considering high forms with one nuqta or diacritic</li>
     <li><code>SHORTFINAL2</code> - for considering high forms with two or more nuqtas and/or diacritics</li>
-    <li>[also <code>SHORTFINAL_KAF</code> - for considering a high kaf]</li>
+    <li><code>SHORTFINAL_KAF</code> - for considering high kafs</li>
     </ul>
-    <p>If the vertical position of the top of the bounding box of the glyph in question is higher than the constant, a short form is appropriate.</p>
+    <p>If the vertical position of the top of the bounding box of the glyph in question is higher than the constant, a short final is appropriate. These values were determined empirically based on the ascent of the font and the sizes of various glyphs.</p>
     <p>Note that short kafs and short finals are two different ways of solving the same problem. If the “Short Forms” feature is set to “All,” the result for a tall sequence may be a short kaf, a short final, or both--depending on the height of the sequence and whether the final character is one that can be shortened.</p>
     <!-- PRODUCT SITE ONLY
     [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
