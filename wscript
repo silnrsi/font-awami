@@ -54,7 +54,7 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 #FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
 #FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
 
-ftmlTest('tools/ftml-smith.xsl')
+ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
 cmds = [
     #name('${DS:FILENAME_BASE}', lang='en-US', subfamily = 'Regular'),
