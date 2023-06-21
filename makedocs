@@ -110,12 +110,12 @@ weasyprint documentation/source/pdftemp/dev01_intro.html documentation/pdf/dev/d
 echo "     > dev02_glyphset.html > dev02_glyphset.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev02_glyphset.md -o documentation/source/pdftemp/dev02_glyphset.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/dev02_glyphset.html documentation/pdf/dev/dev02_glyphset.pdf
-echo "     > dev03_interfaces.html > dev_3_interfaces.pdf"
+echo "     > dev03_interfaces.html > dev03_interfaces.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev03_interfaces.md -o documentation/source/pdftemp/dev03_interfaces.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/dev03_interfaces.html documentation/pdf/dev/dev03_interfaces.pdf
 echo "     > dev03a_interfaceimages.html > dev03a_interfaceimages.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev03a_interfaceimages.md -o documentation/source/pdftemp/dev03a_interfaceimages.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
-weasyprint documentation/source/pdftemp/dev_interfaceimages.html documentation/pdf/dev/dev03a_interfaceimages.pdf
+weasyprint documentation/source/pdftemp/dev03a_interfaceimages.html documentation/pdf/dev/dev03a_interfaceimages.pdf
 echo "     > dev04_behteeth.html > dev04_behteeth.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/dev04_behteeth.md -o documentation/source/pdftemp/dev04_behteeth.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/dev04_behteeth.html documentation/pdf/dev/dev04_behteeth.pdf

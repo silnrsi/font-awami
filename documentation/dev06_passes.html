@@ -42,70 +42,70 @@
     </colgroup>
     <thead>
     <tr class="header">
-    <th>Glyph 1</th>
-    <th>Glyph 2</th>
-    <th>Glyph 3</th>
-    <th>Glyph 4</th>
-    <th>Glyph 5</th>
-    <th>Result</th>
+    <th style="text-align: left;">Glyph 1</th>
+    <th style="text-align: left;">Glyph 2</th>
+    <th style="text-align: left;">Glyph 3</th>
+    <th style="text-align: left;">Glyph 4</th>
+    <th style="text-align: left;">Glyph 5</th>
+    <th style="text-align: left;">Result</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td><strong>initial-raw</strong></td>
-    <td>medial-raw</td>
-    <td>medial-raw</td>
-    <td>medial-raw</td>
-    <td>final</td>
-    <td>no rule matches</td>
+    <td style="text-align: left;"><strong>initial-raw</strong></td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">no rule matches</td>
     </tr>
     <tr class="even">
-    <td>initial-raw</td>
-    <td><strong>medial-raw</strong></td>
-    <td>medial-raw</td>
-    <td>medial-raw</td>
-    <td>final</td>
-    <td>no rule matches</td>
+    <td style="text-align: left;">initial-raw</td>
+    <td style="text-align: left;"><strong>medial-raw</strong></td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">no rule matches</td>
     </tr>
     <tr class="odd">
-    <td>initial-raw</td>
-    <td>medial-raw</td>
-    <td><strong>medial-raw</strong></td>
-    <td>medial-raw</td>
-    <td>final</td>
-    <td>no rule matches</td>
+    <td style="text-align: left;">initial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;"><strong>medial-raw</strong></td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">no rule matches</td>
     </tr>
     <tr class="even">
-    <td>initial-raw</td>
-    <td>medial-raw</td>
-    <td>medial-raw</td>
-    <td><strong>medial-raw</strong></td>
-    <td>final</td>
-    <td>a rule fires: the raw medial is processed and we back up</td>
+    <td style="text-align: left;">initial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;"><strong>medial-raw</strong></td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">a rule fires: the raw medial is processed and we back up</td>
     </tr>
     <tr class="odd">
-    <td>initial-raw</td>
-    <td>medial-raw</td>
-    <td><strong>medial-raw</strong></td>
-    <td>medial</td>
-    <td>final</td>
-    <td>ditto</td>
+    <td style="text-align: left;">initial-raw</td>
+    <td style="text-align: left;">medial-raw</td>
+    <td style="text-align: left;"><strong>medial-raw</strong></td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">ditto</td>
     </tr>
     <tr class="even">
-    <td>initial-raw</td>
-    <td><strong>medial-raw</strong></td>
-    <td>medial</td>
-    <td>medial</td>
-    <td>final</td>
-    <td>ditto</td>
+    <td style="text-align: left;">initial-raw</td>
+    <td style="text-align: left;"><strong>medial-raw</strong></td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">ditto</td>
     </tr>
     <tr class="odd">
-    <td><strong>initial-raw</strong></td>
-    <td>medial</td>
-    <td>medial</td>
-    <td>medial</td>
-    <td>final</td>
-    <td>no further rules will match because there are no raw medials left</td>
+    <td style="text-align: left;"><strong>initial-raw</strong></td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">medial</td>
+    <td style="text-align: left;">final</td>
+    <td style="text-align: left;">no further rules will match because there are no raw medials left</td>
     </tr>
     </tbody>
     </table>
@@ -119,7 +119,7 @@
     <p>Note that Latin data, which is supported by this font, will generally not match any of the rules in the right-to-left passes (1-6). Similarly, Arabic data will not match rules in Pass 7.</p>
     <h2 id="positioning">Positioning</h2>
     <p>(In the following discussion, the overall pass number of each pass is shown in parentheses, since that is what is shown in Graide.)</p>
-    <p><strong>Pass 1 (8):</strong> Basic cursive attachment happens at this point, using the “interfaces” described in <a href="dev_3_interfaces.html">Glyph Interfaces and Suffixes</a>.</p>
+    <p><strong>Pass 1 (8):</strong> Basic cursive attachment happens at this point, using the “interfaces” described in <a href="dev03_interfaces.html">Glyph Interfaces and Suffixes</a>.</p>
     <p>Note that in the font itself, the attachment points are labeled specifically according the interface involved (e.g., <code>exit_behFinal</code>, <code>exit_meem</code>), but the step that auto-generates the GDL code from the font simplifies these down to simply <code>exit</code> and <code>entr</code>. The GDL rules know which forms to attach to which.</p>
     <p>While we do the attachments, we keep a running calculation of the length of sequences and store it in a user-defined slot attribute <code>seqWidth</code> (<code>user5</code>). This is used later in the process to fine-tune kerning.</p>
     <p>This is also a good opportunity to initialize some attributes on spaces since they are not involved in the cursive attachment.</p>
@@ -141,19 +141,19 @@
     <li><code>tooHigh</code> (<code>user3</code>) is set to true when we recognize that a glyph is so high that it may extend above the ascent height defined for the font, risking being clipped or creating a collision with the line above. We use to the read-only <code>position.y</code> attribute to figure this out.</li>
     <li><code>reattached</code> (<code>user4</code>) is needed because when we substitute short forms in pass 6, they effectively become detached from their previous glyph. The <code>reattached</code> attribute helps us keep manage the process of reattaching them.</li>
     </ul>
-    <p><strong>Pass 5 (12):</strong> First we substitute taller kafs in situations where we need them - where they are preceded by nuqtas and diacritics for which there is not space. (See <a href="dev_X_altkafs.html">Alternate Height Kafs and Gafs</a>).</p>
+    <p><strong>Pass 5 (12):</strong> First we substitute taller kafs in situations where we need them - where they are preceded by nuqtas and diacritics for which there is not space. (See <a href="dev09_altkafs.html">Alternate Height Kafs and Gafs</a>).</p>
     <p>Then we substitute shorter kafs in situations where the sequences get too high, or to avoid collisions between adjacent kafs and gafs.</p>
     <p><images of default and alternate-height kafs></p>
     <p>(It’s possible that it would make sense to move the kaf alternates before positioning the nuqtas. We do need to take the presence of nuqtas into account, but the exact position of them is usually not significant, except in a few special cases where nuqtas are shifted in addition to changing the height of the kafs. The kaf changes definitely need to happen after the cursive attachments, since we need to do that before we can figure out how high things are.)</p>
     <p>Once nuqtas and similar elements have been positioned more-or-less correctly, we can turn off the collision fixing for most of them. The exceptions are the ones that are close to the adjusted kafs, since the new kafs may have created collisions that weren’t there before.</p>
     <p><strong>Pass 6 (13):</strong> The main thing this pass does is to make adjustments for sequences that are too high. As an efficiency measure, the pass is not run if the feature is turned off.</p>
-    <p>One of the adjustments is the substitution of a short final form (see <a href="dev_X_shortfinals.html">Short Finals</a>). The tricky thing is that while the final form is the glyph that will be modified, it is the <em>beginning</em> of the sequence where we recognize that the sequence is too high. So during this pass we propagate the <code>tooHigh</code> flag from where we detect the problem down to the final glyph in the sequence.</p>
+    <p>One of the adjustments is the substitution of a short final form (see <a href="dev10_shortfinals.html">Short Finals</a>). The tricky thing is that while the final form is the glyph that will be modified, it is the <em>beginning</em> of the sequence where we recognize that the sequence is too high. So during this pass we propagate the <code>tooHigh</code> flag from where we detect the problem down to the final glyph in the sequence.</p>
     <p>Another kind of adjustment we make is to push down nuqtas and diacritics at the beginning of the word that stick up too high.</p>
     <p><strong>Pass 7 (14):</strong> There are two kinds of attachments that need to happen in this pass.</p>
     <p>First we attach the kaf bases to their preceding bases, if any. We have to do this in a separate pass from the one where the substitution was made, due to an infelicity in the Graphite engine.</p>
     <p>Then we attach the alternate height kaf tops to their bases.</p>
     <p>We also have to reattach sequences to any short final forms that have been substituted. Even though the attachment is still present in the data (in the sense of a reference to the parent glyph), unfortunately it has to be redone in order to force the engine to recalculate the position of the penultimate base glyph. The same applies to nuqtas and similar elements.</p>
-    <img src="assets/images/dev_doc/UnattachedShortFinal.png" alt="Unattached short final" />
+    <img src="assets/images/dev_doc/UnattachedShortFinal.png" title="fig:" alt="Unattached short final" />
     <figcaption>
     Graide shows the necessity of reattaching short finals. (Although the jeem form, third from the end, appears to need reatttaching as well, in fact it doesn't.)
     </figcaption>

@@ -38,7 +38,7 @@ When we start pass 4, all the glyphs except the final are considered “raw”, 
 Here's what a five-glyph stream would look like as it is being processed in Pass 4. The bold shows the position of the processing stream.
 
 Glyph 1|Glyph 2|Glyph 3|Glyph 4|Glyph 5|Result|
---- | --- | --- | --- | --- | --- |
+:--- | :--- | :--- | :--- | :--- | :--- |
 **initial-raw**|medial-raw|medial-raw|medial-raw|final|no rule matches|
 initial-raw | **medial-raw** | medial-raw | medial-raw | final | no rule matches |
 initial-raw|medial-raw|**medial-raw**|medial-raw|final|no rule matches|
@@ -68,7 +68,7 @@ Note that Latin data, which is supported by this font, will generally not match 
 
 (In the following discussion, the overall pass number of each pass is shown in parentheses, since that is what is shown in Graide.)
 
-**Pass 1 (8):** Basic cursive attachment happens at this point, using the “interfaces” described in [Glyph Interfaces and Suffixes](dev_3_interfaces.md).
+**Pass 1 (8):** Basic cursive attachment happens at this point, using the “interfaces” described in [Glyph Interfaces and Suffixes](dev03_interfaces.md).
 
 Note that in the font itself, the attachment points are labeled specifically according the interface involved (e.g., `exit_behFinal`, `exit_meem`), but the step that auto-generates the GDL code from the font simplifies these down to simply `exit` and `entr`. The GDL rules know which forms to attach to which.
 
@@ -107,7 +107,7 @@ There are two user-defined slot attributes that are used for this mechanism:
 - `tooHigh` (`user3`) is set to true when we recognize that a glyph is so high that it may extend above the ascent height defined for the font, risking being clipped or creating a collision with the line above. We use to the read-only `position.y` attribute to figure this out.
 - `reattached` (`user4`) is needed because when we substitute short forms in pass 6, they effectively become detached from their previous glyph. The `reattached` attribute helps us keep manage the process of reattaching them.
 
-**Pass 5 (12):** First we substitute taller kafs in situations where we need them - where they are preceded by nuqtas and diacritics for which there is not space. (See [Alternate Height Kafs and Gafs](dev_X_altkafs.md)).
+**Pass 5 (12):** First we substitute taller kafs in situations where we need them - where they are preceded by nuqtas and diacritics for which there is not space. (See [Alternate Height Kafs and Gafs](dev09_altkafs.md)).
 
 Then we substitute shorter kafs in situations where the sequences get too high, or to avoid collisions between adjacent kafs and gafs.
 
@@ -119,7 +119,7 @@ Once nuqtas and similar elements have been positioned more-or-less correctly, we
 
 **Pass 6 (13):** The main thing this pass does is to make adjustments for sequences that are too high. As an efficiency measure, the pass is not run if the feature is turned off.
 
-One of the adjustments is the substitution of a short final form (see [Short Finals](dev_X_shortfinals.md)). The tricky thing is that while the final form is the glyph that will be modified, it is the _beginning_ of the sequence where we recognize that the sequence is too high. So during this pass we propagate the `tooHigh` flag from where we detect the problem down to the final glyph in the sequence. 
+One of the adjustments is the substitution of a short final form (see [Short Finals](dev10_shortfinals.md)). The tricky thing is that while the final form is the glyph that will be modified, it is the _beginning_ of the sequence where we recognize that the sequence is too high. So during this pass we propagate the `tooHigh` flag from where we detect the problem down to the final glyph in the sequence. 
 
 Another kind of adjustment we make is to push down nuqtas and diacritics at the beginning of the word that stick up too high.
 

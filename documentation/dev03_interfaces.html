@@ -16,7 +16,7 @@
     </header>
     <h1 id="glyph-interfaces-and-suffixes">Glyph Interfaces and Suffixes</h1>
     <p>The calligraphic nature of the Nastaliq style means that a distinctive visual connection is needed between any two characters. For instance, the connection between seen and sad is different from the connection between the seen and jeem or the seen and lam, so there needs to be separate forms of the seen to connect to each following character.</p>
-    <img src="assets/images/dev_doc/SeenForms_red.png" alt="Seen forms with various connections" />
+    <img src="assets/images/dev_doc/SeenForms_red.png" title="fig:" alt="Seen forms with various connections" />
     <figcaption>
     Seen forms with various connections
     </figcaption>
@@ -24,12 +24,12 @@
     <p>We define a set of “interfaces” which indicate the shape of the connection. The interface specifies the exit of the first glyph, the entrance to the second glyph, and the way they connect. Any two glyphs that are designed to support the interface should connect nicely.</p>
     <p>For most characters, all of their medial/final forms will use the same interface for the entrance (ie, the shape of the right-hand side). For instance, the entrance of all the medial/final sads are identical, so any “sad”-type exit (left side) will attach to any medial or final sad entrance. The preceding glyphs have the .sd suffix indicating that they are designed with a “sad” exit to support the “sad” interface, so they can connect to a sad.</p>
     <p>In the examples below, notice how any of the glyphs with sad exits (right-hand column) will connect with any of the sads (left-hand column):</p>
-    <img src="assets/images/dev_doc/SadInterface.png" alt="Sad interface entrances and exits" />
+    <img src="assets/images/dev_doc/SadInterface.png" title="fig:" alt="Sad interface entrances and exits" />
     <figcaption>
     Sad interface entrances and exits
     </figcaption>
     <p>Similarly, any of the glyphs on the right with meem-style exits will connect with any meem on the left.</p>
-    <img src="assets/images/dev_doc/MeemInterface.png" alt="Corresponding meem interface entrances and exits" />
+    <img src="assets/images/dev_doc/MeemInterface.png" title="fig:" alt="Corresponding meem interface entrances and exits" />
     <figcaption>
     Corresponding meem interface entrances and exits
     </figcaption>

@@ -21,7 +21,7 @@
     <p>The approach is to create a set of bases that correspond to each kaf shape, along with a set of kaf and gaf tops consisting of just the stem and upper diagonal stroke. The tops are attached to the bases using an attachment point called <code>kafTop</code>.</p>
     <p>Because these forms are admittedly not quite as perfectly shaped as a single kaf form, this approach is only used when we need an alternate-height glyph, not for the default, standard-height shapes.</p>
     <p>For comparison, here we can see five versions of the kaf; the middle form is the default shape and height. (Notice that for the shortest form, the short form of the seen has been used as well; see the following section.)</p>
-    <img src="assets/images/dev_doc/FiveHtKafs.png" alt="Five heights of the kaf" />
+    <img src="assets/images/dev_doc/FiveHtKafs.png" title="fig:" alt="Five heights of the kaf" />
     <figcaption>
     Five heights of the kaf
     </figcaption>
@@ -29,37 +29,37 @@
     <p>There are five alternate-height kafs:</p>
     <p><strong>Tall:</strong> these are used when preceding glyphs have a stack of nuqtas and diacritics that would collide with the upper stroke of the kaf, and/or to avoid a collision with a previous kaf or gaf.</p>
     <p>These alternates are not dependent on a feature being set. They only exist for medials.</p>
-    <img src="assets/images/dev_doc/TallKafs.png" alt="Tall kafs and gafs" />
+    <img src="assets/images/dev_doc/TallKafs.png" title="fig:" alt="Tall kafs and gafs" />
     <figcaption>
     Tall kafs and gafs
     </figcaption>
     <p><strong>Taller:</strong> these are used to avoid collisions or extreme kerning with very tall previous items such as alef-madda or alef with a diacritic. They only exist for initials, and are not dependent on a feature.</p>
-    <img src="assets/images/dev_doc/TallerKafs.png" alt="Taller kafs and gafs" />
+    <img src="assets/images/dev_doc/TallerKafs.png" title="fig:" alt="Taller kafs and gafs" />
     <figcaption>
     Taller kafs and gafs
     </figcaption>
     <p><strong>Medium/short:</strong> (_medshort): these kafs have a standard-height stem, but the diagonal stroke has been shortened to avoid colliding with a previous tall glyph (lam, tah, kaf, or gaf) or large nuqat. These only exist for medial forms, and they are not dependent on a feature being set.</p>
-    <img src="assets/images/dev_doc/MedShortKafs.png" alt="Medium-short kafs" />
+    <img src="assets/images/dev_doc/MedShortKafs.png" title="fig:" alt="Medium-short kafs" />
     <figcaption>
     Kafs and gafs with shorter diagonal strokes
     </figcaption>
     <p><strong>Short:</strong> these are used when the contextual sequence gets high enough to risk clipping or collisions. They are only used when the “Short Forms” feature is set to “Kaf and gafs” or “All.” For obvious reasons, they are most often used for kafs near the beginning of the sequence, but they can be needed for both initials and medials.</p>
-    <img src="assets/images/dev_doc/ShortKaf.png" alt="Short kaf" />
+    <img src="assets/images/dev_doc/ShortKaf.png" title="fig:" alt="Short kaf" />
     <figcaption>
     Short kaf
     </figcaption>
     <p><strong>Shorter:</strong> these forms are used when the short forms don’t provide quite enough adjustment due to an extremely high sequence.</p>
-    <img src="assets/images/dev_doc/ShorterKaf.png" alt="Shorter kaf" />
+    <img src="assets/images/dev_doc/ShorterKaf.png" title="fig:" alt="Shorter kaf" />
     <figcaption>
     Shorter kaf
     </figcaption>
     <p>The short and shorter forms are also used for gafs in combination with the tall or medium/short forms to avoid collisions.</p>
-    <img src="assets/images/dev_doc/ShortGafPlusKaf.png" alt="Short gafs before kaf" />
+    <img src="assets/images/dev_doc/ShortGafPlusKaf.png" title="fig:" alt="Short gafs before kaf" />
     <figcaption>
     Short/shorter gafs used to avoid collisions with following kafs and gafs
     </figcaption>
     <p>What happens when you need a tall kaf to avoid a collision, but this causes the text to be too high which would normally be solved using a short kaf? The answer is that fixing collisions is the priority, so a tall kaf is used.</p>
-    <img src="assets/images/dev_doc/TallKafTallSeq.png" alt="Tall sequence with tall kaf" />
+    <img src="assets/images/dev_doc/TallKafTallSeq.png" title="fig:" alt="Tall sequence with tall kaf" />
     <figcaption>
     The sequence on the right uses a "shorter" kaf due to the height, but the center and left-most sequences use the standard and tall kaf (respectively) due to the presence of the sheen and diacritic.
     </figcaption>
@@ -72,7 +72,7 @@
     <li>gKafMedJm_lowentry, gGafMedJm_lowentry - these have a lower entry AP for the previous glyph to be attached to, rather than a taller stem, which has the same effect of allowing extra space below the diagonal stroke</li>
     </ul>
     <p>Compare the "lowered" and normal forms below. Notice how the entry of the lowered form effectively creates a taller kaf.</p>
-    <img src="assets/images/dev_doc/KafMedJmLowVsNormal.png" alt="Lowered and normal pre-jeem kaf" />
+    <img src="assets/images/dev_doc/KafMedJmLowVsNormal.png" title="fig:" alt="Lowered and normal pre-jeem kaf" />
     <figcaption>
     Lowered and normal forms of the pre-jeem medial kaf.
     </figcaption>
