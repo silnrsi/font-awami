@@ -3,9 +3,9 @@
 # Generate FTML test data files
 
 # To add a new character:
-# - Add a code for it in the appropriate list in expandSequences().
-# - Add the corresponding USV mapping in _char_name_to_usv().
-# - Add the corresponding information in _group_name_format().
+# - Define a short code for it and add the corresponding USV mapping in _char_name_to_usv().
+# - Add a code for it in the appropriate list in expandSequences() or insert_diacritics().
+# - Add the corresponding information in _group_name_format() or _diac_group_name_format().
 
 import collections
 import codecs
@@ -16,7 +16,7 @@ import os
 def run():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-o","--output",default=r"C:\FontDev\Awami\tests\FTML_XSL",help="Where to write output files")
+    parser.add_argument("-o","--output",default=r"tests/FTML_XSL",help="Where to write output files")  # assumes calling from the root
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
     parser.add_argument("-f","--font",default=r"Awami Nastaliq",help="Name of font to use")
@@ -35,9 +35,8 @@ def run():
     for m in modeArgs:
         if m == "all":
             if len(modeArgs) <= 1 or modeArgs[1] == "all":
-		            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac",
-		                          "alldiac"])
-		            # "allbase_somediac" currently isn't supported
+		            modes.extend(["basicforms", "allbasechars", "basic_somediac", "allbasecharforms", "basic_alldiac"])
+		            # "alldiac" and "allbase_somediac" currently aren't supported
             else:
 		            pass  # ignore all
         else:
@@ -195,6 +194,7 @@ def expand_sequences(mode, basicSequences) :
         changeKey = False
         
     elif mode == "allbasecharforms" or mode == "allbasechars" :
+        # Note: it is appropriate to add new characters to the beginning of the lists below, not at the end. They are processed in reverse order.
         expand = {
             "alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
             "beh"       :   ["dotlessBeh", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
@@ -819,6 +819,9 @@ def _reverse_list(aList) :
 
 def _group_name_format(charName) :
     # code : { sort-key, label, final/medial count, initial/medial count }
+    #    2, 2 - standard dual-connected character
+    #    2, 0 - standard right-connected character
+    #    0, 2 - initial/medial form of a dual-connected character that has an different final (eg, yeh, noon, qaf)
     groupNameFormat = {
         "alef"          :   ('01',      'Alef form',        2, 0),
         "alefMadda"     :   ('01a',     'Alef madda form',  2, 0),
@@ -883,7 +886,7 @@ def _group_name_format(charName) :
         "rehRing"       :   ('05i',     'Reh with ring',                    2, 0),
         "rehTah2smd"    :   ('05j',     'Reh with tah and two small dots',  2, 0),
         "reh2dotsV"     :   ('05k',     'Reh with two dots vertically',     2, 0),
-        "rehSmallVbelow" :  ('05l',		'Reh with small V below',             2, 0),
+        "rehSmallVbelow" :  ('05l',		'Reh with small V below',           2, 0),
         
         "seen"          :   ('06',      'Seen form',    2, 2),
         "sheen"         :   ('06a',     'Sheen form',   2, 2),
