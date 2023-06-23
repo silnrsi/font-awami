@@ -39,6 +39,9 @@ If the vertical position of the top of the bounding box of the glyph in question
 
 Note that short kafs and short finals are two different ways of solving the same problem. If the “Short Forms” feature is set to “All,” the result for a tall sequence may be a short kaf, a short final, or both--depending on the height of the sequence and whether the final character is one that can be shortened.
 
+------
+
+<< Previous: [Alternate Height Kafs and Gafs](dev09_altkafs.md) | [Introduction and Index](dev01_intro.md)
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

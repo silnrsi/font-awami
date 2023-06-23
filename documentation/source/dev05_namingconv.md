@@ -32,6 +32,9 @@ Note that we use “Keheh” in the UFO, since these are generally what the Unic
 
 There is a special form of the **makegdl** script called **awami_makegdl** that generates these glyph names. The awami_makegdl script sets a variable called `awami_names` to true. There is also a special form of **gdl.pm** Perl file that tests this variable and does special transformations that are Awami-specific. [ABS-1306]
 
+--------
+
+<< Previous: [Alternating Beh Teeth](dev04_behteeth.md) | [Introduction and Index](dev01_intro.md) | Next: [Passes and Processing](dev06_passes.md) >>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

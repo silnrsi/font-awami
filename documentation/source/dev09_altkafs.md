@@ -89,6 +89,10 @@ However, this was less than ideal when we started working with alternate height 
 
 Another case where the position of the glyphs in the UFO matters is where the kaf-base (to which the alternate height kaf-top is attached) connects to the following glyph. We don’t reattach the kaf-base, so it needs to be in the exact position that the original kaf was. This is especially noticeable for the .snsn forms, whose interface is unforgiving.
 
+------
+
+<< Previous: [Kerning and Overlaps](dev08_kerning.md) | [Introduction and Index](dev01_intro.md) | Next: [Short Finals](dev10_shortfinals.md) >>
+
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
 [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]

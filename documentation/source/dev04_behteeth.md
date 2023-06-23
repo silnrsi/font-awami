@@ -37,6 +37,10 @@ What may be confusing about the design of the font is that the beh’s high toot
 
 ![](assets/images/dev_doc/SadBehHighLowTeeth.png)
 
+-------
+
+<< Previous: [Glyph Interfaces and Suffixes](dev03_interfaces.md) | [Introduction and Index](dev01_intro.md) | Next: [Naming Conventions](dev05_namingconv.md) >>
+
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

@@ -147,6 +147,9 @@ An unresolved question is whether the full stop should behave differently from o
 
 _Note: it may seem unnecessarily convoluted to use all these mechanisms to control kerning. But it seems that by using a mixture of rules, defined constants, and slot attributes, it has been possible to keep the number of rules down to a reasonable amount; otherwise I have a concern about exploding the list of rules and the finite state machines inside the font._
 
+------
+
+<< Previous: [Collision Fixing](dev07_collisions.md) | [Introduction and Index](dev01_intro.md) | Next: [Alternate Height Kafs and Gafs](dev09_altkafs.md) >>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

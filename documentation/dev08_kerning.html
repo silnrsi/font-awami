@@ -126,6 +126,8 @@
     <p>Apparently we ran into a little problem where with the standard kerning mechanism, the punctuation can end up too tight. The cleanest way to fix that, unfortunately, was to create a little clean-up pass at the very end. Also unfortunately, I don’t have an example to show why this is necessary. I have a question whether it is in fact needed, but I don’t want to change it when nobody is complaining.</p>
     <p>An unresolved question is whether the full stop should behave differently from other punctuation such as the comma. That is, should the full stop break the kerning even though other punctuation does not? Currently they are behaving identically.</p>
     <p><em>Note: it may seem unnecessarily convoluted to use all these mechanisms to control kerning. But it seems that by using a mixture of rules, defined constants, and slot attributes, it has been possible to keep the number of rules down to a reasonable amount; otherwise I have a concern about exploding the list of rules and the finite state machines inside the font.</em></p>
+    <hr />
+    <p>&lt;&lt; Previous: <a href="dev07_collisions.html">Collision Fixing</a> | <a href="dev01_intro.html">Introduction and Index</a> | Next: <a href="dev09_altkafs.html">Alternate Height Kafs and Gafs</a> &gt;&gt;</p>
     <!-- PRODUCT SITE ONLY
     [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
     [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]

@@ -181,6 +181,9 @@ There are a few tricky bits that interact with the other passes such that it hel
 
 **Pass 14 (21):** Kerning of certain low punctuation has to be redone after the main kerning pass (pass 19) in order to correct over-kerning that happens there.
 
+--------
+
+<< Previous: [Naming Conventions](dev05_namingconv.md) | [Introduction and Index](dev01_intro.md) | Next: [Collision Fixing](dev07_collisions.md) >>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

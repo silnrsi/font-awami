@@ -4,6 +4,7 @@
 
 # To add a new character:
 # - Define a short code for it and add the corresponding USV mapping in _char_name_to_usv().
+#       Keep in mind that characters with varying finals (yeh, noon, qaf) need to be handled twice.
 # - Add a code for it in the appropriate list in expandSequences() or insert_diacritics().
 # - Add the corresponding information in _group_name_format() or _diac_group_name_format().
 

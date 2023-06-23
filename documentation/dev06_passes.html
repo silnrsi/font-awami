@@ -189,6 +189,8 @@
     <p>There are a few tricky bits that interact with the other passes such that it helps to move them into their own passes.</p>
     <p><strong>Pass 13 (20):</strong> There are a handful of glyphs with shapes that need special treatment with regard to the right margin. Back in Pass 3 we marked the very first glyph in the data with a slot attribute called <code>startOfLine</code>. In this pass, any of certain initial glyphs are adjusted relative to the right (leading) margin by modifying their advance widths. For instance, the beh+kaf combination needs to be shifted left to accommodate the upper kaf stroke, rather than aligning the right side of the beh with the margin. Also there are some nuqtas on initial forms, such as the peh, that require the margin to be adjusted.</p>
     <p><strong>Pass 14 (21):</strong> Kerning of certain low punctuation has to be redone after the main kerning pass (pass 19) in order to correct over-kerning that happens there.</p>
+    <hr />
+    <p>&lt;&lt; Previous: <a href="dev05_namingconv.html">Naming Conventions</a> | <a href="dev01_intro.html">Introduction and Index</a> | Next: <a href="dev07_collisions.html">Collision Fixing</a> &gt;&gt;</p>
     <!-- PRODUCT SITE ONLY
     [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
     [font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]

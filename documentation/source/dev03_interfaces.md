@@ -99,6 +99,10 @@ Other suffixes include:
 - lowentry - tall kaf/gaf forms with adjusted AP to make it taller, used to avoid collisions
 - squiggle - kaf form with squiggle
 
+--------
+
+<< Previous: [The Glyph Set](dev02_glyphset.md) | [Introduction and Index](dev01_intro.md) | Next: [Alternating Beh Teeth](dev04_behteeth.md) >>
+
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

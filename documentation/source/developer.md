@@ -38,7 +38,7 @@ In the past the default `smith build` invocation has resulted in a core dump due
 
 ### Project documentation
 
-A good deal of documentation for the Awami Nastaliq font can be found at `documentation/dev01_intro.html`.
+A good deal of developer documentation for the Awami Nastaliq font can be found at the [Awami GitHub repository](https://github.com/silnrsi/font-awami).
 
 ### Adding characters
 

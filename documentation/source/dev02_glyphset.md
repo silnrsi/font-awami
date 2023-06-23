@@ -11,6 +11,10 @@ This decomposition approach has two advantages. Since roughly 50 glyphs are need
 
 For the rest of this discussion, we will simply use the primary character to represent glyphs of the entire class. So “beh” is assumed to include teh, theh, peh, initial/medial noon and yeh, and similar characters. “Seen” includes sheen and variants. “Jeem” includes hah, khah, tcheh, dyeh, etc.
 
+--------
+
+[Introduction and Index](dev01_intro.md) | Next: [Glyph Interfaces and Suffixes](dev03_interfaces.md) >>
+
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]

@@ -49,6 +49,9 @@ On the other hand, characters such as kaf with three dots above and ngoeh (gaf w
 ![Kaf exclusion area](assets/images/dev_doc/KafExclusion.png)
 <figcaption>_Right:_ The exclusion area, shown in Graide (but not in the final rendering), prevents the nuqtas on the hah form from jumping above the kaf's diagonal stroke in order to fix the collsion. _Left:_ the ngoeh needs the nuqta to be positioned above the diagonal stroke, so the exclusion area is omitted.</figcaption>
 
+--------
+
+<< Previous: [Passes and Processing](dev06_passes.md) | [Introduction and Index](dev01_intro.md) | Next: [Kerning and Overlaps](dev08_kerning.md) >>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
