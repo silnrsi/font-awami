@@ -28,7 +28,7 @@ There are five alternate-height kafs:
 
 These alternates are not dependent on a feature being set. They only exist for medials.
 
-![Tall kafs and gafs](/images/TallKafs.png)
+![Tall kafs and gafs](images/TallKafs.png)
 <figcaption>Tall kafs and gafs</figcaption>
 
 **Taller:** these are used to avoid collisions or extreme kerning with very tall previous items such as alef-madda or alef with a diacritic. They only exist for initials, and are not dependent on a feature.
