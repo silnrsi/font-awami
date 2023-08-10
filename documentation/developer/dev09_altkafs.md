@@ -19,7 +19,7 @@ For comparison, here we can see five versions of the kaf; the middle form is the
 
 ![Five heights of the kaf](images/FiveHtKafs.png)
 
-__Five heights of the kaf_
+_Five heights of the kaf_
 
 Several defined constants in the code (`SHORTKAF_HT` and `SHORTERKAF_HT`) are used to recognize situations where an adjustment is needed. These were calculated empirically based on the vertical size of the kaf glyphs and the defined ascent of the font.
 
