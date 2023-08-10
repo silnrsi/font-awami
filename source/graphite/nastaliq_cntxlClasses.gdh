@@ -169,8 +169,6 @@ csMedBeNn = (gBehMedBeNn, gBehMedBeNn, gJeemMedBeNn, gSeenMedBeNn, gSadMedBeNn, 
 		gKafMedBeNn, gGafMedBeNn, gLamMedBeNn, gMeemMedBeNn, gHehGoalMedBeNn, gHehDoMedBeNn);
 csMedBeHg = (gBehMedBeHg, gBehMedBeHg, gJeemMedBeHg, gSeenMedBeHg, gSadMedBeHg, gTahMedBeHg, gAinMedBeHg, gFehMedBeHg,
 		gKafMedBeHg, gGafMedBeHg, gLamMedBeHg, gMeemMedBeHg, gHehGoalMedBeHg, gHehDoMedBeHg);
-csMedTmF = (gBehMedTmF, gBehMedTmF, gJeemMedTmF, gSeenMedTmF, gSadMedTmF, gTahMedTmF, gAinMedTmF, gFehMedTmF,
-		gKafMedTmF, gGafMedTmF, gLamMedTmF, gMeemMedTmF, gHehGoalMedTmF, gHehDoMedTmF);
 
 // NOTE gLamMedMm in this class:
 csMedMmX = (gBehMedMmX, gBehMedMmX, gJeemMedMmX, gSeenMedMmX, gSadMedMmX, gTahMedMmX, gAinMedMmX, gFehMedMmX,
@@ -194,7 +192,6 @@ cBehMed_postSmedBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMe
 		gBehMedHgF_be, gBehMedBeRe);
 cBehMed_postSiniBeM1 = (gBehMedBeM2, gBehMedBe, gBehMedSn, gBehMedBeF_ss, gBehMedSd_ss, gBehMedTa_ss,
 		gBehMedAi_ss, gBehMedFe_ss, gBehMedQf_ss, gBehMedBeHg
-//		, gBehMedTmF  // ?????
 	);
 
 csIni_raw = (gBehIni_raw, gJeemIni_raw, gSeenIni_raw, gSadIni_raw, gTahIni_raw, gAinIni_raw, gFehIni_raw,
@@ -249,8 +246,7 @@ csIniBeNn = (gBehIniBeNn, gJeemIniBeNn, gSeenIniBeNn, gSadIniBeNn, gTahIniBeNn, 
 // Note there is no gBehIniBeHg:
 csIniBeHg = (gBehIniBeM2, gJeemIniBeHg, gSeenIniBeHg, gSadIniBeHg, gTahIniBeHg, gAinIniBeHg, gFehIniBeHg,
 		gKafIniBeHg, gGafIniBeHg, gLamIniBeHg, gMeemIniBeHg, gHehGoalIniBeHg, gHehDoIniBeHg);
-csIniTmF = (gBehIniTmF, gJeemIniTmF, gSeenIniTmF, gSadIniTmF, gTahIniTmF, gAinIniTmF, gFehIniTmF,
-		gKafIniTmF, gGafIniTmF, gLamIniTmF, gMeemIniTmF, gHehGoalIniTmF, gHehDoIniTmF);
+
 		
 // Note gLamIni in these classes:
 csIniMmX = (gBehIniMmX, gJeemIniMmX, gSeenIniMmX, gSadIniMmX, gTahIniMmX, gAinIniMmX, gFehIniMmX,

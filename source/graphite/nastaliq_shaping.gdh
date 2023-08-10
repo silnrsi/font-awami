@@ -433,7 +433,7 @@ csMed_raw  >  csMedBe    / ^ MPRECXT  _ MARKS  g_zwjMed?  cBehMed_postBeM;
 // Obsolete way of using using high-tooth behs after seens and sads:
 //gBehMed_SS_raw  >  gBehMedBeRe  /  ^ MPRECXT  _ MARKS  g_zwjMed?  gBehMedRe;
 
-csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  (gBehMedBeM1 gBehMedBeNn gBehMedTmF);
+csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  (gBehMedBeM1 gBehMedBeNn);
 csMed_raw  >  csMedBeM2  / ^ MPRECXT  _ MARKS  g_zwjMed?  gBehMed;  ///  MARKS  c_dkgal_postAlt; - superfluous context?
 
 
@@ -546,7 +546,7 @@ gLamIni_raw  >  gLamIni_short  /  _  cNuqtaLikeUpper  cDiacritic?  g_zwjMed?  cK
 csIni_raw  >  csIniBe        /  _ MARKS  g_zwjMed?  cBehMed_defaultEntrance;
 csIni_raw  >  csIniBeM1      /  _ MARKS  g_zwjMed?  cMed_postBeM1;
 
-csIni_raw  >  csIniBeM2  /  _ MARKS  g_zwjMed?  (gBehMed gBehMedBeM1 gBehMedBeNn gBehMedTmF);
+csIni_raw  >  csIniBeM2  /  _ MARKS  g_zwjMed?  (gBehMed gBehMedBeM1 gBehMedBeNn);
 
 ////gLamIni_raw  >  gLamIniMm /  _ MARKS  g_zwjMed?  cMeemMed_alt; // exception to rule below - can never happen
 csIni_raw     >  csIniMmX /  _ MARKS  g_zwjMed?  cMeemMed_alt;
