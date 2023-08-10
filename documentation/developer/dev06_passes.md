@@ -111,8 +111,6 @@ There are two user-defined slot attributes that are used for this mechanism:
 
 Then we substitute shorter kafs in situations where the sequences get too high, or to avoid collisions between adjacent kafs and gafs.
 
-<images of default and alternate-height kafs>
-
 (It’s possible that it would make sense to move the kaf alternates before positioning the nuqtas. We do need to take the presence of nuqtas into account, but the exact position of them is usually not significant, except in a few special cases where nuqtas are shifted in addition to changing the height of the kafs. The kaf changes definitely need to happen after the cursive attachments, since we need to do that before we can figure out how high things are.)
 
 Once nuqtas and similar elements have been positioned more-or-less correctly, we can turn off the collision fixing for most of them. The exceptions are the ones that are close to the adjusted kafs, since the new kafs may have created collisions that weren’t there before.
@@ -132,6 +130,7 @@ Then we attach the alternate height kaf tops to their bases.
 We also have to reattach sequences to any short final forms that have been substituted. Even though the attachment is still present in the data (in the sense of a reference to the parent glyph), unfortunately it has to be redone in order to force the engine to recalculate the position of the penultimate base glyph. The same applies to nuqtas and similar elements.
 
 ![Unattached short final](images/UnattachedShortFinal.png)
+
 _Graide shows the necessity of reattaching short finals. (Although the jeem form, third from the end, appears to need reatttaching as well, in fact it doesn't.)_
 
 ### Passes 15 - 19: Diacritic positioning and kerning
