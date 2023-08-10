@@ -132,7 +132,7 @@ Then we attach the alternate height kaf tops to their bases.
 We also have to reattach sequences to any short final forms that have been substituted. Even though the attachment is still present in the data (in the sense of a reference to the parent glyph), unfortunately it has to be redone in order to force the engine to recalculate the position of the penultimate base glyph. The same applies to nuqtas and similar elements.
 
 ![Unattached short final](images/UnattachedShortFinal.png)
-<figcaption>Graide shows the necessity of reattaching short finals. (Although the jeem form, third from the end, appears to need reatttaching as well, in fact it doesn't.)</figcaption>
+_Graide shows the necessity of reattaching short finals. (Although the jeem form, third from the end, appears to need reatttaching as well, in fact it doesn't.)_
 
 ### Passes 15 - 19: Diacritic positioning and kerning
 

@@ -21,7 +21,7 @@ Another technique to minimize sequence height is to use short versions of final 
 Sequences with and without short finals:
 
 ![Short and normal finals](images/ShortFinals.png)
-<figcaption>Short and normal finals</figcaption>
+_Short and normal finals_
 
 The tricky thing about these forms is that the glyphs themselves are not the ones that are too high, rather it is a previous glyph in the sequence that is the problem. So this 
 information must be recognized at the point of positioning that previous glyph and then propagated down the glyph stream. This is done using a user-defined slot attribute called `tooHigh` (`user3`).
