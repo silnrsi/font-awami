@@ -24,6 +24,7 @@
 table(glyph)
 cLowPunct = ( gComma gFullStop gSemicolon g_colonArab g_ellipsisArab );
 cHighPunct = ( g_exclamArab gQuestionMark g_parenleftArab g_parenrightArab
+	g_bracketleftArab g_bracketrightArab g_braceleftArab g_bracerightArab
 	g_quoteleftArab g_quoterightArab g_quotedblleftArab g_quotedblrightArab g_quotedblArab g_quotesingleArab );
 cKernPunct = ( cLowPunct  cHighPunct );
 endtable;
@@ -251,6 +252,8 @@ cNuqtaLikeLowerNoRing -= (g__attachedRing);
 
 cTakes_lower = (cTakes_nLowerDia, cTakes_hehhookDia);
 
+cNLikeUpperMiddle = (cNuqtaLikeUpper cNuqtaLikeMiddle);
+
 endtable;
 
 // TODO: handle g__kafTop_null consistently; right now there is a bug in the compiler that makes this code crash.
@@ -276,12 +279,12 @@ cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByR
 
 // X+Nl(large)  Y  Z  Bariyeh
 cTakes_nLowerDia  cNuqtaLowerLarge { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
-	/ _=X  g__kafTop_null?  _=Nx DIACS ^ cMed=Y /*g__kafTop_null?*/ cNuqtaLikeUpper? DIACS  csMedBy=Z  /*g__kafTop_null?*/  cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=X  g__kafTop_null?  _=Nx DIACS ^ cMed=Y /*g__kafTop_null?*/ cNLikeUpperMiddle? DIACS  csMedBy=Z  /*g__kafTop_null?*/  cNuqtaLikeUpper? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Z  Bariyeh
 cTakes_lower cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByRightLowerS; with = nByLowerM } }
 	cTakes_lower cNuqtaLikeLower { underBy = true; attach {to = @By; at = nByMidLeftLowerS; with = nByLowerM } }
-	/ _=B1  g__kafTop_null?  _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy /*g__kafTop_null?*/ cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	/ _=B1  g__kafTop_null?  _=L1 DIACS  _=B2  _=L2  DIACS  ^ csMedBy /*g__kafTop_null?*/ cNLikeUpperMiddle? DIACS  gBariyehFin=By;
 
 // X+Nl  Y+Nl  Bariyeh
 cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByMidRightLowerS; with = nByLowerM } }
@@ -291,14 +294,17 @@ cTakes_nLowerDia cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = 
 // X+Nl+Nu Y Bariyeh 
 cTakes_nLowerDia 
 	cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	cNuqtaLikeUpper { attach {to = @B; at = nUpperS; with = nUpperM } }
-	/ _=B  g__kafTop_null?  _=L _=U DIACS  ^ csMedBy cNuqtaLikeUpper? DIACS  gBariyehFin=By;
+	cNLikeUpperMiddle { attach {to = @B; at = nUpperS; with = nUpperM } }
+	/ _=B  g__kafTop_null?  _=L _=U DIACS  ^ csMedBy cNLikeUpperMiddle? DIACS  gBariyehFin=By;
 
 // X+Nl Y Bariyeh 
 cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at = nByCenterLowerS; with = nByLowerM } }
-	/ _=B  g__kafTop_null?  _=L  DIACS  ^ csMedBy  cNuqtaLikeUpper? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
+	/ _=B  g__kafTop_null?  _=L  DIACS  ^ csMedBy  cNLikeUpperMiddle? cNuqtaLikeSecond? DIACS  gBariyehFin=By;
 
-
+// Special case: feh + teh + alef
+// Only needed for bold
+gBehMed  cNuWide { attach {to = @B; at = nUpperS; with = nUpperM }; shift.y = 350m }
+	/ gFehIniBeM2  MARKS  _=B  _=N  cDiacritic? gAlefFin;
 
 
 // Not really needed, because all glyphs with lower diacs can take upper diacs
@@ -306,6 +312,7 @@ cTakes_nLowerDia  cNuqtaLikeLowerNoRing { underBy = true; attach {to = @By; at =
 //cTakes_n1Lower_and_nUpperDia = cTakes_n1LowerDia;
 //cTakes_n1Lower_and_nUpperDia &= (cTakes_nUpperDia);
 //endtable;
+
 
 // kaf-top, nuqta(s) below
 /*
@@ -493,6 +500,7 @@ cIso
 (gBehIniBe gBehIniBe_jmF gBehMedBe) cNuqtaLower { attach {to = @B1; at = n1LowerS; with = n1LowerM }; shift {x = -100m; y = 50m} }
 	(gBehMedJm gBehMedJmR)  cNuqtaLower { attach {to = @B2; at = n1LowerS; with = n1LowerM }; shift {x=50m; y = -230m} }
 	/ _=B1  _=N1  _=B2  _=N2  gJeemFin;
+
 
 cTakes_n1LowerDia
 	cn1LowerDia { attach {to = @B; at = n1LowerS; with = n1LowerM } }
