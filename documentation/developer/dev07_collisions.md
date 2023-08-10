@@ -46,7 +46,7 @@ Including this extra ink in the kaf, computationally speaking, generally has the
 
 On the other hand, characters such as kaf with three dots above and ngoeh (gaf with two dots above) do in fact want their associated nuqtas to be placed in directly above the base, and so we must omit the exclusion glyph in these situations (otherwise those nuqtas would get moved to an extreme position far above the exclusion glyph).
 
-![Kaf exclusion area](assets/images/dev_doc/KafExclusion.png)
+![Kaf exclusion area](images/dev_doc/KafExclusion.png)
 <figcaption>_Right:_ The exclusion area, shown in Graide (but not in the final rendering), prevents the nuqtas on the hah form from jumping above the kaf's diagonal stroke in order to fix the collsion. _Left:_ the ngoeh needs the nuqta to be positioned above the diagonal stroke, so the exclusion area is omitted.</figcaption>
 
 --------

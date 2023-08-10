@@ -7,7 +7,7 @@ fontversion: 3.100
 
 The calligraphic nature of the Nastaliq style means that a distinctive visual connection is needed between any two characters. For instance, the connection between seen and sad is different from the connection between the seen and jeem or the seen and lam, so there needs to be separate forms of the seen to connect to each following character.
 
-![Seen forms with various connections](assets/images/dev_doc/SeenForms_red.png)
+![Seen forms with various connections](images/dev_doc/SeenForms_red.png)
 <figcaption>Seen forms with various connections</figcaption>
 
 As a rule, the shape of the connection is determined by the second character of the pair, although there are exceptions. In some cases (especially for beh-like forms), there exist sequences of three characters, where the third character affects the shape of the first.
@@ -18,12 +18,12 @@ For most characters, all of their medial/final forms will use the same interface
 
 In the examples below, notice how any of the glyphs with sad exits (right-hand column) will connect with any of the sads (left-hand column):
 
-![Sad interface entrances and exits](assets/images/dev_doc/SadInterface.png)
+![Sad interface entrances and exits](images/dev_doc/SadInterface.png)
 <figcaption>Sad interface entrances and exits</figcaption>
 
 Similarly, any of the glyphs on the right with meem-style exits will connect with any meem on the left.
 
-![Corresponding meem interface entrances and exits](assets/images/dev_doc/MeemInterface.png)
+![Corresponding meem interface entrances and exits](images/dev_doc/MeemInterface.png)
 <figcaption>Corresponding meem interface entrances and exits</figcaption>
 
 Of course there are exceptions and complications. The beh requires quite a few interfaces due to signficant variation in the beh forms. There is an alternate meem form that needs a different interface, as well as the “kashida”-style or toothless seen (which occurs before another seen). The heh-goal requires one interface for the medial and another for the final. 

@@ -9,59 +9,59 @@ fontversion: 3.100
 
 Connects to alef, lam, kaf, dal.
 
-![](assets/images/dev_doc/interfaces/default.png)
+![](images/dev_doc/interfaces/default.png)
 
 ### .ai
 
 Connects to ain.
 
-![](assets/images/dev_doc/interfaces/ai.png)
+![](images/dev_doc/interfaces/ai.png)
 
 ### .be
 
 Connects to some beh forms.
 
-![](assets/images/dev_doc/interfaces/be.png)
+![](images/dev_doc/interfaces/be.png)
 
 ### .beM1
 
 Connects to high-tooth behs.
 
-![](assets/images/dev_doc/interfaces/beM1.png)
+![](images/dev_doc/interfaces/beM1.png)
 
 ### .beM2
 
 Connects to low-tooth behs.
 
-![](assets/images/dev_doc/interfaces/beM2.png)
+![](images/dev_doc/interfaces/beM2.png)
 
 Several initials (beh, feh, kaf, and lam) connect to an alternate form of the final beh using a low-tooth interface.
 
-![](assets/images/dev_doc/interfaces/beM2_beF.png)
+![](images/dev_doc/interfaces/beM2_beF.png)
 
 ### .benn
 
 Connects to beh that occurs before a final noon.
 
-![](assets/images/dev_doc/interfaces/benn.png)
+![](images/dev_doc/interfaces/benn.png)
 
 ###  .behg
 
 Connects to beh that occurs before a final heh-goal.
 
-![](assets/images/dev_doc/interfaces/behg.png)
+![](images/dev_doc/interfaces/behg.png)
 
 ###  .bere
 
 Connects to beh that occurs before a final reh.
 
-![](assets/images/dev_doc/interfaces/bere.png)
+![](images/dev_doc/interfaces/bere.png)
 
 ###  .beF
 
 Connects to standard final beh.
 
-![](assets/images/dev_doc/interfaces/beF.png)
+![](images/dev_doc/interfaces/beF.png)
 
 (There is an alternate form of the final beh that essentially implements the low-tooth interface before a handful of initials (beh, feh, kaf, and lam). The initials use .beM2.)
 
@@ -69,7 +69,7 @@ Connects to standard final beh.
 
 Connects to bariyeh (final).
 
-![](assets/images/dev_doc/interfaces/by.png)
+![](images/dev_doc/interfaces/by.png)
 
 ### .ch
 
@@ -77,55 +77,55 @@ Connects to final chotiyeh.
 
 There are essentially two different interfaces; the second is used following kaf, lam, initial feh, and initial beh.
 
-![](assets/images/dev_doc/interfaces/ch.png)
+![](images/dev_doc/interfaces/ch.png)
 
 ### .fe
 
 Connects to feh and medial qaf.
 
-![](assets/images/dev_doc/interfaces/fe.png)
+![](images/dev_doc/interfaces/fe.png)
 
 ### .hd
 
 Connects to heh-doachaschmee.
 
-![](assets/images/dev_doc/interfaces/hd.png)
+![](images/dev_doc/interfaces/hd.png)
 
 ### .hgM
 
 Connects to medial heh-goal.
 
-![](assets/images/dev_doc/interfaces/hgM.png)
+![](images/dev_doc/interfaces/hgM.png)
 
 ### .hgF
 
 Connects to final heh-goal
 
-![](assets/images/dev_doc/interfaces/hgF.png)
+![](images/dev_doc/interfaces/hgF.png)
 
 ### .jm
 
 Connects to jeem.
 
-![](assets/images/dev_doc/interfaces/jm.png)
+![](images/dev_doc/interfaces/jm.png)
 
 ### .mm
 
 Connects to the standard meem.
 
-![](assets/images/dev_doc/interfaces/mm.png)
+![](images/dev_doc/interfaces/mm.png)
 
 ### .mmX
 
 Connects to the alternate medial meem (round form).
 
-![](assets/images/dev_doc/interfaces/mmX.png)
+![](images/dev_doc/interfaces/mmX.png)
 
 ### .nn
 
 Connects to final noon.
 
-![](assets/images/dev_doc/interfaces/nn.png)
+![](images/dev_doc/interfaces/nn.png)
 
 ### .qf
 
@@ -133,7 +133,7 @@ Connects to final qaf and waw.
 
 Implementationally there are two different interfaces, with the second used following seen, tah, heh doachashmee, and medial feh. However, since the shapes of the final forms are not signficantly different, possibly the two interfaces could be merged.
 
-![](assets/images/dev_doc/interfaces/qf.png)
+![](images/dev_doc/interfaces/qf.png)
 
 ### .re
 
@@ -141,31 +141,31 @@ Connects to reh (final).
 
 There are essentially two different interfaces; the second is used following jeem, kaf, lam, and initial beh.
 
-![](assets/images/dev_doc/interfaces/re.png)
+![](images/dev_doc/interfaces/re.png)
 
 ### .sd
 
 Connects to sad as well as the rounded form of kaf that occurs before a lam and alef.
 
-![](assets/images/dev_doc/interfaces/sd.png)
+![](images/dev_doc/interfaces/sd.png)
 
 ### .sn
 
 Connects to the standard seen.
 
-![](assets/images/dev_doc/interfaces/sn.png)
+![](images/dev_doc/interfaces/sn.png)
 
 ### .snsn
 
 Connects to the flat “kashida”-style seen that occurs before another seen.
 
-![](assets/images/dev_doc/interfaces/snsn.png)
+![](images/dev_doc/interfaces/snsn.png)
 
 ### .ta
 
 Connects to tah.
 
-![](assets/images/dev_doc/interfaces/ta.png)
+![](images/dev_doc/interfaces/ta.png)
 
 
 Back to discussion of [Glyph Interfaces](dev03_interfaces.md)

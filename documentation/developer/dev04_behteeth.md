@@ -13,29 +13,29 @@ Which form the final beh glyph takes depends on what comes after. In the example
 
 - Beh + beh + beh + **beh + beh**  >>  initial-low-tooth + medial-low-tooth + medial-high-tooth + **pre-final (low) + final**
 
-![](assets/images/dev_doc/BehTeeth_bbbbb_marked.png)
+![](images/dev_doc/BehTeeth_bbbbb_marked.png)
 
 - Beh + beh + **beh + seen**  >> initial-low-tooth + medial-low-tooth + **medial high tooth + final-seen**
 
-![](assets/images/dev_doc/BehTeeth_bbbs_marked.png)
+![](images/dev_doc/BehTeeth_bbbs_marked.png)
 
 - Beh + beh + **beh + feh**   >>  initial-high-tooth + medial-high-tooth + **medial-low-tooth + final-feh**
 
-![](assets/images/dev_doc/BehTeeth_bbbf_marked.png)
+![](images/dev_doc/BehTeeth_bbbf_marked.png)
 
 - Beh + beh + beh + **beh + sad** + qaf  >>  initial-low-tooth + medial-low-tooth + medial-high-tooth + **medial-low-tooth + ain** + qaf
 
-![](assets/images/dev_doc/BehTeeth_bbbbaq_marked.png)
+![](images/dev_doc/BehTeeth_bbbbaq_marked.png)
 
 - Lam + beh + beh + **beh + seen**  >>  initial-lam + medial-high-tooth + medial-low-tooth + **medial-high-tooth + final-seen**
 
-![](assets/images/dev_doc/BehTeeth_lbbbs_marked.png)
+![](images/dev_doc/BehTeeth_lbbbs_marked.png)
 
 In fact, the seen is the only character other than another beh form that is preceded by a high-tooth beh. Also note that the initial behs _match_ the following tooth height rather than alternating. (I worked on this font for 9 years before I realized that. :-) )
 
 What may be confusing about the design of the font is that the beh’s high tooth actually occurs on the preceding glyph. As shown below, glyphs with the .beM1 suffix have a high pointed exit that functions as the high tooth of the following beh. Glyphs with the .beM2 suffix have a low bump at the exit that creates the low tooth of the following beh.
 
-![](assets/images/dev_doc/SadBehHighLowTeeth.png)
+![](images/dev_doc/SadBehHighLowTeeth.png)
 
 -------
 

@@ -20,7 +20,7 @@ Another technique to minimize sequence height is to use short versions of final 
 
 Sequences with and without short finals:
 
-![Short and normal finals](assets/images/dev_doc/ShortFinals.png)
+![Short and normal finals](images/dev_doc/ShortFinals.png)
 <figcaption>Short and normal finals</figcaption>
 
 The tricky thing about these forms is that the glyphs themselves are not the ones that are too high, rather it is a previous glyph in the sequence that is the problem. So this 

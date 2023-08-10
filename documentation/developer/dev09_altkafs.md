@@ -17,7 +17,7 @@ Because these forms are admittedly not quite as perfectly shaped as a single kaf
 
 For comparison, here we can see five versions of the kaf; the middle form is the default shape and height. (Notice that for the shortest form, the short form of the seen has been used as well; see the following section.)
 
-![Five heights of the kaf](assets/images/dev_doc/FiveHtKafs.png)
+![Five heights of the kaf](images/dev_doc/FiveHtKafs.png)
 <figcaption>Five heights of the kaf</figcaption>
 
 Several defined constants in the code (`SHORTKAF_HT` and `SHORTERKAF_HT`) are used to recognize situations where an adjustment is needed. These were calculated empirically based on the vertical size of the kaf glyphs and the defined ascent of the font.
@@ -28,37 +28,37 @@ There are five alternate-height kafs:
 
 These alternates are not dependent on a feature being set. They only exist for medials.
 
-![Tall kafs and gafs](assets/images/dev_doc/TallKafs.png)
+![Tall kafs and gafs](/images/dev_doc/TallKafs.png)
 <figcaption>Tall kafs and gafs</figcaption>
 
 **Taller:** these are used to avoid collisions or extreme kerning with very tall previous items such as alef-madda or alef with a diacritic. They only exist for initials, and are not dependent on a feature.
 
-![Taller kafs and gafs](assets/images/dev_doc/TallerKafs.png)
+![Taller kafs and gafs](images/dev_doc/TallerKafs.png)
 <figcaption>Taller kafs and gafs</figcaption>
 
 **Medium/short:** (\_medshort): these kafs have a standard-height stem, but the diagonal stroke has been shortened to avoid colliding with a previous tall glyph (lam, tah, kaf, or gaf) or large nuqat. These only exist for medial forms, and they are not dependent on a feature being set.
 
-![Medium-short kafs](assets/images/dev_doc/MedShortKafs.png)
+![Medium-short kafs](images/dev_doc/MedShortKafs.png)
 <figcaption>Kafs and gafs with shorter diagonal strokes</figcaption>
 
 **Short:** these are used when the contextual sequence gets high enough to risk clipping or collisions. They are only used when the “Short Forms” feature is set to “Kaf and gafs” or “All.” For obvious reasons, they are most often used for kafs near the beginning of the sequence, but they can be needed for both initials and medials.
 
-![Short kaf](assets/images/dev_doc/ShortKaf.png)
+![Short kaf](images/dev_doc/ShortKaf.png)
 <figcaption>Short kaf</figcaption>
 
 **Shorter:** these forms are used when the short forms don’t provide quite enough adjustment due to an extremely high sequence.
 
-![Shorter kaf](assets/images/dev_doc/ShorterKaf.png)
+![Shorter kaf](images/dev_doc/ShorterKaf.png)
 <figcaption>Shorter kaf</figcaption>
 
 The short and shorter forms are also used for gafs in combination with the tall or medium/short forms to avoid collisions.
 
-![Short gafs before kaf](assets/images/dev_doc/ShortGafPlusKaf.png)
+![Short gafs before kaf](images/dev_doc/ShortGafPlusKaf.png)
 <figcaption>Short/shorter gafs used to avoid collisions with following kafs and gafs</figcaption>
 
 What happens when you need a tall kaf to avoid a collision, but this causes the text to be too high which would normally be solved using a short kaf? The answer is that fixing collisions is the priority, so a tall kaf is used.
 
-![Tall sequence with tall kaf](assets/images/dev_doc/TallKafTallSeq.png)
+![Tall sequence with tall kaf](images/dev_doc/TallKafTallSeq.png)
 <figcaption>The sequence on the right uses a "shorter" kaf due to the height, but the center and left-most sequences use the standard and tall kaf (respectively) due to the presence of the sheen and diacritic.</figcaption>
 
 ## Special cases of alternate kafs
@@ -72,7 +72,7 @@ Some of the kaf forms do not lend themselves to this approach - they are shaped 
 
 Compare the "lowered" and normal forms below. Notice how the entry of the lowered form effectively creates a taller kaf.
 
-![Lowered and normal pre-jeem kaf](assets/images/dev_doc/KafMedJmLowVsNormal.png)
+![Lowered and normal pre-jeem kaf](images/dev_doc/KafMedJmLowVsNormal.png)
 <figcaption>Lowered and normal forms of the pre-jeem medial kaf.</figcaption>
 
 Note that these are not repositioned or reattached, so their exit APs must be in the same position as the standard forms they are replacing.
