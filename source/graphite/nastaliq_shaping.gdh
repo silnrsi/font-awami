@@ -912,12 +912,14 @@ csKafFin  >  csKafFinTall  /
 csKafFin  >  csKafFinTall  /  cNuqtaUpperLarge  cDiacriticUpper  _=K;
 
 
-
-
 // Add a bogus null glyph in case we want to break the kafs into two pieces.
 // We need to do it now because we can't do insertions in the positioning table.
 
 cKafIM  _  >  @1  g__kafTop_null:1;
+
+
+// Special case: kharizabar makes word too tall
+gChotiyehFin  >  gChotiyehFin_short  /  gLamIniHgM gKharizabar gHehGoalMedCh g__hehHook_small ^  _=Y;
 
 
 // Special forms of letters
@@ -1021,6 +1023,7 @@ gBehIniBe  gBehMedJm  >  gBehIniBe_jmF  gBehMedJmR
 	>  (g__dot2l_small  g__dot3l_small  g__dot2l_small)  (g__dot2l_small  g__dot3l_small  g__dot2l_small)
 	/ (gBehIniBe gBehIniBeM1)  _  cDiacritic?  (gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedSnSn)  _;
 #endif
+
 
 // Special case: yeh + kaf + zair  TODO
 

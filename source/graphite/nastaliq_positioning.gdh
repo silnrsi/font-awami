@@ -2292,6 +2292,8 @@ cNuqtaLower {shift.y = 300m}  /  gBehMedCh  _=N  cDiacritic?  gChotiyehFin_short
 
 
 
+
+
 // Set up kerning pairs.
 
 cKernable { pairKern = kernPreAlef }		/  _ ^ MARKS  cKernIgnore?  cAlefIso;
@@ -3022,6 +3024,19 @@ gRehFin_jkl { shift.x += -130m;
     	// min/max.y are omitted for kernable glyphs
 	}
 }  /  _  cNuqtaLikeUpper?  DIACS  cKernIgnore?  cBehIso=K;
+
+// Special case: alef-madda + waw-hamza
+#if (WEIGHT >= WT_MED)
+gAlefMaddaAbove {
+	collision {
+		flags = SET_FIX(collision.flags);
+		flags = SET_KERN(collision.flags);
+		margin = 50m;
+		max.x = MAXKERN; min.x = MINKERN;
+    	// min/max.y are omitted for kernable glyphs
+	}
+}  /  _  cDiacritic? ^ gWawHamzaAbove ANY?;  // ANY to increase precedence
+#endif
 
 
 // Don't kern very much before closing quotes.
