@@ -2,6 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <key>com.github.googlei18n.ufo2ft.featureWriters</key>
+  <array>
+    <dict>
+      <key>class</key>
+      <string>KernFeatureWriter</string>
+    </dict>
+    <dict>
+      <key>class</key>
+      <string>ContextualMarkFeatureWriter</string>
+      <key>module</key>
+      <string>glyphsLib.featureWriters.markFeatureWriter</string>
+    </dict>
+    <dict>
+      <key>class</key>
+      <string>GdefFeatureWriter</string>
+    </dict>
+    <dict>
+      <key>class</key>
+      <string>CursFeatureWriter</string>
+    </dict>
+  </array>
   <key>com.schriftgestaltung.Glyphs.fontUserData</key>
   <dict>
     <key>GSDimensionPlugin.Dimensions</key>
@@ -21,9 +42,7 @@
   <key>com.schriftgestaltung.customParameter.GSFont.DisplayStrings</key>
   <array>
     <string>/absMeem/absWaw/space/space/space/absAlef/space/nlqBariyeh/space/absBiblicalEndOfVerse/absSeenFin</string>
-    <string>/nlqKharizabar</string>
-    <string>/nlqJazm_openleft/space/space/nlqPeshWaw</string>
-    <string>/absU</string>
+    <string>/absKafTwoDotsAbove/absKafThreeDotsAbove/absKehehThreeDotsAbove/absKehehDotAbove</string>
   </array>
   <key>com.schriftgestaltung.customParameter.GSFont.disablesAutomaticAlignment</key>
   <true/>
@@ -802,6 +821,7 @@
     <string>absTahMed.tmF</string>
     <string>absAin</string>
     <string>absGhain</string>
+    <string>absAinThreeDotsAbove</string>
     <string>absMisraSign</string>
     <string>absAinFin</string>
     <string>absAinFin_short</string>
@@ -926,6 +946,8 @@
     <string>absKaf</string>
     <string>absKafRing</string>
     <string>absKafTwoDotsAbove</string>
+    <string>absKafThreeDotsAbove</string>
+    <string>absKehehDotAbove</string>
     <string>absKehehThreeDotsAbove</string>
     <string>absGaf</string>
     <string>absGueh</string>
@@ -1266,6 +1288,7 @@
     <string>absMeemMed.tmF</string>
     <string>absNoon</string>
     <string>absNoonDotBelow</string>
+    <string>absNoonThreeDots</string>
     <string>absRnoon</string>
     <string>absNoonFin</string>
     <string>absNoonFin_short</string>
