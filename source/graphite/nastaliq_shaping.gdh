@@ -295,8 +295,6 @@ gChotiyehFin  >  gChotiyehFin_bfkl  /  ^ c_preChF_bfkl MARKS  _ ;
 
 gAlefFin  >  gAlefFin_lm	/  ^ (gLamIni_raw gLamMed_raw) MARKS  _ ;
 
-gKafFin  >  gKafFin_squiggle  /  _  g__dot2u;
-
 
 // Situations where characters before have an effect:
 
@@ -742,27 +740,31 @@ gJeem								>	gHah;
 gSeen		cs_seenMark				>	cs_seenComposed$2:(1 2)	_;
 
 //gSad								>	gSad;
-gSad		cs_sadMark				>	cs_sadComposed$2:(1 2)	_;
+gSad		cs_sadMark					>	cs_sadComposed$2:(1 2)	_;
 //gTah								>	gTah;
-gTah		g__dot1u				>	gZah:(1 2)	_;
+gTah		g__dot1u						>	gZah:(1 2)	_;
 //gAin								>	gAin;
-gAin		g__dot1u				>	gGhain:(1 2)	_;
+gAin		cs_ainMark					>	cs_ainComposed$2:(1 2)	_;
 
 //gQaf								>	gQaf;
 csDotlessQaf_feh    g__noDot2u		>	csDotlessQaf_qaf:(1 2)  _;
 
-gFeh		cs_fehMark				>	cs_fehComposed$2:(1 2)	_;
-gFeh								>	gDotlessFeh;
+gFeh		cs_fehMark					>	cs_fehComposed$2:(1 2)	_;
+gFeh									>	gDotlessFeh;
 
 //gKaf
-gKaf		cs_kafMark				>	cs_kafComposed$2:(1 2)  _;
-gGaf		cs_gafMark				>	cs_gafComposed$2:(1 2)  _;
+gKaf		cs_kafMark						>	cs_kafComposed$2:(1 2)  _;
+gGaf		cs_gafMark						>	cs_gafComposed$2:(1 2)  _;
+gKafFin  (g__dot2u__squiggle g__dot3u__squiggle)
+										>   gKafFin_squiggle  (g__dot2u g__dot3u);
 // Remove squiggle from initial/medial forms.
-(cKafIni  cKafMed)  g__kafSquiggle	>	@1:(1 2)  _;
+(cKafIni  cKafMed)  g__kafSquiggle		>	@1:(1 2)  _  / ^ _ _;  // reprocess to use wide kaf if necessary
+(cKafIni  cKafMed)  (g__dot2u__squiggle g__dot3u__squiggle)
+										> 	@1  (g__dot2u g__dot3u)  /  ^ _ _;
 
 //gLam								>	gLam;
 gLam		g__bar					>	gLamBar:(1 2)	_;
-gLam		g__dot3u				>	gLamThreeDots:(1 2)  _;
+gLam		g__dot3u					>	gLamThreeDots:(1 2)  _;
 gLam		g__smallTah				>	gLamSmallTah:(1 2)  _;
 
 if (lamValt == 1)
@@ -775,8 +777,11 @@ endif;
 (gMeem gMeemFin)  >  (gMeemLowdiac gMeemFinLowdiac)  /  _  cDiacriticLower;
 
 gNoon		cs_noonMark				>	cs_noonComposed$2:(1 2)	_;
-//gNoonFin	g__dot1u_ngMark			>	@1:(1 2)  _;  // obsolete
 (cBehIM gNoonFin)  g__noDot1u		>	@1:(1 2)  _;
+// For noon w/ 3 dots, the isolate and final forms have the dots above...
+cNoonFin  g__dot3Noon                >   @1  g__dot3u;
+// ...and the initial and medial forms have the dots below.
+(cBehIni cBehMed)  g__dot3Noon		>	@1  g__dot3l; 
 
 gHehGoal	cs_hehGoalMark			>	cs_hehGoalComposed$2:(1 2)	_;
 

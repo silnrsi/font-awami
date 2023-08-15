@@ -40,15 +40,17 @@ g__noDot2u       = pseudo(postscript("_dot2u"));        // 1688
 g__noDot2l       = pseudo(postscript("_dot2l"))         // 1689 - IM bariyeh, anything else?
 	{ nByLowerM = point(0m, 194m); mLowerS = point(0m, -424m) };	
 g__noDot2l_small = pseudo(postscript("_dot2l.small"));      // 1690
-g__dot2lIM       = pseudo(postscript("_dot2l")) 	          // 1691 - chotiyeh
+g__dot2lIM       = pseudo(postscript("_dot2l"))             // 1691 - chotiyeh
 	{ nByLowerM = point(0m,194m); n23LowerM = point(0m,195m); mLowerS = point(0m,-424m) };
 g__dot2lIM_small = pseudo(postscript("_dot2l.small"))       // 1692
 	{ nByLowerM = point(0m,159m); n23LowerM = point(0m,160m); mLowerS = point(0m,-393m) };
 g__dot2l_tail    = pseudo(postscript("_dot2l"))             // 1693
 	{ mLowerS = point(0m,0m) }; // avoid spurious warning
-
-g__noDot2l__hamza = pseudo(postscript("_dot2lIM__hamza"))    // 1694
+g__noDot2l__hamza = pseudo(postscript("_dot2lIM__hamza"))   // 1694
 	{ mUpperS = point(140m,1568m) };
+g__dot2u__squiggle = pseudo(postscript("_dot2u"));          // 1695
+g__dot3u__squiggle = pseudo(postscript("_dot3u"));          // 1696
+g__dot3Noon = pseudo(postscript("_dot3u"));	               // 1697
 
 cn23LowerDia += (g__dot2lIM, g__dot2lIM_small);
 
@@ -92,7 +94,8 @@ c_zerojoin = (g_zerojoin, g_zwjIni, g_zwjMed, g_zwjMed_raw, g_zwjFin);    // g_z
 
 // "SmallF" refers to glyphs that are suitable for the small-nuqtas feature, not just smaller nuqtas like the single nuqta.
 cNuqtaUpper = (g__dot1u, g__dot2u, g__dot2vu, g__dot3u, g__dot3uD, g__dot4u,
-	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small) ;
+	g__dot1u_small, g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small
+	g__dot3Noon) ;
 cNuqtaLower = (g__dot1l, g__dot2l, g__dot2vl, g__dot2lIM, g__dot3l, g__dot4l,
 	g__dot1l_small, g__dot2l_small, g__dot2vl_small, g__dot3l_small, g__dot4l_small) ;
 cNuqta = (cNuqtaUpper, cNuqtaLower) ;
@@ -140,7 +143,7 @@ g__kafTop_by_tall_notused { ktDelta = 0m }; // currently not used, just to avoid
 cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic, g__wasla,
 	g__smallV, g__smallVinv, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_smallTah, g__dot1u_smallTahKf,
 	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__noDot2l__hamza, g__dot2lIM__hamza,
-	g__verticalStroke, cKafTop, 
+	g__verticalStroke, cKafTop,
 	//gMaddaAbove_low,
 	g__gafStroke, g__gafStroke_long, g__grafStroke,   // g__gafStroke_short
 	g__smallTwoAbove, g__smallThreeAbove, g__smallFourAbove);
@@ -149,7 +152,8 @@ cNuqtaLikeLower = (cNuqtaLower, g__hehHook_small, g__attachedRing, g__ring, g__d
 	g__smallTah2dotsBelow, g__dot2l_tail, g__smallFourBelow);
 cNuqtaLikeMiddle = (g__bar, g__barNarrow, g__barWaw, g__barRaised, g__barRaised_gaf, g__attachedRingMid);
 cNuqtaLikeUpMid = (cNuqtaLikeUpper, cNuqtaLikeMiddle);
-cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2u, g__dot2lIM);
+cNuqtaLike = (cNuqtaLikeUpper, cNuqtaLikeLower, cNuqtaLikeMiddle, g__noDot1u, g__noDot2u, g__dot2lIM,
+	g__dot2u__squiggle, g__dot3u__squiggle);
 
 
 cNuqtaLikeFirst = (cNuqtaLikeLower,
@@ -374,7 +378,7 @@ cSadIso = (gSad, gDad, gDadDotBelow, gSadThreeDotsAbove);
 cSadFin = (gSadFin, gSadFin_short);
 cTahIso = (gTah, gZah);
 cTahFin = (gTahFin);
-cAinIso = (gAin, gGhain);
+cAinIso = (gAin, gGhain, gAinThreeDotsAbove);
 cAinFin = (gAinFin, gAinFin_short);
 cFehIso = (gFeh, gFehThreeDotsBelow, gDotlessFeh);
 cFehFin = (gFehFin);
@@ -384,9 +388,10 @@ cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt, gLamThreeDots, gLamSmallTa
 cLamFin = (gLamFin, gLamFin_short, gLamFin_kfTall);
 cMeemIso = (gMeem, gMeemLowdiac);
 cMeemFin = (gMeemFin, gMeemFin_short, gMeemFinLowdiac);
-cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV);
+cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV, gNoonThreeDots);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
-cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gGraf, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
+cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gGraf, gArabicKaf, gKafDotAbove, gKafThreeDotsAbove,
+	gArabicKafTwoDotsAbove, gArabicKafThreeDotsAbove);
 cKafFin = (gKafFin, gGafFin, gKafFin_squiggle);
 cHehGoalIso = (gHehGoal, gTehMarbuta, gTehMarbutaGoal, gHehGoalHamza, gHehYehAbove, gAe, gHeh);
 cHehGoalFin = (gHehGoalFin, gTehMarbutaGoalFin);   // gHehGoalFin_stfh - no longer used
@@ -1073,21 +1078,25 @@ cs_seenComposed = (
 cs_sadMark = (g__dot1u, g__dot1l__dot1u, g__dot3u);
 cs_sadComposed = (gDad, gDadDotBelow, gSadThreeDotsAbove);
 
+cs_ainMark = (g__dot1u, g__dot3u);
+cs_ainComposed = (gGhain, gAinThreeDotsAbove);
+
 cs_fehMark = (g__dot1u, g__dot2u, g__dot3l, g__dot3u);
 cs_fehComposed = (gFeh, gQaf, gFehThreeDotsBelow, gVeh);
 
-cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot3u, g__dot2u);
-cs_kafComposed = (gKafRing, gArabicKaf, gKafThreeDotsAbove, gArabicKafTwoDotsAbove);
+cs_kafMark = (g__attachedRingMid, g__kafSquiggle, g__dot1u, g__dot3u, g__dot2u__squiggle, g__dot3u__squiggle);
+cs_kafComposed = (gKafRing, gArabicKaf, gKafDotAbove, gKafThreeDotsAbove,
+	gArabicKafTwoDotsAbove, gArabicKafThreeDotsAbove);
 
 cs_gafMark = (g__dot2vl, g__dot2u, g__attachedRingMid, g__grafStroke);
 cs_gafComposed = (gGueh, gNgoeh, gGafRing, gGraf);
 
 cs_noonMark = (
 	g__dot1u, g__noDot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah,
-	g__dot1u_smallV, g__ring__dot1u); // g__dot1u_ngMark
+	g__dot1u_smallV, g__ring__dot1u, g__dot3Noon); // g__dot1u_ngMark
 cs_noonComposed = (
 	gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon,
-	gNoonSmallV, gNoonRing);
+	gNoonSmallV, gNoonRing, gNoonThreeDots);
 
 cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
 cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
