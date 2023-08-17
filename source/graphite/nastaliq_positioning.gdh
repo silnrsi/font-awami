@@ -1192,11 +1192,11 @@ cNuqtaLikeLower { collision {
 // For ngoeh or kaf w/ 3 dots, don't use the exclusion glyph - 
 // the nuqtas need to go right on top of the gaf.
 //(cls_excludingGlyphs cls_excludingGlyphs_kern)
-cKafIM { collision {
+cKafIMF { collision {
 			flags = CLEAR_FIX(collision.flags);
 			flags = CLEAR_KERN(collision.flags);
 	} }
-	(cDot2u cDot3u) { collision {
+	(cDot1u cDot2u cDot3u) { collision {
 		flags = SET_FIX(collision.flags);
 		min.x = -250m;
 		max.x = 200m;
