@@ -27,6 +27,7 @@ A phenomenon that shows up in various ways in Nastaliq rendering is the necessit
 - [Kerning and Overlaps](dev08_kerning.md)
 - [Alternate Height Kafs and Gafs](dev09_altkafs.md)
 - [Short Finals](dev10_shortfinals.md)
+- [Testing](dev11_testing.md)
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
