@@ -18,12 +18,12 @@ There is a set of files that can be generated that include different combination
 - **basicforms:** all contextual forms of the most basic shapes (beh, jeem, seen, etc.).
 - **allbasechars:** some contextual forms of all letters; this is useful to make sure that nuqtas an other inherent shapes are generated.
 - **basic_somediac:** this generates the same characters as basicforms, each with an upper and lower diac.
-- **allbasecharforms:** all forms of all letters; this generates a *huge* file.
 - **basic_alldiac:** generates same characters as basicforms, with every diacritic.
+- **allbasecharforms:** all forms of all letters; this generates a *huge* file, so it is of limited usefulness.
 
 Running without specifying a mode will generate all five files. By default, the resulting files are named test_MODE.xml (test_basicforms.xml, test_allbasechars.xml, etc.) and are output to tests/FTML_XSL.
 
-The **ftml.xsl** file must be located in the same directory as the .XML files. When it is, opening the XML _in Firefox_ will use the XSL to generate a nice display of the various character combinations. Note that FTML files do not work in other browsers such as Chrome. Firefox is also needed because it supports Graphite which is necessary to handle Awami.
+The **ftml.xsl** file must be located in the same directory as the .XML files. When it is, opening the XML _in Firefox_ will use the XSL to generate a nice display of the various character combinations. Note that FTML files do not currently work in other browsers such as Chrome. Firefox is also needed because it supports Graphite which is necessary to handle Awami.
 
 Also note that the ftml.xsl file for the Awami project is somewhat different than that used by other SIL font projects. It creates a table with four rendered cells per row. Each row shows the letter combination in isolate, final, initial, and medial position. 
 
@@ -31,7 +31,7 @@ Also note that the ftml.xsl file for the Awami project is somewhat different tha
 
 Irrelevant cells are colored gray.
 
-![Part of an FTML-generated table](images/FTMLfinalonly.png)
+![Part of an FTML-generated table](images/FTML_finalonly.png)
 
 ### The ftml_test_gen.py program
 

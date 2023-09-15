@@ -42,7 +42,7 @@ Note that short kafs and short finals are two different ways of solving the same
 
 ------
 
-<< Previous: [Alternate Height Kafs and Gafs](dev09_altkafs.md) | [Introduction and Index](dev01_intro.md) | [Testing](dev11_testing.md)
+<< Previous: [Alternate Height Kafs and Gafs](dev09_altkafs.md) | [Introduction and Index](dev01_intro.md) | Next: [Testing](dev11_testing.md) >>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
