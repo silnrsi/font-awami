@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq Developer Documentation
-fontversion: 3.100
+fontversion: 3.200
 ---
 
 # Collision Fixing
