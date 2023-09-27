@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Developer information
-fontversion: 3.100
+fontversion: 3.200
 ---
 
 ## Welcome font developers!
@@ -38,7 +38,7 @@ In the past the default `smith build` invocation has resulted in a core dump due
 
 ### Project documentation
 
-A good deal of developer documentation for the Awami Nastaliq font can be found at the [Awami GitHub repository](https://github.com/silnrsi/font-awami).
+A good deal of developer documentation for the Awami Nastaliq font can be found at the [Awami GitHub repository](https://github.com/silnrsi/font-awami/documentation/developer).
 
 ### Adding characters
 

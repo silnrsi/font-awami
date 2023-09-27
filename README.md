@@ -4,11 +4,13 @@ Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety 
 
 To download the fonts visit the [Awami downloads page](https://software.sil.org/awami/download/) or the [Github releases page](https://github.com/silnrsi/font-awami/releases).
 
-For more information on using and developing the fonts see the full project documentation. This is available in three forms:
+For more information on using the fonts see the full project documentation. This is available in three forms:
 
 - *local HTML* - Download the release package and open the file `documentation/index.html` in a browser
 - *local PDF* - Download the release or source package and open the file `documentation/pdf/index.pdf`
 - *Web site* - Visit the [Awami web site](https://software.sil.org/awami) 
+
+For more information on developing the fonts see the [project developer documentation](https://github.com/silnrsi/font-awami/documentation/developer/dev01_intro.md). 
 
 For a complete list of changes in this version see the [FONTLOG.txt](FONTLOG.txt).
 

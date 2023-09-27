@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Rendering the Allah ligature
-fontversion: 3.100
+fontversion: 3.200
 ---
 
 In certain types of literature, the name *Allah* and words related to this name are given unique rendering. Unicode has a *presentation form* character (U+FDF2 ARABIC LIGATURE ALLAH ISOLATED FORM) that implements this rendering and, while this can work (in some fonts) for the word in isolation, it doesn’t help users obtain special rendering in other contexts where it is desired. 

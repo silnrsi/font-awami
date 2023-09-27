@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Documentation
-fontversion: 3.100
+fontversion: 3.200
 ---
 
 Thank you for your interest in the Awami Nastaliq font. The Awami Nastaliq font does not provide complete coverage of all the characters defined in Unicode for Arabic script. Because the font style is specifically intended for languages using the Nastaliq style of Arabic script, the character set for this font is aimed at supporting those languages.
@@ -22,16 +22,3 @@ This documentation is a set of HTML pages that can be viewed in any modern web b
 - [Version history](history.md) &#x2013; Complete version history
 - [Announcement](announcement.md) &#x2013; Source for News announcement
 
-## Detailed developer documentation
-
-- [Intro](dev01_intro.md) &#x2013; 
-- [The Glyph Set](dev02_glyphset.md) &#x2013; 
-- [Glyph Interfaces and Suffixes](dev03_interfaces.md) &#x2013; 
-- [Images of Principal Interfaces](dev03a_interfaceimages.md) &#x2013; 
-- [Alternating Beh Teeth](dev04_behteeth.md) &#x2013; 
-- [Naming Conventions](dev05_namingconv.md) &#x2013; 
-- [Passes and Processing](dev06_passes.md) &#x2013; 
-- [Collision Fixing](dev07_collisions.md) &#x2013; 
-- [Kerning and Overlaps](dev08_kerning.md) &#x2013; 
-- [Alternate Height Kafs and Gafs](dev09_altkafs.md) &#x2013; 
-- [Short Finals](dev10_shortfinals.md) &#x2013; 

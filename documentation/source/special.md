@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - What is Special About Awami Nastaliq?
-fontversion: 3.100
+fontversion: 3.200
 ---
 
 The Awami Nastaliq font was developed to support a wide variety of languages that are written using the Nastaliq style of Arabic script. Since at least the year 2000, SIL’s Writing Systems Technology team has received requests for a publication-quality Nastaliq font that is fully customizable and extensible, enabling support for minority languages. While there are a handful of Nastaliq-style fonts that support the Urdu language adequately, until recently there have been no fonts that handle the range of characters and diacritics needed for approximately twenty-five other languages of Pakistan, spoken by over 120 million people, as well as other languages in neighboring countries. The Awami Nastaliq font meets a long-standing need in this part of the world.
