@@ -27,7 +27,7 @@ The Awami Nastliq project can be built from source using [smith](https://github.
 ```
     smith distclean
     smith configure
-    smith build -d
+    smith build -d -v -j1
 ```
 
 Because of the complex kerning and collision avoidance logic, builds can take up to 15 minutes or longer, depending on hardware.
@@ -62,7 +62,7 @@ In addition, the following will need to be updated:
 
 "Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. There is an octabox JSON file for each weight of the font. The command is:
 ```
-octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-WEIGHT.json   ../results/AwamiNastaliq-WEIGHT.ttf
+octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf
 ```
 
 where WEIGHT is Regular, Bold, etc. The command must be executed for each weight. It may take 15 minutes or more to generate each weight.
