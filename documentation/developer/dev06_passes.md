@@ -35,17 +35,17 @@ When we start pass 4, all the glyphs except the final are considered “raw”, 
 
 (The actual rules are a little more complicated since we also need to handle nuqtas and diacritics.)
 
-Here's what a five-glyph stream would look like as it is being processed in Pass 4. The bold shows the position of the processing stream.
+Here's what a five-glyph stream would look like as it is being processed in Pass 4. The bold shows the position of the processing stream and the italics show other glyphs that match the rule.
 
 Glyph 1|Glyph 2|Glyph 3|Glyph 4|Glyph 5|Result|
 :--- | :--- | :--- | :--- | :--- | :--- |
 **initial-raw**|medial-raw|medial-raw|medial-raw|final|no rule matches|
 initial-raw | **medial-raw** | medial-raw | medial-raw | final | no rule matches |
 initial-raw|medial-raw|**medial-raw**|medial-raw|final|no rule matches|
-initial-raw|medial-raw|medial-raw|**medial-raw<br>-> medial**|**final**|a rule fires:<br>the raw medial is processed and we back up|
-initial-raw|medial-raw|**medial-raw**<br>-> medial**|**medial**|final|ditto|
-initial-raw|**medial-raw**|**medial**<br>-> medial**|medial|final|ditto|
-**initial-raw**<br>-> initial**|**medial**|medial|medial|final|no further Pass 4 rules will match <br>because there are no raw medials left; <br>Pass 5 handles the initial and then we are finished|
+initial-raw|medial-raw|medial-raw|**medial-raw<br>-> medial**|_final_|a rule fires:<br>the raw medial is processed and we back up|
+initial-raw|medial-raw|**medial-raw<br>-> medial**|_medial_|final|ditto|
+initial-raw|**medial-raw<br>-> medial**|_medial_|medial|final|ditto|
+**initial-raw**<br>-> initial**|_medial_|medial|medial|final|no further Pass 4 rules will match <br>because there are no raw medials left; <br>Pass 5 handles the initial and then we are finished|
 
                             
 **Pass 5:** generate contextual forms for the initials.
