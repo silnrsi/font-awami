@@ -42,16 +42,12 @@ Glyph 1|Glyph 2|Glyph 3|Glyph 4|Glyph 5|Result|
 **initial-raw**|medial-raw|medial-raw|medial-raw|final|no rule matches|
 initial-raw | **medial-raw** | medial-raw | medial-raw | final | no rule matches |
 initial-raw|medial-raw|**medial-raw**|medial-raw|final|no rule matches|
-initial-raw|medial-raw|medial-raw|**medial-raw**|**final**|a rule fires:|
-||||**-> medial**||...the raw medial is processed and we back up|
-initial-raw|medial-raw|**medial-raw**|**medial**|final|ditto|
-|||**-> medial**||||
-initial-raw|**medial-raw**|**medial**|medial|final|ditto|
-||**-> medial**|||||
-**initial-raw**|**medial**|medial|medial|final|no further Pass 4 rules will match because <br>there are no raw medials left; Pass 5 matches the initial|
-**-> initial**|||||...the raw initial is processed and we are finished|
-                            
+initial-raw|medial-raw|medial-raw|**medial-raw<br>-> medial**|**final**|a rule fires:<br>the raw medial is processed and we back up|
+initial-raw|medial-raw|**medial-raw**<br>-> medial**|**medial**|final|ditto|
+initial-raw|**medial-raw**|**medial**<br>-> medial**|medial|final|ditto|
+**initial-raw**<br>-> initial**|**medial**|medial|medial|final|no further Pass 4 rules will match <br>because there are no raw medials left; <br>Pass 5 handles the initial and then we are finished|
 
+                            
 **Pass 5:** generate contextual forms for the initials.
 
 **Pass 6:** here we replace any remaining isolates with the forms that include the nuqtas. For instance, isolate seen + triple nuqta is turned into an isolate sheen.
