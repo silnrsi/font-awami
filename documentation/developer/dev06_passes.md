@@ -48,8 +48,8 @@ initial-raw|medial-raw|**medial-raw**|**medial**|final|ditto|
 |||**-> medial**||||
 initial-raw|**medial-raw**|**medial**|medial|final|ditto|
 ||**-> medial**|||||
-**initial-raw**|**medial**|medial|medial|final|no further Pass 4 rules will match because there are no raw medials left|
-**-> initial**|||||(the initial is handled by Pass 5)|
+**initial-raw**|**medial**|medial|medial|final|no further Pass 4 rules will match because <br>there are no raw medials left; Pass 5 matches the initial|
+**-> initial**|||||...the raw initial is processed and we are finished|
                             
 
 **Pass 5:** generate contextual forms for the initials.
