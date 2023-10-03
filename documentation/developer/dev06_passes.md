@@ -29,7 +29,7 @@ A start-of-line slot attribute is set at the beginning of the sequence which is 
 
 All the rules are roughly of the form
 
-     medial-raw  >  medial  /  ^  initial-or-medial-RAW  _  medial-not-RAW-or-final;
+     medial-raw  >  medial  /  ^  initial-or-medial-RAW  _  medial-NOT-RAW-or-final;
 
 When we start pass 4, all the glyphs except the final are considered “raw”, so at first only the last raw medial just before the final will match any rule. After replacing that raw glyph with a medial, we back up the stream position to before the previous raw glyph. Now that newly-current raw glyph plus the following medial will match, and we back up again. The process continues until we have replaced the second glyph in the sequence. The first (an initial, of course) is handled by Pass 5.
 
@@ -42,9 +42,9 @@ Glyph 1|Glyph 2|Glyph 3|Glyph 4|Glyph 5|Result|
 **initial-raw**|medial-raw|medial-raw|medial-raw|final|no rule matches|
 initial-raw | **medial-raw** | medial-raw | medial-raw | final | no rule matches |
 initial-raw|medial-raw|**medial-raw**|medial-raw|final|no rule matches|
-initial-raw|medial-raw|medial-raw|**medial-raw<br>-> medial**|_final_|a rule fires:<br>the raw medial is processed and we back up|
-initial-raw|medial-raw|**medial-raw<br>-> medial**|_medial_|final|ditto|
-initial-raw|**medial-raw<br>-> medial**|_medial_|medial|final|ditto|
+initial-raw|medial-raw|_medial-raw_|**medial-raw<br>-> medial**|_final_|a rule fires:<br>the raw medial is processed and we back up|
+initial-raw|_medial-raw_|**medial-raw<br>-> medial**|_medial_|final|ditto|
+_initial-raw_|**medial-raw<br>-> medial**|_medial_|medial|final|ditto|
 **initial-raw<br>-> initial**|_medial_|medial|medial|final|no further Pass 4 rules will match <br>because there are no raw medials left; <br>Pass 5 handles the initial and then we are finished|
 
                             
