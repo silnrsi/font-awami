@@ -91,8 +91,8 @@ dspace_file = 'source/awami.designspace'
 
 # iterate over designspace
 designspace(dspace_file,
-    # -W resets weights to 400 and 700
-    instanceparams='-W -l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
+    # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
+    instanceparams='-l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
     instances = INST,
     target = process('${DS:FILENAME_BASE}.ttf', *cmds),
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
