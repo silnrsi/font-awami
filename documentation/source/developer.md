@@ -60,12 +60,20 @@ In addition, the following will need to be updated:
 
 ### Generating octaboxes
 
-"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. There is an octabox JSON file for each weight of the font. The command is:
+"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. There is an octabox JSON file for each font weight. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. 
+
+Before any octabox can be updated, the ttf file for the corresponding font must be in the `results/` folder, so you first need to build the fonts (see above). Then the command to update a single octabox is:
 ```
 octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf
 ```
 
-where WEIGHT is Regular, Bold, etc. The command must be executed for each weight. It may take 15 minutes or more to generate each weight.
+where WEIGHT is Regular, Bold, etc. As given above, the command must be run from the root of the project. The command must be executed for each weight, and each will take several minutes to execute. 
+
+Alternatively, there is a script in the `tools/` folder called `run_octalap` which, if run from the `tools/` folder, will update all the octaboxes:
+```
+cd tools
+./run_octalap
+```
 
 ### Auto-generated test files
 
