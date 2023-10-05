@@ -27,12 +27,20 @@ The Awami Nastliq project can be built from source using [smith](https://github.
 ```
     smith distclean
     smith configure
-    smith build -d -v -j1
+    smith build -v -j1
 ```
 
 Because of the complex kerning and collision avoidance logic, builds can take up to 15 minutes or longer, depending on hardware.
 
-In the past the default `smith build` invocation has resulted in a core dump due to the intense computation requirements of the Awami build. If this occurs, the `-j1` or `-j2` option can be used in order to avoid the default Smith parallel processing, although this slows the build process somewhat.
+#### Some useful `smith build` options
+
+`-v` makes the output slightly more verbose, specifically including the "runner" information showing the actual commands smith is executing.
+
+`-j` controls parallel processing. Depending on your machine's memory, `smith build` sometimes fails due to the intense computation requirements of the Awami build. If this occurs, `-j1` or `-j2` can be used to restrict parallel processing, although this slows the build process somewhat. The number after the `-j` indicates the number of tasks smith will try to do in parallel.
+
+`-d` should normally be omitted when building the fonts. However, when developing/debugging a font using Graide, the `-d` must be used to prevent some optimizations that are incompatible with Graide. 
+
+`--regOnly` causes smith to build the Regular weight only. This is useful during development and debugging.
 
 ## Modifying the font
 
