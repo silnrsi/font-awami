@@ -83,6 +83,8 @@ cd tools
 ./run_octalap
 ```
 
+In order to use the newly generated octaboxes the font must be rebuilt.
+
 ### Auto-generated test files
 
 The project includes a Python program `tools/scripts/ftml_test_gen.py` that can generates test data in a form of XML called FTML (see below). A variety of test files can be built, covering various combinations of base characters and diacritics:
