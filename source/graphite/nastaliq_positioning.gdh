@@ -2000,11 +2000,16 @@ cTakes_alefDia=B  gKharizabar {att {to=@B; at=alefS; with=mUpperM}; SETDIACINS}
 cTakes_mTahUpperDia=B  cDiacriticUpper {att {to=@B; at=mTahUpperS; with=mUpperM}; SETDIACINS}
 		/  ^ _=B  c_attLikeNqUpper?  cDiacriticLower?  _=D {att.to==0};
 
+table(glyph)
+cMeemIMWide = (cMeemIni cMeemMed);
+cMeemIMWide -= (gMeemIni gMeemIniBeM1 gMeemIniBeNn gMeemIniHgM gMeemMed_alt gMeemMedBeNn_alt gMeemMedMmX);
+endtable;
+
 // Attaching dagger-alef to lam:
 cLamIMF=L     gKharizabar {att {to=@L; at=nUpperS; with=mUpperLamM}; SETDIACINS};
 gLam=L                 gKharizabar {att {to=@L; at=mUpperS; with=mUpperLamM}; SETDIACINS};
-// dagger-alef is also slightly to the left for meems:
-(cMeemIni cMeemMed)=M  gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
+// dagger-alef is also slightly to the left for most meems:
+cMeemIMWide=M          gKharizabar {att {to=@M; at=nUpperS; with=mUpperLamM}; SETDIACINS};
 (cMeemFin cMeemIso)=M  gKharizabar {att {to=@M; at=mUpperS; with=mUpperLamM}; SETDIACINS};
 
 // Attaching to final form, or nuqta, uses mUpper/LowerS.
