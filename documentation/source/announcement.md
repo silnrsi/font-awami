@@ -13,16 +13,17 @@ This is a maintenance release of Awami Nastaliq.
 - Changed shape of mark on 06C7 (Arabic U) to look like a comma instead of a pesh
 - Created bold forms of the honorifics
 - Changed PUA codepoint U+E003 to U+FD47 ARABIC LIGATURE ALAYHI AS-SALAAM
+- Corrected weight class of Medium, SemiBold, and ExtraBold fonts
 
 #### New
 - Added six characters:
-	- U+06A0 ARABIC LETTER AIN WITH THREE DOTS ABOVE ??? ABS-2702
-	- U+06AD ARABIC LETTER N
+  - U+06A0 ARABIC LETTER AIN WITH THREE DOTS ABOVE
+  - U+06AD ARABIC LETTER NG
   - U+06BD ARABIC LETTER NOON WITH THREE DOTS ABOVE
   - U+0762 ARABIC LETTER KEHEH WITH DOT ABOVE
   - U+FDCF ARABIC LIGATURE SALAAMUHU ALAYNAA
-  - U+10ED0 ARABIC BIBLICAL END OF VERSE (this character is not officially in Unicode, it is in the pipeline for Unicode 16.0)
-
+  - U+10ED0 ARABIC BIBLICAL END OF VERSE (this character is not officially in Unicode, it is in the pipeline for a future version of the Unicode Standard)
+  
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 
 ### Known issues
