@@ -21,27 +21,36 @@
     <h2 id="building-the-fonts-from-source-code">Building the fonts from source code</h2>
     <p>Font sources are published in a <a href="https://github.com/silnrsi/font-awami">Github project</a>. The build process requires <a href="https://github.com/silnrsi/smith">smith</a> and project build parameters are set in the <a href="https://github.com/silnrsi/smith/blob/master/wscript">wscript</a>.</p>
     <p>Font sources are in the <a href="http://unifiedfontobject.org/versions/ufo3/">UFO3</a> format with font family structures defined using <a href="https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib">designspace</a>. There is no OpenType code in this font, but the font does use the Graphite smart font technology.</p>
-    <p>The fonts are built using a completely free and open source workflow using industry-standard tools (<a href="https://github.com/fonttools/fonttools">fonttools</a>), a package of custom python scripts (<a href="https://github.com/silnrsi/pysilfont">pysilfont</a>), and a build and packaging system (<a href="https://github.com/silnrsi/smith">Smith</a>). The whole toolchain is available as a Docker container.</p>
-    <p>Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: <a href="https://silnrsi.github.io/silfontdev/">SIL Font Development Notes</a>.</p>
+    <p>The fonts are built using a completely free and open source workflow using industry-standard tools (<a href="https://github.com/fonttools/fonttools">fonttools</a>), a package of custom python scripts (<a href="https://github.com/silnrsi/pysilfont">pysilfont</a>), and a build and packaging system (<a href="https://github.com/silnrsi/smith">smith</a>). The whole toolchain is available as a Docker container.</p>
+    <p>Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: <a href="https://silnrsi.github.io/silfontdev/">SIL Font Development Guide</a>.</p>
     <h3 id="building">Building</h3>
     <p>The Awami Nastliq project can be built from source using <a href="https://github.com/silnrsi/smith">smith</a>. This is done via the sequence:</p>
     <pre><code>        smith distclean
         smith configure
-        smith build -d</code></pre>
+        smith build -v -j1</code></pre>
     <p>Because of the complex kerning and collision avoidance logic, builds can take up to 15 minutes or longer, depending on hardware.</p>
-    <p>In the past the default <code>smith build</code> invocation has resulted in a core dump due to the intense computation requirements of the Awami build. If this occurs, the <code>-j1</code> or <code>-j2</code> option can be used in order to avoid the default Smith parallel processing, although this slows the build process somewhat.</p>
+    <h4 id="some-useful-smith-build-options">Some useful <code>smith build</code> options</h4>
+    <p><code>-v</code> makes the output slightly more verbose, specifically including the "runner" information showing the actual commands smith is executing.</p>
+    <p><code>-j</code> controls parallel processing. Depending on your machine's memory, <code>smith build</code> sometimes fails due to the intense computation requirements of the Awami build. If this occurs, <code>-j1</code> or <code>-j2</code> can be used to restrict parallel processing, although this slows the build process somewhat. The number after the <code>-j</code> indicates the number of tasks smith will try to do in parallel.</p>
+    <p><code>-d</code> should normally be omitted when building the fonts. However, when developing/debugging a font using Graide, the <code>-d</code> must be used to prevent some optimizations that are incompatible with Graide.</p>
+    <p><code>--regOnly</code> causes smith to build the Regular weight only. This is useful during development and debugging.</p>
     <h2 id="modifying-the-font">Modifying the font</h2>
     <h3 id="project-documentation">Project documentation</h3>
-    <p>A good deal of developer documentation for the Awami Nastaliq font can be found at the <a href="https://github.com/silnrsi/font-awami">Awami GitHub repository</a>.</p>
+    <p>A good deal of developer documentation for the Awami Nastaliq font can be found at the <a href="https://github.com/silnrsi/font-awami/documentation/developer">Awami GitHub repository</a>.</p>
     <h3 id="adding-characters">Adding characters</h3>
     <p>Like most Nastaliq fonts, Awami takes a "decomposition" approach, where initial, medial, and final forms are constructed at rendering time from separate base glyphs and nuqtas and other inherent parts of characters. This means that adding a new character will likely require only adding the isolate form along with its USV encoding.</p>
     <p>After adding new glyphs to the font, the shaping logic will need to be extended to handle them. The bulk of the code is found in: - <code>nastaliq_classes.gdh</code> - <code>nastaliq_cntxlClasses.gdh</code> - <code>nastaliq_shaping.gdh</code> - <code>nastaliq_rules.gdh</code>.</p>
     <p>A helpful approach is to do a global search through the code for a character with similar behavior and add glyphs for the new character in all the corresponding places.</p>
     <p>In addition, the following will need to be updated: - <code>glyph_data.csv</code> -- should include all glyphs in the font; it is used to set glyph order in the built font. - <code>nastaliq_complexShapes.gdh</code> -- needs to include any glyphs who shapes cannot be approximated by a simple polygon for the purposes of kerning, particularly those with concave portions. - "Octabox" data will need to be updated for all the weights of the font; see below. - <code>ftml_test_gen.py</code> -- should include the new character in order for it to be included in the automatically generated test files.</p>
     <h3 id="generating-octaboxes">Generating octaboxes</h3>
-    <p>"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. There is an octabox JSON file for each weight of the font. The command is:</p>
-    <pre><code>    octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-WEIGHT.json   ../results/AwamiNastaliq-WEIGHT.ttf</code></pre>
-    <p>where WEIGHT is Regular, Bold, etc. The command must be executed for each weight. It may take 15 minutes or more to generate each weight.</p>
+    <p>"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. There is an octabox JSON file for each font weight. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated.</p>
+    <p>Before any octabox can be updated, the ttf file for the corresponding font must be in the <code>results/</code> folder, so you first need to build the fonts (see above). Then the command to update a single octabox is:</p>
+    <pre><code>    octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf</code></pre>
+    <p>where WEIGHT is Regular, Bold, etc. As given above, the command must be run from the root of the project. The command must be executed for each weight, and each will take several minutes to execute.</p>
+    <p>Alternatively, there is a script in the <code>tools/</code> folder called <code>run_octalap</code> which, if run from the <code>tools/</code> folder, will update all the octaboxes:</p>
+    <pre><code>    cd tools
+    ./run_octalap</code></pre>
+    <p>In order to use the newly generated octaboxes the font must then be rebuilt.</p>
     <h3 id="auto-generated-test-files">Auto-generated test files</h3>
     <p>The project includes a Python program <code>tools/scripts/ftml_test_gen.py</code> that can generates test data in a form of XML called FTML (see below). A variety of test files can be built, covering various combinations of base characters and diacritics: - <code>basicforms</code> - only one character of each shape class is included, no diacritics - <code>allbasechars</code> - all base characters, no diacritics - <code>basic_somediac</code> - only one character of each shape class with one lower and one upper diacritics - <code>basic_alldiac</code> - only one character of each shape class with all diacritics - <code>allbasecharforms</code> - all characters and diacritics are included (this creates a huge file!)</p>
     <p>The test file builder is called as follows:</p>
@@ -60,7 +69,7 @@
     <p>We warmly welcome contributions to the fonts, such as new glyphs, enhanced smart font code, or bug fixes. The <a href="https://silnrsi.github.io/silfontdev/en-US/Contributing_Changes.html">brief overview of contributing changes</a> is a good place to begin. The next step is to contact us by responding to an existing issue or creating an issue in the Github repository and expressing your interest. We can then work together to plan and integrate your contributions.</p>
     <p>To enable us to accept contributions in a way that honors your contribution and respects your copyright while preserving long-term flexibility for open source licensing, you would also need to agree to the <strong>SIL International Contributor License Agreement for Font Software (v1.0)</strong> prior to sending us your contribution. To read more about this requirement and find out how to submit the required form, please visit the <a href="https://software.sil.org/fontcla">CLA information page</a>.</p>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.200 and is copyright © 2014-2023 SIL International.</p>
     </footer>
 </article>
 </div>

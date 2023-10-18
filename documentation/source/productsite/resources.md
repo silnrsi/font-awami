@@ -13,9 +13,7 @@ Install the font by decompressing the .zip archive and installing the font using
 
 ## Keyboarding and character set support
 
-This font does not include any keyboarding helps or utilities. If you cannot use the built-in keyboards of the operating system, you will need to install the appropriate keyboard and input method for the characters of the language you wish to use. If you want to enter characters that are not supported by any system keyboard, the [Keyman program](https://keyman.com/) can be helpful on Windows, macOS, Linux, Android and iOS systems. Also available for Windows is [MSKLC](https://www.microsoft.com/en-us/download/details.aspx?id=102134). For other platforms, [XKB](https://www.x.org/wiki/XKB/) or [Ukelele](https://software.sil.org/ukelele/) can be helpful.
-
-If you want to enter characters that are not supported by any system keyboard, and to access the full Unicode range, we suggest you use gucharmap, kcharselect on Ubuntu or similar software. Another method of entering some symbols is provided by a few applications such as Adobe InDesign. They can display a glyph palette that shows all the glyphs (symbols) in a font and allow you to enter them by clicking on the glyph you want.
+This font does not include any keyboarding helps or utilities. If you cannot use the built-in keyboards of the operating system, you will need to install the appropriate keyboard and input method for the characters of the language you wish to use. If you want to enter characters that are not supported by any system keyboard, the [Keyman program](https://keyman.com/) can be helpful on Windows, macOS, Linux, Android and iOS systems. 
 
 Other suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
 
@@ -27,31 +25,22 @@ See [Character set support](charset) for details of the Unicode characters suppo
 
 ### Installing an Urdu keyboard
 
-#### On Windows 8/10:
+#### On Windows 10/11:
 - Open the Language control panel.
 - Click on **Add a language**.
 - Choose "Urdu (Pakistan)" and click **OK**.
 - Activate the keyboard using the Taskbar control or language bar.
 
-#### On Windows 7:
-- Open the Region and Language control panel.
-- Click on the **Keyboards and Languages tab**.
-- Choose **Change keyboards...**
-- Choose **Add...**
-- Select "Urdu (Islamic Republic of Pakistan)" and click **OK**.
-* Activate the keyboard using the Taskbar control or language bar.
-
 #### To see a visual layout for the keyboard:
 
-* Click on the **Start Menu**, choose **All Programs**, **Accessories**, **Ease of Access**, **On-screen Keyboard**.
-* On Windows 8/10: see [Use the On-Screen Keyboard (OSK) to type](http://windows.microsoft.com/en-us/windows-8/type-with-the-on-screen-keyboard).
+On Windows 10/11: see [Use the On-Screen Keyboard (OSK) to type](https://support.microsoft.com/en-us/windows/use-the-on-screen-keyboard-osk-to-type-ecbb5e08-5b4e-d8c8-f794-81dbf896267a#ID0EBBD=Windows_11).
 
 
 ## Rendering and application support
 
 The Awami Nastaliq font requires software enabled with the very latest [Graphite](https://graphite.sil.org/) engine (version 1.3.4+) in order to render correctly. The font does not support OpenType rendering. **It will not work with standard software such as Microsoft Office**. 
 
-Currently, the only software that can render Awami Nastaliq are the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX/XeLaTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext](https://paratext.org/), and [Bloom](http://bloomlibrary.org/).
+Currently, the only software that can render Awami Nastaliq are the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX/XeLaTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext](https://paratext.org/), [PTXprint](https://software.sil.org/ptxprint/), and [Bloom](http://bloomlibrary.org/).
 
 If a developer wishes to add support for Graphite, the Graphite engine is available [here](https://github.com/silnrsi/graphite/releases/).
 

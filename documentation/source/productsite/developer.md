@@ -13,9 +13,9 @@ Font sources are published in a [Github project](https://github.com/silnrsi/font
 
 Font sources are in the [UFO3](http://unifiedfontobject.org/versions/ufo3/) format with font family structures defined using [designspace](https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib). There is no OpenType code in this font, but the font does use the Graphite smart font technology.
 
-The fonts are built using a completely free and open source workflow using industry-standard tools ([fonttools](https://github.com/fonttools/fonttools)), a package of custom python scripts ([pysilfont](https://github.com/silnrsi/pysilfont)), and a build and packaging system ([Smith](https://github.com/silnrsi/smith)). The whole toolchain is available as a Docker container.
+The fonts are built using a completely free and open source workflow using industry-standard tools ([fonttools](https://github.com/fonttools/fonttools)), a package of custom python scripts ([pysilfont](https://github.com/silnrsi/pysilfont)), and a build and packaging system ([smith](https://github.com/silnrsi/smith)). The whole toolchain is available as a Docker container. 
 
-Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: [SIL Font Development Notes](https://silnrsi.github.io/silfontdev/).
+Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: [SIL Font Development Guide](https://silnrsi.github.io/silfontdev/).
 
 ### Building
 
@@ -23,18 +23,26 @@ The Awami Nastliq project can be built from source using [smith](https://github.
 ```
     smith distclean
     smith configure
-    smith build -d
+    smith build -v -j1
 ```
 
 Because of the complex kerning and collision avoidance logic, builds can take up to 15 minutes or longer, depending on hardware.
 
-In the past the default `smith build` invocation has resulted in a core dump due to the intense computation requirements of the Awami build. If this occurs, the `-j1` or `-j2` option can be used in order to avoid the default Smith parallel processing, although this slows the build process somewhat.
+#### Some useful `smith build` options
+
+`-v` makes the output slightly more verbose, specifically including the "runner" information showing the actual commands smith is executing.
+
+`-j` controls parallel processing. Depending on your machine's memory, `smith build` sometimes fails due to the intense computation requirements of the Awami build. If this occurs, `-j1` or `-j2` can be used to restrict parallel processing, although this slows the build process somewhat. The number after the `-j` indicates the number of tasks smith will try to do in parallel.
+
+`-d` should normally be omitted when building the fonts. However, when developing/debugging a font using Graide, the `-d` must be used to prevent some optimizations that are incompatible with Graide. 
+
+`--regOnly` causes smith to build the Regular weight only. This is useful during development and debugging.
 
 ## Modifying the font
 
 ### Project documentation
 
-A good deal of developer documentation for the Awami Nastaliq font can be found at the [Awami GitHub repository](https://github.com/silnrsi/font-awami).
+A good deal of developer documentation for the Awami Nastaliq font can be found at the [Awami GitHub repository](https://github.com/silnrsi/font-awami/documentation/developer).
 
 ### Adding characters
 
@@ -56,12 +64,22 @@ In addition, the following will need to be updated:
 
 ### Generating octaboxes
 
-"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. There is an octabox JSON file for each weight of the font. The command is:
+"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. There is an octabox JSON file for each font weight. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. 
+
+Before any octabox can be updated, the ttf file for the corresponding font must be in the `results/` folder, so you first need to build the fonts (see above). Then the command to update a single octabox is:
 ```
-octalap -j 0 -q -o ../source/graphite/octabox_AwamiNastaliq-WEIGHT.json   ../results/AwamiNastaliq-WEIGHT.ttf
+octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf
 ```
 
-where WEIGHT is Regular, Bold, etc. The command must be executed for each weight. It may take 15 minutes or more to generate each weight.
+where WEIGHT is Regular, Bold, etc. As given above, the command must be run from the root of the project. The command must be executed for each weight, and each will take several minutes to execute. 
+
+Alternatively, there is a script in the `tools/` folder called `run_octalap` which, if run from the `tools/` folder, will update all the octaboxes:
+```
+cd tools
+./run_octalap
+```
+
+In order to use the newly generated octaboxes the font must then be rebuilt.
 
 ### Auto-generated test files
 

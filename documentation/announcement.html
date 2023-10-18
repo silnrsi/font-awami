@@ -14,20 +14,38 @@
     <header>
         <h1 class="title">Awami Nastaliq - Announcement</h1>
     </header>
-    <p>This is a maintenance release of Awami Nastaliq.</p>
+    <p>We are happy to announce the release of Awami Nastaliq version 3.200. This is a maintenance release of Awami Nastaliq.</p>
+    <p>This release supports only a few new characters. However, it enables support for the Kazakh, Malay, and Uyghur languages.</p>
     <h3 id="changes">Changes</h3>
     <h4 id="improved">Improved</h4>
     <ul>
-    <li>Fixed a bug that manifested as disappearing glyphs</li>
+    <li>Fixed bug in dot removal for YEH followed by COMBINING Hamza (U+064A U+0654)</li>
     <li>Fixed some minor kerning/collision/spacing bugs</li>
+    <li>Changed shape of mark on 06C7 (Arabic U) to look like a comma instead of a pesh</li>
+    <li>Created bold forms of the honorifics</li>
+    <li>Changed PUA codepoint U+E003 to U+FD47 ARABIC LIGATURE ALAYHI AS-SALAAM</li>
+    <li>Corrected weight class of Medium, SemiBold, and ExtraBold fonts</li>
+    </ul>
+    <h4 id="new">New</h4>
+    <ul>
+    <li>Added six characters:
+    <ul>
+    <li>U+06A0 ARABIC LETTER AIN WITH THREE DOTS ABOVE</li>
+    <li>U+06AD ARABIC LETTER NG</li>
+    <li>U+06BD ARABIC LETTER NOON WITH THREE DOTS ABOVE</li>
+    <li>U+0762 ARABIC LETTER KEHEH WITH DOT ABOVE</li>
+    <li>U+FDCF ARABIC LIGATURE SALAAMUHU ALAYNAA</li>
+    <li>U+10ED0 ARABIC BIBLICAL END OF VERSE (this character is not officially in Unicode, it is in the pipeline for a future version of the Unicode Standard)</li>
+    </ul></li>
     </ul>
     <p>Both desktop and web fonts are provided in a single, all-platforms package on the <a href="https://software.sil.org/awami/download/">Download Page</a>.</p>
     <h3 id="known-issues">Known issues</h3>
     <ul>
-    <li>No known issues</li>
+    <li>U+10ED0 ARABIC BIBLICAL END OF VERSE is not officially in Unicode. The codepoint <em>could</em> still change.</li>
+    <li>U+E003 was a PUA codepoint. We have reencoded it to the proper codepoint at U+FD47 ARABIC LIGATURE ALAYHI AS-SALAAM. If the PUA codepoint U+E003 was used, it should be replaced by U+FD47.</li>
     </ul>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.100 and is copyright © 2014-2023 SIL International.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.200 and is copyright © 2014-2023 SIL International.</p>
     </footer>
 </article>
 </div>
