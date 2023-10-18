@@ -5,7 +5,7 @@ fontversion: 3.200
 
 The Awami Nastaliq font does not provide complete coverage of all the characters defined in Unicode for Arabic script. Because the font style is specifically intended for languages using the Nastaliq style of Arabic script, the character set for this font is aimed at supporting those languages.
 
-[Arabic (U+0600..U+06FF)](https://www.unicode.org/charts/PDF/U0600.pdf) was added to Unicode 1.0. [Arabic Supplement (U+0750..U+077F)](https://www.unicode.org/charts/PDF/U0750.pdf) was added to Unicode 4.1, [Arabic Extended-A (U+08A0..U+08FF)](https://www.unicode.org/charts/PDF/U08A0.pdf) was added to Unicode 6.1, [Arabic Extended-B (U+0870..U+089F)](https://www.unicode.org/charts/PDF/U0870.pdf) was added to Unicode 14.0, and [Arabic Extended-C (U+0EC0..U+10EFF)](https://www.unicode.org/charts/PDF/U10EC0.pdf) was added to Unicode 15.0. There are still some Arabic script characters being added to Unicode, so it is possible that not all languages using the Arabic script are fully represented in Unicode. 
+[Arabic (U+0600..U+06FF)](https://www.unicode.org/charts/PDF/U0600.pdf) was added to Unicode 1.0. [Arabic Supplement (U+0750..U+077F)](https://www.unicode.org/charts/PDF/U0750.pdf) was added to Unicode 4.1, [Arabic Extended-A (U+08A0..U+08FF)](https://www.unicode.org/charts/PDF/U08A0.pdf) was added to Unicode 6.1, [Arabic Extended-B (U+0870..U+089F)](https://www.unicode.org/charts/PDF/U0870.pdf) was added to Unicode 14.0, and [Arabic Extended-C (U+10EC0..U+10EFF)](https://www.unicode.org/charts/PDF/U10EC0.pdf) was added to Unicode 15.0. There are still some Arabic script characters being added to Unicode, so it is possible that not all languages using the Arabic script are fully represented in Unicode. 
 
 ## Supported characters
 
@@ -17,7 +17,7 @@ Arabic 	| ✓ except for 0605..0608, 0616..061C, 061D..061E, 063B..0640, 065C..0
 Arabic Supplement | ✓ except for 0750..0758, 075B, 075D..0761, 0764..0767
 Arabic Extended-A | ✓ only includes 08C7, 08C8, 08FF
 Arabic Extended-B | ✗ 
-Arabic Extended-C | ✓ only includes 10ED0 
+Arabic Extended-C | ✓ only includes 10ED0 (a provisional codepoint in the Unicode pipeline)
 Arabic Presentation Forms-A | only includes FD3E..FD3F, FD47, FDCF, FDF2, FDFA..FDFD
 Arabic Presentation Forms-B | ✗ 
 Codepage 1252 (Western)¹ | ✓

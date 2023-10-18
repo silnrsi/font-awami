@@ -3,12 +3,14 @@ title: Awami Nastaliq - Announcement
 fontversion: 3.200
 ---
 
-This is a maintenance release of Awami Nastaliq.
+We are happy to announce the release of Awami Nastaliq version 3.200. This is a maintenance release of Awami Nastaliq.
+
+This release supports only a few new characters. However, it enables support for the Kazakh, Malay, and Uyghur languages.
 
 ### Changes
 
 #### Improved
-- Fixed bug in dot removal for YEH followed by COMBINING Hamza
+- Fixed bug in dot removal for YEH followed by COMBINING Hamza (U+064A U+0654)
 - Fixed some minor kerning/collision/spacing bugs
 - Changed shape of mark on 06C7 (Arabic U) to look like a comma instead of a pesh
 - Created bold forms of the honorifics

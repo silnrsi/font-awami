@@ -6,7 +6,7 @@ fontversion: 3.200
 ### 2023-Oct-23 (SIL WSTech team) Awami Nastaliq Version 3.200
 
 #### Improved
-- Fixed bug in dot removal for YEH followed by COMBINING Hamza
+- Fixed bug in dot removal for YEH followed by COMBINING Hamza (U+064A U+0654)
 - Fixed some minor kerning/collision/spacing bugs
 - Changed shape of mark on 06C7 (Arabic U) to look like a comma instead of a pesh
 - Created bold forms of the honorifics
