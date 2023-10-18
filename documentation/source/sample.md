@@ -129,7 +129,7 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 &#x202D;&#x6DD;&#x31;&#x32;&#x33;&#x202C; &#x202D;&#x6DD;&#x0661;&#x0662;&#x0663;&#x202C;</span></p>
 
 
-## Urdu MSA UDHR #26:
+## Urdu UDHR #26:
 
 <p dir="rtl"><span class='awami-B normal'> دفعہ ۲۶۔</span></p>
 
