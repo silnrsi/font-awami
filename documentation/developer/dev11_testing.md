@@ -70,7 +70,7 @@ For **allbasechars** mode, we cycle through all the sequences and replace most o
 
 ![Output for basicforms vs. allbasechars](images/FTML_BasicVsAllChars.png)
 
-_Compare the output for basicforms mode (right) vs. allbasechars modes_
+_Compare the output for basicforms mode (right) vs. allbasechars mode: the basic shapes are the same, but the characters are different._
 
 For **basic_somediac** and **basic_alldiac**, we generate the same sequences as **basicforms** but duplicate each sequence by including diacritics on each character. The **basic_somediac** format essentially duplicates **basicforms** but with zabars and zers on each base character, so it is about twice as long.
 
@@ -99,7 +99,7 @@ The bolded sequences above are problematic. When the qaf occurs in the medial po
 
 ![Forms circled in red don't fit.](images/FinalFormWoKludge.png)
 
-_The qaf forms circled in red don't fit the feh interface being tested here._
+_The qaf forms circled in red wouldn't fit the feh interface being tested here._
 
 It is only in the last step of the process that we distinguish between the main sequence occurring in the various positional contexts. So at that point we revert the final qaf to a final feh (the most basic form) instead.
 
