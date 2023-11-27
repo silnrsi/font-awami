@@ -29,11 +29,15 @@ Also note that the ftml.xsl file for the Awami project is somewhat different tha
 
 ![Part of an FTML-generated table](images/FTML.png)
 
-Irrelevant cells are colored gray.
+_Part of an FTML-generated table_
 
-![Part of an FTML-generated table](images/FTML_finalonly.png)
+Irrelevant cells are colored gray:
 
-### The ftml_test_gen.py program
+![Part of an FTML-generated table for right-connecting](images/FTML_finalonly.png)
+
+_Part of an FTML-generated table for right-connecting forms_
+
+## The ftml_test_gen.py program
 
 A script called **ftml_test_gen.py** is used to generate the various FTML files. If you run it from the root directory with no arguments, it will produce the five formats listed above. You can also supply various parameters:
 
@@ -56,21 +60,23 @@ Each sequence is put into a <testgroup> XML structure:
 
 which is transformed via XSL into a row in a table with a cell for each of the contexts:
 
-![](images/FTML_dual.png)
+![FTML table](images/FTMLrow_dual.png)
 
-The "basic characters," of course, are beh, jeem, sad, seen, tah, ain, feh, lam, meem, kaf, heh-doachashmee, heh-goal, alef, dal, reh, qaf, waw, bariyeh, chotiyeh, noon, and teh-marbuta. These are divided into dual-connecting and right-connecting groups. All other characters are associated with one of the basic characters. There is a group of initial/medial forms that are associated with a different basic form from the final (e.g., noonIM is an alternate of beh, qafIM is an alternate of feh, etc.).
+The "basic characters" are the expected ones: beh, jeem, sad, seen, tah, ain, feh, lam, meem, kaf, heh-doachashmee, heh-goal, alef, dal, reh, qaf, waw, bariyeh, chotiyeh, noon, and teh-marbuta. These are divided into dual-connecting and right-connecting groups. All other characters are associated with one of the basic characters. There is a group of initial/medial forms that are associated with a different basic form from the final (e.g., noonIM is an alternate of beh, qafIM is an alternate of feh, etc.).
 
 For **basicforms** mode, the only modification that is needed is to change some of the kaf sequences to use gaf instead.
 
 For **allbasechars** mode, we cycle through all the sequences and replace most of the basic characters with an alternate form. For instance, we replace instances of beh with teh, dotless-beh, tteheh, teh3down, etc; we replace jeem with hah, khah, tcheh, dyeh, etc. The goal is not to include every combination but make sure both basic and alternate characters are included. Note that the structure and contents of the **basicforms** and **allbasechars** files are similar, the difference is that **allbasechars** includes a wider variety of characters.
 
-![Output for baseforms mode (right) vs. allbasechars modes](images/FTML_BasicVsAllChars.png)
+![Output for basicforms vs. allbasechars](images/FTML_BasicVsAllChars.png)
+
+_Output for basicforms mode (right) vs. allbasechars modes_
 
 For **basic_somediac** and **basic_alldiac**, we generate the same sequences as **basicforms** but duplicate each sequence by including diacritics on each character. The **basic_somediac** format essentially duplicates **basicforms** but with zabars and zers on each base character, so it is about twice as long.
 
 The sequences are generated in terms of the first character in the sequence, but they need to be output in groups based on the "interface," the last in the sequence. (Why did I write it this way? I don't remember.) The sort keys in _group_name_format() are used to sort things.
 
-#### Adding new characters to the tests
+### Adding new characters to the tests
 
 When the font is extended to handle additional characters, those characters should be added to the test-generation script. They need to be added in three places:
 
@@ -78,7 +84,7 @@ When the font is extended to handle additional characters, those characters shou
 - expand_sequences() or insert_diacritics(): add the code for it into the appropriate list.
 - _group_name_format() or _diac_group_name_format() - add the appropriate information. (Note that for base characters, the last two numbers of the tuple indicate how many cells are needed in the table row. Dual-connecting characters need 2 each of right-connecting and left-connecting (... 2, 2), right-connecting characters need 2 right-connecting and no left-connecting (... 2, 0), and initial/medial alternates need 2 left-connecting and no right-connecting (... 0, 2). However, it looks like these numbers are never used.)
 
-#### Kludge for initial/medial-only alternates
+### Kludge for initial/medial-only alternates
 
 A tricky thing to be aware of happens with the **allbasechars** mode. When substituting initial/medial forms where the final has a distinct form (noon, yeh, qaf, etc.), special care must be taken. The character is appropriate to be substituted in the initial/medial position, and indeed we do want the substitution to happen so it can be tested. But the final form will not be the expected one. 
 
@@ -91,11 +97,15 @@ For example: we want to generate test samples with various feh shapes (including
 
 The bolded sequences above are problematic. When the qaf occurs in the medial position there's no problem, but when it occurs in the final position (the bold-face items above), we don't actually end up with a feh shape, but rather a qaf shape.
 
-![The forms circled in red don't fit the feh interface being tested here.](images/FinalFormKludge.png)
+![Forms circled in red don't fit.](images/FinalFormKludge.png)
+
+_The qaf forms circled in red don't fit the feh interface being tested here._
 
 It is only in the last step of the process that we distinguish between the main sequence occurring in the various positional contexts. So at that point we revert the final qaf to a final feh (the most basic form) instead.
 
-![The qaf forms have been reverted back to the basic feh forms.](images/FinalFormKludge.png)
+![Qaf forms have been reverted.](images/FinalFormKludge.png)
+
+_The qaf forms have been reverted back to the basic feh forms._
 
 ------
 
