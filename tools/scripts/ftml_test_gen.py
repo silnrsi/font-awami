@@ -18,6 +18,8 @@ import os
 
 def run():
 
+    defPath = os.path.join( "tests", "FTML_XSL")
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-o","--output",default=r"tests/FTML_XSL",help="Where to write output files")  # assumes calling from the root
     parser.add_argument("-t","--text",action="store_true",help="Generate data as simple text file")
@@ -33,6 +35,9 @@ def run():
             pass
         else:
         	  modeArgs.append(args.mode[i])
+
+    # Debugging;
+    #modeArgs = ["allbasechars"];
 
     modes = []
     for m in modeArgs:
@@ -62,16 +67,31 @@ def run():
 
     for mode in modes:
         print("Mode: " + mode)
-        outputFilename = os.path.join(args.output, "test_" + mode + (".txt" if args.text else ".xml"))
+        dir = args.output
+        dir = dir.replace( "tests/FTML_XSL", defPath)  # if it's there
+        dir = dir.replace( "tests\\FTML_XSL", defPath)
+        outputFilename = os.path.join(dir, "test_" + mode + (".txt" if args.text else ".xml"))
 
-        # Generate tuples of basic characters, labeled by the group they will eventually belong under and how they connect.
-        # E.g., [('beh', [...(('beh', 'lam'), 'both', 'lam), (('beh', 'dal'), 'right', 'dal'), ...]), ...
+        # Debugging:
+        #outputFilename = "testoutput.ftml"
+
+        # Start with tuples of basic characters, organized by the first char. Each character has associated
+        # # a list of triples. The second element of the triple indicates how the last sequence connects,
+        # and the third element indicates the *key* - which character the sequence will be displayed with in the
+        # final output.
+        # E.g., (much simplified):
+        # [('beh', [ (('beh',  'jeem'), 'both',   'jeem')
+        #            (('beh',  'lam'),  'both',   'lam),
+        #            (('beh',  'dal'),  'right',  'dal') ),
+        #  ('jeem',[ (('jeem', 'jeem'), 'both',   'jeem'),
+        #            (('jeem', 'lam'),  'both',   'lam'),
+        #            (('jeem', 'dal'),  'right',  'dal') ) ]
         basicSeq = generate_basic_sequences(mode)
         print("basicSeq =", basicSeq)
 
-        # Either add additional sequences to handle non-basic characters, or substitute non-basic characters for some
-        # of the basic ones.
-        expandedSeq = expand_sequences(mode, basicSeq)
+        # Then either add additional sequences to handle non-basic characters (allbasecharforms), 
+        # or substitute non-basic characters for some of the basic ones (allbasechars).
+        (expandedSeq, expandLeft) = expand_sequences(mode, basicSeq)
         print("expandedSeq =", expandedSeq)
         
         seqWDiacritics = insert_diacritics(mode, expandedSeq)
@@ -87,7 +107,7 @@ def run():
             gen = Text(outputFilename)
         else:
             gen = FTML(outputFilename)
-        output(gen, mode, fontName, fontScale, groupedSeq)
+        output(gen, mode, fontName, fontScale, groupedSeq, expandLeft)
         print("")
 
     print("Done")
@@ -95,6 +115,14 @@ def run():
 # end of run    
 
 
+""" The return value is a list of tuples of the form (keyChar, sequences) where each sequence is a triple:
+    1. the sequence of character codes
+    2. 'both' to include both contexts, 'right' to include only the left context
+    3. key char
+
+    The key char is the character under which this sequence should be organize - usually the last char 
+    in the sequence.
+"""
 def generate_basic_sequences(mode) :
     
     dualConnecting = ["beh", "jeem", "seen", "sad", "tah", "ain", "feh", "lam", "meem", "kaf",
@@ -105,7 +133,7 @@ def generate_basic_sequences(mode) :
     
     # DEBUGGING:
     """
-    dualConnecting = ["ain", "jeem", "kaf", "meem", "tah"]
+    dualConnecting = ["ain", "jeem", "beh"]
     rightConnecting = ["alef", "noon"]
     dualSubs = []
     rightSubs = []
@@ -182,22 +210,21 @@ def _generate_sub_sequences() :
 
 def expand_sequences(mode, basicSequences) :
 
-    # Put the extra forms in the reverse order, since they always get added right after
-    # the basic form.
     if mode == "basicforms" :
         expand = {"kaf" : ["gaf"]}
-        expand_left = {}
+        expandLeft = {}
         changeKey = False
         
     elif mode == "basic_somediac" or mode == "basic_alldiac" :
         expand = {"kaf" : ["gaf"],
             "beh" : ["teh"]  # because diacritics attach differently to upper and lower nuqtas
         }
-        expand_left = {}
+        expandLeft = {}
         changeKey = False
         
     elif mode == "allbasecharforms" or mode == "allbasechars" :
-        # Note: it is appropriate to add new characters to the beginning of the lists below, not at the end. They are processed in reverse order.
+        # Note: it is appropriate to add new characters to the beginning of the lists below, not at the end.
+        # They are processed in reverse order.
         expand = {
             "alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
             "beh"       :   ["dotlessBeh", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
@@ -216,28 +243,31 @@ def expand_sequences(mode, basicSequences) :
             "bariyeh"   :   ["bariyeh3", "bariyeh2"],
             "hehGoal"   :   ["hehHamza", "arabicHeh"],
                 
-            "reh"       :   ["rehSmallVbelow", "reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot", "rehDotBelow", "jeh", "rreh", "zain"],
+            "reh"       :   ["rehSmallVbelow", "reh2dotsV", "rehTah2smd", "rehRing", "rehHamza", "reh4dots", "reh2dots", "rehDotDot",
+                                "rehDotBelow", "jeh", "rreh", "zain"],
             "dal"       :   ["dul", "dal4dots", "dalRing", "dal2dotsVTah", "dalDotTah", "ddal", "thal"],
                                         # dalDotBelow - not really needed for Nastaliq
             "waw"       :   ["waw3", "waw2", "waw2dots", "wawDot", "yu", "ve", "kirghizYu", "wawRing", "wawHamza"],
             "tehMarGoal" :  ["hehYeh", "tehMarbuta"]
         }
-        # Note: these are not used for allbasechars mode.
-        expand_left = {  # initial/medial forms of letters that have different finals
-            "beh"       :   ["noon3dotsIM", "noonSmallVIM", "noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM", "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
+
+        expandLeft = {  # initial/medial forms of letters that have different finals
+            "beh"       :   ["noon3dotsIM", "noonSmallVIM", "noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM",
+                                "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
             "feh"       :   ["dotlessQafIM", "qafIM"]
         }
-        # Overwrite for debugging:
-        """
-        expand = { "jeem" : ["khah", "hah"], "seen" : ["sheen"] }
-        expand_left = { "beh" :   ["noon3dotsIM", "noonRingIM", "noonIM", "chotiyehIM"], }
-        """
         
+        # Debugging:
+        """
+        expand = { "jeem" : ["khah", "hah"], "ain" : ["ghain"] }
+        expandLeft = { "beh" :   ["noon3dotsIM", "noonRingIM", "noonIM"] }
+        """
+
         changeKey = True
         
     elif mode == "alldiac" :
         expand = {}
-        expand_left = {}
+        expandLeft = {}
 
     else:
         print("ERROR: Unexpected mode: " + mode)
@@ -248,22 +278,27 @@ def expand_sequences(mode, basicSequences) :
     if mode == "allbasechars" :
         for key, expandList in expand.items() :
             reverseList = _reverse_list(expandList)
-            """ We don't include the initial/medial forms with different finals, (eg, noon for beh)
-                because then we don't get the finals we expect.
-            if key in expand_left.keys() :
-                reverseList_left = expand_left[key]
-                print('reverseList_left =',reverseList_left)
-                reverseList.extend(reverseList_left)
-                print('reverseList = ', reverseList)
-            """
-            resultSeq = _substitute_bases(resultSeq, key, reverseList)
+            #if key in expandLeft.keys() :
+            #    reverseList_left = expandLeft[key]
+            #    print('reverseList_left =',reverseList_left)
+            #    reverseList.extend(reverseList_left)
+            #    print('reverseList = ', reverseList)
+            
+            resultSeq = _substitute_bases(resultSeq, key, reverseList, False)
+        
+        # There is currently an issue where, if you substitute a initial/medial-only form for the last item in the sequence,
+        # you get the wrong final - e.g., you turn (lam, beh) into (lam, noonSmallV), which makes no sense, and isn't a 
+        # final beh form as the test expects. This is fixed by a post-processing step at the end.
+        for key, expandList in expandLeft.items() :
+            reverseList = _reverse_list(expandList)
+            resultSeq = _substitute_bases(resultSeq, key, reverseList, True)
             
     else :
         for key, value in expand.items() :
             for expandChar in value :
                 resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "copy", changeKey)
                 
-        for key, value in expand_left.items() :
+        for key, value in expandLeft.items() :
             for expandChar in value :
                 resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "left", changeKey)
     
@@ -273,15 +308,22 @@ def expand_sequences(mode, basicSequences) :
             for expandChar in value :
                 resultSeq = _expand_one_char(resultSeq, key, expandChar, "copy")
     
-        for key, value in expand_left.items() :
+        for key, value in expandLeft.items() :
             for expandChar in value :
                 resultSeq = _expand_one_char(resultSeq, key, expandChar, "left")
      
-    return resultSeq
+    # Also return expandleft lists to use for some post-processing.
+    return (resultSeq, expandLeft)
     
 # end of expand_sequences
 
 
+""" This is kind of subtle. It tries to figure out whether a newly generated sequence
+    should be dual-, right-, or left-connecting.
+    If the old one is right-connecting (eg, ending in alef), the new one is as well.
+    Otherwise, if we are expanding left-only characters (noonIM), it is left-connecting.
+    Otherwise, if we are expanding a dual-connecting character, we pass "copy" and leave it unchanged.
+"""
 def _is_dual(oldIsDual, setIsDual) :
     if oldIsDual == "right" :
         return "right"
@@ -290,7 +332,9 @@ def _is_dual(oldIsDual, setIsDual) :
     else :
         return oldIsDual
 
-
+""" Find the sequence in *sequences* associated with *basicChar*.
+    Expand the sequence to include *expandchar*.
+"""
 def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKey) :
     print("_add_set_starting_with", basicChar, expandChar, setIsDual)
     i = 0
@@ -366,10 +410,11 @@ def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
 # end of _expand_one_char
 
 
-# Substitute an "expand" form for the basic form of the key.
-# For instance, one item might be (('jeem', 'lam'), 'both', 'lam') which will be displayed under  'lam' key.
-# This might substitute (('jeem', 'lamBar'), 'both', 'lam').
-def _substitute_bases(sequences, key, expandList) :
+""" Substitute an "expand" form for the basic form of the key.
+    For instance, one item might be (('jeem', 'lam'), 'both', 'lam').
+    This might substitute (('jeem', 'lamBar'), 'both', 'lam').
+"""
+def _substitute_bases(sequences, key, expandList, imFlag) :
     
     subList = [key] + expandList
     maxC = len(subList)
@@ -379,6 +424,7 @@ def _substitute_bases(sequences, key, expandList) :
         iData = 0
         for (charTuple, isDual, groupName) in charData :
             charList = list(charTuple)
+            charCnt = len(charList)
             newList = []
             for char in charList :
                 if nextC >= maxC :
@@ -388,6 +434,7 @@ def _substitute_bases(sequences, key, expandList) :
                     nextC = nextC + 1
                 else :
                     newList.append(char)
+
             charData[iData] = (tuple(newList), isDual, groupName)
             
             iData = iData + 1
@@ -484,6 +531,18 @@ def organize_sequences_by_group(mode, expandedSeq) :
 
 # end of organize_sequences_by_group
 
+
+# The last char is something like noonSmallVIM which doesn't make sense as a final.
+# Replace it with the basic char, ie, beh.
+def _fix_last_char(lastChar, expandLeft) :
+    newLast = lastChar
+    for basicChar, imOnlyChars in expandLeft.items() :
+        for imChar in imOnlyChars :
+            if imChar == lastChar :
+                newLast = basicChar
+            
+    return newLast
+
 class FTML(object):
     def __init__(self, fname):
         self.f = codecs.open(fname, 'w', 'utf-8')
@@ -532,19 +591,29 @@ class FTML(object):
     def end_group(self):
         self.f.write('  </testgroup>\n')
 
-    def write_one_sequence(self, seq, contextCharI, contextCharF) :
+    def write_one_sequence(self, seq, contextCharI, contextCharF, expandLeft) :
         
         seqLabel = ''
         seqUsvs = ''
+        seqUsvsWoLast = ''
         plusSep = ''
         ###seqLabel = char1
         ###seqUsvs = '&#x' + _char_name_to_usv(char1) + ';'
         (moreChars, isDual) = seq
         for nextChar in moreChars :
             if nextChar != 'NONE' :
+                seqUsvsWoLast = seqUsvs
                 seqLabel = seqLabel + plusSep + _char_name_to_label(nextChar)
                 seqUsvs = seqUsvs + '&#x' + _char_name_to_usv(nextChar) + ';'
                 plusSep = ' + '
+                lastChar = nextChar
+
+        # Convert a sequence like (lam, noonSmallVI) back to (lam, beh) just for use in a final context.
+        lastCharIM = lastChar
+        lastChar = _fix_last_char(lastChar, expandLeft)
+        finalSeqUsvs = seqUsvsWoLast + '&#x' + _char_name_to_usv(lastChar) + ';' 
+        if lastChar != lastCharIM :
+            seqLabel = seqLabel + " / final " + _char_name_to_label(lastChar)
                 
         #barSep = "  |  "
         
@@ -552,6 +621,7 @@ class FTML(object):
         self.f.write('    <testgroup label="' + seqLabel + '">\n')  # second level testgroup
         
         mainStr = "<em>" + seqUsvs + "</em>"
+        finalStr = "<em>" + finalSeqUsvs + "</em>"
         colCnt = 0
         if isDual == "left" :
             # no final forms - add blank cells
@@ -559,10 +629,10 @@ class FTML(object):
             self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
             colCnt = colCnt + 2
         if isDual == "right" or isDual == "both" :
-            self.f.write('      <test rtl="True"><string>' + mainStr)  # IF
+            self.f.write('      <test rtl="True"><string>' + finalStr)  # IF
             #f.write('      <comment></comment>\n')
             self.f.write('</string></test>\n')
-            self.f.write('      <test rtl="True"><string>' + contextCharI + mainStr + '</string></test>\n')   # MF
+            self.f.write('      <test rtl="True"><string>' + contextCharI + finalStr + '</string></test>\n')   # MF
             colCnt = colCnt + 2
         if isDual == "left" or isDual == "both" :
             # Showing only the left connections is used for medial forms of qaf, yeh, noon, etc. that
@@ -578,6 +648,9 @@ class FTML(object):
             colCnt = colCnt + 1
             
         self.f.write('    </testgroup>\n')
+    # end of write_one_sequence
+
+
 
 class Text(FTML):
 
@@ -606,7 +679,7 @@ class Text(FTML):
             self.f.write(cI+s+cF+"\n")
 
 
-def output(gen, mode, fontName, fontScale, sequences) :
+def output(gen, mode, fontName, fontScale, sequences, expandLeft) :
     #import codecs
 
     contextCharI = "&#x0644;" # lam (arbitrary pre-context)
@@ -634,7 +707,7 @@ def output(gen, mode, fontName, fontScale, sequences) :
         keySeq = sequences[key]
         
         for seq in sequences[key] :
-            gen.write_one_sequence(seq, contextCharI, contextCharF)
+            gen.write_one_sequence(seq, contextCharI, contextCharF, expandLeft)
         
         gen.end_group()
             
