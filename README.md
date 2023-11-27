@@ -10,7 +10,7 @@ For more information on using the fonts see the full project documentation. This
 - *local PDF* - Download the release or source package and open the file `documentation/pdf/index.pdf`
 - *Web site* - Visit the [Awami web site](https://software.sil.org/awami) 
 
-For more information on developing the fonts see the [project developer documentation](https://github.com/silnrsi/font-awami/documentation/developer/dev01_intro.md). 
+For more information on developing the fonts see the [project developer documentation](https://github.com/silnrsi/font-awami/blob/master/documentation/developer/dev01_intro.md). 
 
 For a complete list of changes in this version see the [FONTLOG.txt](FONTLOG.txt).
 
