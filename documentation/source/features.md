@@ -5,9 +5,8 @@ fontversion: 3.200
 
 
 <font color="red">Note:</font> |
-:------------ | -
-**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See the [instructions on how to enable Graphite in Firefox](https://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#cf8a0574).** |
-
+------------- | ---------------
+**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
 
 Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](https://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used.
 

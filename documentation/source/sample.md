@@ -3,6 +3,11 @@ title: Awami Nastaliq - Type Sample
 fontversion: 3.200
 ---
 
+<font color="red">Note:</font> |
+------------- | ---------------
+**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
+
+
 This document demonstrates all of the characters in the font. It is organized by Unicode block. Alternate glyphs that are available through features are demonstrated in the [Features](features.md) document. At the end is a sample demonstrating Arabic shaping and another example of running text.
 
 ### Basic Latin:
