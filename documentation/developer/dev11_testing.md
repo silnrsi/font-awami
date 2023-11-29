@@ -19,13 +19,13 @@ There is a set of files that can be generated that include different combination
 - **allbasechars:** some contextual forms of all letters; this is useful to make sure that nuqtas an other inherent shapes are generated.
 - **basic_somediac:** this generates the same characters as basicforms, each with an upper and lower diac.
 - **basic_alldiac:** generates same characters as basicforms, with every diacritic.
-- **allbasecharforms:** all forms of all letters; this generates a *huge* file, so it is of limited usefulness.
+- **allbasecharforms:** all forms of all letters; this generates a *huge* file.
 
 Running without specifying a mode will generate all five files. By default, the resulting files are named test_MODE.xml (e.g., test_basicforms.xml, test_allbasechars.xml, etc.) and are output to tests/FTML_XSL.
 
 The **ftml.xsl** file must be located in the same directory as the .XML files. When it is, opening the XML _in Firefox_ will use the XSL to generate a nice display of the various character combinations. Note that FTML files do not currently work in other browsers such as Chrome. Firefox is also needed because it supports Graphite which is necessary to handle Awami.
 
-Also note that the ftml.xsl file for the Awami project is somewhat different than that used by other SIL font projects. It creates a table with four rendered cells per row. Each row shows the letter combination in isolate, final, initial, and medial position. Somewhat arbitrarily, the preceding letter lam and the following letter feh are used to create the initial, medial and final contexts.
+Also note that the ftml.xsl file for the Awami project is somewhat different than that used by other SIL font projects. It creates a table with four rendered cells per row. Each row shows the letter combination in isolate, final, initial, and medial position. Somewhat arbitrarily, the preceding letter lam and the following letter feh are used to create the initial, medial and final contexts. (The right-most column is reserved for comments but is currently not used.)
 
 ![Part of an FTML-generated table](images/FTML.png)
 
@@ -47,7 +47,7 @@ A script called **ftml_test_gen.py** is used to generate the various FTML files.
 - **-f** or **--font**: name of font (defaults to "Awami Nastaliq")
 - **-s** or **--scale**: scaling factor (defaults to 300)
 
-The basic approach is to create sequences of basic characters (mostly pairs, but some longer), modify or expand it to include the various combinations depending on the mode we are operating in, and then generate a file with four versions of the sequence, with and without an arbitrary initial and final (we use lam and feh just because they have fairly neutral looking connections). The output is organized according to the final character in the sequences which is normally what defines the "interface."
+The basic approach is to create a set of sequences of basic characters (mostly pairs, but some longer), modify or expand the set to include various combinations depending on the mode we are operating in, and then generate a file with four versions of the sequence, with and without an arbitrary initial and final (we use lam and feh just because they have fairly neutral looking connections). The output is organized according to the final character in the sequences which is normally what defines the "interface."
 
 Each sequence is put into a <testgroup> XML structure:
 
@@ -62,11 +62,13 @@ which is transformed via XSL into a row in a table with a cell for each of the c
 
 ![FTML table](images/FTMLrow_dual.png)
 
-The "basic characters" are the expected ones: beh, jeem, sad, seen, tah, ain, feh, lam, meem, kaf, heh-doachashmee, heh-goal, alef, dal, reh, qaf, waw, bariyeh, chotiyeh, noon, and teh-marbuta. These are divided into dual-connecting and right-connecting groups. All other characters are associated with one of the basic characters. There is a group of initial/medial forms that are associated with a different basic form from the final (e.g., noonIM is an alternate of beh, qafIM is an alternate of feh, etc.).
+The "basic characters" are the expected ones: beh, jeem, sad, seen, tah, ain, feh, lam, meem, kaf, heh-doachashmee, heh-goal (dual-connecting);and alef, dal, reh, qaf, waw, bariyeh, chotiyeh, noon, and teh-marbuta (right-connecting). All other ("alternate") characters are associated with one of the basic characters. There is a group of initial/medial-only forms that are associated with a different basic form from the final (e.g., noonIM is an alternate of beh, qafIM is an alternate of feh, etc.).
 
-For **basicforms** mode, the only modification that is needed is to change some of the kaf sequences to use gaf instead.
+For **basicforms** mode, the only modification that is needed is to duplicate some of the kaf sequences and change them to use gaf.
 
 For **allbasechars** mode, we cycle through all the sequences and replace most of the basic characters with an alternate form. For instance, we replace instances of beh with teh, dotless-beh, tteheh, teh3down, etc; we replace jeem with hah, khah, tcheh, dyeh, etc. The goal is not to include every combination but make sure both basic and alternate characters are included. Note that the structure and contents of the **basicforms** and **allbasechars** files are similar, the difference is that **allbasechars** includes a wider variety of characters.
+
+For **allbasecharforms** mode, we duplicate every sequence as many times as is needed to substitute every alternate character. We also create groups for every alternate character: "Alef form sequences," "Alef madda form sequences," "Alef wasla form sequences," etc.
 
 ![Output for basicforms vs. allbasechars](images/FTML_BasicVsAllChars.png)
 
@@ -101,9 +103,13 @@ The bolded sequences above are problematic. When the qaf occurs in the medial po
 
 _The qaf forms circled in red wouldn't fit the feh interface being tested here._
 
-It is only in the last step of the process that we distinguish between the main sequence occurring in the various positional contexts. So at that point we revert the final qaf to a final feh (the most basic form) instead.
+It is only in the last step of the process that we distinguish between the main sequence occurring in the various positional contexts. So at that point we replace the invalid finals with a blank cell.
 
-![Qaf forms have been reverted.](images/FinalFormKludge.png)
+![Final qaf forms are not shown.](images/FinalFormKludgeGray.png)
+
+Another approach would be to revert the final qaf to a final feh (the most basic form) instead. The code is written to make either approach easy.
+
+![Qaf forms have been reverted.](images/FinalFormKludgeBasic.png)
 
 _The qaf forms have been reverted back to the basic feh forms._
 

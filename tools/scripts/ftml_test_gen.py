@@ -36,9 +36,6 @@ def run():
         else:
         	  modeArgs.append(args.mode[i])
 
-    # Debugging;
-    #modeArgs = ["allbasechars"];
-
     modes = []
     for m in modeArgs:
         if m == "all":
@@ -133,8 +130,8 @@ def generate_basic_sequences(mode) :
     
     # DEBUGGING:
     """
-    dualConnecting = ["ain", "jeem", "beh"]
-    rightConnecting = ["alef", "noon"]
+    dualConnecting = ["beh", "jeem"]
+    rightConnecting = ["qaf", "noon"]
     dualSubs = []
     rightSubs = []
     """
@@ -258,10 +255,8 @@ def expand_sequences(mode, basicSequences) :
         }
         
         # Debugging:
-        """
-        expand = { "jeem" : ["khah", "hah"], "ain" : ["ghain"] }
-        expandLeft = { "beh" :   ["noon3dotsIM", "noonRingIM", "noonIM"] }
-        """
+        #expand = { "jeem" : ["khah", "hah"], "beh" : ["teh"], "qaf" : ["dotlessQaf"] }
+        #expandLeft = { "beh" :   ["noon3dotsIM", "noonRingIM", "noonIM"] }
 
         changeKey = True
         
@@ -296,11 +291,13 @@ def expand_sequences(mode, basicSequences) :
     else :
         for key, value in expand.items() :
             for expandChar in value :
-                resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "copy", changeKey)
+                resultSeq = _add_set_starting_with(resultSeq, key, expandChar, changeKey)
                 
         for key, value in expandLeft.items() :
             for expandChar in value :
-                resultSeq = _add_set_starting_with(resultSeq, key, expandChar, "left", changeKey)
+                # We use copy below instead of left because char of interest is the FIRST, which means
+                # the fact that is is left connecting is irrelevant.
+                resultSeq = _add_set_starting_with(resultSeq, key, expandChar, changeKey)
     
         #print("after _add_set_starting_with: ",resultSeq)
     
@@ -310,7 +307,9 @@ def expand_sequences(mode, basicSequences) :
     
         for key, value in expandLeft.items() :
             for expandChar in value :
-                resultSeq = _expand_one_char(resultSeq, key, expandChar, "left")
+                # We use copy below instead of left because char of interest is the FIRST, which means
+                # the fact that is is left connecting is irrelevant.
+                resultSeq = _expand_one_char(resultSeq, key, expandChar, "copy")
      
     # Also return expandleft lists to use for some post-processing.
     return (resultSeq, expandLeft)
@@ -335,18 +334,18 @@ def _is_dual(oldIsDual, setIsDual) :
 """ Find the sequence in *sequences* associated with *basicChar*.
     Expand the sequence to include *expandchar*.
 """
-def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKey) :
-    print("_add_set_starting_with", basicChar, expandChar, setIsDual)
+def _add_set_starting_with(sequences, basicChar, expandChar, changeKey) :
+    #print("_add_set_starting_with", basicChar, expandChar)
     i = 0
     for (char1, charList) in sequences :
         if char1 == basicChar :
             newList = []
             for (charTuple, isDual, key) in charList :
                 newKey = expandChar if (key == basicChar and changeKey) else key
-                newIsDual = _is_dual(isDual, setIsDual)
+                #newIsDual = _is_dual(isDual, "copy")
                 newTuple = tuple([expandChar] + list(charTuple[1:]))
-                newStuff = (newTuple, newIsDual, newKey)
-                print("adding", newStuff)
+                newStuff = (newTuple, isDual, newKey)
+                #print("adding", newStuff)
                 newList.append(newStuff)
             sequences.insert(i+1, (expandChar, newList))
             break
@@ -357,7 +356,7 @@ def _add_set_starting_with(sequences, basicChar, expandChar, setIsDual, changeKe
 
         
 def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
-    #print("exanding " + basicChar +" to " + expandChar)
+    #print("exanding " + basicChar + " to " + expandChar + "; setIsDual: " + setIsDual )
     newStuff = []
     iChar1 = 0
     for (char1, charData) in sequences :
@@ -377,10 +376,10 @@ def _expand_one_char(sequences, basicChar, expandChar, setIsDual) :
                 foundOneToExpand = False
                 iChar = 0
                 for remChar in charTuple :
-                    if iChar == len(charTuple) - 1 and setIsDual == "left" :
-                        # we only want to substitute left-connecting glyphs, and this is a final
-                        newList.append(remChar)
-                    elif remChar == basicChar and iChar > 0 : # if iChar == 0, first char is redundant with char1 key
+                    #if iChar == len(charTuple) - 1 and setIsDual == "left" :
+                    #    # we only want to substitute left-connecting glyphs, and this is a final
+                    #    newList.append(remChar)
+                    if remChar == basicChar and iChar > 0 : # if iChar == 0, first char is redundant with char1 key
                         #print(iChar,basicChar," - expand this")
                         newList.append(expandChar)  # substitute expandChar, the similarly formed character
                         foundOneToExpand = True
@@ -613,7 +612,8 @@ class FTML(object):
         lastChar = _fix_last_char(lastChar, expandLeft)
         finalSeqUsvs = seqUsvsWoLast + '&#x' + _char_name_to_usv(lastChar) + ';' 
         if lastChar != lastCharIM :
-            seqLabel = seqLabel + " / final " + _char_name_to_label(lastChar)
+            #seqLabel = seqLabel + " / final " + _char_name_to_label(lastChar)  # when showing the basic final instead
+            isDual = "left"  # create a blank gray cell
                 
         #barSep = "  |  "
         
@@ -635,7 +635,7 @@ class FTML(object):
             self.f.write('      <test rtl="True"><string>' + contextCharI + finalStr + '</string></test>\n')   # MF
             colCnt = colCnt + 2
         if isDual == "left" or isDual == "both" :
-            # Showing only the left connections is used for medial forms of qaf, yeh, noon, etc. that
+            # Showing only the left connections is used for medial forms of qaf, yeh, and noon that
             # are "extra" forms of other basic characters.
             ##if isDual == "both" :
             ##    f.write(barSep)
