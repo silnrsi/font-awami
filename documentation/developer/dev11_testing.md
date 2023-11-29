@@ -107,6 +107,8 @@ It is only in the last step of the process that we distinguish between the main 
 
 ![Final qaf forms are not shown.](images/FinalFormKludgeGray.png)
 
+_Final qaf forms are not shown._
+
 Another approach would be to revert the final qaf to a final feh (the most basic form) instead. The code is written to make either approach easy.
 
 ![Qaf forms have been reverted.](images/FinalFormKludgeBasic.png)
