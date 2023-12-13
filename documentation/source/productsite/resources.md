@@ -50,7 +50,7 @@ Here are links for downloading appropriate versions:
 
 You will need a [recent version of Firefox](https://www.mozilla.org/en-US/firefox/new/?scene=2&amp;f=85) - version 46 or later.
 
-Due to security concerns, Graphite has sometimes been disabled in Firefox by default, so you might need to enable it. Follow these [instructions for enabling Graphite in Firefox](https://scripts.sil.org/cms/scripts/page.php?site_id=projects&amp;item_id=graphite_firefox#switchon).
+Due to security concerns, Graphite has sometimes been disabled in Firefox by default, so you might need to enable it. Follow these [instructions for enabling Graphite in Firefox](https://graphite.sil.org/graphite_firefox).
 
 ### LibreOffice
 

@@ -1,11 +1,16 @@
 
+<font color="red">Note:</font> |
+------------- | ---------------
+**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
+
+
 This document demonstrates all of the characters in the font. It is organized by Unicode block. Alternate glyphs that are available through features are demonstrated in the [Features](features) document. At the end is a sample demonstrating Arabic shaping and another example of running text.
 
 ### Basic Latin:
 
-Regular: <span class='awamiL-R normal'> ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~</span>
+Regular: <span class='awamiL-R normal'> ! &#x22; # $ % & &#x27; ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~</span>
 
-**Bold**: <span class='awamiL-B normal'> ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~</span>
+**Bold**: <span class='awamiL-B normal'> ! &#x22; # $ % & &#x27; ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~</span>
 
 
 ### Latin-1 Supplement:
@@ -129,23 +134,26 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 
 <p dir="rtl"><span class='awami-B normal'> دفعہ ۲۶۔</span></p>
 
-<p dir="rtl"><span style="line-height:210%" class='awami-R normal'>(۱) ہر شخص کو تعلیم کا حق ہے۔ تعلیم مفت ہو گی، کم سے کم ابتدائی اور بنیادی درجوں میں۔ ابتدائی تعلیم جبری ہو گی۔ فنّی اور پیشہ ورانہ تعلیم حاصل کرنے کا عام انتظام کیا جائے گا اور لیاقت کی بنا پر اعلیٰ تعلیم حاصل کرنا سب کے لئے مساوی طور پر ممکن ہو گا۔</span></p>
+<p dir="rtl"><span class='awami-R normal'>(۱) ہر شخص کو تعلیم کا حق ہے۔ تعلیم مفت ہو گی، کم سے کم ابتدائی اور بنیادی درجوں میں۔ ابتدائی تعلیم جبری ہو گی۔ فنّی اور پیشہ ورانہ تعلیم حاصل کرنے کا عام انتظام کیا جائے گا اور لیاقت کی بنا پر اعلیٰ تعلیم حاصل کرنا سب کے لئے مساوی طور پر ممکن ہو گا۔</span></p>
 
-<p dir="rtl"><span style="line-height:210%" class='awami-R normal'>(۲) تعلیم کا مقصد انسانی شخصیت کی پوری نشوونما ہو گا۔ اور وہ انسانی حقوق اور بنیادی آزادیوں کے احترام میں اضافہ کرنے کا ذریعہ ہو گی۔ وہ تمام قوموں اور نسلی یا مذہبی گروہوں کے درمیان باہمی مفاہمت، رواداری اور دوستی کو ترقی دے گی اور امن کو برقرار رکھنے کے لئے اقوامِ متحدہ کی سرگرمیوں کو آگے بڑھائے گی۔</span></p>
+<p dir="rtl"><span class='awami-R normal'>(۲) تعلیم کا مقصد انسانی شخصیت کی پوری نشوونما ہو گا۔ اور وہ انسانی حقوق اور بنیادی آزادیوں کے احترام میں اضافہ کرنے کا ذریعہ ہو گی۔ وہ تمام قوموں اور نسلی یا مذہبی گروہوں کے درمیان باہمی مفاہمت، رواداری اور دوستی کو ترقی دے گی اور امن کو برقرار رکھنے کے لئے اقوامِ متحدہ کی سرگرمیوں کو آگے بڑھائے گی۔</span></p>
 
-<p dir="rtl"><span style="line-height:210%" class='awami-R normal'>(۳) والدین کو اس بات کے انتخاب کا اوّلین حق ہے کہ ان کے بچوں کو کس قسم کی تعلیم دی جائے گی۔</span></p>
+<p dir="rtl"><span class='awami-R normal'>(۳) والدین کو اس بات کے انتخاب کا اوّلین حق ہے کہ ان کے بچوں کو کس قسم کی تعلیم دی جائے گی۔</span></p>
 
 ## Uyghur UDHR #26:
 <p dir="rtl"><span class='awami-hamz-1-B normal'>26 ماددا</span></p>
 
-<p dir="rtl"><span style='line-height:210%; font-feature-settings: "hamz" 1' class='awami-R normal'>ھەمە ئادەم بىلىم ئېلىش ھوقۇقىغا ئىگە. بىلىم ئېلىش ھەقسىز بولۇشى كېرەك. ھېچ بولمىغاندا، باشلانغۇچ ۋە ئاساسىي باسقۇچتا شۇنداق بولۇشى كېرەك. باشلانغۇچ مائارىپ مەجبۇرىيەت خاراكتېرىدا بولۇشى كېرەك. تېخنىكا مائارىپى ۋە كەسپىي مائارىپى ئومۇميۈزلۈك تەسىس قىلىش كېرەك. ئالىي مائارىپنىڭ ئىشىكىنى نەتىجىگە قاراپ بارلىق كىشىلەرگە تەڭ ئېچىۋېتىش كېرەك.</span></p>
+<p dir="rtl"><span class='awami-hamz-1-R normal'>ھەمە ئادەم بىلىم ئېلىش ھوقۇقىغا ئىگە. بىلىم ئېلىش ھەقسىز بولۇشى كېرەك. ھېچ بولمىغاندا، باشلانغۇچ ۋە ئاساسىي باسقۇچتا شۇنداق بولۇشى كېرەك. باشلانغۇچ مائارىپ مەجبۇرىيەت خاراكتېرىدا بولۇشى كېرەك. تېخنىكا مائارىپى ۋە كەسپىي مائارىپى ئومۇميۈزلۈك تەسىس قىلىش كېرەك. ئالىي مائارىپنىڭ ئىشىكىنى نەتىجىگە قاراپ بارلىق كىشىلەرگە تەڭ ئېچىۋېتىش كېرەك.</span></p>
 
-<p dir="rtl"><span style='line-height:210%; font-feature-settings: "hamz" 1' class='awami-R normal'>مائارىپنىڭ مەقسىتى ئادمنىڭ خاسلىقىنى بولۇق يېتىلدۈرۈش ھەمدە كىشىلىك ھوقۇقى ۋە ئاساسىي ئەركىنلىككە بولغان ھۆرمەتنى كۈچەيتىش. مائارىپ ھەرقايسى دۆلەتلەر، ئىرقلار، ياكى ھەرقايسى دىنىي گۇرۇھلار ئارا چۇشىنىشنى، يول قويۇشنى ۋە دوستلۇقنى ئىلگىرى سۈرۈشى ھەمدە بىرلەشكەن دۆلەتلەر تەشكىلاتىنىڭ تىنچلىقنى قوغداش يولىدىكى تۇرلۇك پائالىيەتلىرنى ئالغا سۈرۈشى كېرەك.</span></p>
+<p dir="rtl"><span class='awami-hamz-1-R normal'>مائارىپنىڭ مەقسىتى ئادمنىڭ خاسلىقىنى بولۇق يېتىلدۈرۈش ھەمدە كىشىلىك ھوقۇقى ۋە ئاساسىي ئەركىنلىككە بولغان ھۆرمەتنى كۈچەيتىش. مائارىپ ھەرقايسى دۆلەتلەر، ئىرقلار، ياكى ھەرقايسى دىنىي گۇرۇھلار ئارا چۇشىنىشنى، يول قويۇشنى ۋە دوستلۇقنى ئىلگىرى سۈرۈشى ھەمدە بىرلەشكەن دۆلەتلەر تەشكىلاتىنىڭ تىنچلىقنى قوغداش يولىدىكى تۇرلۇك پائالىيەتلىرنى ئالغا سۈرۈشى كېرەك.</span></p>
 
-<p dir="rtl"><span style='line-height:210%; font-feature-settings: "hamz" 1' class='awami-R normal'>ئاتا-ئانىلار پەرزەنتلىرىنىڭ ئېلىشقا تېگىشلىك بىلىم تۇرلىرىنى ئاۋۋال تاللاش ھوقۇقىغا ىگە.</span></p>
+<p dir="rtl"><span class='awami-hamz-1-R normal'>ئاتا-ئانىلار پەرزەنتلىرىنىڭ ئېلىشقا تېگىشلىك بىلىم تۇرلىرىنى ئاۋۋال تاللاش ھوقۇقىغا ىگە.</span></p>
 
-[font id='awami' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1]
+[font id='awami' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='210%' rtl=1]
 [font id='awamiL' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' ltr=1]
 
 
-[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='200%' rtl=1 feats='hamz 1']
+[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='210%' rtl=1 feats='hamz 1']
+[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='210%' rtl=1 feats='hamz 1']
+[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='210%' rtl=1 feats='hamz 1']
+[font id='awami-hamz-1' face='AwamiNastaliq-Regular' bold='AwamiNastaliq-Bold' size='150%' lineheight='210%' rtl=1 feats='hamz 1']
