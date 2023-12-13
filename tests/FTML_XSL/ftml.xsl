@@ -42,7 +42,7 @@ The data should look something like:
 -->
 
 <!-- set variables from head element -->
-<xsl:variable name="width-comment" select="/ftml/head/columns/@comment"/>
+<!-- <xsl:variable name="width-comment" select="/ftml/head/columns/@comment"/> -->
 <xsl:variable name="width-label" select="/ftml/head/columns/@label"/>
 <xsl:variable name="width-string" select="/ftml/head/columns/@string"/>
 <xsl:variable name="font-scale" select="concat(/ftml/head/fontscale, substring('100', 1 div not(/ftml/head/fontscale)))"/>
@@ -74,9 +74,11 @@ The data should look something like:
 <xsl:if test="$width-string != ''">
 	.string {width: <xsl:value-of select="$width-string"/>; font-family: TestFont; font-size: <xsl:value-of select="$font-scale"/>%;}
 </xsl:if>
+<!--
 <xsl:if test="$width-comment != ''">
 	.comment {width: <xsl:value-of select="$width-comment"/>}
 </xsl:if>
+-->
 	.dim {color: silver;}
 	.bright {color: red;}
 	<!-- NB: Uncomment the following to build separate css styles for each item in /ftml/head/styles -->
@@ -161,13 +163,16 @@ The data should look something like:
 
 	<xsl:apply-templates/>  <!-- generate the test string cells -->
 	
+	<!--
 	<xsl:if test="$width-comment != ''">
 		<td class="comment">
-			<!-- emit comment concatenated with class (if not default) -->
+	comment: emit comment concatenated with class (if not default)
 			<xsl:value-of select="test/comment"/>
 			<xsl:if test="test/@class"> (<xsl:value-of select="test/@class"/>)</xsl:if>
 		</td>
 	</xsl:if>
+	-->
+
 </tr>
 </xsl:template>
 
