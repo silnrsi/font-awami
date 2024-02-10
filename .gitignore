@@ -4,18 +4,32 @@
 
 # smith
 .waf-*
+.smithpickle-*
 .lock-*
 results/**
 buildlinux2/**
 bin/**
+source/temp/*
+source/masters/temp/*
+source/backups/*
 
-# gdl and graide
+# temporary fontdocs files
+documentation/source/pdftemp/
+documentation/source/productsite/
+web/*.woff*
+
+# diffenator2
+.ninja_log
+build.ninja
+
+# graphite
 $_temp.gdl
 gdlerr.txt
 graide_dbg_output.json
 graide_image*.png
 dbg_*.txt
 awami.cfg
+
 
 # general backup files
 *~
@@ -57,6 +71,8 @@ current.fpr
 *.bak
 *.vfbak
 *.~tt
+.idea/*
+.vscode/*
 
 # Shares
 .AppleDB
@@ -113,4 +129,5 @@ z_VMsave/
 tests/data/temp/
 source/LatinCandidates/
 
+*.glyphs# Glyphs.App
 *.glyphs
