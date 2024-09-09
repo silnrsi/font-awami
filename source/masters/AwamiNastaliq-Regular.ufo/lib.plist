@@ -36,11 +36,12 @@
     <array/>
   </dict>
   <key>com.schriftgestaltung.appVersion</key>
-  <string>3151</string>
+  <string>3260</string>
   <key>com.schriftgestaltung.customParameter.GSFont.DisplayStrings</key>
   <array>
     <string>/absMeem/absWaw/space/space/space/absAlef/space/nlqBariyeh/space/absBiblicalEndOfVerse/absSeenFin</string>
     <string>/absAinIni/ligSalaamUlena/space/ligSalaamUlena.alt/ligAlayhiAsSalam.alt/space/space/space/absLamMed.behg/space/space/ligAllahlong/space/space/space/space/space/space/space/ligBismillah/space/ligJallajalalouhou/space/wordTimothy/space/space</string>
+    <string>/_smallTah/absShortVowelMark/space/space/space/absLeftArrowhead</string>
   </array>
   <key>com.schriftgestaltung.customParameter.GSFont.disablesAutomaticAlignment</key>
   <true/>
@@ -1552,6 +1553,7 @@
     <string>absHighHamza.arabic</string>
     <string>highHamza</string>
     <string>highHamza.arabic</string>
+    <string>absLeftArrowhead</string>
     <string>nlqDopesh</string>
     <string>nlqDozabar</string>
     <string>nlqDozair</string>
@@ -1596,6 +1598,7 @@
     <string>absEndOfAyah</string>
     <string>absEndOfAyah.2</string>
     <string>absEndOfAyah.3</string>
+    <string>absBiblicalEndOfVerse</string>
     <string>absDateSeparator</string>
     <string>absDecimalSeparator</string>
     <string>absEmptyCentreLowStop</string>
@@ -1795,5 +1798,28 @@
     <key>zeroWidthNoBreakSpace</key>
     <string>uniFEFF</string>
   </dict>
+  <key>public.skipExportGlyphs</key>
+  <array>
+    <string>ligAllahlong.alt</string>
+    <string>absKafswash</string>
+    <string>absKafswashMed.sn</string>
+    <string>testFehBehAinReh</string>
+    <string>testJeemMeemaltLamWaw.draft</string>
+    <string>testSadBehLamNoon.draft</string>
+    <string>testHehdoDalHehdoAinJeem</string>
+    <string>testMeemKafReh</string>
+    <string>testAinGafJeemMeem</string>
+    <string>testHehgoalSadQaf</string>
+    <string>testKafSeenHehdo.draft</string>
+    <string>testAlefTahHehgoalFeh</string>
+    <string>testGafSeenHehdo</string>
+    <string>testAinGafJeemMeem.draft</string>
+    <string>testFehBehAinReh.draft</string>
+    <string>ligAlayhiAsSalam.scratch</string>
+    <string>testAinKafBehReh</string>
+    <string>testDalSeenBariyeh</string>
+    <string>testAlefTahHehgoalFeh.draft</string>
+    <string>testJeemMeemaltLamWaw</string>
+  </array>
 </dict>
 </plist>
