@@ -457,6 +457,17 @@ debugGaf {
 endtable; // feature
 
 
+table(language)
+
+kashmiri {
+    languages = (
+        "ks", "kas",   // Kashmiri  
+    );
+    hamzaAlt = ftrue;  // Arabic-style hamza
+}
+
+endtable;
+
 
 ///#define DIACS [[cDiacritic cDiacritic?]? cDiacritic]?
 

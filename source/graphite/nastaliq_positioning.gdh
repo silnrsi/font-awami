@@ -1072,7 +1072,7 @@ cNuqtaLikeUpper { collision {
 // Default case: nuqtas above (other than initial) can move more to the left than the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
-	min.x = -250m;
+	min.x = -300m;
 	max.x = 200m;
 	min.y = -300m;
 	max.y = 400m; // was 1000, that's too much
@@ -1575,9 +1575,19 @@ cNuqtaLikeUpperNoKT { shift.y -= 100m; collision.margin -= 50m } / cKafNoIso cKa
 // If a nuqta is up above the line, move it down and let the collision fixing algorithm pop it
 // back up if necessary.
 #if (WEIGHT >= WT_BOLD)
-cNuqtaLikeUpperNoKT { shift.y = -100m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpperNoKT { shift.y = -100m; 
+		collision {
+			//margin -= 50m;
+			flags = CLEAR_IGNORE(collision.flags);
+			flags = SET_FIX(collision.flags) } }
+	/ _ { position.y > PUSHDOWN };
 #else
-cNuqtaLikeUpperNoKT { shift.y = -200m  /* ; collision.margin -= 50m */ } / _ { position.y > PUSHDOWN };
+cNuqtaLikeUpperNoKT { shift.y = -200m;
+		collision {
+			//margin -= 50m;
+			flags = CLEAR_IGNORE(collision.flags);
+			flags = SET_FIX(collision.flags) } }
+	/ _ { position.y > PUSHDOWN };
 #endif
 // Similarly for tall nuqtas below the line, if they also have a diacritic under them.
 cNuqtaLikeLowerTall { shift.y = 100m; collision.flags = CLEAR_FIX(collision.flags) }
