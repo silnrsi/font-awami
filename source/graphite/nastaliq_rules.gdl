@@ -460,10 +460,17 @@ endtable; // feature
 table(language)
 
 kashmiri {
-    languages = (
-        "ks", "kas"   // Kashmiri  
+		languages = (
+        "ks", "kas"    // Kashmiri  
     );
-    hamzaAlt = ftrue;  // Arabic-style hamza
+    hamzaAlt = ftrue;  // Arabic-style
+}
+
+gojri {
+		languages = (
+				"gju"					// Gojri		
+		);
+		lamValt = ftrue;	// V over bowl
 }
 
 endtable;
