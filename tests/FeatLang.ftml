@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../tools/ftml.xsl" type="text/xsl"?>
+<ftml version="1.0">
+  <head>
+    <fontscale>200</fontscale>
+    <fontsrc label="ref">url(../references/AwamiNastaliq-Regular.ttf)</fontsrc>
+    <fontsrc label="Reg">url(../results/AwamiNastaliq-Regular.ttf)</fontsrc>
+    <styles>
+      <style lang="ks" name="ks"/>
+      <style lang="gju" name="gju"/>
+    </styles>
+    <title>Feature-Language Interactions</title>
+    <widths string="25%"/>
+  </head>
+  <testgroup background="#f0f0f0" label="Rendering Check">
+    <test label="check">
+      <string>RenderingUnknown</string>
+    </test>
+  </testgroup>
+  <testgroup label="Kashmiri alternates">
+    <test label="U+0623 U+0625 U+0654 U+0655" rtl="True">
+      <string>\u000623 \u000627\u000654 \u000625 \u000627\u000655</string>
+    </test>
+    <test label="U+0623 U+0625 U+0654 U+0655" rtl="True" stylename="ks">
+      <string>\u000623 \u000627\u000654 \u000625 \u000627\u000655</string>
+    </test>
+    <test label="boy" rtl="True">
+      <string>لٔڑکہٕ</string>
+    </test>
+    <test label="boy" rtl="True" stylename="ks">
+      <string>لٔڑکہٕ</string>
+    </test>
+  </testgroup>
+  <testgroup label="Gojri alternates">
+    <test label="U+06B5" rtl="True">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+    <test label="U+06B5" rtl="True" stylename="gju">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+  </testgroup>
+</ftml>
