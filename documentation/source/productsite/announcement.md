@@ -1,32 +1,46 @@
 
-We are happy to announce the release of Awami Nastaliq version 3.200. This is a maintenance release of Awami Nastaliq.
+We are happy to announce the release of Awami Nastaliq version 3.300. This is a maintenance release of Awami Nastaliq.
 
-This release supports only a few new characters. However, it enables support for the Kazakh, Malay, and Uyghur languages.
+This release supports only a few new characters. However, it enables support for the Kashmiri and Gojri languages.
 
 ### Changes
 
 #### Improved
-- Fixed bug in dot removal for YEH followed by COMBINING Hamza (U+064A U+0654)
-- Fixed some minor kerning/collision/spacing bugs
-- Changed shape of mark on 06C7 (Arabic U) to look like a comma instead of a pesh
-- Created bold forms of the honorifics
-- Changed PUA codepoint U+E003 to U+FD47 ARABIC LIGATURE ALAYHI AS-SALAAM
-- Corrected weight class of Medium, SemiBold, and ExtraBold fonts
+- Fixed issue with wasla collisions
 
 #### New
-- Added six characters:
-  - U+06A0 ARABIC LETTER AIN WITH THREE DOTS ABOVE
-  - U+06AD ARABIC LETTER NG
-  - U+06BD ARABIC LETTER NOON WITH THREE DOTS ABOVE
-  - U+0762 ARABIC LETTER KEHEH WITH DOT ABOVE
-  - U+FDCF ARABIC LIGATURE SALAAMUHU ALAYNAA
-  - U+10ED0 ARABIC BIBLICAL END OF VERSE (this character is not officially in Unicode, it is in the pipeline for a future version of the Unicode Standard)
+- Added support for Kashmiri language
+- Added support for Gojri language
+- Added 14 characters:
+  - U+08F7 ARABIC LEFT ARROWHEAD ABOVE (for Burushaski)
+  - U+FBC6 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIM (this character is not officially in Unicode, 
+    it is in the pipeline for a future version of the Unicode Standard)
+  - U+FBC7 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIMAA (this character is not officially in Unicode, 
+    it is in the pipeline for a future version of the Unicode Standard)
+  - U+FD40 ARABIC LIGATURE RAHIMAHU ALLAAH
+  - U+FD41 ARABIC LIGATURE RADI ALLAAHU ANH
+  - U+FD42 ARABIC LIGATURE RADI ALLAAHU ANHAA
+  - U+FD43 ARABIC LIGATURE RADI ALLAAHU ANHUM
+  - U+FD44 ARABIC LIGATURE RADI ALLAAHU ANHUMAA
+  - U+FD45 ARABIC LIGATURE RADI ALLAAHU ANHUNNA
+  - U+FD48 ARABIC LIGATURE ALAYHIM AS-SALAAM
+  - U+FD49 ARABIC LIGATURE ALAYHIMAA AS-SALAAM
+  - U+FD4D ARABIC LIGATURE ALAYHAA AS-SALAAM
+  - U+FD90 ARABIC LIGATURE RAHMATU ALLAAHI ALAYH (this character is not officially in Unicode, 
+    it is in the pipeline for a future version of the Unicode Standard)
+  - U+FD91 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHAA (this character is not officially in Unicode, 
+    it is in the pipeline for a future version of the Unicode Standard)
   
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 
 ### Known issues
 
-- U+10ED0 ARABIC BIBLICAL END OF VERSE is not officially in Unicode. The codepoint *could* still change.
-- U+E003 was a PUA codepoint. We have reencoded it to the proper codepoint at U+FD47 ARABIC LIGATURE ALAYHI AS-SALAAM. If the PUA codepoint U+E003 was used, it should be replaced by U+FD47.
+The following characters are not officially in Unicode. The codepoints *could* still change.
+- U+FBC6 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIM
+- U+FBC7 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIMAA
+- U+FD90 ARABIC LIGATURE RAHMATU ALLAAHI ALAYH
+- U+FD91 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHAA
+- U+10ED0 ARABIC BIBLICAL END OF VERSE 
+
 
 

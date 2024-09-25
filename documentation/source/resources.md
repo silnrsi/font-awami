@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Resources
-fontversion: 3.200
+fontversion: 3.300
 ---
 
 The SIL Arabic script fonts are encoded according to Unicode, so your application must support Unicode text in order to access letters other than the standard ANSI characters. Most applications now provide basic Unicode support. You will, however, need some way of entering Unicode text into your document.
@@ -66,8 +66,6 @@ Version 5.1 supports Awami, but it has a bug where certain characters (eg, the s
 
 
 ### XeTeX
-
-The TeXLive 2016 version of XeTeX supports version 1.3.8 of the Graphite2 engine. 
 
 The TeXLive 2017 version of XeTeX contains a fix for Harfbuzz which was causing combining marks to clash at the end of words when followed by a Latin character.
 

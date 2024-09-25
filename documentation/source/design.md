@@ -1,13 +1,13 @@
 ---
 title: Awami Nastaliq - Design
-fontversion: 3.200
+fontversion: 3.300
 ---
 
 Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. For this reason, SIL's smart-font technology, [Graphite](https://graphite.sil.org), has been extended with some special capabilities to address the particular challenges of this beautiful but complicated form of writing.
 
 The sloping nature of Nastaliq creates a great challenge: glyph collisions. A straightforward, naive layout of base glyphs, nuqtas, and diacritics will inevitably result in a rendering where the glyphs collide, forming ugly and even unreadable text. Fixing these collisions is exacerbated by the large number of glyphs and the complex positioning created by the sloping baseline.
 
-Workarounds to current font technologies have been used to create Urdu-specific fonts, but these approaches do not scale well when multiple languages and a variety of diacritics are needed. For this reason, SIL International has developed Awami Nastaliq, specifically intended to support lesser-known languages of South Asia (using an extended version of Graphite). While there are several fonts that support Urdu, this is the first Nastaliq-style font that supports a wide variety of lesser-known languages. 
+Workarounds to current font technologies have been used to create Urdu-specific fonts, but these approaches do not scale well when multiple languages and a variety of diacritics are needed. For this reason, SIL Global has developed Awami Nastaliq, specifically intended to support lesser-known languages of South Asia (using an extended version of Graphite). While there are several fonts that support Urdu, this is the first Nastaliq-style font that supports a wide variety of lesser-known languages. 
 
 Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of languages of South Asia, including but not limited to Urdu. Lesser-known languages often require more vowel diacritics than Urdu. They may use a different set of base characters and diacritics, and the base characters often include more nuqtas to represent sounds that are not present in Urdu or standard Arabic. This font includes all the vowel diacritics and base characters (that we are aware of) required for languages using the Nastaliq style of Arabic script.
 

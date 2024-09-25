@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq Developer Documentation
-fontversion: 3.200
+fontversion: 3.300
 ---
 
 # Naming Conventions

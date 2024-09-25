@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Version History
-fontversion: 3.200
+fontversion: 3.300
 ---
 
 ### 2023-Oct-23 (SIL WSTech team) Awami Nastaliq Version 3.200

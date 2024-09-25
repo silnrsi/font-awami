@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Rendering the Allah ligature
-fontversion: 3.200
+fontversion: 3.300
 ---
 
 <font color="red">Note:</font> |

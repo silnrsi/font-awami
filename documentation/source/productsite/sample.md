@@ -1,6 +1,6 @@
 
 <font color="red">Note:</font> |
-------------- | ---------------
+:------------- | :---------------
 **This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
 
 
@@ -96,20 +96,19 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 ### Arabic Extended-A:
 
 #### Regular:
-<p dir="rtl"><span dir="rtl" class='awami-R normal'>&#x08C7; &#x08C8; &#x25cc;&#x08FF;</span></p>
+<p dir="rtl"><span dir="rtl" class='awami-R normal'>&#x08C7; &#x08C8; &#x25cc;&#x08F7; &#x25cc;&#x08FF;</span></p>
 
 #### Bold:
-<p dir="rtl"><span dir="rtl" class='awami-B normal'>&#x08C7; &#x08C8; &#x25cc;&#x08FF;</span></p>
+<p dir="rtl"><span dir="rtl" class='awami-B normal'>&#x08C7; &#x08C8; &#x25cc;&#x08F7; &#x25cc;&#x08FF;</span></p>
 
 
-
-### Arabic Presentation Forms:
+### Arabic Presentation Forms A and B:
 
 #### Regular:
-<p dir="rtl"><span class='awami-R normal'>&#xFD3E; &#xFD3F; &#xFD47; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
+<p dir="rtl"><span class='awami-R normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
 
 #### Bold:
-<p dir="rtl"><span class='awami-B normal'>&#xFD3E; &#xFD3F; &#xFD47; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
+<p dir="rtl"><span class='awami-B normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
 
 ### Arabic Extended-C:
 

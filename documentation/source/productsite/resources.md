@@ -63,8 +63,6 @@ Version 5.1 supports Awami, but it has a bug where certain characters (eg, the s
 
 ### XeTeX
 
-The TeXLive 2016 version of XeTeX supports version 1.3.8 of the Graphite2 engine. 
-
 The TeXLive 2017 version of XeTeX contains a fix for Harfbuzz which was causing combining marks to clash at the end of words when followed by a Latin character.
 
 TeXLive is available from [https://www.tug.org/texlive/](https://www.tug.org/texlive/).
