@@ -13,9 +13,11 @@ Install the font by decompressing the .zip archive and installing the font using
 
 ## Keyboarding and character set support
 
-This font does not include any keyboarding helps or utilities. If you cannot use the built-in keyboards of the operating system, you will need to install the appropriate keyboard and input method for the characters of the language you wish to use. If you want to enter characters that are not supported by any system keyboard, the [Keyman program](https://keyman.com/) can be helpful on Windows, macOS, Linux, Android and iOS systems. 
+## Keyboarding and character set support
 
-Other suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
+This font package does not include keyboards or other software for entering text. To type the symbols in this font, use the keyboarding systems provided in your OS or use a separate utility. [Keyman](https://keyman.com/) is a cross-platform keyboarding system.
+
+Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
 
 See [Character set support](charset) for details of the Unicode characters supported by this font.
 
