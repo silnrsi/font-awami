@@ -35,8 +35,6 @@ echo "     > versions.html"
 pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/versions.md -o documentation/versions.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
 echo "     > announcement.html"
 pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/announcement.md -o documentation/announcement.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
-echo "     > special.html"
-pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/special.md -o documentation/special.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
 echo "     > honorifics.html"
 pandoc -s -f markdown-smart --template documentation/source/template.html documentation/source/honorifics.md -o documentation/honorifics.html --lua-filter=documentation/source/pandocfilters/filter-html.lua
 
@@ -76,9 +74,6 @@ weasyprint documentation/source/pdftemp/versions.html documentation/pdf/versions
 echo "     > announcement.html > announcement.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/announcement.md -o documentation/source/pdftemp/announcement.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/announcement.html documentation/pdf/announcement.pdf
-echo "     > special.html > special.pdf"
-pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/special.md -o documentation/source/pdftemp/special.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
-weasyprint documentation/source/pdftemp/special.html documentation/pdf/special.pdf
 echo "     > honorifics.html > honorifics.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/honorifics.md -o documentation/source/pdftemp/honorifics.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/honorifics.html documentation/pdf/honorifics.pdf
@@ -114,9 +109,6 @@ echo "     > versions.md"
 python3 documentation/source/makepsmd.py documentation/source/versions.md documentation/source/productsite/versions.md -q
 echo "     > announcement.md"
 python3 documentation/source/makepsmd.py documentation/source/announcement.md documentation/source/productsite/announcement.md -q
-echo "     > special.md"
-python3 documentation/source/makepsmd.py documentation/source/special.md documentation/source/productsite/special.md -q
-echo "     Markdown source for other pages is in separate repo"
 echo "     > honorifics.md"
 python3 documentation/source/makepsmd.py documentation/source/honorifics.md documentation/source/productsite/honorifics.md -q
 echo "     Markdown source for other pages is in separate repo"
