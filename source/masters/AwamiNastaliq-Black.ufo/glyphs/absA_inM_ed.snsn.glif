@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="absAinMed.snsn" format="2">
   <advance width="267"/>
   <anchor x="267" y="1055" name="_exit_ain"/>
@@ -6,7 +6,6 @@
   <anchor x="488" y="609" name="n1Lower"/>
   <anchor x="278" y="1849" name="nUpper"/>
   <outline>
-    <component base="_ainMed" xOffset="-294" yOffset="533"/>
     <contour>
       <point x="267" y="1045" type="curve" smooth="yes"/>
       <point x="267" y="966"/>
@@ -21,6 +20,7 @@
       <point x="578" y="1443"/>
       <point x="267" y="1110"/>
     </contour>
+    <component base="_ainMed" xOffset="-294" yOffset="533"/>
   </outline>
   <lib>
     <dict>
