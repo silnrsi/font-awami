@@ -13,8 +13,6 @@ Install the font by decompressing the .zip archive and installing the font using
 
 ## Keyboarding and character set support
 
-## Keyboarding and character set support
-
 This font package does not include keyboards or other software for entering text. To type the symbols in this font, use the keyboarding systems provided in your OS or use a separate utility. [Keyman](https://keyman.com/) is a cross-platform keyboarding system.
 
 Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
@@ -42,7 +40,7 @@ On Windows 10/11: see [Use the On-Screen Keyboard (OSK) to type](https://support
 
 The Awami Nastaliq font requires software enabled with the very latest [Graphite](https://graphite.sil.org/) engine (version 1.3.4+) in order to render correctly. The font does not support OpenType rendering. **It will not work with standard software such as Microsoft Office**. 
 
-Currently, the only software that can render Awami Nastaliq are the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX/XeLaTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext](https://paratext.org/), [PTXprint](https://software.sil.org/ptxprint/), and [Bloom](http://bloomlibrary.org/).
+Currently, the only software that can render Awami Nastaliq are the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX/XeLaTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext](https://paratext.org/), [PTXprint](https://software.sil.org/ptxprint/), and [Bloom](https://bloomlibrary.org/).
 
 If a developer wishes to add support for Graphite, the Graphite engine is available [here](https://github.com/silnrsi/graphite/releases/).
 
@@ -75,11 +73,11 @@ To use the full collision avoidance (both intra- and inter- word) of Awami in Xe
 
 Explanations of this parameter are at:
 
-[http://tug.org/pipermail/xetex/2016-February/026398.html](http://tug.org/pipermail/xetex/2016-February/026398.html)
-[http://tug.org/pipermail/xetex/2016-February/026401.html](http://tug.org/pipermail/xetex/2016-February/026401.html)
-[http://tug.org/pipermail/xetex/2016-February/026402.html](http://tug.org/pipermail/xetex/2016-February/026402.html)
-[http://tug.org/pipermail/xetex/2016-February/026403.html](http://tug.org/pipermail/xetex/2016-February/026403.html)
-[http://tug.org/pipermail/xetex/2016-February/026474.html](http://tug.org/pipermail/xetex/2016-February/026474.html)
+[https://tug.org/pipermail/xetex/2016-February/026398.html](https://tug.org/pipermail/xetex/2016-February/026398.html)
+[https://tug.org/pipermail/xetex/2016-February/026401.html](https://tug.org/pipermail/xetex/2016-February/026401.html)
+[https://tug.org/pipermail/xetex/2016-February/026402.html](https://tug.org/pipermail/xetex/2016-February/026402.html)
+[https://tug.org/pipermail/xetex/2016-February/026403.html](https://tug.org/pipermail/xetex/2016-February/026403.html)
+[https://tug.org/pipermail/xetex/2016-February/026474.html](https://tug.org/pipermail/xetex/2016-February/026474.html)
 
 This parameter should be set in a .tex file. The file could look something like:
 

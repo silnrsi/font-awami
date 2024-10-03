@@ -7,7 +7,7 @@
 #
 #	Author: 	Peter K. Martin
 #	Date:		26-APR-2003
-#	Copyright:	SIL International
+#	Copyright:	SIL Global
 #
 #	Usage:		Run from within FontLab 4.5
 #				To compare two output files from this script, use

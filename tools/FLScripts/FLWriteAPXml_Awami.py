@@ -2,7 +2,7 @@
 # Author: M. Hosken
 # Description: Outputs attachment point information and notes as XML file for TTFBuilder
 # 
-# Copyright M. Hosken and SIL International, licensed under Perl Artistic license.
+# Copyright M. Hosken and SIL Global, licensed under Perl Artistic license.
 # martin_hosken@sil.org
 #
 # 1.02a JVG   18-MAY-2005 Revised to eliminate reformatting using tidy or saxon
