@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absSeenMed.nn" format="2">
   <advance width="1220"/>
   <anchor x="1220" y="937" name="_exit_seen"/>
@@ -8,6 +8,7 @@
   <anchor x="632" y="1142" name="nUpper"/>
   <anchor x="623" y="1152" name="tahUpper"/>
   <outline>
+    <component base="_seenMed" xOffset="-253" yOffset="-28"/>
     <contour>
       <point x="296" y="447" type="curve" smooth="yes"/>
       <point x="341" y="447"/>
@@ -31,7 +32,6 @@
       <point x="213" y="163"/>
       <point x="255" y="447"/>
     </contour>
-    <component base="_seenMed" xOffset="-253" yOffset="-28"/>
   </outline>
   <lib>
     <dict>

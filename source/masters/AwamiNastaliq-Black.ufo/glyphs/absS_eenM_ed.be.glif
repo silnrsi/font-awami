@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="absSeenMed.be" format="2">
   <advance width="1191"/>
   <guideline x="376" y="838" angle="199.2127"/>
@@ -9,6 +9,7 @@
   <anchor x="603" y="1142" name="nUpper"/>
   <anchor x="593" y="1152" name="tahUpper"/>
   <outline>
+    <component base="_seenMed" xOffset="-282" yOffset="-28"/>
     <contour>
       <point x="0" y="231" type="curve" smooth="yes"/>
       <point x="43" y="218"/>
@@ -35,7 +36,6 @@
       <point x="-37" y="625"/>
       <point x="-37" y="242"/>
     </contour>
-    <component base="_seenMed" xOffset="-282" yOffset="-28"/>
   </outline>
   <lib>
     <dict>
