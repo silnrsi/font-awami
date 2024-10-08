@@ -8,7 +8,7 @@ fontversion: 3.300
 ------------- | ---------------
 **This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
 
-Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](https://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used.
+Awami Nastaliq is a TrueType font with smart font capabilities added using the [Graphite](https://graphite.sil.org) font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used. For applications that do not make use of the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](https://scripts.sil.org/ttw/fonts2go.cgi), then choose the variants and download your font.
 
 See [Using Font Features](https://software.sil.org/fonts/features/). Although that page is not targeted at Arabic script support, it does provide a comprehensive list of applications that make full use of both the OpenType and Graphite font technologies.
 
@@ -18,15 +18,21 @@ This page uses web fonts (WOFF) to demonstrate font features. However, it will o
 
 *If this document is not displaying correctly a PDF version is also provided in the documentation/pdf folder of the release package.*
 
-## End of Ayah (U+06DD), subtending marks (U+0600..U+0605)
+## Complete feature list
 
-These Arabic characters are intended to enclose or hold one or more digits. 
+### Language system tags
 
-Specific technical details of how to use them are discussed in the [Arabic fonts FAQ -- Subtending marks](https://software.sil.org/arabicfonts/support/faq#Ayah).
+<span class='affects'>Affects: U+0623, U+0624, U+0626, U+0654, U+0655, U+0675, U+0681, U+06B5, U+06C2, U+06D3, U+076C</span>
 
-## Customizing with TypeTuner
+Unfortunately, the UI needed to access the language-specific behavior is not yet present in many applications. LibreOffice supports language-specific behavior for Kashmiri. Some Harfbuzz-based apps, e.g., XeTeX, can access language-specific behavior. 
 
-For applications that do not make use of Graphite features or the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](https://scripts.sil.org/ttw/fonts2go.cgi), then choose the variants and download your font.
+#### Gojri and Kashmiri
+
+Language | Lam v (06B5) | hamza | Feature setting
+:--      | ---:         | ----: | :---
+default | <span dir="rtl" class='awami-R normal'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' >&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |
+Gojri | <span dir="rtl" class='awami-R normal' lang='gju' style="color:red">&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='gju'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> | `lang='gju'`
+Kashmiri | <span dir="rtl" class='awami-R normal' lang='ks'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ks' style="color:red">&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span>  | `lang='ks'`
 
 ### Character variants
 
@@ -93,7 +99,7 @@ Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 
 #### Hamza 
 
-<span class='affects'>Affects: U+0654, U+0655, U+0623, U+0624, U+0626, U+0675, U+076C, U+0681, U+06C2, U+06D3</span>
+<span class='affects'>Affects: U+0623, U+0624, U+0626, U+0654, U+0655, U+0675, U+0681, U+06C2, U+06D3, U+076C </span>
 
 Feature | Sample | Feature setting
 ---- | ---------------: | :----
@@ -134,7 +140,11 @@ On (default) | <span dir="rtl" class='awami-R normal' style='font-feature-settin
 
 *This is not technically a feature, but we find it useful to demonstrate the use of these characters.*
 
+These Arabic characters are intended to enclose or hold one or more digits. 
+
 Firefox allows you to use U+06DD followed by the digits and proper rendering occurs. However, surrounding the sequence with U+202D and U+202C seems to give the most reliable results in different browsers, and so this font requires those characters in order to display properly.
+
+Specific technical details of how to use them are discussed in the [Arabic fonts FAQ -- Subtending marks](https://software.sil.org/arabicfonts/support/faq#Ayah).
 
 Character | Sample  
 ------------- | ---------------: 

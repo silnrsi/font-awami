@@ -109,10 +109,10 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 ### Arabic Presentation Forms A and B:
 
 #### Regular:
-<p dir="rtl"><span class='awami-R normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
+<p dir="rtl"><span class='awami-R normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD; &#xFDFE;</span></p>
 
 #### Bold:
-<p dir="rtl"><span class='awami-B normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD;</span></p>
+<p dir="rtl"><span class='awami-B normal'>&#xFBC6; &#xFBC7; &#xFD3E; &#xFD3F; &#xFD40; &#xFD41; &#xFD42; &#xFD43; &#xFD44; &#xFD45; &#xFD47; &#xFD48; &#xFD90; &#xFD91; &#xFDCF; &#xFDF2; &#xFDFA; &#xFDFB; &#xFDFC; &#xFDFD; &#xFDFE;</span></p>
 
 ### Arabic Extended-C:
 

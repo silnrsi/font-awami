@@ -30,6 +30,7 @@ fontversion: 3.300
     it is in the pipeline for a future version of the Unicode Standard)
   - U+FD91 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHAA (this character is not officially in Unicode, 
     it is in the pipeline for a future version of the Unicode Standard)
+  - U+FDFE ARABIC LIGATURE SUBHAANAHU WA TAAALAA
 
 ### 2023-Oct-23 (SIL WSTech team) Awami Nastaliq Version 3.200
 

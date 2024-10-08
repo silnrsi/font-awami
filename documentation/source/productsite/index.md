@@ -12,7 +12,6 @@ This documentation is a set of HTML pages that can be viewed in any modern web b
 - [Font features](features) &#x2013; Using smart font features
 - [Rendering the Allah ligature](allah) &#x2013; Special rules for rendering the Allah ligature
 - [Honorific ligatures](honorifics) — Description of honorific ligature usage 
-- [Special](special) &#x2013; What is Special About Awami Nastaliq?
 - [Support](support) &#x2013; How to get additional support
 - [Developer information](developer) &#x2013; How to modify and build the fonts
 - [Versions](versions) &#x2013; Sources for alternate versions

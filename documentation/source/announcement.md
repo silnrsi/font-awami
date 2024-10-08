@@ -32,12 +32,14 @@ We are happy to announce the release of Awami Nastaliq version 3.300. This is a 
     it is in the pipeline for a future version of the Unicode Standard)
   - U+FD91 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHAA (this character is not officially in Unicode, 
     it is in the pipeline for a future version of the Unicode Standard)
+  - U+FDFE ARABIC LIGATURE SUBHAANAHU WA TAAALAA
   
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 
 ### Known issues
 
 The following characters are not officially in Unicode. The codepoints *could* still change.
+
 - U+FBC6 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIM
 - U+FBC7 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIMAA
 - U+FD90 ARABIC LIGATURE RAHMATU ALLAAHI ALAYH

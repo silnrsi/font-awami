@@ -77,6 +77,15 @@ weasyprint documentation/source/pdftemp/announcement.html documentation/pdf/anno
 echo "     > honorifics.html > honorifics.pdf"
 pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/honorifics.md -o documentation/source/pdftemp/honorifics.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
 weasyprint documentation/source/pdftemp/honorifics.html documentation/pdf/honorifics.pdf
+echo "     > features.html > features.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/features.md -o documentation/source/pdftemp/features.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/features.html documentation/pdf/features.pdf
+echo "     > sample.html > sample.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/sample.md -o documentation/source/pdftemp/sample.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/sample.html documentation/pdf/sample.pdf
+echo "     > allah.html > allah.pdf"
+pandoc -s -f markdown-smart --template documentation/source/templatepdf.html documentation/source/allah.md -o documentation/source/pdftemp/allah.html --lua-filter=documentation/source/pandocfilters/filter-pdf.lua
+weasyprint documentation/source/pdftemp/allah.html documentation/pdf/allah.pdf
 
 
 echo "     >>> PRODUCT SITE MARKDOWN (documentation/source/productsite/)"

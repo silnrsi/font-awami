@@ -10,4 +10,5 @@ These are produced from markdown sources (in `source`) using pandoc,
 weasyprint, and custom python scripts. See the `makedocs` shell script
 in the main project folder.
 
-FYI: Since Awami Nastaliq is a Graphite-only font, the pdfs are manually created using FireFox.
+FYI: Since Awami Nastaliq is a Graphite-only font, the features.pdf is manually created using FireFox.
+This is because the weasyprint doesn't recognize Graphite-style features.
