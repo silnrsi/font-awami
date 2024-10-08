@@ -2,6 +2,18 @@
 <!DOCTYPE all_features SYSTEM "feat_all.dtd">
 <all_features version="1.0">
 
+	<feature name="Language" value="Default" tag="Lng">
+		<value name="Default" tag="Def">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Kashmiri" tag="Kas">
+			<cmd name="gr_feat" args="{gr_hamz} 1"/>
+		</value>
+		<value name="Gojri" tag="Gju">
+			<cmd name="gr_feat" args="{gr_lamv} 1"/>
+		</value>
+	</feature>
+
 	<feature name="Heh-goal hook on medial heh goal" value="True" tag="HgHk">
 		<value name="False" tag="F">
 			<cmd name="gr_feat" args="{gr_hehk} 0"/>
@@ -39,7 +51,7 @@
 	</feature>
 
 	<feature name="Punctuation" value="Default" tag="Punct">
-		<value name="Default" tag="Dflt">
+		<value name="Default" tag="Def">
 			<cmd name="null" args="null"/>
 		</value>
 		<value name="Arabic" tag="Arab">
