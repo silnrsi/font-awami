@@ -5,8 +5,6 @@ fontversion: 3.300
 
 We are happy to announce the release of Awami Nastaliq version 3.300. This is a maintenance release of Awami Nastaliq.
 
-This release supports only a few new characters. However, it enables support for the Kashmiri and Gojri languages.
-
 ### Changes
 
 #### Improved
