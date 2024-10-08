@@ -11,7 +11,7 @@ fontversion: 3.300
 #### New
 - Added support for Kashmiri language
 - Added support for Gojri language
-- Added 14 characters:
+- Added 15 characters:
   - U+08F7 ARABIC LEFT ARROWHEAD ABOVE (for Burushaski)
   - U+FBC6 ARABIC LIGATURE RAHMATU ALLAAHI ALAYHIM (this character is not officially in Unicode, 
     it is in the pipeline for a future version of the Unicode Standard)
