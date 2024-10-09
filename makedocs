@@ -90,8 +90,6 @@ weasyprint documentation/source/pdftemp/allah.html documentation/pdf/allah.pdf
 
 echo "     >>> PRODUCT SITE MARKDOWN (documentation/source/productsite/)"
 
-echo "     > index.md"
-python3 documentation/source/makepsmd.py documentation/source/index.md documentation/source/productsite/index.md -q
 echo "     > about.md"
 python3 documentation/source/makepsmd.py documentation/source/about.md documentation/source/productsite/about.md -q
 echo "     > charset.md"
@@ -114,8 +112,6 @@ echo "     > sample.md"
 python3 documentation/source/makepsmd.py documentation/source/sample.md documentation/source/productsite/sample.md -q
 echo "     > support.md"
 python3 documentation/source/makepsmd.py documentation/source/support.md documentation/source/productsite/support.md -q
-echo "     > versions.md"
-python3 documentation/source/makepsmd.py documentation/source/versions.md documentation/source/productsite/versions.md -q
 echo "     > announcement.md"
 python3 documentation/source/makepsmd.py documentation/source/announcement.md documentation/source/productsite/announcement.md -q
 echo "     > honorifics.md"

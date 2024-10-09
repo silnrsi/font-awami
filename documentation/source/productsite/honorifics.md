@@ -18,7 +18,7 @@ RADI ALLAAHU ANHUM | FD43 | <span class='awami-R normal'>&#xFD43;</span> | May G
 RADI ALLAAHU ANHUMAA | FD44 | <span class='awami-R normal'>&#xFD44;</span> | May God be pleased with them (both).</br>(Used for companions of the prophet.)
 RADI ALLAAHU ANHUNNA | FD45 | <span class='awami-R normal'>&#xFD45;</span>  | May God be pleased with them (feminine).</br>(Used for companions of the prophet.)
 
-##
+## 
 
 Unicode Name</br>ARABIC LIGATURE ... | USV | Glyph | Meaning
 ------------- | --- | --- | ------------- 
