@@ -23,7 +23,7 @@ Which form the final beh glyph takes depends on what comes after. In the example
 
 ![](images/BehTeeth_bbbf_marked.png)
 
-- Beh + beh + beh + **beh + sad** + qaf  >>  initial-low-tooth + medial-low-tooth + medial-high-tooth + **medial-low-tooth + ain** + qaf
+- Beh + beh + beh + **beh + ain** + qaf  >>  initial-low-tooth + medial-low-tooth + medial-high-tooth + **medial-low-tooth + ain** + qaf
 
 ![](images/BehTeeth_bbbbaq_marked.png)
 
