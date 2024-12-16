@@ -23,7 +23,7 @@ A phenomenon that shows up in various ways in Nastaliq rendering is the necessit
 - [Alternating Beh Teeth](dev04_behteeth.md) &#x2013; Special forms needed for sequences of beh, teh, theh, peh, noon, and yeh
 - [Naming Conventions](dev05_namingconv.md) &#x2013; Classes and glyphs
 - [Passes and Processing](dev06_passes.md) &#x2013; Summary of what each pass performs
-- [Collision Fixing](dev07_collision.md)
+- [Collision Fixing](dev07_collisions.md)
 - [Kerning and Overlaps](dev08_kerning.md)
 - [Alternate Height Kafs and Gafs](dev09_altkafs.md)
 - [Short Finals](dev10_shortfinals.md)
