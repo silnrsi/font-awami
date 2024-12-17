@@ -42,6 +42,7 @@ feature ccmp {
 	sub		absDad			by  absSad					_dot1u;
 	sub		absZah			by	absTah					_dot1u;
 	sub		absGhain		by	absAin					_dot1u;
+	sub		absFeh			by	absDotlessFeh		_dot1u;
 	sub		absQaf			by	absDotlessFeh		_dot2u;
 } ccmp;
 
@@ -60,6 +61,7 @@ feature isol {
 	sub		absSad					_dot1u		by		absDad;
 	sub		absTah					_dot1u		by		absZah;
 	sub		absAin					_dot1u		by		absGhain;
+	sub		absDotlessFeh		_dot1u		by		absFeh;
 	sub		absDotlessFeh		_dot2u		by		absQaf;
 } isol;
 
@@ -69,6 +71,8 @@ feature fina {
 lookup RightFinals1 {
 	sub		absAlef			by 		absAlefFin;
 	sub		nlqBariyeh	by		nlqBariyehFin;
+	sub		absWaw			by		absWawFin;
+	sub		absReh			by		absRehFin;
 } RightFinals1;
 
 lookup RightFinals2 {
@@ -100,64 +104,102 @@ lookup BasicContextuals {
 	
 	# alef, lam, kaf, and dal use the default shapes
 	
-	sub @IniDefault_sub' @BehForms	by	@IniBe_sub;
-	sub	@MedDefault_sub' @BehForms	by	@MedBe_sub;
+	sub @IniDefault_sub' absBehFin		by	@IniBeM2F_sub;
 	
-	sub @IniDefault_sub' @JeemForms by	@IniJm_sub;
-	sub	@MedDefault_sub' @JeemForms	by	@MedJm_sub;
+	sub @IniDefault_sub' @BehForms		by	@IniBe_sub;
+	sub	@MedDefault_sub' @BehForms		by	@MedBe_sub;
+	# beh shaping is continued below
 	
-	sub @IniDefault_sub' @SeenForms by	@IniSn_sub;
-	sub	@MedDefault_sub' @SeenForms	by	@MedSn_sub;
+	sub @IniDefault_sub' @JeemForms		by	@IniJm_sub;
+	sub	@MedDefault_sub' @JeemForms		by	@MedJm_sub;
+	
+	sub @IniDefault_sub' @SeenForms		by	@IniSn_sub;
+	sub	@MedDefault_sub' @SeenForms		by	@MedSn_sub;
 		
-	sub @IniDefault_sub' @SadForms	by	@IniSd_sub;
-	sub	@MedDefault_sub' @SadForms	by	@MedSd_sub;
+	sub @IniDefault_sub' @SadForms		by	@IniSd_sub;
+	sub	@MedDefault_sub' @SadForms		by	@MedSd_sub;
 		
-	sub @IniDefault_sub' @TahForms	by	@IniTa_sub;
-	sub	@MedDefault_sub' @TahForms	by	@MedTa_sub;
+	sub @IniDefault_sub' @TahForms		by	@IniTa_sub;
+	sub	@MedDefault_sub' @TahForms		by	@MedTa_sub;
 			
-	sub @IniDefault_sub' @AinForms	by	@IniAi_sub;
-	sub	@MedDefault_sub' @AinForms	by	@MedAi_sub;
+	sub @IniDefault_sub' @AinForms		by	@IniAi_sub;
+	sub	@MedDefault_sub' @AinForms		by	@MedAi_sub;
 
-	sub @IniDefault_sub' @FehForms	by	@IniFe_sub;
-	sub	@MedDefault_sub' @FehForms	by	@MedFe_sub;
+	sub @IniDefault_sub' @FehForms		by	@IniFe_sub;
+	sub	@MedDefault_sub' @FehForms		by	@MedFe_sub;
 		
-	sub @IniDefault_sub' @MeemForms by	@IniMm_sub;
-	sub	@MedDefault_sub' @MeemForms	by	@MedMm_sub;
-
+	sub @IniDefault_sub' @MeemForms		by	@IniMm_sub;
+	sub	@MedDefault_sub' @MeemForms		by	@MedMm_sub;
+	
+	sub @IniDefault_sub' @HehDoForms	by	@IniHd_sub;
+	sub	@MedDefault_sub' @HehDoForms	by	@MedHd_sub;
+	
+	sub @IniDefault_sub' absHehGoalFin	by @IniHgF_sub;
+	sub @MedDefault_sub' absHehGoalFin	by @MedHgF_sub;
+	
+	sub @IniDefault_sub' @HehGoalForms	by	@IniHgM_sub;
+	sub	@MedDefault_sub' @HehGoalForms	by	@MedHgM_sub;
+	
+	sub @IniDefault_sub' absRehFin			by	@IniRe_sub;
+	sub	@MedDefault_sub' absRehFin			by	@MedRe_sub;
+	
+	sub @IniDefault_sub' absNoonFin			by	@IniNn_sub;
+	sub	@MedDefault_sub' absNoonFin			by	@MedNn_sub;
+	
+	sub @IniDefault_sub' nlqChotiyehFin					by	@IniCh_sub;
+	sub	@MedDefault_sub' nlqChotiyehFin					by	@MedCh_sub;
+	
+	sub @IniDefault_sub' nlqBariyehFin					by	@IniBy_sub;
+	sub	@MedDefault_sub' nlqBariyehFin					by	@MedBy_sub;
+	
+	sub @IniDefault_sub' [absQafFin absWawFin]	by	@IniQf_sub;
+	sub	@MedDefault_sub' [absQafFin absWawFin]	by	@MedQf_sub;
+	
 } BasicContextuals;			# end of lookup
 
 
-lookup BehForms {
-	lookupflag IgnoreMarks;
+# Here we assume that glyphs before beh have their .be form.
+lookup BehContextuals {
+	lookupflag IgnoreMarks RightToLeft;
 	
-	rsub absBehMed.be'		absBehFin			by		absBehMed.beF;
-	rsub absBehMed.be'		absBehMed.be	by		absBehMed.beM1;		# high tooth
+	# Use rsub to use backwards logic so that the glyphs at the are processed first.
 	
-	rsub absBehMed.sn 									by absBehMed.beM1;			# seen requires high tooth before it
+	rsub absBehMed.be'		absBehFin			by	absBehMed.beF;
 	
-	# Alternate high and low teeth:
-	rsub absBehMed.be'		absBehMed.beM1		by	absBehMed.beM2;
-	rsub absBehMed.be'		absBehMed.beM2		by	absBehMed.beM1;
+	# Alternate teeth:
+	rsub absBehMed.be'		@PostBeM1			by	absBehMed.beM1;		# high tooth
+	rsub absBehMed.be'		@PostBeM2			by	absBehMed.beM2;		# low tooth
 	
 	# Initial beh:
-	rsub absBehIni.be'		absBehMed.beM1		by	absBehIni.beM2;
-	rsub absBehIni.be'		absBehMed.beM2		by	absBehMed.beM1;
+	rsub absBehIni.be'		@PostBeM1			by	absBehIni.beM1;
+	rsub absBehIni.be'		@PostBeM2			by	absBehMed.beM2;
 	
 	# Finally handle the first item in the chain:
 	rsub @IniBe_sub'   absBehMed.beM1		by	@IniBeM2_sub;
 	rsub @IniBe_sub'   absBehMed.beM2		by	@IniBeM1_sub;
-	rsub @MedBe_sub'   absBehMed.beM1		by	@MedBeM2_sub;		# these two rules must be last
-	rsub @MedBe_sub'   absBehMed.beM2		by	@MedBeM1_sub;
+	rsub @MedBe_sub'   absBehMed.beM1		by	@MedBeM2_sub;		# these two rules must be last, so that
+	rsub @MedBe_sub'   absBehMed.beM2		by	@MedBeM1_sub;		# they only get triggered by non-behs
 
-} BehForms;					# end of lookup
+} BehContextuals;					# end of lookup
 
-lookup MeemForms {
+lookup MeemContextuals {
 
+# TODO!!!!
 
-} MeemForms;					# end of lookup
+} MeemContextuals;					# end of lookup
+
 
 lookup FinalContextuals {
-
+	sub @PreQw_stfh  [absQafFin absWawFin]' by  [absQafFin._stfh absWawFin._stfh];
+	
+	sub @PreBe_bfkl	absBehFin' by absBehFin._bfkl;
+	
+	sub @PreChF_bfkl nlqChotiyehFin' by nlqChotiyehFin._bfkl;
+	
+	#sub @PreHgF_stfh absHehGoalFin' by absHehGoalFin._bfkl;  -- no longer used
+	
+	sub @PreReF_jkl absRehFin' by absRehFin._jkl;
+	sub @PreReF_hgM absRehFin' by absRehFin._hgM;
 
 } FinalContextuals;					# end of lookup
 
@@ -169,7 +211,6 @@ lookup FinalContextuals {
 feature kern {
 
 } kern;
-
 
 
 feature curs {

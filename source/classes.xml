@@ -32,8 +32,8 @@ details including an FAQ.
 	
 	<!-- BASIC LETTER CLASSES -->
 	
-	<!-- ARE WE MISSING ITEMS FROM THIS CLASS??? -->
 	<class name="BehForms">
+		absBeh
 		absBehIni absBehIni.ai absBehIni.be absBehIni.beM1 absBehIni.beM2 absBehIni.benn absBehIni.behg absBehIni.bere
 		absBehIni.beF absBehIni.by absBehIni.ch absBehIni.fe  absBehIni.hd absBehIni.hgM absBehIni.hgF absBehIni.jm
 		absBehIni.mm absBehIni.mmX  absBehIni.nn absBehIni.qf absBehIni.re absBehIni.sd absBehIni.sn absBehIni.snsn absBehIni.ta
@@ -41,9 +41,15 @@ details including an FAQ.
 		absBehMed.beF absBehMed.by absBehMed.ch absBehMed.fe  absBehMed.hd absBehMed.hgM absBehMed.hgF absBehMed.jm
 		absBehMed.mm absBehMed.mmX  absBehMed.nn absBehMed.qf absBehMed.re absBehMed.sd absBehMed.sn absBehMed.snsn absBehMed.ta
 		absBehFin
+		absBehFin._bfkl absBehIni.be_jmF absBehIni.hdR absBehMed.hdR absBehMed.jmR absBehMed.kf_wide absBehMed.mmR absBehMed.mmXR
+		absBehMed.nn_hgbm absBehMed.nn_hgbmR absBehMed.nnR absBehMed.snR
+		absBehmed.qf_short
+		<!-- obsolete: -->
+		absBehMed.beF_ss absBehMed.fe_ss absBehMed.qf_ss absBehMed.sd_ss absBehMed.ta_ss
 	</class>
 	
 	<class name="JeemForms">
+		absJeem
 		absJeemIni absJeemIni.ai absJeemIni.be absJeemIni.beM1 absJeemIni.beM2 absJeemIni.benn absJeemIni.behg absJeemIni.bere
 		absJeemIni.beF absJeemIni.by absJeemIni.ch absJeemIni.fe  absJeemIni.hd absJeemIni.hgM absJeemIni.hgF absJeemIni.jm
 		absJeemIni.mm absJeemIni.mmX  absJeemIni.nn absJeemIni.qf absJeemIni.re absJeemIni.sd absJeemIni.sn absJeemIni.snsn absJeemIni.ta
@@ -51,9 +57,12 @@ details including an FAQ.
 		absJeemMed.beF absJeemMed.by absJeemMed.ch absJeemMed.fe  absJeemMed.hd absJeemMed.hgM absJeemMed.hgF absJeemMed.jm
 		absJeemMed.mm absJeemMed.mmX  absJeemMed.nn absJeemMed.qf absJeemMed.re absJeemMed.sd absJeemMed.sn absJeemMed.snsn absJeemMed.ta
 		absJeemFin
+		absJeemMed.bekl absJeemMed.by_short absJeemMed.kf_wide
+		absJeemFin_short
 	</class>
 	
 	<class name="SeenForms">
+		absSeen
 		absSeenIni absSeenIni.ai absSeenIni.be absSeenIni.beM1 absSeenIni.beM2 absSeenIni.benn absSeenIni.behg absSeenIni.bere
 		absSeenIni.beF absSeenIni.by absSeenIni.ch absSeenIni.fe  absSeenIni.hd absSeenIni.hgM absSeenIni.hgF absSeenIni.jm
 		absSeenIni.mm absSeenIni.mmX  absSeenIni.nn absSeenIni.qf absSeenIni.re absSeenIni.sd absSeenIni.sn absSeenIni.snsn absSeenIni.ta
@@ -61,6 +70,8 @@ details including an FAQ.
 		absSeenMed.beF absSeenMed.by absSeenMed.ch absSeenMed.fe  absSeenMed.hd absSeenMed.hgM absSeenMed.hgF absSeenMed.jm
 		absSeenMed.mm absSeenMed.mmX  absSeenMed.nn absSeenMed.qf absSeenMed.re absSeenMed.sd absSeenMed.sn absSeenMed.snsn absSeenMed.ta
 		absSeenFin
+		absSeenIni.jm_flat absSeenMed.jm_flat absSeenMed.sn_sn
+		absSeenFin_short
 	</class>
 	
 	<class name="SadForms">
@@ -71,8 +82,10 @@ details including an FAQ.
 		absSadMed.beF absSadMed.by absSadMed.ch absSadMed.fe  absSadMed.hd absSadMed.hgM absSadMed.hgF absSadMed.jm
 		absSadMed.mm absSadMed.mmX  absSadMed.nn absSadMed.qf absSadMed.re absSadMed.sd absSadMed.sn absSadMed.snsn absSadMed.ta
 		absSadFin
+		absSadFin_short
 	</class>
-		
+	
+	<!-- add all forms... -->
 	<class name="TahForms">
 		absTahIni absTahIni.ai absTahIni.be absTahIni.beM1 absTahIni.beM2 absTahIni.benn absTahIni.behg absTahIni.bere
 		absTahIni.beF absTahIni.by absTahIni.ch absTahIni.fe  absTahIni.hd absTahIni.hgM absTahIni.hgF absTahIni.jm
@@ -83,6 +96,7 @@ details including an FAQ.
 		absTahFin
 	</class>
 			
+	<!-- add all forms... -->
 	<class name="AinForms">
 		absAinIni absAinIni.ai absAinIni.be absAinIni.beM1 absAinIni.beM2 absAinIni.benn absAinIni.behg absAinIni.bere
 		absAinIni.beF absAinIni.by absAinIni.ch absAinIni.fe  absAinIni.hd absAinIni.hgM absAinIni.hgF absAinIni.jm
@@ -93,6 +107,7 @@ details including an FAQ.
 		absAinFin
 	</class>
 			
+	<!-- add all forms... -->
 	<class name="FehForms">
 		absFehIni absFehIni.ai absFehIni.be absFehIni.beM1 absFehIni.beM2 absFehIni.benn absFehIni.behg absFehIni.bere
 		absFehIni.beF absFehIni.by absFehIni.ch absFehIni.fe  absFehIni.hd absFehIni.hgM absFehIni.hgF absFehIni.jm
@@ -115,6 +130,7 @@ details including an FAQ.
 	</class>
 	-->
 	
+	<!-- add all forms... -->
 	<class name="MeemForms">
 		absMeemIni absMeemIni.ai absMeemIni.be absMeemIni.beM1 absMeemIni.beM2 absMeemIni.benn absMeemIni.behg absMeemIni.bere
 		absMeemIni.beF absMeemIni.by absMeemIni.ch absMeemIni.fe  absMeemIni.hd absMeemIni.hgM absMeemIni.hgF absMeemIni.jm
@@ -125,6 +141,7 @@ details including an FAQ.
 		absMeemFin
 	</class>
 	
+	<!-- add all forms... -->
 	<class name="HehDoForms">
 		absHehDoachashmeeIni absHehDoachashmeeIni.ai absHehDoachashmeeIni.be absHehDoachashmeeIni.beM1 absHehDoachashmeeIni.beM2 absHehDoachashmeeIni.benn absHehDoachashmeeIni.behg absHehDoachashmeeIni.bere
 		absHehDoachashmeeIni.beF absHehDoachashmeeIni.by absHehDoachashmeeIni.ch absHehDoachashmeeIni.fe  absHehDoachashmeeIni.hd absHehDoachashmeeIni.hgM absHehDoachashmeeIni.hgF absHehDoachashmeeIni.jm
@@ -135,6 +152,7 @@ details including an FAQ.
 		absHehDoachashmeeFin
 	</class>
 	
+	<!-- add all forms... -->
 	<class name="HehGoalForms">
 		absHehGoalIni absHehGoalIni.ai absHehGoalIni.be absHehGoalIni.beM1 absHehGoalIni.beM2 absHehGoalIni.benn absHehGoalIni.behg absHehGoalIni.bere
 		absHehGoalIni.beF absHehGoalIni.by absHehGoalIni.ch absHehGoalIni.fe  absHehGoalIni.hd absHehGoalIni.hgM absHehGoalIni.hgF absHehGoalIni.jm
@@ -147,10 +165,10 @@ details including an FAQ.
 	
 	<!-- CONTEXTUAL SHAPING CLASSES -->
 
-  <!-- *NEXT 12 CLASSES MUST MATCH* -->
+  <!-- *NEXT 53 CLASSES MUST MATCH* -->
 
 	<class name="DualPostCcmp_sub">  <!-- output of the ccmp feature -->
-		absDotlessBeh absHah absSeen absSad absTah absAin absFeh absKeheh absGaf absLam 
+		absDotlessBeh absHah absSeen absSad absTah absAin absDotlessFeh absKeheh absGaf absLam 
 		absMeem absHehDoachashmee absHehGoal
 	</class>
 	
@@ -193,10 +211,56 @@ details including an FAQ.
 		absBehIni.beM2 absJeemIni.beM2 absSeenIni.beM2 absSadIni.beM2 absTahIni.beM2 absAinIni.beM2 absFehIni.beM2 absKehehIni.beM2 absGafIni.beM2 absLamIni.beM2 
 		absMeemIni.beM2 absHehDoachashmeeIni.beM2 absHehGoalIni.beM2 
 	</class>
+	
+	<!-- initial forms before final beh - combination of beM2 and beF -->
+	<class name="IniBeM2F_sub">
+		absBehIni.beM2 absJeemIni.beF absSeenIni.beF absSadIni.beF absTahIni.beF absAinIni.beF absFehIni.beM2 absKehehIni.beM2 absGafIni.beM2 absLamIni.beM2
+		absMeemIni.beF absHehGoalIni.beF absHehDoachashmeeIni.beF
+	</class>
 
 	<class name="MedBeM2_sub">
 		absBehMed.beM2 absJeemMed.beM2 absSeenMed.beM2 absSadMed.beM2 absTahMed.beM2 absAinMed.beM2 absFehMed.beM2 absKehehMed.beM2 absGafMed.beM2 absLamMed.beM2 
 		absMeemMed.beM2 absHehDoachashmeeMed.beM2 absHehGoalMed.beM2
+	</class>
+
+	<class name="IniBeNn_sub">
+		absBehIni.benn absJeemIni.benn absSeenIni.benn absSadIni.benn absTahIni.benn absAinIni.benn absFehIni.benn absKehehIni.benn absGafIni.benn absLamIni.benn 
+		absMeemIni.benn absHehDoachashmeeIni.benn absHehGoalIni.benn 
+	</class>
+
+	<class name="MedBeNn_sub">
+		absBehMed.benn absJeemMed.benn absSeenMed.benn absSadMed.benn absTahMed.benn absAinMed.benn absFehMed.benn absKehehMed.benn absGafMed.benn absLamMed.benn 
+		absMeemMed.benn absHehDoachashmeeMed.benn absHehGoalMed.benn
+	</class>
+	
+	<class name="IniBeRe_sub">
+		absBehIni.bere absJeemIni.bere absSeenIni.bere absSadIni.bere absTahIni.bere absAinIni.bere absFehIni.bere absKehehIni.bere absGafIni.bere absLamIni.bere 
+		absMeemIni.bere absHehDoachashmeeIni.bere absHehGoalIni.bere 
+	</class>
+
+	<class name="MedBeRe_sub">
+		absBehMed.bere absJeemMed.bere absSeenMed.bere absSadMed.bere absTahMed.bere absAinMed.bere absFehMed.bere absKehehMed.bere absGafMed.bere absLamMed.bere 
+		absMeemMed.bere absHehDoachashmeeMed.bere absHehGoalMed.bere
+	</class>
+	
+	<class name="IniBeHg_sub">
+		absBehIni.behg absJeemIni.behg absSeenIni.behg absSadIni.behg absTahIni.behg absAinIni.behg absFehIni.behg absKehehIni.behg absGafIni.behg absLamIni.behg 
+		absMeemIni.behg absHehDoachashmeeIni.behg absHehGoalIni.behg 
+	</class>
+
+	<class name="MedBeHg_sub">
+		absBehMed.behg absJeemMed.behg absSeenMed.behg absSadMed.behg absTahMed.behg absAinMed.behg absFehMed.behg absKehehMed.behg absGafMed.behg absLamMed.behg 
+		absMeemMed.behg absHehDoachashmeeMed.behg absHehGoalMed.behg
+	</class>
+	
+	<class name="IniBeF_sub">
+		absBehIni.beF absJeemIni.beF absSeenIni.beF absSadIni.beF absTahIni.beF absAinIni.beF absFehIni.beF absKehehIni.beF absGafIni.beF absLamIni.beF 
+		absMeemIni.beF absHehDoachashmeeIni.beF absHehGoalIni.beF 
+	</class>
+
+	<class name="MedBeF_sub">
+		absBehMed.beF absJeemMed.beF absSeenMed.beF absSadMed.beF absTahMed.beF absAinMed.beF absFehMed.beF absKehehMed.beF absGafMed.beF absLamMed.beF 
+		absMeemMed.beF absHehDoachashmeeMed.beF absHehGoalMed.beF
 	</class>
 	
 	<class name="IniJm_sub">
@@ -217,6 +281,16 @@ details including an FAQ.
 	<class name="MedSn_sub">
 		absBehMed.sn absJeemMed.sn absSeenMed.sn absSadMed.sn absTahMed.sn absAinMed.sn absFehMed.sn absKehehMed.sn absGafMed.sn absLamMed.sn 
 		absMeemMed.sn absHehDoachashmeeMed.sn absHehGoalMed.sn
+	</class>
+	
+	<class name="IniSnSn_sub">
+		absBehIni.snsn absJeemIni.snsn absSeenIni.snsn absSadIni.snsn absTahIni.snsn absAinIni.snsn absFehIni.snsn absKehehIni.snsn absGafIni.snsn absLamIni.snsn 
+		absMeemIni.snsn absHehDoachashmeeIni.snsn absHehGoalIni.snsn 
+	</class>
+
+	<class name="MedSnSn_sub">
+		absBehMed.snsn absJeemMed.snsn absSeenMed.snsn absSadMed.snsn absTahMed.snsn absAinMed.snsn absFehMed.snsn absKehehMed.snsn absGafMed.snsn absLamMed.snsn 
+		absMeemMed.snsn absHehDoachashmeeMed.snsn absHehGoalMed.snsn
 	</class>
 	
 	<class name="IniSd_sub">
@@ -269,6 +343,16 @@ details including an FAQ.
 		absMeemMed.mm absHehDoachashmeeMed.mm absHehGoalMed.mm
 	</class>
 	
+	<class name="IniMmX_sub">
+		absBehIni.mmX absJeemIni.mmX absSeenIni.mmX absSadIni.mmX absTahIni.mmX absAinIni.mmX absFehIni.mmX absKehehIni.mmX absGafIni.mmX absLamIni.mmX 
+		absMeemIni.mmX absHehDoachashmeeIni.mmX absHehGoalIni.mmX
+	</class>
+
+	<class name="MedMmX_sub">
+		absBehMed.mmX absJeemMed.mmX absSeenMed.mmX absSadMed.mmX absTahMed.mmX absAinMed.mmX absFehMed.mmX absKehehMed.mmX absGafMed.mmX absLamMed.mmX 
+		absMeemMed.mmX absHehDoachashmeeMed.mmX absHehGoalMed.mmX
+	</class>
+	
 	<class name="IniHd_sub">
 		absBehIni.hd absJeemIni.hd absSeenIni.hd absSadIni.hd absTahIni.hd absAinIni.hd absFehIni.hd absKehehIni.hd absGafIni.hd absLamIni.hd 
 		absMeemIni.hd absHehDoachashmeeIni.hd absHehGoalIni.hd 
@@ -299,7 +383,55 @@ details including an FAQ.
 		absMeemMed.hgF absHehDoachashmeeMed.hgF absHehGoalMed.hgF
 	</class>
 	
-	<!-- ADD .nn, .ch, .by, .benn, .behg, .bere, .beF, .snsn, .mmX, .qf, .re, -->
+	<class name="IniRe_sub">
+		absBehIni.re absJeemIni.re absSeenIni.re absSadIni.re absTahIni.re absAinIni.re absFehIni.re absKehehIni.re absGafIni.re absLamIni.re 
+		absMeemIni.re absHehDoachashmeeIni.re absHehGoalIni.re 
+	</class>
+	
+	<class name="MedRe_sub">
+		absBehMed.re absJeemMed.re absSeenMed.re absSadMed.re absTahMed.re absAinMed.re absFehMed.re absKehehMed.re absGafMed.re absLamMed.re 
+		absMeemMed.re absHehDoachashmeeMed.re absHehGoalMed.re
+	</class>
+	
+	<class name="IniNn_sub">
+		absBehIni.nn absJeemIni.nn absSeenIni.nn absSadIni.nn absTahIni.nn absAinIni.nn absFehIni.nn absKehehIni.nn absGafIni.nn absLamIni.nn 
+		absMeemIni.nn absHehDoachashmeeIni.nn absHehGoalIni.nn 
+	</class>
+	
+	<class name="MedNn_sub">
+		absBehMed.nn absJeemMed.nn absSeenMed.nn absSadMed.nn absTahMed.nn absAinMed.nn absFehMed.nn absKehehMed.nn absGafMed.nn absLamMed.nn 
+		absMeemMed.nn absHehDoachashmeeMed.nn absHehGoalMed.nn
+	</class>
+	
+	<class name="IniQf_sub">
+		absBehIni.qf absJeemIni.qf absSeenIni.qf absSadIni.qf absTahIni.qf absAinIni.qf absFehIni.qf absKehehIni.qf absGafIni.qf absLamIni.qf 
+		absMeemIni.qf absHehDoachashmeeIni.qf absHehGoalIni.qf 
+	</class>
+	
+	<class name="MedQf_sub">
+		absBehMed.qf absJeemMed.qf absSeenMed.qf absSadMed.qf absTahMed.qf absAinMed.qf absFehMed.qf absKehehMed.qf absGafMed.qf absLamMed.qf 
+		absMeemMed.qf absHehDoachashmeeMed.qf absHehGoalMed.qf
+	</class>
+	
+	<class name="IniCh_sub">
+		absBehIni.ch absJeemIni.ch absSeenIni.ch absSadIni.ch absTahIni.ch absAinIni.ch absFehIni.ch absKehehIni.ch absGafIni.ch absLamIni.ch 
+		absMeemIni.ch absHehDoachashmeeIni.ch absHehGoalIni.ch 
+	</class>
+	
+	<class name="MedCh_sub">
+		absBehMed.ch absJeemMed.ch absSeenMed.ch absSadMed.ch absTahMed.ch absAinMed.ch absFehMed.ch absKehehMed.ch absGafMed.ch absLamMed.ch 
+		absMeemMed.ch absHehDoachashmeeMed.ch absHehGoalMed.ch
+	</class>
+	
+	<class name="IniBy_sub">
+		absBehIni.by absJeemIni.by absSeenIni.by absSadIni.by absTahIni.by absAinIni.by absFehIni.by absKehehIni.by absGafIni.by absLamIni.by 
+		absMeemIni.by absHehDoachashmeeIni.by absHehGoalIni.by 
+	</class>
+	
+	<class name="MedBy_sub">
+		absBehMed.by absJeemMed.by absSeenMed.by absSadMed.by absTahMed.by absAinMed.by absFehMed.by absKehehMed.by absGafMed.by absLamMed.by 
+		absMeemMed.by absHehDoachashmeeMed.by absHehGoalMed.by
+	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 
@@ -351,4 +483,45 @@ details including an FAQ.
 		@ShapedBases @Isolates
 	</class>
 	
+		<!-- For beh contextuals -->
+	
+	<class name="PostBeM1">
+		absBehMed.beM2  absBehMed.sn  absBehMed.snsn  absBehMed.be  absBehMed.behg
+	</class>
+	
+	<class name="PostBeM2">
+		absBehMed.beM1 absBehMed.benn
+	</class>
+	
+	<!-- For final contextuals -->
+	
+	<class name="PreQw_stfh">
+		absSeenIni.qf absSeenMed.qf absTahIni.qf absTahMed.qf absFehMed.qf absHehDoachashmeeMed.qf absHehDoachashmeeIni.qf
+	</class>
+
+	<class name="PreBe_bfkl">
+		<!-- these are the beM2 forms in the IniBeM2F_sub class -->
+		absBehIni.beM2 absFehIni.beM2 absKehehIni.beM2 absGafIni.beM2 absLamIni.beM2
+	</class>
+		
+	<class name="PreChF_bfkl">
+		absBehIni.ch absFehIni.ch absKehehIni.ch absGafIni.ch absLamIni.ch absKehehMed.ch absGafMed.ch absLamMed.ch
+	</class>
+
+	<!-- no longer used
+	<class name="PreHgF_stfh">
+		absSeenIni.hgF absTahIni.hgF absFehIni.hgF absKehehIni.hgF absGafIni.hgF
+    absLamIni.hgF absMeemIni.hgF absHehGoalIni.hgF absSeenMed.hgF absTahMed.hgF absFehMed.hgF absKehehed.hgF
+    absGafMed.hgF absLamMed.hgF absHehGoalMed.hgF
+	</class>
+	-->
+	
+	<class name="PreReF_jkl">
+		absBehIni.re absJeemIni.re absKehehIni.re absGafIni.re absLamIni.re absKehehMed.re absGafMed.re absLamMed.re
+	</class>
+	
+	<class name="PreReF_hgM">
+		absHehGoalMed.re
+	</class>
+
 </classes>
