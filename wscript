@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Smith configuration file
 
-#	This file is part of the Awami Nastaliq font
+#	This file is part of the Awami Nastaliq OpenType font
 #	(https://software.sil.org/awami) and is
 #	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
 # with Reserved Font Names "Awami" and "SIL".
@@ -31,7 +31,7 @@ genout = "generated/"
 APPNAME='AwamiNastaliq'      #### AwamiNastaliq-Dev
 
 # set the font family name
-FAMILY='AwamiNastaliq'
+FAMILY=APPNAME
 
 
 DESC_NAME = "Awami-Nastaliq"
@@ -39,6 +39,8 @@ DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
 getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
+
+ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
 # smith project-specific options:
 #   -d          - debug: do not run ttfsubset
@@ -53,8 +55,6 @@ testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=
 
 #FONT_NAME = "Awami Nastaliq Dev"     #### Awami Nastaliq
 #FONT_FILENAME = "AwamiNastaliq-Dev"  #### AwamiNastaliq-Regular
-
-ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
 cmds = [
     #name('${DS:FILENAME_BASE}', lang='en-US', subfamily = 'Regular'),
@@ -87,6 +87,15 @@ elif '--boldOnly' in opts:
 else:
     INST = None
     
+# For initial development:
+INST = ['Awami Nastaliq Regular']
+
+noOTkern = ' -D nokern=yes ' if '--quick' in opts else ''
+noGRkern = '_nokern' if '--quick' in opts else ''
+
+#omitaps = '--omitaps "_above,_below,_center,_ring,_through,_aboveLeft,_H,_L,_O,_U,_R,above,below,center,ring,through,aboveLeft,H,L,O,U,R"'
+omitaps = ''
+
 dspace_file = 'source/awami.designspace'
 
 # iterate over designspace
@@ -94,24 +103,33 @@ designspace(dspace_file,
     # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
     instanceparams='-l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
     instances = INST,
-    target = process('${DS:FILENAME_BASE}.ttf', *cmds),
+    target = process('${DS:FILENAME_BASE}.ttf'),    ##### , *cmds),
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
-
-    graphite = gdl(genout + '${DS:FILENAME_BASE}.gdl',
-    		master = 'source/graphite/master_${DS:FILENAME_BASE}.gdl',
-    		params='-D -w3541 -w2504 -w4510 -e gdlerr_${DS:FILENAME_BASE}.txt',  ##### -c',
-        depends = glob.glob('*.gdh')),
     
-    opentype = fea('source/simple.fea', no_make=1, no_test=True),
-    #typetuner = typetuner("source/typetuner/feat_all.xml"),
-    #classes = 'source/classes.xml',
-    #script='arab',
-    pdf=fret(params = '-r -b'),     # -b = show octaboxes
-    woff = woff('web/${DS:FILENAME_BASE}.woff',
-        metadata=f'../source/{FAMILY}-WOFF-metadata.xml',
-        cmd='psfwoffit -m ${SRC[1]} --woff ${TGT} --woff2 ${TGT}2 ${SRC[0]}'
+    opentype = fea(genout + '${DS:FILENAME_BASE}.fea',
+        mapfile = genout + "${DS:FILENAME_BASE}.map",
+        master = 'source/opentype/main.feax',
+#        make_params = '--ignoreglyphs ' + omitaps + noOTkern,
+#        depends = ['source/opentype/gsub.feax', 'source/opentype/gpos.feax', 
+#                   'source/opentype/customCollisionSubs.feax',
+#                   'source/opentype/customKerning.feax',
+#                   'source/opentype/customShifting.feax',]
         ),
+
+    #graphite = gdl(genout + '${DS:FILENAME_BASE}.gdl',
+    #		master = 'source/graphite/master_${DS:FILENAME_BASE}.gdl',
+    #		params='-D -w3541 -w2504 -w4510 -e gdlerr_${DS:FILENAME_BASE}.txt',  ##### -c',
+    #    depends = glob.glob('*.gdh')),
+    
+    #typetuner = typetuner("source/typetuner/feat_all.xml"),
+    classes = 'source/classes.xml',
+    script='arab',
+    #pdf=fret(params = '-r -b'),     # -b = show octaboxes
+    #woff = woff('web/${DS:FILENAME_BASE}.woff',
+    #    metadata=f'../source/{FAMILY}-WOFF-metadata.xml',
+    #    cmd='psfwoffit -m ${SRC[1]} --woff ${TGT} --woff2 ${TGT}2 ${SRC[0]}'
+    #    ),
 
     #woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml'),
     )

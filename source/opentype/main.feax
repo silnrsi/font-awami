@@ -1,0 +1,182 @@
+#
+#	File: main.feax
+#
+# Main FEA code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+languagesystem arab dflt;
+
+#========== CLASSES ==========
+
+@NuqtaUpper = [ _dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u];
+@NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l];
+@Nuqta = [@NuqtaUpper @NuqtaLower];
+@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV _kafSquiggle _smallThreeAbove _smallTwoAbove _wasla _wavyHamza];
+@NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _smallFourBelow];
+@NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower];
+
+#========== GSUB rules ==========
+
+# Separate bases from nuqtas
+feature ccmp {
+	sub		absBeh			by	absDotlessBeh		_dot1l;
+	sub		absTeh			by	absDotlessBeh		_dot2u;
+	sub		absTheh			by	absDotlessBeh		_dot3u;
+	sub		absPeh			by	absDotlessBeh		_dot3l;
+	sub		absNoon			by	absDotlessBeh		_dot1u;
+	sub		nlqChotiyeh	by	absDotlessBeh		_dot2l;
+	sub		absJeem			by	absHah					_dot1l;
+	sub		absKhah			by	absHah					_dot1u;
+	sub		absSheen		by	absSeen					_dot3u;
+	sub		absDad			by  absSad					_dot1u;
+	sub		absZah			by	absTah					_dot1u;
+	sub		absGhain		by	absAin					_dot1u;
+	sub		absQaf			by	absDotlessFeh		_dot2u;
+} ccmp;
+
+
+# Recompose isolates:
+feature isol {
+	sub 	absDotlessBeh		_dot1l		by		absBeh;
+	sub		absDotlessBeh		_dot2u		by		absTeh;
+	sub		absDotlessBeh		_dot3u		by		absTheh;
+	sub 	absDotlessBeh		_dot3l		by		absPeh;
+	sub		absDotlessBeh		_dot1u		by		absNoon;
+	sub		absDotlessBeh		_dot2l		by		nlqChotiyeh;
+	sub		absHah					_dot1l		by		absJeem;
+	sub		absHah					_dot1u		by		absKhah;
+	sub		absSeen					_dot3u		by		absSheen;
+	sub		absSad					_dot1u		by		absDad;
+	sub		absTah					_dot1u		by		absZah;
+	sub		absAin					_dot1u		by		absGhain;
+	sub		absDotlessFeh		_dot2u		by		absQaf;
+} isol;
+
+
+feature fina {
+
+lookup RightFinals1 {
+	sub		absAlef			by 		absAlefFin;
+	sub		nlqBariyeh	by		nlqBariyehFin;
+} RightFinals1;
+
+lookup RightFinals2 {
+	sub		absDotlessFeh		_dot2u	by		absQafFin;
+	sub		absDotlessBeh		_dot1u	by		absNoonFin;
+	sub		absDotlessBeh		_dot2l	by		nlqChotiyehFin;
+} RightFinals2;
+
+lookup DualFinals {
+	sub			@DualPostCcmp_sub		by		@DualFinals_sub;
+} DualFinals;
+
+} fina;					# end of feature
+
+
+feature medi {
+	sub		@DualPostCcmp_sub		by		@MedDefault_sub;
+} medi;
+
+feature init {
+	sub		@DualPostCcmp_sub		by		@IniDefault_sub;
+} init;
+
+
+feature rlig {
+
+lookup BasicContextuals {
+	lookupflag IgnoreMarks;
+	
+	# alef, lam, kaf, and dal use the default shapes
+	
+	sub @IniDefault_sub' @BehForms	by	@IniBe_sub;
+	sub	@MedDefault_sub' @BehForms	by	@MedBe_sub;
+	
+	sub @IniDefault_sub' @JeemForms by	@IniJm_sub;
+	sub	@MedDefault_sub' @JeemForms	by	@MedJm_sub;
+	
+	sub @IniDefault_sub' @SeenForms by	@IniSn_sub;
+	sub	@MedDefault_sub' @SeenForms	by	@MedSn_sub;
+		
+	sub @IniDefault_sub' @SadForms	by	@IniSd_sub;
+	sub	@MedDefault_sub' @SadForms	by	@MedSd_sub;
+		
+	sub @IniDefault_sub' @TahForms	by	@IniTa_sub;
+	sub	@MedDefault_sub' @TahForms	by	@MedTa_sub;
+			
+	sub @IniDefault_sub' @AinForms	by	@IniAi_sub;
+	sub	@MedDefault_sub' @AinForms	by	@MedAi_sub;
+
+	sub @IniDefault_sub' @FehForms	by	@IniFe_sub;
+	sub	@MedDefault_sub' @FehForms	by	@MedFe_sub;
+		
+	sub @IniDefault_sub' @MeemForms by	@IniMm_sub;
+	sub	@MedDefault_sub' @MeemForms	by	@MedMm_sub;
+
+} BasicContextuals;			# end of lookup
+
+
+lookup BehForms {
+	lookupflag IgnoreMarks;
+	
+	rsub absBehMed.be'		absBehFin			by		absBehMed.beF;
+	rsub absBehMed.be'		absBehMed.be	by		absBehMed.beM1;		# high tooth
+	
+	rsub absBehMed.sn 									by absBehMed.beM1;			# seen requires high tooth before it
+	
+	# Alternate high and low teeth:
+	rsub absBehMed.be'		absBehMed.beM1		by	absBehMed.beM2;
+	rsub absBehMed.be'		absBehMed.beM2		by	absBehMed.beM1;
+	
+	# Initial beh:
+	rsub absBehIni.be'		absBehMed.beM1		by	absBehIni.beM2;
+	rsub absBehIni.be'		absBehMed.beM2		by	absBehMed.beM1;
+	
+	# Finally handle the first item in the chain:
+	rsub @IniBe_sub'   absBehMed.beM1		by	@IniBeM2_sub;
+	rsub @IniBe_sub'   absBehMed.beM2		by	@IniBeM1_sub;
+	rsub @MedBe_sub'   absBehMed.beM1		by	@MedBeM2_sub;		# these two rules must be last
+	rsub @MedBe_sub'   absBehMed.beM2		by	@MedBeM1_sub;
+
+} BehForms;					# end of lookup
+
+lookup MeemForms {
+
+
+} MeemForms;					# end of lookup
+
+lookup FinalContextuals {
+
+
+} FinalContextuals;					# end of lookup
+
+} rlig;		# end of feature
+
+
+#========== GPOS rules ==========
+
+feature kern {
+
+} kern;
+
+
+
+feature curs {
+
+lookup BasicConnections {
+	lookupflag IgnoreMarks RightToLeft;
+	pos cursive @entry @exit;
+} BasicConnections;
+	
+} curs;							# end of feature
