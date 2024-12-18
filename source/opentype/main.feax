@@ -30,6 +30,32 @@ languagesystem arab dflt;
 
 # Separate bases from nuqtas
 feature ccmp {
+
+# The following three lookups change "RenderingUnknown" to "RenderingOpenType"
+
+lookup _FontCheck_Unknow {
+  lookupflag IgnoreMarks;
+    sub [U n k o w ] by [O p e T y];
+} _FontCheck_Unknow ;
+
+lookup _FontCheck_n {
+  lookupflag IgnoreMarks;
+    sub n by p e;
+} _FontCheck_n ;
+
+lookup FontCheck {
+  lookupflag IgnoreMarks ;
+    sub [R] e n d e r i n g
+      U' lookup _FontCheck_Unknow
+      n' lookup _FontCheck_Unknow
+      k' lookup _FontCheck_Unknow
+      n'
+      o' lookup _FontCheck_Unknow
+      w' lookup _FontCheck_Unknow
+      n' lookup _FontCheck_n;
+} FontCheck ;
+
+lookup DecomposeBases {
 	sub		absBeh			by	absDotlessBeh		_dot1l;
 	sub		absTeh			by	absDotlessBeh		_dot2u;
 	sub		absTheh			by	absDotlessBeh		_dot3u;
@@ -44,6 +70,8 @@ feature ccmp {
 	sub		absGhain		by	absAin					_dot1u;
 	sub		absFeh			by	absDotlessFeh		_dot1u;
 	sub		absQaf			by	absDotlessFeh		_dot2u;
+} DecomposeBases;
+
 } ccmp;
 
 
@@ -89,11 +117,27 @@ lookup DualFinals {
 
 
 feature medi {
+
+lookup MedialForms {
+	lookupflag IgnoreMarks;
 	sub		@DualPostCcmp_sub		by		@MedDefault_sub;
+} MedialForms;
+
+lookup InsertHehHook {
+	sub absHehGoalMed by absHehGoalMed _hehHook.small;	
+} InsertHehHook;
+
 } medi;
 
+
 feature init {
+
+lookup InitialForms {
+	lookupflag IgnoreMarks;
+
 	sub		@DualPostCcmp_sub		by		@IniDefault_sub;
+} InitialForms;
+
 } init;
 
 
@@ -146,14 +190,16 @@ lookup BasicContextuals {
 	sub @IniDefault_sub' absNoonFin			by	@IniNn_sub;
 	sub	@MedDefault_sub' absNoonFin			by	@MedNn_sub;
 	
-	sub @IniDefault_sub' nlqChotiyehFin					by	@IniCh_sub;
-	sub	@MedDefault_sub' nlqChotiyehFin					by	@MedCh_sub;
+	sub @IniDefault_sub' nlqChotiyehFin			by	@IniCh_sub;
+	sub	@MedDefault_sub' nlqChotiyehFin			by	@MedCh_sub;
 	
-	sub @IniDefault_sub' nlqBariyehFin					by	@IniBy_sub;
-	sub	@MedDefault_sub' nlqBariyehFin					by	@MedBy_sub;
+	sub @IniDefault_sub' nlqBariyehFin			by	@IniBy_sub;
+	sub	@MedDefault_sub' nlqBariyehFin			by	@MedBy_sub;
 	
 	sub @IniDefault_sub' [absQafFin absWawFin]	by	@IniQf_sub;
 	sub	@MedDefault_sub' [absQafFin absWawFin]	by	@MedQf_sub;
+	
+	sub [absLamIni absLamMed]' absAlefFin		by	[absLamIni.al absLamMed.al];
 	
 } BasicContextuals;			# end of lookup
 
@@ -183,13 +229,33 @@ lookup BehContextuals {
 } BehContextuals;					# end of lookup
 
 lookup MeemContextuals {
+	lookupflag IgnoreMarks;
+	
+	# Alternate meem occurs before alef, dal, and lam unless it follows a lam.
+	sub @PreMm_alt	absMeemMed'		@PostMm_alt		by		absMeemMed._alt;
 
-# TODO!!!!
+} MeemContextuals;				# end of lookup
 
-} MeemContextuals;					# end of lookup
+lookup PreMeemAlt {
+	lookupflag IgnoreMarks;
+	
+	sub @IniMm_sub'	  absMeemMed._alt		by		@IniMmX_sub;
+	sub @MedMm_sub'		absMeemMed._alt		by		@MedMmX_sub;
+
+} PreMeemAlt;
+
+
+lookup SeenContextuals {
+	lookupflag IgnoreMarks;
+	
+	sub [absSeenIni.sn absSeenMed.sn absSeenMed.sn_sn]		absSeenMed.sn'	@SeenForms		by	absSeenMed.sn_sn;
+	
+} SeenContextuals;
 
 
 lookup FinalContextuals {
+	lookupflag IgnoreMarks;
+	
 	sub @PreQw_stfh  [absQafFin absWawFin]' by  [absQafFin._stfh absWawFin._stfh];
 	
 	sub @PreBe_bfkl	absBehFin' by absBehFin._bfkl;
@@ -200,6 +266,8 @@ lookup FinalContextuals {
 	
 	sub @PreReF_jkl absRehFin' by absRehFin._jkl;
 	sub @PreReF_hgM absRehFin' by absRehFin._hgM;
+	
+	sub @LamForms		absAlefFin'		by	absAlefFin._lm;
 
 } FinalContextuals;					# end of lookup
 
@@ -212,6 +280,23 @@ feature kern {
 
 } kern;
 
+feature mark {
+
+lookup AttachNuqtas {
+		lookupflag 0;
+    pos		base @nUpper  		mark @_nUpper;
+    pos		base @n1Lower			mark @_n1Lower;
+    pos		base @n23Lower		mark @_n23Lower;
+} AttachNuqtas;
+
+lookup AttachOther {
+		lookupflag 1;
+		pos		base @tahUpper		mark @_tahUpper;
+		pos		base @hehhook			mark @_hehhook;
+} AttachOther;
+
+} mark;
+
 
 feature curs {
 
@@ -220,4 +305,4 @@ lookup BasicConnections {
 	pos cursive @entry @exit;
 } BasicConnections;
 	
-} curs;							# end of feature
+} curs;			# end of feature

@@ -118,7 +118,6 @@ details including an FAQ.
 		absFehFin
 	</class>
 	
-	<!-- not needed?
 	<class name="LamForms">
 		absLamIni absLamIni.ai absLamIni.be absLamIni.beM1 absLamIni.beM2 absLamIni.benn absLamIni.behg absLamIni.bere
 		absLamIni.beF absLamIni.by absLamIni.ch absLamIni.fe  absLamIni.hd absLamIni.hgM absLamIni.hgF absLamIni.jm
@@ -127,8 +126,8 @@ details including an FAQ.
 		absLamMed.beF absLamMed.by absLamMed.ch absLamMed.fe  absLamMed.hd absLamMed.hgM absLamMed.hgF absLamMed.jm
 		absLamMed.mm absLamMed.mmX  absLamMed.nn absLamMed.qf absLamMed.re absLamMed.sd absLamMed.sn absLamMed.snsn absLamMed.ta
 		absLamFin
+		absLamIni.al absLamMed.al
 	</class>
-	-->
 	
 	<!-- add all forms... -->
 	<class name="MeemForms">
@@ -344,12 +343,14 @@ details including an FAQ.
 	</class>
 	
 	<class name="IniMmX_sub">
-		absBehIni.mmX absJeemIni.mmX absSeenIni.mmX absSadIni.mmX absTahIni.mmX absAinIni.mmX absFehIni.mmX absKehehIni.mmX absGafIni.mmX absLamIni.mmX 
+		absBehIni.mmX absJeemIni.mmX absSeenIni.mmX absSadIni.mmX absTahIni.mmX absAinIni.mmX absFehIni.mmX absKehehIni.mmX absGafIni.mmX 
+		absLamIni.mm <!-- lam never occurs before alt meem -->
 		absMeemIni.mmX absHehDoachashmeeIni.mmX absHehGoalIni.mmX
 	</class>
 
 	<class name="MedMmX_sub">
-		absBehMed.mmX absJeemMed.mmX absSeenMed.mmX absSadMed.mmX absTahMed.mmX absAinMed.mmX absFehMed.mmX absKehehMed.mmX absGafMed.mmX absLamMed.mmX 
+		absBehMed.mmX absJeemMed.mmX absSeenMed.mmX absSadMed.mmX absTahMed.mmX absAinMed.mmX absFehMed.mmX absKehehMed.mmX absGafMed.mmX
+		absLamMed.mm <!-- lam never occurs before alt meem -->
 		absMeemMed.mmX absHehDoachashmeeMed.mmX absHehGoalMed.mmX
 	</class>
 	
@@ -483,7 +484,7 @@ details including an FAQ.
 		@ShapedBases @Isolates
 	</class>
 	
-		<!-- For beh contextuals -->
+	<!-- For beh contextuals -->
 	
 	<class name="PostBeM1">
 		absBehMed.beM2  absBehMed.sn  absBehMed.snsn  absBehMed.be  absBehMed.behg
@@ -491,6 +492,20 @@ details including an FAQ.
 	
 	<class name="PostBeM2">
 		absBehMed.beM1 absBehMed.benn
+	</class>
+	
+	<!-- For meem contextuals -->
+	
+	<!-- alternate meem occurs before alef, dal, and lam unless it follows a lam. -->
+		
+	<class name="PreMm_alt">
+		absAinIni.ai absAinMed.ai absBehIni.mm absBehMed.mm absHehDoachashmeeIni.mm absHehDoachashmeeMed.mm absFehIni.mm absFehMed.mm
+		absHehGoalIni.mm absHehGoalMed.mm absJeemIni.mm absJeemMed.mm absKehehIni.mm absKehehMed.mm absGafIni.mm absGafMed.mm
+		absMeemIni.mm absMeemMed.mm absSeenIni.mm absSeenMed.mm absSadIni.mm absSadMed.mm absTahIni.mm absTahMed.mm
+	</class>
+	
+	<class name="PostMm_alt">
+		absDalFin absAlefFin @LamForms
 	</class>
 	
 	<!-- For final contextuals -->
@@ -522,6 +537,6 @@ details including an FAQ.
 	
 	<class name="PreReF_hgM">
 		absHehGoalMed.re
-	</class>
-
+	</class>	
+	
 </classes>
