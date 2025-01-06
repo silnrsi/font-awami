@@ -94,7 +94,7 @@ noOTkern = ' -D nokern=yes ' if '--quick' in opts else ''
 noGRkern = '_nokern' if '--quick' in opts else ''
 
 #omitaps = '--omitaps "_above,_below,_center,_ring,_through,_aboveLeft,_H,_L,_O,_U,_R,above,below,center,ring,through,aboveLeft,H,L,O,U,R"'
-omitaps = ''
+omitaps = '--omitaps "kafExclude,kernBbRight,kernBbLeft"'
 
 dspace_file = 'source/awami.designspace'
 
@@ -111,6 +111,7 @@ designspace(dspace_file,
         mapfile = genout + "${DS:FILENAME_BASE}.map",
         master = 'source/opentype/main.feax',
 #        make_params = '--ignoreglyphs ' + omitaps + noOTkern,
+				make_params = omitaps
 #        depends = ['source/opentype/gsub.feax', 'source/opentype/gpos.feax', 
 #                   'source/opentype/customCollisionSubs.feax',
 #                   'source/opentype/customKerning.feax',

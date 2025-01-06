@@ -15,6 +15,7 @@
 #	If this is not the case, go to (https://openfontlicense.org/) for all the
 #	details including an FAQ.
 
+languagesystem latn dflt ;
 languagesystem arab dflt;
 
 #========== CLASSES ==========
@@ -26,13 +27,18 @@ languagesystem arab dflt;
 @NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _smallFourBelow];
 @NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower];
 
-#========== GSUB rules ==========
+@DiacUpper = [@_nUpper @_mUpper @_hamzaUpper @_tahUpper @_digitUpper @_honorific];
+@DiacLower = [@_n1Lower @_n23Lower @_mLower @_hehhook @_tahLower @_ring @_tahLower @_hamzaLower];
 
-# Separate bases from nuqtas
-feature ccmp {
+# gafStroke, graf, _kafTop_bj
+
+@AllUpper = [@NuqtaLikeUpper @DiacUpper];
+@AllLower = [@NuqtaLikeLower @DiacLower];
+@AllMiddle = [@_squiggle @_bar];
+
+#========== LOOKUPS ==========
 
 # The following three lookups change "RenderingUnknown" to "RenderingOpenType"
-
 lookup _FontCheck_Unknow {
   lookupflag IgnoreMarks;
     sub [U n k o w ] by [O p e T y];
@@ -54,6 +60,13 @@ lookup FontCheck {
       w' lookup _FontCheck_Unknow
       n' lookup _FontCheck_n;
 } FontCheck ;
+
+#========== GSUB rules ==========
+
+# Separate bases from nuqtas
+feature ccmp {
+
+lookup FontCheck;		# both latn and arab
 
 lookup DecomposeBases {
 	sub		absBeh			by	absDotlessBeh		_dot1l;
@@ -280,22 +293,152 @@ feature kern {
 
 } kern;
 
+
 feature mark {
 
-lookup AttachNuqtas {
-		lookupflag 0;
-    pos		base @nUpper  		mark @_nUpper;
+# There is ambiguity and overlap among the various attachment classes, so we do the most
+# general attachments first, and put the more specific cases last so they override.
+
+# In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
+lookup AttachLowerDiacsLikeNuqtas {
+		lookupflag UseMarkFilteringSet @AllLower;
+		pos		base @n1Lower			mark @_mLower;
+} AttachLowerDiacsLikeNuqtas;
+
+lookup AttachUpperDiacsLikeNuqtas {
+		lookupflag UseMarkFilteringSet @AllUpper;
+		pos		base @nUpper			mark @_mUpper;
+} AttachUpperDiacsLikeNuqtas;
+
+lookup AttachLower {
+		lookupflag UseMarkFilteringSet @AllLower;
     pos		base @n1Lower			mark @_n1Lower;
     pos		base @n23Lower		mark @_n23Lower;
-} AttachNuqtas;
-
-lookup AttachOther {
-		lookupflag 1;
-		pos		base @tahUpper		mark @_tahUpper;
 		pos		base @hehhook			mark @_hehhook;
-} AttachOther;
+		pos		base @hamzaLower	mark @_hamzaLower;
+		pos		base @mLower			mark @_mLower;
+} AttachLower;
+
+lookup AttachMiddle {
+		lookupflag UseMarkFilteringSet @AllMiddle;
+		pos		base @squiggle		mark @_squiggle;
+		pos		base @bar					mark @_bar;
+} AttachMiddle;
+
+lookup AttachUpper {
+		lookupflag UseMarkFilteringSet @AllUpper;
+    pos		base @nUpper  		mark @_nUpper;
+} AttachUpper;
+
+lookup AttachUpper2 {
+		lookupflag UseMarkFilteringSet @AllUpper;
+		pos		base @alef				mark @_mUpper;
+		pos		base @mUpper			mark @_mUpper;
+		pos		base @tahUpper		mark @_tahUpper;
+		pos		base @hamzaUpper	mark @_hamzaUpper;
+} AttachUpper2;
+
+lookup AttachUpper3 {
+		pos		base @honorific		mark @_honorific;
+} AttachUpper3;
+
+# Special cases go last so that they override:
+lookup AttachAlefDiacToYeh {
+		lookupflag UseMarkFilteringSet @AllUpper;
+		pos		base @alef				mark @_mUpper;
+} AttachAlefDiacToYeh;
+
+lookup AttachAlefDiacToLam {
+		lookupflag UseMarkFilteringSet @AllUpper;
+		#pos		base @nUpper			mark @_mUpperLam;
+		# The rules below were copied from the output of of the FEAX processing.
+		# This is to limit the rules to lams.
+		# TODO: simplify this by adding a distinct AP to the lam forms duplicating nUpper.
+		pos base absLamFin <anchor 1561 2671> mark @_mUpperLam;
+		pos base absLamFin._kfTall <anchor 1565 3171> mark @_mUpperLam;
+		pos base absLamFin_short <anchor 1555 2471> mark @_mUpperLam;
+		pos base absLamIni <anchor 584 2148> mark @_mUpperLam;
+		pos base absLamIni.ai <anchor 602 2718> mark @_mUpperLam;
+		pos base absLamIni.al <anchor 553 2173> mark @_mUpperLam;
+		pos base absLamIni.be <anchor 338 2527> mark @_mUpperLam;
+		pos base absLamIni.beM1 <anchor 660 2677> mark @_mUpperLam;
+		pos base absLamIni.beM2 <anchor 486 2255> mark @_mUpperLam;
+		pos base absLamIni.behg <anchor 539 2148> mark @_mUpperLam;
+		pos base absLamIni.benn <anchor 554 2848> mark @_mUpperLam;
+		pos base absLamIni.bere <anchor 338 2255> mark @_mUpperLam;
+		pos base absLamIni.by <anchor 797 2179> mark @_mUpperLam;
+		pos base absLamIni.ch <anchor 204 2625> mark @_mUpperLam;
+		pos base absLamIni.fe <anchor 651 2180> mark @_mUpperLam;
+		pos base absLamIni.hd <anchor 119 2111> mark @_mUpperLam;
+		pos base absLamIni.hgF <anchor 639 2006> mark @_mUpperLam;
+		pos base absLamIni.hgM <anchor 207 2151> mark @_mUpperLam;
+		pos base absLamIni.jm <anchor 825 3298> mark @_mUpperLam;
+		pos base absLamIni.mm <anchor 282 2486> mark @_mUpperLam;
+		pos base absLamIni.nn <anchor 395 2841> mark @_mUpperLam;
+		pos base [absLamIni.qf absLamIni.snsn] <anchor 350 2442> mark @_mUpperLam;
+		pos base absLamIni.re <anchor 461 2461> mark @_mUpperLam;
+		pos base absLamIni.sd <anchor 980 2994> mark @_mUpperLam;
+		pos base absLamIni.sn <anchor 283 2998> mark @_mUpperLam;
+		pos base absLamIni.ta <anchor 1029 2493> mark @_mUpperLam;
+		pos base [absLamIni_allah1 absLamMed_allah1] <anchor 524 2092> mark @_mUpperLam;
+		pos base absLamIni_short <anchor 754 1618> mark @_mUpperLam;
+		pos base absLamMed <anchor 586 2081> mark @_mUpperLam;
+		pos base absLamMed.ai <anchor 706 2460> mark @_mUpperLam;
+		pos base absLamMed.al <anchor 555 2183> mark @_mUpperLam;
+		pos base absLamMed.be <anchor 317 2126> mark @_mUpperLam;
+		pos base absLamMed.beF <anchor 589 2245> mark @_mUpperLam;
+		pos base absLamMed.beM1 <anchor 668 2599> mark @_mUpperLam;
+		pos base absLamMed.beM2 <anchor 503 2329> mark @_mUpperLam;
+		pos base absLamMed.be_kfTall <anchor 337 2726> mark @_mUpperLam;
+		pos base absLamMed.behg <anchor 564 2119> mark @_mUpperLam;
+		pos base absLamMed.benn <anchor 581 2271> mark @_mUpperLam;
+		pos base absLamMed.bere <anchor 342 2286> mark @_mUpperLam;
+		pos base absLamMed.by <anchor 889 2377> mark @_mUpperLam;
+		pos base absLamMed.by_kfTall <anchor 869 2977> mark @_mUpperLam;
+		pos base absLamMed.ch <anchor 360 2312> mark @_mUpperLam;
+		pos base absLamMed.ch_gfTall <anchor 360 3362> mark @_mUpperLam;
+		pos base absLamMed.fe <anchor 603 2304> mark @_mUpperLam;
+		pos base absLamMed.hd <anchor 201 2249> mark @_mUpperLam;
+		pos base absLamMed.hgF <anchor 574 1969> mark @_mUpperLam;
+		pos base absLamMed.hgM <anchor 188 2113> mark @_mUpperLam;
+		pos base absLamMed.jm <anchor 983 2234> mark @_mUpperLam;
+		pos base absLamMed.mm <anchor 517 2461> mark @_mUpperLam;
+		pos base absLamMed.nn <anchor 496 2423> mark @_mUpperLam;
+		pos base [absLamMed.qf absLamMed.snsn] <anchor 348 2554> mark @_mUpperLam;
+		pos base absLamMed.re <anchor 476 2161> mark @_mUpperLam;
+		pos base absLamMed.sd <anchor 983 2427> mark @_mUpperLam;
+		pos base absLamMed.sn <anchor 321 2302> mark @_mUpperLam;
+		pos base absLamMed.ta <anchor 954 2072> mark @_mUpperLam;
+		pos base absLamMed_allah2 <anchor 478 1730> mark @_mUpperLam;
+		pos base absLamMed_short <anchor 756 1641> mark @_mUpperLam;
+
+} AttachAlefDiacToLam;
 
 } mark;
+
+
+@MarkFilter_mUpper	= [@mUpper_MarkBase @_mUpper];
+@MarkFilter_mLower	= [@mLower_MarkBase @_mLower];
+@MarkFilter_ring		= [@ring_MarkBase @_ring];
+
+feature mkmk {
+
+lookup AttMark2MarkUpper {
+		lookupflag UseMarkFilteringSet @MarkFilter_mUpper;
+		pos		mark @mUpper_MarkBase		mark @_mUpper;
+} AttMark2MarkUpper;
+
+lookup AttMark2MarkLower {
+		lookupflag UseMarkFilteringSet @MarkFilter_mLower;
+		pos		mark @mLower_MarkBase		mark @_mLower;
+} AttMark2MarkLower;
+
+lookup AttRing2Mark {
+		lookupflag UseMarkFilteringSet @MarkFilter_ring;
+		pos		mark @ring_MarkBase		mark @_ring;
+} AttRing2Mark;
+
+} mkmk;
 
 
 feature curs {
