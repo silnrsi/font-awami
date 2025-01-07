@@ -3,7 +3,8 @@
 # Outputs a set of classes based on the width of the glyphs.
 # These classes are intended to be used for bariyeh tail kerning.
 
-# Run this script from the tools/scripts directory where the file is located.
+# Run this script from the tools/scripts directory where the file is located:
+#		python3 genKernWidthClasses.py
 
 from fontParts.world import *
 import sys
@@ -16,15 +17,18 @@ def format_name(gname):
 	return result
 # end of format_name	
 
+# -----------------------------
 # Main routine
 
 # Open UFO
 ufo = sys.argv[1]
+#ufo = '../source/masters/AwamiNastaliq-Regular.ufo'
 font = OpenFont(ufo)
-#font = OpenFont('../source/masters/AwamiNastaliq-Regular.ufo')
 
-outfile = "../../source/bariyehKernClasses.feax"
+outfile = "../../source/opentype/bariyehKernClasses.feax"
 fout = open(outfile, 'w');
+
+skipglyphset = set(font.lib.get('public.skipExportGlyphs', []))
 
 iniZero = dict();
 iniNarrow = dict();
@@ -41,6 +45,9 @@ medExtra = dict();
 for glyph in font:
 		aw = glyph.width
 		gname = glyph.name
+		if gname in skipglyphset:
+			continue
+			
 		if gname[0:3]== "abs" or gname[0:3] == "nlq":
 			if gname[-3:] == "Med" or "Med." in gname or "Med_" in gname:
 				# Medial base that we're interested in.
