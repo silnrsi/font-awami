@@ -62,7 +62,7 @@ def OutputRule(seq, kernValue):
 		c = ClassName(slot) + suffix
 		outputStr += "@" + c
 		if first:
-			outputStr += "' " + str(kernValue) + "  "
+			outputStr += "' lookup Kern" + str(kernValue) + "  "
 		first = False
 		suffix = "Med  "
 	outputStr += "nlqBariyehFin;"
@@ -85,13 +85,13 @@ def TypicalWidth(w):
 	if w == 0:		# zero
 		return 50
 	elif w == 1:	# narrow
-		return 400
+		return 350
 	elif w == 2:	# medium
-		return 800
+		return 700
 	elif w == 3:	# wide
-		return 1200
+		return 1150
 	else:
-		return 1600		# extra wide
+		return 1500		# extra wide
 		
 def ClassName(w):
 	if w == 0:		# zero

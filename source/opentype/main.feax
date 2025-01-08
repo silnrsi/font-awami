@@ -36,6 +36,27 @@ languagesystem arab dflt;
 @AllLower = [@NuqtaLikeLower @DiacLower];
 @AllMiddle = [@_squiggle @_bar];
 
+
+# Bariyeh width: 2600
+#@Zero = []; # < 100
+# 100-500
+#@NarrowIni = [absBehIni.be];
+#@NarrowMed = [absJeemMed.by absJeemMed.jm];
+# 500 - 900
+#@MediumIni = [absBehIni.sn absBehIni.hgM		absJeemIni.sn absFehIni.by];
+#@MediumMed = [absBehMed.beF absJeemMed.sd 
+#		absSadMed absMeemMed.by absHehGoalMed.by];
+# 900 - 1300
+#@WideIni = [absBehIni.by absJeemIni.by absTahIni.by absAinIni.by absLamIni.by absLamMed.by absMeemIni.by absHehGoalIni.by
+#		absBehIni.jm absBehIni.mm absSeenIni.jm];
+#@WideMed = [absBehMed.jm absBehMed.by];
+# > 1300
+#@ExtraIni = [absSeenIni.by absSeenIni.jm absSadIni.by absSadIni.jm absKehehIni.by absHehDoachashmeeIni.by];
+#@ExtraMed = [absSeenMed.by absSadMed.by];
+
+include(../../source/opentype/bariyehKernClasses.feax);
+
+
 #========== LOOKUPS ==========
 
 # The following three lookups change "RenderingUnknown" to "RenderingOpenType"
@@ -60,6 +81,56 @@ lookup FontCheck {
       w' lookup _FontCheck_Unknow
       n' lookup _FontCheck_n;
 } FontCheck ;
+
+# TODO: comment out lookups that are not used.
+lookup Kern50 { pos @AllBases 50; } Kern50;
+lookup Kern100 { pos @AllBases 100; } Kern100;
+lookup Kern150 { pos @AllBases 150; } Kern150;
+lookup Kern200 { pos @AllBases 200; } Kern200;
+lookup Kern250 { pos @AllBases 250; } Kern250;
+lookup Kern300 { pos @AllBases 300; } Kern300;
+lookup Kern350 { pos @AllBases 350; } Kern350;
+lookup Kern400 { pos @AllBases 400; } Kern400;
+lookup Kern450 { pos @AllBases 450; } Kern450;
+lookup Kern500 { pos @AllBases 500; } Kern500;
+lookup Kern550 { pos @AllBases 550; } Kern550;
+lookup Kern600 { pos @AllBases 600; } Kern600;
+lookup Kern650 { pos @AllBases 650; } Kern650;
+lookup Kern700 { pos @AllBases 700; } Kern700;
+lookup Kern750 { pos @AllBases 750; } Kern750;
+lookup Kern800 { pos @AllBases 800; } Kern800;
+lookup Kern850 { pos @AllBases 850; } Kern850;
+lookup Kern900 { pos @AllBases 900; } Kern900;
+lookup Kern950 { pos @AllBases 950; } Kern950;
+lookup Kern1000 { pos @AllBases 1000; } Kern1000;
+lookup Kern1050 { pos @AllBases 1050; } Kern1050;
+lookup Kern1100 { pos @AllBases 1100; } Kern1100;
+lookup Kern1150 { pos @AllBases 1150; } Kern1150;
+lookup Kern1200 { pos @AllBases 1200; } Kern1200;
+lookup Kern1250 { pos @AllBases 1250; } Kern1250;
+lookup Kern1300 { pos @AllBases 1300; } Kern1300;
+lookup Kern1350 { pos @AllBases 1350; } Kern1350;
+lookup Kern1400 { pos @AllBases 1400; } Kern1400;
+lookup Kern1450 { pos @AllBases 1450; } Kern1450;
+lookup Kern1500 { pos @AllBases 1500; } Kern1500;
+lookup Kern1550 { pos @AllBases 1550; } Kern1550;
+lookup Kern1600 { pos @AllBases 1600; } Kern1600;
+lookup Kern1650 { pos @AllBases 1650; } Kern1650;
+lookup Kern1700 { pos @AllBases 1700; } Kern1700;
+lookup Kern1750 { pos @AllBases 1750; } Kern1750;
+lookup Kern1800 { pos @AllBases 1800; } Kern1800;
+lookup Kern1850 { pos @AllBases 1850; } Kern1850;
+lookup Kern1900 { pos @AllBases 1900; } Kern1900;
+lookup Kern1950 { pos @AllBases 1950; } Kern1950;
+lookup Kern2000 { pos @AllBases 2000; } Kern2000;
+#lookup Kern2050 { pos @AllBases 2050; } Kern2050;	# not used
+#lookup Kern2100 { pos @AllBases 2100; } Kern2100;	# not used
+lookup Kern2150 { pos @AllBases 2150; } Kern2150;
+lookup Kern2200 { pos @AllBases 2200; } Kern2200;
+lookup Kern2250 { pos @AllBases 2250; } Kern2250;
+lookup Kern2300 { pos @AllBases 2300; } Kern2300;
+lookup Kern2350 { pos @AllBases 2350; } Kern2350;
+
 
 #========== GSUB rules ==========
 
@@ -231,7 +302,7 @@ lookup BehContextuals {
 	
 	# Initial beh:
 	rsub absBehIni.be'		@PostBeM1			by	absBehIni.beM1;
-	rsub absBehIni.be'		@PostBeM2			by	absBehMed.beM2;
+	rsub absBehIni.be'		@PostBeM2			by	absBehIni.beM2;
 	
 	# Finally handle the first item in the chain:
 	rsub @IniBe_sub'   absBehMed.beM1		by	@IniBeM2_sub;
@@ -447,33 +518,14 @@ lookup BasicConnections {
 } curs;			# end of feature
 
 
-
-# Bariyeh width: 2600
-#@Zero = []; # < 100
-# 100-500
-#@NarrowIni = [absBehIni.be];
-#@NarrowMed = [absJeemMed.by absJeemMed.jm];
-# 500 - 900
-#@MediumIni = [absBehIni.sn absBehIni.hgM		absJeemIni.sn absFehIni.by];
-#@MediumMed = [absBehMed.beF absJeemMed.sd 
-#		absSadMed absMeemMed.by absHehGoalMed.by];
-# 900 - 1300
-#@WideIni = [absBehIni.by absJeemIni.by absTahIni.by absAinIni.by absLamIni.by absLamMed.by absMeemIni.by absHehGoalIni.by
-#		absBehIni.jm absBehIni.mm absSeenIni.jm];
-#@WideMed = [absBehMed.jm absBehMed.by];
-# > 1300
-#@ExtraIni = [absSeenIni.by absSeenIni.jm absSadIni.by absSadIni.jm absKehehIni.by absHehDoachashmeeIni.by];
-#@ExtraMed = [absSeenMed.by absSadMed.by];
-
-
-include(../../source/opentype/bariyehKernClasses.feax);
-
 feature dist {
 
 lookup BariyehKern {
 		lookupflag IgnoreMarks;
 		
 include(../../source/opentype/bariyehKernRules.feax);
+
+#pos absBehIni.beM1' lookup Kern2300 absBehMed.be absBehMed.by nlqBariyehFin;
 
 } BariyehKern;
 

@@ -448,9 +448,23 @@ details including an FAQ.
 	<class name="Initials">
 		@IniBe_sub @IniJm_sub @IniSn_sub @IniSd_sub @IniTa_sub @IniAi_sub @IniFe_sub @IniMm_sub @IniHd_sub @IniHgM_sub @IniHgF_sub
 	</class>
+	
+	<class name="InitialsContextual">
+		@IniDefault_sub
+		@IniBeM1_sub @IniBeM2_sub @IniBeNn_sub @IniBeRe_sub @IniBeHg_sub @IniBeF_sub
+		@IniMmX_sub
+		@IniRe_sub @IniNn_sub @IniQf_sub @IniCh_sub @IniBy_sub
+	</class>
 
 	<class name="Medials">
 		@MedBe_sub @MedJm_sub @MedSn_sub @MedSd_sub @MedTa_sub @MedAi_sub @MedFe_sub @MedMm_sub @MedHd_sub @MedHgM_sub @MedHgF_sub
+	</class>
+	
+	<class name="MedialsContextual">
+		@MedDefault_sub
+		@MedBeM1_sub @MedBeM2_sub @MedBeNn_sub @MedBeRe_sub @MedBeHg_sub @MedBeF_sub
+		@MedMmX_sub
+		@MedRe_sub @MedNn_sub @MedQf_sub @MedCh_sub @MedBy_sub
 	</class>
 	
 	<class name="Finals">
@@ -477,7 +491,7 @@ details including an FAQ.
 	</class>
 
 	<class name="ShapedBases">
-		@Initials @Medials @Finals
+		@Initials @InitialsContextual @Medials @MedialsContextual @Finals
 	</class>
 
 	<class name="AllBases">
