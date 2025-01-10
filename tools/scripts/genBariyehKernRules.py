@@ -80,8 +80,9 @@ def TooManyZeroSlots(seq):
 			if zeros > 3:
 				return True
 	return False
-	
+
 def TypicalWidth(w):
+	# The numbers below are based on the values used in genKernWidthClasses.py.
 	if w == 0:		# zero
 		return 50
 	elif w == 1:	# narrow
@@ -102,7 +103,7 @@ def ClassName(w):
 		return "KMedium"
 	elif w == 3:	# wide
 		return "KWide"
-	else:
+	else:					# extra-wide
 		return "KExtra"
 
 # -----------------------------

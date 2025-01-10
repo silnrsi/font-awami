@@ -23,18 +23,33 @@ languagesystem arab dflt;
 @NuqtaUpper = [ _dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u];
 @NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l];
 @Nuqta = [@NuqtaUpper @NuqtaLower];
-@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV _kafSquiggle _smallThreeAbove _smallTwoAbove _wasla _wavyHamza];
-@NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _smallFourBelow];
-@NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower];
+@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV _kafSquiggle _smallThreeAbove _smallTwoAbove _wasla _wavyHamza
+	_dot2u__squiggle _dot3u__squiggle _dot3Noon
+	_noDot1u _noDot2u ];
+@NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _smallFourBelow
+	_dot2lIM  _dot2lIM.small _dot2l.tail
+	_noDot2l _noDot2l.small];
+
+@NLowerUpper = [_dot1l__smallTah  _dot2vl__smallTah  _dot1l__dot1u  _hehHook__dot2u
+	_ring__dot2u  _noDot2l__hamza  _dot2lIM__smallV  _hehHook__hamza _dot3l__dot3u
+	_ring__dot1u  _dot2lIM__smallTwo  _dot2lIM__smallThree];
+@NLowerNoUpper = [_dot1l  _dot2vl  _dot1l  _hehHook.small
+	_attachedRing  _noDot2l  _dot2l  _hehHook.small  _dot3l
+	_attachedRing  _dot2l  _dot2l];
+@NUpperNoLower = [_smallTah  _smallTah  _dot1u.small  _dot2u.small
+	_dot2u.small  absHamzaAbove  _smallV  absHamzaAbove  _dot3u.small
+	_dot1u.small  _smallTwoAbove  _smallThreeAbove];
+
+@NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower @NLowerUpper];
 
 @DiacUpper = [@_nUpper @_mUpper @_hamzaUpper @_tahUpper @_digitUpper @_honorific];
 @DiacLower = [@_n1Lower @_n23Lower @_mLower @_hehhook @_tahLower @_ring @_tahLower @_hamzaLower];
 
 # gafStroke, graf, _kafTop_bj
 
-@AllUpper = [@NuqtaLikeUpper @DiacUpper];
-@AllLower = [@NuqtaLikeLower @DiacLower];
-@AllMiddle = [@_squiggle @_bar];
+@AllMarksUpper = [@NuqtaLikeUpper @DiacUpper];
+@AllMarksLower = [@NuqtaLikeLower @DiacLower];
+@AllMarksMiddle = [@_squiggle @_bar];
 
 
 # Bariyeh width: 2600
@@ -140,45 +155,70 @@ feature ccmp {
 lookup FontCheck;		# both latn and arab
 
 lookup DecomposeBases {
-	sub		absBeh			by	absDotlessBeh		_dot1l;
-	sub		absTeh			by	absDotlessBeh		_dot2u;
-	sub		absTheh			by	absDotlessBeh		_dot3u;
-	sub		absPeh			by	absDotlessBeh		_dot3l;
-	sub		absNoon			by	absDotlessBeh		_dot1u;
-	sub		nlqChotiyeh	by	absDotlessBeh		_dot2l;
-	sub		absJeem			by	absHah					_dot1l;
-	sub		absKhah			by	absHah					_dot1u;
-	sub		absSheen		by	absSeen					_dot3u;
-	sub		absDad			by  absSad					_dot1u;
-	sub		absZah			by	absTah					_dot1u;
-	sub		absGhain		by	absAin					_dot1u;
-	sub		absFeh			by	absDotlessFeh		_dot1u;
-	sub		absQaf			by	absDotlessFeh		_dot2u;
+	sub		@BehComposed_sub 			by 		absDotlessBeh 	@BehMark_sub;
+	sub		@JeemComposed_sub			by		absHah					@JeemMark_sub;
+	sub		@SeenComposed_sub			by		absSeen					@SeenMark_sub;
+	sub		@SadComposed_sub			by		absSad					@SadMark_sub;
+	sub		@TahComposed_sub			by		absTah					@TahMark_sub;
+	sub		@AinComposed_sub			by		absAin					@AinMark_sub;
+	sub		@FehComposed_sub			by		absDotlessFeh		@FehMark_sub;
+	sub		@KafComposed_sub			by		absKeheh				@KafMark_sub;
+	sub		@GafComposed_sub			by		absGaf					@GafMark_sub;
+	sub		@LamComposed_sub			by		absLam					@LamMark_sub;
+	# no meem varieties at this point
+	sub		@HehGoalComposed_sub	by		absHehGoal			@HehGoalMark_sub;
+	sub		@NoonComposed_sub			by		absNoon					@NoonMark_sub;
+# TODO: handle noon ghunna - add _noDot1u to font
+	sub		@ChotiyehComposed_sub	by		nlqChotiyeh			@ChotiyehMark_sub;
+# TODO: handle yeh hamza above - add _noDot2l__hamza to font
+	sub		@AlefComposed_sub			by		absAlef					@AlefMark_sub;
+	sub		@DalComposed_sub			by		absDal					@DalMark_sub;
+	sub		@RehComposed_sub			by		absReh					@RehMark_sub;
+	sub		@WawComposed_sub			by		absWaw					@WawMark_sub;
+	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
+# TODO: handle nlqBariyeh and nlqBariyehHamza - add _noDot2l and _noDot2l__hamza to font
 } DecomposeBases;
+
 
 } ccmp;
 
 
 # Recompose isolates:
 feature isol {
-	sub 	absDotlessBeh		_dot1l		by		absBeh;
-	sub		absDotlessBeh		_dot2u		by		absTeh;
-	sub		absDotlessBeh		_dot3u		by		absTheh;
-	sub 	absDotlessBeh		_dot3l		by		absPeh;
-	sub		absDotlessBeh		_dot1u		by		absNoon;
-	sub		absDotlessBeh		_dot2l		by		nlqChotiyeh;
-	sub		absHah					_dot1l		by		absJeem;
-	sub		absHah					_dot1u		by		absKhah;
-	sub		absSeen					_dot3u		by		absSheen;
-	sub		absSad					_dot1u		by		absDad;
-	sub		absTah					_dot1u		by		absZah;
-	sub		absAin					_dot1u		by		absGhain;
-	sub		absDotlessFeh		_dot1u		by		absFeh;
-	sub		absDotlessFeh		_dot2u		by		absQaf;
+
+lookup RecomposeIsolates {
+	sub		absDotlessBeh 	@BehMark_sub			by		@BehComposed_sub;
+	sub		absHah					@JeemMark_sub			by		@JeemComposed_sub;
+	sub		absSeen					@SeenMark_sub 		by		@SeenComposed_sub;
+	sub		absSad					@SadMark_sub			by		@SadComposed_sub;
+	sub		absTah					@TahMark_sub			by		@TahComposed_sub;
+	sub		absAin					@AinMark_sub			by		@AinComposed_sub;
+	sub		absDotlessFeh		@FehMark_sub			by		@FehComposed_sub;
+	sub		absKeheh				@KafMark_sub			by		@KafComposed_sub;
+	sub		absGaf					@GafMark_sub			by		@GafComposed_sub;
+	sub		absLam					@LamMark_sub			by		@LamComposed_sub;
+	# no meem varieties at this point
+	sub		absHehGoal			@HehGoalMark_sub	by		@HehGoalComposed_sub;
+	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
+	sub		nlqChotiyeh			@ChotiyehMark_sub	by		@ChotiyehComposed_sub;
+	sub		absAlef					@AlefMark_sub			by		@AlefComposed_sub;
+	sub		absDal					@DalMark_sub			by		@DalComposed_sub;
+	sub		absReh					@RehMark_sub			by		@RehComposed_sub;
+	sub		absWaw					@WawMark_sub			by		@WawComposed_sub;
+	sub		nlqBariyeh			@BariyehMark_sub	by		@BariyehComposed_sub;
+} RecomposeIsolates;
+
 } isol;
 
+@QafMark = [_dot2u];
 
 feature fina {
+
+lookup RightFinals2 {
+	sub		absDotlessFeh'		@QafMark					by		absQafFin;
+	sub		absNoon'					@NoonMark_sub			by		absNoonFin;
+	sub		nlqChotiyeh'			@ChotiyehMark_sub	by		nlqChotiyehFin;
+} RightFinals2;
 
 lookup RightFinals1 {
 	sub		absAlef			by 		absAlefFin;
@@ -187,20 +227,26 @@ lookup RightFinals1 {
 	sub		absReh			by		absRehFin;
 } RightFinals1;
 
-lookup RightFinals2 {
-	sub		absDotlessFeh		_dot2u	by		absQafFin;
-	sub		absDotlessBeh		_dot1u	by		absNoonFin;
-	sub		absDotlessBeh		_dot2l	by		nlqChotiyehFin;
-} RightFinals2;
+lookup RightFinalsDelNuqta {
+	sub		absQafFin				_dot2u		by	absQafFin;
+	sub		nlqChotiyehFin	_dot2lIM	by	nlqChotiyehFin;
+} RightFinalsDelNuqta;
 
 lookup DualFinals {
 	sub			@DualPostCcmp_sub		by		@DualFinals_sub;
 } DualFinals;
 
-} fina;					# end of feature
+} fina;
 
+
+lookup IMNoonYehIsBeh {
+	sub absNoon by absDotlessBeh;
+	sub nlqChotiyeh by absDotlessBeh;	
+} IMNoonYehIsBeh;
 
 feature medi {
+
+lookup IMNoonYehIsBeh;
 
 lookup MedialForms {
 	lookupflag IgnoreMarks;
@@ -216,6 +262,8 @@ lookup InsertHehHook {
 
 feature init {
 
+lookup IMNoonYehIsBeh;
+
 lookup InitialForms {
 	lookupflag IgnoreMarks;
 
@@ -226,6 +274,21 @@ lookup InitialForms {
 
 
 feature rlig {
+
+lookup DoublePreContext {
+	lookupflag IgnoreMarks;
+	
+	sub @IniDefault_sub'	@BehForms absNoonFin			by	@IniBeNn_sub;
+	sub @MedDefault_sub'	@BehForms absNoonFin			by	@MedBeNn_sub;
+	
+	sub @IniDefault_sub' @BehForms absRehFin			by	@IniBeRe_sub;
+	sub @MedDefault_sub' @BehForms absRehFin			by	@MedBeRe_sub;
+	
+	sub @IniDefault_sub' @BehForms absHehGoalFin	by	@IniBeHg_sub;
+	sub @MedDefault_sub' @BehForms absHehGoalFin	by	@MedBeHg_sub;
+
+} DoublePreContext;
+
 
 lookup BasicContextuals {
 	lookupflag IgnoreMarks;
@@ -353,14 +416,55 @@ lookup FinalContextuals {
 	
 	sub @LamForms		absAlefFin'		by	absAlefFin._lm;
 
-} FinalContextuals;					# end of lookup
+} FinalContextuals;	
 
-} rlig;		# end of feature
+
+lookup SpecialContextuals {
+	lookupflag IgnoreMarks;
+	
+	sub [absBehIni.beM2 absBehMed.behg]		absBehMed.hgF'		absHehGoalFin		by		absBehMed.hgF_be;
+
+} SpecialContextuals;
+
+} rlig;		#end of feature
+
+feature calt {
+
+lookup SplitNuqtaPairs {
+	# TODO: see if there is a way to use classes for this.
+	sub		_dot1l__smallTah'			by		_dot1l					_smallTah;
+	sub		_dot2vl__smallTah'		by		_dot2vl					_smallTah;
+	sub		_dot1l__dot1u'				by		_dot1l					_dot1u.small;
+	sub		_hehHook__dot2u'			by		_hehHook.small	_dot2u.small;
+	sub		_ring__dot2u'					by		_attachedRing		_dot2u.small;
+	sub		_noDot2l__hamza'			by		_noDot2l				absHamzaAbove;
+	sub		_dot2lIM__smallV'			by		_dot2l					_smallV;
+	sub		_hehHook__hamza'			by		_hehHook.small	absHamzaAbove;
+	sub		_dot3l__dot3u'				by		_dot3l					_dot3u.small;
+	sub		_ring__dot1u'					by		_attachedRing		_dot1u.small;
+	sub		_dot2lIM__smallTwo'		by		_dot2l					_smallTwoAbove;
+	sub		_dot2lIM__smallThree'	by		_dot2l					_smallThreeAbove;
+} SplitNuqtaPairs;
+
+lookup CleanupsDelete {
+	lookupflag 0;
+	# delete hehhook from all but medial hehgoals
+	sub  @HehGoalInitials'	_hehHook.small'		by		@HehGoalInitials;
+	sub  absHehGoalFin'			_hehHook.small'		by		absHehGoalFin;
+	
+	# TODO: delete noDots glyphs?
+	
+} CleanupsDelete;
+
+lookup CleanupsSub {
+	lookupflag 0;
+	sub  _dot2lIM'	by	_dot2l;
+} CleanupsSub;
+
+} calt;		# end of feature
 
 
 #========== GPOS rules ==========
-
-
 
 feature mark {
 
@@ -369,17 +473,17 @@ feature mark {
 
 # In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
 lookup AttachLowerDiacsLikeNuqtas {
-		lookupflag UseMarkFilteringSet @AllLower;
+		lookupflag UseMarkFilteringSet @AllMarksLower;
 		pos		base @n1Lower			mark @_mLower;
 } AttachLowerDiacsLikeNuqtas;
 
 lookup AttachUpperDiacsLikeNuqtas {
-		lookupflag UseMarkFilteringSet @AllUpper;
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
 		pos		base @nUpper			mark @_mUpper;
 } AttachUpperDiacsLikeNuqtas;
 
 lookup AttachLower {
-		lookupflag UseMarkFilteringSet @AllLower;
+		lookupflag UseMarkFilteringSet @AllMarksLower;
     pos		base @n1Lower			mark @_n1Lower;
     pos		base @n23Lower		mark @_n23Lower;
 		pos		base @hehhook			mark @_hehhook;
@@ -388,18 +492,18 @@ lookup AttachLower {
 } AttachLower;
 
 lookup AttachMiddle {
-		lookupflag UseMarkFilteringSet @AllMiddle;
+		lookupflag UseMarkFilteringSet @AllMarksMiddle;
 		pos		base @squiggle		mark @_squiggle;
 		pos		base @bar					mark @_bar;
 } AttachMiddle;
 
 lookup AttachUpper {
-		lookupflag UseMarkFilteringSet @AllUpper;
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
     pos		base @nUpper  		mark @_nUpper;
 } AttachUpper;
 
 lookup AttachUpper2 {
-		lookupflag UseMarkFilteringSet @AllUpper;
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
 		pos		base @alef				mark @_mUpper;
 		pos		base @mUpper			mark @_mUpper;
 		pos		base @tahUpper		mark @_tahUpper;
@@ -407,17 +511,18 @@ lookup AttachUpper2 {
 } AttachUpper2;
 
 lookup AttachUpper3 {
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
 		pos		base @honorific		mark @_honorific;
 } AttachUpper3;
 
 # Special cases go last so that they override:
 lookup AttachAlefDiacToYeh {
-		lookupflag UseMarkFilteringSet @AllUpper;
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
 		pos		base @alef				mark @_mUpper;
 } AttachAlefDiacToYeh;
 
 lookup AttachAlefDiacToLam {
-		lookupflag UseMarkFilteringSet @AllUpper;
+		lookupflag UseMarkFilteringSet @AllMarksUpper;
 		# The rules below were copied from the autogenerated FEA file autogenerated from the rule below:
 		# pos		base @nUpper			mark @_mUpperLam;
 		# This is necessary to limit the rules to lams.

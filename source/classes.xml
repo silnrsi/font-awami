@@ -30,7 +30,7 @@ details including an FAQ.
 	</class>
 	-->
 	
-	<!-- BASIC LETTER CLASSES -->
+
 	
 	<class name="BehForms">
 		absBeh
@@ -152,14 +152,182 @@ details including an FAQ.
 	</class>
 	
 	<!-- add all forms... -->
-	<class name="HehGoalForms">
+	<class name="HehGoalInitials">
 		absHehGoalIni absHehGoalIni.ai absHehGoalIni.be absHehGoalIni.beM1 absHehGoalIni.beM2 absHehGoalIni.benn absHehGoalIni.behg absHehGoalIni.bere
 		absHehGoalIni.beF absHehGoalIni.by absHehGoalIni.ch absHehGoalIni.fe  absHehGoalIni.hd absHehGoalIni.hgM absHehGoalIni.hgF absHehGoalIni.jm
 		absHehGoalIni.mm absHehGoalIni.mmX  absHehGoalIni.nn absHehGoalIni.qf absHehGoalIni.re absHehGoalIni.sd absHehGoalIni.sn absHehGoalIni.snsn absHehGoalIni.ta
+	</class>
+	<class name="HehGoalForms">
+		@HehGoalInitials
 		absHehGoalMed absHehGoalMed.ai absHehGoalMed.be absHehGoalMed.beM1 absHehGoalMed.beM2 absHehGoalMed.benn absHehGoalMed.behg absHehGoalMed.bere
 		absHehGoalMed.beF absHehGoalMed.by absHehGoalMed.ch absHehGoalMed.fe  absHehGoalMed.hd absHehGoalMed.hgM absHehGoalMed.hgF absHehGoalMed.jm
 		absHehGoalMed.mm absHehGoalMed.mmX  absHehGoalMed.nn absHehGoalMed.qf absHehGoalMed.re absHehGoalMed.sd absHehGoalMed.sn absHehGoalMed.snsn absHehGoalMed.ta
 		absHehGoalFin
+	</class>
+	
+	<!-- FOR DECOMPOSIION -->
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="BehMark_sub">
+		_dot1l  _dot2u  _dot3u  _smallTah  _dot3l  _dot2vl  _ring  _dot2vu  _dot3uD
+	</class>
+	<class name="BehComposed_sub">
+		absBeh absTeh absTheh absTteh absPeh absBeeh absTehRing absTteheh absTehThreeDotsAboveDownwards
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="JeemMark_sub">
+		_dot1l  _dot1u  _dot3l  _dot2vl  _dot2l  _dot4l  _smallTah  _smallTahBelow
+		_smallTah2dotsBelow  _dot3u  absHamzaAbove  _smallFourBelow
+	</class>
+	<class name="JeemComposed_sub">
+		absJeem absKhah absTcheh absDyeh absNyeh absTcheheh absHahSmallTahAbove absHahSmallTahBelow
+		absHahSmallTahTwoDots absHahThreeDotsAbove absHahHamzaAbove absHahFourBelow
+	</class>
+	
+		<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="SeenMark_sub">
+		_dot3u  _dot4u  _dot1l__dot1u  _smallTah2dots  _dot2vu  _dot3l
+		_dot3l__dot3u  _smallVinv  _smallFourAbove
+	</class>
+	<class name="SeenComposed_sub">
+		absSheen absSeenFourDotsAbove absSeenDotBelowDotAbove absSeenSmallTahTwoDots absSeenTwoVertAbove absSeenThreeDotsBelow
+		absSeen3DotsBelow3DotsAbove absSeenInvertedVAbove absSeenFourAbove
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="SadMark_sub">
+		_dot1u  _dot1l__dot1u  _dot3u
+	</class>
+	<class name="SadComposed_sub">
+		absDad absDadDotBelow absSadThreeDotsAbove
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="TahMark_sub">
+		_dot1u
+	</class>
+	<class name="TahComposed_sub">
+		absZah
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="AinMark_sub">
+		_dot1u  _dot3u
+	</class>
+	<class name="AinComposed_sub">
+		absGhain absAinThreeDotsAbove
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="FehMark_sub">
+		_dot1u  _dot2u  _dot3l  _dot3u
+	</class>
+	<class name="FehComposed_sub">
+		absFeh absQaf absFehThreeDotsBelow absVeh
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="KafMark_sub">
+		_dot1u  _dot1u
+		_kafSquiggle  _attachedRingMid  _dot2u__squiggle  _dot3u__squiggle    <!-- _dot1u__squiggle   -->
+	</class>
+	<class name="KafComposed_sub">
+		absKehehDotAbove absKehehThreeDotsAbove
+		absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove     <!-- absKafDotAbove (not supported)  -->
+
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="GafMark_sub">
+		_dot2vl  _dot2u  _attachedRingMid  _grafStroke
+	</class>
+	<class name="GafComposed_sub">
+		absGueh absNgoeh absGafRing absGraf
+	</class>
+	
+		<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="LamMark_sub">
+		_bar  _smallV  _dot3u  _smallTah
+	</class>
+	<class name="LamComposed_sub">
+		absLamBar absLamSmallV absLamThreeDots absLamSmallTah
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="HehGoalMark_sub">
+		_hehHook.small  _hehHook__dot2u  absHamzaAbove  <!--_hamza  _hehHook__hamza -->
+	</class>
+	<class name="HehGoalComposed_sub">
+		absHehGoal absTehMarbutaGoal absHehGoalHamzaAbove   <!-- absHehGoalHamza absHehGoalHamza -->
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="NoonMark_sub">
+		_dot1u  _noDot1u  _dot1u_smallTah  _dot1l__dot1u  _smallTah
+		_dot1u_smallV  _ring__dot1u  _dot3Noon 			<!-- _dot1u_ngMark -->
+	</class>
+	<class name="NoonComposed_sub">
+		absNoon absNoonGhunna absNoonRetro absNoonDotBelow absRnoon
+		absNoonSmallV absNoonRing absNoonThreeDots
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->abs
+	<class name="ChotiyehMark_sub">
+		_dot2lIM  _dot2l  _dot2vl  _dot2lIM__smallV   _dot2l_tail  _ring
+		_dot2lIM__smallTwo  _dot2lIM__smallThree  _smallFourBelow  _noDot2l__hamza
+	</class>
+	<class name="ChotiyehComposed_sub">
+		nlqChotiyeh  absYeh absE absYehSmallV absYehTail, absKashmiriYeh
+		absYehTwoAbove absYehThreeAbove absYehFourBelow absYehHamzaAbove
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="AlefMark_sub">
+		absHamzaAbove  absHamzaBelow  absMaddaAbove  _wavyHamza
+		absWavyHamzaBelow  highHamza  _smallTwoAbove  _smallThreeAbove  _wasla
+	</class>
+	<class name="AlefComposed_sub">
+		absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove
+		absAlefWavyHamzaBelow absHighHamzaAlef absAlefTwoAbove absAlefThreeAbove absAlefWasla
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="DalMark_sub">
+		_dot1u  _smallTah  _dot1l__smallTah  _dot2vl__smallTah  _dot1l  _attachedRing
+		_dot4u  _dot3u  _smallVinvBelow
+	</class>
+	<class name="DalComposed_sub">
+		absThal	absDdal absDalDotBelowSmallTah  absDalTwoVertBelowSmallTah absDalDotBelow absDalRing
+		absDalFourDotsAbove absDul absDalInvertedVBelow
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="RehMark_sub">
+		_dot1u  _smallTah  _dot3u  _dot1l  _dot1l__dot1u  _dot2u  _attachedRing
+		_dot4u  _dot2vu  absHamzaAbove  _smallTah2dots  _smallVBelow
+	</class>
+	<class name="RehComposed_sub">
+		absZain absRreh absJeh absRehDotBelow absRehDotBelowDotAbove absRehTwoDotsAbove absRehRing
+		absRehFourDotsAbove absRehTwoVertAbove absRehHamzaAbove absRehSmallTahTwoDots absRehSmallVBelow
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="WawMark_sub">
+		absHamzaAbove  _attachedRingMid  _bar.waw  _smallV  _smallVinv  nlqPeshWaw
+		_verticalStroke  _dot1u  _dot2u  _dot3u  _smallTwoAbove  _smallThreeAbove
+	</class>
+	<class name="WawComposed_sub">
+		absWawHamzaAbove absWawRing absKirghizOe absOe  absKirghizYu  absU
+		absYu absWawDotAbove absWawTwoDotsAbove absVe absWawTwoAbove absWawThreeAbove
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="BariyehMark_sub">
+		_smallTwoAbove  _smallThreeAbove     <!-- _noDot2l _noDot2l__hamza  -->
+	</class>
+	<class name="BariyehComposed_sub">
+		 nlqBariyehTwoAbove nlqBariyehThreeAbove   <!-- nlqBariyeh nlqBariyehHamza -->
 	</class>
 	
 	<!-- CONTEXTUAL SHAPING CLASSES -->
@@ -243,7 +411,8 @@ details including an FAQ.
 	</class>
 	
 	<class name="IniBeHg_sub">
-		absBehIni.behg absJeemIni.behg absSeenIni.behg absSadIni.behg absTahIni.behg absAinIni.behg absFehIni.behg absKehehIni.behg absGafIni.behg absLamIni.behg 
+		absBehIni.beM2   <!-- beh+beh+hg is handled specially -->
+				absJeemIni.behg absSeenIni.behg absSadIni.behg absTahIni.behg absAinIni.behg absFehIni.behg absKehehIni.behg absGafIni.behg absLamIni.behg 
 		absMeemIni.behg absHehDoachashmeeIni.behg absHehGoalIni.behg 
 	</class>
 
