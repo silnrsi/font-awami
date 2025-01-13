@@ -118,6 +118,32 @@ details including an FAQ.
 		absFehFin
 	</class>
 	
+	<class name="KehehForms">
+		absKehehIni absKehehIni.ai absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.benn absKehehIni.behg absKehehIni.bere
+		absKehehIni.beF absKehehIni.by absKehehIni.ch absKehehIni.fe  absKehehIni.hd absKehehIni.hgM absKehehIni.hgF absKehehIni.jm
+		absKehehIni.mm absKehehIni.mmX  absKehehIni.nn absKehehIni.qf absKehehIni.re absKehehIni.sd absKehehIni.sn absKehehIni.snsn absKehehIni.ta
+		absKehehMed absKehehMed.ai absKehehMed.be absKehehMed.beM1 absKehehMed.beM2 absKehehMed.benn absKehehMed.behg absKehehMed.bere
+		absKehehMed.beF absKehehMed.by absKehehMed.ch absKehehMed.fe  absKehehMed.hd absKehehMed.hgM absKehehMed.hgF absKehehMed.jm
+		absKehehMed.mm absKehehMed.mmX  absKehehMed.nn absKehehMed.qf absKehehMed.re absKehehMed.sd absKehehMed.sn absKehehMed.snsn absKehehMed.ta
+		absKehehFin
+		absKeheh.kf
+	</class>
+	
+	<class name="GafForms">
+		absGafIni absGafIni.ai absGafIni.be absGafIni.beM1 absGafIni.beM2 absGafIni.benn absGafIni.behg absGafIni.bere
+		absGafIni.beF absGafIni.by absGafIni.ch absGafIni.fe  absGafIni.hd absGafIni.hgM absGafIni.hgF absGafIni.jm
+		absGafIni.mm absGafIni.mmX  absGafIni.nn absGafIni.qf absGafIni.re absGafIni.sd absGafIni.sn absGafIni.snsn absGafIni.ta
+		absGafMed absGafMed.ai absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.benn absGafMed.behg absGafMed.bere
+		absGafMed.beF absGafMed.by absGafMed.ch absGafMed.fe  absGafMed.hd absGafMed.hgM absGafMed.hgF absGafMed.jm
+		absGafMed.mm absGafMed.mmX  absGafMed.nn absGafMed.qf absGafMed.re absGafMed.sd absGafMed.sn absGafMed.snsn absGafMed.ta
+		absGafFin
+		absGaf.kf
+	</class>
+	
+	<class name="KafForms">
+		@KehehForms @GafForms
+	</class>
+	
 	<class name="LamForms">
 		absLamIni absLamIni.ai absLamIni.be absLamIni.beM1 absLamIni.beM2 absLamIni.benn absLamIni.behg absLamIni.bere
 		absLamIni.beF absLamIni.by absLamIni.ch absLamIni.fe  absLamIni.hd absLamIni.hgM absLamIni.hgF absLamIni.jm
@@ -165,11 +191,27 @@ details including an FAQ.
 		absHehGoalFin
 	</class>
 	
+	<class name="NoonForms">
+		absNoonFin
+	</class>
+	
+	<class name="QafForms">
+		absQafFin absDotlessQafFin
+	</class>
+	
+	<class name="ChotiyehForms">
+		nlqChotiyehFin
+	</class>
+	
+	<class name="AlefForms">
+		absAlef absAlefFin
+	</class>
+	
 	<!-- FOR DECOMPOSIION -->
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="BehMark_sub">
-		_dot1l  _dot2u  _dot3u  _smallTah  _dot3l  _dot2vl  _ring  _dot2vu  _dot3uD
+		_dot1l  _dot2u  _dot3u  _smallTah  _dot3l  _dot2vl  _ring__dot2u  _dot2vu  _dot3uD
 	</class>
 	<class name="BehComposed_sub">
 		absBeh absTeh absTheh absTteh absPeh absBeeh absTehRing absTteheh absTehThreeDotsAboveDownwards
@@ -675,6 +717,16 @@ details including an FAQ.
 	
 	<class name="PostBeM2">
 		absBehMed.beM1 absBehMed.benn
+	</class>
+	
+	<!-- For kaf contextuals -->
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="KafPreKaf_default_sub">
+		absKehehIni absKehehMed absGafIni absGafMed
+	</class>
+	<class name="KafPreKaf_kf_sub">
+		absKehehIni.kf absKehehMed.dk absGafIni.kf absGafMed.dk
 	</class>
 	
 	<!-- For meem contextuals -->

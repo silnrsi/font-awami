@@ -23,10 +23,11 @@ languagesystem arab dflt;
 @NuqtaUpper = [ _dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u];
 @NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l];
 @Nuqta = [@NuqtaUpper @NuqtaLower];
-@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV _kafSquiggle _smallThreeAbove _smallTwoAbove _wasla _wavyHamza
+@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV  _smallTah2dots  _kafSquiggle
+	_smallThreeAbove _smallTwoAbove _wasla _wavyHamza
 	_dot2u__squiggle _dot3u__squiggle _dot3Noon
 	_noDot1u _noDot2u ];
-@NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _smallFourBelow
+@NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 	_dot2lIM  _dot2lIM.small _dot2l.tail
 	_noDot2l _noDot2l.small];
 
@@ -42,14 +43,14 @@ languagesystem arab dflt;
 
 @NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower @NLowerUpper];
 
-@DiacUpper = [@_nUpper @_mUpper @_hamzaUpper @_tahUpper @_digitUpper @_honorific];
-@DiacLower = [@_n1Lower @_n23Lower @_mLower @_hehhook @_tahLower @_ring @_tahLower @_hamzaLower];
+@DiacUpper = [@_nUpper @_mUpper @_honorific];
+@DiacLower = [@_n1Lower @_n23Lower @_mLower @_hamzaLower];
 
 # gafStroke, graf, _kafTop_bj
 
 @AllMarksUpper = [@NuqtaLikeUpper @DiacUpper];
 @AllMarksLower = [@NuqtaLikeLower @DiacLower];
-@AllMarksMiddle = [@_squiggle @_bar];
+@AllMarksMiddle = [@_squiggle @_bar _attachedRingMid ];
 
 
 # Bariyeh width: 2600
@@ -215,16 +216,22 @@ lookup RecomposeIsolates {
 feature fina {
 
 lookup RightFinals2 {
-	sub		absDotlessFeh'		@QafMark					by		absQafFin;
+	sub		absDotlessQaf'		@QafMark					by		absQafFin;
 	sub		absNoon'					@NoonMark_sub			by		absNoonFin;
 	sub		nlqChotiyeh'			@ChotiyehMark_sub	by		nlqChotiyehFin;
 } RightFinals2;
 
 lookup RightFinals1 {
-	sub		absAlef			by 		absAlefFin;
-	sub		nlqBariyeh	by		nlqBariyehFin;
-	sub		absWaw			by		absWawFin;
-	sub		absReh			by		absRehFin;
+	sub		absAlef				by 		absAlefFin;
+	sub		absReh				by		absRehFin;
+	sub		absDal				by		absDalFin;
+	sub		absWaw				by		absWawFin;
+	sub		nlqBariyeh		by		nlqBariyehFin;
+	
+	# if there is still a noon or chotiyeh or qaf, it must be dotless
+	sub		absNoon				by		absNoonFin;
+	sub		nlqChotiyeh		by		nlqChotiyehFin;
+	sub		absDotlessQaf	by		absQafFin;
 } RightFinals1;
 
 lookup RightFinalsDelNuqta {
@@ -238,15 +245,17 @@ lookup DualFinals {
 
 } fina;
 
-
-lookup IMNoonYehIsBeh {
+# Make sure medial/initial noons and yehs use beh forms and qaf uses feh forms.
+lookup FixIMNoonYehQaf {
 	sub absNoon by absDotlessBeh;
-	sub nlqChotiyeh by absDotlessBeh;	
-} IMNoonYehIsBeh;
+	sub nlqChotiyeh by absDotlessBeh;
+	sub absDotlessQaf by absDotlessFeh;
+} FixIMNoonYehQaf;
+
 
 feature medi {
 
-lookup IMNoonYehIsBeh;
+lookup FixIMNoonYehQaf;
 
 lookup MedialForms {
 	lookupflag IgnoreMarks;
@@ -262,7 +271,7 @@ lookup InsertHehHook {
 
 feature init {
 
-lookup IMNoonYehIsBeh;
+lookup FixIMNoonYehQaf;
 
 lookup InitialForms {
 	lookupflag IgnoreMarks;
@@ -337,6 +346,9 @@ lookup BasicContextuals {
 	sub @IniDefault_sub' absNoonFin			by	@IniNn_sub;
 	sub	@MedDefault_sub' absNoonFin			by	@MedNn_sub;
 	
+	sub @IniDefault_sub' absDotlessQaf	by	@IniQf_sub;
+	sub @MedDefault_sub' absDotlessQaf	by	@MedQf_sub;
+	
 	sub @IniDefault_sub' nlqChotiyehFin			by	@IniCh_sub;
 	sub	@MedDefault_sub' nlqChotiyehFin			by	@MedCh_sub;
 	
@@ -355,7 +367,7 @@ lookup BasicContextuals {
 lookup BehContextuals {
 	lookupflag IgnoreMarks RightToLeft;
 	
-	# Use rsub to use backwards logic so that the glyphs at the are processed first.
+	# Use rsub to use backwards logic so that the glyphs at the end are processed first.
 	
 	rsub absBehMed.be'		absBehFin			by	absBehMed.beF;
 	
@@ -375,6 +387,22 @@ lookup BehContextuals {
 
 } BehContextuals;					# end of lookup
 
+
+lookup KafContextuals {
+	lookupflag IgnoreMarks;
+	
+	# Use straight kaf before another kaf.
+	sub @KafPreKaf_default_sub' @KafForms		by	@KafPreKaf_kf_sub;
+} KafContextuals;
+
+lookup ConnectToRoundKaf{
+	lookupflag IgnoreMarks;
+	
+	# Use sad connection to round kafs, which happen before lams and alefs.
+	sub @IniDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@IniSd_sub;
+} ConnectToRoundKaf;
+
+
 lookup MeemContextuals {
 	lookupflag IgnoreMarks;
 	
@@ -386,6 +414,7 @@ lookup MeemContextuals {
 lookup PreMeemAlt {
 	lookupflag IgnoreMarks;
 	
+	# Create proper connection to alternate meem.
 	sub @IniMm_sub'	  absMeemMed._alt		by		@IniMmX_sub;
 	sub @MedMm_sub'		absMeemMed._alt		by		@MedMmX_sub;
 
@@ -395,6 +424,7 @@ lookup PreMeemAlt {
 lookup SeenContextuals {
 	lookupflag IgnoreMarks;
 	
+	# Use "kashida" form of the seen between two seens.
 	sub [absSeenIni.sn absSeenMed.sn absSeenMed.sn_sn]		absSeenMed.sn'	@SeenForms		by	absSeenMed.sn_sn;
 	
 } SeenContextuals;
@@ -448,11 +478,16 @@ lookup SplitNuqtaPairs {
 
 lookup CleanupsDelete {
 	lookupflag 0;
-	# delete hehhook from all but medial hehgoals
+	# delete hehhook from all but medial hehgoals:
 	sub  @HehGoalInitials'	_hehHook.small'		by		@HehGoalInitials;
 	sub  absHehGoalFin'			_hehHook.small'		by		absHehGoalFin;
 	
-	# TODO: delete noDots glyphs?
+	# delete non-existent nuqtas:
+	sub @BehForms'					_noDot1u'					by		@BehForms;
+	sub @NoonForms'					_noDot1u'					by		@NoonForms;
+	sub @FehForms'					_noDot1u'					by		@FehForms;
+	sub @QafForms'					_noDot2u'					by		@QafForms;
+	sub @ChotiyehForms'			_noDot2l'					by		@ChotiyehForms;
 	
 } CleanupsDelete;
 
@@ -484,7 +519,8 @@ lookup AttachUpperDiacsLikeNuqtas {
 
 lookup AttachLower {
 		lookupflag UseMarkFilteringSet @AllMarksLower;
-    pos		base @n1Lower			mark @_n1Lower;
+		pos		base @ring				mark @_ring;		# must be first
+		pos		base @n1Lower			mark @_n1Lower;
     pos		base @n23Lower		mark @_n23Lower;
 		pos		base @hehhook			mark @_hehhook;
 		pos		base @hamzaLower	mark @_hamzaLower;
@@ -495,6 +531,7 @@ lookup AttachMiddle {
 		lookupflag UseMarkFilteringSet @AllMarksMiddle;
 		pos		base @squiggle		mark @_squiggle;
 		pos		base @bar					mark @_bar;
+		pos		base @ring				mark @_ring;
 } AttachMiddle;
 
 lookup AttachUpper {
