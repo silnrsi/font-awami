@@ -118,31 +118,33 @@ details including an FAQ.
 		absFehFin
 	</class>
 	
-	<class name="KehehForms">
+	<class name="KehehIMForms">
 		absKehehIni absKehehIni.ai absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.benn absKehehIni.behg absKehehIni.bere
 		absKehehIni.beF absKehehIni.by absKehehIni.ch absKehehIni.fe  absKehehIni.hd absKehehIni.hgM absKehehIni.hgF absKehehIni.jm
 		absKehehIni.mm absKehehIni.mmX  absKehehIni.nn absKehehIni.qf absKehehIni.re absKehehIni.sd absKehehIni.sn absKehehIni.snsn absKehehIni.ta
 		absKehehMed absKehehMed.ai absKehehMed.be absKehehMed.beM1 absKehehMed.beM2 absKehehMed.benn absKehehMed.behg absKehehMed.bere
 		absKehehMed.beF absKehehMed.by absKehehMed.ch absKehehMed.fe  absKehehMed.hd absKehehMed.hgM absKehehMed.hgF absKehehMed.jm
 		absKehehMed.mm absKehehMed.mmX  absKehehMed.nn absKehehMed.qf absKehehMed.re absKehehMed.sd absKehehMed.sn absKehehMed.snsn absKehehMed.ta
-		absKehehFin
-		absKeheh.kf
+		absKehehIni.dk absKehehIni.kf_wide absKehehMed.kf_wide
 	</class>
 	
-	<class name="GafForms">
+	<class name="KehehForms">@KehehIMForms absKehehFin</class>
+	
+	<class name="GafIMForms">
 		absGafIni absGafIni.ai absGafIni.be absGafIni.beM1 absGafIni.beM2 absGafIni.benn absGafIni.behg absGafIni.bere
 		absGafIni.beF absGafIni.by absGafIni.ch absGafIni.fe  absGafIni.hd absGafIni.hgM absGafIni.hgF absGafIni.jm
 		absGafIni.mm absGafIni.mmX  absGafIni.nn absGafIni.qf absGafIni.re absGafIni.sd absGafIni.sn absGafIni.snsn absGafIni.ta
 		absGafMed absGafMed.ai absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.benn absGafMed.behg absGafMed.bere
 		absGafMed.beF absGafMed.by absGafMed.ch absGafMed.fe  absGafMed.hd absGafMed.hgM absGafMed.hgF absGafMed.jm
 		absGafMed.mm absGafMed.mmX  absGafMed.nn absGafMed.qf absGafMed.re absGafMed.sd absGafMed.sn absGafMed.snsn absGafMed.ta
-		absGafFin
-		absGaf.kf
+		absGafMed.dk absGafIni.kf_wide absGafMed.kf_wide
 	</class>
 	
-	<class name="KafForms">
-		@KehehForms @GafForms
-	</class>
+	<class name="GafForms">@GafIMForms absGafFin</class>
+	
+	<class name="KafIMForms">@KehehIMForms @GafIMForms</class>
+	
+	<class name="KafForms">@KehehForms @GafForms</class>
 	
 	<class name="LamForms">
 		absLamIni absLamIni.ai absLamIni.be absLamIni.beM1 absLamIni.beM2 absLamIni.benn absLamIni.behg absLamIni.bere
@@ -200,11 +202,15 @@ details including an FAQ.
 	</class>
 	
 	<class name="ChotiyehForms">
-		nlqChotiyehFin
+		nlqChotiyeh nlqChotiyehFin
 	</class>
 	
 	<class name="AlefForms">
 		absAlef absAlefFin
+	</class>
+	
+	<class name="BariyehForms">
+		nlqBariyeh nlqBariyehFin
 	</class>
 	
 	<!-- FOR DECOMPOSIION -->
@@ -366,10 +372,10 @@ details including an FAQ.
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="BariyehMark_sub">
-		_smallTwoAbove  _smallThreeAbove     <!-- _noDot2l _noDot2l__hamza  -->
+		_noDot2l _noDot2l__hamza  _smallTwoAbove  _smallThreeAbove  
 	</class>
 	<class name="BariyehComposed_sub">
-		 nlqBariyehTwoAbove nlqBariyehThreeAbove   <!-- nlqBariyeh nlqBariyehHamza -->
+		 nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove  
 	</class>
 	
 	<!-- CONTEXTUAL SHAPING CLASSES -->
@@ -648,11 +654,11 @@ details including an FAQ.
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 
 	<class name="RightPostCcmp_sub">
-		absAlef absDal absQaf absNoon nlqChotiyeh nlqBariyeh
+		absAlef absDal absQaf absNoon nlqChotiyeh nlqBariyeh absTehMarbuta absTehMarbutaGoalFin
 	</class>
 	
 	<class name="RightFinals_sub">
-		absAlefFin absDalFin absQafFin absNoonFin nlqChotiyehFin nlqBariyehFin
+		absAlefFin absDalFin absQafFin absNoonFin nlqChotiyehFin nlqBariyehFin absTehMarbutaFin absTehMarbutaGoalFin
 	</class>
 
 
@@ -699,6 +705,8 @@ details including an FAQ.
 		absHehDo
 		absHehGoal
 		nlqBariyeh
+		absTehMarbuta
+		absTehMarbutaGoal
 	</class>
 
 	<class name="ShapedBases">
@@ -721,12 +729,17 @@ details including an FAQ.
 	
 	<!-- For kaf contextuals -->
 	
-	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<!-- *NEXT 3 CLASSES MUST MATCH* -->
 	<class name="KafPreKaf_default_sub">
 		absKehehIni absKehehMed absGafIni absGafMed
 	</class>
+	
 	<class name="KafPreKaf_kf_sub">
 		absKehehIni.kf absKehehMed.dk absGafIni.kf absGafMed.dk
+	</class>
+	
+	<class name="KafDk_sub">
+		absKehehIni.dk absKehehMed.dk absGafIni.dk absGafMed.dk
 	</class>
 	
 	<!-- For meem contextuals -->

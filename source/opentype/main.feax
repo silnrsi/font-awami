@@ -169,15 +169,12 @@ lookup DecomposeBases {
 	# no meem varieties at this point
 	sub		@HehGoalComposed_sub	by		absHehGoal			@HehGoalMark_sub;
 	sub		@NoonComposed_sub			by		absNoon					@NoonMark_sub;
-# TODO: handle noon ghunna - add _noDot1u to font
 	sub		@ChotiyehComposed_sub	by		nlqChotiyeh			@ChotiyehMark_sub;
-# TODO: handle yeh hamza above - add _noDot2l__hamza to font
 	sub		@AlefComposed_sub			by		absAlef					@AlefMark_sub;
 	sub		@DalComposed_sub			by		absDal					@DalMark_sub;
 	sub		@RehComposed_sub			by		absReh					@RehMark_sub;
 	sub		@WawComposed_sub			by		absWaw					@WawMark_sub;
 	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
-# TODO: handle nlqBariyeh and nlqBariyehHamza - add _noDot2l and _noDot2l__hamza to font
 } DecomposeBases;
 
 
@@ -219,14 +216,17 @@ lookup RightFinals2 {
 	sub		absDotlessQaf'		@QafMark					by		absQafFin;
 	sub		absNoon'					@NoonMark_sub			by		absNoonFin;
 	sub		nlqChotiyeh'			@ChotiyehMark_sub	by		nlqChotiyehFin;
+	sub		nlqBariyeh'				@BariyehMark_sub	by		nlqBariyehFin;
 } RightFinals2;
 
 lookup RightFinals1 {
-	sub		absAlef				by 		absAlefFin;
-	sub		absReh				by		absRehFin;
-	sub		absDal				by		absDalFin;
-	sub		absWaw				by		absWawFin;
-	sub		nlqBariyeh		by		nlqBariyehFin;
+	sub		absAlef						by 		absAlefFin;
+	sub		absReh						by		absRehFin;
+	sub		absDal						by		absDalFin;
+	sub		absWaw						by		absWawFin;
+	#sub		nlqBariyeh				by		nlqBariyehFin;
+	sub		absTehMarbuta			by		absTehMarbutaFin;
+	sub		absTehMarbutaGoal by 		absTehMarbutaGoalFin;
 	
 	# if there is still a noon or chotiyeh or qaf, it must be dotless
 	sub		absNoon				by		absNoonFin;
@@ -239,6 +239,12 @@ lookup RightFinalsDelNuqta {
 	sub		nlqChotiyehFin	_dot2lIM	by	nlqChotiyehFin;
 } RightFinalsDelNuqta;
 
+lookup RightFinalsDelNuqtaSub {
+	sub		nlqChotiyehFin	_dot2lIM__smallV'			by 	_smallV;
+	sub		nlqChotiyehFin	_dot2lIM__smallTwo'		by 	_smallTwoAbove;
+	sub		nlqChotiyehFin	_dot2lIM__smallThree'	by 	_smallThreeAbove;
+} RightFinalsDelNuqtaSub;
+
 lookup DualFinals {
 	sub			@DualPostCcmp_sub		by		@DualFinals_sub;
 } DualFinals;
@@ -246,6 +252,7 @@ lookup DualFinals {
 } fina;
 
 # Make sure medial/initial noons and yehs use beh forms and qaf uses feh forms.
+# Used for both initials and medials.
 lookup FixIMNoonYehQaf {
 	sub absNoon by absDotlessBeh;
 	sub nlqChotiyeh by absDotlessBeh;
@@ -393,6 +400,9 @@ lookup KafContextuals {
 	
 	# Use straight kaf before another kaf.
 	sub @KafPreKaf_default_sub' @KafForms		by	@KafPreKaf_kf_sub;
+	
+	# Use straight kaf before dal or teh-marbuta.
+	sub @KafPreKaf_default_sub' [absDalFin absTehMarbutaFin]		by	@KafDk_sub;
 } KafContextuals;
 
 lookup ConnectToRoundKaf{
@@ -476,24 +486,42 @@ lookup SplitNuqtaPairs {
 	sub		_dot2lIM__smallThree'	by		_dot2l					_smallThreeAbove;
 } SplitNuqtaPairs;
 
+
 lookup CleanupsDelete {
 	lookupflag 0;
+	
 	# delete hehhook from all but medial hehgoals:
 	sub  @HehGoalInitials'	_hehHook.small'		by		@HehGoalInitials;
 	sub  absHehGoalFin'			_hehHook.small'		by		absHehGoalFin;
 	
 	# delete non-existent nuqtas:
-	sub @BehForms'					_noDot1u'					by		@BehForms;
-	sub @NoonForms'					_noDot1u'					by		@NoonForms;
-	sub @FehForms'					_noDot1u'					by		@FehForms;
-	sub @QafForms'					_noDot2u'					by		@QafForms;
-	sub @ChotiyehForms'			_noDot2l'					by		@ChotiyehForms;
+	# TODO: merge into one rule?
+	sub @BehForms'					_noDot1u'		by		@BehForms;			# noon ghunna
+	sub @NoonForms'					_noDot1u'		by		@NoonForms;			# noon ghunna
+	sub @FehForms'					_noDot1u'		by		@FehForms;			# dotless feh
+	sub @QafForms'					_noDot2u'		by		@QafForms;			# dotless qaf
+	sub @BehForms'					_noDot2l'		by		@BehForms;			# chotiyeh
+	sub @ChotiyehForms'			_noDot2l'		by		@ChotiyehForms;	# chotiyeh
+	sub @BariyehForms'			_noDot2l'		by		@BariyehForms;
+	
+	# delete kaf squiggle from initials and medials:
+	sub	@KehehIMForms'			_kafSquiggle'			by		@KehehIMForms;
 	
 } CleanupsDelete;
 
 lookup CleanupsSub {
 	lookupflag 0;
+	
+	# the special marker for the chotiyeh should just use the standard glyphs at this point:
 	sub  _dot2lIM'	by	_dot2l;
+	
+	# delete non-existent nuqtas:
+	sub	_noDot2l__hamza'		by	absHamzaAbove;
+	
+	# delete kaf squiggle from initials and medials:
+	sub @KehehIMForms _dot2u__squiggle'		by	_dot2u;
+	sub @KehehIMForms _dot3u__squiggle'		by	_dot3u;
+		
 } CleanupsSub;
 
 } calt;		# end of feature
@@ -538,6 +566,11 @@ lookup AttachUpper {
 		lookupflag UseMarkFilteringSet @AllMarksUpper;
     pos		base @nUpper  		mark @_nUpper;
 } AttachUpper;
+
+lookup AttachHamzaAsUpper {
+		lookupflag UseMarkFilteringSet @_hamzaUpper;
+		pos		base @nUpper			mark @_hamzaUpper;
+} AttachHamzaAsUpper;
 
 lookup AttachUpper2 {
 		lookupflag UseMarkFilteringSet @AllMarksUpper;
