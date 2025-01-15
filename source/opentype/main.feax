@@ -466,6 +466,74 @@ lookup SpecialContextuals {
 
 } SpecialContextuals;
 
+@KafKfNormal = [absKehehIni.kf      absGafIni.kf      absKehehMed.dk      absGafMed.dk];
+@KafKfWide   = [absKehehIni.kf_wide absGafIni.kf_wide absKehehMed.kf_wide absGafMed.kf_wide];
+
+@NarrowPreKaf = [absBehMed absJeemMed absAinMed absMeemMed absHehGoalMed absFehMed];
+
+lookup WideForms {
+	lookupflag IgnoreMarks;
+	
+	# These help us avoid collisions.
+	
+	sub absFehIni'		@KafForms		by	absFehIni.kf_wide;
+	sub absFehMed'		@KafForms		by	absFehMed.kf_wide;
+	
+	# Wider beh forms for noon-ring or teh-ring:  .hdR, mmR, .jmR mmXR, .nnR, .nn_hgbmR, .snR
+	#csBehNoRing  csRingDot  _  >  csBehTehRing  g__attachedRing  csNoRingDot$2:2; 
+	# ///////// csNoRingDot = [_dot1u _dot2u]; csRingDot = [g__ring__dot1u g__ring__dot2u]
+	
+	# Special case: kaf w/3 dots + kaf/gaf; graf + kaf/gaf
+	#cKafKfNormal  _ >  cKafKfWide g__kafTop_null:K
+	#		/  _=K  _  (csNuqtaUpperWide  g__grafStroke)  cDiacritic?  cKafMF;
+	
+	# Special case: use a tall final kaf to keep the upper diacritic from having to jump above the kaf stroke
+	# In a later pass, shift the nuqta and diacritic down.
+	#csKafFin  >  csKafFinTall  /
+	#		(cFehIM cAinIM) cNuqtaLikeUpper  cDiacriticUpper  cNarrowPreKaf  MARKS _=K;
+	
+	# Special case: nuqta-small-V + kaf/gaf
+	#gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf   
+	#		/  _  _  cDiacritic?  (cKafMed  cKafFin);
+	#csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
+	
+	# Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
+	#gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
+	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N cDiacritic?              cKafMF;
+	#gJeemMed  >  gJeemMedKf_wide
+	#		/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cKafMF;
+	#gJeemMed  >  gJeemMedKf_wide
+	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cKafMF;
+
+	# Same issue with a lam and stuff above it
+	#gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
+	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N             cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
+	#gJeemMed  >  gJeemMedKf_wide
+	#		/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
+	#gJeemMed  >  gJeemMedKf_wide
+	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cLamMF (cNuqtaLikeUpper cDiacriticUpper);
+
+	# Special case: jeem w/3dots + kaf/alef
+	#gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  csNuqtaUpperWideSmallF  / _=J  _=N  cDiacritic?  cKafMF;
+	#gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  @N                      / _=J  _=N  cDiacritic?  cAlefFin;
+
+	# Special case: feh/ghain + jeem + kaf
+	#cNuqtaUpper  gJeemMed  >  csNuqtaUpperSmallF  gJeemMedKf_wide  /  (cFehIM cAinIM) _=N cDiacritic?    _=J  MARKS  cKafNoIso;
+  #           gJeemMed  >                      gJeemMedKf_wide  /  (cFehIM cAinIM)   cDiacriticUpper  _=J  MARKS  cKafNoIso;
+
+	# Special case: tah + jeem + kaf/gaf
+	#gJeemMed  >  gJeemMedKf_wide  /  (gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
+
+	# Special case: teh + khah + lam + diac
+	#gJeemMed  >  gJeemMedKf_wide
+	#		/ gBehIniJm  (cNuqtaUpper csLowerUpper)  cDiacritic?  _=J  cNuqtaLikeUpper  cDiacritic?  cLamMed  cDiacritic;
+
+	# Special case: nuqta + diac(s)
+	#gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
+
+
+} WideForms;
+
 } rlig;		#end of feature
 
 feature calt {
