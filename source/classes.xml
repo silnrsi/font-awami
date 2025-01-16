@@ -117,32 +117,41 @@ details including an FAQ.
 		absFehIni.kf_wide absFehMed.kf_wide
 	</class>
 	
-	<class name="KehehIMForms">
+	<class name="KehehIniForms">
 		absKehehIni absKehehIni.ai absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.benn absKehehIni.behg absKehehIni.bere
 		absKehehIni.beF absKehehIni.by absKehehIni.ch absKehehIni.fe  absKehehIni.hd absKehehIni.hgM absKehehIni.hgF absKehehIni.jm
 		absKehehIni.mm absKehehIni.mmX  absKehehIni.nn absKehehIni.qf absKehehIni.re absKehehIni.sd absKehehIni.sn absKehehIni.snsn absKehehIni.ta
+	</class>
+	<class name="KehehMedForms">
 		absKehehMed absKehehMed.ai absKehehMed.be absKehehMed.beM1 absKehehMed.beM2 absKehehMed.benn absKehehMed.behg absKehehMed.bere
 		absKehehMed.beF absKehehMed.by absKehehMed.ch absKehehMed.fe  absKehehMed.hd absKehehMed.hgM absKehehMed.hgF absKehehMed.jm
 		absKehehMed.mm absKehehMed.mmX  absKehehMed.nn absKehehMed.qf absKehehMed.re absKehehMed.sd absKehehMed.sn absKehehMed.snsn absKehehMed.ta
 		absKehehIni.dk absKehehMed.dk absKehehIni.kf_wide absKehehMed.kf_wide
 	</class>
-	
+
+	<class name="KehehIMForms">@KehehIniForms @KehehMedForms</class>
+	<class name="KehehMFForms">@KehehMedForms absKehehFin</class>
 	<class name="KehehForms">@KehehIMForms absKehehFin</class>
-	
-	<class name="GafIMForms">
+
+	<class name="GafIniForms">
 		absGafIni absGafIni.ai absGafIni.be absGafIni.beM1 absGafIni.beM2 absGafIni.benn absGafIni.behg absGafIni.bere
 		absGafIni.beF absGafIni.by absGafIni.ch absGafIni.fe  absGafIni.hd absGafIni.hgM absGafIni.hgF absGafIni.jm
 		absGafIni.mm absGafIni.mmX  absGafIni.nn absGafIni.qf absGafIni.re absGafIni.sd absGafIni.sn absGafIni.snsn absGafIni.ta
+	</class>
+	<class name="GafMedForms">
 		absGafMed absGafMed.ai absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.benn absGafMed.behg absGafMed.bere
 		absGafMed.beF absGafMed.by absGafMed.ch absGafMed.fe  absGafMed.hd absGafMed.hgM absGafMed.hgF absGafMed.jm
 		absGafMed.mm absGafMed.mmX  absGafMed.nn absGafMed.qf absGafMed.re absGafMed.sd absGafMed.sn absGafMed.snsn absGafMed.ta
 		absGafIni.dk absGafMed.dk absGafIni.kf_wide absGafMed.kf_wide
 	</class>
+	<class name="GafIMForms">@GafIniForms @GafMedForms</class>
+	<class name="GafMFForms">@GafMedForms absGafFin</class>
 	
 	<class name="GafForms">@GafIMForms absGafFin</class>
 	
 	<class name="KafIMForms">@KehehIMForms @GafIMForms</class>
-	
+	<class name="KafMFForms">@KehehMFForms @GafMFForms</class>
+	<class name="KafFinalForms">absKehehFin absGafFin</class>
 	<class name="KafForms">@KehehForms @GafForms</class>
 	
 	<class name="LamForms">
@@ -276,11 +285,11 @@ details including an FAQ.
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
-	<class name="KafMark_sub">
-		_dot1u  _dot1u
+	<class name="KehehMark_sub">
+		_dot1u  _dot3u
 		_kafSquiggle  _attachedRingMid  _dot2u__squiggle  _dot3u__squiggle    <!-- _dot1u__squiggle   -->
 	</class>
-	<class name="KafComposed_sub">
+	<class name="KehehComposed_sub">
 		absKehehDotAbove absKehehThreeDotsAbove
 		absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove     <!-- absKafDotAbove (not supported)  -->
 
@@ -787,6 +796,25 @@ details including an FAQ.
 		absHehGoalMed.re
 	</class>
 	
+	<!-- FOR VARIOUS CONTEXTUAL SHAPES -->
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="BehNoRing_sub">
+		absBehIni.hd absBehMed.hd absBehMed.jm absBehMed.mm absBehMed.mmX absBehMed.nn absBehMed.hgbm absBehMed.sn
+	</class>
+	
+		<class name="BehForRing_sub">
+		absBehIni.hdR absBehMed.hdR absBehMed.jmR absBehMed.mmR absBehMed.mmXR absBehMed.nnR absBehMed.hgbmR absBehMed.snR
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="RingDot_sub">_ring__dot1u _ring__dot2u</class>
+	<class name="NoRingDot_sub">_dot1u _dot2u</class>
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="KafKfNormal">absKehehIni.kf      absKehehMed.dk      absGafIni.kf      absGafMed.dk</class>
+	<class name="KafKfWide">  absKehehIni.kf_wide absKehehMed.kf_wide absGafIni.kf_wide absGafMed.kf_wide</class>
+	
 	<!-- FOR ALTERNATE HEIGHT KAFS -->
 	
 	<!-- THESE BASE CLASSES MUST BE KEPT IN SYNC WITH THE KAF-TOP CLASSES BELOW. -->
@@ -936,7 +964,7 @@ details including an FAQ.
 		<!-- _gafIniTop_short  -  no BeF -->
 		_gafTop_bj_short <!--jm--> _gafIniTop_short _gafIniTop_short _gafIniTop_short			<!-- Jm,Re,Sn,SnSn -->
 		_gafIniTop_short _gafIniTop_shorter <!--ta--> _gafIniTop_short _gafIniTop_short		<!-- Sd,Ta,Ai,Fe -->
-		_gafIniTop_short _kehehTop_m_bogus <!--mm--> g__gafIniTop_short g__gafIniTop_short <!-- Qf,Mm,MmX,Nn -->
+		_gafIniTop_short _kehehTop_m_bogus <!--mm--> _gafIniTop_short _gafIniTop_short		<!-- Qf,Mm,MmX,Nn -->
 		_gafIniTop_short _gafIniTop_short _gafIniTop_short _gafIniTop_short								<!-- Dk,Kf,HgM,HgF -->
 		_gafIniTop_short _gafIniTop_short _gafTop_bj_short <!--by-->           						<!-- Hd,Ch,By -->
 		_gafIniTop_short																																	<!-- Kf_wide -->

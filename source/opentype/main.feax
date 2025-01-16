@@ -52,6 +52,8 @@ languagesystem arab dflt;
 @AllMarksLower = [@NuqtaLikeLower @DiacLower];
 @AllMarksMiddle = [@_squiggle @_bar _attachedRingMid ];
 
+@NuqtaUpperWide_sub = [_dot2u _dot3u _dot4u];
+@NuqtaUpperWide_small_sub = [_dot2u.small _dot3u.small _dot4u.small];
 
 # Bariyeh width: 2600
 #@Zero = []; # < 100
@@ -148,6 +150,68 @@ lookup Kern2300 { pos @AllBases 2300; } Kern2300;
 lookup Kern2350 { pos @AllBases 2350; } Kern2350;
 
 
+#lookup KafShortGaf {
+#	lookupflag IgnoreMarks;
+#	sub @KehehIniBase_sub _gafTop' by @GafIni_top_short_sub;
+#} KafShortGaf;
+
+
+lookup KafBaseExperiment {
+    sub absKehehIni.be by absKehehIni.be absKehehIni.be;
+    sub absKehehIni.beM1 by absKehehIni.beM1 absKehehIni.beM1;
+    sub absKehehIni.beM2 by absKehehIni.beM2 absKehehIni.beM2;
+    sub absKehehIni.bere by absKehehIni.bere absKehehIni.bere;
+    sub absKehehIni.benn by absKehehIni.benn absKehehIni.benn;
+    sub absKehehIni.behg by absKehehIni.behg absKehehIni.behg;
+    sub absKehehIni.jm by absKehehIni.jm absKehehIni.jm;
+    sub absKehehIni.re by absKehehIni.re absKehehIni.re;
+    sub absKehehIni.sn by absKehehIni.sn absKehehIni.sn;
+    sub absKehehIni.snsn by absKehehIni.snsn absKehehIni.snsn;
+    sub absKehehIni.sd by absKehehIni.sd absKehehIni.sd;
+    sub absKehehIni.ta by absKehehIni.ta absKehehIni.ta;
+    sub absKehehIni.ai by absKehehIni.ai absKehehIni.ai;
+    sub absKehehIni.fe by absKehehIni.fe absKehehIni.fe;
+    sub absKehehIni.qf by absKehehIni.qf absKehehIni.qf;
+    sub absKehehIni.mm by absKehehIni.mm absKehehIni.mm;
+    sub absKehehIni.mmX by absKehehIni.mmX absKehehIni.mmX;
+    sub absKehehIni.nn by absKehehIni.nn absKehehIni.nn;
+    sub absKehehIni.dk by absKehehIni.dk absKehehIni.dk;
+    sub absKehehIni.kf by absKehehIni.kf absKehehIni.kf;
+    sub absKehehIni.hgM by absKehehIni.hgM absKehehIni.hgM;
+    sub absKehehIni.hgF by absKehehIni.hgF absKehehIni.hgF;
+    sub absKehehIni.hd by absKehehIni.hd absKehehIni.hd;
+    sub absKehehIni.ch by absKehehIni.ch absKehehIni.ch;
+    sub absKehehIni.by by absKehehIni.by absKehehIni.by;
+    sub absKehehIni.kf_wide by absKehehIni.kf_wide absKehehIni.kf_wide;
+    sub absGafIni.be by absKehehIni.be_base absGafIni.be;
+    sub absGafIni.beM1 by absKehehIni.beM1_base absGafIni.beM1;
+    sub absGafIni.beM2 by absKehehIni.beM2_base absGafIni.beM2;
+    sub absGafIni.bere by absKehehIni.bere_base absGafIni.bere;
+    sub absGafIni.benn by absKehehIni.benn_base absGafIni.benn;
+    sub absGafIni.behg by absKehehIni.behg_base absGafIni.behg;
+    sub absGafIni.jm by absKehehIni.jm_base absGafIni.jm;
+    sub absGafIni.re by absKehehIni.re_base absGafIni.re;
+    sub absGafIni.sn by absKehehIni.sn_base absGafIni.sn;
+    sub absGafIni.snsn by absKehehIni.snsn_base absGafIni.snsn;
+    sub absGafIni.sd by absKehehIni.sd_base absGafIni.sd;
+    sub absGafIni.ta by absKehehIni.ta_base absGafIni.ta;
+    sub absGafIni.ai by absKehehIni.ai_base absGafIni.ai;
+    sub absGafIni.fe by absKehehIni.fe_base absGafIni.fe;
+    sub absGafIni.qf by absKehehIni.qf_base absGafIni.qf;
+#    sub absGafIni.mm by absKehehIni.mm_base absGafIni.mm;
+    sub absGafIni.mmX by absKehehIni.mmX_base absGafIni.mmX;
+    sub absGafIni.nn by absKehehIni.nn_base absGafIni.nn;
+    sub absGafIni.dk by absKehehIni.dk_base absGafIni.dk;
+    sub absGafIni.kf by absKehehIni.kf_base absGafIni.kf;
+    sub absGafIni.hgM by absKehehIni.hgM_base absGafIni.hgM;
+    sub absGafIni.hgF by absKehehIni.hgF_base absGafIni.hgF;
+    sub absGafIni.hd by absKehehIni.hd_base absGafIni.hd;
+    sub absGafIni.ch by absKehehIni.ch_base absGafIni.ch;
+    sub absGafIni.by by absKehehIni.by_base absGafIni.by;
+    sub absGafIni.kf_wide by absKehehIni.kf_wide_base absGafIni.kf_wide;
+} KafBaseExperiment;
+
+
 #========== GSUB rules ==========
 
 # Separate bases from nuqtas
@@ -163,7 +227,7 @@ lookup DecomposeBases {
 	sub		@TahComposed_sub			by		absTah					@TahMark_sub;
 	sub		@AinComposed_sub			by		absAin					@AinMark_sub;
 	sub		@FehComposed_sub			by		absDotlessFeh		@FehMark_sub;
-	sub		@KafComposed_sub			by		absKeheh				@KafMark_sub;
+	sub		@KehehComposed_sub		by		absKeheh				@KehehMark_sub;
 	sub		@GafComposed_sub			by		absGaf					@GafMark_sub;
 	sub		@LamComposed_sub			by		absLam					@LamMark_sub;
 	# no meem varieties at this point
@@ -176,7 +240,6 @@ lookup DecomposeBases {
 	sub		@WawComposed_sub			by		absWaw					@WawMark_sub;
 	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
 } DecomposeBases;
-
 
 } ccmp;
 
@@ -192,7 +255,7 @@ lookup RecomposeIsolates {
 	sub		absTah					@TahMark_sub			by		@TahComposed_sub;
 	sub		absAin					@AinMark_sub			by		@AinComposed_sub;
 	sub		absDotlessFeh		@FehMark_sub			by		@FehComposed_sub;
-	sub		absKeheh				@KafMark_sub			by		@KafComposed_sub;
+	sub		absKeheh				@KehehMark_sub		by		@KehehComposed_sub;
 	sub		absGaf					@GafMark_sub			by		@GafComposed_sub;
 	sub		absLam					@LamMark_sub			by		@LamComposed_sub;
 	# no meem varieties at this point
@@ -466,31 +529,28 @@ lookup SpecialContextuals {
 
 } SpecialContextuals;
 
+
 @KafKfNormal = [absKehehIni.kf      absGafIni.kf      absKehehMed.dk      absGafMed.dk];
 @KafKfWide   = [absKehehIni.kf_wide absGafIni.kf_wide absKehehMed.kf_wide absGafMed.kf_wide];
+
+@KafFinTall	= [absKehehFin_tall absGafFin_tall];
 
 @NarrowPreKaf = [absBehMed absJeemMed absAinMed absMeemMed absHehGoalMed absFehMed];
 
 lookup WideForms {
-	lookupflag IgnoreMarks;
+	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
 	
 	# These help us avoid collisions.
 	
 	sub absFehIni'		@KafForms		by	absFehIni.kf_wide;
 	sub absFehMed'		@KafForms		by	absFehMed.kf_wide;
 	
-	# Wider beh forms for noon-ring or teh-ring:  .hdR, mmR, .jmR mmXR, .nnR, .nn_hgbmR, .snR
-	#csBehNoRing  csRingDot  _  >  csBehTehRing  g__attachedRing  csNoRingDot$2:2; 
-	# ///////// csNoRingDot = [_dot1u _dot2u]; csRingDot = [g__ring__dot1u g__ring__dot2u]
-	
 	# Special case: kaf w/3 dots + kaf/gaf; graf + kaf/gaf
-	#cKafKfNormal  _ >  cKafKfWide g__kafTop_null:K
-	#		/  _=K  _  (csNuqtaUpperWide  g__grafStroke)  cDiacritic?  cKafMF;
+	sub @KafKfNormal' [@NuqtaUpperWide_sub _grafStroke] @KafMFForms		by		@KafKfWide;
 	
 	# Special case: use a tall final kaf to keep the upper diacritic from having to jump above the kaf stroke
 	# In a later pass, shift the nuqta and diacritic down.
-	#csKafFin  >  csKafFinTall  /
-	#		(cFehIM cAinIM) cNuqtaLikeUpper  cDiacriticUpper  cNarrowPreKaf  MARKS _=K;
+	sub [@FehForms @AinForms] @NuqtaLikeUpper @NarrowPreKaf @KafFinalForms'		by		@KafFinTall;
 	
 	# Special case: nuqta-small-V + kaf/gaf
 	#gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf   
@@ -536,7 +596,32 @@ lookup WideForms {
 
 } rlig;		#end of feature
 
+
 feature calt {
+
+lookup KafSplit {
+	# Split kafs into base+top for easier manipulation.
+	sub @KehehIniFull_sub by @KehehIniBase_sub _kehehTop;
+	sub @KehehMedFull_sub by @KehehMedBase_sub _kehehTop;
+	sub @GafIniFull_sub by @KehehIniBase_sub _gafTop;
+	sub @GafMedFull_sub by @KehehMedBase_sub _gafTop;
+} KafSplit;
+
+#lookup KafCollisions {
+#	lookupflag IgnoreMarks;
+#	
+#	# shorter gaf before kaf
+#	sub absKehehIni.kf_base _gafTop' lookup KafShortGaf _gafTop absKehehFin;
+#} KafCollisions;
+
+lookup KafMerge {
+	# Merge back kafs that have not been modified.
+	sub @KehehIniBase_sub _kehehTop by @KehehIniFull_sub;
+	sub @KehehMedBase_sub _kehehTop by @KehehMedFull_sub;
+	sub @KehehIniBase_sub _gafTop by @GafIniFull_sub;
+	sub @KehehMedBase_sub _gafTop by @GafMedFull_sub;
+} KafMerge;
+
 
 lookup SplitNuqtaPairs {
 	# TODO: see if there is a way to use classes for this.
@@ -553,6 +638,15 @@ lookup SplitNuqtaPairs {
 	sub		_dot2lIM__smallTwo'		by		_dot2l					_smallTwoAbove;
 	sub		_dot2lIM__smallThree'	by		_dot2l					_smallThreeAbove;
 } SplitNuqtaPairs;
+
+# After ring and dots have been split.
+lookup WideForRing {
+	lookupflag UseMarkFilteringSet @_ring;
+
+	# Wider beh forms for noon-ring or teh-ring:  .hdR, mmR, .jmR mmXR, .nnR, .nn_hgbmR, .snR
+	sub @BehNoRing_sub'  _attachedRing  by @BehForRing_sub;
+
+} WideForRing;
 
 
 lookup CleanupsDelete {
@@ -573,7 +667,8 @@ lookup CleanupsDelete {
 	sub @BariyehForms'			_noDot2l'		by		@BariyehForms;
 	
 	# delete kaf squiggle from initials and medials:
-	sub	@KehehIMForms'			_kafSquiggle'			by		@KehehIMForms;
+	sub	@KehehIniForms'			_kafSquiggle'			by		@KehehIniForms;
+	sub	@KehehMedForms'			_kafSquiggle'			by		@KehehMedForms;
 	
 } CleanupsDelete;
 
