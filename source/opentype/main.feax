@@ -23,9 +23,10 @@ languagesystem arab dflt;
 @NuqtaUpper = [ _dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u];
 @NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l];
 @Nuqta = [@NuqtaUpper @NuqtaLower];
-@NuqtaLikeUpper = [@NuqtaUpper _hamza _hamza.arabic _smallTah _smallV  _smallTah2dots  _kafSquiggle
-	_smallThreeAbove _smallTwoAbove _wasla _wavyHamza
-	_dot2u__squiggle _dot3u__squiggle _dot3Noon
+@NuqtaLikeUpper = [@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove _smallTah  _smallV  _smallTah2dots  _kafSquiggle
+	_smallThreeAbove  _smallTwoAbove  _wasla _wavyHamza
+	_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
+	_dot1u_smallV  _dot1u_smallTah
 	_noDot1u _noDot2u ];
 @NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 	_dot2lIM  _dot2lIM.small _dot2l.tail
@@ -148,6 +149,22 @@ lookup Kern2200 { pos @AllBases 2200; } Kern2200;
 lookup Kern2250 { pos @AllBases 2250; } Kern2250;
 lookup Kern2300 { pos @AllBases 2300; } Kern2300;
 lookup Kern2350 { pos @AllBases 2350; } Kern2350;
+
+@NuqtaPlusMark_sub = [_dot1u_smallV _dot1u_smallTah];
+@NuqtaPlusMarkKf_sub = [_dot1u_smallV.kf _dot1u_smallTah.kf];
+
+lookup _WideForms1 {
+	sub absBehMed by absBehMed.kf_wide;
+	sub @NuqtaPlusMark_sub by @NuqtaPlusMarkKf_sub;
+} _WideForms1;
+
+@NuqtaUpper_normal_sub = [_dot1u  _dot2u  _dot2vu  _dot3u  _dot3uD  _dot4u];
+@NuqtaUpper_small_sub = [_dot1u.small  _dot2u.small  _dot2vu.small  _dot3u.small  _dot3uD.small  _dot4u.small];
+
+lookup _WideForms2 {
+	sub @NuqtaUpper_normal_sub by @NuqtaUpper_small_sub;
+	sub absJeemMed by absJeemMed.kf_wide;
+} _WideForms2;
 
 
 #lookup KafShortGaf {
@@ -404,20 +421,20 @@ lookup BasicContextuals {
 	sub @IniDefault_sub' @HehDoForms	by	@IniHd_sub;
 	sub	@MedDefault_sub' @HehDoForms	by	@MedHd_sub;
 	
-	sub @IniDefault_sub' absHehGoalFin	by @IniHgF_sub;
-	sub @MedDefault_sub' absHehGoalFin	by @MedHgF_sub;
+	sub @IniDefault_sub' absHehGoalFin			by @IniHgF_sub;
+	sub @MedDefault_sub' absHehGoalFin			by @MedHgF_sub;
 	
-	sub @IniDefault_sub' @HehGoalForms	by	@IniHgM_sub;
-	sub	@MedDefault_sub' @HehGoalForms	by	@MedHgM_sub;
+	sub @IniDefault_sub' @HehGoalForms			by	@IniHgM_sub;
+	sub	@MedDefault_sub' @HehGoalForms			by	@MedHgM_sub;
 	
-	sub @IniDefault_sub' absRehFin			by	@IniRe_sub;
-	sub	@MedDefault_sub' absRehFin			by	@MedRe_sub;
+	sub @IniDefault_sub' absRehFin					by	@IniRe_sub;
+	sub	@MedDefault_sub' absRehFin					by	@MedRe_sub;
 	
-	sub @IniDefault_sub' absNoonFin			by	@IniNn_sub;
-	sub	@MedDefault_sub' absNoonFin			by	@MedNn_sub;
+	sub @IniDefault_sub' absNoonFin					by	@IniNn_sub;
+	sub	@MedDefault_sub' absNoonFin					by	@MedNn_sub;
 	
-	sub @IniDefault_sub' absDotlessQaf	by	@IniQf_sub;
-	sub @MedDefault_sub' absDotlessQaf	by	@MedQf_sub;
+	sub @IniDefault_sub' absDotlessQaf			by	@IniQf_sub;
+	sub @MedDefault_sub' absDotlessQaf			by	@MedQf_sub;
 	
 	sub @IniDefault_sub' nlqChotiyehFin			by	@IniCh_sub;
 	sub	@MedDefault_sub' nlqChotiyehFin			by	@MedCh_sub;
@@ -450,10 +467,10 @@ lookup BehContextuals {
 	rsub absBehIni.be'		@PostBeM2			by	absBehIni.beM2;
 	
 	# Finally handle the first item in the chain:
-	rsub @IniBe_sub'   absBehMed.beM1		by	@IniBeM2_sub;
-	rsub @IniBe_sub'   absBehMed.beM2		by	@IniBeM1_sub;
-	rsub @MedBe_sub'   absBehMed.beM1		by	@MedBeM2_sub;		# these two rules must be last, so that
-	rsub @MedBe_sub'   absBehMed.beM2		by	@MedBeM1_sub;		# they only get triggered by non-behs
+	rsub @IniBe_sub'   [absBehMed absBehMed.beM1 absBehMed.benn]	by	@IniBeM2_sub;
+	rsub @IniBe_sub'   absBehMed.beM2															by	@IniBeM1_sub;
+	rsub @MedBe_sub'   [absBehMed absBehMed.beM1 absBehMed.benn]	by	@MedBeM2_sub;		# these two rules must be last, so that
+	rsub @MedBe_sub'   absBehMed.beM2															by	@MedBeM1_sub;		# they only get triggered by non-behs
 
 } BehContextuals;					# end of lookup
 
@@ -533,9 +550,11 @@ lookup SpecialContextuals {
 @KafKfNormal = [absKehehIni.kf      absGafIni.kf      absKehehMed.dk      absGafMed.dk];
 @KafKfWide   = [absKehehIni.kf_wide absGafIni.kf_wide absKehehMed.kf_wide absGafMed.kf_wide];
 
-@KafFinTall	= [absKehehFin_tall absGafFin_tall];
+@KafFinNormal_sub = [absKehehFin absGafFin];
+@KafFinTall_sub	= [absKehehFin_tall absGafFin_tall];
 
 @NarrowPreKaf = [absBehMed absJeemMed absAinMed absMeemMed absHehGoalMed absFehMed];
+
 
 lookup WideForms {
 	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
@@ -550,62 +569,72 @@ lookup WideForms {
 	
 	# Special case: use a tall final kaf to keep the upper diacritic from having to jump above the kaf stroke
 	# In a later pass, shift the nuqta and diacritic down.
-	sub [@FehForms @AinForms] @NuqtaLikeUpper @NarrowPreKaf @KafFinalForms'		by		@KafFinTall;
+	sub [@FehForms @AinForms] @NuqtaLikeUpper @NarrowPreKaf @KafFinNormal_sub'		by		@KafFinTall_sub;
 	
-	# Special case: nuqta-small-V + kaf/gaf
-	#gBehMed  csNuqtaPlusMark  >  gBehMedKf_wide  csNuqtaPlusMarkKf   
-	#		/  _  _  cDiacritic?  (cKafMed  cKafFin);
-	#csNuqtaPlusMark  >  csNuqtaPlusMarkKf  /  _  [cBehMed MARKS]?  cKafMF;
-	
-	# Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
-	#gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
-	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N cDiacritic?              cKafMF;
-	#gJeemMed  >  gJeemMedKf_wide
-	#		/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cKafMF;
-	#gJeemMed  >  gJeemMedKf_wide
-	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cKafMF;
-
-	# Same issue with a lam and stuff above it
-	#gJeemMed  csNuqtaUpper_normal  >  gJeemMedKf_wide  csNuqtaUpper_small
-	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower?                  MARKS  _=J  _=N             cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
-	#gJeemMed  >  gJeemMedKf_wide
-	#		/  (gBehIniJm gBehMedJm)                                   MARKS  _=J  cNuqtaLikeUpper cDiacritic?  cLamMF (cNuqtaLikeUpper cDiacriticUpper);
-	#gJeemMed  >  gJeemMedKf_wide
-	#		/  (gBehIniJm gBehMedJm) cNuqtaLikeLower? cNuqtaLikeUpper  MARKS  _=J  MARKS                        cLamMF (cNuqtaLikeUpper cDiacriticUpper);
-
-	# Special case: jeem w/3dots + kaf/alef
-	#gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  csNuqtaUpperWideSmallF  / _=J  _=N  cDiacritic?  cKafMF;
-	#gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  @N                      / _=J  _=N  cDiacritic?  cAlefFin;
-
-	# Special case: feh/ghain + jeem + kaf
-	#cNuqtaUpper  gJeemMed  >  csNuqtaUpperSmallF  gJeemMedKf_wide  /  (cFehIM cAinIM) _=N cDiacritic?    _=J  MARKS  cKafNoIso;
-  #           gJeemMed  >                      gJeemMedKf_wide  /  (cFehIM cAinIM)   cDiacriticUpper  _=J  MARKS  cKafNoIso;
-
 	# Special case: tah + jeem + kaf/gaf
-	#gJeemMed  >  gJeemMedKf_wide  /  (gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
+	sub [absTahIni.jm absTahMed.jm]                   absJeemMed'                  @KafMFForms  by  absJeemMed.kf_wide;
+	sub [absTahIni.jm absTahMed.jm]  @NuqtaLikeUpper  absJeemMed'                  @KafMFForms  by  absJeemMed.kf_wide;
+	sub [absTahIni.jm absTahMed.jm]                   absJeemMed' @NuqtaLikeUpper  @KafMFForms  by  absJeemMed.kf_wide;
+	sub [absTahIni.jm absTahMed.jm]  @NuqtaLikeUpper  absJeemMed' @NuqtaLikeUpper  @KafMFForms  by  absJeemMed.kf_wide;
 
 	# Special case: teh + khah + lam + diac
-	#gJeemMed  >  gJeemMedKf_wide
-	#		/ gBehIniJm  (cNuqtaUpper csLowerUpper)  cDiacritic?  _=J  cNuqtaLikeUpper  cDiacritic?  cLamMed  cDiacritic;
-
-	# Special case: nuqta + diac(s)
-	#gBehMed  >  gBehMedKf_wide  /  _  cNuqtaLikeUpper  cDiacriticUpper cDiacriticUpper?  cKafMF;
-
-
+	# TODO: decide if this is needed.
+	#sub absBehIni.jm  [@NuqtaLikeUpper @NuqtaLowerUpper]  absJeemMed' @NuqtaLikeUpper @LamMedForms  by  absJeemMed.kf_wide;
 } WideForms;
+
+lookup WideFormsDiac {
+	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	
+	# Special case: nuqta + diac(s)
+	sub absBehMed' @NuqtaLikeUpper @DiacUpper @KafMFForms  by  absBehMed.kf_wide;
+
+} WideFormsDiac;
+
+# continuation of WideForms, for chaining rules
+lookup WideForms_chain {
+	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	
+	# Special case: nuqta-small-V + kaf/gaf
+	# TODO: raise AP on the NuqtaPlusMark.kf_sub glyphs.
+	sub absBehMed' lookup _WideForms1 @NuqtaPlusMark_sub' lookup _WideForms1 @KafMFForms;
+	sub @NuqtaPlusMark_sub' lookup _WideForms1 @KafMFForms;
+	sub @NuqtaPlusMark_sub' lookup _WideForms1 @BehMedForms @KafMFForms;
+	sub @NuqtaPlusMark_sub' lookup _WideForms1 @BehMedForms @NuqtaLikeUpper @KafMFForms;
+	
+	# Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
+	# (In Graphite the lam requires a mark above it, but this works fine and is simpler.)
+	sub [absBehIni.jm absBehMed.jm]  absJeemMed' lookup _WideForms2  @NuqtaUpper_normal_sub' lookup _WideForms2  [@KafMFForms @LamMFForms];
+	sub [absBehIni.jm absBehMed.jm]  absJeemMed' lookup _WideForms2  @AllMarksUpper                              [@KafMFForms @LamMFForms];
+	sub [absBehIni.jm absBehMed.jm]  @NuqtaLikeUpper
+																	 absJeemMed' lookup _WideForms2  @AllMarksUpper                              [@KafMFForms @LamMFForms];
+																	 
+	# Special case: jeem w/3dots + kaf/alef
+	sub absJeemMed' lookup _WideForms2  @NuqtaUpperWide_sub' lookup _WideForms2  @KafMFForms;
+	sub absJeemMed' lookup _WideForms2  @NuqtaUpperWide_sub                      @AlefFinForms;
+	
+} WideForms_chain;
+lookup WideForms_chain2 {
+	# Special case: feh/ghain + jeem + kaf
+	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2
+																										@NuqtaUpperWide_sub' lookup _WideForms2       @KafMFForms;
+	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2  @NuqtaLikeUpper  @KafMFForms;
+	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2                   @KafMFForms;
+
+
+} WideForms_chain2;
 
 } rlig;		#end of feature
 
 
 feature calt {
 
-lookup KafSplit {
-	# Split kafs into base+top for easier manipulation.
-	sub @KehehIniFull_sub by @KehehIniBase_sub _kehehTop;
-	sub @KehehMedFull_sub by @KehehMedBase_sub _kehehTop;
-	sub @GafIniFull_sub by @KehehIniBase_sub _gafTop;
-	sub @GafMedFull_sub by @KehehMedBase_sub _gafTop;
-} KafSplit;
+#lookup KafSplit {
+#	# Split kafs into base+top for easier manipulation.
+#	sub @KehehIniFull_sub by @KehehIniBase_sub _kehehTop;
+#	sub @KehehMedFull_sub by @KehehMedBase_sub _kehehTop;
+#	sub @GafIniFull_sub by @KehehIniBase_sub _gafTop;
+#	sub @GafMedFull_sub by @KehehMedBase_sub _gafTop;
+#} KafSplit;
 
 #lookup KafCollisions {
 #	lookupflag IgnoreMarks;
@@ -614,13 +643,13 @@ lookup KafSplit {
 #	sub absKehehIni.kf_base _gafTop' lookup KafShortGaf _gafTop absKehehFin;
 #} KafCollisions;
 
-lookup KafMerge {
-	# Merge back kafs that have not been modified.
-	sub @KehehIniBase_sub _kehehTop by @KehehIniFull_sub;
-	sub @KehehMedBase_sub _kehehTop by @KehehMedFull_sub;
-	sub @KehehIniBase_sub _gafTop by @GafIniFull_sub;
-	sub @KehehMedBase_sub _gafTop by @GafMedFull_sub;
-} KafMerge;
+#lookup KafMerge {
+#	# Merge back kafs that have not been modified.
+#	sub @KehehIniBase_sub _kehehTop by @KehehIniFull_sub;
+#	sub @KehehMedBase_sub _kehehTop by @KehehMedFull_sub;
+#	sub @KehehIniBase_sub _gafTop by @GafIniFull_sub;
+#	sub @KehehMedBase_sub _gafTop by @GafMedFull_sub;
+#} KafMerge;
 
 
 lookup SplitNuqtaPairs {
@@ -658,11 +687,17 @@ lookup CleanupsDelete {
 	
 	# delete non-existent nuqtas:
 	# TODO: merge into one rule?
-	sub @BehForms'					_noDot1u'		by		@BehForms;			# noon ghunna
+	sub @BehIniForms'				_noDot1u'		by		@BehIniForms;		# noon ghunna
+	sub @BehMedForms'				_noDot1u'		by		@BehMedForms;
+	sub @BehFinForms'				_noDot1u'		by		@BehFinForms;
 	sub @NoonForms'					_noDot1u'		by		@NoonForms;			# noon ghunna
-	sub @FehForms'					_noDot1u'		by		@FehForms;			# dotless feh
+	sub @FehIniForms'				_noDot1u'		by		@FehIniForms;		# dotless feh
+	sub @FehMedForms'				_noDot1u'		by		@FehMedForms;		# dotless feh
+	sub absFehFin'					_noDot1u'		by		absFehFin;			# dotless feh
 	sub @QafForms'					_noDot2u'		by		@QafForms;			# dotless qaf
-	sub @BehForms'					_noDot2l'		by		@BehForms;			# chotiyeh
+	sub @BehIniForms'				_noDot2l'		by		@BehIniForms;		# chotiyeh
+	sub @BehMedForms'				_noDot2l'		by		@BehMedForms;
+	sub @BehFinForms'				_noDot2l'		by		@BehFinForms;
 	sub @ChotiyehForms'			_noDot2l'		by		@ChotiyehForms;	# chotiyeh
 	sub @BariyehForms'			_noDot2l'		by		@BariyehForms;
 	
