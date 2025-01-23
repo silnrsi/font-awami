@@ -55,18 +55,25 @@ details including an FAQ.
 	
 	<class name="BehForms">@BehIniForms @BehMedForms @BehFinForms</class>
 	
-	<class name="JeemForms">
+	<class name="JeemIniForms">
 		absJeem
 		absJeemIni absJeemIni.ai absJeemIni.be absJeemIni.beM1 absJeemIni.beM2 absJeemIni.benn absJeemIni.behg absJeemIni.bere
 		absJeemIni.beF absJeemIni.by absJeemIni.ch absJeemIni.fe  absJeemIni.hd absJeemIni.hgM absJeemIni.hgF absJeemIni.jm
 		absJeemIni.mm absJeemIni.mmX  absJeemIni.nn absJeemIni.qf absJeemIni.re absJeemIni.sd absJeemIni.sn absJeemIni.snsn absJeemIni.ta
+	</class>
+	<class name="JeemMedForms">
 		absJeemMed absJeemMed.ai absJeemMed.be absJeemMed.beM1 absJeemMed.beM2 absJeemMed.benn absJeemMed.behg absJeemMed.bere
 		absJeemMed.beF absJeemMed.by absJeemMed.ch absJeemMed.fe  absJeemMed.hd absJeemMed.hgM absJeemMed.hgF absJeemMed.jm
 		absJeemMed.mm absJeemMed.mmX  absJeemMed.nn absJeemMed.qf absJeemMed.re absJeemMed.sd absJeemMed.sn absJeemMed.snsn absJeemMed.ta
-		absJeemFin
 		absJeemMed.bekl absJeemMed.by_short absJeemMed.kf_wide
-		absJeemFin_short
 	</class>
+	<class name="JeemFinForms">
+		absJeemFin absJeemFin_short
+	</class>
+	
+	<class name="JeemMFForms">@JeemMedForms @JeemFinForms</class>
+	
+	<class name="JeemForms">@JeemIniForms @JeemMedForms @JeemFinForms</class>
 	
 	<class name="SeenForms">
 		absSeen
@@ -154,17 +161,21 @@ details including an FAQ.
 		absGafIni absGafIni.ai absGafIni.be absGafIni.beM1 absGafIni.beM2 absGafIni.benn absGafIni.behg absGafIni.bere
 		absGafIni.beF absGafIni.by absGafIni.ch absGafIni.fe  absGafIni.hd absGafIni.hgM absGafIni.hgF absGafIni.jm
 		absGafIni.mm absGafIni.mmX  absGafIni.nn absGafIni.qf absGafIni.re absGafIni.sd absGafIni.sn absGafIni.snsn absGafIni.ta
+		absGafIni.dk absGafIni.kf_wide
 	</class>
 	<class name="GafMedForms">
 		absGafMed absGafMed.ai absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.benn absGafMed.behg absGafMed.bere
 		absGafMed.beF absGafMed.by absGafMed.ch absGafMed.fe  absGafMed.hd absGafMed.hgM absGafMed.hgF absGafMed.jm
 		absGafMed.mm absGafMed.mmX  absGafMed.nn absGafMed.qf absGafMed.re absGafMed.sd absGafMed.sn absGafMed.snsn absGafMed.ta
-		absGafIni.dk absGafMed.dk absGafIni.kf_wide absGafMed.kf_wide
+		absGafMed.dk absGafMed.kf_wide absGafMed.kf_lm
 	</class>
 	<class name="GafIMForms">@GafIniForms @GafMedForms</class>
 	<class name="GafMFForms">@GafMedForms absGafFin</class>
 	
 	<class name="GafForms">@GafIMForms absGafFin absGafFin_tall</class>
+	
+	<class name="KafIniForms">@KehehIniForms @GafIniForms</class>
+	<class name="KafMedForms">@KehehMedForms @GafMedForms</class>
 	
 	<class name="KafIMForms">@KehehIMForms @GafIMForms</class>
 	<class name="KafMFForms">@KehehMFForms @GafMFForms absGafFin_tall</class>
@@ -899,18 +910,6 @@ details including an FAQ.
 
 	<!-- *NEXT 6 CLASSES MUST MATCH* -->
 	
-	<class name="GafMedFull_sub">
-		absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.bere
-		absGafMed.benn absGafMed.behg absGafMed.beF
-		absGafMed.jm absGafMed.re absGafMed.sn absGafMed.snsn absGafMed.sd
-		absGafMed.ta absGafMed.ai absGafMed.fe absGafMed.qf absGafMed.mm absGafMed.mmX
-		absGafMed.nn absGafMed.dk 
-		<!-- absGafMed.kf - does not exist -->
-		absGafMed.hgM absGafMed.hgF absGafMed.hd absGafMed.ch
-		absGafMed.by   <!-- no change -->
-		absGafMed.kf_wide
-	</class>
-
 	<class name="KehehMedFull_sub">
 		absKehehMed.be absKehehMed.beM1 absKehehMed.beM2 absKehehMed.bere
 		absKehehMed.benn absKehehMed.behg absKehehMed.beF
@@ -923,18 +922,18 @@ details including an FAQ.
 		absKehehMed.kf_wide
 	</class>
 	
-	<class name="GafMedBase_sub">
-		absKehehMed.be_base absKehehMed.beM1_base absKehehMed.beM2_base absKehehMed.bere_base 
-		absKehehMed.benn_base absKehehMed.behg_base absKehehMed.beF_base
-		absKehehMed.jm_base absKehehMed.re_base absKehehMed.sn_base absKehehMed.snsn_base absKehehMed.sd_base
-		absKehehMed.ta_base absKehehMed.ai_base absKehehMed.fe_base absKehehMed.qf_base absKehehMed.mm_base absKehehMed.mmX_base
-		absKehehMed.nn_base absKehehMed.dk_base
-		<!-- absKehehMed.kf_base - does not exist -->
-		absKehehMed.hgM_base absKehehMed.hgF_base absKehehMed.hd_base absKehehMed.ch_base
-		absGafMed.by <!-- no change -->
-		absKehehMed.kf_wide_base
+	<class name="GafMedFull_sub">
+		absGafMed.be absGafMed.beM1 absGafMed.beM2 absGafMed.bere
+		absGafMed.benn absGafMed.behg absGafMed.beF
+		absGafMed.jm absGafMed.re absGafMed.sn absGafMed.snsn absGafMed.sd
+		absGafMed.ta absGafMed.ai absGafMed.fe absGafMed.qf absGafMed.mm absGafMed.mmX
+		absGafMed.nn absGafMed.dk 
+		<!-- absGafMed.kf - does not exist -->
+		absGafMed.hgM absGafMed.hgF absGafMed.hd absGafMed.ch
+		absGafMed.by   <!-- no change -->
+		absGafMed.kf_wide
 	</class>
-	
+
 	<class name="KehehMedBase_sub">
 		absKehehMed.be_base absKehehMed.beM1_base absKehehMed.beM2_base absKehehMed.bere_base 
 		absKehehMed.benn_base absKehehMed.behg_base absKehehMed.beF_base
@@ -947,9 +946,7 @@ details including an FAQ.
 		absKehehMed.kf_wide_base
 	</class>
 
-	<!-- For med-short and tall forms. The only difference is that these do modify the .by form. -->
-
-	<class name="GafMedBaseT_sub">"
+	<class name="GafMedBase_sub">
 		absKehehMed.be_base absKehehMed.beM1_base absKehehMed.beM2_base absKehehMed.bere_base 
 		absKehehMed.benn_base absKehehMed.behg_base absKehehMed.beF_base
 		absKehehMed.jm_base absKehehMed.re_base absKehehMed.sn_base absKehehMed.snsn_base absKehehMed.sd_base
@@ -957,9 +954,12 @@ details including an FAQ.
 		absKehehMed.nn_base absKehehMed.dk_base
 		<!-- absKehehMed.kf_base - does not exist -->
 		absKehehMed.hgM_base absKehehMed.hgF_base absKehehMed.hd_base absKehehMed.ch_base
-		absKehehMed.by absKehehMed.kf_wide_base
+		absGafMed.by <!-- no change -->
+		absKehehMed.kf_wide_base
 	</class>
 	
+	<!-- For med-short and tall forms. The only difference is that these do use a .by base form. -->
+
 	<class name="KehehMedBaseT_sub">"
 		absKehehMed.be_base absKehehMed.beM1_base absKehehMed.beM2_base absKehehMed.bere_base 
 		absKehehMed.benn_base absKehehMed.behg_base absKehehMed.beF_base
@@ -968,7 +968,18 @@ details including an FAQ.
 		absKehehMed.nn_base absKehehMed.dk_base
 		<!-- absKehehMed.kf_base - does not exist -->
 		absKehehMed.hgM_base absKehehMed.hgF_base absKehehMed.hd_base absKehehMed.ch_base
-		absKehehMed.by absKehehMed.kf_wide_base
+		absKehehMed.by_base absKehehMed.kf_wide_base
+	</class>
+	
+	<class name="GafMedBaseT_sub">"
+		absKehehMed.be_base absKehehMed.beM1_base absKehehMed.beM2_base absKehehMed.bere_base 
+		absKehehMed.benn_base absKehehMed.behg_base absKehehMed.beF_base
+		absKehehMed.jm_base absKehehMed.re_base absKehehMed.sn_base absKehehMed.snsn_base absKehehMed.sd_base
+		absKehehMed.ta_base absKehehMed.ai_base absKehehMed.fe_base absKehehMed.qf_base absKehehMed.mm_base absKehehMed.mmX_base
+		absKehehMed.nn_base absKehehMed.dk_base
+		<!-- absKehehMed.kf_base - does not exist -->
+		absKehehMed.hgM_base absKehehMed.hgF_base absKehehMed.hd_base absKehehMed.ch_base
+		absKehehMed.by_base absKehehMed.kf_wide_base
 	</class>
 	
 	<!-- *NEXT 3 CLASSES MUST MATCH* -->
@@ -980,24 +991,13 @@ details including an FAQ.
 	<class name="GafIMBaseT_sub">  @GafIniBase_sub   @GafMedBaseT_sub  </class>
 	<class name="KehehIMBaseT_sub">@KehehIniBase_sub @KehehMedBaseT_sub</class>
 	
+	<class name="AllKafBases">@KehehMedBase_sub  @GafMedBase_sub @KehehMedBaseT_sub @GafMedBaseT_sub</class>
+	
 	<!-- Kaf tops -->
 
 	<!--	Note that for a few initials, we use the shorter versions instead of the short, and there are special
 				forms for By and Jm forms.
 	-->
-	<!-- Must match @GafIniFull. -->
-	<class name="GafIni_top_short_sub">
-		_gafIniTop_short _gafIniTop_short _gafIniTop_short																<!-- Be,BeM1,BeM2 -->
-		_gafIniTop_short _gafIniTop_short _gafIniTop_short																<!-- BeRe,BeNn,BeHg -->
-		<!-- _gafIniTop_short  -  no BeF -->
-		_gafTop_bj_short <!--jm--> _gafIniTop_short _gafIniTop_short _gafIniTop_short			<!-- Jm,Re,Sn,SnSn -->
-		_gafIniTop_short _gafIniTop_shorter <!--ta--> _gafIniTop_short _gafIniTop_short		<!-- Sd,Ta,Ai,Fe -->
-		_gafIniTop_short _kehehTop_m_bogus <!--mm--> _gafIniTop_short _gafIniTop_short		<!-- Qf,Mm,MmX,Nn -->
-		_gafIniTop_short _gafIniTop_short _gafIniTop_short _gafIniTop_short								<!-- Dk,Kf,HgM,HgF -->
-		_gafIniTop_short _gafIniTop_short _gafTop_bj_short <!--by-->           						<!-- Hd,Ch,By -->
-		_gafIniTop_short																																	<!-- Kf_wide -->
-	</class>
-
 	<!-- Must match @KehehIniFull. -->
 	<class name="KehehIni_top_short_sub">
 		_kehehIniTop_short _kehehIniTop_short _kehehIniTop_short																<!-- Be,BeM1,BeM2 -->
@@ -1011,30 +1011,43 @@ details including an FAQ.
 		_kehehIniTop_short																																			<!-- Kf_wide -->
 	</class>
 	
-	<!-- Must match @GafMedFull. -->
-	<class name="GafMed_top_short_sub">
-		_gafMedTop_short _gafMedTop_short _gafMedTop_short														<!-- Be,BeM1,BeM2 -->
-		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- BeRe,BeNn,BeHg,BeF -->
-		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- Jm,Re,Sn,SnSn -->
-		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- Sd,Ta,Ai,Fe -->
-		_gafMedTop_short _kafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short 
-		<!-- _gafMedTop_short - .kf does not exist -->																<!-- ^ Qf,Mm,MmX,Nn,Dk -->
-		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- HgM,HgF,Hd,Ch -->
-		_gafMedTop_short _gafMedTop_short													           					<!-- By, Kf_wide -->
+	<!-- Must match @GafIniFull. -->
+	<class name="GafIni_top_short_sub">
+		_gafIniTop_short _gafIniTop_short _gafIniTop_short																<!-- Be,BeM1,BeM2 -->
+		_gafIniTop_short _gafIniTop_short _gafIniTop_short																<!-- BeRe,BeNn,BeHg -->
+		<!-- _gafIniTop_short  -  no BeF -->
+		_gafTop_bj_short <!--jm--> _gafIniTop_short _gafIniTop_short _gafIniTop_short			<!-- Jm,Re,Sn,SnSn -->
+		_gafIniTop_short _gafIniTop_shorter <!--ta--> _gafIniTop_short _gafIniTop_short		<!-- Sd,Ta,Ai,Fe -->
+		_gafIniTop_short _kehehTop_m_bogus <!--mm--> _gafIniTop_short _gafIniTop_short		<!-- Qf,Mm,MmX,Nn -->
+		_gafIniTop_short _gafIniTop_short _gafIniTop_short _gafIniTop_short								<!-- Dk,Kf,HgM,HgF -->
+		_gafIniTop_short _gafIniTop_short _gafTop_bj_short <!--by-->           						<!-- Hd,Ch,By -->
+		_gafIniTop_short																																	<!-- Kf_wide -->
 	</class>
-	
+
 	<!-- Must match @KehehMedFull. -->
 	<class name="KehehMed_top_short_sub">
 		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short															<!-- Be,BeM1,BeM2 -->
 		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short						<!-- BeRe,BeNn,BeHg,BeF -->
 		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short						<!-- Jm,Re,Sn,SnSn -->
 		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short						<!-- Sd,Ta,Ai,Fe -->
-		_kehehMedTop_short _kafMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short 
+		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short 
 		<!-- _kehehMedTop_short - .kf does not exist -->																			<!-- ^ Qf,Mm,MmX,Nn,Dk -->
 		_kehehMedTop_short _kehehMedTop_short _kehehMedTop_short _kehehMedTop_short						<!-- HgM,HgF,Hd,Ch -->
 		_kehehMedTop_short _kehehMedTop_short													           							<!-- By, Kf_wide -->
 	</class>
 
+	<!-- Must match @GafMedFull. -->
+	<class name="GafMed_top_short_sub">
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short														<!-- Be,BeM1,BeM2 -->
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- BeRe,BeNn,BeHg,BeF -->
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- Jm,Re,Sn,SnSn -->
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- Sd,Ta,Ai,Fe -->
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short 
+		<!-- _gafMedTop_short - .kf does not exist -->																<!-- ^ Qf,Mm,MmX,Nn,Dk -->
+		_gafMedTop_short _gafMedTop_short _gafMedTop_short _gafMedTop_short						<!-- HgM,HgF,Hd,Ch -->
+		_gafMedTop_short _gafMedTop_short													           					<!-- By, Kf_wide -->
+	</class>
+	
 	<class name="KafIni_top_short_sub">@KehehIni_top_short_sub @GafIni_top_short_sub</class>
 	<class name="KafMed_top_short_sub">@KehehMed_top_short_sub @GafMed_top_short_sub</class>
 	
@@ -1045,27 +1058,39 @@ details including an FAQ.
 		_gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter																	<!-- Be,BeM1,BeM2 -->
 		_gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter																	<!-- BeRe,BeNn,BeHg -->
 		<!-- _gafIniTop_shorter   - no BeF -->
-		_gafTop_bj_shorter <!--jm--> _gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter			<!-- Jm,Re,Sn,SnSn -->
-		_gafIniTop_shorter _gafIniTop_shorter <!--ta--> _gafIniTop_shorter _gafIniTop_shorter			<!-- Sd,Ta,Ai,Fe -->
-		_gafIniTop_shorter _kehehTop_m_bogus <!--mm--> g__gafIniTop_shorter g__gafIniTop_shorter	<!-- Qf,Mm,MmX,Nn -->
+		_gafTop_bj_short <!--jm--> _gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter				<!-- Jm,Re,Sn,SnSn -->
+		_gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter								<!-- Sd,Ta,Ai,Fe -->
+		_gafIniTop_shorter _kehehTop_m_bogus <!--mm--> _gafIniTop_shorter _gafIniTop_shorter			<!-- Qf,Mm,MmX,Nn -->
 		_gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter _gafIniTop_shorter								<!-- Dk,Kf,HgM,HgF -->
-		_gafIniTop_shorter _gafIniTop_shorter _gafTop_bj_shorter <!--by-->           							<!-- Hd,Ch,By -->
+		_gafIniTop_shorter _gafIniTop_shorter _gafTop_bj_short <!--by-->           								<!-- Hd,Ch,By -->
 		_gafIniTop_shorter																																				<!-- Kf_wide -->
 	</class>
 
 	<!-- Must match @KehehIniFull. -->
 	<class name="KehehIni_top_shorter_sub">
-		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter																	<!-- Be,BeM1,BeM2 -->
-		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter																	<!-- BeRe,BeNn,BeHg -->
+		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter																<!-- Be,BeM1,BeM2 -->
+		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter																<!-- BeRe,BeNn,BeHg -->
 		<!-- _kehehIniTop_shorter   - no BeF -->
-		_kehehTop_bj_shorter <!--jm--> _kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter		<!-- Jm,Re,Sn,SnSn -->
-		_kehehIniTop_shorter _kehehIniTop_shorter <!--ta--> _kehehIniTop_shorter _kehehIniTop_shorter		<!-- Sd,Ta,Ai,Fe -->
-		_kehehIniTop_shorter _kehehTop_m_bogus <!--mm--> g__kehehIniTop_shorter g__kehehIniTop_shorter	<!-- Qf,Mm,MmX,Nn -->
-		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter							<!-- Dk,Kf,HgM,HgF -->
-		_kehehIniTop_shorter _kehehIniTop_shorter _kehehTop_bj_shorter <!--by-->           							<!-- Hd,Ch,By -->
-		_kehehIniTop_shorter																																						<!-- Kf_wide -->
+		_kehehTop_bj_short <!--jm--> _kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter		<!-- Jm,Re,Sn,SnSn -->
+		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter						<!-- Sd,Ta,Ai,Fe -->
+		_kehehIniTop_shorter _kehehTop_m_bogus <!--mm--> _kehehIniTop_shorter _kehehIniTop_shorter		<!-- Qf,Mm,MmX,Nn -->
+		_kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter _kehehIniTop_shorter						<!-- Dk,Kf,HgM,HgF -->
+		_kehehIniTop_shorter _kehehIniTop_shorter _kehehTop_bj_short <!--by-->           							<!-- Hd,Ch,By -->
+		_kehehIniTop_shorter																																					<!-- Kf_wide -->
 	</class>
 	
+	<!-- Must match @KehehMedFull. -->
+	<class name="KehehMed_top_shorter_sub">
+		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter																<!-- Be,BeM1,BeM2 -->
+		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- BeRe,BeNn,BeHg,BeF -->
+		_kehehMedTop_short <!--jm--> _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter		<!-- Jm,Re,Sn,SnSn -->
+		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- Sd,Ta,Ai,Fe -->
+		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter 
+		<!-- _kehehMedTop_shorter - .kf does not exist -->																						<!-- ^ Qf,Mm,MmX,Nn,Dk -->
+		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- HgM,HgF,Hd,Ch -->
+		_kehehMedTop_short <!--by--> _kehehMedTop_shorter													           					<!-- By, Kf_wide -->
+	</class>
+
 	<!-- Must match @GafMedFull. -->
 	<class name="GafMed_top_shorter_sub">
 		_gafMedTop_shorter _gafMedTop_shorter _gafMedTop_shorter															<!-- Be,BeM1,BeM2 -->
@@ -1077,18 +1102,6 @@ details including an FAQ.
 		_gafMedTop_shorter _gafMedTop_shorter _gafMedTop_shorter _gafMedTop_shorter						<!-- HgM,HgF,Hd,Ch -->
 		_gafMedTop_short <!--by--> _gafMedTop_shorter													           			<!-- By, Kf_wide -->
 	</class>
-
-	<!-- Must match @KehehMedFull. -->
-	<class name="KehehMed_top_shorter_sub">
-		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter																<!-- Be,BeM1,BeM2 -->
-		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- BeRe,BeNn,BeHg,BeF -->
-		_kehehMedTop_short <!--jm--> _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter		<!-- Jm,Re,Sn,SnSn -->
-		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- Sd,Ta,Ai,Fe -->
-		_kehehMedTop_shorter _kafMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter 
-		<!-- _kehehMedTop_shorter - .kf does not exist -->																						<!-- ^ Qf,Mm,MmX,Nn,Dk -->
-		_kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter _kehehMedTop_shorter						<!-- HgM,HgF,Hd,Ch -->
-		_kehehMedTop_short <!--by--> _kehehMedTop_shorter													           					<!-- By, Kf_wide -->
-	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="KafIni_top_shorter_sub">@KehehIni_top_shorter_sub @GafIni_top_shorter_sub</class>
@@ -1099,45 +1112,41 @@ details including an FAQ.
 	<!--	Only a handful of these forms are actually used (final heh-goal, beh, tah, feh). -->
 	
 	<!-- Must match @Keheh/GafIniFull. -->
-	<class name="KafIni_top_taller_sub">
-		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller																	<!-- Be,BeM1,BeM2 -->
-		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller																	<!-- BeRe,BeNn,BeHg -->
+	<class name="KehehIni_top_taller_sub">
+		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller																<!-- Be,BeM1,BeM2 -->
+		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller																<!-- BeRe,BeNn,BeHg -->
 		<!-- _kehehIniTop_taller   - no BeF -->
-		_gafIniTop_shorter <!--jm--> _kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller		<!-- Jm,Re,Sn,SnSn -->
-		_kehehIniTop_taller _kehehIniTop_taller <!--ta--> _kehehIniTop_taller _kehehIniTop_taller		<!-- Sd,Ta,Ai,Fe -->
-		_kehehIniTop_taller _kehehTop_m_bogus <!--mm--> g__kehehIniTop_taller g__kehehIniTop_taller	<!-- Qf,Mm,MmX,Nn -->
-		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller							<!-- Dk,Kf,HgM,HgF -->
-		_kehehIniTop_taller _kehehIniTop_taller _kehehTop_m_bogus <!--by-->      		     						<!-- Hd,Ch,By -->
-		_kehehIniTop_taller																																					<!-- Kf_wide -->
-		
+		_kehehTop_m_bogus <!--jm--> _kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller		<!-- Jm,Re,Sn,SnSn -->
+		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller						<!-- Sd,Ta,Ai,Fe -->
+		_kehehIniTop_taller _kehehTop_m_bogus <!--mm--> _kehehIniTop_taller _kehehIniTop_taller		<!-- Qf,Mm,MmX,Nn -->
+		_kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller _kehehIniTop_taller						<!-- Dk,Kf,HgM,HgF -->
+		_kehehIniTop_taller _kehehIniTop_taller _kehehTop_m_bogus <!--by-->      		     					<!-- Hd,Ch,By -->
+		_kehehIniTop_taller																																				<!-- Kf_wide -->
+	</class>
+	<class name="GafIni_top_taller_sub">
 		_gafIniTop_taller _gafIniTop_taller _gafIniTop_taller																	<!-- Be,BeM1,BeM2 -->
 		_gafIniTop_taller _gafIniTop_taller _gafIniTop_taller																	<!-- BeRe,BeNn,BeHg -->
 		<!-- _gafIniTop_taller   - no BeF -->
-		_gafIniTop_shorter <!--jm--> _gafIniTop_taller _gafIniTop_taller _gafIniTop_taller		<!-- Jm,Re,Sn,SnSn -->
-		_gafIniTop_taller _gafIniTop_taller <!--ta--> _gafIniTop_taller _gafIniTop_taller			<!-- Sd,Ta,Ai,Fe -->
-		_gafIniTop_taller _kehehTop_m_bogus <!--mm--> g__gafIniTop_taller g__gafIniTop_taller	<!-- Qf,Mm,MmX,Nn -->
+		_kehehTop_m_bogus <!--jm--> _gafIniTop_taller _gafIniTop_taller _gafIniTop_taller			<!-- Jm,Re,Sn,SnSn -->
+		_gafIniTop_taller _gafIniTop_taller _gafIniTop_taller _gafIniTop_taller								<!-- Sd,Ta,Ai,Fe -->
+		_gafIniTop_taller _kehehTop_m_bogus <!--mm--> _gafIniTop_taller _gafIniTop_taller			<!-- Qf,Mm,MmX,Nn -->
 		_gafIniTop_taller _gafIniTop_taller _gafIniTop_taller _gafIniTop_taller								<!-- Dk,Kf,HgM,HgF -->
 		_gafIniTop_taller _gafIniTop_taller _kehehTop_m_bogus <!--by-->      		     					<!-- Hd,Ch,By -->
 		_gafIniTop_taller																																			<!-- Kf_wide -->
 	</class>
 	
-	<!-- Must match @GafMedFull. -->
-	<class name="GafMed_top_tall_sub">
-		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall																<!-- Be,BeM1,BeM2 -->
-		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- BeRe,BeNn,BeHg,BeF -->
-		_gafMedTop_bj_tall <!--jm--> _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall	<!-- Jm,Re,Sn,SnSn -->
-		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- Sd,Ta,Ai,Fe -->
-		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall 
-		<!-- _gafMedTop_tall  - .kf does not exist -->																<!-- ^ Qf,Mm,MmX,Nn,Dk -->
-		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- HgM,HgF,Hd,Ch -->
-		_gafMedTop_tall _gafMedTop_tall																		     				<!-- By, Kf_wide -->
-	</class>
-
+	<class name="KafIni_top_taller_sub">@KehehIni_top_taller_sub @GafIni_top_taller_sub</class>
+	
+	<!--	Initial tall forms are not needed, since tall forms are only needed
+				to deal with preceding glyphs in the sequence. Preceding sequences
+				(e.g., alef-madda) are handled using the taller set above.
+	-->
+	
 	<!-- Must match @KehehMedFull. -->
 	<class name="KehehMed_top_tall_sub">
 		_kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall																	<!-- Be,BeM1,BeM2 -->
 		_kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall								<!-- BeRe,BeNn,BeHg,BeF -->
-		_kehehMedTop_bj_tall <!--jm--> _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall	<!-- Jm,Re,Sn,SnSn -->
+		_kehehTop_jm_tall <!--jm--> _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall	<!-- Jm,Re,Sn,SnSn -->
 		_kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall								<!-- Sd,Ta,Ai,Fe -->
 		_kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall _kehehMedTop_tall 
 		<!-- _kehehMedTop_tall  - .kf does not exist -->																			<!-- ^ Qf,Mm,MmX,Nn,Dk -->
@@ -1145,34 +1154,46 @@ details including an FAQ.
 		_kehehMedTop_tall _kehehMedTop_tall																										<!-- By, Kf_wide -->
 	</class>
 	
+	<!-- Must match @GafMedFull. -->
+	<class name="GafMed_top_tall_sub">
+		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall																<!-- Be,BeM1,BeM2 -->
+		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- BeRe,BeNn,BeHg,BeF -->
+		_gafTop_bj_tall <!--jm--> _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall	<!-- Jm,Re,Sn,SnSn -->
+		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- Sd,Ta,Ai,Fe -->
+		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall 
+		<!-- _gafMedTop_tall  - .kf does not exist -->																<!-- ^ Qf,Mm,MmX,Nn,Dk -->
+		_gafMedTop_tall _gafMedTop_tall _gafMedTop_tall _gafMedTop_tall								<!-- HgM,HgF,Hd,Ch -->
+		_gafMedTop_tall _gafMedTop_tall																		     				<!-- By, Kf_wide -->
+	</class>
+
 	<class name="KafMed_top_tall_sub">@KehehMed_top_tall_sub @GafMed_top_tall_sub</class>
 	
 	<!--	Initial medshort forms are not needed, since the medshort form is only needed
 				to deal with preceding glyphs. Initials never need their diagonal strokes shortened.
 	-->
 	
-	<!-- Must match @GafMedFull. -->
-	<class name="GafMed_top_medshort_sub">
-		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort																		<!-- Be,BeM1,BeM2 -->
-		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort								<!-- BeRe,BeNn,BeHg,BeF -->
-		_gafMedTop_bj_tall <!--jm--> _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort			<!-- Jm,Re,Sn,SnSn -->
-		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort								<!-- Sd,Ta,Ai,Fe -->
-		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort 
-		<!-- _gafMedTop_medshort  - .kf does not exist -->																						<!-- ^ Qf,Mm,MmX,Nn,Dk -->
-		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort								<!-- HgM,HgF,Hd,Ch -->
-		_kafTop_null <!--by full form--> _gafMedTop_medshort																					<!-- By, Kf_wide -->
-	</class>
-	
 	<!-- Must match @KehehMedFull. -->
 	<class name="KehehMed_top_medshort_sub">
-		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort																			<!-- Be,BeM1,BeM2 -->
-		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort								<!-- BeRe,BeNn,BeHg,BeF -->
-		_kehehMedTop_bj_tall <!--jm--> _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort			<!-- Jm,Re,Sn,SnSn -->
-		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort								<!-- Sd,Ta,Ai,Fe -->
+		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort																<!-- Be,BeM1,BeM2 -->
+		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort					<!-- BeRe,BeNn,BeHg,BeF -->
+		_kehehTop_jm_tall <!--jm--> _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort		<!-- Jm,Re,Sn,SnSn -->
+		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort					<!-- Sd,Ta,Ai,Fe -->
 		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort 
-		<!-- _kehehMedTop_medshort  - .kf does not exist -->																									<!-- ^ Qf,Mm,MmX,Nn,Dk -->
-		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort								<!-- HgM,HgF,Hd,Ch -->
-		_kafTop_null <!--by full form--> _kehehMedTop_medshort																								<!-- By, Kf_wide -->
+		<!-- _kehehMedTop_medshort  - .kf does not exist -->																						<!-- ^ Qf,Mm,MmX,Nn,Dk -->
+		_kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort _kehehMedTop_medshort					<!-- HgM,HgF,Hd,Ch -->
+		_kehehTop_null <!--by full form--> _kehehMedTop_medshort																				<!-- By, Kf_wide -->
+	</class>
+	
+	<!-- Must match @GafMedFull. -->
+	<class name="GafMed_top_medshort_sub">
+		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort																<!-- Be,BeM1,BeM2 -->
+		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort						<!-- BeRe,BeNn,BeHg,BeF -->
+		_gafTop_bj_tall <!--jm--> _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort			<!-- Jm,Re,Sn,SnSn -->
+		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort						<!-- Sd,Ta,Ai,Fe -->
+		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort 
+		<!-- _gafMedTop_medshort  - .kf does not exist -->																				<!-- ^ Qf,Mm,MmX,Nn,Dk -->
+		_gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort _gafMedTop_medshort						<!-- HgM,HgF,Hd,Ch -->
+		_kehehTop_null <!--by full form--> _gafMedTop_medshort																		<!-- By, Kf_wide -->
 	</class>
 	
 	<class name="KafMed_top_medshort_sub">@KehehMed_top_medshort_sub @GafMed_top_medshort_sub</class>"

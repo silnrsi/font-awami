@@ -56,6 +56,10 @@ languagesystem arab dflt;
 @NuqtaUpperWide_sub = [_dot2u _dot3u _dot4u];
 @NuqtaUpperWide_small_sub = [_dot2u.small _dot3u.small _dot4u.small];
 
+@NLikeUpperTall = [_dot3u _dot3u.small _dot4u _dot4u.small _dot2vu _smallTah _smallTah2dots
+	_dot1u_smallTah _dot1u_smallTah.kf _dot1u_smallV _dot1u_smallV.kf _dot1u_ngMark 
+	_dot2lIM__hamza _verticalStroke];
+
 # Bariyeh width: 2600
 #@Zero = []; # < 100
 # 100-500
@@ -166,67 +170,104 @@ lookup _WideForms2 {
 	sub absJeemMed by absJeemMed.kf_wide;
 } _WideForms2;
 
+# Use a short version of the keheh or gaf.
+lookup _KafShort {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_short_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_short_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_short_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_short_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafShort;
 
-#lookup KafShortGaf {
-#	lookupflag IgnoreMarks;
-#	sub @KehehIniBase_sub _gafTop' by @GafIni_top_short_sub;
-#} KafShortGaf;
+# Use an even shorter version of the keheh or gaf.
+lookup _KafShorter {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_shorter_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_shorter_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_shorter_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_shorter_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafShorter;
 
+# Use a tall version of the keheh or gaf. Only needed for medials.
+lookup _KafTall {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_tall_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_tall_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafTall;
 
-lookup KafBaseExperiment {
-    sub absKehehIni.be by absKehehIni.be absKehehIni.be;
-    sub absKehehIni.beM1 by absKehehIni.beM1 absKehehIni.beM1;
-    sub absKehehIni.beM2 by absKehehIni.beM2 absKehehIni.beM2;
-    sub absKehehIni.bere by absKehehIni.bere absKehehIni.bere;
-    sub absKehehIni.benn by absKehehIni.benn absKehehIni.benn;
-    sub absKehehIni.behg by absKehehIni.behg absKehehIni.behg;
-    sub absKehehIni.jm by absKehehIni.jm absKehehIni.jm;
-    sub absKehehIni.re by absKehehIni.re absKehehIni.re;
-    sub absKehehIni.sn by absKehehIni.sn absKehehIni.sn;
-    sub absKehehIni.snsn by absKehehIni.snsn absKehehIni.snsn;
-    sub absKehehIni.sd by absKehehIni.sd absKehehIni.sd;
-    sub absKehehIni.ta by absKehehIni.ta absKehehIni.ta;
-    sub absKehehIni.ai by absKehehIni.ai absKehehIni.ai;
-    sub absKehehIni.fe by absKehehIni.fe absKehehIni.fe;
-    sub absKehehIni.qf by absKehehIni.qf absKehehIni.qf;
-    sub absKehehIni.mm by absKehehIni.mm absKehehIni.mm;
-    sub absKehehIni.mmX by absKehehIni.mmX absKehehIni.mmX;
-    sub absKehehIni.nn by absKehehIni.nn absKehehIni.nn;
-    sub absKehehIni.dk by absKehehIni.dk absKehehIni.dk;
-    sub absKehehIni.kf by absKehehIni.kf absKehehIni.kf;
-    sub absKehehIni.hgM by absKehehIni.hgM absKehehIni.hgM;
-    sub absKehehIni.hgF by absKehehIni.hgF absKehehIni.hgF;
-    sub absKehehIni.hd by absKehehIni.hd absKehehIni.hd;
-    sub absKehehIni.ch by absKehehIni.ch absKehehIni.ch;
-    sub absKehehIni.by by absKehehIni.by absKehehIni.by;
-    sub absKehehIni.kf_wide by absKehehIni.kf_wide absKehehIni.kf_wide;
-    sub absGafIni.be by absKehehIni.be_base absGafIni.be;
-    sub absGafIni.beM1 by absKehehIni.beM1_base absGafIni.beM1;
-    sub absGafIni.beM2 by absKehehIni.beM2_base absGafIni.beM2;
-    sub absGafIni.bere by absKehehIni.bere_base absGafIni.bere;
-    sub absGafIni.benn by absKehehIni.benn_base absGafIni.benn;
-    sub absGafIni.behg by absKehehIni.behg_base absGafIni.behg;
-    sub absGafIni.jm by absKehehIni.jm_base absGafIni.jm;
-    sub absGafIni.re by absKehehIni.re_base absGafIni.re;
-    sub absGafIni.sn by absKehehIni.sn_base absGafIni.sn;
-    sub absGafIni.snsn by absKehehIni.snsn_base absGafIni.snsn;
-    sub absGafIni.sd by absKehehIni.sd_base absGafIni.sd;
-    sub absGafIni.ta by absKehehIni.ta_base absGafIni.ta;
-    sub absGafIni.ai by absKehehIni.ai_base absGafIni.ai;
-    sub absGafIni.fe by absKehehIni.fe_base absGafIni.fe;
-    sub absGafIni.qf by absKehehIni.qf_base absGafIni.qf;
-#    sub absGafIni.mm by absKehehIni.mm_base absGafIni.mm;
-    sub absGafIni.mmX by absKehehIni.mmX_base absGafIni.mmX;
-    sub absGafIni.nn by absKehehIni.nn_base absGafIni.nn;
-    sub absGafIni.dk by absKehehIni.dk_base absGafIni.dk;
-    sub absGafIni.kf by absKehehIni.kf_base absGafIni.kf;
-    sub absGafIni.hgM by absKehehIni.hgM_base absGafIni.hgM;
-    sub absGafIni.hgF by absKehehIni.hgF_base absGafIni.hgF;
-    sub absGafIni.hd by absKehehIni.hd_base absGafIni.hd;
-    sub absGafIni.ch by absKehehIni.ch_base absGafIni.ch;
-    sub absGafIni.by by absKehehIni.by_base absGafIni.by;
-    sub absGafIni.kf_wide by absKehehIni.kf_wide_base absGafIni.kf_wide;
-} KafBaseExperiment;
+# Use an even taller version of the keheh or gaf. Only needed for initials.
+lookup _KafTaller {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_taller_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_taller_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafTaller;
+
+# Use a medium-short version of the keheh or gaf (standard height with short diagonal).
+# Only needed for medials.
+lookup _KafMedshort {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_medshort_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_medshort_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafMedshort;
+
+# Use a short version of the lam before a kaf.
+lookup _LamShort {
+	sub absLamIni  by  absLamIni_short;
+	sub absLamMed  by  absLamMed_short;
+} _LamShort;
+
+lookup _NoChange {
+	ignore sub @AllMarksUpper';
+} _NoChange;
 
 
 #========== GSUB rules ==========
@@ -517,6 +558,8 @@ lookup SeenContextuals {
 	# Use "kashida" form of the seen between two seens.
 	sub [absSeenIni.sn absSeenMed.sn absSeenMed.sn_sn]		absSeenMed.sn'	@SeenForms		by	absSeenMed.sn_sn;
 	
+	# TODO: tighter form of seen before flat-topped jeems.
+	
 } SeenContextuals;
 
 
@@ -543,7 +586,7 @@ lookup SpecialContextuals {
 	lookupflag IgnoreMarks;
 	
 	sub [absBehIni.beM2 absBehMed.behg]		absBehMed.hgF'		absHehGoalFin		by		absBehMed.hgF_be;
-
+	
 } SpecialContextuals;
 
 
@@ -612,16 +655,13 @@ lookup WideForms_chain {
 	sub absJeemMed' lookup _WideForms2  @NuqtaUpperWide_sub' lookup _WideForms2  @KafMFForms;
 	sub absJeemMed' lookup _WideForms2  @NuqtaUpperWide_sub                      @AlefFinForms;
 	
-} WideForms_chain;
-lookup WideForms_chain2 {
 	# Special case: feh/ghain + jeem + kaf
 	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2
 																										@NuqtaUpperWide_sub' lookup _WideForms2       @KafMFForms;
 	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2  @NuqtaLikeUpper  @KafMFForms;
 	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2                   @KafMFForms;
 
-
-} WideForms_chain2;
+} WideForms_chain;
 
 } rlig;		#end of feature
 
@@ -629,43 +669,83 @@ lookup WideForms_chain2 {
 feature calt {
 
 #lookup KafSplit {
-#	# Split kafs into base+top for easier manipulation.
-#	sub @KehehIniFull_sub by @KehehIniBase_sub _kehehTop;
-#	sub @KehehMedFull_sub by @KehehMedBase_sub _kehehTop;
-#	sub @GafIniFull_sub by @KehehIniBase_sub _gafTop;
-#	sub @GafMedFull_sub by @KehehMedBase_sub _gafTop;
+	# Split kafs into base+top for easier manipulation.
+#	sub @KehehIniFull_sub		by	_kehehTop	@KehehIniBase_sub;
+#	sub @KehehMedFull_sub		by	_kehehTop	@KehehMedBase_sub;
+#	sub @GafIniFull_sub			by	_gafTop		@KehehIniBase_sub;
+#	sub @GafMedFull_sub			by	_gafTop		@KehehMedBase_sub;
 #} KafSplit;
 
-#lookup KafCollisions {
-#	lookupflag IgnoreMarks;
-#	
-#	# shorter gaf before kaf
-#	sub absKehehIni.kf_base _gafTop' lookup KafShortGaf _gafTop absKehehFin;
-#} KafCollisions;
+
+@KjNormalEntry = [absKehehMed.jm absGafMed.jm];
+@KjLowEntry    = [absKehehMed.jm_lowentry absGafMed.jm_lowentry];
+@NeedsLowKaf = [absBehIni absBehMed absSeenIni absSeenMed absSadIni absSadMed];
+
+lookup KafCollisionsDiac {
+	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	
+	# Tall final kaf:
+	sub @NLikeUpperTall  @DiacUpper [absKehehFin absGafFin]' by [absKehehFin_tall absGafFin_tall];
+	
+	# Tall: large-nuqta + diacritic + kaf
+	sub @NLikeUpperTall  @DiacUpper  @KafMedFull_sub' lookup _KafTall; 
+	
+	# Special case: Lam + diac + kaf - shorten lam AND heighten kaf
+	sub absLamIni' lookup _LamShort  @AllMarksUpper' lookup _NoChange  @KafMedForms' lookup _KafTall;
+	sub absLamMed' lookup _LamShort  @AllMarksUpper' lookup _NoChange  @KafMedForms' lookup _KafTall;
+	
+} KafCollisionsDiac;
+
+lookup KafCollisionsNuqta {
+	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
+	
+	# Lower entry before jeem (since it as a unique entrance that doesn't work for standard alternate kafs)
+	sub @NeedsLowKaf @NLikeUpperTall            @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;
+	sub [absFehIni absFehMed]  @NuqtaLikeUpper  @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;
+	sub [absKehehIni.kf absKehehMed.dk]         @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;        
+} KafCollisionsNuqta;
+
+lookup KafCollisions {
+	lookupflag IgnoreMarks;
+	
+	# Special case: alef-madda + kaf/gaf + final-heh-goal/beh/tah/feh - make kaf tall so alef-madda can squeeze in
+	sub absAlefMaddaAbove  @KafIniForms' lookup _KafTaller;	
+	
+	# shorter gaf before kaf
+	sub [absGafIni.kf absGafMed.dk]' lookup _KafShort  absKehehFin;
+	
+	# Shorten lam before kaf
+	sub [absLamIni absLamMed]' lookup _LamShort @KafMFForms;
+	
+	# Lam + gaf +kaf/gaf =? special form of gaf
+	sub [absLamIni_short absLamMed_short]  absGafMed.dk'  @KafMFForms  by  absGafMed.kf_lm;
+	
+} KafCollisions;
+
 
 #lookup KafMerge {
-#	# Merge back kafs that have not been modified.
-#	sub @KehehIniBase_sub _kehehTop by @KehehIniFull_sub;
-#	sub @KehehMedBase_sub _kehehTop by @KehehMedFull_sub;
-#	sub @KehehIniBase_sub _gafTop by @GafIniFull_sub;
-#	sub @KehehMedBase_sub _gafTop by @GafMedFull_sub;
+	# Merge back kafs that have not been modified.
+#	sub _kehehTop @KehehIniBase_sub by @KehehIniFull_sub;
+#	sub _kehehTop @KehehMedBase_sub by @KehehMedFull_sub;
+#	sub _gafTop @KehehIniBase_sub by @GafIniFull_sub;
+#	sub _gafTop @KehehMedBase_sub by @GafMedFull_sub;
 #} KafMerge;
 
 
 lookup SplitNuqtaPairs {
 	# TODO: see if there is a way to use classes for this.
-	sub		_dot1l__smallTah'			by		_dot1l					_smallTah;
-	sub		_dot2vl__smallTah'		by		_dot2vl					_smallTah;
-	sub		_dot1l__dot1u'				by		_dot1l					_dot1u.small;
-	sub		_hehHook__dot2u'			by		_hehHook.small	_dot2u.small;
-	sub		_ring__dot2u'					by		_attachedRing		_dot2u.small;
-	sub		_noDot2l__hamza'			by		_noDot2l				absHamzaAbove;
-	sub		_dot2lIM__smallV'			by		_dot2l					_smallV;
-	sub		_hehHook__hamza'			by		_hehHook.small	absHamzaAbove;
-	sub		_dot3l__dot3u'				by		_dot3l					_dot3u.small;
-	sub		_ring__dot1u'					by		_attachedRing		_dot1u.small;
-	sub		_dot2lIM__smallTwo'		by		_dot2l					_smallTwoAbove;
-	sub		_dot2lIM__smallThree'	by		_dot2l					_smallThreeAbove;
+	sub		_dot1l__smallTah'			by		_dot1l						_smallTah;
+	sub		_dot2vl__smallTah'		by		_dot2vl						_smallTah;
+	sub		_dot1l__dot1u'				by		_dot1l						_dot1u.small;
+	sub		_hehHook__dot2u'			by		_hehHook.small		_dot2u.small;
+	sub		_ring__dot2u'					by		_attachedRing			_dot2u.small;
+	sub		_noDot2l__hamza'			by		_noDot2l					absHamzaAbove;
+	sub		_dot2lIM__smallV'			by		_dot2l						_smallV;
+	sub		_hehHook__hamza'			by		_hehHook.small		absHamzaAbove;
+	sub		_dot3l__dot3u'				by		_dot3l						_dot3u.small;
+	sub		_ring__dot1u'					by		_attachedRing			_dot1u.small;
+	sub		_dot2lIM__smallTwo'		by		_dot2l						_smallTwoAbove;
+	sub		_dot2lIM__smallThree'	by		_dot2l						_smallThreeAbove;
 } SplitNuqtaPairs;
 
 # After ring and dots have been split.
@@ -705,6 +785,14 @@ lookup CleanupsDelete {
 	sub	@KehehIniForms'			_kafSquiggle'			by		@KehehIniForms;
 	sub	@KehehMedForms'			_kafSquiggle'			by		@KehehMedForms;
 	
+	# delete bogus kaf tops:
+	sub absKehehMed.jm'		_kehehTop_m_bogus		by  absKehehMed.jm;
+	sub absGafMed.jm'			_kehehTop_m_bogus		by  absGafMed.jm;
+	sub absKehehMed.by'		_kehehTop_m_bogus		by  absKehehMed.by;
+	sub absGafMed.by'			_kehehTop_m_bogus		by  absGafMed.by;
+	sub absKehehMed.mm'		_kehehTop_m_bogus		by  absKehehMed.mm;
+	sub absGafMed.mm'			_kehehTop_m_bogus		by  absGafMed.mm;
+	
 } CleanupsDelete;
 
 lookup CleanupsSub {
@@ -731,6 +819,11 @@ feature mark {
 
 # There is ambiguity and overlap among the various attachment classes, so we do the most
 # general attachments first, and put the more specific cases last so they override.
+
+lookup AttachKafTop {
+		lookupflag UseMarkFilteringSet @_kafTop;
+		pos		base @kafTop		mark @_kafTop;
+} AttachKafTop;
 
 # In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
 lookup AttachLowerDiacsLikeNuqtas {
@@ -795,6 +888,7 @@ lookup AttachAlefDiacToLam {
 		# pos		base @nUpper			mark @_mUpperLam;
 		# This is necessary to limit the rules to lams.
 		# TODO: simplify this by adding a distinct AP to the lam forms duplicating nUpper.
+		
 		pos base absLamFin <anchor 1561 2671> mark @_mUpperLam;
 		pos base absLamFin._kfTall <anchor 1565 3171> mark @_mUpperLam;
 		pos base absLamFin_short <anchor 1555 2471> mark @_mUpperLam;
