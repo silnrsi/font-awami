@@ -75,40 +75,55 @@ details including an FAQ.
 	
 	<class name="JeemForms">@JeemIniForms @JeemMedForms @JeemFinForms</class>
 	
-	<class name="SeenForms">
+	<class name="SeenIniForms">
 		absSeen
 		absSeenIni absSeenIni.ai absSeenIni.be absSeenIni.beM1 absSeenIni.beM2 absSeenIni.benn absSeenIni.behg absSeenIni.bere
 		absSeenIni.beF absSeenIni.by absSeenIni.ch absSeenIni.fe  absSeenIni.hd absSeenIni.hgM absSeenIni.hgF absSeenIni.jm
 		absSeenIni.mm absSeenIni.mmX  absSeenIni.nn absSeenIni.qf absSeenIni.re absSeenIni.sd absSeenIni.sn absSeenIni.snsn absSeenIni.ta
+		absSeenIni.jm_flat
+	</class>
+	<class name="SeenMedForms">
 		absSeenMed absSeenMed.ai absSeenMed.be absSeenMed.beM1 absSeenMed.beM2 absSeenMed.benn absSeenMed.behg absSeenMed.bere
 		absSeenMed.beF absSeenMed.by absSeenMed.ch absSeenMed.fe  absSeenMed.hd absSeenMed.hgM absSeenMed.hgF absSeenMed.jm
 		absSeenMed.mm absSeenMed.mmX  absSeenMed.nn absSeenMed.qf absSeenMed.re absSeenMed.sd absSeenMed.sn absSeenMed.snsn absSeenMed.ta
-		absSeenFin
-		absSeenIni.jm_flat absSeenMed.jm_flat absSeenMed.sn_sn
-		absSeenFin_short
+		absSeenMed.jm_flat absSeenMed.sn_sn
 	</class>
+
+
+	<class name="SeenFinForms">
+		absSeenFin absSeenFin_short
+	</class>
+	<class name="SeenForms">@SeenIniForms @SeenMedForms @SeenFinForms</class>
 	
-	<class name="SadForms">
+	<class name="SadIniForms">
 		absSadIni absSadIni.ai absSadIni.be absSadIni.beM1 absSadIni.beM2 absSadIni.benn absSadIni.behg absSadIni.bere
 		absSadIni.beF absSadIni.by absSadIni.ch absSadIni.fe  absSadIni.hd absSadIni.hgM absSadIni.hgF absSadIni.jm
 		absSadIni.mm absSadIni.mmX  absSadIni.nn absSadIni.qf absSadIni.re absSadIni.sd absSadIni.sn absSadIni.snsn absSadIni.ta
+	</class>
+	<class name="SadMedForms">
 		absSadMed absSadMed.ai absSadMed.be absSadMed.beM1 absSadMed.beM2 absSadMed.benn absSadMed.behg absSadMed.bere
 		absSadMed.beF absSadMed.by absSadMed.ch absSadMed.fe  absSadMed.hd absSadMed.hgM absSadMed.hgF absSadMed.jm
 		absSadMed.mm absSadMed.mmX  absSadMed.nn absSadMed.qf absSadMed.re absSadMed.sd absSadMed.sn absSadMed.snsn absSadMed.ta
+	</class>
+	<class name="SadFinForms">
 		absSadFin
 		absSadFin_short
 	</class>
+	<class name="SadForms">@SadIniForms @SadMedForms @SadFinForms</class>
 	
 	<!-- add all forms... -->
-	<class name="TahForms">
+	<class name="TahIniForms">
 		absTahIni absTahIni.ai absTahIni.be absTahIni.beM1 absTahIni.beM2 absTahIni.benn absTahIni.behg absTahIni.bere
 		absTahIni.beF absTahIni.by absTahIni.ch absTahIni.fe  absTahIni.hd absTahIni.hgM absTahIni.hgF absTahIni.jm
 		absTahIni.mm absTahIni.mmX  absTahIni.nn absTahIni.qf absTahIni.re absTahIni.sd absTahIni.sn absTahIni.snsn absTahIni.ta
+	</class>
+	<class name="TahMedForms">
 		absTahMed absTahMed.ai absTahMed.be absTahMed.beM1 absTahMed.beM2 absTahMed.benn absTahMed.behg absTahMed.bere
 		absTahMed.beF absTahMed.by absTahMed.ch absTahMed.fe  absTahMed.hd absTahMed.hgM absTahMed.hgF absTahMed.jm
 		absTahMed.mm absTahMed.mmX  absTahMed.nn absTahMed.qf absTahMed.re absTahMed.sd absTahMed.sn absTahMed.snsn absTahMed.ta
-		absTahFin
 	</class>
+	<class name="TahFinForms">absTahFin</class>
+	<class name="TahForms">@TahIniForms  @TahMedForms  @TahFinForms</class>
 			
 	<!-- add all forms... -->
 	<class name="AinIniForms">
@@ -121,9 +136,11 @@ details including an FAQ.
 		absAinMed.beF absAinMed.by absAinMed.ch absAinMed.fe  absAinMed.hd absAinMed.hgM absAinMed.hgF absAinMed.jm
 		absAinMed.mm absAinMed.mmX  absAinMed.nn absAinMed.qf absAinMed.re absAinMed.sd absAinMed.sn absAinMed.snsn absAinMed.ta	
 	</class>
-
+	<class name="AinFinForms">
+		absAinFin
+	</class>
 	<class name="AinIMForms">@AinIniForms @AinMedForms</class>
-	<class name="AinForms">@AinIMForms absAinFin</class>
+	<class name="AinForms">@AinIMForms @AinFinForms</class>
 			
 	<class name="FehIniForms">
 		absFehIni absFehIni.ai absFehIni.be absFehIni.beM1 absFehIni.beM2 absFehIni.benn absFehIni.behg absFehIni.bere
@@ -137,9 +154,9 @@ details including an FAQ.
 		absFehMed.mm absFehMed.mmX  absFehMed.nn absFehMed.qf absFehMed.re absFehMed.sd absFehMed.sn absFehMed.snsn absFehMed.ta
 		absFehMed.kf_wide
 	</class>
-	
+	<class name="FehFinForms">absFehFin</class>
 	<class name="FehIMForms">@FehIniForms @FehMedForms</class>
-	<class name="FehForms">@FehIMForms absFehFin</class>
+	<class name="FehForms">@FehIMForms @FehFinForms</class>
 	
 	<class name="KehehIniForms">
 		absKehehIni absKehehIni.ai absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.benn absKehehIni.behg absKehehIni.bere
@@ -198,69 +215,127 @@ details including an FAQ.
 	<class name="LamFinForms">
 		absLamFin
 	</class>
-	
+
 	<class name="LamIMForms">@LamIniForms @LamMedForms</class>
 	<class name="LamMFForms">@LamMedForms @LamFinForms</class>
 	<class name="LamForms">@LamIniForms @LamMedForms @LamFinForms</class>
 	
-	<!-- add all forms... -->
-	<class name="MeemForms">
+	<class name="MeemIniForms">
 		absMeemIni absMeemIni.ai absMeemIni.be absMeemIni.beM1 absMeemIni.beM2 absMeemIni.benn absMeemIni.behg absMeemIni.bere
 		absMeemIni.beF absMeemIni.by absMeemIni.ch absMeemIni.fe  absMeemIni.hd absMeemIni.hgM absMeemIni.hgF absMeemIni.jm
 		absMeemIni.mm absMeemIni.mmX  absMeemIni.nn absMeemIni.qf absMeemIni.re absMeemIni.sd absMeemIni.sn absMeemIni.snsn absMeemIni.ta
+	</class>
+	<class name="MeemMedForms">
 		absMeemMed absMeemMed.ai absMeemMed.be absMeemMed.beM1 absMeemMed.beM2 absMeemMed.benn absMeemMed.behg absMeemMed.bere
 		absMeemMed.beF absMeemMed.by absMeemMed.ch absMeemMed.fe  absMeemMed.hd absMeemMed.hgM absMeemMed.hgF absMeemMed.jm
 		absMeemMed.mm absMeemMed.mmX  absMeemMed.nn absMeemMed.qf absMeemMed.re absMeemMed.sd absMeemMed.sn absMeemMed.snsn absMeemMed.ta
-		absMeemFin
+		absMeemMed._alt
 	</class>
+	<class name="MeemFinForms">
+		absMeemFin absMeemFin_short absMeemFin.lowdiac
+	</class>
+	<class name="MeemForms">@MeemIniForms @MeemMedForms @MeemFinForms</class>
 	
-	<!-- add all forms... -->
-	<class name="HehDoForms">
+
+	<!-- add alt forms -->
+	<class name="HehDoIniForms">
 		absHehDoachashmeeIni absHehDoachashmeeIni.ai absHehDoachashmeeIni.be absHehDoachashmeeIni.beM1 absHehDoachashmeeIni.beM2 absHehDoachashmeeIni.benn absHehDoachashmeeIni.behg absHehDoachashmeeIni.bere
 		absHehDoachashmeeIni.beF absHehDoachashmeeIni.by absHehDoachashmeeIni.ch absHehDoachashmeeIni.fe  absHehDoachashmeeIni.hd absHehDoachashmeeIni.hgM absHehDoachashmeeIni.hgF absHehDoachashmeeIni.jm
 		absHehDoachashmeeIni.mm absHehDoachashmeeIni.mmX  absHehDoachashmeeIni.nn absHehDoachashmeeIni.qf absHehDoachashmeeIni.re absHehDoachashmeeIni.sd absHehDoachashmeeIni.sn absHehDoachashmeeIni.snsn absHehDoachashmeeIni.ta
+	</class>
+	<class name="HehDoMedForms">
 		absHehDoachashmeeMed absHehDoachashmeeMed.ai absHehDoachashmeeMed.be absHehDoachashmeeMed.beM1 absHehDoachashmeeMed.beM2 absHehDoachashmeeMed.benn absHehDoachashmeeMed.behg absHehDoachashmeeMed.bere
 		absHehDoachashmeeMed.beF absHehDoachashmeeMed.by absHehDoachashmeeMed.ch absHehDoachashmeeMed.fe  absHehDoachashmeeMed.hd absHehDoachashmeeMed.hgM absHehDoachashmeeMed.hgF absHehDoachashmeeMed.jm
 		absHehDoachashmeeMed.mm absHehDoachashmeeMed.mmX  absHehDoachashmeeMed.nn absHehDoachashmeeMed.qf absHehDoachashmeeMed.re absHehDoachashmeeMed.sd absHehDoachashmeeMed.sn absHehDoachashmeeMed.snsn absHehDoachashmeeMed.ta
+	</class>
+	<class name="HehDoFinForms">
 		absHehDoachashmeeFin
 	</class>
+	<class name="HehDoForms">@HehDoIniForms @HehDoMedForms @HehDoFinForms</class>
 	
-	<!-- add all forms... -->
-	<class name="HehGoalInitials">
+	<class name="HehGoalIniForms">
 		absHehGoalIni absHehGoalIni.ai absHehGoalIni.be absHehGoalIni.beM1 absHehGoalIni.beM2 absHehGoalIni.benn absHehGoalIni.behg absHehGoalIni.bere
 		absHehGoalIni.beF absHehGoalIni.by absHehGoalIni.ch absHehGoalIni.fe  absHehGoalIni.hd absHehGoalIni.hgM absHehGoalIni.hgF absHehGoalIni.jm
 		absHehGoalIni.mm absHehGoalIni.mmX  absHehGoalIni.nn absHehGoalIni.qf absHehGoalIni.re absHehGoalIni.sd absHehGoalIni.sn absHehGoalIni.snsn absHehGoalIni.ta
 	</class>
-	<class name="HehGoalForms">
-		@HehGoalInitials
+	<class name="HehGoalMedForms">
 		absHehGoalMed absHehGoalMed.ai absHehGoalMed.be absHehGoalMed.beM1 absHehGoalMed.beM2 absHehGoalMed.benn absHehGoalMed.behg absHehGoalMed.bere
 		absHehGoalMed.beF absHehGoalMed.by absHehGoalMed.ch absHehGoalMed.fe  absHehGoalMed.hd absHehGoalMed.hgM absHehGoalMed.hgF absHehGoalMed.jm
 		absHehGoalMed.mm absHehGoalMed.mmX  absHehGoalMed.nn absHehGoalMed.qf absHehGoalMed.re absHehGoalMed.sd absHehGoalMed.sn absHehGoalMed.snsn absHehGoalMed.ta
+	</class>
+	<class name="HehGoalFinForms">
 		absHehGoalFin
 	</class>
+	<class name="HehGoalForms">@HehGoalIniForms  @HehGoalMedForms  @HehGoalFinForms</class>
 	
-	<class name="NoonForms">
-		absNoonFin
-	</class>
-	
-	<class name="QafForms">
-		absQafFin absDotlessQafFin
-	</class>
-	
-	<class name="ChotiyehForms">
-		nlqChotiyeh nlqChotiyehFin
-	</class>
-
 	<class name="AlefFinForms">
-		absAlefFin absAlefFin._lm
+		absAlefFin absAlefFin._lm absAlefFin.allah
 	</class>
 	
 	<class name="AlefForms">absAlef @AlefFinForms</class>
 	
-	<class name="BariyehForms">
-		nlqBariyeh nlqBariyehFin
+	<class name="RehFinForms">absRehFin absRehFin._hgM absRehFin._jkl absRehFin._sshg</class>
+	
+	<class name="DalFinForms">absDalFin</class>
+	
+	<class name="NoonFinForms">absNoonFin</class>
+	
+	<class name="ChotiyehFinForms">
+		nlqChotiyehFin nlqChotiyehFin_short nlqChotiyehFin._bfkl nlqChotiyehFin.bfkl_short
+	</class>
+
+	<class name="QafFinForms">
+		absQafFin absQafFin_short absQafFin._stfh absQafFin._stfh_short
 	</class>
 	
+	<class name="WawFinForms">
+		absWawFin absWawFin._stfh
+	</class>
+	
+	<class name="BariyehFinForms">nlqBariyehFin</class>
+	
+	<class name="Initials">
+		@BehIniForms @JeemIniForms @SeenIniForms @SadIniForms @TahIniForms @AinIniForms @FehIniForms @KafIniForms @LamIniForms @MeemIniForms
+		@HehDoIniForms @HehGoalIniForms
+	</class>
+	
+	<class name="Medials">
+		@BehMedForms @JeemMedForms @SeenMedForms @SadMedForms @TahMedForms @AinMedForms @FehMedForms @KafMedForms @LamMedForms @MeemMedForms
+		@HehDoMedForms @HehGoalMedForms
+	</class>
+	
+	<class name="Finals">
+		@BehFinForms @JeemFinForms @SeenFinForms @SadFinForms @TahFinForms @AinFinForms @FehFinForms @KafFinForms @LamFinForms @MeemFinForms
+		@HehDoFinForms @HehGoalFinForms
+		@AlefFinForms @RehFinForms @DalFinForms @NoonFinForms @ChotiyehFinForms @QafFinForms @WawFinForms @BariyehFinForms
+	</class>
+	
+	<!-- add many more -->
+	<class name="Isolates">
+		absAlef
+		absBeh absTeh absTheh absPeh
+				absNoon nlqChotiyeh
+		absJeem absHah absKhah
+		absSeen absSheen
+		absSad absDad
+		absTah absZah
+		absAin absGhain
+		absFeh 
+				absQaf
+		absKeheh absGaf
+		absLam
+		absMeem
+		absHehDo
+		absHehGoal
+		nlqBariyeh
+		absTehMarbuta
+		absTehMarbutaGoal
+	</class>
+
+	<class name="AllBases">
+		@Initials  @Medials  @Finals  @Isolates
+	</class>
+
 	<!-- FOR DECOMPOSIION -->
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
@@ -446,7 +521,7 @@ details including an FAQ.
 	</class>
 
 	<class name="MedDefault_sub">
-		absBehMed absJeemMed absSeenMed absSadMed absTahIni absAinMed absFehMed absKehehMed absGafMed absLamMed 
+		absBehMed absJeemMed absSeenMed absSadMed absTahMed absAinMed absFehMed absKehehMed absGafMed absLamMed 
 		absMeemMed absHehDoachashmeeMed absHehGoalMed
 	</class>
 		
@@ -709,62 +784,37 @@ details including an FAQ.
 		absAlefFin absDalFin absQafFin absNoonFin nlqChotiyehFin nlqBariyehFin absTehMarbutaFin absTehMarbutaGoalFin
 	</class>
 
-
-	<class name="Initials">
+	<!-- Do we need this set of classes? -->
+	<class name="IniXXX">
 		@IniBe_sub @IniJm_sub @IniSn_sub @IniSd_sub @IniTa_sub @IniAi_sub @IniFe_sub @IniMm_sub @IniHd_sub @IniHgM_sub @IniHgF_sub
 	</class>
 	
-	<class name="InitialsContextual">
+	<class name="IniContextualXXX">
 		@IniDefault_sub
 		@IniBeM1_sub @IniBeM2_sub @IniBeNn_sub @IniBeRe_sub @IniBeHg_sub @IniBeF_sub
 		@IniMmX_sub
 		@IniRe_sub @IniNn_sub @IniQf_sub @IniCh_sub @IniBy_sub
 	</class>
 
-	<class name="Medials">
+	<class name="MedXXX">
 		@MedBe_sub @MedJm_sub @MedSn_sub @MedSd_sub @MedTa_sub @MedAi_sub @MedFe_sub @MedMm_sub @MedHd_sub @MedHgM_sub @MedHgF_sub
 	</class>
 	
-	<class name="MedialsContextual">
+	<class name="MedContextualXXX">
 		@MedDefault_sub
 		@MedBeM1_sub @MedBeM2_sub @MedBeNn_sub @MedBeRe_sub @MedBeHg_sub @MedBeF_sub
 		@MedMmX_sub
 		@MedRe_sub @MedNn_sub @MedQf_sub @MedCh_sub @MedBy_sub
 	</class>
 	
-	<class name="Finals">
+	<class name="FinXXX">
 		@DualFinals_sub @RightFinals_sub
 	</class>
-	
-	<class name="Isolates">
-		absAlef
-		absBeh absTeh absTheh absPeh
-				absNoon nlqChotiyeh
-		absJeem absHah absKhah
-		absSeen absSheen
-		absSad absDad
-		absTah absZah
-		absAin absGhain
-		absFeh 
-				absQaf
-		absKeheh absGaf
-		absLam
-		absMeem
-		absHehDo
-		absHehGoal
-		nlqBariyeh
-		absTehMarbuta
-		absTehMarbutaGoal
+
+	<class name="ShapedBasesXXX">
+		@IniXXX @IniContextualXXX @MedXXX @MedContextualXXX @FinXXX
 	</class>
 
-	<class name="ShapedBases">
-		@Initials @InitialsContextual @Medials @MedialsContextual @Finals
-	</class>
-
-	<class name="AllBases">
-		@ShapedBases @Isolates
-	</class>
-	
 	<!-- For beh contextuals -->
 	
 	<class name="PostBeM1">
@@ -854,11 +904,23 @@ details including an FAQ.
 	<class name="KafKfNormal">absKehehIni.kf      absKehehMed.dk      absGafIni.kf      absGafMed.dk</class>
 	<class name="KafKfWide">  absKehehIni.kf_wide absKehehMed.kf_wide absGafIni.kf_wide absGafMed.kf_wide</class>
 	
+
 	<!-- FOR ALTERNATE HEIGHT KAFS -->
 	
 	<!-- THESE BASE CLASSES MUST BE KEPT IN SYNC WITH THE KAF-TOP CLASSES BELOW. -->
 	
 	<!-- *NEXT 4 CLASSES MUST MATCH* -->
+	
+	<class name="KehehIniFull_sub">
+		absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.bere absKehehIni.benn absKehehIni.behg 
+		<!-- beF does not exist -->
+		absKehehIni.jm absKehehIni.re absKehehIni.sn absKehehIni.snsn absKehehIni.sd
+		absKehehIni.ta absKehehIni.ai absKehehIni.fe absKehehIni.qf absKehehIni.mm absKehehIni.mmX
+		absKehehIni.nn absKehehIni.dk absKehehIni.kf absKehehIni.hgM absKehehIni.hgF absKehehIni.hd
+		absKehehIni.ch
+		absKehehIni.by <!-- no change -->
+		absKehehIni.kf_wide
+	</class>
 	
 	<class name="GafIniFull_sub">
 		absGafIni.be absGafIni.beM1 absGafIni.beM2 absGafIni.bere absGafIni.benn absGafIni.behg 
@@ -871,28 +933,6 @@ details including an FAQ.
 		absGafIni.kf_wide
 	</class>
 				
-	<class name="KehehIniFull_sub">
-		absKehehIni.be absKehehIni.beM1 absKehehIni.beM2 absKehehIni.bere absKehehIni.benn absKehehIni.behg 
-		<!-- beF does not exist -->
-		absKehehIni.jm absKehehIni.re absKehehIni.sn absKehehIni.snsn absKehehIni.sd
-		absKehehIni.ta absKehehIni.ai absKehehIni.fe absKehehIni.qf absKehehIni.mm absKehehIni.mmX
-		absKehehIni.nn absKehehIni.dk absKehehIni.kf absKehehIni.hgM absKehehIni.hgF absKehehIni.hd
-		absKehehIni.ch
-		absKehehIni.by <!-- no change -->
-		absKehehIni.kf_wide
-	</class>
-	
-	<class name="GafIniBase_sub">
-		absKehehIni.be_base absKehehIni.beM1_base absKehehIni.beM2_base absKehehIni.bere_base absKehehIni.benn_base absKehehIni.behg_base
-		<!-- beF does not exist -->
-		absKehehIni.jm_base absKehehIni.re_base absKehehIni.sn_base absKehehIni.snsn_base absKehehIni.sd_base
-		absKehehIni.ta_base absKehehIni.ai_base absKehehIni.fe_base absKehehIni.qf_base absKehehIni.mm_short <!-- !!! --> absKehehIni.mmX_base
-		absKehehIni.nn_base absKehehIni.dk_base absKehehIni.kf_base absKehehIni.hgM_base absKehehIni.hgF_base absKehehIni.hd_base
-		absKehehIni.ch_base
-		absGafIni.by <!-- no change -->
-		absKehehIni.kf_wide_base
-	</class>
-	
 	<class name="KehehIniBase_sub">
 		absKehehIni.be_base absKehehIni.beM1_base absKehehIni.beM2_base absKehehIni.bere_base absKehehIni.benn_base absKehehIni.behg_base
 		<!-- beF does not exist -->
@@ -901,6 +941,17 @@ details including an FAQ.
 		absKehehIni.nn_base absKehehIni.dk_base absKehehIni.kf_base absKehehIni.hgM_base absKehehIni.hgF_base absKehehIni.hd_base
 		absKehehIni.ch_base
 		absKehehIni.by <!-- no change -->
+		absKehehIni.kf_wide_base
+	</class>
+	
+	<class name="GafIniBase_sub">
+		absKehehIni.be_base absKehehIni.beM1_base absKehehIni.beM2_base absKehehIni.bere_base absKehehIni.benn_base absKehehIni.behg_base
+		<!-- beF does not exist -->
+		absKehehIni.jm_base absKehehIni.re_base absKehehIni.sn_base absKehehIni.snsn_base absKehehIni.sd_base
+		absKehehIni.ta_base absKehehIni.ai_base absKehehIni.fe_base absKehehIni.qf_base absGafIni.mm_short <!-- !!! --> absKehehIni.mmX_base
+		absKehehIni.nn_base absKehehIni.dk_base absKehehIni.kf_base absKehehIni.hgM_base absKehehIni.hgF_base absKehehIni.hd_base
+		absKehehIni.ch_base
+		absGafIni.by <!-- no change -->
 		absKehehIni.kf_wide_base
 	</class>
 	
@@ -1052,6 +1103,13 @@ details including an FAQ.
 	<class name="KafMed_top_short_sub">@KehehMed_top_short_sub @GafMed_top_short_sub</class>
 	
 	<class name="KafIM_top_short_sub">@KafIni_top_short_sub @KafMed_top_short_sub</class>
+	
+	<class name="GafBase">@GafIniBase_sub @GafMedBase_sub</class>
+	
+	<class name="GafTopShort">
+		_gafIniTop_short _gafMedTop_short _gafIniTop_shorter _gafMedTop_shorter
+		_gafTop_bj_short _kehehTop_m_bogus
+	</class>
 	
 	<!-- Must match @GafIniFull. -->
 	<class name="GafIni_top_shorter_sub">

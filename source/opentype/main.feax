@@ -31,6 +31,9 @@ languagesystem arab dflt;
 @NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 	_dot2lIM  _dot2lIM.small _dot2l.tail
 	_noDot2l _noDot2l.small];
+@NuqtaLikeMiddle = [_bar  _bar.narrow  _bar.waw  _bar.raised  _bar.raised_gaf  _attachedRingMid];
+
+@NuqtaLikeUpMid = [@NuqtaLikeUpper @NuqtaLikeMiddle];
 
 @NLowerUpper = [_dot1l__smallTah  _dot2vl__smallTah  _dot1l__dot1u  _hehHook__dot2u
 	_ring__dot2u  _noDot2l__hamza  _dot2lIM__smallV  _hehHook__hamza _dot3l__dot3u
@@ -43,8 +46,14 @@ languagesystem arab dflt;
 	_dot1u.small  _smallTwoAbove  _smallThreeAbove];
 
 @NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower @NLowerUpper];
-
-@DiacUpper = [@_nUpper @_mUpper @_honorific];
+@DiacUpper = [nlqZabar nlqPesh absShadda nlqUltaPesh nlqZabarTwoDots nlqKharizabar nlqJazm nlqJazm_openleft
+	nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
+	absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
+	absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
+	absSmallHighSadMark absSmallHighSeen absSmallHighTah
+	_kharizabar_dopesh _kharizabar_pesh _kharizabar_zabar _kharizabar_dozabar _shadda_dopesh _shadda_dozabar
+	_shadda_kharizabar _shadda_kharizabar_allah _shadda_pesh _shadda_zabar _wasla];
+#@DiacUpper = [@_nUpper @_mUpper @_honorific];
 @DiacLower = [@_n1Lower @_n23Lower @_mLower @_hamzaLower];
 
 # gafStroke, graf, _kafTop_bj
@@ -52,6 +61,7 @@ languagesystem arab dflt;
 @AllMarksUpper = [@NuqtaLikeUpper @DiacUpper];
 @AllMarksLower = [@NuqtaLikeLower @DiacLower];
 @AllMarksMiddle = [@_squiggle @_bar _attachedRingMid ];
+@AllMarksUpMid = [@AllMarksUpper @AllMarksMiddle];
 
 @NuqtaUpperWide_sub = [_dot2u _dot3u _dot4u];
 @NuqtaUpperWide_small_sub = [_dot2u.small _dot3u.small _dot4u.small];
@@ -59,6 +69,7 @@ languagesystem arab dflt;
 @NLikeUpperTall = [_dot3u _dot3u.small _dot4u _dot4u.small _dot2vu _smallTah _smallTah2dots
 	_dot1u_smallTah _dot1u_smallTah.kf _dot1u_smallV _dot1u_smallV.kf _dot1u_ngMark 
 	_dot2lIM__hamza _verticalStroke];
+@NLikeUpperFlat = [_dot1u  _dot1u.small  _dot2u  _dot2u.small];
 
 # Bariyeh width: 2600
 #@Zero = []; # < 100
@@ -76,6 +87,9 @@ languagesystem arab dflt;
 # > 1300
 #@ExtraIni = [absSeenIni.by absSeenIni.jm absSadIni.by absSadIni.jm absKehehIni.by absHehDoachashmeeIni.by];
 #@ExtraMed = [absSeenMed.by absSadMed.by];
+
+@Talls = [@LamForms @TahForms];
+
 
 include(../../source/opentype/bariyehKernClasses.feax);
 
@@ -176,20 +190,23 @@ lookup _KafShort {
 	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
 		let g = feaclass('GafIniFull_sub')[i];
 		let k_base = feaclass('KehehIniBase_sub')[i];
+		let g_base = feaclass('GafIniBase_sub')[i];
 		let alt_top_k = feaclass('KehehIni_top_short_sub')[i];
 		let alt_top_g = feaclass('GafIni_top_short_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
 		let g = feaclass('GafMedFull_sub')[i];
 		let k_base = feaclass('KehehMedBase_sub')[i];
+		#let g_base = k_base;
+		let g_base = feaclass('GafMedBase_sub')[i];
 		let alt_top_k = feaclass('KehehMed_top_short_sub')[i];
 		let alt_top_g = feaclass('GafMed_top_short_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 } _KafShort;
 
@@ -199,20 +216,22 @@ lookup _KafShorter {
 	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
 		let g = feaclass('GafIniFull_sub')[i];
 		let k_base = feaclass('KehehIniBase_sub')[i];
+		let g_base = feaclass('GafIniBase_sub')[i];
 		let alt_top_k = feaclass('KehehIni_top_shorter_sub')[i];
 		let alt_top_g = feaclass('GafIni_top_shorter_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
 		let g = feaclass('GafMedFull_sub')[i];
 		let k_base = feaclass('KehehMedBase_sub')[i];
+		let g_base = feaclass('GafMedBase_sub')[i];
 		let alt_top_k = feaclass('KehehMed_top_shorter_sub')[i];
 		let alt_top_g = feaclass('GafMed_top_shorter_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 } _KafShorter;
 
@@ -221,12 +240,13 @@ lookup _KafTall {
 	lookupflag IgnoreMarks;
 	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
 		let g = feaclass('GafMedFull_sub')[i];
-		let k_base = feaclass('KehehMedBase_sub')[i];
+		let k_base = feaclass('KehehMedBaseT_sub')[i];
+		let g_base = feaclass('GafMedBaseT_sub')[i];
 		let alt_top_k = feaclass('KehehMed_top_tall_sub')[i];
 		let alt_top_g = feaclass('GafMed_top_tall_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 } _KafTall;
 
@@ -236,6 +256,7 @@ lookup _KafTaller {
 	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
 		let g = feaclass('GafIniFull_sub')[i];
 		let k_base = feaclass('KehehIniBase_sub')[i];
+		#let g_base = feaclass('GafIniBase_sub')[i];
 		let alt_top_k = feaclass('KehehIni_top_taller_sub')[i];
 		let alt_top_g = feaclass('GafIni_top_taller_sub')[i];
 		{
@@ -250,23 +271,28 @@ lookup _KafMedshort {
 	lookupflag IgnoreMarks;
 	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
 		let g = feaclass('GafMedFull_sub')[i];
-		let k_base = feaclass('KehehMedBase_sub')[i];
+		let k_base = feaclass('KehehMedBaseT_sub')[i];
+		let g_base = feaclass('GafMedBaseT_sub')[i];
 		let alt_top_k = feaclass('KehehMed_top_medshort_sub')[i];
 		let alt_top_g = feaclass('GafMed_top_medshort_sub')[i];
 		{
 			sub $k by $k_base $alt_top_k;
-			sub $g by $k_base $alt_top_g;
+			sub $g by $g_base $alt_top_g;
 		}
 } _KafMedshort;
 
-# Use a short version of the lam before a kaf.
-lookup _LamShort {
+
+# Use a short version of the lam or tah before a kaf.
+lookup _LamTahShort {
 	sub absLamIni  by  absLamIni_short;
 	sub absLamMed  by  absLamMed_short;
-} _LamShort;
+	sub absTahIni  by  absTahIni.kf;
+	sub absTahMed  by  absTahMed.kf;
+} _LamTahShort;
 
 lookup _NoChange {
 	ignore sub @AllMarksUpper';
+	ignore sub @MeemForms';
 } _NoChange;
 
 
@@ -668,21 +694,20 @@ lookup WideForms_chain {
 
 feature calt {
 
-#lookup KafSplit {
-	# Split kafs into base+top for easier manipulation.
-#	sub @KehehIniFull_sub		by	_kehehTop	@KehehIniBase_sub;
-#	sub @KehehMedFull_sub		by	_kehehTop	@KehehMedBase_sub;
-#	sub @GafIniFull_sub			by	_gafTop		@KehehIniBase_sub;
-#	sub @GafMedFull_sub			by	_gafTop		@KehehMedBase_sub;
-#} KafSplit;
-
+# --- alternate height kafs ---
 
 @KjNormalEntry = [absKehehMed.jm absGafMed.jm];
 @KjLowEntry    = [absKehehMed.jm_lowentry absGafMed.jm_lowentry];
 @NeedsLowKaf = [absBehIni absBehMed absSeenIni absSeenMed absSadIni absSadMed];
 
+lookup PreKafCollisions {
+	lookupflag IgnoreMarks;
+	
+} PreKafCollisions;
+
 lookup KafCollisionsDiac {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @AllMarksUpMid;
+	#lookupflag 0;
 	
 	# Tall final kaf:
 	sub @NLikeUpperTall  @DiacUpper [absKehehFin absGafFin]' by [absKehehFin_tall absGafFin_tall];
@@ -691,45 +716,125 @@ lookup KafCollisionsDiac {
 	sub @NLikeUpperTall  @DiacUpper  @KafMedFull_sub' lookup _KafTall; 
 	
 	# Special case: Lam + diac + kaf - shorten lam AND heighten kaf
-	sub absLamIni' lookup _LamShort  @AllMarksUpper' lookup _NoChange  @KafMedForms' lookup _KafTall;
-	sub absLamMed' lookup _LamShort  @AllMarksUpper' lookup _NoChange  @KafMedForms' lookup _KafTall;
+	sub absLamIni' lookup _LamTahShort  @AllMarksUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
+	sub absLamMed' lookup _LamTahShort  @AllMarksUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
+	
+	# Tall: nuqta + diac + kaf
+	sub @NuqtaLikeUpper @DiacUpper @KafMedForms' lookup _KafTall;
+	
+	# Standard: nuqta OR diac + kaf
+	# TODO: probably we need to use a tall form for ANY nuqta.
+	ignore sub @NuqtaLikeUpper @KafMedFull_sub';
+	ignore sub @DiacUpper @KafMedFull_sub';
+	
+	# Exception to rule below, because there is no 'taller' form for pre-meem:
+	###sub [absAlef absAlefFin] @DiacUpper [absKehehIni.mm absGafIni.mm]';
+	# Exception to rule below, because final bariyeh adds horizontal space:
+	###sub [absAlef absAlefFin] @DiacUpper @KafIniFull_sub'  @MedialForms  nlqBariyehFin;
+	
+	# Tall: alef + diac + kaf
+	# Currently we just test for a final that is kind of flat, but the Graphite
+	# version tests the actually position of the kaf and check that it is not very high.
+	# TODO: maybe improve.
+	sub @AlefForms @DiacUpper @KafIniFull_sub' lookup _KafTaller  [@BehFinForms @TahFinForms @FehFinForms @HehGoalFinForms];
+	
+	# nuqta + diac + kaf => default
+	ignore sub @NLikeUpperFlat @DiacUpper  @KafMedFull_sub';
 	
 } KafCollisionsDiac;
 
 lookup KafCollisionsNuqta {
-	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
+	lookupflag UseMarkFilteringSet @NuqtaLikeUpMid;
 	
 	# Lower entry before jeem (since it as a unique entrance that doesn't work for standard alternate kafs)
 	sub @NeedsLowKaf @NLikeUpperTall            @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;
 	sub [absFehIni absFehMed]  @NuqtaLikeUpper  @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;
-	sub [absKehehIni.kf absKehehMed.dk]         @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;        
+	sub [absKehehIni.kf absKehehMed.dk]         @KjNormalEntry' @JeemMFForms  by  @KjLowEntry;   
+	
+	# Tall: short-lam + kaf + ring (short-lams are ALMOST short enough to fit under kaf-rings, but not quite)
+	sub [absLamIni absLamMed]' lookup _LamTahShort  @KafMedFull_sub' lookup _KafTall _attachedRingMid;
+	
+	# Tall nuqta + tall char + kaf => shorten tall char and make kaf tall
+	sub @NLikeUpperTall  @Talls' lookup _LamTahShort  @KafMedFull_sub' lookup _KafTall;
+	
+	# Special case: exception to rule below when form before kaf is a jeem (eg, \u0641\u062E\u06AF\u0633): 
+	sub @NuqtaLikeUpper  absJeemMed @NuqtaLikeUpper  @KafMedFull_sub' lookup _KafTall;
+	
+	# One exception to rule below not added...
+	
+	# Tall: nuqta + nuqta + kaf (eg, sheen + teh + kaf)
+	sub @NuqtaLikeUpper  @Medials @NuqtaLikeUpper  @KafMedForms' lookup _KafTall;
+	
+	# Tall: feh + nuqta/diac + kaf
+	sub @FehIMForms	 @NuqtaLikeUpper  @KafMedFull_sub' lookup _KafTall;
+
 } KafCollisionsNuqta;
 
 lookup KafCollisions {
 	lookupflag IgnoreMarks;
 	
 	# Special case: alef-madda + kaf/gaf + final-heh-goal/beh/tah/feh - make kaf tall so alef-madda can squeeze in
-	sub absAlefMaddaAbove  @KafIniForms' lookup _KafTaller;	
+	sub absAlefMaddaAbove  @KafIniFull_sub' lookup _KafTaller;	
 	
-	# shorter gaf before kaf
+	# Shorter gaf before kaf
 	sub [absGafIni.kf absGafMed.dk]' lookup _KafShort  absKehehFin;
 	
 	# Shorten lam before kaf
-	sub [absLamIni absLamMed]' lookup _LamShort @KafMFForms;
+	sub [absLamIni absLamMed]' lookup _LamTahShort @KafMFForms;
 	
-	# Lam + gaf +kaf/gaf =? special form of gaf
+	# Lam + gaf + kaf/gaf => special form of gaf
 	sub [absLamIni_short absLamMed_short]  absGafMed.dk'  @KafMFForms  by  absGafMed.kf_lm;
+	
+	# Tall: lam/tah + kaf
+	sub @Talls' lookup _LamTahShort  @KafMedFull_sub' lookup _KafTall;
+	
+	# Intervening narrow glyph between gaf and kaf - continued below
+	sub @GafIniFull_sub' lookup _KafShorter  [absMeemMed absFehMed absBehMed absHehGoalMed absHehDoachashmeeMed] @KafMedFull_sub;
+	
+	# Gaf + kaf/gaf-medial => shorter; continued below
+	sub @GafIniFull_sub' lookup _KafShorter @KafMedFull_sub;
+	
+	# same as above but with a short gaf - still needs a tall following kaf - not in test doc
+	sub absKehehMed.dk_base _gafMedTop_short  @KafMedFull_sub' lookup _KafTall;
+	
+	# Lam + gaf + kaf/gaf => special form of gaf
+	sub [absLamIni_short absLamMed_short] absGafMed.dk'  @KafMFForms  by  absGafMed.kf_lm;
+	
+	# Gaf + kaf/gaf-final => short 
+	sub @GafIniFull_sub' lookup _KafShort @KafFinForms;
+	sub @GafMedFull_sub' lookup _KafShort @KafFinForms;
 	
 } KafCollisions;
 
+# Second substitution from rules above
+lookup KafCollisionsStep2 {
+	lookupflag UseMarkFilteringSet @_kafTop;
 
-#lookup KafMerge {
-	# Merge back kafs that have not been modified.
-#	sub _kehehTop @KehehIniBase_sub by @KehehIniFull_sub;
-#	sub _kehehTop @KehehMedBase_sub by @KehehMedFull_sub;
-#	sub _gafTop @KehehIniBase_sub by @GafIniFull_sub;
-#	sub _gafTop @KehehMedBase_sub by @GafMedFull_sub;
-#} KafMerge;
+	# Intervening narrow char between gaf and kaf - continued from above
+	sub @GafBase  @GafTopShort [absMeemMed absFehMed absBehMed absHehGoalMed absHehDoachashmeeMed]  @KafMedFull_sub' lookup _KafTall;
+	
+	# Gaf + kaf/gaf-medial => shorter; continued from above
+	sub @GafBase @GafTopShort @KafMedFull_sub' lookup _KafTall;
+
+} KafCollisionsStep2;
+
+
+# Not included, because I couldn't figure out where these are needed:
+#	// Tall: tall kaf + kaf/gaf (note: does not apply to gaf + kaf)
+# csKafMed_medium  g__kafTop_null
+#		>  csKafMed_baseT$K2  csKafMed_top_tall$K2
+#	/  csKafIM_base g__kafMedTop_tall  MARKS  _=K2  _=T2;
+
+# // Short + medium-short: gaf + ??? + kaf/gaf
+# csGafIM_medium g__kafTop_null  cNuqtaLikeUpper  csKafMed_medium g__kafTop_null
+# 	>  csGafIM_base$G  csGafIM_top_shorter$G  
+# 			@Nfb STAYBELOWKAF // keep nuqta from hopping above kaf
+# 			csKafMed_baseT$K  csKafMed_top_tall$K
+# 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) _=Nfb cDiacritic? _=K _=Tk;
+
+# csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
+# 	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall$K
+# 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
 
 
 lookup SplitNuqtaPairs {
@@ -762,7 +867,7 @@ lookup CleanupsDelete {
 	lookupflag 0;
 	
 	# delete hehhook from all but medial hehgoals:
-	sub  @HehGoalInitials'	_hehHook.small'		by		@HehGoalInitials;
+	sub  @HehGoalIniForms'	_hehHook.small'		by		@HehGoalIniForms;
 	sub  absHehGoalFin'			_hehHook.small'		by		absHehGoalFin;
 	
 	# delete non-existent nuqtas:
@@ -770,16 +875,16 @@ lookup CleanupsDelete {
 	sub @BehIniForms'				_noDot1u'		by		@BehIniForms;		# noon ghunna
 	sub @BehMedForms'				_noDot1u'		by		@BehMedForms;
 	sub @BehFinForms'				_noDot1u'		by		@BehFinForms;
-	sub @NoonForms'					_noDot1u'		by		@NoonForms;			# noon ghunna
+	sub @NoonFinForms'			_noDot1u'		by		@NoonFinForms;	# noon ghunna
 	sub @FehIniForms'				_noDot1u'		by		@FehIniForms;		# dotless feh
 	sub @FehMedForms'				_noDot1u'		by		@FehMedForms;		# dotless feh
 	sub absFehFin'					_noDot1u'		by		absFehFin;			# dotless feh
-	sub @QafForms'					_noDot2u'		by		@QafForms;			# dotless qaf
-	sub @BehIniForms'				_noDot2l'		by		@BehIniForms;		# chotiyeh
-	sub @BehMedForms'				_noDot2l'		by		@BehMedForms;
-	sub @BehFinForms'				_noDot2l'		by		@BehFinForms;
-	sub @ChotiyehForms'			_noDot2l'		by		@ChotiyehForms;	# chotiyeh
-	sub @BariyehForms'			_noDot2l'		by		@BariyehForms;
+	sub @QafFinForms'				_noDot2u'		by		@QafFinForms;		# dotless qaf
+	sub @BehIniForms'				_noDot2l'		by		@BehIniForms;				# chotiyeh
+	sub @BehMedForms'				_noDot2l'		by		@BehMedForms;				# chotiyeh
+	sub @BehFinForms'				_noDot2l'		by		@BehFinForms;				# chotiyeh
+	sub @ChotiyehFinForms'	_noDot2l'		by		@ChotiyehFinForms;	# chotiyeh
+	sub @BariyehFinForms'		_noDot2l'		by		@BariyehFinForms;
 	
 	# delete kaf squiggle from initials and medials:
 	sub	@KehehIniForms'			_kafSquiggle'			by		@KehehIniForms;
