@@ -26,7 +26,7 @@ languagesystem arab dflt;
 @NuqtaLikeUpper = [@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove _smallTah  _smallV  _smallTah2dots  _kafSquiggle
 	_smallThreeAbove  _smallTwoAbove  _wasla _wavyHamza
 	_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
-	_dot1u_smallV  _dot1u_smallTah
+	_dot1u_smallV  _dot1u_smallTah  _dot1u_smallTah.kf
 	_noDot1u _noDot2u ];
 @NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 	_dot2lIM  _dot2lIM.small _dot2l.tail
@@ -361,6 +361,7 @@ feature fina {
 
 lookup RightFinals2 {
 	sub		absDotlessQaf'		@QafMark					by		absQafFin;
+	sub		absDotlessFeh'		@QafMark					by		absQafFin;
 	sub		absNoon'					@NoonMark_sub			by		absNoonFin;
 	sub		nlqChotiyeh'			@ChotiyehMark_sub	by		nlqChotiyehFin;
 	sub		nlqBariyeh'				@BariyehMark_sub	by		nlqBariyehFin;
@@ -686,6 +687,9 @@ lookup WideForms_chain {
 																										@NuqtaUpperWide_sub' lookup _WideForms2       @KafMFForms;
 	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2  @NuqtaLikeUpper  @KafMFForms;
 	sub [@FehIMForms @AinIMForms] @NuqtaLikeUpper  absJeemMed' lookup _WideForms2                   @KafMFForms;
+	
+	# Special case: lam/tah + jeem + kaf/gaf
+	sub @Talls absJeemMed' lookup _WideForms2 @KafMFForms;
 
 } WideForms_chain;
 
@@ -767,6 +771,12 @@ lookup KafCollisionsNuqta {
 	
 	# Tall: feh + nuqta/diac + kaf
 	sub @FehIMForms	 @NuqtaLikeUpper  @KafMedFull_sub' lookup _KafTall;
+	
+	# Medium-short: nuqta + std-width-jeem + kaf
+	# Also need to shift the nuqta right, not up.
+	sub @NuqtaLikeUpper  absJeemMed  @KafMedFull_sub' lookup _KafMedshort;
+	
+
 
 } KafCollisionsNuqta;
 
@@ -804,6 +814,11 @@ lookup KafCollisions {
 	sub @GafIniFull_sub' lookup _KafShort @KafFinForms;
 	sub @GafMedFull_sub' lookup _KafShort @KafFinForms;
 	
+	# Medium-short: tah + beh/meem + kaf
+	# Graphite version includes ain but I don't think that is needed.
+	sub @TahIMForms [absBehMed absMeemMed] @KafMedForms' lookup _KafMedshort;
+
+	
 } KafCollisions;
 
 # Second substitution from rules above
@@ -835,6 +850,32 @@ lookup KafCollisionsStep2 {
 # csGafIM_medium g__kafTop_null  csKafMed_medium g__kafTop_null
 # 	>  csGafIM_base$G  csGafIM_top_shorter$G  csKafMed_baseT$K  csKafMed_top_tall$K
 # 	/  _=G _=Tg  cNuqtaLike? cDiacritic?  (gMeemMed gFehMed gBehMed gHehGoalMed gHehDoMed) cNuqtaLike? cDiacritic? _=K _=Tk;
+
+# Medium-short: lam/tah + jeem/meem + kaf - let's say we don't need this with the wider jeem
+#	cBaseTall  csKafMed_medium  g__kafTop_null  
+# 	>  @B  csKafMed_baseT$K  csKafMed_top_medshort$K
+#		/  _=B  cNuqtaLike? cDiacritic?  (cJeemMed cMeemMed)  cNuqtaLike?  cDiacritic?  _=K  _=T;
+
+# // No change (\u062C\u0646\u06AF\u06CC)
+# cDot1u  csKafMed_medium  g__kafTop_null
+# 	>  @N STAYBELOWKAF  @K  @T
+# 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
+
+# // Tall (\u062E\u064F\u0634\u06A9\u06CC)
+# cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
+# 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
+# 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
+
+
+lookup KafLineHeight {
+	
+	# No change: never make shorter after a kaf/gaf.
+	ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
+	
+	# No change: don't make shorter after a narrow substantial base with nuqta or diac
+	ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	
+} KafLineHeight;
 
 
 lookup SplitNuqtaPairs {
