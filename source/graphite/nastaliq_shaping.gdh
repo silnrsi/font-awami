@@ -996,10 +996,11 @@ gJeemMed  csNuqtaUpperWide  >  gJeemMedKf_wide  @N                      / _=J  _
 cNuqtaUpper  gJeemMed  >  csNuqtaUpperSmallF  gJeemMedKf_wide  /  (cFehIM cAinIM) _=N cDiacritic?    _=J  MARKS  cKafNoIso;
              gJeemMed  >                      gJeemMedKf_wide  /  (cFehIM cAinIM)   cDiacriticUpper  _=J  MARKS  cKafNoIso;
 
-// Special case: tah + jeem + kaf/gaf
-gJeemMed  >  gJeemMedKf_wide  /  (gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
+// Special case: lam/tah + jeem + kaf/gaf
+gJeemMed  >  gJeemMedKf_wide  /  (gLamIniJm gLamMedJm gTahIniJm gTahMedJm) MARKS _=J MARKS  cKafNoIso;
 
 // Special case: teh + khah + lam + diac
+// This seems to duplicate a rule above (\u062a\u062e\u0644\u064e\u0642)
 gJeemMed  >  gJeemMedKf_wide
 	/ gBehIniJm  (cNuqtaUpper csLowerUpper)  cDiacritic?  _=J  cNuqtaLikeUpper  cDiacritic?  cLamMed  cDiacritic;
 

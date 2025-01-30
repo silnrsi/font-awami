@@ -839,7 +839,7 @@ csGafIni_top_short = (
 csKafIni_top_short = (
 	g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short,                              // Be,BeM1,BeM2
 	g__kafIniTop_short, g__kafIniTop_short, g__kafIniTop_short,                              // BeRe,BeNn,BeHg
-	// g__gafIniTop_short, -- no BeF
+	// g__kafIniTop_short, -- no BeF
 	g__kafTop_bj_short,/*jm*/ g__kafIniTop_short, g__kafIniTop_short, g__gafIniTop_short,     // Jm,Re,Sn,SnSn
 	g__kafIniTop_short, g__kafIniTop_shorter,/*ta*/ g__kafIniTop_short, g__kafIniTop_short,   // Sd,Ta,Ai,Fe
 	g__kafIniTop_short, g__kafTop_m_bogus,/*mm*/ g__kafIniTop_short, g__kafIniTop_short,      // Qf,Mm,MmX,Nn
@@ -1070,7 +1070,8 @@ cs_jeemComposed = (
 	gJeem, gKhah, gTcheh, gDyeh, gNyeh, gTcheheh, gHahSmallTahAbove, gHahSmallTahBelow,
 	gHahSmallTahTwoDots, gHahThreeDotsAbove, gHahHamzaAbove, gHahFourBelow);
 
-cs_seenMark = (g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l,
+cs_seenMark = (
+	g__dot3u, g__dot4u, g__dot1l__dot1u, g__smallTah2dots, g__dot2vu, g__dot3l,
 	g__dot3l__dot3u, g__smallVinv, g__smallFourAbove);
 cs_seenComposed = (
 	gSheen, gSeenFourDotsAbove, gSeenDotBelowDotAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove, gSeenThreeDotsBelow,
