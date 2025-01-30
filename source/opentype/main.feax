@@ -383,7 +383,6 @@ lookup RightFinals1 {
 } RightFinals1;
 
 lookup RightFinalsDelNuqta {
-	sub		absQafFin				_dot2u		by	absQafFin;
 	sub		nlqChotiyehFin	_dot2lIM	by	nlqChotiyehFin;
 } RightFinalsDelNuqta;
 
@@ -524,7 +523,10 @@ lookup BehContextuals {
 	
 	# Use rsub to use backwards logic so that the glyphs at the end are processed first.
 	
-	rsub absBehMed.be'		absBehFin			by	absBehMed.beF;
+	#rsub absBehMed.be'		absBehFin			by	absBehMed.beF;
+	
+	rsub @IniBe_sub'			absBehFin			by	@IniBeF_sub;
+	rsub @MedBe_sub'			absBehFin			by	@MedBeF_sub;
 	
 	# Alternate teeth:
 	rsub absBehMed.be'		@PostBeM1			by	absBehMed.beM1;		# high tooth
@@ -776,8 +778,6 @@ lookup KafCollisionsNuqta {
 	# Also need to shift the nuqta right, not up.
 	sub @NuqtaLikeUpper  absJeemMed  @KafMedFull_sub' lookup _KafMedshort;
 	
-
-
 } KafCollisionsNuqta;
 
 lookup KafCollisions {
@@ -866,16 +866,51 @@ lookup KafCollisionsStep2 {
 # 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 # 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
 
+@KHighFinals = [@SeenFinForms @SadFinForms @QafFinForms @JeemFinForms @MeemFinForms @AinFinForms @NoonFinForms @ChotiyehFinForms];
+@KHighMedials = [@JeemMedForms @MeemMedForms @HehDoMedForms];
 
 lookup KafLineHeight {
 	
-	# No change: never make shorter after a kaf/gaf.
-	ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
+	# Places where we don't want shorter forms:
+	# 1. No change: never make shorter after a kaf/gaf.
+	#ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
+	# 2. No change: don't make shorter after a narrow substantial base with nuqta or diac
+	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	# We usually don't need to handle these because any that need taller forms
+	# won't match the KafIni/MedFull_sub classes below.
 	
-	# No change: don't make shorter after a narrow substantial base with nuqta or diac
-	ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	sub	@KafIniFull_sub' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
+	sub	@KafMedFull_sub' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
+	
+	sub	@KafIniFull_sub' lookup _KafShort			@Medials @Medials @Finals;
+	sub	@KafMedFull_sub' lookup _KafShort			@Medials @Medials @Finals;
+	
+	sub	@KafIniFull_sub' lookup _KafShorter 	@KHighMedials @Medials @Medials;
+	sub	@KafMedFull_sub' lookup _KafShorter 	@KHighMedials @Medials @Medials;
+	
+	sub	@KafIniFull_sub' lookup _KafShorter 	@Medials @KHighMedials @Medials;
+	sub	@KafMedFull_sub' lookup _KafShorter 	@Medials @KHighMedials @Medials;
+	
+	sub	@KafIniFull_sub' lookup _KafShorter 	@Medials @Medials @KHighMedials;
+	sub	@KafMedFull_sub' lookup _KafShorter 	@Medials @Medials @KHighMedials;
+	
+	sub	@KafIniFull_sub' lookup _KafShort		 	@Medials @Medials @Medials;
+	sub	@KafMedFull_sub' lookup _KafShort		 	@Medials @Medials @Medials;
+	
+	sub	@KafIniFull_sub' lookup _KafShort		 	@KHighMedials @KHighFinals;
+	sub	@KafMedFull_sub' lookup _KafShort		 	@KHighMedials @KHighFinals;
 	
 } KafLineHeight;
+
+lookup KafLineHeight_JmShort {
+
+	# Special case - the short kaf tops don't work for .jm form, so substitute special forms.
+	sub absKehehMed.jm_base _kehehMedTop_short		by	absKehehMed.jm_short;
+	sub absKehehMed.jm_base _gafMedTop_short			by	absGafMed.jm_short;
+	
+} KafLineHeight_JmShort;
+
+# TODO: delete _kehehTop_m_bogus
 
 
 lookup SplitNuqtaPairs {
@@ -966,9 +1001,12 @@ feature mark {
 # There is ambiguity and overlap among the various attachment classes, so we do the most
 # general attachments first, and put the more specific cases last so they override.
 
+@KafTopMarks = [@_kafTop @_kafTop_bj];
 lookup AttachKafTop {
-		lookupflag UseMarkFilteringSet @_kafTop;
-		pos		base @kafTop		mark @_kafTop;
+		lookupflag UseMarkFilteringSet @KafTopMarks;
+#		pos		base gKafMedJm_base		mark @_kafTop_bj;
+		pos		base @kafTop					mark @_kafTop;
+		pos		base @kafTop_bj				mark @_kafTop_bj;
 } AttachKafTop;
 
 # In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
