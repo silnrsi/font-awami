@@ -73,7 +73,11 @@ if '--autohint' in opts:
     cmds.append(cmd('${TTFAUTOHINT} -v -n -c  -D arab -W ${DEP} ${TGT}'))
 else:
     # strip out bogus hints:
-    cmds.append(cmd('ttfstriphints ${DEP} ${TGT}'))
+    cmds.extend([
+        cmd('ttfstriphints ${DEP} ${TGT}'),
+        # and add Google-recommended gasp and prep
+        cmd('gftools fix-nonhinting --no-backup -q ${DEP} ${TGT}')
+    ])
 
 cmds.extend([
     cmd('psfcompressgr -q ${DEP} ${TGT}'),
