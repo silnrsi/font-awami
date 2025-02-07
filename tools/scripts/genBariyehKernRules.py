@@ -5,14 +5,25 @@
 # Run this script from the tools/scripts directory where the file is located:
 #		python3 genBariyehKernRules.py
 
+# When run in "pos" mode, the output assumes a set of kerning lookups such as:
+#		lookup Kern150 { pos @AllBases 150; } Kern150;
+# etc.
+#
+# When run in "sub" mode, it assumes a set of lookups such as:
+#		lookup Kern150 { sub @Initials by sp150 @Initials } Kern150;
+# etc.
+
+mode = "pos";
+#mode = "sub";
+
 import sys
 
-def ExpandSeq(seqSoFar, slotTotal, depth):
+def ExpandSeq(mode, seqSoFar, slotTotal, depth):
 	print("ExpandSeq" + " " + str(slotTotal) + " depth=" + str(depth))
 	print(seqSoFar)
 	
 	if len(seqSoFar) >= slotTotal:
-		needed = OutputRuleIfNeeded(seqSoFar)
+		needed = OutputRuleIfNeeded(mode, seqSoFar)
 		return needed
 	else:
 		for wc in range(numClasses):
@@ -20,7 +31,7 @@ def ExpandSeq(seqSoFar, slotTotal, depth):
 			nextSeq.append(wc)
 			#print("nextSeq=")
 			#print(nextSeq)
-			needed = ExpandSeq(nextSeq, slotTotal, depth+1)
+			needed = ExpandSeq(mode, nextSeq, slotTotal, depth+1)
 			print("return to ExpandSeq depth " + str(depth))
 			if not needed:
 				return True		# nothing more is needed for this sequence, but something might be needed for another
@@ -28,7 +39,7 @@ def ExpandSeq(seqSoFar, slotTotal, depth):
 		
 # end of ExpandSeq
 
-def OutputRuleIfNeeded(seq):
+def OutputRuleIfNeeded(mode, seq):
 	print("OutputRuleIfNeeded")
 	print(seq)
 	totalWidth = 0
@@ -44,7 +55,7 @@ def OutputRuleIfNeeded(seq):
 	print("totalWidth=" + str(totalWidth))
 	if totalWidth < BariyehWidth:
 		kernValue = BariyehWidth - totalWidth
-		OutputRule(seq, kernValue)
+		OutputRule(mode, seq, kernValue)
 		#OutputTextString(seq)
 		print("return True")
 		return True
@@ -54,8 +65,8 @@ def OutputRuleIfNeeded(seq):
 
 # end of OutputRuleIfNeeded
 
-def OutputRule(seq, kernValue):
-	outputStr = "pos "
+def OutputRule(mode seq, kernValue):
+	outputStr = mode + " ";
 	first = True
 	suffix = "Ini"
 	for slot in seq:
@@ -68,7 +79,8 @@ def OutputRule(seq, kernValue):
 	outputStr += "nlqBariyehFin;"
 		
 	print(outputStr, file=fout)
-# end of Output Rule
+	
+# end of OutputRule
 
 def TooManyZeroSlots(seq):
 	# Zero-width glyphs are relatively rare (mainly medial jeems), so if there are 
@@ -123,6 +135,6 @@ slotCounts = [1, 2, 3, 4, 5]
 for slots in slotCounts:
 	stxt = " SLOT" if slots == 1 else " SLOTS"
 	print("\n# RULES WITH " + str(slots) + stxt + "\n", file=fout)
-	ExpandSeq([], slots, 0);
+	ExpandSeq(mode, [], slots, 0);
 
 fout.close()

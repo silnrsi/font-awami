@@ -53,8 +53,8 @@ languagesystem arab dflt;
 	absSmallHighSadMark absSmallHighSeen absSmallHighTah
 	_kharizabar_dopesh _kharizabar_pesh _kharizabar_zabar _kharizabar_dozabar _shadda_dopesh _shadda_dozabar
 	_shadda_kharizabar _shadda_kharizabar_allah _shadda_pesh _shadda_zabar _wasla];
-#@DiacUpper = [@_nUpper @_mUpper @_honorific];
-@DiacLower = [@_n1Lower @_n23Lower @_mLower @_hamzaLower];
+	### TODO: add honorifics
+@DiacLower = [nlqZair nlqDozair nlqKharizair absEmptyCentreLowStop absSmallLowMeem];   # @_mLower
 
 # gafStroke, graf, _kafTop_bj
 
@@ -91,24 +91,47 @@ languagesystem arab dflt;
 @Talls = [@LamForms @TahForms];
 
 @NLikeSubBy_sub = [_dot1l _dot2l _dot2vl _dot3l _dot4l _hehHook.small _smallTahBelow _smallTah2dotsBelow 
-	_smallVBelow _smallVinvBelow];
+	_smallVBelow _smallVinvBelow
+	nlqZair nlqDozair nlqKharizair];
 @NLikeHid_sub = [_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
-	_smallVBelow.hid _smallVinvBelow.hid];
-# TODO - fix all these
-@NLikeSubBy2_sub = [_dot1l.subBy2 _dot2l.subBy2 _dot2vl.subBy2 _dot3l.subBy2 _dot4l.subBy2 _hehHook.subBy2 _smallTahBelow.subBy2
-	_smallTah2dotsBelow.subBy2 _smallVBelow.subBy2 _smallVinvBelow.subBy2];
-@NLikeSubBy3_sub = [_dot1l.subBy3 _dot2l.subBy3 _dot2vl.subBy3 _dot3l.subBy3 _dot4l.subBy3 _hehHook.subBy3 _smallTahBelow.subBy3
-	_smallTah2dotsBelow.subBy3 _smallVBelow.subBy3 _smallVinvBelow.subBy3];
+	_smallVBelow.hid _smallVinvBelow.hid
+	_diac.hid _diac.hid _diac.hid];
 
-@NLikeSubByAll = [@NLikeSubBy_sub @NLikeSubBy2_sub @NLikeSubBy3_sub];
-@NLikeSubBy2_3 = [@NLikeSubBy2_sub @NLikeSubBy3_sub];
 
 include(../../source/opentype/bariyehKernClasses.feax);
 
 
 #========== LOOKUPS ==========
 
-# The following three lookups change "RenderingUnknown" to "RenderingOpenType"
+lookup _delDot {
+	lookupflag 0;
+	sub _dot3l  by  NULL;
+	#sub _dot3l;
+	#sub absBehIni.jm _dot3l by absBehIni.jm;
+} _delDot;
+
+lookup _insShim1 {
+	sub _dot3l  by  _dot3l _byShim1;
+	sub absJeemFin  by  absJeemFin  _byShim1;
+} _insShim1;
+
+lookup _insShim {
+	sub absJeemFin @NuqtaLower' lookup _insShim1;
+	sub absJeemFin' lookup _insShim1;
+} _insShim;
+
+
+lookup _insShim2 {
+	sub _dot3l  by  _dot3l _byShim1;
+} _insShim2;
+
+lookup IDtest {  # experiment
+	lookupflag UseMarkFilteringSet @NuqtaLower;
+	sub  absBehIni.jm  _dot3l' lookup _delDot;  ### absJeemFin' lookup _insShim;
+} IDtest;
+
+
+# The following three lookups change "RenderingUnknown" to "RenderingOpenType".
 lookup _FontCheck_Unknow {
   lookupflag IgnoreMarks;
     sub [U n k o w ] by [O p e T y];
@@ -130,6 +153,20 @@ lookup FontCheck {
       w' lookup _FontCheck_Unknow
       n' lookup _FontCheck_n;
 } FontCheck ;
+
+
+#lookup MergeNullNull {
+#	lookupflag 0;
+#	sub NULL    NULL  by  NULL;
+#} MergeNullNull;
+
+lookup DeleteNull {
+	lookupflag 0;
+	#sub NULL nlqBariyehFin		by   nlqBariyehFin;
+	#sub @GDEF_bases NULL  by		@GDEF_bases;
+	#sub @GDEF_marks NULL	 by		@GDEF_marks;
+} DeleteNull;
+
 
 # TODO: comment out lookups that are not used.
 lookup Kern50 { pos @AllBases 50; } Kern50;
@@ -312,69 +349,96 @@ lookup _PreByHide {
 	sub @NLikeSubBy_sub by @NLikeHid_sub;
 } _PreByHide;
 
+lookup _PreByDelDiac {
+	lookupflag 0;
+	sub @DiacLower by .null;
+} _PreByDelDiac;
+
+@ByShim = [_byShim1 _byShim2 _byShim3];
+
 lookup _ByInsertDot1l {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _dot1l;
+	sub @ByShim by @ByShim _dot1l;
 } _ByInsertDot1l;
 
 lookup _ByInsertDot2l {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _dot2l;
+	sub @ByShim by @ByShim  _dot2l;
 } _ByInsertDot2l;
 
 lookup _ByInsertDot2vl {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _dot2vl;
+	sub @ByShim by @ByShim _dot2vl;
 } _ByInsertDot2vl;
 
 lookup _ByInsertDot3l {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _dot3l;
+	sub @ByShim by @ByShim  _dot3l;
 } _ByInsertDot3l;
 
 lookup _ByInsertDot4l {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _dot4l;
+	sub @ByShim by @ByShim _dot4l;
 } _ByInsertDot4l;
 
 lookup _ByInsertHehHook {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _hehHook.small;
+	sub @ByShim by @ByShim _hehHook.small;
 } _ByInsertHehHook;
 
 lookup _ByInsertSmallTahBelow {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _smallTahBelow;
+	sub @ByShim by @ByShim _smallTahBelow;
 } _ByInsertSmallTahBelow;
 
 lookup _ByInsertSmallTah2dotsBelow {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _smallTah2dotsBelow;
+	sub @ByShim by @ByShim  _smallTah2dotsBelow;
 } _ByInsertSmallTah2dotsBelow;
 
 lookup _ByInsertSmallVBelow {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _smallVBelow;
+	sub @ByShim by @ByShim  _smallVBelow;
 } _ByInsertSmallVBelow;
 
 lookup _ByInsertSmallVinvBelow {
 	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-	sub nlqBariyehFin by nlqBariyehFin _smallVinvBelow;
+	sub @ByShim by @ByShim  _smallVinvBelow;
 } _ByInsertSmallVinvBelow;
 
-lookup _ByIndex2 {
+lookup _ByInsertZair {
+	#lookupflag UseMarkFilteringSet [@ByShim @NuqtaLikeLower];
 	lookupflag 0;
-	sub @NLikeSubBy_sub by @NLikeSubBy2_sub;
-} _ByIndex2;
+	sub @ByShim          by  @ByShim          nlqZair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqZair;
+} _ByInsertZair;
 
-lookup _ByIndex3 {
-	lookupflag 0;
-	sub @NLikeSubBy_sub by @NLikeSubBy3_sub;
-} _ByIndex3;
+lookup _ByInsertDozair {
+	lookupflag UseMarkFilteringSet @AllMarksLower;
+	sub @ByShim          by  @ByShim          nlqDozair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqDozair;
+} _ByInsertDozair;
+
+lookup _ByInsertKharizair {
+	lookupflag UseMarkFilteringSet @AllMarksLower;
+	sub @ByShim          by  @ByShim          nlqKharizair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqKharizair;
+} _ByInsertKharizair;
+
+#lookup _ByIndex2 {
+#	lookupflag 0;
+#	sub @NLikeSubBy_sub by @NLikeSubBy2_sub;
+#} _ByIndex2;
+
+#lookup _ByIndex3 {
+#	lookupflag 0;
+#	sub @NLikeSubBy_sub by @NLikeSubBy3_sub;
+#} _ByIndex3;
 
 
 lookup _AttByLeft {
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByLeftLower mark @_nLowerBy1;
 	pos base @nByLeftLower mark @_nLowerBy2;
 	pos base @nByLeftLower mark @_nLowerBy3;
 	pos base @nByLeftLower mark @_n1Lower;
@@ -383,8 +447,24 @@ lookup _AttByLeft {
 	pos base @nByLeftLower mark @_tahLower;
 } _AttByLeft;
 
+lookup _AttByLeft3 {
+	lookupflag UseMarkFilteringSet [_byShim3];
+	pos base @nByLeftLower mark @_nLowerBy3;
+} _AttByLeft3;
+
+lookup _AttByMidLeft3 {
+	lookupflag UseMarkFilteringSet [_byShim3];
+	pos base @nByMidLeftLower mark @_nLowerBy3;
+} _AttByMidLeft3;
+
+lookup _AttByMidLeft2 {
+	lookupflag UseMarkFilteringSet [_byShim2];
+	pos base @nByMidLeftLower mark @_nLowerBy2;
+} _AttByMidLeft2;
+
 lookup _AttByMidLeft {
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByMidLeftLower mark @_nLowerBy1;
 	pos base @nByMidLeftLower mark @_nLowerBy2;
 	pos base @nByMidLeftLower mark @_nLowerBy3;
 	pos base @nByMidLeftLower mark @_n1Lower;
@@ -394,7 +474,8 @@ lookup _AttByMidLeft {
 } _AttByMidLeft;
 
 lookup _AttByCenter {
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByCenterLower mark @_nLowerBy1;
 	pos base @nByCenterLower mark @_nLowerBy2;
 	pos base @nByCenterLower mark @_nLowerBy3;
 	pos base @nByCenterLower mark @_n1Lower;
@@ -403,8 +484,15 @@ lookup _AttByCenter {
 	pos base @nByCenterLower mark @_tahLower;
 } _AttByCenter;
 
+lookup _AttByCenter2 {
+	lookupflag UseMarkFilteringSet [_byShim2];
+	pos base @nByCenterLower mark @_nLowerBy2;
+} _AttByCenter2;
+
+
 lookup _AttByMidRight {
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByMidRightLower mark @_nLowerBy1;
 	pos base @nByMidRightLower mark @_nLowerBy2;
 	pos base @nByMidRightLower mark @_nLowerBy3;
 	pos base @nByMidRightLower mark @_n1Lower;
@@ -414,7 +502,8 @@ lookup _AttByMidRight {
 } _AttByMidRight;
 
 lookup _AttByRight {
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByRightLower mark @_nLowerBy1;
 	pos base @nByRightLower mark @_nLowerBy2;
 	pos base @nByRightLower mark @_nLowerBy3;
 	pos base @nByRightLower mark @_n1Lower;
@@ -422,6 +511,12 @@ lookup _AttByRight {
 	pos base @nByRightLower mark @_hehhook;
 	pos base @nByRightLower mark @_tahLower;
 } _AttByRight;
+
+lookup _DeleteShim {
+	sub _byShim1  by  NULL;
+	sub _byShim2  by  NULL;
+	sub _byShim3  by  NULL;
+} _DeleteShim;
 
 
 #========== GSUB rules ==========
@@ -827,6 +922,8 @@ lookup WideForms_chain {
 
 feature calt {
 
+lookup IDtest;
+
 # --- alternate height kafs ---
 
 @KjNormalEntry = [absKehehMed.jm absGafMed.jm];
@@ -1006,27 +1103,21 @@ lookup KafLineHeight {
 	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
 	# We usually don't need to handle these because any that need taller forms
 	# won't match the KafIni/MedFull_sub classes below.
+	# If we find we need to fix them we can do it afterwards in a lookup that can recognize marks.
 	
-	sub	@KafIniFull_sub' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
-	sub	@KafMedFull_sub' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
+	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
 	
-	sub	@KafIniFull_sub' lookup _KafShort			@Medials @Medials @Finals;
-	sub	@KafMedFull_sub' lookup _KafShort			@Medials @Medials @Finals;
+	sub	@KafIMFull' lookup _KafShort		@Medials @Medials @Finals;
 	
-	sub	@KafIniFull_sub' lookup _KafShorter 	@KHighMedials @Medials @Medials;
-	sub	@KafMedFull_sub' lookup _KafShorter 	@KHighMedials @Medials @Medials;
+	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @Medials @Medials;
 	
-	sub	@KafIniFull_sub' lookup _KafShorter 	@Medials @KHighMedials @Medials;
-	sub	@KafMedFull_sub' lookup _KafShorter 	@Medials @KHighMedials @Medials;
+	sub	@KafIMFull' lookup _KafShorter 	@Medials @KHighMedials @Medials;
 	
-	sub	@KafIniFull_sub' lookup _KafShorter 	@Medials @Medials @KHighMedials;
-	sub	@KafMedFull_sub' lookup _KafShorter 	@Medials @Medials @KHighMedials;
+	sub	@KafIMFull' lookup _KafShorter 	@Medials @Medials @KHighMedials;
 	
-	sub	@KafIniFull_sub' lookup _KafShort		 	@Medials @Medials @Medials;
-	sub	@KafMedFull_sub' lookup _KafShort		 	@Medials @Medials @Medials;
+	sub	@KafIMFull' lookup _KafShort		@Medials @Medials @Medials;
 	
-	sub	@KafIniFull_sub' lookup _KafShort		 	@KHighMedials @KHighFinals;
-	sub	@KafMedFull_sub' lookup _KafShort		 	@KHighMedials @KHighFinals;
+	sub	@KafIMFull' lookup _KafShort		@KHighMedials @KHighFinals;
 	
 } KafLineHeight;
 
@@ -1059,6 +1150,8 @@ lookup SplitNuqtaPairs {
 } SplitNuqtaPairs;
 
 
+# --- wide forms for ring characters ---
+
 # After ring and dots have been split:
 lookup WideForRing {
 	lookupflag UseMarkFilteringSet @_ring;
@@ -1068,6 +1161,8 @@ lookup WideForRing {
 
 } WideForRing;
 
+
+# --- clean-ups ---
 
 lookup CleanupsDelete {
 	lookupflag 0;
@@ -1121,61 +1216,149 @@ lookup CleanupsSub {
 		
 } CleanupsSub;
 
+# --- Bariyeh tails with attached nuqtas and diacritics ---
 
 # Must be done after nuqta pairs have been split.
 
-lookup BariyehNuqta1 {
-	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+lookup BariyehShims {
+	sub nlqBariyehFin  by  nlqBariyehFin  _byShim1  _byShim2  _byShim3;
+} BariyehShims;
 
-	sub @IniMed	_dot1l'								lookup _PreByHide		nlqBariyehFin' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		nlqBariyehFin' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		nlqBariyehFin' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		nlqBariyehFin' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		nlqBariyehFin' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		nlqBariyehFin' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		nlqBariyehFin' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		nlqBariyehFin' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		nlqBariyehFin' lookup _ByInsertSmallVinvBelow;
+@NuqtaLowerShim = [@NuqtaLikeLower @ByShim];
+@NLikeHid = [_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
+	_smallVBelow.hid _smallVinvBelow.hid];
+@NuqtaDiacLowerShim  = [@NuqtaLikeLower @DiacLower @ByShim];
 
-} BariyehNuqta1;
-
-lookup BariyehNuqta2 {
-	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-
-	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' 	nlqBariyehFin' lookup _ByInsertSmallVinvBelow;
-} BariyehNuqta2;
-
-lookup BariyehNuqta3 {
-	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
-
-	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' lookup _ByInsertSmallVinvBelow;
+lookup BariyehNuqta3 {		#  closest to bariyeh
+	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+	
+	sub @IniMed	_dot1l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'							lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMed	_smallVBelow' 				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
 } BariyehNuqta3;
 
-lookup ByIndexNuqtas {
-	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+lookup BariyehDiac3 {
+	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	
+	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
+	# positioning confused. It is replaced with a .null glyph which gets deleted below.
+	
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'										lookup _ByInsertZair;
+	
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertDozair;
+	
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertKharizair;
+	
+} BariyehDiac3;
 
-	sub nlqBariyehFin @NuqtaLikeLower		@NLikeSubBy_sub' lookup _ByIndex2		@NLikeSubBy_sub' lookup _ByIndex3;
-	sub nlqBariyehFin @NuqtaLikeLower		@NLikeSubBy_sub' lookup _ByIndex2;
-} ByIndexNuqtas;
+lookup DelNull3 { lookupflag 0; sub .null by NULL; } DelNull3;
+
+lookup BariyehNuqta2 {  # second from bariyeh
+	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+
+	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
+	
+} BariyehNuqta2;
+
+lookup BariyehDiac2 {
+	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	
+	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
+	# positioning confused. It is replaced with a .null glyph which gets deleted below.
+	
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin' _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin' _byShim1' _byShim2' 									lookup _ByInsertZair;
+	
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertDozair;
+
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertKharizair;
+
+} BariyehDiac2;
+
+lookup DelNull2 { lookupflag 0; sub .null by NULL; } DelNull2;
+
+lookup BariyehNuqta1 {  # third from bariyeh
+	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+
+	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
+	
+} BariyehNuqta1;
+
+lookup BariyehDiac1 {
+	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	
+	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
+	# positioning confused. It is replaced with a .null glyph which gets deleted below.
+	
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin' _byShim1' @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin' _byShim1' 									lookup _ByInsertZair;
+	
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertDozair;
+	
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertKharizair;
+	
+} BariyehDiac1;
+
+lookup DelNull1 { lookupflag 0; sub .null by NULL; } DelNull1;
+
+lookup DeleteEmptyShims {
+	# The positioning is based on which shims are in use. So delete empty ones to make the rules easier.
+	
+	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	
+	ignore sub _byShim1' @AllMarksLower;
+	#sub nlqBariyehFin _byShim1' lookup _DeleteShim;
+	sub _byShim1' lookup _DeleteShim;
+	
+	ignore sub _byShim2' @AllMarksLower;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2' lookup _DeleteShim;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2' lookup _DeleteShim;
+	sub _byShim2' lookup _DeleteShim;
+	
+	ignore sub _byShim3' @AllMarksLower;
+	sub _byShim3' lookup _DeleteShim;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2 @AllMarksLower									_byShim3' lookup _DeleteShim;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2 @AllMarksLower @AllMarksLower	_byShim3' lookup _DeleteShim;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2 @AllMarksLower									_byShim3' lookup _DeleteShim;
+	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2 @AllMarksLower @AllMarksLower	_byShim3' lookup _DeleteShim;
+} DeleteEmptyShims;
+
+lookup DeleteHidden {
+	lookupflag 0;
+	sub @NLikeHid_sub  by  NULL;
+} DeleteHidden;
 
 } calt;		# end of feature
 
@@ -1195,24 +1378,50 @@ lookup AttachKafTop {
 		pos		base @kafTop_bj				mark @_kafTop_bj;
 } AttachKafTop;
 
-lookup AttachSubBy {		# right-most nuqta (first in stream)
-	lookupflag UseMarkFilteringSet @NLikeSubByAll;
 
-	pos nlqBariyehFin' @NLikeSubBy_sub' lookup _AttByRight		@NLikeSubBy2_sub	@NLikeSubBy3_sub;
-	pos nlqBariyehFin' @NLikeSubBy_sub' lookup _AttByMidRight	@NLikeSubBy2_sub;
-	pos nlqBariyehFin' @NLikeSubBy_sub' lookup _AttByCenter;
-} AttachSubBy;
+@ByShim2_3 = [_byShim2 _byShim3];
 
-lookup AttachSubBy2 {		# second nuqta when there are 2 or 3
-	lookupflag UseMarkFilteringSet @NLikeSubBy2_3;
-	pos nlqBariyehFin' @NLikeSubBy2_sub' lookup _AttByCenter		@NLikeSubBy3_sub;
-	pos nlqBariyehFin' @NLikeSubBy2_sub' lookup _AttByMidLeft;
-} AttachSubBy2;
+lookup AttachByShim1 {		# right-most nuqta (first in stream)
+	lookupflag UseMarkFilteringSet @ByShim;
 
-lookup AttachSubBy3 {		# left-most nuqta when there are 3 (last in stream)
-	lookupflag UseMarkFilteringSet @NLikeSubBy3_sub;
-	pos nlqBariyehFin' @NLikeSubBy3_sub' lookup _AttByLeft;
-} AttachSubBy3;
+	# If all three shims are used, attach all the way to the right.
+	pos nlqBariyehFin' _byShim1' lookup _AttByRight		_byShim2	_byShim3;
+	
+	# Otherwise, attach mid-right.
+	pos nlqBariyehFin' _byShim1' lookup _AttByMidRight;
+} AttachByShim1;
+
+lookup AttachByShim2 { # second from bariyeh
+	lookupflag UseMarkFilteringSet @ByShim;
+	
+	# If all three shims are used, attach in the center.
+	pos nlqBariyehFin' _byShim1' _byShim2' lookup _AttByCenter2	_byShim3;
+	
+	# If shims 1 and 2 are used, attach mid-left
+	pos nlqBariyehFin' _byShim1' _byShim2' lookup _AttByMidLeft2;
+	
+	# If shims 2 and 3 are used, attach mid-right.
+	pos nlqBariyehFin' _byShim2' lookup _AttByMidRight  _byShim3;
+	
+	# Otherwise attach to center.
+	pos nlqBariyehFin' _byShim2' lookup _AttByCenter2;
+	
+} AttachByShim2;
+
+lookup AttachByShim3 {		# left-most nuqta when there are 3 (last in stream)
+	lookupflag UseMarkFilteringSet @ByShim;
+	
+	# If all three shims are used, attach to the left.
+	pos nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _AttByLeft3;
+	
+	# If 2 shims are used, attach this one mid-left.
+	pos nlqBariyehFin' _byShim1' _byShim3' lookup _AttByMidLeft3;
+	pos nlqBariyehFin' _byShim2' _byShim3' lookup _AttByMidLeft3;
+	
+	# Otherwise attach in the center.
+	pos nlqBariyehFin' _byShim3' lookup _AttByCenter;
+	
+} AttachByShim3;
 
 
 # In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
@@ -1347,19 +1556,32 @@ lookup AttachAlefDiacToLam {
 
 feature mkmk {
 
+lookup Att2ByShimFallBack {
+		lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+		pos mark @shim_MarkBase mark @_nByLower;
+} Att2ByShimFallBack;
+
+lookup Att2ByShim {
+		lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+		pos	mark @shim_MarkBase  	mark @_n1Lower;
+		#pos	mark @shim_MarkBase  	mark @_hehhook;
+		pos mark @shim_MarkBase 	mark @_n23Lower;
+		pos	mark @shim_MarkBase  	mark @_mLower;
+} Att2ByShim;
+
 lookup AttMark2MarkUpper {
 		lookupflag UseMarkFilteringSet @MarkFilter_mUpper;
-		pos		mark @mUpper_MarkBase		mark @_mUpper;
+		pos mark @mUpper_MarkBase		mark @_mUpper;
 } AttMark2MarkUpper;
 
 lookup AttMark2MarkLower {
 		lookupflag UseMarkFilteringSet @MarkFilter_mLower;
-		pos		mark @mLower_MarkBase		mark @_mLower;
+		pos mark @mLower_MarkBase		mark @_mLower;
 } AttMark2MarkLower;
 
 lookup AttRing2Mark {
 		lookupflag UseMarkFilteringSet @MarkFilter_ring;
-		pos		mark @ring_MarkBase		mark @_ring;
+		pos mark @ring_MarkBase		mark @_ring;
 } AttRing2Mark;
 
 } mkmk;

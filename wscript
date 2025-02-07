@@ -111,9 +111,10 @@ designspace(dspace_file,
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
     
-    opentype = fea(genout + '${DS:FILENAME_BASE}.fea',
+    opentype = fea(process(genout + '${DS:FILENAME_BASE}.fea', cmd("sed 's/\\\\NULL/NULL/' ${DEP} > ${TGT}")),
         mapfile = genout + "${DS:FILENAME_BASE}.map",
         master = 'source/opentype/main.feax',
+        
 #        make_params = '--ignoreglyphs ' + omitaps + noOTkern,
 				make_params = omitaps
 #        depends = ['source/opentype/gsub.feax', 'source/opentype/gpos.feax', 
