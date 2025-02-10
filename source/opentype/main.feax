@@ -24,9 +24,9 @@ languagesystem arab dflt;
 @NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l _dot1l.small _dot2l.small _dot2vl.small _dot3l.small _dot4l.small];
 @Nuqta = [@NuqtaUpper @NuqtaLower];
 @NuqtaLikeUpper = [@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove _smallTah  _smallV  _smallTah2dots  _kafSquiggle
-	_smallThreeAbove  _smallTwoAbove  _wasla _wavyHamza
+	_smallThreeAbove  _smallTwoAbove  _wasla  _wavyHamza  _grafStroke
 	_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
-	_dot1u_smallV  _dot1u_smallTah  _dot1u_smallTah.kf
+	_dot1u_smallV  _dot1u_smallV.kf  _dot1u_smallTah  _dot1u_smallTah.kf
 	_noDot1u _noDot2u ];
 @NuqtaLikeLower = [@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 	_dot2lIM  _dot2lIM.small _dot2l.tail
@@ -62,6 +62,7 @@ languagesystem arab dflt;
 @AllMarksLower = [@NuqtaLikeLower @DiacLower];
 @AllMarksMiddle = [@_squiggle @_bar _attachedRingMid ];
 @AllMarksUpMid = [@AllMarksUpper @AllMarksMiddle];
+@AllMarks = [@AllMarksUpper @AllMarksLower @AllMarksMiddle];
 
 @NuqtaUpperWide_sub = [_dot2u _dot3u _dot4u];
 @NuqtaUpperWide_small_sub = [_dot2u.small _dot3u.small _dot4u.small];
@@ -169,53 +170,53 @@ lookup DeleteNull {
 
 
 # TODO: comment out lookups that are not used.
-lookup Kern50 { pos @AllBases 50; } Kern50;
-lookup Kern100 { pos @AllBases 100; } Kern100;
-lookup Kern150 { pos @AllBases 150; } Kern150;
-lookup Kern200 { pos @AllBases 200; } Kern200;
-lookup Kern250 { pos @AllBases 250; } Kern250;
-lookup Kern300 { pos @AllBases 300; } Kern300;
-lookup Kern350 { pos @AllBases 350; } Kern350;
-lookup Kern400 { pos @AllBases 400; } Kern400;
-lookup Kern450 { pos @AllBases 450; } Kern450;
-lookup Kern500 { pos @AllBases 500; } Kern500;
-lookup Kern550 { pos @AllBases 550; } Kern550;
-lookup Kern600 { pos @AllBases 600; } Kern600;
-lookup Kern650 { pos @AllBases 650; } Kern650;
-lookup Kern700 { pos @AllBases 700; } Kern700;
-lookup Kern750 { pos @AllBases 750; } Kern750;
-lookup Kern800 { pos @AllBases 800; } Kern800;
-lookup Kern850 { pos @AllBases 850; } Kern850;
-lookup Kern900 { pos @AllBases 900; } Kern900;
-lookup Kern950 { pos @AllBases 950; } Kern950;
-lookup Kern1000 { pos @AllBases 1000; } Kern1000;
-lookup Kern1050 { pos @AllBases 1050; } Kern1050;
-lookup Kern1100 { pos @AllBases 1100; } Kern1100;
-lookup Kern1150 { pos @AllBases 1150; } Kern1150;
-lookup Kern1200 { pos @AllBases 1200; } Kern1200;
-lookup Kern1250 { pos @AllBases 1250; } Kern1250;
-lookup Kern1300 { pos @AllBases 1300; } Kern1300;
-lookup Kern1350 { pos @AllBases 1350; } Kern1350;
-lookup Kern1400 { pos @AllBases 1400; } Kern1400;
-lookup Kern1450 { pos @AllBases 1450; } Kern1450;
-lookup Kern1500 { pos @AllBases 1500; } Kern1500;
-lookup Kern1550 { pos @AllBases 1550; } Kern1550;
-lookup Kern1600 { pos @AllBases 1600; } Kern1600;
-lookup Kern1650 { pos @AllBases 1650; } Kern1650;
-lookup Kern1700 { pos @AllBases 1700; } Kern1700;
-lookup Kern1750 { pos @AllBases 1750; } Kern1750;
-lookup Kern1800 { pos @AllBases 1800; } Kern1800;
-lookup Kern1850 { pos @AllBases 1850; } Kern1850;
-lookup Kern1900 { pos @AllBases 1900; } Kern1900;
-lookup Kern1950 { pos @AllBases 1950; } Kern1950;
-lookup Kern2000 { pos @AllBases 2000; } Kern2000;
-#lookup Kern2050 { pos @AllBases 2050; } Kern2050;	# not used
-#lookup Kern2100 { pos @AllBases 2100; } Kern2100;	# not used
-lookup Kern2150 { pos @AllBases 2150; } Kern2150;
-lookup Kern2200 { pos @AllBases 2200; } Kern2200;
-lookup Kern2250 { pos @AllBases 2250; } Kern2250;
-lookup Kern2300 { pos @AllBases 2300; } Kern2300;
-lookup Kern2350 { pos @AllBases 2350; } Kern2350;
+lookup Kern50 { pos @IsoIni 50; } Kern50;
+lookup Kern100 { pos @IsoIni 100; } Kern100;
+lookup Kern150 { pos @IsoIni 150; } Kern150;
+lookup Kern200 { pos @IsoIni 200; } Kern200;
+lookup Kern250 { pos @IsoIni 250; } Kern250;
+lookup Kern300 { pos @IsoIni 300; } Kern300;
+lookup Kern350 { pos @IsoIni 350; } Kern350;
+lookup Kern400 { pos @IsoIni 400; } Kern400;
+lookup Kern450 { pos @IsoIni 450; } Kern450;
+lookup Kern500 { pos @IsoIni 500; } Kern500;
+lookup Kern550 { pos @IsoIni 550; } Kern550;
+lookup Kern600 { pos @IsoIni 600; } Kern600;
+lookup Kern650 { pos @IsoIni 650; } Kern650;
+lookup Kern700 { pos @IsoIni 700; } Kern700;
+lookup Kern750 { pos @IsoIni 750; } Kern750;
+lookup Kern800 { pos @IsoIni 800; } Kern800;
+lookup Kern850 { pos @IsoIni 850; } Kern850;
+lookup Kern900 { pos @IsoIni 900; } Kern900;
+lookup Kern950 { pos @IsoIni 950; } Kern950;
+lookup Kern1000 { pos @IsoIni 1000; } Kern1000;
+lookup Kern1050 { pos @IsoIni 1050; } Kern1050;
+lookup Kern1100 { pos @IsoIni 1100; } Kern1100;
+lookup Kern1150 { pos @IsoIni 1150; } Kern1150;
+lookup Kern1200 { pos @IsoIni 1200; } Kern1200;
+lookup Kern1250 { pos @IsoIni 1250; } Kern1250;
+lookup Kern1300 { pos @IsoIni 1300; } Kern1300;
+lookup Kern1350 { pos @IsoIni 1350; } Kern1350;
+lookup Kern1400 { pos @IsoIni 1400; } Kern1400;
+lookup Kern1450 { pos @IsoIni 1450; } Kern1450;
+lookup Kern1500 { pos @IsoIni 1500; } Kern1500;
+lookup Kern1550 { pos @IsoIni 1550; } Kern1550;
+lookup Kern1600 { pos @IsoIni 1600; } Kern1600;
+lookup Kern1650 { pos @IsoIni 1650; } Kern1650;
+lookup Kern1700 { pos @IsoIni 1700; } Kern1700;
+lookup Kern1750 { pos @IsoIni 1750; } Kern1750;
+lookup Kern1800 { pos @IsoIni 1800; } Kern1800;
+lookup Kern1850 { pos @IsoIni 1850; } Kern1850;
+lookup Kern1900 { pos @IsoIni 1900; } Kern1900;
+lookup Kern1950 { pos @IsoIni 1950; } Kern1950;
+lookup Kern2000 { pos @IsoIni 2000; } Kern2000;
+lookup Kern2050 { pos @IsoIni 2050; } Kern2050;	# not used
+lookup Kern2100 { pos @IsoIni 2100; } Kern2100;	# not used
+lookup Kern2150 { pos @IsoIni 2150; } Kern2150;
+lookup Kern2200 { pos @IsoIni 2200; } Kern2200;
+lookup Kern2250 { pos @IsoIni 2250; } Kern2250;
+lookup Kern2300 { pos @IsoIni 2300; } Kern2300;
+lookup Kern2350 { pos @IsoIni 2350; } Kern2350;
 
 @NuqtaPlusMark_sub = [_dot1u_smallV _dot1u_smallTah];
 @NuqtaPlusMarkKf_sub = [_dot1u_smallV.kf _dot1u_smallTah.kf];
@@ -855,8 +856,8 @@ lookup WideForms {
 	
 	# These help us avoid collisions.
 	
-	sub absFehIni'		@KafForms		by	absFehIni.kf_wide;
-	sub absFehMed'		@KafForms		by	absFehMed.kf_wide;
+	sub absFehIni' @NuqtaLikeUpper		@KafForms		by	absFehIni.kf_wide;
+	sub absFehMed' @NuqtaLikeUpper		@KafForms		by	absFehMed.kf_wide;
 	
 	# Special case: kaf w/3 dots + kaf/gaf; graf + kaf/gaf
 	sub @KafKfNormal' [@NuqtaUpperWide_sub _grafStroke] @KafMFForms		by		@KafKfWide;
@@ -874,6 +875,9 @@ lookup WideForms {
 	# Special case: teh + khah + lam + diac
 	# TODO: decide if this is needed.
 	#sub absBehIni.jm  [@NuqtaLikeUpper @NuqtaLowerUpper]  absJeemMed' @NuqtaLikeUpper @LamMedForms  by  absJeemMed.kf_wide;
+	
+	# Feh + kaf => wide feh
+
 } WideForms;
 
 lookup WideFormsDiac {
@@ -886,7 +890,7 @@ lookup WideFormsDiac {
 
 # continuation of WideForms, for chaining rules
 lookup WideForms_chain {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
 	
 	# Special case: nuqta-small-V + kaf/gaf
 	# TODO: raise AP on the NuqtaPlusMark.kf_sub glyphs.
@@ -1147,6 +1151,7 @@ lookup SplitNuqtaPairs {
 	sub		_dot2lIM__smallTwo'		by		_dot2l						_smallTwoAbove;
 	sub		_dot2lIM__smallThree'	by		_dot2l						_smallThreeAbove;
 	sub		_noDot2l__hamza'			by		_noDot2l					absHamzaAbove;
+
 } SplitNuqtaPairs;
 
 
@@ -1189,7 +1194,9 @@ lookup CleanupsDelete {
 	
 	# delete kaf squiggle from initials and medials:
 	sub	@KehehIniForms'			_kafSquiggle'			by		@KehehIniForms;
+	sub @KehehIniBase_sub'	_kafSquiggle'			by 		@KehehIniBase_sub;
 	sub	@KehehMedForms'			_kafSquiggle'			by		@KehehMedForms;
+	sub @KehehMedBase_sub'	_kafSquiggle'			by 		@KehehMedBase_sub;
 	
 	# delete bogus kaf tops:
 	sub absKehehMed.jm'		_kehehTop_m_bogus		by  absKehehMed.jm;
@@ -1202,17 +1209,20 @@ lookup CleanupsDelete {
 } CleanupsDelete;
 
 lookup CleanupsSub {
-	lookupflag 0;
+	lookupflag UseMarkFilteringSet @AllMarks;		# ignore kaf tops
 	
-	# the special marker for the chotiyeh should just use the standard glyphs at this point:
+	# The special marker for the chotiyeh should just use the standard glyphs at this point:
 	sub  _dot2lIM'	by	_dot2l;
 	
-	# delete non-existent nuqtas:
+	# Delete non-existent nuqtas:
 	sub	_noDot2l__hamza'		by	absHamzaAbove;
 	
-	# delete kaf squiggle from initials and medials:
-	sub @KehehIMForms _dot2u__squiggle'		by	_dot2u;
-	sub @KehehIMForms _dot3u__squiggle'		by	_dot3u;
+	# Keep kaf squiggle on finals:
+	sub		@KafFinForms _dot2u__squiggle'		by		_dot2u		_kafSquiggle;
+	sub		@KafFinForms _dot3u__squiggle'		by		_dot3u		_kafSquiggle;
+	# Otherwise delete:
+	sub _dot2u__squiggle' by _dot2u;
+	sub _dot3u__squiggle' by _dot3u;
 		
 } CleanupsSub;
 
@@ -1455,6 +1465,7 @@ lookup AttachMiddle {
 lookup AttachUpper {
 		lookupflag UseMarkFilteringSet @AllMarksUpper;
     pos		base @nUpper  		mark @_nUpper;
+		pos		base @graf				mark @_graf;
 } AttachUpper;
 
 lookup AttachHamzaAsUpper {
@@ -1557,31 +1568,36 @@ lookup AttachAlefDiacToLam {
 feature mkmk {
 
 lookup Att2ByShimFallBack {
-		lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
-		pos mark @shim_MarkBase mark @_nByLower;
+	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	pos mark @shim_MarkBase mark @_nByLower;
 } Att2ByShimFallBack;
 
 lookup Att2ByShim {
-		lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
-		pos	mark @shim_MarkBase  	mark @_n1Lower;
-		#pos	mark @shim_MarkBase  	mark @_hehhook;
-		pos mark @shim_MarkBase 	mark @_n23Lower;
-		pos	mark @shim_MarkBase  	mark @_mLower;
+	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	pos	mark @shim_MarkBase  	mark @_n1Lower;
+	#pos	mark @shim_MarkBase  	mark @_hehhook;
+	pos mark @shim_MarkBase 	mark @_n23Lower;
+	pos	mark @shim_MarkBase  	mark @_mLower;
 } Att2ByShim;
 
+lookup AttGrafStroke {
+	lookupflag 0;
+	pos mark @graf_MarkBase		mark @_graf;
+} AttGrafStroke;
+
 lookup AttMark2MarkUpper {
-		lookupflag UseMarkFilteringSet @MarkFilter_mUpper;
-		pos mark @mUpper_MarkBase		mark @_mUpper;
+	lookupflag UseMarkFilteringSet @MarkFilter_mUpper;
+	pos mark @mUpper_MarkBase		mark @_mUpper;
 } AttMark2MarkUpper;
 
 lookup AttMark2MarkLower {
-		lookupflag UseMarkFilteringSet @MarkFilter_mLower;
-		pos mark @mLower_MarkBase		mark @_mLower;
+	lookupflag UseMarkFilteringSet @MarkFilter_mLower;
+	pos mark @mLower_MarkBase		mark @_mLower;
 } AttMark2MarkLower;
 
 lookup AttRing2Mark {
-		lookupflag UseMarkFilteringSet @MarkFilter_ring;
-		pos mark @ring_MarkBase		mark @_ring;
+	lookupflag UseMarkFilteringSet @MarkFilter_ring;
+	pos mark @ring_MarkBase		mark @_ring;
 } AttRing2Mark;
 
 } mkmk;

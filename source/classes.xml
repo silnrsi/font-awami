@@ -311,27 +311,43 @@ details including an FAQ.
 	
 	<!-- add many more -->
 	<class name="Isolates">
-		absAlef
-		absBeh absTeh absTheh absPeh
-				absNoon nlqChotiyeh
-		absJeem absHah absKhah
-		absSeen absSheen
-		absSad absDad
+		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
+						absAlefTwoAbove absAlefThreeAbove absHighHamzaAlef absAlefWasla
+		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh absDotlessBeh
+				absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV 
+				nlqChotiyeh absYeh absYehHamzaAbove absE absYehSmallV absAlefMaksura absYehTwoAbove absYehThreeAbove absYehFourBelow
+						absYehTail absKashmiriYeh
+		absJeem absHah absKhah absHehHamzaAbove absHahSmallTahAbove absHahSmallTahBelow absHahSmallTwhTwoDotsBelow absHahThreeDotsAbove
+						absHahFourBelow absTcheh absNyeh absDyeh absTcheheh
+		absReh absZain absJeh absRreh absRehDotBelow absRehDotBelowDotAbove absRehTwoDotsAbove absRehFourDotsAbove absRehHamzaAbove
+						absRehRing absRehSmallTahTwoDotsAbove absRehTwoVertAbove absRehSmallVBelow
+		absDal absThal absDalDotBelowSmallTah absDalFourDotsAbove absDalRing absDalTwoVertBelowSmallTah absDalDotBelow absDalInvertedVBelow
+						absDdal absDul
+		absSeen absSheen absSeenDotBelowDotAbove absSeenFourDotsAbove absSeenSmallTahTwoDotsAbove absSeenTwoVertAbove
+						absSeen3DotsBelow3DotsAbove absSeenThreeDotsBelow absSeenInvertedVAbove absSeenFourAbove
+		absSad absDad absDadDotBelow absSadThreeDotsAbove 
 		absTah absZah
-		absAin absGhain
-		absFeh 
-				absQaf
-		absKeheh absGaf
-		absLam
+		absAin absGhain absAinThreeDotsAbove 
+		absFeh absFehThreeDotsBelow absDotlessFeh absVeh
+				absQaf absDotlessQaf 
+		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
+						absGueh absNgoeh absGraf
+		absLam absLamBar absLamSmallV absLamSmallTah absLamThreeDots
 		absMeem
+		absWaw absWawHamzaAbove absWawRing absU absOe absKirghizOe absKirghizYu absWawTwoAbove absWawThreeAbove absWawDotAbove
+						absWawTwoDotsAbove absVe absYu
 		absHehDo
-		absHehGoal
-		nlqBariyeh
+		absHehGoal absHehGoalHamzaAbove absHehYehAbove absHeh absAe
+		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
 		absTehMarbuta
 		absTehMarbutaGoal
 	</class>
 	
 	<class name="IniMed">@Initials @Medials</class>
+	
+	<class name="IsoFin">@Isolates @Finals</class>
+	
+	<class name="IsoIni">@Isolates @Initials</class>
 
 	<class name="AllBases">
 		@Initials  @Medials  @Finals  @Isolates

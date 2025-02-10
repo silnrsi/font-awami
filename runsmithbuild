@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# generate Debg table
+export FONTTOOLS_LOOKUP_DEBUGGING=1
+
+smith distclean
+smith configure
+smith build -v
+#smith test
+#smith sile
+#smith pdfs
