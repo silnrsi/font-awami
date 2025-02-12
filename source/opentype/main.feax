@@ -740,6 +740,8 @@ lookup BasicContextuals {
 	
 } BasicContextuals;			# end of lookup
 
+
+	
 # Here we assume that glyphs before beh have their .be form.
 lookup BehContextuals {
 	lookupflag IgnoreMarks RightToLeft;
@@ -752,18 +754,17 @@ lookup BehContextuals {
 	rsub @MedBe_sub'			absBehFin			by	@MedBeF_sub;
 	
 	# Alternate teeth:
-	rsub absBehMed.be'		@PostBeM1			by	absBehMed.beM1;		# high tooth
-	rsub absBehMed.be'		@PostBeM2			by	absBehMed.beM2;		# low tooth
+	#rsub absBehMed.be'		@PostBeM1			by	absBehMed.beM1;		# high tooth
+	#rsub absBehMed.be'		@PostBeM2			by	absBehMed.beM2;		# low tooth
 	
-	# Initials before beh:
-	rsub @IniBe_sub'			@PostBeM1			by	@IniBeM1_sub;
-	rsub @IniBe_sub'			@PostBeM2			by	@IniBeM2_sub;
-	
+	rsub @MedBe_sub'		absBehMed.bere	by	@MedBeHg_sub;				# eg, \u062a\u0646\u0628\u0646\u0631
+	rsub @IniBe_sub'		absBehMed.bere	by	@IniBeHg_BeRe_sub;	# eg, \u0644\u0628\u0646\u0631
+		
 	# Finally handle the first item in the chain:
-	rsub @IniBe_sub'   [absBehMed absBehMed.beM1 absBehMed.benn]	by	@IniBeM2_sub;
-	rsub @IniBe_sub'   absBehMed.beM2															by	@IniBeM1_sub;
-	rsub @MedBe_sub'   [absBehMed absBehMed.beM1 absBehMed.benn]	by	@MedBeM2_sub;		# these two rules must be last, so that
-	rsub @MedBe_sub'   absBehMed.beM2															by	@MedBeM1_sub;		# they only get triggered by non-behs
+	rsub @IniBe_sub'   @PostBeM1							by	@IniBeM1_sub;
+	rsub @IniBe_sub'   [absBehMed @PostBeM2]	by	@IniBeM2_sub;
+	rsub @MedBe_sub'   @PostBeM1							by	@MedBeM1_sub;
+	rsub @MedBe_sub'   [absBehMed @PostBeM2]	by	@MedBeM2_sub; 
 
 } BehContextuals;					# end of lookup
 
@@ -783,6 +784,7 @@ lookup ConnectToRoundKaf{
 	
 	# Use sad connection to round kafs, which happen before lams and alefs.
 	sub @IniDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@IniSd_sub;
+	sub @MedDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@MedSd_sub;
 } ConnectToRoundKaf;
 
 
@@ -876,7 +878,10 @@ lookup WideForms {
 	# TODO: decide if this is needed.
 	#sub absBehIni.jm  [@NuqtaLikeUpper @NuqtaLowerUpper]  absJeemMed' @NuqtaLikeUpper @LamMedForms  by  absJeemMed.kf_wide;
 	
-	# Feh + kaf => wide feh
+	# Special case: feh + beh + kaf
+	# NOT IN GRAPHITE
+	# TODO: decide if this is needed.
+	sub @FehIMForms @NuqtaLikeUpper absBehMed' @NuqtaLikeUpper @KafForms		by	absBehMed.kf_wide;
 
 } WideForms;
 
@@ -1172,8 +1177,8 @@ lookup WideForRing {
 lookup CleanupsDelete {
 	lookupflag 0;
 	
-	# delete hehhook from all but medial hehgoals:
-	sub  @HehGoalIniForms'	_hehHook.small'		by		@HehGoalIniForms;
+	# delete hehhook from final hehgoals:
+	#sub  @HehGoalMedForms'	_hehHook.small'		by		@HehGoalMedForms;  # eventually controlled by a user feature
 	sub  absHehGoalFin'			_hehHook.small'		by		absHehGoalFin;
 	
 	# delete non-existent nuqtas:
