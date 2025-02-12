@@ -1194,6 +1194,12 @@ lookup WideForRing {
 } WideForRing;
 
 
+lookup NarrowLamBar {
+	lookupflag UseMarkFilteringSet @_bar;
+	sub [absLamIni.al absLamMed.al] _bar'  by  _bar.narrow;
+} NarrowLamBar;
+
+
 # --- clean-ups ---
 
 lookup CleanupsDelete {
@@ -1252,6 +1258,33 @@ lookup CleanupsSub {
 	sub _dot3u__squiggle' by _dot3u;
 		
 } CleanupsSub;
+
+# --- Kaf + lam-bar ---
+
+@Bars = [_bar _bar.raised _bar.raised_gaf _bar.narrow _bar.waw];
+
+@Lam_noBar_postKeheh = [absLamMed.be absLamMed.by absLamFin];
+@Lam_tallForBar_postKeheh = [absLamMed.be_kfTall absLamMed.by_kfTall absLamFin._kfTall];
+@Lam_noBar_postGaf = [absLamMed.ch];
+@Lam_tallForBar_postGaf = [absLamMed.ch_gfTall];
+@LamTall4Bar = [@Lam_tallForBar_postKeheh @Lam_tallForBar_postGaf];
+
+lookup RaiseLamBar {
+	lookupflag UseMarkFilteringSet @Bars;
+	
+	# For a few words we know about, actually use a taller lam:
+	sub @KehehIMForms  @Lam_noBar_postKeheh' @Bars  by  @Lam_tallForBar_postKeheh;
+	sub @KehehIMForms  @Lam_noBar_postGaf'   @Bars  by  @Lam_tallForBar_postGaf;
+	
+	# For other cases, use a raised form of the bar with an extended lam stem.
+	
+	# (...except for the ones we just changed:)
+	ignore sub @KafIMForms @LamTall4Bar @Bars';
+	
+	sub @GafIMForms		@LamMFForms @Bars'  by  _bar.raised_gaf;
+	sub @KehehIMForms	@LamMFForms @Bars'  by  _bar.raised;
+	
+} RaiseLamBar;
 
 # --- Bariyeh tails with attached nuqtas and diacritics ---
 
@@ -1403,7 +1436,7 @@ lookup Space4BariyehKern {
 } calt;		# end of feature
 
 
-#==================== GPOS rules ====================
+#====================  GPOS features  ====================
 
 feature mark {
 
