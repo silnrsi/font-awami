@@ -6,15 +6,15 @@
 #		python3 genBariyehKernRules.py
 
 # When run in "pos" mode, the output assumes a set of kerning lookups such as:
-#		lookup Kern150 { pos @AllBases 150; } Kern150;
+#		lookup _Kern150 { pos @AllBases 150; } _Kern150;
 # etc.
 #
 # When run in "sub" mode, it assumes a set of lookups such as:
-#		lookup Kern150 { sub @Initials by sp150 @Initials } Kern150;
+#		lookup _InsSp2Kern150 { sub @Initials by sp150 @Initials } _InsSp2Kern150;
 # etc.
 
-mode = "pos";
-#mode = "sub";
+mode = "sub";
+#mode = "pos";
 
 import sys
 
@@ -65,7 +65,7 @@ def OutputRuleIfNeeded(mode, seq):
 
 # end of OutputRuleIfNeeded
 
-def OutputRule(mode seq, kernValue):
+def OutputRule(mode, seq, kernValue):
 	outputStr = mode + " ";
 	first = True
 	suffix = "Ini"
@@ -73,7 +73,12 @@ def OutputRule(mode seq, kernValue):
 		c = ClassName(slot) + suffix
 		outputStr += "@" + c
 		if first:
-			outputStr += "' lookup Kern" + str(kernValue) + "  "
+			outputStr += "' lookup "
+			if mode == "sub":
+				outputStr += "_Kern"
+			else:
+				outputStr += "_InsSp4Kern"
+			outputStr += str(kernValue) + "  "
 		first = False
 		suffix = "Med  "
 	outputStr += "nlqBariyehFin;"

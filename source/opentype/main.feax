@@ -18,7 +18,7 @@
 languagesystem latn dflt ;
 languagesystem arab dflt;
 
-#========== CLASSES ==========
+#====================  CLASSES  ====================
 
 @NuqtaUpper = [ _dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u _dot1u.small _dot2u.small _dot3u.small _dot3uD.small _dot4u.small];
 @NuqtaLower = [_dot1l _dot2l _dot2vl _dot3l _dot4l _dot1l.small _dot2l.small _dot2vl.small _dot3l.small _dot4l.small];
@@ -102,35 +102,16 @@ languagesystem arab dflt;
 include(../../source/opentype/bariyehKernClasses.feax);
 
 
-#========== LOOKUPS ==========
+#====================  LOOKUPS  ====================
 
-lookup _delDot {
-	lookupflag 0;
-	sub _dot3l  by  NULL;
-	#sub _dot3l;
-	#sub absBehIni.jm _dot3l by absBehIni.jm;
-} _delDot;
+#lookup DeleteNull {  # not used
+#	lookupflag 0;
+#	sub NULL nlqBariyehFin		by   nlqBariyehFin;
+#	sub @GDEF_bases NULL  by		@GDEF_bases;
+#	sub @GDEF_marks NULL	 by		@GDEF_marks;
+#} DeleteNull;
 
-lookup _insShim1 {
-	sub _dot3l  by  _dot3l _byShim1;
-	sub absJeemFin  by  absJeemFin  _byShim1;
-} _insShim1;
-
-lookup _insShim {
-	sub absJeemFin @NuqtaLower' lookup _insShim1;
-	sub absJeemFin' lookup _insShim1;
-} _insShim;
-
-
-lookup _insShim2 {
-	sub _dot3l  by  _dot3l _byShim1;
-} _insShim2;
-
-lookup IDtest {  # experiment
-	lookupflag UseMarkFilteringSet @NuqtaLower;
-	sub  absBehIni.jm  _dot3l' lookup _delDot;  ### absJeemFin' lookup _insShim;
-} IDtest;
-
+#--- RenderingOpenType ---
 
 # The following three lookups change "RenderingUnknown" to "RenderingOpenType".
 lookup _FontCheck_Unknow {
@@ -155,68 +136,107 @@ lookup FontCheck {
       n' lookup _FontCheck_n;
 } FontCheck ;
 
+#--- bariyeh kerning ---
 
-#lookup MergeNullNull {
-#	lookupflag 0;
-#	sub NULL    NULL  by  NULL;
-#} MergeNullNull;
+lookup _Kern50 { pos @IsoIni 50; } _Kern50;
+lookup _Kern100 { pos @IsoIni 100; } _Kern100;
+lookup _Kern150 { pos @IsoIni 150; } _Kern150;
+lookup _Kern200 { pos @IsoIni 200; } _Kern200;
+lookup _Kern250 { pos @IsoIni 250; } _Kern250;
+lookup _Kern300 { pos @IsoIni 300; } _Kern300;
+lookup _Kern350 { pos @IsoIni 350; } _Kern350;
+lookup _Kern400 { pos @IsoIni 400; } _Kern400;
+lookup _Kern450 { pos @IsoIni 450; } _Kern450;
+lookup _Kern500 { pos @IsoIni 500; } _Kern500;
+lookup _Kern550 { pos @IsoIni 550; } _Kern550;
+lookup _Kern600 { pos @IsoIni 600; } _Kern600;
+lookup _Kern650 { pos @IsoIni 650; } _Kern650;
+lookup _Kern700 { pos @IsoIni 700; } _Kern700;
+lookup _Kern750 { pos @IsoIni 750; } _Kern750;
+lookup _Kern800 { pos @IsoIni 800; } _Kern800;
+lookup _Kern850 { pos @IsoIni 850; } _Kern850;
+lookup _Kern900 { pos @IsoIni 900; } _Kern900;
+lookup _Kern950 { pos @IsoIni 950; } _Kern950;
+lookup _Kern1000 { pos @IsoIni 1000; } _Kern1000;
+lookup _Kern1050 { pos @IsoIni 1050; } _Kern1050;
+lookup _Kern1100 { pos @IsoIni 1100; } _Kern1100;
+lookup _Kern1150 { pos @IsoIni 1150; } _Kern1150;
+lookup _Kern1200 { pos @IsoIni 1200; } _Kern1200;
+lookup _Kern1250 { pos @IsoIni 1250; } _Kern1250;
+lookup _Kern1300 { pos @IsoIni 1300; } _Kern1300;
+lookup _Kern1350 { pos @IsoIni 1350; } _Kern1350;
+lookup _Kern1400 { pos @IsoIni 1400; } _Kern1400;
+lookup _Kern1450 { pos @IsoIni 1450; } _Kern1450;
+lookup _Kern1500 { pos @IsoIni 1500; } _Kern1500;
+lookup _Kern1550 { pos @IsoIni 1550; } _Kern1550;
+lookup _Kern1600 { pos @IsoIni 1600; } _Kern1600;
+lookup _Kern1650 { pos @IsoIni 1650; } _Kern1650;
+lookup _Kern1700 { pos @IsoIni 1700; } _Kern1700;
+lookup _Kern1750 { pos @IsoIni 1750; } _Kern1750;
+lookup _Kern1800 { pos @IsoIni 1800; } _Kern1800;
+lookup _Kern1850 { pos @IsoIni 1850; } _Kern1850;
+lookup _Kern1900 { pos @IsoIni 1900; } _Kern1900;
+lookup _Kern1950 { pos @IsoIni 1950; } _Kern1950;
+lookup _Kern2000 { pos @IsoIni 2000; } _Kern2000;
+lookup _Kern2050 { pos @IsoIni 2050; } _Kern2050;	# not used
+lookup _Kern2100 { pos @IsoIni 2100; } _Kern2100;	# not used
+lookup _Kern2150 { pos @IsoIni 2150; } _Kern2150;
+lookup _Kern2200 { pos @IsoIni 2200; } _Kern2200;
+lookup _Kern2250 { pos @IsoIni 2250; } _Kern2250;
+lookup _Kern2300 { pos @IsoIni 2300; } _Kern2300;
+lookup _Kern2350 { pos @IsoIni 2350; } _Kern2350;
 
-lookup DeleteNull {
-	lookupflag 0;
-	#sub NULL nlqBariyehFin		by   nlqBariyehFin;
-	#sub @GDEF_bases NULL  by		@GDEF_bases;
-	#sub @GDEF_marks NULL	 by		@GDEF_marks;
-} DeleteNull;
+lookup _InsSp2Kern50 { sub @Initials by sp50 @Initials; } _InsSp2Kern50;
+lookup _InsSp2Kern100 { sub @Initials by sp100 @Initials; } _InsSp2Kern100;
+lookup _InsSp2Kern150 { sub @Initials by sp150 @Initials; } _InsSp2Kern150;
+lookup _InsSp2Kern200 { sub @Initials by sp200 @Initials; } _InsSp2Kern200;
+lookup _InsSp2Kern250 { sub @Initials by sp250 @Initials; } _InsSp2Kern250;
+lookup _InsSp2Kern300 { sub @Initials by sp300 @Initials; } _InsSp2Kern300;
+lookup _InsSp2Kern350 { sub @Initials by sp350 @Initials; } _InsSp2Kern350;
+lookup _InsSp2Kern400 { sub @Initials by sp400 @Initials; } _InsSp2Kern400;
+lookup _InsSp2Kern450 { sub @Initials by sp450 @Initials; } _InsSp2Kern450;
+lookup _InsSp2Kern500 { sub @Initials by sp500 @Initials; } _InsSp2Kern500;
+lookup _InsSp2Kern550 { sub @Initials by sp550 @Initials; } _InsSp2Kern550;
+lookup _InsSp2Kern600 { sub @Initials by sp600 @Initials; } _InsSp2Kern600;
+lookup _InsSp2Kern650 { sub @Initials by sp650 @Initials; } _InsSp2Kern650;
+lookup _InsSp2Kern700 { sub @Initials by sp700 @Initials; } _InsSp2Kern700;
+lookup _InsSp2Kern750 { sub @Initials by sp750 @Initials; } _InsSp2Kern750;
+lookup _InsSp2Kern800 { sub @Initials by sp800 @Initials; } _InsSp2Kern800;
+lookup _InsSp2Kern850 { sub @Initials by sp850 @Initials; } _InsSp2Kern850;
+lookup _InsSp2Kern900 { sub @Initials by sp900 @Initials; } _InsSp2Kern900;
+lookup _InsSp2Kern950 { sub @Initials by sp950 @Initials; } _InsSp2Kern950;
+lookup _InsSp2Kern1000 { sub @Initials by sp1000 @Initials; } _InsSp2Kern1000;
+lookup _InsSp2Kern1050 { sub @Initials by sp1050 @Initials; } _InsSp2Kern1050;
+lookup _InsSp2Kern1100 { sub @Initials by sp1100 @Initials; } _InsSp2Kern1100;
+lookup _InsSp2Kern1150 { sub @Initials by sp1150 @Initials; } _InsSp2Kern1150;
+lookup _InsSp2Kern1200 { sub @Initials by sp1200 @Initials; } _InsSp2Kern1200;
+lookup _InsSp2Kern1250 { sub @Initials by sp1250 @Initials; } _InsSp2Kern1250;
+lookup _InsSp2Kern1300 { sub @Initials by sp1300 @Initials; } _InsSp2Kern1300;
+lookup _InsSp2Kern1350 { sub @Initials by sp1350 @Initials; } _InsSp2Kern1350;
+lookup _InsSp2Kern1400 { sub @Initials by sp1400 @Initials; } _InsSp2Kern1400;
+lookup _InsSp2Kern1450 { sub @Initials by sp1450 @Initials; } _InsSp2Kern1450;
+lookup _InsSp2Kern1500 { sub @Initials by sp1500 @Initials; } _InsSp2Kern1500;
+lookup _InsSp2Kern1550 { sub @Initials by sp1550 @Initials; } _InsSp2Kern1550;
+lookup _InsSp2Kern1600 { sub @Initials by sp1600 @Initials; } _InsSp2Kern1600;
+lookup _InsSp2Kern1650 { sub @Initials by sp1650 @Initials; } _InsSp2Kern1650;
+lookup _InsSp2Kern1700 { sub @Initials by sp1700 @Initials; } _InsSp2Kern1700;
+lookup _InsSp2Kern1750 { sub @Initials by sp1750 @Initials; } _InsSp2Kern1750;
+lookup _InsSp2Kern1800 { sub @Initials by sp1800 @Initials; } _InsSp2Kern1800;
+lookup _InsSp2Kern1850 { sub @Initials by sp1850 @Initials; } _InsSp2Kern1850;
+lookup _InsSp2Kern1900 { sub @Initials by sp1900 @Initials; } _InsSp2Kern1900;
+lookup _InsSp2Kern1950 { sub @Initials by sp1950 @Initials; } _InsSp2Kern1950;
+lookup _InsSp2Kern2000 { sub @Initials by sp2000 @Initials; } _InsSp2Kern2000;
+lookup _InsSp2Kern2050 { sub @Initials by sp2050 @Initials; } _InsSp2Kern2050;
+lookup _InsSp2Kern2100 { sub @Initials by sp2100 @Initials; } _InsSp2Kern2100;
+lookup _InsSp2Kern2150 { sub @Initials by sp2150 @Initials; } _InsSp2Kern2150;
+lookup _InsSp2Kern2200 { sub @Initials by sp2200 @Initials; } _InsSp2Kern2200;
+lookup _InsSp2Kern2250 { sub @Initials by sp2250 @Initials; } _InsSp2Kern2250;
+lookup _InsSp2Kern2300 { sub @Initials by sp2300 @Initials; } _InsSp2Kern2300;
+lookup _InsSp2Kern2350 { sub @Initials by sp2350 @Initials; } _InsSp2Kern2350;
+lookup _InsSp2Kern2400 { sub @Initials by sp2400 @Initials; } _InsSp2Kern2400;
 
 
-# TODO: comment out lookups that are not used.
-lookup Kern50 { pos @IsoIni 50; } Kern50;
-lookup Kern100 { pos @IsoIni 100; } Kern100;
-lookup Kern150 { pos @IsoIni 150; } Kern150;
-lookup Kern200 { pos @IsoIni 200; } Kern200;
-lookup Kern250 { pos @IsoIni 250; } Kern250;
-lookup Kern300 { pos @IsoIni 300; } Kern300;
-lookup Kern350 { pos @IsoIni 350; } Kern350;
-lookup Kern400 { pos @IsoIni 400; } Kern400;
-lookup Kern450 { pos @IsoIni 450; } Kern450;
-lookup Kern500 { pos @IsoIni 500; } Kern500;
-lookup Kern550 { pos @IsoIni 550; } Kern550;
-lookup Kern600 { pos @IsoIni 600; } Kern600;
-lookup Kern650 { pos @IsoIni 650; } Kern650;
-lookup Kern700 { pos @IsoIni 700; } Kern700;
-lookup Kern750 { pos @IsoIni 750; } Kern750;
-lookup Kern800 { pos @IsoIni 800; } Kern800;
-lookup Kern850 { pos @IsoIni 850; } Kern850;
-lookup Kern900 { pos @IsoIni 900; } Kern900;
-lookup Kern950 { pos @IsoIni 950; } Kern950;
-lookup Kern1000 { pos @IsoIni 1000; } Kern1000;
-lookup Kern1050 { pos @IsoIni 1050; } Kern1050;
-lookup Kern1100 { pos @IsoIni 1100; } Kern1100;
-lookup Kern1150 { pos @IsoIni 1150; } Kern1150;
-lookup Kern1200 { pos @IsoIni 1200; } Kern1200;
-lookup Kern1250 { pos @IsoIni 1250; } Kern1250;
-lookup Kern1300 { pos @IsoIni 1300; } Kern1300;
-lookup Kern1350 { pos @IsoIni 1350; } Kern1350;
-lookup Kern1400 { pos @IsoIni 1400; } Kern1400;
-lookup Kern1450 { pos @IsoIni 1450; } Kern1450;
-lookup Kern1500 { pos @IsoIni 1500; } Kern1500;
-lookup Kern1550 { pos @IsoIni 1550; } Kern1550;
-lookup Kern1600 { pos @IsoIni 1600; } Kern1600;
-lookup Kern1650 { pos @IsoIni 1650; } Kern1650;
-lookup Kern1700 { pos @IsoIni 1700; } Kern1700;
-lookup Kern1750 { pos @IsoIni 1750; } Kern1750;
-lookup Kern1800 { pos @IsoIni 1800; } Kern1800;
-lookup Kern1850 { pos @IsoIni 1850; } Kern1850;
-lookup Kern1900 { pos @IsoIni 1900; } Kern1900;
-lookup Kern1950 { pos @IsoIni 1950; } Kern1950;
-lookup Kern2000 { pos @IsoIni 2000; } Kern2000;
-lookup Kern2050 { pos @IsoIni 2050; } Kern2050;	# not used
-lookup Kern2100 { pos @IsoIni 2100; } Kern2100;	# not used
-lookup Kern2150 { pos @IsoIni 2150; } Kern2150;
-lookup Kern2200 { pos @IsoIni 2200; } Kern2200;
-lookup Kern2250 { pos @IsoIni 2250; } Kern2250;
-lookup Kern2300 { pos @IsoIni 2300; } Kern2300;
-lookup Kern2350 { pos @IsoIni 2350; } Kern2350;
+#--- wide forms ---
 
 @NuqtaPlusMark_sub = [_dot1u_smallV _dot1u_smallTah];
 @NuqtaPlusMarkKf_sub = [_dot1u_smallV.kf _dot1u_smallTah.kf];
@@ -233,6 +253,8 @@ lookup _WideForms2 {
 	sub @NuqtaUpper_normal_sub by @NuqtaUpper_small_sub;
 	sub absJeemMed by absJeemMed.kf_wide;
 } _WideForms2;
+
+#--- short kafs and other short forms ---
 
 # Use a short version of the keheh or gaf.
 lookup _KafShort {
@@ -344,6 +366,9 @@ lookup _NoChange {
 	ignore sub @AllMarksUpper';
 	ignore sub @MeemForms';
 } _NoChange;
+
+
+#--- marks attached to bariyeh ---
 
 lookup _PreByHide {
 	lookupflag 0;
@@ -517,10 +542,10 @@ lookup _DeleteShim {
 	sub _byShim1  by  NULL;
 	sub _byShim2  by  NULL;
 	sub _byShim3  by  NULL;
-} _DeleteShim;
+} _DeleteShim; 
 
 
-#========== GSUB rules ==========
+#====================  GSUB features  ====================
 
 # Separate bases from nuqtas
 feature ccmp {
@@ -740,7 +765,6 @@ lookup BasicContextuals {
 	
 } BasicContextuals;			# end of lookup
 
-
 	
 # Here we assume that glyphs before beh have their .be form.
 lookup BehContextuals {
@@ -852,7 +876,6 @@ lookup SpecialContextuals {
 
 @NarrowPreKaf = [absBehMed absJeemMed absAinMed absMeemMed absHehGoalMed absFehMed];
 
-
 lookup WideForms {
 	lookupflag UseMarkFilteringSet @NuqtaLikeUpper;
 	
@@ -930,8 +953,6 @@ lookup WideForms_chain {
 
 
 feature calt {
-
-lookup IDtest;
 
 # --- alternate height kafs ---
 
@@ -1067,7 +1088,7 @@ lookup KafCollisionsStep2 {
 } KafCollisionsStep2;
 
 
-# Not included, because I couldn't figure out where these are needed:
+###### Graphite rules that are not included, because I couldn't figure out where these are needed:
 #	// Tall: tall kaf + kaf/gaf (note: does not apply to gaf + kaf)
 # csKafMed_medium  g__kafTop_null
 #		>  csKafMed_baseT$K2  csKafMed_top_tall$K2
@@ -1098,6 +1119,7 @@ lookup KafCollisionsStep2 {
 # cNuqtaLikeUpperNoKT  csKafMed_medium  g__kafTop_null
 # 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 # 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
+#####
 
 @KHighFinals = [@SeenFinForms @SadFinForms @QafFinForms @JeemFinForms @MeemFinForms @AinFinForms @NoonFinForms @ChotiyehFinForms];
 @KHighMedials = [@JeemMedForms @MeemMedForms @HehDoMedForms];
@@ -1354,20 +1376,14 @@ lookup DeleteEmptyShims {
 	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
 	
 	ignore sub _byShim1' @AllMarksLower;
-	#sub nlqBariyehFin _byShim1' lookup _DeleteShim;
 	sub _byShim1' lookup _DeleteShim;
 	
 	ignore sub _byShim2' @AllMarksLower;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2' lookup _DeleteShim;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2' lookup _DeleteShim;
 	sub _byShim2' lookup _DeleteShim;
 	
 	ignore sub _byShim3' @AllMarksLower;
 	sub _byShim3' lookup _DeleteShim;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2 @AllMarksLower									_byShim3' lookup _DeleteShim;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2 @AllMarksLower @AllMarksLower	_byShim3' lookup _DeleteShim;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower								_byShim2 @AllMarksLower									_byShim3' lookup _DeleteShim;
-	#sub nlqBariyehFin _byShim1 @AllMarksLower @AllMarksLower	_byShim2 @AllMarksLower @AllMarksLower	_byShim3' lookup _DeleteShim;
+
 } DeleteEmptyShims;
 
 lookup DeleteHidden {
@@ -1375,10 +1391,19 @@ lookup DeleteHidden {
 	sub @NLikeHid_sub  by  NULL;
 } DeleteHidden;
 
+
+lookup Space4BariyehKern {
+	lookupflag IgnoreMarks;
+
+	include(../../source/opentype/bariyehKernRules.feax);
+
+} Space4BariyehKern;
+
+
 } calt;		# end of feature
 
 
-#========== GPOS rules ==========
+#==================== GPOS rules ====================
 
 feature mark {
 
@@ -1620,14 +1645,11 @@ lookup BasicConnections {
 
 feature dist {
 
-lookup BariyehKern {
-		lookupflag IgnoreMarks;
-		
-include(../../source/opentype/bariyehKernRules.feax);
-
-#pos absBehIni.beM1' lookup Kern2300 absBehMed.be absBehMed.by nlqBariyehFin;
-
-} BariyehKern;
+# This is now being done by inserting spacing glyphs.
+#lookup BariyehKern {
+#		lookupflag IgnoreMarks;	
+#include(../../source/opentype/bariyehKernRules.feax);
+#} BariyehKern;
 
 } dist;
 
