@@ -28,17 +28,18 @@ genout = "generated/"
 # STANDARDS = 'reference'
 
 # set package name
-APPNAME='AwamiNastaliq'      #### AwamiNastaliq-Dev
+APPNAME='AwamiNastaliqOT'      #### AwamiNastaliq-Dev
 
 # set the font family name
 FAMILY=APPNAME
 
 
-DESC_NAME = "Awami-Nastaliq"
+DESC_NAME = "Awami-Nastaliq-OT"
 DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
-getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
+#getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
+getufoinfo('source/masters/AwamiNastaliq-Regular.ufo')
 
 ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
@@ -85,14 +86,14 @@ cmds.extend([
 ])
 
 if '--regOnly' in opts:
-    INST = ['Awami Nastaliq Regular']
+    INST = ['Awami Nastaliq OT Regular']   # OpenType
 elif '--boldOnly' in opts:
-    INST = ['Awami Nastaliq Bold']
+    INST = ['Awami Nastaliq OT Bold']      # OpenType
 else:
     INST = None
     
 # For initial development:
-INST = ['Awami Nastaliq Regular']
+INST = ['Awami Nastaliq OT Regular']      # OpenType
 
 noOTkern = ' -D nokern=yes ' if '--quick' in opts else ''
 noGRkern = '_nokern' if '--quick' in opts else ''
@@ -100,14 +101,14 @@ noGRkern = '_nokern' if '--quick' in opts else ''
 #omitaps = '--omitaps "_above,_below,_center,_ring,_through,_aboveLeft,_H,_L,_O,_U,_R,above,below,center,ring,through,aboveLeft,H,L,O,U,R"'
 omitaps = '--omitaps "kafExclude,kernBbRight,kernBbLeft"'
 
-dspace_file = 'source/awami.designspace'
+dspace_file = 'source/awamiOT.designspace'      # OpenType
 
 # iterate over designspace
 designspace(dspace_file,
     # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
     instanceparams='-l ' + genout + '${DS:FILENAME_BASE}_createintance.log',
     instances = INST,
-    target = process('${DS:FILENAME_BASE}.ttf'),    ##### , *cmds),
+    target = process('${DS:FILENAME_BASE}OT.ttf'),    ##### , *cmds),          # OpenType
     ap = '${DS:FILENAME_BASE}_AP.xml',  # genout?
     version=VERSION,  # Needed to ensure dev information on version string
     
