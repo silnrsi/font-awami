@@ -6,8 +6,9 @@
 # Run this script from the tools/scripts directory where the file is located:
 #		python3 genKernWidthClasses.py
 
-# This version of the script generates 5 width classes. At this point it seems
-# like the best bang for buck.
+# This version of the script generates 6 width classes. We would expect that to be
+# better than 5 classes, but it didn't seem to produce any better result, and
+# requires many more rules. So currently we are only using 5 classes.
 
 from fontParts.world import *
 import sys
@@ -24,8 +25,8 @@ def format_name(gname):
 # Main routine
 
 # Open UFO
-ufo = sys.argv[1]
-#ufo = '../../source/masters/AwamiNastaliq-Regular.ufo'
+#ufo = sys.argv[1]
+ufo = '../../source/masters/AwamiNastaliq-Regular.ufo'
 font = OpenFont(ufo)
 
 outfile = "../../source/opentype/bariyehKernClasses.feax"
@@ -38,12 +39,14 @@ iniNarrow = dict();
 iniMedium = dict();
 iniWide = dict();
 iniExtra = dict();
+iniHuge = dict();
 
 medZero = dict();
 medNarrow = dict();
 medMedium = dict();
 medWide = dict();
 medExtra = dict();
+medHuge = dict();
 
 for glyph in font:
 		aw = glyph.width
@@ -57,14 +60,16 @@ for glyph in font:
 				#print(glyph.name + ", ", aw, file=fout)
 				if aw < 100:
 					medZero[gname] = aw;
-				elif aw < 500:
+				elif aw < 450:
 					medNarrow[gname] = aw;
-				elif aw < 900:
+				elif aw < 800:
 					medMedium[gname] = aw;
-				elif aw < 1300:
+				elif aw < 1150:
 					medWide[gname] = aw;
-				else:
+				elif aw < 1450:
 					medExtra[gname] = aw;
+				else:
+					medHuge[gname] = aw;
 				
 			if gname[-3:] == "Ini" or "Ini." in gname or "Ini_" in gname:
 				# Initial base
@@ -77,8 +82,10 @@ for glyph in font:
 					iniMedium[gname] = aw;
 				elif aw < 1300:
 					iniWide[gname] = aw;
-				else:
+				elif aw < 1450:
 					iniExtra[gname] = aw;
+				else:
+					iniHuge[gname] = aw;
 
 # OUTPUT
 
@@ -109,6 +116,11 @@ for gn in iniExtra:
 	print("  " + format_name(gn) + "# " + str(iniExtra[gn]), file=fout);
 print("];\n", file=fout);
 
+print("@KHugeIni = [", file=fout);
+for gn in iniHuge:
+	print("  " + format_name(gn) + "# " + str(iniHuge[gn]), file=fout);
+print("];\n", file=fout);
+
 print("@KZeroMed = [", file=fout);
 for gn in medZero:
 	print("  " + format_name(gn) + "# " + str(medZero[gn]), file=fout);
@@ -132,6 +144,11 @@ print("];\n", file=fout);
 print("@KExtraMed = [", file=fout);
 for gn in medExtra:
 	print("  " + format_name(gn) + "# " + str(medExtra[gn]), file=fout);
+print("];\n", file=fout);
+
+print("@KHugeMed = [", file=fout);
+for gn in medHuge:
+	print("  " + format_name(gn) + "# " + str(medHuge[gn]), file=fout);
 print("];\n", file=fout);
 
 fout.close()
