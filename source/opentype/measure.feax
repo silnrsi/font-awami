@@ -1,0 +1,88 @@
+#
+#	File: main.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file is intended to be included in main.feax.
+
+# These lookups are run within feature calt.
+
+		
+lookup TreatBasesAsMarks {
+	lookupflag IgnoreMarks;
+	sub @MeasureBase  by  @MeasureBaseMark;
+} TreatBasesAsMarks;
+
+lookup InsertDxDy {
+	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+	sub mkBehIni.mm  			by  mkBehIni.mm 	 			pxNULL		pyNULL		dx1050 	dy500;
+	sub mkMeemMed.sn			by	mkMeemMed.sn				pxNULL		pyNULL		dx950		dy50;
+	sub mkSeenFin					by	mkSeenFin						pxNULL		pyNULL		dx1250	dy1500;  ## wrong - x should be 2250
+	sub mkJeemIni.mmX			by 	mkJeemIni.mmX				pxNULL		pyNULL		dx800		dy200;
+	sub mkMeemMed._alt		by	mkMeemMed._alt			pxNULL		pyNULL		dx200		dy250;
+	sub mkLamMed.qf				by	mkLamMed.qf					pxNULL		pyNULL		dx400		dy1000;
+	sub mkWawFin					by	mkWawFin						pxNULL		pyNULL		dx700		dy500;
+	sub mkFehIni.hgM			by	mkFehIni.hgM				pxNULL		pyNULL		dx150		dy350;
+	sub mkHehGoalMed.jm		by	mkHehGoalMed.jm			pxNULL		pyNULL		dx1000	dy200;
+	sub mkJeemMed.sn			by	mkJeemMed.sn				pxNULL		pyNULL		dxN200	dy300;
+	sub mkWawFin					by	mkWawFin						pxNULL		pyNULL		dx700		dy500;
+} InsertDxDy;
+
+lookup MeasureXFinal {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _InitPosX  @DxMarker';
+} MeasureXFinal;
+
+# Because we can't process backwards, we need as many of these as bases in the sequence.
+lookup MeasureX2 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX2;
+
+lookup MeasureX3 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX3;
+
+lookup MeasureX4 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX4;
+
+lookup MeasureX5 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX5;
+
+lookup MeasureX6 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX6;
+
+lookup MeasureX7 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX7;
+
+lookup MeasureX8 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+} MeasureX8;
+
+
+lookup RestoreBases {
+	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+	sub @MeasureBaseMark  by  @MeasureBase;
+} RestoreBases;
