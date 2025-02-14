@@ -17,6 +17,6 @@ psfsetglyphorder -p checkfix=none -i source/glyph_data.csv source/masters/AwamiN
 ###psfsetglyphorder -q -p checkfix=none -p backup=False --header DesignerOrder,DesignerOrder --field public.glyphOrder,com.schriftgestaltung.glyphOrder -i source/glyph_data.csv source/masters/*-Regular.ufo
 
 echo "Syncing glyph orders, psnames, and other metadata to other UFOs..."
-psfsyncmasters -q source/awami.designspace
+psfsyncmasters -q source/awamiOT.designspace
 
 echo "preflight completed!"

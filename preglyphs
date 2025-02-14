@@ -12,4 +12,4 @@ GLYPHS_FILE_COPY="$GLYPHS_FILE_STEM-copy.glyphs"
 # Create UFO from Glyphs file
 echo
 echo "Converting UFO3 to .glyphs..."
-psfufo2glyphs source/awami.designspace $GLYPHS_FILE -l source/logs/ufo2g.log
+psfufo2glyphs source/awamiOT.designspace $GLYPHS_FILE -l source/logs/ufo2g.log
