@@ -1,7 +1,7 @@
 #
 #	File: main.feax
 #
-# Main FEA code for Awami Nastaliq
+# Main FEAX code for Awami Nastaliq
 
 #	This file is part of the Awami Nastaliq font 
 #	(https://software.sil.org/awami) and is 
@@ -1431,6 +1431,10 @@ lookup Space4BariyehKern {
 	include(../../source/opentype/bariyehKernRules.feax);
 
 } Space4BariyehKern;
+
+#####include(../../source/opentype/arith_TEMP.feax);
+include(../../source/opentype/arithmetic.feax);
+include(../../source/opentype/measure.feax);
 
 
 } calt;		# end of feature

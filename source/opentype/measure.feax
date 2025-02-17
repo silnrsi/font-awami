@@ -19,6 +19,11 @@
 
 # These lookups are run within feature calt.
 
+# Temporary for our experiment:
+@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
+		absFehIni.hgM absHehGoalMed.jm absJeemMed.sn];
+@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
+		mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn];
 		
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
@@ -42,44 +47,63 @@ lookup InsertDxDy {
 
 lookup MeasureXFinal {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _InitPosX  @DxMarker';
+	ignore sub pxNULL'                   @DxMarker pxNULL;	 # ignore all but the last
+	sub        pxNULL' lookup _InitPosX  @DxMarker';
 } MeasureXFinal;
 
-# Because we can't process backwards, we need as many of these as bases in the sequence.
+# Because we can't use rsub to process backwards, we need as many 
+# of these lookups as there are bases in the sequence.
+
 lookup MeasureX2 {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
 } MeasureX2;
 
 lookup MeasureX3 {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
 } MeasureX3;
 
 lookup MeasureX4 {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
 } MeasureX4;
 
 lookup MeasureX5 {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
 } MeasureX5;
 
-lookup MeasureX6 {
-	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
-} MeasureX6;
 
-lookup MeasureX7 {
-	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
-} MeasureX7;
+lookup MeasureYFinal {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	ignore sub pyNULL'                   @DyMarker pyNULL;	 # ignore all but the last
+	sub        pyNULL' lookup _InitPosY  @DyMarker';
+} MeasureYFinal;
 
-lookup MeasureX8 {
-	lookupflag UseMarkFilteringSet @XMarkers;
-	sub pxNULL' lookup _AddMarkersX @DxMarker @PxMarker;
-} MeasureX8;
+# Because we can't use rsub to process backwards, we need as many 
+# of these lookups as there are bases in the sequence.
+# Note that @PyMarker does NOT include pyNull, which forces us to process backwards.
+
+lookup MeasureY2 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY2;
+
+lookup MeasureY3 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY3;
+
+lookup MeasureY4 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY4;
+
+lookup MeasureY5 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY5;
 
 
 lookup RestoreBases {
