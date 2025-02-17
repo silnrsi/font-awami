@@ -47,8 +47,8 @@ lookup InsertDxDy {
 
 lookup MeasureXFinal {
 	lookupflag UseMarkFilteringSet @XMarkers;
-	ignore sub pxNULL'                   @DxMarker pxNULL;	 # ignore all but the last
-	sub        pxNULL' lookup _InitPosX  @DxMarker';
+	ignore sub pxNULL'                   @DxMarker [@PxMarker pxNULL];		# ignore all but the last
+	sub        pxNULL' lookup _InitPosX  @DxMarker;
 } MeasureXFinal;
 
 # Because we can't use rsub to process backwards, we need as many 
@@ -77,8 +77,8 @@ lookup MeasureX5 {
 
 lookup MeasureYFinal {
 	lookupflag UseMarkFilteringSet @YMarkers;
-	ignore sub pyNULL'                   @DyMarker pyNULL;	 # ignore all but the last
-	sub        pyNULL' lookup _InitPosY  @DyMarker';
+	ignore sub pyNULL'                   @DyMarker [@PyMarker pyNULL];		# ignore all but the last
+	sub        pyNULL' lookup _InitPosY  @DyMarker;
 } MeasureYFinal;
 
 # Because we can't use rsub to process backwards, we need as many 
@@ -87,7 +87,7 @@ lookup MeasureYFinal {
 
 lookup MeasureY2 {
 	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+	sub        pyNULL' lookup _AddMarkersY  @DyMarker;
 } MeasureY2;
 
 lookup MeasureY3 {
