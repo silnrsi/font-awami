@@ -6,7 +6,7 @@
 # Run this script from the tools/scripts directory where the file is located:
 #		python3 genKernWidthClasses.py
 
-# This version of the script generates 5 width classes. At this point it seems
+# This version of the script generates 5 width classes. At this point that seems
 # like the best bang for buck.
 
 from fontParts.world import *
