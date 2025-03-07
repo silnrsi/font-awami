@@ -77,14 +77,18 @@ for glyph in font:
 	if gname[0:3]== "abs" or gname[0:3] == "nlq":
 		fInitial = gname[-3:] == "Ini" or "Ini." in gname or "Ini_" in gname
 		fMedial = gname[-3:] == "Med" or "Med." in gname or "Med_" in gname
-		if fInitial or fMedial:
-			# Initial or medial base that we're interested in.
+		fFinal = gname[-3:] == "Fin" or "Fin." in gname or "Fin_" in gname
+		if fInitial or fMedial or fFinal:
+			# Initial, medial, or final base that we're interested in.
 			print(glyph.name)
 			aw = glyph.width
 			anchorList = glyph.anchors
 			yMin = 5000
 			yMax = -5000
 			xEntry = yEntry = 1000
+			if fFinal:
+				xExit = 0
+				yExit = 0
 			for anchor in anchorList:
 				aName = anchor.name
 				if aName == "entry" or aName == "botRt":
@@ -133,7 +137,7 @@ for gName, values in gSorted:
 	ascent = values[3]
 
 	print("\tsub " + formattedName + "\tby\t" + formattedName + "\tpxNULL  pyNULL  " \
-	 		+ " dx" + MarkerValue(aw) + " dy" + MarkerValue(rise) + " des" + MarkerValue(descent) + " asc" + MarkerValue(ascent) + ";", file=fout)
+	 		+ " dx" + MarkerValue(aw) + " dy" + MarkerValue(rise) + " dsc" + MarkerValue(descent) + " asc" + MarkerValue(ascent) + ";", file=fout)
 
 # end for glyphDict
 

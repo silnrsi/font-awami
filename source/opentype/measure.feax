@@ -26,26 +26,33 @@
 	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn];
 
 @MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM];
-		
+
+lookup InsertDxDy {
+	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+	sub absBehIni.mm                  	by	absBehIni.mm                  	pxNULL  pyNULL   dx1050   dy550    dsc250    asc900   ;
+	sub absMeemMed.sn                 	by	absMeemMed.sn                 	pxNULL  pyNULL   dx300    dy450    dscN150   asc950   ;
+	sub absSeenFin                    	by	absSeenFin                    	pxNULL  pyNULL   dx2250   dy1500   dscN900   asc1800  ;
+	sub absJeemIni.mmX                	by	absJeemIni.mmX                	pxNULL  pyNULL   dx800    dy450    dsc100    asc1150  ;
+	sub absMeemMed._alt               	by	absMeemMed._alt               	pxNULL  pyNULL   dx250    dyN200   dscN1050  asc400   ;
+	sub absLamMed.qf                  	by	absLamMed.qf                  	pxNULL  pyNULL   dx400    dy1000   dscN150   asc2050  ;
+	sub absWawFin                     	by	absWawFin                     	pxNULL  pyNULL   dx750    dy500    dscN300   asc1350  ;
+	sub absFehIni.hgM                 	by	absFehIni.hgM                 	pxNULL  pyNULL   dx350    dy600    dscN50    asc1550  ;
+	sub absHehGoalMed.jm              	by	absHehGoalMed.jm              	pxNULL  pyNULL   dx1000   dy200    dscN450   asc1050  ;
+	sub absJeemMed.sn                 	by	absJeemMed.sn                 	pxNULL  pyNULL   dx0      dy300    dscN300   asc850   ;
+	#sub absWawFin
+} InsertDxDy;
+
+# Turn bases into marks so we can filter them out of all the the arithmetic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
 	sub @MeasureBase  by  @MeasureBaseMark;
 } TreatBasesAsMarks;
 
-lookup InsertDxDy {
-	lookupflag UseMarkFilteringSet @MeasureBaseMark;
-	sub mkBehIni.mm  		by  mkBehIni.mm 		pxNULL	pyNULL		dx1050 	dy500;
-	sub mkMeemMed.sn		by	mkMeemMed.sn		pxNULL	pyNULL		dx950	dy50;
-	sub mkSeenFin			by	mkSeenFin			pxNULL	pyNULL		dx2250	dy2500;
-	sub mkJeemIni.mmX		by 	mkJeemIni.mmX		pxNULL	pyNULL		dx800	dy200;
-	sub mkMeemMed._alt		by	mkMeemMed._alt		pxNULL	pyNULL		dx200	dy250;
-	sub mkLamMed.qf			by	mkLamMed.qf			pxNULL	pyNULL		dx400	dy1000;
-	sub mkWawFin			by	mkWawFin			pxNULL	pyNULL		dx700	dy500;
-	sub mkFehIni.hgM		by	mkFehIni.hgM		pxNULL	pyNULL		dx150	dy350;
-	sub mkHehGoalMed.jm		by	mkHehGoalMed.jm		pxNULL	pyNULL		dx1000	dy200;
-	sub mkJeemMed.sn		by	mkJeemMed.sn		pxNULL	pyNULL		dxN200	dy300;
-	sub mkWawFin			by	mkWawFin			pxNULL	pyNULL		dx700	dy500;
-} InsertDxDy;
+lookup AdjustAscentDescent4Marks {
+	lookupflag UseMarkFilteringSet [@AscMarker @DscMarker @NuqtaLike];
+	sub @AscMarker' lookup _AddToAscent 					@NuqtaLikeUpper;
+	sub @DscMarker' lookup _SubtractFromAscent	@AscMarker	@NuqtaLikeLower;
+} AdjustAscentDescent4Marks;
 
 # lookup MeasureXFinal {
 # 	lookupflag UseMarkFilteringSet @XMarkers;
