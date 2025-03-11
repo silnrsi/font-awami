@@ -100,9 +100,10 @@ languagesystem arab dflt;
 
 
 include(../../source/opentype/bariyehKernClasses.feax);
+include(../../source/opentype/arithClasses.feax);
 
 
-#====================  LOOKUPS  ====================
+#====================  AUXILIARY LOOKUPS  ====================
 
 #lookup DeleteNull {  # not used
 #	lookupflag 0;
@@ -1072,7 +1073,6 @@ lookup KafCollisions {
 	# Graphite version includes ain but I don't think that is needed.
 	sub @TahIMForms [absBehMed absMeemMed] @KafMedForms' lookup _KafMedshort;
 
-	
 } KafCollisions;
 
 # Second substitution from rules above
@@ -1138,7 +1138,7 @@ lookup KafLineHeight {
 	
 	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
 	
-	sub	@KafIMFull' lookup _KafShort		@Medials @Medials @Finals;
+	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Finals;
 	
 	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @Medials @Medials;
 	
@@ -1146,9 +1146,9 @@ lookup KafLineHeight {
 	
 	sub	@KafIMFull' lookup _KafShorter 	@Medials @Medials @KHighMedials;
 	
-	sub	@KafIMFull' lookup _KafShort		@Medials @Medials @Medials;
+	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Medials;
 	
-	sub	@KafIMFull' lookup _KafShort		@KHighMedials @KHighFinals;
+	sub	@KafIMFull' lookup _KafShort	@KHighMedials @KHighFinals;
 	
 } KafLineHeight;
 
@@ -1166,18 +1166,18 @@ lookup KafLineHeight_JmShort {
 lookup SplitNuqtaPairs {
 	lookupflag 0;
 	# TODO: see if there is a way to use classes for this.
-	sub		_dot1l__dot1u'				by		_dot1l						_dot1u;
-	sub		_dot3l__dot3u'				by		_dot3l						_dot3u;
-	sub		_dot1l__smallTah'			by		_dot1l						_smallTah;
-	sub		_dot2vl__smallTah'		by		_dot2vl						_smallTah;
-	sub		_dot2lIM__smallV'			by		_dot2l						_smallV;
-	sub		_hehHook__dot2u'			by		_hehHook.small		_dot2u.small;
-	sub		_hehHook__hamza'			by		_hehHook.small		absHamzaAbove;
-	sub		_ring__dot1u'					by		_attachedRing			_dot1u;
-	sub		_ring__dot2u'					by		_attachedRing			_dot2u;
-	sub		_dot2lIM__smallTwo'		by		_dot2l						_smallTwoAbove;
-	sub		_dot2lIM__smallThree'	by		_dot2l						_smallThreeAbove;
-	sub		_noDot2l__hamza'			by		_noDot2l					absHamzaAbove;
+	sub		_dot1l__dot1u'			by		_dot1l				_dot1u;
+	sub		_dot3l__dot3u'			by		_dot3l				_dot3u;
+	sub		_dot1l__smallTah'		by		_dot1l				_smallTah;
+	sub		_dot2vl__smallTah'		by		_dot2vl				_smallTah;
+	sub		_dot2lIM__smallV'		by		_dot2l				_smallV;
+	sub		_hehHook__dot2u'		by		_hehHook.small		_dot2u.small;
+	sub		_hehHook__hamza'		by		_hehHook.small		absHamzaAbove;
+	sub		_ring__dot1u'			by		_attachedRing		_dot1u;
+	sub		_ring__dot2u'			by		_attachedRing		_dot2u;
+	sub		_dot2lIM__smallTwo'		by		_dot2l				_smallTwoAbove;
+	sub		_dot2lIM__smallThree'	by		_dot2l				_smallThreeAbove;
+	sub		_noDot2l__hamza'		by		_noDot2l			absHamzaAbove;
 
 } SplitNuqtaPairs;
 
@@ -1432,8 +1432,8 @@ lookup Space4BariyehKern {
 
 } Space4BariyehKern;
 
-include(../../source/opentype/arith_TEMP.feax);
-####include(../../source/opentype/arithmetic.feax);
+####include(../../source/opentype/arith_TEMP.feax);
+include(../../source/opentype/arithmetic.feax);
 include(../../source/opentype/measure.feax);
 
 

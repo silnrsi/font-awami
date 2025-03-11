@@ -20,25 +20,48 @@
 # These lookups are run within feature calt.
 
 # Temporary for our experiment:
-@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
-	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn];
-@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
-	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn];
+@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin
+	absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
+	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
+	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
+	];
+@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
+	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
+	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
+	mkAinIni mkLamMed.be mkBehMed.mm];
 
-@MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM];
+@MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
 
 lookup InsertDxDy {
 	lookupflag UseMarkFilteringSet @MeasureBaseMark;
-	sub absBehIni.mm                  	by	absBehIni.mm                  	pxNULL  pyNULL   dx1050   dy550    dsc250    asc900   ;
-	sub absMeemMed.sn                 	by	absMeemMed.sn                 	pxNULL  pyNULL   dx300    dy450    dscN150   asc950   ;
-	sub absSeenFin                    	by	absSeenFin                    	pxNULL  pyNULL   dx2250   dy1500   dscN900   asc1800  ;
-	sub absJeemIni.mmX                	by	absJeemIni.mmX                	pxNULL  pyNULL   dx800    dy450    dsc100    asc1150  ;
-	sub absMeemMed._alt               	by	absMeemMed._alt               	pxNULL  pyNULL   dx250    dyN200   dscN1050  asc400   ;
-	sub absLamMed.qf                  	by	absLamMed.qf                  	pxNULL  pyNULL   dx400    dy1000   dscN150   asc2050  ;
-	sub absWawFin                     	by	absWawFin                     	pxNULL  pyNULL   dx750    dy500    dscN300   asc1350  ;
-	sub absFehIni.hgM                 	by	absFehIni.hgM                 	pxNULL  pyNULL   dx350    dy600    dscN50    asc1550  ;
-	sub absHehGoalMed.jm              	by	absHehGoalMed.jm              	pxNULL  pyNULL   dx1000   dy200    dscN450   asc1050  ;
-	sub absJeemMed.sn                 	by	absJeemMed.sn                 	pxNULL  pyNULL   dx0      dy300    dscN300   asc850   ;
+	# sub absBehIni.mm           	by	absBehIni.mm               	pxNULL  pyNULL   pxfNULL  dx1050   dy550    dsc250    asc900   ;
+	# sub absMeemMed.sn         	by	absMeemMed.sn              	pxNULL  pyNULL   pxfNULL  dx300    dy450    dscN150   asc950   ;
+	# sub absSeenFin            	by	absSeenFin                 	pxNULL  pyNULL   pxfNULL  dx2250   dy1500   dscN900   asc1800  ;
+	# sub absJeemIni.mmX        	by	absJeemIni.mmX             	pxNULL  pyNULL   pxfNULL  dx800    dy450    dsc100    asc1150  ;
+	# sub absMeemMed._alt       	by	absMeemMed._alt            	pxNULL  pyNULL   pxfNULL  dx250    dyN200   dscN1050  asc400   ;
+	# sub absLamMed.qf          	by	absLamMed.qf               	pxNULL  pyNULL   pxfNULL  dx400    dy1000   dscN150   asc2050  ;
+	# sub absWawFin             	by	absWawFin                  	pxNULL  pyNULL   pxfNULL  dx750    dy500    dscN300   asc1350  ;
+	# sub absFehIni.hgM         	by	absFehIni.hgM              	pxNULL  pyNULL   pxfNULL  dx350    dy600    dscN50    asc1550  ;
+	# sub absHehGoalMed.jm      	by	absHehGoalMed.jm           	pxNULL  pyNULL   pxfNULL  dx1000   dy200    dscN450   asc1050  ;
+	# sub absJeemMed.sn         	by	absJeemMed.sn              	pxNULL  pyNULL   pxfNULL  dx0      dy300    dscN300   asc850   ;
+	# sub absAinIni                 by	absAinIni                   pxNULL  pyNULL   pxfNULL  dx1000   dyN400   dscN1000  asc400   ;
+	# sub absLamMed.be             	by	absLamMed.be                pxNULL  pyNULL   pxfNULL  dx400    dy450    dscN550   asc1550  ;
+	# sub absBehMed.mm             	by	absBehMed.mm                pxNULL  pyNULL   pxfNULL  dx650    dy500    dscN200   asc750   ;
+	#sub absWawFin
+
+	sub absBehIni.mm           	by	absBehIni.mm               	pxNULL  dx1050 ;
+	sub absMeemMed.sn         	by	absMeemMed.sn              	pxNULL  dx300 ;
+	sub absSeenFin            	by	absSeenFin                 	pxNULL  dx2250 ;    # 2250
+	sub absJeemIni.mmX        	by	absJeemIni.mmX             	pxNULL  dx800 ;
+	sub absMeemMed._alt       	by	absMeemMed._alt            	pxNULL  dx250 ;
+	sub absLamMed.qf          	by	absLamMed.qf               	pxNULL  dx400;
+	sub absWawFin            	by	absWawFin                  	pxNULL  dx750 ;
+	sub absFehIni.hgM         	by	absFehIni.hgM              	pxNULL  dx350 ;
+	sub absHehGoalMed.jm      	by	absHehGoalMed.jm           	pxNULL  dx1000 ;
+	sub absJeemMed.sn         	by	absJeemMed.sn              	pxNULL  dx0;
+	sub absAinIni               by  absAinIni                   pxNULL  dx1000;   # 1000
+	sub absLamMed.be            by  absLamMed.be                pxNULL  dx400;   # 400
+	sub absBehMed.mm            by  absBehMed.mm                pxNULL  dx650;
 	#sub absWawFin
 } InsertDxDy;
 
@@ -54,47 +77,51 @@ lookup AdjustAscentDescent4Marks {
 	sub @DscMarker' lookup _SubtractFromAscent	@AscMarker	@NuqtaLikeLower;
 } AdjustAscentDescent4Marks;
 
-# lookup MeasureXFinal {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	ignore sub pxNULL'                   @DxMarker [@PxMarker pxNULL];		# ignore all but the last
-# 	sub        pxNULL' lookup _InitPosX  @DxMarker;
-# } MeasureXFinal;
+# Measure widths backward
 
-# # Because we can't use rsub to process backwards, we need as many of these lookups
-# # as there are bases in the sequence.
-# # Note that @PxMarker does NOT include pxNull, which is what forces the backwards processing.
+lookup MeasureXFinal {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	ignore sub pxNULL'                   @DxMarker [@PxMarker pxNULL];		# ignore all but the last
+	sub        pxNULL' lookup _InitPosX  @DxMarker;
+} MeasureXFinal;
 
-# lookup MeasureX2 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX2;
+# Because we can't use rsub to process backwards, we need as many of these lookups
+# as there are bases in the sequence that we want to measure.
+# Note that @PxMarker does NOT include pxNull, which is what forces the backwards processing.
 
-# lookup MeasureX3 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX3;
+lookup MeasureX2 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+} MeasureX2;
 
-# lookup MeasureX4 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX4;
+lookup MeasureX3 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+} MeasureX3;
 
-# lookup MeasureX5 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX5;
+lookup MeasureX4 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+} MeasureX4;
 
+lookup MeasureX5 {
+	lookupflag UseMarkFilteringSet @XMarkers;
+	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+} MeasureX5;
+
+# Measure widths forward
 
 lookup MeasureXinitial {
 	lookupflag UseMarkFilteringSet [@MeasureBaseMark @XMarkers];
-	sub @MeasureInitialMark	pxNULL' lookup _Set0;
+	sub @MeasureInitialMark	pxfNULL' lookup _Set0;
 } MeasureXinitial;
 
 lookup MeasureXforward {
-	lookupflag UseMarkFilteringSet @XMarkers;
-	sub @PxMarker	@DxMarker	pxNULL' lookup _AddMarkersXforward;
+	lookupflag UseMarkFilteringSet @XfMarkers;
+	sub @PxfMarker	@DxMarker	pxfNULL' lookup _AddMarkersXforward;
 } MeasureXforward;
 
+# Measure heights
 
 lookup MeasureYFinal {
 	lookupflag UseMarkFilteringSet @YMarkers;
@@ -103,7 +130,7 @@ lookup MeasureYFinal {
 } MeasureYFinal;
 
 # Because we can't use rsub to process backwards, we need as many of these lookups
-# as there are bases in the sequence.
+# as there are bases in the sequence that we need to measure.
 # Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
 
 lookup MeasureY2 {
@@ -125,6 +152,11 @@ lookup MeasureY5 {
 	lookupflag UseMarkFilteringSet @YMarkers;
 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
 } MeasureY5;
+
+lookup MeasureY6 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY6;
 
 
 lookup RestoreBases {
