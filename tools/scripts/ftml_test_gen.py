@@ -26,6 +26,7 @@ def run():
     parser.add_argument("-m","--mode",action="append",default=["all"],help="test modes to generate [all]")
     parser.add_argument("-f","--font",default=r"Awami Nastaliq",help="Name of font to use")
     parser.add_argument("-s","--scale",default=300,type=int,help="font scale [300]")
+    parser.add_argument("-l","--layout",default="1font",help="1font or 2fonts (for comparison)")
 
     args = parser.parse_args()
     
@@ -59,15 +60,25 @@ def run():
     fontName = args.font
     fontScale = int(args.scale)
     #fontScale = "100"  # for waterfall file
+
+    layout= args.layout
+    #layout = "1font"
+    #layout = "2fonts"
     
     print(modes)
+
+    print(layout)
 
     for mode in modes:
         print("Mode: " + mode)
         dir = args.output
         dir = dir.replace( "tests/FTML_XSL", defPath)  # if it's there
         dir = dir.replace( "tests\\FTML_XSL", defPath)
-        outputFilename = os.path.join(dir, "test_" + mode + (".txt" if args.text else ".xml"))
+        if layout == "2fonts" :
+            fnBase = "testCompare_"
+        else :
+            fnBase = "test_"
+        outputFilename = os.path.join(dir, fnBase + mode + (".txt" if args.text else ".xml"))
 
         # Debugging:
         #outputFilename = "testoutput.ftml"
@@ -104,7 +115,7 @@ def run():
             gen = Text(outputFilename)
         else:
             gen = FTML(outputFilename)
-        output(gen, mode, fontName, fontScale, groupedSeq, expandLeft)
+        output(gen, mode, layout, fontName, fontScale, groupedSeq, expandLeft)
         print("")
 
     print("Done")
@@ -549,7 +560,7 @@ class FTML(object):
     def close(self):
         self.f.close()
 
-    def write_header(self, mode, fontName, fontScale):
+    def write_header(self, mode, layout, fontName, fontScale):
         if mode == "basicforms" :
             title = "Test of Awami Basic Base Character Set"
         elif mode == "allbasechars" :
@@ -566,17 +577,28 @@ class FTML(object):
             title = "Test of Awami Rendering (???)"
             
         self.f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        self.f.write('<?xml-stylesheet type="text/xsl" href="ftml.xsl"?>\n')
+
+        if layout == "2fonts" :
+            self.f.write('<?xml-stylesheet type="text/xsl" href="ftml_multifont.xsl"?>\n')
+        else :
+            self.f.write('<?xml-stylesheet type="text/xsl" href="ftml.xsl"?>\n')
+
         self.f.write('<ftml version="1.0">\n')
         self.f.write('  <head>\n')
         self.f.write('    <columns comment="15%" label="20%" string="15%"/>\n')
         self.f.write('    <description>' + title + '</description>\n')
         self.f.write('    <fontscale>' + str(fontScale) + '</fontscale>\n')
-        self.f.write('    <fontsrc>local(' + fontName + '), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
-        self.f.write('    <!--   <fontsrc>local(' + fontName + ' Medium), url(AwamiNastaliq-Medium.ttf)</fontsrc>   -->\n');
-        self.f.write('    <!--   <fontsrc>local(' + fontName + ' SemiBold), url(AwamiNastaliq-SemiBold.ttf)</fontsrc>   -->\n');
-        self.f.write('    <!--   <fontsrc>local(' + fontName + ' Bold), url(AwamiNastaliq-Bold.ttf)</fontsrc>   -->\n');
-        self.f.write('    <!--   <fontsrc>local(' + fontName + ' ExtraBold), url(AwamiNastaliq-ExtraBold.ttf)</fontsrc>   -->\n');
+
+        if layout == "2fonts" :
+            self.f.write('    <fontsrc label="Graphite">local(Awami Nastaliq), url(../reference/AwamiNastaliq-Regular.ttf)</fontsrc>\n')
+            self.f.write('    <fontsrc label="OpenType">local(Awami Nastaliq OT), url(../results/AwamiNastaliqOT-Regular.ttf)</fontsrc>\n')
+        else :
+            self.f.write('    <fontsrc>local(' + fontName + '), url(AwamiNastaliq-Regular.ttf)</fontsrc>\n')
+            self.f.write('    <!--   <fontsrc>local(' + fontName + ' Medium), url(AwamiNastaliq-Medium.ttf)</fontsrc>   -->\n');
+            self.f.write('    <!--   <fontsrc>local(' + fontName + ' SemiBold), url(AwamiNastaliq-SemiBold.ttf)</fontsrc>   -->\n');
+            self.f.write('    <!--   <fontsrc>local(' + fontName + ' Bold), url(AwamiNastaliq-Bold.ttf)</fontsrc>   -->\n');
+            self.f.write('    <!--   <fontsrc>local(' + fontName + ' ExtraBold), url(AwamiNastaliq-ExtraBold.ttf)</fontsrc>   -->\n');
+        
         self.f.write('    <title>' + title + '</title>\n')
         self.f.write('    <styles><style feats=\' \' name="default"/></styles>\n')
         self.f.write('  </head>\n')
@@ -587,10 +609,10 @@ class FTML(object):
     def start_group(self, label):
         self.f.write('  <testgroup label="' + label + '">\n')
 
-    def end_group(self):
-        self.f.write('  </testgroup>\n')
+    def end_group(self, label):
+        self.f.write('  </testgroup>  <!-- ' + label + ' -->\n')
 
-    def write_one_sequence(self, seq, contextCharI, contextCharF, expandLeft) :
+    def write_one_sequence(self, layout, seq, contextCharI, contextCharF, expandLeft) :
         
         seqLabel = ''
         seqUsvs = ''
@@ -618,43 +640,60 @@ class FTML(object):
         #barSep = "  |  "
         
         #f.write('    <test label="' + seqLabel + '" rtl="True" class="default">\n')
-        self.f.write('    <testgroup label="' + seqLabel + '">\n')  # second level testgroup
+
+        if layout == "2fonts" :
+            # All four example strings go in one cell, using a <test> structure
+            self.f.write('    <test label="' + seqLabel + '" rtl="True">\n      <string>')  # second level is <test>
+            preStr = ' '
+            postStr = ' '
+            emptyStr = ''
+        else :
+            # Each example string goes in a separate cell, using a <testgroup> structure
+            self.f.write('    <testgroup label="' + seqLabel + '">\n')  # second level testgroup
+            preStr = '      <test rtl="True"><string>'
+            postStr = '</string></test>\n'
+            emptyStr = '      <test rtl="True" background="#cfcfcf"><string/></test>\n'
         
         mainStr = "<em>" + seqUsvs + "</em>"
         finalStr = "<em>" + finalSeqUsvs + "</em>"
         colCnt = 0
         if isDual == "left" :
             # no final forms - add blank cells
-            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
-            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')
+            self.f.write(emptyStr)
+            self.f.write(emptyStr)
             colCnt = colCnt + 2
         if isDual == "right" or isDual == "both" :
-            self.f.write('      <test rtl="True"><string>' + finalStr)  # IF
+            self.f.write(preStr + finalStr)  # IF
             #f.write('      <comment></comment>\n')
-            self.f.write('</string></test>\n')
-            self.f.write('      <test rtl="True"><string>' + contextCharI + finalStr + '</string></test>\n')   # MF
+            self.f.write(postStr)
+            self.f.write(preStr + contextCharI + finalStr + postStr)   # MF
             colCnt = colCnt + 2
         if isDual == "left" or isDual == "both" :
             # Showing only the left connections is used for medial forms of qaf, yeh, and noon that
             # are "extra" forms of other basic characters.
             ##if isDual == "both" :
             ##    f.write(barSep)
-            self.f.write('      <test rtl="True"><string>' + mainStr + contextCharF + '</string></test>\n')  # IM
-            self.f.write('      <test rtl="True"><string>' + contextCharI + mainStr + contextCharF + '</string></test>\n')   # MM
+            self.f.write(preStr + mainStr + contextCharF + postStr)  # IM
+            self.f.write(preStr + contextCharI + mainStr + contextCharF + postStr)   # MM
             colCnt = colCnt + 2
-            
-        while colCnt < 4 :
-            self.f.write('      <test rtl="True" background="#cfcfcf"><string/></test>\n')  # empty cell
-            colCnt = colCnt + 1
-            
-        self.f.write('    </testgroup>\n')
+
+        if layout == "1font" : 
+            while colCnt < 4 :
+                self.f.write(emptyStr)  # empty cell
+                colCnt = colCnt + 1
+        
+        if layout == "2fonts" :
+            self.f.write('</string>\n    </test>\n')
+        else :
+            self.f.write('    </testgroup>\n')
+
     # end of write_one_sequence
 
 
 
 class Text(FTML):
 
-    def write_header(self, mode, fontscale):
+    def write_header(self, mode, layout, fontname, fontscale):
         pass
 
     def write_closing(self):
@@ -663,10 +702,10 @@ class Text(FTML):
     def start_group(self, label):
         pass
 
-    def end_group(self):
+    def end_group(self, label):
         pass
 
-    def write_one_sequence(self, seq, contextCharI, contextCharF) :
+    def write_one_sequence(self, layout, seq, contextCharI, contextCharF) :
         cI = unichr(int(contextCharI[3:-1], 16))
         cF = unichr(int(contextCharF[3:-1], 16))
         (chars, dual) = seq
@@ -679,13 +718,13 @@ class Text(FTML):
             self.f.write(cI+s+cF+"\n")
 
 
-def output(gen, mode, fontName, fontScale, sequences, expandLeft) :
+def output(gen, mode, layout, fontName, fontScale, sequences, expandLeft) :
     #import codecs
 
     contextCharI = "&#x0644;" # lam (arbitrary pre-context)
     #contextCharI = "&#x0639;" # ain (arbitrary pre-context)
     contextCharF = "&#x0641;" # feh (arbitrary post-context)
-    gen.write_header(mode, fontName, fontScale)
+    gen.write_header(mode, layout, fontName, fontScale)
 
     for key in sequences :
         (sortValBogus, groupName) = key.split('_')
@@ -707,9 +746,9 @@ def output(gen, mode, fontName, fontScale, sequences, expandLeft) :
         keySeq = sequences[key]
         
         for seq in sequences[key] :
-            gen.write_one_sequence(seq, contextCharI, contextCharF, expandLeft)
+            gen.write_one_sequence(layout, seq, contextCharI, contextCharF, expandLeft)
         
-        gen.end_group()
+        gen.end_group(label)
             
     gen.write_closing()
     gen.close()

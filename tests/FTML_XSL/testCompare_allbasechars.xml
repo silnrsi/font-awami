@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ftml_multifont.xsl"?>
+<ftml version="1.0">
+  <head>
+    <columns comment="15%" label="20%" string="15%"/>
+    <description>Test of All Awami Base Characters</description>
+    <fontscale>220</fontscale>
+    <fontsrc label="Graphite">local(Awami Nastaliq), url(../reference/AwamiNastaliq-Regular.ttf)</fontsrc>
+    <fontsrc label="OpenType">local(Awami Nastaliq OT), url(../results/AwamiNastaliqOT-Regular.ttf)</fontsrc>
+    <title>Test of All Awami Base Characters</title>
+    <styles><style feats=' ' name="default"/></styles>
+  </head>
+  <testgroup label="Alef form sequences">
+    <test label="tteh + alef" rtl="True">
+      <string> <em>&#x0679;&#x0627;</em>  &#x0644;<em>&#x0679;&#x0627;</em> </string>
+    </test>
+    <test label="hahTah + alefWasla" rtl="True">
+      <string> <em>&#x076E;&#x0671;</em>  &#x0644;<em>&#x076E;&#x0671;</em> </string>
+    </test>
+    <test label="seenTah2smd + alef3" rtl="True">
+      <string> <em>&#x0770;&#x0774;</em>  &#x0644;<em>&#x0770;&#x0774;</em> </string>
+    </test>
+    <test label="dad + alefMadda" rtl="True">
+      <string> <em>&#x0636;&#x0622;</em>  &#x0644;<em>&#x0636;&#x0622;</em> </string>
+    </test>
+    <test label="tah + alef2" rtl="True">
+      <string> <em>&#x0637;&#x0773;</em>  &#x0644;<em>&#x0637;&#x0773;</em> </string>
+    </test>
+    <test label="ghain + alef" rtl="True">
+      <string> <em>&#x063A;&#x0627;</em>  &#x0644;<em>&#x063A;&#x0627;</em> </string>
+    </test>
+    <test label="feh3dotsBelow + alefWasla" rtl="True">
+      <string> <em>&#x06A5;&#x0671;</em>  &#x0644;<em>&#x06A5;&#x0671;</em> </string>
+    </test>
+    <test label="lam + alef3" rtl="True">
+      <string> <em>&#x0644;&#x0774;</em>  &#x0644;<em>&#x0644;&#x0774;</em> </string>
+    </test>
+    <test label="meem + alef" rtl="True">
+      <string> <em>&#x0645;&#x0627;</em>  &#x0644;<em>&#x0645;&#x0627;</em> </string>
+    </test>
+    <test label="ngoeh + alefWasla" rtl="True">
+      <string> <em>&#x06B1;&#x0671;</em>  &#x0644;<em>&#x06B1;&#x0671;</em> </string>
+    </test>
+    <test label="hehDo + alef2" rtl="True">
+      <string> <em>&#x06BE;&#x0773;</em>  &#x0644;<em>&#x06BE;&#x0773;</em> </string>
+    </test>
+    <test label="arabicHeh + alef" rtl="True">
+      <string> <em>&#x0647;&#x0627;</em>  &#x0644;<em>&#x0647;&#x0627;</em> </string>
+    </test>
+  </testgroup>  <!-- Alef form sequences -->
+  <testgroup label="Beh form sequences">
+    <test label="beh + teh" rtl="True">
+      <string> <em>&#x0628;&#x062A;</em>  &#x0644;<em>&#x0628;&#x062A;</em>  <em>&#x0628;&#x062A;</em>&#x0641;  &#x0644;<em>&#x0628;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="hah + arabicE" rtl="True">
+      <string> <em>&#x062D;&#x06D0;</em>&#x0641;  &#x0644;<em>&#x062D;&#x06D0;</em>&#x0641; </string>
+    </test>
+    <test label="seenInvV + dotlessBeh" rtl="True">
+      <string> <em>&#x077E;&#x066E;</em>  &#x0644;<em>&#x077E;&#x066E;</em>  <em>&#x077E;&#x066E;</em>&#x0641;  &#x0644;<em>&#x077E;&#x066E;</em>&#x0641; </string>
+    </test>
+    <test label="sad + tteheh" rtl="True">
+      <string> <em>&#x0635;&#x067A;</em>  &#x0644;<em>&#x0635;&#x067A;</em>  <em>&#x0635;&#x067A;</em>&#x0641;  &#x0644;<em>&#x0635;&#x067A;</em>&#x0641; </string>
+    </test>
+    <test label="tah + teh" rtl="True">
+      <string> <em>&#x0637;&#x062A;</em>  &#x0644;<em>&#x0637;&#x062A;</em>  <em>&#x0637;&#x062A;</em>&#x0641;  &#x0644;<em>&#x0637;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="ghain + noonDotBelow" rtl="True">
+      <string> <em>&#x063A;&#x06B9;</em>&#x0641;  &#x0644;<em>&#x063A;&#x06B9;</em>&#x0641; </string>
+    </test>
+    <test label="dotlessQaf + dotlessBeh" rtl="True">
+      <string> <em>&#x066F;&#x066E;</em>  &#x0644;<em>&#x066F;&#x066E;</em>  <em>&#x066F;&#x066E;</em>&#x0641;  &#x0644;<em>&#x066F;&#x066E;</em>&#x0641; </string>
+    </test>
+    <test label="lamTah + teh3down" rtl="True">
+      <string> <em>&#x08C7;&#x067D;</em>  &#x0644;<em>&#x08C7;&#x067D;</em>  <em>&#x08C7;&#x067D;</em>&#x0641;  &#x0644;<em>&#x08C7;&#x067D;</em>&#x0641; </string>
+    </test>
+    <test label="meem + tehRing" rtl="True">
+      <string> <em>&#x0645;&#x067C;</em>  &#x0644;<em>&#x0645;&#x067C;</em>  <em>&#x0645;&#x067C;</em>&#x0641;  &#x0644;<em>&#x0645;&#x067C;</em>&#x0641; </string>
+    </test>
+    <test label="kehehDot + beeh" rtl="True">
+      <string> <em>&#x0762;&#x067B;</em>  &#x0644;<em>&#x0762;&#x067B;</em>  <em>&#x0762;&#x067B;</em>&#x0641;  &#x0644;<em>&#x0762;&#x067B;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + tteheh" rtl="True">
+      <string> <em>&#x06BE;&#x067A;</em>  &#x0644;<em>&#x06BE;&#x067A;</em>  <em>&#x06BE;&#x067A;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x067A;</em>&#x0641; </string>
+    </test>
+    <test label="arabicHeh + peh" rtl="True">
+      <string> <em>&#x0647;&#x067E;</em>  &#x0644;<em>&#x0647;&#x067E;</em>  <em>&#x0647;&#x067E;</em>&#x0641;  &#x0644;<em>&#x0647;&#x067E;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Beh form sequences -->
+  <testgroup label="Jeem form sequences">
+    <test label="theh + jeem" rtl="True">
+      <string> <em>&#x062B;&#x062C;</em>  &#x0644;<em>&#x062B;&#x062C;</em>  <em>&#x062B;&#x062C;</em>&#x0641;  &#x0644;<em>&#x062B;&#x062C;</em>&#x0641; </string>
+    </test>
+    <test label="khah + tcheh" rtl="True">
+      <string> <em>&#x062E;&#x0686;</em>  &#x0644;<em>&#x062E;&#x0686;</em>  <em>&#x062E;&#x0686;</em>&#x0641;  &#x0644;<em>&#x062E;&#x0686;</em>&#x0641; </string>
+    </test>
+    <test label="seen4 + jeem" rtl="True">
+      <string> <em>&#x077D;&#x062C;</em>  &#x0644;<em>&#x077D;&#x062C;</em>  <em>&#x077D;&#x062C;</em>&#x0641;  &#x0644;<em>&#x077D;&#x062C;</em>&#x0641; </string>
+    </test>
+    <test label="dad + hah" rtl="True">
+      <string> <em>&#x0636;&#x062D;</em>  &#x0644;<em>&#x0636;&#x062D;</em>  <em>&#x0636;&#x062D;</em>&#x0641;  &#x0644;<em>&#x0636;&#x062D;</em>&#x0641; </string>
+    </test>
+    <test label="zah + khah" rtl="True">
+      <string> <em>&#x0638;&#x062E;</em>  &#x0644;<em>&#x0638;&#x062E;</em>  <em>&#x0638;&#x062E;</em>&#x0641;  &#x0644;<em>&#x0638;&#x062E;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + tcheh" rtl="True">
+      <string> <em>&#x06A0;&#x0686;</em>  &#x0644;<em>&#x06A0;&#x0686;</em>  <em>&#x06A0;&#x0686;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x0686;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsAbove + dyeh" rtl="True">
+      <string> <em>&#x06A4;&#x0684;</em>  &#x0644;<em>&#x06A4;&#x0684;</em>  <em>&#x06A4;&#x0684;</em>&#x0641;  &#x0644;<em>&#x06A4;&#x0684;</em>&#x0641; </string>
+    </test>
+    <test label="lam + tcheheh" rtl="True">
+      <string> <em>&#x0644;&#x0687;</em>  &#x0644;<em>&#x0644;&#x0687;</em>  <em>&#x0644;&#x0687;</em>&#x0641;  &#x0644;<em>&#x0644;&#x0687;</em>&#x0641; </string>
+    </test>
+    <test label="meem + hahHamza" rtl="True">
+      <string> <em>&#x0645;&#x0681;</em>  &#x0644;<em>&#x0645;&#x0681;</em>  <em>&#x0645;&#x0681;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0681;</em>&#x0641; </string>
+    </test>
+    <test label="keheh3dots + hah3dots" rtl="True">
+      <string> <em>&#x0763;&#x0685;</em>  &#x0644;<em>&#x0763;&#x0685;</em>  <em>&#x0763;&#x0685;</em>&#x0641;  &#x0644;<em>&#x0763;&#x0685;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + hahTah" rtl="True">
+      <string> <em>&#x06BE;&#x076E;</em>  &#x0644;<em>&#x06BE;&#x076E;</em>  <em>&#x06BE;&#x076E;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x076E;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + hahTah2smd" rtl="True">
+      <string> <em>&#x06C2;&#x076F;</em>  &#x0644;<em>&#x06C2;&#x076F;</em>  <em>&#x06C2;&#x076F;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x076F;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Jeem form sequences -->
+  <testgroup label="Dal form sequences">
+    <test label="peh + dal" rtl="True">
+      <string> <em>&#x067E;&#x062F;</em>  &#x0644;<em>&#x067E;&#x062F;</em> </string>
+    </test>
+    <test label="hahTah2smd + ddal" rtl="True">
+      <string> <em>&#x076F;&#x0688;</em>  &#x0644;<em>&#x076F;&#x0688;</em> </string>
+    </test>
+    <test label="seen3below + dal2dotsVTah" rtl="True">
+      <string> <em>&#x069B;&#x0759;</em>  &#x0644;<em>&#x069B;&#x0759;</em> </string>
+    </test>
+    <test label="dadDotBelow + dal4dots" rtl="True">
+      <string> <em>&#x06FB;&#x0690;</em>  &#x0644;<em>&#x06FB;&#x0690;</em> </string>
+    </test>
+    <test label="zah + dal" rtl="True">
+      <string> <em>&#x0638;&#x062F;</em>  &#x0644;<em>&#x0638;&#x062F;</em> </string>
+    </test>
+    <test label="ain3dots + ddal" rtl="True">
+      <string> <em>&#x06A0;&#x0688;</em>  &#x0644;<em>&#x06A0;&#x0688;</em> </string>
+    </test>
+    <test label="dotlessFeh + dal2dotsVTah" rtl="True">
+      <string> <em>&#x06A1;&#x0759;</em>  &#x0644;<em>&#x06A1;&#x0759;</em> </string>
+    </test>
+    <test label="lamBar + dal4dots" rtl="True">
+      <string> <em>&#x076A;&#x0690;</em>  &#x0644;<em>&#x076A;&#x0690;</em> </string>
+    </test>
+    <test label="meem + dul" rtl="True">
+      <string> <em>&#x0645;&#x068E;</em>  &#x0644;<em>&#x0645;&#x068E;</em> </string>
+    </test>
+    <test label="kafRing + thal" rtl="True">
+      <string> <em>&#x06AB;&#x0630;</em>  &#x0644;<em>&#x06AB;&#x0630;</em> </string>
+    </test>
+    <test label="hehDo + ddal" rtl="True">
+      <string> <em>&#x06BE;&#x0688;</em>  &#x0644;<em>&#x06BE;&#x0688;</em> </string>
+    </test>
+    <test label="hehHamza + dal2dotsVTah" rtl="True">
+      <string> <em>&#x06C2;&#x0759;</em>  &#x0644;<em>&#x06C2;&#x0759;</em> </string>
+    </test>
+  </testgroup>  <!-- Dal form sequences -->
+  <testgroup label="Reh form sequences">
+    <test label="tteheh + reh" rtl="True">
+      <string> <em>&#x067A;&#x0631;</em>  &#x0644;<em>&#x067A;&#x0631;</em> </string>
+    </test>
+    <test label="hah4below + rreh" rtl="True">
+      <string> <em>&#x077C;&#x0691;</em>  &#x0644;<em>&#x077C;&#x0691;</em> </string>
+    </test>
+    <test label="seen3dots3dots + rehDotBelow" rtl="True">
+      <string> <em>&#x069C;&#x0694;</em>  &#x0644;<em>&#x069C;&#x0694;</em> </string>
+    </test>
+    <test label="sad3dots + reh2dots" rtl="True">
+      <string> <em>&#x069E;&#x0697;</em>  &#x0644;<em>&#x069E;&#x0697;</em> </string>
+    </test>
+    <test label="tah + rehHamza" rtl="True">
+      <string> <em>&#x0637;&#x076C;</em>  &#x0644;<em>&#x0637;&#x076C;</em> </string>
+    </test>
+    <test label="ain + rehTah2smd" rtl="True">
+      <string> <em>&#x0639;&#x0771;</em>  &#x0644;<em>&#x0639;&#x0771;</em> </string>
+    </test>
+    <test label="qaf + rehSmallVbelow" rtl="True">
+      <string> <em>&#x0642;&#x0695;</em>  &#x0644;<em>&#x0642;&#x0695;</em> </string>
+    </test>
+    <test label="lamSmallV + zain" rtl="True">
+      <string> <em>&#x06B5;&#x0632;</em>  &#x0644;<em>&#x06B5;&#x0632;</em> </string>
+    </test>
+    <test label="meem + jeh" rtl="True">
+      <string> <em>&#x0645;&#x0698;</em>  &#x0644;<em>&#x0645;&#x0698;</em> </string>
+    </test>
+    <test label="kaf2dots + rehDotDot" rtl="True">
+      <string> <em>&#x077F;&#x0696;</em>  &#x0644;<em>&#x077F;&#x0696;</em> </string>
+    </test>
+    <test label="hehDo + reh4dots" rtl="True">
+      <string> <em>&#x06BE;&#x0699;</em>  &#x0644;<em>&#x06BE;&#x0699;</em> </string>
+    </test>
+    <test label="hehGoal + rehRing" rtl="True">
+      <string> <em>&#x06C1;&#x0693;</em>  &#x0644;<em>&#x06C1;&#x0693;</em> </string>
+    </test>
+  </testgroup>  <!-- Reh form sequences -->
+  <testgroup label="Seen form sequences">
+    <test label="tteh + seen" rtl="True">
+      <string> <em>&#x0679;&#x0633;</em>  &#x0644;<em>&#x0679;&#x0633;</em>  <em>&#x0679;&#x0633;</em>&#x0641;  &#x0644;<em>&#x0679;&#x0633;</em>&#x0641; </string>
+    </test>
+    <test label="dyeh + seen2dotsV" rtl="True">
+      <string> <em>&#x0684;&#x076D;</em>  &#x0644;<em>&#x0684;&#x076D;</em>  <em>&#x0684;&#x076D;</em>&#x0641;  &#x0644;<em>&#x0684;&#x076D;</em>&#x0641; </string>
+    </test>
+    <test label="seen + sheen" rtl="True">
+      <string> <em>&#x0633;&#x0634;</em>  &#x0644;<em>&#x0633;&#x0634;</em>  <em>&#x0633;&#x0634;</em>&#x0641;  &#x0644;<em>&#x0633;&#x0634;</em>&#x0641; </string>
+    </test>
+    <test label="dadDotBelow + seen4" rtl="True">
+      <string> <em>&#x06FB;&#x077D;</em>  &#x0644;<em>&#x06FB;&#x077D;</em>  <em>&#x06FB;&#x077D;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x077D;</em>&#x0641; </string>
+    </test>
+    <test label="tah + seen4dots" rtl="True">
+      <string> <em>&#x0637;&#x075C;</em>  &#x0644;<em>&#x0637;&#x075C;</em>  <em>&#x0637;&#x075C;</em>&#x0641;  &#x0644;<em>&#x0637;&#x075C;</em>&#x0641; </string>
+    </test>
+    <test label="ain + seen3dots3dots" rtl="True">
+      <string> <em>&#x0639;&#x069C;</em>  &#x0644;<em>&#x0639;&#x069C;</em>  <em>&#x0639;&#x069C;</em>&#x0641;  &#x0644;<em>&#x0639;&#x069C;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsBelow + sheen" rtl="True">
+      <string> <em>&#x06A5;&#x0634;</em>  &#x0644;<em>&#x06A5;&#x0634;</em>  <em>&#x06A5;&#x0634;</em>&#x0641;  &#x0644;<em>&#x06A5;&#x0634;</em>&#x0641; </string>
+    </test>
+    <test label="lamBar + seenTah2smd" rtl="True">
+      <string> <em>&#x076A;&#x0770;</em>  &#x0644;<em>&#x076A;&#x0770;</em>  <em>&#x076A;&#x0770;</em>&#x0641;  &#x0644;<em>&#x076A;&#x0770;</em>&#x0641; </string>
+    </test>
+    <test label="meem + seen4" rtl="True">
+      <string> <em>&#x0645;&#x077D;</em>  &#x0644;<em>&#x0645;&#x077D;</em>  <em>&#x0645;&#x077D;</em>&#x0641;  &#x0644;<em>&#x0645;&#x077D;</em>&#x0641; </string>
+    </test>
+    <test label="graf + seen4dots" rtl="True">
+      <string> <em>&#x08C8;&#x075C;</em>  &#x0644;<em>&#x08C8;&#x075C;</em>  <em>&#x08C8;&#x075C;</em>&#x0641;  &#x0644;<em>&#x08C8;&#x075C;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + seen3dots3dots" rtl="True">
+      <string> <em>&#x06BE;&#x069C;</em>  &#x0644;<em>&#x06BE;&#x069C;</em>  <em>&#x06BE;&#x069C;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x069C;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + sheen" rtl="True">
+      <string> <em>&#x06C1;&#x0634;</em>  &#x0644;<em>&#x06C1;&#x0634;</em>  <em>&#x06C1;&#x0634;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x0634;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Seen form sequences -->
+  <testgroup label="Sad form sequences">
+    <test label="peh + sad" rtl="True">
+      <string> <em>&#x067E;&#x0635;</em>  &#x0644;<em>&#x067E;&#x0635;</em>  <em>&#x067E;&#x0635;</em>&#x0641;  &#x0644;<em>&#x067E;&#x0635;</em>&#x0641; </string>
+    </test>
+    <test label="tcheheh + dad" rtl="True">
+      <string> <em>&#x0687;&#x0636;</em>  &#x0644;<em>&#x0687;&#x0636;</em>  <em>&#x0687;&#x0636;</em>&#x0641;  &#x0644;<em>&#x0687;&#x0636;</em>&#x0641; </string>
+    </test>
+    <test label="seenDotDot + dadDotBelow" rtl="True">
+      <string> <em>&#x069A;&#x06FB;</em>  &#x0644;<em>&#x069A;&#x06FB;</em>  <em>&#x069A;&#x06FB;</em>&#x0641;  &#x0644;<em>&#x069A;&#x06FB;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + sad" rtl="True">
+      <string> <em>&#x069E;&#x0635;</em>  &#x0644;<em>&#x069E;&#x0635;</em>  <em>&#x069E;&#x0635;</em>&#x0641;  &#x0644;<em>&#x069E;&#x0635;</em>&#x0641; </string>
+    </test>
+    <test label="zah + sad3dots" rtl="True">
+      <string> <em>&#x0638;&#x069E;</em>  &#x0644;<em>&#x0638;&#x069E;</em>  <em>&#x0638;&#x069E;</em>&#x0641;  &#x0644;<em>&#x0638;&#x069E;</em>&#x0641; </string>
+    </test>
+    <test label="ghain + sad" rtl="True">
+      <string> <em>&#x063A;&#x0635;</em>  &#x0644;<em>&#x063A;&#x0635;</em>  <em>&#x063A;&#x0635;</em>&#x0641;  &#x0644;<em>&#x063A;&#x0635;</em>&#x0641; </string>
+    </test>
+    <test label="dotlessFeh + dad" rtl="True">
+      <string> <em>&#x06A1;&#x0636;</em>  &#x0644;<em>&#x06A1;&#x0636;</em>  <em>&#x06A1;&#x0636;</em>&#x0641;  &#x0644;<em>&#x06A1;&#x0636;</em>&#x0641; </string>
+    </test>
+    <test label="lamSmallV + dadDotBelow" rtl="True">
+      <string> <em>&#x06B5;&#x06FB;</em>  &#x0644;<em>&#x06B5;&#x06FB;</em>  <em>&#x06B5;&#x06FB;</em>&#x0641;  &#x0644;<em>&#x06B5;&#x06FB;</em>&#x0641; </string>
+    </test>
+    <test label="meem + sad3dots" rtl="True">
+      <string> <em>&#x0645;&#x069E;</em>  &#x0644;<em>&#x0645;&#x069E;</em>  <em>&#x0645;&#x069E;</em>&#x0641;  &#x0644;<em>&#x0645;&#x069E;</em>&#x0641; </string>
+    </test>
+    <test label="kaf + sad" rtl="True">
+      <string> <em>&#x06A9;&#x0635;</em>  &#x0644;<em>&#x06A9;&#x0635;</em>  <em>&#x06A9;&#x0635;</em>&#x0641;  &#x0644;<em>&#x06A9;&#x0635;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + dad" rtl="True">
+      <string> <em>&#x06BE;&#x0636;</em>  &#x0644;<em>&#x06BE;&#x0636;</em>  <em>&#x06BE;&#x0636;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0636;</em>&#x0641; </string>
+    </test>
+    <test label="arabicHeh + dadDotBelow" rtl="True">
+      <string> <em>&#x0647;&#x06FB;</em>  &#x0644;<em>&#x0647;&#x06FB;</em>  <em>&#x0647;&#x06FB;</em>&#x0641;  &#x0644;<em>&#x0647;&#x06FB;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Sad form sequences -->
+  <testgroup label="Tah form sequences">
+    <test label="tteheh + tah" rtl="True">
+      <string> <em>&#x067A;&#x0637;</em>  &#x0644;<em>&#x067A;&#x0637;</em>  <em>&#x067A;&#x0637;</em>&#x0641;  &#x0644;<em>&#x067A;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="hahHamza + zah" rtl="True">
+      <string> <em>&#x0681;&#x0638;</em>  &#x0644;<em>&#x0681;&#x0638;</em>  <em>&#x0681;&#x0638;</em>&#x0641;  &#x0644;<em>&#x0681;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="seen4dots + tah" rtl="True">
+      <string> <em>&#x075C;&#x0637;</em>  &#x0644;<em>&#x075C;&#x0637;</em>  <em>&#x075C;&#x0637;</em>&#x0641;  &#x0644;<em>&#x075C;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="dad + tah" rtl="True">
+      <string> <em>&#x0636;&#x0637;</em>  &#x0644;<em>&#x0636;&#x0637;</em>  <em>&#x0636;&#x0637;</em>&#x0641;  &#x0644;<em>&#x0636;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="tah + zah" rtl="True">
+      <string> <em>&#x0637;&#x0638;</em>  &#x0644;<em>&#x0637;&#x0638;</em>  <em>&#x0637;&#x0638;</em>&#x0641;  &#x0644;<em>&#x0637;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + tah" rtl="True">
+      <string> <em>&#x06A0;&#x0637;</em>  &#x0644;<em>&#x06A0;&#x0637;</em>  <em>&#x06A0;&#x0637;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="feh + zah" rtl="True">
+      <string> <em>&#x0641;&#x0638;</em>  &#x0644;<em>&#x0641;&#x0638;</em>  <em>&#x0641;&#x0638;</em>&#x0641;  &#x0644;<em>&#x0641;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="lam3dots + tah" rtl="True">
+      <string> <em>&#x06B7;&#x0637;</em>  &#x0644;<em>&#x06B7;&#x0637;</em>  <em>&#x06B7;&#x0637;</em>&#x0641;  &#x0644;<em>&#x06B7;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="meem + zah" rtl="True">
+      <string> <em>&#x0645;&#x0638;</em>  &#x0644;<em>&#x0645;&#x0638;</em>  <em>&#x0645;&#x0638;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="gaf + tah" rtl="True">
+      <string> <em>&#x06AF;&#x0637;</em>  &#x0644;<em>&#x06AF;&#x0637;</em>  <em>&#x06AF;&#x0637;</em>&#x0641;  &#x0644;<em>&#x06AF;&#x0637;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + zah" rtl="True">
+      <string> <em>&#x06BE;&#x0638;</em>  &#x0644;<em>&#x06BE;&#x0638;</em>  <em>&#x06BE;&#x0638;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + tah" rtl="True">
+      <string> <em>&#x06C2;&#x0637;</em>  &#x0644;<em>&#x06C2;&#x0637;</em>  <em>&#x06C2;&#x0637;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x0637;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Tah form sequences -->
+  <testgroup label="Ain form sequences">
+    <test label="beeh + ain" rtl="True">
+      <string> <em>&#x067B;&#x0639;</em>  &#x0644;<em>&#x067B;&#x0639;</em>  <em>&#x067B;&#x0639;</em>&#x0641;  &#x0644;<em>&#x067B;&#x0639;</em>&#x0641; </string>
+    </test>
+    <test label="hah3dots + ghain" rtl="True">
+      <string> <em>&#x0685;&#x063A;</em>  &#x0644;<em>&#x0685;&#x063A;</em>  <em>&#x0685;&#x063A;</em>&#x0641;  &#x0644;<em>&#x0685;&#x063A;</em>&#x0641; </string>
+    </test>
+    <test label="seen2dotsV + ain3dots" rtl="True">
+      <string> <em>&#x076D;&#x06A0;</em>  &#x0644;<em>&#x076D;&#x06A0;</em>  <em>&#x076D;&#x06A0;</em>&#x0641;  &#x0644;<em>&#x076D;&#x06A0;</em>&#x0641; </string>
+    </test>
+    <test label="dadDotBelow + ghain" rtl="True">
+      <string> <em>&#x06FB;&#x063A;</em>  &#x0644;<em>&#x06FB;&#x063A;</em>  <em>&#x06FB;&#x063A;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x063A;</em>&#x0641; </string>
+    </test>
+    <test label="tah + ain" rtl="True">
+      <string> <em>&#x0637;&#x0639;</em>  &#x0644;<em>&#x0637;&#x0639;</em>  <em>&#x0637;&#x0639;</em>&#x0641;  &#x0644;<em>&#x0637;&#x0639;</em>&#x0641; </string>
+    </test>
+    <test label="ain + ghain" rtl="True">
+      <string> <em>&#x0639;&#x063A;</em>  &#x0644;<em>&#x0639;&#x063A;</em>  <em>&#x0639;&#x063A;</em>&#x0641;  &#x0644;<em>&#x0639;&#x063A;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsAbove + ain" rtl="True">
+      <string> <em>&#x06A4;&#x0639;</em>  &#x0644;<em>&#x06A4;&#x0639;</em>  <em>&#x06A4;&#x0639;</em>&#x0641;  &#x0644;<em>&#x06A4;&#x0639;</em>&#x0641; </string>
+    </test>
+    <test label="lamTah + ghain" rtl="True">
+      <string> <em>&#x08C7;&#x063A;</em>  &#x0644;<em>&#x08C7;&#x063A;</em>  <em>&#x08C7;&#x063A;</em>&#x0641;  &#x0644;<em>&#x08C7;&#x063A;</em>&#x0641; </string>
+    </test>
+    <test label="meem + ain3dots" rtl="True">
+      <string> <em>&#x0645;&#x06A0;</em>  &#x0644;<em>&#x0645;&#x06A0;</em>  <em>&#x0645;&#x06A0;</em>&#x0641;  &#x0644;<em>&#x0645;&#x06A0;</em>&#x0641; </string>
+    </test>
+    <test label="gueh + ain" rtl="True">
+      <string> <em>&#x06B3;&#x0639;</em>  &#x0644;<em>&#x06B3;&#x0639;</em>  <em>&#x06B3;&#x0639;</em>&#x0641;  &#x0644;<em>&#x06B3;&#x0639;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + ghain" rtl="True">
+      <string> <em>&#x06BE;&#x063A;</em>  &#x0644;<em>&#x06BE;&#x063A;</em>  <em>&#x06BE;&#x063A;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x063A;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + ain3dots" rtl="True">
+      <string> <em>&#x06C1;&#x06A0;</em>  &#x0644;<em>&#x06C1;&#x06A0;</em>  <em>&#x06C1;&#x06A0;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x06A0;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Ain form sequences -->
+  <testgroup label="Feh form sequences">
+    <test label="tehRing + feh" rtl="True">
+      <string> <em>&#x067C;&#x0641;</em>  &#x0644;<em>&#x067C;&#x0641;</em>  <em>&#x067C;&#x0641;</em>&#x0641;  &#x0644;<em>&#x067C;&#x0641;</em>&#x0641; </string>
+    </test>
+    <test label="hahTah + feh3dotsAbove" rtl="True">
+      <string> <em>&#x076E;&#x06A4;</em>  &#x0644;<em>&#x076E;&#x06A4;</em>  <em>&#x076E;&#x06A4;</em>&#x0641;  &#x0644;<em>&#x076E;&#x06A4;</em>&#x0641; </string>
+    </test>
+    <test label="seenTah2smd + feh3dotsBelow" rtl="True">
+      <string> <em>&#x0770;&#x06A5;</em>  &#x0644;<em>&#x0770;&#x06A5;</em>  <em>&#x0770;&#x06A5;</em>&#x0641;  &#x0644;<em>&#x0770;&#x06A5;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + qaf" rtl="True">
+      <string> <em>&#x069E;&#x0642;</em>&#x0641;  &#x0644;<em>&#x069E;&#x0642;</em>&#x0641; </string>
+    </test>
+    <test label="zah + feh3dotsBelow" rtl="True">
+      <string> <em>&#x0638;&#x06A5;</em>  &#x0644;<em>&#x0638;&#x06A5;</em>  <em>&#x0638;&#x06A5;</em>&#x0641;  &#x0644;<em>&#x0638;&#x06A5;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + dotlessFeh" rtl="True">
+      <string> <em>&#x06A0;&#x06A1;</em>  &#x0644;<em>&#x06A0;&#x06A1;</em>  <em>&#x06A0;&#x06A1;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x06A1;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsBelow + dotlessFeh" rtl="True">
+      <string> <em>&#x06A5;&#x06A1;</em>  &#x0644;<em>&#x06A5;&#x06A1;</em>  <em>&#x06A5;&#x06A1;</em>&#x0641;  &#x0644;<em>&#x06A5;&#x06A1;</em>&#x0641; </string>
+    </test>
+    <test label="lam + qaf" rtl="True">
+      <string> <em>&#x0644;&#x0642;</em>&#x0641;  &#x0644;<em>&#x0644;&#x0642;</em>&#x0641; </string>
+    </test>
+    <test label="meem + feh3dotsAbove" rtl="True">
+      <string> <em>&#x0645;&#x06A4;</em>  &#x0644;<em>&#x0645;&#x06A4;</em>  <em>&#x0645;&#x06A4;</em>&#x0641;  &#x0644;<em>&#x0645;&#x06A4;</em>&#x0641; </string>
+    </test>
+    <test label="ngoeh + feh3dotsBelow" rtl="True">
+      <string> <em>&#x06B1;&#x06A5;</em>  &#x0644;<em>&#x06B1;&#x06A5;</em>  <em>&#x06B1;&#x06A5;</em>&#x0641;  &#x0644;<em>&#x06B1;&#x06A5;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + dotlessFeh" rtl="True">
+      <string> <em>&#x06BE;&#x06A1;</em>  &#x0644;<em>&#x06BE;&#x06A1;</em>  <em>&#x06BE;&#x06A1;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x06A1;</em>&#x0641; </string>
+    </test>
+    <test label="arabicHeh + dotlessQaf" rtl="True">
+      <string> <em>&#x0647;&#x066F;</em>&#x0641;  &#x0644;<em>&#x0647;&#x066F;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Feh form sequences -->
+  <testgroup label="Qaf form sequences">
+    <test label="beeh + qaf" rtl="True">
+      <string> <em>&#x067B;&#x0642;</em>  &#x0644;<em>&#x067B;&#x0642;</em> </string>
+    </test>
+    <test label="jeem + dotlessQaf" rtl="True">
+      <string> <em>&#x062C;&#x066F;</em>  &#x0644;<em>&#x062C;&#x066F;</em> </string>
+    </test>
+    <test label="seenInvV + dotlessQaf" rtl="True">
+      <string> <em>&#x077E;&#x066F;</em>  &#x0644;<em>&#x077E;&#x066F;</em> </string>
+    </test>
+    <test label="sad + dotlessQaf" rtl="True">
+      <string> <em>&#x0635;&#x066F;</em>  &#x0644;<em>&#x0635;&#x066F;</em> </string>
+    </test>
+    <test label="zah + qaf" rtl="True">
+      <string> <em>&#x0638;&#x0642;</em>  &#x0644;<em>&#x0638;&#x0642;</em> </string>
+    </test>
+    <test label="ghain + dotlessQaf" rtl="True">
+      <string> <em>&#x063A;&#x066F;</em>  &#x0644;<em>&#x063A;&#x066F;</em> </string>
+    </test>
+    <test label="feh3dotsAbove + qaf" rtl="True">
+      <string> <em>&#x06A4;&#x0642;</em>  &#x0644;<em>&#x06A4;&#x0642;</em> </string>
+    </test>
+    <test label="lam3dots + dotlessQaf" rtl="True">
+      <string> <em>&#x06B7;&#x066F;</em>  &#x0644;<em>&#x06B7;&#x066F;</em> </string>
+    </test>
+    <test label="meem + qaf" rtl="True">
+      <string> <em>&#x0645;&#x0642;</em>  &#x0644;<em>&#x0645;&#x0642;</em> </string>
+    </test>
+    <test label="ng + dotlessQaf" rtl="True">
+      <string> <em>&#x06AD;&#x066F;</em>  &#x0644;<em>&#x06AD;&#x066F;</em> </string>
+    </test>
+    <test label="hehDo + qaf" rtl="True">
+      <string> <em>&#x06BE;&#x0642;</em>  &#x0644;<em>&#x06BE;&#x0642;</em> </string>
+    </test>
+    <test label="arabicHeh + dotlessQaf" rtl="True">
+      <string> <em>&#x0647;&#x066F;</em>  &#x0644;<em>&#x0647;&#x066F;</em> </string>
+    </test>
+  </testgroup>  <!-- Qaf form sequences -->
+  <testgroup label="Lam form sequences">
+    <test label="teh3down + lam" rtl="True">
+      <string> <em>&#x067D;&#x0644;</em>  &#x0644;<em>&#x067D;&#x0644;</em>  <em>&#x067D;&#x0644;</em>&#x0641;  &#x0644;<em>&#x067D;&#x0644;</em>&#x0641; </string>
+    </test>
+    <test label="hahTah2smd + lamSmallV" rtl="True">
+      <string> <em>&#x076F;&#x06B5;</em>  &#x0644;<em>&#x076F;&#x06B5;</em>  <em>&#x076F;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x076F;&#x06B5;</em>&#x0641; </string>
+    </test>
+    <test label="seen3below + lamTah" rtl="True">
+      <string> <em>&#x069B;&#x08C7;</em>  &#x0644;<em>&#x069B;&#x08C7;</em>  <em>&#x069B;&#x08C7;</em>&#x0641;  &#x0644;<em>&#x069B;&#x08C7;</em>&#x0641; </string>
+    </test>
+    <test label="sad + lamBar" rtl="True">
+      <string> <em>&#x0635;&#x076A;</em>  &#x0644;<em>&#x0635;&#x076A;</em>  <em>&#x0635;&#x076A;</em>&#x0641;  &#x0644;<em>&#x0635;&#x076A;</em>&#x0641; </string>
+    </test>
+    <test label="tah + lam3dots" rtl="True">
+      <string> <em>&#x0637;&#x06B7;</em>  &#x0644;<em>&#x0637;&#x06B7;</em>  <em>&#x0637;&#x06B7;</em>&#x0641;  &#x0644;<em>&#x0637;&#x06B7;</em>&#x0641; </string>
+    </test>
+    <test label="ain + lam" rtl="True">
+      <string> <em>&#x0639;&#x0644;</em>  &#x0644;<em>&#x0639;&#x0644;</em>  <em>&#x0639;&#x0644;</em>&#x0641;  &#x0644;<em>&#x0639;&#x0644;</em>&#x0641; </string>
+    </test>
+    <test label="qaf + lamSmallV" rtl="True">
+      <string> <em>&#x0642;&#x06B5;</em>  &#x0644;<em>&#x0642;&#x06B5;</em>  <em>&#x0642;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x0642;&#x06B5;</em>&#x0641; </string>
+    </test>
+    <test label="lamBar + lamSmallV" rtl="True">
+      <string> <em>&#x076A;&#x06B5;</em>  &#x0644;<em>&#x076A;&#x06B5;</em>  <em>&#x076A;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x076A;&#x06B5;</em>&#x0641; </string>
+    </test>
+    <test label="meem + lamSmallV" rtl="True">
+      <string> <em>&#x0645;&#x06B5;</em>  &#x0644;<em>&#x0645;&#x06B5;</em>  <em>&#x0645;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x0645;&#x06B5;</em>&#x0641; </string>
+    </test>
+    <test label="kafRing + lamTah" rtl="True">
+      <string> <em>&#x06AB;&#x08C7;</em>  &#x0644;<em>&#x06AB;&#x08C7;</em>  <em>&#x06AB;&#x08C7;</em>&#x0641;  &#x0644;<em>&#x06AB;&#x08C7;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + lam" rtl="True">
+      <string> <em>&#x06BE;&#x0644;</em>  &#x0644;<em>&#x06BE;&#x0644;</em>  <em>&#x06BE;&#x0644;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0644;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + lamSmallV" rtl="True">
+      <string> <em>&#x06C2;&#x06B5;</em>  &#x0644;<em>&#x06C2;&#x06B5;</em>  <em>&#x06C2;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x06B5;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Lam form sequences -->
+  <testgroup label="Meem form sequences">
+    <test label="dotlessBeh + meem" rtl="True">
+      <string> <em>&#x066E;&#x0645;</em>  &#x0644;<em>&#x066E;&#x0645;</em>  <em>&#x066E;&#x0645;</em>&#x0641;  &#x0644;<em>&#x066E;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="hah4below + meem" rtl="True">
+      <string> <em>&#x077C;&#x0645;</em>  &#x0644;<em>&#x077C;&#x0645;</em>  <em>&#x077C;&#x0645;</em>&#x0641;  &#x0644;<em>&#x077C;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="seen3dots3dots + meem" rtl="True">
+      <string> <em>&#x069C;&#x0645;</em>  &#x0644;<em>&#x069C;&#x0645;</em>  <em>&#x069C;&#x0645;</em>&#x0641;  &#x0644;<em>&#x069C;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="dad + meem" rtl="True">
+      <string> <em>&#x0636;&#x0645;</em>  &#x0644;<em>&#x0636;&#x0645;</em>  <em>&#x0636;&#x0645;</em>&#x0641;  &#x0644;<em>&#x0636;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="zah + meem" rtl="True">
+      <string> <em>&#x0638;&#x0645;</em>  &#x0644;<em>&#x0638;&#x0645;</em>  <em>&#x0638;&#x0645;</em>&#x0641;  &#x0644;<em>&#x0638;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="ghain + meem" rtl="True">
+      <string> <em>&#x063A;&#x0645;</em>  &#x0644;<em>&#x063A;&#x0645;</em>  <em>&#x063A;&#x0645;</em>&#x0641;  &#x0644;<em>&#x063A;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsAbove + meem" rtl="True">
+      <string> <em>&#x06A4;&#x0645;</em>  &#x0644;<em>&#x06A4;&#x0645;</em>  <em>&#x06A4;&#x0645;</em>&#x0641;  &#x0644;<em>&#x06A4;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="lam3dots + meem" rtl="True">
+      <string> <em>&#x06B7;&#x0645;</em>  &#x0644;<em>&#x06B7;&#x0645;</em>  <em>&#x06B7;&#x0645;</em>&#x0641;  &#x0644;<em>&#x06B7;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="meem + meem" rtl="True">
+      <string> <em>&#x0645;&#x0645;</em>  &#x0644;<em>&#x0645;&#x0645;</em>  <em>&#x0645;&#x0645;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="kaf2dots + meem" rtl="True">
+      <string> <em>&#x077F;&#x0645;</em>  &#x0644;<em>&#x077F;&#x0645;</em>  <em>&#x077F;&#x0645;</em>&#x0641;  &#x0644;<em>&#x077F;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + meem" rtl="True">
+      <string> <em>&#x06BE;&#x0645;</em>  &#x0644;<em>&#x06BE;&#x0645;</em>  <em>&#x06BE;&#x0645;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0645;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + meem" rtl="True">
+      <string> <em>&#x06C1;&#x0645;</em>  &#x0644;<em>&#x06C1;&#x0645;</em>  <em>&#x06C1;&#x0645;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x0645;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Meem form sequences -->
+  <testgroup label="Alternate meem sequences">
+    <test label="yehHamza + meem-alt + gaf" rtl="True">
+      <string> <em>&#x0626;&#x0645;&#x06AF;</em>  &#x0644;<em>&#x0626;&#x0645;&#x06AF;</em>  <em>&#x0626;&#x0645;&#x06AF;</em>&#x0641;  &#x0644;<em>&#x0626;&#x0645;&#x06AF;</em>&#x0641; </string>
+    </test>
+    <test label="teh + meem-alt + lamBar" rtl="True">
+      <string> <em>&#x062A;&#x0645;&#x076A;</em>  &#x0644;<em>&#x062A;&#x0645;&#x076A;</em>  <em>&#x062A;&#x0645;&#x076A;</em>&#x0641;  &#x0644;<em>&#x062A;&#x0645;&#x076A;</em>&#x0641; </string>
+    </test>
+    <test label="teh3down + meem-alt + alefMadda" rtl="True">
+      <string> <em>&#x067D;&#x0645;&#x0622;</em>  &#x0644;<em>&#x067D;&#x0645;&#x0622;</em> </string>
+    </test>
+    <test label="dotlessBeh + meem-alt + thal" rtl="True">
+      <string> <em>&#x066E;&#x0645;&#x0630;</em>  &#x0644;<em>&#x066E;&#x0645;&#x0630;</em> </string>
+    </test>
+    <test label="tcheheh + meem-alt + ngoeh" rtl="True">
+      <string> <em>&#x0687;&#x0645;&#x06B1;</em>  &#x0644;<em>&#x0687;&#x0645;&#x06B1;</em>  <em>&#x0687;&#x0645;&#x06B1;</em>&#x0641;  &#x0644;<em>&#x0687;&#x0645;&#x06B1;</em>&#x0641; </string>
+    </test>
+    <test label="hahHamza + meem-alt + lam3dots" rtl="True">
+      <string> <em>&#x0681;&#x0645;&#x06B7;</em>  &#x0644;<em>&#x0681;&#x0645;&#x06B7;</em>  <em>&#x0681;&#x0645;&#x06B7;</em>&#x0641;  &#x0644;<em>&#x0681;&#x0645;&#x06B7;</em>&#x0641; </string>
+    </test>
+    <test label="hahTah2smd + meem-alt + alef2" rtl="True">
+      <string> <em>&#x076F;&#x0645;&#x0773;</em>  &#x0644;<em>&#x076F;&#x0645;&#x0773;</em> </string>
+    </test>
+    <test label="hah4below + meem-alt + dalDotTah" rtl="True">
+      <string> <em>&#x077C;&#x0645;&#x068B;</em>  &#x0644;<em>&#x077C;&#x0645;&#x068B;</em> </string>
+    </test>
+    <test label="seen4 + meem-alt + kaf2dots" rtl="True">
+      <string> <em>&#x077D;&#x0645;&#x077F;</em>  &#x0644;<em>&#x077D;&#x0645;&#x077F;</em>  <em>&#x077D;&#x0645;&#x077F;</em>&#x0641;  &#x0644;<em>&#x077D;&#x0645;&#x077F;</em>&#x0641; </string>
+    </test>
+    <test label="seen + meem-alt + lam" rtl="True">
+      <string> <em>&#x0633;&#x0645;&#x0644;</em>  &#x0644;<em>&#x0633;&#x0645;&#x0644;</em>  <em>&#x0633;&#x0645;&#x0644;</em>&#x0641;  &#x0644;<em>&#x0633;&#x0645;&#x0644;</em>&#x0641; </string>
+    </test>
+    <test label="seen3dots3dots + meem-alt + alef" rtl="True">
+      <string> <em>&#x069C;&#x0645;&#x0627;</em>  &#x0644;<em>&#x069C;&#x0645;&#x0627;</em> </string>
+    </test>
+    <test label="seenInvV + meem-alt + dalRing" rtl="True">
+      <string> <em>&#x077E;&#x0645;&#x0689;</em>  &#x0644;<em>&#x077E;&#x0645;&#x0689;</em> </string>
+    </test>
+    <test label="dadDotBelow + meem-alt + kehehDot" rtl="True">
+      <string> <em>&#x06FB;&#x0645;&#x0762;</em>  &#x0644;<em>&#x06FB;&#x0645;&#x0762;</em>  <em>&#x06FB;&#x0645;&#x0762;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x0645;&#x0762;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + meem-alt + lamSmallV" rtl="True">
+      <string> <em>&#x069E;&#x0645;&#x06B5;</em>  &#x0644;<em>&#x069E;&#x0645;&#x06B5;</em>  <em>&#x069E;&#x0645;&#x06B5;</em>&#x0641;  &#x0644;<em>&#x069E;&#x0645;&#x06B5;</em>&#x0641; </string>
+    </test>
+    <test label="dad + meem-alt + alefWasla" rtl="True">
+      <string> <em>&#x0636;&#x0645;&#x0671;</em>  &#x0644;<em>&#x0636;&#x0645;&#x0671;</em> </string>
+    </test>
+    <test label="dadDotBelow + meem-alt + dul" rtl="True">
+      <string> <em>&#x06FB;&#x0645;&#x068E;</em>  &#x0644;<em>&#x06FB;&#x0645;&#x068E;</em> </string>
+    </test>
+    <test label="zah + meem-alt + graf" rtl="True">
+      <string> <em>&#x0638;&#x0645;&#x08C8;</em>  &#x0644;<em>&#x0638;&#x0645;&#x08C8;</em>  <em>&#x0638;&#x0645;&#x08C8;</em>&#x0641;  &#x0644;<em>&#x0638;&#x0645;&#x08C8;</em>&#x0641; </string>
+    </test>
+    <test label="tah + meem-alt + lamTah" rtl="True">
+      <string> <em>&#x0637;&#x0645;&#x08C7;</em>  &#x0644;<em>&#x0637;&#x0645;&#x08C7;</em>  <em>&#x0637;&#x0645;&#x08C7;</em>&#x0641;  &#x0644;<em>&#x0637;&#x0645;&#x08C7;</em>&#x0641; </string>
+    </test>
+    <test label="tah + meem-alt + alef3" rtl="True">
+      <string> <em>&#x0637;&#x0645;&#x0774;</em>  &#x0644;<em>&#x0637;&#x0645;&#x0774;</em> </string>
+    </test>
+    <test label="zah + meem-alt + thal" rtl="True">
+      <string> <em>&#x0638;&#x0645;&#x0630;</em>  &#x0644;<em>&#x0638;&#x0645;&#x0630;</em> </string>
+    </test>
+    <test label="ghain + meem-alt + gaf" rtl="True">
+      <string> <em>&#x063A;&#x0645;&#x06AF;</em>  &#x0644;<em>&#x063A;&#x0645;&#x06AF;</em>  <em>&#x063A;&#x0645;&#x06AF;</em>&#x0641;  &#x0644;<em>&#x063A;&#x0645;&#x06AF;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + meem-alt + lamBar" rtl="True">
+      <string> <em>&#x06A0;&#x0645;&#x076A;</em>  &#x0644;<em>&#x06A0;&#x0645;&#x076A;</em>  <em>&#x06A0;&#x0645;&#x076A;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x0645;&#x076A;</em>&#x0641; </string>
+    </test>
+    <test label="ghain + meem-alt + alefMadda" rtl="True">
+      <string> <em>&#x063A;&#x0645;&#x0622;</em>  &#x0644;<em>&#x063A;&#x0645;&#x0622;</em> </string>
+    </test>
+    <test label="ain3dots + meem-alt + dalDotTah" rtl="True">
+      <string> <em>&#x06A0;&#x0645;&#x068B;</em>  &#x0644;<em>&#x06A0;&#x0645;&#x068B;</em> </string>
+    </test>
+    <test label="dotlessFeh + meem-alt + ngoeh" rtl="True">
+      <string> <em>&#x06A1;&#x0645;&#x06B1;</em>  &#x0644;<em>&#x06A1;&#x0645;&#x06B1;</em>  <em>&#x06A1;&#x0645;&#x06B1;</em>&#x0641;  &#x0644;<em>&#x06A1;&#x0645;&#x06B1;</em>&#x0641; </string>
+    </test>
+    <test label="feh + meem-alt + lam3dots" rtl="True">
+      <string> <em>&#x0641;&#x0645;&#x06B7;</em>  &#x0644;<em>&#x0641;&#x0645;&#x06B7;</em>  <em>&#x0641;&#x0645;&#x06B7;</em>&#x0641;  &#x0644;<em>&#x0641;&#x0645;&#x06B7;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsBelow + meem-alt + alef2" rtl="True">
+      <string> <em>&#x06A5;&#x0645;&#x0773;</em>  &#x0644;<em>&#x06A5;&#x0645;&#x0773;</em> </string>
+    </test>
+    <test label="dotlessFeh + meem-alt + dalRing" rtl="True">
+      <string> <em>&#x06A1;&#x0645;&#x0689;</em>  &#x0644;<em>&#x06A1;&#x0645;&#x0689;</em> </string>
+    </test>
+    <test label="meem + meem-alt + ng" rtl="True">
+      <string> <em>&#x0645;&#x0645;&#x06AD;</em>  &#x0644;<em>&#x0645;&#x0645;&#x06AD;</em>  <em>&#x0645;&#x0645;&#x06AD;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0645;&#x06AD;</em>&#x0641; </string>
+    </test>
+    <test label="meem + meem-alt + lam3dots" rtl="True">
+      <string> <em>&#x0645;&#x0645;&#x06B7;</em>  &#x0644;<em>&#x0645;&#x0645;&#x06B7;</em>  <em>&#x0645;&#x0645;&#x06B7;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0645;&#x06B7;</em>&#x0641; </string>
+    </test>
+    <test label="meem + meem-alt + alefMadda" rtl="True">
+      <string> <em>&#x0645;&#x0645;&#x0622;</em>  &#x0644;<em>&#x0645;&#x0645;&#x0622;</em> </string>
+    </test>
+    <test label="meem + meem-alt + dal" rtl="True">
+      <string> <em>&#x0645;&#x0645;&#x062F;</em>  &#x0644;<em>&#x0645;&#x0645;&#x062F;</em> </string>
+    </test>
+    <test label="hehDo + meem-alt + ng" rtl="True">
+      <string> <em>&#x06BE;&#x0645;&#x06AD;</em>  &#x0644;<em>&#x06BE;&#x0645;&#x06AD;</em>  <em>&#x06BE;&#x0645;&#x06AD;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0645;&#x06AD;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + meem-alt + lamBar" rtl="True">
+      <string> <em>&#x06BE;&#x0645;&#x076A;</em>  &#x0644;<em>&#x06BE;&#x0645;&#x076A;</em>  <em>&#x06BE;&#x0645;&#x076A;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x0645;&#x076A;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + meem-alt + alef3" rtl="True">
+      <string> <em>&#x06BE;&#x0645;&#x0774;</em>  &#x0644;<em>&#x06BE;&#x0645;&#x0774;</em> </string>
+    </test>
+    <test label="hehDo + meem-alt + dalDotTah" rtl="True">
+      <string> <em>&#x06BE;&#x0645;&#x068B;</em>  &#x0644;<em>&#x06BE;&#x0645;&#x068B;</em> </string>
+    </test>
+    <test label="arabicHeh + meem-alt + keheh3dots" rtl="True">
+      <string> <em>&#x0647;&#x0645;&#x0763;</em>  &#x0644;<em>&#x0647;&#x0645;&#x0763;</em>  <em>&#x0647;&#x0645;&#x0763;</em>&#x0641;  &#x0644;<em>&#x0647;&#x0645;&#x0763;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + meem-alt + lam3dots" rtl="True">
+      <string> <em>&#x06C2;&#x0645;&#x06B7;</em>  &#x0644;<em>&#x06C2;&#x0645;&#x06B7;</em>  <em>&#x06C2;&#x0645;&#x06B7;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x0645;&#x06B7;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + meem-alt + alefMadda" rtl="True">
+      <string> <em>&#x06C2;&#x0645;&#x0622;</em>  &#x0644;<em>&#x06C2;&#x0645;&#x0622;</em> </string>
+    </test>
+    <test label="hehGoal + meem-alt + dalRing" rtl="True">
+      <string> <em>&#x06C1;&#x0645;&#x0689;</em>  &#x0644;<em>&#x06C1;&#x0645;&#x0689;</em> </string>
+    </test>
+  </testgroup>  <!-- Alternate meem sequences -->
+  <testgroup label="Noon form sequences">
+    <test label="yehSmallV + noon" rtl="True">
+      <string> <em>&#x06CE;&#x0646;</em>  &#x0644;<em>&#x06CE;&#x0646;</em> </string>
+    </test>
+    <test label="dyeh + noonRetro" rtl="True">
+      <string> <em>&#x0684;&#x0768;</em>  &#x0644;<em>&#x0684;&#x0768;</em> </string>
+    </test>
+    <test label="seenDotDot + rnoon" rtl="True">
+      <string> <em>&#x069A;&#x06BB;</em>  &#x0644;<em>&#x069A;&#x06BB;</em> </string>
+    </test>
+    <test label="sad + noonSmallV" rtl="True">
+      <string> <em>&#x0635;&#x0769;</em>  &#x0644;<em>&#x0635;&#x0769;</em> </string>
+    </test>
+    <test label="zah + noon" rtl="True">
+      <string> <em>&#x0638;&#x0646;</em>  &#x0644;<em>&#x0638;&#x0646;</em> </string>
+    </test>
+    <test label="ain3dots + noonRetro" rtl="True">
+      <string> <em>&#x06A0;&#x0768;</em>  &#x0644;<em>&#x06A0;&#x0768;</em> </string>
+    </test>
+    <test label="feh3dotsAbove + rnoon" rtl="True">
+      <string> <em>&#x06A4;&#x06BB;</em>  &#x0644;<em>&#x06A4;&#x06BB;</em> </string>
+    </test>
+    <test label="lamSmallV + noonSmallV" rtl="True">
+      <string> <em>&#x06B5;&#x0769;</em>  &#x0644;<em>&#x06B5;&#x0769;</em> </string>
+    </test>
+    <test label="meem + noon" rtl="True">
+      <string> <em>&#x0645;&#x0646;</em>  &#x0644;<em>&#x0645;&#x0646;</em> </string>
+    </test>
+    <test label="kaf + noonRetro" rtl="True">
+      <string> <em>&#x06A9;&#x0768;</em>  &#x0644;<em>&#x06A9;&#x0768;</em> </string>
+    </test>
+    <test label="hehDo + rnoon" rtl="True">
+      <string> <em>&#x06BE;&#x06BB;</em>  &#x0644;<em>&#x06BE;&#x06BB;</em> </string>
+    </test>
+    <test label="hehHamza + noonSmallV" rtl="True">
+      <string> <em>&#x06C2;&#x0769;</em>  &#x0644;<em>&#x06C2;&#x0769;</em> </string>
+    </test>
+  </testgroup>  <!-- Noon form sequences -->
+  <testgroup label="Waw form sequences">
+    <test label="tehRing + waw" rtl="True">
+      <string> <em>&#x067C;&#x0648;</em>  &#x0644;<em>&#x067C;&#x0648;</em> </string>
+    </test>
+    <test label="hah + wawHamza" rtl="True">
+      <string> <em>&#x062D;&#x0624;</em>  &#x0644;<em>&#x062D;&#x0624;</em> </string>
+    </test>
+    <test label="seen4 + wawRing" rtl="True">
+      <string> <em>&#x077D;&#x06C4;</em>  &#x0644;<em>&#x077D;&#x06C4;</em> </string>
+    </test>
+    <test label="dad + kirghizYu" rtl="True">
+      <string> <em>&#x0636;&#x06C9;</em>  &#x0644;<em>&#x0636;&#x06C9;</em> </string>
+    </test>
+    <test label="tah + ve" rtl="True">
+      <string> <em>&#x0637;&#x06CB;</em>  &#x0644;<em>&#x0637;&#x06CB;</em> </string>
+    </test>
+    <test label="ain3dots + yu" rtl="True">
+      <string> <em>&#x06A0;&#x06C8;</em>  &#x0644;<em>&#x06A0;&#x06C8;</em> </string>
+    </test>
+    <test label="feh3dotsBelow + wawDot" rtl="True">
+      <string> <em>&#x06A5;&#x06CF;</em>  &#x0644;<em>&#x06A5;&#x06CF;</em> </string>
+    </test>
+    <test label="lamTah + waw2dots" rtl="True">
+      <string> <em>&#x08C7;&#x06CA;</em>  &#x0644;<em>&#x08C7;&#x06CA;</em> </string>
+    </test>
+    <test label="meem + waw2" rtl="True">
+      <string> <em>&#x0645;&#x0778;</em>  &#x0644;<em>&#x0645;&#x0778;</em> </string>
+    </test>
+    <test label="kehehDot + waw3" rtl="True">
+      <string> <em>&#x0762;&#x0779;</em>  &#x0644;<em>&#x0762;&#x0779;</em> </string>
+    </test>
+    <test label="hehDo + waw" rtl="True">
+      <string> <em>&#x06BE;&#x0648;</em>  &#x0644;<em>&#x06BE;&#x0648;</em> </string>
+    </test>
+    <test label="hehHamza + wawHamza" rtl="True">
+      <string> <em>&#x06C2;&#x0624;</em>  &#x0644;<em>&#x06C2;&#x0624;</em> </string>
+    </test>
+  </testgroup>  <!-- Waw form sequences -->
+  <testgroup label="Kaf form sequences">
+    <test label="chotiyeh + kaf" rtl="True">
+      <string> <em>&#x06CC;&#x06A9;</em>  &#x0644;<em>&#x06CC;&#x06A9;</em>  <em>&#x06CC;&#x06A9;</em>&#x0641;  &#x0644;<em>&#x06CC;&#x06A9;</em>&#x0641; </string>
+    </test>
+    <test label="jeem + gueh" rtl="True">
+      <string> <em>&#x062C;&#x06B3;</em>  &#x0644;<em>&#x062C;&#x06B3;</em>  <em>&#x062C;&#x06B3;</em>&#x0641;  &#x0644;<em>&#x062C;&#x06B3;</em>&#x0641; </string>
+    </test>
+    <test label="seenInvV + kafRing" rtl="True">
+      <string> <em>&#x077E;&#x06AB;</em>  &#x0644;<em>&#x077E;&#x06AB;</em>  <em>&#x077E;&#x06AB;</em>&#x0641;  &#x0644;<em>&#x077E;&#x06AB;</em>&#x0641; </string>
+    </test>
+    <test label="dadDotBelow + ng" rtl="True">
+      <string> <em>&#x06FB;&#x06AD;</em>  &#x0644;<em>&#x06FB;&#x06AD;</em>  <em>&#x06FB;&#x06AD;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x06AD;</em>&#x0641; </string>
+    </test>
+    <test label="tah + keheh3dots" rtl="True">
+      <string> <em>&#x0637;&#x0763;</em>  &#x0644;<em>&#x0637;&#x0763;</em>  <em>&#x0637;&#x0763;</em>&#x0641;  &#x0644;<em>&#x0637;&#x0763;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + kaf" rtl="True">
+      <string> <em>&#x06A0;&#x06A9;</em>  &#x0644;<em>&#x06A0;&#x06A9;</em>  <em>&#x06A0;&#x06A9;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x06A9;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsBelow + gueh" rtl="True">
+      <string> <em>&#x06A5;&#x06B3;</em>  &#x0644;<em>&#x06A5;&#x06B3;</em>  <em>&#x06A5;&#x06B3;</em>&#x0641;  &#x0644;<em>&#x06A5;&#x06B3;</em>&#x0641; </string>
+    </test>
+    <test label="lamTah + kafRing" rtl="True">
+      <string> <em>&#x08C7;&#x06AB;</em>  &#x0644;<em>&#x08C7;&#x06AB;</em>  <em>&#x08C7;&#x06AB;</em>&#x0641;  &#x0644;<em>&#x08C7;&#x06AB;</em>&#x0641; </string>
+    </test>
+    <test label="meem + kaf2dots" rtl="True">
+      <string> <em>&#x0645;&#x077F;</em>  &#x0644;<em>&#x0645;&#x077F;</em>  <em>&#x0645;&#x077F;</em>&#x0641;  &#x0644;<em>&#x0645;&#x077F;</em>&#x0641; </string>
+    </test>
+    <test label="ng + kehehDot" rtl="True">
+      <string> <em>&#x06AD;&#x0762;</em>  &#x0644;<em>&#x06AD;&#x0762;</em>  <em>&#x06AD;&#x0762;</em>&#x0641;  &#x0644;<em>&#x06AD;&#x0762;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + kaf2dots" rtl="True">
+      <string> <em>&#x06BE;&#x077F;</em>  &#x0644;<em>&#x06BE;&#x077F;</em>  <em>&#x06BE;&#x077F;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x077F;</em>&#x0641; </string>
+    </test>
+    <test label="arabicHeh + kehehDot" rtl="True">
+      <string> <em>&#x0647;&#x0762;</em>  &#x0644;<em>&#x0647;&#x0762;</em>  <em>&#x0647;&#x0762;</em>&#x0641;  &#x0644;<em>&#x0647;&#x0762;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Kaf form sequences -->
+  <testgroup label="Heh-Doachashmee form sequences">
+    <test label="teh + hehDo" rtl="True">
+      <string> <em>&#x062A;&#x06BE;</em>  &#x0644;<em>&#x062A;&#x06BE;</em>  <em>&#x062A;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x062A;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="hah + hehDo" rtl="True">
+      <string> <em>&#x062D;&#x06BE;</em>  &#x0644;<em>&#x062D;&#x06BE;</em>  <em>&#x062D;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x062D;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="seen4 + hehDo" rtl="True">
+      <string> <em>&#x077D;&#x06BE;</em>  &#x0644;<em>&#x077D;&#x06BE;</em>  <em>&#x077D;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x077D;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + hehDo" rtl="True">
+      <string> <em>&#x069E;&#x06BE;</em>  &#x0644;<em>&#x069E;&#x06BE;</em>  <em>&#x069E;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x069E;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="zah + hehDo" rtl="True">
+      <string> <em>&#x0638;&#x06BE;</em>  &#x0644;<em>&#x0638;&#x06BE;</em>  <em>&#x0638;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x0638;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="ain + hehDo" rtl="True">
+      <string> <em>&#x0639;&#x06BE;</em>  &#x0644;<em>&#x0639;&#x06BE;</em>  <em>&#x0639;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x0639;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="dotlessFeh + hehDo" rtl="True">
+      <string> <em>&#x06A1;&#x06BE;</em>  &#x0644;<em>&#x06A1;&#x06BE;</em>  <em>&#x06A1;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x06A1;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="lam + hehDo" rtl="True">
+      <string> <em>&#x0644;&#x06BE;</em>  &#x0644;<em>&#x0644;&#x06BE;</em>  <em>&#x0644;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x0644;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="meem + hehDo" rtl="True">
+      <string> <em>&#x0645;&#x06BE;</em>  &#x0644;<em>&#x0645;&#x06BE;</em>  <em>&#x0645;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x0645;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="keheh3dots + hehDo" rtl="True">
+      <string> <em>&#x0763;&#x06BE;</em>  &#x0644;<em>&#x0763;&#x06BE;</em>  <em>&#x0763;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x0763;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + hehDo" rtl="True">
+      <string> <em>&#x06BE;&#x06BE;</em>  &#x0644;<em>&#x06BE;&#x06BE;</em>  <em>&#x06BE;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x06BE;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + hehDo" rtl="True">
+      <string> <em>&#x06C2;&#x06BE;</em>  &#x0644;<em>&#x06C2;&#x06BE;</em>  <em>&#x06C2;&#x06BE;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x06BE;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Heh-Doachashmee form sequences -->
+  <testgroup label="Heh-Goal form sequences">
+    <test label="theh + hehGoal" rtl="True">
+      <string> <em>&#x062B;&#x06C1;</em>  &#x0644;<em>&#x062B;&#x06C1;</em>  <em>&#x062B;&#x06C1;</em>&#x0641;  &#x0644;<em>&#x062B;&#x06C1;</em>&#x0641; </string>
+    </test>
+    <test label="khah + hehHamza" rtl="True">
+      <string> <em>&#x062E;&#x06C2;</em>  &#x0644;<em>&#x062E;&#x06C2;</em>  <em>&#x062E;&#x06C2;</em>&#x0641;  &#x0644;<em>&#x062E;&#x06C2;</em>&#x0641; </string>
+    </test>
+    <test label="seen + arabicHeh" rtl="True">
+      <string> <em>&#x0633;&#x0647;</em>  &#x0644;<em>&#x0633;&#x0647;</em>  <em>&#x0633;&#x0647;</em>&#x0641;  &#x0644;<em>&#x0633;&#x0647;</em>&#x0641; </string>
+    </test>
+    <test label="sad + hehGoal" rtl="True">
+      <string> <em>&#x0635;&#x06C1;</em>  &#x0644;<em>&#x0635;&#x06C1;</em>  <em>&#x0635;&#x06C1;</em>&#x0641;  &#x0644;<em>&#x0635;&#x06C1;</em>&#x0641; </string>
+    </test>
+    <test label="tah + hehHamza" rtl="True">
+      <string> <em>&#x0637;&#x06C2;</em>  &#x0644;<em>&#x0637;&#x06C2;</em>  <em>&#x0637;&#x06C2;</em>&#x0641;  &#x0644;<em>&#x0637;&#x06C2;</em>&#x0641; </string>
+    </test>
+    <test label="ghain + arabicHeh" rtl="True">
+      <string> <em>&#x063A;&#x0647;</em>  &#x0644;<em>&#x063A;&#x0647;</em>  <em>&#x063A;&#x0647;</em>&#x0641;  &#x0644;<em>&#x063A;&#x0647;</em>&#x0641; </string>
+    </test>
+    <test label="dotlessQaf + hehGoal" rtl="True">
+      <string> <em>&#x066F;&#x06C1;</em>  &#x0644;<em>&#x066F;&#x06C1;</em>  <em>&#x066F;&#x06C1;</em>&#x0641;  &#x0644;<em>&#x066F;&#x06C1;</em>&#x0641; </string>
+    </test>
+    <test label="lamBar + hehHamza" rtl="True">
+      <string> <em>&#x076A;&#x06C2;</em>  &#x0644;<em>&#x076A;&#x06C2;</em>  <em>&#x076A;&#x06C2;</em>&#x0641;  &#x0644;<em>&#x076A;&#x06C2;</em>&#x0641; </string>
+    </test>
+    <test label="meem + arabicHeh" rtl="True">
+      <string> <em>&#x0645;&#x0647;</em>  &#x0644;<em>&#x0645;&#x0647;</em>  <em>&#x0645;&#x0647;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0647;</em>&#x0641; </string>
+    </test>
+    <test label="graf + hehGoal" rtl="True">
+      <string> <em>&#x08C8;&#x06C1;</em>  &#x0644;<em>&#x08C8;&#x06C1;</em>  <em>&#x08C8;&#x06C1;</em>&#x0641;  &#x0644;<em>&#x08C8;&#x06C1;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + hehHamza" rtl="True">
+      <string> <em>&#x06BE;&#x06C2;</em>  &#x0644;<em>&#x06BE;&#x06C2;</em>  <em>&#x06BE;&#x06C2;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x06C2;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + arabicHeh" rtl="True">
+      <string> <em>&#x06C1;&#x0647;</em>  &#x0644;<em>&#x06C1;&#x0647;</em>  <em>&#x06C1;&#x0647;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x0647;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Heh-Goal form sequences -->
+  <testgroup label="Teh-marbuta form sequences">
+    <test label="teh + tehMarbuta" rtl="True">
+      <string> <em>&#x062A;&#x0629;</em>  &#x0644;<em>&#x062A;&#x0629;</em> </string>
+    </test>
+    <test label="tcheheh + tehMarbuta" rtl="True">
+      <string> <em>&#x0687;&#x0629;</em>  &#x0644;<em>&#x0687;&#x0629;</em> </string>
+    </test>
+    <test label="seen4dots + tehMarbuta" rtl="True">
+      <string> <em>&#x075C;&#x0629;</em>  &#x0644;<em>&#x075C;&#x0629;</em> </string>
+    </test>
+    <test label="dad + tehMarbuta" rtl="True">
+      <string> <em>&#x0636;&#x0629;</em>  &#x0644;<em>&#x0636;&#x0629;</em> </string>
+    </test>
+    <test label="tah + tehMarbuta" rtl="True">
+      <string> <em>&#x0637;&#x0629;</em>  &#x0644;<em>&#x0637;&#x0629;</em> </string>
+    </test>
+    <test label="ain + tehMarbuta" rtl="True">
+      <string> <em>&#x0639;&#x0629;</em>  &#x0644;<em>&#x0639;&#x0629;</em> </string>
+    </test>
+    <test label="feh3dotsBelow + tehMarbuta" rtl="True">
+      <string> <em>&#x06A5;&#x0629;</em>  &#x0644;<em>&#x06A5;&#x0629;</em> </string>
+    </test>
+    <test label="lam3dots + tehMarbuta" rtl="True">
+      <string> <em>&#x06B7;&#x0629;</em>  &#x0644;<em>&#x06B7;&#x0629;</em> </string>
+    </test>
+    <test label="meem + tehMarbuta" rtl="True">
+      <string> <em>&#x0645;&#x0629;</em>  &#x0644;<em>&#x0645;&#x0629;</em> </string>
+    </test>
+    <test label="gaf + tehMarbuta" rtl="True">
+      <string> <em>&#x06AF;&#x0629;</em>  &#x0644;<em>&#x06AF;&#x0629;</em> </string>
+    </test>
+    <test label="hehDo + tehMarbuta" rtl="True">
+      <string> <em>&#x06BE;&#x0629;</em>  &#x0644;<em>&#x06BE;&#x0629;</em> </string>
+    </test>
+    <test label="hehGoal + tehMarbuta" rtl="True">
+      <string> <em>&#x06C1;&#x0629;</em>  &#x0644;<em>&#x06C1;&#x0629;</em> </string>
+    </test>
+  </testgroup>  <!-- Teh-marbuta form sequences -->
+  <testgroup label="Chotiyeh form sequences">
+    <test label="dotlessBeh + chotiyeh" rtl="True">
+      <string> <em>&#x066E;&#x06CC;</em>  &#x0644;<em>&#x066E;&#x06CC;</em> </string>
+    </test>
+    <test label="tcheh + yehHamza" rtl="True">
+      <string> <em>&#x0686;&#x0626;</em>  &#x0644;<em>&#x0686;&#x0626;</em> </string>
+    </test>
+    <test label="sheen + yehSmallV" rtl="True">
+      <string> <em>&#x0634;&#x06CE;</em>  &#x0644;<em>&#x0634;&#x06CE;</em> </string>
+    </test>
+    <test label="sad3dots + arabicE" rtl="True">
+      <string> <em>&#x069E;&#x06D0;</em>  &#x0644;<em>&#x069E;&#x06D0;</em> </string>
+    </test>
+    <test label="tah + alefMaksura" rtl="True">
+      <string> <em>&#x0637;&#x0649;</em>  &#x0644;<em>&#x0637;&#x0649;</em> </string>
+    </test>
+    <test label="ghain + yeh2" rtl="True">
+      <string> <em>&#x063A;&#x0775;</em>  &#x0644;<em>&#x063A;&#x0775;</em> </string>
+    </test>
+    <test label="dotlessQaf + yeh3" rtl="True">
+      <string> <em>&#x066F;&#x0776;</em>  &#x0644;<em>&#x066F;&#x0776;</em> </string>
+    </test>
+    <test label="lamBar + yeh4below" rtl="True">
+      <string> <em>&#x076A;&#x0777;</em>  &#x0644;<em>&#x076A;&#x0777;</em> </string>
+    </test>
+    <test label="meem + chotiyeh" rtl="True">
+      <string> <em>&#x0645;&#x06CC;</em>  &#x0644;<em>&#x0645;&#x06CC;</em> </string>
+    </test>
+    <test label="graf + yehHamza" rtl="True">
+      <string> <em>&#x08C8;&#x0626;</em>  &#x0644;<em>&#x08C8;&#x0626;</em> </string>
+    </test>
+    <test label="hehDo + yehSmallV" rtl="True">
+      <string> <em>&#x06BE;&#x06CE;</em>  &#x0644;<em>&#x06BE;&#x06CE;</em> </string>
+    </test>
+    <test label="arabicHeh + arabicE" rtl="True">
+      <string> <em>&#x0647;&#x06D0;</em>  &#x0644;<em>&#x0647;&#x06D0;</em> </string>
+    </test>
+  </testgroup>  <!-- Chotiyeh form sequences -->
+  <testgroup label="Bariyeh form sequences">
+    <test label="teh3down + bariyeh" rtl="True">
+      <string> <em>&#x067D;&#x06D2;</em>  &#x0644;<em>&#x067D;&#x06D2;</em> </string>
+    </test>
+    <test label="khah + bariyeh2" rtl="True">
+      <string> <em>&#x062E;&#x077A;</em>  &#x0644;<em>&#x062E;&#x077A;</em> </string>
+    </test>
+    <test label="seen + bariyeh3" rtl="True">
+      <string> <em>&#x0633;&#x077B;</em>  &#x0644;<em>&#x0633;&#x077B;</em> </string>
+    </test>
+    <test label="dadDotBelow + bariyeh" rtl="True">
+      <string> <em>&#x06FB;&#x06D2;</em>  &#x0644;<em>&#x06FB;&#x06D2;</em> </string>
+    </test>
+    <test label="zah + bariyeh2" rtl="True">
+      <string> <em>&#x0638;&#x077A;</em>  &#x0644;<em>&#x0638;&#x077A;</em> </string>
+    </test>
+    <test label="ain + bariyeh3" rtl="True">
+      <string> <em>&#x0639;&#x077B;</em>  &#x0644;<em>&#x0639;&#x077B;</em> </string>
+    </test>
+    <test label="dotlessFeh + bariyeh" rtl="True">
+      <string> <em>&#x06A1;&#x06D2;</em>  &#x0644;<em>&#x06A1;&#x06D2;</em> </string>
+    </test>
+    <test label="lam + bariyeh2" rtl="True">
+      <string> <em>&#x0644;&#x077A;</em>  &#x0644;<em>&#x0644;&#x077A;</em> </string>
+    </test>
+    <test label="meem + bariyeh3" rtl="True">
+      <string> <em>&#x0645;&#x077B;</em>  &#x0644;<em>&#x0645;&#x077B;</em> </string>
+    </test>
+    <test label="keheh3dots + bariyeh" rtl="True">
+      <string> <em>&#x0763;&#x06D2;</em>  &#x0644;<em>&#x0763;&#x06D2;</em> </string>
+    </test>
+    <test label="hehDo + bariyeh2" rtl="True">
+      <string> <em>&#x06BE;&#x077A;</em>  &#x0644;<em>&#x06BE;&#x077A;</em> </string>
+    </test>
+    <test label="hehGoal + bariyeh3" rtl="True">
+      <string> <em>&#x06C1;&#x077B;</em>  &#x0644;<em>&#x06C1;&#x077B;</em> </string>
+    </test>
+  </testgroup>  <!-- Bariyeh form sequences -->
+  <testgroup label="Multiple Beh sequences">
+    <test label="tteh + peh + tteheh" rtl="True">
+      <string> <em>&#x0679;&#x067E;&#x067A;</em>  &#x0644;<em>&#x0679;&#x067E;&#x067A;</em>  <em>&#x0679;&#x067E;&#x067A;</em>&#x0641;  &#x0644;<em>&#x0679;&#x067E;&#x067A;</em>&#x0641; </string>
+    </test>
+    <test label="beeh + tehRing + teh3down + dotlessBeh" rtl="True">
+      <string> <em>&#x067B;&#x067C;&#x067D;&#x066E;</em>  &#x0644;<em>&#x067B;&#x067C;&#x067D;&#x066E;</em>  <em>&#x067B;&#x067C;&#x067D;&#x066E;</em>&#x0641;  &#x0644;<em>&#x067B;&#x067C;&#x067D;&#x066E;</em>&#x0641; </string>
+    </test>
+    <test label="tcheh + teh + theh" rtl="True">
+      <string> <em>&#x0686;&#x062A;&#x062B;</em>  &#x0644;<em>&#x0686;&#x062A;&#x062B;</em>  <em>&#x0686;&#x062A;&#x062B;</em>&#x0641;  &#x0644;<em>&#x0686;&#x062A;&#x062B;</em>&#x0641; </string>
+    </test>
+    <test label="dyeh + tteh + peh + tteheh" rtl="True">
+      <string> <em>&#x0684;&#x0679;&#x067E;&#x067A;</em>  &#x0644;<em>&#x0684;&#x0679;&#x067E;&#x067A;</em>  <em>&#x0684;&#x0679;&#x067E;&#x067A;</em>&#x0641;  &#x0644;<em>&#x0684;&#x0679;&#x067E;&#x067A;</em>&#x0641; </string>
+    </test>
+    <test label="sheen + alefMaksura + teh" rtl="True">
+      <string> <em>&#x0634;&#x0649;&#x062A;</em>  &#x0644;<em>&#x0634;&#x0649;&#x062A;</em>  <em>&#x0634;&#x0649;&#x062A;</em>&#x0641;  &#x0644;<em>&#x0634;&#x0649;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="seenDotDot + theh + tteh + peh" rtl="True">
+      <string> <em>&#x069A;&#x062B;&#x0679;&#x067E;</em>  &#x0644;<em>&#x069A;&#x062B;&#x0679;&#x067E;</em>  <em>&#x069A;&#x062B;&#x0679;&#x067E;</em>&#x0641;  &#x0644;<em>&#x069A;&#x062B;&#x0679;&#x067E;</em>&#x0641; </string>
+    </test>
+    <test label="dad + beeh + tehRing" rtl="True">
+      <string> <em>&#x0636;&#x067B;&#x067C;</em>  &#x0644;<em>&#x0636;&#x067B;&#x067C;</em>  <em>&#x0636;&#x067B;&#x067C;</em>&#x0641;  &#x0644;<em>&#x0636;&#x067B;&#x067C;</em>&#x0641; </string>
+    </test>
+    <test label="dadDotBelow + teh3down + dotlessBeh + noonGhunna" rtl="True">
+      <string> <em>&#x06FB;&#x067D;&#x066E;&#x06BA;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x067D;&#x066E;&#x06BA;</em>&#x0641; </string>
+    </test>
+    <test label="zah + theh + tteh" rtl="True">
+      <string> <em>&#x0638;&#x062B;&#x0679;</em>  &#x0644;<em>&#x0638;&#x062B;&#x0679;</em>  <em>&#x0638;&#x062B;&#x0679;</em>&#x0641;  &#x0644;<em>&#x0638;&#x062B;&#x0679;</em>&#x0641; </string>
+    </test>
+    <test label="tah + peh + tteheh + beeh" rtl="True">
+      <string> <em>&#x0637;&#x067E;&#x067A;&#x067B;</em>  &#x0644;<em>&#x0637;&#x067E;&#x067A;&#x067B;</em>  <em>&#x0637;&#x067E;&#x067A;&#x067B;</em>&#x0641;  &#x0644;<em>&#x0637;&#x067E;&#x067A;&#x067B;</em>&#x0641; </string>
+    </test>
+    <test label="ain3dots + teh + theh" rtl="True">
+      <string> <em>&#x06A0;&#x062A;&#x062B;</em>  &#x0644;<em>&#x06A0;&#x062A;&#x062B;</em>  <em>&#x06A0;&#x062A;&#x062B;</em>&#x0641;  &#x0644;<em>&#x06A0;&#x062A;&#x062B;</em>&#x0641; </string>
+    </test>
+    <test label="ain + tteh + peh + tteheh" rtl="True">
+      <string> <em>&#x0639;&#x0679;&#x067E;&#x067A;</em>  &#x0644;<em>&#x0639;&#x0679;&#x067E;&#x067A;</em>  <em>&#x0639;&#x0679;&#x067E;&#x067A;</em>&#x0641;  &#x0644;<em>&#x0639;&#x0679;&#x067E;&#x067A;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsAbove + rnoon + teh" rtl="True">
+      <string> <em>&#x06A4;&#x06BB;&#x062A;</em>  &#x0644;<em>&#x06A4;&#x06BB;&#x062A;</em>  <em>&#x06A4;&#x06BB;&#x062A;</em>&#x0641;  &#x0644;<em>&#x06A4;&#x06BB;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsBelow + theh + tteh + peh" rtl="True">
+      <string> <em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>  &#x0644;<em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>  <em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>&#x0641;  &#x0644;<em>&#x06A5;&#x062B;&#x0679;&#x067E;</em>&#x0641; </string>
+    </test>
+    <test label="lamSmallV + dotlessBeh + noonRing" rtl="True">
+      <string> <em>&#x06B5;&#x066E;&#x06BC;</em>&#x0641;  &#x0644;<em>&#x06B5;&#x066E;&#x06BC;</em>&#x0641; </string>
+    </test>
+    <test label="lam3dots + teh + theh + tteh" rtl="True">
+      <string> <em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>  &#x0644;<em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>  <em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>&#x0641;  &#x0644;<em>&#x06B7;&#x062A;&#x062B;&#x0679;</em>&#x0641; </string>
+    </test>
+    <test label="meem + teh3down + dotlessBeh" rtl="True">
+      <string> <em>&#x0645;&#x067D;&#x066E;</em>  &#x0644;<em>&#x0645;&#x067D;&#x066E;</em>  <em>&#x0645;&#x067D;&#x066E;</em>&#x0641;  &#x0644;<em>&#x0645;&#x067D;&#x066E;</em>&#x0641; </string>
+    </test>
+    <test label="meem + noonSmallV + teh + theh" rtl="True">
+      <string> <em>&#x0645;&#x0769;&#x062A;&#x062B;</em>  &#x0644;<em>&#x0645;&#x0769;&#x062A;&#x062B;</em>  <em>&#x0645;&#x0769;&#x062A;&#x062B;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0769;&#x062A;&#x062B;</em>&#x0641; </string>
+    </test>
+    <test label="kaf + tehRing + teh3down" rtl="True">
+      <string> <em>&#x06A9;&#x067C;&#x067D;</em>  &#x0644;<em>&#x06A9;&#x067C;&#x067D;</em>  <em>&#x06A9;&#x067C;&#x067D;</em>&#x0641;  &#x0644;<em>&#x06A9;&#x067C;&#x067D;</em>&#x0641; </string>
+    </test>
+    <test label="gaf + dotlessBeh + noon3dots + teh" rtl="True">
+      <string> <em>&#x06AF;&#x066E;&#x06BD;&#x062A;</em>  &#x0644;<em>&#x06AF;&#x066E;&#x06BD;&#x062A;</em>  <em>&#x06AF;&#x066E;&#x06BD;&#x062A;</em>&#x0641;  &#x0644;<em>&#x06AF;&#x066E;&#x06BD;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + beeh + tehRing" rtl="True">
+      <string> <em>&#x06BE;&#x067B;&#x067C;</em>  &#x0644;<em>&#x06BE;&#x067B;&#x067C;</em>  <em>&#x06BE;&#x067B;&#x067C;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x067B;&#x067C;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + teh3down + dotlessBeh + beh" rtl="True">
+      <string> <em>&#x06BE;&#x067D;&#x066E;&#x0628;</em>  &#x0644;<em>&#x06BE;&#x067D;&#x066E;&#x0628;</em>  <em>&#x06BE;&#x067D;&#x066E;&#x0628;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x067D;&#x066E;&#x0628;</em>&#x0641; </string>
+    </test>
+    <test label="hehHamza + tteheh + beeh" rtl="True">
+      <string> <em>&#x06C2;&#x067A;&#x067B;</em>  &#x0644;<em>&#x06C2;&#x067A;&#x067B;</em>  <em>&#x06C2;&#x067A;&#x067B;</em>&#x0641;  &#x0644;<em>&#x06C2;&#x067A;&#x067B;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + tehRing + teh3down + dotlessBeh" rtl="True">
+      <string> <em>&#x06C1;&#x067C;&#x067D;&#x066E;</em>  &#x0644;<em>&#x06C1;&#x067C;&#x067D;&#x066E;</em>  <em>&#x06C1;&#x067C;&#x067D;&#x066E;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x067C;&#x067D;&#x066E;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Multiple Beh sequences -->
+  <testgroup label="Seen/Sad + Beh sequences">
+    <test label="seen4dots + tteheh + sad3dots" rtl="True">
+      <string> <em>&#x075C;&#x067A;&#x069E;</em>  &#x0644;<em>&#x075C;&#x067A;&#x069E;</em>  <em>&#x075C;&#x067A;&#x069E;</em>&#x0641;  &#x0644;<em>&#x075C;&#x067A;&#x069E;</em>&#x0641; </string>
+    </test>
+    <test label="seen2dotsV + beeh + zah" rtl="True">
+      <string> <em>&#x076D;&#x067B;&#x0638;</em>  &#x0644;<em>&#x076D;&#x067B;&#x0638;</em>  <em>&#x076D;&#x067B;&#x0638;</em>&#x0641;  &#x0644;<em>&#x076D;&#x067B;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="seenTah2smd + tehRing + ain" rtl="True">
+      <string> <em>&#x0770;&#x067C;&#x0639;</em>  &#x0644;<em>&#x0770;&#x067C;&#x0639;</em>  <em>&#x0770;&#x067C;&#x0639;</em>&#x0641;  &#x0644;<em>&#x0770;&#x067C;&#x0639;</em>&#x0641; </string>
+    </test>
+    <test label="seen3below + teh3down + dotlessFeh" rtl="True">
+      <string> <em>&#x069B;&#x067D;&#x06A1;</em>  &#x0644;<em>&#x069B;&#x067D;&#x06A1;</em>  <em>&#x069B;&#x067D;&#x06A1;</em>&#x0641;  &#x0644;<em>&#x069B;&#x067D;&#x06A1;</em>&#x0641; </string>
+    </test>
+    <test label="seen3dots3dots + dotlessBeh + qaf" rtl="True">
+      <string> <em>&#x069C;&#x066E;&#x0642;</em>  &#x0644;<em>&#x069C;&#x066E;&#x0642;</em>  <em>&#x069C;&#x066E;&#x0642;</em>&#x0641;  &#x0644;<em>&#x069C;&#x066E;&#x0642;</em>&#x0641; </string>
+    </test>
+    <test label="seenInvV + noon + teh" rtl="True">
+      <string> <em>&#x077E;&#x0646;&#x062A;</em>  &#x0644;<em>&#x077E;&#x0646;&#x062A;</em>  <em>&#x077E;&#x0646;&#x062A;</em>&#x0641;  &#x0644;<em>&#x077E;&#x0646;&#x062A;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + teh + sad" rtl="True">
+      <string> <em>&#x069E;&#x062A;&#x0635;</em>  &#x0644;<em>&#x069E;&#x062A;&#x0635;</em>  <em>&#x069E;&#x062A;&#x0635;</em>&#x0641;  &#x0644;<em>&#x069E;&#x062A;&#x0635;</em>&#x0641; </string>
+    </test>
+    <test label="dad + theh + zah" rtl="True">
+      <string> <em>&#x0636;&#x062B;&#x0638;</em>  &#x0644;<em>&#x0636;&#x062B;&#x0638;</em>  <em>&#x0636;&#x062B;&#x0638;</em>&#x0641;  &#x0644;<em>&#x0636;&#x062B;&#x0638;</em>&#x0641; </string>
+    </test>
+    <test label="dadDotBelow + tteh + ain3dots" rtl="True">
+      <string> <em>&#x06FB;&#x0679;&#x06A0;</em>  &#x0644;<em>&#x06FB;&#x0679;&#x06A0;</em>  <em>&#x06FB;&#x0679;&#x06A0;</em>&#x0641;  &#x0644;<em>&#x06FB;&#x0679;&#x06A0;</em>&#x0641; </string>
+    </test>
+    <test label="sad3dots + peh + feh3dotsAbove" rtl="True">
+      <string> <em>&#x069E;&#x067E;&#x06A4;</em>  &#x0644;<em>&#x069E;&#x067E;&#x06A4;</em>  <em>&#x069E;&#x067E;&#x06A4;</em>&#x0641;  &#x0644;<em>&#x069E;&#x067E;&#x06A4;</em>&#x0641; </string>
+    </test>
+    <test label="sad + tteheh + qaf" rtl="True">
+      <string> <em>&#x0635;&#x067A;&#x0642;</em>  &#x0644;<em>&#x0635;&#x067A;&#x0642;</em>  <em>&#x0635;&#x067A;&#x0642;</em>&#x0641;  &#x0644;<em>&#x0635;&#x067A;&#x0642;</em>&#x0641; </string>
+    </test>
+    <test label="dad + beeh + tehRing" rtl="True">
+      <string> <em>&#x0636;&#x067B;&#x067C;</em>  &#x0644;<em>&#x0636;&#x067B;&#x067C;</em>  <em>&#x0636;&#x067B;&#x067C;</em>&#x0641;  &#x0644;<em>&#x0636;&#x067B;&#x067C;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Seen/Sad + Beh sequences -->
+  <testgroup label="Beh + Reh sequences">
+    <test label="peh + tteheh + zain" rtl="True">
+      <string> <em>&#x067E;&#x067A;&#x0632;</em>  &#x0644;<em>&#x067E;&#x067A;&#x0632;</em> </string>
+    </test>
+    <test label="hah3dots + tehRing + jeh" rtl="True">
+      <string> <em>&#x0685;&#x067C;&#x0698;</em>  &#x0644;<em>&#x0685;&#x067C;&#x0698;</em> </string>
+    </test>
+    <test label="seenTah2smd + tteh + rehDotDot" rtl="True">
+      <string> <em>&#x0770;&#x0679;&#x0696;</em>  &#x0644;<em>&#x0770;&#x0679;&#x0696;</em> </string>
+    </test>
+    <test label="sad3dots + dotlessBeh + reh4dots" rtl="True">
+      <string> <em>&#x069E;&#x066E;&#x0699;</em>  &#x0644;<em>&#x069E;&#x066E;&#x0699;</em> </string>
+    </test>
+    <test label="tah + teh3down + rehRing" rtl="True">
+      <string> <em>&#x0637;&#x067D;&#x0693;</em>  &#x0644;<em>&#x0637;&#x067D;&#x0693;</em> </string>
+    </test>
+    <test label="ain3dots + tehRing + reh2dotsV" rtl="True">
+      <string> <em>&#x06A0;&#x067C;&#x076B;</em>  &#x0644;<em>&#x06A0;&#x067C;&#x076B;</em> </string>
+    </test>
+    <test label="feh + beeh + reh" rtl="True">
+      <string> <em>&#x0641;&#x067B;&#x0631;</em>  &#x0644;<em>&#x0641;&#x067B;&#x0631;</em> </string>
+    </test>
+    <test label="lam + tteheh + rreh" rtl="True">
+      <string> <em>&#x0644;&#x067A;&#x0691;</em>  &#x0644;<em>&#x0644;&#x067A;&#x0691;</em> </string>
+    </test>
+    <test label="meem + peh + rehDotBelow" rtl="True">
+      <string> <em>&#x0645;&#x067E;&#x0694;</em>  &#x0644;<em>&#x0645;&#x067E;&#x0694;</em> </string>
+    </test>
+    <test label="ngoeh + tteh + reh2dots" rtl="True">
+      <string> <em>&#x06B1;&#x0679;&#x0697;</em>  &#x0644;<em>&#x06B1;&#x0679;&#x0697;</em> </string>
+    </test>
+    <test label="hehDo + theh + rehHamza" rtl="True">
+      <string> <em>&#x06BE;&#x062B;&#x076C;</em>  &#x0644;<em>&#x06BE;&#x062B;&#x076C;</em> </string>
+    </test>
+    <test label="hehHamza + teh + rehTah2smd" rtl="True">
+      <string> <em>&#x06C2;&#x062A;&#x0771;</em>  &#x0644;<em>&#x06C2;&#x062A;&#x0771;</em> </string>
+    </test>
+  </testgroup>  <!-- Beh + Reh sequences -->
+  <testgroup label="Beh + Noon sequences">
+    <test label="theh + tteh + noonGhunna" rtl="True">
+      <string> <em>&#x062B;&#x0679;&#x06BA;</em>  &#x0644;<em>&#x062B;&#x0679;&#x06BA;</em> </string>
+    </test>
+    <test label="hahHamza + beeh + noonDotBelow" rtl="True">
+      <string> <em>&#x0681;&#x067B;&#x06B9;</em>  &#x0644;<em>&#x0681;&#x067B;&#x06B9;</em> </string>
+    </test>
+    <test label="seen2dotsV + theh + noonRing" rtl="True">
+      <string> <em>&#x076D;&#x062B;&#x06BC;</em>  &#x0644;<em>&#x076D;&#x062B;&#x06BC;</em> </string>
+    </test>
+    <test label="dadDotBelow + teh3down + noon3dots" rtl="True">
+      <string> <em>&#x06FB;&#x067D;&#x06BD;</em>  &#x0644;<em>&#x06FB;&#x067D;&#x06BD;</em> </string>
+    </test>
+    <test label="zah + tehRing + noonGhunna" rtl="True">
+      <string> <em>&#x0638;&#x067C;&#x06BA;</em>  &#x0644;<em>&#x0638;&#x067C;&#x06BA;</em> </string>
+    </test>
+    <test label="ghain + beeh + noonDotBelow" rtl="True">
+      <string> <em>&#x063A;&#x067B;&#x06B9;</em>  &#x0644;<em>&#x063A;&#x067B;&#x06B9;</em> </string>
+    </test>
+    <test label="dotlessFeh + tteheh + noonRing" rtl="True">
+      <string> <em>&#x06A1;&#x067A;&#x06BC;</em>  &#x0644;<em>&#x06A1;&#x067A;&#x06BC;</em> </string>
+    </test>
+    <test label="lamTah + peh + noon3dots" rtl="True">
+      <string> <em>&#x08C7;&#x067E;&#x06BD;</em>  &#x0644;<em>&#x08C7;&#x067E;&#x06BD;</em> </string>
+    </test>
+    <test label="meem + tteh + noonGhunna" rtl="True">
+      <string> <em>&#x0645;&#x0679;&#x06BA;</em>  &#x0644;<em>&#x0645;&#x0679;&#x06BA;</em> </string>
+    </test>
+    <test label="gueh + theh + noonDotBelow" rtl="True">
+      <string> <em>&#x06B3;&#x062B;&#x06B9;</em>  &#x0644;<em>&#x06B3;&#x062B;&#x06B9;</em> </string>
+    </test>
+    <test label="hehDo + teh + noonRing" rtl="True">
+      <string> <em>&#x06BE;&#x062A;&#x06BC;</em>  &#x0644;<em>&#x06BE;&#x062A;&#x06BC;</em> </string>
+    </test>
+    <test label="arabicHeh + chotiyeh + noon3dots" rtl="True">
+      <string> <em>&#x0647;&#x06CC;&#x06BD;</em>  &#x0644;<em>&#x0647;&#x06CC;&#x06BD;</em> </string>
+    </test>
+  </testgroup>  <!-- Beh + Noon sequences -->
+  <testgroup label="Beh + Heh-Goal sequences">
+    <test label="beeh + tehRing + arabicHeh" rtl="True">
+      <string> <em>&#x067B;&#x067C;&#x0647;</em>  &#x0644;<em>&#x067B;&#x067C;&#x0647;</em> </string>
+    </test>
+    <test label="hahTah + teh3down + hehGoal" rtl="True">
+      <string> <em>&#x076E;&#x067D;&#x06C1;</em>  &#x0644;<em>&#x076E;&#x067D;&#x06C1;</em> </string>
+    </test>
+    <test label="seen3below + peh + hehHamza" rtl="True">
+      <string> <em>&#x069B;&#x067E;&#x06C2;</em>  &#x0644;<em>&#x069B;&#x067E;&#x06C2;</em> </string>
+    </test>
+    <test label="sad + noonRetro + arabicHeh" rtl="True">
+      <string> <em>&#x0635;&#x0768;&#x0647;</em>  &#x0644;<em>&#x0635;&#x0768;&#x0647;</em> </string>
+    </test>
+    <test label="zah + dotlessBeh + hehGoal" rtl="True">
+      <string> <em>&#x0638;&#x066E;&#x06C1;</em>  &#x0644;<em>&#x0638;&#x066E;&#x06C1;</em> </string>
+    </test>
+    <test label="ain + teh3down + hehHamza" rtl="True">
+      <string> <em>&#x0639;&#x067D;&#x06C2;</em>  &#x0644;<em>&#x0639;&#x067D;&#x06C2;</em> </string>
+    </test>
+    <test label="feh3dotsAbove + tehRing + arabicHeh" rtl="True">
+      <string> <em>&#x06A4;&#x067C;&#x0647;</em>  &#x0644;<em>&#x06A4;&#x067C;&#x0647;</em> </string>
+    </test>
+    <test label="lamBar + beeh + hehGoal" rtl="True">
+      <string> <em>&#x076A;&#x067B;&#x06C1;</em>  &#x0644;<em>&#x076A;&#x067B;&#x06C1;</em> </string>
+    </test>
+    <test label="meem + tteheh + hehHamza" rtl="True">
+      <string> <em>&#x0645;&#x067A;&#x06C2;</em>  &#x0644;<em>&#x0645;&#x067A;&#x06C2;</em> </string>
+    </test>
+    <test label="kafRing + peh + arabicHeh" rtl="True">
+      <string> <em>&#x06AB;&#x067E;&#x0647;</em>  &#x0644;<em>&#x06AB;&#x067E;&#x0647;</em> </string>
+    </test>
+    <test label="hehDo + tteh + hehGoal" rtl="True">
+      <string> <em>&#x06BE;&#x0679;&#x06C1;</em>  &#x0644;<em>&#x06BE;&#x0679;&#x06C1;</em> </string>
+    </test>
+    <test label="hehGoal + theh + arabicHeh" rtl="True">
+      <string> <em>&#x06C1;&#x062B;&#x0647;</em>  &#x0644;<em>&#x06C1;&#x062B;&#x0647;</em> </string>
+    </test>
+  </testgroup>  <!-- Beh + Heh-Goal sequences -->
+  <testgroup label="Seen + seen + seen sequences">
+    <test label="theh + sheen + seenDotDot + seen4dots" rtl="True">
+      <string> <em>&#x062B;&#x0634;&#x069A;&#x075C;</em>  &#x0644;<em>&#x062B;&#x0634;&#x069A;&#x075C;</em>  <em>&#x062B;&#x0634;&#x069A;&#x075C;</em>&#x0641;  &#x0644;<em>&#x062B;&#x0634;&#x069A;&#x075C;</em>&#x0641; </string>
+    </test>
+    <test label="hah3dots + seenTah2smd + seen3below + seen3dots3dots" rtl="True">
+      <string> <em>&#x0685;&#x0770;&#x069B;&#x069C;</em>  &#x0644;<em>&#x0685;&#x0770;&#x069B;&#x069C;</em>  <em>&#x0685;&#x0770;&#x069B;&#x069C;</em>&#x0641;  &#x0644;<em>&#x0685;&#x0770;&#x069B;&#x069C;</em>&#x0641; </string>
+    </test>
+    <test label="sheen + seenDotDot + seen4dots + seen2dotsV" rtl="True">
+      <string> <em>&#x0634;&#x069A;&#x075C;&#x076D;</em>  &#x0644;<em>&#x0634;&#x069A;&#x075C;&#x076D;</em>  <em>&#x0634;&#x069A;&#x075C;&#x076D;</em>&#x0641;  &#x0644;<em>&#x0634;&#x069A;&#x075C;&#x076D;</em>&#x0641; </string>
+    </test>
+    <test label="sad + seen + sheen + seenDotDot" rtl="True">
+      <string> <em>&#x0635;&#x0633;&#x0634;&#x069A;</em>  &#x0644;<em>&#x0635;&#x0633;&#x0634;&#x069A;</em>  <em>&#x0635;&#x0633;&#x0634;&#x069A;</em>&#x0641;  &#x0644;<em>&#x0635;&#x0633;&#x0634;&#x069A;</em>&#x0641; </string>
+    </test>
+    <test label="zah + seen2dotsV + seenTah2smd + seen3below" rtl="True">
+      <string> <em>&#x0638;&#x076D;&#x0770;&#x069B;</em>  &#x0644;<em>&#x0638;&#x076D;&#x0770;&#x069B;</em>  <em>&#x0638;&#x076D;&#x0770;&#x069B;</em>&#x0641;  &#x0644;<em>&#x0638;&#x076D;&#x0770;&#x069B;</em>&#x0641; </string>
+    </test>
+    <test label="ain + seenInvV + seen4 + seen" rtl="True">
+      <string> <em>&#x0639;&#x077E;&#x077D;&#x0633;</em>  &#x0644;<em>&#x0639;&#x077E;&#x077D;&#x0633;</em>  <em>&#x0639;&#x077E;&#x077D;&#x0633;</em>&#x0641;  &#x0644;<em>&#x0639;&#x077E;&#x077D;&#x0633;</em>&#x0641; </string>
+    </test>
+    <test label="feh3dotsAbove + seenDotDot + seen4dots + seen2dotsV" rtl="True">
+      <string> <em>&#x06A4;&#x069A;&#x075C;&#x076D;</em>  &#x0644;<em>&#x06A4;&#x069A;&#x075C;&#x076D;</em>  <em>&#x06A4;&#x069A;&#x075C;&#x076D;</em>&#x0641;  &#x0644;<em>&#x06A4;&#x069A;&#x075C;&#x076D;</em>&#x0641; </string>
+    </test>
+    <test label="lamTah + seen3below + seen3dots3dots + seenInvV" rtl="True">
+      <string> <em>&#x08C7;&#x069B;&#x069C;&#x077E;</em>  &#x0644;<em>&#x08C7;&#x069B;&#x069C;&#x077E;</em>  <em>&#x08C7;&#x069B;&#x069C;&#x077E;</em>&#x0641;  &#x0644;<em>&#x08C7;&#x069B;&#x069C;&#x077E;</em>&#x0641; </string>
+    </test>
+    <test label="meem + seen + sheen + seenDotDot" rtl="True">
+      <string> <em>&#x0645;&#x0633;&#x0634;&#x069A;</em>  &#x0644;<em>&#x0645;&#x0633;&#x0634;&#x069A;</em>  <em>&#x0645;&#x0633;&#x0634;&#x069A;</em>&#x0641;  &#x0644;<em>&#x0645;&#x0633;&#x0634;&#x069A;</em>&#x0641; </string>
+    </test>
+    <test label="gueh + seen2dotsV + seenTah2smd + seen3below" rtl="True">
+      <string> <em>&#x06B3;&#x076D;&#x0770;&#x069B;</em>  &#x0644;<em>&#x06B3;&#x076D;&#x0770;&#x069B;</em>  <em>&#x06B3;&#x076D;&#x0770;&#x069B;</em>&#x0641;  &#x0644;<em>&#x06B3;&#x076D;&#x0770;&#x069B;</em>&#x0641; </string>
+    </test>
+    <test label="hehDo + seenInvV + seen4 + seen" rtl="True">
+      <string> <em>&#x06BE;&#x077E;&#x077D;&#x0633;</em>  &#x0644;<em>&#x06BE;&#x077E;&#x077D;&#x0633;</em>  <em>&#x06BE;&#x077E;&#x077D;&#x0633;</em>&#x0641;  &#x0644;<em>&#x06BE;&#x077E;&#x077D;&#x0633;</em>&#x0641; </string>
+    </test>
+    <test label="hehGoal + seenDotDot + seen4dots + seen2dotsV" rtl="True">
+      <string> <em>&#x06C1;&#x069A;&#x075C;&#x076D;</em>  &#x0644;<em>&#x06C1;&#x069A;&#x075C;&#x076D;</em>  <em>&#x06C1;&#x069A;&#x075C;&#x076D;</em>&#x0641;  &#x0644;<em>&#x06C1;&#x069A;&#x075C;&#x076D;</em>&#x0641; </string>
+    </test>
+  </testgroup>  <!-- Seen + seen + seen sequences -->
+</ftml>
