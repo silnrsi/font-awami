@@ -136,8 +136,21 @@ for gName, values in gSorted:
 	descent = values[2]
 	ascent = values[3]
 
+	cStrips = rounded(aw/100)
+	stripMarkers = ""
+	for i in range(cStrips):
+		stripMarkers += "  yt" + MarkerValue(ascent)
+	if fFinal:
+		# don't bother with heights below
+		stripMarkers += "  yb0"
+	else:
+		for i in range(cStrips):
+			stripMarkers += "  yb" + MarkerValue(descent)
+
+	# output aw as a comment
+
 	print("\tsub " + formattedName + "\tby\t" + formattedName + " pxNULL  pyNULL  pxfNULL " \
-	 		+ " dx" + MarkerValue(aw) + " dy" + MarkerValue(rise) + " dsc" + MarkerValue(descent) + " asc" + MarkerValue(ascent) + ";", file=fout)
+	 		+ " dy" + MarkerValue(rise) + stripMarkers + ";", file=fout)
 
 # end for glyphDict
 

@@ -1302,16 +1302,16 @@ lookup BariyehShims {
 lookup BariyehNuqta3 {		#  closest to bariyeh
 	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
 	
-	sub @IniMed	_dot1l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_dot1l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTahBelow;
 	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
+	sub @IniMed	_smallVBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow' 		lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
 } BariyehNuqta3;
 
 lookup BariyehDiac3 {
@@ -1336,16 +1336,16 @@ lookup DelNull3 { lookupflag 0; sub .null by NULL; } DelNull3;
 lookup BariyehNuqta2 {  # second from bariyeh
 	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
 
-	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_dot1l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTahBelow;
 	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
+	sub @IniMed	_smallVBelow' 			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow'		lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
 	
 } BariyehNuqta2;
 
@@ -1371,16 +1371,16 @@ lookup DelNull2 { lookupflag 0; sub .null by NULL; } DelNull2;
 lookup BariyehNuqta1 {  # third from bariyeh
 	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
 
-	sub @IniMed	_dot1l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'							lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'								lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTahBelow;
+	sub @IniMed	_dot1l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot1l;
+	sub @IniMed	_dot2l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2l;
+	sub @IniMed	_dot2vl'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2vl;
+	sub @IniMed	_dot3l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot3l;
+	sub @IniMed	_dot4l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot4l;
+	sub @IniMed	_hehHook.small'			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertHehHook;
+	sub @IniMed	_smallTahBelow'			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTahBelow;
 	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
+	sub @IniMed	_smallVBelow' 			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
+	sub @IniMed	_smallVinvBelow'		lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
 	
 } BariyehNuqta1;
 
@@ -1432,8 +1432,21 @@ lookup Space4BariyehKern {
 
 } Space4BariyehKern;
 
-####include(../../source/opentype/arith_TEMP.feax);
-include(../../source/opentype/arithmetic.feax);
+
+# Temporary for our experiment:
+@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin
+	absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
+	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
+	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
+	];
+@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
+	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
+	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
+	mkAinIni mkLamMed.be mkBehMed.mm];
+@MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
+
+include(../../source/opentype/arith_TEMP.feax);
+####include(../../source/opentype/arithmetic.feax);
 include(../../source/opentype/measure.feax);
 
 
