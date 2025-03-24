@@ -94,9 +94,9 @@
   ybx2550 ybx2600 ybx2650 ybx2700 ybx2750 ybx2800 ybx2850 ybx2900 ybx2950 ybx3000 ];
 
 @XMarkers = [@PxMarker @DxMarker pxNULL];
+@XfMarkers = [@PxfMarker @DxMarker pxfNULL];
 @YMarkers = [@PyMarker @DyMarker pyNULL];
 
-@XfMarkers = [@PxfMarker @DxMarker pxfNULL];
 
 lookup MarkersYtb2AscDsc {
 	sub yt0 by asc0;
@@ -160,7 +160,6 @@ lookup MarkersYtb2AscDsc {
 	sub yt2900 by asc2900;
 	sub yt2950 by asc2950;
 	sub yt3000 by asc3000;
-
 	sub ybN700 by dscN700;
 	sub yb0 by dsc0;
 	sub yb50 by dsc50;
@@ -205,10 +204,10 @@ lookup MarkersYtb2AscDsc {
 	sub yb2000 by dsc2000;
 } MarkersYtb2AscDsc;
 
-lookup _DelNull {
-	sub pxNULL @DxMarker by @DxMarker;
-	sub pyNULL @DyMarker by @DyMarker;
-} _DelNull;
+# lookup _DelNull {
+# 	sub pxNULL @DxMarker by @DxMarker;
+# 	sub pyNULL @DyMarker by @DyMarker;
+# } _DelNull;
 
 
 lookup _SetN1050 {
@@ -236,7 +235,6 @@ lookup _Set0 {
 } _Set0;
 
 lookup _Set50 {
-	#lookupflag UseMarkFilteringSet @XMarkers;
 	sub pxNULL	by	px50;
 	sub pyNULL	by	py50;
 } _Set50;
@@ -261,17 +259,17 @@ lookup _Set800 {
 	sub pyNULL	by	py800;
 	sub @AscMarker	by	yt800;
 	sub @YtMarker	by	yt800;
-	sub @YtxMarker	by	yt800;
 	sub @DscMarker	by	yb800;
 	sub @YbMarker	by	yb800;
-	sub @YbxMarker	by	yb800;
+	# sub @YtxMarker	by	yt800;
+	# sub @YbxMarker	by	yb800;
 } _Set800;
 
 lookup _Set900 {
 	sub @YtMarker	by	yt900;
 	sub @YbMarker	by	yb900;
-	sub @YtxMarker	by	yt900;
-	sub @YbxMarker	by	yb900;
+	# sub @YtxMarker	by	yt900;
+	# sub @YbxMarker	by	yb900;
 } _Set900;
 
 lookup _Set1000 {
@@ -311,10 +309,10 @@ lookup _Set1350 {
 	sub pyNULL	by	py1350;
 	sub @AscMarker	by	yt1350;
 	sub @YtMarker	by	yt1350;
-	sub @YtxMarker	by	yt1350;
 	sub @DscMarker	by	yb1350;
 	sub @YbMarker	by	yb1350;
-	sub @YbxMarker	by	yb1350;
+	# sub @YtxMarker	by	yt1350;
+	# sub @YbxMarker	by	yb1350;
 } _Set1350;
 
 lookup _Set1400 {
@@ -326,27 +324,27 @@ lookup _Set1500 {
 	sub pxNULL	by	px1500;
 	sub pyNULL	by	py1500;
 	sub @AscMarker	by	yt1500;
-	sub @YtxMarker	by	yt1500;
 	sub @DscMarker	by	yb1500;
-	sub @YbxMarker	by	yb1500;
+	# sub @YtxMarker	by	yt1500;
+	# sub @YbxMarker	by	yb1500;
 } _Set1500;
 
 lookup _Set1550 {
 	sub pxNULL	by	px1550;
 	sub pyNULL	by	py1550;
 	sub @AscMarker	by	yt1550;
-	sub @YtxMarker	by	yt1550;
 	sub @DscMarker	by	yb1550;
-	sub @YbxMarker	by	yb1550;
+	# sub @YtxMarker	by	yt1550;
+	# sub @YbxMarker	by	yb1550;
 } _Set1550;
 
 lookup _Set1750 {
 	sub pxNULL	by	px1750;
 	sub pyNULL	by	py1750;
 	sub @AscMarker	by	yt1750;
-	sub @YtxMarker	by	yt1750;
 	sub @DscMarker	by	yb1750;
-	sub @YbxMarker	by	yb1750;
+	# sub @YtxMarker	by	yt1750;
+	# sub @YbxMarker	by	yb1750;
 } _Set1750;
 
 lookup _Set1800 {
@@ -358,9 +356,9 @@ lookup _Set1950 {
 	sub pxNULL	by	px1950;
 	sub pyNULL	by	py1950;
 	sub @AscMarker	by	yt1950;
-	sub @YtxMarker	by	yt1950;
 	sub @DscMarker	by	yb1950;
-	sub @YbxMarker	by	yb1950;
+	# sub @YtxMarker	by	yt1950;
+	# sub @YbxMarker	by	yb1950;
 } _Set1950;
 
 lookup _Set2000 {
@@ -372,9 +370,9 @@ lookup _Set2050 {
 	sub pxNULL	by	px2050;
 	sub pyNULL	by	py2050;
 	sub @AscMarker	by	yt2050;
-	sub @YtxMarker	by	yt2050;
 	#sub @DscMarker	by	yb2050;
-	sub @YbxMarker	by 	yb2050;
+	# sub @YtxMarker	by	yt2050;
+	# sub @YbxMarker	by 	yb2050;
 } _Set2050;
 
 lookup _Set2100 {
@@ -391,9 +389,9 @@ lookup _Set2200 {
 	sub pxNULL	by	px2200;
 	sub pyNULL	by	py2200;
 	sub @AscMarker	by	yt2200;
-	sub @YtxMarker	by	yt2200;
 	sub @DscMarker	by	yb2200;
-	sub @YbxMarker	by	yb2200;
+	# sub @YtxMarker	by	yt2200;
+	# sub @YbxMarker	by	yb2200;
 } _Set2200;
 
 lookup _Set2300 {
@@ -408,9 +406,9 @@ lookup _Set2350 {
 
 lookup _Set2450 {
 	sub @AscMarker	by	yt2450;
-	sub @YtxMarker	by	yt2450;
-	#sub @DscMarker	by	yb2450;
-	sub @YbxMarker	by	yb2450;
+	sub @DscMarker	by	yb2450;
+	# sub @YtxMarker	by	yt2450;
+	# sub @YbxMarker	by	yb2450;
 } _Set2450;
 
 lookup _Set2500 {
@@ -420,29 +418,29 @@ lookup _Set2500 {
 
 lookup _Set2600 {
 	sub @AscMarker	by	yt2600;
-	sub @YtxMarker	by	yt2600;
-	sub @YbxMarker	by	yb2600;
+	# sub @YtxMarker	by	yt2600;
+	# sub @YbxMarker	by	yb2600;
 } _Set2600;
 
 lookup _Set2700 {
 	sub pxNULL	by	px2700;
 	sub pyNULL	by	py2700;
 	sub @AscMarker	by	yt2700;
-	sub @YtxMarker	by	yt2700;
-	sub @YbxMarker	by	yb2700;
+	# sub @YtxMarker	by	yt2700;
+	# sub @YbxMarker	by	yb2700;
 } _Set2700;
 
 lookup _Set2750 {
 	sub @AscMarker	by	yt2750;
 	#sub @DscMarker	by	yb2750;
-	sub @YtxMarker	by	yt2750;
-	sub @YbxMarker	by	yb2750;
+	# sub @YtxMarker	by	yt2750;
+	# sub @YbxMarker	by	yb2750;
 } _Set2750;
 
 lookup _Set2850 {
 	sub @AscMarker	by	yt2850;
-	sub @YtxMarker	by	yt2850;
-	sub @YbxMarker	by	yb2850;
+	# sub @YtxMarker	by	yt2850;
+	# sub @YbxMarker	by	yb2850;
 } _Set2850;
 
 lookup _Set2900 {
@@ -575,95 +573,33 @@ lookup _PosPlusXf800 {
 
 #---
 
-# lookup _AddAsc400 {
-# 	sub yt1550'	lookup _Set1950;
-# } _AddAsc400;
-
-# lookup _AddAsc900 {
-# 	sub yt1800'	lookup _Set2700;
-# } _AddAsc900;
-
-
-# lookup _SubtractDsc400 {
-# 	sub yb300' 	lookup _SetN100;
-# } _SubtractDsc400;
-
-# lookup _SubtractDsc600 {
-# 	sub yb450' 	lookup _SetN150;
-# 	#sub ybN450'	lookup _SetN1050;
-# } _SubtractDsc600;
-
-# lookup _SubtractDsc900 {
-# 	sub yb1700'	lookup _Set800;
-# } _SubtractDsc900;
-
-#---
-
-lookup _AddHt0 {
+lookup _HtPlus0 {
 	sub asc1800'  lookup _Set1800;
 	sub asc2750'  lookup _Set2750;
 	# ignore the dsc value - this is a final and nothing can fit under it
-} _AddHt0;
+} _HtPlus0;
 
-lookup _AddHt1500 {
+lookup _HtPlus1500 {
 	sub asc950'  lookup _Set2450;
 
 	sub dscN150' lookup _Set1350;
-} _AddHt1500;
+} _HtPlus1500;
 
-lookup _AddHt1950 {
+lookup _HtPlus1950 {
 	sub asc900'  lookup _Set2850;
 	sub asc950'  lookup _Set2900;
 
 	sub dscN700' lookup _Set1250;
 	sub dscN150' lookup _Set1800;
 	sub dsc250'  lookup _Set2200;
-} _AddHt1950;
+} _HtPlus1950;
 
-lookup _AddHt2500 {
+lookup _HtPlus2500 {
 	sub asc100' lookup _Set2600;
 	sub asc900' lookup _Set3000;
 
 	sub dsc250' lookup _Set2750;
-} _AddHt2500;
-
-
-@PyInitMarker = [pyNULL py0];
-
-lookup _InsertUpperMarker600 {
-	sub @PyInitMarker	by	@PyInitMarker	ascx600;
-} _InsertUpperMarker600;
-
-lookup _InsertUpperMarker950 {
-	sub @PyInitMarker  by	@PyInitMarker	ascx950;
-} _InsertUpperMarker950;
-
-lookup _InsertLowerMarker600 {
-	sub @PyInitMarker  by	@PyInitMarker	dscx600;
-} _InsertLowerMarker600;
-
-lookup _InsertLowerMarker950 {
-	sub @PyInitMarker  by	@PyInitMarker	dscx950;
-} _InsertLowerMarker950;
-
-lookup _InsertNuqtaDiacMarker {
-	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike];
-	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
-	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot2u;
-	sub @PyInitMarker' lookup _InsertUpperMarker950		@NuqtaLikeLower	_dot3u;
-	sub @PyInitMarker' lookup _InsertUpperMarker950		@NuqtaLikeLower	_dot4u;
-
-	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
-	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
-	sub @PyInitMarker' lookup _InsertUpperMarker950		_dot3u;
-	sub @PyInitMarker' lookup _InsertUpperMarker950		_dot4u;
-
-	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
-	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
-	sub @PyInitMarker' lookup _InsertLowerMarker950		_dot3l;
-	sub @PyInitMarker' lookup _InsertLowerMarker950		_dot4l;
-	sub @PyInitMarker' lookup _InsertLowerMarker950		_hehHook.small;
-} _InsertNuqtaDiacMarker;
+} _HtPlus2500;
 
 #---
 
@@ -745,18 +681,18 @@ lookup _SubtractNuqtaLowerHt {
 # Input stream: @MeasureBaseMarker @PxMarker @PxfMarker @DyMarker @PyMarker @DscXMarker @AscXMarker @DscMarker @DscMarker ... @AscMarker @AscMarker <MARKS>
 lookup _MakeAscAbsolute {
 	lookupflag UseMarkFilteringSet  [@PyMarker @AscMarker];
-	sub py0			@AscMarker'	lookup _AddHt0;
-	sub py1500		@AscMarker' lookup _AddHt1500;
-	sub py1950		@AscMarker' lookup _AddHt1950;
-	sub py2500		@AscMarker' lookup _AddHt2500;
+	sub py0			@AscMarker'	lookup _HtPlus0;
+	sub py1500		@AscMarker' lookup _HtPlus1500;
+	sub py1950		@AscMarker' lookup _HtPlus1950;
+	sub py2500		@AscMarker' lookup _HtPlus2500;
 } _MakeAscAbsolute;
 
 lookup _MakeDscAbsolute {
 	lookupflag UseMarkFilteringSet  [@PyMarker @DscMarker];
-	sub py0			@DscMarker' lookup _AddHt0;
-	sub py1500		@DscMarker' lookup _AddHt1500;
-	sub py1950		@DscMarker' lookup _AddHt1950;
-	sub py2500		@DscMarker' lookup _AddHt2500;
+	sub py0			@DscMarker' lookup _HtPlus0;
+	sub py1500		@DscMarker' lookup _HtPlus1500;
+	sub py1950		@DscMarker' lookup _HtPlus1950;
+	sub py2500		@DscMarker' lookup _HtPlus2500;
 } _MakeDscAbsolute;
 
 
@@ -777,3 +713,30 @@ lookup _MakeDscAbsolute {
 # 	sub pyNULL'	dy1000	by	py1000;
 # 	sub pyNULL'	dy1500	by	py1500;
 # } _InitPosY;
+
+#---
+
+# lookup _AddAsc400 {
+# 	sub yt1550'	lookup _Set1950;
+# } _AddAsc400;
+
+# lookup _AddAsc900 {
+# 	sub yt1800'	lookup _Set2700;
+# } _AddAsc900;
+
+
+# lookup _SubtractDsc400 {
+# 	sub yb300' 	lookup _SetN100;
+# } _SubtractDsc400;
+
+# lookup _SubtractDsc600 {
+# 	sub yb450' 	lookup _SetN150;
+# 	#sub ybN450'	lookup _SetN1050;
+# } _SubtractDsc600;
+
+# lookup _SubtractDsc900 {
+# 	sub yb1700'	lookup _Set800;
+# } _SubtractDsc900;
+
+#---
+

@@ -1,0 +1,148 @@
+#
+#	File: main.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file is intended to be included in main.feax. They are auxiliary lookups
+# that don't need to be auto-generated.
+
+# These lookups are run within feature calt.
+
+@PyInitMarker = [pyNULL py0];
+
+lookup _InsertUpperMarker600 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx600;
+} _InsertUpperMarker600;
+
+lookup _InsertUpperMarker900 {
+	sub @PyInitMarker  by	@PyInitMarker	ascx950;
+} _InsertUpperMarker900;
+
+# lookup _InsertUpperMarker950 {
+# 	sub @PyInitMarker  by	@PyInitMarker	ascx950;
+# } _InsertUpperMarker950;
+
+lookup _InsertUpperMarker1000 {
+	sub @PyInitMarker  by	@PyInitMarker	ascx1000;
+} _InsertUpperMarker1000;
+
+lookup _InsertLowerMarker600 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx600;
+} _InsertLowerMarker600;
+
+lookup _InsertLowerMarker700 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx700;
+} _InsertLowerMarker700;
+
+lookup _InsertLowerMarker900 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx950;
+} _InsertLowerMarker900;
+
+# lookup _InsertLowerMarker950 {
+# 	sub @PyInitMarker  by	@PyInitMarker	dscx950;
+# } _InsertLowerMarker950;
+
+lookup _InsertLowerMarker1000 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx1000;
+} _InsertLowerMarker1000;
+
+
+lookup _InsertNuqtaDiacMarker {
+	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike];
+	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
+	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot2u;
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot3u;		# 950
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot4u;		# 950
+
+	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
+	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;		# 950
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;		#950
+
+	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
+	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;		# 950
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;		# 950
+	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
+
+	# Others:
+	# kharizabar/zair - 1050
+	# small-tah - 900
+	# nuqta+tah - 1500
+} _InsertNuqtaDiacMarker;
+
+
+lookup InsertDxDy {
+	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+	sub absBehIni.mm      	by	absBehIni.mm       	pxNULL  pxfNULL  dy600	pyNULL	dsc300	dsc300	dsc300	dsc300	dsc300	dsc300
+																					asc900	asc900	asc900	asc900	asc900	asc900;
+	sub absMeemMed.sn     	by	absMeemMed.sn      	pxNULL  pxfNULL  dy500	pyNULL	dscN200	dscN200	dscN200		# 300
+																					asc900	asc900	asc900;
+	sub absSeenFin        	by	absSeenFin         	pxNULL  pxfNULL  dy1500	py0		dsc0
+																					asc1800	asc1800	asc1800	asc1800	asc1800	asc1800	asc1800;
+	sub absJeemIni.mmX    	by	absJeemIni.mmX     	pxNULL  pxfNULL  dy500	pyNULL	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100		# 800
+																					asc1100	asc1100	asc1100	asc1100	asc1100	asc1100	asc1100	asc1100	asc1100;
+	sub absMeemMed._alt   	by	absMeemMed._alt    	pxNULL  pxfNULL  dyN200	pyNULL	dscN1000	dscN1000	dscN1000	# 250
+																					asc400	asc400	asc400;
+	sub absLamMed.qf      	by	absLamMed.qf       	pxNULL  pxfNULL  dy1000	pyNULL	dscN200	dscN200	dscN200	dscN200		# 400
+																					asc2000	asc2000	asc2000	asc2000;
+	sub absWawFin         	by	absWawFin          	pxNULL  pxfNULL  dy500	py0		dsc0	# 750
+																					asc1300	asc1300	asc1300	asc1300	asc1300	asc1300	asc1300;
+	sub absFehIni.hgM     	by	absFehIni.hgM      	pxNULL  pxfNULL  dy600	pyNULL	dscN100	dscN100	dscN100	dscN100    # 350
+																					asc1500	asc1500	asc1500	asc1500;
+	sub absHehGoalMed.jm  	by	absHehGoalMed.jm   	pxNULL  pxfNULL  dy200	pyNULL	dscN400	dscN400	dscN400	dscN400	dscN400	dscN400	dscN400	dscN400	dscN400	dscN400		# 1000
+																					asc1000	asc1000	asc1000	asc1000	asc1000	asc1000	asc1000	asc1000	asc1000	asc1000;
+	sub absJeemMed.sn     	by	absJeemMed.sn      	pxNULL  pxfNULL  dy300	pyNULL	dscN300   asc850;  # 0 width
+	sub absAinIni           by	absAinIni           pxNULL  pxfNULL  dyN300	pyNULL	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	# 1000
+																			pyNULL	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400;
+	sub absLamMed.be        by	absLamMed.be        pxNULL  pxfNULL  dy500	pyNULL	dscN550	dscN600	dscN600	dscN600	# 400
+																					asc1500	asc1500	asc1500	asc1500;
+	sub absBehMed.mm        by	absBehMed.mm        pxNULL  pxfNULL  dy500	pyNULL	dscN200	dscN200	dscN200	dscN200	dscN200	dscN200		# 650
+																					asc700	asc700	asc700	asc700	asc700	asc700;
+	###sub absWawFin
+
+} InsertDxDy;
+
+
+# lookup InsertDxDy {
+# 	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+# 	sub absBehIni.mm      	by	absBehIni.mm       	pxNULL  pxfNULL  dy550	pyNULL	dsc250	dsc250	dsc250	dsc250	dsc250	dsc250
+# 																					asc900	asc900	asc900	asc900	asc900	asc900;
+# 	sub absMeemMed.sn     	by	absMeemMed.sn      	pxNULL  pxfNULL  dy450	pyNULL	dscN150	dscN150	dscN150		# 300
+# 																					asc950	asc950	asc950;
+# 	sub absSeenFin        	by	absSeenFin         	pxNULL  pxfNULL  dy1500	py0		dsc0
+# 																					asc1800	asc1800	asc1800	asc1800	asc1800	asc1800	asc1800;
+# 	sub absJeemIni.mmX    	by	absJeemIni.mmX     	pxNULL  pxfNULL  dy450	pyNULL	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100		# 800
+# 																					asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150;
+# 	sub absMeemMed._alt   	by	absMeemMed._alt    	pxNULL  pxfNULL  dyN200	pyNULL	dscN1050	dscN1050	dscN1050	# 250
+# 																					asc400	asc400	asc400;
+# 	sub absLamMed.qf      	by	absLamMed.qf       	pxNULL  pxfNULL  dy1000	pyNULL	dscN150	dscN150	dscN150	dscN150		# 400
+# 																					asc2050	asc2050	asc2050	asc2050;
+# 	sub absWawFin         	by	absWawFin          	pxNULL  pxfNULL  dy500	py0		dsc0	# 750
+# 																					asc1350	asc1350	asc1350	asc1350	asc1350	asc1350	asc1350;
+# 	sub absFehIni.hgM     	by	absFehIni.hgM      	pxNULL  pxfNULL  dy600	pyNULL	dscN50	dscN50	dscN50	dscN50    # 350
+# 																					asc1550	asc1550	asc1550	asc1550;
+# 	sub absHehGoalMed.jm  	by	absHehGoalMed.jm   	pxNULL  pxfNULL  dy200	pyNULL	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450		# 1000
+# 																					asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050;
+# 	sub absJeemMed.sn     	by	absJeemMed.sn      	pxNULL  pxfNULL  dy300	pyNULL	dscN300   asc850;  # 0 width
+# 	sub absAinIni           by	absAinIni           pxNULL  pxfNULL  dyN300	pyNULL	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	# 1000
+# 																			pyNULL	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400;
+# 	sub absLamMed.be        by	absLamMed.be        pxNULL  pxfNULL  dy450	pyNULL	dscN550	dscN550	dscN550	dscN550	# 400
+# 																					asc1550	asc1550	asc1550	asc1550;
+# 	sub absBehMed.mm        by	absBehMed.mm        pxNULL  pxfNULL  dy500	pyNULL	dscN200	dscN200	dscN200	dscN200	dscN200	dscN200		# 650
+# 																			asc750	asc750	asc750	asc750	asc750	asc750;
+# 	###sub absWawFin
+
+# } InsertDxDy;

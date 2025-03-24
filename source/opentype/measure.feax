@@ -19,39 +19,8 @@
 
 # These lookups are run within feature calt.
 
-
-lookup InsertDxDy {
-	lookupflag UseMarkFilteringSet @MeasureBaseMark;
-	sub absBehIni.mm      	by	absBehIni.mm       	pxNULL  pxfNULL  dy550	pyNULL	dsc250	dsc250	dsc250	dsc250	dsc250	dsc250
-																					asc900	asc900	asc900	asc900	asc900	asc900;
-	sub absMeemMed.sn     	by	absMeemMed.sn      	pxNULL  pxfNULL  dy450	pyNULL	dscN150	dscN150	dscN150		# 300
-																					asc950	asc950	asc950;
-	sub absSeenFin        	by	absSeenFin         	pxNULL  pxfNULL  dy1500	py0		dsc0
-																					asc1800	asc1800	asc1800	asc1800	asc1800	asc1800	asc1800;
-	sub absJeemIni.mmX    	by	absJeemIni.mmX     	pxNULL  pxfNULL  dy450	pyNULL	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100	dsc100		# 800
-																					asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150	asc1150;
-	sub absMeemMed._alt   	by	absMeemMed._alt    	pxNULL  pxfNULL  dyN200	pyNULL	dscN1050	dscN1050	dscN1050	# 250
-																					asc400	asc400	asc400;
-	sub absLamMed.qf      	by	absLamMed.qf       	pxNULL  pxfNULL  dy1000	pyNULL	dscN150	dscN150	dscN150	dscN150		# 400
-																					asc2050	asc2050	asc2050	asc2050;
-	sub absWawFin         	by	absWawFin          	pxNULL  pxfNULL  dy500	py0		dsc0	# 750
-																					asc1350	asc1350	asc1350	asc1350	asc1350	asc1350	asc1350;
-	sub absFehIni.hgM     	by	absFehIni.hgM      	pxNULL  pxfNULL  dy600	pyNULL	dscN50	dscN50	dscN50	dscN50    # 350
-																					asc1550	asc1550	asc1550	asc1550;
-	sub absHehGoalMed.jm  	by	absHehGoalMed.jm   	pxNULL  pxfNULL  dy200	pyNULL	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450	dscN450		# 1000
-																					asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050	asc1050;
-	sub absJeemMed.sn     	by	absJeemMed.sn      	pxNULL  pxfNULL  dy300	pyNULL	dscN300   asc850;  # 0 width
-	sub absAinIni           by	absAinIni           pxNULL  pxfNULL  dyN300	pyNULL	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	dscN1000	# 1000
-																			pyNULL	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400	asc400;
-	sub absLamMed.be        by	absLamMed.be        pxNULL  pxfNULL  dy450	pyNULL	dscN550	dscN550	dscN550	dscN550	# 400
-																					asc1550	asc1550	asc1550	asc1550;
-	sub absBehMed.mm        by	absBehMed.mm        pxNULL  pxfNULL  dy500	pyNULL	dscN200	dscN200	dscN200	dscN200	dscN200	dscN200		# 650
-																			asc750	asc750	asc750	asc750	asc750	asc750;
-	###sub absWawFin
-
-} InsertDxDy;
-
-
+# Insert "extra ascent/descent" markers into the stream to represent the presence
+# of nuqtas and/or marks.
 lookup HandleMarkAsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper];
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacUpper;
@@ -153,33 +122,37 @@ lookup MeasureY6 {
 } MeasureY6;
 
 # asc/dsc -> pt/pb
+# We include the @PyMarker to recognize the boundaries of the bases.
 lookup AddNuqtaAscent {
-	lookupflag UseMarkFilteringSet [@AscMarker @AscXMarker];
-	sub @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
+	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker @AscXMarker];
+	sub @PyMarker @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
 } AddNuqtaAscent;
 
 lookup SubtractNuqtaDescent {
-	lookupflag UseMarkFilteringSet [@DscMarker @DscXMarker];
-	sub @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
+	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike];
+	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
 } SubtractNuqtaDescent;
 
-# pt/pb -> asc / dsc
-# lookup MarkersYtb2AscDsc;
+# Convert markers pt/pb -> asc / dsc
+# ??? Why do I have to include the full lookup in the feature???
+#lookup MarkersYtb2AscDsc;
+include(../../source/opentype/arithTopLookups.feax);
 
-lookup MarkersTemp {
-	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
-	sub yt2750  by  asc2750;
-	sub ybN700  by  dscN700;
-} MarkersTemp;
+# lookup MarkersTemp {
+# 	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
+# 	sub yt2750  by  asc2750;
+# 	sub yt2800  by  asc2800;
+# 	sub ybN700  by  dscN700;
+# } MarkersTemp;
 
 lookup MakeAscentAbsolute {
-	lookupflag UseMarkFilteringSet [@AscMarker @PyMarker];
+	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
 	sub @PyMarker	@AscXMarker		@AscMarker' lookup _MakeAscAbsolute;
 	sub @PyMarker					@AscMarker'	lookup _MakeAscAbsolute;
 } MakeAscentAbsolute;
 
 lookup MakeDescentAbsolute {
-	lookupflag UseMarkFilteringSet [@DscMarker @PyMarker];
+	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker];
 	sub @PyMarker	@DscXMarker		@DscMarker' lookup _MakeDscAbsolute;
 	sub @PyMarker					@DscMarker' lookup _MakeDscAbsolute;
 } MakeDescentAbsolute;

@@ -101,6 +101,7 @@ languagesystem arab dflt;
 
 include(../../source/opentype/bariyehKernClasses.feax);
 include(../../source/opentype/arithClasses.feax);
+#include(../../source/opentype/arithTopLookups.feax);
 
 
 #====================  AUXILIARY LOOKUPS  ====================
@@ -575,7 +576,7 @@ lookup DecomposeBases {
 	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
 } DecomposeBases;
 
-} ccmp;
+} ccmp;		# end of feature
 
 
 # Recompose isolates:
@@ -603,7 +604,7 @@ lookup RecomposeIsolates {
 	sub		nlqBariyeh			@BariyehMark_sub	by		@BariyehComposed_sub;
 } RecomposeIsolates;
 
-} isol;
+} isol;		# end of feature
 
 @QafMark = [_dot2u];
 
@@ -646,7 +647,7 @@ lookup DualFinals {
 	sub			@DualPostCcmp_sub		by		@DualFinals_sub;
 } DualFinals;
 
-} fina;
+} fina;		# end of feature
 
 # Make sure medial/initial noons and yehs use beh forms and qaf uses feh forms.
 # Used for both initials and medials.
@@ -670,7 +671,7 @@ lookup MedialForms {
 #	sub absHehGoalMed by absHehGoalMed _hehHook.small;	
 #} InsertHehHook;
 
-} medi;
+} medi;		# end of feature
 
 
 feature init {
@@ -683,7 +684,7 @@ lookup InitialForms {
 	sub		@DualPostCcmp_sub		by		@IniDefault_sub;
 } InitialForms;
 
-} init;
+} init;		# end of feature
 
 
 feature rlig {
@@ -791,7 +792,7 @@ lookup BehContextuals {
 	rsub @MedBe_sub'   @PostBeM1							by	@MedBeM1_sub;
 	rsub @MedBe_sub'   [absBehMed @PostBeM2]	by	@MedBeM2_sub; 
 
-} BehContextuals;					# end of lookup
+} BehContextuals;	# end of lookup
 
 
 lookup KafContextuals {
@@ -838,7 +839,6 @@ lookup SeenContextuals {
 	sub [absSeenIni.sn absSeenMed.sn absSeenMed.sn_sn]		absSeenMed.sn'	@SeenForms		by	absSeenMed.sn_sn;
 	
 	# TODO: tighter form of seen before flat-topped jeems.
-	
 } SeenContextuals;
 
 
@@ -907,7 +907,7 @@ lookup WideForms {
 	# TODO: decide if this is needed.
 	sub @FehIMForms @NuqtaLikeUpper absBehMed' @NuqtaLikeUpper @KafForms		by	absBehMed.kf_wide;
 
-} WideForms;
+} WideForms;	# end of lookup
 
 lookup WideFormsDiac {
 	lookupflag UseMarkFilteringSet @AllMarksUpper;
@@ -950,7 +950,7 @@ lookup WideForms_chain {
 
 } WideForms_chain;
 
-} rlig;		#end of feature
+} rlig;		# end of feature
 
 
 feature calt {
@@ -1120,6 +1120,7 @@ lookup KafCollisionsStep2 {
 # 	>  @N STAYBELOWKAF  csKafMed_baseT$K  csKafMed_top_tall$K
 # 	/  cJeemIM  cNuqtaLike?  cDiacritic?  cMed  _=N  cDiacritic?  _=K  _=T;
 #####
+
 
 @KHighFinals = [@SeenFinForms @SadFinForms @QafFinForms @JeemFinForms @MeemFinForms @AinFinForms @NoonFinForms @ChotiyehFinForms];
 @KHighMedials = [@JeemMedForms @MeemMedForms @HehDoMedForms];
@@ -1445,8 +1446,9 @@ lookup Space4BariyehKern {
 	mkAinIni mkLamMed.be mkBehMed.mm];
 @MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
 
-include(../../source/opentype/arith_TEMP.feax);
-####include(../../source/opentype/arithmetic.feax);
+#####include(../../source/opentype/arith_TEMP.feax);
+include(../../source/opentype/arithmetic.feax);
+include(../../source/opentype/measure_inc.feax);
 include(../../source/opentype/measure.feax);
 
 
