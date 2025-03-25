@@ -134,16 +134,8 @@ lookup SubtractNuqtaDescent {
 } SubtractNuqtaDescent;
 
 # Convert markers pt/pb -> asc / dsc
-# ??? Why do I have to include the full lookup in the feature???
-#lookup MarkersYtb2AscDsc;
-include(../../source/opentype/arithTopLookups.feax);
-
-# lookup MarkersTemp {
-# 	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
-# 	sub yt2750  by  asc2750;
-# 	sub yt2800  by  asc2800;
-# 	sub ybN700  by  dscN700;
-# } MarkersTemp;
+# lookup MarkersYtb2AscDsc:
+include(../../source/opentype/arithMarkersYtb2AscDsc.feax);
 
 lookup MakeAscentAbsolute {
 	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
