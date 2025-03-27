@@ -1,5 +1,5 @@
 #
-#	File: main.feax
+#	File: measure.feax
 #
 # FEAX code for Awami Nastaliq
 
@@ -18,6 +18,10 @@
 # This file is intended to be included in main.feax.
 
 # These lookups are run within feature calt.
+
+# lookup InsertMarkers:
+###include(../../source/opentype/autoKernMetrics.feax);
+include(../../source/opentype/autoKernMetrics_TEMP.feax);
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks.
@@ -133,7 +137,7 @@ lookup SubtractNuqtaDescent {
 	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
 } SubtractNuqtaDescent;
 
-# Convert markers pt/pb -> asc / dsc
+# Convert markers pt/pb back to asc/dsc
 # lookup MarkersYtb2AscDsc:
 include(../../source/opentype/arithMarkersYtb2AscDsc.feax);
 
@@ -149,12 +153,31 @@ lookup MakeDescentAbsolute {
 	sub @PyMarker					@DscMarker' lookup _MakeDscAbsolute;
 } MakeDescentAbsolute;
 
+# Now actually do the comparison to calculate the kerning possible.
 
-# lookup AdjustAscentDescent4Marks { ======================
-# 	lookupflag UseMarkFilteringSet [@AscMarker @DscMarker @NuqtaLike];
-# 	sub @YtMarker' lookup _AddToAscent 						@NuqtaLikeUpper;
-# 	sub @YbMarker' lookup _SubtractFromAscent	@AscMarker	@NuqtaLikeLower;
-# } AdjustAscentDescent4Marks;
+# Each CalculateKern lookup below works backward by one slice in the sequence to be kerned,
+# kerning it a little more tightly if possible.
+# We need a lookup for every potential slice - probably 15.
+
+lookup CalculateKern1 {
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker];
+	sub  @YtMarker'  lookup _CalcKern	@KwMarker  @YbMarker;
+} CalculateKern1;
+
+lookup CalculateKern2 {
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker];
+	sub  @YtMarker'  lookup _CalcKern	@KwMarker  @YbMarker;
+} CalculateKern2;
+
+lookup CalculateKern3 {
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker];
+	sub  @YtMarker'  lookup _CalcKern	@KwMarker  @YbMarker;
+} CalculateKern3;
+
+lookup CalculateKern4 {
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker];
+	sub  @YtMarker'  lookup _CalcKern	@KwMarker  @YbMarker;
+} CalculateKern4;
 
 
 lookup RestoreBases {

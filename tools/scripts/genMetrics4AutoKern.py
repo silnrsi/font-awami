@@ -143,13 +143,13 @@ for gName, values in gSorted:
 	cStrips = round(aw/inc)
 	stripMarkers = ""
 	for i in range(cStrips):
-		stripMarkers += "  yt" + MarkerValue(ascent)
+		stripMarkers += "  asc" + MarkerValue(ascent)
 	if fFinal:
 		# don't bother with heights below
-		stripMarkers += "  yb0"
+		stripMarkers += "  dsc0"
 	else:
 		for i in range(cStrips):
-			stripMarkers += "  yb" + MarkerValue(descent)
+			stripMarkers += "  dsc" + MarkerValue(descent)
 
 	# output aw as a comment
 

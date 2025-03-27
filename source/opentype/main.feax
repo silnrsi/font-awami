@@ -101,7 +101,12 @@ languagesystem arab dflt;
 
 include(../../source/opentype/bariyehKernClasses.feax);
 include(../../source/opentype/arithClasses.feax);
-#include(../../source/opentype/arithTopLookups.feax);
+
+#####include(../../source/opentype/arith_TEMP.feax);
+include(../../source/opentype/arithmetic.feax);
+
+include(../../source/opentype/kerncalc_TEMP.feax);
+####include(../../source/opentype/kerncalc.feax);
 
 
 #====================  AUXILIARY LOOKUPS  ====================
@@ -1434,20 +1439,6 @@ lookup Space4BariyehKern {
 } Space4BariyehKern;
 
 
-# Temporary for our experiment:
-@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin
-	absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
-	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
-	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
-	];
-@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
-	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
-	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
-	mkAinIni mkLamMed.be mkBehMed.mm];
-@MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
-
-#####include(../../source/opentype/arith_TEMP.feax);
-include(../../source/opentype/arithmetic.feax);
 include(../../source/opentype/measure_inc.feax);
 include(../../source/opentype/measure.feax);
 
@@ -1708,5 +1699,24 @@ feature dist {
 
 feature kern {
 
+lookup DoAutoKerning {
+	lookupflag UseMarkFilteringSet @KwMarker;
+	pos @GDEF_bases <-100 0 -100 0> kw100;
+	pos @GDEF_bases <-200 0 -200 0> kw200;
+	pos @GDEF_bases <-300 0 -300 0> kw300;
+	pos @GDEF_bases <-400 0 -400 0> kw400;
+	pos @GDEF_bases <-500 0 -500 0> kw500;
+	pos @GDEF_bases <-600 0 -600 0> kw600;
+	pos @GDEF_bases <-700 0 -700 0> kw700;
+	pos @GDEF_bases <-800 0 -800 0> kw800;
+	pos @GDEF_bases <-900 0 -900 0> kw900;
+	pos @GDEF_bases <-1000 0 -1000 0> kw1000;
+	pos @GDEF_bases <-1100 0 -1100 0> kw1100;
+	pos @GDEF_bases <-1200 0 -1200 0> kw1200;
+	pos @GDEF_bases <-1300 0 -1300 0> kw1300;
+	pos @GDEF_bases <-1400 0 -1400 0> kw1400;
+	pos @GDEF_bases <-1500 0 -1500 0> kw1500;
+	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
+} DoAutoKerning;
 
 } kern;

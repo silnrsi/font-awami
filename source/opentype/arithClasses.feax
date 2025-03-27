@@ -3,69 +3,42 @@
 # Classes
 
 @DxMarker = [dxN500 dxN400 dxN300 dxN200 dxN100 dx0 
-  dx100 dx200 dx300 dx400 dx500 
-  dx600 dx700 dx800 dx900 dx1000 
-  dx1100 dx1200 dx1300 dx1400 dx1500 
-  dx1600 dx1700 dx1800 dx1900 dx2000 
+  dx100 dx200 dx300 dx400 dx500 dx600 dx700 dx800 dx900 dx1000 
+  dx1100 dx1200 dx1300 dx1400 dx1500 dx1600 dx1700 dx1800 dx1900 dx2000 
   dx2100 dx2200 dx2300 dx2400 dx2500 ];
 @DyMarker = [dyN300 dyN200 dyN100 dy0 
-  dy100 dy200 dy300 dy400 dy500 
-  dy600 dy700 dy800 dy900 dy1000 
-  dy1100 dy1200 dy1300 dy1400 dy1500 
-  dy1600 dy1700 dy1800 dy1900 dy2000 
-  dy2100 dy2200 dy2300 dy2400 dy2500 
-  dy2600 dy2700 dy2800 dy2900 dy3000 ];
-@PxMarker = [px0 px100 px200 px300 px400 px500 
-  px600 px700 px800 px900 px1000 
-  px1100 px1200 px1300 px1400 px1500 
-  px1600 px1700 px1800 px1900 px2000 
-  px2100 px2200 px2300 px2400 px2500 
-  px2600 px2700 px2800 px2900 px3000 
-  px3100 px3200 px3300 px3400 px3500 
-  px3600 px3700 px3800 px3900 px4000 ];
-@PxfMarker = [pxf0 pxf100 pxf200 pxf300 pxf400 pxf500 
-  pxf600 pxf700 pxf800 pxf900 pxf1000 
-  pxf1100 pxf1200 pxf1300 pxf1400 pxf1500 
-  pxf1600 pxf1700 pxf1800 pxf1900 pxf2000 
-  pxf2100 pxf2200 pxf2300 pxf2400 pxf2500 
-  pxf2600 pxf2700 pxf2800 pxf2900 pxf3000 ];
-@PyMarker = [py0 py100 py200 py300 py400 py500 
-  py600 py700 py800 py900 py1000 
-  py1100 py1200 py1300 py1400 py1500 
-  py1600 py1700 py1800 py1900 py2000 
-  py2100 py2200 py2300 py2400 py2500 
-  py2600 py2700 py2800 py2900 py3000 ];
+  dy100 dy200 dy300 dy400 dy500 dy600 dy700 dy800 dy900 dy1000 
+  dy1100 dy1200 dy1300 dy1400 dy1500 dy1600 dy1700 dy1800 dy1900 dy2000 
+  dy2100 dy2200 dy2300 dy2400 dy2500 dy2600 dy2700 dy2800 dy2900 dy3000 ];
+@KwMarker = [kw0 kw100 kw200 kw300 kw400 kw500 kw600 kw700 kw800 kw900 kw1000 
+  kw1100 kw1200 kw1300 kw1400 kw1500 kw1600 ];
+@PxMarker = [px0 px100 px200 px300 px400 px500 px600 px700 px800 px900 px1000 
+  px1100 px1200 px1300 px1400 px1500 px1600 px1700 px1800 px1900 px2000 
+  px2100 px2200 px2300 px2400 px2500 px2600 px2700 px2800 px2900 px3000 
+  px3100 px3200 px3300 px3400 px3500 px3600 px3700 px3800 px3900 px4000 ];
+@PxfMarker = [pxf0 pxf100 pxf200 pxf300 pxf400 pxf500 pxf600 pxf700 pxf800 pxf900 pxf1000 
+  pxf1100 pxf1200 pxf1300 pxf1400 pxf1500 pxf1600 pxf1700 pxf1800 pxf1900 pxf2000 
+  pxf2100 pxf2200 pxf2300 pxf2400 pxf2500 pxf2600 pxf2700 pxf2800 pxf2900 pxf3000 ];
+@PyMarker = [py0 py100 py200 py300 py400 py500 py600 py700 py800 py900 py1000 
+  py1100 py1200 py1300 py1400 py1500 py1600 py1700 py1800 py1900 py2000 
+  py2100 py2200 py2300 py2400 py2500 py2600 py2700 py2800 py2900 py3000 ];
 @AscMarker = [ascN500 ascN400 ascN300 ascN200 ascN100 asc0 
-  asc100 asc200 asc300 asc400 asc500 
-  asc600 asc700 asc800 asc900 asc1000 
-  asc1100 asc1200 asc1300 asc1400 asc1500 
-  asc1600 asc1700 asc1800 asc1900 asc2000 
-  asc2100 asc2200 asc2300 asc2400 asc2500 
-  asc2600 asc2700 asc2800 asc2900 asc3000 ];
+  asc100 asc200 asc300 asc400 asc500 asc600 asc700 asc800 asc900 asc1000 
+  asc1100 asc1200 asc1300 asc1400 asc1500 asc1600 asc1700 asc1800 asc1900 asc2000 
+  asc2100 asc2200 asc2300 asc2400 asc2500 asc2600 asc2700 asc2800 asc2900 asc3000 ];
 @DscMarker = [dscN1500 dscN1400 dscN1300 dscN1200 dscN1100 dscN1000 
-  dscN900 dscN800 dscN700 dscN600 dscN500 
-  dscN400 dscN300 dscN200 dscN100 dsc0 
-  dsc100 dsc200 dsc300 dsc400 dsc500 
-  dsc600 dsc700 dsc800 dsc900 dsc1000 
-  dsc1100 dsc1200 dsc1300 dsc1400 dsc1500 
-  dsc1600 dsc1700 dsc1800 dsc1900 dsc2000 
-  dsc2100 dsc2200 dsc2300 dsc2400 dsc2500 
-  dsc2600 dsc2700 dsc2800 dsc2900 dsc3000 ];
-@YtMarker = [yt0 yt100 yt200 yt300 yt400 yt500 
-  yt600 yt700 yt800 yt900 yt1000 
-  yt1100 yt1200 yt1300 yt1400 yt1500 
-  yt1600 yt1700 yt1800 yt1900 yt2000 
-  yt2100 yt2200 yt2300 yt2400 yt2500 
-  yt2600 yt2700 yt2800 yt2900 yt3000 ];
+  dscN900 dscN800 dscN700 dscN600 dscN500 dscN400 dscN300 dscN200 dscN100 dsc0 
+  dsc100 dsc200 dsc300 dsc400 dsc500 dsc600 dsc700 dsc800 dsc900 dsc1000 
+  dsc1100 dsc1200 dsc1300 dsc1400 dsc1500 dsc1600 dsc1700 dsc1800 dsc1900 dsc2000 
+  dsc2100 dsc2200 dsc2300 dsc2400 dsc2500 dsc2600 dsc2700 dsc2800 dsc2900 dsc3000 ];
+@YtMarker = [yt0 yt100 yt200 yt300 yt400 yt500 yt600 yt700 yt800 yt900 yt1000 
+  yt1100 yt1200 yt1300 yt1400 yt1500 yt1600 yt1700 yt1800 yt1900 yt2000 
+  yt2100 yt2200 yt2300 yt2400 yt2500 yt2600 yt2700 yt2800 yt2900 yt3000 ];
 @YbMarker = [ybN1500 ybN1400 ybN1300 ybN1200 ybN1100 ybN1000 
-  ybN900 ybN800 ybN700 ybN600 ybN500 
-  ybN400 ybN300 ybN200 ybN100 yb0 
-  yb100 yb200 yb300 yb400 yb500 
-  yb600 yb700 yb800 yb900 yb1000 
-  yb1100 yb1200 yb1300 yb1400 yb1500 
-  yb1600 yb1700 yb1800 yb1900 yb2000 
-  yb2100 yb2200 yb2300 yb2400 yb2500 
-  yb2600 yb2700 yb2800 yb2900 yb3000 ];
+  ybN900 ybN800 ybN700 ybN600 ybN500 ybN400 ybN300 ybN200 ybN100 yb0 
+  yb100 yb200 yb300 yb400 yb500 yb600 yb700 yb800 yb900 yb1000 
+  yb1100 yb1200 yb1300 yb1400 yb1500 yb1600 yb1700 yb1800 yb1900 yb2000 
+  yb2100 yb2200 yb2300 yb2400 yb2500 yb2600 yb2700 yb2800 yb2900 yb3000 ];
 
 @AscXMarker = [ascx600 ascx700 ascx950 ascx1000 ascx1050 ascx1500];
 @DscXMarker = [dscx600 dscx700 dscx950 dscx1000 dscx1050];
