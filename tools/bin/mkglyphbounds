@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from fontTools import ttLib
+from fontTools import ttLib, ufoLib
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.basePen import BasePen
 from fontTools.misc.bezierTools import calcCubicParameters, solveCubic, solveQuadratic, cubicPointAtT
@@ -134,11 +134,15 @@ parser.add_argument("-o", "--outfile", help="Output OpenType file")
 parser.add_argument("-w", "--width", type=int, default=50, help="Slice width")
 args = parser.parse_args()
 
-f = ttLib.TTFont(args.infont)
+if args.infont.lower().endswith(".ttf"):
+    f = ttLib.TTFont(args.infont)
+elif args.infont.lower().endswith(".ufo"):
+    f = ufoLib.UFOReader(args.infont)
 gs = f.getGlyphSet()
 pen = SlicePen(gs)
 with open(args.outfile, "w") as outf:
-    for gn, g in gs.items():
+    for gn in gs.keys():
+        g = gs[gn]
         # if gn in ("absTahIni.sn", "absAin"):
             # breakpoint()
         u, l = procBounds(g, pen, args.width)
