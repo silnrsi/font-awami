@@ -156,58 +156,110 @@ lookup MakeDescentAbsolute {
 # Now actually do the comparison to calculate the kerning possible.
 
 # Each CalculateKern lookup below works backward by one slice in the sequence to be kerned,
-# kerning it a little more tightly if possible.
-# We need a lookup for every potential slice - probably 15 or 16.
+# kerning a little more tightly if possible.
+# The EnforceBlock checks to see if we are blocked and forces the process to terminate.
+# These lookups need to be separate because they use a different filter.
+# TODO: We need this pair of lookups for every potential kerned slice - probably 15 or 16.
 
 lookup CalculateKern1 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern1;
 
+lookup EnforceBlock1 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock1;
+
 lookup CalculateKern2 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern2;
+
+lookup EnforceBlock2 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock2;
 
 lookup CalculateKern3 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern3;
 
+lookup EnforceBlock3 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock3;
+
 lookup CalculateKern4 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern4;
+
+lookup EnforceBlock4 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock4;
 
 lookup CalculateKern5 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern5;
 
+lookup EnforceBlock5 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock5;
+
 lookup CalculateKern6 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern6;
+
+lookup EnforceBlock6 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock6;
 
 lookup CalculateKern7 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern7;
 
+lookup EnforceBlock7 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock7;
+
 lookup CalculateKern8 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern8;
+
+lookup EnforceBlock8 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock8;
 
 lookup CalculateKern9 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern9;
 
+lookup EnforceBlock9 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock9;
+
 lookup CalculateKern10 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
 } CalculateKern10;
+
+lookup EnforceBlock10 {
+	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	sub @KwMarker' lookup _EnforceBlock;
+} EnforceBlock10;
 
 
 lookup RestoreBases {
