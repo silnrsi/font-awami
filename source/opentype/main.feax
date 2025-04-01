@@ -1701,6 +1701,9 @@ feature kern {
 
 lookup DoAutoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
+
+	# TODO: if there is a kblock before the kw, subtract 100 from the amount to kern?????????
+
 	pos @GDEF_bases <-100 0 -100 0> kw100;
 	pos @GDEF_bases <-200 0 -200 0> kw200;
 	pos @GDEF_bases <-300 0 -300 0> kw300;
