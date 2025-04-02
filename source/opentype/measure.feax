@@ -125,6 +125,26 @@ lookup MeasureY6 {
 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
 } MeasureY6;
 
+lookup MeasureY7 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY7;
+
+lookup MeasureY8 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY8;
+
+lookup MeasureY9 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY9;
+
+lookup MeasureY10 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY10;
+
 # asc/dsc -> pt/pb
 # We include the @PyMarker to recognize the boundaries of the bases.
 lookup AddNuqtaAscent {
@@ -181,6 +201,21 @@ lookup EnforceBlock2 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock2;
 
+# lookup NextGlyph2 {
+# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
+# } NextGlyph2;
+
 lookup CalculateKern3 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -201,6 +236,21 @@ lookup EnforceBlock4 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock4;
 
+# lookup NextGlyph4 {
+# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
+# } NextGlyph4;
+
 lookup CalculateKern5 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -220,6 +270,21 @@ lookup EnforceBlock6 {
 	lookupflag UseMarkFilteringSet [@KwMarker kblock];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock6;
+
+# lookup NextGlyph6 {
+# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
+# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
+# } NextGlyph6;
 
 lookup CalculateKern7 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
