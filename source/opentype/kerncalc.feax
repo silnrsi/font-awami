@@ -147,8 +147,9 @@ lookup _InsYt2400 {
 } _InsYt2400;
 
 lookup _InsYt2500 {
-	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
+	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker @PyMarker];
 	sub @YbMarker by @YbMarker yt2500;
+	sub @PyMarker by @PyMarker yt2500;
 } _InsYt2500;
 
 lookup _InsYt2600 {
@@ -175,6 +176,163 @@ lookup _InsYt3000 {
 	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
 	sub @YbMarker by @YbMarker yt3000;
 } _InsYt3000;
+
+# I want to use the _InsYt methods above, but for some reason I couldn't get it to insert after the PyMarker, or anything.
+
+lookup _KwInsYt0 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt0 @KwMarker;
+} _KwInsYt0;
+
+lookup _KwInsYt100 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt100 @KwMarker;
+} _KwInsYt100;
+
+lookup _KwInsYt200 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt200 @KwMarker;
+} _KwInsYt200;
+
+lookup _KwInsYt300 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt300 @KwMarker;
+} _KwInsYt300;
+
+lookup _KwInsYt400 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt400 @KwMarker;
+} _KwInsYt400;
+
+lookup _KwInsYt500 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt500 @KwMarker;
+} _KwInsYt500;
+
+lookup _KwInsYt600 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt600 @KwMarker;
+} _KwInsYt600;
+
+lookup _KwInsYt700 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt700 @KwMarker;
+} _KwInsYt700;
+
+lookup _KwInsYt800 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt800 @KwMarker;
+} _KwInsYt800;
+
+lookup _KwInsYt900 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt900 @KwMarker;
+} _KwInsYt900;
+
+lookup _KwInsYt1000 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1000 @KwMarker;
+} _KwInsYt1000;
+
+lookup _KwInsYt1100 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1100 @KwMarker;
+} _KwInsYt1100;
+
+lookup _KwInsYt1200 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1200 @KwMarker;
+} _KwInsYt1200;
+
+lookup _KwInsYt1300 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1300 @KwMarker;
+} _KwInsYt1300;
+
+lookup _KwInsYt1400 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1400 @KwMarker;
+} _KwInsYt1400;
+
+lookup _KwInsYt1500 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1500 @KwMarker;
+} _KwInsYt1500;
+
+lookup _KwInsYt1600 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1600 @KwMarker;
+} _KwInsYt1600;
+
+lookup _KwInsYt1700 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1700 @KwMarker;
+} _KwInsYt1700;
+
+lookup _KwInsYt1800 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1800 @KwMarker;
+} _KwInsYt1800;
+
+lookup _KwInsYt1900 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt1800 @KwMarker;
+} _KwInsYt1900;
+
+lookup _KwInsYt2000 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2000 @KwMarker;
+} _KwInsYt2000;
+
+lookup _KwInsYt2100 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2100 @KwMarker;
+} _KwInsYt2100;
+
+lookup _KwInsYt2200 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2200 @KwMarker;
+} _KwInsYt2200;
+
+lookup _KwInsYt2300 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2300 @KwMarker;
+} _KwInsYt2300;
+
+lookup _KwInsYt2400 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2400 @KwMarker;
+} _KwInsYt2400;
+
+lookup _KwInsYt2500 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2500 @KwMarker;
+} _KwInsYt2500;
+
+lookup _KwInsYt2600 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2600 @KwMarker;
+} _KwInsYt2600;
+
+lookup _KwInsYt2700 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2700 @KwMarker;
+} _KwInsYt2700;
+
+lookup _KwInsYt2800 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2800 @KwMarker;
+} _KwInsYt2800;
+
+lookup _KwInsYt2900 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt2900 @KwMarker;
+} _KwInsYt2900;
+
+lookup _KwInsYt3000 {
+	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
+	sub @KwMarker by yt3000 @KwMarker;
+} _KwInsYt3000;
 
 
 lookup _DelYt {
@@ -748,3 +906,43 @@ lookup _EnforceBlock {
 	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock kblock kblock kblock @KwMarker;
 
 } _EnforceBlock;
+
+
+# Move the marker from the previous glyph into the last glyph.
+# For some reason I can't insert the YtMarker after the PyMarker, I can only insert it before the KwMarker.
+lookup _ShiftPrev {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker]; # PyMarker delineates a separate glyph
+
+	sub yt0'  	 lookup _DelYt	@PyMarker'  lookup _KwInsYt0	   	@KwMarker';
+	sub yt100'   lookup _DelYt	@PyMarker'	lookup _KwInsYt100  	@KwMarker';
+	sub yt200'   lookup _DelYt	@PyMarker'	lookup _KwInsYt200  	@KwMarker';
+	sub yt300'   lookup _DelYt	@PyMarker'	lookup _KwInsYt300  	@KwMarker';
+	sub yt400'   lookup _DelYt	@PyMarker'	lookup _KwInsYt400  	@KwMarker';
+	sub yt500'   lookup _DelYt	@PyMarker'	lookup _KwInsYt500  	@KwMarker';
+	sub yt600'   lookup _DelYt	@PyMarker'  lookup _KwInsYt600   	@KwMarker';
+	sub yt700'   lookup _DelYt	@PyMarker'	lookup _KwInsYt700  	@KwMarker';
+	sub yt800'   lookup _DelYt	@PyMarker'	lookup _KwInsYt800  	@KwMarker';
+	sub yt900'   lookup _DelYt	@PyMarker'	lookup _KwInsYt900  	@KwMarker';
+	sub yt1000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1000  	@KwMarker';
+	sub yt1100'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1100  	@KwMarker';
+	sub yt1200'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1200  	@KwMarker';
+	sub yt1300'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1300  	@KwMarker';
+	sub yt1400'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1400  	@KwMarker';
+	sub yt1500'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1500  	@KwMarker';
+	sub yt1600'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1600  	@KwMarker';
+	sub yt1700'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1700  	@KwMarker';
+	sub yt1800'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1800  	@KwMarker';
+	sub yt1900'  lookup _DelYt	@PyMarker'	lookup _KwInsYt1900  	@KwMarker';
+	sub yt2000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2000  	@KwMarker';
+	sub yt2100'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2100  	@KwMarker';
+	sub yt2200'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2200  	@KwMarker';
+	sub yt2300'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2300  	@KwMarker';
+	sub yt2400'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2400  	@KwMarker';
+	sub yt2500'  lookup _DelYt	@PyMarker' 	lookup _KwInsYt2500		@KwMarker';
+	sub yt2600'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2600  	@KwMarker';
+	sub yt2700'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2700  	@KwMarker';
+	sub yt2800'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2800  	@KwMarker';
+	sub yt2900'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2900  	@KwMarker';
+	sub yt3000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt3000  	@KwMarker';
+
+} _ShiftPrev;

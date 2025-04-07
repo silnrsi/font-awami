@@ -1,19 +1,25 @@
 # Temporary for our experiment:
-@MeasureBase = [absBehIni.mm absMeemMed.sn absSeenFin
+@KernBase = [absBehIni.mm absMeemMed.sn absSeenFin
 	absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
 	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
 	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
+	absHehGoalIni.re absRehFin
+	absReh
+	space
 	];
-@MeasureBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
+@KernBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
 	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
 	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
-	mkAinIni mkLamMed.be mkBehMed.mm];
-@MeasureInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
+	mkAinIni mkLamMed.be mkBehMed.mm
+	mkHehGoalIni.re mkRehFin
+	mkReh
+	mkSpace];
+@KernInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
 
 lookup InitKernMetrics {
-	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+	lookupflag UseMarkFilteringSet @KernBaseMark;
 	sub absBehIni.mm      	by	absBehIni.mm       	# pxNULL pxfNULL
-													dy600	pyNULL	dsc400	dsc400	dsc400	dsc400	dsc400	dsc400
+													dy600	pyNULL	dsc300	dsc300	dscN300	dscN300	dsc300	dsc300
 																	asc900	asc900	asc900	asc900	asc900	asc900;
 	sub absMeemMed.sn     	by	absMeemMed.sn      	dy500	pyNULL	dscN200	dscN200	dscN200		# 300
 																	asc900	asc900	asc900;
@@ -25,9 +31,9 @@ lookup InitKernMetrics {
 	sub absMeemMed._alt   	by	absMeemMed._alt    	dyN200	pyNULL	dscN1000	dscN1000	dscN1000	# 250
 																	asc400	asc400	asc400;
 	sub absLamMed.qf      	by	absLamMed.qf       	dy1000	pyNULL	dscN200	dscN200	dscN200	dscN200		# 400
-																	asc2000	asc2000	asc2000	asc2000;
+																	asc2000	asc2000	asc200	asc100;
 	sub absWawFin         	by	absWawFin          	dy500	py0		dsc0	# 750
-																	asc1500	asc1400	asc1300	asc300	asc200	asc100
+																	asc600	asc500	asc200	asc200	asc100	asc100
 																	kw0;
 	sub absFehIni.hgM     	by	absFehIni.hgM      	dy600	pyNULL	dscN100	dscN100	dscN100	dscN100    # 350
 																	asc1500	asc1500	asc1500	asc1500;
@@ -40,13 +46,22 @@ lookup InitKernMetrics {
 																	asc1500	asc1500	asc100	asc100;
 	sub absBehMed.mm        by	absBehMed.mm        dy500	pyNULL	dscN200	dscN200	dscN200	dscN200	dscN200	dscN200		# 650
 																	asc700	asc700	asc700	asc700	asc700	asc700;
+	sub absHehGoalIni.re    by	absHehGoalIni.re	dyN200	pyNULL	dscN1000   dscN1000   dscN1000   dscN1000   dscN1000   dscN1000   dscN1000   dscN1000
+																	asc400     asc400     asc400     asc400     asc400     asc400     asc400     asc400;
+	sub absRehFin			by	absRehFin			dy600	pyNULL	dscN400    dscN400    dscN400    dscN400    dscN400
+																	asc1000    asc1000    asc1000    asc1000    asc1000
+																	kw0;
+	sub absReh				by	absReh				dy700	pyNULL  dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
+																	asc1000    asc1000    asc1000    asc1000    asc1000    asc1000    asc1000    asc1000
+																	kw0;
+
 	###sub absWawFin
 
 } InitKernMetrics;
 
 
 # lookup InitKernMetrics {
-# 	lookupflag UseMarkFilteringSet @MeasureBaseMark;
+# 	lookupflag UseMarkFilteringSet @KernBaseMark;
 # 	sub absBehIni.mm      	by	absBehIni.mm       	pxNULL  pxfNULL  dy550	pyNULL	dsc250	dsc250	dsc250	dsc250	dsc250	dsc250
 # 																					asc900	asc900	asc900	asc900	asc900	asc900;
 # 	sub absMeemMed.sn     	by	absMeemMed.sn      	pxNULL  pxfNULL  dy450	pyNULL	dscN150	dscN150	dscN150		# 300

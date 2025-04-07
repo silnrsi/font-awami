@@ -40,7 +40,7 @@ lookup HandleMarkDsc {
 # Turn bases into marks so we can filter them out of all the the arithmetic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
-	sub @MeasureBase  by  @MeasureBaseMark;
+	sub @KernBase  by  @KernBaseMark;
 } TreatBasesAsMarks;
 
 
@@ -79,7 +79,7 @@ lookup TreatBasesAsMarks {
 # Measure widths forward
 
 # lookup MeasureXinitial {
-# 	lookupflag UseMarkFilteringSet [@MeasureBaseMark @XMarkers];
+# 	lookupflag UseMarkFilteringSet [@KernBaseMark @XMarkers];
 # 	sub @MeasureInitialMark	pxfNULL' lookup _Set0;
 # } MeasureXinitial;
 
@@ -191,6 +191,7 @@ lookup EnforceBlock1 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock1;
 
+
 lookup CalculateKern2 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -201,20 +202,6 @@ lookup EnforceBlock2 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock2;
 
-# lookup NextGlyph2 {
-# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
-# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
-# } NextGlyph2;
 
 lookup CalculateKern3 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
@@ -226,6 +213,7 @@ lookup EnforceBlock3 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock3;
 
+
 lookup CalculateKern4 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -236,20 +224,6 @@ lookup EnforceBlock4 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock4;
 
-# lookup NextGlyph4 {
-# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
-# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
-# } NextGlyph4;
 
 lookup CalculateKern5 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
@@ -261,6 +235,17 @@ lookup EnforceBlock5 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock5;
 
+lookup CleanUpKernedGlyph5 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph5;
+
+lookup ShiftPrevGlyph5 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph5;
+
+
 lookup CalculateKern6 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -271,20 +256,16 @@ lookup EnforceBlock6 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock6;
 
-# lookup NextGlyph6 {
-# 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
-# 	sub @YbMarker																			@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker																	@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker														@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker												@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker									@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker							@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker 				@KwMarker		by	@KwMarker;
-# 	sub @YbMarker @YbMarker	@YbMarker @YbMarker @YbMarker @YbMarker @YbMarker @YbMarker		@KwMarker		by	@KwMarker;
-# } NextGlyph6;
+lookup CleanUpKernedGlyph6 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph6;
+
+lookup ShiftPrevGlyph6 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph6;
+
 
 lookup CalculateKern7 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
@@ -296,6 +277,17 @@ lookup EnforceBlock7 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock7;
 
+lookup CleanUpKernedGlyph7 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph7;
+
+lookup ShiftPrevGlyph7 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph7;
+
+
 lookup CalculateKern8 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -305,6 +297,17 @@ lookup EnforceBlock8 {
 	lookupflag UseMarkFilteringSet [@KwMarker kblock];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock8;
+
+lookup CleanUpKernedGlyph8 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph8;
+
+lookup ShiftPrevGlyph8 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph8;
+
 
 lookup CalculateKern9 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
@@ -316,6 +319,17 @@ lookup EnforceBlock9 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock9;
 
+lookup CleanUpKernedGlyph9 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph9;
+
+lookup ShiftPrevGlyph9 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph9;
+
+
 lookup CalculateKern10 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
 	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
@@ -326,8 +340,19 @@ lookup EnforceBlock10 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock10;
 
+lookup CleanUpKernedGlyph10 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker kblock];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph10;
+
+lookup ShiftPrevGlyph10 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph10;
+
+# TODO: add 5 or 6 more sets
 
 lookup RestoreBases {
-	lookupflag UseMarkFilteringSet @MeasureBaseMark;
-	sub @MeasureBaseMark  by  @MeasureBase;
+	lookupflag UseMarkFilteringSet @KernBaseMark;
+	sub @KernBaseMark  by  @KernBase;
 } RestoreBases;

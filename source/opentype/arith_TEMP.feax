@@ -505,7 +505,7 @@ lookup _AddMarkersXforward {
 
 # Set the y-position of this glyph's exit based on the previous glyph's y-position and rise.
 # Note that the @DyMarker belongs to the previous glyph.
-# Input stream: @pyNULL <marks> @MeasureBaseMark @PxMarker @PxfMarker @DyMarker @PyMarker @DscMarker @DscMarker ... @AscMarker @AscMarker 
+# Input stream: @pyNULL <marks> @KernBaseMark @PxMarker @PxfMarker @DyMarker @PyMarker @DscMarker @DscMarker ... @AscMarker @AscMarker 
 lookup _AddMarkersY {
 	lookupflag UseMarkFilteringSet @YMarkers;
 	sub pyNULL' lookup _PosPlusY0		@DyMarker	py0;
@@ -554,7 +554,7 @@ lookup _SubtractNuqtaLowerHt {
 	sub dscx950		@DscMarker' lookup _SubtractNuqtaHt950;
 } _SubtractNuqtaLowerHt;
 
-# Input stream: @MeasureBaseMarker @PxMarker @PxfMarker @DyMarker @PyMarker @DscXMarker @AscXMarker @DscMarker @DscMarker ... @AscMarker @AscMarker <MARKS>
+# Input stream: @KernBaseMarker @PxMarker @PxfMarker @DyMarker @PyMarker @DscXMarker @AscXMarker @DscMarker @DscMarker ... @AscMarker @AscMarker <MARKS>
 lookup _MakeAscAbsolute {
 	lookupflag UseMarkFilteringSet  [@PyMarker @AscMarker];
 	sub py0			@AscMarker'	lookup _HtPlus0;
