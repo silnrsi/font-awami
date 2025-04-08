@@ -90,7 +90,7 @@ lookup TreatBasesAsMarks {
 
 # Measure heights
 
-# lookup MeasureYFinal { -- replaced by AppendFinalPy
+# lookup MeasureYFinal { -- now the py0 is inserted by InitKernMetrics for isolates and finals
 # 	lookupflag UseMarkFilteringSet @YMarkers;
 # 	ignore sub pyNULL'                   @DyMarker [@PyMarker pyNULL];		# ignore all but the last
 # 	sub        pyNULL' lookup _InitPosY  @DyMarker;
