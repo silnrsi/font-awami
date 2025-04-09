@@ -4,7 +4,8 @@
 	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
 	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
 	absHehGoalIni.re absRehFin
-	absReh
+	absJeemIni.beF absBehFin
+	absReh absSeen
 	space
 	];
 @KernBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
@@ -12,7 +13,8 @@
 	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
 	mkAinIni mkLamMed.be mkBehMed.mm
 	mkHehGoalIni.re mkRehFin
-	mkReh
+	mkJeemIni.beF mkBehFin
+	mkReh mkSeen
 	mkSpace];
 @KernInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
 
@@ -52,8 +54,16 @@ lookup InitKernMetrics {
 																	asc1000    asc1000    asc1000    asc1000    asc1000
 																	kw0;
 	sub absReh				by	absReh				dy700	py0	  	dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
-																	asc1000    asc1000    asc1000    asc1000    asc1000    asc1000    asc1000    asc1000
+																	asc1000    asc800     asc600     asc500     asc300     asc200     asc100     asc100
 																	kw0;
+	sub	absSeen				by	absSeen				dy1500	py0		dsc900     dsc900     dsc900     dsc900     dsc900     dsc900     dsc800     dsc100     dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900  
+																	asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800
+																	kw0;
+	sub absBehFin			by  absBehFin			dy500   py0		dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
+																	asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700     asc700
+																	kw0;
+	sub absJeemIni.beF		by	absJeemIni.beF		dy500   pyNULL	dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400
+																	asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100;
 
 	###sub absWawFin
 
