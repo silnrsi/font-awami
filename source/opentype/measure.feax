@@ -187,7 +187,7 @@ lookup CalculateKern1 {
 } CalculateKern1;
 
 lookup EnforceBlock1 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock1;
 
@@ -198,7 +198,7 @@ lookup CalculateKern2 {
 } CalculateKern2;
 
 lookup EnforceBlock2 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock2;
 
@@ -209,7 +209,7 @@ lookup CalculateKern3 {
 } CalculateKern3;
 
 lookup EnforceBlock3 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock3;
 
@@ -220,7 +220,7 @@ lookup CalculateKern4 {
 } CalculateKern4;
 
 lookup EnforceBlock4 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock4;
 
@@ -231,7 +231,7 @@ lookup CalculateKern5 {
 } CalculateKern5;
 
 lookup EnforceBlock5 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock5;
 
@@ -242,7 +242,7 @@ lookup CleanUpKernedGlyph5 {
 
 lookup ShiftPrevGlyph5 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph5;
 
 
@@ -252,7 +252,7 @@ lookup CalculateKern6 {
 } CalculateKern6;
 
 lookup EnforceBlock6 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock6;
 
@@ -263,7 +263,7 @@ lookup CleanUpKernedGlyph6 {
 
 lookup ShiftPrevGlyph6 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph6;
 
 
@@ -273,7 +273,7 @@ lookup CalculateKern7 {
 } CalculateKern7;
 
 lookup EnforceBlock7 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock7;
 
@@ -284,7 +284,7 @@ lookup CleanUpKernedGlyph7 {
 
 lookup ShiftPrevGlyph7 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph7;
 
 
@@ -294,7 +294,7 @@ lookup CalculateKern8 {
 } CalculateKern8;
 
 lookup EnforceBlock8 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock8;
 
@@ -305,7 +305,7 @@ lookup CleanUpKernedGlyph8 {
 
 lookup ShiftPrevGlyph8 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph8;
 
 
@@ -315,7 +315,7 @@ lookup CalculateKern9 {
 } CalculateKern9;
 
 lookup EnforceBlock9 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock9;
 
@@ -326,7 +326,7 @@ lookup CleanUpKernedGlyph9 {
 
 lookup ShiftPrevGlyph9 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph9;
 
 
@@ -336,7 +336,7 @@ lookup CalculateKern10 {
 } CalculateKern10;
 
 lookup EnforceBlock10 {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock10;
 
@@ -347,7 +347,7 @@ lookup CleanUpKernedGlyph10 {
 
 lookup ShiftPrevGlyph10 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker kblock]; # the @PyMarker delineates a separate glyph
-	sub @YtMarker' lookup _ShiftPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph10;
 
 # TODO: add 5 or 6 more sets
@@ -356,3 +356,12 @@ lookup RestoreBases {
 	lookupflag UseMarkFilteringSet @KernBaseMark;
 	sub @KernBaseMark  by  @KernBase;
 } RestoreBases;
+
+# lookup CleanUpMarkers {
+# 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker kblock @PyMarker];
+# 	sub @DyMarker by NULL;
+# 	sub @YtMarker by NULL;
+# 	sub @YbMarker by NULL;
+# 	sub kblock by NULL;
+# 	sub @PyMarker by NULL;
+# } CleanUpMarkers;

@@ -1010,7 +1010,7 @@ lookup _InsBlockerAndDecKw {
 
 # If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
 lookup _EnforceBlock {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
 
 	# TODO: figure out how many of these rules we need.
 	# I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
@@ -1024,6 +1024,13 @@ lookup _EnforceBlock {
 	# ignore sub kblock @KwMarker' kblock kblock kblock kblock kblock @KwMarker;
 	# ignore sub kblock @KwMarker' kblock kblock kblock kblock kblock kblock @KwMarker;
 
+	# Ignore blockers that are not part of this sequence.
+	# The rules aren't actually needed; this will happen automatically by virtue of 
+	# including @KernFinIsoMark in the filter.
+	ignore sub @KwMarker' @KernFinIsoMark @KernFinIsoMark @KernFinIsoMark 	kblock @KwMarker;
+	ignore sub @KwMarker' @KernFinIsoMark @KernFinIsoMark 					kblock @KwMarker;
+	ignore sub @KwMarker' @KernFinIsoMark 									kblock @KwMarker;
+
 	sub @KwMarker' lookup _InsBlockerAndDecKw   kblock @KwMarker;
 	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock @KwMarker;
 	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock @KwMarker;
@@ -1036,7 +1043,7 @@ lookup _EnforceBlock {
 
 # Move the marker from the previous glyph into the last glyph.
 # For some reason I can't insert the YtMarker after the PyMarker, I can only insert it before the KwMarker.
-lookup _ShiftPrev {
+lookup _ShiftFromPrev {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker]; # PyMarker delineates a separate glyph
 
 	sub yt0'  	 lookup _DelYt	@PyMarker'  lookup _KwInsYt0	   	@KwMarker';
@@ -1071,4 +1078,4 @@ lookup _ShiftPrev {
 	sub yt2900'  lookup _DelYt	@PyMarker'	lookup _KwInsYt2900  	@KwMarker';
 	sub yt3000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt3000  	@KwMarker';
 
-} _ShiftPrev;
+} _ShiftFromPrev;

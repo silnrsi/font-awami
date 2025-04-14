@@ -1,22 +1,4 @@
 # Temporary for our experiment:
-@KernBase = [absBehIni.mm absMeemMed.sn absSeenFin
-	absJeemIni.mmX absMeemMed._alt absLamMed.qf absWawFin
-	absFehIni.hgM absHehGoalMed.jm absJeemMed.sn  # absWawFin
-	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
-	absHehGoalIni.re absRehFin
-	absJeemIni.beF absBehFin
-	absReh absSeen
-	space
-	];
-@KernBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
-	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
-	mkFehIni.hgM mkHehGoalMed.jm mkJeemMed.sn 
-	mkAinIni mkLamMed.be mkBehMed.mm
-	mkHehGoalIni.re mkRehFin
-	mkJeemIni.beF mkBehFin
-	mkReh mkSeen
-	mkSpace];
-@KernInitialMark = [mkBehIni.mm mkJeemIni.mmX mkFehIni.hgM mkAinIni];
 
 lookup InitKernMetrics {
 	lookupflag UseMarkFilteringSet @KernBaseMark;
