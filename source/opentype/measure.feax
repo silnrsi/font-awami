@@ -37,11 +37,20 @@ lookup HandleMarkDsc {
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeLower;
 } HandleMarkDsc;
 
+
 # Turn bases into marks so we can filter them out of all the the arithmetic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
 	sub @KernBase  by  @KernBaseMark;
 } TreatBasesAsMarks;
+
+# Must come after InsertMarkers.
+# Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
+# out to the right of the initial base (eg, peh, yeh).
+lookup AdjustForNuqtaOvershoot {
+	lookupflag UseMarkFilteringSet [@KernInitialMark @NuqtaLikeLower @KwMarker];
+	sub @KwMarker' lookup _Dec400kw		mkBehIni.mm' lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
+} AdjustForNuqtaOvershoot;
 
 
 # Measure widths backward

@@ -35,10 +35,10 @@ lookup InitKernMetrics {
 	sub absRehFin			by	absRehFin			dy600	py0		dscN400    dscN400    dscN400    dscN400    dscN400
 																	asc1000    asc1000    asc1000    asc1000    asc1000
 																	kw0;
-	sub absReh				by	absReh				dy700	py0	  	dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
+	sub absReh				by	absReh				dy0		py0	  	dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
 																	asc1000    asc800     asc600     asc500     asc300     asc200     asc100     asc100
 																	kw0;
-	sub	absSeen				by	absSeen				dy1500	py0		dsc900     dsc900     dsc900     dsc900     dsc900     dsc900     dsc800     dsc100     dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900  
+	sub	absSeen				by	absSeen				dy0		py0		dsc900     dsc900     dsc900     dsc900     dsc900     dsc900     dsc800     dsc100     dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900    dscN900  
 																	asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800    asc1800
 																	kw0;
 	sub absBehFin			by  absBehFin			dy500   py0		dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300    dscN300
@@ -47,6 +47,12 @@ lookup InitKernMetrics {
 	sub absJeemIni.beF		by	absJeemIni.beF		dy500   pyNULL	dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400    dscN400
 																	asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100    asc1100;
 
+	sub absAlef				by	absAlef				dy0		py0	  	dscN300		dscN300		dscN300
+																	asc800		asc800		asc800
+																	kw0;
+	sub absAlefFin			by	absAlefFin			dy800	py0	  	dscN300		dscN300		dscN300
+																	asc800		asc800		asc800
+																	kw0;
 	###sub absWawFin
 
 } InitKernMetrics;

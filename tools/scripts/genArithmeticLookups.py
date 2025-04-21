@@ -7,7 +7,7 @@
 #
 # See the individual functions for examples of output.
 
-kwMin = 0
+kwMin = -400
 kwMax = 1600
 
 dxMin = -500

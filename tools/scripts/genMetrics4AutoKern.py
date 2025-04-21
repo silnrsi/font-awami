@@ -8,7 +8,7 @@
 
 # The output looks like:
 #		lookup InsertKernMetrics {
-#			sub <glyphname>	by	<glyphname>	pxNULL	pyNULL	<advwidth>	<rise>	<xMin>	<xMax>;
+#			sub <glyphname>	by	<glyphname>	pyNULL	<advwidth>	<rise>	<xMin>	<xMax>;
 #		}
 
 

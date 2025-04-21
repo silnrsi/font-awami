@@ -1704,6 +1704,11 @@ feature kern {
 lookup DoAutoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
 
+	pos @GDEF_bases <400 0 400 0> kwN400;
+	pos @GDEF_bases <300 0 300 0> kwN300;
+	pos @GDEF_bases <200 0 200 0> kwN200;
+	pos @GDEF_bases <100 0 100 0> kwN100;
+
 	pos @GDEF_bases <-100 0 -100 0> kw100;
 	pos @GDEF_bases <-200 0 -200 0> kw200;
 	pos @GDEF_bases <-300 0 -300 0> kw300;
