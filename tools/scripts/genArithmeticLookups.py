@@ -7,7 +7,7 @@
 #
 # See the individual functions for examples of output.
 
-kwMin = -400
+kwMin = -500
 kwMax = 1600
 
 dxMin = -500
@@ -17,11 +17,13 @@ pxMax = 4000
 pxfMin = 0
 pxfMax = 3000
 
+# Must match what's in mkGlyphBounds
 dyMin = -300
 dyMax = 3000
 pyMin = 0
 pyMax = 3000
 
+# Must match what's in mkGlyphBounds
 ascMin = -500
 ascMax = 3000
 dscMin = -1500

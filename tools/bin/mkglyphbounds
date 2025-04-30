@@ -13,9 +13,8 @@ from dataclasses import dataclass
 from typing import Tuple
 
 
-
 # increment that we're using:
-inc = 100
+INCREMENT = 100
 
 @dataclass
 class Curve:
@@ -53,7 +52,7 @@ class SlicePen(BoundsPen):
         self.curves = []
         self.bounds = None      # xMin, yMin, xMax, yMax
 
-    def slices(self, width=50, rtl=False, upper=False):
+    def slices(self, width=INCREMENT, rtl=False, upper=False):
         if not len(self.curves):
             return []
         if not self.curves[0].hasRoots():
@@ -131,7 +130,7 @@ class SlicePen(BoundsPen):
 # end of class SlicePen
 
 
-def procBounds(g, p, width):
+def ProcBounds(g, p, width):
     p.init()
     g.draw(p)
     # All values should be in logical order, RTL:
@@ -140,39 +139,66 @@ def procBounds(g, p, width):
     return [uppers, lowers]
 
 
-def CalcRiseValues(font):
-    result = {}
+def CalcExitsAndRiseValues(font):
+
+    # These must match what are in genArithmeticLookups.py
+    dyMin = -300  # perhaps change to -700 for eg, absSadMed.benn, absHehGoalMed.benn, absTahMed, absFehMed.benn, absAinMed, etc.
+    dyMax = 3000
+
+    riseValues = {}
+    exits = {}
     for glyph in font:
         gn = glyph.name
-        if arabicBase(gn):
-            yEntry = None
-            yExit = 0
-            yBotRt = None
-            anchorList = glyph.anchors
-            for anchor in anchorList:
-                if anchor.name == "entry":
-                    yEntry = anchor.y
-                elif anchor.name == "exit":
-                    yExit = anchor.y
-                elif anchor.name == "botRt":
-                    yBotRt = anchor.y
-            
-            if yEntry == None:
-                if yBotRt == None:
-                    dy = 0
-                else:
-                    dy = yBotRt - yExit
+        if isArabicBase(gn):
+            if isInitialBase(gn) or isMedialBase(gn) or isFinalBase(gn):
+                yEntry = None
+                yExit = 0 if isFinalBase(gn) else None
+                anchorList = glyph.anchors
+                for anchor in anchorList:
+                    if anchor.name == "entry":
+                        yEntry = anchor.y
+                    elif anchor.name == "exit":
+                        yExit = anchor.y
+
+                if yExit is None:
+                    print("WARNING: missing EXIT for " + gn)
+                exits[gn] = yExit
+
+                if isMedialBase(gn) or isFinalBase(gn):
+                    if yEntry is None:
+                        print("WARNING: missing ENTRY for " + gn)
+                        dy = 0
+                    else:
+                        dy = yEntry - yExit
+                    dy = max(min(dyMax, dy), dyMin)
+                    riseValues[gn] = dy
             else:
-                dy = yEntry - yExit
-            result[gn] = dy
-    return result
+                exits[gn] = 0   # isolate
 
-# end of CalcRiseValues
+        # else ignore this glyph
+
+    return [exits, riseValues]
+
+# end of CalcExitsAndRiseValues
 
 
-def MarkerValue(v):
+def MakeRelativeToExit(exit, vList):
+    if exit is None: # final, isolate
+        return vList
+    res = []
+    for v in vList:
+        if v is not None:
+            res.append(v - exit)
+    return res
+
+
+def MarkerValue(v, inc, prefix):
+	if prefix == "asc":
+		v += 50
+	elif prefix == "dsc":
+		v -= 50
 	roundedV = round(v / inc) * inc
-	if v < 0:
+	if roundedV < 0:
 		result = "N" + str(abs(roundedV))
 	else:
 		result = str(roundedV)
@@ -182,17 +208,29 @@ def MarkerValue(v):
 # end of MarkerValue
 
 
-def str_flist(vList, prefix):
+def FormatMarkerList(vList, prefix, sliceWidth):
+    # prefix = 'asc' or 'dsc'
+
     #return ", ".join(["{:.2f}".format(x) for x in vList if x is not None])
+
+    # Must match what's in genArithmeticLookups.py
+    ascMin = -500
+    ascMax = 3000
+    dscMin = -1500
+    dscMax = 3000
+
+    vMin = ascMin if prefix == "asc" else dscMin
+    vMax = ascMax if prefix == "asc" else dscMax
 
     result = ""
     for v in vList:
         if v is not None:
-            result += prefix + MarkerValue(v)
+            v = max(min(v, vMax), vMin)
+            result += prefix + MarkerValue(v, sliceWidth, prefix)
     return result
 
 
-def arabicBase(name):
+def isArabicBase(name):
     
     # What about bariyeh? For now we're ignoring it.
     allBases = ["absAlef", "absHighHamzaAlef",
@@ -211,25 +249,276 @@ def arabicBase(name):
         "absHehGoal", "absTehMarbuta", "absHeh", "absAe",
         "absDal", "absThal", "absDdal", "absDul",
         "absReh", "absZain", "absJeh", "absRreh",
-        "absWaw", "absU", "absoe", "absKirghiz", "absVe", "absYu",
+        "absWaw", "absU", "absOe", "absKirghiz", "absVe", "absYu",
         "absYeh", "nlqChotiyeh", "absE", "absAlefMaksura", "absKashmiriYeh",
+        # "nlqBariyeh",
         "absLigatureAllah", "absLigatureLlah"];
     
     if name == "absVerseSign": # triggered by absVe
         return False
+    elif name == "absEmptyCentreLowStop": # triggered by absE
+        return False
+    elif "absEndOfAyah" in name:
+        return False
+    elif "absEastern" in name:
+        return False
+    elif "absEight" in name:
+        return False
+    
+    # TODO: ignore digits, if necessary
 
     for baseName in allBases:
         if name[0:len(baseName)] == baseName:
             return True
     return False
 
-def isFinalBase(name):
-    return ("Fin" in name)
+# end of isArabicBase
 
-def isKernableBase(name):
+def isInitialBase(name):
+    if ("Ini" in name): return True
+    return False
+
+def isMedialBase(name):
+    if ("Med" in name): return True
+    return False
+
+def isFinalBase(name):
+    if ("Fin" in name): return True
+    return False
+
+def isIsolateFinalBase(name):
     if ("Ini" in name): return False
     if ("Med" in name): return False
     return True
+
+def isKernableBase(name):
+    return isIsolateFinalBase(name)
+
+def EntryInterface(gn):
+    if "Med" in gn or "Fin" in gn:
+        if "Alef" in gn:
+            return "default"
+        elif "Beh" in gn:
+            if gn == "absBehFin":
+                return "beF"
+            elif gn == "absBehMed.beM2" or gn == "absBehMed.be" or gn == "absBehMed.behg" or gn =="absBehMed.sn" \
+                    or gn == "absBehMed.snR" or gn == "absBehMed.snsn":
+                return "beM1"
+            elif gn == "absBehMed.beM1":
+                return "beM2"
+            elif "absBehMed.nn" in gn:  # absBehMed.nnR, absBehMed.nn_hgbm, etc.
+                return "benn"
+            elif gn == "absBehMed.re":
+                return "bere"
+            elif gn == "absBehMed.hg":
+                return "behg"
+            else:
+                return "be"
+        elif "Jeem" in gn:
+            return "jm"
+        elif "Seen" in gn:
+            if gn == "absSadMed.sn":
+                return "snsn"
+            else:
+                return "sn"
+        elif "Sad" in gn:
+            return "sd"
+        elif "Tah" in gn:
+            return "ta"
+        elif "Ain" in gn:
+            return "ai"
+        elif "Feh" in gn:
+            return "fe"
+        elif "Keheh" in gn or "Gaf" in gn:
+            if gn == "absKehehMed" or gn == "absGafMed":
+                return "sd"
+            else:
+                return "default"
+        elif "Lam" in gn:
+            return "default"
+        elif "Meem" in gn:
+            if gn =="absMeemMed.alt":
+                return "mmX"
+            else:
+                return "mm"
+        elif "Noon" in gn:
+            return "nn"
+        elif "HehDoachashmee" in gn:
+            return "hd"
+        elif "HehGoal" in gn:
+            if gn == "absHehGoalFin":
+                return "hgF"
+            else:
+                return "hgM"
+        elif "Qaf" in gn or "Waw" in gn:
+            return "qf"
+        elif "Reh" in gn:
+            return "re"
+        elif "Dal" in gn:
+            return "default"
+        elif "Chotiyeh" in gn:
+            return "ch"
+        elif "Bariyeh" in gn:
+            return "by"
+    else:
+        return None
+
+# end of EntryInterface
+
+def ExitInterface(gn):
+    # Note: for our purposes we don't need to distinguish between the multiple re, ch, and qf interfaces.
+    labels = ["benn", "bere", "behg", "beM1", "beM2", "beF", "be", ".jm", "snsn", "sn", "sd", "ta", "ai", "fe", "mm", "mmX",
+                  "nn", "hd", "hgM", "hgF", "qf", "re", "ch", "by"]
+    if "Ini" in gn or "Med" in gn:
+        for label in labels:
+            suffix = "." + label
+            if suffix in gn:
+                return label
+        return "default"
+    else:
+        return None
+
+# end of ExitInterface
+
+
+def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
+    # Note: metrics are in RTL order.
+
+    # TODO: rewrite to take various values of sliceWidth into account.
+    # Right now we assume 100.
+
+    # Remove None elements so our counting is correct.
+    t = []
+    for lower in lowers:
+        if lower is not None:
+            t.append(lower)
+    lowers = t
+
+    # These interfaces overlap such that the right-hand glyph is underneath.
+    # Trim off the end of the upper metrics on the right-hand (exit) glyph
+    # and the beginning of the lower metrics on the left-hand (entry) glyph.
+
+    if entry == "default":
+        # Remove slices from right end of lowers
+        if "absAlef" in gname:
+            lowers = lowers[3:]  # all of them for absAlefFin - is this a problem?
+        elif "absLam" in gname:
+            lowers = lowers[1:]
+        elif "absKeheh" in gname or "absGaf" in gname:
+            lowers = lowers[10:]
+        elif "absDal" in gname:
+            lowers = lowers[1:]
+    if exit == "default":
+        uppers = uppers[0:-2]  # remove 200 from left end of lowers
+
+    if entry == "ai":
+        lowers = lowers[2:]
+    if exit == "ai":
+        uppers = uppers[0:-2]
+
+    if entry == "benn":
+        lowers = lowers[2:]
+    if exit == "benn":
+        uppers = uppers[0:-2]
+
+    if entry == "beF":
+        lowers = lowers[1:]
+    if exit == "beF":
+        uppers = uppers[0:-1]
+
+    if entry == "fe":
+        lowers = lowers[2:]  # 250 units
+    if exit == "fe":
+        uppers = uppers[0:-2]
+
+    if entry == "sd":
+        lowers = lowers[5:]
+    if exit == "sd":
+        uppers = uppers[0:-5]  # 550 units
+
+    if entry == "ta":
+        lowers = lowers[7:]
+    if exit == "ta":
+        uppers = uppers[0:-7]
+        
+    # These interfaces overlap such that the right-hand glyph is on top.
+    # Trim off the end of the lower metrics on the right-hand (exit) glyph
+    # and the beginning of the upper metrics on the left-hand (entry) glyph.
+
+    if entry == "beM1":
+        uppers = uppers[1:]
+    if exit == "beM1":
+        lowers = lowers[0:-1]
+
+    if entry == "ch":
+        uppers = uppers[5:]
+    if exit == "ch":
+        lowers = lowers[0:-5]
+
+    if entry == "hd":
+        uppers = uppers[4:]
+    if exit == "hd":
+        lowers = lowers[0:-4]
+
+    if entry == "jm":
+        uppers = uppers[7:]
+    if exit == "jm":
+        lowers = lowers[0:-7]
+
+    if entry == "mm":
+        uppers = uppers[5:]
+    if exit == "mm":
+        lowers = lowers[0:-5]
+
+    if entry == "mmX":
+        uppers = uppers[3:]
+    if exit == "mmX":
+        lowers = lowers[0:-3]
+
+    # Only overlaps at very top.
+
+    if exit == "nn":
+        uppers = uppers[0:-1]
+
+    return [uppers, lowers]
+
+# end of TrimMetrics
+
+
+def TruncateLowFinals(lowers):
+    # Once the bottom of a final or isolate gets below -400, it will block kerning,
+    # so truncate the marker stream in order to minimize the number of markers.
+
+    if not lowers: # empty
+        return lowers
+    
+    result = []
+    for v in lowers:
+        if v is not None:
+            result.append(v)
+            if v < -400 and len(result) > 1:
+                return result
+
+    return result
+
+# end of TruncateLowFinals
+
+
+def print_list(gn, vList):
+
+    if not vList:
+        print(gn + ": list is empty")
+        return
+    
+    #str = ", ".join(["{:.2f}".format(x) for x in vList if x is not None])
+
+    str = ""
+    for v in vList:
+        if v is None:
+            str += " None"
+        else:
+            str += " " + "{:.2f}".format(v)
+    print(gn + ": " + str)
 
 
 #=====  MAIN ROUTINE  =====
@@ -237,17 +526,21 @@ def isKernableBase(name):
 parser = argparse.ArgumentParser()
 parser.add_argument("infont", help="Input font file")
 parser.add_argument("-o", "--outfile", help="Output OpenType file")
-parser.add_argument("-w", "--width", type=int, default=50, help="Slice width")
+parser.add_argument("-w", "--width", type=int, default=INCREMENT, help="Slice width")
 args = parser.parse_args()
 
 if args.infont.lower().endswith(".ttf"):
     f = ttLib.TTFont(args.infont)
     riseValues = {}
     print("Warning: delta-y values cannot be calculated from a TTF file - all the values will be zero.")
+    skipglyphset = []
 elif args.infont.lower().endswith(".ufo"):
     f = ufoLib.UFOReader(args.infont)
     fFtools = OpenFont(args.infont)
-    riseValues = CalcRiseValues(fFtools)
+    exits, riseValues = CalcExitsAndRiseValues(fFtools)
+    skipglyphset = set(fFtools.lib.get('public.skipExportGlyphs', []))
+
+sliceWidth = args.width
 
 gs = f.getGlyphSet()
 pen = SlicePen(gs)
@@ -258,18 +551,49 @@ with open(args.outfile, "w") as outf:
     outf.write("lookup InitKernMetrics {\n\n")
 
     for gn in gs.keys():
-        if arabicBase(gn):
+        if isArabicBase(gn) and gn not in skipglyphset:
             g = gs[gn]
             # if gn in ("absTahIni.sn", "absAin"):
                 # breakpoint()
-            u, l = procBounds(g, pen, args.width)
+
+            uppers, lowers = ProcBounds(g, pen, sliceWidth)
+
+            uppers = MakeRelativeToExit(exits[gn], uppers)
+            lowers = MakeRelativeToExit(exits[gn], lowers)
+
+            # Trim off some of the slice metrics to account for the fact that glyphs
+            # overlap when they connect. The interface indicates (roughly) how much
+            # overlap there is.
+            entry = EntryInterface(gn)
+            exit = ExitInterface(gn)
+            #entry = "None" if entry is None else entry
+            #exit = "None" if exit is None else exit
+            #print(gn + ": " + entry + " / " + exit)
+            # if exit is None and isIsolateFinalBase(name): 
+            #     print_list(gn, lowers)
+
+            uppers, lowers = TrimMetrics(gn, uppers, lowers, entry, exit, sliceWidth)
+
+            if gn == "absMeemMed.sn":
+                print_list(gn, lowers)
+
+            if exit is None and isIsolateFinalBase(gn): 
+                print_list(gn, lowers)
+                lowers = TruncateLowFinals(lowers)
+
+            #uppers, lowers = TruncateLongSeq(uppers, lowers)
+
             #gnMarker = BaseMarkerName(gn)
             gnMarker = gn
+
             rise = riseValues[gn] if gn in riseValues else None
-            dy = "dy0" if rise is None else "dy" + MarkerValue(rise)
-            px = "px0" if isFinalBase(gn) else "pxNULL"
+            dy = "dy0" if rise is None else "dy" + MarkerValue(rise, 100, "dy")
+            py = "py0" if isIsolateFinalBase(gn) else "pyNULL"
             kw = "\n\t\t\t\t\tkw0" if isKernableBase(gn) else ""
-            outf.write(f"  sub {gn}  by  {gnMarker}  {dy}  {px}  \n\t\t\t\t\t{str_flist(l, "dsc")}\n\t\t\t\t\t{str_flist(u, "asc")}{kw};\n")
+            dscString = FormatMarkerList(lowers, "dsc", sliceWidth)
+            ascString = FormatMarkerList(uppers, "asc", sliceWidth)
+
+            outf.write(f"  sub {gn}  by  {gnMarker}  {dy}  {py}  \n\t\t\t\t\t{dscString}\tybLast\n\t\t\t\t\t{ascString}{kw};\n")
 
     outf.write("\n} InitKernMetrics;\n")
 

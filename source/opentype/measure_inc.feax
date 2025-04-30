@@ -59,6 +59,8 @@ lookup _InsertLowerMarker1000 {
 } _InsertLowerMarker1000;
 
 
+# Insert an indication of a nuqta or mark in order to force the 
+# descent lower or the ascent higher.
 lookup _InsertNuqtaDiacMarker {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike];
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
@@ -69,7 +71,7 @@ lookup _InsertNuqtaDiacMarker {
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;		# 950
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;		#950
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;		# 950
 
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;

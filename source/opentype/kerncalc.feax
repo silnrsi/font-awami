@@ -2,6 +2,7 @@
 
 
 lookup _IncKern { 
+	sub kwN500	by	kwN400;
 	sub kwN400	by	kwN300;
 	sub kwN300	by	kwN200;
 	sub kwN200	by	kwN100;
@@ -24,59 +25,58 @@ lookup _IncKern {
 	sub kw1500  by  kw1600;
 } _IncKern;
 
+lookup _DecKern { 
+	sub kwN500	by	kwN500;
+	sub kwN400	by	kwN500;
+	sub kwN300	by	kwN400;
+	sub kwN200	by	kwN300;
+	sub kwN100	by	kwN200;
+	sub kw0		by	kwN100;
+	sub kw100	by	kw0;
+	sub kw200	by	kw100;
+	sub kw300	by	kw200;
+	sub kw400	by	kw300;
+	sub kw500	by	kw400;
+	sub kw600	by	kw500;
+	sub kw700	by	kw600;
+	sub kw800	by	kw700;
+	sub kw900	by	kw800;
+	sub kw1000	by	kw900;
+	sub kw1100	by	kw1000;
+	sub kw1200	by	kw1100;
+	sub kw1300	by	kw1200;
+	sub kw1400	by	kw1300;
+	sub kw1500  by  kw1400;
+	sub kw1600  by  kw1500;
+} _DecKern;
+
+
+lookup _Dec200kw {
+	sub kw0  by  kwN200;
+} _Dec200kw;
+
 lookup _Dec400kw {
 	sub kw0  by  kwN400;
 } _Dec400kw;
 
+lookup _Inc800kw {
+	sub kw0  by  kw800;
+} _Inc800kw;
 
 # Add more YbMarkers to account for a wide nuqta that hangs out to the right.
+
+lookup _ExpandYbBy2 {
+do	forlet ybm = feaclass('YbMarker');
+	{
+		sub $ybm by $ybm $ybm $ybm;
+	}
+} _ExpandYbBy2;
+
 lookup _ExpandYbBy4 {
-    sub ybN1500 by ybN1500 ybN1500 ybN1500 ybN1500 ybN1500;
-    sub ybN1400 by ybN1400 ybN1400 ybN1400 ybN1400 ybN1400;
-    sub ybN1300 by ybN1300 ybN1300 ybN1300 ybN1300 ybN1300;
-    sub ybN1200 by ybN1200 ybN1200 ybN1200 ybN1200 ybN1200;
-    sub ybN1100 by ybN1100 ybN1100 ybN1100 ybN1100 ybN1100;
-    sub ybN1000 by ybN1000 ybN1000 ybN1000 ybN1000 ybN1000;
-    sub ybN900 by ybN900 ybN900 ybN900 ybN900 ybN900;
-    sub ybN800 by ybN800 ybN800 ybN800 ybN800 ybN800;
-    sub ybN700 by ybN700 ybN700 ybN700 ybN700 ybN700;
-    sub ybN600 by ybN600 ybN600 ybN600 ybN600 ybN600;
-    sub ybN500 by ybN500 ybN500 ybN500 ybN500 ybN500;
-    sub ybN400 by ybN400 ybN400 ybN400 ybN400 ybN400;
-    sub ybN300 by ybN300 ybN300 ybN300 ybN300 ybN300;
-    sub ybN200 by ybN200 ybN200 ybN200 ybN200 ybN200;
-    sub ybN100 by ybN100 ybN100 ybN100 ybN100 ybN100;
-    sub yb0 by yb0 yb0 yb0 yb0 yb0;
-    sub yb100 by yb100 yb100 yb100 yb100 yb100;
-    sub yb200 by yb200 yb200 yb200 yb200 yb200;
-    sub yb300 by yb300 yb300 yb300 yb300 yb300;
-    sub yb400 by yb400 yb400 yb400 yb400 yb400;
-    sub yb500 by yb500 yb500 yb500 yb500 yb500;
-    sub yb600 by yb600 yb600 yb600 yb600 yb600;
-    sub yb700 by yb700 yb700 yb700 yb700 yb700;
-    sub yb800 by yb800 yb800 yb800 yb800 yb800;
-    sub yb900 by yb900 yb900 yb900 yb900 yb900;
-    sub yb1000 by yb1000 yb1000 yb1000 yb1000 yb1000;
-    sub yb1100 by yb1100 yb1100 yb1100 yb1100 yb1100;
-    sub yb1200 by yb1200 yb1200 yb1200 yb1200 yb1200;
-    sub yb1300 by yb1300 yb1300 yb1300 yb1300 yb1300;
-    sub yb1400 by yb1400 yb1400 yb1400 yb1400 yb1400;
-    sub yb1500 by yb1500 yb1500 yb1500 yb1500 yb1500;
-    sub yb1600 by yb1600 yb1600 yb1600 yb1600 yb1600;
-    sub yb1700 by yb1700 yb1700 yb1700 yb1700 yb1700;
-    sub yb1800 by yb1800 yb1800 yb1800 yb1800 yb1800;
-    sub yb1900 by yb1900 yb1900 yb1900 yb1900 yb1900;
-    sub yb2000 by yb2000 yb2000 yb2000 yb2000 yb2000;
-    sub yb2100 by yb2100 yb2100 yb2100 yb2100 yb2100;
-    sub yb2200 by yb2200 yb2200 yb2200 yb2200 yb2200;
-    sub yb2300 by yb2300 yb2300 yb2300 yb2300 yb2300;
-    sub yb2400 by yb2400 yb2400 yb2400 yb2400 yb2400;
-    sub yb2500 by yb2500 yb2500 yb2500 yb2500 yb2500;
-    sub yb2600 by yb2600 yb2600 yb2600 yb2600 yb2600;
-    sub yb2700 by yb2700 yb2700 yb2700 yb2700 yb2700;
-    sub yb2800 by yb2800 yb2800 yb2800 yb2800 yb2800;
-    sub yb2900 by yb2900 yb2900 yb2900 yb2900 yb2900;
-    sub yb3000 by yb3000 yb3000 yb3000 yb3000 yb3000;
+do	forlet ybm = feaclass('YbMarker');
+	{
+		sub $ybm by $ybm $ybm $ybm $ybm $ybm;
+	}
 } _ExpandYbBy4;
 
 
@@ -92,7 +92,7 @@ lookup _InsYt100 {
 
 lookup _InsYt200 {
 	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
-	sub @YbMarker by @YbMarker yt100;
+	sub @YbMarker by @YbMarker yt200;
 } _InsYt200;
 
 lookup _InsYt300 {
@@ -394,545 +394,715 @@ lookup _KwInsYt3000 {
 } _KwInsYt3000;
 
 
+lookup _B4lastInsYb100 {
+	sub ybLast by yb100 ybLast;
+} _B4lastInsYb100;
+
+lookup _B4lastInsYb200 {
+	sub ybLast by yb200 ybLast;
+} _B4lastInsYb200;
+
+lookup _B4lastInsYb300 {
+	sub ybLast by yb300 ybLast;
+} _B4lastInsYb300;
+
+lookup _B4lastInsYb400 {
+	sub ybLast by yb400 ybLast;
+} _B4lastInsYb400;
+
+lookup _B4lastInsYb500 {
+	sub ybLast by yb500 ybLast;
+} _B4lastInsYb500;
+
+lookup _B4lastInsYb600 {
+	sub ybLast by yb600 ybLast;
+} _B4lastInsYb600;
+
+lookup _B4lastInsYb700 {
+	sub ybLast by yb700 ybLast;
+} _B4lastInsYb700;
+
+lookup _B4lastInsYb800 {
+	sub ybLast by yb800 ybLast;
+} _B4lastInsYb800;
+
+lookup _B4lastInsYb900 {
+	sub ybLast by yb900 ybLast;
+} _B4lastInsYb900;
+
+lookup _B4lastInsYb1000 {
+	sub ybLast by yb1000 ybLast;
+} _B4lastInsYb1000;
+
+lookup _B4lastInsYb1100 {
+	sub ybLast by yb1100 ybLast;
+} _B4lastInsYb1100;
+
+lookup _B4lastInsYb1200 {
+	sub ybLast by yb1200 ybLast;
+} _B4lastInsYb1200;
+
+lookup _B4lastInsYb1300 {
+	sub ybLast by yb1300 ybLast;
+} _B4lastInsYb1300;
+
+lookup _B4lastInsYb1400 {
+	sub ybLast by yb1400 ybLast;
+} _B4lastInsYb1400;
+
+lookup _B4lastInsYb1500 {
+	sub ybLast by yb1500 ybLast;
+} _B4lastInsYb1500;
+
+lookup _B4lastInsYb1600 {
+	sub ybLast by yb1600 ybLast;
+} _B4lastInsYb1600;
+
+lookup _B4lastInsYb1700 {
+	sub ybLast by yb1700 ybLast;
+} _B4lastInsYb1700;
+
+lookup _B4lastInsYb1800 {
+	sub ybLast by yb1800 ybLast;
+} _B4lastInsYb1800;
+
+lookup _B4lastInsYb1900 {
+	sub ybLast by yb1900 ybLast;
+} _B4lastInsYb1900;
+
+lookup _B4lastInsYb2000 {
+	sub ybLast by yb2000 ybLast;
+} _B4lastInsYb2000;
+
+lookup _B4lastInsYb2100 {
+	sub ybLast by yb2100 ybLast;
+} _B4lastInsYb2100;
+
+lookup _B4lastInsYb2200 {
+	sub ybLast by yb2200 ybLast;
+} _B4lastInsYb2200;
+
+lookup _B4lastInsYb2300 {
+	sub ybLast by yb2300 ybLast;
+} _B4lastInsYb2300;
+
+lookup _B4lastInsYb2400 {
+	sub ybLast by yb2400 ybLast;
+} _B4lastInsYb2400;
+
+lookup _B4lastInsYb2500 {
+	sub ybLast by yb2500 ybLast;
+} _B4lastInsYb2500;
+
+lookup _B4lastInsYb2600 {
+	sub ybLast by yb2600 ybLast;
+} _B4lastInsYb2600;
+
+lookup _B4lastInsYb2700 {
+	sub ybLast by yb2700 ybLast;
+} _B4lastInsYb2700;
+
+lookup _B4lastInsYb2800 {
+	sub ybLast by yb2800 ybLast;
+} _B4lastInsYb2800;
+
+lookup _B4lastInsYb2900 {
+	sub ybLast by yb2900 ybLast;
+} _B4lastInsYb2900;
+
+lookup _B4lastInsYb3000 {
+	sub ybLast by yb3000 ybLast;
+} _B4lastInsYb3000;
+
+
 lookup _DelYt {
     sub @YtMarker  by   NULL;
 } _DelYt;
 
+lookup _DelYb {
+	sub @YbMarker	by	NULL;
+} _DelYb;
+
 @YbLow = [yb0 ybN100 ybN200 ybN300 ybN400 ybN500 ybN600 ybN700 ybN800 ybN900 ybN1000
 	ybN1100 ybN1200 ybN1300 ybN1400 ybN1500];
 
-lookup _Block {
+# kblockI ("internal") is used to indicate a block on a previously-kerned glyph
+# against something further along in the sequence.
+# kblock indicates a  block with a fresh glyph hitting the right-head edge of the
+# following sequence.
+@Kblocks = [kblock kblockI];
+
+# A block occurs when the yt (top) value is too close to the yb (bottom) value.
+# Currently we want a space of at least 100 units.
+
+do	forlet i = range(0,2);
+	let lnames = ["_Block","_BlockI"];
+	let lname = lnames[i];
+	let kbGlyphs = feaclass('Kblocks');
+	let kb = kbGlyphs[i];
+{
+lookup $lname {
 	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
+	sub yt0'	@YbLow		by	$kb;
+	sub yt0'	yb100		by	$kb;
 
-	sub yt0'	@YbLow		by	kblock;
+	sub yt100'  @YbLow		by	$kb;
+	sub yt100'  yb100		by	$kb;
+	sub yt100'	yb200		by	$kb;
 
-	sub yt100'  @YbLow		by	kblock;
-	sub yt100'  yb100		by	kblock;
+	sub yt200'	@YbLow		by	$kb;
+	sub yt200'  yb100		by	$kb;
+	sub yt200'  yb200		by	$kb;
+	sub yt200'	yb300		by	$kb;
 
-	sub yt200'	@YbLow		by	kblock;
-	sub yt200'  yb100		by	kblock;
-	sub yt200'  yb200		by	kblock;
+	sub yt300'	@YbLow		by	$kb;
+	sub yt300'  yb100		by	$kb;
+	sub yt300'  yb200		by	$kb;
+	sub yt300'  yb300		by	$kb;
+	sub yt300'	yb400		by	$kb;
 
-	sub yt300'	@YbLow		by	kblock;
-	sub yt300'  yb100		by	kblock;
-	sub yt300'  yb200		by	kblock;
-	sub yt300'  yb300		by	kblock;
+	sub yt400'	@YbLow		by	$kb;
+	sub yt400'  yb100		by	$kb;
+	sub yt400'  yb200		by	$kb;
+	sub yt400'  yb300		by	$kb;
+	sub yt400'  yb400		by	$kb;
+	sub yt400'	yb500		by	$kb;
 
-	sub yt400'	@YbLow		by	kblock;
-	sub yt400'  yb100		by	kblock;
-	sub yt400'  yb200		by	kblock;
-	sub yt400'  yb300		by	kblock;
-	sub yt400'  yb400		by	kblock;
+	sub yt500'	@YbLow		by	$kb;
+	sub yt500'  yb100		by	$kb;
+	sub yt500'  yb200		by	$kb;
+	sub yt500'  yb300		by	$kb;
+	sub yt500'  yb400		by	$kb;
+	sub yt500'  yb500		by	$kb;
+	sub yt500'	yb600		by	$kb;
 
-	sub yt500'	@YbLow		by	kblock;
-	sub yt500'  yb100		by	kblock;
-	sub yt500'  yb200		by	kblock;
-	sub yt500'  yb300		by	kblock;
-	sub yt500'  yb400		by	kblock;
-	sub yt500'  yb500		by	kblock;
+	sub yt600'	@YbLow		by	$kb;
+	sub yt600'	yb100		by	$kb;
+	sub yt600'	yb200		by	$kb;
+	sub yt600'	yb300		by	$kb;
+	sub yt600'	yb400		by	$kb;
+	sub yt600'	yb500		by	$kb;
+	sub yt600'	yb600		by	$kb;
+	sub yt600'	yb700		by	$kb;
 
-	sub yt600'	@YbLow		by	kblock;
-	sub yt600'	yb100		by	kblock;
-	sub yt600'	yb200		by	kblock;
-	sub yt600'	yb300		by	kblock;
-	sub yt600'	yb400		by	kblock;
-	sub yt600'	yb500		by	kblock;
-	sub yt600'	yb600		by	kblock;
+	sub yt700'	@YbLow		by	$kb;
+	sub yt700'	yb100		by	$kb;
+	sub yt700'	yb200		by	$kb;
+	sub yt700'	yb300		by	$kb;
+	sub yt700'	yb400		by	$kb;
+	sub yt700'	yb500		by	$kb;
+	sub yt700'	yb600		by	$kb;
+	sub yt700'	yb700		by	$kb;
+	sub yt700'	yb800		by	$kb;
 
-	sub yt700' @YbLow		by	kblock;
-	sub yt700' yb100		by	kblock;
-	sub yt700' yb200		by	kblock;
-	sub yt700' yb300		by	kblock;
-	sub yt700' yb400		by	kblock;
-	sub yt700' yb500		by	kblock;
-	sub yt700' yb600		by	kblock;
-	sub yt700' yb700		by	kblock;
+	sub yt800'	@YbLow		by	$kb;
+	sub yt800'	yb100		by	$kb;
+	sub yt800'	yb200		by	$kb;
+	sub yt800'	yb300		by	$kb;
+	sub yt800'	yb400		by	$kb;
+	sub yt800'	yb500		by	$kb;
+	sub yt800'	yb600		by	$kb;
+	sub yt800'	yb700		by	$kb;
+	sub yt800'	yb800		by	$kb;
+	sub yt800'	yb900		by	$kb;
 
-	sub yt800' @YbLow		by	kblock;
-	sub yt800' yb100		by	kblock;
-	sub yt800' yb200		by	kblock;
-	sub yt800' yb300		by	kblock;
-	sub yt800' yb400		by	kblock;
-	sub yt800' yb500		by	kblock;
-	sub yt800' yb600		by	kblock;
-	sub yt800' yb700		by	kblock;
-	sub yt800' yb800		by	kblock;
+	sub yt900'	@YbLow		by	$kb;
+	sub yt900'	yb100		by	$kb;
+	sub yt900'	yb200		by	$kb;
+	sub yt900'	yb300		by	$kb;
+	sub yt900'	yb400		by	$kb;
+	sub yt900'	yb500		by	$kb;
+	sub yt900'	yb600		by	$kb;
+	sub yt900'	yb700		by	$kb;
+	sub yt900'	yb800		by	$kb;
+	sub yt900'	yb900		by	$kb;
+	sub yt900'	yb1000		by	$kb;
 
-	sub yt900' @YbLow		by	kblock;
-	sub yt900' yb100		by	kblock;
-	sub yt900' yb200		by	kblock;
-	sub yt900' yb300		by	kblock;
-	sub yt900' yb400		by	kblock;
-	sub yt900' yb500		by	kblock;
-	sub yt900' yb600		by	kblock;
-	sub yt900' yb700		by	kblock;
-	sub yt900' yb800		by	kblock;
-	sub yt900' yb900		by	kblock;
+	sub yt1000'	@YbLow		by	$kb;
+	sub yt1000'	yb100		by	$kb;
+	sub yt1000'	yb200		by	$kb;
+	sub yt1000'	yb300		by	$kb;
+	sub yt1000'	yb400		by	$kb;
+	sub yt1000'	yb500		by	$kb;
+	sub yt1000'	yb600		by	$kb;
+	sub yt1000'	yb700		by	$kb;
+	sub yt1000'	yb800		by	$kb;
+	sub yt1000'	yb900		by	$kb;
+	sub yt1000'	yb1000		by	$kb;
+	sub yt1000'	yb1100		by	$kb;
 
-	sub yt1000' @YbLow		by	kblock;
-	sub yt1000' yb100		by	kblock;
-	sub yt1000' yb200		by	kblock;
-	sub yt1000' yb300		by	kblock;
-	sub yt1000' yb400		by	kblock;
-	sub yt1000' yb500		by	kblock;
-	sub yt1000' yb600		by	kblock;
-	sub yt1000' yb700		by	kblock;
-	sub yt1000' yb800		by	kblock;
-	sub yt1000' yb900		by	kblock;
-	sub yt1000' yb1000		by	kblock;
+	sub yt1100'	@YbLow		by	$kb;
+	sub yt1100'	yb100		by	$kb;
+	sub yt1100'	yb200		by	$kb;
+	sub yt1100'	yb300		by	$kb;
+	sub yt1100'	yb400		by	$kb;
+	sub yt1100'	yb500		by	$kb;
+	sub yt1100'	yb600		by	$kb;
+	sub yt1100'	yb700		by	$kb;
+	sub yt1100'	yb800		by	$kb;
+	sub yt1100'	yb900		by	$kb;
+	sub yt1100'	yb1000		by	$kb;
+	sub	yt1100'	yb1100		by	$kb;
+	sub yt1100'	yb1200		by	$kb;
 
-	sub yt1100' @YbLow		by	kblock;
-	sub yt1100' yb100		by	kblock;
-	sub yt1100' yb200		by	kblock;
-	sub yt1100' yb300		by	kblock;
-	sub yt1100' yb400		by	kblock;
-	sub yt1100' yb500		by	kblock;
-	sub yt1100' yb600		by	kblock;
-	sub yt1100' yb700		by	kblock;
-	sub yt1100' yb800		by	kblock;
-	sub yt1100' yb900		by	kblock;
-	sub yt1100' yb1000		by	kblock;
-	sub	yt1100'	yb1100		by	kblock;
+	sub yt1200'	@YbLow		by	$kb;
+	sub yt1200'	yb100		by	$kb;
+	sub yt1200'	yb200		by	$kb;
+	sub yt1200'	yb300		by	$kb;
+	sub yt1200'	yb400		by	$kb;
+	sub yt1200'	yb500		by	$kb;
+	sub yt1200'	yb600		by	$kb;
+	sub yt1200'	yb700		by	$kb;
+	sub yt1200'	yb800		by	$kb;
+	sub yt1200'	yb900		by	$kb;
+	sub yt1200'	yb1000		by	$kb;
+	sub	yt1200'	yb1100		by	$kb;
+	sub yt1200'	yb1200		by	$kb;
+	sub yt1200'	yb1300		by	$kb;
 
-	sub yt1200' @YbLow		by	kblock;
-	sub yt1200' yb100		by	kblock;
-	sub yt1200' yb200		by	kblock;
-	sub yt1200' yb300		by	kblock;
-	sub yt1200' yb400		by	kblock;
-	sub yt1200' yb500		by	kblock;
-	sub yt1200' yb600		by	kblock;
-	sub yt1200' yb700		by	kblock;
-	sub yt1200' yb800		by	kblock;
-	sub yt1200' yb900		by	kblock;
-	sub yt1200' yb1000		by	kblock;
-	sub	yt1200'	yb1100		by	kblock;
-	sub yt1200' yb1200		by	kblock;
+	sub yt1300'	@YbLow		by	$kb;
+	sub yt1300'	yb100		by	$kb;
+	sub yt1300'	yb200		by	$kb;
+	sub yt1300'	yb300		by	$kb;
+	sub yt1300'	yb400		by	$kb;
+	sub yt1300'	yb500		by	$kb;
+	sub yt1300'	yb600		by	$kb;
+	sub yt1300'	yb700		by	$kb;
+	sub yt1300'	yb800		by	$kb;
+	sub yt1300'	yb900		by	$kb;
+	sub yt1300'	yb1000		by	$kb;
+	sub yt1300'	yb1100		by	$kb;
+	sub yt1300'	yb1200		by	$kb;
+	sub yt1300'	yb1300		by	$kb;
+	sub yt1300'	yb1400		by	$kb;
 
-	sub yt1300' @YbLow		by	kblock;
-	sub yt1300' yb100		by	kblock;
-	sub yt1300' yb200		by	kblock;
-	sub yt1300' yb300		by	kblock;
-	sub yt1300' yb400		by	kblock;
-	sub yt1300' yb500		by	kblock;
-	sub yt1300' yb600		by	kblock;
-	sub yt1300' yb700		by	kblock;
-	sub yt1300' yb800		by	kblock;
-	sub yt1300' yb900		by	kblock;
-	sub yt1300' yb1000		by	kblock;
-	sub yt1300' yb1100		by	kblock;
-	sub yt1300' yb1200		by	kblock;
-	sub yt1300' yb1300		by	kblock;
+	sub yt1400'	@YbLow		by	$kb;
+	sub yt1400'	yb100		by	$kb;
+	sub yt1400'	yb200		by	$kb;
+	sub yt1400'	yb300		by	$kb;
+	sub yt1400'	yb400		by	$kb;
+	sub yt1400'	yb500		by	$kb;
+	sub yt1400'	yb600		by	$kb;
+	sub yt1400'	yb700		by	$kb;
+	sub yt1400'	yb800		by	$kb;
+	sub yt1400'	yb900		by	$kb;
+	sub yt1400'	yb1000		by	$kb;
+	sub yt1400'	yb1100		by	$kb;
+	sub yt1400'	yb1200		by	$kb;	
+	sub yt1400'	yb1300		by	$kb;
+	sub yt1400'	yb1400		by	$kb;
+	sub yt1400'	yb1500		by	$kb;
 
-	sub yt1400' @YbLow		by	kblock;
-	sub yt1400' yb100		by	kblock;
-	sub yt1400' yb200		by	kblock;
-	sub yt1400' yb300		by	kblock;
-	sub yt1400' yb400		by	kblock;
-	sub yt1400' yb500		by	kblock;
-	sub yt1400' yb600		by	kblock;
-	sub yt1400' yb700		by	kblock;
-	sub yt1400' yb800		by	kblock;
-	sub yt1400' yb900		by	kblock;
-	sub yt1400' yb1000		by	kblock;
-	sub yt1400' yb1100		by	kblock;
-	sub yt1400' yb1200		by	kblock;	
-	sub yt1400' yb1300		by	kblock;
-	sub yt1400' yb1400		by	kblock;
+	sub yt1500'	@YbLow		by	$kb;
+	sub yt1500'	yb100		by	$kb;
+	sub yt1500'	yb200		by	$kb;
+	sub yt1500'	yb300		by	$kb;
+	sub yt1500'	yb400		by	$kb;
+	sub yt1500'	yb500		by	$kb;
+	sub yt1500'	yb600		by	$kb;
+	sub yt1500'	yb700		by	$kb;
+	sub yt1500'	yb800		by	$kb;
+	sub yt1500'	yb900		by	$kb;
+	sub yt1500'	yb1000		by	$kb;
+	sub yt1500'	yb1100		by	$kb;
+	sub yt1500'	yb1200		by	$kb;
+	sub yt1500'	yb1300		by	$kb;
+	sub yt1500'	yb1400		by	$kb;
+	sub yt1500'	yb1500		by	$kb;
+	sub yt1500'	yb1600		by	$kb;
 
-	sub yt1500' @YbLow		by	kblock;
-	sub yt1500' yb100		by	kblock;
-	sub yt1500' yb200		by	kblock;
-	sub yt1500' yb300		by	kblock;
-	sub yt1500' yb400		by	kblock;
-	sub yt1500' yb500		by	kblock;
-	sub yt1500' yb600		by	kblock;
-	sub yt1500' yb700		by	kblock;
-	sub yt1500' yb800		by	kblock;
-	sub yt1500' yb900		by	kblock;
-	sub yt1500' yb1000		by	kblock;
-	sub yt1500' yb1100		by	kblock;
-	sub yt1500' yb1200		by	kblock;
-	sub yt1500' yb1300		by	kblock;
-	sub yt1500' yb1400		by	kblock;
-	sub yt1500' yb1500		by	kblock;
+	sub yt1600'	@YbLow		by	$kb;
+	sub yt1600'	yb100		by	$kb;
+	sub yt1600'	yb200		by	$kb;
+	sub yt1600'	yb300		by	$kb;
+	sub yt1600'	yb400		by	$kb;
+	sub yt1600'	yb500		by	$kb;
+	sub yt1600'	yb600		by	$kb;
+	sub yt1600'	yb700		by	$kb;
+	sub yt1600'	yb800		by	$kb;
+	sub yt1600'	yb900		by	$kb;
+	sub yt1600'	yb1000		by	$kb;
+	sub yt1600'	yb1100		by	$kb;
+	sub yt1600'	yb1200		by	$kb;
+	sub yt1600'	yb1300		by	$kb;
+	sub yt1600'	yb1400		by	$kb;
+	sub yt1600'	yb1500		by	$kb;
+	sub yt1600'	yb1600		by	$kb;
+	sub yt1600'	yb1700		by	$kb;
 
-	sub yt1600' @YbLow		by	kblock;
-	sub yt1600' yb100		by	kblock;
-	sub yt1600' yb200		by	kblock;
-	sub yt1600' yb300		by	kblock;
-	sub yt1600' yb400		by	kblock;
-	sub yt1600' yb500		by	kblock;
-	sub yt1600' yb600		by	kblock;
-	sub yt1600' yb700		by	kblock;
-	sub yt1600' yb800		by	kblock;
-	sub yt1600' yb900		by	kblock;
-	sub yt1600' yb1000		by	kblock;
-	sub yt1600' yb1100		by	kblock;
-	sub yt1600' yb1200		by	kblock;
-	sub yt1600' yb1300		by	kblock;
-	sub yt1600' yb1400		by	kblock;
-	sub yt1600' yb1500		by	kblock;
-	sub yt1600' yb1600		by	kblock;
+	sub yt1700'	@YbLow		by	$kb;
+	sub yt1700'	yb100		by	$kb;
+	sub yt1700'	yb200		by	$kb;
+	sub yt1700'	yb300		by	$kb;
+	sub yt1700'	yb400		by	$kb;
+	sub yt1700'	yb500		by	$kb;
+	sub yt1700'	yb600		by	$kb;
+	sub yt1700'	yb700		by	$kb;
+	sub yt1700'	yb800		by	$kb;
+	sub yt1700'	yb900		by	$kb;
+	sub yt1700'	yb1000		by	$kb;
+	sub yt1700'	yb1100		by	$kb;
+	sub yt1700'	yb1200		by	$kb;
+	sub yt1700'	yb1300		by	$kb;
+	sub yt1700'	yb1400		by	$kb;
+	sub yt1700'	yb1500		by	$kb;
+	sub yt1700'	yb1600		by	$kb;
+	sub yt1700'	yb1700		by	$kb;
+	sub yt1700'	yb1800		by	$kb;
 
-	sub yt1700' @YbLow		by	kblock;
-	sub yt1700' yb100		by	kblock;
-	sub yt1700' yb200		by	kblock;
-	sub yt1700' yb300		by	kblock;
-	sub yt1700' yb400		by	kblock;
-	sub yt1700' yb500		by	kblock;
-	sub yt1700' yb600		by	kblock;
-	sub yt1700' yb700		by	kblock;
-	sub yt1700' yb800		by	kblock;
-	sub yt1700' yb900		by	kblock;
-	sub yt1700' yb1000		by	kblock;
-	sub yt1700' yb1100		by	kblock;
-	sub yt1700' yb1200		by	kblock;
-	sub yt1700' yb1300		by	kblock;
-	sub yt1700' yb1400		by	kblock;
-	sub yt1700' yb1500		by	kblock;
-	sub yt1700' yb1600		by	kblock;
-	sub yt1700' yb1700		by	kblock;
+	sub yt1800'	@YbLow		by	$kb;
+	sub yt1800'	yb100		by	$kb;
+	sub yt1800'	yb200		by	$kb;
+	sub yt1800'	yb300		by	$kb;
+	sub yt1800'	yb400		by	$kb;
+	sub yt1800'	yb500		by	$kb;
+	sub yt1800'	yb600		by	$kb;
+	sub yt1800'	yb700		by	$kb;
+	sub yt1800'	yb800		by	$kb;
+	sub yt1800'	yb900		by	$kb;
+	sub yt1800'	yb1000		by	$kb;
+	sub yt1800'	yb1100		by	$kb;
+	sub yt1800'	yb1200		by	$kb;
+	sub yt1800'	yb1300		by	$kb;
+	sub yt1800'	yb1400		by	$kb;
+	sub yt1800'	yb1500		by	$kb;
+	sub yt1800'	yb1600		by	$kb;
+	sub yt1800'	yb1700		by	$kb;
+	sub yt1800'	yb1800		by	$kb;
+	sub yt1800'	yb1900		by	$kb;
 
-	sub yt1800' @YbLow		by	kblock;
-	sub yt1800' yb100		by	kblock;
-	sub yt1800' yb200		by	kblock;
-	sub yt1800' yb300		by	kblock;
-	sub yt1800' yb400		by	kblock;
-	sub yt1800' yb500		by	kblock;
-	sub yt1800' yb600		by	kblock;
-	sub yt1800' yb700		by	kblock;
-	sub yt1800' yb800		by	kblock;
-	sub yt1800' yb900		by	kblock;
-	sub yt1800' yb1000		by	kblock;
-	sub yt1800' yb1100		by	kblock;
-	sub yt1800' yb1200		by	kblock;
-	sub yt1800' yb1300		by	kblock;
-	sub yt1800' yb1400		by	kblock;
-	sub yt1800' yb1500		by	kblock;
-	sub yt1800' yb1600		by	kblock;
-	sub yt1800' yb1700		by	kblock;
-	sub yt1800' yb1800		by	kblock;
+	sub yt1900'	@YbLow		by	$kb;
+	sub yt1900'	yb100		by	$kb;
+	sub yt1900'	yb200		by	$kb;
+	sub yt1900'	yb300		by	$kb;
+	sub yt1900'	yb400		by	$kb;
+	sub yt1900'	yb500		by	$kb;
+	sub yt1900'	yb600		by	$kb;
+	sub yt1900'	yb700		by	$kb;
+	sub yt1900'	yb800		by	$kb;
+	sub yt1900'	yb900		by	$kb;
+	sub yt1900'	yb1000		by	$kb;
+	sub yt1900'	yb1100		by	$kb;
+	sub yt1900'	yb1200		by	$kb;
+	sub yt1900'	yb1300		by	$kb;
+	sub yt1900'	yb1400		by	$kb;
+	sub yt1900'	yb1500		by	$kb;
+	sub yt1900'	yb1600		by	$kb;
+	sub yt1900'	yb1700		by	$kb;
+	sub yt1900'	yb1800		by	$kb;
+	sub yt1900'	yb1900		by	$kb;
+	sub yt1900'	yb2000		by	$kb;
 
-	sub yt1900' @YbLow		by	kblock;
-	sub yt1900' yb100		by	kblock;
-	sub yt1900' yb200		by	kblock;
-	sub yt1900' yb300		by	kblock;
-	sub yt1900' yb400		by	kblock;
-	sub yt1900' yb500		by	kblock;
-	sub yt1900' yb600		by	kblock;
-	sub yt1900' yb700		by	kblock;
-	sub yt1900' yb800		by	kblock;
-	sub yt1900' yb900		by	kblock;
-	sub yt1900' yb1000		by	kblock;
-	sub yt1900' yb1100		by	kblock;
-	sub yt1900' yb1200		by	kblock;
-	sub yt1900' yb1300		by	kblock;
-	sub yt1900' yb1400		by	kblock;
-	sub yt1900' yb1500		by	kblock;
-	sub yt1900' yb1600		by	kblock;
-	sub yt1900' yb1700		by	kblock;
-	sub yt1900' yb1800		by	kblock;
-	sub yt1900' yb1900		by	kblock;
+	sub yt2000'	@YbLow		by	$kb;
+	sub yt2000'	yb100		by	$kb;
+	sub yt2000'	yb200		by	$kb;
+	sub yt2000'	yb300		by	$kb;
+	sub yt2000'	yb400		by	$kb;
+	sub yt2000'	yb500		by	$kb;
+	sub yt2000'	yb600		by	$kb;
+	sub yt2000'	yb700		by	$kb;
+	sub yt2000'	yb800		by	$kb;
+	sub yt2000'	yb900		by	$kb;
+	sub yt2000'	yb1000		by	$kb;
+	sub yt2000'	yb1100		by	$kb;
+	sub yt2000'	yb1200		by	$kb;
+	sub yt2000'	yb1300		by	$kb;
+	sub yt2000'	yb1400		by	$kb;
+	sub yt2000'	yb1500		by	$kb;
+	sub yt2000'	yb1600		by	$kb;
+	sub yt2000'	yb1700		by	$kb;
+	sub yt2000'	yb1800		by	$kb;
+	sub yt2000'	yb1900		by	$kb;
+	sub yt2000'	yb2000		by	$kb;
+	sub yt2000'	yb2100		by	$kb;
 
-	sub yt2000' @YbLow		by	kblock;
-	sub yt2000' yb100		by	kblock;
-	sub yt2000' yb200		by	kblock;
-	sub yt2000' yb300		by	kblock;
-	sub yt2000' yb400		by	kblock;
-	sub yt2000' yb500		by	kblock;
-	sub yt2000' yb600		by	kblock;
-	sub yt2000' yb700		by	kblock;
-	sub yt2000' yb800		by	kblock;
-	sub yt2000' yb900		by	kblock;
-	sub yt2000' yb1000		by	kblock;
-	sub yt2000' yb1100		by	kblock;
-	sub yt2000' yb1200		by	kblock;
-	sub yt2000' yb1300		by	kblock;
-	sub yt2000' yb1400		by	kblock;
-	sub yt2000' yb1500		by	kblock;
-	sub yt2000' yb1600		by	kblock;
-	sub yt2000' yb1700		by	kblock;
-	sub yt2000' yb1800		by	kblock;
-	sub yt2000' yb1900		by	kblock;
-	sub yt2000' yb2000		by	kblock;
+	sub yt2100'	@YbLow		by	$kb;
+	sub yt2100'	yb100		by	$kb;
+	sub yt2100'	yb200		by	$kb;
+	sub yt2100'	yb300		by	$kb;
+	sub yt2100'	yb400		by	$kb;
+	sub yt2100'	yb500		by	$kb;
+	sub yt2100'	yb600		by	$kb;
+	sub yt2100'	yb700		by	$kb;
+	sub yt2100'	yb800		by	$kb;
+	sub yt2100'	yb900		by	$kb;
+	sub yt2100'	yb1000		by	$kb;
+	sub yt2100'	yb1100		by	$kb;
+	sub yt2100'	yb1200		by	$kb;
+	sub yt2100'	yb1300		by	$kb;
+	sub yt2100'	yb1400		by	$kb;
+	sub yt2100'	yb1500		by	$kb;
+	sub yt2100'	yb1600		by	$kb;
+	sub yt2100'	yb1700		by	$kb;
+	sub yt2100'	yb1800		by	$kb;
+	sub yt2100'	yb1900		by	$kb;
+	sub yt2100'	yb2000		by	$kb;
+	sub yt2100'	yb2100		by	$kb;
+	sub yt2100'	yb2200		by	$kb;
 
-	sub yt2100' @YbLow		by	kblock;
-	sub yt2100' yb100		by	kblock;
-	sub yt2100' yb200		by	kblock;
-	sub yt2100' yb300		by	kblock;
-	sub yt2100' yb400		by	kblock;
-	sub yt2100' yb500		by	kblock;
-	sub yt2100' yb600		by	kblock;
-	sub yt2100' yb700		by	kblock;
-	sub yt2100' yb800		by	kblock;
-	sub yt2100' yb900		by	kblock;
-	sub yt2100' yb1000		by	kblock;
-	sub yt2100' yb1100		by	kblock;
-	sub yt2100' yb1200		by	kblock;
-	sub yt2100' yb1300		by	kblock;
-	sub yt2100' yb1400		by	kblock;
-	sub yt2100' yb1500		by	kblock;
-	sub yt2100' yb1600		by	kblock;
-	sub yt2100' yb1700		by	kblock;
-	sub yt2100' yb1800		by	kblock;
-	sub yt2100' yb1900		by	kblock;
-	sub yt2100' yb2000		by	kblock;
-	sub yt2100' yb2100		by	kblock;
+	sub yt2200'	@YbLow		by	$kb;
+	sub yt2200'	yb100		by	$kb;
+	sub yt2200'	yb200		by	$kb;
+	sub yt2200'	yb300		by	$kb;
+	sub yt2200'	yb400		by	$kb;
+	sub yt2200'	yb500		by	$kb;
+	sub yt2200'	yb600		by	$kb;
+	sub yt2200'	yb700		by	$kb;
+	sub yt2200'	yb800		by	$kb;
+	sub yt2200'	yb900		by	$kb;
+	sub yt2200'	yb1000		by	$kb;
+	sub yt2200'	yb1100		by	$kb;
+	sub yt2200'	yb1200		by	$kb;
+	sub yt2200'	yb1300		by	$kb;
+	sub yt2200'	yb1400		by	$kb;
+	sub yt2200'	yb1500		by	$kb;
+	sub yt2200'	yb1600		by	$kb;
+	sub yt2200'	yb1700		by	$kb;
+	sub yt2200'	yb1800		by	$kb;
+	sub yt2200'	yb1900		by	$kb;
+	sub yt2200'	yb2000		by	$kb;
+	sub yt2200'	yb2100		by	$kb;
+	sub yt2200'	yb2200		by	$kb;
+	sub yt2200'	yb2300		by	$kb;
 
-	sub yt2200' @YbLow		by	kblock;
-	sub yt2200' yb100		by	kblock;
-	sub yt2200' yb200		by	kblock;
-	sub yt2200' yb300		by	kblock;
-	sub yt2200' yb400		by	kblock;
-	sub yt2200' yb500		by	kblock;
-	sub yt2200' yb600		by	kblock;
-	sub yt2200' yb700		by	kblock;
-	sub yt2200' yb800		by	kblock;
-	sub yt2200' yb900		by	kblock;
-	sub yt2200' yb1000		by	kblock;
-	sub yt2200' yb1100		by	kblock;
-	sub yt2200' yb1200		by	kblock;
-	sub yt2200' yb1300		by	kblock;
-	sub yt2200' yb1400		by	kblock;
-	sub yt2200' yb1500		by	kblock;
-	sub yt2200' yb1600		by	kblock;
-	sub yt2200' yb1700		by	kblock;
-	sub yt2200' yb1800		by	kblock;
-	sub yt2200' yb1900		by	kblock;
-	sub yt2200' yb2000		by	kblock;
-	sub yt2200' yb2100		by	kblock;
-	sub yt2200' yb2200		by	kblock;
+	sub yt2300'	@YbLow		by	$kb;
+	sub yt2300'	yb100		by	$kb;
+	sub yt2300'	yb200		by	$kb;
+	sub yt2300'	yb300		by	$kb;
+	sub yt2300'	yb400		by	$kb;
+	sub yt2300'	yb500		by	$kb;
+	sub yt2300'	yb600		by	$kb;
+	sub yt2300'	yb700		by	$kb;
+	sub yt2300'	yb800		by	$kb;
+	sub yt2300'	yb900		by	$kb;
+	sub yt2300'	yb1000		by	$kb;
+	sub yt2300'	yb1100		by	$kb;
+	sub yt2300'	yb1200		by	$kb;
+	sub yt2300'	yb1300		by	$kb;
+	sub yt2300'	yb1400		by	$kb;
+	sub yt2300'	yb1500		by	$kb;
+	sub yt2300'	yb1600		by	$kb;
+	sub yt2300'	yb1700		by	$kb;
+	sub yt2300'	yb1800		by	$kb;
+	sub yt2300'	yb1900		by	$kb;
+	sub yt2300'	yb2000		by	$kb;
+	sub yt2300'	yb2100		by	$kb;
+	sub yt2300'	yb2200		by	$kb;
+	sub yt2300'	yb2300		by	$kb;
+	sub yt2300'	yb2400		by	$kb;
 
-	sub yt2300' @YbLow		by	kblock;
-	sub yt2300' yb100		by	kblock;
-	sub yt2300' yb200		by	kblock;
-	sub yt2300' yb300		by	kblock;
-	sub yt2300' yb400		by	kblock;
-	sub yt2300' yb500		by	kblock;
-	sub yt2300' yb600		by	kblock;
-	sub yt2300' yb700		by	kblock;
-	sub yt2300' yb800		by	kblock;
-	sub yt2300' yb900		by	kblock;
-	sub yt2300' yb1000		by	kblock;
-	sub yt2300' yb1100		by	kblock;
-	sub yt2300' yb1200		by	kblock;
-	sub yt2300' yb1300		by	kblock;
-	sub yt2300' yb1400		by	kblock;
-	sub yt2300' yb1500		by	kblock;
-	sub yt2300' yb1600		by	kblock;
-	sub yt2300' yb1700		by	kblock;
-	sub yt2300' yb1800		by	kblock;
-	sub yt2300' yb1900		by	kblock;
-	sub yt2300' yb2000		by	kblock;
-	sub yt2300' yb2100		by	kblock;
-	sub yt2300' yb2200		by	kblock;
-	sub yt2300' yb2300		by	kblock;
+	sub yt2400'	@YbLow		by	$kb;
+	sub yt2400'	yb100		by	$kb;
+	sub yt2400'	yb200		by	$kb;
+	sub yt2400'	yb300		by	$kb;
+	sub yt2400'	yb400		by	$kb;
+	sub yt2400'	yb500		by	$kb;
+	sub yt2400'	yb600		by	$kb;
+	sub yt2400'	yb700		by	$kb;
+	sub yt2400'	yb800		by	$kb;
+	sub yt2400'	yb900		by	$kb;
+	sub yt2400'	yb1000		by	$kb;
+	sub yt2400'	yb1100		by	$kb;
+	sub yt2400'	yb1200		by	$kb;
+	sub yt2400'	yb1300		by	$kb;
+	sub yt2400'	yb1400		by	$kb;
+	sub yt2400'	yb1500		by	$kb;
+	sub yt2400'	yb1600		by	$kb;
+	sub yt2400'	yb1700		by	$kb;
+	sub yt2400'	yb1800		by	$kb;
+	sub yt2400'	yb1900		by	$kb;
+	sub yt2400'	yb2000		by	$kb;
+	sub yt2400'	yb2100		by	$kb;
+	sub yt2400'	yb2200		by	$kb;
+	sub yt2400'	yb2300		by	$kb;
+	sub yt2400'	yb2400		by	$kb;
+	sub yt2400'	yb2500		by	$kb;
 
-	sub yt2400' @YbLow		by	kblock;
-	sub yt2400' yb100		by	kblock;
-	sub yt2400' yb200		by	kblock;
-	sub yt2400' yb300		by	kblock;
-	sub yt2400' yb400		by	kblock;
-	sub yt2400' yb500		by	kblock;
-	sub yt2400' yb600		by	kblock;
-	sub yt2400' yb700		by	kblock;
-	sub yt2400' yb800		by	kblock;
-	sub yt2400' yb900		by	kblock;
-	sub yt2400' yb1000		by	kblock;
-	sub yt2400' yb1100		by	kblock;
-	sub yt2400' yb1200		by	kblock;
-	sub yt2400' yb1300		by	kblock;
-	sub yt2400' yb1400		by	kblock;
-	sub yt2400' yb1500		by	kblock;
-	sub yt2400' yb1600		by	kblock;
-	sub yt2400' yb1700		by	kblock;
-	sub yt2400' yb1800		by	kblock;
-	sub yt2400' yb1900		by	kblock;
-	sub yt2400' yb2000		by	kblock;
-	sub yt2400' yb2100		by	kblock;
-	sub yt2400' yb2200		by	kblock;
-	sub yt2400' yb2300		by	kblock;
-	sub yt2400' yb2400		by	kblock;
+	sub yt2500'	@YbLow		by	$kb;
+	sub yt2500'	yb100		by	$kb;
+	sub yt2500'	yb200		by	$kb;
+	sub yt2500'	yb300		by	$kb;
+	sub yt2500'	yb400		by	$kb;
+	sub yt2500'	yb500		by	$kb;
+	sub yt2500'	yb600		by	$kb;
+	sub yt2500'	yb700		by	$kb;
+	sub yt2500'	yb800		by	$kb;
+	sub yt2500'	yb900		by	$kb;
+	sub yt2500'	yb1000		by	$kb;
+	sub yt2500'	yb1100		by	$kb;
+	sub yt2500'	yb1200		by	$kb;
+	sub yt2500'	yb1300		by	$kb;
+	sub yt2500'	yb1400		by	$kb;
+	sub yt2500'	yb1500		by	$kb;
+	sub yt2500'	yb1600		by	$kb;
+	sub yt2500'	yb1700		by	$kb;
+	sub yt2500'	yb1800		by	$kb;
+	sub yt2500'	yb1900		by	$kb;
+	sub yt2500'	yb2000		by	$kb;
+	sub yt2500'	yb2100		by	$kb;
+	sub yt2500'	yb2200		by	$kb;
+	sub yt2500'	yb2300		by	$kb;
+	sub yt2500'	yb2400		by	$kb;
+	sub yt2500'	yb2500		by	$kb;
+	sub yt2500'	yb2600		by	$kb;
 
-	sub yt2500' @YbLow		by	kblock;
-	sub yt2500' yb100		by	kblock;
-	sub yt2500' yb200		by	kblock;
-	sub yt2500' yb300		by	kblock;
-	sub yt2500' yb400		by	kblock;
-	sub yt2500' yb500		by	kblock;
-	sub yt2500' yb600		by	kblock;
-	sub yt2500' yb700		by	kblock;
-	sub yt2500' yb800		by	kblock;
-	sub yt2500' yb900		by	kblock;
-	sub yt2500' yb1000		by	kblock;
-	sub yt2500' yb1100		by	kblock;
-	sub yt2500' yb1200		by	kblock;
-	sub yt2500' yb1300		by	kblock;
-	sub yt2500' yb1400		by	kblock;
-	sub yt2500' yb1500		by	kblock;
-	sub yt2500' yb1600		by	kblock;
-	sub yt2500' yb1700		by	kblock;
-	sub yt2500' yb1800		by	kblock;
-	sub yt2500' yb1900		by	kblock;
-	sub yt2500' yb2000		by	kblock;
-	sub yt2500' yb2100		by	kblock;
-	sub yt2500' yb2200		by	kblock;
-	sub yt2500' yb2300		by	kblock;
-	sub yt2500' yb2400		by	kblock;
-	sub yt2500' yb2500		by	kblock;
+	sub yt2600'	@YbLow		by	$kb;
+	sub yt2600'	yb100		by	$kb;
+	sub yt2600'	yb200		by	$kb;
+	sub yt2600'	yb300		by	$kb;
+	sub yt2600'	yb400		by	$kb;
+	sub yt2600'	yb500		by	$kb;
+	sub yt2600'	yb600		by	$kb;
+	sub yt2600'	yb700		by	$kb;
+	sub yt2600'	yb800		by	$kb;
+	sub yt2600'	yb900		by	$kb;
+	sub yt2600'	yb1000		by	$kb;
+	sub yt2600'	yb1100		by	$kb;
+	sub yt2600'	yb1200		by	$kb;
+	sub yt2600'	yb1300		by	$kb;
+	sub yt2600'	yb1400		by	$kb;
+	sub yt2600'	yb1500		by	$kb;
+	sub yt2600'	yb1600		by	$kb;
+	sub yt2600'	yb1700		by	$kb;
+	sub yt2600'	yb1800		by	$kb;
+	sub yt2600'	yb1900		by	$kb;
+	sub yt2600'	yb2000		by	$kb;
+	sub yt2600'	yb2100		by	$kb;
+	sub yt2600'	yb2200		by	$kb;
+	sub yt2600'	yb2300		by	$kb;
+	sub yt2600'	yb2400		by	$kb;
+	sub yt2600'	yb2500		by	$kb;
+	sub yt2600'	yb2600		by	$kb;
+	sub yt2600'	yb2700		by	$kb;
 
-	sub yt2600' @YbLow		by	kblock;
-	sub yt2600' yb100		by	kblock;
-	sub yt2600' yb200		by	kblock;
-	sub yt2600' yb300		by	kblock;
-	sub yt2600' yb400		by	kblock;
-	sub yt2600' yb500		by	kblock;
-	sub yt2600' yb600		by	kblock;
-	sub yt2600' yb700		by	kblock;
-	sub yt2600' yb800		by	kblock;
-	sub yt2600' yb900		by	kblock;
-	sub yt2600' yb1000		by	kblock;
-	sub yt2600' yb1100		by	kblock;
-	sub yt2600' yb1200		by	kblock;
-	sub yt2600' yb1300		by	kblock;
-	sub yt2600' yb1400		by	kblock;
-	sub yt2600' yb1500		by	kblock;
-	sub yt2600' yb1600		by	kblock;
-	sub yt2600' yb1700		by	kblock;
-	sub yt2600' yb1800		by	kblock;
-	sub yt2600' yb1900		by	kblock;
-	sub yt2600' yb2000		by	kblock;
-	sub yt2600' yb2100		by	kblock;
-	sub yt2600' yb2200		by	kblock;
-	sub yt2600' yb2300		by	kblock;
-	sub yt2600' yb2400		by	kblock;
-	sub yt2600' yb2500		by	kblock;
-	sub yt2600' yb2600		by	kblock;
+	sub yt2700'	@YbLow		by	$kb;
+	sub yt2700'	yb100		by	$kb;
+	sub yt2700'	yb200		by	$kb;
+	sub yt2700'	yb300		by	$kb;
+	sub yt2700'	yb400		by	$kb;
+	sub yt2700'	yb500		by	$kb;
+	sub yt2700'	yb600		by	$kb;
+	sub yt2700'	yb700		by	$kb;
+	sub yt2700'	yb800		by	$kb;
+	sub yt2700'	yb900		by	$kb;
+	sub yt2700'	yb1000		by	$kb;
+	sub yt2700'	yb1100		by	$kb;
+	sub yt2700'	yb1200		by	$kb;
+	sub yt2700'	yb1300		by	$kb;
+	sub yt2700'	yb1400		by	$kb;
+	sub yt2700'	yb1500		by	$kb;
+	sub yt2700'	yb1600		by	$kb;
+	sub yt2700'	yb1700		by	$kb;
+	sub yt2700'	yb1800		by	$kb;
+	sub yt2700'	yb1900		by	$kb;
+	sub yt2700'	yb2000		by	$kb;
+	sub yt2700'	yb2100		by	$kb;
+	sub yt2700'	yb2200		by	$kb;
+	sub yt2700'	yb2300		by	$kb;
+	sub yt2700'	yb2400		by	$kb;
+	sub yt2700'	yb2500		by	$kb;
+	sub yt2700'	yb2600		by	$kb;
+	sub yt2700'	yb2700		by	$kb;
+	sub yt2700'	yb2800		by	$kb;
 
-	sub yt2700' @YbLow		by	kblock;
-	sub yt2700' yb100		by	kblock;
-	sub yt2700' yb200		by	kblock;
-	sub yt2700' yb300		by	kblock;
-	sub yt2700' yb400		by	kblock;
-	sub yt2700' yb500		by	kblock;
-	sub yt2700' yb600		by	kblock;
-	sub yt2700' yb700		by	kblock;
-	sub yt2700' yb800		by	kblock;
-	sub yt2700' yb900		by	kblock;
-	sub yt2700' yb1000		by	kblock;
-	sub yt2700' yb1100		by	kblock;
-	sub yt2700' yb1200		by	kblock;
-	sub yt2700' yb1300		by	kblock;
-	sub yt2700' yb1400		by	kblock;
-	sub yt2700' yb1500		by	kblock;
-	sub yt2700' yb1600		by	kblock;
-	sub yt2700' yb1700		by	kblock;
-	sub yt2700' yb1800		by	kblock;
-	sub yt2700' yb1900		by	kblock;
-	sub yt2700' yb2000		by	kblock;
-	sub yt2700' yb2100		by	kblock;
-	sub yt2700' yb2200		by	kblock;
-	sub yt2700' yb2300		by	kblock;
-	sub yt2700' yb2400		by	kblock;
-	sub yt2700' yb2500		by	kblock;
-	sub yt2700' yb2600		by	kblock;
-	sub yt2700' yb2700		by	kblock;
+	sub yt2800'	@YbLow		by	$kb;
+	sub yt2800'	yb100		by	$kb;
+	sub yt2800'	yb200		by	$kb;
+	sub yt2800'	yb300		by	$kb;
+	sub yt2800'	yb400		by	$kb;
+	sub yt2800'	yb500		by	$kb;
+	sub yt2800'	yb600		by	$kb;
+	sub yt2800'	yb700		by	$kb;
+	sub yt2800'	yb800		by	$kb;
+	sub yt2800'	yb900		by	$kb;
+	sub yt2800'	yb1000		by	$kb;
+	sub yt2800'	yb1100		by	$kb;
+	sub yt2800'	yb1200		by	$kb;
+	sub yt2800'	yb1300		by	$kb;
+	sub yt2800'	yb1400		by	$kb;
+	sub yt2800'	yb1500		by	$kb;
+	sub yt2800'	yb1600		by	$kb;
+	sub yt2800'	yb1700		by	$kb;
+	sub yt2800'	yb1800		by	$kb;
+	sub yt2800'	yb1900		by	$kb;
+	sub yt2800'	yb2000		by	$kb;
+	sub yt2800'	yb2100		by	$kb;
+	sub yt2800'	yb2200		by	$kb;
+	sub yt2800'	yb2300		by	$kb;
+	sub yt2800'	yb2400		by	$kb;
+	sub yt2800'	yb2500		by	$kb;
+	sub yt2800'	yb2600		by	$kb;
+	sub yt2800'	yb2700		by	$kb;
+	sub yt2800'	yb2800		by	$kb;
+	sub yt2800'	yb2900		by	$kb;
 
-	sub yt2800' @YbLow		by	kblock;
-	sub yt2800' yb100		by	kblock;
-	sub yt2800' yb200		by	kblock;
-	sub yt2800' yb300		by	kblock;
-	sub yt2800' yb400		by	kblock;
-	sub yt2800' yb500		by	kblock;
-	sub yt2800' yb600		by	kblock;
-	sub yt2800' yb700		by	kblock;
-	sub yt2800' yb800		by	kblock;
-	sub yt2800' yb900		by	kblock;
-	sub yt2800' yb1000		by	kblock;
-	sub yt2800' yb1100		by	kblock;
-	sub yt2800' yb1200		by	kblock;
-	sub yt2800' yb1300		by	kblock;
-	sub yt2800' yb1400		by	kblock;
-	sub yt2800' yb1500		by	kblock;
-	sub yt2800' yb1600		by	kblock;
-	sub yt2800' yb1700		by	kblock;
-	sub yt2800' yb1800		by	kblock;
-	sub yt2800' yb1900		by	kblock;
-	sub yt2800' yb2000		by	kblock;
-	sub yt2800' yb2100		by	kblock;
-	sub yt2800' yb2200		by	kblock;
-	sub yt2800' yb2300		by	kblock;
-	sub yt2800' yb2400		by	kblock;
-	sub yt2800' yb2500		by	kblock;
-	sub yt2800' yb2600		by	kblock;
-	sub yt2800' yb2700		by	kblock;
-	sub yt2800' yb2800		by	kblock;
+	sub yt2900'	@YbLow		by	$kb;
+	sub yt2900'	yb100		by	$kb;
+	sub yt2900'	yb200		by	$kb;
+	sub yt2900'	yb300		by	$kb;
+	sub yt2900'	yb400		by	$kb;
+	sub yt2900'	yb500		by	$kb;
+	sub yt2900'	yb600		by	$kb;
+	sub yt2900'	yb700		by	$kb;
+	sub yt2900'	yb800		by	$kb;
+	sub yt2900'	yb900		by	$kb;
+	sub yt2900'	yb1000		by	$kb;
+	sub yt2900'	yb1100		by	$kb;
+	sub yt2900'	yb1200		by	$kb;
+	sub yt2900'	yb1300		by	$kb;
+	sub yt2900'	yb1400		by	$kb;
+	sub yt2900'	yb1500		by	$kb;
+	sub yt2900'	yb1600		by	$kb;
+	sub yt2900'	yb1700		by	$kb;
+	sub yt2900'	yb1800		by	$kb;
+	sub yt2900'	yb1900		by	$kb;
+	sub yt2900'	yb2000		by	$kb;
+	sub yt2900'	yb2100		by	$kb;
+	sub yt2900'	yb2200		by	$kb;
+	sub yt2900'	yb2300		by	$kb;
+	sub yt2900'	yb2400		by	$kb;
+	sub yt2900'	yb2500		by	$kb;
+	sub yt2900'	yb2600		by	$kb;
+	sub yt2900'	yb2700		by	$kb;
+	sub yt2900'	yb2800		by	$kb;
+	sub yt2900'	yb2900		by	$kb;
+	sub yt2900'	yb3000		by	$kb;
 
-	sub yt2900' @YbLow		by	kblock;
-	sub yt2900' yb100		by	kblock;
-	sub yt2900' yb200		by	kblock;
-	sub yt2900' yb300		by	kblock;
-	sub yt2900' yb400		by	kblock;
-	sub yt2900' yb500		by	kblock;
-	sub yt2900' yb600		by	kblock;
-	sub yt2900' yb700		by	kblock;
-	sub yt2900' yb800		by	kblock;
-	sub yt2900' yb900		by	kblock;
-	sub yt2900' yb1000		by	kblock;
-	sub yt2900' yb1100		by	kblock;
-	sub yt2900' yb1200		by	kblock;
-	sub yt2900' yb1300		by	kblock;
-	sub yt2900' yb1400		by	kblock;
-	sub yt2900' yb1500		by	kblock;
-	sub yt2900' yb1600		by	kblock;
-	sub yt2900' yb1700		by	kblock;
-	sub yt2900' yb1800		by	kblock;
-	sub yt2900' yb1900		by	kblock;
-	sub yt2900' yb2000		by	kblock;
-	sub yt2900' yb2100		by	kblock;
-	sub yt2900' yb2200		by	kblock;
-	sub yt2900' yb2300		by	kblock;
-	sub yt2900' yb2400		by	kblock;
-	sub yt2900' yb2500		by	kblock;
-	sub yt2900' yb2600		by	kblock;
-	sub yt2900' yb2700		by	kblock;
-	sub yt2900' yb2800		by	kblock;
-	sub yt2900' yb2900		by	kblock;
+	sub yt3000'	@YbLow		by	$kb;
+	sub yt3000'	yb100		by	$kb;
+	sub yt3000'	yb200		by	$kb;
+	sub yt3000'	yb300		by	$kb;
+	sub yt3000'	yb400		by	$kb;
+	sub yt3000'	yb500		by	$kb;
+	sub yt3000'	yb600		by	$kb;
+	sub yt3000'	yb700		by	$kb;
+	sub yt3000'	yb800		by	$kb;
+	sub yt3000'	yb900		by	$kb;
+	sub yt3000'	yb1000		by	$kb;
+	sub yt3000'	yb1100		by	$kb;
+	sub yt3000'	yb1200		by	$kb;
+	sub yt3000'	yb1300		by	$kb;
+	sub yt3000'	yb1400		by	$kb;
+	sub yt3000'	yb1500		by	$kb;
+	sub yt3000'	yb1600		by	$kb;
+	sub yt3000'	yb1700		by	$kb;
+	sub yt3000'	yb1800		by	$kb;
+	sub yt3000'	yb1900		by	$kb;
+	sub yt3000'	yb2000		by	$kb;
+	sub yt3000'	yb2100		by	$kb;
+	sub yt3000'	yb2200		by	$kb;
+	sub yt3000'	yb2300		by	$kb;
+	sub yt3000'	yb2400		by	$kb;
+	sub yt3000'	yb2500		by	$kb;
+	sub yt3000'	yb2600		by	$kb;
+	sub yt3000'	yb2700		by	$kb;
+	sub yt3000'	yb2800		by	$kb;
+	sub yt3000'	yb2900		by	$kb;
+	sub yt3000'	yb3000		by	$kb;
+} $lname;
 
-	sub yt3000' @YbLow		by	kblock;
-	sub yt3000' yb100		by	kblock;
-	sub yt3000' yb200		by	kblock;
-	sub yt3000' yb300		by	kblock;
-	sub yt3000' yb400		by	kblock;
-	sub yt3000' yb500		by	kblock;
-	sub yt3000' yb600		by	kblock;
-	sub yt3000' yb700		by	kblock;
-	sub yt3000' yb800		by	kblock;
-	sub yt3000' yb900		by	kblock;
-	sub yt3000' yb1000		by	kblock;
-	sub yt3000' yb1100		by	kblock;
-	sub yt3000' yb1200		by	kblock;
-	sub yt3000' yb1300		by	kblock;
-	sub yt3000' yb1400		by	kblock;
-	sub yt3000' yb1500		by	kblock;
-	sub yt3000' yb1600		by	kblock;
-	sub yt3000' yb1700		by	kblock;
-	sub yt3000' yb1800		by	kblock;
-	sub yt3000' yb1900		by	kblock;
-	sub yt3000' yb2000		by	kblock;
-	sub yt3000' yb2100		by	kblock;
-	sub yt3000' yb2200		by	kblock;
-	sub yt3000' yb2300		by	kblock;
-	sub yt3000' yb2400		by	kblock;
-	sub yt3000' yb2500		by	kblock;
-	sub yt3000' yb2600		by	kblock;
-	sub yt3000' yb2700		by	kblock;
-	sub yt3000' yb2800		by	kblock;
-	sub yt3000' yb2900		by	kblock;
-	sub yt3000' yb3000		by	kblock;
-
-} _Block;
-
+}
+# end of do forlet...
 
 lookup _DelYtAndIncKw {
     lookupflag UseMarkFilteringSet [@KwMarker @YtMarker];
@@ -967,7 +1137,7 @@ lookup _TryNext16 {
 # This loop creates a set of lookups called _TryNext2, _TryNext3, ... _TryNext15, each of which calls
 # the successive lookup in the set to continue shifting yt markers.
 
-do	forlet ntry = range(15,1,-1);
+do	forlet ntry = range(15,1,-1);	# probably we only need 12 or 13 of these
 	let nextTry = ntry + 1;
 	let lname = "_TryNext" + str(ntry);
 	let lnameNext = "_TryNext" + str(nextTry);
@@ -975,48 +1145,49 @@ do	forlet ntry = range(15,1,-1);
 		lookup $lname {
 			ignore sub @YbMarker';				# blocked, or nothing left to shift
 			ignore sub @YtMarker' @YbMarker;	# nothing left to shift
-			sub @YtMarker' yt0'   lookup _Block lookup _DelYt	lookup _InsYt0		@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt100' lookup _Block lookup _DelYt	lookup _InsYt100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt200' lookup _Block lookup _DelYt	lookup _InsYt200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt300' lookup _Block lookup _DelYt	lookup _InsYt300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt400' lookup _Block lookup _DelYt	lookup _InsYt400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt500' lookup _Block lookup _DelYt	lookup _InsYt500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt600' lookup _Block lookup _DelYt	lookup _InsYt600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt700' lookup _Block lookup _DelYt	lookup _InsYt700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt800' lookup _Block lookup _DelYt	lookup _InsYt800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt900' lookup _Block lookup _DelYt	lookup _InsYt900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1000' lookup _Block lookup _DelYt	lookup _InsYt1000	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1100' lookup _Block lookup _DelYt	lookup _InsYt1100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1200' lookup _Block lookup _DelYt	lookup _InsYt1200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1300' lookup _Block lookup _DelYt	lookup _InsYt1300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1400' lookup _Block lookup _DelYt	lookup _InsYt1400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1500' lookup _Block lookup _DelYt	lookup _InsYt1500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1600' lookup _Block lookup _DelYt	lookup _InsYt1600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1700' lookup _Block lookup _DelYt	lookup _InsYt1700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1800' lookup _Block lookup _DelYt	lookup _InsYt1800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1900' lookup _Block lookup _DelYt	lookup _InsYt1900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2000' lookup _Block lookup _DelYt	lookup _InsYt2000	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2100' lookup _Block lookup _DelYt	lookup _InsYt2100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2200' lookup _Block lookup _DelYt	lookup _InsYt2200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2300' lookup _Block lookup _DelYt	lookup _InsYt2300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2400' lookup _Block lookup _DelYt	lookup _InsYt2400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2500' lookup _Block lookup _DelYt	lookup _InsYt2500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2600' lookup _Block lookup _DelYt	lookup _InsYt2600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2700' lookup _Block lookup _DelYt	lookup _InsYt2700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2800' lookup _Block lookup _DelYt	lookup _InsYt2800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2900' lookup _Block lookup _DelYt	lookup _InsYt2900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt3000' lookup _Block lookup _DelYt	lookup _InsYt3000	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt0'   lookup _BlockI lookup _DelYt	lookup _InsYt0		@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt100' lookup _BlockI lookup _DelYt	lookup _InsYt100	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt200' lookup _BlockI lookup _DelYt	lookup _InsYt200	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt300' lookup _BlockI lookup _DelYt	lookup _InsYt300	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt400' lookup _BlockI lookup _DelYt	lookup _InsYt400	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt500' lookup _BlockI lookup _DelYt	lookup _InsYt500	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt600' lookup _BlockI lookup _DelYt	lookup _InsYt600	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt700' lookup _BlockI lookup _DelYt	lookup _InsYt700	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt800' lookup _BlockI lookup _DelYt	lookup _InsYt800	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt900' lookup _BlockI lookup _DelYt	lookup _InsYt900	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1000' lookup _BlockI lookup _DelYt	lookup _InsYt1000	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1100' lookup _BlockI lookup _DelYt	lookup _InsYt1100	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1200' lookup _BlockI lookup _DelYt	lookup _InsYt1200	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1300' lookup _BlockI lookup _DelYt	lookup _InsYt1300	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1400' lookup _BlockI lookup _DelYt	lookup _InsYt1400	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1500' lookup _BlockI lookup _DelYt	lookup _InsYt1500	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1600' lookup _BlockI lookup _DelYt	lookup _InsYt1600	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1700' lookup _BlockI lookup _DelYt	lookup _InsYt1700	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1800' lookup _BlockI lookup _DelYt	lookup _InsYt1800	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt1900' lookup _BlockI lookup _DelYt	lookup _InsYt1900	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2000' lookup _BlockI lookup _DelYt	lookup _InsYt2000	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2100' lookup _BlockI lookup _DelYt	lookup _InsYt2100	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2200' lookup _BlockI lookup _DelYt	lookup _InsYt2200	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2300' lookup _BlockI lookup _DelYt	lookup _InsYt2300	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2400' lookup _BlockI lookup _DelYt	lookup _InsYt2400	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2500' lookup _BlockI lookup _DelYt	lookup _InsYt2500	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2600' lookup _BlockI lookup _DelYt	lookup _InsYt2600	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2700' lookup _BlockI lookup _DelYt	lookup _InsYt2700	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2800' lookup _BlockI lookup _DelYt	lookup _InsYt2800	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt2900' lookup _BlockI lookup _DelYt	lookup _InsYt2900	@YbMarker' lookup $lnameNext;
+			sub @YtMarker' yt3000' lookup _BlockI lookup _DelYt	lookup _InsYt3000	@YbMarker' lookup $lnameNext;
 
 		} $lname;
 	}
 
 lookup _TryKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker kblock];
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
 
 	# Note that the _InsYt lookups are actually focused on the YbMarker, not the KwMarker, since the  
 	# _DelYtAndIncKw lookup deleted the YtMarker slot.                \/  \/  \/
 	#                                                                 \/  \/  \/   _TryNext2 is focused on the just-shifted @YtMarker.
 	#                                                                 \/  \/  \/                      \/ \/ \/ 
+	sub yt0'   lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt0		@YbMarker' lookup _TryNext2;
 	sub yt100' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt100		@YbMarker' lookup _TryNext2;
 	sub yt200' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt200		@YbMarker' lookup _TryNext2;
 	sub yt300' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt300		@YbMarker' lookup _TryNext2;
@@ -1077,33 +1248,29 @@ lookup _InsBlockerAndDecKw {
 
 # If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
 lookup _EnforceBlock {
-	lookupflag UseMarkFilteringSet [@KwMarker kblock @KernFinIsoMark];
+	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
 
 	# TODO: figure out how many of these rules we need.
 	# I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
 	# create the first blocker, the remaining _TryNext lookups can't do anything.
 
-	ignore sub kblock @KwMarker' @KwMarker;
-	ignore sub kblock @KwMarker' kblock @KwMarker;
-	# ignore sub kblock @KwMarker' kblock kblock @KwMarker;
-	# ignore sub kblock @KwMarker' kblock kblock kblock @KwMarker;
-	# ignore sub kblock @KwMarker' kblock kblock kblock kblock @KwMarker;
-	# ignore sub kblock @KwMarker' kblock kblock kblock kblock kblock @KwMarker;
-	# ignore sub kblock @KwMarker' kblock kblock kblock kblock kblock kblock @KwMarker;
+	ignore sub kblock @KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin          @KwMarker;
+	ignore sub kblock @KwMarker' @KernBaseMarkIso                                   @KwMarker;
 
-	# Ignore blockers that are not part of this sequence.
-	# The rules aren't actually needed; this will happen automatically by virtue of 
-	# including @KernFinIsoMark in the filter.
-	# ignore sub @KwMarker' @KernFinIsoMark @KernFinIsoMark @KernFinIsoMark 	kblock @KwMarker;
-	# ignore sub @KwMarker' @KernFinIsoMark @KernFinIsoMark 					kblock @KwMarker;
-	# ignore sub @KwMarker' @KernFinIsoMark 									kblock @KwMarker;
+	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
+	# It is irrelevant.
+	ignore sub kblock @KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin  kblock  @KwMarker;
+	ignore sub kblock @KwMarker' @KernBaseMarkIso                           kblock  @KwMarker;
 
-	sub @KwMarker' lookup _InsBlockerAndDecKw   kblock @KwMarker;
-	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock @KwMarker;
-	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock @KwMarker;
-	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock kblock @KwMarker;
-	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock kblock kblock @KwMarker;
-	# sub @KwMarker' lookup _InsBlockerAndDecKw   kblock kblock kblock kblock kblock kblock @KwMarker;
+	# Recognize the internal blocker and pull stick a corresponding one before the KwMarker
+	# in order to stop the process.
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin          @KwMarker;
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                            @KwMarker;
+
+	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
+	# It is irrelevant.
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin  kblock  @KwMarker;
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                    kblock  @KwMarker;
 
 } _EnforceBlock;
 
@@ -1146,3 +1313,43 @@ lookup _ShiftFromPrev {
 	sub yt3000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt3000  	@KwMarker';
 
 } _ShiftFromPrev;
+
+
+lookup _PyDelYb {
+	sub @PyMarker yb1700 by @PyMarker;
+} _PyDelYb;
+
+lookup _ShiftFromNext {
+	lookupflag UseMarkFilteringSet [ybLast @YbMarker @PyMarker];
+
+	sub ybLast' lookup _B4lastInsYb100	@PyMarker'	yb100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb200	@PyMarker'	yb200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb300	@PyMarker'	yb300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb400	@PyMarker'	yb400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb500	@PyMarker'	yb500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb600	@PyMarker'	yb600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb700	@PyMarker'	yb700'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb800	@PyMarker'	yb800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb900	@PyMarker'	yb900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1000	@PyMarker'	yb1000'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1100	@PyMarker'	yb1100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1200	@PyMarker'	yb1200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1300	@PyMarker'	yb1300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1400	@PyMarker'	yb1400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1500	@PyMarker'	yb1500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1600	@PyMarker'	yb1600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1700	@PyMarker'	yb1700' lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1800	@PyMarker'	yb1800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1900	@PyMarker'	yb1900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2000	@PyMarker'	yb2000'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2100	@PyMarker'	yb2100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2200	@PyMarker'	yb2200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2300	@PyMarker'	yb2300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2400	@PyMarker'	yb2400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2500	@PyMarker'	yb2500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2600	@PyMarker'	yb2600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2700	@PyMarker'	yb2700' lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2800	@PyMarker'	yb2800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2900	@PyMarker'	yb2900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb3000	@PyMarker'	yb3000'	lookup _PyDelYb;
+} _ShiftFromNext;

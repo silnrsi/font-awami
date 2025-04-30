@@ -3,6 +3,8 @@
 # Outputs a set of rules that defines some metrics for base glyphs that
 # can be used to perform kerning.
 
+# OBSOLETE - replaced by mkglyphbounds
+
 # Run this script from the tools/scripts directory where the file is located:
 #		python3 genMetrics4AutoKern.py
 
