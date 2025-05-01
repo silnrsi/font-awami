@@ -530,13 +530,13 @@ lookup _DelYb {
 # against something further along in the sequence.
 # kblock indicates a  block with a fresh glyph hitting the right-head edge of the
 # following sequence.
-@Kblocks = [kblock kblockI];
+@Kblocks = [kblockR kblockI kblock];
 
 # A block occurs when the yt (top) value is too close to the yb (bottom) value.
 # Currently we want a space of at least 100 units.
 
 do	forlet i = range(0,2);
-	let lnames = ["_Block","_BlockI"];
+	let lnames = ["_BlockR","_BlockI"];
 	let lname = lnames[i];
 	let kbGlyphs = feaclass('Kblocks');
 	let kb = kbGlyphs[i];
@@ -1184,40 +1184,40 @@ lookup _TryKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
 
 	# Note that the _InsYt lookups are actually focused on the YbMarker, not the KwMarker, since the  
-	# _DelYtAndIncKw lookup deleted the YtMarker slot.                \/  \/  \/
-	#                                                                 \/  \/  \/   _TryNext2 is focused on the just-shifted @YtMarker.
-	#                                                                 \/  \/  \/                      \/ \/ \/ 
-	sub yt0'   lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt0		@YbMarker' lookup _TryNext2;
-	sub yt100' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt100		@YbMarker' lookup _TryNext2;
-	sub yt200' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt200		@YbMarker' lookup _TryNext2;
-	sub yt300' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt300		@YbMarker' lookup _TryNext2;
-	sub yt400' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt400		@YbMarker' lookup _TryNext2;
-	sub yt500' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt500		@YbMarker' lookup _TryNext2;
-	sub yt600' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt600		@YbMarker' lookup _TryNext2;
-	sub yt700' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt700		@YbMarker' lookup _TryNext2;
-	sub yt800' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt800		@YbMarker' lookup _TryNext2;
-	sub yt900' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt900		@YbMarker' lookup _TryNext2;
-	sub yt1000' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1000	@YbMarker' lookup _TryNext2;
-	sub yt1100' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1100	@YbMarker' lookup _TryNext2;
-	sub yt1200' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1200	@YbMarker' lookup _TryNext2;
-	sub yt1300' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1300	@YbMarker' lookup _TryNext2;
-	sub yt1400' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1400	@YbMarker' lookup _TryNext2;
-	sub yt1500' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1500	@YbMarker' lookup _TryNext2;
-	sub yt1600' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1600	@YbMarker' lookup _TryNext2;
-	sub yt1700' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1700	@YbMarker' lookup _TryNext2;
-	sub yt1800' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1800	@YbMarker' lookup _TryNext2;
-	sub yt1900' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1900	@YbMarker' lookup _TryNext2;
-	sub yt2000' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2000	@YbMarker' lookup _TryNext2;
-	sub yt2100' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2100	@YbMarker' lookup _TryNext2;
-	sub yt2200' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2200	@YbMarker' lookup _TryNext2;
-	sub yt2300' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2300	@YbMarker' lookup _TryNext2;
-	sub yt2400' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2400	@YbMarker' lookup _TryNext2;
-	sub yt2500' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2500	@YbMarker' lookup _TryNext2;
-	sub yt2600' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2600	@YbMarker' lookup _TryNext2;
-	sub yt2700' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2700	@YbMarker' lookup _TryNext2;
-	sub yt2800' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2800	@YbMarker' lookup _TryNext2;
-	sub yt2900' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2900	@YbMarker' lookup _TryNext2;
-	sub yt3000' lookup _Block lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt3000	@YbMarker' lookup _TryNext2;
+	# _DelYtAndIncKw lookup deleted the YtMarker slot.                    \/  \/  \/
+	#                                                                     \/  \/  \/   _TryNext2 is focused on the just-shifted @YtMarker.
+	#                                                                     \/  \/  \/                       \/ \/ \/ 
+	sub yt0'   lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt0		@YbMarker' lookup _TryNext2;
+	sub yt100' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt100		@YbMarker' lookup _TryNext2;
+	sub yt200' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt200		@YbMarker' lookup _TryNext2;
+	sub yt300' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt300		@YbMarker' lookup _TryNext2;
+	sub yt400' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt400		@YbMarker' lookup _TryNext2;
+	sub yt500' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt500		@YbMarker' lookup _TryNext2;
+	sub yt600' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt600		@YbMarker' lookup _TryNext2;
+	sub yt700' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt700		@YbMarker' lookup _TryNext2;
+	sub yt800' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt800		@YbMarker' lookup _TryNext2;
+	sub yt900' lookup _BlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt900		@YbMarker' lookup _TryNext2;
+	sub yt1000' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1000	@YbMarker' lookup _TryNext2;
+	sub yt1100' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1100	@YbMarker' lookup _TryNext2;
+	sub yt1200' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1200	@YbMarker' lookup _TryNext2;
+	sub yt1300' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1300	@YbMarker' lookup _TryNext2;
+	sub yt1400' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1400	@YbMarker' lookup _TryNext2;
+	sub yt1500' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1500	@YbMarker' lookup _TryNext2;
+	sub yt1600' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1600	@YbMarker' lookup _TryNext2;
+	sub yt1700' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1700	@YbMarker' lookup _TryNext2;
+	sub yt1800' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1800	@YbMarker' lookup _TryNext2;
+	sub yt1900' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1900	@YbMarker' lookup _TryNext2;
+	sub yt2000' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2000	@YbMarker' lookup _TryNext2;
+	sub yt2100' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2100	@YbMarker' lookup _TryNext2;
+	sub yt2200' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2200	@YbMarker' lookup _TryNext2;
+	sub yt2300' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2300	@YbMarker' lookup _TryNext2;
+	sub yt2400' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2400	@YbMarker' lookup _TryNext2;
+	sub yt2500' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2500	@YbMarker' lookup _TryNext2;
+	sub yt2600' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2600	@YbMarker' lookup _TryNext2;
+	sub yt2700' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2700	@YbMarker' lookup _TryNext2;
+	sub yt2800' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2800	@YbMarker' lookup _TryNext2;
+	sub yt2900' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2900	@YbMarker' lookup _TryNext2;
+	sub yt3000' lookup _BlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt3000	@YbMarker' lookup _TryNext2;
 
 } _TryKern;
 
@@ -1246,31 +1246,43 @@ lookup _InsBlockerAndDecKw {
 	sub kw1600	by	kblock	kw1500;
 } _InsBlockerAndDecKw;
 
+lookup _MakeBlockerFinal {
+	sub kblockR by kblock;
+} _MakeBlockerFinal;
+
+@KbNotI = [kblock kblockR];
+
 # If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
 lookup _EnforceBlock {
 	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
 
-	# TODO: figure out how many of these rules we need.
-	# I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
-	# create the first blocker, the remaining _TryNext lookups can't do anything.
+	ignore sub kblock @KwMarker';  # to avoid redoing from the same caller after insertion
 
-	ignore sub kblock @KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin          @KwMarker;
-	ignore sub kblock @KwMarker' @KernBaseMarkIso                                   @KwMarker;
+	ignore sub kblock' @KwMarker';  # already final
 
-	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
-	# It is irrelevant.
-	ignore sub kblock @KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin  kblock  @KwMarker;
-	ignore sub kblock @KwMarker' @KernBaseMarkIso                           kblock  @KwMarker;
+	# NB: I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
+	# create the first blocker, the remaining _TryNext lookups can't do anything. The exception is one that applies
+	# to the NEXT kern.
 
-	# Recognize the internal blocker and pull stick a corresponding one before the KwMarker
-	# in order to stop the process.
-	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin          @KwMarker;
-	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                            @KwMarker;
+	# If there is a right-edge blocker, indicate that it is the final decision.
+	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin           @KwMarker;
+	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIso                                    @KwMarker;
 
 	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
 	# It is irrelevant.
-	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin  kblock  @KwMarker;
-	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                    kblock  @KwMarker;
+	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin  @KbNotI  @KwMarker;
+	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIso                           @KbNotI  @KwMarker;
+
+	# Recognize the internal blocker and stick a corresponding one before the KwMarker
+	# in order to stop the process. Also decrement the kern value since we incremented it
+	# before we realized the block would happen.
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin           @KwMarker;
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                             @KwMarker;
+
+	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
+	# It is irrelevant.
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin  @KbNotI  @KwMarker;
+	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                    @KbNotI  @KwMarker;
 
 } _EnforceBlock;
 

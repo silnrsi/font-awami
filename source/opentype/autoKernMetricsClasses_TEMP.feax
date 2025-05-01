@@ -5,14 +5,13 @@
 	absAinIni absLamMed.be absBehMed.mm   # absMeemMed.sn absSeenFin
 	absHehGoalIni.re absRehFin
 	absJeemIni.beF absBehFin
-	absSeenIni absAlefFin
+	absSeenIni absAlefFin absLamFin
 	absLamIni.mm # ...absMeemMed.sn...
 	absKehehIni.sd absSadMed.mm  # ...absMeemMed.sn...
 	absTahIni absKehehMed.sn # ...absSeenFin / 
 	absDalFin
 	absAlef absReh absSeen
-	space
-	];
+	space zeronojoin zerojoin];
 
 @KernBaseMark = [mkBehIni.mm mkMeemMed.sn mkSeenFin 
 	mkJeemIni.mmX mkMeemMed._alt mkLamMed.qf mkWawFin
@@ -20,16 +19,16 @@
 	mkAinIni mkLamMed.be mkBehMed.mm
 	mkHehGoalIni.re mkRehFin
 	mkJeemIni.beF mkBehFin
-	mkSeenIni mkAlefFin
+	mkSeenIni mkAlefFin mkLamFin
 	mkLamIni.mm
 	mkKehehIni.sd absSadMed.mm
 	mkTahIni mkKehehMed.sn
 	mkDalFin
 	mkAlef mkReh mkSeen
-	mkSpace];
+	mkSpace mkZeronojoin mkZerojoin];
 
 @KernBaseMarkIni = [mkAinIni mkBehIni.mm mkFehIni.hgM mkJeemIni.mmX mkKehehIni.sd mkLamIni.mm mkSeenIni mkTahIni];
-@KernBaseMarkFin = [mkAlefFin mkBehFin mkDalFin mkSeenFin mkRehFin mkWawFin];
+@KernBaseMarkFin = [mkAlefFin mkBehFin mkDalFin mkLamFin mkSeenFin mkRehFin mkWawFin];
 @KernBaseMarkIso = [mkAlef mkSeen mkReh];
 
 @KernBaseMarkIsoIni = [@KernBaseMarkIni @KernBaseMarkIso];
