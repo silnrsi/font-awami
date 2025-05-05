@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="mkBehMed.fe" format="2">
   <advance width="718"/>
-  <anchor x="0" y="0" name="_4mk"/>
   <anchor x="718" y="938" name="entry"/>
   <anchor x="0" y="469" name="exit"/>
   <anchor x="659" y="200" name="n1Lower"/>
@@ -10,23 +9,7 @@
   <anchor x="407" y="468" name="ring"/>
   <anchor x="506" y="1177" name="tahUpper"/>
   <outline>
-    <contour>
-      <point x="-94" y="293" type="curve" smooth="yes"/>
-      <point x="432" y="293"/>
-      <point x="492" y="770"/>
-      <point x="718" y="702" type="curve" smooth="yes"/>
-      <point x="785" y="682"/>
-      <point x="785" y="908"/>
-      <point x="718" y="928" type="curve" smooth="yes"/>
-      <point x="550" y="978"/>
-      <point x="466" y="447"/>
-      <point x="101" y="447" type="curve" smooth="yes"/>
-      <point x="74" y="447"/>
-      <point x="37" y="450"/>
-      <point x="0" y="459" type="curve" smooth="yes"/>
-      <point x="-28" y="466"/>
-      <point x="-118" y="293"/>
-    </contour>
+    <component base="absBehMed.fe"/>
   </outline>
   <lib>
     <dict>

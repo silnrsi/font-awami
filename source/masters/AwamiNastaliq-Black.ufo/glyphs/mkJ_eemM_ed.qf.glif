@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="mkJeemMed.qf" format="2">
   <advance width="16"/>
-  <anchor x="0" y="0" name="_4mk"/>
   <anchor x="16" y="1110" name="entry"/>
   <anchor x="0" y="471" name="exit"/>
   <anchor x="-82" y="1616" name="hamzaUpper"/>
@@ -11,29 +10,7 @@
   <anchor x="545" y="617" name="tahLower"/>
   <anchor x="-105" y="1648" name="tahUpper"/>
   <outline>
-    <contour>
-      <point x="698" y="1373" type="curve" smooth="yes"/>
-      <point x="698" y="1452"/>
-      <point x="392" y="1444"/>
-      <point x="193" y="1444" type="curve" smooth="yes"/>
-      <point x="154" y="1444"/>
-      <point x="16" y="1150"/>
-      <point x="16" y="1100" type="curve" smooth="yes"/>
-      <point x="16" y="1081"/>
-      <point x="25" y="1070"/>
-      <point x="45" y="1070" type="curve" smooth="yes"/>
-      <point x="389" y="1070"/>
-      <point x="468" y="1061"/>
-      <point x="468" y="1022" type="curve" smooth="yes"/>
-      <point x="468" y="998"/>
-      <point x="198" y="856"/>
-      <point x="-1" y="801" type="curve" smooth="yes"/>
-      <point x="-38" y="791"/>
-      <point x="-30" y="438"/>
-      <point x="-1" y="461" type="curve" smooth="yes"/>
-      <point x="177" y="602"/>
-      <point x="698" y="967"/>
-    </contour>
+    <component base="absJeemMed.qf"/>
   </outline>
   <lib>
     <dict>

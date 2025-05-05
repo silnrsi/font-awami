@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="mkBehIni.hgM" format="2">
   <advance width="688"/>
-  <anchor x="0" y="0" name="_4mk"/>
   <anchor x="574" y="737" name="botRt"/>
   <anchor x="0" y="203" name="exit"/>
   <anchor x="270" y="-22" name="n1Lower"/>
@@ -10,20 +9,7 @@
   <anchor x="235" y="641" name="ring"/>
   <anchor x="286" y="1351" name="tahUpper"/>
   <outline>
-    <contour>
-      <point x="574" y="1076" type="curve" smooth="yes"/>
-      <point x="183" y="1110"/>
-      <point x="-37" y="521"/>
-      <point x="-37" y="193" type="curve" smooth="yes"/>
-      <point x="-37" y="181"/>
-      <point x="0" y="182"/>
-      <point x="0" y="193" type="curve" smooth="yes"/>
-      <point x="0" y="434"/>
-      <point x="181" y="746"/>
-      <point x="448" y="737" type="curve" smooth="yes"/>
-      <point x="479" y="736"/>
-      <point x="621" y="1073"/>
-    </contour>
+    <component base="absBehIni.hgM"/>
   </outline>
   <lib>
     <dict>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="mkBehMed.mmR" format="2">
   <advance width="730"/>
-  <anchor x="0" y="0" name="_4mk"/>
   <anchor x="730" y="1616" name="entry"/>
   <anchor x="0" y="1128" name="exit"/>
   <anchor x="620" y="911" name="n1Lower"/>
@@ -10,26 +9,7 @@
   <anchor x="694" y="1395" name="ring"/>
   <anchor x="455" y="1873" name="tahUpper"/>
   <outline>
-    <contour>
-      <point x="296" y="1286" type="curve" smooth="yes"/>
-      <point x="266" y="1303"/>
-      <point x="283" y="1328"/>
-      <point x="306" y="1345" type="curve" smooth="yes"/>
-      <point x="420" y="1430"/>
-      <point x="609" y="1416"/>
-      <point x="730" y="1380" type="curve" smooth="yes"/>
-      <point x="797" y="1360"/>
-      <point x="797" y="1586"/>
-      <point x="730" y="1606" type="curve" smooth="yes"/>
-      <point x="449" y="1690"/>
-      <point x="0" y="1286"/>
-      <point x="0" y="1118" type="curve" smooth="yes"/>
-      <point x="0" y="1087"/>
-      <point x="20" y="1061"/>
-      <point x="59" y="1041" type="curve" smooth="yes"/>
-      <point x="86" y="1027"/>
-      <point x="347" y="1258"/>
-    </contour>
+    <component base="absBehMed.mmR"/>
   </outline>
   <lib>
     <dict>

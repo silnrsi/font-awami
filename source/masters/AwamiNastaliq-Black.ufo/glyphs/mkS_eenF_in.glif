@@ -2,7 +2,6 @@
 <glyph name="mkSeenFin" format="2">
   <advance width="2358"/>
   <guideline x="1972" y="1463" angle="101.5085"/>
-  <anchor x="0" y="0" name="_4mk"/>
   <anchor x="2358" y="1601" name="entry"/>
   <anchor x="420" y="1393" name="honorific"/>
   <anchor x="709" y="-918" name="mLower"/>
@@ -12,39 +11,7 @@
   <anchor x="1908" y="1798" name="nUpper"/>
   <anchor x="1904" y="1792" name="tahUpper"/>
   <outline>
-    <component base="_seenMed" xOffset="925" yOffset="636"/>
-    <contour>
-      <point x="1670" y="1349" type="curve" smooth="yes"/>
-      <point x="1599" y="1349"/>
-      <point x="1530" y="1466"/>
-      <point x="1491" y="1466" type="curve" smooth="yes"/>
-      <point x="1461" y="1466"/>
-      <point x="1439" y="1389"/>
-      <point x="1439" y="1290" type="curve" smooth="yes"/>
-      <point x="1439" y="1151"/>
-      <point x="1475" y="1026"/>
-      <point x="1479" y="905" type="curve" smooth="yes"/>
-      <point x="1484" y="734"/>
-      <point x="1468" y="593"/>
-      <point x="1458" y="537" type="curve" smooth="yes"/>
-      <point x="1423" y="350"/>
-      <point x="1199" y="-40"/>
-      <point x="702" y="-40" type="curve" smooth="yes"/>
-      <point x="250" y="-40"/>
-      <point x="183" y="467"/>
-      <point x="350" y="876" type="curve" smooth="yes"/>
-      <point x="359" y="898"/>
-      <point x="313" y="918"/>
-      <point x="303" y="898" type="curve" smooth="yes"/>
-      <point x="-76" y="183"/>
-      <point x="111" y="-600"/>
-      <point x="634" y="-600" type="curve" smooth="yes"/>
-      <point x="1163" y="-600"/>
-      <point x="1574" y="272"/>
-      <point x="1574" y="988" type="curve"/>
-      <point x="1748" y="929"/>
-      <point x="1743" y="1349"/>
-    </contour>
+    <component base="absSeenFin"/>
   </outline>
   <lib>
     <dict>
