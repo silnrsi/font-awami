@@ -23,7 +23,7 @@ details including an FAQ.
 	<!--
 	<class name="HamzaAbove">
         absHamzaAbove _wavyHamza _hamzaArabic
-  </class>
+	</class>
 	
 	<class name="HamzaBelow">
 		absHamzaBelow absWavyHamzaBelow absHamzaBelowArabic
@@ -31,13 +31,12 @@ details including an FAQ.
 	-->
 	
 	<class name="BehIniForms">
-		absBeh
-		absBehIni absBehIni.ai absBehIni.be absBehIni.beM1 absBehIni.beM2 absBehIni.benn absBehIni.behg absBehIni.bere
+		absBehIni absBehIni.ai absBehIni.be absBehIni.beM1 absBehIni.beM2 absBehIni.benn <!--absBehIni.behg--> absBehIni.bere
 		absBehIni.beF absBehIni.by absBehIni.ch absBehIni.fe  absBehIni.hd absBehIni.hgM absBehIni.hgF absBehIni.jm
 		absBehIni.mm absBehIni.mmX  absBehIni.nn absBehIni.qf absBehIni.re absBehIni.sd absBehIni.sn absBehIni.snsn absBehIni.ta
 		absBehIni.be_jmF absBehIni.hdR
 	</class>
-	
+
 	<class name="BehMedForms">
 		absBehMed absBehMed.ai absBehMed.be absBehMed.beM1 absBehMed.beM2 absBehMed.benn absBehMed.behg absBehMed.bere
 		absBehMed.beF absBehMed.by absBehMed.ch absBehMed.fe  absBehMed.hd absBehMed.hgM absBehMed.hgF absBehMed.jm
@@ -56,7 +55,6 @@ details including an FAQ.
 	<class name="BehForms">@BehIniForms @BehMedForms @BehFinForms</class>
 	
 	<class name="JeemIniForms">
-		absJeem
 		absJeemIni absJeemIni.ai absJeemIni.be absJeemIni.beM1 absJeemIni.beM2 absJeemIni.benn absJeemIni.behg absJeemIni.bere
 		absJeemIni.beF absJeemIni.by absJeemIni.ch absJeemIni.fe  absJeemIni.hd absJeemIni.hgM absJeemIni.hgF absJeemIni.jm
 		absJeemIni.mm absJeemIni.mmX  absJeemIni.nn absJeemIni.qf absJeemIni.re absJeemIni.sd absJeemIni.sn absJeemIni.snsn absJeemIni.ta
@@ -76,7 +74,6 @@ details including an FAQ.
 	<class name="JeemForms">@JeemIniForms @JeemMedForms @JeemFinForms</class>
 	
 	<class name="SeenIniForms">
-		absSeen
 		absSeenIni absSeenIni.ai absSeenIni.be absSeenIni.beM1 absSeenIni.beM2 absSeenIni.benn absSeenIni.behg absSeenIni.bere
 		absSeenIni.beF absSeenIni.by absSeenIni.ch absSeenIni.fe  absSeenIni.hd absSeenIni.hgM absSeenIni.hgF absSeenIni.jm
 		absSeenIni.mm absSeenIni.mmX  absSeenIni.nn absSeenIni.qf absSeenIni.re absSeenIni.sd absSeenIni.sn absSeenIni.snsn absSeenIni.ta
@@ -88,8 +85,6 @@ details including an FAQ.
 		absSeenMed.mm absSeenMed.mmX  absSeenMed.nn absSeenMed.qf absSeenMed.re absSeenMed.sd absSeenMed.sn absSeenMed.snsn absSeenMed.ta
 		absSeenMed.jm_flat absSeenMed.sn_sn
 	</class>
-
-
 	<class name="SeenFinForms">
 		absSeenFin absSeenFin_short
 	</class>
@@ -106,8 +101,7 @@ details including an FAQ.
 		absSadMed.mm absSadMed.mmX  absSadMed.nn absSadMed.qf absSadMed.re absSadMed.sd absSadMed.sn absSadMed.snsn absSadMed.ta
 	</class>
 	<class name="SadFinForms">
-		absSadFin
-		absSadFin_short
+		absSadFin absSadFin_short
 	</class>
 	<class name="SadForms">@SadIniForms @SadMedForms @SadFinForms</class>
 	
@@ -277,16 +271,16 @@ details including an FAQ.
 	
 	<class name="DalFinForms">absDalFin</class>
 	
+	<class name="QafFinForms">
+		absQafFin absQafFin_short absQafFin._stfh absQafFin._stfh_short
+	</class>
+	
 	<class name="NoonFinForms">absNoonFin absNoonFin_short</class>
 	
 	<class name="ChotiyehFinForms">
 		nlqChotiyehFin nlqChotiyehFin_short nlqChotiyehFin._bfkl nlqChotiyehFin.bfkl_short
 	</class>
 
-	<class name="QafFinForms">
-		absQafFin absQafFin_short absQafFin._stfh absQafFin._stfh_short
-	</class>
-	
 	<class name="WawFinForms">
 		absWawFin absWawFin._stfh
 	</class>
@@ -306,7 +300,7 @@ details including an FAQ.
 	<class name="Finals">
 		@BehFinForms @JeemFinForms @SeenFinForms @SadFinForms @TahFinForms @AinFinForms @FehFinForms @KafFinForms @LamFinForms @MeemFinForms
 		@HehDoFinForms @HehGoalFinForms
-		@AlefFinForms @RehFinForms @DalFinForms @NoonFinForms @ChotiyehFinForms @QafFinForms @WawFinForms @BariyehFinForms
+		@AlefFinForms @RehFinForms @DalFinForms @QafFinForms @NoonFinForms @ChotiyehFinForms @WawFinForms @BariyehFinForms
 	</class>
 	
 	<!-- add many more -->
@@ -1297,5 +1291,256 @@ details including an FAQ.
 	<class name="KafRound_short_sub">
 		absKafIni_short absGafIni_short absKafMed_short absGafMed_short
 	</class>
+
+	<!-- KERNING -->
+	
+	<class name="BehKernBaseMarkIni">
+		mkBehIni mkBehIni.ai mkBehIni.be mkBehIni.beM1 mkBehIni.beM2 mkBehIni.benn <!--mkBehIni.behg--> mkBehIni.bere
+		mkBehIni.beF mkBehIni.by mkBehIni.ch mkBehIni.fe  mkBehIni.hd mkBehIni.hgM mkBehIni.hgF mkBehIni.jm
+		mkBehIni.mm mkBehIni.mmX  mkBehIni.nn mkBehIni.qf mkBehIni.re mkBehIni.sd mkBehIni.sn mkBehIni.snsn mkBehIni.ta
+		mkBehIni.be_jmF mkBehIni.hdR
+	</class>
+	<class name="JeemKernBaseMarkIni">
+		mkJeemIni mkJeemIni.ai mkJeemIni.be mkJeemIni.beM1 mkJeemIni.beM2 mkJeemIni.benn mkJeemIni.behg mkJeemIni.bere
+		mkJeemIni.beF mkJeemIni.by mkJeemIni.ch mkJeemIni.fe  mkJeemIni.hd mkJeemIni.hgM mkJeemIni.hgF mkJeemIni.jm
+		mkJeemIni.mm mkJeemIni.mmX  mkJeemIni.nn mkJeemIni.qf mkJeemIni.re mkJeemIni.sd mkJeemIni.sn mkJeemIni.snsn mkJeemIni.ta
+	</class>
+	<class name="SeenKernBaseMarkIni">
+		mkSeenIni mkSeenIni.ai mkSeenIni.be mkSeenIni.beM1 mkSeenIni.beM2 mkSeenIni.benn mkSeenIni.behg mkSeenIni.bere
+		mkSeenIni.beF mkSeenIni.by mkSeenIni.ch mkSeenIni.fe  mkSeenIni.hd mkSeenIni.hgM mkSeenIni.hgF mkSeenIni.jm
+		mkSeenIni.mm mkSeenIni.mmX  mkSeenIni.nn mkSeenIni.qf mkSeenIni.re mkSeenIni.sd mkSeenIni.sn mkSeenIni.snsn mkSeenIni.ta
+		mkSeenIni.jm_flat
+	</class>
+	<class name="SadKernBaseMarkIni">
+		mkSadIni mkSadIni.ai mkSadIni.be mkSadIni.beM1 mkSadIni.beM2 mkSadIni.benn mkSadIni.behg mkSadIni.bere
+		mkSadIni.beF mkSadIni.by mkSadIni.ch mkSadIni.fe  mkSadIni.hd mkSadIni.hgM mkSadIni.hgF mkSadIni.jm
+		mkSadIni.mm mkSadIni.mmX  mkSadIni.nn mkSadIni.qf mkSadIni.re mkSadIni.sd mkSadIni.sn mkSadIni.snsn mkSadIni.ta
+	</class>
+	<class name="TahKernBaseMarkIni">
+		mkTahIni mkTahIni.ai mkTahIni.be mkTahIni.beM1 mkTahIni.beM2 mkTahIni.benn mkTahIni.behg mkTahIni.bere
+		mkTahIni.beF mkTahIni.by mkTahIni.ch mkTahIni.fe  mkTahIni.hd mkTahIni.hgM mkTahIni.hgF mkTahIni.jm
+		mkTahIni.mm mkTahIni.mmX  mkTahIni.nn mkTahIni.qf mkTahIni.re mkTahIni.sd mkTahIni.sn mkTahIni.snsn mkTahIni.ta
+	</class>
+	<class name="AinKernBaseMarkIni">
+		mkAinIni mkAinIni.ai mkAinIni.be mkAinIni.beM1 mkAinIni.beM2 mkAinIni.benn mkAinIni.behg mkAinIni.bere
+		mkAinIni.beF mkAinIni.by mkAinIni.ch mkAinIni.fe  mkAinIni.hd mkAinIni.hgM mkAinIni.hgF mkAinIni.jm
+		mkAinIni.mm mkAinIni.mmX  mkAinIni.nn mkAinIni.qf mkAinIni.re mkAinIni.sd mkAinIni.sn mkAinIni.snsn mkAinIni.ta
+	</class>
+	<class name="FehKernBaseMarkIni">
+		mkFehIni mkFehIni.ai mkFehIni.be mkFehIni.beM1 mkFehIni.beM2 mkFehIni.benn mkFehIni.behg mkFehIni.bere
+		mkFehIni.beF mkFehIni.by mkFehIni.ch mkFehIni.fe  mkFehIni.hd mkFehIni.hgM mkFehIni.hgF mkFehIni.jm
+		mkFehIni.mm mkFehIni.mmX  mkFehIni.nn mkFehIni.qf mkFehIni.re mkFehIni.sd mkFehIni.sn mkFehIni.snsn mkFehIni.ta
+		mkFehIni.kf_wide
+	</class>
+	<class name="KafKernBaseMarkIni">
+		mkKehehIni mkKehehIni.ai mkKehehIni.be mkKehehIni.beM1 mkKehehIni.beM2 mkKehehIni.benn mkKehehIni.behg mkKehehIni.bere
+		mkKehehIni.beF mkKehehIni.by mkKehehIni.ch mkKehehIni.fe  mkKehehIni.hd mkKehehIni.hgM mkKehehIni.hgF mkKehehIni.jm
+		mkKehehIni.mm mkKehehIni.mmX  mkKehehIni.nn mkKehehIni.qf mkKehehIni.re mkKehehIni.sd mkKehehIni.sn mkKehehIni.snsn mkKehehIni.ta
+		mkGafIni mkGafIni.ai mkGafIni.be mkGafIni.beM1 mkGafIni.beM2 mkGafIni.benn mkGafIni.behg mkGafIni.bere
+		mkGafIni.beF mkGafIni.by mkGafIni.ch mkGafIni.fe  mkGafIni.hd mkGafIni.hgM mkGafIni.hgF mkGafIni.jm
+		mkGafIni.mm mkGafIni.mmX  mkGafIni.nn mkGafIni.qf mkGafIni.re mkGafIni.sd mkGafIni.sn mkGafIni.snsn mkGafIni.ta
+		mkGafIni.dk mkGafIni.kf_wide
+	</class>
+	<class name="LamKernBaseMarkIni">
+		mkLamIni mkLamIni.ai mkLamIni.be mkLamIni.beM1 mkLamIni.beM2 mkLamIni.benn mkLamIni.behg mkLamIni.bere
+		mkLamIni.beF mkLamIni.by mkLamIni.ch mkLamIni.fe  mkLamIni.hd mkLamIni.hgM mkLamIni.hgF mkLamIni.jm
+		mkLamIni.mm mkLamIni.mmX  mkLamIni.nn mkLamIni.qf mkLamIni.re mkLamIni.sd mkLamIni.sn mkLamIni.snsn mkLamIni.ta
+		mkLamIni.al mkLamIni_short
+	</class>
+	<class name="MeemKernBaseMarkIni">
+		mkMeemIni mkMeemIni.ai mkMeemIni.be mkMeemIni.beM1 mkMeemIni.beM2 mkMeemIni.benn mkMeemIni.behg mkMeemIni.bere
+		mkMeemIni.beF mkMeemIni.by mkMeemIni.ch mkMeemIni.fe  mkMeemIni.hd mkMeemIni.hgM mkMeemIni.hgF mkMeemIni.jm
+		mkMeemIni.mm mkMeemIni.mmX  mkMeemIni.nn mkMeemIni.qf mkMeemIni.re mkMeemIni.sd mkMeemIni.sn mkMeemIni.snsn mkMeemIni.ta
+	</class>
+	<class name="HehDoKernBaseMarkIni">
+		mkHehDoachashmeeIni mkHehDoachashmeeIni.ai mkHehDoachashmeeIni.be mkHehDoachashmeeIni.beM1 mkHehDoachashmeeIni.beM2 mkHehDoachashmeeIni.benn mkHehDoachashmeeIni.behg mkHehDoachashmeeIni.bere
+		mkHehDoachashmeeIni.beF mkHehDoachashmeeIni.by mkHehDoachashmeeIni.ch mkHehDoachashmeeIni.fe  mkHehDoachashmeeIni.hd mkHehDoachashmeeIni.hgM mkHehDoachashmeeIni.hgF mkHehDoachashmeeIni.jm
+		mkHehDoachashmeeIni.mm mkHehDoachashmeeIni.mmX  mkHehDoachashmeeIni.nn mkHehDoachashmeeIni.qf mkHehDoachashmeeIni.re mkHehDoachashmeeIni.sd mkHehDoachashmeeIni.sn mkHehDoachashmeeIni.snsn mkHehDoachashmeeIni.ta
+	</class>
+	<class name="HehGoalKernBaseMarkIni">
+		mkHehGoalIni mkHehGoalIni.ai mkHehGoalIni.be mkHehGoalIni.beM1 mkHehGoalIni.beM2 mkHehGoalIni.benn mkHehGoalIni.behg mkHehGoalIni.bere
+		mkHehGoalIni.beF mkHehGoalIni.by mkHehGoalIni.ch mkHehGoalIni.fe  mkHehGoalIni.hd mkHehGoalIni.hgM mkHehGoalIni.hgF mkHehGoalIni.jm
+		mkHehGoalIni.mm mkHehGoalIni.mmX  mkHehGoalIni.nn mkHehGoalIni.qf mkHehGoalIni.re mkHehGoalIni.sd mkHehGoalIni.sn mkHehGoalIni.snsn mkHehGoalIni.ta
+	</class>
+
+	<class name="KernBaseMarkIni">
+		@BehKernBaseMarkIni @JeemKernBaseMarkIni @SeenKernBaseMarkIni @SadKernBaseMarkIni
+		@TahKernBaseMarkIni @AinKernBaseMarkIni @FehKernBaseMarkIni
+		@KafKernBaseMarkIni
+		@LamKernBaseMarkIni @MeemKernBaseMarkIni
+		@HehDoKernBaseMarkIni @HehGoalKernBaseMarkIni
+	</class>
+	
+	<class name="BehKernBaseMarkMed">
+		mkBehMed mkBehMed.ai mkBehMed.be mkBehMed.beM1 mkBehMed.beM2 mkBehMed.benn mkBehMed.behg mkBehMed.bere
+		mkBehMed.beF mkBehMed.by mkBehMed.ch mkBehMed.fe  mkBehMed.hd mkBehMed.hgM mkBehMed.hgF mkBehMed.jm
+		mkBehMed.mm mkBehMed.mmX  mkBehMed.nn mkBehMed.qf mkBehMed.re mkBehMed.sd mkBehMed.sn mkBehMed.snsn mkBehMed.ta
+		mkBehMed.hdR mkBehMed.jmR mkBehMed.kf_wide mkBehMed.mmR mkBehMed.mmXR
+		mkBehMed.nn_hgbm mkBehMed.nn_hgbmR mkBehMed.nnR mkBehMed.snR
+		mkBehMed.qf_short
+		mkBehMed.kf_wide
+		<!-- obsolete: mkBehMed.beF_ss mkBehMed.fe_ss mkBehMed.qf_ss mkBehMed.sd_ss mkBehMed.ta_ss -->
+	</class>
+	<class name="JeemKernBaseMarkMed">
+		mkJeemMed mkJeemMed.ai mkJeemMed.be mkJeemMed.beM1 mkJeemMed.beM2 mkJeemMed.benn mkJeemMed.behg mkJeemMed.bere
+		mkJeemMed.beF mkJeemMed.by mkJeemMed.ch mkJeemMed.fe  mkJeemMed.hd mkJeemMed.hgM mkJeemMed.hgF mkJeemMed.jm
+		mkJeemMed.mm mkJeemMed.mmX  mkJeemMed.nn mkJeemMed.qf mkJeemMed.re mkJeemMed.sd mkJeemMed.sn mkJeemMed.snsn mkJeemMed.ta
+		mkJeemMed.bekl mkJeemMed.by_short mkJeemMed.kf_wide
+	</class>
+	<class name="SeenKernBaseMarkMed">
+		mkSeenMed mkSeenMed.ai mkSeenMed.be mkSeenMed.beM1 mkSeenMed.beM2 mkSeenMed.benn mkSeenMed.behg mkSeenMed.bere
+		mkSeenMed.beF mkSeenMed.by mkSeenMed.ch mkSeenMed.fe  mkSeenMed.hd mkSeenMed.hgM mkSeenMed.hgF mkSeenMed.jm
+		mkSeenMed.mm mkSeenMed.mmX  mkSeenMed.nn mkSeenMed.qf mkSeenMed.re mkSeenMed.sd mkSeenMed.sn mkSeenMed.snsn mkSeenMed.ta
+		mkSeenMed.jm_flat mkSeenMed.sn_sn
+	</class>
+	<class name="SadKernBaseMarkMed">
+		mkSadMed mkSadMed.ai mkSadMed.be mkSadMed.beM1 mkSadMed.beM2 mkSadMed.benn mkSadMed.behg mkSadMed.bere
+		mkSadMed.beF mkSadMed.by mkSadMed.ch mkSadMed.fe  mkSadMed.hd mkSadMed.hgM mkSadMed.hgF mkSadMed.jm
+		mkSadMed.mm mkSadMed.mmX  mkSadMed.nn mkSadMed.qf mkSadMed.re mkSadMed.sd mkSadMed.sn mkSadMed.snsn mkSadMed.ta
+	</class>
+	<class name="TahKernBaseMarkMed">
+		mkTahMed mkTahMed.ai mkTahMed.be mkTahMed.beM1 mkTahMed.beM2 mkTahMed.benn mkTahMed.behg mkTahMed.bere
+		mkTahMed.beF mkTahMed.by mkTahMed.ch mkTahMed.fe  mkTahMed.hd mkTahMed.hgM mkTahMed.hgF mkTahMed.jm
+		mkTahMed.mm mkTahMed.mmX  mkTahMed.nn mkTahMed.qf mkTahMed.re mkTahMed.sd mkTahMed.sn mkTahMed.snsn mkTahMed.ta
+	</class>
+	<class name="AinKernBaseMarkMed">
+		mkAinMed mkAinMed.ai mkAinMed.be mkAinMed.beM1 mkAinMed.beM2 mkAinMed.benn mkAinMed.behg mkAinMed.bere
+		mkAinMed.beF mkAinMed.by mkAinMed.ch mkAinMed.fe  mkAinMed.hd mkAinMed.hgM mkAinMed.hgF mkAinMed.jm
+		mkAinMed.mm mkAinMed.mmX  mkAinMed.nn mkAinMed.qf mkAinMed.re mkAinMed.sd mkAinMed.sn mkAinMed.snsn mkAinMed.ta
+	</class>
+	<class name="FehKernBaseMarkMed">
+		mkFehMed mkFehMed.ai mkFehMed.be mkFehMed.beM1 mkFehMed.beM2 mkFehMed.benn mkFehMed.behg mkFehMed.bere
+		mkFehMed.beF mkFehMed.by mkFehMed.ch mkFehMed.fe  mkFehMed.hd mkFehMed.hgM mkFehMed.hgF mkFehMed.jm
+		mkFehMed.mm mkFehMed.mmX  mkFehMed.nn mkFehMed.qf mkFehMed.re mkFehMed.sd mkFehMed.sn mkFehMed.snsn mkFehMed.ta
+		mkFehMed.kf_wide
+	</class>
+	<class name="KafKernBaseMarkMed">
+		mkKehehMed mkKehehMed.ai mkKehehMed.be mkKehehMed.beM1 mkKehehMed.beM2 mkKehehMed.benn mkKehehMed.behg mkKehehMed.bere
+		mkKehehMed.beF mkKehehMed.by mkKehehMed.ch mkKehehMed.fe  mkKehehMed.hd mkKehehMed.hgM mkKehehMed.hgF mkKehehMed.jm
+		mkKehehMed.mm mkKehehMed.mmX  mkKehehMed.nn mkKehehMed.qf mkKehehMed.re mkKehehMed.sd mkKehehMed.sn mkKehehMed.snsn mkKehehMed.ta
+		mkKehehIni.dk mkKehehMed.dk mkKehehIni.kf_wide mkKehehMed.kf_wide
+		mkGafMed mkGafMed.ai mkGafMed.be mkGafMed.beM1 mkGafMed.beM2 mkGafMed.benn mkGafMed.behg mkGafMed.bere
+		mkGafMed.beF mkGafMed.by mkGafMed.ch mkGafMed.fe  mkGafMed.hd mkGafMed.hgM mkGafMed.hgF mkGafMed.jm
+		mkGafMed.mm mkGafMed.mmX  mkGafMed.nn mkGafMed.qf mkGafMed.re mkGafMed.sd mkGafMed.sn mkGafMed.snsn mkGafMed.ta
+		mkGafMed.dk mkGafMed.kf_wide mkGafMed.kf_lm
+	</class>
+	<class name="LamKernBaseMarkMed">
+		mkLamMed mkLamMed.ai mkLamMed.be mkLamMed.beM1 mkLamMed.beM2 mkLamMed.benn mkLamMed.behg mkLamMed.bere
+		mkLamMed.beF mkLamMed.by mkLamMed.ch mkLamMed.fe  mkLamMed.hd mkLamMed.hgM mkLamMed.hgF mkLamMed.jm
+		mkLamMed.mm mkLamMed.mmX  mkLamMed.nn mkLamMed.qf mkLamMed.re mkLamMed.sd mkLamMed.sn mkLamMed.snsn mkLamMed.ta
+		mkLamMed.al mkLamMed_short
+	</class>
+	<class name="MeemKernBaseMarkMed">
+		mkMeemMed mkMeemMed.ai mkMeemMed.be mkMeemMed.beM1 mkMeemMed.beM2 mkMeemMed.benn mkMeemMed.behg mkMeemMed.bere
+		mkMeemMed.beF mkMeemMed.by mkMeemMed.ch mkMeemMed.fe  mkMeemMed.hd mkMeemMed.hgM mkMeemMed.hgF mkMeemMed.jm
+		mkMeemMed.mm mkMeemMed.mmX  mkMeemMed.nn mkMeemMed.qf mkMeemMed.re mkMeemMed.sd mkMeemMed.sn mkMeemMed.snsn mkMeemMed.ta
+		mkMeemMed._alt
+	</class>
+	<class name="HehDoKernBaseMarkMed">
+		mkHehDoachashmeeMed mkHehDoachashmeeMed.ai mkHehDoachashmeeMed.be mkHehDoachashmeeMed.beM1 mkHehDoachashmeeMed.beM2 mkHehDoachashmeeMed.benn mkHehDoachashmeeMed.behg mkHehDoachashmeeMed.bere
+		mkHehDoachashmeeMed.beF mkHehDoachashmeeMed.by mkHehDoachashmeeMed.ch mkHehDoachashmeeMed.fe  mkHehDoachashmeeMed.hd mkHehDoachashmeeMed.hgM mkHehDoachashmeeMed.hgF mkHehDoachashmeeMed.jm
+		mkHehDoachashmeeMed.mm mkHehDoachashmeeMed.mmX  mkHehDoachashmeeMed.nn mkHehDoachashmeeMed.qf mkHehDoachashmeeMed.re mkHehDoachashmeeMed.sd mkHehDoachashmeeMed.sn mkHehDoachashmeeMed.snsn mkHehDoachashmeeMed.ta
+	</class>
+	<class name="HehGoalKernBaseMarkMed">
+		mkHehGoalMed mkHehGoalMed.ai mkHehGoalMed.be mkHehGoalMed.beM1 mkHehGoalMed.beM2 mkHehGoalMed.benn mkHehGoalMed.behg mkHehGoalMed.bere
+		mkHehGoalMed.beF mkHehGoalMed.by mkHehGoalMed.ch mkHehGoalMed.fe  mkHehGoalMed.hd mkHehGoalMed.hgM mkHehGoalMed.hgF mkHehGoalMed.jm
+		mkHehGoalMed.mm mkHehGoalMed.mmX  mkHehGoalMed.nn mkHehGoalMed.qf mkHehGoalMed.re mkHehGoalMed.sd mkHehGoalMed.sn mkHehGoalMed.snsn mkHehGoalMed.ta
+	</class>
+
+	<class name="KernBaseMarkMed">
+		@BehKernBaseMarkMed
+		@JeemKernBaseMarkMed
+		@SeenKernBaseMarkMed @SadKernBaseMarkMed
+		@TahKernBaseMarkMed @AinKernBaseMarkMed @FehKernBaseMarkMed
+		@KafKernBaseMarkMed
+		@LamKernBaseMarkMed @MeemKernBaseMarkMed
+		@HehDoKernBaseMarkMed @HehGoalKernBaseMarkMed
+	</class>
+
+	<class name="KernFinals">	<!-- sadly, this duplicates @Finals, it's easier than creating all those small classes -->
+		absBehFin absBehFin._bfkl
+		absJeemFin absJeemFin_short
+		absSeenFin absSeenFin_short
+		absSadFin absSadFin_short
+		absTahFin
+		absAinFin
+		absFehFin
+		absKehehFin absKehehFin_tall absGafFin absGafFin_tall
+		absLamFin absLamFin_short absLamFin_kfTall
+		absMeemFin absMeemFin_short absMeemFin.lowdiac
+		absHehDoachashmeeFin
+		absHehGoalFin
+		absAlefFin absAlefFin._lm absAlefFin.allah
+		absRehFin absRehFin._hgM absRehFin._jkl absRehFin._sshg
+		absDalFin
+		absQafFin absQafFin_short absQafFin._stfh absQafFin._stfh_short
+		absNoonFin absNoonFin_short
+		nlqChotiyehFin nlqChotiyehFin_short nlqChotiyehFin._bfkl nlqChotiyehFin.bfkl_short
+		absWawFin absWawFin._stfh
+		nlqBariyehFin
+	</class>
+	
+	<class name="KernBaseMarkFin">
+		mkBehFin  mkBehFin._bfkl
+		mkJeemFin mkJeemFin_short
+		mkSeenFin mkSeenFin_short
+		mkSadFin mkSadFin_short
+		mkTahFin
+		mkAinFin
+		mkFehFin
+		mkKehehFin mkKehehFin_tall mkGafFin mkGafFin_tall
+		mkLamFin mkLamFin_short mkLamFin_kfTall
+		mkMeemFin mkMeemFin_short mkMeemFin.lowdiac
+		mkHehDoachashmeeFin
+		mkHehGoalFin
+		mkAlefFin mkAlefFin._lm mkAlefFin.allah
+		mkRehFin mkRehFin._hgM mkRehFin._jkl mkRehFin._sshg
+		mkDalFin
+		mkQafFin mkQafFin_short mkQafFin._stfh mkQafFin._stfh_short
+		mkNoonFin mkNoonFin_short
+		mkChotiyehFin mkChotiyehFin_short mkChotiyehFin._bfkl mkChotiyehFin.bfkl_short
+		mkWawFin mkWawFin._stfh
+		mkBariyehFin
+	</class>
+	
+	<class name="KernBaseMarkIso">
+		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
+						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
+		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh mkDotlessBeh
+				mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV 
+				mkChotiyeh mkYeh mkYehHamzaAbove mkE mkYehSmallV mkAlefMaksura mkYehTwoAbove mkYehThreeAbove mkYehFourBelow
+						mkYehTail mkKashmiriYeh
+		mkJeem mkHah mkKhah mkHehHamzaAbove mkHahSmallTahAbove mkHahSmallTahBelow mkHahSmallTwhTwoDotsBelow mkHahThreeDotsAbove
+						mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh
+		mkReh mkZain mkJeh mkRreh mkRehDotBelow mkRehDotBelowDotAbove mkRehTwoDotsAbove mkRehFourDotsAbove mkRehHamzaAbove
+						mkRehRing mkRehSmallTahTwoDotsAbove mkRehTwoVertAbove mkRehSmallVBelow
+		mkDal mkThal mkDalDotBelowSmallTah mkDalFourDotsAbove mkDalRing mkDalTwoVertBelowSmallTah mkDalDotBelow mkDalInvertedVBelow
+						mkDdal mkDul
+		mkSeen mkSheen mkSeenDotBelowDotAbove mkSeenFourDotsAbove mkSeenSmallTahTwoDotsAbove mkSeenTwoVertAbove
+						mkSeen3DotsBelow3DotsAbove mkSeenThreeDotsBelow mkSeenInvertedVAbove mkSeenFourAbove
+		mkSad mkDad mkDadDotBelow mkSadThreeDotsAbove 
+		mkTah mkZah
+		mkAin mkGhain mkAinThreeDotsAbove 
+		mkFeh mkFehThreeDotsBelow mkDotlessFeh mkVeh
+				mkQaf mkDotlessQaf 
+		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
+						mkGueh mkNgoeh mkGraf
+		mkLam mkLamBar mkLamSmallV mkLamSmallTah mkLamThreeDots
+		mkMeem
+		mkWaw mkWawHamzaAbove mkWawRing mkU mkOe mkKirghizOe mkKirghizYu mkWawTwoAbove mkWawThreeAbove mkWawDotAbove
+						mkWawTwoDotsAbove mkVe mkYu
+		mkHehDo
+		mkHehGoal mkHehGoalHamzaAbove mkHehYehAbove mkHeh mkAe
+		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
+		mkTehMarbuta
+		mkTehMarbutaGoal
+	</class>
+
+	<class name="KernBaseOther">space zerojoin zeronojoin</class>
+	<class name="KernBaseMarkOther">mkSpace mkZerojoin mkZeronojoin</class>
+
+	<!-- <class name="KernBase">@Initials @Medials @Finals @Isolates @KernBaseOther</class> -->
+
+	<class name="KernBaseMark">@KernBaseMarkIni @KernBaseMarkMed @KernBaseMarkFin @KernBaseMarkIso @KernBaseMarkOther</class>
 
 </classes>

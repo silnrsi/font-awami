@@ -38,10 +38,15 @@ lookup HandleMarkDsc {
 } HandleMarkDsc;
 
 
-# Turn bases into marks so we can filter them out of all the the arithmetic.
+# Turn bases into marks so we can filter them out of all the arithmetic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
-	sub @KernBase  by  @KernBaseMark;
+	# sub @KernBase by  @KernBaseMark;  # FEAX doesn't handle classes with different structures
+	sub @Initials		by @KernBaseMarkIni;
+	sub @Medials		by @KernBaseMarkMed;
+	sub @KernFinals		by @KernBaseMarkFin;
+	sub @Isolates		by @KernBaseMarkIso;
+	sub @KernBaseOther	by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
 
 # Must come after InsertMarkers.
@@ -197,6 +202,24 @@ lookup MakeDescentAbsolute {
 # we are allowing 12.
 
 # TODO: Use some do-loops to generate these.
+
+# do	forlet n = range(0,5);
+# 	let lnameX = "_XXX" + str(n);
+# 	let lnameY = "_YYY" + str(n);
+
+# 	{
+# 		lookup $lnameX {
+# 			sub kblock by kblockR;
+# 		} $lnameX;
+
+# 		if n > 3;
+# 		{
+# 			lookup $lnameY {
+# 				sub kblock by kblockI;
+# 			} $lnameY;
+# 		}
+# 	}
+
 
 lookup CalculateKern1 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
@@ -545,7 +568,12 @@ lookup AddSpaceWhenBlocked {
 
 lookup RestoreBases {
 	lookupflag UseMarkFilteringSet @KernBaseMark;
-	sub @KernBaseMark  by  @KernBase;
+	# sub @KernBaseMark  by  @KernBase;  # FEAX doesn't handle classes with different structures
+	sub @KernBaseMarkIni	by	@Initials;
+	sub @KernBaseMarkMed	by	@Medials;
+	sub @KernBaseMarkFin	by	@KernFinals;
+	sub @KernBaseMarkIso	by	@Isolates;
+	sub @KernBaseMarkOther	by	@KernBaseOther;
 } RestoreBases;
 
 # lookup CleanUpMarkers {
