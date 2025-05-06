@@ -1440,13 +1440,17 @@ lookup Space4BariyehKern {
 
 } Space4BariyehKern;
 
-# --- Measure and kern ---
+} calt;	 # end of feature
 
-include(../../source/opentype/measure_inc.feax);
-include(../../source/opentype/measure.feax);
+# --- Auto-kerning ---
 
+include(../../source/opentype/autokern_inc.feax);
 
-} calt;		# end of feature
+feature calt {	# eventually change this to a Stylistic Set
+
+include(../../source/opentype/autokern.feax);
+
+} calt;
 
 
 #====================  GPOS features  ====================
@@ -1705,6 +1709,12 @@ feature kern {
 lookup DoAutoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
 
+	pos @GDEF_bases <1000 0 1000 0> kwN1000;
+	pos @GDEF_bases <900 0 900 0> kwN900;
+	pos @GDEF_bases <800 0 800 0> kwN800;
+	pos @GDEF_bases <700 0 700 0> kwN700;
+	pos @GDEF_bases <600 0 600 0> kwN600;
+	pos @GDEF_bases <500 0 500 0> kwN500;
 	pos @GDEF_bases <400 0 400 0> kwN400;
 	pos @GDEF_bases <300 0 300 0> kwN300;
 	pos @GDEF_bases <200 0 200 0> kwN200;

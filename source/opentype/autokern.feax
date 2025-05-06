@@ -1,0 +1,288 @@
+#
+#	File: measure.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file is intended to be included in main.feax.
+
+# These lookups are run within feature ss01.
+
+# lookup InsertMarkers:
+include(../../source/opentype/autoKernMetrics.feax);
+###include(../../source/opentype/autoKernMetrics_TEMP.feax);
+
+# Insert "extra ascent/descent" markers into the stream to represent the presence
+# of nuqtas and/or marks.
+lookup HandleMarkAsc {
+	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper];
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacUpper;
+	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeUpper;
+} HandleMarkAsc;
+
+lookup HandleMarkDsc {
+	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @DiacLower];
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacLower;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeLower;
+} HandleMarkDsc;
+
+
+# Turn bases into marks so we can filter them out of all the arithmetic.
+lookup TreatBasesAsMarks {
+	lookupflag IgnoreMarks;
+	# sub @KernBase by  @KernBaseMark;  # FEAX doesn't handle classes with different structures
+	sub @Initials		by	@KernBaseMarkIni;
+	sub @Medials		by	@KernBaseMarkMed;
+	sub @KernFinals		by	@KernBaseMarkFin;
+	sub @Isolates		by	@KernBaseMarkIso;
+	sub @KernBaseOther	by	@KernBaseMarkOther;
+} TreatBasesAsMarks;
+
+# Must come after InsertMarkers.
+# Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
+# out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
+lookup AdjustForNuqtaOverhang {
+	lookupflag UseMarkFilteringSet [@KernBaseMark @NuqtaLikeLower @KwMarker];
+	sub @KwMarker' lookup _Dec400kw		mkBehIni.mm'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec400kw		mkJeemIni.mmX'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec200kw		mkJeemIni.mmX'	lookup _ExpandYbBy2	[_dot1l];
+	sub @KwMarker' lookup _Dec200kw		mkLamIni.mm'	lookup _ExpandYbBy2 [_bar];
+
+} AdjustForNuqtaOverhang;
+
+lookup AdjustForBaseOverhang {
+	lookupflag UseMarkFilteringSet [@KernBaseMarkWord @KwMarker];
+	sub @KwMarker' lookup _Inc800kw		mkKehehIni.sd';
+
+	# short sequences with overhang on right
+	sub mkRehFin	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	#sub mkRehFin.hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	sub 			@KwMarker' lookup _Dec400kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+} AdjustForBaseOverhang;
+
+
+# Measure widths backward
+
+# lookup MeasureXFinal {
+# 	lookupflag UseMarkFilteringSet @XMarkers;
+# 	ignore sub pxNULL'                   @DxMarker [@PxMarker pxNULL];		# ignore all but the last
+# 	sub        pxNULL' lookup _InitPosX  @DxMarker;
+# } MeasureXFinal;
+
+# Because we can't use rsub to process backwards, we need as many of these lookups
+# as there are bases in the sequence that we want to measure.
+# Note that @PxMarker does NOT include pxNull, which is what forces the backwards processing.
+
+# lookup MeasureX2 {
+# 	lookupflag UseMarkFilteringSet @XMarkers;
+# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+# } MeasureX2;
+
+# lookup MeasureX3 {
+# 	lookupflag UseMarkFilteringSet @XMarkers;
+# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+# } MeasureX3;
+
+# lookup MeasureX4 {
+# 	lookupflag UseMarkFilteringSet @XMarkers;
+# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+# } MeasureX4;
+
+# lookup MeasureX5 {
+# 	lookupflag UseMarkFilteringSet @XMarkers;
+# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
+# } MeasureX5;
+
+# Measure widths forward
+
+# lookup MeasureXinitial {
+# 	lookupflag UseMarkFilteringSet [@KernBaseMark @XMarkers];
+# 	sub @MeasureInitialMark	pxfNULL' lookup _Set0;
+# } MeasureXinitial;
+
+# lookup MeasureXforward {
+# 	lookupflag UseMarkFilteringSet @XfMarkers;
+# 	sub @PxfMarker	@DxMarker	pxfNULL' lookup _AddMarkersXforward;
+# } MeasureXforward;
+
+# Measure heights
+
+# lookup MeasureYFinal { -- now the py0 is inserted by InitKernMetrics for isolates and finals
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	ignore sub pyNULL'                   @DyMarker [@PyMarker pyNULL];		# ignore all but the last
+# 	sub        pyNULL' lookup _InitPosY  @DyMarker;
+# } MeasureYFinal;
+
+# Because we can't use rsub to process backwards, we need as many of these lookups
+# as there are bases in the sequence that we need to measure.
+# Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
+
+lookup MeasureY2 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub        pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY2;
+
+lookup MeasureY3 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY3;
+
+lookup MeasureY4 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY4;
+
+lookup MeasureY5 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY5;
+
+lookup MeasureY6 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY6;
+
+lookup MeasureY7 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY7;
+
+lookup MeasureY8 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY8;
+
+lookup MeasureY9 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY9;
+
+lookup MeasureY10 {
+	lookupflag UseMarkFilteringSet @YMarkers;
+	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+} MeasureY10;
+
+# asc/dsc -> pt/pb
+# We include the @PyMarker to recognize the boundaries of the bases.
+lookup AddNuqtaAscent {
+	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker @AscXMarker];
+	sub @PyMarker @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
+} AddNuqtaAscent;
+
+lookup SubtractNuqtaDescent {
+	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike];
+	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
+} SubtractNuqtaDescent;
+
+# Convert markers pt/pb back to asc/dsc
+# lookup MarkersYtb2AscDsc:
+include(../../source/opentype/arithMarkersYtb2AscDsc.feax);
+
+lookup MakeAscentAbsolute {
+	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
+	sub @PyMarker	@AscXMarker		@AscMarker' lookup _MakeAscAbsolute;
+	sub @PyMarker					@AscMarker'	lookup _MakeAscAbsolute;
+} MakeAscentAbsolute;
+
+lookup MakeDescentAbsolute {
+	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker];
+	sub @PyMarker	@DscXMarker		@DscMarker' lookup _MakeDscAbsolute;
+	sub @PyMarker					@DscMarker' lookup _MakeDscAbsolute;
+} MakeDescentAbsolute;
+
+# Now actually do the comparisons to calculate the amount of kerning that is possible.
+
+# Each CalculateKern lookup below works backward by one slice in the sequence to be kerned,
+# kerning a little more tightly if possible.
+# The EnforceBlock checks to see if we are blocked and forces the process to terminate.
+# These lookups need to be separate because they use different filters.
+# We need this set of lookups for every potential kerned slice. Right now
+# we are allowing 12.
+
+# TODO: the last four lookups are not needed for the last iteration.
+
+do	forlet n = range(0,12);
+	let c = str(n + 1);
+	let ln_CalculateKern = "CalculateKern" + c;
+	let ln_EnforceBlock = "EnforceBlock" + c;
+	let ln_CleanUpKernedGlyph = "CleanUpKernedGlyph" + c;
+	let ln_CleanUpTopGlyph = "CleanUpTopGlyph" + c;
+	let ln_ShiftPrevGlyph = "ShiftPrevGlyph" + c;
+	let ln_ShiftNextGlyph = "ShiftNextGlyph" + c;
+
+{
+
+lookup $ln_CalculateKern {
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
+	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
+} $ln_CalculateKern;
+
+lookup $ln_EnforceBlock {
+	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
+	sub @Kblocks' @KwMarker' lookup _EnforceBlock;
+	sub @KwMarker' lookup _EnforceBlock;
+} $ln_EnforceBlock;
+
+# Once a glyph has been completely kerned, invalidate its bottoms.
+lookup $ln_CleanUpKernedGlyph {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} $ln_CleanUpKernedGlyph;
+
+# Once a glyph has had something kern under it completely, invalidate its tops.
+lookup $ln_CleanUpTopGlyph {
+	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
+	sub @YtMarker ybLast @YtMarker'  by  ytIgnore;
+} $ln_CleanUpTopGlyph;
+
+lookup $ln_ShiftPrevGlyph {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
+} $ln_ShiftPrevGlyph;
+
+lookup $ln_ShiftNextGlyph {
+	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' @YbMarker';
+} $ln_ShiftNextGlyph;
+
+}
+# end of do
+
+
+# If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
+lookup AddSpaceWhenBlocked {
+	sub kblock	@KwMarker' lookup _DecKern;
+} AddSpaceWhenBlocked;
+
+
+lookup RestoreBases {
+	lookupflag UseMarkFilteringSet @KernBaseMark;
+	# sub @KernBaseMark  by  @KernBase;  # FEAX doesn't handle classes with different structures
+	sub @KernBaseMarkIni	by	@Initials;
+	sub @KernBaseMarkMed	by	@Medials;
+	sub @KernBaseMarkFin	by	@KernFinals;
+	sub @KernBaseMarkIso	by	@Isolates;
+	sub @KernBaseMarkOther	by	@KernBaseOther;
+} RestoreBases;
+
+
+# Leaving the markers in for the time being helps with debugging.
+# lookup CleanUpMarkers {
+# 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker @Kblocks @PyMarker];
+# 	sub @DyMarker by NULL;
+# 	sub @YtMarker by NULL;
+# 	sub @YbMarker by NULL;
+# 	sub @Kblocks by NULL;
+# 	sub @PyMarker by NULL;
+# } CleanUpMarkers;
