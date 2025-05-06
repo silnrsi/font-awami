@@ -42,25 +42,34 @@ lookup HandleMarkDsc {
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
 	# sub @KernBase by  @KernBaseMark;  # FEAX doesn't handle classes with different structures
-	sub @Initials		by @KernBaseMarkIni;
-	sub @Medials		by @KernBaseMarkMed;
-	sub @KernFinals		by @KernBaseMarkFin;
-	sub @Isolates		by @KernBaseMarkIso;
+	sub @Initials		by	@KernBaseMarkIni;
+	sub @Medials		by	@KernBaseMarkMed;
+	sub @KernFinals		by	@KernBaseMarkFin;
+	sub @Isolates		by	@KernBaseMarkIso;
 	sub @KernBaseOther	by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
 
 # Must come after InsertMarkers.
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
-lookup AdjustForOverhang {
-	lookupflag UseMarkFilteringSet [@KernBaseMarkIni @NuqtaLikeLower @KwMarker];
+lookup AdjustForNuqtaOverhang {
+	lookupflag UseMarkFilteringSet [@KernBaseMark @NuqtaLikeLower @KwMarker];
 	sub @KwMarker' lookup _Dec400kw		mkBehIni.mm'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
 	sub @KwMarker' lookup _Dec400kw		mkJeemIni.mmX'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
 	sub @KwMarker' lookup _Dec200kw		mkJeemIni.mmX'	lookup _ExpandYbBy2	[_dot1l];
 	sub @KwMarker' lookup _Dec200kw		mkLamIni.mm'	lookup _ExpandYbBy2 [_bar];
 
+} AdjustForNuqtaOverhang;
+
+lookup AdjustForBaseOverhang {
+	lookupflag UseMarkFilteringSet [@KernBaseMarkWord @KwMarker];
 	sub @KwMarker' lookup _Inc800kw		mkKehehIni.sd';
-} AdjustForOverhang;
+
+	# short sequences with overhang on right
+	sub mkRehFin	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	#sub mkRehFin.hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	sub 			@KwMarker' lookup _Dec400kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+} AdjustForBaseOverhang;
 
 
 # Measure widths backward
@@ -232,6 +241,28 @@ lookup EnforceBlock1 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock1;
 
+# Once a glyph has been completely kerned, invalidate its bottoms.
+lookup CleanUpKernedGlyph1 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph1;
+
+# Once a glyph has had something kern under it completely, invalidate its tops.
+lookup CleanUpTopGlyph1 {
+	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
+	sub @YtMarker ybLast @YtMarker'  by  ytIgnore;
+} CleanUpTopGlyph1;
+
+lookup ShiftPrevGlyph1 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph1;
+
+lookup ShiftNextGlyph1 {
+	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' @YbMarker';
+} ShiftNextGlyph1;
+
 
 lookup CalculateKern2 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
@@ -244,8 +275,28 @@ lookup EnforceBlock2 {
 	sub @KwMarker' lookup _EnforceBlock;
 } EnforceBlock2;
 
-# Leaving out CleanUpKernedGlyphs1 and 2 and shiftPrev/NextGlyph1 and 2 assumes
-# that the first kerned glyph contains at least 3 slices to kern
+# Once a glyph has been completely kerned, invalidate its bottoms.
+lookup CleanUpKernedGlyph2 {
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
+	rsub @YbMarker' @KwMarker	by  ybIgnore;
+} CleanUpKernedGlyph2;
+
+# Once a glyph has had something kern under it completely, invalidate its tops.
+lookup CleanUpTopGlyph2 {
+	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
+	sub @YtMarker ybLast @YtMarker'  by  ytIgnore;
+} CleanUpTopGlyph2;
+
+lookup ShiftPrevGlyph2 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
+} ShiftPrevGlyph2;
+
+lookup ShiftNextGlyph2 {
+	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' @YbMarker';
+} ShiftNextGlyph2;
+
 
 lookup CalculateKern3 {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
@@ -274,6 +325,11 @@ lookup ShiftPrevGlyph3 {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } ShiftPrevGlyph3;
+
+lookup ShiftNextGlyph3 {
+	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' @YbMarker';
+} ShiftNextGlyph3;
 
 
 lookup CalculateKern4 {

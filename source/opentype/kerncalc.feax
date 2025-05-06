@@ -2,6 +2,11 @@
 
 
 lookup _IncKern { 
+	sub kwN1000	by	kwN900;
+	sub kwN900	by	kwN800;
+	sub kwN800	by	kwN700;
+	sub kwN700	by	kwN600;
+	sub kwN600	by	kwN500;
 	sub kwN500	by	kwN400;
 	sub kwN400	by	kwN300;
 	sub kwN300	by	kwN200;
@@ -25,8 +30,13 @@ lookup _IncKern {
 	sub kw1500  by  kw1600;
 } _IncKern;
 
-lookup _DecKern { 
-	sub kwN500	by	kwN500;
+lookup _DecKern {
+	sub kwN1000	by	kwN1000;
+	sub kwN900	by	kwN1000;
+	sub kwN800	by	kwN900;
+	sub kwN700	by	kwN800;
+	sub kwN600	by	kwN700;
+	sub kwN500	by	kwN600;
 	sub kwN400	by	kwN500;
 	sub kwN300	by	kwN400;
 	sub kwN200	by	kwN300;
@@ -52,15 +62,68 @@ lookup _DecKern {
 
 
 lookup _Dec200kw {
-	sub kw0  by  kwN200;
+	sub kwN800	by  kwN1000;
+	sub kwN600	by  kwN800;
+	sub kwN400	by  kwN600;
+	sub kwN200	by  kwN400;
+	sub kw0		by  kwN200;
+	sub kw200	by  kw0;
+	sub kw400	by	kw200;
+	sub kw600	by	kw400;
+	sub kw800	by	kw600;
 } _Dec200kw;
 
 lookup _Dec400kw {
-	sub kw0  by  kwN400;
+	sub kwN1000	by	kwN1000;
+	sub kwN800	by	kwN1000;
+	sub kwN600	by	kwN1000;
+	sub kwN400	by	kwN800;
+	sub kwN200	by	kwN600;
+	sub kw0		by  kwN400;
+	sub kw200	by	kwN200;
+	sub kw400	by	kw0;
+	sub kw600	by	kw200;
+	sub kw800	by	kw400;
 } _Dec400kw;
 
+lookup _Dec600kw {
+	sub kwN1000	by	kwN1000;
+	sub kwN800	by	kwN1000;
+	sub kwN600	by	kwN1000;
+	sub kwN400	by	kwN1000;
+	sub kwN200	by	kwN800;
+	sub kw0		by  kwN600;
+	sub kw200	by	kwN400;
+	sub kw400	by	kwN200;
+	sub kw600	by	kw0;
+	sub kw800	by	kw200;
+	sub kw1000	by	kw400;
+} _Dec600kw;
+
+lookup _Dec800kw {
+	sub kwN1000	by	kwN1000;
+	sub kwN800	by	kwN1000;
+	sub kwN600	by	kwN1000;
+	sub kwN400	by	kwN1000;
+	sub kwN200	by	kwN1000;
+	sub kw0		by  kwN800;
+	sub kw200	by	kwN600;
+	sub kw400	by	kwN400;
+	sub kw600	by	kwN200;
+	sub kw800	by	kw0;
+	sub kw1000	by	kw200;
+	sub kw1200	by	kw400;
+	sub kw1400	by	kw600;
+} _Dec800kw;
+
 lookup _Inc800kw {
-	sub kw0  by  kw800;
+	sub kwN1000	by	kwN200;
+	sub kwN800	by	kw0;
+	sub kwN600	by	kw200;
+	sub kwN400	by	kw400;
+	sub kwN200	by	kw600;
+	sub kw0  	by  kw800;
+	sub kw200	by	kw1000;
 } _Inc800kw;
 
 # Add more YbMarkers to account for a wide nuqta that hangs out to the right.
@@ -393,6 +456,31 @@ lookup _KwInsYt3000 {
 	sub @KwMarker by yt3000 @KwMarker;
 } _KwInsYt3000;
 
+
+
+lookup _B4lastInsYbLow {
+	sub ybLast by ybN1000 ybLast;
+} _B4lastInsYbLow;
+
+lookup _B4lastInsYbN400 {
+	sub ybLast by ybN400 ybLast;
+} _B4lastInsYbN400;
+
+lookup _B4lastInsYbN300 {
+	sub ybLast by ybN300 ybLast;
+} _B4lastInsYbN300;
+
+lookup _B4lastInsYbN200 {
+	sub ybLast by ybN200 ybLast;
+} _B4lastInsYbN200;
+
+lookup _B4lastInsYbN100 {
+	sub ybLast by ybN100 ybLast;
+} _B4lastInsYbN100;
+
+lookup _B4lastInsYb0 {
+	sub ybLast by yb0 ybLast;
+} _B4lastInsYb0;
 
 lookup _B4lastInsYb100 {
 	sub ybLast by yb100 ybLast;
@@ -1106,6 +1194,12 @@ lookup $lname {
 
 lookup _DelYtAndIncKw {
     lookupflag UseMarkFilteringSet [@KwMarker @YtMarker];
+	sub @YtMarker  kwN1000	by	kwN900;
+	sub @YtMarker  kwN900	by	kwN800;
+	sub @YtMarker  kwN800	by	kwN700;
+	sub @YtMarker  kwN700	by	kwN600;
+	sub @YtMarker  kwN600	by	kwN500;
+	sub @YtMarker  kwN500	by	kwN400;
 	sub @YtMarker  kwN400	by	kwN300;
 	sub @YtMarker  kwN300	by	kwN200;
 	sub @YtMarker  kwN200	by	kwN100;
@@ -1328,12 +1422,29 @@ lookup _ShiftFromPrev {
 
 
 lookup _PyDelYb {
-	sub @PyMarker yb1700 by @PyMarker;
+	sub @PyMarker @YbMarker by @PyMarker;
 } _PyDelYb;
 
 lookup _ShiftFromNext {
 	lookupflag UseMarkFilteringSet [ybLast @YbMarker @PyMarker];
 
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1400'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1300'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1200'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1100'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN900'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN800'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN700'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN600'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN500'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbN400	@PyMarker'	ybN400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN300	@PyMarker'	ybN300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN200	@PyMarker'	ybN200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN100	@PyMarker'	ybN100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb0	@PyMarker'	yb0'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb100	@PyMarker'	yb100'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb200	@PyMarker'	yb200'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb300	@PyMarker'	yb300'	lookup _PyDelYb;

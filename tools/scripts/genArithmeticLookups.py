@@ -7,7 +7,7 @@
 #
 # See the individual functions for examples of output.
 
-kwMin = -500
+kwMin = -1000
 kwMax = 1600
 
 dxMin = -500
@@ -25,6 +25,7 @@ pyMax = 3000
 
 # Must match what's in mkGlyphBounds
 ascMin = -500
+
 ascMax = 3000
 dscMin = -1500
 dscMax = 3000
@@ -144,6 +145,8 @@ def GenLookup_SetValues():
 		if ytMin <= v and v <= ytMax:
 			print("  sub @AscMarker by  yt" + ValueName(v) + ";", file=fout)
 			print("  sub @YtMarker  by  yt" + ValueName(v) + ";", file=fout)
+		elif v < ytMin:
+			print("  sub @AscMarker by  yt0;", file=fout)
 		if ybMin <= v and v <= ybMax:
 			print("  sub @DscMarker by  yb" + ValueName(v) + ";", file=fout)
 			print("  sub @YbMarker  by  yb" + ValueName(v) + ";", file=fout)

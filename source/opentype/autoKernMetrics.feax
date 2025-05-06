@@ -65,8 +65,8 @@ lookup InitKernMetrics {
 					dsc800   dsc800   dsc700   dsc600   dsc600   dsc500   dsc400   dsc200   dscN100  	ybLast
 					asc1100  asc1300  asc1400  asc1400  asc1300  asc1300  asc1200  asc1000  asc500   ;
   sub absAinIni.jm  by  absAinIni.jm  dy0  pyNULL  
-					dsc600   dsc600   dsc500   dsc500   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc800   asc1100  asc1200  asc1200  asc1200  asc1100  asc1000  asc900   ;
+					dsc600   dsc600   dsc500   	ybLast
+					asc800   asc1100  asc1200  asc1200  asc1200  asc1100  asc1000  asc900   asc700   asc200   ;
   sub absAinIni.mm  by  absAinIni.mm  dy0  pyNULL  
 					dsc700   dsc600   dsc500   dsc400   dsc400   dsc300   	ybLast
 					asc900   asc1100  asc1100  asc1100  asc1100  asc1100  asc1000  asc800   asc700   asc200   asc100   ;
@@ -140,8 +140,8 @@ lookup InitKernMetrics {
 					dsc100   dscN100  	ybLast
 					asc1000  asc1000  asc1000  asc1000  ;
   sub absAinMed.jm  by  absAinMed.jm  dy700     pyNULL  
-					dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc1100  asc1200  asc1200  asc1100  asc1100  asc1000  asc500   asc400   ;
+					dsc400   	ybLast
+					asc1100  asc1200  asc1200  asc1100  asc1100  asc1000  asc500   asc400   asc300   asc200   ;
   sub absAinMed.mm  by  absAinMed.mm  dy500     pyNULL  
 					dsc200   	ybLast
 					asc1000  asc1000  asc1000  asc1000  asc900   asc900   asc300   asc200   ;
@@ -291,8 +291,8 @@ lookup InitKernMetrics {
 					dsc500   dsc500   dsc400   dsc400   dsc200   dscN100  	ybLast
 					asc900   asc900   asc900   asc800   asc700   asc500   ;
   sub absBehIni.jm  by  absBehIni.jm  dy0  pyNULL  
-					dsc700   dsc600   dsc500   dsc400   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1100  asc1000  asc900   asc800   asc700   asc600   asc600   asc500   ;
+					dsc700   dsc600   dsc500   	ybLast
+					asc1100  asc1000  asc900   asc800   asc700   asc600   asc600   asc500   asc400   asc300   ;
   sub absBehIni.mm  by  absBehIni.mm  dy0  pyNULL  
 					dsc500   dsc500   dsc500   dsc400   dsc400   	ybLast
 					asc800   asc800   asc800   asc700   asc700   asc600   asc500   asc400   asc300   asc200   ;
@@ -381,11 +381,11 @@ lookup InitKernMetrics {
 					dsc400   dsc400   dsc300   dsc0     dscN100  	ybLast
 					asc700   asc700   asc700   asc500   asc300   ;
   sub absBehMed.jm  by  absBehMed.jm  dy700     pyNULL  
-					dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dsc0     dscN100  	ybLast
-					asc700   asc700   asc700   asc700   asc600   asc500   ;
+					dsc400   	ybLast
+					asc700   asc700   asc700   asc700   asc600   asc500   asc400   asc200   ;
   sub absBehMed.jmR  by  absBehMed.jmR  dy900     pyNULL  
-					dsc600   dsc600   dsc600   dsc500   dsc500   dsc400   dsc300   dsc200   dsc0     dscN100  	ybLast
-					asc900   asc900   asc900   asc900   asc800   asc800   asc700   asc600   ;
+					dsc600   dsc600   dsc600   	ybLast
+					asc900   asc900   asc900   asc900   asc800   asc800   asc700   asc600   asc400   asc300   ;
   sub absBehMed.kf_wide  by  absBehMed.kf_wide  dyN300    pyNULL  
 					dscN600  dscN700  dscN800  dscN800  dscN800  dscN800  dscN800  dscN700  dscN600  	ybLast
 					ascN300  ascN300  ascN300  ascN400  ascN400  ascN300  ascN200  ;
@@ -568,8 +568,8 @@ lookup InitKernMetrics {
 					dsc400   dsc100   dscN100  	ybLast
 					asc1200  asc1300  asc1300  ;
   sub absFehIni.jm  by  absFehIni.jm  dy0  pyNULL  
-					dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1300  asc1300  asc1300  asc1300  asc1100  asc500   asc500   ;
+					dsc500   dsc400   	ybLast
+					asc1300  asc1300  asc1300  asc1300  asc1100  asc500   asc500   asc400   asc200   ;
   sub absFehIni.kf_wide  by  absFehIni.kf_wide  dy0  pyNULL  
 					dscN500  dscN700  dscN700  dscN800  dscN800  dscN800  dscN800  dscN700  	ybLast
 					asc300   asc400   asc400   asc400   asc100   ascN400  ;
@@ -646,8 +646,8 @@ lookup InitKernMetrics {
 					dsc400   dsc200   dscN100  	ybLast
 					asc1300  asc1300  asc1300  asc1300  asc1200  ;
   sub absFehMed.jm  by  absFehMed.jm  dy700     pyNULL  
-					dsc400   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1300  asc1300  asc1300  asc1300  asc1200  asc1000  asc500   ;
+						ybLast
+					asc1300  asc1300  asc1300  asc1300  asc1200  asc1000  asc500   asc400   asc300   ;
   sub absFehMed.kf_wide  by  absFehMed.kf_wide  dyN300    pyNULL  
 					dscN700  dscN800  dscN800  dscN800  dscN800  dscN800  	ybLast
 					asc200   asc300   asc300   asc200   asc100   asc0     ;
@@ -740,8 +740,8 @@ lookup InitKernMetrics {
 					dsc2100  dsc2000  dsc2000  dsc1900  dsc1800  dsc1700  dsc1700  dsc1600  dsc1500  dsc700   dsc400   dsc100   dscN100  	ybLast
 					asc2500  asc2400  asc2700  asc2700  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc1100  asc400   ;
   sub absGafIni.jm  by  absGafIni.jm  dy0  pyNULL  
-					dsc2000  dsc1900  dsc1800  dsc1800  dsc1700  dsc1600  dsc1500  dsc1500  dsc1300  dsc800   dsc600   dsc500   dsc400   dsc300   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2400  asc2300  asc2500  asc2500  asc2500  asc2400  asc2300  asc2200  asc2100  asc2100  asc1900  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   ;
+					dsc2000  dsc1900  dsc1800  dsc1800  dsc1700  dsc1600  dsc1500  dsc1500  dsc1300  dsc800   dsc600   dsc500   dsc400   	ybLast
+					asc2400  asc2300  asc2500  asc2500  asc2500  asc2400  asc2300  asc2200  asc2100  asc2100  asc1900  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   asc400   asc200   ;
   sub absGafIni.kf  by  absGafIni.kf  dy0  pyNULL  
 					dsc1300  dsc1200  dsc1100  dsc1000  dsc1000  dsc900   dsc800   dsc700   dsc600   dscN100  dscN500  dscN600  dscN700  dscN800  dscN800  dscN800  	ybLast
 					asc1700  asc1600  asc1800  asc1800  asc1700  asc1600  asc1600  asc1500  asc1400  asc1300  asc1200  asc300   ascN300  ascN400  ;
@@ -830,17 +830,17 @@ lookup InitKernMetrics {
 					dsc400   dsc100   dscN100  	ybLast
 					asc2500  asc2400  asc2700  asc2700  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc1100  asc400   ;
   sub absGafMed.jm  by  absGafMed.jm  dy1100    pyNULL  
-					dsc600   dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2500  asc2400  asc2700  asc2700  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   ;
+					dsc600   dsc500   dsc400   	ybLast
+					asc2500  asc2400  asc2700  asc2700  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   asc400   asc100   ;
   sub absGafMed.jm_lowentry  by  absGafMed.jm_lowentry  dy700     pyNULL  
-					dsc500   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2400  asc2400  asc2600  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc2000  asc1000  asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc500   dsc500   dsc400   	ybLast
+					asc2400  asc2400  asc2600  asc2600  asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc2000  asc1000  asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absGafMed.jm_short  by  absGafMed.jm_short  dy700     pyNULL  
-					dsc400   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2200  asc2200  asc2100  asc2300  asc2300  asc2200  asc2100  asc2000  asc2000  asc1900  asc1800  asc900   asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc400   dsc500   dsc400   	ybLast
+					asc2200  asc2200  asc2100  asc2300  asc2300  asc2200  asc2100  asc2000  asc2000  asc1900  asc1800  asc900   asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absGafMed.jm_tall  by  absGafMed.jm_tall  dy700     pyNULL  
-					dsc400   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2600  asc2600  asc2800  asc2800  asc2700  asc2600  asc2600  asc2500  asc2400  asc2300  asc1700  asc1200  asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc400   dsc500   dsc400   	ybLast
+					asc2600  asc2600  asc2800  asc2800  asc2700  asc2600  asc2600  asc2500  asc2400  asc2300  asc1700  asc1200  asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absGafMed.kf_lm  by  absGafMed.kf_lm  dy100     pyNULL  
 					dscN400  dscN500  dscN700  dscN700  dscN800  dscN800  dscN800  	ybLast
 					asc1500  asc1400  asc1700  asc1700  asc1600  asc1500  asc1400  asc1300  asc1200  asc1200  asc1000  asc100   ascN300  ascN300  ascN300  ;
@@ -1021,11 +1021,11 @@ lookup InitKernMetrics {
 					dsc500   dsc500   dsc400   dsc400   dsc400   dsc300   dsc0     dscN100  	ybLast
 					asc900   asc1000  asc1100  asc1100  asc1300  asc1300  asc1100  asc1000  ;
   sub absHehDoachashmeeIni.jm  by  absHehDoachashmeeIni.jm  dy0  pyNULL  
-					dsc700   dsc600   dsc600   dsc600   dsc500   dsc500   dsc500   dsc500   dsc400   dsc400   dsc300   dsc200   dsc0     dscN100  dscN100  	ybLast
-					asc1200  asc1200  asc1200  asc1300  asc1300  asc1300  asc1300  asc1200  asc1000  asc700   asc600   asc500   asc400   ;
+					dsc700   dsc600   dsc600   dsc600   dsc500   dsc500   dsc500   dsc500   	ybLast
+					asc1200  asc1200  asc1200  asc1300  asc1300  asc1300  asc1300  asc1200  asc1000  asc700   asc600   asc500   asc400   asc300   asc100   ;
   sub absHehDoachashmeeIni.jm_alt  by  absHehDoachashmeeIni.jm_alt  dy0  pyNULL  
-					dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc900   asc1000  asc1100  asc1100  asc1300  asc1300  asc1100  asc1000  asc500   asc400   ;
+					dsc500   dsc500   dsc400   dsc400   dsc400   	ybLast
+					asc900   asc1000  asc1100  asc1100  asc1300  asc1300  asc1100  asc1000  asc500   asc400   asc300   asc100   ;
   sub absHehDoachashmeeIni.mm  by  absHehDoachashmeeIni.mm  dy0  pyNULL  
 					dsc600   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   	ybLast
 					asc1100  asc1100  asc1100  asc1100  asc1200  asc1200  asc1200  asc1100  asc900   asc600   asc400   asc300   asc200   ;
@@ -1132,11 +1132,11 @@ lookup InitKernMetrics {
 					dsc800   dsc700   dsc700   dsc600   dsc600   dsc600   dsc600   dsc600   dsc500   dsc400   dsc200   dscN100  	ybLast
 					asc1400  asc1400  asc1400  asc1400  asc1200  asc800   asc600   asc500   ;
   sub absHehDoachashmeeMed.jm  by  absHehDoachashmeeMed.jm  dy1100    pyNULL  
-					dsc700   dsc600   dsc600   dsc600   dsc500   dsc500   dsc500   dsc500   dsc400   dsc400   dsc300   dsc200   dsc0     dscN100  dscN100  	ybLast
-					asc1300  asc1300  asc1300  asc1200  asc1000  asc700   asc600   asc500   asc400   ;
+					dsc700   dsc600   dsc600   dsc600   dsc500   dsc500   dsc500   dsc500   	ybLast
+					asc1300  asc1300  asc1300  asc1200  asc1000  asc700   asc600   asc500   asc400   asc300   asc100   ;
   sub absHehDoachashmeeMed.jm_short  by  absHehDoachashmeeMed.jm_short  dy900     pyNULL  
-					dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1200  asc1200  asc1100  asc1100  asc900   asc700   asc600   asc500   asc400   asc400   ;
+					dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   dsc400   	ybLast
+					asc1200  asc1200  asc1100  asc1100  asc900   asc700   asc600   asc500   asc400   asc400   asc300   asc200   ;
   sub absHehDoachashmeeMed.mm  by  absHehDoachashmeeMed.mm  dy900     pyNULL  
 					dsc600   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   	ybLast
 					asc1200  asc1200  asc1200  asc1100  asc900   asc600   asc400   asc300   asc200   ;
@@ -1229,8 +1229,8 @@ lookup InitKernMetrics {
 					dsc400   dsc400   dsc400   dsc500   dsc400   dsc300   dscN100  	ybLast
 					asc700   asc700   asc800   asc800   asc700   asc700   asc500   ;
   sub absHehGoalIni.jm  by  absHehGoalIni.jm  dy0  pyNULL  
-					dsc400   dsc400   dsc400   dsc500   dsc400   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc700   asc700   asc800   asc800   asc700   asc700   asc600   asc500   asc400   ;
+					dsc400   dsc400   dsc400   dsc500   	ybLast
+					asc700   asc700   asc800   asc800   asc700   asc700   asc600   asc500   asc400   asc300   asc200   ;
   sub absHehGoalIni.mm  by  absHehGoalIni.mm  dy0  pyNULL  
 					dsc200   dsc200   dsc200   dsc300   	ybLast
 					asc500   asc500   asc600   asc600   asc500   asc500   asc400   asc300   asc100   ;
@@ -1304,8 +1304,8 @@ lookup InitKernMetrics {
 					dsc400   dsc400   dsc400   dsc300   dscN100  	ybLast
 					asc700   asc700   asc700   asc700   asc500   ;
   sub absHehGoalMed.jm  by  absHehGoalMed.jm  dy200     pyNULL  
-					dsc200   dsc400   dsc500   dsc500   dsc400   dsc400   dsc300   dsc200   dsc100   dscN100  	ybLast
-					asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   ;
+					dsc200   dsc400   dsc500   	ybLast
+					asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   asc400   asc300   ;
   sub absHehGoalMed.mm  by  absHehGoalMed.mm  dy0       pyNULL  
 					dsc0     dsc100   dsc200   	ybLast
 					asc500   asc500   asc500   asc500   asc500   asc400   asc400   asc200   ;
@@ -1403,8 +1403,8 @@ lookup InitKernMetrics {
 					dsc800   dsc700   dsc600   dsc400   dsc300   dsc100   dscN100  	ybLast
 					asc1000  asc1000  asc1100  asc1100  asc1100  asc1100  asc1100  ;
   sub absJeemIni.jm  by  absJeemIni.jm  dy0  pyNULL  
-					dsc600   dsc500   dsc400   dsc400   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1100  asc1100  asc1100  asc1100  asc1100  asc1000  asc1000  asc800   ;
+					dsc600   dsc500   dsc400   	ybLast
+					asc1100  asc1100  asc1100  asc1100  asc1100  asc1000  asc1000  asc800   asc400   asc300   ;
   sub absJeemIni.mm  by  absJeemIni.mm  dy0  pyNULL  
 					dsc400   dsc300   dsc300   dsc200   	ybLast
 					asc900   asc900   asc900   asc900   asc900   asc900   asc800   asc600   asc100   ;
@@ -1484,8 +1484,8 @@ lookup InitKernMetrics {
 					dsc600   dsc400   dsc200   dscN100  dscN100  dsc600   dsc600   	ybLast
 					;
   sub absJeemMed.jm  by  absJeemMed.jm  dy700     pyNULL  
-					dsc700   dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dsc0     dscN100  dscN100  	ybLast
-					asc500   asc400   ;
+					dsc700   dsc500   dsc400   dsc400   	ybLast
+					asc500   asc400   asc300   asc100   ;
   sub absJeemMed.kf_wide  by  absJeemMed.kf_wide  dyN100    pyNULL  
 					dscN100  dscN300  dscN400  dscN600  dscN700  dscN700  dscN800  dscN800  dscN800  dscN800  dscN800  dscN700  dscN600  	ybLast
 					ascN400  ascN300  ascN300  ascN200  ;
@@ -1656,11 +1656,11 @@ lookup InitKernMetrics {
 					dsc300   dsc100   dscN100  	ybLast
 					asc700   asc600   asc300   ;
   sub absKehehIni.jm  by  absKehehIni.jm  dy0  pyNULL  
-					dsc2000  dsc1900  dsc1800  dsc1800  dsc1700  dsc1600  dsc1500  dsc1500  dsc1300  dsc800   dsc600   dsc500   dsc400   dsc300   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2400  asc2300  asc2200  asc2100  asc2000  asc2000  asc1900  asc1800  asc1700  asc1600  asc1400  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   ;
+					dsc2000  dsc1900  dsc1800  dsc1800  dsc1700  dsc1600  dsc1500  dsc1500  dsc1300  dsc800   dsc600   dsc500   dsc400   	ybLast
+					asc2400  asc2300  asc2200  asc2100  asc2000  asc2000  asc1900  asc1800  asc1700  asc1600  asc1400  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   asc400   asc200   ;
   sub absKehehIni.jm_base  by  absKehehIni.jm_base  dy0  pyNULL  
-					dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc800   asc700   asc600   asc600   asc500   asc500   asc500   ;
+					dsc500   dsc400   	ybLast
+					asc800   asc700   asc600   asc600   asc500   asc500   asc500   asc400   asc300   ;
   sub absKehehIni.kf  by  absKehehIni.kf  dy0  pyNULL  
 					dsc1300  dsc1200  dsc1100  dsc1000  dsc1000  dsc900   dsc800   dsc700   dsc600   dscN100  dscN500  dscN600  dscN700  dscN800  dscN800  dscN800  	ybLast
 					asc1700  asc1600  asc1500  asc1400  asc1300  asc1200  asc1200  asc1100  asc1000  asc800   asc700   asc300   ascN300  ascN400  ;
@@ -1824,20 +1824,20 @@ lookup InitKernMetrics {
 						ybLast
 					asc600   asc500   ;
   sub absKehehMed.jm  by  absKehehMed.jm  dy1100    pyNULL  
-					dsc600   dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc2000  asc1900  asc1800  asc1700  asc1500  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   ;
+					dsc600   dsc500   dsc400   	ybLast
+					asc2500  asc2400  asc2300  asc2300  asc2200  asc2100  asc2000  asc1900  asc1800  asc1700  asc1500  asc1000  asc700   asc600   asc600   asc600   asc500   asc500   asc400   asc100   ;
   sub absKehehMed.jm_base  by  absKehehMed.jm_base  dy700     pyNULL  
 						ybLast
-					asc1100  asc1100  asc700   asc700   asc600   asc600   asc500   asc500   ;
+					asc1100  asc1100  asc700   asc700   asc600   asc600   asc500   asc500   asc400   asc300   ;
   sub absKehehMed.jm_lowentry  by  absKehehMed.jm_lowentry  dy700     pyNULL  
-					dsc500   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2400  asc2400  asc2300  asc2200  asc2100  asc2000  asc1900  asc1900  asc1800  asc1600  asc1400  asc1000  asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc500   dsc500   dsc400   	ybLast
+					asc2400  asc2400  asc2300  asc2200  asc2100  asc2000  asc1900  asc1900  asc1800  asc1600  asc1400  asc1000  asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absKehehMed.jm_short  by  absKehehMed.jm_short  dy700     pyNULL  
-					dsc400   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2200  asc2200  asc2100  asc2000  asc1900  asc1800  asc1700  asc1700  asc1500  asc1400  asc1200  asc900   asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc400   dsc500   dsc400   	ybLast
+					asc2200  asc2200  asc2100  asc2000  asc1900  asc1800  asc1700  asc1700  asc1500  asc1400  asc1200  asc900   asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absKehehMed.jm_tall  by  absKehehMed.jm_tall  dy700     pyNULL  
-					dsc400   dsc500   dsc400   dsc300   dsc300   dsc200   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc2600  asc2600  asc2500  asc2400  asc2300  asc2200  asc2200  asc2100  asc2000  asc1800  asc1700  asc1200  asc700   asc600   asc600   asc600   asc500   asc400   ;
+					dsc400   dsc500   dsc400   	ybLast
+					asc2600  asc2600  asc2500  asc2400  asc2300  asc2200  asc2200  asc2100  asc2000  asc1800  asc1700  asc1200  asc700   asc600   asc600   asc600   asc500   asc400   asc400   asc100   ;
   sub absKehehMed.kf_wide  by  absKehehMed.kf_wide  dy100     pyNULL  
 					dscN400  dscN600  dscN700  dscN800  dscN800  dscN800  dscN800  dscN800  dscN700  dscN600  	ybLast
 					asc1700  asc1600  asc1500  asc1400  asc1300  asc1300  asc1200  asc1100  asc1000  asc900   asc700   asc300   ascN300  ascN400  ascN400  ascN400  ascN300  ascN200  ;
@@ -1983,8 +1983,8 @@ lookup InitKernMetrics {
 					dsc500   dsc300   dsc0     dscN100  	ybLast
 					asc1700  asc1600  asc600   asc300   ;
   sub absLamIni.jm  by  absLamIni.jm  dy0  pyNULL  
-					dsc900   dsc600   dsc500   dsc400   dsc400   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc1700  asc1700  asc1100  asc800   asc700   asc600   asc600   asc500   ;
+					dsc900   dsc600   dsc500   	ybLast
+					asc1700  asc1700  asc1100  asc800   asc700   asc600   asc600   asc500   asc400   asc200   ;
   sub absLamIni.mm  by  absLamIni.mm  dy0  pyNULL  
 						ybLast
 					asc1200  asc1100  asc400   asc200   ;
@@ -2073,8 +2073,8 @@ lookup InitKernMetrics {
 					dsc400   dsc0     dscN100  	ybLast
 					asc1700  asc1700  asc1400  asc300   ;
   sub absLamMed.jm  by  absLamMed.jm  dy1000    pyNULL  
-					dsc600   dsc500   dsc400   dsc400   dsc300   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1900  asc1800  asc900   asc700   asc700   asc600   asc600   asc500   asc500   ;
+					dsc600   dsc500   dsc400   	ybLast
+					asc1900  asc1800  asc900   asc700   asc700   asc600   asc600   asc500   asc500   asc400   asc300   ;
   sub absLamMed.mm  by  absLamMed.mm  dy1000    pyNULL  
 					dsc300   	ybLast
 					asc1800  asc1800  asc1500  asc500   asc400   asc300   asc200   ;
@@ -2202,8 +2202,8 @@ lookup InitKernMetrics {
 					dsc600   dsc500   dsc500   dsc500   dsc300   dscN100  	ybLast
 					asc1000  asc1000  asc1100  asc1100  asc1000  asc700   ;
   sub absMeemIni.jm  by  absMeemIni.jm  dy0  pyNULL  
-					dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc900   asc1000  asc1000  asc1000  asc900   asc700   asc600   asc600   asc500   ;
+					dsc500   dsc400   dsc400   dsc400   	ybLast
+					asc900   asc1000  asc1000  asc1000  asc900   asc700   asc600   asc600   asc500   asc400   asc100   ;
   sub absMeemIni.mm  by  absMeemIni.mm  dy0  pyNULL  
 					dsc500   dsc400   dsc400   dsc300   	ybLast
 					asc900   asc1000  asc1000  asc1000  asc900   asc600   asc500   asc400   asc300   ;
@@ -2283,8 +2283,8 @@ lookup InitKernMetrics {
 					dsc500   dsc500   dsc500   dsc500   dsc500   dsc500   dsc400   dsc300   dsc100   dscN100  	ybLast
 					asc700   asc700   asc700   asc600   asc400   ;
   sub absMeemMed.jm  by  absMeemMed.jm  dy700     pyNULL  
-					dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc700   asc600   asc600   asc500   ;
+					dsc500   dsc400   dsc400   dsc400   	ybLast
+					asc700   asc600   asc600   asc500   asc400   asc100   ;
   sub absMeemMed.mm  by  absMeemMed.mm  dy500     pyNULL  
 					dsc200   dsc200   dsc200   dsc200   	ybLast
 					asc400   asc300   asc200   asc100   ;
@@ -2394,7 +2394,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absReh  by  absReh  dy0  py0  
 					dsc500   dsc200   dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  	ybLast
-					asc1000  asc800   asc600   asc400   asc300   asc300   asc200   asc100   
+					asc1000  asc800   asc600   asc400   asc300   asc300   asc400   asc200   
 					kw0;
   sub absRehDotBelow  by  absRehDotBelow  dy0  py0  
 					dsc500   dscN600  	ybLast
@@ -2414,7 +2414,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absRehFin._jkl  by  absRehFin._jkl  dy700     py0  
 					dsc300   dsc100   dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  	ybLast
-					asc700   asc700   asc500   asc400   asc300   asc200   asc200   asc100   
+					asc700   asc700   asc500   asc400   asc300   asc200   asc400   asc200   
 					kw0;
   sub absRehFin._sshg  by  absRehFin._sshg  dy600     py0  
 					dsc300   dsc100   dsc0     dscN200  dscN300  dscN300  	ybLast
@@ -2514,8 +2514,8 @@ lookup InitKernMetrics {
 					dsc600   dsc400   dsc300   dsc300   dsc300   dsc300   dsc300   dsc300   dsc400   dsc400   dsc400   dsc200   dscN100  	ybLast
 					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc700   asc700   asc500   ;
   sub absSadIni.jm  by  absSadIni.jm  dy0  pyNULL  
-					dsc600   dsc400   dsc300   dsc300   dsc300   dsc300   dsc300   dsc300   dsc300   dsc400   dsc500   dsc400   dsc400   dsc300   dsc100   dsc0     dscN100  	ybLast
-					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   ;
+					dsc600   dsc400   dsc300   dsc300   dsc300   dsc300   dsc300   dsc300   dsc300   dsc400   	ybLast
+					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   asc400   asc200   ;
   sub absSadIni.mm  by  absSadIni.mm  dy0  pyNULL  
 					dsc300   dsc200   dsc100   dsc100   dsc100   dsc100   dsc100   dsc100   dsc100   dsc200   dsc300   	ybLast
 					asc1000  asc1000  asc1000  asc900   asc900   asc800   asc600   asc500   asc500   asc500   asc500   asc500   asc500   asc500   asc400   asc300   ;
@@ -2589,8 +2589,8 @@ lookup InitKernMetrics {
 					dsc300   dsc300   dsc300   dsc400   dsc400   dsc400   dsc200   dscN100  	ybLast
 					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc700   asc700   asc500   ;
   sub absSadMed.jm  by  absSadMed.jm  dy300     pyNULL  
-					dsc300   dsc300   dsc300   dsc300   dsc400   dsc500   dsc400   dsc400   dsc300   dsc100   dsc0     dscN100  	ybLast
-					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   ;
+					dsc300   dsc300   dsc300   dsc300   dsc400   	ybLast
+					asc1200  asc1200  asc1200  asc1100  asc1100  asc1000  asc800   asc700   asc800   asc800   asc800   asc700   asc700   asc600   asc500   asc400   asc200   ;
   sub absSadMed.mm  by  absSadMed.mm  dy100     pyNULL  
 					dsc100   dsc100   dsc100   dsc100   dsc200   dsc300   	ybLast
 					asc1000  asc1000  asc1000  asc900   asc900   asc800   asc600   asc500   asc500   asc500   asc500   asc500   asc500   asc500   asc400   asc300   ;
@@ -2696,11 +2696,11 @@ lookup InitKernMetrics {
 					dsc600   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dscN100  	ybLast
 					asc1000  asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc500   ;
   sub absSeenIni.jm  by  absSeenIni.jm  dy0  pyNULL  
-					dsc600   dsc500   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dsc0     dscN100  	ybLast
-					asc1000  asc900   asc800   asc800   asc800   asc700   asc700   asc700   asc600   asc600   asc500   ;
+					dsc600   dsc500   dsc500   dsc500   dsc400   dsc400   	ybLast
+					asc1000  asc900   asc800   asc800   asc800   asc700   asc700   asc700   asc600   asc600   asc500   asc400   asc300   ;
   sub absSeenIni.jm_flat  by  absSeenIni.jm_flat  dy0  pyNULL  
-					dsc600   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc300   dsc200   dsc0     dscN100  	ybLast
-					asc1000  asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc600   asc500   ;
+					dsc600   dsc500   dsc500   dsc400   dsc400   dsc400   	ybLast
+					asc1000  asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc600   asc500   asc400   asc300   ;
   sub absSeenIni.mm  by  absSeenIni.mm  dy0  pyNULL  
 					dsc400   dsc300   dsc300   dsc200   dsc200   dsc200   dsc200   dsc200   	ybLast
 					asc800   asc600   asc600   asc600   asc500   asc400   asc500   asc500   asc500   asc500   asc400   asc300   asc200   ;
@@ -2775,11 +2775,11 @@ lookup InitKernMetrics {
 					dsc600   dsc600   dsc500   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dscN100  	ybLast
 					asc900   asc900   asc900   asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc400   ;
   sub absSeenMed.jm  by  absSeenMed.jm  dy900     pyNULL  
-					dsc700   dsc600   dsc500   dsc500   dsc500   dsc400   dsc400   dsc400   dsc400   dsc400   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc1000  asc1000  asc900   asc800   asc800   asc800   asc700   asc700   asc700   asc700   asc600   asc600   asc500   ;
+					dsc700   dsc600   dsc500   dsc500   dsc500   dsc400   dsc400   dsc400   	ybLast
+					asc1000  asc1000  asc900   asc800   asc800   asc800   asc700   asc700   asc700   asc700   asc600   asc600   asc500   asc400   asc100   ;
   sub absSeenMed.jm_flat  by  absSeenMed.jm_flat  dy800     pyNULL  
-					dsc600   dsc600   dsc500   dsc500   dsc500   dsc400   dsc300   dsc300   dsc400   dsc300   dsc300   dsc200   dsc100   dscN100  dscN100  	ybLast
-					asc900   asc900   asc900   asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc500   asc500   ;
+					dsc600   dsc600   dsc500   dsc500   dsc500   dsc400   dsc300   dsc300   	ybLast
+					asc900   asc900   asc900   asc800   asc800   asc800   asc700   asc600   asc600   asc600   asc600   asc500   asc500   asc300   asc100   ;
   sub absSeenMed.mm  by  absSeenMed.mm  dy700     pyNULL  
 					dsc400   dsc400   dsc300   dsc300   dsc300   dsc200   dsc200   dsc200   dsc200   dsc300   	ybLast
 					asc700   asc700   asc700   asc600   asc600   asc600   asc500   asc500   asc500   asc500   asc500   asc400   asc400   asc300   asc100   ;
@@ -2880,8 +2880,8 @@ lookup InitKernMetrics {
 					dsc700   dsc600   dsc500   dsc500   dsc400   dsc300   dsc300   dsc200   dsc0     dscN100  	ybLast
 					asc1300  asc1300  asc1300  asc1300  asc2200  asc2200  asc2000  asc700   asc400   asc300   ;
   sub absTahIni.jm  by  absTahIni.jm  dy0  pyNULL  
-					dsc700   dsc600   dsc600   dsc500   dsc500   dsc400   dsc400   dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1200  asc1300  asc1300  asc1200  asc2200  asc2200  asc2000  asc800   asc600   asc500   ;
+					dsc700   dsc600   dsc600   dsc500   dsc500   	ybLast
+					asc1200  asc1300  asc1300  asc1200  asc2200  asc2200  asc2000  asc800   asc600   asc500   asc400   asc200   ;
   sub absTahIni.kf  by  absTahIni.kf  dy0  pyNULL  
 					dscN100  dscN300  dscN400  dscN500  dscN500  dscN600  dscN600  dscN700  dscN700  dscN700  dscN700  dscN700  dscN600  dscN500  	ybLast
 					asc400   asc400   asc400   asc400   asc1100  asc1100  asc900   asc0     ascN200  ascN300  ascN300  ascN200  ;
@@ -2961,8 +2961,8 @@ lookup InitKernMetrics {
 					dsc200   dsc0     dscN100  	ybLast
 					asc1300  asc1300  asc1300  asc1300  asc2200  asc2200  asc2000  asc700   asc400   asc300   ;
   sub absTahMed.jm  by  absTahMed.jm  dy500     pyNULL  
-					dsc300   dsc200   dsc100   dsc0     dscN100  	ybLast
-					asc1200  asc1300  asc1300  asc1200  asc2200  asc2200  asc2000  asc800   asc600   asc500   ;
+						ybLast
+					asc1200  asc1300  asc1300  asc1200  asc2200  asc2200  asc2000  asc800   asc600   asc500   asc400   asc200   ;
   sub absTahMed.kf  by  absTahMed.kf  dyN300    pyNULL  
 					dscN700  dscN700  dscN700  dscN700  dscN700  dscN600  dscN500  	ybLast
 					asc400   asc400   asc400   asc400   asc1100  asc1100  asc900   asc0     ascN200  ascN300  ascN300  ascN200  ;

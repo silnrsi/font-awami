@@ -505,7 +505,17 @@ def TruncateLowFinals(lowers):
 # end of TruncateLowFinals
 
 
-def print_list(gn, vList):
+def Tweak(gn, uppers, lowers):
+    if gn == "absReh" or gn == "absRehFin._jkl":
+        # The left-hand point of these rehs needs more space.
+        uppers[-2] = uppers[-2] + 200
+        uppers[-1] = uppers[-1] + 100
+
+    return [uppers, lowers]
+
+
+
+def PrintList(gn, vList):
 
     if not vList:
         print(gn + ": list is empty")
@@ -571,18 +581,20 @@ with open(args.outfile, "w") as outf:
             #exit = "None" if exit is None else exit
             #print(gn + ": " + entry + " / " + exit)
             # if exit is None and isIsolateFinalBase(name): 
-            #     print_list(gn, lowers)
+            #     PrintList(gn, lowers)
 
             uppers, lowers = TrimMetrics(gn, uppers, lowers, entry, exit, sliceWidth)
 
             if gn == "absMeemMed.sn":
-                print_list(gn, lowers)
+                PrintList(gn, lowers)
 
             if exit is None and isIsolateFinalBase(gn): 
-                print_list(gn, lowers)
+                PrintList(gn, lowers)
                 lowers = TruncateLowFinals(lowers)
 
             #uppers, lowers = TruncateLongSeq(uppers, lowers)
+
+            uppers, lowers = Tweak(gn, uppers, lowers)
 
             #gnMarker = BaseMarkerName(gn)
             gnMarker = gn
