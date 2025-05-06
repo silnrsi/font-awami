@@ -366,8 +366,9 @@ def EntryInterface(gn):
 # end of EntryInterface
 
 def ExitInterface(gn):
-    # Note: for our purposes we don't need to distinguish between the multiple re, ch, and qf interfaces.
-    labels = ["benn", "bere", "behg", "beM1", "beM2", "beF", "be", ".jm", "snsn", "sn", "sd", "ta", "ai", "fe", "mm", "mmX",
+    # Note: for our purposes we don't need to distinguish between the multiple re, ch, and qf interfaces;
+    # their adjustments are all the same.
+    labels = ["benn", "bere", "behg", "beM1", "beM2", "beF", "be", "jm", "snsn", "sn", "sd", "ta", "ai", "fe", "mm", "mmX",
                   "nn", "hd", "hgM", "hgF", "qf", "re", "ch", "by"]
     if "Ini" in gn or "Med" in gn:
         for label in labels:
