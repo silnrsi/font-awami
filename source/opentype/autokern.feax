@@ -225,7 +225,9 @@ do	forlet n = range(0,12);
 
 lookup $ln_CalculateKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
-	sub  @YtMarker'  lookup _TryKern	@KwMarker  @YbMarker;
+#	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
+	sub  @YtMarker'  lookup TryKernShift	@KwMarker   @YbMarker;
+	sub  @YtMarker'  lookup TryKernShift	            @YbMarker;
 } $ln_CalculateKern;
 
 lookup $ln_EnforceBlock {
