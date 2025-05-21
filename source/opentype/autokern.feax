@@ -237,29 +237,9 @@ lookup $ln_CalculateKern {
 
 #	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
 
-	# first shift
+	sub @YtMarker' lookup _TryKernShift	@KwMarker'  @PyMarker'  @YbMarker';		# first shift
 
-	# Stop if there is already an internal blocker.
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;  # stop!
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' kblockI;  #  stop!
-	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' kblockI;  # stop!
-
-	sub         @YtMarker' lookup _TryKernShift	@KwMarker'  @PyMarker'  @YbMarker';
-
-	# subsequent shifts
-
-	ignore sub @YtMarker  kblockI                          @YbMarker';		# stop!
-
-	sub        @YtMarker  @YtMarker' lookup _TryKernShift  @YbMarker';		# continued shifts
+	sub @YtMarker  @YtMarker' lookup _TryKernShift  @YbMarker';					# subsequent shifts
 
 } $ln_CalculateKern;
 
