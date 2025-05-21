@@ -1263,6 +1263,33 @@ lookup _AddNuqtaHt1000{
   sub @AscMarker' lookup _Set3000;
 } _AddNuqtaHt1000;
 
+lookup _AddNuqtaHt1200{
+  sub ascN500' lookup _Set700;
+  sub ascN400' lookup _Set800;
+  sub ascN300' lookup _Set900;
+  sub ascN200' lookup _Set1000;
+  sub ascN100' lookup _Set1100;
+  sub asc0' lookup _Set1200;
+  sub asc100' lookup _Set1300;
+  sub asc200' lookup _Set1400;
+  sub asc300' lookup _Set1500;
+  sub asc400' lookup _Set1600;
+  sub asc500' lookup _Set1700;
+  sub asc600' lookup _Set1800;
+  sub asc700' lookup _Set1900;
+  sub asc800' lookup _Set2000;
+  sub asc900' lookup _Set2100;
+  sub asc1000' lookup _Set2200;
+  sub asc1100' lookup _Set2300;
+  sub asc1200' lookup _Set2400;
+  sub asc1300' lookup _Set2500;
+  sub asc1400' lookup _Set2600;
+  sub asc1500' lookup _Set2700;
+  sub asc1600' lookup _Set2800;
+  sub asc1700' lookup _Set2900;
+  sub @AscMarker' lookup _Set3000;
+} _AddNuqtaHt1200;
+
 lookup _SubtractNuqtaHt600{
   sub dscN1500' lookup _SetN1500;
   sub dscN1400' lookup _SetN1500;
@@ -1414,6 +1441,7 @@ lookup _AddNuqtaUpperHt{
   lookupflag UseMarkFilteringSet [@AscMarker @AscXMarker];
   sub ascx600 @AscMarker' lookup _AddNuqtaHt600;
   sub ascx1000 @AscMarker' lookup _AddNuqtaHt1000;
+  sub ascx1200 @AscMarker' lookup _AddNuqtaHt1200;
 } _AddNuqtaUpperHt;
 
 lookup _SubtractNuqtaLowerHt{
