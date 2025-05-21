@@ -1190,8 +1190,6 @@ lookup $lname {
 } $lname;
 
 }
-
-
 # end of do forlet...
 
 lookup _DelYtAndIncKw {
@@ -1318,7 +1316,7 @@ lookup _TryKern {
 } _TryKern;
 
 
-lookup TryKernShift {
+lookup _TryKernShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
 	# loop to match the various ytXXXX markers.
 do  forlet i = range(31);
@@ -1327,9 +1325,9 @@ do  forlet i = range(31);
     let insyt = "_InsYt"+ext;
     {
     sub $yt' lookup _BlockR lookup _DelYtAndIncKw @KwMarker' lookup $insyt @YbMarker';	# first shift
-    sub $yt' lookup _BlockR lookup _DelYt                    lookup $insyt @YbMarker';
+    sub $yt' lookup _BlockI lookup _DelYt                    lookup $insyt @YbMarker';
     }
-} TryKernShift;
+} _TryKernShift;
 
 lookup _InsBlockerAndDecKw {
 	# Decrement the KwMarker, because it got incremented before we knew there was going to be blocker further in.
@@ -1366,7 +1364,7 @@ lookup _MakeBlockerFinal {
 lookup _EnforceBlock {
 	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
 
-	ignore sub kblock @KwMarker';  # to avoid redoing from the same caller after insertion
+	ignore sub kblock  @KwMarker';  # to avoid redoing from the same caller after insertion
 
 	ignore sub kblock' @KwMarker';  # already final
 

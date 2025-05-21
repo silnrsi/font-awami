@@ -186,6 +186,7 @@ lookup SubtractNuqtaDescent {
 } SubtractNuqtaDescent;
 
 include(../../source/opentype/arithTopLevel.feax);
+# ------------    ^^^ This file includes the following:
 
 # Convert markers pt/pb back to asc/dsc
 # lookup MarkersYtb2AscDsc:
@@ -207,6 +208,8 @@ include(../../source/opentype/arithTopLevel.feax);
 #  ...
 #} MakeDescentAbsolute;
 
+# ---------------
+
 # Now actually do the comparisons to calculate the amount of kerning that is possible.
 
 # Each CalculateKern lookup below works backward by one slice in the sequence to be kerned,
@@ -216,7 +219,7 @@ include(../../source/opentype/arithTopLevel.feax);
 # We need this set of lookups for every potential kerned slice. Right now
 # we are allowing 12.
 
-# TODO: the last four lookups are not needed for the last iteration.
+# TODO: the last four lookups are not needed for the final iteration.
 
 do	forlet n = range(0,12);
 	let c = str(n + 1);
@@ -230,10 +233,34 @@ do	forlet n = range(0,12);
 {
 
 lookup $ln_CalculateKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
+	lookupflag UseMarkFilteringSet [@KwMarker @PyMarker @YtMarker @YbMarker @Kblocks];
+
 #	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
-	sub  @YtMarker'  lookup TryKernShift	@KwMarker'  @YbMarker';
-	sub  @YtMarker'  lookup TryKernShift	            @YbMarker';
+
+	# first shift
+
+	# Stop if there is already an internal blocker.
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' @YbMarker' @YtMarker' kblockI;  # stop!
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' @YbMarker' @YtMarker' kblockI;  #  stop!
+	ignore sub  @YtMarker' @KwMarker'  @PyMarker'  @YbMarker'  @YtMarker' kblockI;  # stop!
+
+	sub         @YtMarker' lookup _TryKernShift	@KwMarker'  @PyMarker'  @YbMarker';
+
+	# subsequent shifts
+
+	ignore sub @YtMarker  kblockI                          @YbMarker';		# stop!
+
+	sub        @YtMarker  @YtMarker' lookup _TryKernShift  @YbMarker';		# continued shifts
+
 } $ln_CalculateKern;
 
 lookup $ln_EnforceBlock {
