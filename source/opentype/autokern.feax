@@ -185,21 +185,27 @@ lookup SubtractNuqtaDescent {
 	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
 } SubtractNuqtaDescent;
 
+include(../../source/opentype/arithTopLevel.feax);
+
 # Convert markers pt/pb back to asc/dsc
 # lookup MarkersYtb2AscDsc:
-include(../../source/opentype/arithMarkersYtb2AscDsc.feax);
 
-lookup MakeAscentAbsolute {
-	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
-	sub @PyMarker	@AscXMarker		@AscMarker' lookup _MakeAscAbsolute;
-	sub @PyMarker					@AscMarker'	lookup _MakeAscAbsolute;
-} MakeAscentAbsolute;
+# These are flattened for the sake of performance.
+# lookup MakeAscentAbsolute;
+#  lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
+#  sub py0  asc100' lookup _Set100;
+#  sub py0  asc200' lookup _Set200;
+#  sub py0  asc300' lookup _Set300;
+#  ...
+#} MakeAscentAbsolute;
 
-lookup MakeDescentAbsolute {
-	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker];
-	sub @PyMarker	@DscXMarker		@DscMarker' lookup _MakeDscAbsolute;
-	sub @PyMarker					@DscMarker' lookup _MakeDscAbsolute;
-} MakeDescentAbsolute;
+# lookup MakeDescentAbsolute;
+#  lookupflag UseMarkFilteringSet [@PyMarker @DscMarker];
+#  sub py0  dscN1500' lookup _SetN1500;
+#  sub py0  dscN1400' lookup _SetN1400;
+#  sub py0  dscN1300' lookup _SetN1300;
+#  ...
+#} MakeDescentAbsolute;
 
 # Now actually do the comparisons to calculate the amount of kerning that is possible.
 
@@ -287,4 +293,6 @@ lookup RestoreBases {
 # 	sub @YbMarker by NULL;
 # 	sub @Kblocks by NULL;
 # 	sub @PyMarker by NULL;
+#   sub ybIgnore by NULL;
+#   sub ytIgnore by NULL;
 # } CleanUpMarkers;

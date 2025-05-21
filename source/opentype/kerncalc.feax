@@ -1320,13 +1320,14 @@ lookup _TryKern {
 
 lookup TryKernShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
+	# loop to match the various ytXXXX markers.
 do  forlet i = range(31);
     let ext = str(i) + ("" if i == 0 else "00");
     let yt = "yt"+ext;
     let insyt = "_InsYt"+ext;
     {
-    sub $yt' lookup _BlockR lookup _DelYtAndIncKw @KwMarker' lookup $insyt @YbMarker';
-    sub $yt' lookup _BlockR lookup _DelYt lookup $insyt @YbMarker' ;
+    sub $yt' lookup _BlockR lookup _DelYtAndIncKw @KwMarker' lookup $insyt @YbMarker';	# first shift
+    sub $yt' lookup _BlockR lookup _DelYt                    lookup $insyt @YbMarker';
     }
 } TryKernShift;
 
