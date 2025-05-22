@@ -128,50 +128,59 @@ lookup AdjustForBaseOverhang {
 # as there are bases in the sequence that we need to measure.
 # Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
 
-lookup MeasureY2 {
+lookup MeasureY {
 	lookupflag UseMarkFilteringSet @YMarkers;
-	sub        pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY2;
+	# rsub pyNULL' dy100 py0  by  py100;
+	# rsub pyNULL' dy100 py100  by  py200;
+	# rsub pyNULL' dy100 py200  by  py300;
+	# etc.
+include(../../source/opentype/arithMeasureYrules.feax);
+} MeasureY;
 
-lookup MeasureY3 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY3;
+# lookup MeasureY2 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub        pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY2;
 
-lookup MeasureY4 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY4;
+# lookup MeasureY3 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY3;
 
-lookup MeasureY5 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY5;
+# lookup MeasureY4 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY4;
 
-lookup MeasureY6 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY6;
+# lookup MeasureY5 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY5;
 
-lookup MeasureY7 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY7;
+# lookup MeasureY6 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY6;
 
-lookup MeasureY8 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY8;
+# lookup MeasureY7 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY7;
 
-lookup MeasureY9 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY9;
+# lookup MeasureY8 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY8;
 
-lookup MeasureY10 {
-	lookupflag UseMarkFilteringSet @YMarkers;
-	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-} MeasureY10;
+# lookup MeasureY9 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY9;
+
+# lookup MeasureY10 {
+# 	lookupflag UseMarkFilteringSet @YMarkers;
+# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
+# } MeasureY10;
 
 # asc/dsc -> pt/pb
 # We include the @PyMarker to recognize the boundaries of the bases.
