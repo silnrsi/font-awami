@@ -69,22 +69,23 @@ lookup _InsertLowerMarker1000 {
 lookup _InsertNuqtaDiacMarker {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike];
 
-	sub absRehFin @PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
+	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
+	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot2u;
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot3u;		# 950
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot4u;		# 950
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot3u;
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot4u;
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;		# 950
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;		# 950
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;
 
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
-	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;		# 950
-	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;		# 950
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;
 	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
 
 	# Others:

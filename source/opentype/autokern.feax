@@ -53,13 +53,13 @@ lookup TreatBasesAsMarks {
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 lookup AdjustForNuqtaOverhang {
-	lookupflag UseMarkFilteringSet [@KernBaseMark @NuqtaLikeLower @KwMarker];
-	sub @KwMarker' lookup _Dec400kw		mkBehIni.mm'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec400kw		mkJeemIni.mmX'	lookup _ExpandYbBy4	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec200kw		mkJeemIni.mmX'	lookup _ExpandYbBy2	[_dot1l];
-	sub @KwMarker' lookup _Dec200kw		mkLamIni.mm'	lookup _ExpandYbBy2 [_bar];
-
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark ybLast @NuqtaLikeLower];
+	sub @KwMarker' lookup _Dec200kw		mkBehIni.mm'	ybLast' lookup _ExtendYbBy2	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec400kw		mkJeemIni.mmX'	ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec200kw		mkJeemIni.mmX'	ybLast' lookup _ExtendYbBy2	[_dot1l];
+	sub @KwMarker' lookup _Dec200kw		mkLamIni.mm'	ybLast' lookup _ExtendYbBy2	[_bar];
 } AdjustForNuqtaOverhang;
+
 
 lookup AdjustForBaseOverhang {
 	lookupflag UseMarkFilteringSet [@KernBaseMarkWord @KwMarker];
@@ -67,7 +67,7 @@ lookup AdjustForBaseOverhang {
 
 	# short sequences with overhang on right
 	sub mkRehFin	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
-	#sub mkRehFin.hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	#sub mkRehFin._hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
 	sub 			@KwMarker' lookup _Dec400kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
 } AdjustForBaseOverhang;
 
@@ -218,6 +218,15 @@ include(../../source/opentype/arithTopLevel.feax);
 #} MakeDescentAbsolute;
 
 # ---------------
+
+lookup ExtendForNuqtaOverhang {
+	lookupflag UseMarkFilteringSet [@YbMarker @ExtendMarker];
+	do	forlet ybm = feaclass('YbMarker');
+	{
+		sub $ybm extend2' by $ybm $ybm;
+		sub $ybm extend4' by $ybm $ybm $ybm $ybm;
+	}
+} ExtendForNuqtaOverhang;
 
 # Now actually do the comparisons to calculate the amount of kerning that is possible.
 

@@ -505,11 +505,17 @@ def TruncateLowFinals(lowers):
 # end of TruncateLowFinals
 
 
+# Hard code some special cases.
 def Tweak(gn, uppers, lowers):
-    if gn == "absReh" or gn == "absRehFin._jkl":
+    if gn == "absReh" or gn == "absRehFin._jkl" or gn == "absRehFin":
         # The left-hand point of these rehs needs more space.
-        uppers[-2] = uppers[-2] + 200
-        uppers[-1] = uppers[-1] + 100
+        uppers[-4] = 400
+        uppers[-3] = 400
+        uppers[-2] = 400
+        uppers[-1] = 400
+    elif gn == "absRehFin._hgM":
+        uppers[-2] = 400
+        uppers[-1] = 400
 
     return [uppers, lowers]
 

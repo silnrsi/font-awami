@@ -128,19 +128,13 @@ lookup _Inc800kw {
 
 # Add more YbMarkers to account for a wide nuqta that hangs out to the right.
 
-lookup _ExpandYbBy2 {
-do	forlet ybm = feaclass('YbMarker');
-	{
-		sub $ybm by $ybm $ybm $ybm;
-	}
-} _ExpandYbBy2;
+lookup _ExtendYbBy2 {
+	sub ybLast by extend2 ybLast;
+} _ExtendYbBy2;
 
-lookup _ExpandYbBy4 {
-do	forlet ybm = feaclass('YbMarker');
-	{
-		sub $ybm by $ybm $ybm $ybm $ybm $ybm;
-	}
-} _ExpandYbBy4;
+lookup _ExtendYbBy4 {
+	sub ybLast by extend4 ybLast;
+} _ExtendYbBy4;
 
 
 lookup _InsYt0 {
