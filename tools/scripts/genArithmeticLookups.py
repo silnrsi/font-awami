@@ -37,11 +37,9 @@ ybMax = 3000
 inc = 100
 
 # These lists should match the _InsertNuqtaDiacMarker lookup:
-# upperMarkHts = [600, 950]	# 1 dot, 3 dots
-# lowerMarkHts = [600, 700, 950]	# 1 dot/shadda, hehhook, zabar/zair/pesh,
 
-upperMarkHts = [600, 1000]	# 1 dot, 3 dots
-lowerMarkHts = [600, 700, 1000]	# 1 dot/shadda, hehhook, zabar/zair/pesh,
+upperMarkHts = [600, 1000, 1200]	# 1 dot, 3 dots, dot on reh
+lowerMarkHts = [600, 700, 1000]		# 1 dot/shadda, hehhook, zabar/zair/pesh,
 
 #import sys
 
@@ -417,7 +415,7 @@ def GenLookup_AddNuqtaUpLowHeight(valueList, dir) :
 	# lookup _AddNuqtaUpperHt {
 	# 	lookupflag UseMarkFilteringSet [@AscMarker @AscXMarker];
 	# 	sub ascx600	@AscMarker' lookup _AddNuqtaHt600;
-	# 	sub ascx950 @AscMarker' lookup _AddNuqtaHt950;
+	# 	sub ascx950 @AscMarker' lookup _AddNuqtaHt1000;
 	# } _AddNuqtqUpperHt;
 
 	if dir == 1:	# add
@@ -597,13 +595,14 @@ GenClasses("dsc", "DscMarker", dscMin, dscMax)
 GenClasses("yt", "YtMarker", ytMin, ytMax)
 GenClasses("yb", "YbMarker", ybMin, ybMax)
 
-print("\n@AscXMarker = [ascx600 ascx700 ascx950 ascx1000 ascx1050 ascx1500];", file=fout)
-print("@DscXMarker = [dscx600 dscx700 dscx950 dscx1000 dscx1050];", file=fout)
+print("\n@AscXMarker = [ascx600 ascx700 ascx1000 ascs1200 ascx1500];", file=fout)
+print("@DscXMarker = [dscx600 dscx700 dscx1000];", file=fout)
 
-print("\n@XMarkers = [@PxMarker @DxMarker pxNULL];", file=fout);
-print("@XfMarkers = [@PxfMarker @DxMarker pxfNULL];", file=fout);
-print("@YMarkers = [@PyMarker @DyMarker pyNULL];", file=fout);
+print("\n@XMarkers = [@PxMarker @DxMarker pxNULL];", file=fout)
+print("@XfMarkers = [@PxfMarker @DxMarker pxfNULL];", file=fout)
+print("@YMarkers = [@PyMarker @DyMarker pyNULL];", file=fout)
 #print("@YtbMarkers = [@YtMarker @YbMarker ]")
+print("\n@ExtendMarker = [extend2 extend4];", file=fout)
 
 fout.close()
 print("Classes written to '" + outfile + "'")
