@@ -1,7 +1,7 @@
 #
 #	File: measure_inc.feax
 #
-# FEAX code for Awami Nastaliq
+#	FEAX code for Awami Nastaliq
 
 #	This file is part of the Awami Nastaliq font 
 #	(https://software.sil.org/awami) and is 
@@ -16,7 +16,7 @@
 #	details including an FAQ.
 
 # This file is intended to be included in main.feax. They are auxiliary lookups
-# that don't need to be auto-generated.
+# that it doesn't make sense to auto-generate.
 
 # These lookups are run within feature calt.
 
@@ -29,10 +29,6 @@ lookup _InsertUpperMarker600 {
 lookup _InsertUpperMarker900 {
 	sub @PyInitMarker  by	@PyInitMarker	ascx950;
 } _InsertUpperMarker900;
-
-# lookup _InsertUpperMarker950 {
-# 	sub @PyInitMarker  by	@PyInitMarker	ascx950;
-# } _InsertUpperMarker950;
 
 lookup _InsertUpperMarker1000 {
 	sub @PyInitMarker  by	@PyInitMarker	ascx1000;
@@ -53,10 +49,6 @@ lookup _InsertLowerMarker700 {
 lookup _InsertLowerMarker900 {
 	sub @PyInitMarker  by	@PyInitMarker	dscx950;
 } _InsertLowerMarker900;
-
-# lookup _InsertLowerMarker950 {
-# 	sub @PyInitMarker  by	@PyInitMarker	dscx950;
-# } _InsertLowerMarker950;
 
 lookup _InsertLowerMarker1000 {
 	sub @PyInitMarker  by	@PyInitMarker	dscx1000;

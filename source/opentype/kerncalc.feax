@@ -1371,7 +1371,7 @@ lookup _EnforceBlock {
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIso                                    @KwMarker;
 
 	# There could be a kblock before the NEXT KwMarker indicating that the following glyph is also blocked.
-	# It is irrelevant.
+	# It is irrelevant, but account for it.
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin  @KbNotI  @KwMarker;
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIso                           @KbNotI  @KwMarker;
 
@@ -1436,8 +1436,8 @@ lookup _PyDelYb {
 lookup _ShiftFromNext {
 	lookupflag UseMarkFilteringSet [ybLast @YbMarker @PyMarker];
 
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1400'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000,
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1400'	lookup _PyDelYb;	# ie, too low to kern underneath
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1300'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1200'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN1100'	lookup _PyDelYb;	#    \/
