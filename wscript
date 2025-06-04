@@ -34,8 +34,8 @@ APPNAME='AwamiNastaliqOT'      #### AwamiNastaliq-Dev
 FAMILY=APPNAME
 
 
-DESC_NAME = "Awami-Nastaliq-OT"
-DEBPKG = 'fonts-awami'
+# DESC_NAME = "Awami-Nastaliq-OT"
+# DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
 #getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')

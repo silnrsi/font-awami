@@ -53,11 +53,16 @@ lookup TreatBasesAsMarks {
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 lookup AdjustForNuqtaOverhang {
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark ybLast @NuqtaLikeLower];
-	sub @KwMarker' lookup _Dec200kw		mkBehIni.mm'	ybLast' lookup _ExtendYbBy2	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec400kw		mkJeemIni.mmX'	ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec200kw		mkJeemIni.mmX'	ybLast' lookup _ExtendYbBy2	[_dot1l];
-	sub @KwMarker' lookup _Dec200kw		mkLamIni.mm'	ybLast' lookup _ExtendYbBy2	[_bar];
+	# @KernBaseMarkVis ignores spaces
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower];
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mm ]'		ybLast' lookup _ExtendYbBy2	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec400kw		[mkBehIni.ch mkBehIni.qf]'		ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mmX]'					ybLast' lookup _ExtendYbBy2	[_dot1l];
+
+	sub @KwMarker' lookup _Dec400kw		[mkJeemIni.mmX mkJeemIni.qf]'	ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
+	sub @KwMarker' lookup _Dec200kw		[mkJeemIni.mmX mkJeemIni.qf]'	ybLast' lookup _ExtendYbBy2	[_dot1l];
+
+	sub @KwMarker' lookup _Dec200kw		[mkLamIni.mm]'					ybLast' lookup _ExtendYbBy2	[_bar];
 } AdjustForNuqtaOverhang;
 
 
@@ -123,12 +128,16 @@ include(../../source/opentype/arithTopLevel.feax);
 
 # ---------------
 
+# Extend the slices below to account for the width of an overhanging nuqta.
 lookup ExtendForNuqtaOverhang {
 	lookupflag UseMarkFilteringSet [@YbMarker @ExtendMarker];
 	do	forlet ybm = feaclass('YbMarker');
 	{
+		sub $ybm extend1' by $ybm;
 		sub $ybm extend2' by $ybm $ybm;
+		sub $ybm extend3' by $ybm $ybm $ybm;
 		sub $ybm extend4' by $ybm $ybm $ybm $ybm;
+		sub $ybm extend4' by $ybm $ybm $ybm $ybm $ybm;
 	}
 } ExtendForNuqtaOverhang;
 
