@@ -819,6 +819,13 @@ lookup ConnectToRoundKaf{
 	sub @MedDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@MedSd_sub;
 } ConnectToRoundKaf;
 
+# Patch the pre-.sd beh form which is now wrong.
+lookup BehSdContextuals2 {
+	lookupflag IgnoreMarks;
+	sub absBehIni.beM2'  @MedSd_sub  by  absBehIni.be;
+	sub absBehMed.beM2'  @MedSd_sub  by  absBehMed.be;
+} BehSdContextuals2;
+
 
 lookup MeemContextuals {
 	lookupflag IgnoreMarks;
