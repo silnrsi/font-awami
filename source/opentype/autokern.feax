@@ -72,60 +72,8 @@ lookup AdjustForBaseOverhang {
 } AdjustForBaseOverhang;
 
 
-# Measure widths backward
-
-# lookup MeasureXFinal {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	ignore sub pxNULL'                   @DxMarker [@PxMarker pxNULL];		# ignore all but the last
-# 	sub        pxNULL' lookup _InitPosX  @DxMarker;
-# } MeasureXFinal;
-
-# Because we can't use rsub to process backwards, we need as many of these lookups
-# as there are bases in the sequence that we want to measure.
-# Note that @PxMarker does NOT include pxNull, which is what forces the backwards processing.
-
-# lookup MeasureX2 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX2;
-
-# lookup MeasureX3 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX3;
-
-# lookup MeasureX4 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX4;
-
-# lookup MeasureX5 {
-# 	lookupflag UseMarkFilteringSet @XMarkers;
-# 	sub pxNULL' lookup _AddMarkersX  @DxMarker @PxMarker;
-# } MeasureX5;
-
-# Measure widths forward
-
-# lookup MeasureXinitial {
-# 	lookupflag UseMarkFilteringSet [@KernBaseMark @XMarkers];
-# 	sub @MeasureInitialMark	pxfNULL' lookup _Set0;
-# } MeasureXinitial;
-
-# lookup MeasureXforward {
-# 	lookupflag UseMarkFilteringSet @XfMarkers;
-# 	sub @PxfMarker	@DxMarker	pxfNULL' lookup _AddMarkersXforward;
-# } MeasureXforward;
-
 # Measure heights
 
-# lookup MeasureYFinal { -- now the py0 is inserted by InitKernMetrics for isolates and finals
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	ignore sub pyNULL'                   @DyMarker [@PyMarker pyNULL];		# ignore all but the last
-# 	sub        pyNULL' lookup _InitPosY  @DyMarker;
-# } MeasureYFinal;
-
-# Because we can't use rsub to process backwards, we need as many of these lookups
-# as there are bases in the sequence that we need to measure.
 # Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
 
 lookup MeasureY {
@@ -137,50 +85,6 @@ lookup MeasureY {
 include(../../source/opentype/arithMeasureYrules.feax);
 } MeasureY;
 
-# lookup MeasureY2 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub        pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY2;
-
-# lookup MeasureY3 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY3;
-
-# lookup MeasureY4 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY4;
-
-# lookup MeasureY5 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY5;
-
-# lookup MeasureY6 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY6;
-
-# lookup MeasureY7 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY7;
-
-# lookup MeasureY8 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY8;
-
-# lookup MeasureY9 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY9;
-
-# lookup MeasureY10 {
-# 	lookupflag UseMarkFilteringSet @YMarkers;
-# 	sub pyNULL' lookup _AddMarkersY  @DyMarker @PyMarker;
-# } MeasureY10;
 
 # asc/dsc -> pt/pb
 # We include the @PyMarker to recognize the boundaries of the bases.
