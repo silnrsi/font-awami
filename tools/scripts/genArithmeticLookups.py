@@ -602,7 +602,7 @@ print("\n@XMarkers = [@PxMarker @DxMarker pxNULL];", file=fout)
 print("@XfMarkers = [@PxfMarker @DxMarker pxfNULL];", file=fout)
 print("@YMarkers = [@PyMarker @DyMarker pyNULL];", file=fout)
 #print("@YtbMarkers = [@YtMarker @YbMarker ]")
-print("\n@ExtendMarker = [extend1 extend2 extend3 extend4 extend5];", file=fout)
+print("\n@ExtYbMarker = [extYb1 extYb2 extYb3 extYb4 extYb5 extYb6];", file=fout)
 
 fout.close()
 print("Classes written to '" + outfile + "'")

@@ -60,6 +60,18 @@ lookup _DecKern {
 	sub kw1600  by  kw1500;
 } _DecKern;
 
+# TODO: flesh these out properly.
+lookup _Dec100kw {
+	sub kwN800	by  kwN900;
+	sub kwN600	by  kwN700;
+	sub kwN400	by  kwN500;
+	sub kwN200	by  kwN300;
+	sub kw0		by  kwN100;
+	sub kw200	by  kw100;
+	sub kw400	by	kw300;
+	sub kw600	by	kw500;
+	sub kw800	by	kw700;
+} _Dec100kw;
 
 lookup _Dec200kw {
 	sub kwN800	by  kwN1000;
@@ -72,6 +84,18 @@ lookup _Dec200kw {
 	sub kw600	by	kw400;
 	sub kw800	by	kw600;
 } _Dec200kw;
+
+lookup _Dec300kw {
+	sub kwN800	by  kwN1000;
+	sub kwN600	by  kwN900;
+	sub kwN400	by  kwN700;
+	sub kwN200	by  kwN500;
+	sub kw0		by  kwN300;
+	sub kw200	by  kwN100;
+	sub kw400	by	kw100;
+	sub kw600	by	kw300;
+	sub kw800	by	kw500;
+} _Dec300kw;
 
 lookup _Dec400kw {
 	sub kwN1000	by	kwN1000;
@@ -86,7 +110,21 @@ lookup _Dec400kw {
 	sub kw800	by	kw400;
 } _Dec400kw;
 
-lookup _Dec600kw {
+lookup _Dec500kw {
+	sub kwN1000	by	kwN1000;
+	sub kwN800	by	kwN1000;
+	sub kwN600	by	kwN1000;
+	sub kwN400	by	kwN900;
+	sub kwN200	by	kwN700;
+	sub kw0		by  kwN500;
+	sub kw200	by	kwN300;
+	sub kw400	by	kwN100;
+	sub kw600	by	kw100;
+	sub kw800	by	kw300;
+	sub kw1000	by	kw500;
+} _Dec500kw;
+
+lookup _Dec600kw {  # is this needed?
 	sub kwN1000	by	kwN1000;
 	sub kwN800	by	kwN1000;
 	sub kwN600	by	kwN1000;
@@ -100,7 +138,7 @@ lookup _Dec600kw {
 	sub kw1000	by	kw400;
 } _Dec600kw;
 
-lookup _Dec800kw {
+lookup _Dec800kw {  # is this needed?
 	sub kwN1000	by	kwN1000;
 	sub kwN800	by	kwN1000;
 	sub kwN600	by	kwN1000;
@@ -127,14 +165,29 @@ lookup _Inc800kw {
 } _Inc800kw;
 
 # Add more YbMarkers to account for a wide nuqta that hangs out to the right.
+lookup _ExtendYbBy1 {
+	sub ybLast by extYb1 ybLast;
+} _ExtendYbBy1;
 
 lookup _ExtendYbBy2 {
-	sub ybLast by extend2 ybLast;
+	sub ybLast by extYb2 ybLast;
 } _ExtendYbBy2;
 
+lookup _ExtendYbBy3 {
+	sub ybLast by extYb3 ybLast;
+} _ExtendYbBy3;
+
 lookup _ExtendYbBy4 {
-	sub ybLast by extend4 ybLast;
+	sub ybLast by extYb4 ybLast;
 } _ExtendYbBy4;
+
+lookup _ExtendYbBy5 {
+	sub ybLast by extYb5 ybLast;
+} _ExtendYbBy5;
+
+lookup _ExtendYbBy6 {
+	sub ybLast by extYb6 ybLast;
+} _ExtendYbBy6;
 
 
 lookup _InsYt0 {

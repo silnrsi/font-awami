@@ -49,20 +49,61 @@ lookup TreatBasesAsMarks {
 	sub @KernBaseOther	by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
 
+@DotWide = [_dot2l _dot3l _dot4l];
+
 # Must come after InsertMarkers.
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 lookup AdjustForNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower];
-	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mm ]'		ybLast' lookup _ExtendYbBy2	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec400kw		[mkBehIni.ch mkBehIni.qf]'		ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mmX]'					ybLast' lookup _ExtendYbBy2	[_dot1l];
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
 
-	sub @KwMarker' lookup _Dec400kw		[mkJeemIni.mmX mkJeemIni.qf]'	ybLast' lookup _ExtendYbBy4	[_dot2l _dot3l _dot4l];
-	sub @KwMarker' lookup _Dec200kw		[mkJeemIni.mmX mkJeemIni.qf]'	ybLast' lookup _ExtendYbBy2	[_dot1l];
+	# beh initials
+	sub @KwMarker' lookup _Dec100kw		[mkBehIni.be mkBehIni.beM1
+										 mkBehIni.benn]'				ybLast' lookup _ExtendYbBy1	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.re]'					ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec300kw		[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy3	@DotWide  @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _Dec100kw		[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy1	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.ai]'					ybLast' lookup _ExtendYbBy2	@DotWide  @KernBaseMarkMed;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mm ]'					ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy2	_dot1l;
+	sub @KwMarker' lookup _Dec600kw		[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy6	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.hd]'					ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec100kw		[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy1	_dot1l;
+	sub @KwMarker' lookup _Dec400kw		[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy4	@DotWide;
 
-	sub @KwMarker' lookup _Dec200kw		[mkLamIni.mm]'					ybLast' lookup _ExtendYbBy2	[_bar];
+	# jeem initials
+	sub @KwMarker' lookup _Dec100kw		[mkJeemIni.re]'					ybLast' lookup _ExtendYbBy1	@DotWide;
+	sub @KwMarker' lookup _Dec600kw		[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy6	@DotWide @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _Dec200kw		[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec400kw		[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy4	@DotWide;
+	sub @KwMarker' lookup _Dec100kw		[mkJeemIni.fe]'					ybLast' lookup _ExtendYbBy1	@DotWide  @KernBaseMarkMed;
+	sub @KwMarker' lookup _Dec200kw		[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy2	_dot1l;
+	sub @KwMarker' lookup _Dec400kw		[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy4	@DotWide;
+	sub @KwMarker' lookup _Dec100kw		[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy1	_dot1l;
+	sub @KwMarker' lookup _Dec300kw		[mkJeemIni.qf]'					ybLast' lookup _ExtendYbBy3	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkJeemIni.ai]'					ybLast' lookup _ExtendYbBy2	@DotWide  @KernBaseMarkMed;
+	sub @KwMarker' lookup _Dec100kw		[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy1	@DotWide;
+	sub @KwMarker' lookup _Dec400kw		[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy4	@DotWide;
+
+	# feh w/ three dots below
+	sub @KwMarker' lookup _Dec300kw		[mkFehIni.jm]'					ybLast' lookup _ExtendYbBy3	@DotWide  @KernBaseMarkMed;
+	sub @KwMarker' lookup _Dec100kw		[mkFehIni.fe]'					ybLast' lookup _ExtendYbBy1	@DotWide  @KernBaseMarkMed;
+	sub @KwMarker' lookup _Dec100kw		[mkFehIni.sn]'					ybLast' lookup _ExtendYbBy1	@DotWide;
+	sub @KwMarker' lookup _Dec300kw		[mkFehIni.mmX mkFehIni.hgM]'	ybLast' lookup _ExtendYbBy3	@DotWide;
+	sub @KwMarker' lookup _Dec400kw		[mkFehIni.mm mkFehIni.hd]'		ybLast' lookup _ExtendYbBy4	@DotWide;
+	sub @KwMarker' lookup _Dec200kw		[mkFehIni.nn mkFehIni.qf]'		ybLast' lookup _ExtendYbBy2	@DotWide;
+	sub @KwMarker' lookup _Dec500kw		[mkFehIni.ch]'					ybLast' lookup _ExtendYbBy5	@DotWide;
+
+	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and
+	# by considerably more than 100.
+	sub @KwMarker' lookup _Dec100kw		[mkLamBar]'						ybLast' lookup _ExtendYbBy1;
+	sub @KwMarker' lookup _Dec100kw		[mkLamIni mkLamIni.be mkLamIni.beM1 mkLamIni.beM2 mkLamIni.re
+										mkLamIni.benn mkLamIni.behg mkLamIni.bere mkLamIni.jm mkLamIni.sn
+										mkLamIni.snsn mkLamIni.sd mkLamIni.ta mkLamIni.ai mkLamIni.fe mkLamIni.mm
+										mkLamIni.hd mkLamIni.hgM mkLamIni.hgF mkLamIni.nn mkLamIni.qf
+										mkLamIni.ch]'					ybLast' lookup _ExtendYbBy1	[_bar];
 } AdjustForNuqtaOverhang;
 
 
@@ -72,7 +113,7 @@ lookup AdjustForBaseOverhang {
 
 	# short sequences with overhang on right
 	sub mkRehFin	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
-	#sub mkRehFin._hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	#sub mkRehFin._hgM	@KwMarker' lookup _Dec800kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # 400 is too much
 	sub 			@KwMarker' lookup _Dec400kw		@KernBaseMarkIni	[mkJeemFin mkAinFin];
 } AdjustForBaseOverhang;
 
@@ -130,14 +171,15 @@ include(../../source/opentype/arithTopLevel.feax);
 
 # Extend the slices below to account for the width of an overhanging nuqta.
 lookup ExtendForNuqtaOverhang {
-	lookupflag UseMarkFilteringSet [@YbMarker @ExtendMarker];
+	lookupflag UseMarkFilteringSet [@YbMarker @ExtYbMarker];
 	do	forlet ybm = feaclass('YbMarker');
 	{
-		sub $ybm extend1' by $ybm;
-		sub $ybm extend2' by $ybm $ybm;
-		sub $ybm extend3' by $ybm $ybm $ybm;
-		sub $ybm extend4' by $ybm $ybm $ybm $ybm;
-		sub $ybm extend4' by $ybm $ybm $ybm $ybm $ybm;
+		sub $ybm extYb1' by $ybm;
+		sub $ybm extYb2' by $ybm $ybm;
+		sub $ybm extYb3' by $ybm $ybm $ybm;
+		sub $ybm extYb4' by $ybm $ybm $ybm $ybm;
+		sub $ybm extYb5' by $ybm $ybm $ybm $ybm $ybm;
+		sub $ybm extYb6' by $ybm $ybm $ybm $ybm $ybm $ybm;
 	}
 } ExtendForNuqtaOverhang;
 
