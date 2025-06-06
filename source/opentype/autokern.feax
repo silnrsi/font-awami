@@ -1,5 +1,5 @@
 #
-#	File: measure.feax
+#	File: kerncalc.feax
 #
 # FEAX code for Awami Nastaliq
 
@@ -17,11 +17,10 @@
 
 # This file is intended to be included in main.feax.
 
-# These lookups are run within feature ss01.
+# Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
 # lookup InsertMarkers:
 include(../../source/opentype/autoKernMetrics.feax);
-###include(../../source/opentype/autoKernMetrics_TEMP.feax);
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks.

@@ -1,0 +1,38 @@
+#
+#	File: collfix.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file is intended to be included in main.feax.
+
+# Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
+
+@CfMarker = [cfNS0 cfN100 cfN200 cfN300 cfN400 cfN500 cfS100 cfS200 cfS300 cfS400 cfS500
+	cfEW0 cfE100 cfE200 cfE300 cfE400 cfE500 cfW100 cfW200 cfW300 cfW400 cfW500];
+
+
+@AnyNastaliq = [@GDEF_bases @GDEF_marks];
+
+
+lookup CollFixNuqtas {
+
+	# beh + beh
+
+	sub absBehIni.beM2  @NuqtaLikeUpper' lookup _ShiftN100	absBehMed @NuqtaLikeUpper;
+	sub absBehIni.beM2  @NuqtaLikeUpper  @CfMarker			absBehMed @NuqtaLikeUpper' lookup _ShiftS100;
+
+	sub absBehIni.beM2  @NuqtaLikeLower   					absBehMed @NuqtaLikeLower' lookup _ShiftS100;
+
+} CollFixNuqtas;

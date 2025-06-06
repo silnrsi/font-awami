@@ -1,0 +1,50 @@
+#
+#	File: collfix.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file is intended to be included in main.feax.
+
+# Lookups used by collision fixing.
+
+
+# shift north
+
+lookup _ShiftN100 {
+	sub @NuqtaLike  by  @NuqtaLike  cfN100;
+} _ShiftN100;
+
+lookup _ShiftN200 {
+	sub @NuqtaLike  by  @NuqtaLike  cfN200;
+} _ShiftN200;
+
+lookup _ShiftN100_next {
+	sub @AllBases  @NuqtaLike'  by  @NuqtaLike  cfN100;
+} _ShiftN100_next;
+
+# shift south
+
+lookup _ShiftS100 {
+	sub @NuqtaLike  by  @NuqtaLike  cfS100;
+} _ShiftS100;
+
+lookup _ShiftS100_next {
+	sub absBehMed  @NuqtaLike'  by  @NuqtaLike  cfS100;
+} _ShiftS100_next;
+
+# shift east
+
+
+# shift west
