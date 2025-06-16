@@ -16,27 +16,73 @@
 #	details including an FAQ.
 
 # This file is intended to be included in main.feax. They are auxiliary lookups
-# that it doesn't make sense to auto-generate.
+# that it doesn't make sense to auto-generate. They incorporate knowledge of Nastaliq
+# script and the Awami glyph set.
 
 # These lookups are run within feature calt.
 
 @PyInitMarker = [pyNULL py0];
 
+lookup _InsertUpperMarker400 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx400;
+} _InsertUpperMarker400;
+
+lookup _InsertUpperMarker500 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx500;
+} _InsertUpperMarker500;
+
 lookup _InsertUpperMarker600 {
 	sub @PyInitMarker	by	@PyInitMarker	ascx600;
 } _InsertUpperMarker600;
 
+lookup _InsertUpperMarker700 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx700;
+} _InsertUpperMarker700;
+
+lookup _InsertUpperMarker800 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx800;
+} _InsertUpperMarker800;
+
 lookup _InsertUpperMarker900 {
-	sub @PyInitMarker  by	@PyInitMarker	ascx950;
+	sub @PyInitMarker  by	@PyInitMarker	ascx900;
 } _InsertUpperMarker900;
 
 lookup _InsertUpperMarker1000 {
 	sub @PyInitMarker  by	@PyInitMarker	ascx1000;
 } _InsertUpperMarker1000;
 
+lookup _InsertUpperMarker1100 {
+	sub @PyInitMarker	by	@PyInitMarker	ascx1100;
+} _InsertUpperMarker1100;
+
 lookup _InsertUpperMarker1200 {
 	sub @PyInitMarker  by  @PyInitMarker	ascx1200;
 } _InsertUpperMarker1200;
+
+lookup _InsertUpperMarker1300 {
+	sub @PyInitMarker  by  @PyInitMarker	ascx1300;
+} _InsertUpperMarker1300;
+
+lookup _InsertUpperMarker1400 {
+	sub @PyInitMarker  by  @PyInitMarker	ascx1400;
+} _InsertUpperMarker1400;
+
+lookup _InsertUpperMarker1500 {
+	sub @PyInitMarker  by  @PyInitMarker	ascx1500;
+} _InsertUpperMarker1500;
+
+lookup _InsertUpperMarker1600 {
+	sub @PyInitMarker  by  @PyInitMarker	ascx1600;
+} _InsertUpperMarker1600;
+
+
+lookup _InsertLowerMarker400 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx400;
+} _InsertLowerMarker400;
+
+lookup _InsertLowerMarker500 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx500;
+} _InsertLowerMarker500;
 
 lookup _InsertLowerMarker600 {
 	sub @PyInitMarker  by	@PyInitMarker	dscx600;
@@ -46,22 +92,141 @@ lookup _InsertLowerMarker700 {
 	sub @PyInitMarker  by	@PyInitMarker	dscx700;
 } _InsertLowerMarker700;
 
+lookup _InsertLowerMarker800 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx800;
+} _InsertLowerMarker800;
+
 lookup _InsertLowerMarker900 {
-	sub @PyInitMarker  by	@PyInitMarker	dscx950;
+	sub @PyInitMarker  by	@PyInitMarker	dscx900;
 } _InsertLowerMarker900;
 
 lookup _InsertLowerMarker1000 {
 	sub @PyInitMarker  by	@PyInitMarker	dscx1000;
 } _InsertLowerMarker1000;
 
+lookup _InsertLowerMarker1100 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx1100;
+} _InsertLowerMarker1100;
+
+lookup _InsertLowerMarker1200 {
+	sub @PyInitMarker  by	@PyInitMarker	dscx1200;
+} _InsertLowerMarker1200;
+
+lookup _IncAscxDscx100 {
+	sub ascx400  by  ascx500;
+	sub ascx500  by  ascx600;
+	sub ascx600  by  ascx700;
+	sub ascx700  by  ascx800;
+	sub ascx800  by  ascx900;
+	sub ascx900  by  ascx1000;
+	sub ascx1000  by  ascx1100;
+	sub ascx1100  by  ascx1200;
+	sub ascx1200  by  ascx1300;
+	sub ascx1300  by  ascx1400;
+	sub ascx1400  by  ascx1500;
+	sub ascx1500  by  ascx1600;
+	sub ascx1600  by  ascx1600;
+
+	sub dscx400  by  dscx400;
+	sub dscx500  by  dscx400;
+	sub dscx600  by  dscx500;
+	sub dscx700  by  dscx600;
+	sub dscx800  by  dscx700;
+	sub dscx900  by  dscx800;
+	sub dscx1000  by  dscx900;
+	sub dscx1100  by  dscx1000;
+	sub dscx1200  by  dscx1100;
+} _IncAscxDscx100;
+
+lookup _IncAscxDscx200 {
+	sub ascx400  by  ascx600;
+	sub ascx500  by  ascx700;
+	sub ascx600  by  ascx800;
+	sub ascx700  by  ascx900;
+	sub ascx800  by  ascx1000;
+	sub ascx900  by  ascx1100;
+	sub ascx1000  by  ascx1200;
+	sub ascx1100  by  ascx1300;
+	sub ascx1200  by  ascx1400;
+	sub ascx1300  by  ascx1500;
+	sub ascx1400  by  ascx1600;
+	sub ascx1500  by  ascx1600;
+	sub ascx1600  by  ascx1600;
+
+	sub dscx400  by  dscx400;
+	sub dscx500  by  dscx400;
+	sub dscx600  by  dscx400;
+	sub dscx700  by  dscx500;
+	sub dscx800  by  dscx600;
+	sub dscx900  by  dscx700;
+	sub dscx1000  by  dscx800;
+	sub dscx1100  by  dscx900;
+	sub dscx1200  by  dscx1000;
+} _IncAscxDscx200;
+
+lookup _DecAscxDscx100 {
+	sub ascx400  by  ascx400;
+	sub ascx500  by  ascx400;
+	sub ascx600  by  ascx500;
+	sub ascx700  by  ascx600;
+	sub ascx800  by  ascx700;
+	sub ascx900  by  ascx800;
+	sub ascx1000  by  ascx900;
+	sub ascx1100  by  ascx1000;
+	sub ascx1200  by  ascx1100;
+	sub ascx1300  by  ascx1200;
+	sub ascx1400  by  ascx1300;
+	sub ascx1500  by  ascx1400;
+	sub ascx1600  by  ascx1500;
+
+	sub dscx400  by  dscx500;
+	sub dscx500  by  dscx600;
+	sub dscx600  by  dscx700;
+	sub dscx700  by  dscx800;
+	sub dscx800  by  dscx900;
+	sub dscx900  by  dscx1000;
+	sub dscx1000  by  dscx1100;
+	sub dscx1100  by  dscx1200;
+	sub dscx1200  by  dscx1200;
+} _DecAscxDscx100;
+
+lookup _DecAscxDscx200 {
+	sub ascx400  by  ascx400;
+	sub ascx500  by  ascx400;
+	sub ascx600  by  ascx400;
+	sub ascx700  by  ascx500;
+	sub ascx800  by  ascx600;
+	sub ascx900  by  ascx700;
+	sub ascx1000  by  ascx800;
+	sub ascx1100  by  ascx900;
+	sub ascx1200  by  ascx1000;
+	sub ascx1300  by  ascx1100;
+	sub ascx1400  by  ascx1200;
+	sub ascx1500  by  ascx1300;
+	sub ascx1600  by  ascx1400;
+
+	sub dscx400  by  dscx600;
+	sub dscx500  by  dscx700;
+	sub dscx600  by  dscx800;
+	sub dscx700  by  dscx900;
+	sub dscx800  by  dscx1000;
+	sub dscx900  by  dscx1100;
+	sub dscx1000  by  dscx1200;
+	sub dscx1100  by  dscx1200;
+	sub dscx1200  by  dscx1200;
+} _DecAscxDscx200;
 
 
 # Insert an indication of a nuqta or mark in order to force the 
 # descent lower or the ascent higher.
+# TODO: split into two methods to handle upper and lower.
 lookup _InsertNuqtaDiacMarker {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike];
 
-	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
+	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeLower @NuqtaLikeUpper;	# the nuqta doesn't add any height
+	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeUpper;
+
+	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;  # the nuqta on the reh is higher than normal
 	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
@@ -74,6 +239,7 @@ lookup _InsertNuqtaDiacMarker {
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;
 
+
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;
@@ -81,7 +247,8 @@ lookup _InsertNuqtaDiacMarker {
 	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
 
 	# Others:
-	# kharizabar/zair - 1050
+	# kharizabar/zair - 1100
 	# small-tah - 900
 	# nuqta+tah - 1500
 } _InsertNuqtaDiacMarker;
+

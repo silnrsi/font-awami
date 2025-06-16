@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Outputs a set of rules to perform arithmetic
+# Outputs a set of rules to perform arithmetic.
 
 # Run this script from the tools/scripts directory where the file is located:
 #		python3 genArithmeticLookups.py
@@ -36,10 +36,10 @@ ybMax = 3000
 
 inc = 100
 
-# These lists should match the _InsertNuqtaDiacMarker lookup:
+# These lists should at least cover what's in the _InsertNuqtaDiacMarker lookup:
 
-upperMarkHts = [600, 1000, 1200]	# 1 dot, 3 dots, dot on reh
-lowerMarkHts = [600, 700, 1000]		# 1 dot/shadda, hehhook, zabar/zair/pesh
+upperMarkHts = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]	# 1 dot, 3 dots, dot on reh...
+lowerMarkHts = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200]		# 1 dot/shadda, hehhook, zabar/zair/pesh
 
 
 kwDecValues = [100, 200, 300, 400, 500, 600]
@@ -625,8 +625,8 @@ GenClasses("dsc", "DscMarker", dscMin, dscMax)
 GenClasses("yt", "YtMarker", ytMin, ytMax)
 GenClasses("yb", "YbMarker", ybMin, ybMax)
 
-print("\n@AscXMarker = [ascx600 ascx700 ascx1000 ascx1200 ascx1500];", file=fout)
-print("@DscXMarker = [dscx600 dscx700 dscx1000];", file=fout)
+print("\n@AscXMarker = [ascx400 ascx500 ascx600 ascx700 ascx800 ascx900 ascx1000 ascx1100 ascx1200 ascx1300 ascx1400 ascx1500 ascx1600];", file=fout)
+print("@DscXMarker = [dscx400 dscx500 dscx600 dscx700 dscx800 dscx900 dscx1000 dscx1100 dscx1200];", file=fout)
 
 print("\n@XMarkers = [@PxMarker @DxMarker pxNULL];", file=fout)
 print("@XfMarkers = [@PxfMarker @DxMarker pxfNULL];", file=fout)

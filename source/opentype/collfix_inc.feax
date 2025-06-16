@@ -23,28 +23,87 @@
 # shift north
 
 lookup _ShiftN100 {
-	sub @NuqtaLike  by  @NuqtaLike  cfN100;
+	sub @NuqtaLike'  by  @NuqtaLike  cfN100;
 } _ShiftN100;
 
 lookup _ShiftN200 {
-	sub @NuqtaLike  by  @NuqtaLike  cfN200;
+	sub @NuqtaLike'  by  @NuqtaLike  cfN200;
 } _ShiftN200;
 
-lookup _ShiftN100_next {
-	sub @AllBases  @NuqtaLike'  by  @NuqtaLike  cfN100;
-} _ShiftN100_next;
+lookup _ShiftN300 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfN300;
+} _ShiftN300;
+
+lookup _ShiftN400 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfN400;
+} _ShiftN400;
+
+lookup _ShiftN500 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfN500;
+} _ShiftN500;
 
 # shift south
 
 lookup _ShiftS100 {
-	sub @NuqtaLike  by  @NuqtaLike  cfS100;
+	sub @NuqtaLike'  by  @NuqtaLike  cfS100;
 } _ShiftS100;
 
-lookup _ShiftS100_next {
-	sub absBehMed  @NuqtaLike'  by  @NuqtaLike  cfS100;
-} _ShiftS100_next;
+lookup _ShiftS200 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfS200;
+} _ShiftS200;
+
+lookup _ShiftS300 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfS300;
+} _ShiftS300;
+
+lookup _ShiftS400 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfS400;
+} _ShiftS400;
+
+lookup _ShiftS500 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfS500;
+} _ShiftS500;
 
 # shift east
 
+lookup _ShiftE100 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfE100;
+} _ShiftE100;
+
+lookup _ShiftE200 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfE200;
+} _ShiftE200;
+
+lookup _ShiftE300 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfE300;
+} _ShiftE300;
+
+lookup _ShiftE400 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfE400;
+} _ShiftE400;
+
+lookup _ShiftE500 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfE500;
+} _ShiftE500;
 
 # shift west
+
+lookup _ShiftW100 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfW100;
+} _ShiftW100;
+
+lookup _ShiftW200 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfW200;
+} _ShiftW200;
+
+lookup _ShiftW300 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfW300;
+} _ShiftW300;
+
+lookup _ShiftW400 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfW400;
+} _ShiftW400;
+
+lookup _ShiftW500 {
+	sub @NuqtaLike'  by  @NuqtaLike  cfW500;
+} _ShiftW500;

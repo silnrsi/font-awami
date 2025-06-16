@@ -29,7 +29,11 @@ details including an FAQ.
 		absHamzaBelow absWavyHamzaBelow absHamzaBelowArabic
 	</class>
 	-->
-	
+
+	<!-- ============= -->
+	<!--  BASIC FORMS  -->
+	<!-- ============= -->
+
 	<class name="BehIniForms">
 		absBehIni absBehIni.ai absBehIni.be absBehIni.beM1 absBehIni.beM2 absBehIni.benn <!--absBehIni.behg--> absBehIni.bere
 		absBehIni.beF absBehIni.by absBehIni.ch absBehIni.fe  absBehIni.hd absBehIni.hgM absBehIni.hgF absBehIni.jm
@@ -347,8 +351,10 @@ details including an FAQ.
 		@Initials  @Medials  @Finals  @Isolates
 	</class>
 
-	<!-- FOR DECOMPOSIION -->
-	
+	<!-- ================== -->
+	<!--  FOR DECOMPOSIION  -->
+	<!-- ================== -->
+
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="BehMark_sub">
 		_dot1l  _dot2u  _dot3u  _smallTah  _dot3l  _dot2vl  _ring__dot2u  _dot2vu  _dot3uD
@@ -512,9 +518,11 @@ details including an FAQ.
 		 nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove  
 	</class>
 	
-	<!-- CONTEXTUAL SHAPING CLASSES -->
+	<!-- ============================ -->
+	<!--  CONTEXTUAL SHAPING CLASSES  -->
+	<!-- ============================ -->
 
-  <!-- *NEXT 54 CLASSES MUST MATCH* -->
+	<!-- *NEXT 54 CLASSES MUST MATCH* -->
 
 	<class name="DualPostCcmp_sub">  <!-- output of the ccmp feature -->
 		absDotlessBeh absHah absSeen absSad absTah absAin absDotlessFeh absKeheh absGaf absLam 
@@ -899,8 +907,10 @@ details including an FAQ.
 	<class name="PreReF_hgM">
 		absHehGoalMed.re
 	</class>
-	
-	<!-- FOR VARIOUS CONTEXTUAL SHAPES -->
+
+	<!-- =============================== -->
+	<!--  FOR VARIOUS CONTEXTUAL SHAPES  -->
+	<!-- =============================== -->
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="BehNoRing_sub">
@@ -919,8 +929,9 @@ details including an FAQ.
 	<class name="KafKfNormal">absKehehIni.kf      absKehehMed.dk      absGafIni.kf      absGafMed.dk</class>
 	<class name="KafKfWide">  absKehehIni.kf_wide absKehehMed.kf_wide absGafIni.kf_wide absGafMed.kf_wide</class>
 	
-
-	<!-- FOR ALTERNATE HEIGHT KAFS -->
+	<!-- ======================= -->
+	<!--  ALTERNATE HEIGHT KAFS  -->
+	<!-- ======================= -->
 	
 	<!-- THESE BASE CLASSES MUST BE KEPT IN SYNC WITH THE KAF-TOP CLASSES BELOW. -->
 	
@@ -1292,7 +1303,29 @@ details including an FAQ.
 		absKafIni_short absGafIni_short absKafMed_short absGafMed_short
 	</class>
 
-	<!-- KERNING -->
+	<!-- ================== -->
+	<!--  COLLISION FIXING  -->
+	<!-- ================== -->
+
+	<class name="DotWide">
+		_dot2u _dot3u _dot4u _dot2l _dot3l _dot4l
+	</class>
+
+	<class name="DotNarrow">
+		_dot1u _dot1l
+	</class>
+	
+	<class name="DotTall">
+		_dot3u _dot4u _dot3l _dot4l
+	</class>
+
+	<class name="DotFlat">
+		_dot1u _dot2u _dot1l _dot2l
+	</class>
+
+	<!-- ========= -->
+	<!--  KERNING  -->
+	<!-- ========= -->
 	
 	<class name="BehKernBaseMarkIni">
 		mkBehIni mkBehIni.ai mkBehIni.be mkBehIni.beM1 mkBehIni.beM2 mkBehIni.benn <!--mkBehIni.behg--> mkBehIni.bere
