@@ -67,6 +67,16 @@ lookup AdjustForNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
 
+	# beh + beh + jeem
+	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
+			mkBehMed.jm ybLast @NuqtaLikeLower	mkJeemFin;
+	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
+			mkBehMed.jm ybLast	mkJeemFin;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy300	@DotNarrow
+			mkBehMed.jm ybLast @NuqtaLikeLower	mkJeemFin;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy300	@DotNarrow
+			mkBehMed.jm ybLast	mkJeemFin;
+
 	# beh initials
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
 										 mkBehIni.beM2 mkBehIni.benn]'	ybLast' lookup _ExtendYbBy100	@DotWide;
@@ -75,11 +85,11 @@ lookup AdjustForNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy100	@DotWide;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWide  @KernBaseMarkMed;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy200	_dot1l;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy200	@DotNarrow;
 	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy600	@DotWide;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'					ybLast' lookup _ExtendYbBy200	@DotWide;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	_dot1l;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	@DotNarrow;
 	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy400	@DotWide;
 
 	# jeem initials
@@ -88,9 +98,9 @@ lookup AdjustForNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy200	@DotWide;
 	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWide;
 	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.fe]'					ybLast' lookup _ExtendYbBy100	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy200	_dot1l;
+	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy200	@DotNarrow;
 	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy400	@DotWide;
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy100	_dot1l;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy100	@DotNarrow;
 	sub @KwMarker' lookup _DecKwBy300	[mkJeemIni.qf]'					ybLast' lookup _ExtendYbBy300	@DotWide;
 	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWide  @KernBaseMarkMed;
 	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy100	@DotWide;
@@ -131,6 +141,16 @@ lookup AdjustForBaseOverhang {
 	sub mkRehFin	@KwMarker' lookup _DecKwBy600		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # was 800
 	#sub mkRehFin._hgM	@KwMarker' lookup _DecKwBy800		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # 400 is too much
 	sub 			@KwMarker' lookup _DecKwBy400		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+
+	# Short sequences ending with jeem+jeem.
+	# Not kerned yet:
+	#    \/
+	sub kw0' lookup _DecKwBy200	mkBehIni.jm		mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy200	mkLamIni.jm		mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy200	mkJeemIni.jm	mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy300	mkMeemIni.jm	mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy300	mkFehIni.jm		mkJeemMed.jm	mkJeemFin;
+
 } AdjustForBaseOverhang;
 
 

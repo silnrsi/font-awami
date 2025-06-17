@@ -1544,36 +1544,42 @@ lookup AttachUpperDiacsLikeNuqtas {
 
 lookup AttachLower {
 	lookupflag UseMarkFilteringSet @AllMarksLower;
-	pos		base @ring				mark @_ring;		# must be first
-	pos		base @n1Lower			mark @_n1Lower;
+	pos		base @ring			mark @_ring;		# must be first
+
+	pos		base @n1Lower		mark @_n1Lower;
     pos		base @n23Lower		mark @_n23Lower;
-	pos		base @hehhook			mark @_hehhook;
+	pos		base @hehhook		mark @_hehhook;
 	pos		base @hamzaLower	mark @_hamzaLower;
-	pos		base @mLower			mark @_mLower;
+	pos		base @mLower		mark @_mLower;
 } AttachLower;
+
+lookup AttachLower2 {
+	lookupflag UseMarkFilteringSet @AllMarksLower;
+	pos		base @tahLower		mark @_tahLower;
+} AttachLower2;
 
 lookup AttachMiddle {
 	lookupflag UseMarkFilteringSet @AllMarksMiddle;
 	pos		base @squiggle		mark @_squiggle;
-	pos		base @bar					mark @_bar;
-	pos		base @ring				mark @_ring;
+	pos		base @bar			mark @_bar;
+	pos		base @ring			mark @_ring;
 } AttachMiddle;
 
 lookup AttachUpper {
 	lookupflag UseMarkFilteringSet @AllMarksUpper;
     pos		base @nUpper  		mark @_nUpper;
-	pos		base @graf				mark @_graf;
+	pos		base @graf			mark @_graf;
 } AttachUpper;
 
 lookup AttachHamzaAsUpper {
 	lookupflag UseMarkFilteringSet @_hamzaUpper;
-	pos		base @nUpper			mark @_hamzaUpper;
+	pos		base @nUpper		mark @_hamzaUpper;
 } AttachHamzaAsUpper;
 
 lookup AttachUpper2 {
 	lookupflag UseMarkFilteringSet @AllMarksUpper;
-	pos		base @alef				mark @_mUpper;
-	pos		base @mUpper			mark @_mUpper;
+	pos		base @alef			mark @_mUpper;
+	pos		base @mUpper		mark @_mUpper;
 	pos		base @tahUpper		mark @_tahUpper;
 	pos		base @hamzaUpper	mark @_hamzaUpper;
 } AttachUpper2;
@@ -1586,7 +1592,7 @@ lookup AttachUpper3 {
 # Special cases go last so that they override:
 lookup AttachAlefDiacToYeh {
 	lookupflag UseMarkFilteringSet @AllMarksUpper;
-	pos		base @alef				mark @_mUpper;
+	pos		base @alef			mark @_mUpper;
 } AttachAlefDiacToYeh;
 
 lookup AttachAlefDiacToLam {
@@ -1672,7 +1678,7 @@ lookup Att2ByShimFallBack {
 lookup Att2ByShim {
 	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
 	pos	mark @shim_MarkBase  	mark @_n1Lower;
-	#pos	mark @shim_MarkBase  	mark @_hehhook;
+	#pos mark @shim_MarkBase	mark @_hehhook;
 	pos mark @shim_MarkBase 	mark @_n23Lower;
 	pos	mark @shim_MarkBase  	mark @_mLower;
 } Att2ByShim;
@@ -1683,17 +1689,24 @@ lookup AttGrafStroke {
 } AttGrafStroke;
 
 lookup AttMark2MarkUpper {
-	lookupflag UseMarkFilteringSet @MarkFilter_mUpper;
-	pos mark @mUpper_MarkBase		mark @_mUpper;
+	lookupflag UseMarkFilteringSet [@mUpper_MarkBase @_mUpper];
+	pos mark @mUpper_MarkBase	mark @_mUpper;
 } AttMark2MarkUpper;
 
 lookup AttMark2MarkLower {
-	lookupflag UseMarkFilteringSet @MarkFilter_mLower;
-	pos mark @mLower_MarkBase		mark @_mLower;
+	lookupflag UseMarkFilteringSet [@mLower_MarkBase @_mLower];
+	pos mark @mLower_MarkBase	mark @_mLower;
 } AttMark2MarkLower;
 
+# Do we need this?
+# lookup AttTah2Mark{
+# 	lookupflag UseMarkFilteringSet [@tahUpper_MarkBase @_tahUpper @tahLower_MarkBase @_tahLower];
+# 	pos mark @tahUpper_MarkBase	mark @_tahUpper;
+# 	pos mark @tahLower_MarkBase	mark @_tahLower;
+# } AttTah2Mark;
+
 lookup AttRing2Mark {
-	lookupflag UseMarkFilteringSet @MarkFilter_ring;
+	lookupflag UseMarkFilteringSet [@ring_MarkBase @_ring];
 	pos mark @ring_MarkBase		mark @_ring;
 } AttRing2Mark;
 
@@ -1723,7 +1736,8 @@ feature dist {
 
 feature kern {
 
-lookup ShiftNuqtas {
+lookup ShiftNuqtasNS {
+	lookupflag UseMarkFilteringSet [@NuqtaLike @CfMarkerNS];
 	pos @NuqtaLike' <0  100 0 0> cfN100;
 	pos @NuqtaLike' <0  200 0 0> cfN200;
 	pos @NuqtaLike' <0  300 0 0> cfN300;
@@ -1734,6 +1748,10 @@ lookup ShiftNuqtas {
 	pos @NuqtaLike' <0 -300 0 0> cfS300;
 	pos @NuqtaLike' <0 -400 0 0> cfS400;
 	pos @NuqtaLike' <0 -500 0 0> cfS500;
+} ShiftNuqtasNS;
+
+lookup ShiftNuqtasEW {
+	lookupflag UseMarkFilteringSet [@NuqtaLike @CfMarkerEW];
 	pos @NuqtaLike' < 100 0 0 0> cfE100;
 	pos @NuqtaLike' < 200 0 0 0> cfE200;
 	pos @NuqtaLike' < 300 0 0 0> cfE300;
@@ -1744,7 +1762,7 @@ lookup ShiftNuqtas {
 	pos @NuqtaLike' <-300 0 0 0> cfW300;
 	pos @NuqtaLike' <-400 0 0 0> cfW400;
 	pos @NuqtaLike' <-500 0 0 0> cfW500;
-} ShiftNuqtas;
+} ShiftNuqtasEW;
 
 lookup DoAutoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
