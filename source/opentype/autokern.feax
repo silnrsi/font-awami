@@ -321,6 +321,17 @@ lookup RestoreBases {
 } RestoreBases;
 
 
+lookup IsolateKafKern {
+	# Single chars need a little extra kerning before the kaf, because short sequences can't kern more than their width.
+	lookupflag UseMarkFilteringSet [@KwMarker];
+	sub absHehGoal  kw500'  [@KafIniForms @KafIsolates]		by	kw800;
+	sub absAlef		kw300'  [@KafIniForms @KafIsolates]		by	kw600;
+	sub absWaw		kw700'  [@KafIniForms @KafIsolates]		by	kw900;
+	sub absDal		kw800'  [@KafIniForms @KafIsolates]		by	kw1000;
+	sub absReh		kw800'  [@KafIniForms @KafIsolates]		by	kw1100;
+} IsolateKafKern;
+
+
 # Leaving the markers in for the time being helps with debugging.
 # lookup CleanUpMarkers {
 # 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker @Kblocks @PyMarker];
@@ -331,4 +342,5 @@ lookup RestoreBases {
 # 	sub @PyMarker by NULL;
 #   sub ybIgnore by NULL;
 #   sub ytIgnore by NULL;
+#	# Whatever we do, don't delete KwMarkers or CfMarkers!
 # } CleanUpMarkers;

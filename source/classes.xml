@@ -232,9 +232,8 @@ details including an FAQ.
 		absMeemFin absMeemFin_short absMeemFin.lowdiac
 	</class>
 	<class name="MeemForms">@MeemIniForms @MeemMedForms @MeemFinForms</class>
-	
 
-	<!-- add alt forms -->
+	<!-- TODO: add alt forms -->
 	<class name="HehDoIniForms">
 		absHehDoachashmeeIni absHehDoachashmeeIni.ai absHehDoachashmeeIni.be absHehDoachashmeeIni.beM1 absHehDoachashmeeIni.beM2 absHehDoachashmeeIni.benn absHehDoachashmeeIni.behg absHehDoachashmeeIni.bere
 		absHehDoachashmeeIni.beF absHehDoachashmeeIni.by absHehDoachashmeeIni.ch absHehDoachashmeeIni.fe  absHehDoachashmeeIni.hd absHehDoachashmeeIni.hgM absHehDoachashmeeIni.hgF absHehDoachashmeeIni.jm
@@ -307,6 +306,11 @@ details including an FAQ.
 		@AlefFinForms @RehFinForms @DalFinForms @QafFinForms @NoonFinForms @ChotiyehFinForms @WawFinForms @BariyehFinForms
 	</class>
 	
+	<class name="KafIsolates">
+		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
+		absGueh absNgoeh absGraf
+	</class>
+
 	<!-- add many more -->
 	<class name="Isolates">
 		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
@@ -328,8 +332,7 @@ details including an FAQ.
 		absAin absGhain absAinThreeDotsAbove 
 		absFeh absFehThreeDotsBelow absDotlessFeh absVeh
 				absQaf absDotlessQaf 
-		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
-						absGueh absNgoeh absGraf
+		@KafIsolates
 		absLam absLamBar absLamSmallV absLamSmallTah absLamThreeDots
 		absMeem
 		absWaw absWawHamzaAbove absWawRing absU absOe absKirghizOe absKirghizYu absWawTwoAbove absWawThreeAbove absWawDotAbove
@@ -1536,6 +1539,11 @@ details including an FAQ.
 		mkBariyehFin
 	</class>
 	
+	<class name="KernBaseMarkIso_Kaf">
+		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
+					mkGueh mkNgoeh mkGraf
+	</class>
+
 	<class name="KernBaseMarkIso">
 		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
 						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
@@ -1556,8 +1564,7 @@ details including an FAQ.
 		mkAin mkGhain mkAinThreeDotsAbove 
 		mkFeh mkFehThreeDotsBelow mkDotlessFeh mkVeh
 				mkQaf mkDotlessQaf 
-		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
-						mkGueh mkNgoeh mkGraf
+		@KernBaseMarkIso_Kaf
 		mkLam mkLamBar mkLamSmallV mkLamSmallTah mkLamThreeDots
 		mkMeem
 		mkWaw mkWawHamzaAbove mkWawRing mkU mkOe mkKirghizOe mkKirghizYu mkWawTwoAbove mkWawThreeAbove mkWawDotAbove

@@ -512,10 +512,31 @@ def Tweak(gn, uppers, lowers):
         uppers[-4] = 400
         uppers[-3] = 400
         uppers[-2] = 400
-        uppers[-1] = 400
+        uppers[-1] = 200
     elif gn == "absRehFin._hgM":
         uppers[-2] = 400
-        uppers[-1] = 400
+        uppers[-1] = 200
+
+    kafIsolates = ["absKeheh", "absKaf", "absKafRing", "absKafTwoDotsAbove", "absKafThreeDotsAbove", "absKehehDotAbove",
+                   "absKehehThreeDotsAbove", "absGaf", "absGueh", "absNgoeh", "absGraf"]
+
+    if gn in kafIsolates or "absKehehIni" in gn or "absGafIni" in gn:
+        if gn == "absKehehIni" or gn == "absGafIni": # round forms
+            pass
+        elif "_base" in gn:
+            pass
+        elif gn == "absKehehIni.ch" or gn == "absGafIni.ch" or gn == "absKehehIni.hd" or gn == "absGafIni.hd":
+            pass
+        elif gn == "absKehehIni.mm" or gn == "absGafIni.mm" or gn == "absKehehIni.mm_short" or gn =="absGafIni.mm_short":
+            pass
+        else:  
+            # The bottom corner of the vertical stroke needs more space.
+            # PrintList(gn, lowers)
+            lowers[5] = 600  # normally something like 1400
+            lowers[6] = 400
+            lowers[7] = 100
+            lowers[8] = 0
+
 
     return [uppers, lowers]
 
@@ -534,7 +555,7 @@ def PrintList(gn, vList):
         if v is None:
             str += " None"
         else:
-            str += " " + "{:.2f}".format(v)
+            str += "  " + "{:.2f}".format(v)
     print(gn + ": " + str)
 
 
@@ -591,11 +612,11 @@ with open(args.outfile, "w") as outf:
 
             uppers, lowers = TrimMetrics(gn, uppers, lowers, entry, exit, sliceWidth)
 
-            if gn == "absMeemMed.sn":
-                PrintList(gn, lowers)
+            # if gn == "absMeemMed.sn":
+            #     PrintList(gn, lowers)
 
             if exit is None and isIsolateFinalBase(gn): 
-                PrintList(gn, lowers)
+                # PrintList(gn, lowers)
                 lowers = TruncateLowFinals(lowers)
 
             #uppers, lowers = TruncateLongSeq(uppers, lowers)
