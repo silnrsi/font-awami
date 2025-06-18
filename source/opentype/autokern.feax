@@ -137,19 +137,35 @@ lookup AdjustForBaseOverhang {
 	lookupflag UseMarkFilteringSet [@KernBaseMarkWord @KwMarker];
 	sub @KwMarker' lookup _IncKwBy800		mkKehehIni.sd';
 
-	# short sequences with overhang on right
-	sub mkRehFin	@KwMarker' lookup _DecKwBy600		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # was 800
-	#sub mkRehFin._hgM	@KwMarker' lookup _DecKwBy800		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # 400 is too much
-	sub 			@KwMarker' lookup _DecKwBy400		@KernBaseMarkIni	[mkJeemFin mkAinFin];
+	# 2-char sequences with overhang on right
+	# sub mkRehFin	@KwMarker' lookup _DecKwBy600		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # was 800
+	
+	# 2-char sequences w/ final jeem
+	ignore sub @KwMarker' 	[mkSadIni.jm mkHehDoachashmeeIni.jm]		mkJeemFin;
+	sub @KwMarker' lookup _DecKwBy400		[mkSadIni.jm]				mkJeemFin;
+	sub @KwMarker' lookup _DecKwBy500		@KernBaseMarkIni			mkJeemFin;
+
+	# 2-char sequences w/ final ain
+	sub @KwMarker' lookup _DecKwBy400		[mkBehIni.ai mkFehIni.ai mkLamIni.ai]	mkAinFin;
 
 	# Short sequences ending with jeem+jeem.
 	# Not kerned yet:
 	#    \/
 	sub kw0' lookup _DecKwBy200	mkBehIni.jm		mkJeemMed.jm	mkJeemFin;
 	sub kw0' lookup _DecKwBy200	mkLamIni.jm		mkJeemMed.jm	mkJeemFin;
-	sub kw0' lookup _DecKwBy200	mkJeemIni.jm	mkJeemMed.jm	mkJeemFin;
-	sub kw0' lookup _DecKwBy300	mkMeemIni.jm	mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy300	mkJeemIni.jm	mkJeemMed.jm	mkJeemFin;
 	sub kw0' lookup _DecKwBy300	mkFehIni.jm		mkJeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy300	mkMeemIni.jm	mkJeemMed.jm	mkJeemFin;
+
+	# ... meem+jeem
+	# sub kw0' lookup _DecKwBy100	mkBehIni.jm		mkJeemMed.jm	mkJeemFin;  - ok
+	sub kw0' lookup _DecKwBy300	mkLamIni.mm		mkMeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy500	mkFehIni.mm		mkMeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy300	mkMeemIni.mm	mkMeemMed.jm	mkJeemFin;
+
+	# ... feh+jeem
+	sub kw0' lookup _DecKwBy200	mkLamIni.mm		mkMeemMed.jm	mkJeemFin;
+	sub kw0' lookup _DecKwBy200	mkFehIni.mm		mkMeemMed.jm	mkJeemFin;
 
 } AdjustForBaseOverhang;
 
