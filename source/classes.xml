@@ -311,6 +311,10 @@ details including an FAQ.
 		absGueh absNgoeh absGraf
 	</class>
 
+	<class name="BariyehIsolates">
+		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
+	</class>
+
 	<!-- add many more -->
 	<class name="Isolates">
 		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
@@ -339,7 +343,7 @@ details including an FAQ.
 						absWawTwoDotsAbove absVe absYu
 		absHehDo
 		absHehGoal absHehGoalHamzaAbove absHehYehAbove absHeh absAe
-		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
+		@BariyehIsolates
 		absTehMarbuta
 		absTehMarbutaGoal
 	</class>
@@ -1311,20 +1315,31 @@ details including an FAQ.
 	<!-- ================== -->
 
 	<class name="DotWide">
-		_dot2u _dot3u _dot4u _dot2l _dot3l _dot4l
+		_dot2u _dot3u _dot4u _dot2l _dot2lIM _dot3l _dot4l
 	</class>
-
 	<class name="DotNarrow">
 		_dot1u _dot1l _dot2vl
 	</class>
-	
 	<class name="DotTall">
 		_dot3u _dot4u _dot3l _dot4l _dot2vl
 	</class>
-
 	<class name="DotFlat">
-		_dot1u _dot2u _dot1l _dot2l
+		_dot1u _dot2u _dot1l _dot2l _dot2lIM
 	</class>
+
+	<class name="DotWideL">
+		_dot2l _dot2lIM _dot3l _dot4l
+	</class>
+	<class name="DotNarrowL">
+		_dot1l _dot2vl
+	</class>
+	<class name="DotTallL">
+		_dot3l _dot4l _dot2vl _smallTahBelow
+	</class>
+	<class name="DotFlatL">
+		_dot1l _dot2l _dot2lIM
+	</class>
+
 
 	<!-- ========= -->
 	<!--  KERNING  -->
@@ -1539,9 +1554,15 @@ details including an FAQ.
 		mkBariyehFin
 	</class>
 	
-	<class name="KernBaseMarkIso_Kaf">
+	<!-- These have to be in separate classes to have parallel structure to the @Isolates class,
+		due to the limitations of FEAX. -->
+	<class name="KafKernBaseMarkIso">
 		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
 					mkGueh mkNgoeh mkGraf
+	</class>
+
+	<class name="ByKernBaseMarkIso">
+		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
 	</class>
 
 	<class name="KernBaseMarkIso">
@@ -1564,14 +1585,14 @@ details including an FAQ.
 		mkAin mkGhain mkAinThreeDotsAbove 
 		mkFeh mkFehThreeDotsBelow mkDotlessFeh mkVeh
 				mkQaf mkDotlessQaf 
-		@KernBaseMarkIso_Kaf
+		@KafKernBaseMarkIso
 		mkLam mkLamBar mkLamSmallV mkLamSmallTah mkLamThreeDots
 		mkMeem
 		mkWaw mkWawHamzaAbove mkWawRing mkU mkOe mkKirghizOe mkKirghizYu mkWawTwoAbove mkWawThreeAbove mkWawDotAbove
 						mkWawTwoDotsAbove mkVe mkYu
 		mkHehDo
 		mkHehGoal mkHehGoalHamzaAbove mkHehYehAbove mkHeh mkAe
-		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
+		@ByKernBaseMarkIso
 		mkTehMarbuta
 		mkTehMarbutaGoal
 	</class>
@@ -1584,5 +1605,11 @@ details including an FAQ.
 	<class name="KernBaseMark">@KernBaseMarkIni @KernBaseMarkMed @KernBaseMarkFin @KernBaseMarkIso @KernBaseMarkOther</class>
 
 	<class name="KernBaseMarkVis">@KernBaseMarkIni @KernBaseMarkMed @KernBaseMarkFin @KernBaseMarkIso</class>
+
+	<class name="ByKernSpace">
+		kSp50 kSp100 kSp150 kSp200 kSp250 kSp300 kSp350 kSp400 kSp450 kSp500 kSp550 kSp600 kSp650 kSp700 kSp750 kSp800 kSp850 kSp900 kSp950 kSp1000
+		kSp1050 kSp1100 kSp1150 kSp1200 kSp1250 kSp1300 kSp1350 kSp1400 kSp1450 kSp1500 kSp1550 kSp1600 kSp1650 kSp1700 kSp1750 kSp1800 kSp1850 kSp1900 kSp1950 kSp2000
+		kSp2050 kSp2100 kSp2150 kSp2200 kSp2250 kSp2300 kSp2350 kSp2400
+	</class>
 
 </classes>

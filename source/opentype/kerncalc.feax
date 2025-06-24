@@ -531,7 +531,39 @@ do	forlet i = range(0,2);
 	let kb = kbGlyphs[i];
 {
 lookup $lname {
-	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
+	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker knone];
+	sub yt0'	knone	by	$kb;
+	sub yt100'	knone	by	$kb;
+	sub yt200'	knone	by	$kb;
+	sub yt300'	knone	by	$kb;
+	sub yt400'	knone	by	$kb;
+	sub yt500'	knone	by	$kb;
+	sub yt600'	knone	by	$kb;
+	sub yt700'	knone	by	$kb;
+	sub yt800'	knone	by	$kb;
+	sub yt900'	knone	by	$kb;
+	sub yt1000'	knone	by	$kb;
+	sub yt1100'	knone	by	$kb;
+	sub yt1200'	knone	by	$kb;
+	sub yt1300'	knone	by	$kb;
+	sub yt1400'	knone	by	$kb;
+	sub yt1500'	knone	by	$kb;
+	sub yt1600'	knone	by	$kb;
+	sub yt1700'	knone	by	$kb;
+	sub yt1800'	knone	by	$kb;
+	sub yt1900'	knone	by	$kb;
+	sub yt2000'	knone	by	$kb;
+	sub yt2100'	knone	by	$kb;
+	sub yt2200'	knone	by	$kb;
+	sub yt2300'	knone	by	$kb;
+	sub yt2400'	knone	by	$kb;
+	sub yt2500'	knone	by	$kb;
+	sub yt2600'	knone	by	$kb;
+	sub yt2700'	knone	by	$kb;
+	sub yt2800'	knone	by	$kb;
+	sub yt2900'	knone	by	$kb;
+	sub yt3000' knone	by	#kb;
+
 	sub yt0'	@YbLow		by	$kb;
 	sub yt0'	yb100		by	$kb;
 

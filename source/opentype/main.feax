@@ -146,102 +146,104 @@ lookup FontCheck {
 
 #--- bariyeh kerning ---
 
-lookup _Kern50 { pos @IsoIni 50; } _Kern50;
-lookup _Kern100 { pos @IsoIni 100; } _Kern100;
-lookup _Kern150 { pos @IsoIni 150; } _Kern150;
-lookup _Kern200 { pos @IsoIni 200; } _Kern200;
-lookup _Kern250 { pos @IsoIni 250; } _Kern250;
-lookup _Kern300 { pos @IsoIni 300; } _Kern300;
-lookup _Kern350 { pos @IsoIni 350; } _Kern350;
-lookup _Kern400 { pos @IsoIni 400; } _Kern400;
-lookup _Kern450 { pos @IsoIni 450; } _Kern450;
-lookup _Kern500 { pos @IsoIni 500; } _Kern500;
-lookup _Kern550 { pos @IsoIni 550; } _Kern550;
-lookup _Kern600 { pos @IsoIni 600; } _Kern600;
-lookup _Kern650 { pos @IsoIni 650; } _Kern650;
-lookup _Kern700 { pos @IsoIni 700; } _Kern700;
-lookup _Kern750 { pos @IsoIni 750; } _Kern750;
-lookup _Kern800 { pos @IsoIni 800; } _Kern800;
-lookup _Kern850 { pos @IsoIni 850; } _Kern850;
-lookup _Kern900 { pos @IsoIni 900; } _Kern900;
-lookup _Kern950 { pos @IsoIni 950; } _Kern950;
-lookup _Kern1000 { pos @IsoIni 1000; } _Kern1000;
-lookup _Kern1050 { pos @IsoIni 1050; } _Kern1050;
-lookup _Kern1100 { pos @IsoIni 1100; } _Kern1100;
-lookup _Kern1150 { pos @IsoIni 1150; } _Kern1150;
-lookup _Kern1200 { pos @IsoIni 1200; } _Kern1200;
-lookup _Kern1250 { pos @IsoIni 1250; } _Kern1250;
-lookup _Kern1300 { pos @IsoIni 1300; } _Kern1300;
-lookup _Kern1350 { pos @IsoIni 1350; } _Kern1350;
-lookup _Kern1400 { pos @IsoIni 1400; } _Kern1400;
-lookup _Kern1450 { pos @IsoIni 1450; } _Kern1450;
-lookup _Kern1500 { pos @IsoIni 1500; } _Kern1500;
-lookup _Kern1550 { pos @IsoIni 1550; } _Kern1550;
-lookup _Kern1600 { pos @IsoIni 1600; } _Kern1600;
-lookup _Kern1650 { pos @IsoIni 1650; } _Kern1650;
-lookup _Kern1700 { pos @IsoIni 1700; } _Kern1700;
-lookup _Kern1750 { pos @IsoIni 1750; } _Kern1750;
-lookup _Kern1800 { pos @IsoIni 1800; } _Kern1800;
-lookup _Kern1850 { pos @IsoIni 1850; } _Kern1850;
-lookup _Kern1900 { pos @IsoIni 1900; } _Kern1900;
-lookup _Kern1950 { pos @IsoIni 1950; } _Kern1950;
-lookup _Kern2000 { pos @IsoIni 2000; } _Kern2000;
-lookup _Kern2050 { pos @IsoIni 2050; } _Kern2050;	# not used
-lookup _Kern2100 { pos @IsoIni 2100; } _Kern2100;	# not used
-lookup _Kern2150 { pos @IsoIni 2150; } _Kern2150;
-lookup _Kern2200 { pos @IsoIni 2200; } _Kern2200;
-lookup _Kern2250 { pos @IsoIni 2250; } _Kern2250;
-lookup _Kern2300 { pos @IsoIni 2300; } _Kern2300;
-lookup _Kern2350 { pos @IsoIni 2350; } _Kern2350;
+# lookup _Kern50 { pos @IsoIni 50; } _Kern50;
+# lookup _Kern100 { pos @IsoIni 100; } _Kern100;
+# lookup _Kern150 { pos @IsoIni 150; } _Kern150;
+# lookup _Kern200 { pos @IsoIni 200; } _Kern200;
+# lookup _Kern250 { pos @IsoIni 250; } _Kern250;
+# lookup _Kern300 { pos @IsoIni 300; } _Kern300;
+# lookup _Kern350 { pos @IsoIni 350; } _Kern350;
+# lookup _Kern400 { pos @IsoIni 400; } _Kern400;
+# lookup _Kern450 { pos @IsoIni 450; } _Kern450;
+# lookup _Kern500 { pos @IsoIni 500; } _Kern500;
+# lookup _Kern550 { pos @IsoIni 550; } _Kern550;
+# lookup _Kern600 { pos @IsoIni 600; } _Kern600;
+# lookup _Kern650 { pos @IsoIni 650; } _Kern650;
+# lookup _Kern700 { pos @IsoIni 700; } _Kern700;
+# lookup _Kern750 { pos @IsoIni 750; } _Kern750;
+# lookup _Kern800 { pos @IsoIni 800; } _Kern800;
+# lookup _Kern850 { pos @IsoIni 850; } _Kern850;
+# lookup _Kern900 { pos @IsoIni 900; } _Kern900;
+# lookup _Kern950 { pos @IsoIni 950; } _Kern950;
+# lookup _Kern1000 { pos @IsoIni 1000; } _Kern1000;
+# lookup _Kern1050 { pos @IsoIni 1050; } _Kern1050;
+# lookup _Kern1100 { pos @IsoIni 1100; } _Kern1100;
+# lookup _Kern1150 { pos @IsoIni 1150; } _Kern1150;
+# lookup _Kern1200 { pos @IsoIni 1200; } _Kern1200;
+# lookup _Kern1250 { pos @IsoIni 1250; } _Kern1250;
+# lookup _Kern1300 { pos @IsoIni 1300; } _Kern1300;
+# lookup _Kern1350 { pos @IsoIni 1350; } _Kern1350;
+# lookup _Kern1400 { pos @IsoIni 1400; } _Kern1400;
+# lookup _Kern1450 { pos @IsoIni 1450; } _Kern1450;
+# lookup _Kern1500 { pos @IsoIni 1500; } _Kern1500;
+# lookup _Kern1550 { pos @IsoIni 1550; } _Kern1550;
+# lookup _Kern1600 { pos @IsoIni 1600; } _Kern1600;
+# lookup _Kern1650 { pos @IsoIni 1650; } _Kern1650;
+# lookup _Kern1700 { pos @IsoIni 1700; } _Kern1700;
+# lookup _Kern1750 { pos @IsoIni 1750; } _Kern1750;
+# lookup _Kern1800 { pos @IsoIni 1800; } _Kern1800;
+# lookup _Kern1850 { pos @IsoIni 1850; } _Kern1850;
+# lookup _Kern1900 { pos @IsoIni 1900; } _Kern1900;
+# lookup _Kern1950 { pos @IsoIni 1950; } _Kern1950;
+# lookup _Kern2000 { pos @IsoIni 2000; } _Kern2000;
+# lookup _Kern2050 { pos @IsoIni 2050; } _Kern2050;	# not used
+# lookup _Kern2100 { pos @IsoIni 2100; } _Kern2100;	# not used
+# lookup _Kern2150 { pos @IsoIni 2150; } _Kern2150;
+# lookup _Kern2200 { pos @IsoIni 2200; } _Kern2200;
+# lookup _Kern2250 { pos @IsoIni 2250; } _Kern2250;
+# lookup _Kern2300 { pos @IsoIni 2300; } _Kern2300;
+# lookup _Kern2350 { pos @IsoIni 2350; } _Kern2350;
 
-lookup _InsSp2Kern50 { sub @Initials by sp50 @Initials; } _InsSp2Kern50;
-lookup _InsSp2Kern100 { sub @Initials by sp100 @Initials; } _InsSp2Kern100;
-lookup _InsSp2Kern150 { sub @Initials by sp150 @Initials; } _InsSp2Kern150;
-lookup _InsSp2Kern200 { sub @Initials by sp200 @Initials; } _InsSp2Kern200;
-lookup _InsSp2Kern250 { sub @Initials by sp250 @Initials; } _InsSp2Kern250;
-lookup _InsSp2Kern300 { sub @Initials by sp300 @Initials; } _InsSp2Kern300;
-lookup _InsSp2Kern350 { sub @Initials by sp350 @Initials; } _InsSp2Kern350;
-lookup _InsSp2Kern400 { sub @Initials by sp400 @Initials; } _InsSp2Kern400;
-lookup _InsSp2Kern450 { sub @Initials by sp450 @Initials; } _InsSp2Kern450;
-lookup _InsSp2Kern500 { sub @Initials by sp500 @Initials; } _InsSp2Kern500;
-lookup _InsSp2Kern550 { sub @Initials by sp550 @Initials; } _InsSp2Kern550;
-lookup _InsSp2Kern600 { sub @Initials by sp600 @Initials; } _InsSp2Kern600;
-lookup _InsSp2Kern650 { sub @Initials by sp650 @Initials; } _InsSp2Kern650;
-lookup _InsSp2Kern700 { sub @Initials by sp700 @Initials; } _InsSp2Kern700;
-lookup _InsSp2Kern750 { sub @Initials by sp750 @Initials; } _InsSp2Kern750;
-lookup _InsSp2Kern800 { sub @Initials by sp800 @Initials; } _InsSp2Kern800;
-lookup _InsSp2Kern850 { sub @Initials by sp850 @Initials; } _InsSp2Kern850;
-lookup _InsSp2Kern900 { sub @Initials by sp900 @Initials; } _InsSp2Kern900;
-lookup _InsSp2Kern950 { sub @Initials by sp950 @Initials; } _InsSp2Kern950;
-lookup _InsSp2Kern1000 { sub @Initials by sp1000 @Initials; } _InsSp2Kern1000;
-lookup _InsSp2Kern1050 { sub @Initials by sp1050 @Initials; } _InsSp2Kern1050;
-lookup _InsSp2Kern1100 { sub @Initials by sp1100 @Initials; } _InsSp2Kern1100;
-lookup _InsSp2Kern1150 { sub @Initials by sp1150 @Initials; } _InsSp2Kern1150;
-lookup _InsSp2Kern1200 { sub @Initials by sp1200 @Initials; } _InsSp2Kern1200;
-lookup _InsSp2Kern1250 { sub @Initials by sp1250 @Initials; } _InsSp2Kern1250;
-lookup _InsSp2Kern1300 { sub @Initials by sp1300 @Initials; } _InsSp2Kern1300;
-lookup _InsSp2Kern1350 { sub @Initials by sp1350 @Initials; } _InsSp2Kern1350;
-lookup _InsSp2Kern1400 { sub @Initials by sp1400 @Initials; } _InsSp2Kern1400;
-lookup _InsSp2Kern1450 { sub @Initials by sp1450 @Initials; } _InsSp2Kern1450;
-lookup _InsSp2Kern1500 { sub @Initials by sp1500 @Initials; } _InsSp2Kern1500;
-lookup _InsSp2Kern1550 { sub @Initials by sp1550 @Initials; } _InsSp2Kern1550;
-lookup _InsSp2Kern1600 { sub @Initials by sp1600 @Initials; } _InsSp2Kern1600;
-lookup _InsSp2Kern1650 { sub @Initials by sp1650 @Initials; } _InsSp2Kern1650;
-lookup _InsSp2Kern1700 { sub @Initials by sp1700 @Initials; } _InsSp2Kern1700;
-lookup _InsSp2Kern1750 { sub @Initials by sp1750 @Initials; } _InsSp2Kern1750;
-lookup _InsSp2Kern1800 { sub @Initials by sp1800 @Initials; } _InsSp2Kern1800;
-lookup _InsSp2Kern1850 { sub @Initials by sp1850 @Initials; } _InsSp2Kern1850;
-lookup _InsSp2Kern1900 { sub @Initials by sp1900 @Initials; } _InsSp2Kern1900;
-lookup _InsSp2Kern1950 { sub @Initials by sp1950 @Initials; } _InsSp2Kern1950;
-lookup _InsSp2Kern2000 { sub @Initials by sp2000 @Initials; } _InsSp2Kern2000;
-lookup _InsSp2Kern2050 { sub @Initials by sp2050 @Initials; } _InsSp2Kern2050;
-lookup _InsSp2Kern2100 { sub @Initials by sp2100 @Initials; } _InsSp2Kern2100;
-lookup _InsSp2Kern2150 { sub @Initials by sp2150 @Initials; } _InsSp2Kern2150;
-lookup _InsSp2Kern2200 { sub @Initials by sp2200 @Initials; } _InsSp2Kern2200;
-lookup _InsSp2Kern2250 { sub @Initials by sp2250 @Initials; } _InsSp2Kern2250;
-lookup _InsSp2Kern2300 { sub @Initials by sp2300 @Initials; } _InsSp2Kern2300;
-lookup _InsSp2Kern2350 { sub @Initials by sp2350 @Initials; } _InsSp2Kern2350;
-lookup _InsSp2Kern2400 { sub @Initials by sp2400 @Initials; } _InsSp2Kern2400;
+lookup _InsSp2Kern50 { sub @Initials by kSp50 @Initials; } _InsSp2Kern50;
+lookup _InsSp2Kern100 { sub @Initials by kSp100 @Initials; } _InsSp2Kern100;
+lookup _InsSp2Kern150 { sub @Initials by kSp150 @Initials; } _InsSp2Kern150;
+lookup _InsSp2Kern200 { sub @Initials by kSp200 @Initials; } _InsSp2Kern200;
+lookup _InsSp2Kern250 { sub @Initials by kSp250 @Initials; } _InsSp2Kern250;
+lookup _InsSp2Kern300 { sub @Initials by kSp300 @Initials; } _InsSp2Kern300;
+lookup _InsSp2Kern350 { sub @Initials by kSp350 @Initials; } _InsSp2Kern350;
+lookup _InsSp2Kern400 { sub @Initials by kSp400 @Initials; } _InsSp2Kern400;
+lookup _InsSp2Kern450 { sub @Initials by kSp450 @Initials; } _InsSp2Kern450;
+lookup _InsSp2Kern500 { sub @Initials by kSp500 @Initials; } _InsSp2Kern500;
+lookup _InsSp2Kern550 { sub @Initials by kSp550 @Initials; } _InsSp2Kern550;
+lookup _InsSp2Kern600 { sub @Initials by kSp600 @Initials; } _InsSp2Kern600;
+lookup _InsSp2Kern650 { sub @Initials by kSp650 @Initials; } _InsSp2Kern650;
+lookup _InsSp2Kern700 { sub @Initials by kSp700 @Initials; } _InsSp2Kern700;
+lookup _InsSp2Kern750 { sub @Initials by kSp750 @Initials; } _InsSp2Kern750;
+lookup _InsSp2Kern800 { sub @Initials by kSp800 @Initials; } _InsSp2Kern800;
+lookup _InsSp2Kern850 { sub @Initials by kSp850 @Initials; } _InsSp2Kern850;
+lookup _InsSp2Kern900 { sub @Initials by kSp900 @Initials; } _InsSp2Kern900;
+lookup _InsSp2Kern950 { sub @Initials by kSp950 @Initials; } _InsSp2Kern950;
+lookup _InsSp2Kern1000 { sub @Initials by kSp1000 @Initials; } _InsSp2Kern1000;
+lookup _InsSp2Kern1050 { sub @Initials by kSp1050 @Initials; } _InsSp2Kern1050;
+lookup _InsSp2Kern1100 { sub @Initials by kSp1100 @Initials; } _InsSp2Kern1100;
+lookup _InsSp2Kern1150 { sub @Initials by kSp1150 @Initials; } _InsSp2Kern1150;
+lookup _InsSp2Kern1200 { sub @Initials by kSp1200 @Initials; } _InsSp2Kern1200;
+lookup _InsSp2Kern1250 { sub @Initials by kSp1250 @Initials; } _InsSp2Kern1250;
+lookup _InsSp2Kern1300 { sub @Initials by kSp1300 @Initials; } _InsSp2Kern1300;
+lookup _InsSp2Kern1350 { sub @Initials by kSp1350 @Initials; } _InsSp2Kern1350;
+lookup _InsSp2Kern1400 { sub @Initials by kSp1400 @Initials; } _InsSp2Kern1400;
+lookup _InsSp2Kern1450 { sub @Initials by kSp1450 @Initials; } _InsSp2Kern1450;
+lookup _InsSp2Kern1500 { sub @Initials by kSp1500 @Initials; } _InsSp2Kern1500;
+lookup _InsSp2Kern1550 { sub @Initials by kSp1550 @Initials; } _InsSp2Kern1550;
+lookup _InsSp2Kern1600 { sub @Initials by kSp1600 @Initials; } _InsSp2Kern1600;
+lookup _InsSp2Kern1650 { sub @Initials by kSp1650 @Initials; } _InsSp2Kern1650;
+lookup _InsSp2Kern1700 { sub @Initials by kSp1700 @Initials; } _InsSp2Kern1700;
+lookup _InsSp2Kern1750 { sub @Initials by kSp1750 @Initials; } _InsSp2Kern1750;
+lookup _InsSp2Kern1800 { sub @Initials by kSp1800 @Initials; } _InsSp2Kern1800;
+lookup _InsSp2Kern1850 { sub @Initials by kSp1850 @Initials; } _InsSp2Kern1850;
+lookup _InsSp2Kern1900 { sub @Initials by kSp1900 @Initials; } _InsSp2Kern1900;
+lookup _InsSp2Kern1950 { sub @Initials by kSp1950 @Initials; } _InsSp2Kern1950;
+lookup _InsSp2Kern2000 { sub @Initials by kSp2000 @Initials; } _InsSp2Kern2000;
+lookup _InsSp2Kern2050 { sub @Initials by kSp2050 @Initials; } _InsSp2Kern2050;
+lookup _InsSp2Kern2100 { sub @Initials by kSp2100 @Initials; } _InsSp2Kern2100;
+lookup _InsSp2Kern2150 { sub @Initials by kSp2150 @Initials; } _InsSp2Kern2150;
+lookup _InsSp2Kern2200 { sub @Initials by kSp2200 @Initials; } _InsSp2Kern2200;
+lookup _InsSp2Kern2250 { sub @Initials by kSp2250 @Initials; } _InsSp2Kern2250;
+lookup _InsSp2Kern2300 { sub @Initials by kSp2300 @Initials; } _InsSp2Kern2300;
+lookup _InsSp2Kern2350 { sub @Initials by kSp2350 @Initials; } _InsSp2Kern2350;
+lookup _InsSp2Kern2400 { sub @Initials by kSp2400 @Initials; } _InsSp2Kern2400;
+
+lookup _PreventKernUnder { sub @Initials by knone @Initials; } _PreventKernUnder;
 
 
 #--- wide forms ---
@@ -799,6 +801,13 @@ lookup BehContextuals {
 	rsub @MedBe_sub'   [absBehMed @PostBeM2]	by	@MedBeM2_sub; 
 
 } BehContextuals;	# end of lookup
+
+
+lookup HgbmContextuals {
+	lookupflag IgnoreMarks;
+	 # Probably not really needed, but might as well make it match Graphite.
+	sub [absHehGoalIni absHehGoalIni.benn absBehMed absBehMed.benn absMeemIni absMeemIni.benn]  absBehMed.nn'	by	absBehMed.nn_hgbm;
+} HgbmContextuals;
 
 
 lookup KafContextuals {
@@ -1440,12 +1449,8 @@ lookup DeleteHidden {
 } DeleteHidden;
 
 
-lookup Space4BariyehKern {
-	lookupflag IgnoreMarks;
-
-	include(../../source/opentype/bariyehKernRules.feax);
-
-} Space4BariyehKern;
+#lookup Space4BariyehKern:
+include(../../source/opentype/bariyehKernRules.feax);
 
 } calt;	 # end of feature
 
