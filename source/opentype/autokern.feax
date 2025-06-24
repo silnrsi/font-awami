@@ -19,8 +19,15 @@
 
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
-# lookup InsertMarkers:
+# lookup InitKernMetrics:
 include(../../source/opentype/autoKernMetrics.feax);
+
+# Don't allow kerning before bariyeh with overhanging tail.
+lookup PreventPreBariyehKern {
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+	sub  kw0'  [@ByKernSpace @BariyehIsolates]		by	NULL;
+} PreventPreBariyehKern;
+
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks.
@@ -67,7 +74,7 @@ lookup AdjustForNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
 
-	# beh + beh + jeem
+	# beh + beh + final jeem
 	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
 			mkBehMed.jm ybLast @NuqtaLikeLower	mkJeemFin;
 	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
@@ -79,41 +86,48 @@ lookup AdjustForNuqtaOverhang {
 
 	# beh initials
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
-										 mkBehIni.beM2 mkBehIni.benn]'	ybLast' lookup _ExtendYbBy100	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWide  @KernBaseMarkMed;  # followed by medial
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy100	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy200	@DotNarrow;
-	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy600	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	@DotNarrow;
-	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy400	@DotWide;
+										 mkBehIni.beM2 mkBehIni.benn]'	ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy300	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy600	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
+
+	# beh+beh - the nuqta on the second beh is an issue
+	# sub @KwMarker' lookup _DecKwBy400	mkBehIni.beM1'					ybLast' lookup _ExtendYbBy400	@NuqtaLike
+	# 	@BehKernBaseMarkMed  @DotWideL;
 
 	# jeem initials
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.re]'					ybLast' lookup _ExtendYbBy100	@DotWide;
-	sub @KwMarker' lookup _DecKwBy600	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy600	@DotWide @KernBaseMarkMed;  # followed by medial
-	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWide;
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.fe]'					ybLast' lookup _ExtendYbBy100	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy200	@DotNarrow;
-	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy400	@DotWide;
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy100	@DotNarrow;
-	sub @KwMarker' lookup _DecKwBy300	[mkJeemIni.qf]'					ybLast' lookup _ExtendYbBy300	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy100	@DotWide;
-	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWide;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.re]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy600	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy600	@DotWideL @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.fe]'					ybLast' lookup _ExtendYbBy100	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy200	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.mm mkJeemIni.mmX]'	ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy300	[mkJeemIni.qf]'					ybLast' lookup _ExtendYbBy300	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
 
 	# feh w/ three dots below
-	sub @KwMarker' lookup _DecKwBy300	[mkFehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy100	[mkFehIni.fe]'					ybLast' lookup _ExtendYbBy100	@DotWide  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy100	[mkFehIni.sn]'					ybLast' lookup _ExtendYbBy100	@DotWide;
-	sub @KwMarker' lookup _DecKwBy300	[mkFehIni.mmX mkFehIni.hgM]'	ybLast' lookup _ExtendYbBy300	@DotWide;
-	sub @KwMarker' lookup _DecKwBy400	[mkFehIni.mm mkFehIni.hd]'		ybLast' lookup _ExtendYbBy400	@DotWide;
-	sub @KwMarker' lookup _DecKwBy200	[mkFehIni.nn mkFehIni.qf]'		ybLast' lookup _ExtendYbBy200	@DotWide;
-	sub @KwMarker' lookup _DecKwBy500	[mkFehIni.ch]'					ybLast' lookup _ExtendYbBy500	@DotWide;
+	sub @KwMarker' lookup _DecKwBy300	[mkFehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy100	[mkFehIni.fe]'					ybLast' lookup _ExtendYbBy100	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy100	[mkFehIni.sn]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkFehIni.mmX mkFehIni.hgM]'	ybLast' lookup _ExtendYbBy300	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy400	[mkFehIni.mm mkFehIni.hd]'		ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkFehIni.nn mkFehIni.qf]'		ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy500	[mkFehIni.ch]'					ybLast' lookup _ExtendYbBy500	@DotWideL;
+
+	# ... beh+heh-goal
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.hgM]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
 
 	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and
 	# by considerably more than 100. But this is better than nothing.
@@ -141,7 +155,8 @@ lookup AdjustForBaseOverhang {
 	# sub mkRehFin	@KwMarker' lookup _DecKwBy600		@KernBaseMarkIni	[mkJeemFin mkAinFin];  # was 800
 	
 	# 2-char sequences w/ final jeem
-	ignore sub @KwMarker' 	[mkSadIni.jm mkHehDoachashmeeIni.jm]		mkJeemFin;
+	ignore sub @KwMarker' 		[mkSadIni.jm mkHehDoachashmeeIni.jm]	mkJeemFin;
+	ignore sub @KwMarker' 					@KafKernBaseMarkIni			mkJeemFin;
 	sub @KwMarker' lookup _DecKwBy400		[mkSadIni.jm]				mkJeemFin;
 	sub @KwMarker' lookup _DecKwBy500		@KernBaseMarkIni			mkJeemFin;
 
@@ -307,7 +322,29 @@ lookup $ln_ShiftNextGlyph {
 # If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
 lookup AddSpaceWhenBlocked {
 	sub kblock	@KwMarker' lookup _DecKwBy100;
+
 } AddSpaceWhenBlocked;
+
+
+lookup IniKafKern {
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis];
+
+	# Account for jeem and ain back-swashes.
+	sub @KernBaseMarkIsoFin		kw1200'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw300;		# eg, noon
+	sub @KernBaseMarkIsoFin		kw400'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw0;
+	sub @KernBaseMarkIsoFin		kw500'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw200;		# eg, heh-goal
+	sub @KernBaseMarkIsoFin		kw600'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw300;		# eg, lam-alef
+	sub @KernBaseMarkIsoFin		kw700'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw400;
+
+	# Thin single chars need a little extra kerning before the kaf, because short sequences can't kern more than their width.
+	# TODO: handle other forms of these isolates
+	sub mkHehGoal	kw500'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw700;
+	sub mkAlef		kw300'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw500;
+	sub mkWaw		kw700'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw900;
+	sub mkDal		kw800'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw1000;
+	sub mkReh		kw800'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw1100;
+
+} IniKafKern;
 
 
 lookup RestoreBases {
@@ -320,16 +357,6 @@ lookup RestoreBases {
 	sub @KernBaseMarkOther	by	@KernBaseOther;
 } RestoreBases;
 
-
-lookup IsolateKafKern {
-	# Single chars need a little extra kerning before the kaf, because short sequences can't kern more than their width.
-	lookupflag UseMarkFilteringSet [@KwMarker];
-	sub absHehGoal  kw500'  [@KafIniForms @KafIsolates]		by	kw800;
-	sub absAlef		kw300'  [@KafIniForms @KafIsolates]		by	kw600;
-	sub absWaw		kw700'  [@KafIniForms @KafIsolates]		by	kw900;
-	sub absDal		kw800'  [@KafIniForms @KafIsolates]		by	kw1000;
-	sub absReh		kw800'  [@KafIniForms @KafIsolates]		by	kw1100;
-} IsolateKafKern;
 
 
 # Leaving the markers in for the time being helps with debugging.

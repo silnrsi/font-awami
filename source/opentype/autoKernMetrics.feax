@@ -2340,10 +2340,6 @@ lookup InitKernMetrics {
 					dsc400   dsc100   dscN200  dscN300  dscN400  dscN500  	ybLast
 					asc1300  asc1300  asc400   asc200   asc0     ascN100  ascN100  ascN200  ascN200  ascN200  ascN200  ascN100  asc900   asc900   asc700   
 					kw0;
-  sub absNoonGhunnaMark  by  absNoonGhunnaMark  dy0  py0  
-					dscN100  dscN200  	ybLast
-					asc200   asc100   
-					kw0;
   sub absNoonRetro  by  absNoonRetro  dy0  py0  
 					dsc300   dsc0     dscN200  dscN300  dscN400  dscN500  	ybLast
 					asc1500  asc1300  asc300   asc100   asc1500  asc1500  asc1700  asc1700  asc1200  asc1200  ascN200  ascN100  asc900   asc900   asc600   
@@ -3140,6 +3136,26 @@ lookup InitKernMetrics {
   sub absZain  by  absZain  dy0  py0  
 					dsc800   dsc400   dsc100   dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  	ybLast
 					asc1600  asc1700  asc1700  asc1700  asc400   asc300   asc200   asc200   asc100   
+					kw0;
+  sub nlqBariyeh  by  nlqBariyeh  dy0  py0  
+					dsc300   dsc200   dsc200   dsc100   dsc100   dsc100   dsc100   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dsc0     dsc0     dsc0     dsc0     dsc100   	ybLast
+					asc500   asc500   asc500   asc500   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc1200  asc1200  asc1000  asc1000  asc900   asc900   asc900   asc800   asc700   
+					kw0;
+  sub nlqBariyehFin  by  nlqBariyehFin  dy500     py0  
+					dsc300   dsc200   dsc200   dsc100   dsc100   dsc100   dsc100   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dsc0     dsc0     dsc0     dsc0     dsc0     dsc100   	ybLast
+					asc500   
+					kw0;
+  sub nlqBariyehHamzaAbove  by  nlqBariyehHamzaAbove  dy0  py0  
+					dsc300   dsc200   dsc200   dsc100   dsc100   dsc100   dsc100   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dsc0     dsc0     dsc0     dsc0     dsc100   dsc900   dsc800   dsc800   	ybLast
+					asc500   asc500   asc500   asc500   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc1200  asc1200  asc1000  asc1000  asc900   asc900   asc900   asc1300  asc1300  asc1300  asc1200  asc1100  
+					kw0;
+  sub nlqBariyehThreeAbove  by  nlqBariyehThreeAbove  dy0  py0  
+					dsc300   dsc200   dsc200   dsc100   dsc100   dsc100   dsc100   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dsc0     dsc0     dsc0     dsc0     dsc100   dsc1000  dsc600   dsc600   	ybLast
+					asc500   asc500   asc500   asc500   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc1200  asc1200  asc1000  asc1000  asc900   asc900   asc900   asc1300  asc1300  asc1300  asc1300  asc1300  
+					kw0;
+  sub nlqBariyehTwoAbove  by  nlqBariyehTwoAbove  dy0  py0  
+					dsc300   dsc200   dsc200   dsc100   dsc100   dsc100   dsc100   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dscN100  dsc0     dsc0     dsc0     dsc0     dsc100   dsc1000  dsc600   dsc600   	ybLast
+					asc500   asc500   asc500   asc500   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc1200  asc1200  asc1000  asc1000  asc900   asc900   asc900   asc800   asc1200  asc1200  asc1300  asc1300  
 					kw0;
   sub nlqChotiyeh  by  nlqChotiyeh  dy0  py0  
 					dsc1300  dsc300   dsc0     dscN200  dscN300  dscN400  dscN500  	ybLast

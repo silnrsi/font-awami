@@ -25,9 +25,6 @@
 
 @Any = [@GDEF_bases @GDEF_marks];
 
-@DotTallL = [_dot3l _dot4l _dot2vl _smallTahBelow];
-@DotFlatL = [_dot1l _dot2l];
-
 lookup EndOfStreamKludge {
 	# Ensure that the last nuqta has at least three slots after it.
 	# This is needed for the insertion rules.
@@ -39,13 +36,16 @@ lookup CollFixNuqtas {
 
 	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLike];
 
-	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion.
+	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion. \/ \/ \/
 																										#	 \/ \/ \/
 	# beh + beh																							#	 \/ \/ \/
 
 	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100	absBehMed'		@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
+	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100	absBehMed.benn'	@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
 
+	sub absBehIni.be	@DotTallL' 		 lookup _ShiftN100	absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS100;
+	sub absBehIni.beM1	@NuqtaLikeLower' lookup _ShiftN200	absBehMed.be'	@NuqtaLikeLower'	@Any' lookup _ShiftS400;
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftE100	absBehMed'		@NuqtaLikeLower'	@Any' lookup _ShiftS100;
 	sub absBehIni.benn	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.nn'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
 	sub absBehMed.bere	@NuqtaLikeLower' lookup _ShiftE200	absBehMed.re'	@NuqtaLikeLower' 	@Any' lookup _ShiftS400;
@@ -58,6 +58,12 @@ lookup CollFixNuqtas {
 	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm	@DotTallL	absJeemFin	@NuqtaLikeLower;
 	# more below in CollFixNuqtas_contd
 
+	# beh + kaf + heh-do
+	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100		[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
+
+	# beh + heh-goal
+	sub absBehIni.hgM	@DotWideL' lookup _ShiftE200	@HehGoalMedForms	_hehHook.small;
+
 	# medial jeem + final jeem
 
 	sub absJeemMed.jm	@DotFlatL' lookup _ShiftE200	absJeemFin;
@@ -65,15 +71,16 @@ lookup CollFixNuqtas {
 
 	# jeem + qaf
 	
-	sub absJeemIni.qf	@NuqtaLike			absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
-	sub absJeemIni.qf						absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
+	sub absJeemIni.qf	@NuqtaLike		absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
+	sub absJeemIni.qf					absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
 
 	# feh
 
 	sub absFehIni.hd	@NuqtaLikeLower' lookup _ShiftE200	@HehDoForms;
-	sub absFehIni.hd	@NuqtaLikeLower' lookup _ShiftE200	@JeemForms;
+	sub absFehIni.jm	@NuqtaLikeLower' lookup _ShiftE200	@JeemForms;
 
-	sub absFehIni.hgM	@NuqtaLikeLower' lookup _ShiftE100	@HehGoalMedForms' _hehHook.small'	@Any' lookup _ShiftW100;
+	sub absFehIni.beM1	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.be' 		@NuqtaLikeLower'	@Any' lookup _ShiftS200;
+	sub absFehIni.hgM	@NuqtaLikeLower' lookup _ShiftE100	@HehGoalMedForms'	_hehHook.small'		@Any' lookup _ShiftW100;
 
 
 } CollFixNuqtas;

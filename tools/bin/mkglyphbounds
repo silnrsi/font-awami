@@ -232,7 +232,6 @@ def FormatMarkerList(vList, prefix, sliceWidth):
 
 def isArabicBase(name):
     
-    # What about bariyeh? For now we're ignoring it.
     allBases = ["absAlef", "absHighHamzaAlef",
         "absBeh", "absTeh", "absTheh", "absPeh", "absTte", "absBeeh", "absDotlessBeh",
         "absJeem", "absHah", "absKhah", "absTcheh", "absNyeh", "absDyeh",
@@ -251,7 +250,7 @@ def isArabicBase(name):
         "absReh", "absZain", "absJeh", "absRreh",
         "absWaw", "absU", "absOe", "absKirghiz", "absVe", "absYu",
         "absYeh", "nlqChotiyeh", "absE", "absAlefMaksura", "absKashmiriYeh",
-        # "nlqBariyeh",
+        "nlqBariyeh",
         "absLigatureAllah", "absLigatureLlah"];
     
     if name == "absVerseSign": # triggered by absVe
@@ -263,6 +262,8 @@ def isArabicBase(name):
     elif "absEastern" in name:
         return False
     elif "absEight" in name:
+        return False
+    elif name == "absNoonGhunnaMark":   # triggered by absNoon
         return False
     
     # TODO: ignore digits, if necessary
@@ -289,6 +290,7 @@ def isFinalBase(name):
 def isIsolateFinalBase(name):
     if ("Ini" in name): return False
     if ("Med" in name): return False
+    if name == "absNoonGhunnaMark": return False
     return True
 
 def isKernableBase(name):
@@ -441,6 +443,9 @@ def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
         lowers = lowers[7:]
     if exit == "ta":
         uppers = uppers[0:-7]
+
+    if entry == "by":
+        uppers = uppers[0:1]
         
     # These interfaces overlap such that the right-hand glyph is on top.
     # Trim off the end of the lower metrics on the right-hand (exit) glyph
@@ -536,7 +541,6 @@ def Tweak(gn, uppers, lowers):
             lowers[6] = 400
             lowers[7] = 100
             lowers[8] = 0
-
 
     return [uppers, lowers]
 

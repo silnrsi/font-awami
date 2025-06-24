@@ -125,3 +125,7 @@ lookup _ShiftN500E500 {
 lookup _ShiftS100E100 {
 	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfE100;
 } _ShiftS100E100;
+
+lookup _ShiftS200E100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfE100;
+} _ShiftS200E100;
