@@ -25,7 +25,7 @@ include(../../source/opentype/autoKernMetrics.feax);
 # Don't allow kerning before bariyeh with overhanging tail.
 lookup PreventPreBariyehKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
-	sub  kw0'  [@ByKernSpace @BariyehIsolates]		by	NULL;
+	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	NULL;
 } PreventPreBariyehKern;
 
 
@@ -45,6 +45,9 @@ lookup HandleMarkDsc {
 
 lookup AdjustAscxDscx4Shifts {
 	lookupflag UseMarkFilteringSet [@DscXMarker @CfMarkerNS];
+
+	# The nuqtas have been shifted (in lookup CollFix), so adjust the vertical deltas accordingly.
+	# TODO: add more values as needed.
 
 	# sub dscx600' lookup _IncAscxDscx100 cfN100;
 
@@ -98,6 +101,7 @@ lookup AdjustForNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL;
 	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.bere]'				ybLast'	lookup _ExtendYbBy200	@DotWideL;
 
 	# beh+beh - the nuqta on the second beh is an issue
 	# sub @KwMarker' lookup _DecKwBy400	mkBehIni.beM1'					ybLast' lookup _ExtendYbBy400	@NuqtaLike
@@ -293,26 +297,32 @@ lookup $ln_EnforceBlock {
 	sub @KwMarker' lookup _EnforceBlock;
 } $ln_EnforceBlock;
 
+# TODO: extend to kern 3 glyphs; currently it only handles 2.
 # Once a glyph has been completely kerned, invalidate its bottoms.
 lookup $ln_CleanUpKernedGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
 	rsub @YbMarker' @KwMarker	by  ybIgnore;
 } $ln_CleanUpKernedGlyph;
 
+# Currently this handles kerning under 3 glyphs max.
 # Once a glyph has had something kern under it completely, invalidate its tops.
 lookup $ln_CleanUpTopGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
-	sub @YtMarker ybLast @YtMarker'  by  ytIgnore;
+	sub @YtMarker ybLast		@YtMarker'  by  ytIgnore;
+	sub @YtMarker ybLast ybLast	@YtMarker'  by  ytIgnore;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
+# TODO: extend to kern 3 glyphs; currently it only handles 2.
 lookup $ln_ShiftPrevGlyph {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 
+# Currently this handles kerning under 3 glyphs max.
 lookup $ln_ShiftNextGlyph {
 	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
-	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' @YbMarker';
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker'						@YbMarker';
+	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' ybLast'	@PyMarker'	@YbMarker';
 } $ln_ShiftNextGlyph;
 
 }
@@ -345,6 +355,15 @@ lookup IniKafKern {
 	sub mkReh		kw800'  [@KafKernBaseMarkIni @KafKernBaseMarkIso]		by	kw1100;
 
 } IniKafKern;
+
+
+lookup HandFix {
+	# Cases that are easiest to hard-code.
+	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @NuqtaLikeUpper @KwMarker];
+
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin]	kw0'  mkBehIni	@NuqtaLikeUpper	mkAlefFin	by	kwN200;
+
+} HandFix;
 
 
 lookup RestoreBases {

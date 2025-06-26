@@ -408,6 +408,7 @@ def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
         elif "absLam" in gname:
             lowers = lowers[1:]
         elif "absKeheh" in gname or "absGaf" in gname:
+            # trim off the diagonal stroke:
             lowers = lowers[10:]
         elif "absDal" in gname:
             lowers = lowers[1:]

@@ -267,8 +267,13 @@ details including an FAQ.
 	<class name="AlefFinForms">
 		absAlefFin absAlefFin._lm absAlefFin.allah
 	</class>
+
+	<class name="AlefIsoForms">
+		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
+						absAlefTwoAbove absAlefThreeAbove absHighHamzaAlef absAlefWasla
+	</class>
 	
-	<class name="AlefForms">absAlef @AlefFinForms</class>
+	<class name="AlefForms">alefIsolates @AlefFinForms</class>
 	
 	<class name="RehFinForms">absRehFin absRehFin._hgM absRehFin._jkl absRehFin._sshg</class>
 	
@@ -306,19 +311,18 @@ details including an FAQ.
 		@AlefFinForms @RehFinForms @DalFinForms @QafFinForms @NoonFinForms @ChotiyehFinForms @WawFinForms @BariyehFinForms
 	</class>
 	
-	<class name="KafIsolates">
+	<class name="KafIsoForms">
 		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
 		absGueh absNgoeh absGraf
 	</class>
 
-	<class name="BariyehIsolates">
+	<class name="BariyehIsoForms">
 		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
 	</class>
 
 	<!-- add many more -->
 	<class name="Isolates">
-		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
-						absAlefTwoAbove absAlefThreeAbove absHighHamzaAlef absAlefWasla
+		@AlefIsoForms
 		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh absDotlessBeh
 				absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV 
 				nlqChotiyeh absYeh absYehHamzaAbove absE absYehSmallV absAlefMaksura absYehTwoAbove absYehThreeAbove absYehFourBelow
@@ -336,14 +340,14 @@ details including an FAQ.
 		absAin absGhain absAinThreeDotsAbove 
 		absFeh absFehThreeDotsBelow absDotlessFeh absVeh
 				absQaf absDotlessQaf 
-		@KafIsolates
+		@KafIsoForms
 		absLam absLamBar absLamSmallV absLamSmallTah absLamThreeDots
 		absMeem
 		absWaw absWawHamzaAbove absWawRing absU absOe absKirghizOe absKirghizYu absWawTwoAbove absWawThreeAbove absWawDotAbove
 						absWawTwoDotsAbove absVe absYu
 		absHehDo
 		absHehGoal absHehGoalHamzaAbove absHehYehAbove absHeh absAe
-		@BariyehIsolates
+		@BariyehIsoForms
 		absTehMarbuta
 		absTehMarbutaGoal
 	</class>
@@ -1556,6 +1560,11 @@ details including an FAQ.
 	
 	<!-- These have to be in separate classes to have parallel structure to the @Isolates class,
 		due to the limitations of FEAX. -->
+
+	<class name="AlefKernBaseMarkIso">
+		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
+						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
+	</class>
 	<class name="KafKernBaseMarkIso">
 		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
 					mkGueh mkNgoeh mkGraf
@@ -1566,8 +1575,7 @@ details including an FAQ.
 	</class>
 
 	<class name="KernBaseMarkIso">
-		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
-						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
+		@AlefKernBaseMarkIso
 		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh mkDotlessBeh
 				mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV 
 				mkChotiyeh mkYeh mkYehHamzaAbove mkE mkYehSmallV mkAlefMaksura mkYehTwoAbove mkYehThreeAbove mkYehFourBelow

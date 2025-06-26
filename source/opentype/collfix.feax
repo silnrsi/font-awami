@@ -29,7 +29,7 @@ lookup EndOfStreamKludge {
 	# Ensure that the last nuqta has at least three slots after it.
 	# This is needed for the insertion rules.
 	ignore sub @Finals  @NuqtaLike' @Any @Any @Any;
-	sub @Finals	 @NuqtaLike'  by  @NuqtaLike  ytx0 ytx0 ytx0;
+	sub @Finals	 @NuqtaLike'  by  @NuqtaLike  bogus bogus bogus;
 } EndOfStreamKludge;
 
 lookup CollFixNuqtas {
@@ -48,7 +48,10 @@ lookup CollFixNuqtas {
 	sub absBehIni.beM1	@NuqtaLikeLower' lookup _ShiftN200	absBehMed.be'	@NuqtaLikeLower'	@Any' lookup _ShiftS400;
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftE100	absBehMed'		@NuqtaLikeLower'	@Any' lookup _ShiftS100;
 	sub absBehIni.benn	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.nn'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
+	sub absBehIni.bere	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.re'	@DotWideL'			@Any' lookup _ShiftS200W100;
+	sub absBehIni.bere	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.re'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absBehMed.bere	@NuqtaLikeLower' lookup _ShiftE200	absBehMed.re'	@NuqtaLikeLower' 	@Any' lookup _ShiftS400;
+
 
 	# beh + beh + final jeem
 
@@ -92,5 +95,5 @@ lookup CollFixNuqtas_contd {
 } CollFixNuqtas_contd;
 
 lookup EndOfStreamUndokludge {
-	sub ytx0  by  NULL;
+	sub bogus  by  NULL;
 } EndOfStreamUndokludge;

@@ -562,7 +562,7 @@ lookup $lname {
 	sub yt2700'	knone	by	$kb;
 	sub yt2800'	knone	by	$kb;
 	sub yt2900'	knone	by	$kb;
-	sub yt3000' knone	by	#kb;
+	sub yt3000' knone	by	$kb;
 
 	sub yt0'	@YbLow		by	$kb;
 	sub yt0'	yb100		by	$kb;
@@ -1258,7 +1258,7 @@ do  forlet i = range(31);
     let insyt = "_InsYt"+ext;
     {
     sub $yt' lookup _BlockR lookup _DelYtAndIncKw @KwMarker' lookup $insyt @YbMarker';	# first shift
-    sub $yt' lookup _BlockI lookup _DelYt                    lookup $insyt @YbMarker';
+    sub $yt' lookup _BlockI lookup _DelYt                    lookup $insyt @YbMarker';	# internal shifts
     }
 } _TryKernShift;
 
@@ -1386,7 +1386,7 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN800'		lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN700'		lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN600'		lookup _PyDelYb;	#    \/
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN500'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybN500'		lookup _PyDelYb;	#    --
 	sub ybLast' lookup _B4lastInsYbN400	@PyMarker'	ybN400'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN300	@PyMarker'	ybN300'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN200	@PyMarker'	ybN200'	lookup _PyDelYb;
@@ -1422,4 +1422,54 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYb2800	@PyMarker'	yb2800'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb2900	@PyMarker'	yb2900'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb3000	@PyMarker'	yb3000'	lookup _PyDelYb;
+
+	# shift from third glyph over:
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000,
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1400'	lookup _PyDelYb;	# ie, too low to kern underneath
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1300'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1200'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1100'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN900'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN800'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN700'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN600'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN500'		lookup _PyDelYb;	#    --
+	sub ybLast' lookup _B4lastInsYbN400	@PyMarker'	ybLast'	@PyMarker'	ybN400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN300	@PyMarker'	ybLast'	@PyMarker'	ybN300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN200	@PyMarker'	ybLast'	@PyMarker'	ybN200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYbN100	@PyMarker'	ybLast'	@PyMarker'	ybN100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb0	@PyMarker'	ybLast'	@PyMarker'	yb0'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb100	@PyMarker'	ybLast'	@PyMarker'	yb100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb200	@PyMarker'	ybLast'	@PyMarker'	yb200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb300	@PyMarker'	ybLast'	@PyMarker'	yb300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb400	@PyMarker'	ybLast'	@PyMarker'	yb400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb500	@PyMarker'	ybLast'	@PyMarker'	yb500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb600	@PyMarker'	ybLast'	@PyMarker'	yb600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb700	@PyMarker'	ybLast'	@PyMarker'	yb700'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb800	@PyMarker'	ybLast'	@PyMarker'	yb800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb900	@PyMarker'	ybLast'	@PyMarker'	yb900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1000	@PyMarker'	ybLast'	@PyMarker'	yb1000'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1100	@PyMarker'	ybLast'	@PyMarker'	yb1100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1200	@PyMarker'	ybLast'	@PyMarker'	yb1200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1300	@PyMarker'	ybLast'	@PyMarker'	yb1300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1400	@PyMarker'	ybLast'	@PyMarker'	yb1400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1500	@PyMarker'	ybLast'	@PyMarker'	yb1500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1600	@PyMarker'	ybLast'	@PyMarker'	yb1600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1700	@PyMarker'	ybLast'	@PyMarker'	yb1700' lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1800	@PyMarker'	ybLast'	@PyMarker'	yb1800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb1900	@PyMarker'	ybLast'	@PyMarker'	yb1900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2000	@PyMarker'	ybLast'	@PyMarker'	yb2000'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2100	@PyMarker'	ybLast'	@PyMarker'	yb2100'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2200	@PyMarker'	ybLast'	@PyMarker'	yb2200'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2300	@PyMarker'	ybLast'	@PyMarker'	yb2300'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2400	@PyMarker'	ybLast'	@PyMarker'	yb2400'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2500	@PyMarker'	ybLast'	@PyMarker'	yb2500'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2600	@PyMarker'	ybLast'	@PyMarker'	yb2600'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2700	@PyMarker'	ybLast'	@PyMarker'	yb2700' lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2800	@PyMarker'	ybLast'	@PyMarker'	yb2800'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb2900	@PyMarker'	ybLast'	@PyMarker'	yb2900'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb3000	@PyMarker'	ybLast'	@PyMarker'	yb3000'	lookup _PyDelYb;
+
 } _ShiftFromNext;
