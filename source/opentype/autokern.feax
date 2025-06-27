@@ -25,6 +25,7 @@ include(../../source/opentype/autoKernMetrics.feax);
 # Don't allow kerning before bariyeh with overhanging tail.
 lookup PreventPreBariyehKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+	# Don't delete the kw0; other places in the system expect it to be present after a final.
 	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblock kw0;
 } PreventPreBariyehKern;
 

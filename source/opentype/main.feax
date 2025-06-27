@@ -815,12 +815,17 @@ lookup KafContextuals {
 	sub @KafPreKaf_default_sub' [absDalFin absTehMarbutaFin]		by	@KafDk_sub;
 } KafContextuals;
 
+@KfKaf = [absKehehIni.kf absGafIni.kf absKehehMed.dk absGafMed.dk];
+@SdKaf = [absKehehIni.sd absGafIni.sd absKehehMed.sd absGafMed.sd];
+
 lookup ConnectToRoundKaf{
 	lookupflag IgnoreMarks;
 	
 	# Use sad connection to round kafs, which happen before lams and alefs.
 	sub @IniDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@IniSd_sub;
 	sub @MedDefault_sub' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@MedSd_sub;
+
+	sub @KfKaf' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@SdKaf;
 } ConnectToRoundKaf;
 
 # Patch the pre-.sd beh form which is now wrong.
