@@ -74,6 +74,7 @@ lookup TreatBasesAsMarks {
 # Must come after InsertMarkers.
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
+# TODO: Replace some of these rules with ones that test for the presence CfMarkerEWs.
 lookup AdjustForNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
@@ -89,8 +90,12 @@ lookup AdjustForNuqtaOverhang {
 			mkBehMed.jm ybLast	mkJeemFin;
 
 	# beh initials
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy200	@DotWideL	mkBehMed.hgM;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
-										 mkBehIni.beM2 mkBehIni.benn]'	ybLast' lookup _ExtendYbBy100	@DotWideL;
+										 mkBehIni.benn]'				ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy300	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy100	@DotWideL;
@@ -151,7 +156,8 @@ lookup AdjustForNuqtaShift {
 	sub @KwMarker' lookup _DecKwBy200	@ExtYbMarker' lookup _ExtendYbBy200	ybLast' @NuqtaLikeLower	cfE200;
 } AdjustForNuqtaShift;
 
-
+# Bases such as the final jeem and ain have swashes that curve right. In short sequences
+# these need kerning.
 lookup AdjustForBaseOverhang {
 	lookupflag UseMarkFilteringSet [@KernBaseMarkWord @KwMarker];
 	sub @KwMarker' lookup _IncKwBy800		mkKehehIni.sd';
@@ -298,28 +304,34 @@ lookup $ln_EnforceBlock {
 	sub @KwMarker' lookup _EnforceBlock;
 } $ln_EnforceBlock;
 
+# Once a (final) glyph has been completely kerned, invalidate its bottoms.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
-# Once a glyph has been completely kerned, invalidate its bottoms.
 lookup $ln_CleanUpKernedGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
+	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @Kblocks
 	rsub @YbMarker' @KwMarker	by  ybIgnore;
 } $ln_CleanUpKernedGlyph;
 
 # Currently this handles kerning under 3 glyphs max.
 # Once a glyph has had something kern under it completely, invalidate its tops.
+# TODO: find a way to stop this running if there is a kblock present.
 lookup $ln_CleanUpTopGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
 	sub @YtMarker ybLast		@YtMarker'  by  ytIgnore;
 	sub @YtMarker ybLast ybLast	@YtMarker'  by  ytIgnore;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
+# Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
 lookup $ln_ShiftPrevGlyph {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
+	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @Kblocks
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 
+# Shift a single @YbMarker from the following glyph into the initial, so we can test for kerning under it.
 # Currently this handles kerning under 3 glyphs max.
+# TODO: don't run if there is a kblock present.
 lookup $ln_ShiftNextGlyph {
 	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
 	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker'						@YbMarker';
@@ -362,7 +374,7 @@ lookup HandFix {
 	# Cases that are easiest to hard-code.
 	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @NuqtaLikeUpper @KwMarker];
 
-	sub [mkAlef mkAlefMaddaAbove mkAlefFin]	kw0'  mkBehIni	@NuqtaLikeUpper	mkAlefFin	by	kwN200;
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0'  mkBehIni	@NuqtaLikeUpper	mkAlefFin	by	kwN200;
 
 } HandFix;
 

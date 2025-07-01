@@ -110,6 +110,14 @@ lookup _ShiftW500 {
 
 # shift diagonally
 
+lookup _ShiftN200E100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE100;
+} _ShiftN200E100;
+
+lookup _ShiftN200E200 {
+	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE200;
+} _ShiftN200E200;
+
 lookup _ShiftN200E300 {
 	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE300;
 } _ShiftN200E300;

@@ -521,8 +521,10 @@ lookup _DelYb {
 # following sequence.
 @Kblocks = [kblockR kblockI kblock];
 
+
 # A block occurs when the yt (top) value is too close to the yb (bottom) value.
 # Currently we want a space of at least 100 units.
+# TODO: possibly this should be increased to 200 units.
 
 do	forlet i = range(0,2);
 	let lnames = ["_TestBlockR","_TestBlockI"];
@@ -565,10 +567,10 @@ lookup $lname {
 	sub yt2900'	knone	by	$kb;
 	sub yt3000' knone	by	$kb;
 
-	sub yt0'	@YbLow		by	$kb;
+	sub yt0'	@YbLow		by	$kb;  # any top lower than 0 creates a block
 	sub yt0'	yb100		by	$kb;
 
-	sub yt100'  @YbLow		by	$kb;
+	sub yt100'  @YbLow		by	$kb;  # any top lower than 0 creates a block
 	sub yt100'  yb100		by	$kb;
 	sub yt100'	yb200		by	$kb;
 
