@@ -828,12 +828,14 @@ lookup ConnectToRoundKaf{
 	sub @KfKaf' [absKehehMed absGafMed] [absAlefFin @LamForms]		by	@SdKaf;
 } ConnectToRoundKaf;
 
-# Patch the pre-.sd beh form which is now wrong.
-lookup BehSdContextuals2 {
+# Patch the pre-.sd forms which are now wrong.
+# Note that we shouldn't have to work backwards any further, eg, to correct a beh chain,
+# because beM1s connect to both .beM2 and .be forms.
+lookup PreSdContextuals2 {
 	lookupflag IgnoreMarks;
-	sub absBehIni.beM2'  @MedSd_sub  by  absBehIni.be;
-	sub absBehMed.beM2'  @MedSd_sub  by  absBehMed.be;
-} BehSdContextuals2;
+	sub @IniBeM2_sub'	@MedSd_sub	by	@IniBe_sub;
+	sub @MedBeM2_sub'	@MedSd_sub	by	@MedBe_sub;
+} PreSdContextuals2;
 
 
 lookup MeemContextuals {
