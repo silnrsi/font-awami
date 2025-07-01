@@ -31,9 +31,11 @@ lookup PreventPreBariyehKern {
 
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
-# of nuqtas and/or marks.
+# of nuqtas and/or marks. These cause the ascent to be raised higher or the
+# descent to the lowered.
 lookup HandleMarkAsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper];
+
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacUpper;
 	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeUpper;
 } HandleMarkAsc;
@@ -43,6 +45,24 @@ lookup HandleMarkDsc {
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacLower;
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeLower;
 } HandleMarkDsc;
+
+# Special cases: the nuqta doesn't affect the height of the entire (wide) glyph.
+# Only raise the height where the nuqta is positioned.
+lookup HandleAscMarkLimited {
+	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLikeUpper @AscXMarker];
+
+	# Ideally these should be treated like the qaf below, but in fact the final seen and feh forms
+	# are wide enough that the nuqtas on the right side are never going to affect kerning, which
+	# is limited to 1200 units.
+	sub [absFehFin absSeenFin]			ascx600'	@NuqtaLikeUpper		by	ascx.Done;
+	sub [absFehFin absSeenFin]			ascx1000'	@NuqtaLikeUpper		by	ascx.Done;
+
+	sub [absQafFin absQafFin_short]		ascx600'	@NuqtaLikeUpper		by	ascx600.Rt8;
+	sub [absQafFin absQafFin_short]		ascx1000'	@NuqtaLikeUpper		by	ascx1000.Rt8;
+
+	sub [absBehFin absBehFin._bfkl]		ascx600'	@NuqtaLikeUpper		by	ascx600.Mid8;
+	sub [absBehFin absBehFin._bfkl]		ascx1000'	@NuqtaLikeUpper		by	ascx1000.Mid8;
+} HandleAscMarkLimited;
 
 lookup AdjustAscxDscx4Shifts {
 	lookupflag UseMarkFilteringSet [@DscXMarker @CfMarkerNS];
@@ -209,11 +229,40 @@ lookup MeasureBaseY {
 include(../../source/opentype/arithMeasureYrules.feax);
 } MeasureBaseY;
 
+@AscXPartialMarkers = [ascx600.Rt8 ascx1000.Rt8 ascx600.Mid8 ascx1000.Mid8];
 
-# asc/dsc -> pt/pb
+# NB: asc/dsc -> pt/pb
 # We include the @PyMarker to recognize the boundaries of the bases.
 lookup AddNuqtaAscent {
-	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker @AscXMarker];
+	lookupflag UseMarkFilteringSet [@PyMarker @AscMarker @AscXMarker @AscXPartialMarkers];
+
+	# Special cases: on some forms, the nuqta doesn't add height all the way across the glyph, only on the right side.
+	# e.g., qaf, feh, seen
+	sub @PyMarker ascx600.Rt8' lookup _AscxDone
+			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600 
+			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
+			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
+			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600;
+	sub @PyMarker ascx1000.Rt8' lookup _AscxDone
+			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000 
+			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
+			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
+			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000;
+
+	# E.g., final theh
+	sub @PyMarker ascx600.Mid8' lookup _AscxDone
+			@AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' 
+	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600 
+	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
+	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
+	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600;
+	sub @PyMarker ascx1000.Mid8' lookup _AscxDone
+			@AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' 
+	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000 
+	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
+	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
+	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000;
+
 	sub @PyMarker @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
 } AddNuqtaAscent;
 
@@ -223,7 +272,7 @@ lookup SubtractNuqtaDescent {
 } SubtractNuqtaDescent;
 
 include(../../source/opentype/arithTopLevel.feax);
-# ------------    ^^^ This file includes the following:
+# -----------------    ^^^ This file includes the following:
 
 # Convert markers pt/pb back to asc/dsc
 # lookup MarkersYtb2AscDsc:
