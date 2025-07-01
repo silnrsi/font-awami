@@ -34,6 +34,11 @@ ytMax = 3000
 ybMin = -1500
 ybMax = 3000
 
+ascxMin = 400
+ascxMax = 1600
+dscxMin = 400
+dscxMax = 1200
+
 inc = 100
 
 # These lists should at least cover what's in the _InsertNuqtaDiacMarker lookup:
@@ -41,9 +46,10 @@ inc = 100
 upperMarkHts = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]	# 1 dot, 3 dots, dot on reh...
 lowerMarkHts = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200]		# 1 dot/shadda, hehhook, zabar/zair/pesh
 
-
 kwDecValues = [100, 200, 300, 400, 500, 600]
 kwIncValues = [800]
+
+cfShiftValues = [100, 200, 300, 400, 500, 600]
 
 #import sys
 
@@ -545,7 +551,39 @@ def GenLookup_IncDecKw(valueList, dir):
 # end of GenLookup_IncDecKw
 
 
-def GenLookup_AdjustHeights(valueList, dir, lName, cName, prefix, dminv, dmaxv):
+def GenLookup_IncDecAscxDscx(valueList, dir):
+	### Example:
+	# lookup _IncAscxDscx100 {
+	#	sub ascx400  by  ascx500;
+	#	sub ascx500  by  ascx600;
+	#	sub ascx600  by  ascx700;
+	#	...
+	# } _IncAscxDscx100;
+	
+	if dir == -1:
+		lname = "_DecAscxDscx"
+	else:
+		lname = "_IncAscxDscx"
+
+	for vinc in valueList:
+		print("\nlookup " + lname + ValueName(vinc) + "{", file=fout)
+
+		for v2 in range(ascxMin, ascxMax + inc, inc):
+			vres = v2 + (vinc * dir)
+			vres = min(max(ascxMin, vres), ascxMax)
+			print("  sub  ascx" + ValueName(v2) + "  by  ascx" + ValueName(vres) + ";", file=fout)
+
+		for v2 in range(dscxMin, dscxMax + inc, inc):
+			vres = v2 + (vinc * dir * -1)
+			vres = min(max(dscxMin, vres), dscxMax)
+			print("  sub  dscx" + ValueName(v2) + "  by  dscx" + ValueName(vres) + ";", file=fout)
+
+		print("} " + lname + ValueName(vinc) + ";", file=fout)
+
+# end of GenLookup_IncDecAscxDscx
+
+
+def GenLookup_AdjustHeights(valueList, dir, lname, cname, prefix, dminv, dmaxv):
 
 	# CURRENTLY NOT USED
 
@@ -562,15 +600,15 @@ def GenLookup_AdjustHeights(valueList, dir, lName, cName, prefix, dminv, dmaxv):
 	# We don't need a full set of these.
 
 	for v in valueList:
-		print("lookup " + lName + ValueName(v) + "{", file=fout)
-		print("  lookupflag UseMarkFilteringSet @" + cName + ";", file=fout)	# do we need this?
+		print("lookup " + lname + ValueName(v) + "{", file=fout)
+		print("  lookupflag UseMarkFilteringSet @" + cname + ";", file=fout)	# do we need this?
 		v2 = dminv
 		while v2 < dmaxv:
 			newv = v2 + (v * dir)  # dir = -1 for subtraction
 			if dir > 0 and newv + inc > dmaxv:
 				# output a fall-back rule and quit
 				# sub @YtMarker lookup _Set3000;
-				print( "  sub @" + cName + "' lookup _Set" + ValueName(newv) + ";", file=fout)
+				print( "  sub @" + cname + "' lookup _Set" + ValueName(newv) + ";", file=fout)
 				break
 			elif dir < 0 and newv < dminv:
 				newv = dminv
@@ -578,7 +616,7 @@ def GenLookup_AdjustHeights(valueList, dir, lName, cName, prefix, dminv, dmaxv):
 			# sub yt100 lookup _Set700;
 			print("  sub " + prefix + ValueName(v2) + "' lookup _Set" + ValueName(newv) + ";", file=fout)
 			v2 += inc
-		print("} " + lName + ValueName(v) + ";\n", file=fout)
+		print("} " + lname + ValueName(v) + ";\n", file=fout)
 
 # end of GenLookup_AdjustHeights
 
@@ -713,6 +751,9 @@ GenLookup_AddNuqtaUpLowHeight(lowerMarkHts, -1)
 
 GenLookup_IncDecKw(kwDecValues, -1)
 GenLookup_IncDecKw(kwIncValues, 1)
+
+GenLookup_IncDecAscxDscx(cfShiftValues, 1)
+GenLookup_IncDecAscxDscx(cfShiftValues, -1)
 
 # GenLookup_AdjustHeights(upperMarkHts, 1, "_AddAsc", "YtMarker", "yt", ascMin, ascMax)
 # GenLookup_AdjustHeights(lowerMarkHts, -1, "_SubtractDsc", "YbMarker", "yb", dscMin, dscMax)
