@@ -384,10 +384,10 @@ def ExitInterface(gn):
 # end of ExitInterface
 
 
-def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
+def TrimMetricsForOverlappingConnections(gname, uppers, lowers, entry, exit, sliceWidth):
     # Note: metrics are in RTL order.
 
-    # TODO: rewrite to take various values of sliceWidth into account.
+    # TODO: maybe rewrite to take various values of sliceWidth into account.
     # Right now we assume 100.
 
     # Remove None elements so our counting is correct.
@@ -413,7 +413,10 @@ def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
         elif "absDal" in gname:
             lowers = lowers[1:]
     if exit == "default":
-        uppers = uppers[0:-2]  # remove 200 from left end of lowers
+        if gname == "absLamMed.al":
+            pass
+        else:
+            uppers = uppers[0:-2]  # remove 200 units from left end of lowers
 
     if entry == "ai":
         lowers = lowers[2:]
@@ -487,9 +490,17 @@ def TrimMetrics(gname, uppers, lowers, entry, exit, sliceWidth):
     if exit == "nn":
         uppers = uppers[0:-1]
 
+    # The post-lam alef completely covers the lam. Extend the alef to include the lam overhang on the left.
+    if gname == "absAlefFin._lm":
+        uppersNew = (uppers[0], uppers[1], uppers[2], 500, 500)
+        uppers = uppersNew
+    # The lam is already truncated for some reason that I don't understand.
+    # if gname == "absLamMed.al":
+    #     uppers = uppers[0:5]
+
     return [uppers, lowers]
 
-# end of TrimMetrics
+# end of TrimMetricsForOverlappingConnections
 
 
 def TruncateLowFinals(lowers):
@@ -542,6 +553,12 @@ def Tweak(gn, uppers, lowers):
             lowers[6] = 400
             lowers[7] = 100
             lowers[8] = 0
+
+    if "nlqChotiyeh" in gn:
+        PrintList(gn, uppers)
+        uppers[-3] = 1200   # normally 1000
+        uppers[-2] = 1000   # normally 700
+        uppers[-1] = 800    # normally 300
 
     return [uppers, lowers]
 
@@ -615,7 +632,7 @@ with open(args.outfile, "w") as outf:
             # if exit is None and isIsolateFinalBase(name): 
             #     PrintList(gn, lowers)
 
-            uppers, lowers = TrimMetrics(gn, uppers, lowers, entry, exit, sliceWidth)
+            uppers, lowers = TrimMetricsForOverlappingConnections(gn, uppers, lowers, entry, exit, sliceWidth)
 
             # if gn == "absMeemMed.sn":
             #     PrintList(gn, lowers)

@@ -64,11 +64,13 @@ lookup CollFixNuqtas {
 	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm'	@DotFlatL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS200;
 	sub absBehIni.be	@DotFlatL' lookup _ShiftN300E300	absBehMed.jm'	@DotTallL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS100;
 	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm	@DotTallL	absJeemFin	@NuqtaLikeLower;
-
 	# more below in CollFixNuqtas_contd
 
 	# beh + kaf + heh-do
 	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100		[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
+
+	# beh + final lam
+	sub [absBehIni] @NuqtaLikeLower' lookup _ShiftE100	absLamFin;
 
 	# beh + heh-goal
 	sub absBehIni.hgM	@DotWideL' lookup _ShiftE200	@HehGoalMedForms	_hehHook.small;
@@ -95,6 +97,10 @@ lookup CollFixNuqtas {
 
 	sub absFehIni.beM1	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.be' 		@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absFehIni.hgM	@NuqtaLikeLower' lookup _ShiftE100	@HehGoalMedForms'	_hehHook.small'		@Any' lookup _ShiftW100;
+
+	# heh-goal + lam + chotiyeh
+	
+	sub absHehGoalIni	_hehHook.small' lookup _ShiftE100	absLamMed.ch	[nlqChotiyehFin nlqChotiyehFin._bfkl];
 
 
 } CollFixNuqtas;
