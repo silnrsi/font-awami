@@ -263,6 +263,7 @@ lookup AddNuqtaAscent {
 	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
 	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000;
 
+	# Default case: add across the whole width of the glyph.
 	sub @PyMarker @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
 } AddNuqtaAscent;
 
@@ -366,8 +367,8 @@ lookup $ln_CleanUpKernedGlyph {
 # TODO: find a way to stop this running if there is a kblock present.
 lookup $ln_CleanUpTopGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
-	sub @YtMarker ybLast		@YtMarker'  by  ytIgnore;
-	sub @YtMarker ybLast ybLast	@YtMarker'  by  ytIgnore;  # second glyph in sequence
+	sub @YbMarker @YtMarker ybLast		@YtMarker'  by  ytIgnore;
+	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  by  ytIgnore;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
