@@ -27,9 +27,11 @@
 
 lookup EndOfStreamKludge {
 	# Ensure that the last nuqta has at least three slots after it.
-	# This is needed for the insertion rules.
+	# This is needed for the insertion rules below.
 	ignore sub @Finals  @NuqtaLike' @Any @Any @Any;
-	sub @Finals	 @NuqtaLike'  by  @NuqtaLike  bogus bogus bogus;
+	sub @Finals  @NuqtaLike'  @Any @Any		by  @NuqtaLike  bogus;
+	sub @Finals  @NuqtaLike'  @Any			by  @NuqtaLike  bogus bogus;
+	sub @Finals	 @NuqtaLike'  				by  @NuqtaLike  bogus bogus bogus;
 } EndOfStreamKludge;
 
 lookup CollFixNuqtas {
@@ -45,12 +47,16 @@ lookup CollFixNuqtas {
 
 	ignore sub absBehIni.be _dot1l'								absBehMed.beF' _dot1l'				@Any';
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.beF'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
-	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E100	absBehMed.hgM'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
+	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E200	absBehMed.hgM'	@DotWideL'			@Any' @Any' lookup _ShiftS300;
+	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E100	absBehMed.hgM'	@NuqtaLikeLower'	@Any' @Any' lookup _ShiftS200;
+	sub absBehIni.be    @NuqtaLikeLower' lookup _ShiftN100		absBehMed.fe'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
+	sub absBehIni.be	@DotTallL' 		 lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
+	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS100;
+
 	sub absBehIni.beM2	@DotWideL'		 lookup _ShiftN200E300	absBehMed.beM1'	@NuqtaLikeLower'	@Any' @Any' lookup _ShiftS200;
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftN200E200	absBehMed.beM1'	@NuqtaLikeLower'	@Any' @Any' lookup _ShiftS200;
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftE100		absBehMed'		@NuqtaLikeLower'	@Any' lookup _ShiftS100;
-	sub absBehIni.be	@DotTallL' 		 lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
-	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS100;
+	sub absBehIni.beM1	@DotWideL'       lookup _ShiftN200		absBehMed.beM2'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absBehIni.beM1	@NuqtaLikeLower' lookup _ShiftN200		[absBehMed.be	
 																 absBehMed.sn]'	@NuqtaLikeLower'	@Any' lookup _ShiftS400;
 	sub absBehIni.benn	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.nn'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
@@ -105,12 +111,14 @@ lookup CollFixNuqtas {
 
 } CollFixNuqtas;
 
+# Adjust the third item in the sequence.
 lookup CollFixNuqtas_contd {
 	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLike];
 	sub absBehIni.be	@NuqtaLikeLower		absBehMed.jm	@NuqtaLikeLower	absJeemFin	@DotTallL' lookup _ShiftS200;
 	sub absBehIni.be	@NuqtaLikeLower		absBehMed.jm	@DotTallL		absJeemFin	@NuqtaLikeLower' lookup _ShiftS200;
 } CollFixNuqtas_contd;
 
-lookup EndOfStreamUndokludge {
+
+lookup EndOfStreamUndoKludge {
 	sub bogus  by  NULL;
-} EndOfStreamUndokludge;
+} EndOfStreamUndoKludge;

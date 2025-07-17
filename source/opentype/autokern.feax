@@ -100,6 +100,8 @@ lookup AdjustForNuqtaOverhang {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
 
 	# beh + beh + final jeem
+	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy600	@DotTallL
+			mkBehMed.jm ybLast @DotWideL	mkJeemFin;
 	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
 			mkBehMed.jm ybLast @NuqtaLikeLower	mkJeemFin;
 	sub @KwMarker' lookup _DecKwBy500	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy500	@DotWide
@@ -109,12 +111,15 @@ lookup AdjustForNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy300	@DotNarrow
 			mkBehMed.jm ybLast	mkJeemFin;
 
+	# jeem + final ain
+	sub @KwMarker' lookup _DecKwBy100	mkJeemIni.ai'		ybLast' lookup _ExtendYbBy100	@DotWideL	mkAinFin;
+
 	# beh initials
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy200	@DotWideL	mkBehMed.hgM;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy300	@DotWideL	mkBehMed.hgM;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
 										 mkBehIni.benn]'				ybLast' lookup _ExtendYbBy100	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy300	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
@@ -176,6 +181,15 @@ lookup AdjustForNuqtaShift {
 	sub @KwMarker' lookup _DecKwBy200	@ExtYbMarker' lookup _ExtendYbBy200	ybLast' @NuqtaLikeLower	cfE200;
 } AdjustForNuqtaShift;
 
+
+lookup AdjustForNuqtaOnFinal {
+	lookupflag UseMarkFilteringSet [@PyMarker @KernBaseMarkVis @KwMarker @NuqtaLikeUpper];
+
+	# final reh
+	sub [mkRehFin mkRehFin._hgM]	@PyMarker	kw0'  [@DotWideU _smallTah]		by	kwN300;
+	sub [mkRehFin mkRehFin._hgM]	@PyMarker	kw0'  @NuqtaLikeUpper			by	kwN200;
+} AdjustForNuqtaOnFinal;
+
 # Bases such as the final jeem and ain have swashes that curve right. In short sequences
 # these need kerning.
 lookup AdjustForBaseOverhang {
@@ -228,6 +242,7 @@ lookup MeasureBaseY {
 	# etc.
 include(../../source/opentype/arithMeasureYrules.feax);
 } MeasureBaseY;
+
 
 @AscXPartialMarkers = [ascx600.Rt8 ascx1000.Rt8 ascx600.Mid8 ascx1000.Mid8];
 

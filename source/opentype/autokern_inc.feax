@@ -122,6 +122,12 @@ lookup _AscxDone {
 } _AscxDone;
 
 
+# Account for nuqtas on final reh.
+# lookup _RaiseRehAsc {
+# 	_sub [mkRehFin mkRehFin._hgM]' @AscMarker' _lookup _Set1600 @AscMarker' _lookup _Set1600 @AscMarker' _lookup _Set1600 @AscMarker' _lookup _Set1600;
+# } _RaiseRehAsc;
+
+
 # Insert an indication of a nuqta or mark in order to force the 
 # descent lower or the ascent higher.
 # TODO: split into two methods to handle upper and lower.
