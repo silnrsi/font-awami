@@ -316,6 +316,11 @@ details including an FAQ.
 		absGueh absNgoeh absGraf
 	</class>
 
+	<class name="RehIsoForms">
+		absReh absZain absJeh absRreh absRehDotBelow absRehDotBelowDotAbove absRehTwoDotsAbove absRehFourDotsAbove absRehHamzaAbove
+						absRehRing absRehSmallTahTwoDotsAbove absRehTwoVertAbove absRehSmallVBelow
+	</class>
+
 	<class name="BariyehIsoForms">
 		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
 	</class>
@@ -329,8 +334,7 @@ details including an FAQ.
 						absYehTail absKashmiriYeh
 		absJeem absHah absKhah absHehHamzaAbove absHahSmallTahAbove absHahSmallTahBelow absHahSmallTwhTwoDotsBelow absHahThreeDotsAbove
 						absHahFourBelow absTcheh absNyeh absDyeh absTcheheh
-		absReh absZain absJeh absRreh absRehDotBelow absRehDotBelowDotAbove absRehTwoDotsAbove absRehFourDotsAbove absRehHamzaAbove
-						absRehRing absRehSmallTahTwoDotsAbove absRehTwoVertAbove absRehSmallVBelow
+		@RehIsoForms
 		absDal absThal absDalDotBelowSmallTah absDalFourDotsAbove absDalRing absDalTwoVertBelowSmallTah absDalDotBelow absDalInvertedVBelow
 						absDdal absDul
 		absSeen absSheen absSeenDotBelowDotAbove absSeenFourDotsAbove absSeenSmallTahTwoDotsAbove absSeenTwoVertAbove
@@ -1318,45 +1322,36 @@ details including an FAQ.
 	<!--  COLLISION FIXING  -->
 	<!-- ================== -->
 
-	<class name="DotWide">
-		_dot2u _dot3u _dot4u _dot2l _dot2lIM _dot3l _dot4l
-	</class>
-	<class name="DotNarrow">
-		_dot1u _dot1l _dot2vl
-	</class>
-	<class name="DotTall">
-		_dot3u _dot4u _dot3l _dot4l _dot2vl
-	</class>
-	<class name="DotFlat">
-		_dot1u _dot2u _dot1l _dot2l _dot2lIM
-	</class>
-
 	<class name="DotWideU">
-		_dot2u _dot3u _dot4u
+		_dot2u _dot3u _dot4u _hamza absHamzaAbove
 	</class>
 	<class name="DotNarrowU">
-		_dot1u
+		_dot1u _smallTah _smallTah2dots
 	</class>
 	<class name="DotTallU">
-		_dot3u _dot4u _smallTah
+		_dot3u _dot4u _smallTah _smallTah2dots
 	</class>
 	<class name="DotFlatU">
-		_dot1u _dot2u
+		_dot1u _dot2u _hamza absHamzaAbove
 	</class>
 
 	<class name="DotWideL">
-		_dot2l _dot2lIM _dot3l _dot4l
+		_dot2l _dot2lIM _dot3l _dot4l absHamzaBelow
 	</class>
 	<class name="DotNarrowL">
-		_dot1l _dot2vl
+		_dot1l _dot2vl _smallTahBelow _smallTah2dotsBelow
 	</class>
 	<class name="DotTallL">
-		_dot3l _dot4l _dot2vl _smallTahBelow
+		_dot3l _dot4l _dot2vl _smallTahBelow _smallTah2dotsBelow
 	</class>
 	<class name="DotFlatL">
-		_dot1l _dot2l _dot2lIM
+		_dot1l _dot2l _dot2lIM absHamzaBelow
 	</class>
 
+	<class name="DotWide">@DotWideU @DotWideL</class>
+	<class name="DotNarrow">@DotNarrowU @DotNarrowL</class>
+	<class name="DotTall">@DotTallU @DotTallL</class>
+	<class name="DotFlat">@DotFlatU @DotFlatL</class>
 
 	<!-- ========= -->
 	<!--  KERNING  -->
@@ -1582,7 +1577,10 @@ details including an FAQ.
 		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
 					mkGueh mkNgoeh mkGraf
 	</class>
-
+	<class name="RehKernBaseMarkIso">
+		mkReh mkZain mkJeh mkRreh mkRehDotBelow mkRehDotBelowDotAbove mkRehTwoDotsAbove mkRehFourDotsAbove mkRehHamzaAbove
+						mkRehRing mkRehSmallTahTwoDotsAbove mkRehTwoVertAbove mkRehSmallVBelow
+	</class>
 	<class name="ByKernBaseMarkIso">
 		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
 	</class>
@@ -1595,8 +1593,7 @@ details including an FAQ.
 						mkYehTail mkKashmiriYeh
 		mkJeem mkHah mkKhah mkHehHamzaAbove mkHahSmallTahAbove mkHahSmallTahBelow mkHahSmallTwhTwoDotsBelow mkHahThreeDotsAbove
 						mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh
-		mkReh mkZain mkJeh mkRreh mkRehDotBelow mkRehDotBelowDotAbove mkRehTwoDotsAbove mkRehFourDotsAbove mkRehHamzaAbove
-						mkRehRing mkRehSmallTahTwoDotsAbove mkRehTwoVertAbove mkRehSmallVBelow
+		@RehKernBaseMarkIso
 		mkDal mkThal mkDalDotBelowSmallTah mkDalFourDotsAbove mkDalRing mkDalTwoVertBelowSmallTah mkDalDotBelow mkDalInvertedVBelow
 						mkDdal mkDul
 		mkSeen mkSheen mkSeenDotBelowDotAbove mkSeenFourDotsAbove mkSeenSmallTahTwoDotsAbove mkSeenTwoVertAbove

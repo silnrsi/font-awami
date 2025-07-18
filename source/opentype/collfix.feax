@@ -81,6 +81,13 @@ lookup CollFixNuqtas {
 	# beh + heh-goal
 	sub absBehIni.hgM	@DotWideL' lookup _ShiftE200	@HehGoalMedForms	_hehHook.small;
 
+	# initial jeem
+	
+	sub [absJeemIni.beM2]	@NuqtaLike		[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN100;
+	sub [absJeemIni.beM2]					[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN100;
+	sub [absJeemIni.be absJeemIni.bere]	@NuqtaLike		@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftW100;
+	sub [absJeemIni.be absJeemIni.bere]					@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftW100;
+
 	# medial jeem + final jeem
 
 	sub absJeemMed.jm	@DotFlatL' lookup _ShiftE200	absJeemFin;
@@ -88,8 +95,8 @@ lookup CollFixNuqtas {
 
 	# jeem + qaf
 	
-	sub absJeemIni.qf	@NuqtaLike		absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
-	sub absJeemIni.qf					absQafFin'	@NuqtaLikeUpper' lookup _ShiftW200;
+	sub absJeemIni.qf	@NuqtaLike		absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
+	sub absJeemIni.qf					absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
 
 	# feh
 

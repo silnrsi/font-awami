@@ -30,9 +30,17 @@ lookup PreventPreBariyehKern {
 } PreventPreBariyehKern;
 
 
+# Handle some isolate forms explicitly; they are hard to get exactly right.
+lookup HardCodeSpecialIsolates {
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+
+	sub [absAlef absAlefFin]  kw0'	@RehIsoForms	by	kblock kw0; 
+} HardCodeSpecialIsolates;
+
+
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks. These cause the ascent to be raised higher or the
-# descent to the lowered.
+# descent to be lowered.
 lookup HandleMarkAsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper];
 
@@ -95,9 +103,9 @@ lookup TreatBasesAsMarks {
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 # TODO: Replace some of these rules with ones that test for the presence CfMarkerEWs.
-lookup AdjustForNuqtaOverhang {
+lookup AdjustForLowerNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower _bar];
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower];
 
 	# beh + beh + final jeem
 	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy600	@DotTallL
@@ -114,31 +122,31 @@ lookup AdjustForNuqtaOverhang {
 	# jeem + final ain
 	sub @KwMarker' lookup _DecKwBy100	mkJeemIni.ai'		ybLast' lookup _ExtendYbBy100	@DotWideL	mkAinFin;
 
-	# beh initials
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy300	@DotWideL	mkBehMed.hgM;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
+	# beh initials - lower
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'				ybLast' lookup _ExtendYbBy300	@DotWideL	mkBehMed.hgM;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
-										 mkBehIni.benn]'				ybLast' lookup _ExtendYbBy100	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.beM2]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'					ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'		ybLast' lookup _ExtendYbBy100	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy300	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]'	ybLast' lookup _ExtendYbBy600	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy100	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.bere]'				ybLast'	lookup _ExtendYbBy200	@DotWideL;
+										 mkBehIni.benn]'			ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'				ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'	ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'				ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy300	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy600	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.bere]'			ybLast'	lookup _ExtendYbBy200	@DotWideL;
 
 	# beh+beh - the nuqta on the second beh is an issue
 	# sub @KwMarker' lookup _DecKwBy400	mkBehIni.beM1'					ybLast' lookup _ExtendYbBy400	@NuqtaLike
 	# 	@BehKernBaseMarkMed  @DotWideL;
 
-	# jeem initials
+	# jeem initials - lower
 	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.re]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy600	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy600	@DotWideL @KernBaseMarkMed;  # followed by medial
 	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.jm]'					ybLast' lookup _ExtendYbBy200	@DotWideL;
@@ -164,6 +172,19 @@ lookup AdjustForNuqtaOverhang {
 	# ... beh+heh-goal
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.hgM]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
 
+} AdjustForLowerNuqtaOverhang;
+
+lookup AdjustForUpperNuqtaOverhang {
+	# @KernBaseMarkVis ignores spaces
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeUpper _bar];
+	
+	# beh initials - upper
+	# TODO - since this is an upper nuqta, really we should extend a number higher than the actual glyph bottom.
+	sub @KwMarker' lookup _DecKwBy100	mkBehIni'			ybLast'	lookup _ExtendYbBy100	@DotWideU;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn
+										 mkBehIni.beM1]'	ybLast'	lookup _ExtendYbBy200	@DotWideU;
+
+
 	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and
 	# by considerably more than 100. But this is better than nothing.
 	sub @KwMarker' lookup _DecKwBy100	[mkLamBar]'						ybLast' lookup _ExtendYbBy100;
@@ -172,7 +193,7 @@ lookup AdjustForNuqtaOverhang {
 										mkLamIni.snsn mkLamIni.sd mkLamIni.ta mkLamIni.ai mkLamIni.fe mkLamIni.mm
 										mkLamIni.hd mkLamIni.hgM mkLamIni.hgF mkLamIni.nn mkLamIni.qf
 										mkLamIni.ch]'					ybLast' lookup _ExtendYbBy100	[_bar];
-} AdjustForNuqtaOverhang;
+} AdjustForUpperNuqtaOverhang;
 
 # Add another slice or two if the nuqta of interest has been shifted right (east).
 lookup AdjustForNuqtaShift {

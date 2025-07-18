@@ -144,15 +144,17 @@ lookup _InsertNuqtaDiacMarker {
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot2u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot3u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot4u;
+	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	[_hamza absHamzaAbove];
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;
-
+	sub @PyInitMarker' lookup _InsertUpperMarker600		[_hamza absHamzaAbove];
 
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot2vl;
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;
 	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
