@@ -524,7 +524,7 @@ lookup _DelYb {
 
 # A block occurs when the yt (top) value is too close to the yb (bottom) value.
 # Currently we want a space of at least 100 units.
-# TODO: possibly this should be increased to 200 units.
+# TODO: probably this should be increased to 200 units.
 
 do	forlet i = range(0,2);
 	let lnames = ["_TestBlockR","_TestBlockI"];
@@ -1210,51 +1210,9 @@ do	forlet ntry = range(15,1,-1);	# probably we only need 12 or 13 of these
 		} $lname;
 	}
 
-lookup _TryKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
-
-	# Note that the _InsYt lookups are actually focused on the YbMarker, not the KwMarker, since the  
-	# _DelYtAndIncKw lookup deleted the YtMarker slot.                   \/  \/  \/
-	#                                                                    \/  \/  \/    _TryNext2 is focused on the just-shifted @YtMarker.
-	#                                                                    \/  \/  \/                       \/ \/ \/ 
-	sub yt0'   lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt0		@YbMarker' lookup _TryNext2;
-	sub yt100' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt100		@YbMarker' lookup _TryNext2;
-	sub yt200' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt200		@YbMarker' lookup _TryNext2;
-	sub yt300' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt300		@YbMarker' lookup _TryNext2;
-	sub yt400' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt400		@YbMarker' lookup _TryNext2;
-	sub yt500' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt500		@YbMarker' lookup _TryNext2;
-	sub yt600' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt600		@YbMarker' lookup _TryNext2;
-	sub yt700' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt700		@YbMarker' lookup _TryNext2;
-	sub yt800' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt800		@YbMarker' lookup _TryNext2;
-	sub yt900' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt900		@YbMarker' lookup _TryNext2;
-	sub yt1000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1000	@YbMarker' lookup _TryNext2;
-	sub yt1100' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1100	@YbMarker' lookup _TryNext2;
-	sub yt1200' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1200	@YbMarker' lookup _TryNext2;
-	sub yt1300' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1300	@YbMarker' lookup _TryNext2;
-	sub yt1400' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1400	@YbMarker' lookup _TryNext2;
-	sub yt1500' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1500	@YbMarker' lookup _TryNext2;
-	sub yt1600' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1600	@YbMarker' lookup _TryNext2;
-	sub yt1700' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1700	@YbMarker' lookup _TryNext2;
-	sub yt1800' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1800	@YbMarker' lookup _TryNext2;
-	sub yt1900' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1900	@YbMarker' lookup _TryNext2;
-	sub yt2000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2000	@YbMarker' lookup _TryNext2;
-	sub yt2100' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2100	@YbMarker' lookup _TryNext2;
-	sub yt2200' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2200	@YbMarker' lookup _TryNext2;
-	sub yt2300' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2300	@YbMarker' lookup _TryNext2;
-	sub yt2400' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2400	@YbMarker' lookup _TryNext2;
-	sub yt2500' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2500	@YbMarker' lookup _TryNext2;
-	sub yt2600' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2600	@YbMarker' lookup _TryNext2;
-	sub yt2700' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2700	@YbMarker' lookup _TryNext2;
-	sub yt2800' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2800	@YbMarker' lookup _TryNext2;
-	sub yt2900' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2900	@YbMarker' lookup _TryNext2;
-	sub yt3000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt3000	@YbMarker' lookup _TryNext2;
-
-} _TryKern;
-
-
 lookup _TryKernShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
-	# loop to match the various ytXXXX markers.
+	# loop to match the various ytXXXX markers - yt100..yt3000
 do  forlet i = range(31);
     let ext = str(i) + ("" if i == 0 else "00");
     let yt = "yt"+ext;
