@@ -14,7 +14,7 @@ from typing import Tuple
 
 
 # increment that we're using:
-INCREMENT = 100
+INCREMENT = 200
 
 @dataclass
 class Curve:
@@ -52,7 +52,7 @@ class SlicePen(BoundsPen):
         self.curves = []
         self.bounds = None      # xMin, yMin, xMax, yMax
 
-    def slices(self, width=INCREMENT, rtl=False, upper=False):
+    def slices(self, width=100, rtl=False, upper=False):
         if not len(self.curves):
             return []
         if not self.curves[0].hasRoots():
@@ -387,9 +387,6 @@ def ExitInterface(gn):
 def TrimMetricsForOverlappingConnections(gname, uppers, lowers, entry, exit, sliceWidth):
     # Note: metrics are in RTL order.
 
-    # TODO: maybe rewrite to take various values of sliceWidth into account.
-    # Right now we assume 100.
-
     # Remove None elements so our counting is correct.
     t = []
     for lower in lowers:
@@ -397,6 +394,14 @@ def TrimMetricsForOverlappingConnections(gname, uppers, lowers, entry, exit, sli
             t.append(lower)
     lowers = t
 
+    if sliceWidth == 100:
+        return TrimMetricsForOverlappingConnections_100(gname, uppers, lowers, entry, exit)
+    elif sliceWidth == 200:
+        return TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit)
+
+
+def TrimMetricsForOverlappingConnections_100(gname, uppers, lowers, entry, exit):
+    
     # These interfaces overlap such that the right-hand glyph is underneath.
     # Trim off the end of the upper metrics on the right-hand (exit) glyph
     # and the beginning of the lower metrics on the left-hand (entry) glyph.
@@ -500,7 +505,115 @@ def TrimMetricsForOverlappingConnections(gname, uppers, lowers, entry, exit, sli
 
     return [uppers, lowers]
 
-# end of TrimMetricsForOverlappingConnections
+# end of TrimMetricsForOverlappingConnections_100
+
+
+def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit):
+    
+    # These interfaces overlap such that the right-hand glyph is underneath.
+    # Trim off the end of the upper metrics on the right-hand (exit) glyph
+    # and the beginning of the lower metrics on the left-hand (entry) glyph.
+
+    if entry == "default":
+        # Remove slices from right end of lowers
+        if "absAlef" in gname:
+            lowers = lowers[2:]  # all of them for absAlefFin - is this a problem?
+        elif "absLam" in gname:
+            lowers = lowers[1:]
+        elif "absKeheh" in gname or "absGaf" in gname:
+            # trim off the diagonal stroke:
+            lowers = lowers[5:]
+        elif "absDal" in gname:
+            lowers = lowers[1:]
+    if exit == "default":
+        if gname == "absLamMed.al":
+            pass
+        else:
+            uppers = uppers[0:-1]  # remove 200 units from left end of lowers
+
+    if entry == "ai":
+        lowers = lowers[1:]
+    if exit == "ai":
+        uppers = uppers[0:-1]
+
+    if entry == "benn":
+        lowers = lowers[1:]
+    if exit == "benn":
+        uppers = uppers[0:-1]
+
+    # if entry == "beF":
+    #     lowers = lowers[1:]
+    # if exit == "beF":
+    #     uppers = uppers[0:-1]
+
+    if entry == "fe":
+        lowers = lowers[1:]  # 250 units
+    if exit == "fe":
+        uppers = uppers[0:-1]
+
+    if entry == "sd":
+        lowers = lowers[3:]
+    if exit == "sd":
+        uppers = uppers[0:-3]  # 550 units
+
+    if entry == "ta":
+        lowers = lowers[3:]
+    if exit == "ta":
+        uppers = uppers[0:-3]
+
+    # if entry == "by":
+    #     uppers = uppers[0:1]
+        
+    # These interfaces overlap such that the right-hand glyph is on top.
+    # Trim off the end of the lower metrics on the right-hand (exit) glyph
+    # and the beginning of the upper metrics on the left-hand (entry) glyph.
+
+    # if entry == "beM1":
+    #     uppers = uppers[1:]
+    # if exit == "beM1":
+    #     lowers = lowers[0:-1]
+
+    if entry == "ch":
+        uppers = uppers[2:]
+    if exit == "ch":
+        lowers = lowers[0:-2]
+
+    if entry == "hd":
+        uppers = uppers[2:]
+    if exit == "hd":
+        lowers = lowers[0:-2]
+
+    if entry == "jm":
+        uppers = uppers[3:]
+    if exit == "jm":
+        lowers = lowers[0:-3]
+
+    if entry == "mm":
+        uppers = uppers[2:]
+    if exit == "mm":
+        lowers = lowers[0:-2]
+
+    if entry == "mmX":
+        uppers = uppers[1:]
+    if exit == "mmX":
+        lowers = lowers[0:-1]
+
+    # Only overlaps at very top.
+
+    if exit == "nn":
+        uppers = uppers[0:-1]
+
+    # The post-lam alef completely covers the lam. Extend the alef to include the lam overhang on the left.
+    if gname == "absAlefFin._lm":
+        uppersNew = (uppers[0], uppers[1], 500)
+        uppers = uppersNew
+    # The lam is already truncated for some reason that I don't understand.
+    # if gname == "absLamMed.al":
+    #     uppers = uppers[0:3]
+
+    return [uppers, lowers]
+
+# end of TrimMetricsForOverlappingConnections_200
 
 
 def TruncateLowFinals(lowers):
@@ -523,7 +636,13 @@ def TruncateLowFinals(lowers):
 
 
 # Hard code some special cases.
-def Tweak(gn, uppers, lowers):
+def Tweak(gn, uppers, lowers, sliceWidth):
+    if sliceWidth == 100:
+        return Tweak_100(gn, uppers, lowers)
+    elif sliceWidth == 200:
+        return Tweak_200(gn, uppers, lowers)
+    
+def Tweak_100(gn, uppers, lowers):
     if gn == "absReh" or gn == "absRehFin._jkl" or gn == "absRehFin":
         # The left-hand point of these rehs needs more space.
         uppers[-4] = 400
@@ -555,13 +674,48 @@ def Tweak(gn, uppers, lowers):
             lowers[8] = 0
 
     if "nlqChotiyeh" in gn:
-        PrintList(gn, uppers)
         uppers[-3] = 1200   # normally 1000
         uppers[-2] = 1000   # normally 700
         uppers[-1] = 800    # normally 300
 
     return [uppers, lowers]
 
+
+def Tweak_200(gn, uppers, lowers):
+
+#    if gn == "absReh" or gn == "absRehFin._jkl" or gn == "absRehFin":
+#         # The left-hand point of these rehs needs more space.
+#         uppers[-2] = 400
+#         uppers[-1] = 200
+#     elif gn == "absRehFin._hgM":
+#         uppers[-1] = 300
+
+    kafIsolates = ["absKeheh", "absKaf", "absKafRing", "absKafTwoDotsAbove", "absKafThreeDotsAbove", "absKehehDotAbove",
+                   "absKehehThreeDotsAbove", "absGaf", "absGueh", "absNgoeh", "absGraf"]
+
+    # if gn in kafIsolates or "absKehehIni" in gn or "absGafIni" in gn:
+    #     if gn == "absKehehIni" or gn == "absGafIni": # round forms
+    #         pass
+    #     elif "_base" in gn:
+    #         pass
+    #     elif gn == "absKehehIni.ch" or gn == "absGafIni.ch" or gn == "absKehehIni.hd" or gn == "absGafIni.hd":
+    #         pass
+    #     elif gn == "absKehehIni.mm" or gn == "absGafIni.mm" or gn == "absKehehIni.mm_short" or gn =="absGafIni.mm_short":
+    #         pass
+    #     else:  
+    #         # The bottom corner of the vertical stroke needs more space.
+    #         # PrintList(gn, lowers)
+    #         lowers[5] = 600  # normally something like 1400
+    #         lowers[6] = 400
+    #         lowers[7] = 100
+    #         lowers[8] = 0
+
+    # if "nlqChotiyeh" in gn:
+    #     uppers[-3] = 1200   # normally 1000
+    #     uppers[-2] = 1000   # normally 700
+    #     uppers[-1] = 800    # normally 300
+
+    return [uppers, lowers]
 
 
 def PrintList(gn, vList):
@@ -612,6 +766,8 @@ with open(args.outfile, "w") as outf:
 
     for gn in gs.keys():
         if isArabicBase(gn) and gn not in skipglyphset:
+            print(gn)
+
             g = gs[gn]
             # if gn in ("absTahIni.sn", "absAin"):
                 # breakpoint()
@@ -643,7 +799,7 @@ with open(args.outfile, "w") as outf:
 
             #uppers, lowers = TruncateLongSeq(uppers, lowers)
 
-            uppers, lowers = Tweak(gn, uppers, lowers)
+            uppers, lowers = Tweak(gn, uppers, lowers, sliceWidth)
 
             #gnMarker = BaseMarkerName(gn)
             gnMarker = gn

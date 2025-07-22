@@ -4,44 +4,93 @@
 
 
 # Indicate that we need more YbMarkers to account for a wide nuqta that hangs out to the right.
-lookup _ExtendYbBy100 {
+lookup _ExtendYbBy100 {  # one slice - same as 200
 	sub ybLast' by extYb1 ybLast;
 	sub extYb1' ybLast by extYb2;
 	sub extYb2' ybLast by extYb3;
 	sub extYb3' ybLast by extYb4;
 	sub extYb4' ybLast by extYb5;
-	sub extYb5' ybLast by extYb6;
+	sub extYb4' ybLast by extYb6;
 } _ExtendYbBy100;
 
-lookup _ExtendYbBy200 {
+lookup _ExtendYbBy200 { # one slice
+	sub ybLast' by extYb1 ybLast;
+	sub extYb1' ybLast by extYb2;
+	sub extYb2' ybLast by extYb3;
+	sub extYb3' ybLast by extYb4;
+	sub extYb4' ybLast by extYb5;
+	sub extYb4' ybLast by extYb6;
+} _ExtendYbBy200;
+
+lookup _ExtendYbBy300 {  # two slices - same as 400
 	sub ybLast' by extYb2 ybLast;
 	sub extYb1' ybLast by extYb3;
 	sub extYb2' ybLast by extYb4;
 	sub extYb3' ybLast by extYb5;
 	sub extYb4' ybLast by extYb6;
-} _ExtendYbBy200;
+} _ExtendYbBy300;
 
-lookup _ExtendYbBy300 {
+lookup _ExtendYbBy400 {   # two slices
+	sub ybLast' by extYb2 ybLast;
+	sub extYb1' ybLast by extYb3;
+	sub extYb2' ybLast by extYb4;
+	sub extYb3' ybLast by extYb5;
+	sub extYb4' ybLast by extYb6;
+} _ExtendYbBy400;
+
+lookup _ExtendYbBy500 {   # three slices - same as 600
 	sub ybLast' by extYb3 ybLast;
 	sub extYb1' ybLast by extYb4;
 	sub extYb2' ybLast by extYb5;
 	sub extYb3' ybLast by extYb6;
-} _ExtendYbBy300;
-
-lookup _ExtendYbBy400 {
-	sub ybLast' by extYb4 ybLast;
-	sub extYb1' ybLast by extYb5;
-	sub extYb2' ybLast by extYb6;
-} _ExtendYbBy400;
-
-lookup _ExtendYbBy500 {
-	sub ybLast' by extYb5 ybLast;
-	sub extYb1' ybLast by extYb6;
 } _ExtendYbBy500;
 
 lookup _ExtendYbBy600 {
-	sub ybLast' by extYb6 ybLast;
+	sub ybLast' by extYb3 ybLast;
+	sub extYb1' ybLast by extYb4;
+	sub extYb2' ybLast by extYb5;
+	sub extYb3' ybLast by extYb6;
 } _ExtendYbBy600;
+
+# Old version where the slice width = 100
+# lookup _ExtendYbBy100 {
+# 	sub ybLast' by extYb1 ybLast;
+# 	sub extYb1' ybLast by extYb2;
+# 	sub extYb2' ybLast by extYb3;
+# 	sub extYb3' ybLast by extYb4;
+# 	sub extYb4' ybLast by extYb5;
+# 	sub extYb5' ybLast by extYb6;
+# } _ExtendYbBy100;
+
+# lookup _ExtendYbBy200 {
+# 	sub ybLast' by extYb2 ybLast;
+# 	sub extYb1' ybLast by extYb3;
+# 	sub extYb2' ybLast by extYb4;
+# 	sub extYb3' ybLast by extYb5;
+# 	sub extYb4' ybLast by extYb6;
+# } _ExtendYbBy200;
+
+# lookup _ExtendYbBy300 {
+# 	sub ybLast' by extYb3 ybLast;
+# 	sub extYb1' ybLast by extYb4;
+# 	sub extYb2' ybLast by extYb5;
+# 	sub extYb3' ybLast by extYb6;
+# } _ExtendYbBy300;
+
+# lookup _ExtendYbBy400 {
+# 	sub ybLast' by extYb4 ybLast;
+# 	sub extYb1' ybLast by extYb5;
+# 	sub extYb2' ybLast by extYb6;
+# } _ExtendYbBy400;
+
+# lookup _ExtendYbBy500 {
+# 	sub ybLast' by extYb5 ybLast;
+# 	sub extYb1' ybLast by extYb6;
+# } _ExtendYbBy500;
+
+# lookup _ExtendYbBy600 {
+# 	sub ybLast' by extYb6 ybLast;
+# } _ExtendYbBy600;
 
 
 lookup _InsYt0 {
@@ -1128,129 +1177,36 @@ lookup $lname {
 }
 # end of do forlet...
 
-lookup _DelYtAndIncKw {
+lookup _DelYtAndIncKw {  # slices are 200 wide; increment by 200
     lookupflag UseMarkFilteringSet [@KwMarker @YtMarker];
-	sub @YtMarker  kwN1000	by	kwN900;
-	sub @YtMarker  kwN900	by	kwN800;
-	sub @YtMarker  kwN800	by	kwN700;
-	sub @YtMarker  kwN700	by	kwN600;
-	sub @YtMarker  kwN600	by	kwN500;
-	sub @YtMarker  kwN500	by	kwN400;
-	sub @YtMarker  kwN400	by	kwN300;
-	sub @YtMarker  kwN300	by	kwN200;
-	sub @YtMarker  kwN200	by	kwN100;
-	sub @YtMarker  kwN100	by	kw0;
-    sub @YtMarker  kw0		by  kw100;
-    sub @YtMarker  kw100	by  kw200;
-    sub @YtMarker  kw200	by  kw300;
-    sub @YtMarker  kw300	by  kw400;
-    sub @YtMarker  kw400	by  kw500;
-    sub @YtMarker  kw500	by  kw600;
-    sub @YtMarker  kw600	by  kw700;
-    sub @YtMarker  kw700	by  kw800;
-    sub @YtMarker  kw800	by  kw900;
-    sub @YtMarker  kw900	by  kw1000;
-    sub @YtMarker  kw1000	by  kw1100;
-    sub @YtMarker  kw1100	by  kw1200;
-    sub @YtMarker  kw1200	by  kw1300;
-    sub @YtMarker  kw1300	by  kw1400;
-    sub @YtMarker  kw1400	by  kw1500;
+	sub @YtMarker  kwN1000	by	kwN800;
+	sub @YtMarker  kwN900	by	kwN700;
+	sub @YtMarker  kwN800	by	kwN600;
+	sub @YtMarker  kwN700	by	kwN500;
+	sub @YtMarker  kwN600	by	kwN400;
+	sub @YtMarker  kwN500	by	kwN300;
+	sub @YtMarker  kwN400	by	kwN200;
+	sub @YtMarker  kwN300	by	kwN100;
+	sub @YtMarker  kwN200	by	kw0;
+	sub @YtMarker  kwN100	by	kw100;
+    sub @YtMarker  kw0		by  kw200;
+    sub @YtMarker  kw100	by  kw300;
+    sub @YtMarker  kw200	by  kw400;
+    sub @YtMarker  kw300	by  kw500;
+    sub @YtMarker  kw400	by  kw600;
+    sub @YtMarker  kw500	by  kw700;
+    sub @YtMarker  kw600	by  kw800;
+    sub @YtMarker  kw700	by  kw900;
+    sub @YtMarker  kw800	by  kw1000;
+    sub @YtMarker  kw900	by  kw1100;
+    sub @YtMarker  kw1000	by  kw1200;
+    sub @YtMarker  kw1100	by  kw1300;
+    sub @YtMarker  kw1200	by  kw1400;
+    sub @YtMarker  kw1300	by  kw1500;
+    sub @YtMarker  kw1400	by  kw1600;
     sub @YtMarker  kw1500	by  kw1600;
     sub @YtMarker  kw1600	by  kw1600;
 } _DelYtAndIncKw;
-
-lookup _TryNext16 {
-	ignore sub @YbMarker';
-	ignore sub @YtMarker' @YbMarker;
-} _TryNext16;
-
-# This loop creates a set of lookups called _TryNext2, _TryNext3, ... _TryNext15, each of which calls
-# the successive lookup in the set to continue shifting yt markers.
-
-do	forlet ntry = range(15,1,-1);	# probably we only need 12 or 13 of these
-	let nextTry = ntry + 1;
-	let lname = "_TryNext" + str(ntry);
-	let lnameNext = "_TryNext" + str(nextTry);
-	{
-		lookup $lname {
-			ignore sub @YbMarker';				# blocked, or nothing left to shift
-			ignore sub @YtMarker' @YbMarker;	# nothing left to shift
-			sub @YtMarker' yt0'   lookup _TestBlockI lookup _DelYt	lookup _InsYt0		@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt100' lookup _TestBlockI lookup _DelYt	lookup _InsYt100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt200' lookup _TestBlockI lookup _DelYt	lookup _InsYt200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt300' lookup _TestBlockI lookup _DelYt	lookup _InsYt300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt400' lookup _TestBlockI lookup _DelYt	lookup _InsYt400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt500' lookup _TestBlockI lookup _DelYt	lookup _InsYt500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt600' lookup _TestBlockI lookup _DelYt	lookup _InsYt600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt700' lookup _TestBlockI lookup _DelYt	lookup _InsYt700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt800' lookup _TestBlockI lookup _DelYt	lookup _InsYt800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt900' lookup _TestBlockI lookup _DelYt	lookup _InsYt900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1000' lookup _TestBlockI lookup _DelYt	lookup _InsYt1000	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1100' lookup _TestBlockI lookup _DelYt	lookup _InsYt1100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1200' lookup _TestBlockI lookup _DelYt	lookup _InsYt1200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1300' lookup _TestBlockI lookup _DelYt	lookup _InsYt1300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1400' lookup _TestBlockI lookup _DelYt	lookup _InsYt1400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1500' lookup _TestBlockI lookup _DelYt	lookup _InsYt1500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1600' lookup _TestBlockI lookup _DelYt	lookup _InsYt1600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1700' lookup _TestBlockI lookup _DelYt	lookup _InsYt1700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1800' lookup _TestBlockI lookup _DelYt	lookup _InsYt1800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt1900' lookup _TestBlockI lookup _DelYt	lookup _InsYt1900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2000' lookup _TestBlockI lookup _DelYt	lookup _InsYt2000	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2100' lookup _TestBlockI lookup _DelYt	lookup _InsYt2100	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2200' lookup _TestBlockI lookup _DelYt	lookup _InsYt2200	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2300' lookup _TestBlockI lookup _DelYt	lookup _InsYt2300	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2400' lookup _TestBlockI lookup _DelYt	lookup _InsYt2400	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2500' lookup _TestBlockI lookup _DelYt	lookup _InsYt2500	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2600' lookup _TestBlockI lookup _DelYt	lookup _InsYt2600	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2700' lookup _TestBlockI lookup _DelYt	lookup _InsYt2700	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2800' lookup _TestBlockI lookup _DelYt	lookup _InsYt2800	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt2900' lookup _TestBlockI lookup _DelYt	lookup _InsYt2900	@YbMarker' lookup $lnameNext;
-			sub @YtMarker' yt3000' lookup _TestBlockI lookup _DelYt	lookup _InsYt3000	@YbMarker' lookup $lnameNext;
-
-		} $lname;
-	}
-
-lookup _TryKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
-
-	# Note that the _InsYt lookups are actually focused on the YbMarker, not the KwMarker, since the  
-	# _DelYtAndIncKw lookup deleted the YtMarker slot.                   \/  \/  \/
-	#                                                                    \/  \/  \/    _TryNext2 is focused on the just-shifted @YtMarker.
-	#                                                                    \/  \/  \/                       \/ \/ \/ 
-	sub yt0'   lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt0		@YbMarker' lookup _TryNext2;
-	sub yt100' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt100		@YbMarker' lookup _TryNext2;
-	sub yt200' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt200		@YbMarker' lookup _TryNext2;
-	sub yt300' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt300		@YbMarker' lookup _TryNext2;
-	sub yt400' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt400		@YbMarker' lookup _TryNext2;
-	sub yt500' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt500		@YbMarker' lookup _TryNext2;
-	sub yt600' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt600		@YbMarker' lookup _TryNext2;
-	sub yt700' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt700		@YbMarker' lookup _TryNext2;
-	sub yt800' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt800		@YbMarker' lookup _TryNext2;
-	sub yt900' lookup _TestBlockR lookup _DelYtAndIncKw		@KwMarker' lookup _InsYt900		@YbMarker' lookup _TryNext2;
-	sub yt1000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1000	@YbMarker' lookup _TryNext2;
-	sub yt1100' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1100	@YbMarker' lookup _TryNext2;
-	sub yt1200' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1200	@YbMarker' lookup _TryNext2;
-	sub yt1300' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1300	@YbMarker' lookup _TryNext2;
-	sub yt1400' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1400	@YbMarker' lookup _TryNext2;
-	sub yt1500' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1500	@YbMarker' lookup _TryNext2;
-	sub yt1600' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1600	@YbMarker' lookup _TryNext2;
-	sub yt1700' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1700	@YbMarker' lookup _TryNext2;
-	sub yt1800' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1800	@YbMarker' lookup _TryNext2;
-	sub yt1900' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt1900	@YbMarker' lookup _TryNext2;
-	sub yt2000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2000	@YbMarker' lookup _TryNext2;
-	sub yt2100' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2100	@YbMarker' lookup _TryNext2;
-	sub yt2200' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2200	@YbMarker' lookup _TryNext2;
-	sub yt2300' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2300	@YbMarker' lookup _TryNext2;
-	sub yt2400' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2400	@YbMarker' lookup _TryNext2;
-	sub yt2500' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2500	@YbMarker' lookup _TryNext2;
-	sub yt2600' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2600	@YbMarker' lookup _TryNext2;
-	sub yt2700' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2700	@YbMarker' lookup _TryNext2;
-	sub yt2800' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2800	@YbMarker' lookup _TryNext2;
-	sub yt2900' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt2900	@YbMarker' lookup _TryNext2;
-	sub yt3000' lookup _TestBlockR lookup _DelYtAndIncKw	@KwMarker' lookup _InsYt3000	@YbMarker' lookup _TryNext2;
-
-} _TryKern;
-
 
 lookup _TryKernShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
@@ -1269,25 +1225,25 @@ lookup _InsBlockerAndDecKw {
 	# Decrement the KwMarker, because it got incremented before we knew there was going to be blocker further in.
 	sub kwN400	by	kblock	kwN400;
 	sub kwN300	by	kblock	kwN400;
-	sub kwN200	by	kblock	kwN300;
-	sub kwN100	by	kblock	kwN200;
-	sub kw0		by	kblock	kwN100;
-	sub kw100	by	kblock	kw0;
-	sub kw200	by	kblock	kw100;
-	sub kw300	by	kblock	kw200;
-	sub kw400	by	kblock	kw300;
-	sub kw500	by	kblock	kw400;
-	sub kw600	by	kblock	kw500;
-	sub kw700	by	kblock	kw600;
-	sub kw800	by	kblock	kw700;
-	sub kw900	by	kblock	kw800;
-	sub kw1000	by	kblock	kw900;
-	sub kw1100	by	kblock	kw1000;
-	sub kw1200	by	kblock	kw1100;
-	sub kw1300	by	kblock	kw1200;
-	sub kw1400	by	kblock	kw1300;
-	sub kw1500	by	kblock	kw1400;
-	sub kw1600	by	kblock	kw1500;
+	sub kwN200	by	kblock	kwN400;
+	sub kwN100	by	kblock	kwN300;
+	sub kw0		by	kblock	kwN200;
+	sub kw100	by	kblock	kwN100;
+	sub kw200	by	kblock	kw0;
+	sub kw300	by	kblock	kw100;
+	sub kw400	by	kblock	kw200;
+	sub kw500	by	kblock	kw300;
+	sub kw600	by	kblock	kw400;
+	sub kw700	by	kblock	kw500;
+	sub kw800	by	kblock	kw600;
+	sub kw900	by	kblock	kw700;
+	sub kw1000	by	kblock	kw800;
+	sub kw1100	by	kblock	kw900;
+	sub kw1200	by	kblock	kw1000;
+	sub kw1300	by	kblock	kw1100;
+	sub kw1400	by	kblock	kw1200;
+	sub kw1500	by	kblock	kw1300;
+	sub kw1600	by	kblock	kw1400;
 } _InsBlockerAndDecKw;
 
 lookup _MakeBlockerFinal {
