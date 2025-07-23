@@ -1298,7 +1298,7 @@ lookup _SubtractNuqtaLowerHt{
   sub dscx1200 @DscMarker' lookup _SubtractNuqtaHt1200;
 } _SubtractNuqtaLowerHt;
 
-lookup _DecKwBy100 {  # treat like 200
+lookup _DecKwBy100 {
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
   sub  kwN800  by  kwN1000;
@@ -1358,7 +1358,7 @@ lookup _DecKwBy200 {
   sub  kw1600  by  kw1400;
 } _DecKwBy200;
 
-lookup _DecKwBy300 {  # treat like 400
+lookup _DecKwBy300 {
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
   sub  kwN800  by  kwN1000;
@@ -1418,7 +1418,7 @@ lookup _DecKwBy400 {
   sub  kw1600  by  kw1200;
 } _DecKwBy400;
 
-lookup _DecKwBy500 {  # treat like 600
+lookup _DecKwBy500 {
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
   sub  kwN800  by  kwN1000;

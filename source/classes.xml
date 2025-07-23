@@ -311,14 +311,33 @@ details including an FAQ.
 		@AlefFinForms @RehFinForms @DalFinForms @QafFinForms @NoonFinForms @ChotiyehFinForms @WawFinForms @BariyehFinForms
 	</class>
 	
-	<class name="KafIsoForms">
-		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
-		absGueh absNgoeh absGraf
+	<class name="BehIsoForms">
+		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh absDotlessBeh
 	</class>
+
 
 	<class name="RehIsoForms">
 		absReh absZain absJeh absRreh absRehDotBelow absRehDotBelowDotAbove absRehTwoDotsAbove absRehFourDotsAbove absRehHamzaAbove
 						absRehRing absRehSmallTahTwoDotsAbove absRehTwoVertAbove absRehSmallVBelow
+	</class>
+
+	<class name="DalIsoForms">
+			absDal absThal absDalDotBelowSmallTah absDalFourDotsAbove absDalRing absDalTwoVertBelowSmallTah absDalDotBelow absDalInvertedVBelow
+						absDdal absDul
+	</class>
+
+	<class name="SeenIsoForms">
+		absSeen absSheen absSeenDotBelowDotAbove absSeenFourDotsAbove absSeenSmallTahTwoDotsAbove absSeenTwoVertAbove
+				absSeen3DotsBelow3DotsAbove absSeenThreeDotsBelow absSeenInvertedVAbove absSeenFourAbove
+	</class>
+
+	<class name="SadIsoForms">
+		absSad absDad absDadDotBelow absSadThreeDotsAbove 
+	</class>
+
+	<class name="KafIsoForms">
+		absKeheh absGaf absKaf absKafRing absKafTwoDotsAbove absKafThreeDotsAbove absKehehDotAbove absKehehThreeDotsAbove 
+		absGueh absNgoeh absGraf
 	</class>
 
 	<class name="BariyehIsoForms">
@@ -328,18 +347,16 @@ details including an FAQ.
 	<!-- add many more -->
 	<class name="Isolates">
 		@AlefIsoForms
-		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh absDotlessBeh
-				absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV 
-				nlqChotiyeh absYeh absYehHamzaAbove absE absYehSmallV absAlefMaksura absYehTwoAbove absYehThreeAbove absYehFourBelow
-						absYehTail absKashmiriYeh
+		@BehIsoForms
+		absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV 
+		nlqChotiyeh absYeh absYehHamzaAbove absE absYehSmallV absAlefMaksura absYehTwoAbove absYehThreeAbove absYehFourBelow
+			absYehTail absKashmiriYeh
 		absJeem absHah absKhah absHehHamzaAbove absHahSmallTahAbove absHahSmallTahBelow absHahSmallTwhTwoDotsBelow absHahThreeDotsAbove
 						absHahFourBelow absTcheh absNyeh absDyeh absTcheheh
 		@RehIsoForms
-		absDal absThal absDalDotBelowSmallTah absDalFourDotsAbove absDalRing absDalTwoVertBelowSmallTah absDalDotBelow absDalInvertedVBelow
-						absDdal absDul
-		absSeen absSheen absSeenDotBelowDotAbove absSeenFourDotsAbove absSeenSmallTahTwoDotsAbove absSeenTwoVertAbove
-						absSeen3DotsBelow3DotsAbove absSeenThreeDotsBelow absSeenInvertedVAbove absSeenFourAbove
-		absSad absDad absDadDotBelow absSadThreeDotsAbove 
+		@DalIsoForms
+		@SeenIsoForms
+		@SadIsoForms
 		absTah absZah
 		absAin absGhain absAinThreeDotsAbove 
 		absFeh absFehThreeDotsBelow absDotlessFeh absVeh
@@ -1356,6 +1373,15 @@ details including an FAQ.
 	<!-- ========= -->
 	<!--  KERNING  -->
 	<!-- ========= -->
+
+	<class name="KNone">knone knoneIso</class>
+
+	<!-- kblockI ("internal") is used to indicate a block on a previously-kerned glyph
+		 against something further along in the sequence.
+		 kblockR ("right") indicates a block with a fresh glyph hitting the right-head edge of the
+		 following sequence.
+		 kblock is the final result. -->
+	<class name="KBlock">kblockR kblockI kblock</class>
 	
 	<class name="BehKernBaseMarkIni">
 		mkBehIni mkBehIni.ai mkBehIni.be mkBehIni.beM1 mkBehIni.beM2 mkBehIni.benn <!--mkBehIni.behg--> mkBehIni.bere
@@ -1573,13 +1599,28 @@ details including an FAQ.
 		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
 						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
 	</class>
-	<class name="KafKernBaseMarkIso">
-		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
-					mkGueh mkNgoeh mkGraf
+	<class name="BehKernBaseMarkIso">
+		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh mkDotlessBeh
+	</class>
+	<class name="DalKernBaseMarkIso">
+		mkDal mkThal mkDalDotBelowSmallTah mkDalFourDotsAbove mkDalRing mkDalTwoVertBelowSmallTah mkDalDotBelow mkDalInvertedVBelow
+				mkDdal mkDul
+
 	</class>
 	<class name="RehKernBaseMarkIso">
 		mkReh mkZain mkJeh mkRreh mkRehDotBelow mkRehDotBelowDotAbove mkRehTwoDotsAbove mkRehFourDotsAbove mkRehHamzaAbove
 						mkRehRing mkRehSmallTahTwoDotsAbove mkRehTwoVertAbove mkRehSmallVBelow
+	</class>
+	<class name="SeenKernBaseMarkIso">
+		mkSeen mkSheen mkSeenDotBelowDotAbove mkSeenFourDotsAbove mkSeenSmallTahTwoDotsAbove mkSeenTwoVertAbove
+						mkSeen3DotsBelow3DotsAbove mkSeenThreeDotsBelow mkSeenInvertedVAbove mkSeenFourAbove
+	</class>
+	<class name="SadKernBaseMarkIso">
+		mkSad mkDad mkDadDotBelow mkSadThreeDotsAbove 
+	</class>
+	<class name="KafKernBaseMarkIso">
+		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
+					mkGueh mkNgoeh mkGraf
 	</class>
 	<class name="ByKernBaseMarkIso">
 		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
@@ -1587,18 +1628,16 @@ details including an FAQ.
 
 	<class name="KernBaseMarkIso">
 		@AlefKernBaseMarkIso
-		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh mkDotlessBeh
-				mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV 
-				mkChotiyeh mkYeh mkYehHamzaAbove mkE mkYehSmallV mkAlefMaksura mkYehTwoAbove mkYehThreeAbove mkYehFourBelow
-						mkYehTail mkKashmiriYeh
+		@BehKernBaseMarkIso
+		mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV 
+		mkChotiyeh mkYeh mkYehHamzaAbove mkE mkYehSmallV mkAlefMaksura mkYehTwoAbove mkYehThreeAbove mkYehFourBelow
+				mkYehTail mkKashmiriYeh
 		mkJeem mkHah mkKhah mkHehHamzaAbove mkHahSmallTahAbove mkHahSmallTahBelow mkHahSmallTwhTwoDotsBelow mkHahThreeDotsAbove
-						mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh
+				mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh
 		@RehKernBaseMarkIso
-		mkDal mkThal mkDalDotBelowSmallTah mkDalFourDotsAbove mkDalRing mkDalTwoVertBelowSmallTah mkDalDotBelow mkDalInvertedVBelow
-						mkDdal mkDul
-		mkSeen mkSheen mkSeenDotBelowDotAbove mkSeenFourDotsAbove mkSeenSmallTahTwoDotsAbove mkSeenTwoVertAbove
-						mkSeen3DotsBelow3DotsAbove mkSeenThreeDotsBelow mkSeenInvertedVAbove mkSeenFourAbove
-		mkSad mkDad mkDadDotBelow mkSadThreeDotsAbove 
+		@DalKernBaseMarkIso
+		@SeenKernBaseMarkIso
+		@SadKernBaseMarkIso
 		mkTah mkZah
 		mkAin mkGhain mkAinThreeDotsAbove 
 		mkFeh mkFehThreeDotsBelow mkDotlessFeh mkVeh

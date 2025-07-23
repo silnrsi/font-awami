@@ -503,6 +503,7 @@ def GenLookup_MakeAscDscAbsolute(prefix) :
 		maxvy = ytMax
 		minvad = ascMin
 		maxvad = ascMax
+		outprefix = "yt"
 	else:
 		lname = "MakeDescentAbsolute"
 		cname = "@DscMarker"
@@ -510,7 +511,9 @@ def GenLookup_MakeAscDscAbsolute(prefix) :
 		maxvy = ybMax
 		minvad = dscMin
 		maxvad = dscMax
+		outprefix = "yb"
 
+	print("\n# We use chaining lookups to set the value, to avoid duplicated auto-generated lookups.", file=fout)
 	print("\nlookup " + lname + "{", file=fout)
 	print("  lookupflag UseMarkFilteringSet [@PyMarker " + cname + "];", file=fout)
 
@@ -519,6 +522,7 @@ def GenLookup_MakeAscDscAbsolute(prefix) :
 			vSum = vpy + vad
 			vSum = max(min(vSum, maxvy), minvy)
 			print("  sub py" + ValueName(vpy) + "  " + prefix + ValueName(vad) + "' lookup _Set" + ValueName(vSum) + ";", file=fout)
+			#print("  sub py" + ValueName(vpy) + "  " + prefix + ValueName(vad) + "' by " + outprefix + ValueName(vSum) + ";", file=fout)
 
 	print("} " + lname + ";", file=fout)
 
@@ -527,11 +531,11 @@ def GenLookup_MakeAscDscAbsolute(prefix) :
 
 def GenLookup_IncDecKw(valueList, dir):
 	### Example:
-	# lookup _Dec100kw {
-	# 	sub kwN800	by  kwN900;
-	#	sub kwN700  by  kwN800;
-	# 	sub kwN600	by  kwN700;
-	# 	sub kwN400	by  kwN500;
+	# lookup _Dec200kw {
+	# 	sub kwN800	by  kwN1000;
+	#	sub kwN700  by  kwN900;
+	# 	sub kwN600	by  kwN800;
+	# 	sub kwN400	by  kwN600;
 	#	...
 	# } _Dec100kw;
 
@@ -541,12 +545,18 @@ def GenLookup_IncDecKw(valueList, dir):
 		lname = "IncKwBy"
 
 	for vinc in valueList:
-		print("\nlookup _" + lname + str(vinc) + " {", file=fout)
-		for v2 in range(kwMin, kwMax + inc, inc):
-			vres = v2 + (vinc * dir)
+		vincName = vinc
+		# Kludge to handle the fact that _DecKwBy100 is equivalent to _DecKwBy200, for now:
+		if vinc == 100 or vinc == 300 or vinc == 500 or vinc == 700:
+			vincName = vinc
+			vinc += 100
+
+		print("\nlookup _" + lname + str(vincName) + " {", file=fout)
+		for vinput in range(kwMin, kwMax + inc, inc):
+			vres = vinput + (vinc * dir)
 			vres = min(max(vres, kwMin), kwMax)
-			print("  sub  kw" + ValueName(v2) + "  by  kw" + ValueName(vres) + ";", file=fout)
-		print("} _" + lname + str(vinc) + ";", file=fout)
+			print("  sub  kw" + ValueName(vinput) + "  by  kw" + ValueName(vres) + ";", file=fout)
+		print("} _" + lname + str(vincName) + ";", file=fout)
 
 # end of GenLookup_IncDecKw
 

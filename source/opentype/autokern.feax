@@ -20,24 +20,55 @@
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
 # lookup InitKernMetrics:
+include(../../source/opentype/autoKernMetrics.feax);
 ###include(../../source/opentype/autoKernMetrics_100.feax);
-include(../../source/opentype/autoKernMetrics_200.feax);
+###include(../../source/opentype/autoKernMetrics_200.feax);
 
 # Don't allow kerning before bariyeh with overhanging tail.
 lookup PreventPreBariyehKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+	lookupflag UseMarkFilteringSet [@KwMarker @BariyehIsoForms @ByKernSpace];
 	# Don't delete the kw0; other places in the system expect it to be present after a final.
 	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblock kw0;
 } PreventPreBariyehKern;
 
 
+# Kerning before isolates will be handled by hard-coding.
+# We can do this because we always know their vertical position - that is, zero.
+lookup PreventPreIsoKern {
+	lookupflag UseMarkFilteringSet [@KwMarker];
+	sub kw0'       				@Isolates	by	knoneIso kw0;
+	sub kw0' space 				@Isolates	by	knoneIso kw0;
+	sub kw0' space space 		@Isolates	by	knoneIso kw0;
+	sub kw0' space space space	@Isolates	by	knoneIso kw0;
+	# If we have more than four spaces, the kerning doesn't matter too much!
+} PreventPreIsoKern;
+
+lookup ClearAscentsPreIso {
+	lookupflag UseMarkFilteringSet [@AscMarker knoneIso];
+	rsub @AscMarker' knoneIso	by	ytIgnore;
+} ClearAscentsPreIso;
+
+
 # Handle some isolate forms explicitly; they are hard to get exactly right.
-lookup HardCodeSpecialIsolates {
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+lookup HardCodeIsolates {
+	lookupflag UseMarkFilteringSet [@KwMarker];
 
+	# alef
 	sub [absAlef absAlefFin]  kw0'	@RehIsoForms	by	kblock kw0; 
-} HardCodeSpecialIsolates;
 
+	# seen & sad
+	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0'	[@SeenIsoForms @SadIsoForms]	by	kw200;
+	sub [@DalIsoForms @DalFinForms]							kw0'	[@SeenIsoForms @SadIsoForms]	by	kw500;
+	sub [absReh absRehFin absRehFin._jkl]					kw0'	[@SeenIsoForms @SadIsoForms]	by	kw400;
+	sub [absRehFin]											kw0'	[@SeenIsoForms @SadIsoForms]	by	kw300;
+	sub [absZain]											kw0'	[@SeenIsoForms @SadIsoForms]	by	kw200;
+} HardCodeIsolates;
+
+
+# Handle some isolate forms explicitly; they are hard to get exactly right.
+lookup HardCodeIsolatesWNuqtaUpper {
+	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
+} HardCodeIsolatesWNuqtaUpper;
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks. These cause the ascent to be raised higher or the
@@ -100,7 +131,8 @@ lookup TreatBasesAsMarks {
 	sub @KernBaseOther	by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
 
-# Must come after InsertMarkers.
+
+# Must come after InitKernMetrics.
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 # TODO: Replace some of these rules with ones that test for the presence CfMarkerEWs.
@@ -375,7 +407,7 @@ do	forlet n = range(0,6);
 {
 
 lookup $ln_CalculateKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @PyMarker @YtMarker @YbMarker @Kblocks];
+	lookupflag UseMarkFilteringSet [@KwMarker @PyMarker @YtMarker @YbMarker @KBlock];
 
 #	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
 
@@ -386,16 +418,16 @@ lookup $ln_CalculateKern {
 } $ln_CalculateKern;
 
 lookup $ln_EnforceBlock {
-	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
-	sub @Kblocks' @KwMarker' lookup _EnforceBlock;
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
+	sub @KBlock' @KwMarker' lookup _EnforceBlock;
 	sub @KwMarker' lookup _EnforceBlock;
 } $ln_EnforceBlock;
 
 # Once a (final) glyph has been completely kerned, invalidate its bottoms.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
 lookup $ln_CleanUpKernedGlyph {
-	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @Kblocks];
-	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @Kblocks
+	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @KBlock @KNone];
+	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @KBlock or KNone
 	rsub @YbMarker' @KwMarker	by  ybIgnore;
 } $ln_CleanUpKernedGlyph;
 
@@ -403,24 +435,24 @@ lookup $ln_CleanUpKernedGlyph {
 # Once a glyph has had something kern under it completely, invalidate its tops.
 # TODO: find a way to stop this running if there is a kblock present.
 lookup $ln_CleanUpTopGlyph {
-	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast];
-	sub @YbMarker @YtMarker ybLast		@YtMarker'  by  ytIgnore;
-	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  by  ytIgnore;  # second glyph in sequence
+	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast @KwMarker @KBlock @KNone];
+	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  ytIgnore;
+	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  @KwMarker	by  ytIgnore;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
 lookup $ln_ShiftPrevGlyph {
-	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
-	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @Kblocks
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @KBlock @KNone]; # the @PyMarker delineates a separate glyph
+	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @KBlock - same with @KNone
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 
 # Shift a single @YbMarker from the following glyph into the initial, so we can test for kerning under it.
 # Currently this handles kerning under 3 glyphs max.
-# TODO: don't run if there is a kblock present.
+# TODO: don't run if there is a kblock or knone present.
 lookup $ln_ShiftNextGlyph {
-	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker];
+	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker @KBlock @KNone];
 	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker'						@YbMarker';
 	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' ybLast'	@PyMarker'	@YbMarker';
 } $ln_ShiftNextGlyph;
@@ -480,11 +512,11 @@ lookup RestoreBases {
 
 # Leaving the markers in for the time being helps with debugging.
 # lookup CleanUpMarkers {
-# 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker @Kblocks @PyMarker];
+# 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker @KBlock @PyMarker];
 # 	sub @DyMarker by NULL;
 # 	sub @YtMarker by NULL;
 # 	sub @YbMarker by NULL;
-# 	sub @Kblocks by NULL;
+# 	sub @KBlock by NULL;
 # 	sub @PyMarker by NULL;
 #   sub ybIgnore by NULL;
 #   sub ytIgnore by NULL;

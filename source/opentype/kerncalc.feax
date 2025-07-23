@@ -564,13 +564,6 @@ lookup _DelYb {
 @YbLow = [yb0 ybN100 ybN200 ybN300 ybN400 ybN500 ybN600 ybN700 ybN800 ybN900 ybN1000
 	ybN1100 ybN1200 ybN1300 ybN1400 ybN1500];
 
-# kblockI ("internal") is used to indicate a block on a previously-kerned glyph
-# against something further along in the sequence.
-# kblock indicates a  block with a fresh glyph hitting the right-head edge of the
-# following sequence.
-@Kblocks = [kblockR kblockI kblock];
-
-
 # A block occurs when the yt (top) value is too close to the yb (bottom) value.
 # Currently we want a space of at least 100 units.
 # TODO: possibly this should be increased to 200 units.
@@ -578,43 +571,43 @@ lookup _DelYb {
 do	forlet i = range(0,2);
 	let lnames = ["_TestBlockR","_TestBlockI"];
 	let lname = lnames[i];
-	let kbGlyphs = feaclass('Kblocks');
-	let kb = kbGlyphs[i];
+	let kbGlyphs = feaclass('KBlock');
+	let kb = kbGlyphs[i];  # kblockI, kblockR
 {
 lookup $lname {
-	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker knone];
-	# knone indicates no kerning allowed, so we are always blocked.
-	sub yt0'	knone	by	$kb;
-	sub yt100'	knone	by	$kb;
-	sub yt200'	knone	by	$kb;
-	sub yt300'	knone	by	$kb;
-	sub yt400'	knone	by	$kb;
-	sub yt500'	knone	by	$kb;
-	sub yt600'	knone	by	$kb;
-	sub yt700'	knone	by	$kb;
-	sub yt800'	knone	by	$kb;
-	sub yt900'	knone	by	$kb;
-	sub yt1000'	knone	by	$kb;
-	sub yt1100'	knone	by	$kb;
-	sub yt1200'	knone	by	$kb;
-	sub yt1300'	knone	by	$kb;
-	sub yt1400'	knone	by	$kb;
-	sub yt1500'	knone	by	$kb;
-	sub yt1600'	knone	by	$kb;
-	sub yt1700'	knone	by	$kb;
-	sub yt1800'	knone	by	$kb;
-	sub yt1900'	knone	by	$kb;
-	sub yt2000'	knone	by	$kb;
-	sub yt2100'	knone	by	$kb;
-	sub yt2200'	knone	by	$kb;
-	sub yt2300'	knone	by	$kb;
-	sub yt2400'	knone	by	$kb;
-	sub yt2500'	knone	by	$kb;
-	sub yt2600'	knone	by	$kb;
-	sub yt2700'	knone	by	$kb;
-	sub yt2800'	knone	by	$kb;
-	sub yt2900'	knone	by	$kb;
-	sub yt3000' knone	by	$kb;
+	lookupflag UseMarkFilteringSet [@YtMarker @YbMarker @KNone];
+	# KNone indicates no kerning allowed, so we are always blocked.
+	sub yt0'	@KNone	by	$kb;
+	sub yt100'	@KNone	by	$kb;
+	sub yt200'	@KNone	by	$kb;
+	sub yt300'	@KNone	by	$kb;
+	sub yt400'	@KNone	by	$kb;
+	sub yt500'	@KNone	by	$kb;
+	sub yt600'	@KNone	by	$kb;
+	sub yt700'	@KNone	by	$kb;
+	sub yt800'	@KNone	by	$kb;
+	sub yt900'	@KNone	by	$kb;
+	sub yt1000'	@KNone	by	$kb;
+	sub yt1100'	@KNone	by	$kb;
+	sub yt1200'	@KNone	by	$kb;
+	sub yt1300'	@KNone	by	$kb;
+	sub yt1400'	@KNone	by	$kb;
+	sub yt1500'	@KNone	by	$kb;
+	sub yt1600'	@KNone	by	$kb;
+	sub yt1700'	@KNone	by	$kb;
+	sub yt1800'	@KNone	by	$kb;
+	sub yt1900'	@KNone	by	$kb;
+	sub yt2000'	@KNone	by	$kb;
+	sub yt2100'	@KNone	by	$kb;
+	sub yt2200'	@KNone	by	$kb;
+	sub yt2300'	@KNone	by	$kb;
+	sub yt2400'	@KNone	by	$kb;
+	sub yt2500'	@KNone	by	$kb;
+	sub yt2600'	@KNone	by	$kb;
+	sub yt2700'	@KNone	by	$kb;
+	sub yt2800'	@KNone	by	$kb;
+	sub yt2900'	@KNone	by	$kb;
+	sub yt3000' @KNone	by	$kb;
 
 	sub yt0'	@YbLow		by	$kb;  # any top lower than 0 creates a block
 	sub yt0'	yb100		by	$kb;
@@ -1209,7 +1202,7 @@ lookup _DelYtAndIncKw {  # slices are 200 wide; increment by 200
 } _DelYtAndIncKw;
 
 lookup _TryKernShift {
-	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @Kblocks];
+	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @KBlock];
 	# loop to match the various ytXXXX markers.
 do  forlet i = range(31);
     let ext = str(i) + ("" if i == 0 else "00");
@@ -1254,7 +1247,7 @@ lookup _MakeBlockerFinal {
 
 # If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
 lookup _EnforceBlock {
-	lookupflag UseMarkFilteringSet [@KwMarker @Kblocks @KernBaseMarkIsoIniFin];
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
 
 	ignore sub kblock  @KwMarker';  # to avoid redoing from the same caller after insertion
 
