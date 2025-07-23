@@ -20,6 +20,7 @@
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
 # lookup InitKernMetrics:
+###include(../../source/opentype/autoKernMetrics_100.feax);
 include(../../source/opentype/autoKernMetrics_200.feax);
 
 # Don't allow kerning before bariyeh with overhanging tail.
@@ -333,7 +334,7 @@ include(../../source/opentype/arithTopLevel.feax);
 
 # ---------------
 
-# Extend the descent slices to account for the width of an overhanging nuqta.
+# Extend the slices below to account for the width of an overhanging nuqta.
 lookup ExtendForNuqtaOverhang {
 	lookupflag UseMarkFilteringSet [@YbMarker @ExtYbMarker];
 	do	forlet ybm = feaclass('YbMarker');
@@ -362,7 +363,7 @@ lookup MedialNuqtaOverhang {
 
 # TODO: the last four lookups are not needed for the final iteration.
 
-do	forlet n = range(0,12);
+do	forlet n = range(0,6);
 	let c = str(n + 1);
 	let ln_CalculateKern = "CalculateKern" + c;
 	let ln_EnforceBlock = "EnforceBlock" + c;

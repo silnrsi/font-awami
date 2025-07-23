@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Run this script from the tools/bin directory where the file is located:
-#    ./mkglyphbounds -o ../../source/opentype/autoKernMetrics.feax ../../source/masters/AwamiNastaliq-Regular.ufo
+#    ./mkglyphbounds -o ../../source/opentype/autoKernMetrics_200.feax ../../source/masters/AwamiNastaliq-Regular.ufo
 
 import argparse
 from fontTools import ttLib, ufoLib
