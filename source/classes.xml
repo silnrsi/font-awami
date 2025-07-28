@@ -340,6 +340,11 @@ details including an FAQ.
 		absGueh absNgoeh absGraf
 	</class>
 
+	<class name="WawIsoForms">
+		absWaw absWawHamzaAbove absWawRing absU absOe absKirghizOe absKirghizYu absWawTwoAbove absWawThreeAbove absWawDotAbove
+		absWawTwoDotsAbove absVe absYu
+	</class>
+
 	<class name="BariyehIsoForms">
 		nlqBariyeh nlqBariyehHamzaAbove nlqBariyehTwoAbove nlqBariyehThreeAbove 
 	</class>
@@ -364,8 +369,7 @@ details including an FAQ.
 		@KafIsoForms
 		absLam absLamBar absLamSmallV absLamSmallTah absLamThreeDots
 		absMeem
-		absWaw absWawHamzaAbove absWawRing absU absOe absKirghizOe absKirghizYu absWawTwoAbove absWawThreeAbove absWawDotAbove
-						absWawTwoDotsAbove absVe absYu
+		@WawIsoForms
 		absHehDo
 		absHehGoal absHehGoalHamzaAbove absHehYehAbove absHeh absAe
 		@BariyehIsoForms
@@ -1622,6 +1626,10 @@ details including an FAQ.
 		mkKeheh mkGaf mkKaf mkKafRing mkKafTwoDotsAbove mkKafThreeDotsAbove mkKehehDotAbove mkKehehThreeDotsAbove 
 					mkGueh mkNgoeh mkGraf
 	</class>
+	<class name="WawKernBaseMarkIso">
+		mkWaw mkWawHamzaAbove mkWawRing mkU mkOe mkKirghizOe mkKirghizYu mkWawTwoAbove mkWawThreeAbove mkWawDotAbove
+		mkWawTwoDotsAbove mkVe mkYu
+	</class>
 	<class name="ByKernBaseMarkIso">
 		mkBariyeh mkBariyehHamzaAbove mkBariyehTwoAbove mkBariyehThreeAbove 
 	</class>
@@ -1645,8 +1653,7 @@ details including an FAQ.
 		@KafKernBaseMarkIso
 		mkLam mkLamBar mkLamSmallV mkLamSmallTah mkLamThreeDots
 		mkMeem
-		mkWaw mkWawHamzaAbove mkWawRing mkU mkOe mkKirghizOe mkKirghizYu mkWawTwoAbove mkWawThreeAbove mkWawDotAbove
-						mkWawTwoDotsAbove mkVe mkYu
+		@WawKernBaseMarkIso
 		mkHehDo
 		mkHehGoal mkHehGoalHamzaAbove mkHehYehAbove mkHeh mkAe
 		@ByKernBaseMarkIso

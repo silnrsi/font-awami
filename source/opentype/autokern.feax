@@ -40,32 +40,63 @@ lookup PreventPreIsoKern {
 	sub kw0' space 				@Isolates	by	knoneIso kw0;
 	sub kw0' space space 		@Isolates	by	knoneIso kw0;
 	sub kw0' space space space	@Isolates	by	knoneIso kw0;
-	# If we have more than four spaces, the kerning doesn't matter too much!
+	# If we have lots of spaces, the kerning doesn't matter too much!
 } PreventPreIsoKern;
 
+
+# TODO: if we move TreatBasesAsMarks up, delete most of these rules.
 lookup ClearAscentsPreIso {
 	lookupflag UseMarkFilteringSet [@AscMarker knoneIso];
-	rsub @AscMarker' knoneIso	by	ytIgnore;
+	rsub @AscMarker' knoneIso													by	ytIgnore;
+	rsub @AscMarker' @AllBases knoneIso											by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases knoneIso								by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases knoneIso						by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases knoneIso			by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases @AllBases knoneIso	by	ytIgnore;
 } ClearAscentsPreIso;
 
 
-# Handle some isolate forms explicitly; they are hard to get exactly right.
+# TODO: probably run TreatBasesAsMarks earlier and then delete this.
+lookup IgnoreInvisibles {
+	sub space by mkSpace;
+	sub zerojoin by mkZerojoin;
+	sub zeronojoin by mkZeronojoin;
+} IgnoreInvisibles;
+
+
+# Handle isolate forms explicitly. This is faster than running the algorithm.
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker];
 
 	# alef
-	sub [absAlef absAlefFin]  kw0'	@RehIsoForms	by	kblock kw0; 
+	sub [absRehFin._jkl]									kw0' lookup _Set200		@AlefIsoForms;
+	sub [absRehFin]											kw0' lookup _Set100		@AlefIsoForms;
+#	sub absRehFin._hgM - ignore
+	sub [@RehIsoForms @DalFinForms @WawFinForms 
+			@WawIsoForms]									kw0' lookup _Set100		@AlefIsoForms;
+
+	# reh
+	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _Set0		@RehIsoForms;
+	sub [@WawIsoForms @WawFinForms]							kw0' lookup _Set200		@RehIsoForms;
 
 	# seen & sad
-	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0'	[@SeenIsoForms @SadIsoForms]	by	kw200;
-	sub [@DalIsoForms @DalFinForms]							kw0'	[@SeenIsoForms @SadIsoForms]	by	kw500;
-	sub [absReh absRehFin absRehFin._jkl]					kw0'	[@SeenIsoForms @SadIsoForms]	by	kw400;
-	sub [absRehFin]											kw0'	[@SeenIsoForms @SadIsoForms]	by	kw300;
-	sub [absZain]											kw0'	[@SeenIsoForms @SadIsoForms]	by	kw200;
+	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0' lookup _Set200		[@SeenIsoForms @SadIsoForms];
+	sub [@DalIsoForms @DalFinForms]							kw0' lookup _Set500		[@SeenIsoForms @SadIsoForms];
+	sub [absReh absRehFin absRehFin._jkl]					kw0' lookup _Set400		[@SeenIsoForms @SadIsoForms];
+	sub [absRehFin]											kw0' lookup _Set300		[@SeenIsoForms @SadIsoForms];
+	sub [absZain]											kw0' lookup _Set200		[@SeenIsoForms @SadIsoForms];
+
+	# kaf
+	sub @AllBases			kw0' lookup _Set1000	[@KafIsoForms];
+
+	# qaf
+	sub absRehFin			kw0' lookup _Set100		absQafFin;
+
+	# waw
+	sub [@DalIsoForms]		kw0' lookup _Set100		@WawIsoForms;	
+
 } HardCodeIsolates;
 
-
-# Handle some isolate forms explicitly; they are hard to get exactly right.
 lookup HardCodeIsolatesWNuqtaUpper {
 	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
 } HardCodeIsolatesWNuqtaUpper;
@@ -74,7 +105,9 @@ lookup HardCodeIsolatesWNuqtaUpper {
 # of nuqtas and/or marks. These cause the ascent to be raised higher or the
 # descent to be lowered.
 lookup HandleMarkAsc {
-	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper];
+	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper ytIgnore];
+
+	ignore sub @PyInitMarker' ytIgnore;		# we're ignoring the ascents - because this is a segment preceding an isolate
 
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacUpper;
 	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeUpper;

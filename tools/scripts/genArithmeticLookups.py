@@ -39,6 +39,9 @@ ascxMax = 1600
 dscxMin = 400
 dscxMax = 1200
 
+kwMin = -1000
+kwMax = 1600
+
 inc = 100
 
 # These lists should at least cover what's in the _InsertNuqtaDiacMarker lookup:
@@ -157,6 +160,8 @@ def GenLookup_SetValues():
 		if ybMin <= v and v <= ybMax:
 			print("  sub @DscMarker by  yb" + ValueName(v) + ";", file=fout)
 			print("  sub @YbMarker  by  yb" + ValueName(v) + ";", file=fout)
+		if kwMin <= v and v <= kwMax:
+			print("  sub @KwMarker by  kw" + ValueName(v) + ";", file=fout)
 		print("} _Set" + ValueName(v) + ";\n", file=fout)
 		
 		v += inc
@@ -408,12 +413,14 @@ def GenLookups_AddNuqtaHt(valuesList, dir) :
 			if dir > 0 and newv + inc > maxv:
 				# output a fall-back rule and quit
 				# sub @YtMarker lookup _Set3000;
-				print( "  sub @" + cName + "' lookup _Set" + ValueName(newv) + ";", file=fout)
-				break
+				# -- NO, cant' do this in simple substitution lookups
+				# print( "  sub @" + cName + "  by  " + prefix + ValueName(newv) + ";", file=fout)
+				# break
+				newv = maxv
 			elif dir < 0 and newv < minv:
 				newv = minv
 
-			print("  sub " + prefix + ValueName(v2) + "' lookup _Set" + ValueName(newv) + ";", file=fout)
+			print("  sub " + prefix + ValueName(v2) + "  by  " + prefix + ValueName(newv) + ";", file=fout)
 
 		print("} " + lname + ValueName(v) + ";", file=fout)
 
