@@ -557,26 +557,29 @@ feature ccmp {
 
 lookup FontCheck;		# both latn and arab
 
+script arab;
 lookup DecomposeBases {
+	
+
 	sub		@BehComposed_sub 			by 		absDotlessBeh 	@BehMark_sub;
-	sub		@JeemComposed_sub			by		absHah					@JeemMark_sub;
-	sub		@SeenComposed_sub			by		absSeen					@SeenMark_sub;
-	sub		@SadComposed_sub			by		absSad					@SadMark_sub;
-	sub		@TahComposed_sub			by		absTah					@TahMark_sub;
-	sub		@AinComposed_sub			by		absAin					@AinMark_sub;
-	sub		@FehComposed_sub			by		absDotlessFeh		@FehMark_sub;
-	sub		@KehehComposed_sub		by		absKeheh				@KehehMark_sub;
-	sub		@GafComposed_sub			by		absGaf					@GafMark_sub;
-	sub		@LamComposed_sub			by		absLam					@LamMark_sub;
+	sub		@JeemComposed_sub			by		absHah			@JeemMark_sub;
+	sub		@SeenComposed_sub			by		absSeen			@SeenMark_sub;
+	sub		@SadComposed_sub			by		absSad			@SadMark_sub;
+	sub		@TahComposed_sub			by		absTah			@TahMark_sub;
+	sub		@AinComposed_sub			by		absAin			@AinMark_sub;
+	sub		@FehComposed_sub			by		absDotlessFeh	@FehMark_sub;
+	sub		@KehehComposed_sub			by		absKeheh		@KehehMark_sub;
+	sub		@GafComposed_sub			by		absGaf			@GafMark_sub;
+	sub		@LamComposed_sub			by		absLam			@LamMark_sub;
 	# no meem varieties at this point
-	sub		@HehGoalComposed_sub	by		absHehGoal			@HehGoalMark_sub;
-	sub		@NoonComposed_sub			by		absNoon					@NoonMark_sub;
-	sub		@ChotiyehComposed_sub	by		nlqChotiyeh			@ChotiyehMark_sub;
-	sub		@AlefComposed_sub			by		absAlef					@AlefMark_sub;
-	sub		@DalComposed_sub			by		absDal					@DalMark_sub;
-	sub		@RehComposed_sub			by		absReh					@RehMark_sub;
-	sub		@WawComposed_sub			by		absWaw					@WawMark_sub;
-	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
+	sub		@HehGoalComposed_sub		by		absHehGoal		@HehGoalMark_sub;
+	sub		@NoonComposed_sub			by		absNoon			@NoonMark_sub;
+	sub		@ChotiyehComposed_sub		by		nlqChotiyeh		@ChotiyehMark_sub;
+	sub		@AlefComposed_sub			by		absAlef			@AlefMark_sub;
+	sub		@DalComposed_sub			by		absDal			@DalMark_sub;
+	sub		@RehComposed_sub			by		absReh			@RehMark_sub;
+	sub		@WawComposed_sub			by		absWaw			@WawMark_sub;
+	sub		@BariyehComposed_sub		by		nlqBariyeh		@BariyehMark_sub;
 } DecomposeBases;
 
 } ccmp;		# end of feature
@@ -584,6 +587,7 @@ lookup DecomposeBases {
 
 # Recompose isolates:
 feature isol {
+script arab;
 
 lookup RecomposeIsolates {
 	sub		absDotlessBeh 	@BehMark_sub			by		@BehComposed_sub;
@@ -612,6 +616,7 @@ lookup RecomposeIsolates {
 @QafMark = [_dot2u];
 
 feature fina {
+script arab;
 
 lookup RightFinals2 {
 	sub		absDotlessQaf'		@QafMark					by		absQafFin;
@@ -662,6 +667,7 @@ lookup FixIMNoonYehQaf {
 
 
 feature medi {
+script arab;
 
 lookup FixIMNoonYehQaf;
 
@@ -678,6 +684,7 @@ lookup MedialForms {
 
 
 feature init {
+script arab;
 
 lookup FixIMNoonYehQaf;
 
@@ -691,6 +698,7 @@ lookup InitialForms {
 
 
 feature rlig {
+script arab;
 
 lookup DoublePreContext {
 	lookupflag IgnoreMarks;
@@ -978,6 +986,7 @@ lookup WideForms_chain {
 
 
 feature calt {
+script arab;
 
 # --- alternate height kafs ---
 
@@ -1461,6 +1470,7 @@ include(../../source/opentype/bariyehKernRules.feax);
 include(../../source/opentype/collfix_inc.feax);
 
 feature calt {
+script arab;
 
 include(../../source/opentype/collfix.feax);
 
@@ -1471,6 +1481,7 @@ include(../../source/opentype/collfix.feax);
 include(../../source/opentype/autokern_inc.feax);
 
 feature calt {	# eventually change this to a Stylistic Set?
+script arab;
 
 include(../../source/opentype/autokern.feax);
 
@@ -1721,6 +1732,7 @@ lookup AttRing2Mark {
 
 
 feature curs {
+script arab;
 
 lookup BasicConnections {
 	lookupflag IgnoreMarks RightToLeft;
@@ -1731,6 +1743,7 @@ lookup BasicConnections {
 
 
 feature dist {
+script arab;
 
 # This is now being done by inserting spacing glyphs.
 #lookup BariyehKern {
@@ -1742,6 +1755,7 @@ feature dist {
 
 
 feature kern {
+script arab;
 
 lookup ShiftNuqtasNS {
 	lookupflag UseMarkFilteringSet [@NuqtaLike @CfMarkerNS];
