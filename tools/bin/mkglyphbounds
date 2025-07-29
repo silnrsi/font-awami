@@ -707,6 +707,9 @@ def Tweak_100(gn, uppers, lowers):
 
 def Tweak_200(gn, uppers, lowers):
 
+    if gn == "absFin":
+        uppers[-2] = 1000  # normally 400, which makes kerning too tight
+
 #    if gn == "absReh" or gn == "absRehFin._jkl" or gn == "absRehFin":
 #         # The left-hand point of these rehs needs more space.
 #         uppers[-2] = 400
