@@ -747,9 +747,11 @@ gTah		g__dot1u						>	gZah:(1 2)	_;
 gAin		cs_ainMark					>	cs_ainComposed$2:(1 2)	_;
 
 //gQaf								>	gQaf;
-csDotlessQaf_feh    g__noDot2u		>	csDotlessQaf_qaf:(1 2)  _;
+csDotlessQaf_feh		g__noDot2u		>	csDotlessQaf_qaf:(1 2)  _;
+csDotlessQaf_feh		g__dot3uQaf		>	csDotlessQaf_qaf		g__dot3u;
+cFehFin				g__dot3uQaf		>	gQafFin				g__dot3u;
 
-gFeh		cs_fehMark					>	cs_fehComposed$2:(1 2)	_;
+gFeh		cs_fehMark		>	cs_fehComposed$2:(1 2)	_;
 gFeh									>	gDotlessFeh;
 
 //gKaf
@@ -848,6 +850,10 @@ else
 gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 endif;
 
+if (highHamzaAlt == 1)
+(gHighHamza gHighHamzaArabic)  >  gHighHamzaArabicLarge;
+endif;
+
 /*****
 if (smallNuqtas == 1)
 // Small nuqtas
@@ -869,6 +875,7 @@ else
 g__noDot1u		>	g__dot1u;
 g__dot2lIM		>	g__dot2l;
 g__dot2l_tail	>	g__dot2l;
+g__dot3uQaf		> g__dot3u;
 
 // This one goes away:
 ANY  g__noDot2l    >  @1:(1 2)  _;
@@ -929,8 +936,8 @@ gChotiyehFin  >  gChotiyehFin_short  /  gLamIniHgM gKharizabar gHehGoalMedCh g__
 
 // Special forms of letters
 
-g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
-////g__bar  >  g__barNarrow  /  (gLamAlef gLamAlefFin)  _;
+////g__bar  >  g__barNarrow  /  _  cDiacritic?  (cSadMed gSadFin);
+g__bar  >  g__barNarrow  /  (gLamIniAl gLamMedAl)  _;
 
 if (hehDoachIni == round)
 gHehDoIniQf  csQwFin_stfh  >  gHehDoIniQf_alt  csQwFin  /  _=HD  cDiacritic?  _=QW;

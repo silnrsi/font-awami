@@ -8,7 +8,8 @@
 # - Add a code for it in the appropriate list in expand_sequences() or insert_diacritics().
 # - Add the corresponding information in _group_name_format() or _diac_group_name_format().
 
-# To use default output, run from the root directory of the project.
+# To use default output, run from the root directory of the project:
+#			python3 ./tools/scripts/ftml_test_gen.py
 
 import collections
 import codecs
@@ -49,7 +50,7 @@ def run():
 
     # Debugging:
     #modes = ["basicforms"]         # all contextual forms of the basic shapes (beh, jeem, seen, etc.)
-    #modes = ["allbasechars"]       # some contextual forms of all letters - make sure nuqtas are generated
+    modes = ["allbasechars"]       # some contextual forms of all letters - make sure nuqtas are generated
     #modes = ["basic_somediac"]     # same characters as basicforms, each with an upper and lower diac
     #modes = ["allbasecharforms"]   # all forms of all letters - HUGE file
     #modes = ["basic_alldiac"]      # same characters as basicforms, with every diac
@@ -224,14 +225,14 @@ def expand_sequences(mode, basicSequences) :
         # They are processed in reverse order.
         expand = {
             "alef"      :   ["alef3", "alef2", "alefWasla", "alefMadda"],
-            "beh"       :   ["dotlessBeh", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
-            "jeem"      :   ["hah4below", "hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
+            "beh"       :   ["dotlessBeh", "beh2down1up", "teh3down", "tehRing", "beeh", "tteheh", "peh", "tteh", "theh", "teh"],
+            "jeem"      :   ["hah2dotsV", "hah4below", "hahTah2smd", "hahTah", "hah3dots", "hahHamza", "tcheheh",  "dyeh", "tcheh", "khah", "hah"],
             "seen"      :   ["seen4", "seenInvV", "seen3dots3dots", "seen3below", "seenTah2smd", "seen2dotsV", "seen4dots", "seenDotDot", "sheen"],
             "sad"       :   ["sad3dots", "dadDotBelow", "dad"],
             "tah"       :   ["zah"],
             "ain"       :   ["ain3dots", "ghain"],
             "feh"       :   ["dotlessFeh", "feh3dotsBelow", "feh3dotsAbove"],
-            "qaf"       :   ["dotlessQaf"],
+            "qaf"       :   ["dotlessQaf", "qaf3dotsAbove"],
             "kaf"       :   ["graf", "keheh3dots", "kehehDot", "ng", "kaf2dots", "kafRing", "ngoeh", "gueh", "gaf"],
                                         # gafRing - not needed for Nastaliq
             "lam"       :   ["lamTah", "lam3dots", "lamSmallV", "lamBar"],
@@ -251,7 +252,7 @@ def expand_sequences(mode, basicSequences) :
         expandLeft = {  # initial/medial forms of letters that have different finals
             "beh"       :   ["noon3dotsIM", "noonSmallVIM", "noonRingIM", "rnoonIM", "noonDotBelowIM", "noonRetroIM", "noonGhunnaIM", "noonIM",
                                 "alefMaksuraIM", "arabicEIM", "yehSmallVIM", "yehHamzaIM", "chotiyehIM"],
-            "feh"       :   ["dotlessQafIM", "qafIM"]
+            "feh"       :   ["dotlessQafIM", "qaf3dotsAboveIM", "qafIM"]
         }
         
         # Debugging:
@@ -730,6 +731,7 @@ def _char_name_to_usv(charName) :
             "beeh"      :   '067B',
             "tehRing"   :   '067C',
             "teh3down"  :   '067D',
+            "beh2down1up" :	'0754',
             "dotlessBeh":   '066E',
         "jeem"          :   '062C',
             "hah"       :   '062D',
@@ -742,6 +744,7 @@ def _char_name_to_usv(charName) :
             "hahTah"    :   '076E',
             "hahTah2smd":   '076F',
             "hah4below" :   '077C',
+            "hah2dotsV"	:		'0682',
         "dal"           :   '062F',
             "thal"      :   '0630',
             "ddal"      :   '0688',
@@ -787,10 +790,12 @@ def _char_name_to_usv(charName) :
             "feh3dotsAbove" :   '06A4',
             "feh3dotsBelow" :   '06A5',
             "dotlessFeh"    :   '06A1',
-        "qaf"               :   '0642',     # Note: add two codes for each character!
+        "qaf"              	:   '0642',     # Note: add two codes for each character!
             "qafIM"         :   '0642',
-            "dotlessQaf"    :   '066F',
-            "dotlessQafIM"  :	'066F',
+            "qaf3dotsAbove"	:		'06A8',
+            "qaf3dotsAboveIM"	:		'06A8',
+            "dotlessQaf"    :		'066F',
+            "dotlessQafIM"  :		'066F',
         "lam"           :   '0644',
             "lamBar"    :   '076A',
             "lamSmallV" :   '06B5',
@@ -920,7 +925,8 @@ def _group_name_format(charName) :
         "beeh"          :   ('02f',     'Beeh form',        2, 2),
         "tehRing"       :   ('02g',     'Teh with ring form',                   2, 2),
         "teh3down"      :   ('02h',     'Teh with 3 dots downward',             2, 2),
-        "dotlessBeh"    :   ('02i',     'Dotless beh',                          2, 2),
+        "beh2down1up"		:		('02i',			'Beh weith 2 dots below 1 above',				2, 2),
+        "dotlessBeh"    :   ('02j',     'Dotless beh',                          2, 2),
         "noonIM"        :   ('02x0',    'Noon initial/medial form',             0, 2),
         "noonGhunnaIM"  :   ('02x1',    'Noon-ghunna form',                     0, 2),
         "noonRetroIM"   :   ('02x2',    'Noon-retro initial/medial form',       0, 2),
@@ -946,6 +952,7 @@ def _group_name_format(charName) :
         "hahTah"        :   ('03h',     'Hah with tah form',                2, 2),
         "hahTah2smd"    :   ('03i',     'Hah with tah and small dots form', 2, 2),
         "hah4below"     :   ('03j',     'Hah with 4 below',                 2, 2),
+        "hah2dotsV"			:		('03k',			'Hah with 2 dots vertically',				2, 2),
         
         "dal"           :   ('04',      'Dal form',     2, 0),
         "thal"          :   ('04a',     'Thal form',    2, 0),
@@ -1000,8 +1007,10 @@ def _group_name_format(charName) :
         "feh3dotsBelow" :   ('10c',     'Feh with three dots below',        2, 2),
         "dotlessFeh"    :   ('10d',     'Dotless feh',                      2, 2),
         "dotlessQafIM"  :   ('10e',     'Dotless qaf initial/medial form',	0, 2),
-        "qaf"           :   ('11',      'Qaf form',         		2, 0),
-        "dotlessQaf"    :   ('11a',     'Dotless qaf form',			2, 0),
+        "qaf3dotsAboveIM"	:	('10f',			'Qaf 3 dots above initial/medial',	0, 2),
+        "qaf"           :   ('11',      'Qaf form',         					2, 0),
+        "qaf3dotsAbove"	:		('11a',			'Qaf with three dots above',	2, 0),
+        "dotlessQaf"    :   ('11b',     'Dotless qaf form',						2, 0),
 
         "lam"           :   ('12',      'Lam form',         		2, 2),
         "lamBar"        :   ('12a',     'Lam with bar',     		2, 2),

@@ -282,6 +282,22 @@ hamzaAlt {
     default = 0;
 }
 
+highHamzaAlt {
+    id = "hihm";
+    name.1033 = string("High hamza");
+    settings {
+        ffalse {
+            value = 0;
+            name.1033 = string("Small");
+        }
+        ftrue {
+            value = 1;
+            name.1033 = string("Large");
+        }
+    }
+    default = 0;
+}
+
 /***
 maddaAlt {
     id = "madd";
@@ -471,6 +487,13 @@ gojri {
 				"gju"					// Gojri		
 		);
 		lamValt = ftrue;	// V over bowl
+}
+
+jawi {
+		languages = (
+				"ms", "msa"		// Jawi
+		);
+		highHamzaAlt = ftrue;		// large
 }
 
 endtable;

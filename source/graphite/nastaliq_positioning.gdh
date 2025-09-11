@@ -1030,6 +1030,45 @@ cNuqtaLikeUpper { shift.x = -100m;
 		} }
 / gBehIniJm  _=N1  cDiacritic?  gJeemFin  _=N2;
 
+// Special case: yeh + peh + yeh + tcheh + yeh
+// Notice that potential diacritics are not handled.
+cNuqtaLikeLower { shift { x = -150m; y = 100m };
+		collision {
+			flags = SET_FIX(collision.flags);
+			margin = 150m;
+			min.x = -250m;	max.x = 200m;
+			min.y = -350m;	max.y = 400m
+		} }
+	cNuqtaLikeLower { shift.x = -100m;
+	  collision {
+			flags = SET_FIX(collision.flags);
+			margin = 150m;
+			min.x = -250m;	max.x = 200m;
+			min.y = -350m;	max.y = 400m
+		} }
+	cNuqtaLikeLower { shift.y = -250m;
+	  collision {
+	  	flags = SET_FIX(collision.flags);
+			margin = 150m;
+			min.x = -250m;	max.x = 200m;
+			min.y = -350m;	max.y = 400m
+		} }
+	cNuqtaLikeLower { shift.x = 100m;
+	  collision {
+	  	flags = SET_FIX(collision.flags);
+			margin = 150m;
+			min.x = -250m;	max.x = 200m;
+			min.y = -350m;	max.y = 400m
+		} }
+	cNuqtaLikeLower { shift.x = 150m;
+	  collision {
+			flags = SET_FIX(collision.flags);
+			margin = 150m;
+			min.x = -250m;	max.x = 200m;
+			min.y = -350m;	max.y = 400m
+		} }
+	/ cMed _  cMed _  cMed _  cMed _  cMed _;
+
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeUpper { collision {
 	flags = SET_FIX(collision.flags);
@@ -1176,7 +1215,6 @@ cNlWide { collision {
 		max.y = 300m;
 	} }
 	/ gBehIniBeM2  _=N1 cDiacritic? gBehMedBeM1 _=N2;
-
 
 // Nuqtas on initials can be moved quite a bit to the right.
 cNuqtaLikeLower { collision {
@@ -2810,10 +2848,11 @@ cDiacriticLower {
 
 
 table(glyph)
-cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gKhah, gHahThreeDotsAbove,
+cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gBehTwoDotsBelowDotAbove,
+	gKhah, gHahThreeDotsAbove, gHahTwoDotsVert,
 	gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
 	gSeen3DotsBelow3DotsAbove, gSeenInvertedVAbove, gSeenFourAbove, gDad, gZah, gGhain,
-	gFeh, gQaf, gLamSmallV, gLamThreeDots, gLamSmallTah, 
+	gFeh, gQaf, gQafThreeDots, gLamSmallV, gLamThreeDots, gLamSmallTah, 
 	gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRetro,
 	gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalFourDotsAbove,
 	gWawDotAbove, gWawTwoDotsAbove, gWawTwoAbove, gWawThreeAbove, gZain,gRreh, gJeh, gRehDotBelowDotAbove,
