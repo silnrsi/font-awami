@@ -2398,6 +2398,9 @@ cRehIso { pairKern = 150m } /  _=R  MARKS  (gFehIniMm gMeemIniMm gLamIniMm);
 
 DRW_F_noupper { pairKern = 200m }  /  _=RWD cDiacriticLower? MARKS  cKafIso;
 
+// Special case:
+gZain { pairKern = 110m } /  _  gMeemIniQf cDiacritic?  cWawFin;
+
 
 // Before a two-letter sequence:
 /////cKernable { pairKern = kernPreShort }  /  _ ^ MARKS  cKernIgnore?  cIni MARKS  cFin;

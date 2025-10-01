@@ -22,6 +22,7 @@
       <style name="fset23031" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=0 snuq=0 agca=3 invs=0" />
       <style name="fset23032" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=3 snuq=0 agca=3" />
       <style name="fset23033" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=3 agca=3" />
+      <style name="fset23034" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 hihm=0 wdsp=2 shrt=3 agca=3" />
       <style name="fset28" feats="snuq=1" />
       <style name="fset29" feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" />
       <style name="fset3" feats="hehk=1 olap=2" />
@@ -3937,6 +3938,9 @@ Is absBehIni.hd too thick at right edge?</comment>
     </test>
     <test label="yeh + ... + bariyeh" rtl="True" class="fset23033">
       <string>لیٹتے</string>
+    </test>
+    <test label="zain + meem + waw" rtl="True" class="fset23034">
+      <string>ملازموں</string>
     </test>
     <test label="PASSES 17 &amp; 18" background="#55aaff" rtl="True" class="fset23023">
       <string />
