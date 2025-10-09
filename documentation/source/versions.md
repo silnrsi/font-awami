@@ -7,8 +7,6 @@ fontversion: 3.400
 
 If you would like stay informed of updates to Awami Nastaliq and other SIL fonts, please subscribe to the [SIL Font News Announcement List](https://groups.google.com/a/groups.sil.org/forum/#!forum/sil-font-news). For more information see [About](about.md).
 
-Our font announcements are also available through X (formerly Twitter) [\@silfonts](https://x.com/silfonts).
-
 ## Current versions
 
 The latest version of the font is always available from the [Awami Nastaliq download page](https://software.sil.org/awami/download/) as a .zip archive for all major platforms.
