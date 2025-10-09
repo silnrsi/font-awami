@@ -128,14 +128,14 @@ Questions</h1>
     Awami Nastaliq working in XeLaTeX?</em></h3>
     <p>Awami Nastaliq is a Graphite font. For OpenType fonts the font
     declaration would be:</p>
-    <pre><code>    \newfontfamily\fontnast[Script=Arabic]{Jameel Noori Nastaleeq}</code></pre>
+    <pre><code>\newfontfamily\fontnast[Script=Arabic]{Jameel Noori Nastaleeq}</code></pre>
     <p>However, because this is a Graphite font, you need a different
     declaration:</p>
-    <pre><code>    \newfontfamily\urdufont[Renderer=Graphite]{Awami Nastaliq}</code></pre>
+    <pre><code>\newfontfamily\urdufont[Renderer=Graphite]{Awami Nastaliq}</code></pre>
     <p>It would also be useful to add
     <code>\XeTeXinterwordspaceshaping=1</code> to your file. Thus, you
     might have:</p>
-    <pre><code>    \XeTeXinterwordspaceshaping=1
+    <pre><code>\XeTeXinterwordspaceshaping=1
 \newfontfamily\urdufont[Renderer=Graphite]{Awami Nastaliq}</code></pre>
     <h3
     id="why-doesnt-awami-nastaliq-use-agl-adobe-glyph-list-names-i-cannot-copy-and-paste-from-a-pdf-using-awami-nastaliq-into-another-document.-there-is-a-lot-of-gibberish."><em>Why
@@ -154,7 +154,7 @@ Questions</h1>
     character text stream within the document, which makes copy and
     paste work regardless of the glyph names used by the font.</p>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.3 and is copyright © 2014-2024 SIL Global.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.4 and is copyright © 2014-2025 SIL Global.</p>
     </footer>
 </article>
 </div>
