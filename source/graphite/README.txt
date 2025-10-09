@@ -6,7 +6,7 @@ font family. This information should be distributed along with the Awami Nastali
 fonts and any derivative works.
 
 These files are part of Awami Nastaliq font family (https://software.sil.org/awami/) 
-and are Copyright (c) 2014-2024, SIL Global (https://www.sil.org/),
+and are Copyright (c) 2014-2025, SIL Global (https://www.sil.org/),
 with Reserved Font Names "Awami" and "SIL".
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
