@@ -22,13 +22,14 @@ This page uses web fonts (WOFF) to demonstrate font features. However, it will o
 
 Unfortunately, the UI needed to access the language-specific behavior is not yet present in many applications. LibreOffice supports language-specific behavior for Kashmiri. Some Harfbuzz-based apps, e.g., XeTeX, can access language-specific behavior. 
 
-#### Gojri and Kashmiri
+#### Gojri, Kashmiri, Malay
 
-Language | Lam v (06B5) | hamza | Feature setting
-:--      | ---:         | ----: | :---
-default | <span dir="rtl" class='awami-R normal'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' >&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |
-Gojri | <span dir="rtl" class='awami-R normal' lang='gju' style="color:red">&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='gju'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> | `lang='gju'`
-Kashmiri | <span dir="rtl" class='awami-R normal' lang='ks'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ks' style="color:red">&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span>  | `lang='ks'`
+Language | Lam v (06B5) | hamza | 0674 | Feature setting
+:--      | ---:         | ----: | ----: | :---
+default | <span dir="rtl" class='awami-R normal'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' >&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal'>&#x0627;&#x0674;</span> |
+Gojri | <span dir="rtl" class='awami-R normal' lang='gju' style="color:red">&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='gju'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='gju'>&#x0627;&#x0674;</span> | `lang='gju'`
+Kashmiri | <span dir="rtl" class='awami-R normal' lang='ks'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ks' style="color:red">&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='ks'>&#x0627;&#x0674;</span> | `lang='ks'`
+Malay | <span dir="rtl" class='awami-R normal' lang='ms'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ms'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='ms' style="color:red">&#x0627;&#x0674;</span> | `lang='ms'`
 
 ### Character variants
 
