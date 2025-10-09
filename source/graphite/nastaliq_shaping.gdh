@@ -147,6 +147,11 @@ pass(1)
 	_  g_n  g_w  g_o  g_n  g_k  g_n  g_U  g_g  g_n  g_i  g_r  g_e  g_d  g_n  g_e  g_R
 		>  g_e:2  g_t  g_i  g_h  g_p  g_a  g_r  g_G  @9  @10  @11  @12  @13  @14  @15  @16  @17;
 		
+/////////////////////////////////////////
+// SUBTENDING MARK DEBUGGING KLUDGES
+////	 gSeen  gWaw  gWaw  gWaw  gWaw  >  gSamvat4  g_one_small  g_two_small  g_three_small  g_four_small;
+////	 g_zero  >  gPageSign  /  g_eight  g_eight  g_eight  _;   // reversed here - actually LTR
+//////////////////////
 		
 	// Separate nuqtas and similar bits from bases.
 
@@ -1075,20 +1080,20 @@ cDigitAbsFullSize = (cDigitArabic, cDigitEastern);
 
 
 cSignTakes4 = (gYearSign gNumberSign gPageSign gSamvat); // small
-cSign4 = (gYearSign4 gNumberSign4 gPageSign4 gSamvat);
+cSign4 = (gYearSign4 gNumberSign4 gPageSign4 gSamvat4);
 
-cSignTakes3Small = (gYearSign gNumberSign gPageSign);
-cSign3Small = (gYearSign3 gNumberSign3 gPageSign3);
+cSignTakes3Small = (gYearSign gNumberSign gPageSign gSamvat);
+cSign3Small = (gYearSign3 gNumberSign3 gPageSign3 gSamvat3);
 cSignTakes3Smaller  = (gEndOfAyah); // also alternative forms
 cSign3Smaller  = (gEndOfAyah3);
 
-cSignTakes2Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
-cSign2Small = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2);
+cSignTakes2Small = (gYearSign gNumberSign gPageSign gFootnoteSign gSamvat);
+cSign2Small = (gYearSign2 gNumberSign2 gPageSign2 gFootnoteSign2 gSamvat2);
 cSignTakes2Smaller = (gEndOfAyah);
 cSign2Smaller = (gEndOfAyah2);
 
-cSignTakes1Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
-cSign1Small = (gYearSign gNumberSign gPageSign gFootnoteSign);
+cSignTakes1Small = (gYearSign gNumberSign gPageSign gFootnoteSign gSamvat);
+cSign1Small = (gYearSign gNumberSign gPageSign gFootnoteSign gSamvat);
 cSignTakes1Smaller = (gEndOfAyah);
 cSign1Smaller = (gEndOfAyah);
 
