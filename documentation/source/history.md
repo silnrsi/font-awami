@@ -1,7 +1,23 @@
 ---
 title: Awami Nastaliq - Version History
-fontversion: 3.300
+fontversion: 3.400
 ---
+
+### 2025-Oct-17 (SIL WSTech team) Awami Nastaliq Version 3.400
+
+#### Improved
+
+- Fixed issues with kerning and collisions
+
+#### New
+
+- Added support for Malay high hamza
+- Added 5 characters:
+  - U+0682 ARABIC LETTER HAH WITH TWO DOTS VERTICAL ABOVE
+  - U+06A8 ARABIC LETTER QAF WITH THREE DOTS ABOVE
+  - U+0754 ARABIC LETTER BEH WITH TWO DOTS BELOW AND DOT ABOVE
+  - U+FD4F ARABIC LIGATURE RAHIMAHUM ALLAAH
+  - U+FDFF ARABIC LIGATURE AZZA WA JALL
 
 ### 2024-Oct-09 (SIL WSTech team) Awami Nastaliq Version 3.300
 

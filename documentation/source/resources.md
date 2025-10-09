@@ -1,11 +1,11 @@
 ---
 title: Awami Nastaliq - Resources
-fontversion: 3.300
+fontversion: 3.400
 ---
 
 The SIL Arabic script fonts are encoded according to Unicode, so your application must support Unicode text in order to access letters other than the standard ANSI characters. Most applications now provide basic Unicode support. You will, however, need some way of entering Unicode text into your document.
 
-Arabic script is a complex and difficult script, and this complexity is compounded by the fact that Arabic script is used for [many different languages](https://scriptsource.org/scr/Arab) and cultures with variations in acceptable calligraphic style. From a computer perspective at least, the technologies used to implement Arabic script are not yet fully mature. The result is that while a given font might work for one set of languages on a given software platform, the same font might not work for other languages or on other platforms. This means that it is very difficult to give an accurate answer to the question of software requirements. 
+Arabic script is a complex and difficult script, and this complexity is compounded by the fact that Arabic script is used for [many different languages](https://writingsystems.info/scrlang/scripts/arab/) and cultures with variations in acceptable calligraphic style. From a computer perspective at least, the technologies used to implement Arabic script are not yet fully mature. The result is that while a given font might work for one set of languages on a given software platform, the same font might not work for other languages or on other platforms. This means that it is very difficult to give an accurate answer to the question of software requirements. 
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Install the font by decompressing the .zip archive and installing the font using
 
 This font package does not include keyboards or other software for entering text. To type the symbols in this font, use the keyboarding systems provided in your OS or use a separate utility. [Keyman](https://keyman.com/) is a cross-platform keyboarding system.
 
-Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
+Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://writingsystems.info/topics/input/keyboards-and-tools/).
 
 See [Character set support](charset.md) for details of the Unicode characters supported by this font.
 
@@ -61,8 +61,6 @@ Due to security concerns, Graphite has sometimes been disabled in Firefox by def
 We recommend [LibreOffice 5.3+](https://www.libreoffice.org/) which supports version 1.3.8 of the Graphite engine.
 
 Version 5.2 fixed the bug that was in version 5.1.
-
-Version 5.1 supports Awami, but it has a bug where certain characters (eg, the small tah) would be displayed in an incorrect position.
 
 
 ### XeTeX

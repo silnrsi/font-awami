@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Honorific ligatures
-fontversion: 3.300
+fontversion: 3.400
 ---
 
 Unicode has a number of honorific ligatures. The below chart should aid in understanding in what context they should be used. As new characters, applications may have problems with rendering them in right-to-left text. In some cases, you can correct reading order problems by inserting U+200F RIGHT-TO-LEFT MARK after the honorific ligature.
@@ -29,12 +29,14 @@ Unicode Name</br>ARABIC LIGATURE ... | USV | Glyph | Meaning
 RAHMATU ALLAAHI ALAYHIM | FBC6 | <span class='awami-R normal'>&#xFBC6; </span>  | May God’s mercy be upon them (masculine plural).</br>(Used for relatives or students of companions of the prophet.)
 RAHMATU ALLAAHI ALAYHIMAA | FBC7 | <span class='awami-R normal'>&#xFBC7;</span> | May God’s mercy be upon them (masculine and feminine plural).</br>(Used for relatives or students of companions of the prophet.)
 RAHIMAHU ALLAAH | FD40 | <span class='awami-R normal'>&#xFD40;</span>  | May God’s mercy be upon him.</br>(Used for relative(s) or student(s) of companions of the prophet. Can be for any believer who has passed away.)
+RAHIMAHUM ALLAAH | FD4F | <span class='awami-R normal'>﵏ </span>  | God have mercy upon them (masculine).</br>(Used for widely recognized scholars. Also used for ordinary believers.)
 RAHMATU ALLAAHI ALAYH | FD90 | <span class='awami-R normal'>&#xFD90;</span> | May God’s mercy be upon him (masculine singular).</br>(Used for relative or student of companions of the prophet.)
 RAHMATU ALLAAHI ALAYHAA | FD91 | <span class='awami-R normal'>&#xFD91;</span> | May God’s mercy be upon her (feminine singular).</br>(Used for relative or student of companions of the prophet.)
 SALLALLAHOU ALAYHE WASALLAM | FDFA | <span class='awami-R normal'>&#xFDFA;</span> | The blessings and peace of God be upon him. </br>(Used after the name of a major prophet, especially the prophet of Islam.)
 JALLAJALALOUHOU | FDFB | <span class='awami-R normal'>&#xFDFB;</span> | May His glory be glorified.</br>(Used after the name of God.)
 BISMILLAH AR-RAHMAN AR-RAHEEM | FDFD | <span class='awami-R normal'>&#xFDFD;</span> | In the name of God, the most merciful, the most compassionate.</br>(Used as the opening of each action in order to receive blessing from God.)
 SUBHAANAHU WA TAAALAA | FDFE | <span class='awami-R normal'>&#xFDFE;</span> | May He be praised and exalted (Glorified and Lofty).</br>(The most common honorific for God.)
+AZZA WA JALL | FDFF | <span class='awami-R normal'>﷿ </span> | The Glorified/Exalted/Mighty and Sublime (Prestigious and Majestic).</br>(The second most common honorific for God.)
 
 
 <!-- PRODUCT SITE ONLY

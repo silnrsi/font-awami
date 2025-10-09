@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Developer information
-fontversion: 3.300
+fontversion: 3.400
 ---
 
 ## Welcome font developers!
