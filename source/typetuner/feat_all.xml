@@ -79,6 +79,15 @@
 			<cmd name="gr_feat" args="{gr_hamz} 1"/>
 		</value>
 	</feature>
+	
+	<feature name="High hamza" value="Small" tag="HiHmz">
+		<value name="Small" tag="Small">
+			<cmd name="null" args="null"/>
+		</value>
+		<value name="Large" tag="Large">
+			<cmd name="gr_feat" args="{gr_hihm} 1"/>
+		</value>
+	</feature>
 
 	<feature name="Word spacing" value="Medium" tag="WdSp">
 		<value name="Extra tight" tag="XTit">
