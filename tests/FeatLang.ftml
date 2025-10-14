@@ -8,6 +8,7 @@
     <styles>
       <style lang="ks" name="ks"/>
       <style lang="gju" name="gju"/>
+      <style lang="ms" name="ms"/>
     </styles>
     <title>Feature-Language Interactions</title>
     <widths string="25%"/>
@@ -24,12 +25,14 @@
     <test label="U+0623 U+0625 U+0654 U+0655" rtl="True" stylename="ks">
       <string>\u000623 \u000627\u000654 \u000625 \u000627\u000655</string>
     </test>
+    <!-- kas will not be handled by HTML -->
     <test label="boy" rtl="True">
       <string>لٔڑکہٕ</string>
     </test>
     <test label="boy" rtl="True" stylename="ks">
       <string>لٔڑکہٕ</string>
     </test>
+    <!-- kas will not be handled by HTML -->
   </testgroup>
   <testgroup label="Gojri alternates">
     <test label="U+06B5" rtl="True">
@@ -38,5 +41,14 @@
     <test label="U+06B5" rtl="True" stylename="gju">
       <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
     </test>
+  </testgroup>
+ <testgroup label="Jawi alternates">
+    <test label="U+0674" rtl="True">
+      <string>\u000627\u000654 \u0634\u0674\u0645\u000627\u000655</string>
+    </test>
+    <test label="U+0674" rtl="True" stylename="ms">
+      <string>\u000627\u000654 \u0634\u0674\u0645\u000627\u000655</string>
+    </test>
+    <!-- msa will not be handled by HTML -->
   </testgroup>
 </ftml>

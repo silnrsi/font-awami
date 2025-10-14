@@ -626,6 +626,11 @@ g_zwjMed  cMedFin  >  _  @B:(Z B)  /  _=Z  ^  _=B;
 // Okay to leave initial and final ZWJs, they won't interfere with positioning.
 (g_zwjIni g_zwjFin)  >  g_zerojoin;
 
+// This rule must go before the alt-hamza stuff.
+if (highHamzaAlt == 1)
+(gHighHamza gHighHamzaArabic)       >  gHighHamzaArabicLarge;
+endif;
+
 // Alterate (standard Arabic-style) hamza
 if (hamzaAlt == 1)
 
@@ -638,6 +643,8 @@ gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
 (gChotiyeh cChotiyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
 (gHehGoal cHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
 (gBariyeh cBariyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
+
+(gAlef gChotiyeh)            csHamzaUrdu			>  @1  csHamzaArabic;	// don't recompose
 
 cHehGoalIni  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
 if (hehGoalHook == 0)
@@ -654,8 +661,9 @@ gAlef  g_highHamza  >  gHighHamzaAlefArabic:(1 2)  _;
 (cBehIni  cBehMed)  g__dot2lIM__hamza  _	>  @1  g__dot2l:2  g__hamzaArabic:2;
 
 // This version of the rule takes precedence over the rules below that substitute the composed isolates
-// (an extra slot is included to ensure the precedence):
-cIso  csHamzaUrdu	>  @1  csHamzaArabic;
+// (an extra slot is included to ensure the precedence)
+///////cIso  csHamzaUrdu	>  @1  csHamzaArabic; -- moved above for chotiyeh and alef
+
 csHamzaUrdu  >  csHamzaArabic;
 
 endif; // hamzaAlt
@@ -738,8 +746,8 @@ gJeemIniMm  g__dot1u  gZabar  gMeemMedJm  gJeemMedHd  g__dot1l
 
 // See also subtending rules below.
 
-gBeh		cs_behMark				>	cs_behComposed$2:(1 2)	_;
-gBeh								>	gDotlessBeh;
+gBeh			cs_behMark				>	cs_behComposed$2:(1 2)	_;
+gBeh									>	gDotlessBeh;
 gJeem		cs_jeemMark				>	cs_jeemComposed$2:(1 2)	_;
 gJeem								>	gHah;
 gSeen		cs_seenMark				>	cs_seenComposed$2:(1 2)	_;
@@ -849,15 +857,13 @@ gWaw		cs_wawMark2Prec			>	cs_wawComposed2Prec$2:(1 2)  _;
 gTehMarbutaGoal	g__dot2u			>	gTehMarbutaGoal:(1 2)  _;
 gTehMarbuta		g__dot2u			>	gTehMarbuta:(1 2)  _;
 
+
 if (hamzaAlt == 1)
 gTehMarbutaGoal gHamzaAbove			>	gHehGoal  g__hamzaArabic;
 else
 gTehMarbutaGoal	gHamzaAbove			>	gHehYehAbove:(1 2)  _;	// heh-goal-w-hamza -- OR SHOULD THIS BE TEH MARBUTA??
 endif;
 
-if (highHamzaAlt == 1)
-(gHighHamza gHighHamzaArabic)  >  gHighHamzaArabicLarge;
-endif;
 
 /*****
 if (smallNuqtas == 1)

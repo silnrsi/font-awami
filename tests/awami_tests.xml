@@ -23,6 +23,11 @@
       <style name="fset23032" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=3 snuq=0 agca=3" />
       <style name="fset23033" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 wdsp=2 shrt=3 agca=3" />
       <style name="fset23034" feats="hehk=1 hedo=0 lamv=0 cv85=0 punc=0 cv78=1 hamz=0 hihm=0 wdsp=2 shrt=3 agca=3" />
+      <style name="fset23035" lang="ks" />
+      <style name="fset23036" lang="kas" />
+      <style name="fset23037" lang="gju" />
+      <style name="fset23042" lang="msa" />
+      <style name="fset23043" lang="ms" />
       <style name="fset28" feats="snuq=1" />
       <style name="fset29" feats="agca=3 cv78=1 hamz=0 hedo=0 hehk=1 invs=0 lamv=0 shrt=3 snuq=0 wdsp=2" />
       <style name="fset3" feats="hehk=1 olap=2" />
@@ -269,6 +274,15 @@
     </test>
     <test label="samvat - RTL" rtl="True">
       <string>٥٤٩١؄</string>
+    </test>
+    <test label="shifting 1" background="#ff00ff" class="fset23034">
+      <string>؀3 ؁3 ؂3 ؃3 ؄3 </string>
+    </test>
+    <test label="shifting 2" class="fset23034">
+      <string>؀34 ؁34 ؂34 ؃34 ؄34</string>
+    </test>
+    <test label="shifting - number sign" background="#55ffff" class="fset23034">
+      <string>abc ؀3 ؀34 def</string>
     </test>
   </testgroup>
   <testgroup label="Shaping rules">
@@ -2744,6 +2758,28 @@
     </test>
     <test label="alt full stop" rtl="True" class="fset35">
       <string>نِ نیا ز۔</string>
+    </test>
+    <test label="special case for hamza" rtl="True" class="fset22">
+      <string>یٔ ځ یٔیٔ یٔیٔیٔ ۂ ۓ ۂ ۃٔ</string>
+    </test>
+    <test label="LANGUAGES" background="#ffaaff" rtl="True" class="fset23034">
+      <string />
+    </test>
+    <test label="Kashmiri - ks" rtl="True" class="fset23035">
+      <comment>alt-hamza</comment>
+      <string>ئلئفئ ځ مۂ بۓ</string>
+    </test>
+    <test label="Kashmiri - kas" rtl="True" class="fset23036">
+      <string>ئلئفئ ځ مۂ بۓ</string>
+    </test>
+    <test label="Gojri - gju" rtl="True" class="fset23037">
+      <string>سڵ ڵ</string>
+    </test>
+    <test label="Jawi - ms" rtl="True" class="fset23043">
+      <string>سٴبفئځ</string>
+    </test>
+    <test label="Jawi - msa" rtl="True" class="fset23042">
+      <string>سٴبفئځ</string>
     </test>
   </testgroup>
   <testgroup label="NFC / NFD">

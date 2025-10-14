@@ -3050,7 +3050,7 @@ cIso { collision {
 #endif
 
 // Don't kern glyphs before the high hamza; retain the space.
-cKernable  (gHighHamza gHighHamzaArabic);
+cKernable  (gHighHamza gHighHamzaArabic gHighHamzaArabicLarge);
 
 // Don't kern before numbers
 cKernable  cKernIgnore?  cDigitAbsFullSize;
