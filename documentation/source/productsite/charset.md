@@ -13,7 +13,7 @@ Arabic 	| ✓ except for 0605..0608, 0616..061C, 061D..061E, 063B..0640, 065C..0
 Arabic Supplement | ✓ except for 0750..0753, 0755..0758, 075B, 075D..0761, 0764..0767
 Arabic Extended-A | ✓ only includes 08C7, 08C8, 08F7, 08FF
 Arabic Extended-B | ✗ 
-Arabic Extended-C | ✓ only includes 10ED0 (a provisional codepoint in the Unicode pipeline)
+Arabic Extended-C | ✓ only includes 10ED0
 Arabic Presentation Forms-A | ✓ only includes FD3E..FD3F, FD40..FD45, FD47..FD49, FD4D, FD4F, FD90..FD91, FDCF, FDF2, FDFA..FDFF
 Arabic Presentation Forms-B | ✓ only includes FBC6..FBC7
 Codepage 1252 (Western)¹ | ✓

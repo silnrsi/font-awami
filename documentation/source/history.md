@@ -7,11 +7,11 @@ fontversion: 3.400
 
 #### Improved
 
-- Fixed issues with kerning and collisions
+- Fixed issues with kerning and collisions.
 
 #### New
 
-- Added support for Malay high hamza
+- Added support for Malay hamza forms.
 - Added 5 characters:
   - U+0682 ARABIC LETTER HAH WITH TWO DOTS VERTICAL ABOVE
   - U+06A8 ARABIC LETTER QAF WITH THREE DOTS ABOVE

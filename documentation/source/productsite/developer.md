@@ -38,6 +38,14 @@ Because of the complex kerning and collision avoidance logic, builds can take up
 
 `--regOnly` causes smith to build the Regular weight only. This is useful during development and debugging.
 
+This would just build Regular:
+
+```
+    smith distclean
+    smith configure
+    smith build -d --regOnly -v -j1
+```
+
 ## Modifying the font
 
 ### Project documentation
