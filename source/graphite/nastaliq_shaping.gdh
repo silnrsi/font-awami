@@ -628,7 +628,11 @@ g_zwjMed  cMedFin  >  _  @B:(Z B)  /  _=Z  ^  _=B;
 
 // This rule must go before the alt-hamza stuff.
 if (highHamzaAlt == 1)
-(gHighHamza gHighHamzaArabic)       >  gHighHamzaArabicLarge;
+// Alef is included to provide precedence over rule below:
+gAlef g_highHamza                     >  @1  g_highHamzaArabicLarge;   // 0675
+
+gAlef (gHighHamza gHighHamzaArabic)   >  @1  gHighHamzaArabicLarge;    // override recomposition below
+(gHighHamza gHighHamzaArabic)         >  gHighHamzaArabicLarge;
 endif;
 
 // Alterate (standard Arabic-style) hamza
@@ -644,7 +648,7 @@ gTehMarbutaGoal  gHamzaAbove	>  gHeh  g__hamzaArabic;	// no nuqtas
 (gHehGoal cHehGoalFin)		g__hehHook__hamza	>  @1  g__hamzaArabic;
 (gBariyeh cBariyehFin)		g__noDot2l__hamza	>  @1  g__hamzaArabic;
 
-(gAlef gChotiyeh)            csHamzaUrdu			>  @1  csHamzaArabic;	// don't recompose
+(gAlef gWaw gReh gChotiyeh)           csHamzaUrdu			>  @1  csHamzaArabic;	// don't recompose
 
 cHehGoalIni  g__hehHook__hamza  _	>  @1  g__hehHook_small:2  g__hamzaArabic:2;
 if (hehGoalHook == 0)
