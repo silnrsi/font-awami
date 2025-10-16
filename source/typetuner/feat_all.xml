@@ -14,8 +14,7 @@
 		</value>
 		<value name="Malay" tag="Msa">
 			<cmd name="gr_feat" args="{gr_hihm} 1"/>
-			<cmd name="encode" args="0654 absHamzaAbove.arabic" />
-			<cmd name="encode" args="0655 absHamzaBelow.arabic" />
+			<cmd name="gr_feat" args="{gr_hamz} 1"/>
 		</value>
 	</feature>
 
