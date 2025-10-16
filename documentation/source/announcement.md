@@ -5,6 +5,8 @@ fontversion: 3.400
 
 We are happy to announce the release of Awami Nastaliq version 3.400. This is a maintenance release of Awami Nastaliq.
 
+## Changes
+
 #### Improved
 
 - Fixed issues with kerning and collisions.

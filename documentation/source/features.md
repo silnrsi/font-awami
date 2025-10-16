@@ -33,7 +33,7 @@ Language | Lam v (06B5) | hamza | 0674 | Feature setting
 default | <span dir="rtl" class='awami-R normal'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' >&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal'>&#x0627;&#x0674;</span> |
 Gojri | <span dir="rtl" class='awami-R normal' lang='gju' style="color:red">&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='gju'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='gju'>&#x0627;&#x0674;</span> | `lang='gju'`
 Kashmiri | <span dir="rtl" class='awami-R normal' lang='ks'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ks' style="color:red">&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='ks'>&#x0627;&#x0674;</span> | `lang='ks'`
-Malay | <span dir="rtl" class='awami-R normal' lang='ms'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ms'>&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='ms' style="color:red">&#x0627;&#x0674;</span> | `lang='ms'`
+Malay | <span dir="rtl" class='awami-R normal' lang='ms'>&#x06b5;&#x0020;&#x06b5;&#x06b5;&#x06b5;</span> | <span dir="rtl" class='awami-R normal' lang='ms' style="color:red">&#x0623;&#x0020;&#x0624;&#x0020;&#x0626;&#x0020;&#x0626;&#x0626;&#x0626;&#x0020;&#x0628;&#x0654;&#x0020;&#x0628;&#x0655;&#x0020;&#x0675;&#x0020;&#x0681;&#x0020;&#x0681;&#x0681;&#x0681;&#x0020;&#x06C2;&#x0020;&#x06C2;&#x06C2;&#x06C2;&#x0020;&#x06D3;&#x0020;&#x076C;</span> |<span dir="rtl" class='awami-R normal' lang='ms' style="color:red">&#x0627;&#x0674;</span> | `lang='ms'`
 
 ### Character variants
 
@@ -86,8 +86,8 @@ Default uses Arabic-style punctuation for right-to-left segments and Latin-style
 Feature | Sample | Feature setting
 ---- | ---------------: | :---- 
 Default | <span dir="rtl" class='awami-R normal'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </span>| `punc=0`
-Arabic | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 1'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span> | `punc=1`
-Latin | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 2'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </font></span>| `punc=2`
+Arabic | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 1'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </span> | `punc=1`
+Latin | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "punc" 2'>! " ' ( ) * + - / :  [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙ </span>| `punc=2`
 
 #### Sukun/jazm 
 
@@ -96,7 +96,7 @@ Latin | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "pu
 Feature | Sample | Feature setting
 ---- | ------: | :---- 
 Open down | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 1'>&#x628;&#x652; &#x25cc;&#x652;</span>| `cv78=1`
-Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 2'>&#x628;&#x652; &#x25cc;&#x652;</font></span>| `cv78=2`
+Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "cv78" 2'>&#x628;&#x652; &#x25cc;&#x652;</span>| `cv78=2`
 
 #### Hamza 
 
@@ -105,7 +105,16 @@ Open left | <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 Feature | Sample | Feature setting
 ---- | ---------------: | :----
 Urdu style | <span dir="rtl" class='awami-R normal'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</span>| `hamz=0`
-Arabic style | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hamz" 1'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</font></span>| `hamz=1`
+Arabic style | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hamz" 1'>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</span>| `hamz=1`
+
+#### High Hamza (for Malay)
+
+<span class='affects'>Affects: U+0674 </span>
+
+Feature | Sample | Feature setting
+---- | ---------------: | :----
+Urdu style | <span dir="rtl" class='awami-R normal'>&#x0674;</span>| `hihm=0`
+Malay style | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "hihm" 1'>&#x0674;</span>| `hihm=1`
 
 #### Word spacing 
 
@@ -124,7 +133,7 @@ Extra wide| <span dir="rtl" class='awami-R normal' style='font-feature-settings:
 Feature | Sample | Feature setting
 ---- | ---------------: | :----
 None | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 0'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;&#x6CC; &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;&#x644;</span>| `shrt=0`
-Kafs and gafs | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 1'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</font></span>| `shrt=1`
+Kafs and gafs | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 1'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;&#x6CC; <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;&#x633; &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;&#x644;</span>| `shrt=1`
 Finals | <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 2'>&#x62F;&#x6CC;&#x6A9;&#x6BE;&#x62A;<font color="red">&#x6CC;</font> &#x6A9;&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;&#x6AF;&#x6BE;&#x646;&#x6D2; &#x62A;&#x6A9;&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=2`
 All (default)| <span dir="rtl" class='awami-R normal' style='font-feature-settings: "shrt" 3'>&#x62F;&#x6CC;<font color="red">&#x6A9;</font>&#x6BE;&#x62A;<font color="red">&#x6CC;</font> <font color="red">&#x6A9;</font>&#x646;&#x633;&#x644;&#x679;&#x646;&#x679;<font color="red">&#x633;</font> &#x646;<font color="red">&#x6AF;</font>&#x6BE;&#x646;&#x6D2; &#x62A;<font color="red">&#x6A9;</font>&#x645;&#x6CC;<font color="red">&#x644;</font></span>| `shrt=3`
 
