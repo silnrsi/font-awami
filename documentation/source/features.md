@@ -163,6 +163,7 @@ U+0600 ARABIC NUMBER SIGN<br>(U+202D U+0600 U+06F1 U+06F2 U+06F3 U+202C)| <span 
 U+0601 ARABIC SIGN SANAH (year)<br>(U+202D U+0601 U+06F1 U+06F2 U+06F3 U+202C)| <span dir="rtl" class='awami-R normal'>&#x202D;&#x601;&#x6F1;&#x6F9;&#x6F3;&#x6F2;&#x202C;</span>
 U+0602 ARABIC FOOTNOTE MARKER<br>(U+202D U+0602 U+06F1 U+06F2 U+202C)| <span dir="rtl" class='awami-R normal'>&#x202D;&#x602;&#x6F1;&#x6F2;&#x202C; &#x202D;&#x602;&#x6F1;&#x202C;</span>
 U+0603 ARABIC SIGN SAFHA (page)<br>(U+202D U+0603 U+06F1 U+06F2 U+06F3 U+202C)| <span dir="rtl" class='awami-R normal'>&#x202D;&#x603;&#x6F1;&#x6F2;&#x6F3;&#x202C; &#x202D;&#x603;&#x6F1;&#x6F2;&#x202C; &#x202D;&#x603;&#x6F1;&#x202C;</span>
+U+0604 ARABIC SIGN SAMVAT (Samvat era dates in Urdu)<br>(U+202D U+0604 U+06F1 U+06F2 U+06F3 U+202C)| <span dir="rtl" class='awami-R normal'>&#x202D;&#x604;&#x6F1;&#x6F2;&#x6F3;&#x6F4;&#x202C; &#x202D;&#x604;&#x6F1;&#x6F2;&#x6F3;&#x202C; &#x202D;&#x604;&#x6F1;&#x6F2;&#x202C; &#x202D;&#x604;&#x6F1;&#x202C; </span>
 
 
 
