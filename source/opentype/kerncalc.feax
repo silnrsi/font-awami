@@ -566,7 +566,7 @@ lookup _DelYb {
 
 # A block occurs when the yt (top) value is too close to the yb (bottom) value.
 # Currently we want a space of at least 100 units.
-# TODO: possibly this should be increased to 200 units.
+# TODO: probably this should be increased to 200 units.
 
 do	forlet i = range(0,2);
 	let lnames = ["_TestBlockR","_TestBlockI"];
@@ -1321,6 +1321,7 @@ lookup _ShiftFromPrev {
 
 
 lookup _PyDelYb {
+	lookupflag UseMarkFilteringSet [@PyMarker @YbMarker];  # ignore dscx.Done
 	sub @PyMarker @YbMarker by @PyMarker;
 } _PyDelYb;
 
@@ -1343,7 +1344,7 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYbN300	@PyMarker'	ybN300'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN200	@PyMarker'	ybN200'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN100	@PyMarker'	ybN100'	lookup _PyDelYb;
-	sub ybLast' lookup _B4lastInsYb0	@PyMarker'	yb0'	lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb0		@PyMarker'	yb0'		lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb100	@PyMarker'	yb100'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb200	@PyMarker'	yb200'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb300	@PyMarker'	yb300'	lookup _PyDelYb;
