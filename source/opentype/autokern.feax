@@ -48,6 +48,11 @@ lookup HandleMarkAsc {
 	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeUpper;
 } HandleMarkAsc;
 
+lookup HandleMarkDscContext {  # like lookup below but with context
+	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @JeemMedForms];
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker @JeemMedForms @PyInitMarker @NuqtaLikeLower;
+} HandleMarkDscContext;
+
 lookup HandleMarkDsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @DiacLower];
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacLower;
@@ -266,6 +271,7 @@ include(../../source/opentype/arithMeasureYrules.feax);
 
 
 @AscXPartialMarkers = [ascx600.Rt8 ascx1000.Rt8 ascx600.Mid8 ascx1000.Mid8];
+@DscXPartialMarkers = [dscx1200.Left2];
 
 # NB: asc/dsc -> pt/pb
 # We include the @PyMarker to recognize the boundaries of the bases.
@@ -274,25 +280,25 @@ lookup AddNuqtaAscent {
 
 	# Special cases: on some forms, the nuqta doesn't add height all the way across the glyph, only on the right side.
 	# e.g., qaf, feh, seen
-	sub @PyMarker ascx600.Rt8' lookup _AscxDone
+	sub @PyMarker ascx600.Rt8' lookup _AscxDscxDone
 			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600 
 			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
 			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
 			@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600;
-	sub @PyMarker ascx1000.Rt8' lookup _AscxDone
+	sub @PyMarker ascx1000.Rt8' lookup _AscxDscxDone
 			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000 
 			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
 			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
 			@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000;
 
 	# E.g., final theh
-	sub @PyMarker ascx600.Mid8' lookup _AscxDone
+	sub @PyMarker ascx600.Mid8' lookup _AscxDscxDone
 			@AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' 
 	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600 
 	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
 	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600
 	 		@AscMarker' lookup _AddNuqtaHt600	@AscMarker' lookup _AddNuqtaHt600;
-	sub @PyMarker ascx1000.Mid8' lookup _AscxDone
+	sub @PyMarker ascx1000.Mid8' lookup _AscxDscxDone
 			@AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' @AscMarker' 
 	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000 
 	 		@AscMarker' lookup _AddNuqtaHt1000	@AscMarker' lookup _AddNuqtaHt1000
@@ -301,11 +307,53 @@ lookup AddNuqtaAscent {
 
 	# Default case: add across the whole width of the glyph.
 	sub @PyMarker @AscXMarker @AscMarker' lookup _AddNuqtaUpperHt;
+	
 } AddNuqtaAscent;
 
 lookup SubtractNuqtaDescent {
-	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike];
+
+	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike @DscXPartialMarkers ybLast];
+	
+	# Skip all but the last 200-worth of slices.
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;	   
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+  sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
+	   @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker' @DscMarker'
+	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
+	   ybLast;
+	   
+	# Default case: subtract across the whole width of the glyph.
 	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
+	
 } SubtractNuqtaDescent;
 
 include(../../source/opentype/arithTopLevel.feax);
