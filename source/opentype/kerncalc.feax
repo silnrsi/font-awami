@@ -1245,17 +1245,12 @@ lookup _MakeBlockerFinal {
 
 @KbNotI = [kblock kblockR];
 
-# If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
-lookup _EnforceBlock {
+lookup _EnforceBlockAux1 {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
 
-	ignore sub kblock  @KwMarker';  # to avoid redoing from the same caller after insertion
-
-	ignore sub kblock' @KwMarker';  # already final
-
-	# NB: I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
-	# create the first blocker, the remaining _TryNext lookups can't do anything. The exception is one that applies
-	# to the NEXT kern.
+	# Why would we ever NOT want the kblockR to be final? why not just say:
+	# sub kblockR' lookup _makeBlockerFinal  @KwMarker';
+	# ?
 
 	# If there is a right-edge blocker, indicate that it is the final decision.
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin           @KwMarker;
@@ -1265,6 +1260,20 @@ lookup _EnforceBlock {
 	# It is irrelevant, but account for it.
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIni kblockI @KernBaseMarkFin  @KbNotI  @KwMarker;
 	sub kblockR' lookup _MakeBlockerFinal	@KwMarker' @KernBaseMarkIso                           @KbNotI  @KwMarker;
+
+} _EnforceBlockAux1;
+
+# If any blocker is present, insert one right before the KwMarker, which should terminate the kerning calculation process.
+lookup _EnforceBlockAux2 {
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
+
+	ignore sub kblock  @KwMarker';  # to avoid redoing from the same caller after insertion
+
+	#ignore sub kblock' @KwMarker';  # already final
+
+	# NB: I don't think there  can ever be more than one kblock between the KwMarkers, because once we 
+	# create the first blocker, the remaining _TryNext lookups can't do anything. The exception is one that applies
+	# to the NEXT kern.
 
 	# Recognize the internal blocker and stick a corresponding one before the KwMarker
 	# in order to stop the process. Also decrement the kern value since we incremented it
@@ -1277,7 +1286,7 @@ lookup _EnforceBlock {
 	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIni  kblockI  @KernBaseMarkFin  @KbNotI  @KwMarker;
 	sub @KwMarker' lookup _InsBlockerAndDecKw  @KernBaseMarkIso  kblockI                    @KbNotI  @KwMarker;
 
-} _EnforceBlock;
+} _EnforceBlockAux2;
 
 
 # Move the marker from the previous glyph into the last glyph.

@@ -500,8 +500,9 @@ lookup $ln_CalculateKern {
 
 lookup $ln_EnforceBlock {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
-	sub @KBlock' @KwMarker' lookup _EnforceBlock;
-	sub @KwMarker' lookup _EnforceBlock;
+	ignore sub kblock' @KwMarker';  # already final
+	sub @KBlock' @KwMarker' lookup _EnforceBlockAux1;
+	sub @KwMarker' lookup _EnforceBlockAux2;
 } $ln_EnforceBlock;
 
 # Once a (final) glyph has been completely kerned, invalidate its bottoms.
