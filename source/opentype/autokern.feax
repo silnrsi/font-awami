@@ -517,8 +517,11 @@ lookup $ln_CleanUpKernedGlyph {
 # TODO: find a way to stop this running if there is a kblock present.
 lookup $ln_CleanUpTopGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast @KwMarker @KBlock @KNone];
-	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  ytIgnore;
+	# I don't remember why we have to test for a KwMarker. Maybe we just want to be sure to skip it if it's there.
+	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  ytIgnore;  
+	sub @YbMarker @YtMarker ybLast			@YtMarker'				by  ytIgnore;
 	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  @KwMarker	by  ytIgnore;  # second glyph in sequence
+	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'				by  ytIgnore;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
