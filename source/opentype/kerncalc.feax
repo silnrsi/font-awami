@@ -1334,6 +1334,7 @@ lookup _PyDelYb {
 	sub @PyMarker @YbMarker by @PyMarker;
 } _PyDelYb;
 
+# Using two separate lookups may be more efficient in terms of searching through lists of lookup strings.
 lookup _ShiftFromNext {
 	lookupflag UseMarkFilteringSet [ybLast @YbMarker @PyMarker];
 
@@ -1353,7 +1354,7 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYbN300	@PyMarker'	ybN300'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN200	@PyMarker'	ybN200'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYbN100	@PyMarker'	ybN100'	lookup _PyDelYb;
-	sub ybLast' lookup _B4lastInsYb0		@PyMarker'	yb0'		lookup _PyDelYb;
+	sub ybLast' lookup _B4lastInsYb0	@PyMarker'	yb0'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb100	@PyMarker'	yb100'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb200	@PyMarker'	yb200'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb300	@PyMarker'	yb300'	lookup _PyDelYb;
@@ -1384,11 +1385,14 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYb2800	@PyMarker'	yb2800'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb2900	@PyMarker'	yb2900'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb3000	@PyMarker'	yb3000'	lookup _PyDelYb;
+} _ShiftFromNext;
+
+lookup _ShiftFromNext2 {
 
 	# shift from third glyph over:
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000,
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1400'	lookup _PyDelYb;	# ie, too low to kern underneath
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1300'	lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1500'		lookup _PyDelYb;	# treat anything lower than -400 as -1000,
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1400'		lookup _PyDelYb;	# ie, too low to kern underneath
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1300'		lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1200'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1100'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
@@ -1434,4 +1438,4 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYb2900	@PyMarker'	ybLast'	@PyMarker'	yb2900'	lookup _PyDelYb;
 	sub ybLast' lookup _B4lastInsYb3000	@PyMarker'	ybLast'	@PyMarker'	yb3000'	lookup _PyDelYb;
 
-} _ShiftFromNext;
+} _ShiftFromNext2;

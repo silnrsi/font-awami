@@ -538,8 +538,8 @@ lookup $ln_ShiftPrevGlyph {
 # TODO: don't run if there is a kblock or knone present.
 lookup $ln_ShiftNextGlyph {
 	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker @KBlock @KNone];
-	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker'						@YbMarker';
-	sub @YtMarker ybLast' lookup _ShiftFromNext	@PyMarker' ybLast'	@PyMarker'	@YbMarker';
+	sub @YtMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker';
+	sub @YtMarker ybLast' lookup _ShiftFromNext2	@PyMarker' ybLast'	@PyMarker'	@YbMarker';
 } $ln_ShiftNextGlyph;
 
 }
