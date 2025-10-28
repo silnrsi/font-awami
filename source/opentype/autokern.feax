@@ -46,7 +46,7 @@ lookup PreventPreIsoKern {
 
 # TODO: if we move TreatBasesAsMarks up, delete most of these rules.
 lookup ClearAscentsPreIso {
-	lookupflag UseMarkFilteringSet [@AscMarker knoneIso];
+	lookupflag UseMarkFilteringSet [@AscMarker knoneIso @KwMarker];  # include @KwMarker to recognize segment breaks
 	rsub @AscMarker' knoneIso													by	ytIgnore;
 	rsub @AscMarker' @AllBases knoneIso											by	ytIgnore;
 	rsub @AscMarker' @AllBases @AllBases knoneIso								by	ytIgnore;
