@@ -492,9 +492,9 @@ lookup $ln_CalculateKern {
 
 #	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
 
-	sub @YtMarker' lookup _TryKernShift	@KwMarker'  @PyMarker'  @YbMarker';		# first shift
+	sub @YtMarker' lookup _TryKernShiftFirst	@KwMarker'  @PyMarker'  @YbMarker';		# first shift
 
-	sub @YtMarker  @YtMarker' lookup _TryKernShift  @YbMarker';					# subsequent shifts
+	sub @YtMarker  @YtMarker' lookup _TryKernShiftContinue  @YbMarker';					# subsequent shifts
 
 } $ln_CalculateKern;
 
@@ -533,13 +533,15 @@ lookup $ln_ShiftPrevGlyph {
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 
-# Shift a single @YbMarker from the following glyph into the initial, so we can test for kerning under it.
+# Shift a single @YbMarker from a following glyph into the initial, so we can test for kerning under it.
 # Currently this handles kerning under 3 glyphs max.
 # TODO: don't run if there is a kblock or knone present.
 lookup $ln_ShiftNextGlyph {
 	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker @KBlock @KNone];
-	sub @YtMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker';
-	sub @YtMarker ybLast' lookup _ShiftFromNext2	@PyMarker' ybLast'	@PyMarker'	@YbMarker';
+	# Shift from the next immediate glyph:
+	sub @YtMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker' lookup _PyDelYb;
+	# Shift from the second glyph down, skipping the next intervening glyph:
+	sub @YtMarker ybLast' lookup _ShiftFromNext2	@PyMarker' ybLast'	@PyMarker'	@YbMarker' lookup _PyDelYb;
 } $ln_ShiftNextGlyph;
 
 }
