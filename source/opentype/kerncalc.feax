@@ -1389,10 +1389,12 @@ lookup _ShiftFromNext {
 
 lookup _ShiftFromNext2 {
 
+	lookupflag UseMarkFilteringSet [ybLast @YbMarker @PyMarker];
+
 	# shift from third glyph over:
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1500'		lookup _PyDelYb;	# treat anything lower than -400 as -1000,
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1400'		lookup _PyDelYb;	# ie, too low to kern underneath
-	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker' ybN1300'		lookup _PyDelYb;	#    \/
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1500'	lookup _PyDelYb;	# treat anything lower than -400 as -1000,
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1400'	lookup _PyDelYb;	# ie, too low to kern underneath
+	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1300'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1200'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1100'	lookup _PyDelYb;	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	@PyMarker'	ybLast'	@PyMarker'	ybN1000'	lookup _PyDelYb;	#    \/
