@@ -526,7 +526,9 @@ lookup $ln_CleanUpTopGlyph {
 } $ln_CleanUpTopGlyph;
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
-# TODO: extend to kern 3 glyphs; currently it only handles 2.
+# TODO: extend to kern 3 glyphs; currently it only handles 2. This isn't high priority since
+# final glyphs tend to be wide, and in any case the result will be that not quite enough kerning happens.
+# An example of a sequence that doesn't work ideally is one ending in jeem+hehgoal.
 lookup $ln_ShiftPrevGlyph {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @KBlock @KNone]; # the @PyMarker delineates a separate glyph
 	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @KBlock - same with @KNone
