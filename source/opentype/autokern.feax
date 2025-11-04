@@ -158,16 +158,22 @@ lookup AdjustAscxDscx4Shifts {
 } AdjustAscxDscx4Shifts;
 
 
-# Turn bases into marks so we can filter them out of all the arithmetic.
+# Turn bases into marks so we can filter them out of all the arithmetic and kerning logic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
-	# sub @KernBase by  @KernBaseMark;  # FEAX doesn't handle classes with different structures
-	sub @Initials		by	@KernBaseMarkIni;
-	sub @Medials		by	@KernBaseMarkMed;
-	sub @KernFinals		by	@KernBaseMarkFin;
-	sub @Isolates		by	@KernBaseMarkIso;
-	sub @KernBaseOther	by	@KernBaseMarkOther;
+	# sub @KernBase 		by 	@KernBaseMark;  # FEAX doesn't handle classes with different structures, so list everything out:
+	sub @Initials			by	@KernBaseMarkIni;
+	sub @Medials			by	@KernBaseMarkMed;
+	sub @KernFinals			by	@KernBaseMarkFin;
+	sub @Isolates			by	@KernBaseMarkIso;
+	sub @KernBaseOther		by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
+
+lookup TreatBasesAsMarks_altKaf {   # separate lookup due to absKehehMed.by existing in two classes
+	lookupflag IgnoreMarks;
+	sub @KehehIniBase_sub	by	@KehehKernBaseMarkIni_base;
+	sub @KehehMedBase_sub	by	@KehehKernBaseMarkMed_base;
+} TreatBasesAsMarks_altKaf;
 
 
 # Must come after InitKernMetrics.
@@ -590,13 +596,18 @@ lookup HandFix {
 lookup RestoreBases {
 	lookupflag UseMarkFilteringSet @KernBaseMark;
 	# sub @KernBaseMark  by  @KernBase;  # FEAX doesn't handle classes with different structures
-	sub @KernBaseMarkIni	by	@Initials;
-	sub @KernBaseMarkMed	by	@Medials;
-	sub @KernBaseMarkFin	by	@KernFinals;
-	sub @KernBaseMarkIso	by	@Isolates;
-	sub @KernBaseMarkOther	by	@KernBaseOther;
+	sub @KernBaseMarkIni			by	@Initials;
+	sub @KernBaseMarkMed			by	@Medials;
+	sub @KernBaseMarkFin			by	@KernFinals;
+	sub @KernBaseMarkIso			by	@Isolates;
+	sub @KernBaseMarkOther			by	@KernBaseOther;
 } RestoreBases;
 
+lookup RestoreBases_altKaf {  # separate lookup due to mkKehehMed.by existing in two classes
+	lookupflag UseMarkFilteringSet [@KehehKernBaseMarkIni_base @KehehKernBaseMarkMed_base];
+	sub @KehehKernBaseMarkIni_base	by	@KehehIniBase_sub;
+	sub @KehehKernBaseMarkMed_base	by	@KehehMedBase_sub;
+} RestoreBases_altKaf;
 
 
 # Leaving the markers in for the time being helps with debugging.
