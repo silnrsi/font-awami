@@ -104,6 +104,12 @@ lookup TreatBasesAsMarks {
 	sub @KernBaseOther	by	@KernBaseMarkOther;
 } TreatBasesAsMarks;
 
+lookup TreatBasesAsMarks_altKaf {   # separate lookup due to absKehehMed.by existing in two classes
+	lookupflag IgnoreMarks;
+	sub @KehehIniBase_sub	by	@KehehKernBaseMarkIni_base;
+	sub @KehehMedBase_sub	by	@KehehKernBaseMarkMed_base;
+} TreatBasesAsMarks_altKaf;
+
 # Must come after InsertMarkers.
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
@@ -523,6 +529,11 @@ lookup RestoreBases {
 	sub @KernBaseMarkOther	by	@KernBaseOther;
 } RestoreBases;
 
+lookup RestoreBases_altKaf {  # separate lookup due to mkKehehMed.by existing in two classes
+	lookupflag UseMarkFilteringSet [@KehehKernBaseMarkIni_base @KehehKernBaseMarkMed_base];
+	sub @KehehKernBaseMarkIni_base	by	@KehehIniBase_sub;
+	sub @KehehKernBaseMarkMed_base	by	@KehehMedBase_sub;
+} RestoreBases_altKaf;
 
 
 # Leaving the markers in for the time being helps with debugging.

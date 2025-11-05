@@ -1149,41 +1149,40 @@ lookup KafCollisionsStep2 {
 @KHighFinals = [@SeenFinForms @SadFinForms @QafFinForms @JeemFinForms @MeemFinForms @AinFinForms @NoonFinForms @ChotiyehFinForms];
 @KHighMedials = [@JeemMedForms @MeemMedForms @HehDoMedForms];
 
-# TEMPORARILY COMMENTED OUT WHILE TESTING KERNING
-# lookup KafLineHeight {
-# 	lookupflag IgnoreMarks;
+lookup KafLineHeight {
+	lookupflag IgnoreMarks;
 	
-# 	# Places where we don't want shorter forms:
-# 	# 1. No change: never make shorter after a kaf/gaf.
-# 	#ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
-# 	# 2. No change: don't make shorter after a narrow substantial base with nuqta or diac
-# 	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
-# 	# We usually don't need to handle these because any that need taller forms
-# 	# won't match the KafIni/MedFull_sub classes below.
-# 	# If we find we need to fix them we can do it afterwards in a lookup that can recognize marks.
+	# Places where we don't want shorter forms:
+	# 1. No change: never make shorter after a kaf/gaf.
+	#ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
+	# 2. No change: don't make shorter after a narrow substantial base with nuqta or diac
+	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	# We usually don't need to handle these because any that need taller forms
+	# won't match the KafIni/MedFull_sub classes below.
+	# If we find we need to fix them we can do it afterwards in a lookup that can recognize marks.
 	
-# 	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
+	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
 	
-# 	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Finals;
+	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Finals;
 	
-# 	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @Medials @Medials;
+	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @Medials @Medials;
 	
-# 	sub	@KafIMFull' lookup _KafShorter 	@Medials @KHighMedials @Medials;
+	sub	@KafIMFull' lookup _KafShorter 	@Medials @KHighMedials @Medials;
 	
-# 	sub	@KafIMFull' lookup _KafShorter 	@Medials @Medials @KHighMedials;
+	sub	@KafIMFull' lookup _KafShorter 	@Medials @Medials @KHighMedials;
 	
-# 	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Medials;
+	sub	@KafIMFull' lookup _KafShort	@Medials @Medials @Medials;
 	
-# 	sub	@KafIMFull' lookup _KafShort	@KHighMedials @KHighFinals;
+	sub	@KafIMFull' lookup _KafShort	@KHighMedials @KHighFinals;
 	
-# } KafLineHeight;
+} KafLineHeight;
 
 lookup KafLineHeight_JmShort {
 	lookupflag 0;
 	
 	# Special case - the short kaf tops don't work for .jm form, so substitute special forms.
 	sub absKehehMed.jm_base _kehehMedTop_short		by	absKehehMed.jm_short;
-	sub absKehehMed.jm_base _gafMedTop_short			by	absGafMed.jm_short;
+	sub absKehehMed.jm_base _gafMedTop_short		by	absGafMed.jm_short;
 	
 } KafLineHeight_JmShort;
 
