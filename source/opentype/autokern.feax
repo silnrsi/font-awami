@@ -546,8 +546,11 @@ lookup $ln_CleanUpTopGlyph {
 # final glyphs tend to be wide, and in any case the result will be that not quite enough kerning happens.
 # An example of a sequence that doesn't work ideally is one ending in jeem+hehgoal.
 lookup $ln_ShiftPrevGlyph {
-	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @KBlock @KNone]; # the @PyMarker delineates a separate glyph
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @KBlock @KNone];
 	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @KBlock - same with @KNone
+	
+	# The @PyMarker delineates a separate glyph, so we make sure we are shifting from the previous glyph;
+	# otherwise the rule gets triggered when we don't need to perform the shift.
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 
