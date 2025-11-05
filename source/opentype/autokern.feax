@@ -44,6 +44,8 @@ lookup PreventPreIsoKern {
 } PreventPreIsoKern;
 
 
+# Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
+# using the kerning algorithm.
 # TODO: if we move TreatBasesAsMarks up, delete most of these rules.
 lookup ClearAscentsPreIso {
 	lookupflag UseMarkFilteringSet [@AscMarker knoneIso @KwMarker];  # include @KwMarker to recognize segment breaks
@@ -54,6 +56,12 @@ lookup ClearAscentsPreIso {
 	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases knoneIso			by	ytIgnore;
 	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases @AllBases knoneIso	by	ytIgnore;
 } ClearAscentsPreIso;
+
+# I suspect this is worth it since we can clean up the stream quite a lot right at the beginning of the process.
+lookup DelYtIgnore1 {
+	lookupflag 0;
+	sub ytIgnore by NULL;
+} DelYtIgnore1;
 
 
 # TODO: probably run TreatBasesAsMarks earlier and then delete this.
@@ -513,10 +521,11 @@ lookup $ln_EnforceBlock {
 
 # Once a (final) glyph has been completely kerned, invalidate its bottoms.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
+# Do we really need this lookup? It seems safer to include it, but the regression test didn't show any problems without it.
 lookup $ln_CleanUpKernedGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @KBlock @KNone];
 	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @KBlock or KNone
-	rsub @YbMarker' @KwMarker	by  ybIgnore;
+	rsub @YbMarker' @KwMarker	by  ybIgnore;  # replacing with NULL doesn't work when we are using an rsub
 } $ln_CleanUpKernedGlyph;
 
 # Currently this handles kerning under 3 glyphs max.
@@ -525,10 +534,11 @@ lookup $ln_CleanUpKernedGlyph {
 lookup $ln_CleanUpTopGlyph {
 	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast @KwMarker @KBlock @KNone];
 	# I don't remember why we have to test for a KwMarker. Maybe we just want to be sure to skip it if it's there.
-	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  ytIgnore;  
-	sub @YbMarker @YtMarker ybLast			@YtMarker'				by  ytIgnore;
-	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  @KwMarker	by  ytIgnore;  # second glyph in sequence
-	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'				by  ytIgnore;  # second glyph in sequence
+	# NOTE: we used to substitute ytIgnore instead of NULL.
+	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  NULL;  
+	sub @YbMarker @YtMarker ybLast			@YtMarker'				by  NULL;
+	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'  @KwMarker	by  NULL;  # second glyph in sequence
+	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'				by  NULL;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
