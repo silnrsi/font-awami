@@ -1345,10 +1345,37 @@ lookup _PyDelYb {
 	sub @PyMarker @YbMarker by @PyMarker;
 } _PyDelYb;
 
+#=================  NOT USED  =================
+# lookup _B4lastInsYb_1 {		# Delete ybLast
+#   sub ybLast by NULL;
+# } _B4lastInsYb_1;
+
+# lookup _B4lastInsYb_2 {
+#   sub ybN1500 by ybN1000;	# special cases
+#   sub ybN1400 by ybN1000;
+#   sub ybN1300 by ybN1000;
+#   sub ybN1200 by ybN1000;
+#   sub ybN1100 by ybN1000;
+#   sub ybN1000 by ybN1000;
+#   sub ybN900 by ybN1000;
+#   sub ybN800 by ybN1000;
+#   sub ybN700 by ybN1000;
+#   sub ybN600 by ybN1000;
+#   sub ybN500 by ybN1000;
+# } _B4lastInsYb_2;
+
+# lookup _B4lastInsYb_3 {		# Reinsert ybLast
+#   sub @YbMarker by @YbMarker ybLast;
+# } _B4lastInsYb_3;
+#==============================================
+
+
 # Using two separate lookups may be more efficient in terms of searching through lists of lookup strings.
 # The first lookup shifts a slice from the immediate next glyph for comparison.
 lookup _ShiftFromNext {
 	lookupflag UseMarkFilteringSet [ybLast @YbMarker];
+
+	#sub ybLast' lookup _B4lastInsYb_1 lookup _B4lastInsYb_2 lookup _B4lastInsYb_3 @YbMarker';
 
 	sub ybLast' lookup _B4lastInsYbLow	ybN1500';	# treat anything lower than -400 as -1000,
 	sub ybLast' lookup _B4lastInsYbLow	ybN1400';	# ie, too low to kern underneath
