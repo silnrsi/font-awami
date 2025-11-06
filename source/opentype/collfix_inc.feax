@@ -126,13 +126,29 @@ lookup _ShiftN300E300 {
 	sub @NuqtaLike'  by  @NuqtaLike cfN300 cfE300;
 } _ShiftN300E300;
 
+lookup _ShiftN400E100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfN400 cfE100;
+} _ShiftN400E100;
+
 lookup _ShiftN500E500 {
 	sub @NuqtaLike'  by  @NuqtaLike cfN500 cfE500;
 } _ShiftN500E500;
 
+lookup _ShiftN200W100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfW100;
+} _ShiftN200W100;
+
 lookup _ShiftS100E100 {
 	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfE100;
 } _ShiftS100E100;
+
+lookup _ShiftS100W100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfW100;
+} _ShiftS100W100;
+
+lookup _ShiftS100E300 {
+	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfE300;
+} _ShiftS100E300;
 
 lookup _ShiftS200E100 {
 	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfE100;
@@ -145,3 +161,12 @@ lookup _ShiftS200W100 {
 lookup _ShiftS200W200 {
 	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfW200;
 } _ShiftS200W200;
+
+lookup _ShiftS300E100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfS300 cfE100;
+} _ShiftS300E100;
+
+lookup _ShiftS500W100 {
+	sub @NuqtaLike'  by  @NuqtaLike cfS500 cfW100;
+} _ShiftS500W100;
+

@@ -192,8 +192,8 @@ lookup AdjustForUpperNuqtaOverhang {
 	# beh initials - upper
 	# TODO - since this is an upper nuqta, really we should extend a number higher than the actual glyph bottom.
 	sub @KwMarker' lookup _DecKwBy100	mkBehIni'			ybLast'	lookup _ExtendYbBy100	@DotWideU;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn
-										 mkBehIni.beM1]'	ybLast'	lookup _ExtendYbBy200	@DotWideU;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn mkBehIni.beM1 mkBehIni.sd]'
+															ybLast'	lookup _ExtendYbBy200	@DotWideU;
 
 
 	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and
@@ -211,6 +211,7 @@ lookup AdjustForNuqtaShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @ExtYbMarker ybLast @NuqtaLikeLower @CfMarkerEW];
 	sub @KwMarker' lookup _DecKwBy100	@ExtYbMarker' lookup _ExtendYbBy100	ybLast'	@NuqtaLikeLower	cfE100;
 	sub @KwMarker' lookup _DecKwBy200	@ExtYbMarker' lookup _ExtendYbBy200	ybLast' @NuqtaLikeLower	cfE200;
+	#sub @KwMarker' lookup _DecKwBy300	@ExtYbMarker' lookup _ExtendYbBy300	ybLast' @NuqtaLikeLower	cfE300;
 } AdjustForNuqtaShift;
 
 
@@ -464,8 +465,11 @@ lookup $ln_CleanUpTopGlyph {
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
 lookup $ln_ShiftPrevGlyph {
-	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks]; # the @PyMarker delineates a separate glyph
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @Kblocks];
 	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @Kblocks
+
+	# The @PyMarker delineates a separate glyph, so we make sure we are shifting from the previous glyph;
+	# otherwise the rule gets triggered when we don't need to perform the shift.
 	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
 } $ln_ShiftPrevGlyph;
 

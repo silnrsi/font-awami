@@ -34,14 +34,70 @@ lookup EndOfStreamKludge {
 	sub @Finals	 @NuqtaLike'  				by  @NuqtaLike  bogus bogus bogus;
 } EndOfStreamKludge;
 
-lookup CollFixNuqtas {
+lookup CollFixNuqtasUpper {
+	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLikeUpper];
 
-	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLike];
+	# beh + beh
+	sub absBehIni.be	@NuqtaLikeUpper' lookup _ShiftN300		absBehMed.jm	@NuqtaLikeUpper;
+	sub absBehIni.be	@NuqtaLikeUpper' lookup _ShiftN200		absBehMed.fe;
+	sub absBehIni.be	@NuqtaLikeUpper							absBehMed.qf	@NuqtaLikeLower' lookup _ShiftS200;
 
 	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion.	  \/ \/ \/
 																											#	  \/ \/ \/
-	# beh + beh																								#	  \/ \/ \/
+	sub absBehIni.be	@NuqtaLikeUpper' lookup _ShiftN200		absBehMed.ta'	@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
+	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed'		@NuqtaLikeUpper'	@Any' lookup _ShiftS100;
+	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed.benn'	@NuqtaLikeUpper'	@Any' lookup _ShiftS100W100;
 
+	# beh + alt=kaf
+	sub absBehIni.sd	@DotWideU' lookup _ShiftS100E300		absKehehMed;
+	sub absBehIni.sd	@NuqtaLikeUpper' lookup _ShiftS100E100	absKehehMed;
+	sub absBehIni		@DotFlatL' lookup _ShiftS100			@KehehMedBase_sub;  # @KafMed_top_short_sub;
+	sub absBehIni		@NuqtaLikeUpper' lookup _ShiftS300E100	@KehehMedBase_sub;  # @KafMed_top_short_sub;
+
+	# teh/theh + beh + kaf
+	#sub absBehMed.beM2	@NuqtaLikeUpper' lookup _ShiftS100		absBehMed	@NuqtaLikeUpper		@KafMedForms; -- not needed - kaf will be tall
+	sub absBehMed.beM2	@NuqtaLikeUpper' lookup _ShiftS100		absBehMed						@KafMedForms;
+
+	# initial jeem
+	sub [absJeemIni.beM2]	@NuqtaLike		[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN200;
+	sub [absJeemIni.beM2]					[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN200;
+	sub [absJeemIni.be absJeemIni.bere]	@NuqtaLike		@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftN200W100;
+	sub [absJeemIni.be absJeemIni.bere]					@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftN200W100;
+
+	# medial jeem + medial beh (teh/theh)
+	sub @JeemMedForms	@NuqtaLikeUpper' lookup _ShiftN400E100	@BehMedForms @NuqtaLikeUpper;
+
+	sub @JeemMedForms	@NuqtaLike	@BehMedForms @DotWideU' lookup _ShiftN400;
+	sub @JeemMedForms				@BehMedForms @DotWideU' lookup _ShiftN400;
+	sub @JeemMedForms	@NuqtaLike	@BehMedForms @DotNarrowU' lookup _ShiftN200W100;
+	sub @JeemMedForms				@BehMedForms @DotNarrowU' lookup _ShiftN200W100;
+
+	# jeem + qaf
+	sub absJeemIni.qf	@NuqtaLike		absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
+	sub absJeemIni.qf					absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
+
+	# feh
+	sub [absFehIni.be absFehIni.beM2]	@NuqtaLikeUpper' lookup _ShiftN200	@BehForms'	@NuqtaLikeUpper'	@Any' lookup _ShiftN400;
+
+	sub absFehMed @DotWideU' lookup _ShiftE100	@LamMFForms;
+	# Doesn't work, and maybe not needed.
+	#sub absFehIni.kf_wide	@DotWideU' lookup _ShiftE100 @KafForms;  # I don't think we need to includes lam and alef forms.
+
+	# seen + beh
+	sub [absSeenMed.be absSeenIni.beM2]	@NuqtaLikeUpper' lookup _ShiftE200	[absBehMed absBehMed.jm absBehMed.mm]	@NuqtaLikeUpper;
+
+	# tah
+	sub absBehMed.ta	@NuqtaLikeUpper		@TahMedForms	@NuqtaLikeUpper' lookup _ShiftN100;
+	sub absBehMed.ta	@NuqtaLikeUpper		@TahFinForms	@NuqtaLikeUpper' lookup _ShiftN300;
+
+} CollFixNuqtasUpper;
+
+lookup CollFixNuqtasLower {
+	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLikeLower];
+
+	# beh + beh																								#	  \/ \/ \/
+	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion.	  \/ \/ \/
+																											#	  \/ \/ \/
 	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed'		@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed.benn'	@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
 
@@ -59,10 +115,16 @@ lookup CollFixNuqtas {
 	sub absBehIni.beM1	@DotWideL'       lookup _ShiftN200		absBehMed.beM2'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absBehIni.beM1	@NuqtaLikeLower' lookup _ShiftN200		[absBehMed.be	
 																 absBehMed.sn]'	@NuqtaLikeLower'	@Any' lookup _ShiftS400;
-	sub absBehIni.benn	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.nn'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
+	sub absBehIni.benn	_dot1l'          lookup _ShiftN100		absBehMed.nn'	_dot1l'				@Any' lookup _ShiftS300;
+	sub absBehIni.benn	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.nn'	@NuqtaLikeLower'	@Any' lookup _ShiftS400;
 	sub absBehIni.bere	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.re'	@DotWideL'			@Any' lookup _ShiftS200W200;
 	sub absBehIni.bere	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.re'	@NuqtaLikeLower'	@Any' lookup _ShiftS200W100;
 	sub absBehMed.bere	@NuqtaLikeLower' lookup _ShiftE200		absBehMed.re'	@NuqtaLikeLower' 	@Any' lookup _ShiftS400;
+
+	sub absBehIni.beM2	@NuqtaLikeLower							absBehMed.benn'	@NuqtaLikeLower' lookup _ShiftS200W200;
+	sub absBehIni.be	@NuqtaLikeLower 						absBehMed.mmX	@NuqtaLikeLower' lookup _ShiftS200W100;
+	sub absBehMed.benn	_dot1l									absBehMed.nn	_dot1l'			 lookup _ShiftS200;
+	sub absBehMed.benn	@NuqtaLikeLower						absBehMed.nn_hgbm	@NuqtaLikeLower' lookup _ShiftS300;
 
 	# beh + beh + final jeem
 
@@ -76,34 +138,23 @@ lookup CollFixNuqtas {
 	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100		[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
 
 	# beh + final lam
+	
 	sub [absBehIni] @NuqtaLikeLower' lookup _ShiftE100	absLamFin;
 
 	# beh + heh-goal
+	
 	sub absBehIni.hgM	@DotWideL' lookup _ShiftE200	@HehGoalMedForms	_hehHook.small;
 
-	# initial jeem
+	# jeem + beh
 	
-	sub [absJeemIni.beM2]	@NuqtaLike		[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN100;
-	sub [absJeemIni.beM2]					[absBehMed.benn absBehMed.beM1]	@NuqtaLikeUpper'	lookup _ShiftN100;
-	sub [absJeemIni.be absJeemIni.bere]	@NuqtaLike		@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftW100;
-	sub [absJeemIni.be absJeemIni.bere]					@BehMedForms	@NuqtaLikeUpper'	lookup _ShiftW100;
+	sub [absJeemIni.benn]	@NuqtaLower		absBehMed.nn	@NuqtaLikeLower' lookup _ShiftS300;
 
 	# medial jeem + final jeem
-
+	
 	sub absJeemMed.jm	@DotFlatL' lookup _ShiftE200	absJeemFin;
 	sub absJeemMed.jm	@DotTallL' lookup _ShiftE300	absJeemFin;
 
-	# jeem + qaf
-	
-	sub absJeemIni.qf	@NuqtaLike		absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
-	sub absJeemIni.qf					absQafFin	@NuqtaLikeUpper' lookup _ShiftW200;
-
 	# feh
-
-	sub [absFehIni.be absFehIni.beM2]	@NuqtaLikeUpper' lookup _ShiftN200	@BehForms'	@NuqtaLikeUpper'	@Any' lookup _ShiftN400;
-
-	# Doesn't work, and maybe not needed.
-	#sub absFehIni.kf_wide	@DotWideU' lookup _ShiftE100 @KafForms;  # I don't think we need to includes lam and alef forms.
 
 	sub absFehIni.hd	@NuqtaLikeLower' lookup _ShiftE200	@HehDoForms;
 	sub absFehIni.jm	@NuqtaLikeLower' lookup _ShiftE200	@JeemForms;
@@ -111,19 +162,27 @@ lookup CollFixNuqtas {
 	sub absFehIni.beM1	@NuqtaLikeLower' lookup _ShiftN100	absBehMed.be' 		@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absFehIni.hgM	@NuqtaLikeLower' lookup _ShiftE100	@HehGoalMedForms'	_hehHook.small'		@Any' lookup _ShiftW100;
 
+	# heh-goal + chotiyeh
+	sub absHehGoalIni.benn	_hehHook.small	absBehMed.nn_hgbm	@NuqtaLikeLower' lookup _ShiftS500W100;
+
 	# heh-goal + lam + chotiyeh
 	
 	sub absHehGoalIni	_hehHook.small' lookup _ShiftE100	absLamMed.ch	[nlqChotiyehFin nlqChotiyehFin._bfkl];
 
+	# reh overhang
 
-} CollFixNuqtas;
+	####sub absRehFin  absBehIni.ch @NuqtaLikeLower' lookup _ShiftS300;
+
+} CollFixNuqtasLower;
 
 # Adjust the third item in the sequence.
-lookup CollFixNuqtas_contd {
+lookup CollFixNuqtas_3rd {
 	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLike];
+
 	sub absBehIni.be	@NuqtaLikeLower		absBehMed.jm	@NuqtaLikeLower	absJeemFin	@DotTallL' lookup _ShiftS200;
 	sub absBehIni.be	@NuqtaLikeLower		absBehMed.jm	@DotTallL		absJeemFin	@NuqtaLikeLower' lookup _ShiftS200;
-} CollFixNuqtas_contd;
+
+} CollFixNuqtas_3rd;
 
 
 lookup EndOfStreamUndoKludge {
