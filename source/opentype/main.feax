@@ -937,7 +937,7 @@ lookup WideFormsDiac {
 	lookupflag UseMarkFilteringSet @AllMarksUpper;
 	
 	# Special case: nuqta + diac(s)
-	sub absBehMed' @NuqtaLikeUpper @DiacUpper @KafMFForms  by  absBehMed.kf_wide;
+	sub absBehMed' @NuqtaLikeUpper @DiacUpper @KafMFForms abs  by  absBehMed.kf_wide;
 
 } WideFormsDiac;
 
