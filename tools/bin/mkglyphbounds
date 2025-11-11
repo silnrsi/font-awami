@@ -745,6 +745,13 @@ def Tweak_200(gn, uppers, lowers):
     return [uppers, lowers]
 
 
+def FullGlyph(gn) :
+    result = gn
+    if "absKeheh" in gn and "_base" in gn:
+        result = gn.replace("_base", "")
+    return result
+
+
 def PrintList(gn, vList):
 
     if not vList:
@@ -795,10 +802,11 @@ with open(args.outfile, "w") as outf:
     for gn in gs.keys():
         if isArabicBase(gn) and gn not in skipglyphset:
             #print(gn)
-
-            g = gs[gn]
             # if gn in ("absTahIni.sn", "absAin"):
                 # breakpoint()
+
+            gnFull = FullGlyph(gn)
+            g = gs[gnFull]
 
             uppers, lowers = ProcBounds(g, pen, sliceWidth)
 
@@ -816,7 +824,7 @@ with open(args.outfile, "w") as outf:
             # if exit is None and isIsolateFinalBase(name): 
             #     PrintList(gn, lowers)
 
-            uppers, lowers = TrimMetricsForOverlappingConnections(gn, uppers, lowers, entry, exit, sliceWidth)
+            uppers, lowers = TrimMetricsForOverlappingConnections(gnFull, uppers, lowers, entry, exit, sliceWidth)
 
             # if gn == "absMeemMed.sn":
             #     PrintList(gn, lowers)
