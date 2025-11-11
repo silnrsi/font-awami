@@ -45,7 +45,7 @@ lookup CollFixNuqtasUpper {
 	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion.	  \/ \/ \/
 																											#	  \/ \/ \/
 	sub absBehIni.be	@NuqtaLikeUpper' lookup _ShiftN200		absBehMed.ta'	@NuqtaLikeUpper' 	@Any' lookup _ShiftS100;
-	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN200		absBehMed'		@abshamzaUpper'		@Any' lookup _ShiftS100;
+	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN200		absBehMed'		absHamzaAbove'		@Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed'		@NuqtaLikeUpper'	@Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaLikeUpper' lookup _ShiftN100		absBehMed.benn'	@NuqtaLikeUpper'	@Any' lookup _ShiftS100W100;
 
