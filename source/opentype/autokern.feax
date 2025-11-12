@@ -72,7 +72,8 @@ lookup IgnoreInvisibles {
 } IgnoreInvisibles;
 
 
-# Handle isolate forms explicitly. This is faster than running the algorithm.
+# Handle isolate forms explicitly.
+# (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker];
 
@@ -105,9 +106,9 @@ lookup HardCodeIsolates {
 
 } HardCodeIsolates;
 
-lookup HardCodeIsolatesWNuqtaUpper {
-	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
-} HardCodeIsolatesWNuqtaUpper;
+# lookup HardCodeIsolatesWNuqtaUpper {
+# 	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
+# } HardCodeIsolatesWNuqtaUpper;
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks. These cause the ascent to be raised higher or the
