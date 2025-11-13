@@ -116,6 +116,10 @@ lookup _InsertDscx1200Left2 {
   sub @PyInitMarker  by @PyInitMarker dscx1200.Left2;
 } _InsertDscx1200Left2;
 
+lookup _InsBlocker {
+    sub @KwMarker by kblock @KwMarker;
+} _InsBlocker;
+
 
 # We've finished adjusting the heights for limited-scope nuqta markers.
 lookup _AscxDscxDone {

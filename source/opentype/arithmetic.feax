@@ -471,6 +471,15 @@ lookup _Set4000 {
 } _Set4000;
 
 
+do  forlet n = range(0, 11);
+    let name = str(n) + ("" if n == 0 else "00");
+    let ln = "_BlockSet" + name;
+    let kwn = "kw"+name;
+{
+lookup $ln {
+    sub kw0 by kblock $kwn;
+} $ln;
+}
 # Arithmetic callers
 
 

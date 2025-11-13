@@ -78,31 +78,31 @@ lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker];
 
 	# alef
-	sub [absRehFin._jkl]									kw0' lookup _Set200		@AlefIsoForms;
-	sub [absRehFin]											kw0' lookup _Set100		@AlefIsoForms;
+	sub [absRehFin._jkl]									kw0' lookup _BlockSet200		@AlefIsoForms;
+	sub [absRehFin]											kw0' lookup _BlockSet100		@AlefIsoForms;
 #	sub absRehFin._hgM - ignore
 	sub [@RehIsoForms @DalFinForms @WawFinForms 
-			@WawIsoForms]									kw0' lookup _Set100		@AlefIsoForms;
+			@WawIsoForms]									kw0' lookup _BlockSet100		@AlefIsoForms;
 
 	# reh
-	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _Set0		@RehIsoForms;
-	sub [@WawIsoForms @WawFinForms]							kw0' lookup _Set200		@RehIsoForms;
+	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _BlockSet0		@RehIsoForms;
+	sub [@WawIsoForms @WawFinForms]							kw0' lookup _BlockSet200		@RehIsoForms;
 
 	# seen & sad
-	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0' lookup _Set200		[@SeenIsoForms @SadIsoForms];
-	sub [@DalIsoForms @DalFinForms]							kw0' lookup _Set500		[@SeenIsoForms @SadIsoForms];
-	sub [absReh absRehFin absRehFin._jkl]					kw0' lookup _Set400		[@SeenIsoForms @SadIsoForms];
-	sub [absRehFin]											kw0' lookup _Set300		[@SeenIsoForms @SadIsoForms];
-	sub [absZain]											kw0' lookup _Set200		[@SeenIsoForms @SadIsoForms];
+	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0' lookup _BlockSet200		[@SeenIsoForms @SadIsoForms];
+	sub [@DalIsoForms @DalFinForms]							kw0' lookup _BlockSet500		[@SeenIsoForms @SadIsoForms];
+	sub [absReh absRehFin absRehFin._jkl]					kw0' lookup _BlockSet400		[@SeenIsoForms @SadIsoForms];
+	sub [absRehFin]											kw0' lookup _BlockSet300		[@SeenIsoForms @SadIsoForms];
+	sub [absZain]											kw0' lookup _BlockSet200		[@SeenIsoForms @SadIsoForms];
 
 	# kaf
-	sub @AllBases			kw0' lookup _Set1000	[@KafIsoForms];
+	sub @AllBases			kw0' lookup _BlockSet1000	[@KafIsoForms];
 
 	# qaf
-	sub absRehFin			kw0' lookup _Set100		absQafFin;
+	sub absRehFin			kw0' lookup _BlockSet100		absQafFin;
 
 	# waw
-	sub [@DalIsoForms]		kw0' lookup _Set100		@WawIsoForms;	
+	sub [@DalIsoForms]		kw0' lookup _BlockSet100		@WawIsoForms;	
 
 } HardCodeIsolates;
 
@@ -186,6 +186,14 @@ lookup TreatBasesAsMarks_altKaf {   # separate lookup due to absKehehMed.by exis
 
 
 # Must come after InitKernMetrics.
+
+# Insert blocker before final kw
+lookup blockFinalKw {
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
+    ignore sub @KwMarker' @AllKernBase;
+    sub @KwMarker' lookup _InsBlocker;
+} blockFinalKw;
+
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
 # TODO: Replace some of these rules with ones that test for the presence CfMarkerEWs.

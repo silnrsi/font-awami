@@ -1682,6 +1682,7 @@ details including an FAQ.
 
 	<class name="KernBaseOther">space zerojoin zeronojoin</class>
 	<class name="KernBaseMarkOther">mkSpace mkZerojoin mkZeronojoin</class>
+    <class name="AllKernBase">@KernBaseMarkIni @KernBaseMarkMed @KernBaseMarkFin @KernBaseMarkIso @KernBaseOther</class>
 
 	<!-- <class name="KernBase">@Initials @Medials @Finals @Isolates @KernBaseOther</class> -->
 
