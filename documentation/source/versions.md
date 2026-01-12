@@ -13,7 +13,7 @@ The latest version of the font is always available from the [Awami Nastaliq down
 
 This font package is also available in the [SIL software repository for Ubuntu](https://packages.sil.org/). Users can subscribe to this software repository and get current versions and updates automatically.
 
-Awami Nastaliq is also available through the [TypeTuner Web](https://scripts.sil.org/ttw/fonts2go.cgi) service, which allows you to choose among the smart font features and download a font with those features preset. This enables them to work in many applications that do not make use of Graphite or OpenType Character Variants.
+Awami Nastaliq is also available through the [TypeTuner Web](https://typetunerweb.languagetechnology.org/ttw/fonts2go.cgi) service, which allows you to choose among the smart font features and download a font with those features preset. This enables them to work in many applications that do not make use of Graphite or OpenType Character Variants.
 
 ## Previous versions
 

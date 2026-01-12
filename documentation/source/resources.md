@@ -120,7 +120,7 @@ One common type of data conversion is from Roman script to Arabic script. Cross-
 
 One page that may prove helpful is: [Roman Script to Arabic Script Conversion](https://software.sil.org/arabicfonts/rs-to-as-conversion/).
 
-Other suggestions are listed here: [Introduction to Text Conversion and Transliteration](https://scriptsource.org/entry/xlzd6n5aqt).
+Other suggestions are listed here: [Encoding Conversion](http://writingsystems.info/topics/encoding/encoding-conversion/).
 
 See also: [Arabic Fonts -- Resources](https://software.sil.org/arabicfonts/resources/).
 
