@@ -142,8 +142,8 @@ lookup _InsertNuqtaDiacMarker {
 	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeLower @NuqtaLikeUpper;	# the nuqta doesn't add any height
 	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeUpper;
 
-	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;  # the nuqta on the reh is higher than normal
-	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  _dot1u;
+	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;  # the nuqta on the reh is higher than normal
+	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;
 	
 	# Special case for nuqta under jeem that underhangs the previous glyph:
 	sub @PyInitMarker' lookup _InsertDscx1200Left2  @JeemMedForms @PyInitMarker _dot3l;

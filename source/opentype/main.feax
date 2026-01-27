@@ -46,6 +46,7 @@ languagesystem arab dflt;
 	_dot1u.small  _smallTwoAbove  _smallThreeAbove];
 
 @NuqtaLike = [@NuqtaLikeUpper @NuqtaLikeLower @NLowerUpper];
+
 @DiacUpper = [nlqZabar nlqPesh absShadda nlqUltaPesh nlqZabarTwoDots nlqKharizabar nlqJazm nlqJazm_openleft
 	nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
 	absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
@@ -56,13 +57,24 @@ languagesystem arab dflt;
 	### TODO: add honorifics
 @DiacLower = [nlqZair nlqDozair nlqKharizair absEmptyCentreLowStop absSmallLowMeem];   # @_mLower
 
+# For UAX#53:
+# TODO: implement all this!
+
+@DiacUpperC2 = [nlqZabar nlqPesh absShadda nlqUltaPesh nlqKharizabar nlqJazm nlqJazm_openleft
+	nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
+	absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
+	absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
+	absSmallHighSadMark absSmallHighSeen absSmallHighTah];
+
+@Diac = [@DiacUpper @DiacLower];
+
 # gafStroke, graf, _kafTop_bj
 
-@AllMarksUpper = [@NuqtaLikeUpper @DiacUpper];
-@AllMarksLower = [@NuqtaLikeLower @DiacLower];
-@AllMarksMiddle = [@_squiggle @_bar _attachedRingMid ];
-@AllMarksUpMid = [@AllMarksUpper @AllMarksMiddle];
-@AllMarks = [@AllMarksUpper @AllMarksLower @AllMarksMiddle];
+@MarkUpper = [@NuqtaLikeUpper @DiacUpper];
+@MarkLower = [@NuqtaLikeLower @DiacLower];
+@MarkMiddle = [@_squiggle @_bar _attachedRingMid ];
+@MarkUpMid = [@MarkUpper @MarkMiddle];
+@Mark = [@MarkUpper @MarkLower @MarkMiddle];
 
 @NuqtaUpperWide_sub = [_dot2u _dot3u _dot4u];
 @NuqtaUpperWide_small_sub = [_dot2u.small _dot3u.small _dot4u.small];
@@ -368,7 +380,7 @@ lookup _LamTahShort {
 } _LamTahShort;
 
 lookup _NoChange {
-	ignore sub @AllMarksUpper';
+	ignore sub @MarkUpper';
 	ignore sub @MeemForms';
 } _NoChange;
 
@@ -445,13 +457,13 @@ lookup _ByInsertZair {
 } _ByInsertZair;
 
 lookup _ByInsertDozair {
-	lookupflag UseMarkFilteringSet @AllMarksLower;
+	lookupflag UseMarkFilteringSet @MarkLower;
 	sub @ByShim          by  @ByShim          nlqDozair;
 	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqDozair;
 } _ByInsertDozair;
 
 lookup _ByInsertKharizair {
-	lookupflag UseMarkFilteringSet @AllMarksLower;
+	lookupflag UseMarkFilteringSet @MarkLower;
 	sub @ByShim          by  @ByShim          nlqKharizair;
 	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqKharizair;
 } _ByInsertKharizair;
@@ -586,52 +598,54 @@ lookup DecomposeBases {
 feature isol {
 
 lookup RecomposeIsolates {
-	sub		absDotlessBeh 	@BehMark_sub			by		@BehComposed_sub;
+	sub		absDotlessBeh 			@BehMark_sub			by		@BehComposed_sub;
 	sub		absHah					@JeemMark_sub			by		@JeemComposed_sub;
-	sub		absSeen					@SeenMark_sub 		by		@SeenComposed_sub;
+	sub		absSeen					@SeenMark_sub 			by		@SeenComposed_sub;
 	sub		absSad					@SadMark_sub			by		@SadComposed_sub;
 	sub		absTah					@TahMark_sub			by		@TahComposed_sub;
 	sub		absAin					@AinMark_sub			by		@AinComposed_sub;
-	sub		absDotlessFeh		@FehMark_sub			by		@FehComposed_sub;
-	sub		absKeheh				@KehehMark_sub		by		@KehehComposed_sub;
+	sub		absDotlessFeh			@FehMark_sub			by		@FehComposed_sub;
+	sub		absKeheh				@KehehMark_sub			by		@KehehComposed_sub;
 	sub		absGaf					@GafMark_sub			by		@GafComposed_sub;
 	sub		absLam					@LamMark_sub			by		@LamComposed_sub;
 	# no meem varieties at this point
-	sub		absHehGoal			@HehGoalMark_sub	by		@HehGoalComposed_sub;
+	sub		absHehGoal				@HehGoalMark_sub		by		@HehGoalComposed_sub;
 	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
-	sub		nlqChotiyeh			@ChotiyehMark_sub	by		@ChotiyehComposed_sub;
+	sub		nlqChotiyeh				@ChotiyehMark_sub		by		@ChotiyehComposed_sub;
 	sub		absAlef					@AlefMark_sub			by		@AlefComposed_sub;
 	sub		absDal					@DalMark_sub			by		@DalComposed_sub;
 	sub		absReh					@RehMark_sub			by		@RehComposed_sub;
 	sub		absWaw					@WawMark_sub			by		@WawComposed_sub;
-	sub		nlqBariyeh			@BariyehMark_sub	by		@BariyehComposed_sub;
+	sub		nlqBariyeh				@BariyehMark_sub		by		@BariyehComposed_sub;
 } RecomposeIsolates;
 
 } isol;		# end of feature
+
+# ======  TODO: implement UAX#53  ========
 
 @QafMark = [_dot2u];
 
 feature fina {
 
 lookup RightFinals2 {
-	sub		absDotlessQaf'		@QafMark					by		absQafFin;
-	sub		absDotlessFeh'		@QafMark					by		absQafFin;
-	sub		absNoon'					@NoonMark_sub			by		absNoonFin;
-	sub		nlqChotiyeh'			@ChotiyehMark_sub	by		nlqChotiyehFin;
-	sub		nlqBariyeh'				@BariyehMark_sub	by		nlqBariyehFin;
+	sub		absDotlessQaf'		@QafMark			by		absQafFin;
+	sub		absDotlessFeh'		@QafMark			by		absQafFin;
+	sub		absNoon'			@NoonMark_sub		by		absNoonFin;
+	sub		nlqChotiyeh'		@ChotiyehMark_sub	by		nlqChotiyehFin;
+	sub		nlqBariyeh'			@BariyehMark_sub	by		nlqBariyehFin;
 } RightFinals2;
 
 lookup RightFinals1 {
-	sub		absAlef						by 		absAlefFin;
-	sub		absReh						by		absRehFin;
-	sub		absDal						by		absDalFin;
-	sub		absWaw						by		absWawFin;
-	#sub		nlqBariyeh				by		nlqBariyehFin;
+	sub		absAlef					by 		absAlefFin;
+	sub		absReh					by		absRehFin;
+	sub		absDal					by		absDalFin;
+	sub		absWaw					by		absWawFin;
+	#sub		nlqBariyeh			by		nlqBariyehFin;
 	sub		absTehMarbuta			by		absTehMarbutaFin;
-	sub		absTehMarbutaGoal by 		absTehMarbutaGoalFin;
+	sub		absTehMarbutaGoal		by 		absTehMarbutaGoalFin;
 	
 	# if there is still a noon or chotiyeh or qaf, it must be dotless
-	sub		absNoon				by		absNoonFin;
+	sub		absNoon			by		absNoonFin;
 	sub		nlqChotiyeh		by		nlqChotiyehFin;
 	sub		absDotlessQaf	by		absQafFin;
 } RightFinals1;
@@ -641,7 +655,7 @@ lookup RightFinalsDelNuqta {
 } RightFinalsDelNuqta;
 
 lookup RightFinalsDelNuqtaSub {
-	sub		nlqChotiyehFin	_dot2lIM__smallV'			by 	_smallV;
+	sub		nlqChotiyehFin	_dot2lIM__smallV'		by 	_smallV;
 	sub		nlqChotiyehFin	_dot2lIM__smallTwo'		by 	_smallTwoAbove;
 	sub		nlqChotiyehFin	_dot2lIM__smallThree'	by 	_smallThreeAbove;
 } RightFinalsDelNuqtaSub;
@@ -692,6 +706,7 @@ lookup InitialForms {
 
 feature rlig {
 
+# Forms that need two slots for the pre-context.
 lookup DoublePreContext {
 	lookupflag IgnoreMarks;
 	
@@ -748,11 +763,11 @@ lookup BasicContextuals {
 	sub @IniDefault_sub' @HehGoalForms			by	@IniHgM_sub;
 	sub	@MedDefault_sub' @HehGoalForms			by	@MedHgM_sub;
 	
-	sub @IniDefault_sub' absRehFin					by	@IniRe_sub;
-	sub	@MedDefault_sub' absRehFin					by	@MedRe_sub;
+	sub @IniDefault_sub' absRehFin				by	@IniRe_sub;
+	sub	@MedDefault_sub' absRehFin				by	@MedRe_sub;
 	
-	sub @IniDefault_sub' absNoonFin					by	@IniNn_sub;
-	sub	@MedDefault_sub' absNoonFin					by	@MedNn_sub;
+	sub @IniDefault_sub' absNoonFin				by	@IniNn_sub;
+	sub	@MedDefault_sub' absNoonFin				by	@MedNn_sub;
 	
 	sub @IniDefault_sub' absDotlessQaf			by	@IniQf_sub;
 	sub @MedDefault_sub' absDotlessQaf			by	@MedQf_sub;
@@ -934,7 +949,7 @@ lookup WideForms {
 } WideForms;	# end of lookup
 
 lookup WideFormsDiac {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	
 	# Special case: nuqta + diac(s)
 	sub absBehMed' @NuqtaLikeUpper @DiacUpper @KafMFForms  by  absBehMed.kf_wide;
@@ -955,9 +970,9 @@ lookup WideForms_chain {
 	# Special case: beh + khah + kaf/gaf, or noon/teh + jeem + kaf/gaf
 	# (In Graphite the lam requires a mark above it, but this works fine and is simpler.)
 	sub [absBehIni.jm absBehMed.jm]  absJeemMed' lookup _WideForms2  @NuqtaUpper_normal_sub' lookup _WideForms2  [@KafMFForms @LamMFForms];
-	sub [absBehIni.jm absBehMed.jm]  absJeemMed' lookup _WideForms2  @AllMarksUpper                              [@KafMFForms @LamMFForms];
+	sub [absBehIni.jm absBehMed.jm]  absJeemMed' lookup _WideForms2  @MarkUpper                              [@KafMFForms @LamMFForms];
 	sub [absBehIni.jm absBehMed.jm]  @NuqtaLikeUpper
-																	 absJeemMed' lookup _WideForms2  @AllMarksUpper                              [@KafMFForms @LamMFForms];
+																	 absJeemMed' lookup _WideForms2  @MarkUpper                              [@KafMFForms @LamMFForms];
 																	 
 	# Special case: jeem w/3dots + kaf/alef
 	sub absJeemMed' lookup _WideForms2  @NuqtaUpperWide_sub' lookup _WideForms2  @KafMFForms;
@@ -991,7 +1006,7 @@ lookup PreKafCollisions {
 } PreKafCollisions;
 
 lookup KafCollisionsDiac {
-	lookupflag UseMarkFilteringSet @AllMarksUpMid;
+	lookupflag UseMarkFilteringSet @MarkUpMid;
 	#lookupflag 0;
 	
 	# Tall final kaf:
@@ -1001,8 +1016,8 @@ lookup KafCollisionsDiac {
 	sub @NLikeUpperTall  @DiacUpper  @KafMedFull_sub' lookup _KafTall; 
 	
 	# Special case: Lam + diac + kaf - shorten lam AND heighten kaf
-	sub absLamIni' lookup _LamTahShort  @AllMarksUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
-	sub absLamMed' lookup _LamTahShort  @AllMarksUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
+	sub absLamIni' lookup _LamTahShort  @MarkUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
+	sub absLamMed' lookup _LamTahShort  @MarkUpper' lookup _NoChange  @KafMedFull_sub' lookup _KafTall;
 	
 	# Tall: nuqta + diac + kaf
 	sub @NuqtaLikeUpper @DiacUpper @KafMedForms' lookup _KafTall;
@@ -1156,7 +1171,7 @@ lookup KafLineHeight {
 	# 1. No change: never make shorter after a kaf/gaf.
 	#ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
 	# 2. No change: don't make shorter after a narrow substantial base with nuqta or diac
-	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @MarkUpper @KafMedForms';
 	# We usually don't need to handle these because any that need taller forms
 	# won't match the KafIni/MedFull_sub classes below.
 	# If we find we need to fix them we can do it afterwards in a lookup that can recognize marks.
@@ -1267,7 +1282,7 @@ lookup CleanupsDelete {
 } CleanupsDelete;
 
 lookup CleanupsSub {
-	lookupflag UseMarkFilteringSet @AllMarks;		# ignore kaf tops
+	lookupflag UseMarkFilteringSet @Mark;		# ignore kaf tops
 	
 	# The special marker for the chotiyeh should just use the standard glyphs at this point:
 	sub  _dot2lIM'	by	_dot2l;
@@ -1431,15 +1446,15 @@ lookup DelNull1 { lookupflag 0; sub .null by NULL; } DelNull1;
 lookup DeleteEmptyShims {
 	# The positioning is based on which shims are in use. So delete empty ones to make the rules easier.
 	
-	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	lookupflag UseMarkFilteringSet [@ByShim @MarkLower];
 	
-	ignore sub _byShim1' @AllMarksLower;
+	ignore sub _byShim1' @MarkLower;
 	sub _byShim1' lookup _DeleteShim;
 	
-	ignore sub _byShim2' @AllMarksLower;
+	ignore sub _byShim2' @MarkLower;
 	sub _byShim2' lookup _DeleteShim;
 	
-	ignore sub _byShim3' @AllMarksLower;
+	ignore sub _byShim3' @MarkLower;
 	sub _byShim3' lookup _DeleteShim;
 
 } DeleteEmptyShims;
@@ -1462,18 +1477,28 @@ include(../../source/opentype/collfix_inc.feax);
 feature calt {
 
 include(../../source/opentype/collfix.feax);
+include(../../source/opentype/handkern.feax);  # not needed if we do autokerning
+
+# @CfMarkerNS = [cfNS0 cfN100 cfN200 cfN300 cfN400 cfN500 cfS100 cfS200 cfS300 cfS400 cfS500];
+# @CfMarkerEW = [cfEW0 cfE100 cfE200 cfE300 cfE400 cfE500 cfW100 cfW200 cfW300 cfW400 cfW500];
+# @CfMarker = [@CfMarkerNS @CfMarkerEW];
+
+# lookup TempFix {
+# 	lookupflag UseMarkFilteringSet [@NuqtaLike @Diac];
+# 	sub absKehehIni.beM1_base nlqZair' lookup _ShiftE200  absBehMed.beM2' _dot2l' lookup _ShiftS200;
+# } TempFix;
 
 } calt;
 
 # --- Auto-kerning ---
 
-include(../../source/opentype/autokern_inc.feax);
+# include(../../source/opentype/autokern_inc.feax);
 
-feature calt {	# eventually change this to a Stylistic Set?
+# feature calt {	# eventually change this to a Stylistic Set?
 
-include(../../source/opentype/autokern.feax);
+# include(../../source/opentype/autokern.feax);
 
-} calt;
+# } calt;
 
 
 #====================  GPOS features  ====================
@@ -1539,17 +1564,17 @@ lookup AttachByShim3 {		# left-most nuqta when there are 3 (last in stream)
 
 # In case the base doesn't have 'm' APs, use the 'n' ones. This will be overridden if possible.
 lookup AttachLowerDiacsLikeNuqtas {
-	lookupflag UseMarkFilteringSet @AllMarksLower;
+	lookupflag UseMarkFilteringSet @MarkLower;
 	pos		base @n1Lower			mark @_mLower;
 } AttachLowerDiacsLikeNuqtas;
 
 lookup AttachUpperDiacsLikeNuqtas {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @nUpper			mark @_mUpper;
 } AttachUpperDiacsLikeNuqtas;
 
 lookup AttachLower {
-	lookupflag UseMarkFilteringSet @AllMarksLower;
+	lookupflag UseMarkFilteringSet @MarkLower;
 	pos		base @ring			mark @_ring;		# must be first
 
 	pos		base @n1Lower		mark @_n1Lower;
@@ -1560,19 +1585,19 @@ lookup AttachLower {
 } AttachLower;
 
 lookup AttachLower2 {
-	lookupflag UseMarkFilteringSet @AllMarksLower;
+	lookupflag UseMarkFilteringSet @MarkLower;
 	pos		base @tahLower		mark @_tahLower;
 } AttachLower2;
 
 lookup AttachMiddle {
-	lookupflag UseMarkFilteringSet @AllMarksMiddle;
+	lookupflag UseMarkFilteringSet @MarkMiddle;
 	pos		base @squiggle		mark @_squiggle;
 	pos		base @bar			mark @_bar;
 	pos		base @ring			mark @_ring;
 } AttachMiddle;
 
 lookup AttachUpper {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
     pos		base @nUpper  		mark @_nUpper;
 	pos		base @graf			mark @_graf;
 } AttachUpper;
@@ -1583,7 +1608,7 @@ lookup AttachHamzaAsUpper {
 } AttachHamzaAsUpper;
 
 lookup AttachUpper2 {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @alef			mark @_mUpper;
 	pos		base @mUpper		mark @_mUpper;
 	pos		base @tahUpper		mark @_tahUpper;
@@ -1591,18 +1616,18 @@ lookup AttachUpper2 {
 } AttachUpper2;
 
 lookup AttachUpper3 {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @honorific		mark @_honorific;
 } AttachUpper3;
 
 # Special cases go last so that they override:
 lookup AttachAlefDiacToYeh {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @alef			mark @_mUpper;
 } AttachAlefDiacToYeh;
 
 lookup AttachAlefDiacToLam {
-	lookupflag UseMarkFilteringSet @AllMarksUpper;
+	lookupflag UseMarkFilteringSet @MarkUpper;
 	# The rules below were copied from the FEA file autogenerated from the rule below:
 	# pos		base @nUpper			mark @_mUpperLam;
 	# This is necessary to limit the rules to lams.
@@ -1677,12 +1702,12 @@ lookup AttachAlefDiacToLam {
 feature mkmk {
 
 lookup Att2ByShimFallBack {
-	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	lookupflag UseMarkFilteringSet [@ByShim @MarkLower];
 	pos mark @shim_MarkBase mark @_nByLower;
 } Att2ByShimFallBack;
 
 lookup Att2ByShim {
-	lookupflag UseMarkFilteringSet [@ByShim @AllMarksLower];
+	lookupflag UseMarkFilteringSet [@ByShim @MarkLower];
 	pos	mark @shim_MarkBase  	mark @_n1Lower;
 	#pos mark @shim_MarkBase	mark @_hehhook;
 	pos mark @shim_MarkBase 	mark @_n23Lower;
@@ -1743,34 +1768,34 @@ feature dist {
 feature kern {
 
 lookup ShiftNuqtasNS {
-	lookupflag UseMarkFilteringSet [@NuqtaLike @CfMarkerNS];
-	pos @NuqtaLike' <0  100 0 0> cfN100;
-	pos @NuqtaLike' <0  200 0 0> cfN200;
-	pos @NuqtaLike' <0  300 0 0> cfN300;
-	pos @NuqtaLike' <0  400 0 0> cfN400;
-	pos @NuqtaLike' <0  500 0 0> cfN500;
-	pos @NuqtaLike' <0 -100 0 0> cfS100;
-	pos @NuqtaLike' <0 -200 0 0> cfS200;
-	pos @NuqtaLike' <0 -300 0 0> cfS300;
-	pos @NuqtaLike' <0 -400 0 0> cfS400;
-	pos @NuqtaLike' <0 -500 0 0> cfS500;
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
+	pos @Shiftable' <0  100 0 0> cfN100;
+	pos @Shiftable' <0  200 0 0> cfN200;
+	pos @Shiftable' <0  300 0 0> cfN300;
+	pos @Shiftable' <0  400 0 0> cfN400;
+	pos @Shiftable' <0  500 0 0> cfN500;
+	pos @Shiftable' <0 -100 0 0> cfS100;
+	pos @Shiftable' <0 -200 0 0> cfS200;
+	pos @Shiftable' <0 -300 0 0> cfS300;
+	pos @Shiftable' <0 -400 0 0> cfS400;
+	pos @Shiftable' <0 -500 0 0> cfS500;
 } ShiftNuqtasNS;
 
 lookup ShiftNuqtasEW {
-	lookupflag UseMarkFilteringSet [@NuqtaLike @CfMarkerEW];
-	pos @NuqtaLike' < 100 0 0 0> cfE100;
-	pos @NuqtaLike' < 200 0 0 0> cfE200;
-	pos @NuqtaLike' < 300 0 0 0> cfE300;
-	pos @NuqtaLike' < 400 0 0 0> cfE400;
-	pos @NuqtaLike' < 500 0 0 0> cfE500;
-	pos @NuqtaLike' <-100 0 0 0> cfW100;
-	pos @NuqtaLike' <-200 0 0 0> cfW200;
-	pos @NuqtaLike' <-300 0 0 0> cfW300;
-	pos @NuqtaLike' <-400 0 0 0> cfW400;
-	pos @NuqtaLike' <-500 0 0 0> cfW500;
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerEW];
+	pos @Shiftable' < 100 0 0 0> cfE100;
+	pos @Shiftable' < 200 0 0 0> cfE200;
+	pos @Shiftable' < 300 0 0 0> cfE300;
+	pos @Shiftable' < 400 0 0 0> cfE400;
+	pos @Shiftable' < 500 0 0 0> cfE500;
+	pos @Shiftable' <-100 0 0 0> cfW100;
+	pos @Shiftable' <-200 0 0 0> cfW200;
+	pos @Shiftable' <-300 0 0 0> cfW300;
+	pos @Shiftable' <-400 0 0 0> cfW400;
+	pos @Shiftable' <-500 0 0 0> cfW500;
 } ShiftNuqtasEW;
 
-lookup DoAutoKerning {
+lookup DoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
 
 	pos @GDEF_bases <1000 0 1000 0> kwN1000;
@@ -1800,6 +1825,6 @@ lookup DoAutoKerning {
 	pos @GDEF_bases <-1400 0 -1400 0> kw1400;
 	pos @GDEF_bases <-1500 0 -1500 0> kw1500;
 	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
-} DoAutoKerning;
+} DoKerning;
 
 } kern;

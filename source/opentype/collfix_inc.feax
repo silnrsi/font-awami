@@ -19,154 +19,208 @@
 
 # Lookups used by collision fixing.
 
+@Shiftable = [@NuqtaLike @Diac];
+@HardKernable = [absAlefMaddaAbove absAlef absAlefFin];
 
 # shift north
 
 lookup _ShiftN100 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfN100;
+	sub @Shiftable'  by  @Shiftable  cfN100;
 } _ShiftN100;
 
 lookup _ShiftN200 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfN200;
+	sub @Shiftable'  by  @Shiftable  cfN200;
 } _ShiftN200;
 
 lookup _ShiftN300 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfN300;
+	sub @Shiftable'  by  @Shiftable  cfN300;
 } _ShiftN300;
 
 lookup _ShiftN400 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfN400;
+	sub @Shiftable'  by  @Shiftable  cfN400;
 } _ShiftN400;
 
 lookup _ShiftN500 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfN500;
+	sub @Shiftable'  by  @Shiftable  cfN500;
 } _ShiftN500;
 
 # shift south
 
 lookup _ShiftS100 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfS100;
+	sub @Shiftable'  by  @Shiftable  cfS100;
 } _ShiftS100;
 
 lookup _ShiftS200 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfS200;
+	sub @Shiftable'  by  @Shiftable  cfS200;
 } _ShiftS200;
 
 lookup _ShiftS300 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfS300;
+	sub @Shiftable'  by  @Shiftable  cfS300;
 } _ShiftS300;
 
 lookup _ShiftS400 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfS400;
+	sub @Shiftable'  by  @Shiftable  cfS400;
 } _ShiftS400;
 
 lookup _ShiftS500 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfS500;
+	sub @Shiftable'  by  @Shiftable  cfS500;
 } _ShiftS500;
 
 # shift east
 
 lookup _ShiftE100 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfE100;
+	sub @Shiftable'  by  @Shiftable  cfE100;
 } _ShiftE100;
 
 lookup _ShiftE200 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfE200;
+	sub @Shiftable'  by  @Shiftable  cfE200;
 } _ShiftE200;
 
 lookup _ShiftE300 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfE300;
+	sub @Shiftable'  by  @Shiftable  cfE300;
 } _ShiftE300;
 
 lookup _ShiftE400 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfE400;
+	sub @Shiftable'  by  @Shiftable  cfE400;
 } _ShiftE400;
 
 lookup _ShiftE500 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfE500;
+	sub @Shiftable'  by  @Shiftable  cfE500;
 } _ShiftE500;
 
 # shift west
 
 lookup _ShiftW100 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfW100;
+	sub @Shiftable'  by  @Shiftable  cfW100;
 } _ShiftW100;
 
 lookup _ShiftW200 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfW200;
+	sub @Shiftable'  by  @Shiftable  cfW200;
 } _ShiftW200;
 
 lookup _ShiftW300 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfW300;
+	sub @Shiftable'  by  @Shiftable  cfW300;
 } _ShiftW300;
 
 lookup _ShiftW400 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfW400;
+	sub @Shiftable'  by  @Shiftable  cfW400;
 } _ShiftW400;
 
 lookup _ShiftW500 {
-	sub @NuqtaLike'  by  @NuqtaLike  cfW500;
+	sub @Shiftable'  by  @Shiftable  cfW500;
 } _ShiftW500;
 
-# shift diagonally
+# shift diagonally north-east
+
+lookup _ShiftN100E100 {
+	sub @Shiftable'  by  @Shiftable cfN100 cfE100;
+} _ShiftN100E100;
+
+lookup _ShiftN100E200 {
+	sub @Shiftable'  by  @Shiftable cfN100 cfE200;
+} _ShiftN100E200;
 
 lookup _ShiftN200E100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE100;
+	sub @Shiftable'  by  @Shiftable cfN200 cfE100;
 } _ShiftN200E100;
 
 lookup _ShiftN200E200 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE200;
+	sub @Shiftable'  by  @Shiftable cfN200 cfE200;
 } _ShiftN200E200;
 
 lookup _ShiftN200E300 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfE300;
+	sub @Shiftable'  by  @Shiftable cfN200 cfE300;
 } _ShiftN200E300;
 
+lookup _ShiftN300E100 {
+	sub @Shiftable'  by  @Shiftable cfN300 cfE100;
+} _ShiftN300E100;
+
 lookup _ShiftN300E300 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN300 cfE300;
+	sub @Shiftable'  by  @Shiftable cfN300 cfE300;
 } _ShiftN300E300;
 
 lookup _ShiftN400E100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN400 cfE100;
+	sub @Shiftable'  by  @Shiftable cfN400 cfE100;
 } _ShiftN400E100;
 
+lookup _ShiftN500E300 {
+	sub @Shiftable'  by @Shiftable cfN500 cfE300;
+} _ShiftN500E300;
+
 lookup _ShiftN500E500 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN500 cfE500;
+	sub @Shiftable'  by  @Shiftable cfN500 cfE500;
 } _ShiftN500E500;
 
+# shift diagonally north-west
+
 lookup _ShiftN200W100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfN200 cfW100;
+	sub @Shiftable'  by  @Shiftable cfN200 cfW100;
 } _ShiftN200W100;
 
+# shift diagonally south-east
+
 lookup _ShiftS100E100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfE100;
+	sub @Shiftable'  by  @Shiftable cfS100 cfE100;
 } _ShiftS100E100;
 
-lookup _ShiftS100W100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfW100;
-} _ShiftS100W100;
-
 lookup _ShiftS100E300 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS100 cfE300;
+	sub @Shiftable'  by  @Shiftable cfS100 cfE300;
 } _ShiftS100E300;
 
+lookup _ShiftS100E400 {
+	sub @Shiftable'  by  @Shiftable cfS100 cfE400;
+} _ShiftS100E400;
+
 lookup _ShiftS200E100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfE100;
+	sub @Shiftable'  by  @Shiftable cfS200 cfE100;
 } _ShiftS200E100;
 
+lookup _ShiftS200E200 {
+	sub @Shiftable'  by  @Shiftable cfS200 cfE200;
+} _ShiftS200E200;
+
+lookup _ShiftS200E300 {
+	sub @Shiftable'  by  @Shiftable cfS200 cfE300;
+} _ShiftS200E300;
+
+lookup _ShiftS300E100 {
+	sub @Shiftable'  by  @Shiftable cfS300 cfE100;
+} _ShiftS300E100;
+
+# shift diagonally south-west
+
+lookup _ShiftS100W100 {
+	sub @Shiftable'  by  @Shiftable cfS100 cfW100;
+} _ShiftS100W100;
+
 lookup _ShiftS200W100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfW100;
+	sub @Shiftable'  by  @Shiftable cfS200 cfW100;
 } _ShiftS200W100;
 
 lookup _ShiftS200W200 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS200 cfW200;
+	sub @Shiftable'  by  @Shiftable cfS200 cfW200;
 } _ShiftS200W200;
 
-lookup _ShiftS300E100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS300 cfE100;
-} _ShiftS300E100;
-
 lookup _ShiftS500W100 {
-	sub @NuqtaLike'  by  @NuqtaLike cfS500 cfW100;
+	sub @Shiftable'  by  @Shiftable cfS500 cfW100;
 } _ShiftS500W100;
+
+# Hard-kerning
+
+lookup _HardKern100 {
+	sub @HardKernable'	by 	@HardKernable kwN100;
+} _HardKern100;
+
+lookup _HardKern200 {
+	sub @HardKernable'	by 	@HardKernable kwN200;
+} _HardKern200;
+
+lookup _HardKern300 {
+	sub @HardKernable'	by 	@HardKernable kwN300;
+} _HardKern300;
+
+lookup _HardKern400 {
+	sub @HardKernable'	by 	@HardKernable kwN400;
+} _HardKern400;
 
