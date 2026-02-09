@@ -1477,11 +1477,6 @@ include(../../source/opentype/collfix_inc.feax);
 feature calt {
 
 include(../../source/opentype/collfix.feax);
-include(../../source/opentype/handkern.feax);  # not needed if we do autokerning
-
-# @CfMarkerNS = [cfNS0 cfN100 cfN200 cfN300 cfN400 cfN500 cfS100 cfS200 cfS300 cfS400 cfS500];
-# @CfMarkerEW = [cfEW0 cfE100 cfE200 cfE300 cfE400 cfE500 cfW100 cfW200 cfW300 cfW400 cfW500];
-# @CfMarker = [@CfMarkerNS @CfMarkerEW];
 
 # lookup TempFix {
 # 	lookupflag UseMarkFilteringSet [@NuqtaLike @Diac];
@@ -1492,13 +1487,15 @@ include(../../source/opentype/handkern.feax);  # not needed if we do autokerning
 
 # --- Auto-kerning ---
 
-# include(../../source/opentype/autokern_inc.feax);
+include(../../source/opentype/autokern_inc.feax);
 
-# feature calt {	# eventually change this to a Stylistic Set?
+feature calt {	# eventually change this to a Stylistic Set?
+
+include(../../source/opentype/handkern.feax);  # not needed if we do autokerning
 
 # include(../../source/opentype/autokern.feax);
 
-# } calt;
+} calt;
 
 
 #====================  GPOS features  ====================

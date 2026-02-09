@@ -1,0 +1,118 @@
+#
+#	File: handkern.feax
+#
+# FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+# This file will not be needed if we do autokerning.
+
+# It is intended to be included in main.feax.
+
+# Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
+
+#--- alef-madda - shifting plus kerning ---
+
+lookup FixAlefMadda {
+	lookupflag IgnoreMarks;
+	sub absAlefMaddaAbove'	absLamIni.beM2	absBehFin._bfkl		by  absAlef absMaddaAbove cfN200;
+	sub absAlefMaddaAbove'  [absKehehIni absGafIni]  absAlefFin	by	absAlef absMaddaAbove cfN300;
+
+	sub absAlefMaddaAbove'	absLam						by  absAlef kwN300 absMaddaAbove;
+
+	sub absAlefMaddaAbove'	absSheen					by  absAlef kwN200 absMaddaAbove cfN200;
+
+	sub absAlefMaddaAbove'  absBehIni.ch				by	absAlefMaddaAbove kwN300;
+	sub absAlefMaddaAbove'  absBehIni.sn  absSeenFin	by	absAlefMaddaAbove kwN300;
+	sub absAlefMaddaAbove'	absSheen					by	absAlefMaddaAbove kwN200;
+
+	sub absAlefMaddaAbove'  absJeemIni.hd  absHehDoachashmeeMed.be absBehMed.ch nlqChotiyehFin
+														by	absAlefMaddaAbove kwN200;
+
+	sub absAlefMaddaAbove'  @KafIsoForms		by	absAlefMaddaAbove kwN300;
+
+} FixAlefMadda;
+
+lookup FixPostAlefMaddaMarkUpper {
+	lookupflag UseMarkFilteringSet @MarkUpper;
+
+	sub absAlefMaddaAbove'  space  absBehIni.qf  @MarkUpper	by  absAlef absMaddaAbove kwN200;
+
+	sub absAlefMaddaAbove'  absBehIni.qf  @MarkUpper	by  absAlef absMaddaAbove cfN400;
+
+	sub absAlefMaddaAbove'  absBehIni  @MarkUpper  absKehehMed.hd  absHehDoachashmeeFin
+														by  absAlefMaddaAbove kwN400;
+
+	sub absAlefMaddaAbove'	absBehIni.benn  @MarkUpper	by	absAlefMaddaAbove  cfN300;  # also kerned maybe
+	# step 2
+	sub absAlefMaddaAbove	absBehIni.benn  @MarkUpper'  by  @MarkUpper  cfS200;
+
+	sub absAlefMaddaAbove'  absBehIni @MarkUpper  absKehehMed.hd_base  absHehDoachashmeeMed.benn
+									by  absAlefMaddaAbove  kwN400;
+
+	sub absAlefMaddaAbove'  @BehIniForms  [@NuqtaLikeUpper @DiacUpper]		by  absAlefMaddaAbove  kwN300;
+
+	sub absAlefMaddaAbove'  absFehIni.beM2  @MarkUpper  absBehMed  absAlefFin
+														by  absAlefMaddaAbove cfN100 kwN200;
+	sub absAlefMaddaAbove'  absFehIni.beM2  @MarkUpper  absBehMed @MarkUpper  absAlefFin
+														by  absAlefMaddaAbove cfN100 kwN200;
+
+	sub absAlefMaddaAbove'  absFehIni.re  @MarkUpper	by	absAlefMaddaAbove  kwN300;
+
+	sub absAlefMaddaAbove'  absWawHamzaAbove @MarkUpper	by	absAlefMaddaAbove  kwN300;
+
+
+} FixPostAlefMaddaMarkUpper;
+
+lookup FixPostAlefMaddaUndoShift {
+	lookupflag UseMarkFilteringSet [@MarkUpper @CfMarkerEW];
+
+	# No, don't shift after all.
+	sub absAlefMaddaAbove @BehIniForms  _dot1u  cfE100'  by  NULL;
+
+} FixPostAlefMaddaUndoShift;
+
+
+lookup FixAlefMaddaAlefMadda {
+	lookupflag UseMarkFilteringSet [absMaddaAbove cfN400];
+
+	sub absAlefMaddaAbove'  absBehIni  absAlefFin absMaddaAbove		by	absAlef absMaddaAbove cfN400;
+
+} FixAlefMaddaAlefMadda;
+
+lookup FixAlefMaddaAlefMadda2 {
+	lookupflag UseMarkFilteringSet [absMaddaAbove cfN400];
+
+	sub absAlef absMaddaAbove  cfN400  absBehIni  absAlefFin absMaddaAbove'  by  absMaddaAbove cfS100;
+
+} FixAlefMaddaAlefMadda2;
+
+# more kerning
+
+lookup HandKernMarkUpper {
+	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @DiacUpper @KwMarker];  # ignore sequences that are already kerned
+
+	sub @AlefIsoForms'  @BehIniForms  [@NuqtaLikeUpper @DiacUpper]		by  @AlefIsoForms  kwN200;
+
+} HandKernMarkUpper;
+
+
+
+lookup HandKernMarkLower {
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower @KwMarker];
+
+	sub @AlefIsoForms'  absBehIni.nn  [@NuqtaLikeLower @DiacLower]  absNoonFin		by	@AlefIsoForms  kwN200;
+
+	sub @AlefIsoForms'  @BehIniForms  [@NuqtaLikeLower @DiacLower]					by  @AlefIsoForms  kwN100;
+
+} HandKernMarkLower;
