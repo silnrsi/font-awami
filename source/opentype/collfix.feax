@@ -25,19 +25,21 @@
 
 @Any = [@GDEF_bases @GDEF_marks];
 
-lookup EndOfStreamKludge {
+lookup KludgeEndOfStream {
 	# Ensure that the last shiftable glyph has at least three slots after it.
 	# This is needed for the insertion rules below.
 	ignore sub @Finals  @Shiftable' @Any @Any @Any;
 	sub @Finals  @Shiftable'  @Any @Any		by  @Shiftable  bogus;
 	sub @Finals  @Shiftable'  @Any			by  @Shiftable  bogus bogus;
 	sub @Finals	 @Shiftable'  				by  @Shiftable  bogus bogus bogus;
+} KludgeEndOfStream;
 
+lookup KludgeEndOfStreamPenultimate {
 	# shiftable glyph on penultimate base might need some extra slots:
 	ignore sub @Shiftable @Finals' @Any @Any;
 	sub @Shiftable @Finals' @Any			by	@Finals bogus;
 	sub @Shiftable @Finals'					by	@Finals bogus bogus;
-} EndOfStreamKludge;
+} KludgeEndOfStreamPenultimate;
 
 lookup CollFixNuqtasUpper {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper bogus];
@@ -142,12 +144,12 @@ lookup CollFixNuqtasLower {
 	sub absBehMed.benn	@NuqtaLikeLower						absBehMed.nn_hgbm	@NuqtaLikeLower' lookup _ShiftS300;
 
 	# beh + beh + final jeem
-
+																													# \/ affects middle nuqta
 	sub absBehIni.be	@DotFlatL' lookup _ShiftN200E300	absBehMed.jm'	@DotFlatL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS200;
 	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm'	@DotFlatL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS200;
 	sub absBehIni.be	@DotFlatL' lookup _ShiftN300E300	absBehMed.jm'	@DotTallL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS100;
-	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm	@DotTallL	absJeemFin	@NuqtaLikeLower;
-	# more below in CollFixNuqtas_contd
+	sub absBehIni.be	@DotTallL' lookup _ShiftN500E500	absBehMed.jm'	@DotTallL'	absJeemFin	@NuqtaLikeLower;
+	# more below in CollFixNuqtas_3rd
 
 	# beh + kaf + heh-do
 	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100		[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
@@ -199,19 +201,22 @@ lookup CollFixNuqtas_3rd {
 
 } CollFixNuqtas_3rd;
 
-
 lookup CollFixDiacUpper {
-	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @DiacUpper bogus];
+	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @DiacUpper bogus];  # bogus matches kludged slot
 
 	sub absJeemMed	@Diac'	lookup _ShiftE200		[absAlefFin @LamMedForms @LamFinForms @KafMedForms @KafFinForms];
 
 	sub absMeemIni.mm  @Diac' lookup _ShiftS200E200  absMeemMed  @KehehMedForms;
 
+	sub [absLamIni.mm absKehehIni.mm absGafIni.mm]  @MeemMedForms  @Diac' lookup _ShiftS100W400;
+
+	sub absBehIni  @NuqtaLike' lookup _ShiftS200  @Diac  @KafMFForms;
+
 } CollFixDiacUpper;
 
 
 lookup CollFixDiacLower {
-	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower bogus];
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower bogus];  # bogus matches kludged slot
 
 	# zair + nuqta
 	sub [absKehehIni.beM1 absGafIni.beM1 absKehehIni.beM1_base absBehIni.beM1]
@@ -224,6 +229,14 @@ lookup CollFixDiacLower {
 	#sub absLamIni.jm	@DiacLower' lookup _ShiftS100E100;
 
 } CollFixDiacLower;
+
+# Chain reaction - adjust another nuqta after adjusting for diacritics!
+lookup CollFixNuqtasNextAdjustment {
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @CfMarker];
+
+	# yeh + yeh - avoid a flat line
+	sub absBehMed.beM2  _dot2l  [cfS200 cfS300]		absBehMed  _dot2l' lookup _ShiftS200;
+} CollFixNuqtasNextAdjustment;
 
 
 lookup EndOfStreamUndoKludge {

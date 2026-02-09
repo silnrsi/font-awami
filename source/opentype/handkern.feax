@@ -102,17 +102,43 @@ lookup FixAlefMaddaAlefMadda2 {
 lookup HandKernMarkUpper {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @DiacUpper @KwMarker];  # ignore sequences that are already kerned
 
-	sub @AlefIsoForms'  @BehIniForms  [@NuqtaLikeUpper @DiacUpper]		by  @AlefIsoForms  kwN200;
+	sub @AlefForms'  @BehIniForms  [@NuqtaLikeUpper @DiacUpper]		by  @AlefForms  kwN200;
 
 } HandKernMarkUpper;
 
+
+lookup HandKernMarkUpperLower {
+	lookupflag UseMarkFilteringSet [@NuqtaLike @KwMarker];
+
+	sub @RehFinForms' @NuqtaLikeUpper		@BehIniForms @NuqtaLikeLower	by 	@RehFinForms  kwN300;
+
+} HandKernMarkUpperLower;
 
 
 lookup HandKernMarkLower {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower @KwMarker];
 
-	sub @AlefIsoForms'  absBehIni.nn  [@NuqtaLikeLower @DiacLower]  absNoonFin		by	@AlefIsoForms  kwN200;
+	sub @AlefForms'  absBehIni.nn  [@NuqtaLikeLower @DiacLower]  absNoonFin		by	@AlefForms  kwN200;
 
-	sub @AlefIsoForms'  @BehIniForms  [@NuqtaLikeLower @DiacLower]					by  @AlefIsoForms  kwN100;
+	# beh + beh + jeem with lots of nuqtas
+	sub @AlefForms'	absBehIni.be @NuqtaLikeLower absBehMed.jm @NuqtaLikeLower  absJeemFin
+														by  @AlefForms  kwN300;
+
+	sub @AlefForms'  @BehIniForms  [@NuqtaLikeLower @DiacLower]		by  @AlefForms  kwN100;
+	
+	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
+									[@DotNarrowL]	by		@AlefForms  kwN100;
+	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
+									[@DotWideL]		by		@AlefForms  kwN400;
+	sub @AlefForms'	@JeemIniForms	[@DotWideL]		by		@AlefForms  kwN100;  #probably not all of the jeem forms need the kerning
 
 } HandKernMarkLower;
+
+# Kern to fix collisions caused by shifting:
+lookup HandKernMarkLowerShifted {
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @CfMarkerEW];
+
+	sub @AlefForms'  @FehIniForms  @NuqtaLikeLower  cfE100	by	 @AlefForms  kwN300;
+	sub @AlefForms'  @FehIniForms  @NuqtaLikeLower  cfE200	by	 @AlefForms  kwN400;
+
+} HandKernMarkLowerShifted;

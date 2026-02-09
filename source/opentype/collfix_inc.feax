@@ -194,6 +194,10 @@ lookup _ShiftS100W100 {
 	sub @Shiftable'  by  @Shiftable cfS100 cfW100;
 } _ShiftS100W100;
 
+lookup _ShiftS100W400 {
+	sub @Shiftable'  by  @Shiftable cfS100 cfW400;
+} _ShiftS100W400;
+
 lookup _ShiftS200W100 {
 	sub @Shiftable'  by  @Shiftable cfS200 cfW100;
 } _ShiftS200W100;
