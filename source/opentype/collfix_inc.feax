@@ -17,10 +17,20 @@
 
 # This file is intended to be included in main.feax.
 
-# Lookups used by collision fixing.
+@CfMarkerN = [cfN100 cfN200 cfN300 cfN400 cfN500];
+@CfMarkerS = [cfS100 cfS200 cfS300 cfS400 cfS500 cfS600 cfS700];
+@CfMarkerNS = [cfNS0 @CfMarkerN @CfMarkerS];
+@CfMarkerE = [cfE100 cfE200 cfE300 cfE400 cfE500];
+@CfMarkerW = [cfW100 cfW200 cfW300 cfW400 cfW500];
+@CfMarkerEW = [cfEW0 @CfMarkerE @CfMarkerW];
+@CfMarker = [@CfMarkerNS @CfMarkerEW];
+
+@Any = [@GDEF_bases @GDEF_marks];
 
 @Shiftable = [@NuqtaLike @Diac];
 @HardKernable = [absAlefMaddaAbove absAlef absAlefFin];
+
+# Lookups used by collision fixing.
 
 # shift north
 
@@ -65,6 +75,14 @@ lookup _ShiftS400 {
 lookup _ShiftS500 {
 	sub @Shiftable'  by  @Shiftable  cfS500;
 } _ShiftS500;
+
+lookup _ShiftS600 {
+	sub @Shiftable'  by  @Shiftable  cfS600;
+} _ShiftS600;
+
+lookup _ShiftS700 {
+	sub @Shiftable'  by  @Shiftable  cfS700;
+} _ShiftS700;
 
 # shift east
 
@@ -165,6 +183,10 @@ lookup _ShiftN500E500 {
 lookup _ShiftN200W100 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfW100;
 } _ShiftN200W100;
+
+lookup _ShiftN500W100 {
+	sub @Shiftable'  by  @Shiftable cfN500 cfW100;
+} _ShiftN500W100;
 
 # shift diagonally south-east
 

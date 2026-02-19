@@ -964,18 +964,26 @@ lookup WideFormsDiac {
 	
 	# Special case: nuqta + diac(s)
 	sub absBehMed' @NuqtaLikeUpper @DiacUpper @KafMFForms  by  absBehMed.kf_wide;
+
+	sub @LamForms @MarkUpper	absBehMed'							@KafFinForms	by	absBehMed.kf_wide;
+	sub @LamForms @MarkUpper	absBehMed'	@MarkUpper				@KafFinForms	by	absBehMed.kf_wide;
+	sub @LamForms @MarkUpper	absBehMed'	@MarkUpper @MarkUpper	@KafFinForms	by	absBehMed.kf_wide;
+
 } WideFormsDiac;
 
 # continuation of WideForms, for chaining rules
 lookup WideForms_chain {
 	lookupflag UseMarkFilteringSet @MarkUpper;
 	
-	# Special case: nuqta-small-V + kaf/gaf
+	# Special case: nuqta-small-V/tah + kaf/gaf
 	# TODO: raise AP on the NuqtaPlusMark.kf_sub glyphs.
 	sub absBehMed' lookup _WideSmForm @NuqtaPlusMark_sub' lookup _WideSmForm @KafMFForms;
 	sub @NuqtaPlusMark_sub' lookup _WideSmForm @KafMFForms;
 	sub @NuqtaPlusMark_sub' lookup _WideSmForm @BehMedForms @KafMFForms;
 	sub @NuqtaPlusMark_sub' lookup _WideSmForm @BehMedForms @NuqtaLikeUpper @KafMFForms;
+
+	# beh + beh+marks + kaf
+	sub absBehMed.beM2 @NuqtaVisUpper		absBehMed' lookup _WideSmForm @MarkUpper @MarkUpper		@KafMFForms;
 
 	# Special case: khah + theh + kaf/gaf
 	sub absJeemMed.beM2 @MarkUpper' lookup _WideSmForm	absBehMed' lookup _WideSmForm	@MarkUpper	@KafMFForms;
@@ -999,6 +1007,8 @@ lookup WideForms_chain {
 	
 	# Special case: lam/tah + jeem + kaf/gaf
 	sub @Talls absJeemMed' lookup _WideSmForm @KafMFForms;
+
+	# beh+
 
 } WideForms_chain;
 
@@ -1800,11 +1810,14 @@ lookup ShiftNuqtasNS {
 	pos @Shiftable' <0  300 0 0> cfN300;
 	pos @Shiftable' <0  400 0 0> cfN400;
 	pos @Shiftable' <0  500 0 0> cfN500;
+
 	pos @Shiftable' <0 -100 0 0> cfS100;
 	pos @Shiftable' <0 -200 0 0> cfS200;
 	pos @Shiftable' <0 -300 0 0> cfS300;
 	pos @Shiftable' <0 -400 0 0> cfS400;
 	pos @Shiftable' <0 -500 0 0> cfS500;
+	pos @Shiftable' <0 -600 0 0> cfS600;
+	pos @Shiftable' <0 -700 0 0> cfS700;
 } ShiftNuqtasNS;
 
 lookup ShiftNuqtasEW {
@@ -1814,6 +1827,7 @@ lookup ShiftNuqtasEW {
 	pos @Shiftable' < 300 0 0 0> cfE300;
 	pos @Shiftable' < 400 0 0 0> cfE400;
 	pos @Shiftable' < 500 0 0 0> cfE500;
+
 	pos @Shiftable' <-100 0 0 0> cfW100;
 	pos @Shiftable' <-200 0 0 0> cfW200;
 	pos @Shiftable' <-300 0 0 0> cfW300;
