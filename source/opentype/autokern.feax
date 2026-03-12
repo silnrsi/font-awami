@@ -495,7 +495,7 @@ lookup MedialNuqtaOverhang {
 # The EnforceBlock checks to see if we are blocked and forces the process to terminate.
 # These lookups need to be separate because they use different filters.
 # We need this set of lookups for every potential kerned slice. Right now
-# we are allowing 12.
+# we are allowing 6 instead 12, as an optimization.
 
 # TODO: the last four lookups are not needed for the final iteration.
 
