@@ -1268,7 +1268,8 @@ do  forlet i = range(31);
 } _TryKernShiftContinue;
 
 lookup _InsBlockerAndDecKw {
-	# Decrement the KwMarker, because it got incremented before we knew there was going to be blocker further in.
+	# Decrement the KwMarker, because it got incremented before we knew it was going to be blocked further in.
+	# Note that we don't care what the slice width is at this point; invalid widths just won't happen.
 	sub kwN400	by	kblock	kwN400;
 	sub kwN300	by	kblock	kwN400;
 	sub kwN200	by	kblock	kwN400;
@@ -1291,6 +1292,7 @@ lookup _InsBlockerAndDecKw {
 	sub kw1500	by	kblock	kw1300;
 	sub kw1600	by	kblock	kw1400;
 } _InsBlockerAndDecKw;
+
 
 lookup _MakeBlockerFinal {
 	sub kblockR by kblock;
