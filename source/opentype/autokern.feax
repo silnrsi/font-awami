@@ -1,4 +1,3 @@
-#
 #	File: autokern.feax
 #
 #	FEAX code for Awami Nastaliq
@@ -24,7 +23,7 @@ include(../../source/opentype/autoKernMetrics.feax);
 
 # Don't allow kerning before bariyeh with overhanging tail.
 lookup PreventPreBariyehKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @BariyehIsoForms @ByKernSpace];
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
 	# Don't delete the kw0; other places in the system expect it to be present after a final.
 	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblock kw0;
 } PreventPreBariyehKern;
@@ -40,6 +39,12 @@ lookup PreventPreIsoKern {
 	sub kw0' space space space	@Isolates	by	knoneIso kw0;
 	# If we have lots of spaces, the kerning doesn't matter too much!
 } PreventPreIsoKern;
+
+
+lookup HardCodeSpecialIsolates{
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+	sub [absAlef absAlefFin]  kw0'  @RehIsoForms  by  kblock kw0;
+} HardCodeSpecialIsolates;
 
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
@@ -114,21 +119,19 @@ lookup HardCodeIsolates {
 lookup HandleMarkAsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeUpper @DiacUpper ytIgnore];
 
-	ignore sub @PyInitMarker' ytIgnore;		# we're ignoring the ascents - because this is a segment preceding an isolate
-
-	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacUpper;
-	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeUpper;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerUpper	@DiacUpper;
+	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarkerUpper	@NuqtaLikeUpper;
 } HandleMarkAsc;
 
 lookup HandleMarkDscContext {  # like lookup below but with context
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @JeemMedForms];
-	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker @JeemMedForms @PyInitMarker @NuqtaLikeLower;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerLower @JeemMedForms @PyInitMarker @NuqtaLikeLower;
 } HandleMarkDscContext;
 
 lookup HandleMarkDsc {
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @DiacLower];
-	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@DiacLower;
-	sub @PyInitMarker' lookup _InsertNuqtaDiacMarker	@NuqtaLikeLower;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerLower	@DiacLower;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerLower	@NuqtaLikeLower;
 } HandleMarkDsc;
 
 # Special cases: the nuqta doesn't affect the height of the entire (wide) glyph.
@@ -197,7 +200,7 @@ lookup blockFinalKw {
 # TODO: Replace some of these rules with ones that test for the presence CfMarkerEWs.
 lookup AdjustForLowerNuqtaOverhang {
 	# @KernBaseMarkVis ignores spaces
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @NuqtaLikeLower];
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis ybLast @MarkLower @CfMarkerEW];
 
 	# beh + beh + final jeem
 	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.be]'		ybLast' lookup _ExtendYbBy600	@DotTallL
@@ -264,6 +267,13 @@ lookup AdjustForLowerNuqtaOverhang {
 	# ... beh+heh-goal
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.hgM]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
 
+	# Default - detect shift and adjust:
+	sub @KwMarker' lookup _DecKwBy100	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE100;
+	sub @KwMarker' lookup _DecKwBy200	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE200;
+	sub @KwMarker' lookup _DecKwBy300	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE300;
+	sub @KwMarker' lookup _DecKwBy400	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE400;
+	sub @KwMarker' lookup _DecKwBy500	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE500;
+
 } AdjustForLowerNuqtaOverhang;
 
 lookup AdjustForUpperNuqtaOverhang {
@@ -273,8 +283,8 @@ lookup AdjustForUpperNuqtaOverhang {
 	# beh initials - upper
 	# TODO - since this is an upper nuqta, really we should extend a number higher than the actual glyph bottom.
 	sub @KwMarker' lookup _DecKwBy100	mkBehIni'			ybLast'	lookup _ExtendYbBy100	@DotWideU;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn
-										 mkBehIni.beM1]'	ybLast'	lookup _ExtendYbBy200	@DotWideU;
+	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn mkBehIni.beM1 mkBehIni.sd]'
+															ybLast'	lookup _ExtendYbBy200	@DotWideU;
 
 
 	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and
@@ -292,6 +302,7 @@ lookup AdjustForNuqtaShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @ExtYbMarker ybLast @NuqtaLikeLower @CfMarkerEW];
 	sub @KwMarker' lookup _DecKwBy100	@ExtYbMarker' lookup _ExtendYbBy100	ybLast'	@NuqtaLikeLower	cfE100;
 	sub @KwMarker' lookup _DecKwBy200	@ExtYbMarker' lookup _ExtendYbBy200	ybLast' @NuqtaLikeLower	cfE200;
+	#sub @KwMarker' lookup _DecKwBy300	@ExtYbMarker' lookup _ExtendYbBy300	ybLast' @NuqtaLikeLower	cfE300;
 } AdjustForNuqtaShift;
 
 
@@ -401,7 +412,7 @@ lookup SubtractNuqtaDescent {
 
 	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike @DscXPartialMarkers ybLast];
 	
-	# Skip all but the last 200-worth of slices.
+	# For some wide glyphs, skip all but the last 200-worth of slices.
   sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
 	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
 	   ybLast;
