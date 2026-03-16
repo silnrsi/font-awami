@@ -116,6 +116,9 @@ lookup _InsertDscx1200Left2 {
   sub @PyInitMarker  by @PyInitMarker dscx1200.Left2;
 } _InsertDscx1200Left2;
 
+lookup _InsBlocker {
+    sub @KwMarker by kblock @KwMarker;
+} _InsBlocker;
 
 # We've finished adjusting the heights for limited-scope nuqta markers.
 lookup _AscxDscxDone {
@@ -135,30 +138,32 @@ lookup _AscxDscxDone {
 
 # Insert an indication of a nuqta or mark in order to force the 
 # descent lower or the ascent higher.
-# TODO: split into two methods to handle upper and lower.
-lookup _InsertNuqtaDiacMarker {
-	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLike @JeemMedForms];
+lookup _InsertNuqtaDiacMarkerUpper {
+	lookupflag UseMarkFilteringSet [@PyInitMarker @MarkUpper];
 
-	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeLower @NuqtaLikeUpper;	# the nuqta doesn't add any height
 	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeUpper;
 
 	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;  # the nuqta on the reh is higher than normal
 	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;
 	
-	# Special case for nuqta under jeem that underhangs the previous glyph:
-	sub @PyInitMarker' lookup _InsertDscx1200Left2  @JeemMedForms @PyInitMarker _dot3l;
-
-	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot1u;
-	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	_dot2u;
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot3u;
-	sub @PyInitMarker' lookup _InsertUpperMarker1000	@NuqtaLikeLower	_dot4u;
-	sub @PyInitMarker' lookup _InsertUpperMarker600		@NuqtaLikeLower	[_hamza absHamzaAbove];
+	# TODO: add nuqta + diac combinations
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		[_hamza absHamzaAbove];
+
+	sub @PyInitMarker' lookup _InsertUpperMarker600		@DiacUpper;
+
+} _InsertNuqtaDiacMarkerUpper;
+
+lookup _InsertNuqtaDiacMarkerLower {
+
+	lookupflag UseMarkFilteringSet [@PyInitMarker @MarkLower];
+
+	# Special case for nuqta under jeem that underhangs the previous glyph:
+	sub @PyInitMarker' lookup _InsertDscx1200Left2  @JeemMedForms @PyInitMarker _dot3l;
 
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot1l;
 	sub @PyInitMarker' lookup _InsertLowerMarker600		_dot2l;
@@ -167,9 +172,13 @@ lookup _InsertNuqtaDiacMarker {
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;
 	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
 
+	sub @PyInitMarker' lookup _InsertLowerMarker600		@DiacLower;
+
+	# TODO: add nuqta + diac combinations
+
 	# Others:
 	# kharizabar/zair - 1100
 	# small-tah - 900
 	# nuqta+tah - 1500
-} _InsertNuqtaDiacMarker;
+} _InsertNuqtaDiacMarkerLower;
 

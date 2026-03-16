@@ -88,6 +88,8 @@ lookup MarkersYtb2AscDsc {
 # Absolute heights
 
 
+# We use chaining lookups to set the value, to avoid duplicated auto-generated lookups.
+
 lookup MakeAscentAbsolute{
   lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
   sub py0  ascN500' lookup _Set0;
@@ -1207,6 +1209,8 @@ lookup MakeAscentAbsolute{
   sub py3000  asc2900' lookup _Set3000;
   sub py3000  asc3000' lookup _Set3000;
 } MakeAscentAbsolute;
+
+# We use chaining lookups to set the value, to avoid duplicated auto-generated lookups.
 
 lookup MakeDescentAbsolute{
   lookupflag UseMarkFilteringSet [@PyMarker @DscMarker];

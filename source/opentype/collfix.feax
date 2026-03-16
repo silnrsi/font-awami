@@ -19,8 +19,14 @@
 
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
+@CfMarkerNS = [cfNS0 cfN100 cfN200 cfN300 cfN400 cfN500 cfS100 cfS200 cfS300 cfS400 cfS500];
+@CfMarkerEW = [cfEW0 cfE100 cfE200 cfE300 cfE400 cfE500 cfW100 cfW200 cfW300 cfW400 cfW500];
+@CfMarker = [@CfMarkerNS @CfMarkerEW];
+
+@Any = [@GDEF_bases @GDEF_marks];
+
 lookup KludgeEndOfStream {
-	# Ensure that the last shiftable glyph has at least three slots after it.
+	# Ensure that the last nuqta has at least three slots after it.
 	# This is needed for the insertion rules below.
 	ignore sub @Finals  @Shiftable' @Any @Any @Any;
 	sub @Finals  @Shiftable'  @Any @Any		by  @Shiftable  bogus;
@@ -159,8 +165,8 @@ lookup CollFixNuqtasLower {
 	sub absBehMed.benn	@NuqtaLikeLower						absBehMed.nn_hgbm	@NuqtaLikeLower' lookup _ShiftS300;
 
 	# beh + beh + medial jeem
-	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm					absJeemMed.qf;
-	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm	@NuqtaLikeLower	absJeemMed.qf;
+	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm					[absJeemMed.qf absJeemMed.hd];
+	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm	@NuqtaLikeLower	[absJeemMed.qf absJeemMed.hd];
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100E200
 														absBehMed.jm' @NuqtaLikeLower' @Any' @Any' lookup _ShiftS300;
 

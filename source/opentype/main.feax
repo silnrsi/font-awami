@@ -1,7 +1,7 @@
 #
 #	File: main.feax
 #
-# Main FEAX code for Awami Nastaliq
+#	Main FEAX code for Awami Nastaliq
 
 #	This file is part of the Awami Nastaliq font 
 #	(https://software.sil.org/awami) and is 
@@ -17,6 +17,11 @@
 
 languagesystem latn dflt ;
 languagesystem arab dflt;
+
+
+def SliceWidth() {
+	return 200			# 100 for best rendering, 200 for optimizaed performance
+} SliceWidth;
 
 #====================  CLASSES  ====================
 
@@ -113,6 +118,7 @@ languagesystem arab dflt;
 @NLikeHid_sub = [_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
 	_smallVBelow.hid _smallVinvBelow.hid
 	_diac.hid _diac.hid _diac.hid];
+
 
 
 include(../../source/opentype/bariyehKernClasses.feax);
@@ -580,26 +586,29 @@ feature ccmp {
 
 lookup FontCheck;		# both latn and arab
 
+script arab;
 lookup DecomposeBases {
+	
+
 	sub		@BehComposed_sub 			by 		absDotlessBeh 	@BehMark_sub;
-	sub		@JeemComposed_sub			by		absHah					@JeemMark_sub;
-	sub		@SeenComposed_sub			by		absSeen					@SeenMark_sub;
-	sub		@SadComposed_sub			by		absSad					@SadMark_sub;
-	sub		@TahComposed_sub			by		absTah					@TahMark_sub;
-	sub		@AinComposed_sub			by		absAin					@AinMark_sub;
-	sub		@FehComposed_sub			by		absDotlessFeh		@FehMark_sub;
-	sub		@KehehComposed_sub		by		absKeheh				@KehehMark_sub;
-	sub		@GafComposed_sub			by		absGaf					@GafMark_sub;
-	sub		@LamComposed_sub			by		absLam					@LamMark_sub;
+	sub		@JeemComposed_sub			by		absHah			@JeemMark_sub;
+	sub		@SeenComposed_sub			by		absSeen			@SeenMark_sub;
+	sub		@SadComposed_sub			by		absSad			@SadMark_sub;
+	sub		@TahComposed_sub			by		absTah			@TahMark_sub;
+	sub		@AinComposed_sub			by		absAin			@AinMark_sub;
+	sub		@FehComposed_sub			by		absDotlessFeh	@FehMark_sub;
+	sub		@KehehComposed_sub			by		absKeheh		@KehehMark_sub;
+	sub		@GafComposed_sub			by		absGaf			@GafMark_sub;
+	sub		@LamComposed_sub			by		absLam			@LamMark_sub;
 	# no meem varieties at this point
-	sub		@HehGoalComposed_sub	by		absHehGoal			@HehGoalMark_sub;
-	sub		@NoonComposed_sub			by		absNoon					@NoonMark_sub;
-	sub		@ChotiyehComposed_sub	by		nlqChotiyeh			@ChotiyehMark_sub;
-	sub		@AlefComposed_sub			by		absAlef					@AlefMark_sub;
-	sub		@DalComposed_sub			by		absDal					@DalMark_sub;
-	sub		@RehComposed_sub			by		absReh					@RehMark_sub;
-	sub		@WawComposed_sub			by		absWaw					@WawMark_sub;
-	sub		@BariyehComposed_sub	by		nlqBariyeh			@BariyehMark_sub;
+	sub		@HehGoalComposed_sub		by		absHehGoal		@HehGoalMark_sub;
+	sub		@NoonComposed_sub			by		absNoon			@NoonMark_sub;
+	sub		@ChotiyehComposed_sub		by		nlqChotiyeh		@ChotiyehMark_sub;
+	sub		@AlefComposed_sub			by		absAlef			@AlefMark_sub;
+	sub		@DalComposed_sub			by		absDal			@DalMark_sub;
+	sub		@RehComposed_sub			by		absReh			@RehMark_sub;
+	sub		@WawComposed_sub			by		absWaw			@WawMark_sub;
+	sub		@BariyehComposed_sub		by		nlqBariyeh		@BariyehMark_sub;
 } DecomposeBases;
 
 } ccmp;		# end of feature
@@ -607,6 +616,7 @@ lookup DecomposeBases {
 
 # Recompose isolates:
 feature isol {
+script arab;
 
 lookup RecomposeIsolates {
 	sub		absDotlessBeh 			@BehMark_sub			by		@BehComposed_sub;
@@ -637,6 +647,7 @@ lookup RecomposeIsolates {
 @QafMark = [_dot2u];
 
 feature fina {
+script arab;
 
 lookup RightFinals2 {
 	sub		absDotlessQaf'		@QafMark			by		absQafFin;
@@ -687,6 +698,7 @@ lookup FixIMNoonYehQaf {
 
 
 feature medi {
+script arab;
 
 lookup FixIMNoonYehQaf;
 
@@ -703,6 +715,7 @@ lookup MedialForms {
 
 
 feature init {
+script arab;
 
 lookup FixIMNoonYehQaf;
 
@@ -716,6 +729,7 @@ lookup InitialForms {
 
 
 feature rlig {
+script arab;
 
 # Forms that need two slots for the pre-context.
 lookup DoublePreContext {
@@ -1016,6 +1030,7 @@ lookup WideForms_chain {
 
 
 feature calt {
+script arab;
 
 # --- alternate height kafs ---
 
@@ -1189,6 +1204,15 @@ lookup KafCollisionsStep2 {
 
 lookup KafLineHeight {
 	lookupflag IgnoreMarks;
+	
+	# Places where we don't want shorter forms:
+	# 1. No change: never make shorter after a kaf/gaf.
+	#ignore sub @KafTop @NuqtaLikeUpper @KafMedForms';
+	# 2. No change: don't make shorter after a narrow substantial base with nuqta or diac
+	#ignore sub [absFehIni absFehMed absAinIni absAinMed absJeemIni absJeemMed] @AllMarksUpper @KafMedForms';
+	# We usually don't need to handle these because any that need taller forms
+	# won't match the KafIni/MedFull_sub classes below.
+	# If we find we need to fix them we can do it afterwards in a lookup that can recognize marks.
 	
 	sub	@KafIMFull' lookup _KafShorter 	@KHighMedials @KHighMedials @KHighFinals;
 	
@@ -1514,6 +1538,7 @@ include(../../source/opentype/bariyehKernRules.feax);
 include(../../source/opentype/collfix_inc.feax);
 
 feature calt {
+script arab;
 
 include(../../source/opentype/collfix.feax);
 
@@ -1529,10 +1554,18 @@ include(../../source/opentype/collfix.feax);
 include(../../source/opentype/autokern_inc.feax);
 
 feature calt {	# eventually change this to a Stylistic Set?
+script arab;
 
-include(../../source/opentype/handkern.feax);  # not needed if we do autokerning
+def AutoKern() {
+	return 1    # toggle to switch between auto- and hand-kerning
+} AutoKern;
 
-#include(../../source/opentype/autokern.feax);
+# Can't use the AutoKern() conditional for this file; toggle by hand.	
+include(../../source/opentype/autokern.feax);
+
+do	if AutoKern() != 1; {
+	include(../../source/opentype/handkern.feax);
+}
 
 } calt;
 
@@ -1781,6 +1814,7 @@ lookup AttRing2Mark {
 
 
 feature curs {
+script arab;
 
 lookup BasicConnections {
 	lookupflag IgnoreMarks RightToLeft;
@@ -1791,6 +1825,7 @@ lookup BasicConnections {
 
 
 feature dist {
+script arab;
 
 # This is now being done by inserting spacing glyphs.
 #lookup BariyehKern {
@@ -1802,6 +1837,7 @@ feature dist {
 
 
 feature kern {
+script arab;
 
 lookup ShiftNuqtasNS {
 	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
@@ -1838,6 +1874,39 @@ lookup ShiftNuqtasEW {
 lookup DoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
 
+do	if AutoKern() == 1; {
+	# For auto-kerning, it helps to just loosen everything up a little.
+	pos @GDEF_bases <1050 0 1050 0> kwN1000;
+	pos @GDEF_bases <950 0 950 0> kwN900;
+	pos @GDEF_bases <850 0 850 0> kwN800;
+	pos @GDEF_bases <750 0 750 0> kwN700;
+	pos @GDEF_bases <650 0 650 0> kwN600;
+	pos @GDEF_bases <550 0 550 0> kwN500;
+	pos @GDEF_bases <450 0 450 0> kwN400;
+	pos @GDEF_bases <350 0 350 0> kwN300;
+	pos @GDEF_bases <250 0 250 0> kwN200;
+	pos @GDEF_bases <150 0 150 0> kwN100;
+
+	pos @GDEF_bases <-50 0 -50 0> kw100;
+	pos @GDEF_bases <-150 0 -150 0> kw200;
+	pos @GDEF_bases <-250 0 -250 0> kw300;
+	pos @GDEF_bases <-350 0 -350 0> kw400;
+	pos @GDEF_bases <-450 0 -450 0> kw500;
+	pos @GDEF_bases <-550 0 -550 0> kw600;
+	pos @GDEF_bases <-650 0 -650 0> kw700;
+	pos @GDEF_bases <-750 0 -750 0> kw800;
+	pos @GDEF_bases <-850 0 -850 0> kw900;
+	pos @GDEF_bases <-950 0 -950 0> kw1000;
+	pos @GDEF_bases <-1050 0 -1050 0> kw1100;
+	pos @GDEF_bases <-1150 0 -1150 0> kw1200;
+	pos @GDEF_bases <-1250 0 -1250 0> kw1300;
+	pos @GDEF_bases <-1350 0 -1350 0> kw1400;
+	pos @GDEF_bases <-1450 0 -1450 0> kw1500;
+	pos @GDEF_bases <-1550 0 -1500 0> kw1600;
+}
+
+do	if AutoKern() != 1; {
+	# Standard kerning
 	pos @GDEF_bases <1000 0 1000 0> kwN1000;
 	pos @GDEF_bases <900 0 900 0> kwN900;
 	pos @GDEF_bases <800 0 800 0> kwN800;
@@ -1865,6 +1934,8 @@ lookup DoKerning {
 	pos @GDEF_bases <-1400 0 -1400 0> kw1400;
 	pos @GDEF_bases <-1500 0 -1500 0> kw1500;
 	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
+}
+
 } DoKerning;
 
 } kern;
