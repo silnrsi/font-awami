@@ -1,7 +1,7 @@
 #
 #	File: main.feax
 #
-# Main FEAX code for Awami Nastaliq
+#	Main FEAX code for Awami Nastaliq
 
 #	This file is part of the Awami Nastaliq font 
 #	(https://software.sil.org/awami) and is 
@@ -17,6 +17,11 @@
 
 languagesystem latn dflt ;
 languagesystem arab dflt;
+
+
+def SliceWidth() {
+	return 200			# 100 for best rendering, 200 for optimizaed performance
+} SliceWidth;
 
 #====================  CLASSES  ====================
 
@@ -97,6 +102,7 @@ languagesystem arab dflt;
 @NLikeHid_sub = [_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
 	_smallVBelow.hid _smallVinvBelow.hid
 	_diac.hid _diac.hid _diac.hid];
+
 
 
 include(../../source/opentype/bariyehKernClasses.feax);

@@ -1464,7 +1464,13 @@ lookup _SubtractNuqtaLowerHt{
   sub dscx1200 @DscMarker' lookup _SubtractNuqtaHt1200;
 } _SubtractNuqtaLowerHt;
 
+# When using 200-unit slices, we can't delete 100 at a time, so treat
+# 100 units as 200, 300 as 400, and 500 as 600.
+
+do  if SliceWidth() == 200;
+{
 lookup _DecKwBy100 {
+  # Since slices are 200 wide, delete 200.
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
   sub  kwN800  by  kwN1000;
@@ -1493,6 +1499,39 @@ lookup _DecKwBy100 {
   sub  kw1500  by  kw1300;
   sub  kw1600  by  kw1400;
 } _DecKwBy100;
+}
+do  if SliceWidth() == 100;
+{
+lookup _DecKwBy100 {
+  sub  kwN1000  by  kwN1000;
+  sub  kwN900  by  kwN1000;
+  sub  kwN800  by  kwN900;
+  sub  kwN700  by  kwN800;
+  sub  kwN600  by  kwN700;
+  sub  kwN500  by  kwN600;
+  sub  kwN400  by  kwN500;
+  sub  kwN300  by  kwN400;
+  sub  kwN200  by  kwN300;
+  sub  kwN100  by  kwN200;
+  sub  kw0  by  kwN100;
+  sub  kw100  by  kw0;
+  sub  kw200  by  kw100;
+  sub  kw300  by  kw200;
+  sub  kw400  by  kw300;
+  sub  kw500  by  kw400;
+  sub  kw600  by  kw500;
+  sub  kw700  by  kw600;
+  sub  kw800  by  kw700;
+  sub  kw900  by  kw800;
+  sub  kw1000  by  kw900;
+  sub  kw1100  by  kw1000;
+  sub  kw1200  by  kw1100;
+  sub  kw1300  by  kw1200;
+  sub  kw1400  by  kw1300;
+  sub  kw1500  by  kw1400;
+  sub  kw1600  by  kw1500;
+} _DecKwBy100;
+}
 
 lookup _DecKwBy200 {
   sub  kwN1000  by  kwN1000;
@@ -1524,6 +1563,8 @@ lookup _DecKwBy200 {
   sub  kw1600  by  kw1400;
 } _DecKwBy200;
 
+do  if SliceWidth() == 200;
+{
 lookup _DecKwBy300 {
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
@@ -1553,6 +1594,39 @@ lookup _DecKwBy300 {
   sub  kw1500  by  kw1100;
   sub  kw1600  by  kw1200;
 } _DecKwBy300;
+}
+do  if SliceWidth() == 100;
+{
+lookup _DecKwBy300 {
+  sub  kwN1000  by  kwN1000;
+  sub  kwN900  by  kwN1000;
+  sub  kwN800  by  kwN1000;
+  sub  kwN700  by  kwN1000;
+  sub  kwN600  by  kwN900;
+  sub  kwN500  by  kwN800;
+  sub  kwN400  by  kwN700;
+  sub  kwN300  by  kwN600;
+  sub  kwN200  by  kwN500;
+  sub  kwN100  by  kwN400;
+  sub  kw0  by  kwN300;
+  sub  kw100  by  kwN200;
+  sub  kw200  by  kwN100;
+  sub  kw300  by  kw0;
+  sub  kw400  by  kw100;
+  sub  kw500  by  kw200;
+  sub  kw600  by  kw300;
+  sub  kw700  by  kw400;
+  sub  kw800  by  kw500;
+  sub  kw900  by  kw600;
+  sub  kw1000  by  kw700;
+  sub  kw1100  by  kw800;
+  sub  kw1200  by  kw900;
+  sub  kw1300  by  kw1000;
+  sub  kw1400  by  kw1100;
+  sub  kw1500  by  kw1200;
+  sub  kw1600  by  kw1300;
+} _DecKwBy300;
+}
 
 lookup _DecKwBy400 {
   sub  kwN1000  by  kwN1000;
@@ -1584,6 +1658,8 @@ lookup _DecKwBy400 {
   sub  kw1600  by  kw1200;
 } _DecKwBy400;
 
+do  if SliceWidth() == 200;
+{
 lookup _DecKwBy500 {
   sub  kwN1000  by  kwN1000;
   sub  kwN900  by  kwN1000;
@@ -1613,6 +1689,39 @@ lookup _DecKwBy500 {
   sub  kw1500  by  kw900;
   sub  kw1600  by  kw1000;
 } _DecKwBy500;
+}
+do  if SliceWidth() == 100;
+{
+lookup _DecKwBy500 {
+  sub  kwN1000  by  kwN1000;
+  sub  kwN900  by  kwN1000;
+  sub  kwN800  by  kwN1000;
+  sub  kwN700  by  kwN1000;
+  sub  kwN600  by  kwN1000;
+  sub  kwN500  by  kwN1000;
+  sub  kwN400  by  kwN900;
+  sub  kwN300  by  kwN800;
+  sub  kwN200  by  kwN700;
+  sub  kwN100  by  kwN600;
+  sub  kw0  by  kwN500;
+  sub  kw100  by  kwN400;
+  sub  kw200  by  kwN300;
+  sub  kw300  by  kwN200;
+  sub  kw400  by  kwN100;
+  sub  kw500  by  kw0;
+  sub  kw600  by  kw100;
+  sub  kw700  by  kw200;
+  sub  kw800  by  kw300;
+  sub  kw900  by  kw400;
+  sub  kw1000  by  kw500;
+  sub  kw1100  by  kw600;
+  sub  kw1200  by  kw700;
+  sub  kw1300  by  kw800;
+  sub  kw1400  by  kw900;
+  sub  kw1500  by  kw1000;
+  sub  kw1600  by  kw1100;
+} _DecKwBy500;
+}
 
 lookup _DecKwBy600 {
   sub  kwN1000  by  kwN1000;
