@@ -3,8 +3,6 @@
 
 # These metrics use a kerning slice width of 200.
 
-# NOTE: this file has been hand-tweaked.
-
 lookup InitKernMetrics {
 
   sub absAe  by  absAe  dy0  py0  
@@ -16,12 +14,12 @@ lookup InitKernMetrics {
 					yt400   yt200   yt1400  yt1800  yt1800  yt1600  yt1400  yt200   
 					kw0;
   sub absAinFin  by  absAinFin  dy1100    py0  
-					dscN400  dscN600  	ybLast
-					asc400   asc200   asc0     asc1600  asc1600  asc1600  asc1400  asc200   
+					dscN600  dscN200  	ybLast
+					asc1600  asc1400  asc600   
 					kw0;
   sub absAinFin_short  by  absAinFin_short  dy900     py0  
-					dscN600  dscN600  	ybLast
-					asc400   asc0     ascN200  asc1400  asc1400  asc1400  asc1200  
+					dscN600  dscN200  	ybLast
+					asc1400  asc1200  asc400   
 					kw0;
   sub absAinIni  by  absAinIni  dy0  pyNULL  
 					dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
@@ -99,80 +97,80 @@ lookup InitKernMetrics {
 					dsc800   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1200  asc1400  asc1400  asc1200  asc800   ;
   sub absAinMed  by  absAinMed  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc200   asc200   asc0     ;
+					dscN800  dscN800  	ybLast
+					asc200   asc0     ;
   sub absAinMed.ai  by  absAinMed.ai  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dsc0     	ybLast
-					asc800   asc800   asc800   asc200   ;
+					dscN200  dscN200  	ybLast
+					asc800   asc800   ;
   sub absAinMed.be  by  absAinMed.be  dy100     pyNULL  
-					dscN400  dscN400  	ybLast
-					asc600   asc600   asc400   ;
+					dscN400  	ybLast
+					asc600   asc400   ;
   sub absAinMed.beF  by  absAinMed.beF  dy200     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc600   asc0     ;
+					dscN200  dscN200  	ybLast
+					asc600   asc600   asc0     ;
   sub absAinMed.beM1  by  absAinMed.beM1  dy200     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc600   asc600   ;
+					dscN200  dscN200  	ybLast
+					asc800   asc600   asc400   ;
   sub absAinMed.beM2  by  absAinMed.beM2  dy200     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc600   asc200   ;
+					dscN200  dscN200  	ybLast
+					asc600   asc600   asc0     ;
   sub absAinMed.behg  by  absAinMed.behg  dy100     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc400   asc0     ;
+					dscN200  dscN200  	ybLast
+					asc600   asc400   asc0     ;
   sub absAinMed.benn  by  absAinMed.benn  dyN300    pyNULL  
-					dscN800  dscN1000 dscN1000 	ybLast
-					asc0     asc0     asc0     ;
+					dscN1000 dscN1000 	ybLast
+					asc0     asc0     ;
   sub absAinMed.bere  by  absAinMed.bere  dy100     pyNULL  
-					dscN400  dscN400  	ybLast
-					asc600   asc600   asc400   ;
+					dscN400  	ybLast
+					asc600   asc400   ;
   sub absAinMed.by  by  absAinMed.by  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc400   asc200   ;
+					dsc0     dsc0     dsc0     	ybLast
+					asc1000  asc800   asc400   asc200   ;
   sub absAinMed.ch  by  absAinMed.ch  dy500     pyNULL  
-					dsc200   dsc200   	ybLast
-					asc1000  asc1000  asc1000  asc400   asc200   ;
+					dsc200   	ybLast
+					asc1000  asc800   asc400   asc200   ;
   sub absAinMed.fe  by  absAinMed.fe  dy400     pyNULL  
-					dsc0     dsc0     dscN200  dscN200  	ybLast
-					asc800   asc800   asc800   asc200   ;
+					dsc0     dscN200  dscN200  	ybLast
+					asc800   asc800   asc0     ;
   sub absAinMed.hd  by  absAinMed.hd  dy300     pyNULL  
 						ybLast
-					asc800   asc800   asc800   ;
+					asc800   asc800   ;
   sub absAinMed.hgF  by  absAinMed.hgF  dy0       pyNULL  
-					dscN400  dscN400  dscN400  	ybLast
-					asc400   asc400   asc400   asc0     ;
+					dscN400  	ybLast
+					asc400   asc400   ;
   sub absAinMed.hgM  by  absAinMed.hgM  dy500     pyNULL  
-					dsc0     	ybLast
-					asc1000  asc1000  ;
+						ybLast
+					asc1000  ;
   sub absAinMed.jm  by  absAinMed.jm  dy700     pyNULL  
-					dsc400   	ybLast
-					asc1200  asc1200  asc1000  asc400   asc400   ;
+						ybLast
+					asc1200  asc1000  asc400   asc200   ;
   sub absAinMed.mm  by  absAinMed.mm  dy500     pyNULL  
-					dsc200   	ybLast
-					asc1000  asc1000  asc1000  asc400   ;
+						ybLast
+					asc1000  asc1000  asc200   ;
   sub absAinMed.mmX  by  absAinMed.mmX  dy400     pyNULL  
-					dsc200   	ybLast
-					asc1000  asc1000  asc800   asc200   ;
+						ybLast
+					asc800   asc800   asc200   ;
   sub absAinMed.nn  by  absAinMed.nn  dy0       pyNULL  
-					dscN200  dscN200  	ybLast
-					asc600   asc600   ;
+					dscN200  	ybLast
+					asc600   ;
   sub absAinMed.qf  by  absAinMed.qf  dy500     pyNULL  
-					dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc1000  ;
+					dsc0     	ybLast
+					asc1000  asc800   ;
   sub absAinMed.re  by  absAinMed.re  dy200     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc600   asc0     ;
+					dscN400  	ybLast
+					asc600   asc600   ;
   sub absAinMed.sd  by  absAinMed.sd  dy700     pyNULL  
-					dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1200  asc400   ;
+					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc1200  asc1000  asc400   ;
   sub absAinMed.sn  by  absAinMed.sn  dy200     pyNULL  
-					dscN200  dscN200  	ybLast
-					asc600   asc600   asc600   ;
+					dscN200  	ybLast
+					asc600   asc600   ;
   sub absAinMed.snsn  by  absAinMed.snsn  dy400     pyNULL  
-					dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   ;
+					dsc0     	ybLast
+					asc1000  asc800   ;
   sub absAinMed.ta  by  absAinMed.ta  dy900     pyNULL  
-					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc1200  asc400   ;
+					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc1400  asc1200  asc400   ;
   sub absAinThreeDotsAbove  by  absAinThreeDotsAbove  dy0  py0  
 						ybLast
 					yt400   yt200   yt2200  yt2600  yt2600  yt2600  yt2200  yt200   
@@ -183,15 +181,15 @@ lookup InitKernMetrics {
 					kw0;
   sub absAlefFin  by  absAlefFin  dy800     py0  
 						ybLast
-					asc1600  asc1600  
+					asc1800  
 					kw0;
   sub absAlefFin._lm  by  absAlefFin._lm  dy300     py0  
 						ybLast
-					asc1800  asc600   asc600   
+					asc200   asc600   asc600   
 					kw0;
   sub absAlefFin_allah  by  absAlefFin_allah  dy800     py0  
 						ybLast
-					asc1600  asc1600  
+					asc1800  
 					kw0;
   sub absAlefHamzaAbove  by  absAlefHamzaAbove  dy0  py0  
 						ybLast
@@ -199,11 +197,11 @@ lookup InitKernMetrics {
 					kw0;
   sub absAlefHamzaBelow  by  absAlefHamzaBelow  dy0  py0  
 						ybLast
-					yt1800  yt1800  yt0     
+					yt1600  yt1600  yt0     
 					kw0;
   sub absAlefMaddaAbove  by  absAlefMaddaAbove  dy0  py0  
 						ybLast
-					yt2400  yt2400  yt2200  yt2400  yt2400  
+					yt2200  yt2400  yt2400  
 					kw0;
   sub absAlefMaksura  by  absAlefMaksura  dy0  py0  
 						ybLast
@@ -219,7 +217,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absAlefWasla  by  absAlefWasla  dy0  py0  
 						ybLast
-					yt2600  yt2600  yt2600  yt2400  
+					yt2600  yt2600  yt2400  
 					kw0;
   sub absAlefWavyHamzaAbove  by  absAlefWavyHamzaAbove  dy0  py0  
 						ybLast
@@ -227,7 +225,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absAlefWavyHamzaBelow  by  absAlefWavyHamzaBelow  dy0  py0  
 						ybLast
-					yt1800  yt1800  yt200   
+					yt1600  yt1600  yt0     
 					kw0;
   sub absAlef_allah  by  absAlef_allah  dy0  py0  
 						ybLast
@@ -242,8 +240,8 @@ lookup InitKernMetrics {
 					yt800   yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
 					kw0;
   sub absBehFin  by  absBehFin  dy500     py0  
-					dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc800   asc600   asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc600   asc600   
+					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc800   asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absBehFin._bfkl  by  absBehFin._bfkl  dy600     py0  
 					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
@@ -329,7 +327,7 @@ lookup InitKernMetrics {
 					ascN200  ascN400  ;
   sub absBehMed.ai  by  absBehMed.ai  dy600     pyNULL  
 					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc200   asc200   ;
+					asc600   asc400   asc200   asc200   ;
   sub absBehMed.ai_ss  by  absBehMed.ai_ss  dy300     pyNULL  
 					dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc200   asc200   ;
@@ -337,20 +335,20 @@ lookup InitKernMetrics {
 					dscN400  dscN400  	ybLast
 					asc200   asc0     ;
   sub absBehMed.beF  by  absBehMed.beF  dy400     pyNULL  
-					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc400   asc400   asc200   asc0     asc0     ;
-  sub absBehMed.beF_ss  by  absBehMed.beF_ss  dy200     pyNULL  
 					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc200   asc200   asc0     asc0     ;
+					asc400   asc400   asc200   asc0     ;
+  sub absBehMed.beF_ss  by  absBehMed.beF_ss  dy200     pyNULL  
+					dscN200  dscN200  dscN200  	ybLast
+					asc400   asc200   asc0     ;
   sub absBehMed.beM1  by  absBehMed.beM1  dy300     pyNULL  
-					dscN200  dscN200  dscN200  dsc0     	ybLast
-					asc200   asc200   asc600   asc600   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc400   asc200   asc400   ;
   sub absBehMed.beM2  by  absBehMed.beM2  dy100     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
 					asc200   asc200   asc200   ;
   sub absBehMed.behg  by  absBehMed.behg  dy100     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc200   asc200   asc0     ;
+					asc200   asc0     asc0     ;
   sub absBehMed.benn  by  absBehMed.benn  dyN300    pyNULL  
 					dscN800  dscN1000 dscN1000 	ybLast
 					ascN400  ascN400  ;
@@ -359,13 +357,13 @@ lookup InitKernMetrics {
 					asc200   asc0     ;
   sub absBehMed.by  by  absBehMed.by  dy700     pyNULL  
 					dsc400   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   asc400   asc200   ;
+					asc800   asc600   asc400   asc400   asc200   ;
   sub absBehMed.ch  by  absBehMed.ch  dy600     pyNULL  
 					dsc400   dsc200   	ybLast
-					asc600   asc600   asc600   asc400   ;
+					asc600   asc600   asc400   asc200   ;
   sub absBehMed.fe  by  absBehMed.fe  dy500     pyNULL  
 					dsc200   dsc0     dscN200  dscN200  	ybLast
-					asc400   asc400   asc200   ;
+					asc600   asc400   asc200   ;
   sub absBehMed.fe_ss  by  absBehMed.fe_ss  dy200     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
 					asc400   asc200   ;
@@ -380,10 +378,10 @@ lookup InitKernMetrics {
 					asc200   asc0     asc0     ;
   sub absBehMed.hgF_be  by  absBehMed.hgF_be  dy100     pyNULL  
 					dscN400  dscN400  dscN400  	ybLast
-					asc0     asc0     asc0     ;
+					asc200   asc0     asc0     ;
   sub absBehMed.hgM  by  absBehMed.hgM  dy700     pyNULL  
-					dsc400   dsc0     dsc0     	ybLast
-					asc600   asc600   asc200   ;
+					dsc400   dsc0     	ybLast
+					asc800   asc600   ;
   sub absBehMed.jm  by  absBehMed.jm  dy700     pyNULL  
 					dsc400   	ybLast
 					asc800   asc800   asc600   asc400   ;
@@ -391,17 +389,17 @@ lookup InitKernMetrics {
 					dsc600   dsc600   	ybLast
 					asc1000  asc1000  asc800   asc600   asc400   ;
   sub absBehMed.kf_wide  by  absBehMed.kf_wide  dyN300    pyNULL  
-					dscN600  dscN800  dscN800  dscN800  dscN600  	ybLast
-					ascN200  ascN400  ascN400  asc0     ;
+					dscN800  dscN800  dscN800  dscN800  	ybLast
+					ascN200  ascN400  ascN200  ;
   sub absBehMed.mm  by  absBehMed.mm  dy500     pyNULL  
-					dsc200   dsc200   	ybLast
-					asc600   asc600   asc400   asc200   ;
+					dsc200   dsc0     	ybLast
+					asc600   asc400   asc400   asc200   ;
   sub absBehMed.mmR  by  absBehMed.mmR  dy500     pyNULL  
 					dsc200   dsc200   	ybLast
-					asc600   asc600   asc400   asc400   ;
+					asc600   asc600   asc400   asc200   ;
   sub absBehMed.mmX  by  absBehMed.mmX  dy400     pyNULL  
 					dsc200   	ybLast
-					asc400   asc400   asc400   ;
+					asc400   asc400   asc200   ;
   sub absBehMed.mmXR  by  absBehMed.mmXR  dy400     pyNULL  
 					dsc200   	ybLast
 					asc400   asc400   asc400   ;
@@ -412,29 +410,29 @@ lookup InitKernMetrics {
 					dscN200  dscN400  dscN400  	ybLast
 					asc400   asc200   asc0     ;
   sub absBehMed.nn_hgbm  by  absBehMed.nn_hgbm  dy400     pyNULL  
-					dscN400  dscN400  dscN200  	ybLast
-					asc400   asc200   asc0     ;
+					dscN400  dscN400  	ybLast
+					asc400   asc200   ;
   sub absBehMed.nn_hgbmR  by  absBehMed.nn_hgbmR  dy400     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
+					dscN400  dscN400  dscN400  	ybLast
 					asc400   asc200   asc0     ;
   sub absBehMed.qf  by  absBehMed.qf  dy800     pyNULL  
-					dsc400   dsc200   dsc0     	ybLast
-					asc600   asc600   asc400   ;
+					dsc400   dsc0     dsc0     	ybLast
+					asc800   asc600   asc400   ;
   sub absBehMed.qf_short  by  absBehMed.qf_short  dy500     pyNULL  
 					dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   asc200   ;
+					asc600   asc400   asc400   asc200   ;
   sub absBehMed.qf_ss  by  absBehMed.qf_ss  dy500     pyNULL  
-					dsc200   dsc0     	ybLast
+					dsc0     dsc0     	ybLast
 					asc600   asc400   ;
   sub absBehMed.re  by  absBehMed.re  dy100     pyNULL  
-					dscN200  dscN200  dscN400  	ybLast
-					asc200   asc200   asc0     ;
+					dscN400  dscN200  	ybLast
+					asc200   asc200   ;
   sub absBehMed.sd  by  absBehMed.sd  dy700     pyNULL  
-					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   asc400   ;
+					dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc800   asc600   asc400   ;
   sub absBehMed.sd_ss  by  absBehMed.sd_ss  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   ;
+					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc600   asc400   ;
   sub absBehMed.sn  by  absBehMed.sn  dy200     pyNULL  
 					dscN200  dscN200  	ybLast
 					asc200   asc0     ;
@@ -445,11 +443,11 @@ lookup InitKernMetrics {
 					dsc0     dsc0     	ybLast
 					asc400   asc200   ;
   sub absBehMed.ta  by  absBehMed.ta  dy800     pyNULL  
-					dsc600   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc800   asc800   asc600   asc400   ;
-  sub absBehMed.ta_ss  by  absBehMed.ta_ss  dy600     pyNULL  
 					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   ;
+					asc800   asc800   asc400   ;
+  sub absBehMed.ta_ss  by  absBehMed.ta_ss  dy600     pyNULL  
+					dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc800   asc600   asc400   ;
   sub absDad  by  absDad  dy0  py0  
 						ybLast
 					yt2200  yt2200  yt2200  yt1400  yt1200  yt200   yt0     yt0     yt0     yt0     yt600   yt600   
@@ -472,7 +470,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absDalFin  by  absDalFin  dy800     py0  
 					dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc600   asc400   asc200   
+					asc1000  asc600   asc200   asc200   
 					kw0;
   sub absDalFourDotsAbove  by  absDalFourDotsAbove  dy0  py0  
 						ybLast
@@ -508,7 +506,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absDul  by  absDul  dy0  py0  
 						ybLast
-					yt2000  yt2000  yt2000  yt1800  
+					yt2000  yt2000  yt2000  yt1600  
 					kw0;
   sub absDyeh  by  absDyeh  dy0  py0  
 						ybLast
@@ -523,8 +521,8 @@ lookup InitKernMetrics {
 					yt2000  yt2000  yt1800  yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absFehFin  by  absFehFin  dy500     py0  
-					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
-					asc1200  asc1200  asc1000  asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc1200  asc1000  asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absFehIni  by  absFehIni  dy0  pyNULL  
 					dscN600  dscN800  dscN800  dscN800  	ybLast
@@ -605,285 +603,285 @@ lookup InitKernMetrics {
 					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1400  asc1400  asc1200  ;
   sub absFehMed  by  absFehMed  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc200   asc200   asc200   ;
+					dscN800  dscN800  	ybLast
+					asc200   asc0     ;
   sub absFehMed.ai  by  absFehMed.ai  dy400     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  dsc0     	ybLast
-					asc1000  asc1000  asc800   asc0     asc200   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc1000  asc800   asc0     ;
   sub absFehMed.be  by  absFehMed.be  dy100     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc800   asc800   asc600   asc0     ;
-  sub absFehMed.beF  by  absFehMed.beF  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc800   asc0     asc0     ;
-  sub absFehMed.beM1  by  absFehMed.beM1  dy200     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc600   asc600   ;
-  sub absFehMed.beM2  by  absFehMed.beM2  dy300     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc800   asc200   ;
-  sub absFehMed.behg  by  absFehMed.behg  dy200     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc0     asc0     ;
-  sub absFehMed.benn  by  absFehMed.benn  dyN300    pyNULL  
-					dscN800  dscN1000 dscN1000 dscN800  	ybLast
-					asc200   asc200   asc0     asc0     ;
-  sub absFehMed.bere  by  absFehMed.bere  dy0       pyNULL  
 					dscN400  dscN400  	ybLast
-					asc600   asc600   asc600   ;
-  sub absFehMed.by  by  absFehMed.by  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc400   asc200   ;
-  sub absFehMed.ch  by  absFehMed.ch  dy600     pyNULL  
-					dsc400   dsc200   	ybLast
-					asc1200  asc1200  asc1200  asc400   asc0     ;
-  sub absFehMed.fe  by  absFehMed.fe  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc800   asc0     ;
-  sub absFehMed.hd  by  absFehMed.hd  dy500     pyNULL  
-					dsc200   	ybLast
-					asc1200  asc1200  asc1000  asc200   ;
-  sub absFehMed.hgF  by  absFehMed.hgF  dy0       pyNULL  
-					dscN400  dscN400  dscN400  	ybLast
-					asc600   asc600   asc600   asc0     ;
-  sub absFehMed.hgM  by  absFehMed.hgM  dy700     pyNULL  
-					dsc200   dsc0     	ybLast
-					asc1400  asc1400  asc1200  ;
-  sub absFehMed.jm  by  absFehMed.jm  dy700     pyNULL  
-					dsc400   	ybLast
-					asc1400  asc1400  asc1200  asc400   asc200   ;
-  sub absFehMed.kf_wide  by  absFehMed.kf_wide  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc200   asc200   asc200   ;
-  sub absFehMed.mm  by  absFehMed.mm  dy600     pyNULL  
-					dsc200   	ybLast
-					asc1200  asc1200  asc1000  asc400   ;
-  sub absFehMed.mmX  by  absFehMed.mmX  dy400     pyNULL  
-					dsc200   	ybLast
-					asc1000  asc1000  asc1000  asc400   ;
-  sub absFehMed.nn  by  absFehMed.nn  dy100     pyNULL  
+					asc800   asc600   asc0     ;
+  sub absFehMed.beF  by  absFehMed.beF  dy300     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   ;
+					asc1000  asc800   asc0     asc0     ;
+  sub absFehMed.beM1  by  absFehMed.beM1  dy200     pyNULL  
+					dscN200  dscN200  dsc0     	ybLast
+					asc800   asc600   asc600   asc600   ;
+  sub absFehMed.beM2  by  absFehMed.beM2  dy300     pyNULL  
+					dscN200  dscN200  	ybLast
+					asc800   asc800   asc200   ;
+  sub absFehMed.behg  by  absFehMed.behg  dy200     pyNULL  
+					dscN200  dscN200  	ybLast
+					asc800   asc600   asc0     ;
+  sub absFehMed.benn  by  absFehMed.benn  dyN300    pyNULL  
+					dscN1000 dscN1000 	ybLast
+					asc200   asc0     ;
+  sub absFehMed.bere  by  absFehMed.bere  dy0       pyNULL  
+					dscN400  	ybLast
+					asc600   asc400   ;
+  sub absFehMed.by  by  absFehMed.by  dy500     pyNULL  
+					dsc200   dsc0     dsc0     	ybLast
+					asc1200  asc1000  asc400   asc200   ;
+  sub absFehMed.ch  by  absFehMed.ch  dy600     pyNULL  
+						ybLast
+					asc1200  asc1200  asc400   ;
+  sub absFehMed.fe  by  absFehMed.fe  dy300     pyNULL  
+					dscN200  dscN200  dscN200  	ybLast
+					asc1000  asc800   asc0     ;
+  sub absFehMed.hd  by  absFehMed.hd  dy500     pyNULL  
+						ybLast
+					asc1200  asc1000  asc200   ;
+  sub absFehMed.hgF  by  absFehMed.hgF  dy0       pyNULL  
+					dscN400  dscN400  	ybLast
+					asc600   asc400   asc0     ;
+  sub absFehMed.hgM  by  absFehMed.hgM  dy700     pyNULL  
+					dsc0     	ybLast
+					asc1400  asc1200  ;
+  sub absFehMed.jm  by  absFehMed.jm  dy700     pyNULL  
+						ybLast
+					asc1400  asc1200  asc600   asc400   ;
+  sub absFehMed.kf_wide  by  absFehMed.kf_wide  dyN300    pyNULL  
+					dscN800  dscN800  	ybLast
+					asc200   asc0     ;
+  sub absFehMed.mm  by  absFehMed.mm  dy600     pyNULL  
+						ybLast
+					asc1200  asc1000  asc200   ;
+  sub absFehMed.mmX  by  absFehMed.mmX  dy400     pyNULL  
+						ybLast
+					asc1000  asc1000  asc400   ;
+  sub absFehMed.nn  by  absFehMed.nn  dy100     pyNULL  
+					dscN200  dscN200  	ybLast
+					asc800   asc600   ;
   sub absFehMed.qf  by  absFehMed.qf  dy500     pyNULL  
-					dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc200   asc200   ;
+					dsc0     dsc0     dsc0     	ybLast
+					asc1200  asc1000  asc200   asc200   ;
   sub absFehMed.re  by  absFehMed.re  dy200     pyNULL  
-					dscN200  dscN200  dscN400  	ybLast
-					asc800   asc800   asc800   asc200   ;
+					dscN200  dscN400  	ybLast
+					asc800   asc600   asc200   ;
   sub absFehMed.sd  by  absFehMed.sd  dy700     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc1200  asc400   asc200   ;
+					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc1400  asc1200  asc400   asc200   ;
   sub absFehMed.sn  by  absFehMed.sn  dy200     pyNULL  
-					dsc0     dscN200  dscN200  	ybLast
-					asc800   asc800   asc800   asc0     ;
+					dscN200  dscN200  	ybLast
+					asc800   asc600   asc0     ;
   sub absFehMed.snsn  by  absFehMed.snsn  dy400     pyNULL  
-					dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   ;
+					dsc0     	ybLast
+					asc1000  asc800   ;
   sub absFehMed.ta  by  absFehMed.ta  dy700     pyNULL  
-					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc1200  asc400   asc400   ;
+					dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc1400  asc1200  asc400   asc400   ;
   sub absFehThreeDotsBelow  by  absFehThreeDotsBelow  dy0  py0  
 						ybLast
 					yt1200  yt1200  yt1200  yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
 					kw0;
   sub absGaf  by  absGaf  dy0  py0  
 						ybLast
-					yt2800  yt3000  yt3000  yt2800  yt2600  yt2400  yt2200  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2800  yt2800  yt2600  yt2600  yt2400  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absGafFin  by  absGafFin  dy1000    py0  
-					dsc600   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc400   	ybLast
-					asc3000  asc3000  asc3000  asc2800  asc2600  asc2600  asc2200  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc600   asc600   asc600   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc2400  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absGafFin_tall  by  absGafFin_tall  dy1000    py0  
-					dsc600   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc400   	ybLast
-					asc3000  asc3000  asc3000  asc3000  asc3000  asc2800  asc2600  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc600   asc600   asc600   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc2800  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absGafIni  by  absGafIni  dy0  pyNULL  
-					dsc800   dsc800   dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1400  asc1400  asc1200  asc1000  ;
+					dsc800   dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1600  asc1400  asc1200  ;
   sub absGafIni.ai  by  absGafIni.ai  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2400  asc2400  asc2200  asc2000  asc2000  asc800   asc200   ;
   sub absGafIni.be  by  absGafIni.be  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc2200  asc2200  asc2000  asc1800  asc1600  asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc2200  asc2200  asc2000  asc2000  asc1800  asc800   asc0     ;
   sub absGafIni.beM1  by  absGafIni.beM1  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc600   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2200  asc2200  asc2000  asc1800  asc200   asc800   asc800   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  	ybLast
+					asc2400  asc2400  asc2200  asc2000  asc1800  asc400   asc200   asc400   ;
   sub absGafIni.beM2  by  absGafIni.beM2  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc2200  asc2200  asc2000  asc1800  asc1600  asc200   asc200   ;
+					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   asc200   ;
   sub absGafIni.behg  by  absGafIni.behg  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2200  asc2000  asc1800  asc1600  asc0     asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2200  asc2200  asc2200  asc2000  asc1800  asc800   asc0     asc0     ;
   sub absGafIni.benn  by  absGafIni.benn  dy0  pyNULL  
-					dsc1000  dsc800   dsc800   dsc600   dscN200  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1600  asc1600  asc1400  asc1200  asc1000  ascN400  ascN400  ;
+					dsc1000  dsc800   dsc600   dsc400   dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1600  asc1400  asc1400  asc1200  asc200   ascN400  ;
   sub absGafIni.bere  by  absGafIni.bere  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc2000  asc2000  asc1800  asc1800  asc1600  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   asc0     ;
   sub absGafIni.by  by  absGafIni.by  dy0  pyNULL  
-					dsc1600  dsc1600  dsc1400  dsc1200  dsc600   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2200  asc2200  asc2200  asc2000  asc1800  asc1600  asc400   asc400   asc400   asc200   ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2200  asc2200  asc2000  asc1800  asc800   asc400   asc400   asc200   ;
   sub absGafIni.ch  by  absGafIni.ch  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   	ybLast
-					asc2000  asc2000  asc2000  asc2000  asc1800  asc1600  asc0     ;
+					dsc1400  dsc1400  dsc1200  dsc1000  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   ;
   sub absGafIni.dk  by  absGafIni.dk  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1800  asc1800  asc1600  asc1400  asc1200  ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1400  asc200   ascN200  ;
   sub absGafIni.fe  by  absGafIni.fe  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2200  asc2200  asc2000  asc1800  asc200   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2400  asc2400  asc2200  asc2000  asc1800  asc800   asc0     ;
   sub absGafIni.hd  by  absGafIni.hd  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1200  	ybLast
-					asc2000  asc2200  asc2200  asc2000  asc1800  asc1600  ;
+					dsc1400  dsc1400  dsc1200  dsc1000  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1800  asc200   ;
   sub absGafIni.hgF  by  absGafIni.hgF  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc2000  asc2000  asc1800  asc1800  asc1600  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN400  dscN400  dscN400  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   asc0     asc0     ;
   sub absGafIni.hgM  by  absGafIni.hgM  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1800  dsc1600  dsc800   dsc200   dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   ;
+					dsc2000  dsc1800  dsc1600  dsc1400  dsc400   dsc0     	ybLast
+					asc2600  asc2600  asc2400  asc2400  asc2200  asc1200  ;
   sub absGafIni.jm  by  absGafIni.jm  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc800   dsc400   dsc400   	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2200  asc2000  asc600   asc600   asc600   asc400   ;
+					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc400   dsc400   	ybLast
+					asc2600  asc2600  asc2400  asc2200  asc2000  asc1000  asc600   asc600   asc400   asc200   ;
   sub absGafIni.kf  by  absGafIni.kf  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1800  asc1800  asc1600  asc1400  asc1200  ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1400  asc200   ascN200  ;
   sub absGafIni.kf_wide  by  absGafIni.kf_wide  dy0  pyNULL  
-					dsc1200  dsc1200  dsc1000  dsc800   dsc0     dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1800  asc1800  asc1800  asc1600  asc1400  asc1200  ascN200  ascN400  ascN200  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN600  dscN800  dscN800  dscN800  dscN600  	ybLast
+					asc1800  asc1800  asc1800  asc1600  asc1400  asc400   ascN400  ascN400  ascN200  ;
   sub absGafIni.mm  by  absGafIni.mm  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     	ybLast
-					asc2000  asc2000  asc2000  asc1800  asc1600  asc1600  asc200   ;
+					dsc1400  dsc1200  dsc1000  dsc800   	ybLast
+					asc1800  asc2000  asc2000  asc1800  asc1600  asc600   ;
   sub absGafIni.mmX  by  absGafIni.mmX  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc600   dsc200   	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc400   asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc200   dsc200   	ybLast
+					asc2400  asc2400  asc2200  asc2000  asc2000  asc800   asc400   asc200   ;
   sub absGafIni.mm_short  by  absGafIni.mm_short  dy0  pyNULL  
 					dsc1200  dsc1000  dsc1000  dsc800   	ybLast
 					asc1600  asc1800  asc1800  asc1600  asc1400  asc400   ;
   sub absGafIni.nn  by  absGafIni.nn  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc2000  asc2000  asc2000  asc1800  asc1600  asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   ;
   sub absGafIni.qf  by  absGafIni.qf  dy0  pyNULL  
-					dsc1800  dsc1800  dsc1600  dsc1400  dsc600   dsc0     dsc0     	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2200  asc2000  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2600  asc2600  asc2400  asc2200  asc2000  asc600   asc200   ;
   sub absGafIni.re  by  absGafIni.re  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc200   dsc0     dsc0     	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2000  asc1800  asc400   asc200   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2400  asc2400  asc2400  asc2200  asc2000  asc1000  asc400   ;
   sub absGafIni.sd  by  absGafIni.sd  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2400  asc2400  asc2200  asc2200  asc2000  asc400   asc200   ;
   sub absGafIni.sn  by  absGafIni.sn  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dscN200  dscN200  	ybLast
-					asc2000  asc2000  asc2000  asc1800  asc1800  asc1600  asc200   ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   asc0     ;
   sub absGafIni.snsn  by  absGafIni.snsn  dy0  pyNULL  
-					dsc1800  dsc1800  dsc1600  dsc1400  dsc600   dsc0     dsc0     	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2000  asc2000  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2400  asc2400  asc2400  asc2200  asc2000  asc400   asc200   ;
   sub absGafIni.ta  by  absGafIni.ta  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc600   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2400  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   ;
+					dsc1800  dsc1800  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2600  asc2600  asc2400  asc2200  asc2000  asc1000  asc400   ;
   sub absGafIni_short  by  absGafIni_short  dy0  pyNULL  
-					dsc800   dsc600   dscN800  dscN1000 dscN1000 dscN800  	ybLast
-					asc1200  asc1400  asc1400  asc1200  asc1000  ;
+					dsc800   dscN800  dscN1000 dscN1000 dscN1000 	ybLast
+					asc1400  asc1400  asc1200  asc1000  ;
   sub absGafMed  by  absGafMed  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1400  asc1400  asc1200  asc1000  ;
+						ybLast
+					asc1200  ;
   sub absGafMed.ai  by  absGafMed.ai  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dsc0     	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2200  asc2000  asc200   asc200   ;
+						ybLast
+					asc2000  asc200   asc200   ;
   sub absGafMed.be  by  absGafMed.be  dy700     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc0     asc0     ;
+						ybLast
+					asc1800  asc0     asc0     ;
   sub absGafMed.beF  by  absGafMed.beF  dy700     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   asc0     asc0     ;
+						ybLast
+					asc1800  asc200   asc0     asc0     ;
   sub absGafMed.beM1  by  absGafMed.beM1  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   asc800   asc800   ;
+						ybLast
+					asc1800  asc200   asc400   asc400   ;
   sub absGafMed.beM2  by  absGafMed.beM2  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   asc200   ;
+						ybLast
+					asc1800  asc200   asc200   ;
   sub absGafMed.behg  by  absGafMed.behg  dy700     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc0     asc0     asc0     ;
+						ybLast
+					asc1800  asc0     asc0     asc0     ;
   sub absGafMed.benn  by  absGafMed.benn  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1600  asc1600  asc1600  asc1400  asc1200  ascN400  ascN400  ;
+						ybLast
+					asc1200  ascN400  ascN400  ;
   sub absGafMed.bere  by  absGafMed.bere  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2200  asc2200  asc2200  asc2000  asc1800  asc1600  asc0     asc0     ;
+						ybLast
+					asc1800  asc0     asc0     ;
   sub absGafMed.by  by  absGafMed.by  dy1100    pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2800  asc2800  asc2600  asc2400  asc2200  asc400   asc400   asc400   asc200   ;
+						ybLast
+					asc2200  asc400   asc400   asc400   asc200   ;
   sub absGafMed.ch  by  absGafMed.ch  dy900     pyNULL  
 						ybLast
-					asc2400  asc2600  asc2600  asc2400  asc2200  asc2000  asc200   ;
+					asc2000  asc400   ;
   sub absGafMed.dk  by  absGafMed.dk  dy100     pyNULL  
-					dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1800  asc1800  asc1600  asc1400  asc1200  ascN400  ;
+						ybLast
+					asc1200  ascN200  ascN200  ;
   sub absGafMed.fe  by  absGafMed.fe  dy700     pyNULL  
-					dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   ;
+						ybLast
+					asc1800  asc200   asc0     ;
   sub absGafMed.hd  by  absGafMed.hd  dy900     pyNULL  
 						ybLast
-					asc2400  asc2600  asc2600  asc2400  asc2200  asc2000  asc200   ;
+					asc2000  asc200   ;
   sub absGafMed.hgF  by  absGafMed.hgF  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc2200  asc2200  asc2000  asc1800  asc1600  asc0     asc0     ;
+						ybLast
+					asc1600  asc0     asc0     asc0     ;
   sub absGafMed.hgM  by  absGafMed.hgM  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   ;
+						ybLast
+					asc2200  asc400   ;
   sub absGafMed.jm  by  absGafMed.jm  dy1100    pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2200  asc2000  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc2200  asc800   asc600   asc600   asc400   ;
   sub absGafMed.jm_lowentry  by  absGafMed.jm_lowentry  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2400  asc2600  asc2600  asc2400  asc2200  asc2000  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc2000  asc800   asc600   asc600   asc400   ;
   sub absGafMed.jm_short  by  absGafMed.jm_short  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1800  asc800   asc600   asc600   asc400   ;
   sub absGafMed.jm_tall  by  absGafMed.jm_tall  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2600  asc2800  asc2800  asc2600  asc2400  asc1600  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc2200  asc800   asc600   asc600   asc400   ;
   sub absGafMed.kf_lm  by  absGafMed.kf_lm  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1600  asc1600  asc1400  asc1200  asc1000  ascN200  ascN200  ;
+						ybLast
+					asc1000  ascN200  ascN200  ;
   sub absGafMed.kf_wide  by  absGafMed.kf_wide  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1800  asc1800  asc1600  asc1400  asc1200  ascN200  ascN400  ascN200  ;
+						ybLast
+					asc1200  ascN200  ascN400  ascN200  ;
   sub absGafMed.mm  by  absGafMed.mm  dy1000    pyNULL  
-					dsc200   	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   asc200   ;
+						ybLast
+					asc2200  asc600   asc200   ;
   sub absGafMed.mmX  by  absGafMed.mmX  dy900     pyNULL  
-					dsc200   	ybLast
-					asc2400  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   asc200   ;
+						ybLast
+					asc2000  asc400   asc200   ;
   sub absGafMed.nn  by  absGafMed.nn  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   ;
+						ybLast
+					asc1800  asc200   ;
   sub absGafMed.qf  by  absGafMed.qf  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2400  asc2200  asc400   ;
+						ybLast
+					asc2200  asc400   asc200   ;
   sub absGafMed.re  by  absGafMed.re  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2400  asc2200  asc400   asc200   ;
+						ybLast
+					asc2200  asc400   asc400   ;
   sub absGafMed.sd  by  absGafMed.sd  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2400  asc2200  asc400   asc200   ;
+					dsc0     	ybLast
+					asc2200  asc600   asc200   ;
   sub absGafMed.sn  by  absGafMed.sn  dy800     pyNULL  
-					dscN200  dscN200  	ybLast
-					asc2400  asc2400  asc2400  asc2200  asc2000  asc1800  asc200   ;
+						ybLast
+					asc2000  asc200   ;
   sub absGafMed.snsn  by  absGafMed.snsn  dy1000    pyNULL  
-					dsc0     dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2400  asc2200  asc2000  asc400   ;
+						ybLast
+					asc2200  asc400   asc200   ;
   sub absGafMed.ta  by  absGafMed.ta  dy1000    pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2600  asc2600  asc2600  asc2400  asc2200  asc400   ;
+					dsc0     	ybLast
+					asc2400  asc2200  asc600   ;
   sub absGafMed_short  by  absGafMed_short  dyN300    pyNULL  
 						ybLast
-					asc1400  asc1400  asc1200  asc1200  ;
+					asc1000  ;
   sub absGafRing  by  absGafRing  dy0  py0  
 						ybLast
-					yt2800  yt3000  yt3000  yt2800  yt2600  yt2400  yt2200  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2800  yt2800  yt2600  yt2600  yt2400  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absGhain  by  absGhain  dy0  py0  
 						ybLast
@@ -891,11 +889,11 @@ lookup InitKernMetrics {
 					kw0;
   sub absGraf  by  absGraf  dy0  py0  
 						ybLast
-					yt2800  yt3000  yt3000  yt3000  yt3000  yt2800  yt2200  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2800  yt3000  yt3000  yt3000  yt2400  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absGueh  by  absGueh  dy0  py0  
 						ybLast
-					yt2800  yt3000  yt3000  yt2800  yt2600  yt2400  yt2200  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2800  yt2800  yt2600  yt2600  yt2400  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absHah  by  absHah  dy0  py0  
 						ybLast
@@ -934,8 +932,8 @@ lookup InitKernMetrics {
 					yt800   yt800   yt800   yt800   yt600   yt200   
 					kw0;
   sub absHehDoachashmeeFin  by  absHehDoachashmeeFin  dy600     py0  
-					dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc800   asc800   asc600   asc200   
+					dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc800   asc200   
 					kw0;
   sub absHehDoachashmeeIni  by  absHehDoachashmeeIni  dy0  pyNULL  
 					dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  dscN600  	ybLast
@@ -1088,89 +1086,89 @@ lookup InitKernMetrics {
 					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
 					asc0     asc200   asc200   asc200   ;
   sub absHehDoachashmeeMed  by  absHehDoachashmeeMed  dy0       pyNULL  
-					dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  dscN600  	ybLast
-					asc200   asc200   ascN200  asc0     ;
+					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc0     ascN400  ;
   sub absHehDoachashmeeMed.ai  by  absHehDoachashmeeMed.ai  dy700     pyNULL  
-					dsc200   dsc200   dsc200   dsc200   dsc0     dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc600   asc200   ;
+					dsc200   dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc800   asc200   asc200   ;
   sub absHehDoachashmeeMed.be  by  absHehDoachashmeeMed.be  dy400     pyNULL  
-					dsc0     dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc400   ;
+					dscN200  dscN200  dscN400  dscN400  	ybLast
+					asc600   asc0     ;
   sub absHehDoachashmeeMed.beF  by  absHehDoachashmeeMed.beF  dy600     pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc200   asc0     ;
+					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc800   asc200   asc0     ;
   sub absHehDoachashmeeMed.beM1  by  absHehDoachashmeeMed.beM1  dy600     pyNULL  
-					dsc200   dsc0     dsc0     dscN200  dscN200  dscN200  dsc0     	ybLast
-					asc800   asc800   asc400   asc600   asc600   ;
+					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc600   asc800   asc800   ;
   sub absHehDoachashmeeMed.beM2  by  absHehDoachashmeeMed.beM2  dy700     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc200   asc0     ;
+					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc800   asc200   asc200   ;
   sub absHehDoachashmeeMed.be_short  by  absHehDoachashmeeMed.be_short  dy300     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc200   asc0     ;
+					dscN200  dscN200  dscN400  dscN400  	ybLast
+					asc400   asc0     ;
   sub absHehDoachashmeeMed.behg  by  absHehDoachashmeeMed.behg  dy500     pyNULL  
-					dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc0     asc0     ;
+					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc600   asc0     asc0     ;
   sub absHehDoachashmeeMed.benn  by  absHehDoachashmeeMed.benn  dyN100    pyNULL  
-					dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc200   asc200   ascN200  ;
+					dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc0     ;
   sub absHehDoachashmeeMed.bere  by  absHehDoachashmeeMed.bere  dy300     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc400   asc0     ;
+					dscN200  dscN200  dscN400  dscN400  	ybLast
+					asc400   asc0     ;
   sub absHehDoachashmeeMed.by  by  absHehDoachashmeeMed.by  dy900     pyNULL  
-					dsc400   dsc400   dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc800   asc400   asc200   asc200   ;
+					dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc1000  asc400   asc200   asc200   ;
   sub absHehDoachashmeeMed.ch  by  absHehDoachashmeeMed.ch  dy800     pyNULL  
-					dsc400   dsc200   dsc200   dsc200   	ybLast
-					asc1000  asc1000  asc800   asc200   ;
+					dsc200   dsc200   	ybLast
+					asc1000  asc400   ;
   sub absHehDoachashmeeMed.fe  by  absHehDoachashmeeMed.fe  dy600     pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc0     ;
+					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc800   asc200   ;
   sub absHehDoachashmeeMed.hd  by  absHehDoachashmeeMed.hd  dy700     pyNULL  
-					dsc400   dsc200   dsc200   dsc200   	ybLast
-					asc1000  asc1000  asc800   asc400   ;
+					dsc200   dsc200   	ybLast
+					asc600   asc200   ;
   sub absHehDoachashmeeMed.hgF  by  absHehDoachashmeeMed.hgF  dy300     pyNULL  
-					dscN200  dscN200  dscN200  dscN400  dscN400  dscN400  	ybLast
-					asc600   asc600   asc200   asc0     ;
+					dscN200  dscN400  dscN400  dscN400  dscN400  	ybLast
+					asc400   asc0     asc0     ;
   sub absHehDoachashmeeMed.hgM  by  absHehDoachashmeeMed.hgM  dy1200    pyNULL  
-					dsc800   dsc600   dsc600   dsc600   dsc400   dsc0     	ybLast
-					asc1400  asc1400  asc1200  asc600   ;
+					dsc600   dsc600   dsc200   dsc0     	ybLast
+					asc1000  asc600   ;
   sub absHehDoachashmeeMed.jm  by  absHehDoachashmeeMed.jm  dy1100    pyNULL  
-					dsc600   dsc600   dsc600   dsc400   dsc400   	ybLast
-					asc1400  asc1400  asc1000  asc600   asc400   asc0     ;
+					dsc600   dsc600   dsc400   	ybLast
+					asc1200  asc600   asc400   asc200   ;
   sub absHehDoachashmeeMed.jm_short  by  absHehDoachashmeeMed.jm_short  dy900     pyNULL  
-					dsc400   dsc400   dsc400   dsc400   dsc400   	ybLast
-					asc1200  asc1200  asc1000  asc600   asc400   asc400   ;
+					dsc400   dsc400   dsc400   dsc200   	ybLast
+					asc1000  asc600   asc400   asc400   asc200   ;
   sub absHehDoachashmeeMed.mm  by  absHehDoachashmeeMed.mm  dy900     pyNULL  
-					dsc400   dsc400   dsc400   dsc400   dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc400   asc200   ;
+					dsc400   dsc400   dsc200   	ybLast
+					asc1000  asc400   asc200   ;
   sub absHehDoachashmeeMed.mmX  by  absHehDoachashmeeMed.mmX  dy800     pyNULL  
-					dsc400   dsc200   dsc200   dsc200   	ybLast
-					asc1000  asc1000  asc800   asc200   ;
+					dsc200   dsc200   	ybLast
+					asc800   asc400   ;
   sub absHehDoachashmeeMed.nn  by  absHehDoachashmeeMed.nn  dy500     pyNULL  
-					dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc400   ;
+					dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc600   ;
   sub absHehDoachashmeeMed.qf  by  absHehDoachashmeeMed.qf  dy700     pyNULL  
-					dsc200   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc600   asc200   ;
+					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc800   asc200   asc200   ;
   sub absHehDoachashmeeMed.re  by  absHehDoachashmeeMed.re  dy700     pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dscN200  dscN400  dscN400  	ybLast
-					asc1000  asc1000  asc600   asc200   asc0     ;
+					dsc200   dsc0     dsc0     dscN200  dscN400  	ybLast
+					asc800   asc200   asc0     ;
   sub absHehDoachashmeeMed.sd  by  absHehDoachashmeeMed.sd  dy1000    pyNULL  
-					dsc600   dsc600   dsc400   dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc400   ;
+					dsc400   dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc1000  asc400   ;
   sub absHehDoachashmeeMed.sn  by  absHehDoachashmeeMed.sn  dy700     pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc0     ;
+					dsc200   dsc0     dscN200  dscN200  	ybLast
+					asc600   asc200   ;
   sub absHehDoachashmeeMed.snsn  by  absHehDoachashmeeMed.snsn  dy800     pyNULL  
-					dsc200   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   asc200   ;
+					dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc800   asc400   ;
   sub absHehDoachashmeeMed.ta  by  absHehDoachashmeeMed.ta  dy1000    pyNULL  
-					dsc600   dsc600   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc400   ;
+					dsc600   dsc400   dsc400   dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc1200  asc600   ;
   sub absHehDoachashmeeMed_short  by  absHehDoachashmeeMed_short  dyN200    pyNULL  
-					dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc0     asc0     ascN200  ascN400  ;
+					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc0     ascN400  ;
   sub absHehFin_allah  by  absHehFin_allah  dy1000    py0  
 					dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1000  asc600   asc400   asc200   
@@ -1180,8 +1178,8 @@ lookup InitKernMetrics {
 					yt800   yt800   yt600   
 					kw0;
   sub absHehGoalFin  by  absHehGoalFin  dy400     py0  
-					dsc0     dsc0     dsc0     	ybLast
-					asc400   asc400   asc200   
+					dsc0     dscN200  dscN200  	ybLast
+					asc400   asc400   asc0     
 					kw0;
   sub absHehGoalHamzaAbove  by  absHehGoalHamzaAbove  dy0  py0  
 						ybLast
@@ -1263,35 +1261,35 @@ lookup InitKernMetrics {
 					dsc600   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1000  asc1000  asc1000  asc800   asc400   ;
   sub absHehGoalMed  by  absHehGoalMed  dyN300    pyNULL  
-					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
+					dscN800  dscN600  dscN800  dscN800  dscN800  	ybLast
 					asc0     asc0     ascN200  ascN200  ;
   sub absHehGoalMed.ai  by  absHehGoalMed.ai  dy0       pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc600   asc600   asc400   asc0     ;
   sub absHehGoalMed.be  by  absHehGoalMed.be  dyN300    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
+					dscN400  dscN200  dscN200  	ybLast
 					asc200   asc200   asc0     ;
   sub absHehGoalMed.beF  by  absHehGoalMed.beF  dyN100    pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					dscN200  dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc200   asc200   asc0     ;
   sub absHehGoalMed.beM1  by  absHehGoalMed.beM1  dyN100    pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc400   asc400   asc400   asc200   asc400   ;
+					dscN200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc400   asc400   asc200   asc200   asc400   ;
   sub absHehGoalMed.beM2  by  absHehGoalMed.beM2  dyN200    pyNULL  
-					dsc0     dsc0     dscN200  dscN200  	ybLast
+					dscN200  dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc200   asc200   ;
   sub absHehGoalMed.behg  by  absHehGoalMed.behg  dyN200    pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					dscN200  dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc200   asc0     asc0     ;
   sub absHehGoalMed.benn  by  absHehGoalMed.benn  dyN300    pyNULL  
-					dscN600  dscN800  dscN1000 dscN1000 dscN800  	ybLast
+					dscN800  dscN800  dscN1000 dscN1000 dscN800  	ybLast
 					ascN200  ascN200  ascN400  asc0     ;
   sub absHehGoalMed.bere  by  absHehGoalMed.bere  dyN300    pyNULL  
-					dscN200  dscN200  dscN400  	ybLast
+					dscN400  dscN200  dscN400  	ybLast
 					asc200   asc200   asc0     ;
   sub absHehGoalMed.by  by  absHehGoalMed.by  dy200     pyNULL  
 					dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc800   asc800   asc600   asc400   asc400   asc200   ;
+					asc600   asc600   asc400   asc400   asc400   asc200   ;
   sub absHehGoalMed.ch  by  absHehGoalMed.ch  dy0       pyNULL  
 					dsc0     dsc400   dsc200   	ybLast
 					asc600   asc600   asc600   asc400   asc200   ;
@@ -1323,10 +1321,10 @@ lookup InitKernMetrics {
 					dsc0     dsc200   dsc0     	ybLast
 					asc600   asc600   asc400   ;
   sub absHehGoalMed.re  by  absHehGoalMed.re  dyN300    pyNULL  
-					dscN200  dscN200  dscN400  	ybLast
+					dscN400  dscN200  dscN400  	ybLast
 					asc200   asc200   asc0     ;
   sub absHehGoalMed.sd  by  absHehGoalMed.sd  dy300     pyNULL  
-					dsc400   dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					dsc200   dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
 					asc800   asc800   asc600   asc400   ;
   sub absHehGoalMed.sn  by  absHehGoalMed.sn  dyN200    pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
@@ -1343,23 +1341,23 @@ lookup InitKernMetrics {
 					kw0;
   sub absHighHamzaAlef  by  absHighHamzaAlef  dy0  py0  
 						ybLast
-					yt2400  yt2400  yt2200  yt1600  
+					yt2200  yt1600  
 					kw0;
   sub absHighHamzaAlef.arabic  by  absHighHamzaAlef.arabic  dy0  py0  
 						ybLast
-					yt2400  yt2400  yt2200  yt1600  
+					yt2400  yt1600  
 					kw0;
   sub absJeem  by  absJeem  dy0  py0  
 						ybLast
 					yt400   yt200   yt1400  yt1400  yt1400  yt1400  yt1400  yt1200  
 					kw0;
   sub absJeemFin  by  absJeemFin  dy1200    py0  
-					dscN200  dscN400  dscN600  	ybLast
-					asc1600  asc1600  asc1600  asc1400  asc600   
+					dscN400  	ybLast
+					
 					kw0;
   sub absJeemFin_short  by  absJeemFin_short  dy900     py0  
-					dscN200  dscN400  	ybLast
-					asc1200  asc1200  asc1200  asc1000  
+					dscN400  	ybLast
+					
 					kw0;
   sub absJeemIni  by  absJeemIni  dy0  pyNULL  
 					dscN400  dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
@@ -1437,100 +1435,100 @@ lookup InitKernMetrics {
 					dsc800   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1200  asc1200  asc1400  asc1400  asc1200  ;
   sub absJeemMed  by  absJeemMed  dyN100    pyNULL  
-					dscN400  dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc200   ;
+					dscN800  	ybLast
+					;
   sub absJeemMed.ai  by  absJeemMed.ai  dy500     pyNULL  
-					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   ;
+					dscN200  dscN200  	ybLast
+					;
   sub absJeemMed.be  by  absJeemMed.be  dy300     pyNULL  
-					dsc0     dscN200  dscN200  	ybLast
+					dscN200  	ybLast
 					;
   sub absJeemMed.beF  by  absJeemMed.beF  dy400     pyNULL  
-					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc0     ;
+					dscN200  dscN200  	ybLast
+					;
   sub absJeemMed.beM1  by  absJeemMed.beM1  dy500     pyNULL  
-					dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc400   ;
+					dscN200  dscN200  	ybLast
+					;
   sub absJeemMed.beM2  by  absJeemMed.beM2  dy400     pyNULL  
-					dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc600   ;
+					dscN200  	ybLast
+					;
   sub absJeemMed.behg  by  absJeemMed.behg  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   ;
+					dscN200  	ybLast
+					;
   sub absJeemMed.bekl  by  absJeemMed.bekl  dy500     pyNULL  
-					dsc200   dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc200   asc0     ;
+					dscN200  dscN200  	ybLast
+					;
   sub absJeemMed.benn  by  absJeemMed.benn  dyN200    pyNULL  
-					dscN400  dscN800  dscN800  dscN1000 dscN1000 	ybLast
-					asc0     ;
+					dscN1000 dscN800  	ybLast
+					;
   sub absJeemMed.bere  by  absJeemMed.bere  dy300     pyNULL  
-					dsc0     dscN400  dscN400  	ybLast
+					dscN400  	ybLast
 					;
   sub absJeemMed.by  by  absJeemMed.by  dy700     pyNULL  
-					dsc400   dsc400   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc800   asc400   asc0     ;
+					dsc0     dsc0     	ybLast
+					;
   sub absJeemMed.by_short  by  absJeemMed.by_short  dy400     pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc600   asc200   ;
+					dsc0     dsc0     	ybLast
+					;
   sub absJeemMed.ch  by  absJeemMed.ch  dy700     pyNULL  
-					dsc400   dsc200   dsc200   	ybLast
-					asc800   asc200   ;
+						ybLast
+					;
   sub absJeemMed.fe  by  absJeemMed.fe  dy500     pyNULL  
-					dsc200   dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc0     ;
+					dscN200  dscN200  dscN200  	ybLast
+					;
   sub absJeemMed.hd  by  absJeemMed.hd  dy400     pyNULL  
-					dsc200   dsc200   dsc0     	ybLast
-					asc600   asc200   ;
+						ybLast
+					;
   sub absJeemMed.hgF  by  absJeemMed.hgF  dy200     pyNULL  
-					dsc0     dscN400  dscN400  dscN400  	ybLast
-					asc400   ;
+					dscN400  	ybLast
+					;
   sub absJeemMed.hgM  by  absJeemMed.hgM  dy700     pyNULL  
-					dsc400   dsc0     dsc0     dsc600   	ybLast
-					asc1000  ;
+					dsc0     dsc600   	ybLast
+					;
   sub absJeemMed.jm  by  absJeemMed.jm  dy700     pyNULL  
-					dsc600   dsc400   dsc200   	ybLast
-					asc1000  asc400   asc200   ;
+						ybLast
+					;
   sub absJeemMed.kf_wide  by  absJeemMed.kf_wide  dyN100    pyNULL  
-					dscN400  dscN600  dscN800  dscN800  dscN800  dscN800  dscN600  	ybLast
-					asc200   ascN400  asc0     ;
+					dscN800  dscN800  dscN800  	ybLast
+					;
   sub absJeemMed.mm  by  absJeemMed.mm  dy500     pyNULL  
-					dsc400   dsc200   dsc0     	ybLast
-					asc800   asc200   ;
+						ybLast
+					;
   sub absJeemMed.mmX  by  absJeemMed.mmX  dy500     pyNULL  
-					dsc400   dsc200   dsc200   	ybLast
-					asc600   asc200   ;
+						ybLast
+					;
   sub absJeemMed.nn  by  absJeemMed.nn  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
+					dscN200  	ybLast
 					;
   sub absJeemMed.qf  by  absJeemMed.qf  dy600     pyNULL  
-					dsc400   dsc200   dsc0     dsc0     	ybLast
-					asc800   ;
+					dsc0     	ybLast
+					;
   sub absJeemMed.re  by  absJeemMed.re  dy400     pyNULL  
-					dsc200   dsc0     dsc0     dscN200  dscN400  	ybLast
-					asc600   asc200   ;
+					dscN200  dscN400  	ybLast
+					;
   sub absJeemMed.sd  by  absJeemMed.sd  dy1000    pyNULL  
-					dsc600   dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc200   ;
+					dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					;
   sub absJeemMed.sn  by  absJeemMed.sn  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dsc200   	ybLast
-					asc600   ;
+					dsc200   	ybLast
+					;
   sub absJeemMed.snsn  by  absJeemMed.snsn  dy700     pyNULL  
-					dsc400   dsc200   dsc0     dsc0     	ybLast
-					asc1000  ;
+					dsc0     	ybLast
+					;
   sub absJeemMed.ta  by  absJeemMed.ta  dy1000    pyNULL  
-					dsc800   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc400   ;
+					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					;
   sub absJeh  by  absJeh  dy0  py0  
 						ybLast
-					yt1800  yt2000  yt2000  yt1600  yt200   
+					yt2000  yt2000  yt1600  yt200   
 					kw0;
   sub absKaf  by  absKaf  dy0  py0  
 						ybLast
-					yt2800  yt2600  yt2600  yt2400  yt2200  yt2000  yt1600  yt600   yt400   yt1000  yt1000  yt1000  yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2600  yt2400  yt2200  yt2200  yt1800  yt600   yt400   yt400   yt1200  yt1200  yt800   yt400   yt400   yt800   yt800   
 					kw0;
   sub absKafRing  by  absKafRing  dy0  py0  
 						ybLast
-					yt2800  yt2600  yt2600  yt2400  yt2200  yt2000  yt1600  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2600  yt2400  yt2200  yt2200  yt1800  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absKafThreeDotsAbove  by  absKafThreeDotsAbove  dy0  py0  
 						ybLast
@@ -1545,366 +1543,366 @@ lookup InitKernMetrics {
 					yt1600  yt1600  yt1400  yt1000  yt0     yt0     
 					kw0;
   sub absKashmiriYehFin  by  absKashmiriYehFin  dy900     py0  
-					dscN200  dscN400  dscN600  	ybLast
-					asc800   asc1000  asc1000  ascN200  ascN200  
+					dscN600  dscN600  	ybLast
+					asc1000  ascN200  ascN200  
 					kw0;
   sub absKashmiriYehFin._bfkl  by  absKashmiriYehFin._bfkl  dy1200    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc800   asc1200  asc1200  ascN200  ascN200  
+					dscN600  dscN600  	ybLast
+					asc1200  ascN200  ascN200  
 					kw0;
   sub absKeheh  by  absKeheh  dy0  py0  
 						ybLast
-					yt2800  yt2600  yt2600  yt2400  yt2200  yt2000  yt1600  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2600  yt2400  yt2200  yt2200  yt1800  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absKehehDotAbove  by  absKehehDotAbove  dy0  py0  
 						ybLast
 					yt2800  yt2600  yt2600  yt2400  yt2600  yt2600  yt2600  yt600   yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
 					kw0;
   sub absKehehFin  by  absKehehFin  dy1000    py0  
-					dsc600   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc400   	ybLast
-					asc3000  asc2800  asc2600  asc2400  asc2200  asc2000  asc1600  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc600   asc600   asc600   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc1800  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absKehehFin_squiggle  by  absKehehFin_squiggle  dy1000    py0  
-					dsc600   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc400   	ybLast
-					asc3000  asc2800  asc2600  asc2400  asc2200  asc2000  asc1600  asc600   asc400   asc400   asc1200  asc1200  asc400   asc400   asc600   asc600   asc600   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc1800  asc600   asc400   asc400   asc1200  asc1200  asc800   asc400   asc400   asc800   asc800   
 					kw0;
   sub absKehehFin_tall  by  absKehehFin_tall  dy1000    py0  
-					dsc600   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     dsc400   	ybLast
-					asc3000  asc3000  asc2800  asc2800  asc2600  asc2400  asc1800  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc600   asc600   asc600   
+					dsc0     dsc0     dsc0     dsc0     dsc0     dsc200   	ybLast
+					asc2200  asc600   asc400   asc400   asc400   asc400   asc400   asc400   asc400   asc800   asc800   
 					kw0;
   sub absKehehIni  by  absKehehIni  dy0  pyNULL  
-					dsc800   dsc800   dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1200  asc1000  asc800   asc600   ;
+					dsc800   dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc1200  asc1200  asc1000  asc800   ;
   sub absKehehIni.ai  by  absKehehIni.ai  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc200   ;
   sub absKehehIni.ai_base  by  absKehehIni.ai_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc200   ;
   sub absKehehIni.be  by  absKehehIni.be  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc2000  asc1800  asc1600  asc1600  asc1200  asc800   asc0     ;
   sub absKehehIni.beM1  by  absKehehIni.beM1  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc600   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1600  asc1200  asc200   asc800   asc800   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  dsc0     	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc200   asc600   asc600   ;
   sub absKehehIni.beM1_base  by  absKehehIni.beM1_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc600   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1600  asc1200  asc200   asc800   asc800   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  dsc0     	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc200   asc600   asc600   ;
   sub absKehehIni.beM2  by  absKehehIni.beM2  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc200   asc200   ;
+					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   asc200   ;
   sub absKehehIni.beM2_base  by  absKehehIni.beM2_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc200   asc200   ;
+					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   asc200   ;
   sub absKehehIni.be_base  by  absKehehIni.be_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc2000  asc1800  asc1600  asc1600  asc1200  asc800   asc0     ;
   sub absKehehIni.behg  by  absKehehIni.behg  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1400  asc1200  asc0     asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1600  asc1400  asc800   asc0     asc0     ;
   sub absKehehIni.behg_base  by  absKehehIni.behg_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1400  dsc1200  dsc200   dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1400  asc1200  asc0     asc0     asc0     ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1600  asc1400  asc800   asc0     asc0     ;
   sub absKehehIni.benn  by  absKehehIni.benn  dy0  pyNULL  
-					dsc1000  dsc800   dsc800   dsc600   dscN200  dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1400  asc1200  asc1000  asc800   asc600   ascN400  ascN400  ;
+					dsc1000  dsc800   dsc600   dsc400   dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc1400  asc1200  asc1000  asc1000  asc600   asc200   ascN400  ;
   sub absKehehIni.benn_base  by  absKehehIni.benn_base  dy0  pyNULL  
-					dsc1000  dsc800   dsc800   dsc600   dscN200  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1400  asc1200  asc1000  asc800   asc600   ascN400  ascN400  ;
+					dsc1000  dsc800   dsc600   dsc400   dscN600  dscN800  dscN800  dscN800  	ybLast
+					asc1400  asc1200  asc1000  asc1000  asc600   asc200   ascN400  ;
   sub absKehehIni.bere  by  absKehehIni.bere  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1200  asc1000  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1200  asc600   asc0     ;
   sub absKehehIni.bere_base  by  absKehehIni.bere_base  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1200  asc1000  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dscN200  dscN400  dscN400  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1200  asc600   asc0     ;
   sub absKehehIni.by  by  absKehehIni.by  dy0  pyNULL  
-					dsc1600  dsc1600  dsc1400  dsc1200  dsc600   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1400  asc1200  asc400   asc400   asc400   asc200   ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc2000  asc1800  asc1800  asc1600  asc1400  asc800   asc400   asc400   asc200   ;
   sub absKehehIni.by_base  by  absKehehIni.by_base  dy0  pyNULL  
-					dsc1600  dsc1600  dsc1400  dsc1200  dsc600   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1400  asc1200  asc400   asc400   asc400   asc200   ;
+					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc2000  asc1800  asc1800  asc1600  asc1400  asc800   asc400   asc400   asc200   ;
   sub absKehehIni.ch  by  absKehehIni.ch  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc0     ;
+					dsc1400  dsc1400  dsc1200  dsc1000  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.ch_base  by  absKehehIni.ch_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1400  asc1000  asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.dk  by  absKehehIni.dk  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1400  asc1200  asc1000  asc800   asc200   ascN200  ;
   sub absKehehIni.dk_base  by  absKehehIni.dk_base  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1400  asc1200  asc1000  asc800   asc200   ascN200  ;
   sub absKehehIni.fe  by  absKehehIni.fe  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc0     ;
   sub absKehehIni.fe_base  by  absKehehIni.fe_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1200  dsc400   dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   ;
+					dsc1600  dsc1400  dsc1400  dsc1200  dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc0     ;
   sub absKehehIni.hd  by  absKehehIni.hd  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1200  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  ;
+					dsc1400  dsc1400  dsc1200  dsc1000  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.hd_base  by  absKehehIni.hd_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1200  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  ;
+					dsc1400  dsc1400  dsc1200  dsc1000  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.hgF  by  absKehehIni.hgF  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1200  asc1000  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN400  dscN400  dscN400  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1200  asc600   asc0     asc0     ;
   sub absKehehIni.hgF_base  by  absKehehIni.hgF_base  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1200  asc1000  asc0     asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN400  dscN400  dscN400  	ybLast
+					asc1800  asc1800  asc1600  asc1400  asc1200  asc600   asc0     asc0     ;
   sub absKehehIni.hgM  by  absKehehIni.hgM  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1800  dsc1600  dsc800   dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+					dsc2000  dsc1800  dsc1600  dsc1400  dsc400   dsc0     	ybLast
+					asc2400  asc2200  asc2000  asc2000  asc1600  asc1200  ;
   sub absKehehIni.hgM_base  by  absKehehIni.hgM_base  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1800  dsc1600  dsc800   dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+					dsc2000  dsc1800  dsc1600  dsc1400  dsc400   dsc0     	ybLast
+					asc2400  asc2200  asc2000  asc2000  asc1600  asc1200  ;
   sub absKehehIni.jm  by  absKehehIni.jm  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc800   dsc400   dsc400   	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1800  asc1400  asc600   asc600   asc600   asc400   ;
+					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc400   dsc400   	ybLast
+					asc2400  asc2200  asc2000  asc1800  asc1600  asc1000  asc600   asc600   asc400   asc200   ;
   sub absKehehIni.jm_base  by  absKehehIni.jm_base  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc800   dsc400   dsc400   	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1800  asc1400  asc600   asc600   asc600   asc400   ;
+					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc400   dsc400   	ybLast
+					asc2400  asc2200  asc2000  asc1800  asc1600  asc1000  asc600   asc600   asc400   asc200   ;
   sub absKehehIni.kf  by  absKehehIni.kf  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1400  asc1200  asc1000  asc800   asc200   ascN200  ;
   sub absKehehIni.kf_base  by  absKehehIni.kf_base  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1400  asc1200  asc1000  asc800   asc200   ascN200  ;
   sub absKehehIni.kf_wide  by  absKehehIni.kf_wide  dy0  pyNULL  
-					dsc1200  dsc1200  dsc1000  dsc800   dsc0     dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1800  asc1600  asc1400  asc1200  asc1000  asc800   ascN200  ascN400  ascN200  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN600  dscN800  dscN800  dscN800  dscN600  	ybLast
+					asc1600  asc1400  asc1400  asc1200  asc1000  asc400   ascN400  ascN400  ascN200  ;
   sub absKehehIni.kf_wide_base  by  absKehehIni.kf_wide_base  dy0  pyNULL  
-					dsc1200  dsc1000  dsc800   dsc800   dsc0     dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ascN400  ascN400  ;
+					dsc1200  dsc1000  dsc800   dsc600   dscN400  dscN800  dscN800  dscN800  dscN800  dscN800  	ybLast
+					asc1600  asc1400  asc1200  asc1000  asc800   asc200   ascN400  ascN400  ascN200  ;
   sub absKehehIni.mm  by  absKehehIni.mm  dy0  pyNULL  
-					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1200  asc1000  asc200   ;
+					dsc1400  dsc1200  dsc1000  dsc800   	ybLast
+					asc1800  asc1600  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.mmX  by  absKehehIni.mmX  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc600   dsc200   	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc400   asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc200   dsc200   	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc400   asc200   ;
   sub absKehehIni.mmX_base  by  absKehehIni.mmX_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1400  dsc1400  dsc600   dsc200   	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc400   asc200   ;
+					dsc1600  dsc1600  dsc1400  dsc1200  dsc200   dsc200   	ybLast
+					asc2200  asc2000  asc1800  asc1600  asc1400  asc800   asc400   asc200   ;
   sub absKehehIni.mm_short  by  absKehehIni.mm_short  dy0  pyNULL  
 					dsc1200  dsc1000  dsc1000  dsc800   	ybLast
 					asc1600  asc1400  asc1400  asc1200  asc1000  asc400   ;
   sub absKehehIni.nn  by  absKehehIni.nn  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.nn_base  by  absKehehIni.nn_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc0     ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   ;
   sub absKehehIni.qf  by  absKehehIni.qf  dy0  pyNULL  
-					dsc1800  dsc1800  dsc1600  dsc1400  dsc600   dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc2000  asc1800  asc1600  asc600   asc200   ;
   sub absKehehIni.qf_base  by  absKehehIni.qf_base  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc600   dsc200   dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc400   ;
+					dsc1800  dsc1600  dsc1600  dsc1400  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2200  asc2000  asc1800  asc1600  asc600   asc200   ;
   sub absKehehIni.re  by  absKehehIni.re  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc200   dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc400   asc200   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc2000  asc1800  asc1600  asc1000  asc400   ;
   sub absKehehIni.re_base  by  absKehehIni.re_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc600   dsc200   dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc400   asc200   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc2000  asc1800  asc1600  asc1000  asc400   ;
   sub absKehehIni.sd  by  absKehehIni.sd  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc1800  asc1800  asc1400  asc1000  asc200   ;
   sub absKehehIni.sd_base  by  absKehehIni.sd_base  dy0  pyNULL  
-					dsc1800  dsc1600  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc1800  asc1800  asc1400  asc1000  asc200   ;
   sub absKehehIni.sn  by  absKehehIni.sn  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1400  asc1400  asc1000  asc200   ;
+					dsc1400  dsc1200  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   asc0     ;
   sub absKehehIni.sn_base  by  absKehehIni.sn_base  dy0  pyNULL  
-					dsc1600  dsc1400  dsc1200  dsc1000  dsc400   dscN200  dscN200  	ybLast
-					asc2000  asc1800  asc1600  asc1600  asc1400  asc1000  asc200   ;
+					dsc1400  dsc1400  dsc1200  dsc1000  dsc0     dscN200  dscN200  	ybLast
+					asc2000  asc1800  asc1600  asc1400  asc1200  asc600   asc0     ;
   sub absKehehIni.snsn  by  absKehehIni.snsn  dy0  pyNULL  
-					dsc1800  dsc1800  dsc1600  dsc1400  dsc600   dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc2000  asc1800  asc1400  asc400   asc200   ;
   sub absKehehIni.snsn_base  by  absKehehIni.snsn_base  dy0  pyNULL  
-					dsc1800  dsc1800  dsc1600  dsc1400  dsc600   dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc400   ;
+					dsc1800  dsc1600  dsc1400  dsc1200  dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc2000  asc2000  asc1800  asc1400  asc400   asc200   ;
   sub absKehehIni.ta  by  absKehehIni.ta  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc600   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc400   ;
+					dsc1800  dsc1800  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2400  asc2200  asc2000  asc1800  asc1600  asc1000  asc400   ;
   sub absKehehIni.ta_base  by  absKehehIni.ta_base  dy0  pyNULL  
-					dsc2000  dsc1800  dsc1600  dsc1400  dsc600   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc400   ;
+					dsc1800  dsc1800  dsc1600  dsc1400  dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2400  asc2200  asc2000  asc1800  asc1600  asc1000  asc400   ;
   sub absKehehIni_short  by  absKehehIni_short  dy0  pyNULL  
 					dsc800   dscN400  dscN800  dscN800  dscN800  	ybLast
 					asc1200  asc1000  asc800   asc800   ;
   sub absKehehMed  by  absKehehMed  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc1400  asc1200  asc1000  asc800   asc600   ;
+						ybLast
+					asc800   ;
   sub absKehehMed.ai  by  absKehehMed.ai  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1800  asc1400  asc200   asc200   ;
+						ybLast
+					asc1400  asc200   asc200   ;
   sub absKehehMed.ai_base  by  absKehehMed.ai_base  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dsc0     	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1800  asc1400  asc200   asc200   ;
+						ybLast
+					asc1400  asc200   asc200   ;
   sub absKehehMed.be  by  absKehehMed.be  dy700     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     ;
   sub absKehehMed.beF  by  absKehehMed.beF  dy700     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   asc0     asc0     ;
+						ybLast
+					asc1400  asc200   asc0     asc0     ;
   sub absKehehMed.beF_base  by  absKehehMed.beF_base  dy700     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   asc0     asc0     ;
+						ybLast
+					asc1400  asc200   asc0     asc0     ;
   sub absKehehMed.beM1  by  absKehehMed.beM1  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   asc800   asc800   ;
+						ybLast
+					asc1400  asc200   asc400   asc400   ;
   sub absKehehMed.beM1_base  by  absKehehMed.beM1_base  dy800     pyNULL  
-					dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   asc800   asc800   ;
+						ybLast
+					asc1400  asc200   asc400   asc400   ;
   sub absKehehMed.beM2  by  absKehehMed.beM2  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   asc200   ;
+						ybLast
+					asc1200  asc200   asc200   ;
   sub absKehehMed.beM2_base  by  absKehehMed.beM2_base  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc200   asc200   ;
+						ybLast
+					asc1200  asc200   asc200   ;
   sub absKehehMed.be_base  by  absKehehMed.be_base  dy700     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     ;
   sub absKehehMed.behg  by  absKehehMed.behg  dy700     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc0     asc0     asc0     ;
+						ybLast
+					asc1400  asc0     asc0     asc0     ;
   sub absKehehMed.behg_base  by  absKehehMed.behg_base  dy700     pyNULL  
-					dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc0     asc0     asc0     ;
+						ybLast
+					asc1400  asc0     asc0     asc0     ;
   sub absKehehMed.benn  by  absKehehMed.benn  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1200  asc1200  asc1000  asc600   ascN400  ascN400  ;
+						ybLast
+					asc600   ascN400  ascN400  ;
   sub absKehehMed.benn_base  by  absKehehMed.benn_base  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1200  asc1200  asc1000  asc600   ascN400  ascN400  ;
+						ybLast
+					asc600   ascN400  ascN400  ;
   sub absKehehMed.bere  by  absKehehMed.bere  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2200  asc2000  asc1800  asc1600  asc1400  asc1200  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     ;
   sub absKehehMed.bere_base  by  absKehehMed.bere_base  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc2000  asc1800  asc1600  asc1400  asc1200  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     ;
   sub absKehehMed.by  by  absKehehMed.by  dy1100    pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   asc400   asc400   asc200   ;
+						ybLast
+					asc1800  asc400   asc400   asc400   asc200   ;
   sub absKehehMed.by_base  by  absKehehMed.by_base  dy1100    pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   asc400   asc400   asc200   ;
+						ybLast
+					asc1800  asc400   asc400   asc400   asc200   ;
   sub absKehehMed.ch  by  absKehehMed.ch  dy900     pyNULL  
 						ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc200   ;
+					asc1600  asc400   ;
   sub absKehehMed.ch_base  by  absKehehMed.ch_base  dy900     pyNULL  
 						ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc200   ;
+					asc1600  asc400   ;
   sub absKehehMed.dk  by  absKehehMed.dk  dy100     pyNULL  
-					dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+						ybLast
+					asc800   ascN400  asc0     ;
   sub absKehehMed.dk_base  by  absKehehMed.dk_base  dy100     pyNULL  
-					dscN600  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ;
+						ybLast
+					asc800   ascN400  asc0     ;
   sub absKehehMed.fe  by  absKehehMed.fe  dy700     pyNULL  
-					dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc200   ;
+						ybLast
+					asc1400  asc200   asc0     ;
   sub absKehehMed.fe_base  by  absKehehMed.fe_base  dy700     pyNULL  
-					dsc0     dscN200  dscN200  	ybLast
-					asc2200  asc2000  asc2000  asc1800  asc1600  asc1200  asc200   ;
+						ybLast
+					asc1400  asc200   asc0     ;
   sub absKehehMed.hd  by  absKehehMed.hd  dy900     pyNULL  
 						ybLast
-					asc2400  asc2200  asc2200  asc2000  asc1800  asc1400  asc200   ;
+					asc1600  asc400   ;
   sub absKehehMed.hd_base  by  absKehehMed.hd_base  dy900     pyNULL  
 						ybLast
-					asc2400  asc2200  asc2200  asc2000  asc1800  asc1400  asc200   ;
+					asc1600  asc400   ;
   sub absKehehMed.hgF  by  absKehehMed.hgF  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     asc0     ;
   sub absKehehMed.hgF_base  by  absKehehMed.hgF_base  dy500     pyNULL  
-					dscN200  dscN400  dscN400  	ybLast
-					asc2000  asc1800  asc1800  asc1600  asc1400  asc1000  asc0     asc0     ;
+						ybLast
+					asc1200  asc0     asc0     asc0     ;
   sub absKehehMed.hgM  by  absKehehMed.hgM  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   ;
   sub absKehehMed.hgM_base  by  absKehehMed.hgM_base  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   ;
   sub absKehehMed.jm  by  absKehehMed.jm  dy1100    pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1600  asc800   asc600   asc600   asc400   ;
   sub absKehehMed.jm_base  by  absKehehMed.jm_base  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1600  asc800   asc600   asc600   asc400   ;
   sub absKehehMed.jm_lowentry  by  absKehehMed.jm_lowentry  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1600  asc800   asc600   asc600   asc400   ;
   sub absKehehMed.jm_short  by  absKehehMed.jm_short  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2200  asc2000  asc1800  asc1800  asc1600  asc1200  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1400  asc800   asc600   asc600   asc400   ;
   sub absKehehMed.jm_tall  by  absKehehMed.jm_tall  dy700     pyNULL  
-					dsc400   dsc400   	ybLast
-					asc2600  asc2400  asc2400  asc2200  asc2000  asc1600  asc600   asc600   asc600   asc400   ;
+						ybLast
+					asc1800  asc800   asc600   asc600   asc400   ;
   sub absKehehMed.kf_wide  by  absKehehMed.kf_wide  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN200  ascN400  ascN200  ;
+						ybLast
+					asc800   ascN200  ascN400  ascN200  ;
   sub absKehehMed.kf_wide_base  by  absKehehMed.kf_wide_base  dy100     pyNULL  
-					dscN600  dscN800  dscN800  dscN800  dscN800  	ybLast
-					asc1600  asc1400  asc1400  asc1200  asc1000  asc600   ascN400  ascN400  ascN200  ;
+						ybLast
+					asc800   ascN200  ascN400  ascN200  ;
   sub absKehehMed.mm  by  absKehehMed.mm  dy1000    pyNULL  
-					dsc200   	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   asc200   ;
+						ybLast
+					asc1600  asc600   asc200   ;
   sub absKehehMed.mmX  by  absKehehMed.mmX  dy900     pyNULL  
-					dsc200   	ybLast
-					asc2400  asc2200  asc2000  asc2000  asc1800  asc1400  asc400   asc200   ;
+						ybLast
+					asc1600  asc400   asc400   ;
   sub absKehehMed.mmX_base  by  absKehehMed.mmX_base  dy1000    pyNULL  
-					dsc200   	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc600   asc400   ;
+						ybLast
+					asc1600  asc600   asc400   ;
   sub absKehehMed.mm_base  by  absKehehMed.mm_base  dy1000    pyNULL  
-					dsc200   	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   asc200   ;
+						ybLast
+					asc1600  asc600   asc200   ;
   sub absKehehMed.nn  by  absKehehMed.nn  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2000  asc1800  asc1600  asc1200  asc200   ;
+						ybLast
+					asc1400  asc200   ;
   sub absKehehMed.nn_base  by  absKehehMed.nn_base  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc2200  asc2200  asc2000  asc1800  asc1600  asc1200  asc200   ;
+						ybLast
+					asc1400  asc200   ;
   sub absKehehMed.qf  by  absKehehMed.qf  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   asc200   ;
   sub absKehehMed.qf_base  by  absKehehMed.qf_base  dy1000    pyNULL  
-					dsc200   dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   asc200   ;
   sub absKehehMed.re  by  absKehehMed.re  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc2000  asc1600  asc400   asc200   ;
+						ybLast
+					asc1600  asc400   asc400   ;
   sub absKehehMed.re_base  by  absKehehMed.re_base  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc2000  asc1600  asc400   asc200   ;
+						ybLast
+					asc1600  asc400   asc400   ;
   sub absKehehMed.sd  by  absKehehMed.sd  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   asc200   ;
+					dsc0     	ybLast
+					asc1600  asc600   asc200   ;
   sub absKehehMed.sd_base  by  absKehehMed.sd_base  dy1000    pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   asc200   ;
+					dsc0     	ybLast
+					asc1600  asc600   asc200   ;
   sub absKehehMed.sn  by  absKehehMed.sn  dy800     pyNULL  
-					dscN200  dscN200  	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   ;
+						ybLast
+					asc1400  asc200   ;
   sub absKehehMed.sn_base  by  absKehehMed.sn_base  dy800     pyNULL  
-					dscN200  dscN200  	ybLast
-					asc2400  asc2200  asc2000  asc1800  asc1600  asc1400  asc200   ;
+						ybLast
+					asc1400  asc200   ;
   sub absKehehMed.snsn  by  absKehehMed.snsn  dy1000    pyNULL  
-					dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   asc200   ;
   sub absKehehMed.snsn_base  by  absKehehMed.snsn_base  dy1000    pyNULL  
-					dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2000  asc1800  asc1600  asc400   ;
+						ybLast
+					asc1600  asc400   asc200   ;
   sub absKehehMed.ta  by  absKehehMed.ta  dy1000    pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   ;
+						ybLast
+					asc1600  asc600   ;
   sub absKehehMed.ta_base  by  absKehehMed.ta_base  dy1100    pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2600  asc2400  asc2200  asc2200  asc2000  asc1600  asc400   ;
+						ybLast
+					asc1800  asc600   ;
   sub absKehehMed_short  by  absKehehMed_short  dyN300    pyNULL  
 						ybLast
-					asc1200  asc1000  asc800   asc800   ;
+					asc600   ;
   sub absKehehThreeDotsAbove  by  absKehehThreeDotsAbove  dy0  py0  
 						ybLast
 					yt2800  yt2600  yt2600  yt2400  yt2600  yt3000  yt3000  yt3000  yt2600  yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
@@ -1927,7 +1925,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absLamBar  by  absLamBar  dy0  py0  
 						ybLast
-					yt1800  yt2200  yt2200  yt1600  yt1600  yt0     yt0     yt1000  yt1000  yt400   
+					yt2400  yt2400  yt1600  yt1600  yt0     yt0     yt0     yt800   yt800   
 					kw0;
   sub absLamFin  by  absLamFin  dy1400    py0  
 					dscN200  dscN400  	ybLast
@@ -2021,88 +2019,88 @@ lookup InitKernMetrics {
 					asc600   ascN200  ascN400  ;
   sub absLamMed  by  absLamMed  dy200     pyNULL  
 					dscN800  dscN800  dscN800  	ybLast
-					asc1000  ascN200  ascN400  ;
+					asc1000  ascN200  ascN200  ;
   sub absLamMed.ai  by  absLamMed.ai  dy800     pyNULL  
-					dscN200  dscN200  dscN200  dsc0     	ybLast
-					asc1400  asc1400  asc200   asc200   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc1600  asc400   asc0     ;
   sub absLamMed.al  by  absLamMed.al  dy600     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc1600  asc1400  asc200   asc200   ;
+					asc1600  asc200   asc200   asc200   ;
   sub absLamMed.be  by  absLamMed.be  dy500     pyNULL  
-					dscN400  dscN400  	ybLast
-					asc1000  asc1000  asc0     ;
+					dscN400  	ybLast
+					asc1200  asc0     ;
   sub absLamMed.beF  by  absLamMed.beF  dy700     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc1200  asc1200  asc200   asc0     ;
+					asc1400  asc200   asc0     asc0     ;
   sub absLamMed.beM1  by  absLamMed.beM1  dy700     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc1200  asc1200  asc200   asc400   ;
+					asc1600  asc400   asc800   asc800   ;
   sub absLamMed.beM2  by  absLamMed.beM2  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc200   asc0     ;
+					dscN200  dscN200  	ybLast
+					asc1400  asc200   asc200   ;
   sub absLamMed.be_kfTall  by  absLamMed.be_kfTall  dy500     pyNULL  
-					dscN400  dscN400  	ybLast
-					asc1600  asc1600  asc0     ;
+					dscN400  	ybLast
+					asc1800  asc0     ;
   sub absLamMed.behg  by  absLamMed.behg  dy600     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc0     asc0     ;
+					asc1400  asc0     asc0     asc0     ;
   sub absLamMed.benn  by  absLamMed.benn  dy100     pyNULL  
-					dscN800  dscN1000 dscN1000 	ybLast
-					asc400   asc400   ascN400  ;
+					dscN800  dscN800  dscN800  	ybLast
+					asc800   ascN400  asc0     ;
   sub absLamMed.bere  by  absLamMed.bere  dy500     pyNULL  
-					dscN400  dscN400  	ybLast
-					asc1000  asc1000  asc0     ;
+					dscN400  	ybLast
+					asc1200  asc0     ;
   sub absLamMed.by  by  absLamMed.by  dy1000    pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc400   asc400   asc400   asc0     ;
+					dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc1800  asc600   asc400   asc400   asc200   ;
   sub absLamMed.by_kfTall  by  absLamMed.by_kfTall  dy900     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc2000  asc2000  asc400   asc400   asc400   asc0     ;
+					dsc200   dsc200   dsc0     dsc0     	ybLast
+					asc2200  asc600   asc400   asc400   asc200   ;
   sub absLamMed.ch  by  absLamMed.ch  dy800     pyNULL  
 						ybLast
-					asc1400  asc1400  asc200   ;
+					asc1600  asc400   asc0     ;
   sub absLamMed.ch_gfTall  by  absLamMed.ch_gfTall  dy800     pyNULL  
 						ybLast
-					asc2400  asc2400  asc200   ;
+					asc2600  asc400   asc0     ;
   sub absLamMed.fe  by  absLamMed.fe  dy800     pyNULL  
 					dscN200  dscN200  dscN200  	ybLast
-					asc1200  asc1200  asc0     ;
+					asc1600  asc200   asc0     ;
   sub absLamMed.hd  by  absLamMed.hd  dy900     pyNULL  
 						ybLast
-					asc1400  asc1400  ;
+					asc1800  asc200   ;
   sub absLamMed.hgF  by  absLamMed.hgF  dy600     pyNULL  
 					dscN400  dscN400  dscN400  	ybLast
-					asc1000  asc1000  asc0     asc0     ;
+					asc1200  asc0     asc0     asc0     ;
   sub absLamMed.hgM  by  absLamMed.hgM  dy1000    pyNULL  
 					dsc0     	ybLast
-					asc1400  asc1400  ;
+					asc1800  asc400   ;
   sub absLamMed.jm  by  absLamMed.jm  dy1000    pyNULL  
-					dsc400   dsc400   	ybLast
+					dsc400   dsc200   	ybLast
 					asc2000  asc800   asc600   asc600   asc400   asc200   ;
   sub absLamMed.mm  by  absLamMed.mm  dy1000    pyNULL  
-					dsc0     	ybLast
-					asc1400  asc1400  asc400   asc200   ;
+						ybLast
+					asc1800  asc600   asc400   ;
   sub absLamMed.nn  by  absLamMed.nn  dy700     pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc0     ;
+					dscN200  dscN200  	ybLast
+					asc1400  asc200   ;
   sub absLamMed.qf  by  absLamMed.qf  dy1000    pyNULL  
-					dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc400   ;
+					dsc0     	ybLast
+					asc1800  asc400   ;
   sub absLamMed.re  by  absLamMed.re  dy1000    pyNULL  
 					dsc0     dsc0     	ybLast
-					asc800   asc600   asc400   ;
+					asc1800  asc400   asc400   ;
   sub absLamMed.sd  by  absLamMed.sd  dy1000    pyNULL  
 					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1600  asc1600  asc400   ;
+					asc1800  asc600   asc400   ;
   sub absLamMed.sn  by  absLamMed.sn  dy700     pyNULL  
-					dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc0     ;
+					dscN200  	ybLast
+					asc1600  asc200   ;
   sub absLamMed.snsn  by  absLamMed.snsn  dy1000    pyNULL  
-					dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc200   ;
+					dsc0     	ybLast
+					asc1800  asc400   ;
   sub absLamMed.ta  by  absLamMed.ta  dy900     pyNULL  
 					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1600  asc1600  asc400   ;
+					asc1800  asc600   asc400   ;
   sub absLamMed_allah1  by  absLamMed_allah1  dy200     pyNULL  
 					dscN800  dscN800  	ybLast
 					asc1000  ascN200  ;
@@ -2111,7 +2109,7 @@ lookup InitKernMetrics {
 					asc600   ascN400  ;
   sub absLamMed_short  by  absLamMed_short  dy200     pyNULL  
 					dscN800  dscN800  dscN800  	ybLast
-					asc600   ascN200  ascN400  ;
+					asc800   ascN200  ascN400  ;
   sub absLamSmallTah  by  absLamSmallTah  dy0  py0  
 						ybLast
 					yt3000  yt3000  yt2800  yt0     yt0     yt0     yt0     yt600   yt600   
@@ -2126,7 +2124,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absLamThreeDots  by  absLamThreeDots  dy0  py0  
 						ybLast
-					yt3000  yt3000  yt3000  yt3000  yt0     yt0     yt0     yt1000  yt1000  yt400   
+					yt3000  yt3000  yt3000  yt3000  yt0     yt0     yt0     yt800   yt800   
 					kw0;
   sub absLigatureAllah  by  absLigatureAllah  dy0  py0  
 						ybLast
@@ -2137,8 +2135,8 @@ lookup InitKernMetrics {
 					yt1800  yt2000  yt2800  yt2800  yt2000  yt800   yt800   yt400   yt200   
 					kw0;
   sub absLigatureLlahFin  by  absLigatureLlahFin  dy1100    py0  
-					dsc400   dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc2000  asc2200  asc2800  asc2800  asc2000  asc800   asc800   asc400   asc200   
+					dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc2000  asc2000  asc2400  asc2400  asc600   asc600   asc600   asc400   asc200   
 					kw0;
   sub absMeem  by  absMeem  dy0  py0  
 						ybLast
@@ -2149,16 +2147,16 @@ lookup InitKernMetrics {
 					yt1200  yt1200  yt1000  yt800   yt600   yt200   
 					kw0;
   sub absMeemFin  by  absMeemFin  dy1000    py0  
-					dsc600   dsc600   dsc400   dsc400   dscN1200 	ybLast
-					asc1000  asc800   asc600   asc200   
+					dsc400   dsc200   dscN1200 	ybLast
+					asc600   ascN400  
 					kw0;
   sub absMeemFin.lowdiac  by  absMeemFin.lowdiac  dy1000    py0  
-					dsc600   dsc600   dsc400   dsc400   dscN800  	ybLast
-					asc1000  asc800   asc600   asc200   
+					dsc400   dsc200   dscN800  	ybLast
+					asc600   ascN400  
 					kw0;
   sub absMeemFin_short  by  absMeemFin_short  dy700     py0  
-					dsc400   dsc400   dsc200   dsc0     dscN1200 	ybLast
-					asc800   asc600   asc400   asc0     
+					dsc200   dsc0     dscN1200 	ybLast
+					asc400   ascN400  
 					kw0;
   sub absMeemIni  by  absMeemIni  dy0  pyNULL  
 					dscN800  dscN800  dscN800  	ybLast
@@ -2236,89 +2234,89 @@ lookup InitKernMetrics {
 					dsc600   dsc600   dsc600   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1200  asc1200  asc1200  asc800   asc600   ;
   sub absMeemMed  by  absMeemMed  dyN200    pyNULL  
-					dscN400  dscN400  dscN600  dscN800  dscN800  	ybLast
-					asc0     ascN400  ;
-  sub absMeemMed._alt  by  absMeemMed._alt  dyN200    pyNULL  
 					dscN800  dscN800  dscN800  	ybLast
 					;
+  sub absMeemMed._alt  by  absMeemMed._alt  dyN200    pyNULL  
+					dscN800  dscN600  	ybLast
+					;
   sub absMeemMed.ai  by  absMeemMed.ai  dy600     pyNULL  
-					dsc200   dsc200   dsc200   dscN200  dscN200  dscN200  	ybLast
-					asc800   asc400   asc0     ;
+					dsc0     dscN200  dscN200  dsc0     	ybLast
+					asc200   ;
   sub absMeemMed.be  by  absMeemMed.be  dy400     pyNULL  
-					dsc0     dsc200   dscN200  dscN400  dscN400  	ybLast
-					asc600   asc200   asc0     ;
+					dscN200  dscN200  	ybLast
+					;
   sub absMeemMed.beF  by  absMeemMed.beF  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc200   asc200   asc0     ;
+					dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc0     asc0     ;
   sub absMeemMed.beM1  by  absMeemMed.beM1  dy400     pyNULL  
-					dsc0     dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc200   asc600   asc600   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc400   ;
   sub absMeemMed.beM2  by  absMeemMed.beM2  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc200   asc200   asc0     ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc200   ;
   sub absMeemMed.behg  by  absMeemMed.behg  dy300     pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc400   asc200   asc0     asc0     ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc0     ;
   sub absMeemMed.benn  by  absMeemMed.benn  dyN300    pyNULL  
-					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
-					ascN200  ascN400  ;
+					dscN800  dscN800  dscN800  	ybLast
+					;
   sub absMeemMed.benn_alt  by  absMeemMed.benn_alt  dyN300    pyNULL  
-					dscN800  dscN1000 dscN1000 	ybLast
+					dscN1000 dscN800  	ybLast
 					;
   sub absMeemMed.bere  by  absMeemMed.bere  dy300     pyNULL  
 					dsc0     dsc0     dsc0     dscN200  dscN400  dscN400  	ybLast
 					asc400   asc200   asc0     asc0     ;
   sub absMeemMed.by  by  absMeemMed.by  dy700     pyNULL  
-					dsc400   dsc400   dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc800   asc600   asc400   asc400   asc200   ;
-  sub absMeemMed.ch  by  absMeemMed.ch  dy600     pyNULL  
-					dsc200   dsc200   dsc200   	ybLast
-					asc800   asc400   asc400   ;
-  sub absMeemMed.fe  by  absMeemMed.fe  dy500     pyNULL  
-					dsc200   dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc200   asc0     ;
-  sub absMeemMed.hd  by  absMeemMed.hd  dy400     pyNULL  
-					dsc200   dsc200   	ybLast
-					asc600   asc200   ;
-  sub absMeemMed.hgF  by  absMeemMed.hgF  dy300     pyNULL  
-					dsc0     dsc0     dscN200  dscN400  dscN400  dscN400  	ybLast
-					asc400   asc0     asc0     asc0     ;
-  sub absMeemMed.hgM  by  absMeemMed.hgM  dy800     pyNULL  
-					dsc400   dsc400   dsc400   dsc400   dsc0     	ybLast
-					asc1000  asc800   asc600   ;
-  sub absMeemMed.jm  by  absMeemMed.jm  dy700     pyNULL  
-					dsc400   dsc400   dsc400   	ybLast
-					asc800   asc600   asc400   asc200   ;
-  sub absMeemMed.mm  by  absMeemMed.mm  dy500     pyNULL  
-					dsc200   dsc200   dsc0     	ybLast
-					asc600   asc400   asc0     ;
-  sub absMeemMed.mmX  by  absMeemMed.mmX  dy500     pyNULL  
-					dsc200   dsc200   	ybLast
-					asc600   asc400   ;
-  sub absMeemMed.nn  by  absMeemMed.nn  dy400     pyNULL  
-					dsc200   dsc200   dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc200   asc0     ;
-  sub absMeemMed.qf  by  absMeemMed.qf  dy700     pyNULL  
-					dsc400   dsc400   dsc200   dsc0     dsc0     	ybLast
-					asc800   asc400   asc200   ;
-  sub absMeemMed.re  by  absMeemMed.re  dy300     pyNULL  
-					dsc0     dscN200  dscN200  dscN400  	ybLast
+					dsc200   dsc200   dsc0     dsc0     	ybLast
 					asc400   asc200   ;
+  sub absMeemMed.ch  by  absMeemMed.ch  dy600     pyNULL  
+					dsc200   	ybLast
+					asc200   ;
+  sub absMeemMed.fe  by  absMeemMed.fe  dy500     pyNULL  
+					dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc0     ;
+  sub absMeemMed.hd  by  absMeemMed.hd  dy400     pyNULL  
+						ybLast
+					;
+  sub absMeemMed.hgF  by  absMeemMed.hgF  dy300     pyNULL  
+					dscN400  dscN400  dscN400  	ybLast
+					asc0     ;
+  sub absMeemMed.hgM  by  absMeemMed.hgM  dy800     pyNULL  
+					dsc400   dsc200   dsc0     	ybLast
+					asc400   ;
+  sub absMeemMed.jm  by  absMeemMed.jm  dy700     pyNULL  
+						ybLast
+					asc400   ;
+  sub absMeemMed.mm  by  absMeemMed.mm  dy500     pyNULL  
+						ybLast
+					;
+  sub absMeemMed.mmX  by  absMeemMed.mmX  dy500     pyNULL  
+						ybLast
+					;
+  sub absMeemMed.nn  by  absMeemMed.nn  dy400     pyNULL  
+					dsc0     dscN200  dscN200  	ybLast
+					;
+  sub absMeemMed.qf  by  absMeemMed.qf  dy700     pyNULL  
+					dsc0     dsc0     	ybLast
+					;
+  sub absMeemMed.re  by  absMeemMed.re  dy300     pyNULL  
+					dscN200  dscN400  	ybLast
+					;
   sub absMeemMed.sd  by  absMeemMed.sd  dy900     pyNULL  
-					dsc600   dsc600   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc800   asc600   ;
+					dsc400   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc400   ;
   sub absMeemMed.sn  by  absMeemMed.sn  dy400     pyNULL  
-					dsc200   dsc200   dsc0     dscN200  	ybLast
-					asc600   asc200   ;
+					dscN200  dscN200  	ybLast
+					;
   sub absMeemMed.snsn  by  absMeemMed.snsn  dy700     pyNULL  
-					dsc400   dsc400   dsc200   dsc0     dsc0     	ybLast
-					asc800   asc400   asc200   ;
+					dsc0     dsc0     	ybLast
+					;
   sub absMeemMed.ta  by  absMeemMed.ta  dy900     pyNULL  
-					dsc600   dsc600   dsc600   dsc400   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc800   asc600   ;
+					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc400   ;
   sub absNgoeh  by  absNgoeh  dy0  py0  
 						ybLast
-					yt2800  yt3000  yt3000  yt2800  yt2600  yt2800  yt3000  yt3000  yt3000  yt2800  yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2800  yt2800  yt2800  yt2600  yt2600  yt3000  yt3000  yt3000  yt3000  yt400   yt400   yt400   yt400   yt400   yt800   yt800   
 					kw0;
   sub absNoon  by  absNoon  dy0  py0  
 						ybLast
@@ -2329,20 +2327,20 @@ lookup InitKernMetrics {
 					yt1400  yt200   yt800   yt800   yt800   yt0     yt600   yt600   
 					kw0;
   sub absNoonFin  by  absNoonFin  dy1300    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc1200  asc400   asc0     ascN200  ascN200  asc0     asc800   asc800   
+					dscN200  dscN400  dscN600  	ybLast
+					asc1400  asc200   asc0     ascN200  ascN200  asc1000  asc1000  
 					kw0;
   sub absNoonFin_short  by  absNoonFin_short  dy1000    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc1000  asc200   asc0     ascN200  ascN200  asc1000  asc1000  asc600   
+					dscN200  dscN400  	ybLast
+					asc1000  asc200   asc0     ascN200  ascN200  asc800   asc800   
 					kw0;
   sub absNoonGhunna  by  absNoonGhunna  dy0  py0  
 						ybLast
 					yt1400  yt200   yt0     yt0     yt0     yt0     yt600   yt600   
 					kw0;
   sub absNoonGhunnaFin  by  absNoonGhunnaFin  dy1300    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc1200  asc400   asc0     ascN200  ascN200  asc0     asc800   asc800   
+					dscN200  dscN400  dscN600  	ybLast
+					asc1400  asc200   asc0     ascN200  ascN200  asc1000  asc1000  
 					kw0;
   sub absNoonRetro  by  absNoonRetro  dy0  py0  
 						ybLast
@@ -2377,20 +2375,20 @@ lookup InitKernMetrics {
 					yt2000  yt2000  yt1800  yt1800  yt0     yt0     yt800   yt800   
 					kw0;
   sub absQafFin  by  absQafFin  dy700     py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc1200  asc1200  asc1200  ascN200  ascN200  asc0     asc600   asc600   
+					dscN200  dscN400  dscN600  	ybLast
+					asc1200  asc1200  asc1000  ascN200  ascN200  asc0     asc600   asc600   
 					kw0;
   sub absQafFin._stfh  by  absQafFin._stfh  dy700     py0  
 					dsc0     dscN400  dscN600  	ybLast
-					asc1200  asc1200  asc1200  ascN200  ascN200  asc0     asc600   asc600   
+					asc1200  asc1200  asc1000  ascN200  ascN200  asc0     asc600   asc600   
 					kw0;
   sub absQafFin._stfh_short  by  absQafFin._stfh_short  dy500     py0  
 					dscN200  dscN400  dscN600  	ybLast
-					asc1000  asc1000  asc1000  ascN200  ascN200  asc0     asc600   asc600   
+					asc1200  asc1200  asc800   ascN200  ascN200  asc1000  asc1000  asc400   
 					kw0;
   sub absQafFin_short  by  absQafFin_short  dy600     py0  
 					dscN200  dscN400  dscN600  	ybLast
-					asc1000  asc1000  asc1000  ascN200  ascN200  asc0     asc600   asc600   
+					asc1200  asc1200  asc800   ascN200  ascN200  asc1000  asc1000  asc400   
 					kw0;
   sub absReh  by  absReh  dy0  py0  
 						ybLast
@@ -2405,24 +2403,24 @@ lookup InitKernMetrics {
 					yt1800  yt1800  yt400   yt200   yt0     
 					kw0;
   sub absRehFin  by  absRehFin  dy600     py0  
-					dsc200   dscN200  dscN400  	ybLast
+					dsc0     dscN200  dscN400  	ybLast
 					asc600   asc400   asc0     
 					kw0;
   sub absRehFin._hgM  by  absRehFin._hgM  dy900     py0  
-					dsc400   dsc0     dscN400  	ybLast
-					asc800   asc800   asc200   
+					dsc200   dscN200  dscN400  	ybLast
+					asc1000  asc600   asc200   
 					kw0;
   sub absRehFin._jkl  by  absRehFin._jkl  dy700     py0  
-					dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc800   asc400   asc400   asc200   
+					dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc800   asc400   asc200   asc200   
 					kw0;
   sub absRehFin._sshg  by  absRehFin._sshg  dy600     py0  
-					dsc200   dscN200  dscN400  	ybLast
+					dsc0     dscN200  dscN400  	ybLast
 					asc600   asc400   asc0     
 					kw0;
   sub absRehFourDotsAbove  by  absRehFourDotsAbove  dy0  py0  
 						ybLast
-					yt2000  yt2000  yt2000  yt2000  yt200   
+					yt2000  yt2000  yt2000  yt2000  yt0     
 					kw0;
   sub absRehHamzaAbove  by  absRehHamzaAbove  dy0  py0  
 						ybLast
@@ -2442,7 +2440,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absRehTwoDotsAbove  by  absRehTwoDotsAbove  dy0  py0  
 						ybLast
-					yt1800  yt1800  yt1600  yt1600  yt200   
+					yt1800  yt1800  yt1600  yt1600  yt0     
 					kw0;
   sub absRehTwoVertAbove  by  absRehTwoVertAbove  dy0  py0  
 						ybLast
@@ -2461,12 +2459,12 @@ lookup InitKernMetrics {
 					yt1600  yt1600  yt1600  yt1400  yt1200  yt200   yt0     yt0     yt0     yt0     yt600   yt600   
 					kw0;
   sub absSadFin  by  absSadFin  dy900     py0  
-					dsc600   dsc0     dscN400  dscN600  	ybLast
-					asc1800  asc1800  asc1600  asc1400  asc1200  asc200   asc0     ascN200  ascN200  asc0     asc600   asc600   
+					dscN600  dscN600  	ybLast
+					asc1200  asc400   asc0     ascN200  ascN200  ascN200  asc800   asc800   
 					kw0;
   sub absSadFin_short  by  absSadFin_short  dy700     py0  
-					dsc400   dscN200  dscN400  	ybLast
-					asc1600  asc1600  asc1400  asc1200  asc1000  asc200   asc0     ascN200  ascN200  asc1000  asc1000  asc400   
+					dscN600  dscN600  	ybLast
+					asc1000  asc400   asc0     ascN200  ascN200  ascN200  asc800   asc800   
 					kw0;
   sub absSadIni  by  absSadIni  dy0  pyNULL  
 					dscN400  dscN600  dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
@@ -2544,80 +2542,80 @@ lookup InitKernMetrics {
 					dsc600   dsc400   dsc400   dsc400   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1400  asc1400  asc1200  asc1000  asc800   asc800   asc400   ;
   sub absSadMed  by  absSadMed  dyN300    pyNULL  
-					dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
-					asc200   asc200   asc200   asc0     ascN200  ascN400  ascN200  ;
+					dscN800  dscN800  	ybLast
+					asc0     ascN200  ascN200  ascN400  ;
   sub absSadMed.ai  by  absSadMed.ai  dy100     pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc800   asc600   asc400   asc400   asc200   asc200   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc600   asc400   asc400   asc200   asc200   ;
   sub absSadMed.be  by  absSadMed.be  dyN200    pyNULL  
-					dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc600   asc400   asc200   asc0     asc0     ;
+					dscN400  	ybLast
+					asc400   asc200   asc200   asc0     ;
   sub absSadMed.beF  by  absSadMed.beF  dy0       pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc800   asc600   asc400   asc200   asc200   asc0     ;
+					dscN200  dscN200  	ybLast
+					asc600   asc400   asc200   asc200   asc0     ;
   sub absSadMed.beM1  by  absSadMed.beM1  dy0       pyNULL  
-					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc800   asc600   asc400   asc200   asc400   asc400   ;
+					dscN200  dscN200  	ybLast
+					asc600   asc400   asc200   asc400   asc400   ;
   sub absSadMed.beM2  by  absSadMed.beM2  dyN100    pyNULL  
-					dscN200  dsc0     dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc400   asc400   asc200   asc200   ;
+					dscN200  dscN200  	ybLast
+					asc400   asc400   asc200   asc200   asc0     ;
   sub absSadMed.behg  by  absSadMed.behg  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc400   asc200   asc200   asc0     asc0     ;
+					dscN200  dscN200  	ybLast
+					asc400   asc200   asc200   asc0     asc0     ;
   sub absSadMed.benn  by  absSadMed.benn  dyN300    pyNULL  
-					dscN800  dscN800  dscN1000 dscN1000 dscN800  	ybLast
-					asc200   asc200   asc0     ascN200  ascN200  ascN400  asc0     ;
+					dscN1000 dscN1000 	ybLast
+					ascN200  ascN400  ascN400  ascN400  ;
   sub absSadMed.bere  by  absSadMed.bere  dyN100    pyNULL  
-					dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc800   asc800   asc600   asc400   asc200   asc200   asc0     ;
+					dscN400  	ybLast
+					asc400   asc200   asc200   asc0     ;
   sub absSadMed.by  by  absSadMed.by  dy200     pyNULL  
-					dsc0     dsc200   dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc600   asc600   asc600   asc400   asc400   asc200   ;
+					dsc200   dsc0     dsc0     	ybLast
+					asc800   asc600   asc600   asc400   asc400   asc200   ;
   sub absSadMed.ch  by  absSadMed.ch  dy200     pyNULL  
-					dsc200   dsc200   dsc400   	ybLast
-					asc1000  asc1000  asc1000  asc800   asc600   asc600   asc600   asc400   ;
+					dsc200   	ybLast
+					asc800   asc600   asc600   asc600   asc400   asc200   ;
   sub absSadMed.fe  by  absSadMed.fe  dy100     pyNULL  
-					dsc0     dsc200   dsc0     dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc800   asc600   asc400   asc400   asc200   ;
+					dscN200  dscN200  dscN200  	ybLast
+					asc600   asc400   asc400   asc200   asc0     ;
   sub absSadMed.hd  by  absSadMed.hd  dy0       pyNULL  
-					dsc0     dsc0     	ybLast
-					asc800   asc800   asc800   asc400   asc400   asc400   asc200   ;
+						ybLast
+					asc600   asc400   asc400   asc400   asc200   ;
   sub absSadMed.hgF  by  absSadMed.hgF  dyN300    pyNULL  
-					dscN400  dscN400  dscN400  dscN400  dscN400  	ybLast
-					asc600   asc600   asc400   asc200   asc200   asc0     asc0     asc0     ;
+					dscN400  dscN400  	ybLast
+					asc400   asc200   asc0     asc0     asc0     ;
   sub absSadMed.hgM  by  absSadMed.hgM  dy300     pyNULL  
-					dsc200   dsc400   dsc200   dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc800   asc800   asc800   asc600   ;
+					dsc0     	ybLast
+					asc800   asc800   asc800   asc600   ;
   sub absSadMed.jm  by  absSadMed.jm  dy300     pyNULL  
-					dsc200   dsc400   dsc400   	ybLast
-					asc1200  asc1200  asc1000  asc800   asc800   asc800   asc600   asc600   asc200   ;
+						ybLast
+					asc800   asc800   asc800   asc600   asc600   asc200   ;
   sub absSadMed.mm  by  absSadMed.mm  dy100     pyNULL  
-					dsc0     dsc200   dsc400   	ybLast
-					asc1000  asc1000  asc800   asc600   asc600   asc600   asc600   asc400   ;
+					dsc0     	ybLast
+					asc600   asc600   asc600   asc600   asc400   asc200   ;
   sub absSadMed.mmX  by  absSadMed.mmX  dy100     pyNULL  
-					dsc0     dsc200   	ybLast
-					asc1000  asc1000  asc800   asc600   asc400   asc400   asc400   ;
+						ybLast
+					asc600   asc400   asc400   asc400   ;
   sub absSadMed.nn  by  absSadMed.nn  dyN200    pyNULL  
-					dscN200  dscN200  dscN400  dscN400  	ybLast
-					asc600   asc600   asc600   asc400   asc200   asc0     ;
+					dscN400  	ybLast
+					asc400   asc200   asc200   ;
   sub absSadMed.qf  by  absSadMed.qf  dy200     pyNULL  
-					dsc200   dsc200   dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc800   asc600   asc400   ;
+						ybLast
+					asc800   asc600   asc600   ;
   sub absSadMed.re  by  absSadMed.re  dyN200    pyNULL  
-					dscN200  dscN200  dscN400  	ybLast
-					asc600   asc600   asc600   asc400   asc200   asc200   ;
+						ybLast
+					asc400   asc200   asc200   ;
   sub absSadMed.sd  by  absSadMed.sd  dy300     pyNULL  
-					dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1000  asc800   asc600   asc600   asc400   ;
+					dsc0     dsc0     dsc0     dsc0     	ybLast
+					asc800   asc600   asc600   asc400   ;
   sub absSadMed.sn  by  absSadMed.sn  dyN100    pyNULL  
-					dscN200  dsc0     dscN200  dscN200  	ybLast
-					asc800   asc800   asc600   asc400   asc400   asc200   asc0     ;
+					dscN200  	ybLast
+					asc400   asc200   asc200   asc0     ;
   sub absSadMed.snsn  by  absSadMed.snsn  dy100     pyNULL  
-					dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   asc600   asc600   asc400   ;
+						ybLast
+					asc800   asc600   asc400   ;
   sub absSadMed.ta  by  absSadMed.ta  dy500     pyNULL  
-					dsc400   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1400  asc1400  asc1200  asc1000  asc800   asc800   asc400   ;
+					dsc200   dsc0     dsc0     dsc0     	ybLast
+					asc1000  asc800   asc800   asc600   ;
   sub absSadThreeDotsAbove  by  absSadThreeDotsAbove  dy0  py0  
 						ybLast
 					yt2400  yt2600  yt2600  yt2200  yt1200  yt200   yt0     yt0     yt0     yt0     yt600   yt600   
@@ -2628,18 +2626,18 @@ lookup InitKernMetrics {
 					kw0;
   sub absSeen3DotsBelow3DotsAbove  by  absSeen3DotsBelow3DotsAbove  dy0  py0  
 						ybLast
-					yt800   yt1600  yt2200  yt2600  yt2600  yt2400  yt0     yt0     yt0     yt0     yt800   yt800   
+					yt2000  yt2400  yt2400  yt2400  yt2000  yt0     yt0     yt0     yt0     yt600   yt600   
 					kw0;
   sub absSeenDotBelowDotAbove  by  absSeenDotBelowDotAbove  dy0  py0  
 						ybLast
 					yt1400  yt2000  yt2000  yt2000  yt200   yt0     yt0     yt0     yt0     yt600   yt600   
 					kw0;
   sub absSeenFin  by  absSeenFin  dy1500    py0  
-					dsc1200  dsc1200  dsc1000  dsc400   dscN200  dscN400  dscN600  	ybLast
-					asc1600  asc1600  asc1400  asc1400  asc1400  asc200   asc0     ascN200  ascN200  asc800   asc800   
+					dsc1200  dsc1200  dsc1000  dsc200   dscN200  dscN400  	ybLast
+					asc1600  asc1600  asc1400  asc1400  asc1200  asc200   asc0     ascN200  ascN200  asc800   asc800   
 					kw0;
   sub absSeenFin_short  by  absSeenFin_short  dy1100    py0  
-					dsc1000  dsc800   dsc800   dsc200   dscN200  dscN400  	ybLast
+					dsc1000  dsc800   dsc800   dsc0     dscN200  dscN600  	ybLast
 					asc1200  asc1200  asc1000  asc1000  asc1000  asc0     ascN200  ascN200  ascN200  asc800   asc800   
 					kw0;
   sub absSeenFourAbove  by  absSeenFourAbove  dy0  py0  
@@ -2670,7 +2668,7 @@ lookup InitKernMetrics {
 					asc600   asc400   asc400   asc200   asc200   asc200   ;
   sub absSeenIni.behg  by  absSeenIni.behg  dy0  pyNULL  
 					dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
-					asc600   asc400   asc400   asc200   asc200   asc0     asc0     ;
+					asc600   asc400   asc200   asc200   asc200   asc0     asc0     ;
   sub absSeenIni.benn  by  absSeenIni.benn  dy0  pyNULL  
 					dscN400  dscN600  dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
 					asc0     ascN200  ascN200  ascN400  ascN400  asc0     ;
@@ -2734,7 +2732,7 @@ lookup InitKernMetrics {
 					asc0     asc0     ascN200  ascN200  ascN200  ascN400  ;
   sub absSeenMed.ai  by  absSeenMed.ai  dy500     pyNULL  
 					dsc200   dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc400   asc400   asc200   asc200   asc0     ;
+					asc600   asc600   asc400   asc200   asc200   asc200   asc200   ;
   sub absSeenMed.be  by  absSeenMed.be  dy300     pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc200   asc200   asc0     ;
@@ -2742,8 +2740,8 @@ lookup InitKernMetrics {
 					dsc200   dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc600   asc600   asc400   asc400   asc400   asc200   asc0     asc0     ;
   sub absSeenMed.beM1  by  absSeenMed.beM1  dy500     pyNULL  
-					dsc400   dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
-					asc600   asc600   asc400   asc400   asc400   asc200   asc800   asc800   ;
+					dsc200   dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
+					asc600   asc600   asc400   asc400   asc400   asc200   asc600   asc600   ;
   sub absSeenMed.beM2  by  absSeenMed.beM2  dy400     pyNULL  
 					dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc400   asc200   asc200   asc200   asc200   ;
@@ -2751,17 +2749,17 @@ lookup InitKernMetrics {
 					dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc400   asc200   asc200   asc0     asc0     ;
   sub absSeenMed.benn  by  absSeenMed.benn  dyN100    pyNULL  
-					dscN400  dscN400  dscN600  dscN600  dscN800  dscN1000 dscN1000 dscN800  	ybLast
-					asc0     asc0     ascN200  ascN400  ascN400  ascN400  asc0     ;
+					dscN400  dscN400  dscN600  dscN600  dscN800  dscN1000 dscN1000 	ybLast
+					asc0     ascN200  ascN200  ascN400  ascN400  ascN400  ;
   sub absSeenMed.bere  by  absSeenMed.bere  dy300     pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN400  dscN400  	ybLast
 					asc400   asc400   asc200   asc200   asc200   asc0     ;
   sub absSeenMed.by  by  absSeenMed.by  dy700     pyNULL  
 					dsc400   dsc400   dsc200   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc800   asc800   asc600   asc600   asc400   asc400   asc400   asc200   ;
+					asc800   asc800   asc600   asc400   asc400   asc400   asc400   asc200   ;
   sub absSeenMed.ch  by  absSeenMed.ch  dy700     pyNULL  
-					dsc600   dsc400   dsc200   dsc200   dsc200   dsc200   	ybLast
-					asc800   asc800   asc600   asc600   asc600   asc600   asc400   asc200   ;
+					dsc400   dsc400   dsc200   dsc200   dsc200   dsc200   	ybLast
+					asc800   asc800   asc600   asc600   asc600   asc600   asc400   asc0     ;
   sub absSeenMed.fe  by  absSeenMed.fe  dy500     pyNULL  
 					dsc200   dsc200   dsc0     dsc0     dsc0     dscN200  dscN200  dscN200  	ybLast
 					asc600   asc600   asc400   asc400   asc400   asc200   asc0     ;
@@ -2770,27 +2768,27 @@ lookup InitKernMetrics {
 					asc600   asc600   asc600   asc400   asc400   asc400   ;
   sub absSeenMed.hgF  by  absSeenMed.hgF  dy300     pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN400  dscN400  dscN400  	ybLast
-					asc400   asc400   asc200   asc200   asc0     asc0     asc0     ;
+					asc400   asc400   asc200   asc200   asc200   asc0     asc0     ;
   sub absSeenMed.hgM  by  absSeenMed.hgM  dy800     pyNULL  
-					dsc600   dsc400   dsc400   dsc400   dsc400   dsc0     	ybLast
-					asc1000  asc1000  asc800   asc600   asc600   asc600   ;
+					dsc600   dsc400   dsc400   dsc400   dsc200   dsc0     	ybLast
+					asc800   asc800   asc800   asc600   asc600   asc600   ;
   sub absSeenMed.jm  by  absSeenMed.jm  dy900     pyNULL  
-					dsc600   dsc600   dsc400   dsc400   dsc400   	ybLast
-					asc1000  asc1000  asc800   asc600   asc600   asc600   asc400   asc0     ;
+					dsc600   dsc600   dsc400   dsc400   	ybLast
+					asc1000  asc1000  asc800   asc600   asc600   asc600   asc400   ;
   sub absSeenMed.jm_flat  by  absSeenMed.jm_flat  dy800     pyNULL  
-					dsc600   dsc400   dsc400   dsc400   dsc400   	ybLast
-					asc1000  asc1000  asc800   asc600   asc600   asc600   asc400   asc0     ;
+					dsc600   dsc400   dsc400   dsc400   	ybLast
+					asc800   asc800   asc800   asc600   asc600   asc600   asc400   ;
   sub absSeenMed.mm  by  absSeenMed.mm  dy700     pyNULL  
 					dsc400   dsc200   dsc200   dsc200   dsc200   dsc0     	ybLast
-					asc800   asc800   asc600   asc400   asc400   asc400   asc400   asc200   ;
+					asc600   asc600   asc600   asc400   asc400   asc400   asc400   asc200   ;
   sub absSeenMed.mmX  by  absSeenMed.mmX  dy500     pyNULL  
 					dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc600   asc600   asc400   asc400   asc400   asc400   ;
+					asc600   asc600   asc400   asc400   asc400   asc200   ;
   sub absSeenMed.nn  by  absSeenMed.nn  dy300     pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN200  dscN200  	ybLast
 					asc400   asc400   asc200   asc200   asc200   ;
   sub absSeenMed.qf  by  absSeenMed.qf  dy600     pyNULL  
-					dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
+					dsc200   dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
 					asc600   asc600   asc400   asc400   asc400   asc200   ;
   sub absSeenMed.re  by  absSeenMed.re  dy300     pyNULL  
 					dsc0     dsc0     dscN200  dscN200  dscN200  dscN400  	ybLast
@@ -2813,7 +2811,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absSeenThreeDotsBelow  by  absSeenThreeDotsBelow  dy0  py0  
 						ybLast
-					yt800   yt1600  yt1600  yt1400  yt1200  yt1200  yt0     yt0     yt0     yt0     yt800   yt800   
+					yt1400  yt1400  yt1400  yt1200  yt400   yt0     yt0     yt0     yt0     yt600   yt600   
 					kw0;
   sub absSeenTwoVertAbove  by  absSeenTwoVertAbove  dy0  py0  
 						ybLast
@@ -2828,8 +2826,8 @@ lookup InitKernMetrics {
 					yt800   yt800   yt1600  yt1600  
 					kw0;
   sub absTahFin  by  absTahFin  dy100     py0  
-					dsc0     	ybLast
-					asc800   asc800   asc1600  asc1600  
+						ybLast
+					asc1800  asc400   
 					kw0;
   sub absTahIni  by  absTahIni  dy0  pyNULL  
 					dscN400  dscN600  dscN600  dscN800  dscN800  dscN800  	ybLast
@@ -2913,86 +2911,86 @@ lookup InitKernMetrics {
 					dsc600   dsc400   dsc400   dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
 					asc1200  asc1200  asc1200  asc1000  asc400   ;
   sub absTahMed  by  absTahMed  dyN300    pyNULL  
-					dscN800  dscN800  dscN800  	ybLast
-					asc400   asc400   asc1000  asc1000  ascN200  ;
+					dscN600  	ybLast
+					asc1200  ascN200  asc0     ;
   sub absTahMed.ai  by  absTahMed.ai  dy0       pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   ;
+					dscN200  	ybLast
+					asc1800  asc400   asc200   ;
   sub absTahMed.be  by  absTahMed.be  dyN200    pyNULL  
-					dscN400  dscN400  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   ;
+						ybLast
+					asc1600  asc400   asc0     ;
   sub absTahMed.beF  by  absTahMed.beF  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   asc0     ;
+					dscN200  	ybLast
+					asc1600  asc400   asc0     asc0     ;
   sub absTahMed.beM1  by  absTahMed.beM1  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  dsc0     	ybLast
-					asc800   asc800   asc1600  asc1600  asc400   asc600   asc600   ;
+					dscN200  	ybLast
+					asc1800  asc600   asc400   asc400   ;
   sub absTahMed.beM2  by  absTahMed.beM2  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1600  asc1600  asc200   asc200   ;
+						ybLast
+					asc1800  asc400   asc200   ;
   sub absTahMed.behg  by  absTahMed.behg  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   asc0     ;
+						ybLast
+					asc1600  asc400   asc0     ;
   sub absTahMed.bekf  by  absTahMed.bekf  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   asc200   ;
+						ybLast
+					asc1600  asc400   asc200   ;
   sub absTahMed.benn  by  absTahMed.benn  dyN300    pyNULL  
-					dscN1000 dscN1000 dscN1000 	ybLast
-					asc200   asc200   asc1000  asc1000  ascN400  ;
+						ybLast
+					asc1200  ascN200  ;
   sub absTahMed.bere  by  absTahMed.bere  dyN200    pyNULL  
-					dscN400  dscN400  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   ;
+						ybLast
+					asc1600  asc400   asc0     ;
   sub absTahMed.by  by  absTahMed.by  dy300     pyNULL  
-					dsc200   dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1800  asc1800  asc400   asc200   ;
+					dsc0     	ybLast
+					asc2000  asc800   asc400   asc200   ;
   sub absTahMed.ch  by  absTahMed.ch  dy300     pyNULL  
 						ybLast
-					asc1200  asc1200  asc1800  asc1800  asc400   ;
+					asc2000  asc600   asc200   ;
   sub absTahMed.fe  by  absTahMed.fe  dy0       pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1600  asc1600  asc200   ;
+					dscN200  	ybLast
+					asc1800  asc400   asc0     ;
   sub absTahMed.hd  by  absTahMed.hd  dy300     pyNULL  
-					dsc200   	ybLast
-					asc1000  asc1000  asc1600  asc1600  asc400   asc200   ;
+						ybLast
+					asc1800  asc600   asc200   ;
   sub absTahMed.hgF  by  absTahMed.hgF  dyN300    pyNULL  
-					dscN400  dscN400  	ybLast
-					asc600   asc600   asc1400  asc1400  asc0     ;
+						ybLast
+					asc1600  asc400   asc0     ;
   sub absTahMed.hgM  by  absTahMed.hgM  dy400     pyNULL  
-					dsc200   dsc0     	ybLast
-					asc1200  asc1200  asc2000  asc2000  asc400   ;
+						ybLast
+					asc2200  asc800   asc200   ;
   sub absTahMed.jm  by  absTahMed.jm  dy500     pyNULL  
 						ybLast
-					asc1200  asc1200  asc2000  asc2000  asc600   asc400   ;
+					asc2200  asc800   asc600   asc200   ;
   sub absTahMed.kf  by  absTahMed.kf  dyN300    pyNULL  
-					dscN600  dscN600  dscN600  dscN600  	ybLast
-					asc400   asc400   asc1000  asc1000  ascN200  ascN200  ;
+					dscN600  dscN600  	ybLast
+					asc1200  asc0     ascN200  ascN200  ;
   sub absTahMed.mm  by  absTahMed.mm  dy300     pyNULL  
-					dsc0     	ybLast
-					asc1200  asc1200  asc1800  asc1800  asc400   asc0     ;
+						ybLast
+					asc2000  asc600   asc400   ;
   sub absTahMed.mmX  by  absTahMed.mmX  dy200     pyNULL  
 						ybLast
-					asc1000  asc1000  asc1800  asc1800  asc200   ;
+					asc2000  asc600   asc200   ;
   sub absTahMed.nn  by  absTahMed.nn  dyN100    pyNULL  
-					dscN200  dscN200  dscN200  	ybLast
-					asc800   asc800   asc1400  asc1400  asc200   ;
+						ybLast
+					asc1600  asc400   ;
   sub absTahMed.qf  by  absTahMed.qf  dy200     pyNULL  
-					dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc800   asc400   asc200   ;
-  sub absTahMed.re  by  absTahMed.re  dy0       pyNULL  
-					dscN200  dscN400  	ybLast
-					asc800   asc800   asc1600  asc1600  asc200   ;
-  sub absTahMed.sd  by  absTahMed.sd  dy300     pyNULL  
-					dsc200   dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc1000  asc400   ;
-  sub absTahMed.sn  by  absTahMed.sn  dy0       pyNULL  
-					dscN200  dscN200  	ybLast
-					asc1000  asc1000  asc1400  asc1400  asc200   ;
-  sub absTahMed.snsn  by  absTahMed.snsn  dy200     pyNULL  
 					dsc0     	ybLast
-					asc1000  asc1000  asc1000  asc800   ;
+					asc1800  asc600   asc200   asc200   ;
+  sub absTahMed.re  by  absTahMed.re  dy0       pyNULL  
+						ybLast
+					asc1800  asc400   asc0     ;
+  sub absTahMed.sd  by  absTahMed.sd  dy300     pyNULL  
+					dsc0     dsc0     dsc0     	ybLast
+					asc1800  asc800   asc400   ;
+  sub absTahMed.sn  by  absTahMed.sn  dy0       pyNULL  
+						ybLast
+					asc1600  asc400   asc0     ;
+  sub absTahMed.snsn  by  absTahMed.snsn  dy200     pyNULL  
+						ybLast
+					asc1800  asc600   ;
   sub absTahMed.ta  by  absTahMed.ta  dy300     pyNULL  
-					dsc200   dsc200   dsc0     dsc0     dsc0     	ybLast
-					asc1200  asc1200  asc1200  asc1000  asc400   ;
+					dsc0     dsc0     dsc0     	ybLast
+					asc2000  asc800   asc400   ;
   sub absTcheh  by  absTcheh  dy0  py0  
 						ybLast
 					yt400   yt600   yt1400  yt1400  yt1400  yt1400  yt1400  yt1200  
@@ -3010,16 +3008,16 @@ lookup InitKernMetrics {
 					yt1600  yt1600  yt1600  yt1600  
 					kw0;
   sub absTehMarbutaFin  by  absTehMarbutaFin  dy800     py0  
-					dsc200   dsc200   dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   asc600   
+					dsc200   dsc0     dsc0     	ybLast
+					asc800   asc800   asc600   
 					kw0;
   sub absTehMarbutaGoal  by  absTehMarbutaGoal  dy0  py0  
 						ybLast
 					yt1600  yt1600  yt1600  yt1600  
 					kw0;
   sub absTehMarbutaGoalFin  by  absTehMarbutaGoalFin  dy400     py0  
-					dsc0     dsc0     dsc0     	ybLast
-					asc400   asc400   asc200   
+					dsc0     dscN200  dscN200  	ybLast
+					asc400   asc400   asc0     
 					kw0;
   sub absTehRing  by  absTehRing  dy0  py0  
 						ybLast
@@ -3055,7 +3053,7 @@ lookup InitKernMetrics {
 					kw0;
   sub absVeh  by  absVeh  dy0  py0  
 						ybLast
-					yt2200  yt2200  yt2200  yt2000  yt400   yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
+					yt2200  yt2200  yt2200  yt1800  yt400   yt400   yt400   yt400   yt400   yt400   yt600   yt600   
 					kw0;
   sub absWaw  by  absWaw  dy0  py0  
 						ybLast
@@ -3067,11 +3065,11 @@ lookup InitKernMetrics {
 					kw0;
   sub absWawFin  by  absWawFin  dy500     py0  
 					dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   asc200   
+					asc1000  asc1000  asc200   asc0     
 					kw0;
   sub absWawFin._stfh  by  absWawFin._stfh  dy500     py0  
 					dsc0     dsc0     dsc0     dsc0     	ybLast
-					asc1000  asc1000  asc800   asc200   
+					asc1000  asc1000  asc600   asc200   
 					kw0;
   sub absWawHamzaAbove  by  absWawHamzaAbove  dy0  py0  
 						ybLast
@@ -3114,12 +3112,12 @@ lookup InitKernMetrics {
 					yt1600  yt1600  yt1400  yt1000  yt0     yt0     yt1000  yt1000  yt800   yt800   
 					kw0;
   sub absYehTailFin  by  absYehTailFin  dy900     py0  
-					dscN200  dscN400  dscN600  	ybLast
-					asc800   asc1000  asc1000  ascN200  ascN200  asc1000  asc1000  asc1000  asc800   asc800   
+					dscN600  dscN600  	ybLast
+					asc1000  ascN200  ascN200  asc1000  asc1000  asc1000  asc800   
 					kw0;
   sub absYehTailFin._bfkl  by  absYehTailFin._bfkl  dy1200    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc800   asc1200  asc1200  ascN200  ascN200  asc1000  asc1000  asc1000  asc800   asc800   
+					dscN600  dscN600  	ybLast
+					asc1200  ascN200  ascN200  asc1000  asc1000  asc1000  asc800   
 					kw0;
   sub absYehThreeAbove  by  absYehThreeAbove  dy0  py0  
 						ybLast
@@ -3166,20 +3164,20 @@ lookup InitKernMetrics {
 					yt1600  yt1600  yt1400  yt1000  yt0     yt0     yt1000  yt1000  yt200   
 					kw0;
   sub nlqChotiyehFin  by  nlqChotiyehFin  dy900     py0  
-					dscN200  dscN400  dscN600  	ybLast
-					asc1000  ascN200  ascN200  asc1000  asc1000  asc600   
+					dscN600  dscN600  	ybLast
+					ascN200  asc800   asc800   
 					kw0;
   sub nlqChotiyehFin._bfkl  by  nlqChotiyehFin._bfkl  dy1200    py0  
-					dsc0     dscN400  dscN600  	ybLast
-					asc1200  ascN200  ascN200  asc1000  asc1000  asc600   
+					dscN600  dscN600  	ybLast
+					ascN200  asc1000  asc1000  asc400   
 					kw0;
   sub nlqChotiyehFin._bfkl_short  by  nlqChotiyehFin._bfkl_short  dy900     py0  
-					dscN200  dscN400  	ybLast
-					asc800   ascN200  ascN200  asc800   asc800   
+					dscN600  dscN600  	ybLast
+					ascN200  asc1000  asc1000  
 					kw0;
   sub nlqChotiyehFin_short  by  nlqChotiyehFin_short  dy600     py0  
-					dscN400  dscN600  	ybLast
-					asc600   ascN200  ascN200  asc800   asc800   
+					dscN600  dscN600  	ybLast
+					ascN200  asc800   asc800   
 					kw0;
 
 } InitKernMetrics;
