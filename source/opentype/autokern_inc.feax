@@ -21,6 +21,19 @@
 
 # These lookups are run within feature calt.
 
+# _BlockSet100, _BlockSet200, _BlockSet1100
+
+do  forlet n = range(0, 11);
+    let name = str(n) + ("" if n == 0 else "00");
+    let ln = "_BlockSet" + name;
+    let kwn = "kw"+name;
+{
+lookup $ln {
+    sub kw0 by kblock $kwn;
+} $ln;
+}
+
+
 @PyInitMarker = [pyNULL py0];
 
 lookup _InsertUpperMarker400 {

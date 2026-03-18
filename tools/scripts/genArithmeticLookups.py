@@ -388,20 +388,22 @@ def GenLookups_AddNuqtaHt(valuesList, dir) :
 	### Example:
 	# lookup _AddNuqtaHt600 {
 	# 	...
-	# 	sub asc500' lookup _Set1100;
-	# 	sub asc550' lookup _Set1150;
+	# 	sub asc500 by yt1100;
+	# 	sub asc550 by yt1150;
 	# 	...
 	# } _AddNuqtaHt600;
 
 	if dir == 1:	# add
 		lname = "_AddNuqtaHt"
-		prefix = "asc"
+		prefixIn = "asc"
+		prefixOut = "yt"
 		minv = ascMin
 		maxv = ascMax
 		cName = "AscMarker"
 	else:			# subtract
 		lname = "_SubtractNuqtaHt"
-		prefix = "dsc"
+		prefixIn = "dsc"
+		prefixOut = "yb"
 		minv = dscMin
 		maxv = dscMax
 		cName = "DscMarker"
@@ -420,7 +422,7 @@ def GenLookups_AddNuqtaHt(valuesList, dir) :
 			elif dir < 0 and newv < minv:
 				newv = minv
 
-			print("  sub " + prefix + ValueName(v2) + "  by  " + prefix + ValueName(newv) + ";", file=fout)
+			print("  sub " + prefixIn + ValueName(v2) + "  by  " + prefixOut + ValueName(newv) + ";", file=fout)
 
 		print("} " + lname + ValueName(v) + ";", file=fout)
 
@@ -553,16 +555,30 @@ def GenLookup_IncDecKw(valueList, dir):
 
 	for vinc in valueList:
 		vincName = vinc
-		# Kludge to handle the fact that _DecKwBy100 is equivalent to _DecKwBy200, for now:
-		if vinc == 100 or vinc == 300 or vinc == 500 or vinc == 700:
-			vincName = vinc
-			vinc += 100
+		# Output two versions of _DecKwBy100 / 300 / 500, one for 100-unit slices and one for 200-unit slices.
+		if (vinc == 100 or vinc == 300 or vinc == 500 or vinc == 700) and dir == -1:
+			swids = [100,200]
+		else:
+			swids = [100]  # no difference for 200
 
 		print("\nlookup _" + lname + str(vincName) + " {", file=fout)
-		for vinput in range(kwMin, kwMax + inc, inc):
-			vres = vinput + (vinc * dir)
-			vres = min(max(vres, kwMin), kwMax)
-			print("  sub  kw" + ValueName(vinput) + "  by  kw" + ValueName(vres) + ";", file=fout)
+
+		for sw in swids:
+			if len(swids) > 1:
+				print("do\tif SliceWidth() == " + str(sw) + ";\n{", file=fout)
+
+			vincName = vinc
+			if sw == 200:
+				vinc += 100  # _DecKwBy100 acts like _DecKwBy200, 300 like 400, 500 like 600
+
+			for vinput in range(kwMin, kwMax + inc, inc):
+				vres = vinput + (vinc * dir)
+				vres = min(max(vres, kwMin), kwMax)
+				print("  sub  kw" + ValueName(vinput) + "  by  kw" + ValueName(vres) + ";", file=fout)
+
+			if len(swids) > 1:
+				print("}", file=fout)  # end of do-if construct
+
 		print("} _" + lname + str(vincName) + ";", file=fout)
 
 # end of GenLookup_IncDecKw
