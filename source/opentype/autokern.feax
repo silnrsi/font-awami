@@ -137,7 +137,7 @@ lookup HandleMarkDsc {
 # Special cases: the nuqta doesn't affect the height of the entire (wide) glyph.
 # Only raise the height where the nuqta is positioned.
 lookup HandleAscMarkLimited {
-	lookupflag UseMarkFilteringSet [@AllBases @NuqtaLikeUpper @AscXMarker];
+	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @AscXMarker];
 
 	# Ideally these should be treated like the qaf below, but in fact the final seen and feh forms
 	# are wide enough that the nuqtas on the right side are never going to affect kerning, which
@@ -150,6 +150,7 @@ lookup HandleAscMarkLimited {
 
 	sub [absBehFin absBehFin._bfkl]		ascx600'	@NuqtaLikeUpper		by	ascx600.Mid8;
 	sub [absBehFin absBehFin._bfkl]		ascx1000'	@NuqtaLikeUpper		by	ascx1000.Mid8;
+
 } HandleAscMarkLimited;
 
 lookup AdjustAscxDscx4Shifts {
@@ -252,7 +253,7 @@ lookup AdjustForLowerNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.qf mkJeemIni.ch]'	ybLast' lookup _ExtendYbBy100	@DotNarrowL;
 	sub @KwMarker' lookup _DecKwBy300	[mkJeemIni.qf]'					ybLast' lookup _ExtendYbBy300	@DotWideL;
 	sub @KwMarker' lookup _DecKwBy200	[mkJeemIni.ai]'					ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100	[mkJeemIni.hd]'					ybLast' lookup _ExtendYbBy100	@NuqtaLikeLower;
 	sub @KwMarker' lookup _DecKwBy400	[mkJeemIni.ch]'					ybLast' lookup _ExtendYbBy400	@DotWideL;
 
 	# feh w/ three dots below
@@ -352,6 +353,15 @@ lookup AdjustForBaseOverhang {
 	sub kw0' lookup _DecKwBy200	mkFehIni.mm		mkMeemMed.jm	mkJeemFin;
 
 } AdjustForBaseOverhang;
+
+# SliceWidth() == 200
+lookup HandleDscTweak {
+	lookupflag UseMarkFilteringSet [@KernBaseMarkIni @MarkLower @DscMarker];
+
+	# The descent has to be tweaked for specific slices.
+
+	sub mkKehehIni.mm	@DscMarker  @DscMarker  @DscMarker @DscMarker'	@MarkLower	by	dsc0;	# due to the shape of the glyph and the position of the anchor
+} HandleDscTweak;
 
 
 # Measure heights
@@ -457,8 +467,8 @@ lookup SubtractNuqtaDescent {
 include(../../source/opentype/arithTopLevel.feax);
 # -----------------    ^^^ This file includes the following:
 
-# Convert markers pt/pb back to asc/dsc
-# lookup MarkersYtb2AscDsc:
+# Convert markers yt/yb back to asc/dsc
+#lookup MarkersYtb2AscDsc
 
 # These are flattened for the sake of performance.
 # lookup MakeAscentAbsolute;
@@ -477,7 +487,7 @@ include(../../source/opentype/arithTopLevel.feax);
 #  ...
 #} MakeDescentAbsolute;
 
-# ---------------
+# -------------------------------------------------------------------------
 
 # Extend the slices below to account for the width of an overhanging nuqta.
 lookup ExtendForNuqtaOverhang {

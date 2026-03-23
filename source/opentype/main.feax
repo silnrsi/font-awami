@@ -1531,6 +1531,25 @@ lookup DeleteHidden {
 #lookup Space4BariyehKern:
 include(../../source/opentype/bariyehKernRules.feax);
 
+@RehWawDalAlef = [absReh absRehFin._jkl absWaw absWawFin absDal absDalFin @AlefForms];
+
+# The automatic calculations aren't quite right for some sequences. Adjust.
+lookup HandFixBariyehKern {
+	lookupflag UseMarkFilteringSet [kSp950];
+
+	sub @IsoFin kSp950' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
+	sub @IsoFin kSp950' space 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
+	sub @IsoFin kSp950' space space	absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
+
+	sub @IsoFin'				[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
+									by	@IsoFin kw0;
+	sub @IsoFin'  space			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
+									by	@IsoFin kw0;
+	sub @IsoFin'  space space	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
+									by	@IsoFin kw0;
+
+} HandFixBariyehKern;
+
 } calt;	 # end of feature
 
 # --- Collision fixing ---
@@ -1557,13 +1576,13 @@ feature calt {	# eventually change this to a Stylistic Set?
 script arab;
 
 def AutoKern() {
-	return 1    # toggle to switch between auto- and hand-kerning
-} AutoKern;
-
-# Can't use the AutoKern() conditional for this file; toggle by hand.	
+	return 1    # \/  \/  toggle to switch between auto- and hand-kerning; -1 for no kerning at all
+} AutoKern;     # \/  \/  \/
+#               # \/  \/  \/
+# Can't use the AutoKern() conditional for this file; TOGGLE BY HAND.	
 include(../../source/opentype/autokern.feax);
 
-do	if AutoKern() != 1; {
+do	if AutoKern() == 0; {
 	include(../../source/opentype/handkern.feax);
 }
 
