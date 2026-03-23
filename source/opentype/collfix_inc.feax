@@ -17,18 +17,6 @@
 
 # This file is intended to be included in main.feax.
 
-@CfMarkerN = [cfN100 cfN200 cfN300 cfN400 cfN500];
-@CfMarkerS = [cfS100 cfS200 cfS300 cfS400 cfS500 cfS600 cfS700];
-@CfMarkerNS = [cfNS0 @CfMarkerN @CfMarkerS];
-@CfMarkerE = [cfE100 cfE200 cfE300 cfE400 cfE500];
-@CfMarkerW = [cfW100 cfW200 cfW300 cfW400 cfW500];
-@CfMarkerEW = [cfEW0 @CfMarkerE @CfMarkerW];
-@CfMarker = [@CfMarkerNS @CfMarkerEW];
-
-@Any = [@GDEF_bases @GDEF_marks];
-
-@Shiftable = [@NuqtaLike @Diac];
-@HardKernable = [absAlefMaddaAbove absAlef absAlefFin];
 
 # Lookups used by collision fixing.
 

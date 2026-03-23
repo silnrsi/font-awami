@@ -1341,6 +1341,92 @@ details including an FAQ.
 		absKafIni_short absGafIni_short absKafMed_short absGafMed_short
 	</class>
 
+	<!-- =========== -->
+	<!--    MARKS    -->
+	<!-- =========== -->
+
+	<class name="NuqtaUpper">
+		_dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u _dot1u.small _dot2u.small _dot3u.small _dot3uD.small _dot4u.small
+	</class>
+	<class name="NuqtaLower">
+		_dot1l _dot2l _dot2vl _dot3l _dot4l _dot1l.small _dot2l.small _dot2vl.small _dot3l.small _dot4l.small
+	</class>
+	<class name="Nuqta">@NuqtaUpper @NuqtaLower</class>
+	<class name="NuqtaLikeUpper">
+		@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove
+		_smallTah  _smallV  _smallTah2dots  _kafSquiggle
+		_smallThreeAbove  _smallTwoAbove  _wasla  _wavyHamza  _grafStroke
+		_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
+		_dot1u_smallV  _dot1u_smallV.kf  _dot1u_smallTah  _dot1u_smallTah.kf
+		_noDot1u _noDot2u
+	</class>
+	<class name="NuqtaLikeLower">
+		@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow 
+		_smallVinvBelow _ring  _attachedRing _smallFourBelow
+		_dot2lIM  _dot2lIM.small _dot2l.tail
+		_noDot2l _noDot2l.small
+	</class>
+	<class name="NuqtaLikeMiddle">_bar  _bar.narrow  _bar.waw  _bar.raised  _bar.raised_gaf  _attachedRingMid</class>
+
+	<class name="NuqtaLikeUpMid">@NuqtaLikeUpper @NuqtaLikeMiddle</class>
+
+	<class name="NLowerUpper">
+		_dot1l__smallTah  _dot2vl__smallTah  _dot1l__dot1u  _hehHook__dot2u
+		_ring__dot2u  _noDot2l__hamza  _dot2lIM__smallV  _hehHook__hamza _dot3l__dot3u
+		_ring__dot1u  _dot2lIM__smallTwo  _dot2lIM__smallThree</class>
+	<class name="NLowerNoUpper">
+		_dot1l  _dot2vl  _dot1l  _hehHook.small
+		_attachedRing  _noDot2l  _dot2l  _hehHook.small  _dot3l
+		_attachedRing  _dot2l  _dot2l</class>
+	<class name="NUpperNoLower">
+		_smallTah  _smallTah  _dot1u.small  _dot2u.small
+		_dot2u.small  absHamzaAbove  _smallV  absHamzaAbove  _dot3u.small
+		_dot1u.small  _smallTwoAbove  _smallThreeAbove</class>
+
+	<class name="NuqtaVisUpper">@NuqtaLikeUpper @NLowerUpper</class>
+	<class name="NuqtaVisLower">@NuqtaLikeLower @NLowerUpper</class>
+
+	<class name="NuqtaLike">@NuqtaLikeUpper @NuqtaLikeLower @NLowerUpper</class>
+
+	<class name="DiacUpper">
+		nlqZabar nlqPesh absShadda nlqUltaPesh nlqZabarTwoDots nlqKharizabar nlqJazm nlqJazm_openleft
+		nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
+		absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
+		absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
+		absSmallHighSadMark absSmallHighSeen absSmallHighTah
+		_kharizabar_dopesh _kharizabar_pesh _kharizabar_zabar _kharizabar_dozabar _shadda_dopesh _shadda_dozabar
+		_shadda_kharizabar _shadda_kharizabar_allah _shadda_pesh _shadda_zabar _wasla
+		<!-- TODO: add honorifics -->
+	</class>
+	<class name="DiacLower">
+		nlqZair nlqDozair nlqKharizair absEmptyCentreLowStop absSmallLowMeem
+		<!-- @_mLower  -->
+	</class>
+
+	<!-- For UAX#53:
+			TODO: implement all this!
+	-->
+
+	<class name="DiacUpperC2">
+		nlqZabar nlqPesh absShadda nlqUltaPesh nlqKharizabar nlqJazm nlqJazm_openleft
+		nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
+		absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
+		absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
+		absSmallHighSadMark absSmallHighSeen absSmallHighTah</class>
+
+	<class name="Diac">@DiacUpper @DiacLower</class>
+
+	<!-- TODO: handle gafStroke, graf, _kafTop_bj -->
+
+	<class name="MarkUpper">@NuqtaVisUpper @DiacUpper</class>
+	<class name="MarkLower">@NuqtaVisLower @DiacLower</class>
+	<class name="MarkMiddle">
+		_kafSquiggle _bar _bar.narrow _bar.raised _bar.raised.gaf _bar.waw
+		_attachedRingMid
+	</class>
+	<class name="MarkUpMid">@MarkUpper @MarkMiddle</class>
+	<class name="Mark">@MarkUpper @MarkLower @MarkMiddle</class>
+
 	<!-- ================== -->
 	<!--  COLLISION FIXING  -->
 	<!-- ================== -->
@@ -1375,6 +1461,40 @@ details including an FAQ.
 	<class name="DotNarrow">@DotNarrowU @DotNarrowL</class>
 	<class name="DotTall">@DotTallU @DotTallL</class>
 	<class name="DotFlat">@DotFlatU @DotFlatL</class>
+
+	<class name="CfMarkerN">cfN100 cfN200 cfN300 cfN400 cfN500</class>
+	<class name="CfMarkerS">cfS100 cfS200 cfS300 cfS400 cfS500 cfS600 cfS700</class>
+	<class name="CfMarkerE">cfE100 cfE200 cfE300 cfE400 cfE500</class>
+	<class name="CfMarkerW">cfW100 cfW200 cfW300 cfW400 cfW500</class>
+	<class name="CfMarkerNS">cfNS0 @CfMarkerN @CfMarkerS</class>
+	<class name="CfMarkerEW">cfEW0 @CfMarkerE @CfMarkerW</class>
+	<class name="CfMarker">@CfMarkerNS @CfMarkerEW</class>
+
+	<class name="Any">@GDEF_bases @GDEF_marks</class>
+
+	<class name="Shiftable">@NuqtaLike @Diac</class>
+	<class name="HardKernable">absAlefMaddaAbove absAlef absAlefFin</class>
+
+	<class name="NuqtaUpperWide_sub">_dot2u _dot3u _dot4u</class>
+	<class name="NuqtaUpperWide_small_sub">_dot2u.small _dot3u.small _dot4u.small</class>
+
+	<class name="NLikeUpperTall">
+		_dot3u _dot3u.small _dot4u _dot4u.small _dot2vu _smallTah _smallTah2dots
+		_dot1u_smallTah _dot1u_smallTah.kf _dot1u_smallV _dot1u_smallV.kf _dot1u_ngMark 
+		_dot2lIM__hamza _verticalStroke</class>
+	<class name="NLikeUpperFlat">_dot1u  _dot1u.small  _dot2u  _dot2u.small</class>
+
+	<class name="Talls">@LamForms @TahForms</class>;
+
+	<!-- for marks attached to bariyeh -->
+	<class name="NLikeSubBy_sub">
+		_dot1l _dot2l _dot2vl _dot3l _dot4l _hehHook.small _smallTahBelow _smallTah2dotsBelow 
+		_smallVBelow _smallVinvBelow
+		nlqZair nlqDozair nlqKharizair</class>
+	<class name="NLikeHid_sub">
+		_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
+		_smallVBelow.hid _smallVinvBelow.hid
+		_diac.hid _diac.hid _diac.hid</class>
 
 	<!-- ========= -->
 	<!--  KERNING  -->

@@ -19,12 +19,6 @@
 
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
-@CfMarkerNS = [cfNS0 cfN100 cfN200 cfN300 cfN400 cfN500 cfS100 cfS200 cfS300 cfS400 cfS500];
-@CfMarkerEW = [cfEW0 cfE100 cfE200 cfE300 cfE400 cfE500 cfW100 cfW200 cfW300 cfW400 cfW500];
-@CfMarker = [@CfMarkerNS @CfMarkerEW];
-
-@Any = [@GDEF_bases @GDEF_marks];
-
 lookup KludgeEndOfStream {
 	# Ensure that the last nuqta has at least three slots after it.
 	# This is needed for the insertion rules below.
