@@ -214,9 +214,17 @@ lookup _ShiftS400E200 {
 	sub @Shiftable'  by  @Shiftable cfS400 cfE200;
 } _ShiftS400E200;
 
+lookup _ShiftS500E100 {
+	sub @Shiftable'  by  @Shiftable cfS500 cfE100;
+} _ShiftS500E100;
+
 lookup _ShiftS500E200 {
 	sub @Shiftable'  by  @Shiftable cfS500 cfE200;
 } _ShiftS500E200;
+
+lookup _ShiftS700E100 {
+	sub @Shiftable'  by  @Shiftable cfS700 cfE100;
+} _ShiftS700E100;
 
 # shift diagonally south-west
 

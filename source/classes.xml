@@ -92,6 +92,7 @@ details including an FAQ.
 	<class name="SeenFinForms">
 		absSeenFin absSeenFin_short
 	</class>
+	<class name="SeenIMForms">@SeenIniForms @SeenMedForms</class>
 	<class name="SeenForms">@SeenIniForms @SeenMedForms @SeenFinForms</class>
 	
 	<class name="SadIniForms">
@@ -1426,6 +1427,8 @@ details including an FAQ.
 	</class>
 	<class name="MarkUpMid">@MarkUpper @MarkMiddle</class>
 	<class name="Mark">@MarkUpper @MarkLower @MarkMiddle</class>
+
+	<class name="ByShim">_byShim1 _byShim2 _byShim3</class>
 
 	<!-- ================== -->
 	<!--  COLLISION FIXING  -->

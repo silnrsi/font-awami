@@ -44,6 +44,11 @@ lookup PreventPreIsoKern {
 lookup HardCodeSpecialIsolates{
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
 	sub [absAlef absAlefFin]  kw0'  @RehIsoForms  by  kblock kw0;
+
+	# Probably not needed, too much:
+	#sub [absAlef absAlefFin] kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN100;
+
+	sub absAlefMaddaAbove kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN200;
 } HardCodeSpecialIsolates;
 
 
