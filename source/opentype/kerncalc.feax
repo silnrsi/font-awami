@@ -1386,7 +1386,7 @@ lookup _ShiftFromPrev {
 
 lookup _PyDelYb {
 	lookupflag UseMarkFilteringSet [@PyMarker @YbMarker];  # ignore dscx.Done
-	sub @PyMarker @YbMarker by @PyMarker;
+	sub @PyMarker @YbMarker		by	@PyMarker;
 } _PyDelYb;
 
 #=================  NOT USED  =================
@@ -1430,8 +1430,8 @@ lookup _ShiftFromNext {
 	sub ybLast' lookup _B4lastInsYbLow	ybN1000';	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	ybN900';	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	ybN800';	#    \/
-	sub ybLast' lookup _B4lastInsYbLow	ybN700';	#    \/
-	sub ybLast' lookup _B4lastInsYbLow	ybN600';	#    \/
+	sub ybLast' lookup _B4lastInsYbLow 	ybN700';	#    \/
+	sub ybLast' lookup _B4lastInsYbLow 	ybN600';	#    \/
 	sub ybLast' lookup _B4lastInsYbLow	ybN500';	#    --
 	sub ybLast' lookup _B4lastInsYbN400	ybN400';
 	sub ybLast' lookup _B4lastInsYbN300	ybN300';

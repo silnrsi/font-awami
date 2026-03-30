@@ -41,16 +41,15 @@ lookup PreventPreIsoKern {
 } PreventPreIsoKern;
 
 
-lookup HardCodeSpecialIsolates{
+lookup HardCodeSpecialIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
 	sub [absAlef absAlefFin]  kw0'  @RehIsoForms  by  kblock kw0;
 
-	# Probably not needed, too much:
+	# Probably not needed, 100 is too much:
 	#sub [absAlef absAlefFin] kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN100;
 
 	sub absAlefMaddaAbove kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN200;
 } HardCodeSpecialIsolates;
-
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
 # using the kerning algorithm.
@@ -104,7 +103,7 @@ lookup HardCodeIsolates {
 	sub [absZain]											kw0' lookup _BlockSet200		[@SeenIsoForms @SadIsoForms];
 
 	# kaf
-	sub @AllBases			kw0' lookup _BlockSet1000	[@KafIsoForms];
+	sub @AllBases			kw0' lookup _BlockSet1000		[@KafIsoForms];
 
 	# qaf
 	sub absRehFin			kw0' lookup _BlockSet100		absQafFin;
@@ -117,6 +116,18 @@ lookup HardCodeIsolates {
 # lookup HardCodeIsolatesWNuqtaUpper {
 # 	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
 # } HardCodeIsolatesWNuqtaUpper;
+
+
+# When there are 2 characters in a sequence with the same number of slices, once you have fully kerned under
+# the first glyph and fully kerned the second, the process meets in the middle and gets in a tangle. 
+# Hard-code one side.
+lookup HardCode2CharSeq {
+
+	# kaf + chotiyeh
+	sub @AllBases			kw0' lookup _BlockSet800		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
+
+} HardCode2CharSeq;
+
 
 # Insert "extra ascent/descent" markers into the stream to represent the presence
 # of nuqtas and/or marks. These cause the ascent to be raised higher or the
@@ -575,6 +586,7 @@ lookup $ln_CleanUpTopGlyph {
 	sub @YbMarker @YtMarker ybLast ybLast	@YtMarker'				by  NULL;  # second glyph in sequence
 } $ln_CleanUpTopGlyph;
 
+
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
 # TODO: extend to kern 3 glyphs; currently it only handles 2. This isn't high priority since
 # final glyphs tend to be wide, and in any case the result will be that not quite enough kerning happens.
@@ -592,7 +604,8 @@ lookup $ln_ShiftPrevGlyph {
 # Currently this handles kerning under 3 glyphs max.
 # TODO: don't run if there is a kblock or knone present.
 lookup $ln_ShiftNextGlyph {
-	lookupflag UseMarkFilteringSet [ybLast @KwMarker @PyMarker @YbMarker @YtMarker @KBlock @KNone];
+	lookupflag UseMarkFilteringSet [ybLast @PyMarker @YbMarker @YtMarker @KwMarker @KBlock @KNone];
+
 	# Shift from the next immediate glyph:
 	sub @YtMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker' lookup _PyDelYb;
 	# Shift from the second glyph down, skipping the next intervening glyph:
