@@ -588,8 +588,8 @@ def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit)
     if exit == "ta":
         uppers = uppers[0:-3]
 
-    # if entry == "by":
-    #     uppers = uppers[0:1]
+    if entry == "by":
+        uppers = []
         
     # These interfaces overlap such that the right-hand glyph is on top.
     # Trim off the end of the lower metrics on the right-hand (exit) glyph
@@ -781,7 +781,8 @@ parser.add_argument("-o", "--outfile", help="Output OpenType file")
 parser.add_argument("-w", "--width", type=int, default=INCREMENT, help="Slice width")
 args = parser.parse_args()
 
-outFileName = args.outfile + "_" + str(INCREMENT)
+outFileName = args.outfile
+outFileName = outFileName.replace( ".fea", "-" + str(INCREMENT) + ".fea")  # eg, autoKernMetrics-200.feax
 
 if args.infont.lower().endswith(".ttf"):
     f = ttLib.TTFont(args.infont)
@@ -875,4 +876,4 @@ with open(outFileName, "w") as outf:
 
     outf.write("\n} InitKernMetrics;\n")
 
-print("Output written to " + args.outfile)
+print("Output written to " + outFileName)

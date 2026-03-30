@@ -205,11 +205,12 @@ lookup TreatBasesAsMarks_altKaf {   # separate lookup due to absKehehMed.by exis
 # Must come after InitKernMetrics.
 
 # Insert blocker before final kw
-lookup blockFinalKw {
+lookup BlockFinalKw {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
     ignore sub @KwMarker' @AllKernBase;
+	ignore sub kblock @KwMarker';
     sub @KwMarker' lookup _InsBlocker;
-} blockFinalKw;
+} BlockFinalKw;
 
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
