@@ -43,12 +43,10 @@ lookup PreventPreIsoKern {
 
 lookup HardCodeSpecialIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
-	sub [absAlef absAlefFin]  kw0'  @RehIsoForms  by  kblock kw0;
+	sub [absAlef absAlefFin]  kw0' lookup _BlockSet0	@RehIsoForms;
 
-	# Probably not needed, 100 is too much:
-	#sub [absAlef absAlefFin] kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN100;
-
-	sub absAlefMaddaAbove kw0' absBehIni.ch  nlqChotiyehFin._bfkl 	by	kblock kwN200;
+	#sub [absAlef absAlefFin] kw0' lookup _BlockSetN100	absBehIni.ch  nlqChotiyehFin._bfkl;	# 100 is too much
+	sub absAlefMaddaAbove kw0' lookup _BlockSetN200		absBehIni.ch  nlqChotiyehFin._bfkl;
 } HardCodeSpecialIsolates;
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
@@ -82,7 +80,8 @@ lookup IgnoreInvisibles {
 # Handle isolate forms explicitly.
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
-	lookupflag UseMarkFilteringSet [@KwMarker];
+	lookupflag UseMarkFilteringSet [@KwMarker
+							kblock];  # ignore when case has already been handled
 
 	# alef
 	sub [absRehFin._jkl]									kw0' lookup _BlockSet200		@AlefIsoForms;
@@ -618,7 +617,7 @@ lookup $ln_ShiftNextGlyph {
 
 # If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
 lookup AddSpaceWhenBlocked {
-	sub kblock	@KwMarker' lookup _DecKwBy100;
+	sub [kblock kblockR]	@KwMarker' lookup _DecKwBy100;
 
 } AddSpaceWhenBlocked;
 

@@ -26,13 +26,23 @@
 do  forlet n = range(0, 11);
     let name = str(n) + ("" if n == 0 else "00");
     let ln = "_BlockSet" + name;
-    let kwn = "kw"+name;
+    let kwn = "kw" + name;
 {
 lookup $ln {
     sub kw0 by kblock $kwn;
 } $ln;
 }
 
+# negative values:
+do	forlet n = range(1, 9);
+	let name = str(n) + "00";
+	let ln = "_BlockSetN" + name;
+	let kwn = "kwN" + name;
+{
+lookup $ln {
+    sub kw0 by kblock $kwn;
+} $ln;
+}
 
 @PyInitMarker = [pyNULL py0];
 
