@@ -190,8 +190,11 @@ lookup CollFixNuqtasLower {
 	# beh + lam + beh
 	sub absBehIni @DotTallL' lookup _ShiftN200		absLamMed.be	absBehMed.qf @DotWideL;
 
+	# beh + kaf + chotiyeh
+	sub absBehIni	@NuqtaLikeLower' lookup _ShiftN100E300		[absKehehMed.ch absGafMed.ch absKehehMed.ch_base absLamMed.ch];
+
 	# beh + kaf + heh-do
-	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100		[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
+	sub absBehIni	@NuqtaLikeLower' lookup _ShiftS200E100	[absKehehMed.hd absGafMed.hd absKehehMed.hd_base absLamMed.hd];
 
 	# beh + heh-goal
 	sub absBehIni.hgM	@DotWideL' lookup _ShiftE200	@HehGoalMedForms	_hehHook.small;
@@ -250,6 +253,11 @@ lookup CollFixNuqtas_3rd {
 lookup CollFixDiacUpper {
 	lookupflag UseMarkFilteringSet [@NuqtaVisUpper @DiacUpper @KafMed_top_tall_sub bogus];  # bogus matches kludged slot
 
+	# alef
+	sub absAlef  @DiacUpper' lookup _ShiftN200E100  [absKehehIni absGafIni];
+	# alef + feh
+	sub @AlefForms @MarkUpper	@FehIniForms @DotWideU' lookup _ShiftW200  @Finals;
+
 	# beh
 
 	sub absBehIni @NuqtaVisUpper' lookup _ShiftS200E100	@DiacUpper
@@ -265,11 +273,10 @@ lookup CollFixDiacUpper {
 
 	sub absBehIni.beM2  @NuqtaLikeUpper' lookup _ShiftS100	absBehMed'  @Diac' @Any'  lookup _ShiftN500;
 
+	sub absBehIni.bere  @NuqtaLikeUpper' lookup _ShiftS100	absBehMed.re' @Diac' @Any' lookup _ShiftN200W100;
+
 	# jeem
 	sub absJeemMed	@DiacUpper'	lookup _ShiftE200		[absAlefFin @LamMedForms @LamFinForms @KafMedForms @KafFinForms @KafMedBase_sub];
-
-	# alef + feh
-	sub @AlefForms @MarkUpper	@FehIniForms @DotWideU' lookup _ShiftW200  @Finals;
 
 	# ain + meem
 	sub [absAinIni.mm absAinMed.mm]  [@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW300 [@LamMFForms absAlefFin @KafMFForms];
@@ -365,6 +372,8 @@ lookup CollFixNuqtasUpperNextAdjustment {
 	sub absMeemMed.fe @DiacUpper' lookup _ShiftN200 @CfMarkerW	absFehMed  @DotWideU;
 
 
+
+
 } CollFixNuqtasUpperNextAdjustment;
 
 lookup CollFixNuqtasLowerNextAdjustment {
@@ -378,6 +387,12 @@ lookup CollFixNuqtasLowerNextAdjustment {
 
 } CollFixNuqtasLowerNextAdjustment;
 
+# Tweak fixes using simple substitution
+lookup CollFixRedo {
+
+	sub [absKehehIni.benn absGafIni.benn] @DiacLower cfS700' @CfMarkerE absBehMed.nn @NuqtaLikeLower	by	cfS400;
+
+} CollFixRedo;
 
 lookup EndOfStreamUndoKludge {
 	sub bogus  by  NULL;

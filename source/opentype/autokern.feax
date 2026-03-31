@@ -47,6 +47,10 @@ lookup HardCodeSpecialIsolates {
 
 	#sub [absAlef absAlefFin] kw0' lookup _BlockSetN100	absBehIni.ch  nlqChotiyehFin._bfkl;	# 100 is too much
 	sub absAlefMaddaAbove kw0' lookup _BlockSetN200		absBehIni.ch  nlqChotiyehFin._bfkl;
+
+	# long specific sequences
+	sub absAlefMaddaAbove kw0' lookup _BlockSetN200		absBehIni  absKehehMed.hd_base absHehDoachashmeeMed.benn;
+
 } HardCodeSpecialIsolates;
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
