@@ -1509,8 +1509,9 @@ details including an FAQ.
 		 against something further along in the sequence.
 		 kblockR ("right") indicates a block with a fresh glyph hitting the right-head edge of the
 		 following sequence.
-		 kblock is the final result. -->
-	<class name="KBlock">kblockR kblockI kblock</class>
+		 kblock is the final result.
+		 kblockHard indicates a hard-coded value. -->
+	<class name="KBlock">kblockR kblockI kblock kblockHard</class>
 	
 	<class name="BehKernBaseMarkIni">
 		mkBehIni mkBehIni.ai mkBehIni.be mkBehIni.beM1 mkBehIni.beM2 mkBehIni.benn <!--mkBehIni.behg--> mkBehIni.bere

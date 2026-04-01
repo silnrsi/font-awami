@@ -339,7 +339,7 @@ lookup _Set3250 {
 
 do  forlet n = range(0, 11);
     let name = str(n) + ("" if n == 0 else "00");
-    let ln = "_BlockSet" + name;
+    let ln = "_HardBlock" + name;
     let kwn = "kw"+name;
 {
 lookup $ln {

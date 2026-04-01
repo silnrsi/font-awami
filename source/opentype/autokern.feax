@@ -18,7 +18,36 @@
 
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
+# REWORK THIS if we switch back to 100-unit slices.
+lookup InitKernMetricsSpecial {
+	lookupflag IgnoreMarks;
+
+	# Don't include lower metrics for glyphs covered underneath by a final jeem.
+	# The upper metrics are copied by hand from the auto-generated ones in autoKernMetrics.
+	# As a kludge we replace the actual glyphs with markers to prevent the actual InitKernMetrics from firing.
+	# TODO: we probably need a lot special cases here. Add them also in UndoInitMetricsKludge.
+
+	sub absBehIni.be' absBehMed.jm  absJeemFin
+			by mkBehIni.be  dy0  pyNULL		ybLast		asc200   asc0     ;
+
+	sub absMeemIni.jm' absJeemFin
+			by mkMeemIni.jm dy0  pyNULL		ybLast		asc600   asc600   asc600   asc200   asc0     ;
+
+	# This one is tricky:
+	sub absAlefFin._lm'		by	mkAlefFin._lm  dy300  py0  ybLast asc1600  asc1600   asc200   kw0 ;
+	
+} InitKernMetricsSpecial;
+
+
 include(../../source/opentype/autoKernMetrics.feax);
+
+
+lookup UndoInitMetricsKludge {
+	lookupflag UseMarkFilteringSet @KernBaseMark;
+	sub mkBehIni.be  	by	absBehIni.be;
+	sub mkMeemIni.jm	by	absMeemIni.jm;
+	sub mkAlefFin._lm	by	absAlefFin._lm;
+} UndoInitMetricsKludge;
 
 
 # Don't allow kerning before bariyeh with overhanging tail.
@@ -38,18 +67,23 @@ lookup PreventPreIsoKern {
 	sub kw0' space space 		@Isolates	by	knoneIso kw0;
 	sub kw0' space space space	@Isolates	by	knoneIso kw0;
 	# If we have lots of spaces, the kerning doesn't matter too much!
+
 } PreventPreIsoKern;
 
 
 lookup HardCodeSpecialIsolates {
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
-	sub [absAlef absAlefFin]  kw0' lookup _BlockSet0	@RehIsoForms;
+	lookupflag UseMarkFilteringSet [@KwMarker];
+	sub [absAlef absAlefFin]  kw0' lookup _HardBlock0	@RehIsoForms;
 
-	#sub [absAlef absAlefFin] kw0' lookup _BlockSetN100	absBehIni.ch  nlqChotiyehFin._bfkl;	# 100 is too much
-	sub absAlefMaddaAbove kw0' lookup _BlockSetN200		absBehIni.ch  nlqChotiyehFin._bfkl;
+	#sub [absAlef absAlefFin] kw0' lookup _HardBlockN100	absBehIni.ch  nlqChotiyehFin._bfkl;	# 100 is too much
+	sub absAlefMaddaAbove kw0' lookup _HardBlockN200		absBehIni.ch  nlqChotiyehFin._bfkl;
 
 	# long specific sequences
-	sub absAlefMaddaAbove kw0' lookup _BlockSetN200		absBehIni  absKehehMed.hd_base absHehDoachashmeeMed.benn;
+	sub absAlefMaddaAbove kw0' lookup _HardBlockN200		absBehIni  absKehehMed.hd_base absHehDoachashmeeMed.benn;
+
+	# Treat a few special 2-char sequences as isolates. Put these rules after the one with alef-madda above.
+	sub kw0'					absBehIni.ch  nlqChotiyehFin._bfkl	by	knoneIso kwN100;
+	sub kw0' space				absBehIni.ch  nlqChotiyehFin._bfkl	by	knoneIso kwN100;
 
 } HardCodeSpecialIsolates;
 
@@ -85,34 +119,34 @@ lookup IgnoreInvisibles {
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
-							kblock];  # ignore when case has already been handled
+									kblock];  # ignore when case has already been handled
 
 	# alef
-	sub [absRehFin._jkl]									kw0' lookup _BlockSet200		@AlefIsoForms;
-	sub [absRehFin]											kw0' lookup _BlockSet100		@AlefIsoForms;
+	sub [absRehFin._jkl]									kw0' lookup _HardBlock200		@AlefIsoForms;
+	sub [absRehFin]											kw0' lookup _HardBlock100		@AlefIsoForms;
 #	sub absRehFin._hgM - ignore
 	sub [@RehIsoForms @DalFinForms @WawFinForms 
-			@WawIsoForms]									kw0' lookup _BlockSet100		@AlefIsoForms;
+			@WawIsoForms]									kw0' lookup _HardBlock100		@AlefIsoForms;
 
 	# reh
-	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _BlockSet0		@RehIsoForms;
-	sub [@WawIsoForms @WawFinForms]							kw0' lookup _BlockSet200		@RehIsoForms;
+	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _HardBlock0		@RehIsoForms;
+	sub [@WawIsoForms @WawFinForms]							kw0' lookup _HardBlock200		@RehIsoForms;
 
 	# seen & sad
-	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0' lookup _BlockSet200		[@SeenIsoForms @SadIsoForms];
-	sub [@DalIsoForms @DalFinForms]							kw0' lookup _BlockSet500		[@SeenIsoForms @SadIsoForms];
-	sub [absReh absRehFin absRehFin._jkl]					kw0' lookup _BlockSet400		[@SeenIsoForms @SadIsoForms];
-	sub [absRehFin]											kw0' lookup _BlockSet300		[@SeenIsoForms @SadIsoForms];
-	sub [absZain]											kw0' lookup _BlockSet200		[@SeenIsoForms @SadIsoForms];
+	sub [@BehIsoForms @BehFinForms absFeh @FehFinForms]		kw0' lookup _HardBlock200		[@SeenIsoForms @SadIsoForms];
+	sub [@DalIsoForms @DalFinForms]							kw0' lookup _HardBlock500		[@SeenIsoForms @SadIsoForms];
+	sub [absReh absRehFin absRehFin._jkl]					kw0' lookup _HardBlock400		[@SeenIsoForms @SadIsoForms];
+	sub [absRehFin]											kw0' lookup _HardBlock300		[@SeenIsoForms @SadIsoForms];
+	sub [absZain]											kw0' lookup _HardBlock200		[@SeenIsoForms @SadIsoForms];
 
 	# kaf
-	sub @AllBases			kw0' lookup _BlockSet1000		[@KafIsoForms];
+	sub @AllBases			kw0' lookup _HardBlock1000		[@KafIsoForms];
 
 	# qaf
-	sub absRehFin			kw0' lookup _BlockSet100		absQafFin;
+	sub absRehFin			kw0' lookup _HardBlock100		absQafFin;
 
 	# waw
-	sub [@DalIsoForms]		kw0' lookup _BlockSet100		@WawIsoForms;	
+	sub [@DalIsoForms]		kw0' lookup _HardBlock100		@WawIsoForms;	
 
 } HardCodeIsolates;
 
@@ -123,11 +157,16 @@ lookup HardCodeIsolates {
 
 # When there are 2 characters in a sequence with the same number of slices, once you have fully kerned under
 # the first glyph and fully kerned the second, the process meets in the middle and gets in a tangle. 
-# Hard-code one side.
+# So we hard-code one side.
 lookup HardCode2CharSeq {
+	lookupflag UseMarkFilteringSet [@KwMarker
+									kblock];  # ignore when case has already been handled
 
 	# kaf + chotiyeh
-	sub @AllBases			kw0' lookup _BlockSet800		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
+	sub @AllBases			kw0' lookup _HardBlock800		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
+
+	# kaf + heh-doachashmee
+	sub @AllBases			kw0' lookup _HardBlock800		[absKehehIni.hd absGafIni.hd]	absHehDoachashmeeFin;
 
 } HardCode2CharSeq;
 
@@ -622,7 +661,7 @@ lookup $ln_ShiftNextGlyph {
 
 # If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
 lookup AddSpaceWhenBlocked {
-	sub [kblock kblockR]	@KwMarker' lookup _DecKwBy100;
+	sub [kblock kblockR]	@KwMarker' lookup _DecKwBy100;  # TODO: right now this is actually decreasing by 200
 
 } AddSpaceWhenBlocked;
 
