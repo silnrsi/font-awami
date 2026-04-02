@@ -695,6 +695,8 @@ GenClasses("asc", "AscMarker", ascMin, ascMax)
 GenClasses("dsc", "DscMarker", dscMin, dscMax)
 GenClasses("yt", "YtMarker", ytMin, ytMax)
 GenClasses("yb", "YbMarker", ybMin, ybMax)
+GenClasses("ytk", "YtKMarker", ytMin, ytMax)
+GenClasses("ybk", "YbKMarker", ybMin, ybMax)
 
 print("\n@AscXMarker = [ascx400 ascx500 ascx600 ascx700 ascx800 ascx900 ascx1000 ascx1100 ascx1200 ascx1300 ascx1400 ascx1500 ascx1600];", file=fout)
 print("@DscXMarker = [dscx400 dscx500 dscx600 dscx700 dscx800 dscx900 dscx1000 dscx1100 dscx1200];", file=fout)
