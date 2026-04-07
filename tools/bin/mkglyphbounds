@@ -139,6 +139,9 @@ def ProcBounds(g, gn, p, width):
     # All values should be in logical order, RTL:
     uppers = p.slices(gn, aw, width, rtl=True, upper=True)
     lowers = p.slices(gn, aw, width, rtl=True, upper=False)
+
+    if gn == "absAinFin":
+        print( gn+ " aw", aw)
     return [uppers, lowers]
 
 
@@ -430,53 +433,55 @@ def TrimMetricsForOverlappingConnections(gname, uppers, lowers, entry, exit, sli
 def TrimMetricsForOverlappingConnections_100(gname, uppers, lowers, entry, exit):
     
     # These interfaces overlap such that the right-hand glyph is underneath.
-    # Trim off the end of the upper metrics on the right-hand (exit) glyph
-    # and the beginning of the lower metrics on the left-hand (entry) glyph.
+    # Trim off the end of the upper metrics on the right-hand (exit) glyph an
+    # amount corresponding to the overhang (RSB) of the left-hand glyph.
+    # Note that the left-hand glyph doesn't need to be adjusted because the slices
+    # exclude the RSB.
 
     if entry == "default":
         # Remove slices from right end of lowers
         if "absAlef" in gname:
             lowers = lowers[3:]  # all of them for absAlefFin - is this a problem?
-        elif "absLam" in gname:
-            lowers = lowers[1:]
+        #elif "absLam" in gname:
+        #    lowers = lowers[1:]
         elif "absKeheh" in gname or "absGaf" in gname:
             # trim off the diagonal stroke:
             lowers = lowers[10:]
-        elif "absDal" in gname:
-            lowers = lowers[1:]
+        #elif "absDal" in gname:
+        #    lowers = lowers[1:]
     if exit == "default":
         if gname == "absLamMed.al":
             pass
         else:
             uppers = uppers[0:-2]  # remove 200 units from left end of lowers
 
-    if entry == "ai":
-        lowers = lowers[2:]
+    #if entry == "ai":
+    #    lowers = lowers[2:]
     if exit == "ai":
         uppers = uppers[0:-2]
 
-    if entry == "benn":
-        lowers = lowers[2:]
+    #if entry == "benn":
+    #    lowers = lowers[2:]
     if exit == "benn":
         uppers = uppers[0:-2]
 
-    if entry == "beF":
-        lowers = lowers[1:]
+    #if entry == "beF":
+    #    lowers = lowers[1:]
     if exit == "beF":
         uppers = uppers[0:-1]
 
-    if entry == "fe":
-        lowers = lowers[2:]  # 250 units
+    #if entry == "fe":
+    #    lowers = lowers[2:]  # 250 units
     if exit == "fe":
         uppers = uppers[0:-2]
 
-    if entry == "sd":
-        lowers = lowers[5:]
+    #if entry == "sd":
+    #    lowers = lowers[5:]
     if exit == "sd":
         uppers = uppers[0:-5]  # 550 units
 
-    if entry == "ta":
-        lowers = lowers[7:]
+    #if entry == "ta":
+    #    lowers = lowers[7:]
     if exit == "ta":
         uppers = uppers[0:-7]
 
@@ -484,36 +489,38 @@ def TrimMetricsForOverlappingConnections_100(gname, uppers, lowers, entry, exit)
         uppers = uppers[0:1]
         
     # These interfaces overlap such that the right-hand glyph is on top.
-    # Trim off the end of the lower metrics on the right-hand (exit) glyph
-    # and the beginning of the upper metrics on the left-hand (entry) glyph.
+    # Trim off the end of the lower metrics on the right-hand (exit) glyph to
+    # correspond to the underhang (RSB) of the left-hand glyph.
+    # Again, note that the left-hand glyph doesn't need to be adjusted because the slices
+    # exclude the RSB.
 
-    if entry == "beM1":
-        uppers = uppers[1:]
+    #if entry == "beM1":
+    #    uppers = uppers[1:]
     if exit == "beM1":
         lowers = lowers[0:-1]
 
-    if entry == "ch":
-        uppers = uppers[5:]
+    #if entry == "ch":
+    #    uppers = uppers[5:]
     if exit == "ch":
         lowers = lowers[0:-5]
 
-    if entry == "hd":
-        uppers = uppers[4:]
+    #if entry == "hd":
+    #    uppers = uppers[4:]
     if exit == "hd":
         lowers = lowers[0:-4]
 
-    if entry == "jm":
-        uppers = uppers[7:]
+    #if entry == "jm":
+    #    uppers = uppers[7:]
     if exit == "jm":
         lowers = lowers[0:-7]
 
-    if entry == "mm":
-        uppers = uppers[5:]
+    #if entry == "mm":
+    #    uppers = uppers[5:]
     if exit == "mm":
         lowers = lowers[0:-5]
 
-    if entry == "mmX":
-        uppers = uppers[3:]
+    #if entry == "mmX":
+    #    uppers = uppers[3:]
     if exit == "mmX":
         lowers = lowers[0:-3]
 
@@ -538,33 +545,35 @@ def TrimMetricsForOverlappingConnections_100(gname, uppers, lowers, entry, exit)
 def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit):
     
     # These interfaces overlap such that the right-hand glyph is underneath.
-    # Trim off the end of the upper metrics on the right-hand (exit) glyph
-    # and the beginning of the lower metrics on the left-hand (entry) glyph.
+    # Trim off the end of the upper metrics on the right-hand (exit) glyph an
+    # amount corresponding to the overhang (RSB) of the left-hand glyph.
+    # Note that the left-hand glyph doesn't need to be adjusted because the slices
+    # exclude the RSB.
 
     if entry == "default":
         # Remove slices from right end of lowers
         if "absAlef" in gname:
-            lowers = lowers[2:]  # all of them for absAlefFin - is this a problem?
-        elif "absLam" in gname:
-            lowers = lowers[1:]
+            lowers = lowers[2:]  # all of them for absAlefFin - doesn't seem to be a problem
+        #elif "absLam" in gname:
+        #    lowers = lowers[1:]
         elif "absKeheh" in gname or "absGaf" in gname:
             # trim off the diagonal stroke:
             lowers = lowers[5:]
-        elif "absDal" in gname:
-            lowers = lowers[1:]
+        #elif "absDal" in gname:
+        #    lowers = lowers[1:]
     if exit == "default":
         if gname == "absLamMed.al":
             pass
         else:
             uppers = uppers[0:-1]  # remove 200 units from left end of lowers
 
-    if entry == "ai":
-        lowers = lowers[1:]
+    #if entry == "ai":
+    #    lowers = lowers[1:]  # taken care of by aw
     if exit == "ai":
         uppers = uppers[0:-1]
 
-    if entry == "benn":
-        lowers = lowers[1:]
+    #if entry == "benn":
+    #    lowers = lowers[1:]
     if exit == "benn":
         uppers = uppers[0:-1]
 
@@ -573,18 +582,18 @@ def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit)
     # if exit == "beF":
     #     uppers = uppers[0:-1]
 
-    if entry == "fe":
-        lowers = lowers[1:]  # 250 units
+    #if entry == "fe":
+    #    lowers = lowers[1:]  # 250 units
     if exit == "fe":
         uppers = uppers[0:-1]
 
-    if entry == "sd":
-        lowers = lowers[3:]
+    #if entry == "sd":
+    #    lowers = lowers[3:]
     if exit == "sd":
         uppers = uppers[0:-3]  # 550 units
 
-    if entry == "ta":
-        lowers = lowers[3:]
+    #if entry == "ta":
+    #    lowers = lowers[3:]
     if exit == "ta":
         uppers = uppers[0:-3]
 
@@ -592,43 +601,44 @@ def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit)
         uppers = []
         
     # These interfaces overlap such that the right-hand glyph is on top.
-    # Trim off the end of the lower metrics on the right-hand (exit) glyph
-    # and the beginning of the upper metrics on the left-hand (entry) glyph.
+    # Trim off the end of the lower metrics on the right-hand (exit) glyph to
+    # correspond to the underhang (RSB) of the left-hand glyph.
+    # Again, note that the left-hand glyph doesn't need to be adjusted because the slices
+    # exclude the RSB.
 
     # if entry == "beM1":
     #     uppers = uppers[1:]
     # if exit == "beM1":
     #     lowers = lowers[0:-1]
 
-    if entry == "ch":
-        uppers = uppers[2:]
+    #if entry == "ch":
+    #    uppers = uppers[2:]
     if exit == "ch":
         lowers = lowers[0:-2]
 
-    if entry == "hd":
-        uppers = uppers[2:]
+    #if entry == "hd":
+    #    uppers = uppers[2:]
     if exit == "hd":
         lowers = lowers[0:-2]
 
-    if entry == "jm":
-        uppers = uppers[3:]
+    #if entry == "jm":
+    #    uppers = uppers[3:]
     if exit == "jm":
         lowers = lowers[0:-3]
 
-    if entry == "mm":
-        uppers = uppers[2:]
+    #if entry == "mm":
+    #    uppers = uppers[2:]
     if exit == "mm":
         lowers = lowers[0:-2]
 
-    if entry == "mmX":
-        uppers = uppers[1:]
+    #if entry == "mmX":
+    #    uppers = uppers[1:]
     if exit == "mmX":
         lowers = lowers[0:-1]
 
-    # Only overlaps at very top.
-
-    if exit == "nn":
-        uppers = uppers[0:-1]
+    # Only overlaps at very top - not a full slice.
+    #if exit == "nn":
+    #    uppers = uppers[0:-1]
 
     # The post-lam alef completely covers the lam. Extend the alef to include the lam overhang on the left.
     if gname == "absAlefFin._lm":
@@ -817,14 +827,14 @@ with open(outFileName, "w") as outf:
 
             uppers, lowers = ProcBounds(g, gn, pen, sliceWidth)
 
-            # if gn == "absKehehIni.mm":
-            #     PrintList(gn+" raw", lowers)
+            if gn == "absAinFin":
+                PrintList(gn+" raw", lowers)
 
             uppers = MakeRelativeToExit(exits[gn], uppers)
             lowers = MakeRelativeToExit(exits[gn], lowers)
 
-            # if gn == "absKehehIni.mm":
-            #     PrintList(gn+" rel", lowers)
+            if gn == "absAinFin":
+                PrintList(gn+" rel", lowers)
 
             # Trim off some of the slice metrics to account for the fact that glyphs
             # overlap when they connect. The interface indicates (roughly) how much
@@ -839,22 +849,21 @@ with open(outFileName, "w") as outf:
 
             uppers, lowers = TrimMetricsForOverlappingConnections(gnFull, uppers, lowers, entry, exit, sliceWidth)
 
-            # if gn == "absKehehIni.mm":
-            #     PrintList(gn+" trimmed", lowers)
-
-            # if gn == "absMeemMed.sn":
-            #     PrintList(gn, lowers)
+            if gn == "absAinFin":
+                PrintList(gn+" trimmed", lowers)
 
             if exit is None and isIsolateFinalBase(gn): 
                 # PrintList(gn, lowers)
                 lowers = TruncateLowFinals(lowers)
+                if gn == "absAinFin":
+                    PrintList(gn+" trunc", lowers)
 
             #uppers, lowers = TruncateLongSeq(uppers, lowers)
 
             uppers, lowers = Tweak(gn, uppers, lowers, sliceWidth)
 
-            # if gn == "absKehehIni.mm":
-            #     PrintList(gn+" tweak", lowers)
+            if gn == "absAinFin":
+                PrintList(gn+" tweak", lowers)
 
             #gnMarker = BaseMarkerName(gn)
             gnMarker = gn
