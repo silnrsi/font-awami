@@ -119,7 +119,7 @@ lookup IgnoreInvisibles {
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
-									kblock];  # ignore when case has already been handled
+							kblock kblockHard];  # ignore when case has already been handled
 
 	# alef
 	sub [absRehFin._jkl]									kw0' lookup _HardBlock200		@AlefIsoForms;
@@ -254,6 +254,12 @@ lookup BlockFinalKw {
 	ignore sub kblock @KwMarker';
     sub @KwMarker' lookup _InsBlocker;
 } BlockFinalKw;
+
+lookup KludgeBlock {
+	lookupflag 0;
+	sub knoneIso  kblock		by	kblock;
+	sub knoneIso  kblockHard	by	kblock;
+} KludgeBlock;
 
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
@@ -631,28 +637,29 @@ lookup $ln_EnforceBlock {
 
 
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
-# TODO: extend to kern 3 glyphs; currently it only handles 2. This isn't high priority since
-# final glyphs tend to be wide, and in any case the result will be that not quite enough kerning happens.
-# An example of a sequence that doesn't work ideally is one ending in jeem+hehgoal.
 lookup $ln_ShiftPrevGlyph {
-	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker @KBlock @KNone];
-	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';  # implied by filter that includes @KBlock - same with @KNone
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker 
+			@KBlock @KNone];	# ignore cases with these
+	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';
 	
 	# The @PyMarker delineates a separate glyph, so we make sure we are shifting from the previous glyph;
 	# otherwise the rule gets triggered when we don't need to perform the shift.
-	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' @KwMarker';
+	sub @YtMarker' lookup _ShiftFromPrev @PyMarker' 			@KwMarker';
+	# Shift from the second glyph back.
+	# Examples of a sequences that need 3 preceeding glyphs are ones ending in jeem+hehgoal or a final jeem.
+	sub @YtMarker' lookup _ShiftFromPrev2 @PyMarker' @PyMarker'	@KwMarker';
 } $ln_ShiftPrevGlyph;
 
 # Shift a single @YbMarker from a following glyph into the initial, so we can test for kerning under it.
 # Currently this handles kerning under 3 glyphs max.
 # TODO: don't run if there is a kblock or knone present.
 lookup $ln_ShiftNextGlyph {
-	lookupflag UseMarkFilteringSet [ybLast @PyMarker @YbMarker @YtMarker @KwMarker @KBlock @KNone];
+	lookupflag UseMarkFilteringSet [ybLast @PyMarker @YbMarker @YtkMarker @KwMarker @KBlock @KNone];
 
 	# Shift from the next immediate glyph:
-	sub @YtMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker' lookup _PyDelYb;
+	sub @YtkMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker' lookup _PyDelYb;
 	# Shift from the second glyph down, skipping the next intervening glyph:
-	sub @YtMarker ybLast' lookup _ShiftFromNext2	@PyMarker' ybLast'	@PyMarker'	@YbMarker' lookup _PyDelYb;
+	sub @YtkMarker ybLast' lookup _ShiftFromNext2	@PyMarker' ybLast'	@PyMarker'	@YbMarker' lookup _PyDelYb;
 } $ln_ShiftNextGlyph;
 
 }
@@ -660,8 +667,9 @@ lookup $ln_ShiftNextGlyph {
 
 
 # If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
+# NOTE: do NOT do this when there is a hard block.
 lookup AddSpaceWhenBlocked {
-	sub [kblock kblockR]	@KwMarker' lookup _DecKwBy100;  # TODO: right now this is actually decreasing by 200
+	sub [kblock kblockR]	@KwMarker' lookup _DecKwExactly100;
 
 } AddSpaceWhenBlocked;
 

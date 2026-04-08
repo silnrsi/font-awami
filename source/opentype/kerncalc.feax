@@ -358,7 +358,7 @@ lookup _KwInsYt1800 {
 
 lookup _KwInsYt1900 {
 	lookupflag UseMarkFilteringSet [@YtMarker @KwMarker];
-	sub @KwMarker by yt1800 @KwMarker;
+	sub @KwMarker by yt1900 @KwMarker;
 } _KwInsYt1900;
 
 lookup _KwInsYt2000 {
@@ -624,7 +624,7 @@ lookup $lname {
 	sub [yt0 ytk0]'	yb100		by	$kb;
 	sub [yt0 ytk0]'	yb200		by	$kb;
 
-	sub [yt100 ytk100]'	@YbLow		by	$kb;  # any top lower than 0 creates a block
+	sub [yt100 ytk100]'	@YbLow		by	$kb;  # any top lower than 100 creates a block
 	sub [yt100 ytk100]'	yb100		by	$kb;
 	sub [yt100 ytk100]'	yb200		by	$kb;
 	sub [yt100 ytk100]'	yb300		by	$kb;
@@ -1414,6 +1414,43 @@ lookup _ShiftFromPrev {
 	sub yt3000'  lookup _DelYt	@PyMarker'	lookup _KwInsYt3000  	@KwMarker';
 
 } _ShiftFromPrev;
+
+# Shift from the second glyph back for comparison. The previous glyph has already been processed.
+lookup _ShiftFromPrev2 {
+	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker]; # PyMarker delineates a separate glyph
+
+	sub yt0'  	 lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt0	   	@KwMarker';
+	sub yt100'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt100  	@KwMarker';
+	sub yt200'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt200  	@KwMarker';
+	sub yt300'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt300  	@KwMarker';
+	sub yt400'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt400  	@KwMarker';
+	sub yt500'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt500  	@KwMarker';
+	sub yt600'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt600   	@KwMarker';
+	sub yt700'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt700  	@KwMarker';
+	sub yt800'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt800  	@KwMarker';
+	sub yt900'   lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt900  	@KwMarker';
+	sub yt1000'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1000  	@KwMarker';
+	sub yt1100'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1100  	@KwMarker';
+	sub yt1200'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1200  	@KwMarker';
+	sub yt1300'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1300  	@KwMarker';
+	sub yt1400'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1400  	@KwMarker';
+	sub yt1500'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1500  	@KwMarker';
+	sub yt1600'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1600  	@KwMarker';
+	sub yt1700'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1700  	@KwMarker';
+	sub yt1800'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1800  	@KwMarker';
+	sub yt1900'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt1900  	@KwMarker';
+	sub yt2000'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2000  	@KwMarker';
+	sub yt2100'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2100  	@KwMarker';
+	sub yt2200'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2200  	@KwMarker';
+	sub yt2300'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2300  	@KwMarker';
+	sub yt2400'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2400  	@KwMarker';
+	sub yt2500'  lookup _DelYt	@PyMarker' @PyMarker' 	lookup _KwInsYt2500		@KwMarker';
+	sub yt2600'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2600  	@KwMarker';
+	sub yt2700'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2700  	@KwMarker';
+	sub yt2800'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2800  	@KwMarker';
+	sub yt2900'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt2900  	@KwMarker';
+	sub yt3000'  lookup _DelYt	@PyMarker' @PyMarker'	lookup _KwInsYt3000  	@KwMarker';
+} _ShiftFromPrev2;
 
 
 lookup _PyDelYb {

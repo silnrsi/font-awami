@@ -1734,6 +1734,36 @@ lookup _DecKwBy600 {
   sub  kw1600  by  kw1000;
 } _DecKwBy600;
 
+lookup _DecKwExactly100 {
+  sub  kwN1000  by  kwN1000;
+  sub  kwN900  by  kwN1000;
+  sub  kwN800  by  kwN900;
+  sub  kwN700  by  kwN800;
+  sub  kwN600  by  kwN700;
+  sub  kwN500  by  kwN600;
+  sub  kwN400  by  kwN500;
+  sub  kwN300  by  kwN400;
+  sub  kwN200  by  kwN300;
+  sub  kwN100  by  kwN200;
+  sub  kw0  by  kwN100;
+  sub  kw100  by  kw0;
+  sub  kw200  by  kw100;
+  sub  kw300  by  kw200;
+  sub  kw400  by  kw300;
+  sub  kw500  by  kw400;
+  sub  kw600  by  kw500;
+  sub  kw700  by  kw600;
+  sub  kw800  by  kw700;
+  sub  kw900  by  kw800;
+  sub  kw1000  by  kw900;
+  sub  kw1100  by  kw1000;
+  sub  kw1200  by  kw1100;
+  sub  kw1300  by  kw1200;
+  sub  kw1400  by  kw1300;
+  sub  kw1500  by  kw1400;
+  sub  kw1600  by  kw1500;
+} _DecKwExactly100;
+
 lookup _IncKwBy800 {
   sub  kwN1000  by  kwN200;
   sub  kwN900  by  kwN100;
