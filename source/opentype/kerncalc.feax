@@ -586,39 +586,7 @@ do	forlet i = range(0,2);
 	let kb = kbGlyphs[i];  # kblockI, kblockR
 {
 lookup $lname {
-	lookupflag UseMarkFilteringSet [@YtMarker @YtkMarker @YbMarker @KNone];
-	# KNone indicates no kerning allowed, so we are always blocked.
-	sub [yt0 ytk0]'	@KNone	by	$kb;
-	sub [yt100 ytk100]'		@KNone	by	$kb;
-	sub [yt200 ytk200]'		@KNone	by	$kb;
-	sub [yt300 ytk300]'		@KNone	by	$kb;
-	sub [yt400 ytk400]'		@KNone	by	$kb;
-	sub [yt500 ytk500]'		@KNone	by	$kb;
-	sub [yt600 ytk600]'		@KNone	by	$kb;
-	sub [yt700 ytk700]'		@KNone	by	$kb;
-	sub [yt800 ytk800]'		@KNone	by	$kb;
-	sub [yt900 ytk900]'		@KNone	by	$kb;
-	sub [yt1000 ytk1000]'	@KNone	by	$kb;
-	sub [yt1100 ytk1100]'	@KNone	by	$kb;
-	sub [yt1200 ytk1200]'	@KNone	by	$kb;
-	sub [yt1300 ytk1300]'	@KNone	by	$kb;
-	sub [yt1400 ytk1400]'	@KNone	by	$kb;
-	sub [yt1500 ytk1500]'	@KNone	by	$kb;
-	sub [yt1600 ytk1600]'	@KNone	by	$kb;
-	sub [yt1700 ytk1700]'	@KNone	by	$kb;
-	sub [yt1800 ytk1800]'	@KNone	by	$kb;
-	sub [yt1900 ytk1900]'	@KNone	by	$kb;
-	sub [yt2000 ytk2000]'	@KNone	by	$kb;
-	sub [yt2100 ytk2100]'	@KNone	by	$kb;
-	sub [yt2200 ytk2200]'	@KNone	by	$kb;
-	sub [yt2300 ytk2300]'	@KNone	by	$kb;
-	sub [yt2400 ytk2400]'	@KNone	by	$kb;
-	sub [yt2500 ytk2500]'	@KNone	by	$kb;
-	sub [yt2600 ytk2600]'	@KNone	by	$kb;
-	sub [yt2700 ytk2700]'	@KNone	by	$kb;
-	sub [yt2800 ytk2800]'	@KNone	by	$kb;
-	sub [yt2900 ytk2900]'	@KNone	by	$kb;
-	sub [yt3000 ytk3000]'	@KNone	by	$kb;
+	lookupflag UseMarkFilteringSet [@YtMarker @YtkMarker @YbMarker];
 
 	sub [yt0 ytk0]'	@YbLow		by	$kb;  # any top lower than 0 creates a block
 	sub [yt0 ytk0]'	yb100		by	$kb;
@@ -1330,7 +1298,7 @@ lookup _MakeBlockerFinal {
 	sub kblockR by kblock;
 } _MakeBlockerFinal;
 
-@KbNotI = [kblock kblockR];
+@KbNotI = [kblock kblockR kblockHard];
 
 lookup _EnforceBlockAux1 {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];

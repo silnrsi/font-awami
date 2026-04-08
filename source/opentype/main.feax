@@ -166,7 +166,7 @@ lookup _InsSp2Kern2300 { sub @Initials by kSp2300 @Initials; } _InsSp2Kern2300;
 lookup _InsSp2Kern2350 { sub @Initials by kSp2350 @Initials; } _InsSp2Kern2350;
 lookup _InsSp2Kern2400 { sub @Initials by kSp2400 @Initials; } _InsSp2Kern2400;
 
-lookup _PreventKernUnder { sub @Initials by knone @Initials; } _PreventKernUnder;
+lookup _PreventKernUnder { sub @Initials by kblockHard @Initials; } _PreventKernUnder;
 
 
 #--- wide forms and small forms ---

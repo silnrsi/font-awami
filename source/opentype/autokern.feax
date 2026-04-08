@@ -62,17 +62,18 @@ lookup PreventPreBariyehKern {
 # We can do this because we always know their vertical position - that is, zero.
 lookup PreventPreIsoKern {
 	lookupflag UseMarkFilteringSet [@KwMarker];
-	sub kw0'       				@Isolates	by	knoneIso kw0;
-	sub kw0' space 				@Isolates	by	knoneIso kw0;
-	sub kw0' space space 		@Isolates	by	knoneIso kw0;
-	sub kw0' space space space	@Isolates	by	knoneIso kw0;
+	sub kw0'       				@Isolates	by	kblockHard kw0;
+	sub kw0' space 				@Isolates	by	kblockHard kw0;
+	sub kw0' space space 		@Isolates	by	kblockHard kw0;
+	sub kw0' space space space	@Isolates	by	kblockHard kw0;
 	# If we have lots of spaces, the kerning doesn't matter too much!
 
 } PreventPreIsoKern;
 
 
 lookup HardCodeSpecialIsolates {
-	lookupflag UseMarkFilteringSet [@KwMarker];
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock];
+	
 	sub [absAlef absAlefFin]  kw0' lookup _HardBlock0	@RehIsoForms;
 
 	#sub [absAlef absAlefFin] kw0' lookup _HardBlockN100	absBehIni.ch  nlqChotiyehFin._bfkl;	# 100 is too much
@@ -82,8 +83,8 @@ lookup HardCodeSpecialIsolates {
 	sub absAlefMaddaAbove kw0' lookup _HardBlockN200		absBehIni  absKehehMed.hd_base absHehDoachashmeeMed.benn;
 
 	# Treat a few special 2-char sequences as isolates. Put these rules after the one with alef-madda above.
-	sub kw0'					absBehIni.ch  nlqChotiyehFin._bfkl	by	knoneIso kwN100;
-	sub kw0' space				absBehIni.ch  nlqChotiyehFin._bfkl	by	knoneIso kwN100;
+	sub kw0'					absBehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
+	sub kw0' space				absBehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
 
 } HardCodeSpecialIsolates;
 
@@ -91,13 +92,14 @@ lookup HardCodeSpecialIsolates {
 # using the kerning algorithm.
 # TODO: if we move TreatBasesAsMarks up, delete most of these rules.
 lookup ClearAscentsPreIso {
-	lookupflag UseMarkFilteringSet [@AscMarker knoneIso @KwMarker];  # include @KwMarker to recognize segment breaks
-	rsub @AscMarker' knoneIso													by	ytIgnore;
-	rsub @AscMarker' @AllBases knoneIso											by	ytIgnore;
-	rsub @AscMarker' @AllBases @AllBases knoneIso								by	ytIgnore;
-	rsub @AscMarker' @AllBases @AllBases @AllBases knoneIso						by	ytIgnore;
-	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases knoneIso			by	ytIgnore;
-	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases @AllBases knoneIso	by	ytIgnore;
+	lookupflag UseMarkFilteringSet [@AscMarker kblockHard @KwMarker];  # include @KwMarker to recognize segment breaks
+
+	rsub @AscMarker' kblockHard														by	ytIgnore;
+	rsub @AscMarker' @AllBases kblockHard											by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases kblockHard									by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases kblockHard						by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases kblockHard				by	ytIgnore;
+	rsub @AscMarker' @AllBases @AllBases @AllBases @AllBases @AllBases kblockHard	by	ytIgnore;
 } ClearAscentsPreIso;
 
 # I suspect this is worth it since we can clean up the stream quite a lot right at the beginning of the process.
@@ -254,12 +256,6 @@ lookup BlockFinalKw {
 	ignore sub kblock @KwMarker';
     sub @KwMarker' lookup _InsBlocker;
 } BlockFinalKw;
-
-lookup KludgeBlock {
-	lookupflag 0;
-	sub knoneIso  kblock		by	kblock;
-	sub knoneIso  kblockHard	by	kblock;
-} KludgeBlock;
 
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
@@ -609,16 +605,16 @@ lookup $ln_CalculateKern {
 lookup $ln_EnforceBlock {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
 	ignore sub kblock' @KwMarker';  # already final
-	sub @KBlock' @KwMarker' lookup _EnforceBlockAux1;
-	sub @KwMarker' lookup _EnforceBlockAux2;
+	sub @KBlock'	@KwMarker' lookup _EnforceBlockAux1;
+	sub				@KwMarker' lookup _EnforceBlockAux2;
 } $ln_EnforceBlock;
 
 # Once a (final) glyph has been completely kerned, invalidate its bottoms.
 # TODO: extend to kern 3 glyphs; currently it only handles 2.
 # Do we really need this lookup? It seems safer to include it, but the regression test didn't show any problems without it.
 #lookup $ln_CleanUpKernedGlyph {
-#	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @KBlock @KNone];
-#	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @KBlock or KNone
+#	lookupflag UseMarkFilteringSet [@YbMarker @KwMarker @YtMarker @KBlock];
+#	#ignore rsub @YbMarker'  kblock  @KwMarker;  # implied by filter that includes @KBlock
 #	rsub @YbMarker' @KwMarker	by  ybIgnore;  # replacing with NULL doesn't work when we are using an rsub
 #} $ln_CleanUpKernedGlyph;
 
@@ -626,7 +622,7 @@ lookup $ln_EnforceBlock {
 # Once a glyph has had something kern under it completely, invalidate its tops.
 # TODO: find a way to stop this running if there is a kblock present.
 #lookup $ln_CleanUpTopGlyph {
-#	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast @KwMarker @KBlock @KNone];
+#	lookupflag UseMarkFilteringSet [@YbMarker @YtMarker ybLast @KwMarker @KBlock];
 #	# I don't remember why we have to test for a KwMarker. Maybe we just want to be sure to skip it if it's there.
 #	# NOTE: we used to substitute ytIgnore instead of NULL.
 #	sub @YbMarker @YtMarker ybLast			@YtMarker'  @KwMarker	by  NULL;  
@@ -639,7 +635,7 @@ lookup $ln_EnforceBlock {
 # Shift a single @YbMarker from the previous glyph into the final, so we can test it for kerning.
 lookup $ln_ShiftPrevGlyph {
 	lookupflag UseMarkFilteringSet [@YtMarker @PyMarker @KwMarker 
-			@KBlock @KNone];	# ignore cases with these
+			@KBlock];	# ignore cases with these
 	#ignore sub @YtMarker' @PyMarker' kblock' @KwMarker';
 	
 	# The @PyMarker delineates a separate glyph, so we make sure we are shifting from the previous glyph;
@@ -652,9 +648,9 @@ lookup $ln_ShiftPrevGlyph {
 
 # Shift a single @YbMarker from a following glyph into the initial, so we can test for kerning under it.
 # Currently this handles kerning under 3 glyphs max.
-# TODO: don't run if there is a kblock or knone present.
+# TODO: don't run if there is a kblock present.
 lookup $ln_ShiftNextGlyph {
-	lookupflag UseMarkFilteringSet [ybLast @PyMarker @YbMarker @YtkMarker @KwMarker @KBlock @KNone];
+	lookupflag UseMarkFilteringSet [ybLast @PyMarker @YbMarker @YtkMarker @KwMarker @KBlock];
 
 	# Shift from the next immediate glyph:
 	sub @YtkMarker ybLast' lookup _ShiftFromNext		@PyMarker'						@YbMarker' lookup _PyDelYb;
