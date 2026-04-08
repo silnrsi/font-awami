@@ -377,9 +377,6 @@ lookup CollFixNuqtasUpperNextAdjustment {
 	# (lam +) meem + feh
 	sub absMeemMed.fe @DiacUpper' lookup _ShiftN200 @CfMarkerW	absFehMed  @DotWideU;
 
-
-
-
 } CollFixNuqtasUpperNextAdjustment;
 
 lookup CollFixNuqtasLowerNextAdjustment {
@@ -399,6 +396,34 @@ lookup CollFixRedo {
 	sub [absKehehIni.benn absGafIni.benn] @DiacLower cfS700' @CfMarkerE absBehMed.nn @NuqtaLikeLower	by	cfS400;
 
 } CollFixRedo;
+
+lookup CollFixNameMarker {
+
+	lookupflag UseMarkFilteringSet [absNameMarker];
+
+	# Jesus: yeh seen waw ain
+	sub absBehIni.sn absSeenMed.qf absWawFin._stfh absAin absNameMarker' lookup _ShiftS300E100;
+
+	# Noah: beh waw jeem alef
+	sub absBehIni.qf absWawFin absJeemIni absNameMarker' lookup _ShiftN200E400 absAlefFin;
+
+	# Enoch: jeem beh waw jeem
+	sub absJeemIni.be absBehMed.qf absWawFin absKhah absNameMarker' lookup _ShiftS100E300;
+
+	# sheen meem
+	sub absSeenIni.mm absMeemFin  absNameMarker' lookup _ShiftN500W400;
+
+	# lam jeem meem
+	sub absLamIni.jm absJeemMed.mm absMeemFin  absNameMarker' lookup _ShiftN400W300;
+} CollFixNameMarker;
+
+lookup CollFixNuqtaNameMarker {
+	lookupflag 0;
+
+	# [ain reh] feh heh-goal
+	sub absFehIni.hgF @NuqtaLikeUpper' lookup _ShiftS200	absHehGoalFin'  absNameMarker' @Any' lookup _ShiftN700E400;
+} CollFixNuqtaNameMarker;
+
 
 lookup EndOfStreamUndoKludge {
 	sub bogus  by  NULL;

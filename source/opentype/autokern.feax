@@ -38,7 +38,7 @@ lookup InitKernMetricsSpecial {
 	
 } InitKernMetricsSpecial;
 
-
+# lookup InitKernMetrics:
 include(../../source/opentype/autoKernMetrics.feax);
 
 
@@ -200,7 +200,7 @@ lookup HandleMarkDsc {
 lookup HandleAscMarkLimited {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeUpper @AscXMarker];
 
-	# Ideally these should be treated like the qaf below, but in fact the final seen and feh forms
+	# Ideally the feh and seen should be treated like the qaf below, but in fact these final forms
 	# are wide enough that the nuqtas on the right side are never going to affect kerning, which
 	# is limited to 1200 units.
 	sub [absFehFin absSeenFin]			ascx600'	@NuqtaLikeUpper		by	ascx.Done;
@@ -213,6 +213,21 @@ lookup HandleAscMarkLimited {
 	sub [absBehFin absBehFin._bfkl]		ascx1000'	@NuqtaLikeUpper		by	ascx1000.Mid8;
 
 } HandleAscMarkLimited;
+
+
+# Currently we initialize the kerning metrics for isolates using absolute coordinates, to avoid
+# unnecessary arithmetic. But if there are diacritics, we'll need relative coordinates after all.
+# This is a hack, but I *think* it is still faster, since isolates with diacritics are not that common.
+lookup ConvertIsolatesToRelativeUpper {
+	lookupflag UseMarkFilteringSet [@AscXMarker @YtMarker];
+	sub @AscXMarker @YtMarker' lookup _Ytb2AscDsc;
+} ConvertIsolatesToRelativeUpper;
+
+lookup ConvertIsolatesToRelativeLower {
+	lookupflag UseMarkFilteringSet [@DscXMarker @YbMarker];
+	sub @DscXMarker @YbMarker' lookup _Ytb2AscDsc;
+} ConvertIsolatesToRelativeLower;
+
 
 lookup AdjustAscxDscx4Shifts {
 	lookupflag UseMarkFilteringSet [@DscXMarker @CfMarkerNS];
@@ -257,6 +272,7 @@ lookup BlockFinalKw {
 	ignore sub kblock @KwMarker';
     sub @KwMarker' lookup _InsBlocker;
 } BlockFinalKw;
+
 
 # Adjust the YbMarkers and the initial kern value to account for nuqtas that hang
 # out to the right of the initial base (eg, peh, yeh) and kaf/gaf diagonal strokes.
@@ -368,7 +384,6 @@ lookup AdjustForNuqtaShift {
 	#sub @KwMarker' lookup _DecKwBy300	@ExtYbMarker' lookup _ExtendYbBy300	ybLast' @NuqtaLikeLower	cfE300;
 } AdjustForNuqtaShift;
 
-
 lookup AdjustForNuqtaOnFinal {
 	lookupflag UseMarkFilteringSet [@PyMarker @KernBaseMarkVis @KwMarker @NuqtaLikeUpper];
 
@@ -416,7 +431,7 @@ lookup AdjustForBaseOverhang {
 
 } AdjustForBaseOverhang;
 
-# SliceWidth() == 200
+# This lookup assumes SliceWidth() == 200.
 lookup HandleDscTweak {
 	lookupflag UseMarkFilteringSet [@KernBaseMarkIni @MarkLower @DscMarker];
 

@@ -42,6 +42,14 @@ lookup _ShiftN500 {
 	sub @Shiftable'  by  @Shiftable  cfN500;
 } _ShiftN500;
 
+lookup _ShiftN600 {
+	sub @Shiftable'  by  @Shiftable  cfN600;
+} _ShiftN600;
+
+lookup _ShiftN700 {
+	sub @Shiftable'  by  @Shiftable  cfN700;
+} _ShiftN700;
+
 # shift south
 
 lookup _ShiftS100 {
@@ -142,6 +150,10 @@ lookup _ShiftN200E300 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfE300;
 } _ShiftN200E300;
 
+lookup _ShiftN200E400 {
+	sub @Shiftable'  by  @Shiftable cfN200 cfE400;
+} _ShiftN200E400;
+
 lookup _ShiftN300E100 {
 	sub @Shiftable'  by  @Shiftable cfN300 cfE100;
 } _ShiftN300E100;
@@ -166,15 +178,27 @@ lookup _ShiftN500E500 {
 	sub @Shiftable'  by  @Shiftable cfN500 cfE500;
 } _ShiftN500E500;
 
+lookup _ShiftN700E400 {
+	sub @Shiftable'  by  @Shiftable cfN700 cfE400;
+} _ShiftN700E400;
+
 # shift diagonally north-west
 
 lookup _ShiftN200W100 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfW100;
 } _ShiftN200W100;
 
+lookup _ShiftN400W300 {
+	sub @Shiftable'  by  @Shiftable cfN400 cfW300;
+} _ShiftN400W300;
+
 lookup _ShiftN500W100 {
 	sub @Shiftable'  by  @Shiftable cfN500 cfW100;
 } _ShiftN500W100;
+
+lookup _ShiftN500W400 {
+	sub @Shiftable'  by  @Shiftable cfN500 cfW400;
+} _ShiftN500W400;
 
 # shift diagonally south-east
 
@@ -209,6 +233,10 @@ lookup _ShiftS200E300 {
 lookup _ShiftS300E100 {
 	sub @Shiftable'  by  @Shiftable cfS300 cfE100;
 } _ShiftS300E100;
+
+lookup _ShiftS300E300 {
+	sub @Shiftable'  by  @Shiftable cfS300 cfE300;
+} _ShiftS300E300;
 
 lookup _ShiftS400E200 {
 	sub @Shiftable'  by  @Shiftable cfS400 cfE200;

@@ -22,7 +22,6 @@
 # These lookups are run within feature calt.
 
 # _HardBlock100, _HardBlock200, _HardBlock1100, etc.
-
 do  forlet n = range(0, 11);
     let name = str(n) + ("" if n == 0 else "00");
     let ln = "_HardBlock" + name;
@@ -32,6 +31,7 @@ lookup $ln {
     sub kw0 by kblockHard $kwn;
 } $ln;
 }
+# end of do
 
 
 # TODO: add a lot more glyphs here!
@@ -39,7 +39,6 @@ lookup _MakeMarkerNoMetrics {
 	sub absBehIni.be	by	mkBehIni.be;
 	sub absBehMed.jm	by	mkBehMed.jm;
 } _MakeMarkerNoMetrics;
-
 
 # negative values:
 do	forlet n = range(1, 9);
@@ -51,6 +50,8 @@ lookup $ln {
     sub kw0 by kblockHard $kwn;
 } $ln;
 }
+# end of do
+
 
 @PyInitMarker = [pyNULL py0];
 
