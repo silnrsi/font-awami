@@ -78,7 +78,9 @@ lookup CollFixNuqtasUpper {
 	sub @JeemMedForms	@NuqtaVisUpper' lookup _ShiftE100  absBehMed.kf_wide;
 
 	# jeem (initial) + beh (teh)
-	sub absJeemIni.beM2  absBehMed @DotWideU' lookup _ShiftN300;
+	sub [absJeemIni.beM2 absJeemIni.behg]  					@BehMedForms @DotWideU' lookup _ShiftN300;
+	sub [absJeemIni.beM2 absJeemIni.behg]  @NuqtaVisUpper' lookup _ShiftN200
+															@BehMedForms' @DotWideU' @Any' lookup _ShiftN200W100;
 
 	# jeem (medial) + beh (teh/theh)
 	sub @JeemMedForms	@NuqtaVisUpper' lookup _ShiftN400E100	@BehMedForms @NuqtaVisUpper;
@@ -98,7 +100,8 @@ lookup CollFixNuqtasUpper {
 	sub absJeemMed.sn	@NuqtaVisUpper' lookup _ShiftN100E100	absSeenMed.beM2' @NuqtaVisUpper' absBehMed' @NuqtaVisUpper' lookup _ShiftN200W100;
 
 	# jeem + sheen
-	sub absJeemMed.sn	@NuqtaVisUpper	@SeenMedForms	@DotWideU' lookup _ShiftW200;
+	sub absJeemMed.sn					[@SeenMedForms @SeenIniForms]	@DotWideU' lookup _ShiftW300;
+	sub absJeemMed.sn	@NuqtaLikeUpper	[@SeenMedForms @SeenFinForms]	@DotWideU' lookup _ShiftW300;
 
 	# jeem + qaf
 	sub [absJeemIni.qf absJeemMed.qf]	@NuqtaVisUpper	absQafFin	@NuqtaVisUpper' lookup _ShiftW200;
@@ -109,7 +112,8 @@ lookup CollFixNuqtasUpper {
 	sub [absFehIni.be absFehIni.beM2]										absBehMed.jm	@NuqtaVisUpper' lookup _ShiftW300;
 	sub [absFehIni.be absFehIni.beM2]	@NuqtaVisUpper' lookup _ShiftN200	@BehForms'		@NuqtaVisUpper' @Any' lookup _ShiftN500W100;
 
-	sub absFehMed @DotWideU' lookup _ShiftE100	@LamMFForms;
+	sub absBehMed.fe @DotWideU	absFehMed @DotWideU' lookup _ShiftN200E100	@LamMFForms;
+	sub 						absFehMed @DotWideU' lookup _ShiftE100		@LamMFForms;
 	# Doesn't work, and maybe not needed.
 	#sub absFehIni.kf_wide	@DotWideU' lookup _ShiftE100 @KafForms;  # I don't think we need to includes lam and alef forms.
 
@@ -164,7 +168,7 @@ lookup CollFixNuqtasLower {
 	sub absBehMed.bere	@NuqtaLikeLower' lookup _ShiftE200		absBehMed.re'	@NuqtaLikeLower' 	@Any' lookup _ShiftS400;
 
 	sub absBehIni.beM2	@NuqtaLikeLower							absBehMed.benn'	@NuqtaLikeLower' lookup _ShiftS200W200;
-	sub absBehIni.be	@NuqtaLikeLower 						absBehMed.mmX	@NuqtaLikeLower' lookup _ShiftS200W100;
+	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.mmX'	@NuqtaLikeLower' absMeemMed._alt' lookup _ShiftS200W200;
 	sub absBehMed.benn	_dot1l									absBehMed.nn	_dot1l'			 lookup _ShiftS200;
 	sub absBehMed.benn	@NuqtaLikeLower						absBehMed.nn_hgbm	@NuqtaLikeLower' lookup _ShiftS300;
 
@@ -172,7 +176,7 @@ lookup CollFixNuqtasLower {
 	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm					[absJeemMed.qf absJeemMed.hd];
 	sub absBehIni.be	@DotWideL' lookup _ShiftE100	absBehMed.jm	@NuqtaLikeLower	[absJeemMed.qf absJeemMed.hd];
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100E200
-														absBehMed.jm' @NuqtaLikeLower' @Any' @Any' lookup _ShiftS300;
+														absBehMed.jm' @NuqtaLikeLower' @JeemMedForms' @Any' lookup _ShiftS300;
 
 	# beh + beh + final jeem																												# \/ affects middle nuqta due to insertions
 	sub absBehIni.be	@DotFlatL' lookup _ShiftN200E300	absBehMed.jm'	@DotFlatL'	absJeemFin' @NuqtaLikeLower' lookup _ShiftS200;
@@ -279,8 +283,10 @@ lookup CollFixDiacUpper {
 	sub absJeemMed	@DiacUpper'	lookup _ShiftE200		[absAlefFin @LamMedForms @LamFinForms @KafMedForms @KafFinForms @KafMedBase_sub];
 
 	# ain + meem
-	sub [absAinIni.mm absAinMed.mm]  [@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW300 [@LamMFForms absAlefFin @KafMFForms];
-	sub [absAinIni.mm absAinMed.mm]  [@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW400;
+	sub [absAinIni.mm absAinMed.mm]				[@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW300 [@LamMFForms absAlefFin @KafMFForms];
+	sub [absAinIni.mm absAinMed.mm] @MarkUpper	[@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW300 [@LamMFForms absAlefFin @KafMFForms];
+	sub [absAinIni.mm absAinMed.mm]				[@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW400;
+	sub [absAinIni.mm absAinMed.mm] @MarkUpper  [@MeemMedForms absMeemFin]	@Diac' lookup _ShiftW400;
 
 	# lam + beh + kaf
 	sub @LamIniForms @DiacUpper' lookup _ShiftS100E100  @BehMedForms 						@KafFinForms;

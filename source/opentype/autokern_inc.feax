@@ -183,7 +183,9 @@ lookup _InsertNuqtaDiacMarkerUpper {
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot3u;
 	sub @PyInitMarker' lookup _InsertUpperMarker1000	_dot4u;
-	sub @PyInitMarker' lookup _InsertUpperMarker600		[_hamza absHamzaAbove];
+	sub @PyInitMarker' lookup _InsertUpperMarker600		[_hamza absHamzaAbove _smallV ];
+	sub @PyInitMarker' lookup _InsertUpperMarker1000	[_smallTah _smallTah2dots _smallThreeAbove _smallTwoAbove];
+	# TODO: add more nuqta-like glyphs
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		@DiacUpper;
 

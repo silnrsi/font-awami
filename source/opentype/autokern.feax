@@ -181,6 +181,7 @@ lookup HandleMarkAsc {
 
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerUpper	@DiacUpper;
 	sub	@PyInitMarker' lookup _InsertNuqtaDiacMarkerUpper	@NuqtaLikeUpper;
+
 } HandleMarkAsc;
 
 lookup HandleMarkDscContext {  # like lookup below but with context
