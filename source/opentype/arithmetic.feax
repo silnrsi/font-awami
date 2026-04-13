@@ -97,7 +97,8 @@ lookup _SetN200 {
 } _SetN200;
 
 lookup _SetN100 {
-  sub @AscMarker by  yt0;
+  sub @AscMarker by  ytN100;
+  sub @YtMarker  by  ytN100;
   sub @DscMarker by  ybN100;
   sub @YbMarker  by  ybN100;
   sub @KwMarker by  kwN100;
@@ -478,7 +479,7 @@ lookup _Set4000 {
 
 
 lookup _AddNuqtaHt400{
-  #sub ascN500  by  ytN100;
+  sub ascN500  by  ytN100;
   sub ascN400  by  yt0;
   sub ascN300  by  yt100;
   sub ascN200  by  yt200;
@@ -985,10 +986,10 @@ lookup _AddNuqtaHt1600{
 } _AddNuqtaHt1600;
 
 lookup _SubtractNuqtaHt400{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
   sub dscN1100  by  ybN1500;
   sub dscN1000  by  ybN1400;
   sub dscN900  by  ybN1300;
@@ -1034,11 +1035,11 @@ lookup _SubtractNuqtaHt400{
 } _SubtractNuqtaHt400;
 
 lookup _SubtractNuqtaHt500{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
   sub dscN1000  by  ybN1500;
   sub dscN900  by  ybN1400;
   sub dscN800  by  ybN1300;
@@ -1083,12 +1084,12 @@ lookup _SubtractNuqtaHt500{
 } _SubtractNuqtaHt500;
 
 lookup _SubtractNuqtaHt600{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
   sub dscN900  by  ybN1500;
   sub dscN800  by  ybN1400;
   sub dscN700  by  ybN1300;
@@ -1132,13 +1133,13 @@ lookup _SubtractNuqtaHt600{
 } _SubtractNuqtaHt600;
 
 lookup _SubtractNuqtaHt700{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
   sub dscN800  by  ybN1500;
   sub dscN700  by  ybN1400;
   sub dscN600  by  ybN1300;
@@ -1181,14 +1182,14 @@ lookup _SubtractNuqtaHt700{
 } _SubtractNuqtaHt700;
 
 lookup _SubtractNuqtaHt800{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
-  sub dscN800  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
+  sub dscN800  by  ybN100;
   sub dscN700  by  ybN1500;
   sub dscN600  by  ybN1400;
   sub dscN500  by  ybN1300;
@@ -1230,15 +1231,15 @@ lookup _SubtractNuqtaHt800{
 } _SubtractNuqtaHt800;
 
 lookup _SubtractNuqtaHt900{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
-  sub dscN800  by  ybN1500;
-  sub dscN700  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
+  sub dscN800  by  ybN100;
+  sub dscN700  by  ybN100;
   sub dscN600  by  ybN1500;
   sub dscN500  by  ybN1400;
   sub dscN400  by  ybN1300;
@@ -1279,16 +1280,16 @@ lookup _SubtractNuqtaHt900{
 } _SubtractNuqtaHt900;
 
 lookup _SubtractNuqtaHt1000{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
-  sub dscN800  by  ybN1500;
-  sub dscN700  by  ybN1500;
-  sub dscN600  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
+  sub dscN800  by  ybN100;
+  sub dscN700  by  ybN100;
+  sub dscN600  by  ybN100;
   sub dscN500  by  ybN1500;
   sub dscN400  by  ybN1400;
   sub dscN300  by  ybN1300;
@@ -1328,17 +1329,17 @@ lookup _SubtractNuqtaHt1000{
 } _SubtractNuqtaHt1000;
 
 lookup _SubtractNuqtaHt1100{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
-  sub dscN800  by  ybN1500;
-  sub dscN700  by  ybN1500;
-  sub dscN600  by  ybN1500;
-  sub dscN500  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
+  sub dscN800  by  ybN100;
+  sub dscN700  by  ybN100;
+  sub dscN600  by  ybN100;
+  sub dscN500  by  ybN100;
   sub dscN400  by  ybN1500;
   sub dscN300  by  ybN1400;
   sub dscN200  by  ybN1300;
@@ -1377,18 +1378,18 @@ lookup _SubtractNuqtaHt1100{
 } _SubtractNuqtaHt1100;
 
 lookup _SubtractNuqtaHt1200{
-  sub dscN1500  by  ybN1500;
-  sub dscN1400  by  ybN1500;
-  sub dscN1300  by  ybN1500;
-  sub dscN1200  by  ybN1500;
-  sub dscN1100  by  ybN1500;
-  sub dscN1000  by  ybN1500;
-  sub dscN900  by  ybN1500;
-  sub dscN800  by  ybN1500;
-  sub dscN700  by  ybN1500;
-  sub dscN600  by  ybN1500;
-  sub dscN500  by  ybN1500;
-  sub dscN400  by  ybN1500;
+  sub dscN1500  by  ybN100;
+  sub dscN1400  by  ybN100;
+  sub dscN1300  by  ybN100;
+  sub dscN1200  by  ybN100;
+  sub dscN1100  by  ybN100;
+  sub dscN1000  by  ybN100;
+  sub dscN900  by  ybN100;
+  sub dscN800  by  ybN100;
+  sub dscN700  by  ybN100;
+  sub dscN600  by  ybN100;
+  sub dscN500  by  ybN100;
+  sub dscN400  by  ybN100;
   sub dscN300  by  ybN1500;
   sub dscN200  by  ybN1400;
   sub dscN100  by  ybN1300;
@@ -1734,36 +1735,6 @@ lookup _DecKwBy600 {
   sub  kw1600  by  kw1000;
 } _DecKwBy600;
 
-lookup _DecKwExactly100 {
-  sub  kwN1000  by  kwN1000;
-  sub  kwN900  by  kwN1000;
-  sub  kwN800  by  kwN900;
-  sub  kwN700  by  kwN800;
-  sub  kwN600  by  kwN700;
-  sub  kwN500  by  kwN600;
-  sub  kwN400  by  kwN500;
-  sub  kwN300  by  kwN400;
-  sub  kwN200  by  kwN300;
-  sub  kwN100  by  kwN200;
-  sub  kw0  by  kwN100;
-  sub  kw100  by  kw0;
-  sub  kw200  by  kw100;
-  sub  kw300  by  kw200;
-  sub  kw400  by  kw300;
-  sub  kw500  by  kw400;
-  sub  kw600  by  kw500;
-  sub  kw700  by  kw600;
-  sub  kw800  by  kw700;
-  sub  kw900  by  kw800;
-  sub  kw1000  by  kw900;
-  sub  kw1100  by  kw1000;
-  sub  kw1200  by  kw1100;
-  sub  kw1300  by  kw1200;
-  sub  kw1400  by  kw1300;
-  sub  kw1500  by  kw1400;
-  sub  kw1600  by  kw1500;
-} _DecKwExactly100;
-
 lookup _IncKwBy800 {
   sub  kwN1000  by  kwN200;
   sub  kwN900  by  kwN100;
@@ -1793,6 +1764,36 @@ lookup _IncKwBy800 {
   sub  kw1500  by  kw1600;
   sub  kw1600  by  kw1600;
 } _IncKwBy800;
+
+lookup _DecKwExactly100 {
+  sub  kwN1000  by  kwN1000;
+  sub  kwN900  by  kwN1000;
+  sub  kwN800  by  kwN900;
+  sub  kwN700  by  kwN800;
+  sub  kwN600  by  kwN700;
+  sub  kwN500  by  kwN600;
+  sub  kwN400  by  kwN500;
+  sub  kwN300  by  kwN400;
+  sub  kwN200  by  kwN300;
+  sub  kwN100  by  kwN200;
+  sub  kw0  by  kwN100;
+  sub  kw100  by  kw0;
+  sub  kw200  by  kw100;
+  sub  kw300  by  kw200;
+  sub  kw400  by  kw300;
+  sub  kw500  by  kw400;
+  sub  kw600  by  kw500;
+  sub  kw700  by  kw600;
+  sub  kw800  by  kw700;
+  sub  kw900  by  kw800;
+  sub  kw1000  by  kw900;
+  sub  kw1100  by  kw1000;
+  sub  kw1200  by  kw1100;
+  sub  kw1300  by  kw1200;
+  sub  kw1400  by  kw1300;
+  sub  kw1500  by  kw1400;
+  sub  kw1600  by  kw1500;
+} _DecKwExactly100;
 
 lookup _IncAscxDscx100{
   sub  ascx400  by  ascx500;

@@ -18,7 +18,7 @@ pxfMin = 0
 pxfMax = 3000
 
 # Must match what's in mkGlyphBounds
-dyMin = -300
+dyMin = -800
 dyMax = 3000
 pyMin = 0
 pyMax = 3000
@@ -29,7 +29,7 @@ ascMax = 3000
 dscMin = -1500
 dscMax = 3000
 
-ytMin = 0
+ytMin = -100    # ascMin + 400
 ytMax = 3000
 ybMin = -1500
 ybMax = 3000
@@ -421,6 +421,7 @@ def GenLookups_AddNuqtaHt(valuesList, dir) :
 				newv = maxv
 			elif dir < 0 and newv < minv:
 				newv = minv
+				newv = max(minv, ytMin)
 
 			print("  sub " + prefixIn + ValueName(v2) + "  by  " + prefixOut + ValueName(newv) + ";", file=fout)
 
@@ -538,7 +539,7 @@ def GenLookup_MakeAscDscAbsolute(prefix) :
 # end of GenLookup_MakeAscDscAbsolute
 
 
-def GenLookup_IncDecKw(valueList, dir):
+def GenLookup_IncDecKw(valueList, dir, exactly):
 	### Example:
 	# lookup _Dec200kw {
 	# 	sub kwN800	by  kwN1000;
@@ -548,7 +549,9 @@ def GenLookup_IncDecKw(valueList, dir):
 	#	...
 	# } _Dec100kw;
 
-	if dir == -1:
+	if exactly == True:
+		lname = "DecKwExactly"
+	elif dir == -1:
 		lname = "DecKwBy"
 	else:
 		lname = "IncKwBy"
@@ -556,7 +559,9 @@ def GenLookup_IncDecKw(valueList, dir):
 	for vinc in valueList:
 		vincName = vinc
 		# Output two versions of _DecKwBy100 / 300 / 500, one for 100-unit slices and one for 200-unit slices.
-		if (vinc == 100 or vinc == 300 or vinc == 500 or vinc == 700) and dir == -1:
+		if exactly:
+			swids = [100]
+		elif (vinc == 100 or vinc == 300 or vinc == 500 or vinc == 700) and dir == -1:
 			swids = [100,200]
 		else:
 			swids = [100]  # no difference for 200
@@ -695,8 +700,8 @@ GenClasses("asc", "AscMarker", ascMin, ascMax)
 GenClasses("dsc", "DscMarker", dscMin, dscMax)
 GenClasses("yt", "YtMarker", ytMin, ytMax)
 GenClasses("yb", "YbMarker", ybMin, ybMax)
-GenClasses("ytk", "YtKMarker", ytMin, ytMax)
-GenClasses("ybk", "YbKMarker", ybMin, ybMax)
+GenClasses("ytk", "YtkMarker", ytMin, ytMax)
+GenClasses("ybk", "YbkMarker", ybMin, ybMax)
 
 print("\n@AscXMarker = [ascx400 ascx500 ascx600 ascx700 ascx800 ascx900 ascx1000 ascx1100 ascx1200 ascx1300 ascx1400 ascx1500 ascx1600];", file=fout)
 print("@DscXMarker = [dscx400 dscx500 dscx600 dscx700 dscx800 dscx900 dscx1000 dscx1100 dscx1200];", file=fout)
@@ -784,8 +789,10 @@ GenLookups_AddNuqtaHt(lowerMarkHts, -1)
 GenLookup_AddNuqtaUpLowHeight(upperMarkHts, 1)
 GenLookup_AddNuqtaUpLowHeight(lowerMarkHts, -1)
 
-GenLookup_IncDecKw(kwDecValues, -1)
-GenLookup_IncDecKw(kwIncValues, 1)
+GenLookup_IncDecKw(kwDecValues, -1, False)
+GenLookup_IncDecKw(kwIncValues, 1, False)
+
+GenLookup_IncDecKw([100], -1, True)  # DecKwExactly100
 
 GenLookup_IncDecAscxDscx(cfShiftValues, 1)
 GenLookup_IncDecAscxDscx(cfShiftValues, -1)

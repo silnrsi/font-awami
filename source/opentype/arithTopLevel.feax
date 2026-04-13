@@ -6,6 +6,7 @@
 
 lookup MarkersYtb2AscDsc {
   lookupflag UseMarkFilteringSet [@YtMarker @YbMarker];
+  sub ytN100 by ascN100;
   sub yt0 by asc0;
   sub yt100 by asc100;
   sub yt200 by asc200;
@@ -92,11 +93,11 @@ lookup MarkersYtb2AscDsc {
 
 lookup MakeAscentAbsolute{
   lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
-  sub py0  ascN500' lookup _Set0;
-  sub py0  ascN400' lookup _Set0;
-  sub py0  ascN300' lookup _Set0;
-  sub py0  ascN200' lookup _Set0;
-  sub py0  ascN100' lookup _Set0;
+  sub py0  ascN500' lookup _SetN100;
+  sub py0  ascN400' lookup _SetN100;
+  sub py0  ascN300' lookup _SetN100;
+  sub py0  ascN200' lookup _SetN100;
+  sub py0  ascN100' lookup _SetN100;
   sub py0  asc0' lookup _Set0;
   sub py0  asc100' lookup _Set100;
   sub py0  asc200' lookup _Set200;
@@ -128,10 +129,10 @@ lookup MakeAscentAbsolute{
   sub py0  asc2800' lookup _Set2800;
   sub py0  asc2900' lookup _Set2900;
   sub py0  asc3000' lookup _Set3000;
-  sub py100  ascN500' lookup _Set0;
-  sub py100  ascN400' lookup _Set0;
-  sub py100  ascN300' lookup _Set0;
-  sub py100  ascN200' lookup _Set0;
+  sub py100  ascN500' lookup _SetN100;
+  sub py100  ascN400' lookup _SetN100;
+  sub py100  ascN300' lookup _SetN100;
+  sub py100  ascN200' lookup _SetN100;
   sub py100  ascN100' lookup _Set0;
   sub py100  asc0' lookup _Set100;
   sub py100  asc100' lookup _Set200;
@@ -164,9 +165,9 @@ lookup MakeAscentAbsolute{
   sub py100  asc2800' lookup _Set2900;
   sub py100  asc2900' lookup _Set3000;
   sub py100  asc3000' lookup _Set3000;
-  sub py200  ascN500' lookup _Set0;
-  sub py200  ascN400' lookup _Set0;
-  sub py200  ascN300' lookup _Set0;
+  sub py200  ascN500' lookup _SetN100;
+  sub py200  ascN400' lookup _SetN100;
+  sub py200  ascN300' lookup _SetN100;
   sub py200  ascN200' lookup _Set0;
   sub py200  ascN100' lookup _Set100;
   sub py200  asc0' lookup _Set200;
@@ -200,8 +201,8 @@ lookup MakeAscentAbsolute{
   sub py200  asc2800' lookup _Set3000;
   sub py200  asc2900' lookup _Set3000;
   sub py200  asc3000' lookup _Set3000;
-  sub py300  ascN500' lookup _Set0;
-  sub py300  ascN400' lookup _Set0;
+  sub py300  ascN500' lookup _SetN100;
+  sub py300  ascN400' lookup _SetN100;
   sub py300  ascN300' lookup _Set0;
   sub py300  ascN200' lookup _Set100;
   sub py300  ascN100' lookup _Set200;
@@ -236,7 +237,7 @@ lookup MakeAscentAbsolute{
   sub py300  asc2800' lookup _Set3000;
   sub py300  asc2900' lookup _Set3000;
   sub py300  asc3000' lookup _Set3000;
-  sub py400  ascN500' lookup _Set0;
+  sub py400  ascN500' lookup _SetN100;
   sub py400  ascN400' lookup _Set0;
   sub py400  ascN300' lookup _Set100;
   sub py400  ascN200' lookup _Set200;
