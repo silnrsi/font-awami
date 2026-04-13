@@ -140,15 +140,15 @@ def ProcBounds(g, gn, p, width):
     uppers = p.slices(gn, aw, width, rtl=True, upper=True)
     lowers = p.slices(gn, aw, width, rtl=True, upper=False)
 
-    if gn == "absAinFin":
-        print( gn+ " aw", aw)
+    # if gn == "absAinFin":
+    #     print( gn+ " aw", aw)
     return [uppers, lowers]
 
 
 def CalcExitsAndRiseValues(font):
 
     # These must match what are in genArithmeticLookups.py
-    dyMin = -300  # perhaps change to -700 for eg, absSadMed.benn, absHehGoalMed.benn, absTahMed, absFehMed.benn, absAinMed, etc.
+    dyMin = -800  # perhaps change to -700 for eg, absSadMed.benn, absHehGoalMed.benn, absTahMed, absFehMed.benn, absAinMed, etc.
     dyMax = 3000
 
     riseValues = {}
@@ -166,6 +166,9 @@ def CalcExitsAndRiseValues(font):
                     elif anchor.name == "exit":
                         yExit = anchor.y
 
+                if gn == "absKehehMed":
+                    print( "absKehehMed yEntry = " + str(yEntry) + "; yExit = " + str(yExit))
+
                 if yExit is None:
                     print("WARNING: missing EXIT for " + gn)
                 exits[gn] = yExit
@@ -176,6 +179,8 @@ def CalcExitsAndRiseValues(font):
                         dy = 0
                     else:
                         dy = yEntry - yExit
+                    if dy < dyMin: 
+                        print("WARNING: dyMin must be lowered to " + str(dy) + " for " + gn)
                     dy = max(min(dyMax, dy), dyMin)
                     riseValues[gn] = dy
             else:
@@ -827,14 +832,14 @@ with open(outFileName, "w") as outf:
 
             uppers, lowers = ProcBounds(g, gn, pen, sliceWidth)
 
-            if gn == "absAinFin":
-                PrintList(gn+" raw", lowers)
+            # if gn == "absAinFin":
+            #     PrintList(gn+" raw", lowers)
 
             uppers = MakeRelativeToExit(exits[gn], uppers)
             lowers = MakeRelativeToExit(exits[gn], lowers)
 
-            if gn == "absAinFin":
-                PrintList(gn+" rel", lowers)
+            # if gn == "absAinFin":
+            #     PrintList(gn+" rel", lowers)
 
             # Trim off some of the slice metrics to account for the fact that glyphs
             # overlap when they connect. The interface indicates (roughly) how much
@@ -849,21 +854,21 @@ with open(outFileName, "w") as outf:
 
             uppers, lowers = TrimMetricsForOverlappingConnections(gnFull, uppers, lowers, entry, exit, sliceWidth)
 
-            if gn == "absAinFin":
-                PrintList(gn+" trimmed", lowers)
+            # if gn == "absAinFin":
+            #     PrintList(gn+" trimmed", lowers)
 
             if exit is None and isIsolateFinalBase(gn): 
                 # PrintList(gn, lowers)
                 lowers = TruncateLowFinals(lowers)
-                if gn == "absAinFin":
-                    PrintList(gn+" trunc", lowers)
+                # if gn == "absAinFin":
+                #     PrintList(gn+" trunc", lowers)
 
             #uppers, lowers = TruncateLongSeq(uppers, lowers)
 
             uppers, lowers = Tweak(gn, uppers, lowers, sliceWidth)
 
-            if gn == "absAinFin":
-                PrintList(gn+" tweak", lowers)
+            # if gn == "absAinFin":
+            #     PrintList(gn+" tweak", lowers)
 
             #gnMarker = BaseMarkerName(gn)
             gnMarker = gn
