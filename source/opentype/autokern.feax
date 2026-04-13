@@ -71,6 +71,14 @@ lookup PreventPreIsoKern {
 } PreventPreIsoKern;
 
 
+# Name markers are wide and generally positioned high. Just say we can't kern after them.
+lookup PreventPostNameMarkerKern {
+	lookupflag UseMarkFilteringSet [@KwMarker absNameMarker];
+	ignore sub @KBlock @KwMarker';
+	sub kw0' absNameMarker	by	kblockHard kw0;
+} PreventPostNameMarkerKern;
+
+
 lookup HardCodeSpecialIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock];
 	
@@ -85,8 +93,11 @@ lookup HardCodeSpecialIsolates {
 	# Treat a few special 2-char sequences as isolates. Put these rules after the one with alef-madda above.
 	sub kw0'					absBehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
 	sub kw0' space				absBehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
+	sub kw0'					absFehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
+	sub kw0' space				absFehIni.ch  nlqChotiyehFin._bfkl	by	kblockHard kwN100;
 
 } HardCodeSpecialIsolates;
+
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
 # using the kerning algorithm.
@@ -117,7 +128,7 @@ lookup IgnoreInvisibles {
 } IgnoreInvisibles;
 
 
-# Handle isolate forms explicitly.
+# Handle isolate forms explicitly, also some short sequences.
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
@@ -129,6 +140,9 @@ lookup HardCodeIsolates {
 #	sub absRehFin._hgM - ignore
 	sub [@RehIsoForms @DalFinForms @WawFinForms 
 			@WawIsoForms]									kw0' lookup _HardBlock100		@AlefIsoForms;
+
+	# beh
+	sub absBehIni.re absRehFin._jkl 						kw0' lookup _HardBlock300		absBehIni [absAlefFin absLamFin];
 
 	# reh
 	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _HardBlock0		@RehIsoForms;
@@ -151,10 +165,6 @@ lookup HardCodeIsolates {
 	sub [@DalIsoForms]		kw0' lookup _HardBlock100		@WawIsoForms;	
 
 } HardCodeIsolates;
-
-# lookup HardCodeIsolatesWNuqtaUpper {
-# 	lookupflag UseMarkFilteringSet [@KwMarker @NuqtaLikeUpper];
-# } HardCodeIsolatesWNuqtaUpper;
 
 
 # When there are 2 characters in a sequence with the same number of slices, once you have fully kerned under
@@ -265,11 +275,11 @@ lookup TreatBasesAsMarks_altKaf {   # separate lookup due to absKehehMed.by exis
 
 # Must come after InitKernMetrics.
 
-# Insert blocker before final kw
+# Insert blocker before final kw.
 lookup BlockFinalKw {
 	lookupflag UseMarkFilteringSet [@KwMarker @KBlock @KernBaseMarkIsoIniFin];
     ignore sub @KwMarker' @AllKernBase;
-	ignore sub kblock @KwMarker';
+	ignore sub @KBlock @KwMarker';
     sub @KwMarker' lookup _InsBlocker;
 } BlockFinalKw;
 
@@ -593,9 +603,14 @@ lookup MedialNuqtaOverhang {
 # We need this set of lookups for every potential kerned slice. Right now
 # we are allowing 6 instead 12, as an optimization.
 
+# We actually run the iteration 7 times (for a max of 1400) rather than 6, so we can distinguish
+# between actually hitting a block at iteration 6 vs. just giving up. This is needed for a sequence
+# like kaf+waw+seen+seen. TODO: decide if this is worth it for a handful of cases.
+# LimitKwTo1200 enforces the limit of 1200.
+
 # TODO: the last four lookups are not needed for the final iteration.
 
-do	let loopCount = int(1200 / SliceWidth());	# 1200 is the maximum kern
+do	let loopCount = int(1400 / SliceWidth());	# 1400 is the maximum kern to calculate
 	forlet n = range(0,loopCount);
 		let c = str(n + 1);
 		let ln_CalculateKern = "CalculateKern" + c;
@@ -681,9 +696,16 @@ lookup $ln_ShiftNextGlyph {
 # If a block occurred, reduce the amount of kerning a bit to avoid an actual collision.
 # NOTE: do NOT do this when there is a hard block.
 lookup AddSpaceWhenBlocked {
+	ignore sub [kblock kblockR]	kw0';
 	sub [kblock kblockR]	@KwMarker' lookup _DecKwExactly100;
-
 } AddSpaceWhenBlocked;
+
+
+lookup LimitKwTo1200 {
+	sub kw1300 by kw1200;
+	sub kw1400 by kw1200;
+	sub kw1500 by kw1200;
+} LimitKwTo1200;
 
 
 lookup IniKafKern {

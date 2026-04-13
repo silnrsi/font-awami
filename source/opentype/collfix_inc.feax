@@ -138,6 +138,10 @@ lookup _ShiftN100E300 {
 	sub @Shiftable'  by  @Shiftable cfN100 cfE300;
 } _ShiftN100E300;
 
+lookup _ShiftN100E400 {
+	sub @Shiftable'  by @Shiftable cfN100 cfE400;
+} _ShiftN100E400;
+
 lookup _ShiftN200E100 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfE100;
 } _ShiftN200E100;
@@ -154,6 +158,10 @@ lookup _ShiftN200E400 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfE400;
 } _ShiftN200E400;
 
+lookup _ShiftN200E500 {
+	sub @Shiftable'  by  @Shiftable cfN200 cfE500;
+} _ShiftN200E500;
+
 lookup _ShiftN300E100 {
 	sub @Shiftable'  by  @Shiftable cfN300 cfE100;
 } _ShiftN300E100;
@@ -165,6 +173,10 @@ lookup _ShiftN300E200 {
 lookup _ShiftN300E300 {
 	sub @Shiftable'  by  @Shiftable cfN300 cfE300;
 } _ShiftN300E300;
+
+lookup _ShiftN400E400 {
+	sub @Shiftable'  by  @Shiftable cfN400 cfE400;
+} _ShiftN400E400;
 
 lookup _ShiftN400E100 {
 	sub @Shiftable'  by  @Shiftable cfN400 cfE100;
@@ -187,6 +199,10 @@ lookup _ShiftN700E400 {
 lookup _ShiftN200W100 {
 	sub @Shiftable'  by  @Shiftable cfN200 cfW100;
 } _ShiftN200W100;
+
+lookup _ShiftN300W200 {
+	sub @Shiftable'  by  @Shiftable cfN300 cfW200;
+} _ShiftN300W200;
 
 lookup _ShiftN400W300 {
 	sub @Shiftable'  by  @Shiftable cfN400 cfW300;
@@ -260,6 +276,10 @@ lookup _ShiftS100W100 {
 	sub @Shiftable'  by  @Shiftable cfS100 cfW100;
 } _ShiftS100W100;
 
+lookup _ShiftS100W200 {
+	sub @Shiftable'  by  @Shiftable cfS100 cfW200;
+} _ShiftS100W200;
+
 lookup _ShiftS100W400 {
 	sub @Shiftable'  by  @Shiftable cfS100 cfW400;
 } _ShiftS100W400;
@@ -272,9 +292,26 @@ lookup _ShiftS200W200 {
 	sub @Shiftable'  by  @Shiftable cfS200 cfW200;
 } _ShiftS200W200;
 
+lookup _ShiftS300W100 {
+	sub @Shiftable'  by  @Shiftable cfS300 cfW100;
+} _ShiftS300W100;
+
+lookup _ShiftS300W300 {
+	sub @Shiftable'  by  @Shiftable cfS300 cfW300;
+} _ShiftS300W300;
+
+lookup _ShiftS400W200 {
+	sub @Shiftable'  by  @Shiftable cfS400 cfW200;
+} _ShiftS400W200;
+
+lookup _ShiftS400W300 {
+	sub @Shiftable'  by  @Shiftable cfS400 cfW300;
+} _ShiftS400W300;
+
 lookup _ShiftS500W100 {
 	sub @Shiftable'  by  @Shiftable cfS500 cfW100;
 } _ShiftS500W100;
+
 
 # Hard-kerning
 

@@ -56,6 +56,8 @@ details including an FAQ.
 		absBehFin  absBehFin._bfkl
 	</class>
 	
+	<class name="BehMFForms">@BehMedForms @BehFinForms</class>
+	
 	<class name="BehForms">@BehIniForms @BehMedForms @BehFinForms</class>
 	
 	<class name="JeemIniForms">
@@ -93,6 +95,7 @@ details including an FAQ.
 		absSeenFin absSeenFin_short
 	</class>
 	<class name="SeenIMForms">@SeenIniForms @SeenMedForms</class>
+	<class name="SeenMFForms">@SeenMedForms @SeenFinForms</class>
 	<class name="SeenForms">@SeenIniForms @SeenMedForms @SeenFinForms</class>
 	
 	<class name="SadIniForms">
@@ -681,12 +684,12 @@ details including an FAQ.
 	</class>
 	
 	<class name="IniSnSn_sub">
-		absBehIni.snsn absJeemIni.snsn absSeenIni.snsn absSadIni.snsn absTahIni.snsn absAinIni.snsn absFehIni.snsn absKehehIni.snsn absGafIni.snsn absLamIni.snsn 
+		absBehIni.snsn absJeemIni.snsn absSeenIni.sn <!-- no change --> absSadIni.snsn absTahIni.snsn absAinIni.snsn absFehIni.snsn absKehehIni.snsn absGafIni.snsn absLamIni.snsn 
 		absMeemIni.snsn absHehDoachashmeeIni.snsn absHehGoalIni.snsn 
 	</class>
 
 	<class name="MedSnSn_sub">
-		absBehMed.snsn absJeemMed.snsn absSeenMed.snsn absSadMed.snsn absTahMed.snsn absAinMed.snsn absFehMed.snsn absKehehMed.snsn absGafMed.snsn absLamMed.snsn 
+		absBehMed.snsn absJeemMed.snsn absSeenMed.sn <!-- no change --> absSadMed.snsn absTahMed.snsn absAinMed.snsn absFehMed.snsn absKehehMed.snsn absGafMed.snsn absLamMed.snsn 
 		absMeemMed.snsn absHehDoachashmeeMed.snsn absHehGoalMed.snsn
 	</class>
 	

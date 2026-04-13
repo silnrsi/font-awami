@@ -811,6 +811,13 @@ lookup SeenContextuals {
 	# TODO: tighter form of seen before flat-topped jeems.
 } SeenContextuals;
 
+lookup PreKashidaSeen {
+	lookupflag IgnoreMarks;
+
+	sub @IniSn_sub' [absSeenMed.sn absSeenMed.sn_sn]	by	@IniSnSn_sub;
+	sub	@MedSn_sub' [absSeenMed.sn absSeenMed.sn_sn]	by	@MedSnSn_sub;
+} PreKashidaSeen;
+
 
 lookup FinalContextuals {
 	lookupflag IgnoreMarks;

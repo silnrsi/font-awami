@@ -175,10 +175,11 @@ lookup _InsertNuqtaDiacMarkerUpper {
 
 	ignore sub absNoonFin  @PyInitMarker'  @NuqtaLikeUpper;
 
+	# TODO: add specific nuqta + diacritic combinations
+	sub @PyInitMarker' lookup _InsertUpperMarker1400	@NuqtaVisUpper	@Diac;
+
 	sub absRehFin		@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;  # the nuqta on the reh is higher than normal
 	sub absRehFin._hgM	@PyInitMarker' lookup _InsertUpperMarker1200  @NuqtaLikeUpper;
-	
-	# TODO: add nuqta + diac combinations
 
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot1u;
 	sub @PyInitMarker' lookup _InsertUpperMarker600		_dot2u;
