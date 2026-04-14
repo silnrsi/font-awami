@@ -419,11 +419,11 @@ lookup CollFixNameMarker {
 	# Jesus: yeh seen waw ain
 	sub absBehIni.sn absSeenMed.qf absWawFin._stfh absAin absNameMarker' lookup _ShiftS300E100;
 
-	# Noah: beh waw jeem alef
-	sub absBehIni.qf absWawFin absJeemIni absNameMarker' lookup _ShiftN200E400 absAlefFin;
-
 	# Enoch: jeem beh waw jeem
 	sub absJeemIni.be absBehMed.qf absWawFin absKhah absNameMarker' lookup _ShiftS100E300;
+
+	# Hagar: [heh-goal alef] gaf alef reh
+	sub absGafIni absAlefFin absReh absNameMarker' lookup _ShiftN300;
 
 	# sheen meem
 	sub absSeenIni.mm absMeemFin  absNameMarker' lookup _ShiftN500W400;
@@ -431,12 +431,30 @@ lookup CollFixNameMarker {
 	# lam jeem meem
 	sub absLamIni.jm absJeemMed.mm absMeemFin  absNameMarker' lookup _ShiftN400W300;
 
+	# Lot: lam waw tah
+	sub absLamIni.qf absWawFin absTah absNameMarker' lookup _ShiftE200;
+
+	# Pharaoah: [feh reh] ain waw heh-goal
+	sub absAinIni.qf absWawFin absHehGoal absNameMarker' lookup _ShiftE300;
+
+	# Nahor: [noon alef] hah waw reh
+	sub absJeemIni.qf absWawFin absNameMarker' lookup _ShiftN200;
+
+	# Naphtuhim: [noon feh teh waw] hah yeh meem
+	sub absJeemIni.be absBehMed.mm absNameMarker' lookup _ShiftN200;
+
+	# Noah: beh waw jeem alef
+	sub absBehIni.qf absWawFin absJeemIni absNameMarker' lookup _ShiftN200E400 absAlefFin;
+
+	# Shalam: [sheen alef] lam meem
+	sub absLamIni.mm absMeemFin absNameMarker' lookup _ShiftN500;
+
 	# Tamar: [teh alef] meem alef reh
 	sub absMeemIni absAlefFin absReh  absNameMarker' lookup _ShiftN400E100;
 
 } CollFixNameMarker;
 
-lookup CollFixNuqtaNameMarker {
+lookup CollFixMarkNameMarker {
 	lookupflag 0;
 
 	# [ain reh] feh heh-goal
@@ -444,7 +462,32 @@ lookup CollFixNuqtaNameMarker {
 
 	# Boaz: [beh waw] ain zain 
 	sub absAinIni.re absRehFin @NuqtaLikeUpper absNameMarker' lookup _ShiftE300;
-} CollFixNuqtaNameMarker;
+
+	# Gaza: ghain zain heh-goal
+	sub absAinIni.re _dot1u absRehFin _dot1u' lookup _ShiftS200 absShadda' absHehGoal' absNameMarker'; ## @Any' lookup _ShiftN400E400;
+
+	# Rehoboth: [reh hah waw beh] waw teh heh-do
+	sub absWawFin absBehIni.hd _dot2u' lookup _ShiftS200 absHehDoachashmeeFin' absNameMarker' @Any' lookup _ShiftN500E300;
+
+	# Sabbath: [seen beh] teh heh-goal
+	sub absBehMed.hgF_be _dot2u' lookup _ShiftS200 absHehGoalFin' absNameMarker' @Any' lookup _ShiftN400E400;
+
+	# Zeboyim: [dad beh waw] yeh-hamza yeh meem
+	sub absBehIni.be absHamzaAbove' lookup _ShiftS200 absBehMed.mm' _dot2l' absMeemFin' absNameMarker' @Any' lookup _ShiftN500;
+
+	# Zoar: [dad] ain zabar reh
+	sub absAinMed.re nlqZabar' lookup _ShiftS100 absRehFin' absNameMarker' @Any' lookup _ShiftN700;
+
+} CollFixMarkNameMarker;
+
+lookup CollFixMarkNameMarkerContd {
+	lookupflag UseMarkFilteringSet [absNameMarker @Mark];
+
+	# Why can't I do all this in one rule??? It should work.!
+	# Gaza: ghain zain heh-goal
+	sub absAinIni.re _dot1u absRehFin _dot1u absShadda absHehGoal absNameMarker' lookup _ShiftN400E400;
+
+} CollFixMarkNameMarkerContd;
 
 
 lookup EndOfStreamUndoKludge {
