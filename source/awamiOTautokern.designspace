@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<designspace format="3">
+    <axes>
+        <axis default="400.0" maximum="800.0" minimum="400.0" name="weight" tag="wght">    <!-- user weights -->
+        		<!-- input is user weight (eg, CSS); output is design weight -->
+            <map input="400.0" output="400.0" />
+            <map input="500.0" output="500.0" />
+            <map input="600.0" output="600.0" />
+            <map input="700.0" output="700.0" />
+            <map input="800.0" output="900.0" />
+            <labelname xml:lang="en">Weight</labelname>
+        </axis>
+        <axis default="100.0" maximum="100.0" minimum="100.0" name="width" tag="wdth">
+            <map input="100.0" output="100.0" />
+            <labelname xml:lang="en">Width</labelname>
+        </axis>
+        <axis default="0.0" maximum="0.0" minimum="0.0" name="custom" tag="XXXX">
+            <map input="0.0" output="0.0" />
+            <labelname xml:lang="en">Custom</labelname>
+        </axis>
+    </axes>
+    
+    <sources>
+        <source familyname="Awami Nastaliq OT" name="AwamiNastaliqOT-Regular" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
+            <lib copy="1" />
+            <groups copy="1" />
+            <features copy="1" />
+            <info copy="1" />
+            <location>
+                <dimension name="weight" xvalue="400.000000" />  <!-- design weight -->
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+        </source>
+        
+        <source familyname="Awami Nastaliq OT" filename="masters/AwamiNastaliq-Black.ufo" name="AwamiNastaliqOT-Black" stylename="Black">
+          <location>
+                <dimension name="weight" xvalue="900.000000" />  <!-- design weight -->
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+        </source>
+    
+    </sources>
+
+    <instances>
+        <!-- Regular -->
+        <instance      familyname="Awami OT TechPre AutoKern"
+                         filename="instances/AwamiOTTechPreAutoKern-Regular.ufo"
+                             name="Awami OT TechPre AutoKern Regular"
+               stylemapfamilyname="Awami OT TechPre AutoKern"
+                        stylename="Regular"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiOTTechPreAutoKern-Regular">
+            <location>
+                <dimension name="weight" xvalue="400.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- Medium -->
+        <instance      familyname="Awami OT TechPre AutoKern"
+        	               filename="instances/AwamiOTTechPreAutoKern-Medium.ufo"
+                             name="Awami OT TechPre AutoKern Medium"
+               stylemapfamilyname="Awami OT TechPre AutoKern Medium"
+                        stylename="Medium"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiOTTechPreAutoKern-Medium">
+            <location>
+                <dimension name="weight" xvalue="500.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- SemiBold -->
+        <instance      familyname="Awami OT TechPre AutoKern"
+        	               filename="instances/AwamiOTTechPreAutoKern-SemiBold.ufo"
+                             name="Awami OT TechPre AutoKern SemiBold"
+               stylemapfamilyname="Awami OT TechPre AutoKern SemiBold"
+                        stylename="SemiBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiOTTechPreAutoKern-SemiBold">
+            <location>
+                <dimension name="weight" xvalue="600.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- Bold -->
+        <instance      familyname="Awami OT TechPre AutoKern"
+                         filename="instances/AwamiOTTechPreAutoKern-Bold.ufo"
+                             name="Awami OT TechPre AutoKern Bold"
+               stylemapfamilyname="Awami OT TechPre AutoKern"
+                        stylename="Bold"
+                stylemapstylename="bold"
+               postscriptfontname="AwamiOTTechPreAutoKern-Bold">
+            <location>
+                <dimension name="weight" xvalue="700.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- ExtraBold -->
+        <instance      familyname="Awami OT TechPre AutoKern"
+        	               filename="instances/AwamiOTTechPreAutoKern-ExtraBold.ufo"
+                             name="Awami OT TechPre AutoKern ExtraBold"
+               stylemapfamilyname="Awami OT TechPre AutoKern ExtraBold"
+                        stylename="ExtraBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiOTTechPreAutoKern-ExtraBold">
+            <location>
+                <dimension name="weight" xvalue="900.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+
+    </instances>
+</designspace>
