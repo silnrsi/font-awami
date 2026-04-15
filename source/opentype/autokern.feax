@@ -371,9 +371,9 @@ lookup AdjustForUpperNuqtaOverhang {
 	
 	# beh initials - upper
 	# TODO - since this is an upper nuqta, really we should extend a number higher than the actual glyph bottom.
-	sub @KwMarker' lookup _DecKwBy100	mkBehIni'			ybLast'	lookup _ExtendYbBy100	@DotWideU;
+	sub @KwMarker' lookup _DecKwBy100	[mkBehIni mkBehIni.be]'	ybLast'	lookup _ExtendYbBy100	@DotWideU;
 	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.benn mkBehIni.beM1 mkBehIni.sd]'
-															ybLast'	lookup _ExtendYbBy200	@DotWideU;
+																ybLast'	lookup _ExtendYbBy200	@DotWideU;
 
 
 	# TODO: strictly speaking, we shouldn't extend the bottom of the lam but some point in the middle, and

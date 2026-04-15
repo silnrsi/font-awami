@@ -105,6 +105,8 @@ lookup HandKernMarkUpper {
 	ignore sub @AlefForms' absBehIni.ch;
 	sub @AlefForms'  @BehIniForms  @MarkUpper		by  @AlefForms  kwN200;
 
+	sub absRehFin' @NuqtaLikeUpper	absAlef		by	absRehFin  kwN200;
+
 } HandKernMarkUpper;
 
 
@@ -121,7 +123,7 @@ lookup HandKernMarkLower {
 
 	sub @AlefForms'  absBehIni.nn  @MarkLower  absNoonFin		by	@AlefForms  kwN200;
 
-	# beh + beh + jeem with lots of nuqtas
+	# beh + beh + jeem with lots of nuqtas - couldn't find an example where this fixed things well
 	sub @AlefForms'	absBehIni.be @NuqtaLikeLower absBehMed.jm @NuqtaLikeLower  absJeemFin
 														by  @AlefForms  kwN300;
 
@@ -131,7 +133,12 @@ lookup HandKernMarkLower {
 									[@DotNarrowL]	by		@AlefForms  kwN100;
 	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
 									[@DotWideL]		by		@AlefForms  kwN400;
-	sub @AlefForms'	@JeemIniForms	[@DotWideL]		by		@AlefForms  kwN100;  #probably not all of the jeem forms need the kerning
+	sub @AlefForms'	@JeemIniForms	[@DotWideL]		by		@AlefForms  kwN100;  # probably not all of the jeem forms need the kerning
+
+	sub @IsoFin' [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN400;
+	sub @IsoFin' space [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN200;
+
+	sub absRehFin' absBehIni.re @DotWideL  absRehFin._jkl	by	absRehFin kwN200;
 
 } HandKernMarkLower;
 

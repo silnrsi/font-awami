@@ -20,19 +20,21 @@
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
 lookup KludgeEndOfStream {
-	# Ensure that the last nuqta has at least three slots after it.
+	# Ensure that the last nuqta or diacritic has at least three slots after it.
 	# This is needed for the insertion rules below.
-	ignore sub @Finals  @Shiftable' @Any @Any @Any;
-	sub @Finals  @Shiftable'  @Any @Any		by  @Shiftable  bogus;
-	sub @Finals  @Shiftable'  @Any			by  @Shiftable  bogus bogus;
-	sub @Finals	 @Shiftable'  				by  @Shiftable  bogus bogus bogus;
+	ignore sub @IsoFin @Shiftable' @AllBases;  # not at the end
+	ignore sub @IsoFin @Shiftable' @Any @Any @Any;
+	
+	sub @IsoFin  @Shiftable'  @Any @Any		by  @Shiftable  bogus;
+	sub @IsoFin  @Shiftable'  @Any			by  @Shiftable  bogus bogus;
+	sub @IsoFin	 @Shiftable'  				by  @Shiftable  bogus bogus bogus;
 } KludgeEndOfStream;
 
 lookup KludgeEndOfStreamPenultimate {
 	# shiftable glyph on penultimate base might need some extra slots:
-	ignore sub @Shiftable @Finals' @Any @Any;
-	sub @Shiftable @Finals' @Any			by	@Finals bogus;
-	sub @Shiftable @Finals'					by	@Finals bogus bogus;
+	ignore sub @Shiftable @IsoFin' @Any @Any;
+	sub @Shiftable @IsoFin' @Any			by	@IsoFin bogus;
+	sub @Shiftable @IsoFin'					by	@IsoFin bogus bogus;
 } KludgeEndOfStreamPenultimate;
 
 lookup CollFixNuqtasUpper {
@@ -406,11 +408,15 @@ lookup CollFixNuqtasLowerNextAdjustment {
 } CollFixNuqtasLowerNextAdjustment;
 
 # Tweak fixes using simple substitution
-lookup CollFixRedo {
+lookup CollFixRedoLower {
+	lookupflag UseMarkFilteringSet [@MarkLower @CfMarker];
 
 	sub [absKehehIni.benn absGafIni.benn] @DiacLower cfS700' @CfMarkerE absBehMed.nn @NuqtaLikeLower	by	cfS400;
 
-} CollFixRedo;
+	# beh + yeh + noon + yeh
+	sub absBehIni.beM1 @MarkLower @CfMarker absBehMed.be @NuqtaLikeLower @CfMarkerS cfW200' absBehMed.ch	by  cfW100;
+
+} CollFixRedoLower;
 
 lookup CollFixNameMarker {
 
@@ -455,13 +461,16 @@ lookup CollFixNameMarker {
 } CollFixNameMarker;
 
 lookup CollFixMarkNameMarker {
-	lookupflag 0;
+	lookupflag 0;  #UseMarkFilteringSet [@Mark];  # ignore bogus
 
 	# [ain reh] feh heh-goal
 	sub absFehIni.hgF @NuqtaLikeUpper' lookup _ShiftS200	absHehGoalFin'  absNameMarker' @Any' lookup _ShiftN700E400;
 
 	# Boaz: [beh waw] ain zain 
 	sub absAinIni.re absRehFin @NuqtaLikeUpper absNameMarker' lookup _ShiftE300;
+
+	# Eve: hah waw shadda alef
+	sub absJeemIni.qf absWawFin absShadda' lookup _ShiftN200 absAlef' absNameMarker' @Any' lookup _ShiftE400;
 
 	# Gaza: ghain zain heh-goal
 	sub absAinIni.re _dot1u absRehFin _dot1u' lookup _ShiftS200 absShadda' absHehGoal' absNameMarker'; ## @Any' lookup _ShiftN400E400;
