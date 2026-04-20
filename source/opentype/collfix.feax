@@ -37,7 +37,8 @@ lookup KludgeEndOfStreamPenultimate {
 	sub @Shiftable @IsoFin'					by	@IsoFin bogus bogus;
 } KludgeEndOfStreamPenultimate;
 
-lookup CollFixNuqtasUpper {
+lookup CollFixNuqtasUpper {  # some of these rules are generalized to include all marks
+
 	lookupflag UseMarkFilteringSet [@NuqtaVisUpper bogus @KafMed_top_short_sub @KafMed_top_shorter_sub];
 
 	# beh + qaf - put before rule below
@@ -51,6 +52,7 @@ lookup CollFixNuqtasUpper {
 
 	# NB: lookups that follow @Any operate on the nuqta in the preceding slot, due to the earlier insertion.	  \/ \/ \/
 	sub absBehIni.be	@NuqtaVisUpper' lookup _ShiftN200		absBehMed.ta'	@NuqtaVisUpper' 	@Any' lookup _ShiftS100;
+	# beh + beh
 	sub absBehIni.beM1	@NuqtaVisUpper' lookup _ShiftN200		absBehMed.sn	@NuqtaVisUpper;
 	sub absBehIni.beM2	@DotWideU'		 lookup _ShiftN300E200	absBehMed'		absHamzaAbove'	@Any' @Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaVisUpper' lookup _ShiftN200		absBehMed'		absHamzaAbove'		@Any' lookup _ShiftS100;
@@ -132,6 +134,8 @@ lookup CollFixNuqtasUpper {
 	sub [absSeenIni.be absSeenMed.be absSeenIni.beM2 absSeenMed.beM2]
 						@NuqtaVisUpper' lookup _ShiftN100E200	[absBehMed absBehMed.jm absBehMed.mm]	@NuqtaVisUpper;
 	sub absSeenIni.bere @NuqtaVisUpper' lookup _ShiftN200E100		absBehMed.re'	@DotWideU'	@Any'	lookup _ShiftS200W100;
+	# avoid straight line
+	sub absSeenIni.behg @NuqtaVisUpper' lookup _ShiftN200 absBehMed.hgF @NuqtaVisUpper;
 
 	# sheen + jeem
 	sub absSeenIni.jm  @NuqtaVisUpper' lookup _ShiftE300	absJeemMed.beM1  @NuqtaVisUpper;
@@ -153,6 +157,7 @@ lookup CollFixNuqtasLower {
 
 	ignore sub absBehIni.be _dot1l'								absBehMed.beF' _dot1l'				@Any';
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.beF'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
+	sub absBehMed.be	@NuqtaLikeLower' lookup _ShiftN100E200	absBehMed.jm'	@NuqtaLikeLower'	@Any'@Any' lookup _ShiftS200W200;
 	sub absBehIni.be	@DotTallL'		 lookup _ShiftN200E200	absBehMed.hgM'	@DotWideL'			@Any' @Any' lookup _ShiftS300;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E200	absBehMed.hgM'	@DotWideL'			@Any' @Any' lookup _ShiftS200;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E100	absBehMed.hgM'	@NuqtaLikeLower'	@Any' @Any' lookup _ShiftS200;
@@ -452,11 +457,17 @@ lookup CollFixNameMarker {
 	# Noah: beh waw jeem alef
 	sub absBehIni.qf absWawFin absJeemIni absNameMarker' lookup _ShiftN200E400 absAlefFin;
 
+	# Sarah: [seen alef] reh heh-goal
+	sub absReh absHehGoal absNameMarker' lookup _ShiftE300;
+
 	# Shalam: [sheen alef] lam meem
 	sub absLamIni.mm absMeemFin absNameMarker' lookup _ShiftN500;
 
 	# Tamar: [teh alef] meem alef reh
 	sub absMeemIni absAlefFin absReh  absNameMarker' lookup _ShiftN400E100;
+
+	# Zohar: dad jeem reh
+	sub absSadIni.jm absJeemMed.re absRehFin absNameMarker' lookup _ShiftN300;
 
 } CollFixNameMarker;
 
@@ -474,6 +485,9 @@ lookup CollFixMarkNameMarker {
 
 	# Gaza: ghain zain heh-goal
 	sub absAinIni.re _dot1u absRehFin _dot1u' lookup _ShiftS200 absShadda' absHehGoal' absNameMarker'; ## @Any' lookup _ShiftN400E400;
+
+	# Rebekah [reh] beh qaf heh-goal
+	sub absBehIni.fe _dot1l absFehMed.hgF _dot2u' lookup _ShiftS200 absHehGoalFin' absNameMarker' @Any' lookup _ShiftN700E300;
 
 	# Rehoboth: [reh hah waw beh] waw teh heh-do
 	sub absWawFin absBehIni.hd _dot2u' lookup _ShiftS200 absHehDoachashmeeFin' absNameMarker' @Any' lookup _ShiftN500E300;

@@ -190,6 +190,10 @@ lookup _ShiftN500E500 {
 	sub @Shiftable'  by  @Shiftable cfN500 cfE500;
 } _ShiftN500E500;
 
+lookup _ShiftN700E300 {
+	sub @Shiftable'  by @Shiftable cfN700 cfE300;
+} _ShiftN700E300;
+
 lookup _ShiftN700E400 {
 	sub @Shiftable'  by  @Shiftable cfN700 cfE400;
 } _ShiftN700E400;

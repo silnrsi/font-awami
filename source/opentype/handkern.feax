@@ -127,7 +127,8 @@ lookup HandKernMarkLower {
 	sub @AlefForms'	absBehIni.be @NuqtaLikeLower absBehMed.jm @NuqtaLikeLower  absJeemFin
 														by  @AlefForms  kwN300;
 
-	sub @AlefForms'  @BehIniForms  @MarkLower		by  @AlefForms  kwN100;
+	sub @AlefForms'			@BehIniForms  @MarkLower		by  @AlefForms  kwN100;
+	sub @AlefForms' @Diac	@BehIniForms  @MarkLower		by  @AlefForms  kwN100;
 	
 	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
 									[@DotNarrowL]	by		@AlefForms  kwN100;
@@ -138,9 +139,23 @@ lookup HandKernMarkLower {
 	sub @IsoFin' [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN400;
 	sub @IsoFin' space [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN200;
 
+	sub [absRehFin absRehFin._hgM]'	absBehIni  @NuqtaLikeLower @Finals	by  [absRehFin absRehFin._hgM] kwN100;
+
 	sub absRehFin' absBehIni.re @DotWideL  absRehFin._jkl	by	absRehFin kwN200;
 
 } HandKernMarkLower;
+
+lookup HandKernMarkLowerShift {
+	lookupflag UseMarkFilteringSet [@MarkLower @KwMarker];
+	
+	sub [absDalFin absRehFin._jkl] absBehIni.qf @NuqtaLikeLower' lookup _ShiftS500;
+
+	sub [absRehFin absRehFin._hgM]	@KwMarker absBehIni  @NuqtaLikeLower' lookup _ShiftS400	@Finals;
+
+	sub absRehFin absBehIni.be					absBehMed.ch @NuqtaLikeLower' lookup _ShiftN200;
+	sub absRehFin absBehIni.be @NuqtaLikeLower	absBehMed.ch @NuqtaLikeLower' lookup _ShiftN200;
+
+} HandKernMarkLowerShift;
 
 # Kern to fix collisions caused by shifting:
 lookup HandKernMarkLowerShifted {

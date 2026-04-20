@@ -54,14 +54,17 @@ lookup UndoInitMetricsKludge {
 lookup PreventPreBariyehKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
 	# Don't delete the kw0; other places in the system expect it to be present after a final.
-	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblock kw0;
+	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblockHard kw0;
 } PreventPreBariyehKern;
 
 
 # Kerning before isolates will be handled by hard-coding.
 # We can do this because we always know their vertical position - that is, zero.
 lookup PreventPreIsoKern {
-	lookupflag UseMarkFilteringSet [@KwMarker];
+	lookupflag UseMarkFilteringSet [@KwMarker @KBlock];
+	
+	ignore sub @KBlock @KwMarker';  # already handled
+
 	sub kw0'       				@Isolates	by	kblockHard kw0;
 	sub kw0' space 				@Isolates	by	kblockHard kw0;
 	sub kw0' space space 		@Isolates	by	kblockHard kw0;
@@ -73,8 +76,8 @@ lookup PreventPreIsoKern {
 
 # Name markers are wide and generally positioned high. Just say we can't kern after them.
 lookup PreventPostNameMarkerKern {
-	lookupflag UseMarkFilteringSet [@KwMarker absNameMarker];
-	ignore sub @KBlock @KwMarker';
+	lookupflag UseMarkFilteringSet [@KwMarker absNameMarker @KBlock];
+	ignore sub @KBlock @KwMarker';  # already handled
 	sub kw0' absNameMarker	by	kblockHard kw0;
 } PreventPostNameMarkerKern;
 
@@ -103,7 +106,7 @@ lookup HardCodeSpecialIsolates {
 # using the kerning algorithm.
 # TODO: if we move TreatBasesAsMarks up, delete most of these rules.
 lookup ClearAscentsPreIso {
-	lookupflag UseMarkFilteringSet [@AscMarker kblockHard @KwMarker];  # include @KwMarker to recognize segment breaks
+	lookupflag UseMarkFilteringSet [@AscMarker @KBlock @KwMarker];  # include @KwMarker to recognize segment breaks
 
 	rsub @AscMarker' kblockHard														by	ytIgnore;
 	rsub @AscMarker' @AllBases kblockHard											by	ytIgnore;
@@ -132,7 +135,7 @@ lookup IgnoreInvisibles {
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
-							kblock kblockHard];  # ignore when case has already been handled
+							@KBlock];  # ignore when case has already been handled
 
 	# alef
 	sub [absRehFin._jkl]									kw0' lookup _HardBlock200		@AlefIsoForms;
@@ -172,7 +175,7 @@ lookup HardCodeIsolates {
 # So we hard-code one side.
 lookup HardCode2CharSeq {
 	lookupflag UseMarkFilteringSet [@KwMarker
-									kblock];  # ignore when case has already been handled
+									@KBlock];  # ignore when case has already been handled
 
 	# kaf + chotiyeh
 	sub @AllBases			kw0' lookup _HardBlock800		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
@@ -731,9 +734,12 @@ lookup IniKafKern {
 
 lookup HandFix {
 	# Cases that are easiest to hard-code.
-	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @NuqtaLikeUpper @KwMarker];
+	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @MarkUpper @KwMarker];
 
-	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0'  mkBehIni	@NuqtaLikeUpper	mkAlefFin	by	kwN200;
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0'  			mkBehIni	@MarkUpper				mkAlefFin	by	kwN200;
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0'  			mkBehIni	@MarkUpper	@MarkUpper	mkAlefFin	by	kwN200;
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0' @MarkUpper	mkBehIni	@MarkUpper				mkAlefFin	by	kwN200;
+	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0' @MarkUpper	mkBehIni	@MarkUpper	@MarkUpper	mkAlefFin	by	kwN200;
 
 } HandFix;
 
