@@ -102,6 +102,10 @@ lookup _ExtendYbBy600 {
 
 }
 
+lookup _InsYtkN100 {
+	lookupflag UseMarkFilteringSet [@YtMarker @YtkMarker @YbMarker];
+	sub @YbMarker by @YbMarker ytkN100;
+} _InsYtkN100;
 
 lookup _InsYtk0 {
 	lookupflag UseMarkFilteringSet [@YtMarker @YtkMarker @YbMarker];
@@ -588,11 +592,17 @@ do	forlet i = range(0,2);
 lookup $lname {
 	lookupflag UseMarkFilteringSet [@YtMarker @YtkMarker @YbMarker];
 
-	sub [yt0 ytk0]'	@YbLow		by	$kb;  # any top lower than 0 creates a block
-	sub [yt0 ytk0]'	yb100		by	$kb;
-	sub [yt0 ytk0]'	yb200		by	$kb;
+	# bottom = -100; any top lower than 100 creates a block
+	sub [ytN100 ytkN100]' @YbLow	by $kb;
+	sub [ytN100 ytkN100]' yb100		by $kb;
 
-	sub [yt100 ytk100]'	@YbLow		by	$kb;  # any top lower than 100 creates a block
+	# bottom = 0; any top lower than 200 creates a block
+	sub [yt0 ytk0]'	@YbLow			by	$kb;
+	sub [yt0 ytk0]'	yb100			by	$kb;
+	sub [yt0 ytk0]'	yb200			by	$kb;
+
+	# bottom = 100; any top lower than 300 creates a block
+	sub [yt100 ytk100]'	@YbLow		by	$kb;
 	sub [yt100 ytk100]'	yb100		by	$kb;
 	sub [yt100 ytk100]'	yb200		by	$kb;
 	sub [yt100 ytk100]'	yb300		by	$kb;
@@ -1245,6 +1255,10 @@ do	if SliceWidth() == 100;
 
 lookup _TryKernShiftFirst {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YbMarker @KBlock];
+
+	# -100
+	sub ytN100' lookup _TestBlockR lookup _DelYtAndIncKw @KwMarker' lookup _InsYtkN100 @YbMarker';
+
 	# loop to match the various ytXXX markers.
 do  forlet i = range(31);
     let ext = str(i) + ("" if i == 0 else "00");
@@ -1257,6 +1271,10 @@ do  forlet i = range(31);
 
 lookup _TryKernShiftContinue {
 	lookupflag UseMarkFilteringSet [@KwMarker @YtMarker @YtkMarker @YbMarker @KBlock];
+
+	# -100
+	sub ytN100' lookup _TestBlockI lookup _DelYt lookup _InsYtkN100  @YbMarker';
+
 	# loop to match the various ytkXXX markers.
 do  forlet i = range(31);
     let ext = str(i) + ("" if i == 0 else "00");
@@ -1269,7 +1287,7 @@ do  forlet i = range(31);
 
 lookup _InsBlockerAndDecKw {
 	# Decrement the KwMarker, because it got incremented before we knew it was going to be blocked further in.
-	# Note that we don't care what the slice width is at this point; invalid widths just won't happen.
+	# Note that invalid slice widths just won't happen.
 	sub kwN400	by	kblock	kwN400;
 	sub kwN300	by	kblock	kwN400;
 	sub kwN200	by	kblock	kwN400;
