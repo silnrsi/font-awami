@@ -18,7 +18,8 @@ import glob
 
 # set the default output folders
 out="results"
-DOCDIR = ["documentation", "web"]
+# DOCDIR = ["documentation", "web"]
+DOCDIR = "documentation-techpre"
 OUTDIR="installers"
 ZIPDIR="releases"
 TESTDIR='tests'
