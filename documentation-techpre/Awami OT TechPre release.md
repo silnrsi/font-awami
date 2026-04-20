@@ -29,12 +29,14 @@ We have tested the font and believe it works in LibreOffice, Chrome, Firefox, an
    *Not included:* **Awami Nastaliq 3.400** \- this is our currently-released font that uses the Graphite system. It features fast performance and high-quality layout, but does not work in non-Graphite-enabled applications such as MS Word or Chrome. (See the [current list of Graphite-enabled applications](https://graphite.sil.org/graphite_apps.html).) It can be downloaded from [software.sil.org/awami](http://software.sil.org/awami).
 
 2. Data files  
-   a. **genesis-autokern.odt**: OpenBible Genesis in Urdu using Awami OT TechPre AutoKern \- LibreOffice format (150 pages)  
-   b. **ruth-autokern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre AutoKern; LibreOffice format (13 pages)  
+   a. **genesis-autokern.odt**: OpenBible Genesis in Urdu using Awami OT TechPre AutoKern \- LibreOffice format (153 pages)  
+   b. **ruth-autokern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre AutoKern; LibreOffice format (12 pages)  
    c. **udhr-autokern.html** \- Universal Declaration of Human Rights in Urdu using Awami OT TechPre AutoKern; HTML format  
-   d. **genesis-minkern.odt** \- OpenBible Genesis in Urdu using Awami OT TechPre MinKern- LibreOffice format (150 pages)  
-   e. **ruth-minkern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre MinKern \- LibreOffice format (13 pages)  
-   f. **udhr-minkern.html** \- UDHR in Urdu using Awami OT TechPre MinKern; HTML format
+   d. **udhr-srk-autokern.odt** \- UDHR in Saraiki using Awami OT TechPre AutoKern; LibreOffice format (xxx pages)
+   e. **genesis-minkern.odt** \- OpenBible Genesis in Urdu using Awami OT TechPre MinKern- LibreOffice format (158 pages)  
+   f. **ruth-minkern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre MinKern \- LibreOffice format (12 pages)  
+   g. **udhr-minkern.html** \- UDHR in Urdu using Awami OT TechPre MinKern; HTML format
+   h. **udhr-srk-minkern.odt** \- UDHR in Saraiki using Awami OT TechPre MinKern; LibreOffice format (xxx pages)
 
 ## Feedback needed
 
@@ -58,8 +60,9 @@ We would appreciate feedback on several aspects of the fonts.
 
 ## Suggestions for testing
 
+* Install the two fonts on your OS in the normal way.
 * Open the two versions of the book of Ruth (using LibreOffice or some other editor) and compare the appearance and readability of the kerned and unkerned layout. To what extent does the kerning improve the layout (or not)?  
-* Using an Urdu keyboard, try typing into the file. A long paragraph will give the best information. Compare the behavior of the kerned and unkerned fonts. Is the kerned font adequate?  
+* Using an Urdu keyboard, try typing into the file. A long paragraph will give the best information. Compare the behavior of the auto-kerned and minimally kerned fonts. Is the kerned font adequate?  
 * Open the Genesis file. Does it open in a reasonable amount of time? Try scrolling down to the bottom of the document using PageDown, arrows, and the scroll bar.  
 * Try the fonts with data you may have in translation or linguistics software such as Flex or Paratext. Are there contexts where the performance is better or worse?  
 * Try the font in any other of your favorite applications. Do you get acceptable output? Is the performance adequate, sluggish, or completely unacceptable?
