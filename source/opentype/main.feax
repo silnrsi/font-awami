@@ -1508,8 +1508,12 @@ def AutoKern() {
 # Can't use the AutoKern() conditional for this file; TOGGLE BY HAND.	
 include(../../source/opentype/autokern.feax);
 
+# We need some hand-kerning even when doing auto-kerning.
+include(../../source/opentype/handkern.feax);
+
 do	if AutoKern() == 0; {
-	include(../../source/opentype/handkern.feax);
+	# And we need even more hand-kerning when auto-kerning is turned off.
+	include(../../source/opentype/handkernextra.feax);
 }
 
 } calt;

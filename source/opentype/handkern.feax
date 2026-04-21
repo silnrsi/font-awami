@@ -15,17 +15,20 @@
 #	If this is not the case, go to (https://openfontlicense.org/) for all the
 #	details including an FAQ.
 
-# This file will not be needed if we do autokerning.
+# This file is used whether or not we are doing auto-kerning.
 
 # It is intended to be included in main.feax.
 
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
-#--- alef-madda - shifting plus kerning ---
+#--- alef-madda
+
+# We solve a lot of alef-madda problems by raising the madda.
 
 lookup FixAlefMadda {
 	lookupflag IgnoreMarks;
 	sub absAlefMaddaAbove'	absLamIni.beM2	absBehFin._bfkl		by  absAlef absMaddaAbove cfN200;
+	sub absAlefMaddaAbove'	absFehIni.beM2	absBehFin._bfkl		by  absAlef absMaddaAbove cfN200;
 	sub absAlefMaddaAbove'  [absKehehIni absGafIni]  absAlefFin	by	absAlef absMaddaAbove cfN300;
 
 	sub absAlefMaddaAbove'	absLam						by  absAlef kwN300 absMaddaAbove;
@@ -96,72 +99,3 @@ lookup FixAlefMaddaAlefMadda2 {
 	sub absAlef absMaddaAbove  cfN400  absBehIni  absAlefFin absMaddaAbove'  by  absMaddaAbove cfS100;
 
 } FixAlefMaddaAlefMadda2;
-
-# more kerning
-
-lookup HandKernMarkUpper {
-	lookupflag UseMarkFilteringSet [@MarkUpper @KwMarker];  # ignore sequences that are already kerned
-
-	ignore sub @AlefForms' absBehIni.ch;
-	sub @AlefForms'  @BehIniForms  @MarkUpper		by  @AlefForms  kwN200;
-
-	sub absRehFin' @NuqtaLikeUpper	absAlef		by	absRehFin  kwN200;
-
-} HandKernMarkUpper;
-
-
-lookup HandKernMarkUpperLower {
-	lookupflag UseMarkFilteringSet [@NuqtaLike @KwMarker];
-
-	sub @RehFinForms' @NuqtaLikeUpper		@BehIniForms @NuqtaLikeLower	by 	@RehFinForms  kwN300;
-
-} HandKernMarkUpperLower;
-
-
-lookup HandKernMarkLower {
-	lookupflag UseMarkFilteringSet [@MarkLower @KwMarker];
-
-	sub @AlefForms'  absBehIni.nn  @MarkLower  absNoonFin		by	@AlefForms  kwN200;
-
-	# beh + beh + jeem with lots of nuqtas - couldn't find an example where this fixed things well
-	sub @AlefForms'	absBehIni.be @NuqtaLikeLower absBehMed.jm @NuqtaLikeLower  absJeemFin
-														by  @AlefForms  kwN300;
-
-	sub @AlefForms'			@BehIniForms  @MarkLower		by  @AlefForms  kwN100;
-	sub @AlefForms' @Diac	@BehIniForms  @MarkLower		by  @AlefForms  kwN100;
-	
-	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
-									[@DotNarrowL]	by		@AlefForms  kwN100;
-	sub @AlefForms'	[absJeemIni.mm absJeemIni.mmX absJeemIni.ch]
-									[@DotWideL]		by		@AlefForms  kwN400;
-	sub @AlefForms'	@JeemIniForms	[@DotWideL]		by		@AlefForms  kwN100;  # probably not all of the jeem forms need the kerning
-
-	sub @IsoFin' [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN400;
-	sub @IsoFin' space [absBehIni.ch absFehIni.ch] @NuqtaLikeLower	by	@IsoFin  kwN200;
-
-	sub [absRehFin absRehFin._hgM]'	absBehIni  @NuqtaLikeLower @Finals	by  [absRehFin absRehFin._hgM] kwN100;
-
-	sub absRehFin' absBehIni.re @DotWideL  absRehFin._jkl	by	absRehFin kwN200;
-
-} HandKernMarkLower;
-
-lookup HandKernMarkLowerShift {
-	lookupflag UseMarkFilteringSet [@MarkLower @KwMarker];
-	
-	sub [absDalFin absRehFin._jkl] absBehIni.qf @NuqtaLikeLower' lookup _ShiftS500;
-
-	sub [absRehFin absRehFin._hgM]	@KwMarker absBehIni  @NuqtaLikeLower' lookup _ShiftS400	@Finals;
-
-	sub absRehFin absBehIni.be					absBehMed.ch @NuqtaLikeLower' lookup _ShiftN200;
-	sub absRehFin absBehIni.be @NuqtaLikeLower	absBehMed.ch @NuqtaLikeLower' lookup _ShiftN200;
-
-} HandKernMarkLowerShift;
-
-# Kern to fix collisions caused by shifting:
-lookup HandKernMarkLowerShifted {
-	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @CfMarkerEW];
-
-	sub @AlefForms'  @FehIniForms  @NuqtaLikeLower  cfE100	by	 @AlefForms  kwN300;
-	sub @AlefForms'  @FehIniForms  @NuqtaLikeLower  cfE200	by	 @AlefForms  kwN400;
-
-} HandKernMarkLowerShifted;
