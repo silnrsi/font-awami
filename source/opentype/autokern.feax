@@ -178,6 +178,7 @@ lookup HardCode2CharSeq {
 									@KBlock];  # ignore when case has already been handled
 
 	# kaf + chotiyeh
+	sub absDal				kw0' lookup _HardBlock600		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
 	sub @AllBases			kw0' lookup _HardBlock800		[absKehehIni.ch absGafIni.ch]	nlqChotiyehFin._bfkl;
 
 	# kaf + heh-doachashmee
@@ -245,7 +246,7 @@ lookup ConvertIsolatesToRelativeLower {
 lookup AdjustAscxDscx4Shifts {
 	lookupflag UseMarkFilteringSet [@DscXMarker @CfMarkerNS];
 
-	# The nuqtas have been shifted (in lookup CollFix), so adjust the vertical deltas accordingly.
+	# The nuqtas have been shifted vertically (in lookup CollFix), so adjust the vertical deltas accordingly.
 	# TODO: add more values as needed.
 
 	# sub dscx600' lookup _IncAscxDscx100 cfN100;
@@ -310,24 +311,27 @@ lookup AdjustForLowerNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy100	mkJeemIni.ai'		ybLast' lookup _ExtendYbBy100	@DotWideL	mkAinFin;
 
 	# beh initials - lower
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.be]'				ybLast' lookup _ExtendYbBy300	@DotWideL	mkBehMed.hgM;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.be mkBehIni.beM1
-										 mkBehIni.benn]'			ybLast' lookup _ExtendYbBy100	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy100	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.re]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.jm]'				ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.sn mkBehIni.sd]'	ybLast' lookup _ExtendYbBy100	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.ai]'				ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.mm ]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy300	[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy300	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy600	[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy600	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.hd]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.nn]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
-	sub @KwMarker' lookup _DecKwBy400	[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy400	@DotWideL;
-	sub @KwMarker' lookup _DecKwBy200	[mkBehIni.bere]'			ybLast'	lookup _ExtendYbBy200	@DotWideL;
+	# TODO: account for marks after the kw for all these cases.
+	sub @KwMarker' lookup _DecKwBy300		[mkBehIni.be]'				ybLast' lookup _ExtendYbBy300	@DotWideL	mkBehMed.hgM;
+	sub @KwMarker' lookup _DecKwBy100		[mkBehIni.be]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL	mkBehMed.hgM;
+	sub @KwMarker' lookup _DecKwBy100		[mkBehIni.be mkBehIni.beM1
+											 mkBehIni.benn]'			ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100		[mkBehIni.beM2]'			ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.re]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200 @Mark' [mkBehIni.re]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300		[mkBehIni.jm]'				ybLast' lookup _ExtendYbBy300	@DotWideL  @KernBaseMarkMed;  # followed by medial
+	sub @KwMarker' lookup _DecKwBy100		[mkBehIni.sn mkBehIni.sd]'	ybLast' lookup _ExtendYbBy100	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.ai]'				ybLast' lookup _ExtendYbBy200	@DotWideL  @KernBaseMarkMed;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.mm ]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy300		[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy300	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy600		[mkBehIni.mmX mkBehIni.ch ]' ybLast' lookup _ExtendYbBy600	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.hd]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.nn]'				ybLast' lookup _ExtendYbBy200	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy100		[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy100	@DotNarrowL;
+	sub @KwMarker' lookup _DecKwBy400		[mkBehIni.qf]'				ybLast' lookup _ExtendYbBy400	@DotWideL;
+	sub @KwMarker' lookup _DecKwBy200		[mkBehIni.bere]'			ybLast'	lookup _ExtendYbBy200	@DotWideL;
+###	sub @KwMarker' lookup _DecKwBy100		[mkBehIni]'					ybLast' lookup _ExtendYbBy100	@DotWideL; -- too much
 
 	# beh+beh - the nuqta on the second beh is an issue
 	# sub @KwMarker' lookup _DecKwBy400	mkBehIni.beM1'					ybLast' lookup _ExtendYbBy400	@NuqtaLike
@@ -359,12 +363,12 @@ lookup AdjustForLowerNuqtaOverhang {
 	# ... beh+heh-goal
 	sub @KwMarker' lookup _DecKwBy100	[mkBehIni.hgM]'					ybLast' lookup _ExtendYbBy100	@DotWideL;
 
-	# Default - detect shift and adjust:
-	sub @KwMarker' lookup _DecKwBy100	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE100;
-	sub @KwMarker' lookup _DecKwBy200	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE200;
-	sub @KwMarker' lookup _DecKwBy300	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE300;
-	sub @KwMarker' lookup _DecKwBy400	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE400;
-	sub @KwMarker' lookup _DecKwBy500	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE500;
+	# Default - detect shift and adjust - no - done below in AdjustForNuqtaShift
+	#sub @KwMarker' lookup _DecKwBy100	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE100;
+	#sub @KwMarker' lookup _DecKwBy200	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE200;
+	#sub @KwMarker' lookup _DecKwBy300	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE300;
+	#sub @KwMarker' lookup _DecKwBy400	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE400;
+	#sub @KwMarker' lookup _DecKwBy500	@KernBaseMarkIni'	ybLast' lookup _ExtendYbBy100  @MarkLower cfE500;
 
 } AdjustForLowerNuqtaOverhang;
 
@@ -392,6 +396,7 @@ lookup AdjustForUpperNuqtaOverhang {
 # Add another slice or two if the nuqta of interest has been shifted right (east).
 lookup AdjustForNuqtaShift {
 	lookupflag UseMarkFilteringSet [@KwMarker @ExtYbMarker ybLast @NuqtaLikeLower @CfMarkerEW];
+
 	sub @KwMarker' lookup _DecKwBy100	@ExtYbMarker' lookup _ExtendYbBy100	ybLast'	@NuqtaLikeLower	cfE100;
 	sub @KwMarker' lookup _DecKwBy200	@ExtYbMarker' lookup _ExtendYbBy200	ybLast' @NuqtaLikeLower	cfE200;
 	#sub @KwMarker' lookup _DecKwBy300	@ExtYbMarker' lookup _ExtendYbBy300	ybLast' @NuqtaLikeLower	cfE300;
@@ -458,6 +463,7 @@ lookup HandleDscTweak {
 
 # Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
 
+# Set the absolute height based on the previous glyph's height plus the delta y.
 lookup MeasureBaseY {
 	lookupflag UseMarkFilteringSet @YMarkers;
 	# rsub pyNULL' dy100 py0  by  py100;
@@ -732,7 +738,7 @@ lookup IniKafKern {
 } IniKafKern;
 
 
-lookup HandFix {
+lookup HandFixUpper {
 	# Cases that are easiest to hard-code.
 	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @MarkUpper @KwMarker];
 
@@ -741,7 +747,17 @@ lookup HandFix {
 	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0' @MarkUpper	mkBehIni	@MarkUpper				mkAlefFin	by	kwN200;
 	sub [mkAlef mkAlefMaddaAbove mkAlefFin mkAlefFin._lm]	kw0' @MarkUpper	mkBehIni	@MarkUpper	@MarkUpper	mkAlefFin	by	kwN200;
 
-} HandFix;
+} HandFixUpper;
+
+lookup HandFixLower {
+	lookupflag UseMarkFilteringSet [@KernBaseMarkVis @MarkLower @KwMarker];
+
+	sub mkRehFin kw0'	mkBehIni @DotWideL [mkAlefFin mkLamFin mkLamFin_short mkLamFin._kfTall mkKehehFin mkGafFin]
+												by	kwN300;
+	sub mkRehFin kw0'	mkBehIni @MarkLower [mkAlefFin mkLamFin mkLamFin_short mkLamFin._kfTall mkKehehFin mkGafFin]
+												by	kwN200;
+
+} HandFixLower;
 
 
 lookup RestoreBases {

@@ -57,7 +57,7 @@ lookup CollFixNuqtasUpper {  # some of these rules are generalized to include al
 	sub absBehIni.beM2	@DotWideU'		 lookup _ShiftN300E200	absBehMed'		absHamzaAbove'	@Any' @Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaVisUpper' lookup _ShiftN200		absBehMed'		absHamzaAbove'		@Any' lookup _ShiftS100;
 	sub absBehIni.beM2	@NuqtaVisUpper' lookup _ShiftN100		absBehMed'		@NuqtaVisUpper'	@Any' lookup _ShiftS100;
-	sub absBehIni.beM2	@NuqtaVisUpper' lookup _ShiftN100		absBehMed.benn'	@NuqtaVisUpper'	@Any' lookup _ShiftS100W100;
+###	sub absBehIni.beM2	@NuqtaVisUpper' lookup _ShiftN100		absBehMed.benn'	@NuqtaVisUpper'	@Any' lookup _ShiftS100W100;  -- generalized to any marks
 	sub absBehIni.beM2  @NuqtaVisUpper' lookup _ShiftN200		absBehMed.beM1'	@NuqtaVisUpper' @Any' lookup _ShiftS100;
 
 	sub absBehIni.bere	@DotWideU' lookup _ShiftS100			absBehMed.re' @NuqtaVisUpper' @Any' lookup _ShiftN300W200;
@@ -301,8 +301,13 @@ lookup CollFixDiacUpper {
 
 	sub absBehIni.bere  @NuqtaLikeUpper' lookup _ShiftS100	absBehMed.re' @Diac' @Any' lookup _ShiftN200W100;
 
+	# beh + beh
+	sub absBehIni.beM2	@MarkUpper' lookup _ShiftN100		absBehMed.benn'	@MarkUpper'	@Any' lookup _ShiftS100W100;
+
 	# jeem
 	sub absJeemMed	@DiacUpper'	lookup _ShiftE200		[absAlefFin @LamMedForms @LamFinForms @KafMedForms @KafFinForms @KafMedBase_sub];
+	
+	sub absJeemIni.qf	absWawFin @DiacUpper' lookup _ShiftN200W100;
 
 	# ain + meem
 	sub [absAinIni.mm absAinMed.mm]				[@MeemMedForms absMeemFin]  @Diac' lookup _ShiftW300 [@LamMFForms absAlefFin @KafMFForms];
@@ -339,16 +344,21 @@ lookup CollFixDiacLower {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower bogus];  # bogus matches kludged slot
 
 	# zair + nuqta
-	sub [absKehehIni.beM1 absGafIni.beM1 absKehehIni.beM1_base absBehIni.beM1]
+	sub absBehIni.beM1	@DiacLower' lookup _ShiftN200			@BehMedForms'  @NuqtaLikeLower' @Any' lookup _ShiftS400;
+	sub [absKehehIni.beM1 absGafIni.beM1 absKehehIni.beM1_base]
 						@DiacLower' lookup _ShiftN100			@BehMedForms'  @NuqtaLikeLower' @Any' lookup _ShiftS300;
 	sub absLamIni.beM1	@DiacLower' lookup _ShiftN200E200		@BehMedForms'  @NuqtaLikeLower' @Any' @Any' lookup _ShiftS400;
 	sub absFehIni.be	@DiacLower' lookup _ShiftN200E100		absBehMed.mm'  @NuqtaLikeLower' @Any' @Any' lookup _ShiftS300;
 	sub [absFehMed.be absBehMed.be]
 						@DiacLower' lookup _ShiftN100E100		absBehMed.mm'  @NuqtaLikeLower' @Any' @Any' lookup _ShiftS300;
 
+
 	# something + diac + beh/yeh (common in Urdu)
 	sub @NuqtaLikeLower @DiacLower' lookup _ShiftS500E100 absBehMed.qf  @NuqtaLikeLower;
 	sub                 @DiacLower' lookup _ShiftS700E100 @BehMedForms  @NuqtaLikeLower;
+
+	# beh + alef
+	sub absBehMed  @NuqtaLikeLower' lookup _ShiftN100	absAlefFin' @Diac' @Any' lookup _ShiftS400W100;
 
 	# beh + jeem
 	sub [absBehIni.jm absBehMed.jm]  @NuqtaLikeLower  @DiacLower' lookup _ShiftN200E300  absJeemFin @NuqtaLikeLower;
@@ -358,6 +368,9 @@ lookup CollFixDiacLower {
 	sub @LamKafBeLowTooth @DiacLower' lookup _ShiftS700  absBehMed.qf @NuqtaLikeLower;
 
 	sub absBehMed @NuqtaLikeLower  [@LamMedForms @KafMedForms]  @DiacLower' lookup _ShiftS400;
+
+	# jeem + kaf/lam + yeh
+	sub absJeemIni @NuqtaLikeLower [absKehehMed.ch absGafMed.ch] @Diac' lookup _ShiftS600W100;
 
 	# seen + jeem
 	sub @SeenIMForms  @DiacLower' lookup _ShiftE200 @JeemMedForms;
@@ -430,14 +443,11 @@ lookup CollFixNameMarker {
 	# Jesus: yeh seen waw ain
 	sub absBehIni.sn absSeenMed.qf absWawFin._stfh absAin absNameMarker' lookup _ShiftS300E100;
 
-	# Enoch: jeem beh waw jeem
+	# Enoch: jeem noon waw jeem
 	sub absJeemIni.be absBehMed.qf absWawFin absKhah absNameMarker' lookup _ShiftS100E300;
 
 	# Hagar: [heh-goal alef] gaf alef reh
 	sub absGafIni absAlefFin absReh absNameMarker' lookup _ShiftN300;
-
-	# sheen meem
-	sub absSeenIni.mm absMeemFin  absNameMarker' lookup _ShiftN500W400;
 
 	# lam jeem meem
 	sub absLamIni.jm absJeemMed.mm absMeemFin  absNameMarker' lookup _ShiftN400W300;
@@ -454,7 +464,7 @@ lookup CollFixNameMarker {
 	# Naphtuhim: [noon feh teh waw] hah yeh meem
 	sub absJeemIni.be absBehMed.mm absNameMarker' lookup _ShiftN200;
 
-	# Noah: beh waw jeem alef
+	# Noah: noon waw jeem alef
 	sub absBehIni.qf absWawFin absJeemIni absNameMarker' lookup _ShiftN200E400 absAlefFin;
 
 	# Sarah: [seen alef] reh heh-goal
@@ -462,6 +472,9 @@ lookup CollFixNameMarker {
 
 	# Shalam: [sheen alef] lam meem
 	sub absLamIni.mm absMeemFin absNameMarker' lookup _ShiftN500;
+
+	# sheen meem
+	sub absSeenIni.mm absMeemFin  absNameMarker' lookup _ShiftN500W400;
 
 	# Tamar: [teh alef] meem alef reh
 	sub absMeemIni absAlefFin absReh  absNameMarker' lookup _ShiftN400E100;
@@ -472,16 +485,18 @@ lookup CollFixNameMarker {
 } CollFixNameMarker;
 
 lookup CollFixMarkNameMarker {
-	lookupflag 0;  #UseMarkFilteringSet [@Mark];  # ignore bogus
+	lookupflag UseMarkFilteringSet [@Mark bogus]; #include bogus for the sake of @Any
 
-	# [ain reh] feh heh-goal
+	# Arafa: [ain reh] feh heh-goal
 	sub absFehIni.hgF @NuqtaLikeUpper' lookup _ShiftS200	absHehGoalFin'  absNameMarker' @Any' lookup _ShiftN700E400;
 
 	# Boaz: [beh waw] ain zain 
+	# Note: this rule doesn't fire at the end of a line, due to the interference of bogus glyphs.
+	# But that's okay because there will be no collision on that case anyway.
 	sub absAinIni.re absRehFin @NuqtaLikeUpper absNameMarker' lookup _ShiftE300;
 
 	# Eve: hah waw shadda alef
-	sub absJeemIni.qf absWawFin absShadda' lookup _ShiftN200 absAlef' absNameMarker' @Any' lookup _ShiftE400;
+	sub absJeemIni.qf absWawFin absShadda absAlef absNameMarker' lookup _ShiftE400;
 
 	# Gaza: ghain zain heh-goal
 	sub absAinIni.re _dot1u absRehFin _dot1u' lookup _ShiftS200 absShadda' absHehGoal' absNameMarker'; ## @Any' lookup _ShiftN400E400;

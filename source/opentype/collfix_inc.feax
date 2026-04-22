@@ -262,6 +262,10 @@ lookup _ShiftS400E200 {
 	sub @Shiftable'  by  @Shiftable cfS400 cfE200;
 } _ShiftS400E200;
 
+lookup _ShiftS400W100 {
+	sub @Shiftable'  by  @Shiftable cfS400 cfW100;
+} _ShiftS400W100;
+
 lookup _ShiftS500E100 {
 	sub @Shiftable'  by  @Shiftable cfS500 cfE100;
 } _ShiftS500E100;
@@ -315,6 +319,10 @@ lookup _ShiftS400W300 {
 lookup _ShiftS500W100 {
 	sub @Shiftable'  by  @Shiftable cfS500 cfW100;
 } _ShiftS500W100;
+
+lookup _ShiftS600W100 {
+	sub @Shiftable'  by  @Shiftable cfS600 cfW100;
+} _ShiftS600W100;
 
 
 # Hard-kerning
