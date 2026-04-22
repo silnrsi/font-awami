@@ -397,32 +397,35 @@ def GenLookups_AddNuqtaHt(valuesList, dir) :
 		lname = "_AddNuqtaHt"
 		prefixIn = "asc"
 		prefixOut = "yt"
-		minv = ascMin
-		maxv = ascMax
+		minvIn = ascMin
+		maxvIn = ascMax
+		minvOut = ytMin
+		maxvOut = ytMax
 		cName = "AscMarker"
 	else:			# subtract
 		lname = "_SubtractNuqtaHt"
 		prefixIn = "dsc"
 		prefixOut = "yb"
-		minv = dscMin
-		maxv = dscMax
+		minvIn = dscMin
+		maxvIn = dscMax
+		minvOut = ybMin
+		maxvOut = ybMax
 		cName = "DscMarker"
 
 	for v in valuesList:
 		print("\nlookup " + lname + ValueName(v) + "{", file=fout)
-		for v2 in range(minv, maxv+inc, inc):
+		for v2 in range(minvIn, maxvIn+inc, inc):
 			newv = (v * dir) + v2
-			if dir > 0 and newv + inc > maxv:
+			if dir > 0 and newv + inc > maxvOut:
 				# output a fall-back rule and quit
 				# sub @YtMarker lookup _Set3000;
 				# -- NO, cant' do this in simple substitution lookups
 				# print( "  sub @" + cName + "  by  " + prefix + ValueName(newv) + ";", file=fout)
 				# break
-				newv = maxv
-			elif dir < 0 and newv < minv:
-				newv = minv
-				newv = max(minv, ytMin)
-
+				newv = maxvOut
+			elif dir < 0 and newv < minvOut:
+				newv = minvOut
+				
 			print("  sub " + prefixIn + ValueName(v2) + "  by  " + prefixOut + ValueName(newv) + ";", file=fout)
 
 		print("} " + lname + ValueName(v) + ";", file=fout)
