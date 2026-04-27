@@ -19,23 +19,34 @@
 # Currently these lookups are run within feature calt. Eventually this might be changed to a stylistic set.
 
 # REWORK THIS if we switch back to 100-unit slices.
+# This lookup duplicates data in InitKernMetrics.
 lookup InitKernMetricsSpecial {
 	lookupflag IgnoreMarks;
 
 	# Don't include lower metrics for glyphs covered underneath by a final jeem.
 	# The upper metrics are copied by hand from the auto-generated ones in autoKernMetrics.
 	# As a kludge we replace the actual glyphs with markers to prevent the actual InitKernMetrics from firing.
-	# TODO: we probably need a lot special cases here. Add them also in UndoInitMetricsKludge.
+	# TODO: we probably need a lot more special cases here.
+	
+	# ****  Add them also in UndoInitMetricsKludge.  ****
 
 	sub absBehIni.be' absBehMed.jm  absJeemFin
 			by mkBehIni.be  dy0  pyNULL		ybLast		asc200   asc0     ;
 
+	sub absBehMed.jm' absJeemFin	by	mkBehMed.jm  dy700	pyNULL dscN1500	ybLast	asc800	asc800	asc600	asc400 ;
+
+	sub absBehMed.ai' absAinFin		by	mkBehMed.ai  dy700	pyNULL dscN1500	ybLast	asc600	asc400	asc200	asc200	;
+
+	# TODO: add a lot more of these, or build them into mkglyphbounds.
+#	sub absLamMed.be' absBehMed.jm absJeemFin
+#			by	mkLamMed.be	dy500 pyNULL	dscN1500	ybLast		asc1200	asc0	;
+	
 	sub absMeemIni.jm' absJeemFin
 			by mkMeemIni.jm dy0  pyNULL		ybLast		asc600   asc600   asc600   asc200   asc0     ;
 
 	# This one is tricky:
 	sub absAlefFin._lm'		by	mkAlefFin._lm  dy300  py0  ybLast asc1600  asc1600   asc200   kw0 ;
-	
+
 } InitKernMetricsSpecial;
 
 # lookup InitKernMetrics:
@@ -45,6 +56,9 @@ include(../../source/opentype/autoKernMetrics.feax);
 lookup UndoInitMetricsKludge {
 	lookupflag UseMarkFilteringSet @KernBaseMark;
 	sub mkBehIni.be  	by	absBehIni.be;
+	sub mkBehMed.jm		by	absBehMed.jm;
+	sub mkBehMed.ai		by	absBehMed.ai;
+	sub mkLamMed.be		by	absLamMed.be;
 	sub mkMeemIni.jm	by	absMeemIni.jm;
 	sub mkAlefFin._lm	by	absAlefFin._lm;
 } UndoInitMetricsKludge;
@@ -56,6 +70,18 @@ lookup PreventPreBariyehKern {
 	# Don't delete the kw0; other places in the system expect it to be present after a final.
 	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblockHard kw0;
 } PreventPreBariyehKern;
+
+# The backswash of the jeem underhangs not only the previous character, but sometimes the one before that too.
+# Lower the last two slice descents accordingly.
+lookup HandleJeemBackswash {
+	lookupflag UseMarkFilteringSet [@DscMarker];
+
+	# The pre-jeem beh should have exactly one descent slice; see InitKernMetricsSpecial
+	#                                           \/  \/  \/
+	sub @DscMarker' @DscMarker	absBehMed.jm	@DscMarker		absJeemFin		by	dscN1500;
+	sub @DscMarker'				absBehMed.jm	@DscMarker		absJeemFin		by	dscN1500;
+
+} HandleJeemBackswash;
 
 
 # Kerning before isolates will be handled by hard-coding.
@@ -148,7 +174,7 @@ lookup HardCodeIsolates {
 	sub absBehIni.re absRehFin._jkl 						kw0' lookup _HardBlock300		absBehIni [absAlefFin absLamFin];
 
 	# reh
-	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _HardBlock0		@RehIsoForms;
+	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _HardBlock0			@RehIsoForms;
 	sub [@WawIsoForms @WawFinForms]							kw0' lookup _HardBlock200		@RehIsoForms;
 
 	# seen & sad
@@ -201,6 +227,7 @@ lookup HandleMarkAsc {
 lookup HandleMarkDscContext {  # like lookup below but with context
 	lookupflag UseMarkFilteringSet [@PyInitMarker @NuqtaLikeLower @JeemMedForms];
 	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerLower @JeemMedForms @PyInitMarker @NuqtaLikeLower;
+	sub @PyInitMarker' lookup _InsertNuqtaDiacMarkerLower @BehMedForms  @PyInitMarker @NuqtaLikeLower;
 } HandleMarkDscContext;
 
 lookup HandleMarkDsc {
@@ -514,11 +541,13 @@ lookup AddNuqtaAscent {
 	
 } AddNuqtaAscent;
 
-lookup SubtractNuqtaDescent {
 
+# INCLUDES A BUILT-IN LIMIT OF 10 SLICES
+lookup SubtractNuqtaDescent {
 	lookupflag UseMarkFilteringSet [@PyMarker @DscMarker @DscXMarker @NuqtaLike @DscXPartialMarkers ybLast];
 	
-	# For some wide glyphs, skip all but the last 200-worth of slices.
+	# For some wide glyphs, skip all but the last 2 slices. See _InsertNuqtaDiacMarkerLower.
+	# These are also used for glyphs that underhang part of the previous glyph.
   sub @PyMarker dscx1200.Left2' lookup _AscxDscxDone
 	   @DscMarker' lookup _SubtractNuqtaHt1200  @DscMarker' lookup _SubtractNuqtaHt1200
 	   ybLast;
@@ -559,6 +588,39 @@ lookup SubtractNuqtaDescent {
 	sub @PyMarker @DscXMarker @DscMarker' lookup _SubtractNuqtaLowerHt;
 	
 } SubtractNuqtaDescent;
+
+# CURRENTLY HANDLED BY InitKernMetricsSpecial
+
+# TODO: fill out this class:
+###@IMPreJeemAin = [mkBehIni.jm mkBehMed.jm mkBehIni.ai mkBehMed.ai];
+###@DscYb = [@DscMarker @YbMarker];
+
+# Account for the back that the backswashes on the final ains and jeems prevent kerning under the previous glyph.
+# Note that the descents are still relative at this point; ideally we should be setting them to some absolutely low value.
+#lookup HandleFinalBackswash {
+#	lookupflag UseMarkFilteringSet [@KernBaseMark @DscYb];
+
+#	sub @IMPreJeemAin	@DscYb' lookup _SetN1500						[mkJeemFin mkAinFin];
+#	sub @IMPreJeemAin	@DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500
+#																		[mkJeemFin mkAinFin];
+#	sub @IMPreJeemAin	@DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500
+#																		[mkJeemFin mkAinFin];
+#	sub @IMPreJeemAin	@DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500
+#						@DscYb' lookup _SetN1500
+#																		[mkJeemFin mkAinFin];
+#	sub @IMPreJeemAin	@DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500
+#						@DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500
+#																		[mkJeemFin mkAinFin];
+#} HandleFinalBackswash;
+
+#lookup HandleFinalBackswash2 {
+#	lookupflag UseMarkFilteringSet [@KernBaseMark @DscYb];
+
+#	sub @DscYb' lookup _SetN1500 							mkBehMed.jm @DscYb @DscYb @DscYb mkJeemFin;
+#	sub @DscYb' lookup _SetN1500 @DscYb' lookup _SetN1500 	mkBehMed.jm @DscYb @DscYb @DscYb mkJeemFin;
+
+#} HandleFinalBackswash2;
+
 
 include(../../source/opentype/arithTopLevel.feax);
 # -----------------    ^^^ This file includes the following:

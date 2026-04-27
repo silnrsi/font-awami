@@ -115,7 +115,8 @@ lookup CollFixNuqtasUpper {  # some of these rules are generalized to include al
 	sub [absJeemIni.qf absJeemMed.qf]	@NuqtaVisUpper	absQafFin	@NuqtaVisUpper' lookup _ShiftW200;
 	sub [absJeemIni.qf absJeemMed.qf]					absQafFin	@NuqtaVisUpper' lookup _ShiftW200;
 
-	# feh                                 \/ \/ \/ use ' to parallel and override rule below
+	# feh
+	#	                                 \/ \/ \/ use ' to parallel and override rule below
 	sub [absFehIni.be absFehIni.beM2]	@NuqtaVisUpper'						absBehMed.jm'	@NuqtaVisUpper' lookup _ShiftW300;
 	sub [absFehIni.be absFehIni.beM2]										absBehMed.jm	@NuqtaVisUpper' lookup _ShiftW300;
 	sub [absFehIni.be absFehIni.beM2]	@NuqtaVisUpper' lookup _ShiftN200	@BehMedForms'	@NuqtaVisUpper' @Any' lookup _ShiftN500W100;
@@ -320,6 +321,9 @@ lookup CollFixDiacUpper {
 	sub @LamIniForms @DiacUpper' lookup _ShiftS100E100  @BehMedForms @MarkUpper				@KafFinForms;
 	sub @LamIniForms @DiacUpper' lookup _ShiftS100E100  @BehMedForms @MarkUpper @MarkUpper	@KafFinForms;
 
+	# lam/kaf + meem + lam/kaf 
+	sub [@LamIMForms @KafIMForms] absMeemMed._alt @DiacUpper' lookup _ShiftN700	[@LamMFForms @KafMFForms];
+
 	# meem
 	sub absMeemIni.mm  @DiacUpper' lookup _ShiftS200E200			absMeemMed  @KehehMedForms;
 
@@ -334,6 +338,11 @@ lookup CollFixDiacUpper {
 
 	# feh + dal
 	sub absFehMed @NuqtaVisUpper	absDalFin @DiacUpper' lookup _ShiftN200;
+
+	# feh + waw
+	sub absFehIni.qf						absWawFin @DiacUpper' lookup _ShiftW200;
+	sub absFehIni.qf @MarkUpper				absWawFin @DiacUpper' lookup _ShiftW200;
+	sub absFehIni.qf @MarkUpper @MarkUpper	absWawFin @DiacUpper' lookup _ShiftW200;
 
 } CollFixDiacUpper;
 
@@ -426,6 +435,15 @@ lookup CollFixNuqtasLowerNextAdjustment {
 } CollFixNuqtasLowerNextAdjustment;
 
 # Tweak fixes using simple substitution
+lookup CollFixRedoUpper {
+	lookupflag UseMarkFilteringSet [@MarkUpper @CfMarker];
+
+	# feh + beh + alef/lam/kaf
+	sub absFehIni.beM2 @NuqtaVisUpper cfN200'	absBehMed @NuqtaVisUpper @CfMarkerNS @CfMarkerEW	by	cfN300;
+	sub absBehMed @NuqtaVisUpper @CfMarkerNS cfW100'	[absAlefFin @LamMFForms @KafMFForms]		by	NULL;
+
+} CollFixRedoUpper;
+
 lookup CollFixRedoLower {
 	lookupflag UseMarkFilteringSet [@MarkLower @CfMarker];
 
