@@ -147,6 +147,8 @@ lookup CollFixNuqtasUpper {  # some of these rules are generalized to include al
 
 } CollFixNuqtasUpper;
 
+@BehBe = [absBehIni.be absBehMed.be];
+
 lookup CollFixNuqtasLower {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeLower bogus];
 
@@ -156,13 +158,13 @@ lookup CollFixNuqtasLower {
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftN100		absBehMed'		@NuqtaLikeLower' 	@Any' lookup _ShiftS200;
 	sub absBehIni.beM2	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.benn'	@NuqtaLikeLower' 	@Any' lookup _ShiftS200;
 
-	ignore sub absBehIni.be _dot1l'								absBehMed.beF' _dot1l'				@Any';
-	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.beF'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
+	ignore sub @BehBe _dot1l'									absBehMed.beF' _dot1l'				@Any';
+	sub @BehBe			@NuqtaLikeLower' lookup _ShiftN100		absBehMed.beF'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absBehMed.be	@NuqtaLikeLower' lookup _ShiftN100E200	absBehMed.jm'	@NuqtaLikeLower'	@Any'@Any' lookup _ShiftS200W200;
 	sub absBehIni.be	@DotTallL'		 lookup _ShiftN200E200	absBehMed.hgM'	@DotWideL'			@Any' @Any' lookup _ShiftS300;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E200	absBehMed.hgM'	@DotWideL'			@Any' @Any' lookup _ShiftS200;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN200E100	absBehMed.hgM'	@NuqtaLikeLower'	@Any' @Any' lookup _ShiftS200;
-	sub absBehIni.be	@NuqtaVisLower'  lookup _ShiftN100		absBehMed.ai'	@NuqtaVisLower'		@Any' lookup _ShiftS400W300;
+	sub @BehBe			@NuqtaVisLower'  lookup _ShiftN100		absBehMed.ai'	@NuqtaVisLower'		@Any' lookup _ShiftS400W300;
 	sub absBehIni.be    @NuqtaLikeLower' lookup _ShiftN100		absBehMed.fe'	@NuqtaLikeLower'	@Any' lookup _ShiftS200;
 	sub absBehIni.be	@DotTallL' 		 lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS300;
 	sub absBehIni.be	@NuqtaLikeLower' lookup _ShiftN100		absBehMed.qf'	@NuqtaLikeLower'	@Any' lookup _ShiftS100;
