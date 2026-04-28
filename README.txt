@@ -2,8 +2,25 @@ README
 Awami Nastaliq font
 ===================
 
-Thank you for your interest in the Awami Nastaliq font.
-We hope you find it useful!
+Thanks for your interest in Awami Nastaliq. The goal of this “tech-preview” release 
+is to gain feedback on our approach to using OpenType for smart rendering of Nastaliq.
+
+Our current officially-released font (Awami Nastaliq 3.400: http://software.sil.org/awami) 
+uses the Graphite system to achieve high-quality layout with behavior characteristic of the 
+traditional Nastaliq style. The biggest rendering challenges are collision avoidance 
+and automatic kerning. However, the Graphite system imposes some limitations on the usefulness 
+of the font, due to a lack of Graphite support in a wide range of applications.
+
+Our current hope is to create a version of Awami Nastaliq that uses OpenType to fix collisions 
+and perform kerning in a way that properly reflects the Nastaliq tradition. This requires not 
+only loosening the kerning to avoid collisions between segments, but also tightening the kerning 
+to create overlaps between diagonal segments, as shown in the images below.
+
+Please go the documentation-techpre/README.md file to see what kinds of feedback we are looking
+for.
+
+ABOUT
+=====
 
 Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of 
 languages of Southwest Asia, including but not limited to Urdu. This font is aimed 
@@ -25,7 +42,7 @@ Awami is a trademark of SIL Global.
 See the OFL and OFL-FAQ for details of the SIL Open Font License.
 See the FONTLOG for information on this and previous releases.
 
-For further information about this font, including Unicode ranges
+For further information about the Graphite version of this font, including Unicode ranges
 supported, Graphite font features and how to use them, 
 and licensing, please see the documentation on the website 
 (https://software.sil.org/awami) or in the documentation 
@@ -35,7 +52,7 @@ TIPS
 ====
 
 As this font is distributed at no cost, we are unable to provide a 
-commercial level of personal technical support. The font has, however, 
+commercial level of personal technical support. The officially released font has, however, 
 been through some testing on various platforms to be sure it works in most
 situations. In particular, it has been tested and shown to work on 
 Windows 11. Graphite capabilities have been tested on Graphite-supported platforms.
@@ -57,15 +74,17 @@ Arabic letter. You will also need some way of entering Unicode text into your
 document.
 
 Rendering:
-This font is designed to work with the Graphite advanced font technology. 
-To take advantage of the advanced typographic capabilities of this font, 
-you must be using applications that provide an adequate level of support for 
-Graphite. 
+This font is designed to work with the OpenType advanced font technology. 
+This technical preview font is primarily intended for testing as the font is
+in development.
 
 Keyboarding:
-This font package does not include keyboards or other software for entering text. To type the symbols in this font, use the keyboarding systems provided in your OS or use a separate utility. Keyman(https://keyman.com/) is a cross-platform keyboarding system.
+This font package does not include keyboards or other software for entering text. 
+To type the symbols in this font, use the keyboarding systems provided in your OS 
+or use a separate utility. Keyman(https://keyman.com/) is a cross-platform keyboarding system.
 
-Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: https://scriptsource.org/entry/ytr8g8n6sw.
+Various other means may be available for different operating-system platforms to create 
+additional input methods. Some suggestions are listed here: https://scriptsource.org/entry/ytr8g8n6sw.
 
 CONTACT
 ========

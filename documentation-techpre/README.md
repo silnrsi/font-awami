@@ -42,23 +42,32 @@ We have tested the font and believe it works in LibreOffice, Chrome, Firefox, an
 
 We would appreciate feedback on several aspects of the fonts.
 
-1. Appearance of the auto-kerned font \- is the output correct, readable, and attractive?  
+1. Appearance of the auto-kerned font \- is the output correct, readable, and attractive? 
+
    a. Most importantly, does the kerning look appropriate and natural?  
       1. Is it tight enough, or too tight?   
       2. Is it consistent enough to be readable and not confusing (e.g., in discerning word breaks)?  
-      3. Are there specific examples where the kerning is odd or inappropriate? Please send those to us.  
+      3. Are there specific examples where the kerning is odd or inappropriate? Please send those to us.
+
    b. Basic shaping: feel free to report wrong letter forms or bad cursive connections.
+
    c. Collisions - how bad are they? Do you see many in your data, or a few here and there? You may report any egregious collisions you see (although there may be too many to bother with, particularly in languages other than Urdu).
 
 2. Performance \- is the auto-kerned font fast enough, or does it seem sluggish or even unusable? Compare the AutoKern font with the MinKern version. Things to pay attention to:
-   a. Typing, especially in long paragraphs  
-   b. Scrolling, especially in a long document  
-   c. Opening a file  
+
+   a. Typing, especially in long paragraphs
+
+   b. Scrolling, especially in a long document
+
+   c. Opening a file
+
    d. Are there specific applications in which performance is good or adequate and others in which the font is less usable?
 
 3. Other  
-   a. Are there contexts in which auto-kerning is essential?  
+   a. Are there contexts in which auto-kerning is essential?
+
    b. Are there contexts in which the faster speed of the minimally-kerned version would outweigh the lack of high-quality kerning?
+   
    c. Can you imagine a need for both versions of the font?
 
 ## Suggestions for testing
