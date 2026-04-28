@@ -282,7 +282,8 @@ lookup CollFixDiacUpper {
 	# alef
 	sub absAlef  @DiacUpper' lookup _ShiftN200E100  [absKehehIni absGafIni];
 	# alef + feh
-	sub @AlefForms @MarkUpper	@FehIniForms @DotWideU' lookup _ShiftW200  @Finals;
+	ignore sub @AlefForms @MarkUpper	@FehIniForms @DotWideU'	[@AlefFinForms @LamFinForms @KafFinForms];
+	sub		@AlefForms @MarkUpper	@FehIniForms @DotWideU' lookup _ShiftW200  @Finals;
 
 	# beh + kaf
 
