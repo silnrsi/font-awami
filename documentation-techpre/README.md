@@ -4,7 +4,7 @@ Thanks for your interest in Awami Nastaliq. The goal of this “tech-preview” 
 
 Our current officially-released font ([Awami Nastaliq 3.400](http://software.sil.org/awami))  uses the Graphite system to achieve high-quality layout with behavior characteristic of the traditional Nastaliq style. The biggest rendering challenges are collision avoidance and automatic kerning. However, the Graphite system imposes some limitations on the usefulness of the font, due to a lack of Graphite support in a wide range of applications.
 
-Our current hope is to create a version of Awami Nastaliq that uses OpenType to fix collisions and perform kerning in a way that properly reflects the Nastaliq tradition. This requires not only loosening the kerning to avoid collisions between segments, but also tightening the kerning to create overlaps between diagonal segments, as shown in the images below.
+Our current goal is to create a version of Awami Nastaliq that uses OpenType to fix collisions and perform kerning in a way that properly reflects the Nastaliq tradition. This requires not only loosening the kerning to avoid collisions between segments, but also tightening the kerning to create overlaps between diagonal segments, as shown in the images below.
 
 #### Intra-word overlaps
 
@@ -18,12 +18,12 @@ Our current hope is to create a version of Awami Nastaliq that uses OpenType to 
 
 **PLEASE NOTE:** this is a “technology preview” release meaning that it contains known bugs and infelicities. It will not be difficult to find collisions even in Urdu text. You also are welcome to try the font with other languages, but there will likely be even more collisions in that data.
 
-We have tested the font and believe it works in LibreOffice, Chrome, Firefox, and PTXPrint. At this point we have had very limited success using it in MS Word. We would appreciate feedback on how the font works in these and any other applications of interest.
+We have tested the fonts and believe they work in LibreOffice, Chrome, Firefox, and PTXPrint. At this point we have had very limited success using them in MS Word. We would appreciate feedback on how the fonts, especially the auto-kern version, work in these and any other applications of interest.
 
 ## Package contents
 
 1. Fonts  
-   a. **Awami OT TechPre AutoKern**: this font includes an auto-kerning mechanism that uses kerning to fix collisions and perform the Nastaliq-specific overlap kerning. It also includes a similar level of collision fixing for nuqtas and diacritics. We expect the performance of this font to be slower than Awami OT TechPre MinKern.  
+   a. **Awami OT TechPre AutoKern**: this font includes an auto-kerning mechanism that fixes collisions and performs the Nastaliq-specific overlap kerning. It also includes some collision fixing for nuqtas and diacritics. We expect the performance of this font to be slower than Awami OT TechPre MinKern.  
    b. **Awami OT TechPre MinKern**: this font performs some (incomplete) collision fixing for nuqtas and diacritics, and uses hard-coded kerning to fix other collisions. It does *not* include Nastaliq-style overlap kerning of diagonal segments. This is included mainly for comparison to the auto-kerned version.  
         
    *Not included:* **Awami Nastaliq 3.400** \- this is our currently-released font that uses the Graphite system. It features fast performance and high-quality layout, but does not work in non-Graphite-enabled applications such as MS Word or Chrome. (See the [current list of Graphite-enabled applications](https://graphite.sil.org/graphite_apps.html).) It can be downloaded from [software.sil.org/awami](http://software.sil.org/awami).
