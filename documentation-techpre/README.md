@@ -32,10 +32,10 @@ We have tested the fonts and believe they work in LibreOffice, Chrome, Firefox, 
    a. **genesis-autokern.odt**: OpenBible Genesis in Urdu using Awami OT TechPre AutoKern \- LibreOffice format (153 pages)  
    b. **ruth-autokern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre AutoKern; LibreOffice format (12 pages)  
    c. **udhr-autokern.html** \- Universal Declaration of Human Rights (UDHR) in Urdu using Awami OT TechPre AutoKern; HTML format  
-   d. **udhr-srk-autokern.odt** \- UDHR in Saraiki using Awami OT TechPre AutoKern; LibreOffice format (11 pages)
+   d. **udhr-srk-autokern.odt** \- UDHR in Saraiki using Awami OT TechPre AutoKern; LibreOffice format (11 pages)  
    e. **genesis-minkern.odt** \- OpenBible Genesis in Urdu using Awami OT TechPre MinKern- LibreOffice format (158 pages)  
    f. **ruth-minkern.odt** \- OpenBible Ruth in Urdu using Awami OT TechPre MinKern \- LibreOffice format (12 pages)  
-   g. **udhr-minkern.html** \- UDHR in Urdu using Awami OT TechPre MinKern; HTML format
+   g. **udhr-minkern.html** \- UDHR in Urdu using Awami OT TechPre MinKern; HTML format  
    h. **udhr-srk-minkern.odt** \- UDHR in Saraiki using Awami OT TechPre MinKern; LibreOffice format (11 pages)
 
 ## Feedback needed
