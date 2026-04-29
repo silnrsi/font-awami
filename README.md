@@ -1,4 +1,4 @@
-# Project status [![Build Status](https://build.palaso.org/app/rest/builds/buildType:Fonts_Awami/statusIcon)](https://build.palaso.org/buildConfiguration/Fonts_Awami_Opentype&guest=1) 
+# Project status [![Build Status](https://build.palaso.org/app/rest/builds/buildType:Fonts_Awami_Opentype/statusIcon)](https://build.palaso.org/buildConfiguration/Fonts_Awami_Opentype) 
 
 Awami is a Nastaliq-style Arabic script font supporting a wide variety of languages of southwest Asia, including but not limited to Urdu. 
 
