@@ -49,9 +49,7 @@ We would appreciate feedback on several aspects of the fonts.
       2. Is it consistent enough to be readable and not confusing (e.g., in discerning word breaks)?  
       3. Are there specific examples where the kerning is odd or inappropriate? Please send those to us.
 
-   b. Basic shaping: feel free to report wrong letter forms or bad cursive connections.
-
-   c. Collisions - how bad are they? Do you see many in your data, or a few here and there? You may report any egregious collisions you see (although there may be too many to bother with, particularly in languages other than Urdu).
+   b. Basic shaping: feel free to report wrong letter forms or bad cursive connections. (Please do NOT report collisions involving nuqtas or diacritics \- we are well aware of those\! See the note above.)
 
 2. Performance \- is the auto-kerned font fast enough, or does it seem sluggish or even unusable? Compare the AutoKern font with the MinKern version. Things to pay attention to:
 
