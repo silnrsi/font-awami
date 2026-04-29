@@ -37,6 +37,7 @@ This font makes use of state-of-the-art font technologies to support complex
 typographic issues. Font smarts have been implemented using OpenType.
 
 Awami Nastaliq is released under the SIL Open Font License.
+
 Awami is a trademark of SIL Global.
 	
 See the OFL and OFL-FAQ for details of the SIL Open Font License.
