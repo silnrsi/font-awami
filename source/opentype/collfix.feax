@@ -435,6 +435,10 @@ lookup CollFixNuqtasLowerNextAdjustment {
 	# yeh + yeh - avoid a flat line
 	sub absBehMed.beM2  _dot2l  @CfMarkerS		absBehMed  _dot2l' lookup _ShiftS200;
 
+	# beh/heh-goal + final tcheh
+	sub absBehMed.jm @NuqtaLikeLower cfS200 @CfMarkerEW		absJeemFin @DotTallL' lookup _ShiftS200;
+	sub absHehGoalMed.jm _hehHook.small @CfMarkerEW			absJeemFin @DotTallL' lookup _ShiftS200;
+
 } CollFixNuqtasLowerNextAdjustment;
 
 # Tweak fixes using simple substitution

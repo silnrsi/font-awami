@@ -40,6 +40,7 @@ lookup HandKernMarkUpperLower {
 
 } HandKernMarkUpperLower;
 
+@RehDalWawFin = [absReh absRehFin._jkl absDal absDalFin absWaw absWawFin];  # add absRehFin and absRehFin._hgM ???
 
 lookup HandKernMarkLower {
 	lookupflag UseMarkFilteringSet [@MarkLower @KwMarker];
@@ -65,6 +66,9 @@ lookup HandKernMarkLower {
 	sub [absRehFin absRehFin._hgM]'	absBehIni  @NuqtaLikeLower @Finals	by  [absRehFin absRehFin._hgM] kwN100;
 
 	sub absRehFin' absBehIni.re @DotWideL  absRehFin._jkl	by	absRehFin kwN200;
+
+	sub [absReh absRehFin._jkl]' [absBehIni.re absBehIni.qf] @DotWideL	by	[absReh absRehFin._jkl] kwN200;
+	sub @RehDalWawFin' [absBehIni.re absBehIni.qf] @DotWideL			by	@RehDalWawFin kwN300;
 
 } HandKernMarkLower;
 

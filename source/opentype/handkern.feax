@@ -99,3 +99,13 @@ lookup FixAlefMaddaAlefMadda2 {
 	sub absAlef absMaddaAbove  cfN400  absBehIni  absAlefFin absMaddaAbove'  by  absMaddaAbove cfS100;
 
 } FixAlefMaddaAlefMadda2;
+
+# For some cases, we just have to give up and enumerate all the glyphs in the sequence. :-(
+lookup SpecialCaseHandKern {
+	lookupflag UseMarkFilteringSet @Mark;
+
+	# (peh + yeh +) jeh + yeh + meem + yeh + teh (Khowar)
+	sub absRehFin @DotTallU'	absBehIni.mm @NuqtaLikeLower	absMeemMed.be	absBehMed.beF @NuqtaLikeLower	absBehFin	by	@DotTallU cfS200;
+	sub absRehFin @DotTallU		absBehIni.mm @NuqtaLikeLower'	absMeemMed.be	absBehMed.beF @NuqtaLikeLower	absBehFin	by	@NuqtaLikeLower cfN100;
+
+} SpecialCaseHandKern;
