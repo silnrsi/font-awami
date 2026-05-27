@@ -212,6 +212,7 @@ lookup _InsertNuqtaDiacMarkerLower {
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot3l;
 	sub @PyInitMarker' lookup _InsertLowerMarker1000	_dot4l;
 	sub @PyInitMarker' lookup _InsertLowerMarker700		_hehHook.small;
+	sub @PyInitMarker' lookup _InsertLowerMarker1000	[_smallTah _smallTah2dotsBelow];
 
 	sub @PyInitMarker' lookup _InsertLowerMarker600		@DiacLower;
 
@@ -219,7 +220,6 @@ lookup _InsertNuqtaDiacMarkerLower {
 
 	# Others:
 	# kharizabar/zair - 1100
-	# small-tah - 900
 	# nuqta+tah - 1500
 } _InsertNuqtaDiacMarkerLower;
 
