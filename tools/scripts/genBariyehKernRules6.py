@@ -72,17 +72,21 @@ def OutputRuleIfNeeded(mode, seq):
 def OutputRule(mode, seq, kernValue):
 	outputStr = mode + " ";
 	first = True
-	suffix = "Ini"
+	suffix = "Ini  "
 	for slot in seq:
+		if first:
+			outputStr += "@IsoFin' lookup "
+			if kernValue == "prevent":
+				outputStr += "_PreventKernUnder\t"
+			else:
+				if mode == "sub":
+					outputStr += "_InsSp2Kern"
+				else:
+					outputStr += "_Kern"
+				outputStr += str(kernValue) + "\t\t"
 		c = ClassName(slot) + suffix
 		outputStr += "@" + c
-		if first:
-			outputStr += "' lookup "
-			if mode == "sub":
-				outputStr += "_InsSp2Kern"
-			else:
-				outputStr += "_Kern"
-			outputStr += str(kernValue) + "  "
+
 		first = False
 		suffix = "Med  "
 	outputStr += "nlqBariyehFin;"
