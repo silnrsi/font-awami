@@ -479,9 +479,10 @@ lookup _AttByRight {
 } _AttByRight;
 
 lookup _DeleteShim {
-	sub _byShim1  by  NULL;
-	sub _byShim2  by  NULL;
-	sub _byShim3  by  NULL;
+	# Replacing with NULL does not work in MS Word.
+	sub _byShim1  by  bogus;
+	sub _byShim2  by  bogus;
+	sub _byShim3  by  bogus;
 } _DeleteShim; 
 
 
@@ -1347,7 +1348,7 @@ lookup BariyehDiac3 {
 	
 } BariyehDiac3;
 
-lookup DelNull3 { lookupflag 0; sub .null by NULL; } DelNull3;
+lookup DelNull3 { lookupflag 0; sub .null by bogus; } DelNull3;
 
 lookup BariyehNuqta2 {  # second from bariyeh
 	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
@@ -1382,7 +1383,7 @@ lookup BariyehDiac2 {
 
 } BariyehDiac2;
 
-lookup DelNull2 { lookupflag 0; sub .null by NULL; } DelNull2;
+lookup DelNull2 { lookupflag 0; sub .null by bogus; } DelNull2;
 
 lookup BariyehNuqta1 {  # third from bariyeh
 	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
@@ -1417,7 +1418,7 @@ lookup BariyehDiac1 {
 	
 } BariyehDiac1;
 
-lookup DelNull1 { lookupflag 0; sub .null by NULL; } DelNull1;
+lookup DelNull1 { lookupflag 0; sub .null by bogus; } DelNull1;
 
 lookup DeleteEmptyShims {
 	# The positioning is based on which shims are in use. So delete empty ones to make the rules easier.
@@ -1436,9 +1437,17 @@ lookup DeleteEmptyShims {
 } DeleteEmptyShims;
 
 lookup DeleteHidden {
+	# replacing by NULL does not work in MS Word.
 	lookupflag 0;
-	sub @NLikeHid_sub  by  NULL;
+	sub @NLikeHid_sub  by  bogus;
 } DeleteHidden;
+
+
+lookup DeleteBogus {
+	# Does not work in MS Word, but let's do it if we can.
+	lookupflag 0;
+	sub bogus by NULL;
+} DeleteBogus;
 
 
 lookup Space2Mark {		# so Space4BariyehKern can ignore it
@@ -1496,7 +1505,7 @@ include(../../source/opentype/collfix_inc.feax);
 feature calt {
 script arab;
 
-include(../../source/opentype/collfix.feax);
+########include(../../source/opentype/collfix.feax);
 
 # lookup TempFix {
 # 	lookupflag UseMarkFilteringSet [@NuqtaLike @Diac];
@@ -1531,6 +1540,19 @@ do	if AutoKern() == 0; {
 
 
 #====================  GPOS features  ====================
+
+
+# Putting the curs feature first seems to be better for MS Word, especially for getting kaf tops to work.
+feature curs {
+script arab;
+
+lookup BasicConnections {
+	lookupflag IgnoreMarks RightToLeft;
+	pos cursive @entry @exit;
+} BasicConnections;
+	
+} curs;			# end of feature
+
 
 feature mark {
 
@@ -1771,17 +1793,6 @@ lookup AttRing2Mark {
 } AttRing2Mark;
 
 } mkmk;
-
-
-feature curs {
-script arab;
-
-lookup BasicConnections {
-	lookupflag IgnoreMarks RightToLeft;
-	pos cursive @entry @exit;
-} BasicConnections;
-	
-} curs;			# end of feature
 
 
 feature dist {
