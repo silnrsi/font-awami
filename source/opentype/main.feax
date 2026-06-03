@@ -69,104 +69,57 @@ lookup FontCheck {
 
 #--- bariyeh kerning ---
 
-# lookup _Kern50 { pos @IsoIni 50; } _Kern50;
-# lookup _Kern100 { pos @IsoIni 100; } _Kern100;
-# lookup _Kern150 { pos @IsoIni 150; } _Kern150;
-# lookup _Kern200 { pos @IsoIni 200; } _Kern200;
-# lookup _Kern250 { pos @IsoIni 250; } _Kern250;
-# lookup _Kern300 { pos @IsoIni 300; } _Kern300;
-# lookup _Kern350 { pos @IsoIni 350; } _Kern350;
-# lookup _Kern400 { pos @IsoIni 400; } _Kern400;
-# lookup _Kern450 { pos @IsoIni 450; } _Kern450;
-# lookup _Kern500 { pos @IsoIni 500; } _Kern500;
-# lookup _Kern550 { pos @IsoIni 550; } _Kern550;
-# lookup _Kern600 { pos @IsoIni 600; } _Kern600;
-# lookup _Kern650 { pos @IsoIni 650; } _Kern650;
-# lookup _Kern700 { pos @IsoIni 700; } _Kern700;
-# lookup _Kern750 { pos @IsoIni 750; } _Kern750;
-# lookup _Kern800 { pos @IsoIni 800; } _Kern800;
-# lookup _Kern850 { pos @IsoIni 850; } _Kern850;
-# lookup _Kern900 { pos @IsoIni 900; } _Kern900;
-# lookup _Kern950 { pos @IsoIni 950; } _Kern950;
-# lookup _Kern1000 { pos @IsoIni 1000; } _Kern1000;
-# lookup _Kern1050 { pos @IsoIni 1050; } _Kern1050;
-# lookup _Kern1100 { pos @IsoIni 1100; } _Kern1100;
-# lookup _Kern1150 { pos @IsoIni 1150; } _Kern1150;
-# lookup _Kern1200 { pos @IsoIni 1200; } _Kern1200;
-# lookup _Kern1250 { pos @IsoIni 1250; } _Kern1250;
-# lookup _Kern1300 { pos @IsoIni 1300; } _Kern1300;
-# lookup _Kern1350 { pos @IsoIni 1350; } _Kern1350;
-# lookup _Kern1400 { pos @IsoIni 1400; } _Kern1400;
-# lookup _Kern1450 { pos @IsoIni 1450; } _Kern1450;
-# lookup _Kern1500 { pos @IsoIni 1500; } _Kern1500;
-# lookup _Kern1550 { pos @IsoIni 1550; } _Kern1550;
-# lookup _Kern1600 { pos @IsoIni 1600; } _Kern1600;
-# lookup _Kern1650 { pos @IsoIni 1650; } _Kern1650;
-# lookup _Kern1700 { pos @IsoIni 1700; } _Kern1700;
-# lookup _Kern1750 { pos @IsoIni 1750; } _Kern1750;
-# lookup _Kern1800 { pos @IsoIni 1800; } _Kern1800;
-# lookup _Kern1850 { pos @IsoIni 1850; } _Kern1850;
-# lookup _Kern1900 { pos @IsoIni 1900; } _Kern1900;
-# lookup _Kern1950 { pos @IsoIni 1950; } _Kern1950;
-# lookup _Kern2000 { pos @IsoIni 2000; } _Kern2000;
-# lookup _Kern2050 { pos @IsoIni 2050; } _Kern2050;	# not used
-# lookup _Kern2100 { pos @IsoIni 2100; } _Kern2100;	# not used
-# lookup _Kern2150 { pos @IsoIni 2150; } _Kern2150;
-# lookup _Kern2200 { pos @IsoIni 2200; } _Kern2200;
-# lookup _Kern2250 { pos @IsoIni 2250; } _Kern2250;
-# lookup _Kern2300 { pos @IsoIni 2300; } _Kern2300;
-# lookup _Kern2350 { pos @IsoIni 2350; } _Kern2350;
+# TODO: decide if we need 150, 250, 350, etc.
+lookup _ByKern50 { sub @IniWKafBase by kblockHard kwN100 @IniWKafBase; } _ByKern50;
+lookup _ByKern100 { sub @IniWKafBase by kblockHard kwN100 @IniWKafBase; } _ByKern100;
+lookup _ByKern150 { sub @IniWKafBase by kblockHard kwN200 @IniWKafBase; } _ByKern150;
+lookup _ByKern200 { sub @IniWKafBase by kblockHard kwN200 @IniWKafBase; } _ByKern200;
+lookup _ByKern250 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern250;
+lookup _ByKern300 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern300;
+lookup _ByKern350 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern350;
+lookup _ByKern400 { sub @IniWKafBase by kblockHard kwN400 @IniWKafBase; } _ByKern400;
+lookup _ByKern450 { sub @IniWKafBase by kblockHard kwN400 @IniWKafBase; } _ByKern450;
+lookup _ByKern500 { sub @IniWKafBase by kblockHard kwN500 @IniWKafBase; } _ByKern500;
+lookup _ByKern550 { sub @IniWKafBase by kblockHard kwN500 @IniWKafBase; } _ByKern550;
+lookup _ByKern600 { sub @IniWKafBase by kblockHard kwN600 @IniWKafBase; } _ByKern600;
+lookup _ByKern650 { sub @IniWKafBase by kblockHard kwN600 @IniWKafBase; } _ByKern650;
+lookup _ByKern700 { sub @IniWKafBase by kblockHard kwN700 @IniWKafBase; } _ByKern700;
+lookup _ByKern750 { sub @IniWKafBase by kblockHard kwN700 @IniWKafBase; } _ByKern750;
+lookup _ByKern800 { sub @IniWKafBase by kblockHard kwN800 @IniWKafBase; } _ByKern800;
+lookup _ByKern850 { sub @IniWKafBase by kblockHard kwN800 @IniWKafBase; } _ByKern850;
+lookup _ByKern900 { sub @IniWKafBase by kblockHard kwN900 @IniWKafBase; } _ByKern900;
+lookup _ByKern950 { sub @IniWKafBase by kblockHard kwN900 @IniWKafBase; } _ByKern950;
+lookup _ByKern1000 { sub @IniWKafBase by kblockHard kwN1000 @IniWKafBase; } _ByKern1000;
+lookup _ByKern1050 { sub @IniWKafBase by kblockHard kwN1000 @IniWKafBase; } _ByKern1050;
+lookup _ByKern1100 { sub @IniWKafBase by kblockHard kwN1100 @IniWKafBase; } _ByKern1100;
+lookup _ByKern1150 { sub @IniWKafBase by kblockHard kwN1100 @IniWKafBase; } _ByKern1150;
+lookup _ByKern1200 { sub @IniWKafBase by kblockHard kwN1200 @IniWKafBase; } _ByKern1200;
+lookup _ByKern1250 { sub @IniWKafBase by kblockHard kwN1200 @IniWKafBase; } _ByKern1250;
+lookup _ByKern1300 { sub @IniWKafBase by kblockHard kwN1300 @IniWKafBase; } _ByKern1300;
+lookup _ByKern1350 { sub @IniWKafBase by kblockHard kwN1300 @IniWKafBase; } _ByKern1350;
+lookup _ByKern1400 { sub @IniWKafBase by kblockHard kwN1400 @IniWKafBase; } _ByKern1400;
+lookup _ByKern1450 { sub @IniWKafBase by kblockHard kwN1400 @IniWKafBase; } _ByKern1450;
+lookup _ByKern1500 { sub @IniWKafBase by kblockHard kwN1500 @IniWKafBase; } _ByKern1500;
+lookup _ByKern1550 { sub @IniWKafBase by kblockHard kwN1500 @IniWKafBase; } _ByKern1550;
+lookup _ByKern1600 { sub @IniWKafBase by kblockHard kwN1600 @IniWKafBase; } _ByKern1600;
+lookup _ByKern1650 { sub @IniWKafBase by kblockHard kwN1600 @IniWKafBase; } _ByKern1650;
+lookup _ByKern1700 { sub @IniWKafBase by kblockHard kwN1700 @IniWKafBase; } _ByKern1700;
+lookup _ByKern1750 { sub @IniWKafBase by kblockHard kwN1700 @IniWKafBase; } _ByKern1750;
+lookup _ByKern1800 { sub @IniWKafBase by kblockHard kwN1800 @IniWKafBase; } _ByKern1800;
+lookup _ByKern1850 { sub @IniWKafBase by kblockHard kwN1800 @IniWKafBase; } _ByKern1850;
+lookup _ByKern1900 { sub @IniWKafBase by kblockHard kwN1900 @IniWKafBase; } _ByKern1900;
+lookup _ByKern1950 { sub @IniWKafBase by kblockHard kwN1900 @IniWKafBase; } _ByKern1950;
+lookup _ByKern2000 { sub @IniWKafBase by kblockHard kwN2000 @IniWKafBase; } _ByKern2000;
+lookup _ByKern2050 { sub @IniWKafBase by kblockHard kwN2000 @IniWKafBase; } _ByKern2050;
+lookup _ByKern2100 { sub @IniWKafBase by kblockHard kwN2100 @IniWKafBase; } _ByKern2100;
+lookup _ByKern2150 { sub @IniWKafBase by kblockHard kwN2100 @IniWKafBase; } _ByKern2150;
+lookup _ByKern2200 { sub @IniWKafBase by kblockHard kwN2200 @IniWKafBase; } _ByKern2200;
+lookup _ByKern2250 { sub @IniWKafBase by kblockHard kwN2200 @IniWKafBase; } _ByKern2250;
+lookup _ByKern2300 { sub @IniWKafBase by kblockHard kwN2300 @IniWKafBase; } _ByKern2300;
+lookup _ByKern2350 { sub @IniWKafBase by kblockHard kwN2300 @IniWKafBase; } _ByKern2350;
+lookup _ByKern2400 { sub @IniWKafBase by kblockHard kwN2400 @IniWKafBase; } _ByKern2400;
 
-lookup _InsSp2Kern50 { sub @IsoFin by @IsoFin kSp50; } _InsSp2Kern50;
-lookup _InsSp2Kern100 { sub @IsoFin by @IsoFin kSp100; } _InsSp2Kern100;
-lookup _InsSp2Kern150 { sub @IsoFin by @IsoFin kSp150; } _InsSp2Kern150;
-lookup _InsSp2Kern200 { sub @IsoFin by @IsoFin kSp200; } _InsSp2Kern200;
-lookup _InsSp2Kern250 { sub @IsoFin by @IsoFin kSp250; } _InsSp2Kern250;
-lookup _InsSp2Kern300 { sub @IsoFin by @IsoFin kSp300; } _InsSp2Kern300;
-lookup _InsSp2Kern350 { sub @IsoFin by @IsoFin kSp350; } _InsSp2Kern350;
-lookup _InsSp2Kern400 { sub @IsoFin by @IsoFin kSp400; } _InsSp2Kern400;
-lookup _InsSp2Kern450 { sub @IsoFin by @IsoFin kSp450; } _InsSp2Kern450;
-lookup _InsSp2Kern500 { sub @IsoFin by @IsoFin kSp500; } _InsSp2Kern500;
-lookup _InsSp2Kern550 { sub @IsoFin by @IsoFin kSp550; } _InsSp2Kern550;
-lookup _InsSp2Kern600 { sub @IsoFin by @IsoFin kSp600; } _InsSp2Kern600;
-lookup _InsSp2Kern650 { sub @IsoFin by @IsoFin kSp650; } _InsSp2Kern650;
-lookup _InsSp2Kern700 { sub @IsoFin by @IsoFin kSp700; } _InsSp2Kern700;
-lookup _InsSp2Kern750 { sub @IsoFin by @IsoFin kSp750; } _InsSp2Kern750;
-lookup _InsSp2Kern800 { sub @IsoFin by @IsoFin kSp800; } _InsSp2Kern800;
-lookup _InsSp2Kern850 { sub @IsoFin by @IsoFin kSp850; } _InsSp2Kern850;
-lookup _InsSp2Kern900 { sub @IsoFin by @IsoFin kSp900; } _InsSp2Kern900;
-lookup _InsSp2Kern950 { sub @IsoFin by @IsoFin kSp950; } _InsSp2Kern950;
-lookup _InsSp2Kern1000 { sub @IsoFin by @IsoFin kSp1000; } _InsSp2Kern1000;
-lookup _InsSp2Kern1050 { sub @IsoFin by @IsoFin kSp1050; } _InsSp2Kern1050;
-lookup _InsSp2Kern1100 { sub @IsoFin by @IsoFin kSp1100; } _InsSp2Kern1100;
-lookup _InsSp2Kern1150 { sub @IsoFin by @IsoFin kSp1150; } _InsSp2Kern1150;
-lookup _InsSp2Kern1200 { sub @IsoFin by @IsoFin kSp1200; } _InsSp2Kern1200;
-lookup _InsSp2Kern1250 { sub @IsoFin by @IsoFin kSp1250; } _InsSp2Kern1250;
-lookup _InsSp2Kern1300 { sub @IsoFin by @IsoFin kSp1300; } _InsSp2Kern1300;
-lookup _InsSp2Kern1350 { sub @IsoFin by @IsoFin kSp1350; } _InsSp2Kern1350;
-lookup _InsSp2Kern1400 { sub @IsoFin by @IsoFin kSp1400; } _InsSp2Kern1400;
-lookup _InsSp2Kern1450 { sub @IsoFin by @IsoFin kSp1450; } _InsSp2Kern1450;
-lookup _InsSp2Kern1500 { sub @IsoFin by @IsoFin kSp1500; } _InsSp2Kern1500;
-lookup _InsSp2Kern1550 { sub @IsoFin by @IsoFin kSp1550; } _InsSp2Kern1550;
-lookup _InsSp2Kern1600 { sub @IsoFin by @IsoFin kSp1600; } _InsSp2Kern1600;
-lookup _InsSp2Kern1650 { sub @IsoFin by @IsoFin kSp1650; } _InsSp2Kern1650;
-lookup _InsSp2Kern1700 { sub @IsoFin by @IsoFin kSp1700; } _InsSp2Kern1700;
-lookup _InsSp2Kern1750 { sub @IsoFin by @IsoFin kSp1750; } _InsSp2Kern1750;
-lookup _InsSp2Kern1800 { sub @IsoFin by @IsoFin kSp1800; } _InsSp2Kern1800;
-lookup _InsSp2Kern1850 { sub @IsoFin by @IsoFin kSp1850; } _InsSp2Kern1850;
-lookup _InsSp2Kern1900 { sub @IsoFin by @IsoFin kSp1900; } _InsSp2Kern1900;
-lookup _InsSp2Kern1950 { sub @IsoFin by @IsoFin kSp1950; } _InsSp2Kern1950;
-lookup _InsSp2Kern2000 { sub @IsoFin by @IsoFin kSp2000; } _InsSp2Kern2000;
-lookup _InsSp2Kern2050 { sub @IsoFin by @IsoFin kSp2050; } _InsSp2Kern2050;
-lookup _InsSp2Kern2100 { sub @IsoFin by @IsoFin kSp2100; } _InsSp2Kern2100;
-lookup _InsSp2Kern2150 { sub @IsoFin by @IsoFin kSp2150; } _InsSp2Kern2150;
-lookup _InsSp2Kern2200 { sub @IsoFin by @IsoFin kSp2200; } _InsSp2Kern2200;
-lookup _InsSp2Kern2250 { sub @IsoFin by @IsoFin kSp2250; } _InsSp2Kern2250;
-lookup _InsSp2Kern2300 { sub @IsoFin by @IsoFin kSp2300; } _InsSp2Kern2300;
-lookup _InsSp2Kern2350 { sub @IsoFin by @IsoFin kSp2350; } _InsSp2Kern2350;
-lookup _InsSp2Kern2400 { sub @IsoFin by @IsoFin kSp2400; } _InsSp2Kern2400;
-
-lookup _PreventKernUnder { sub @IsoFin by @IsoFin kblockHard; } _PreventKernUnder;
+lookup _PreventKernUnder { sub @IniWKafBase by kblockHard @IniWKafBase; } _PreventKernUnder;
 
 
 #--- wide forms and small forms ---
@@ -1450,26 +1403,16 @@ lookup DeleteBogus {
 } DeleteBogus;
 
 
-lookup Space2Mark {		# so Space4BariyehKern can ignore it
-	lookupflag 0;
-	sub space by mkSpace;
-} Space2Mark;
-
-lookup Space4BariyehKern {
+lookup Kern4BariyehTail {
 	lookupflag IgnoreMarks;
 
 	# Special cases:
-	sub @IsoFin' lookup _InsSp2Kern800	[absKehehIni absGafIni] absLamMed.by;	# 400
+	sub [absKehehIni absGafIni]' lookup _ByKern800	absLamMed.by;	# 400
 
 	# Default auto-generated rules:
 	include(../../source/opentype/bariyehKernRules.feax);
 
-} Space4BariyehKern;
-
-lookup SpaceMark2Space {	# undo SpaceMark2Space
-	lookupflag 0;
-	sub mkSpace by space;
-} SpaceMark2Space;
+} Kern4BariyehTail;
 
 
 @RehWawDalAlef = [absReh absRehFin._jkl absWaw absWawFin absDal absDalFin @AlefForms];
@@ -1496,6 +1439,7 @@ lookup HandFixBariyehKern {
 									by	@IsoFin kw0;
 } HandFixBariyehKern;
 
+
 } calt;	 # end of feature
 
 # --- Collision fixing ---
@@ -1505,12 +1449,8 @@ include(../../source/opentype/collfix_inc.feax);
 feature calt {
 script arab;
 
-########include(../../source/opentype/collfix.feax);
+include(../../source/opentype/collfix.feax);
 
-# lookup TempFix {
-# 	lookupflag UseMarkFilteringSet [@NuqtaLike @Diac];
-# 	sub absKehehIni.beM1_base nlqZair' lookup _ShiftE200  absBehMed.beM2' _dot2l' lookup _ShiftS200;
-# } TempFix;
 
 } calt;
 
@@ -1531,10 +1471,25 @@ include(../../source/opentype/autokern.feax);
 # We need some hand-kerning even when doing auto-kerning.
 include(../../source/opentype/handkern.feax);
 
+#do	if AutoKern() == 1; {
+#	lookup KernDebug {
+#		lookupflag 0;
+#		#sub ...
+#	} KernDebug;
+#}
+
 do	if AutoKern() == 0; {
 	# And we need even more hand-kerning when auto-kerning is turned off.
 	include(../../source/opentype/handkernextra.feax);
+
+#	lookup KernDebug {
+#		lookupflag 0;
+#		sub absRehFin._jkl'  absBehIni.sn _dot2u  absSeenFin  by  absRehFin._jkl  ytIgnore kw800;
+#		sub absAlef'         absSeenIni.mm absMeemMed.beM2 absBehMed _dot1l absLamMed.ch     by  absAlef  ybLast  kw400;
+#	} KernDebug;
+
 }
+
 
 } calt;
 
@@ -1810,6 +1765,12 @@ script arab;
 feature kern {
 script arab;
 
+
+#lookup TempTest {
+#	lookupflag 0;
+#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
+#} TempTest;
+
 lookup ShiftNuqtasNS {
 	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
 	pos @Shiftable' <0  100 0 0> cfN100;
@@ -1849,7 +1810,21 @@ lookup DoKerning {
 
 do	if AutoKern() == 1; {
 	# For auto-kerning, it helps to just loosen everything up a little.
-	pos @GDEF_bases <1050 0 1050 0> kwN1000;
+	pos @GDEF_bases <2400 0 2400 0> kwN2400;
+	pos @GDEF_bases <2300 0 2300 0> kwN2300;
+	pos @GDEF_bases <2200 0 2200 0> kwN2200;
+	pos @GDEF_bases <2100 0 2100 0> kwN2100;
+	pos @GDEF_bases <2000 0 2000 0> kwN2000;
+	pos @GDEF_bases <1900 0 1900 0> kwN1900;
+	pos @GDEF_bases <1800 0 1800 0> kwN1800;
+	pos @GDEF_bases <1700 0 1700 0> kwN1700;
+	pos @GDEF_bases <1600 0 1600 0> kwN1600;
+	pos @GDEF_bases <1500 0 1500 0> kwN1500;
+	pos @GDEF_bases <1400 0 1400 0> kwN1400;
+	pos @GDEF_bases <1300 0 1300 0> kwN1300;
+	pos @GDEF_bases <1200 0 1200 0> kwN1200;
+	pos @GDEF_bases <1100 0 1100 0> kwN1100;
+	pos @GDEF_bases <1000 0 1000 0> kwN1000;
 	pos @GDEF_bases <950 0 950 0> kwN900;
 	pos @GDEF_bases <850 0 850 0> kwN800;
 	pos @GDEF_bases <750 0 750 0> kwN700;
@@ -1880,6 +1855,20 @@ do	if AutoKern() == 1; {
 
 do	if AutoKern() != 1; {
 	# Standard kerning
+	pos @GDEF_bases <2400 0 2400 0> kwN2400;
+	pos @GDEF_bases <2300 0 2300 0> kwN2300;
+	pos @GDEF_bases <2200 0 2200 0> kwN2200;
+	pos @GDEF_bases <2100 0 2100 0> kwN2100;
+	pos @GDEF_bases <2000 0 2000 0> kwN2000;
+	pos @GDEF_bases <1900 0 1900 0> kwN1900;
+	pos @GDEF_bases <1800 0 1800 0> kwN1800;
+	pos @GDEF_bases <1700 0 1700 0> kwN1700;
+	pos @GDEF_bases <1600 0 1600 0> kwN1600;
+	pos @GDEF_bases <1500 0 1500 0> kwN1500;
+	pos @GDEF_bases <1400 0 1400 0> kwN1400;
+	pos @GDEF_bases <1300 0 1300 0> kwN1300;
+	pos @GDEF_bases <1200 0 1200 0> kwN1200;
+	pos @GDEF_bases <1100 0 1100 0> kwN1100;
 	pos @GDEF_bases <1000 0 1000 0> kwN1000;
 	pos @GDEF_bases <900 0 900 0> kwN900;
 	pos @GDEF_bases <800 0 800 0> kwN800;

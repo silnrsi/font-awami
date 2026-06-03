@@ -65,11 +65,19 @@ lookup UndoInitMetricsKludge {
 
 
 # Don't allow kerning before bariyeh with overhanging tail.
-lookup PreventPreBariyehKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
-	# Don't delete the kw0; other places in the system expect it to be present after a final.
-	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblockHard kw0;
-} PreventPreBariyehKern;
+#lookup PreventPreBariyehKern {
+#	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMark];
+#	# Don't delete the kw0; other places in the system expect it to be present after a final.
+#	sub  kw0'  [@ByKernSpace @BariyehIsoForms]		by	kblockHard kw0;
+#} PreventPreBariyehKern;
+
+# Patch bariyeh tail kerning
+lookup PatchBariyehKerning {
+	lookupflag UseMarkFilteringSet [@KwMarker kblockHard @KernBaseMark];
+
+	sub kw0' kblockHard' @KwMarker	by	kblockHard;
+} PatchBariyehKerning;
+
 
 # The backswash of the jeem underhangs not only the previous character, but sometimes the one before that too.
 # Lower the last two slice descents accordingly.
@@ -520,6 +528,7 @@ lookup AdjustForBaseOverhang {
 
 } AdjustForBaseOverhang;
 
+
 # This lookup assumes SliceWidth() == 200.
 lookup HandleDscTweak {
 	lookupflag UseMarkFilteringSet [@KernBaseMarkIni @MarkLower @DscMarker];
@@ -530,9 +539,8 @@ lookup HandleDscTweak {
 } HandleDscTweak;
 
 
-# Measure heights
 
-# Note that @PyMarker does NOT include pyNull, which is what forces the backwards processing.
+# Measure heights
 
 # Set the absolute height based on the previous glyph's height plus the delta y.
 lookup MeasureBaseY {
@@ -633,6 +641,7 @@ lookup SubtractNuqtaDescent {
 	
 } SubtractNuqtaDescent;
 
+
 # CURRENTLY HANDLED BY InitKernMetricsSpecial
 
 # TODO: fill out this class:
@@ -666,13 +675,15 @@ lookup SubtractNuqtaDescent {
 #} HandleFinalBackswash2;
 
 
+# Make ascent and descent absolute.
+
 include(../../source/opentype/arithTopLevel.feax);
 # -----------------    ^^^ This file includes the following:
 
 # Convert markers yt/yb back to asc/dsc
 #lookup MarkersYtb2AscDsc
 
-# These are flattened for the sake of performance.
+# These lookups are flattened for the sake of performance.
 # lookup MakeAscentAbsolute;
 #  lookupflag UseMarkFilteringSet [@PyMarker @AscMarker];
 #  sub py0  asc100' lookup _Set100;
@@ -689,7 +700,7 @@ include(../../source/opentype/arithTopLevel.feax);
 #  ...
 #} MakeDescentAbsolute;
 
-# -------------------------------------------------------------------------
+#---------------------------------- ^^^ -----------------------------------
 
 # Extend the slices below to account for the width of an overhanging nuqta.
 lookup ExtendForNuqtaOverhang {
