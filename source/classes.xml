@@ -1369,7 +1369,7 @@ details including an FAQ.
 		_noDot1u _noDot2u
 	</class>
 	<class name="NuqtaLikeLower">
-		@NuqtaLower _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow 
+		@NuqtaLower absHamzaBelow _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow 
 		_smallVinvBelow _ring  _attachedRing _smallFourBelow
 		_dot2lIM  _dot2lIM.small _dot2l.tail
 		_noDot2l _noDot2l.small
@@ -1437,6 +1437,39 @@ details including an FAQ.
 	<class name="Mark">@MarkUpper @MarkLower @MarkMiddle</class>
 
 	<class name="ByShim">_byShim1 _byShim2 _byShim3</class>
+
+	<!-- ================================== -->
+	<!--  ALLAH LIGATURE and SHADDA COMBOS  -->
+	<!-- ================================== -->
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="AlefNoAllah">absAlef absAlefFin</class>
+	<class name="AlefAllah">absAlef_allah absAlefFin_allah</class>
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="Lam1NoAllah">absLamIni absLamMed</class>
+	<class name="Lam1Allah">absLamIni_allah1 absLamMed_allah1</class>
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="HehNoAllah">absHehGoalFin</class>
+	<class name="HehAllah">absHehFin_allah</class>
+
+	<class name="AlefNoAllahIsol">absAlef absAlefWasla</class>
+
+	<class name="KasraInAllah">nlqZair</class>
+
+	<!-- *If we add these ligatures, the next 2 classes must match* -->
+	<class name="ShaddaKasraMarks">nlqZair nlqDozair</class>
+	<!-- <class name="ShaddaKasraLigatures">_shadda_zair _shadda_dozair</class> -->
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="ShaddaMarks">nlqZabar nlqPesh nlqDozabar nlqDopesh</class>
+	<class name="ShaddaLigatures">_shadda_zabar _shadda_pesh _shadda_dozabar _shadda_dopesh</class>
+
+	<class name="ShaddaLigatureParts">
+		@ShaddaMarks nlqDopesh nlqPesh absShadda
+		<!-- graphemejoinercomb -->
+	</class>
 
 	<!-- ================== -->
 	<!--  COLLISION FIXING  -->

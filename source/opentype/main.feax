@@ -25,7 +25,7 @@ def SliceWidth() {
 
 #====================  CLASSES  ====================
 
-# Currently most classes are defined in classes.xml 
+# Currently most classes are defined in classes.xml.
 
 include(../../source/opentype/bariyehKernClasses.feax);
 include(../../source/opentype/arithClasses.feax);
@@ -70,54 +70,54 @@ lookup FontCheck {
 #--- bariyeh kerning ---
 
 # TODO: decide if we need 150, 250, 350, etc.
-lookup _ByKern50 { sub @IniWKafBase by kblockHard kwN100 @IniWKafBase; } _ByKern50;
-lookup _ByKern100 { sub @IniWKafBase by kblockHard kwN100 @IniWKafBase; } _ByKern100;
-lookup _ByKern150 { sub @IniWKafBase by kblockHard kwN200 @IniWKafBase; } _ByKern150;
-lookup _ByKern200 { sub @IniWKafBase by kblockHard kwN200 @IniWKafBase; } _ByKern200;
-lookup _ByKern250 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern250;
-lookup _ByKern300 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern300;
-lookup _ByKern350 { sub @IniWKafBase by kblockHard kwN300 @IniWKafBase; } _ByKern350;
-lookup _ByKern400 { sub @IniWKafBase by kblockHard kwN400 @IniWKafBase; } _ByKern400;
-lookup _ByKern450 { sub @IniWKafBase by kblockHard kwN400 @IniWKafBase; } _ByKern450;
-lookup _ByKern500 { sub @IniWKafBase by kblockHard kwN500 @IniWKafBase; } _ByKern500;
-lookup _ByKern550 { sub @IniWKafBase by kblockHard kwN500 @IniWKafBase; } _ByKern550;
-lookup _ByKern600 { sub @IniWKafBase by kblockHard kwN600 @IniWKafBase; } _ByKern600;
-lookup _ByKern650 { sub @IniWKafBase by kblockHard kwN600 @IniWKafBase; } _ByKern650;
-lookup _ByKern700 { sub @IniWKafBase by kblockHard kwN700 @IniWKafBase; } _ByKern700;
-lookup _ByKern750 { sub @IniWKafBase by kblockHard kwN700 @IniWKafBase; } _ByKern750;
-lookup _ByKern800 { sub @IniWKafBase by kblockHard kwN800 @IniWKafBase; } _ByKern800;
-lookup _ByKern850 { sub @IniWKafBase by kblockHard kwN800 @IniWKafBase; } _ByKern850;
-lookup _ByKern900 { sub @IniWKafBase by kblockHard kwN900 @IniWKafBase; } _ByKern900;
-lookup _ByKern950 { sub @IniWKafBase by kblockHard kwN900 @IniWKafBase; } _ByKern950;
-lookup _ByKern1000 { sub @IniWKafBase by kblockHard kwN1000 @IniWKafBase; } _ByKern1000;
-lookup _ByKern1050 { sub @IniWKafBase by kblockHard kwN1000 @IniWKafBase; } _ByKern1050;
-lookup _ByKern1100 { sub @IniWKafBase by kblockHard kwN1100 @IniWKafBase; } _ByKern1100;
-lookup _ByKern1150 { sub @IniWKafBase by kblockHard kwN1100 @IniWKafBase; } _ByKern1150;
-lookup _ByKern1200 { sub @IniWKafBase by kblockHard kwN1200 @IniWKafBase; } _ByKern1200;
-lookup _ByKern1250 { sub @IniWKafBase by kblockHard kwN1200 @IniWKafBase; } _ByKern1250;
-lookup _ByKern1300 { sub @IniWKafBase by kblockHard kwN1300 @IniWKafBase; } _ByKern1300;
-lookup _ByKern1350 { sub @IniWKafBase by kblockHard kwN1300 @IniWKafBase; } _ByKern1350;
-lookup _ByKern1400 { sub @IniWKafBase by kblockHard kwN1400 @IniWKafBase; } _ByKern1400;
-lookup _ByKern1450 { sub @IniWKafBase by kblockHard kwN1400 @IniWKafBase; } _ByKern1450;
-lookup _ByKern1500 { sub @IniWKafBase by kblockHard kwN1500 @IniWKafBase; } _ByKern1500;
-lookup _ByKern1550 { sub @IniWKafBase by kblockHard kwN1500 @IniWKafBase; } _ByKern1550;
-lookup _ByKern1600 { sub @IniWKafBase by kblockHard kwN1600 @IniWKafBase; } _ByKern1600;
-lookup _ByKern1650 { sub @IniWKafBase by kblockHard kwN1600 @IniWKafBase; } _ByKern1650;
-lookup _ByKern1700 { sub @IniWKafBase by kblockHard kwN1700 @IniWKafBase; } _ByKern1700;
-lookup _ByKern1750 { sub @IniWKafBase by kblockHard kwN1700 @IniWKafBase; } _ByKern1750;
-lookup _ByKern1800 { sub @IniWKafBase by kblockHard kwN1800 @IniWKafBase; } _ByKern1800;
-lookup _ByKern1850 { sub @IniWKafBase by kblockHard kwN1800 @IniWKafBase; } _ByKern1850;
-lookup _ByKern1900 { sub @IniWKafBase by kblockHard kwN1900 @IniWKafBase; } _ByKern1900;
-lookup _ByKern1950 { sub @IniWKafBase by kblockHard kwN1900 @IniWKafBase; } _ByKern1950;
-lookup _ByKern2000 { sub @IniWKafBase by kblockHard kwN2000 @IniWKafBase; } _ByKern2000;
-lookup _ByKern2050 { sub @IniWKafBase by kblockHard kwN2000 @IniWKafBase; } _ByKern2050;
-lookup _ByKern2100 { sub @IniWKafBase by kblockHard kwN2100 @IniWKafBase; } _ByKern2100;
-lookup _ByKern2150 { sub @IniWKafBase by kblockHard kwN2100 @IniWKafBase; } _ByKern2150;
-lookup _ByKern2200 { sub @IniWKafBase by kblockHard kwN2200 @IniWKafBase; } _ByKern2200;
-lookup _ByKern2250 { sub @IniWKafBase by kblockHard kwN2200 @IniWKafBase; } _ByKern2250;
-lookup _ByKern2300 { sub @IniWKafBase by kblockHard kwN2300 @IniWKafBase; } _ByKern2300;
-lookup _ByKern2350 { sub @IniWKafBase by kblockHard kwN2300 @IniWKafBase; } _ByKern2350;
-lookup _ByKern2400 { sub @IniWKafBase by kblockHard kwN2400 @IniWKafBase; } _ByKern2400;
+lookup _ByKern50 { sub @IniWKafBase by kwN100 @IniWKafBase; } _ByKern50;
+lookup _ByKern100 { sub @IniWKafBase by kwN100 @IniWKafBase; } _ByKern100;
+lookup _ByKern150 { sub @IniWKafBase by kwN200 @IniWKafBase; } _ByKern150;
+lookup _ByKern200 { sub @IniWKafBase by kwN200 @IniWKafBase; } _ByKern200;
+lookup _ByKern250 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern250;
+lookup _ByKern300 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern300;
+lookup _ByKern350 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern350;
+lookup _ByKern400 { sub @IniWKafBase by kwN400 @IniWKafBase; } _ByKern400;
+lookup _ByKern450 { sub @IniWKafBase by kwN400 @IniWKafBase; } _ByKern450;
+lookup _ByKern500 { sub @IniWKafBase by kwN500 @IniWKafBase; } _ByKern500;
+lookup _ByKern550 { sub @IniWKafBase by kwN500 @IniWKafBase; } _ByKern550;
+lookup _ByKern600 { sub @IniWKafBase by kwN600 @IniWKafBase; } _ByKern600;
+lookup _ByKern650 { sub @IniWKafBase by kwN600 @IniWKafBase; } _ByKern650;
+lookup _ByKern700 { sub @IniWKafBase by kwN700 @IniWKafBase; } _ByKern700;
+lookup _ByKern750 { sub @IniWKafBase by kwN700 @IniWKafBase; } _ByKern750;
+lookup _ByKern800 { sub @IniWKafBase by kwN800 @IniWKafBase; } _ByKern800;
+lookup _ByKern850 { sub @IniWKafBase by kwN800 @IniWKafBase; } _ByKern850;
+lookup _ByKern900 { sub @IniWKafBase by kwN900 @IniWKafBase; } _ByKern900;
+lookup _ByKern950 { sub @IniWKafBase by kwN900 @IniWKafBase; } _ByKern950;
+lookup _ByKern1000 { sub @IniWKafBase by kwN1000 @IniWKafBase; } _ByKern1000;
+lookup _ByKern1050 { sub @IniWKafBase by kwN1000 @IniWKafBase; } _ByKern1050;
+lookup _ByKern1100 { sub @IniWKafBase by kwN1100 @IniWKafBase; } _ByKern1100;
+lookup _ByKern1150 { sub @IniWKafBase by kwN1100 @IniWKafBase; } _ByKern1150;
+lookup _ByKern1200 { sub @IniWKafBase by kwN1200 @IniWKafBase; } _ByKern1200;
+lookup _ByKern1250 { sub @IniWKafBase by kwN1200 @IniWKafBase; } _ByKern1250;
+lookup _ByKern1300 { sub @IniWKafBase by kwN1300 @IniWKafBase; } _ByKern1300;
+lookup _ByKern1350 { sub @IniWKafBase by kwN1300 @IniWKafBase; } _ByKern1350;
+lookup _ByKern1400 { sub @IniWKafBase by kwN1400 @IniWKafBase; } _ByKern1400;
+lookup _ByKern1450 { sub @IniWKafBase by kwN1400 @IniWKafBase; } _ByKern1450;
+lookup _ByKern1500 { sub @IniWKafBase by kwN1500 @IniWKafBase; } _ByKern1500;
+lookup _ByKern1550 { sub @IniWKafBase by kwN1500 @IniWKafBase; } _ByKern1550;
+lookup _ByKern1600 { sub @IniWKafBase by kwN1600 @IniWKafBase; } _ByKern1600;
+lookup _ByKern1650 { sub @IniWKafBase by kwN1600 @IniWKafBase; } _ByKern1650;
+lookup _ByKern1700 { sub @IniWKafBase by kwN1700 @IniWKafBase; } _ByKern1700;
+lookup _ByKern1750 { sub @IniWKafBase by kwN1700 @IniWKafBase; } _ByKern1750;
+lookup _ByKern1800 { sub @IniWKafBase by kwN1800 @IniWKafBase; } _ByKern1800;
+lookup _ByKern1850 { sub @IniWKafBase by kwN1800 @IniWKafBase; } _ByKern1850;
+lookup _ByKern1900 { sub @IniWKafBase by kwN1900 @IniWKafBase; } _ByKern1900;
+lookup _ByKern1950 { sub @IniWKafBase by kwN1900 @IniWKafBase; } _ByKern1950;
+lookup _ByKern2000 { sub @IniWKafBase by kwN2000 @IniWKafBase; } _ByKern2000;
+lookup _ByKern2050 { sub @IniWKafBase by kwN2000 @IniWKafBase; } _ByKern2050;
+lookup _ByKern2100 { sub @IniWKafBase by kwN2100 @IniWKafBase; } _ByKern2100;
+lookup _ByKern2150 { sub @IniWKafBase by kwN2100 @IniWKafBase; } _ByKern2150;
+lookup _ByKern2200 { sub @IniWKafBase by kwN2200 @IniWKafBase; } _ByKern2200;
+lookup _ByKern2250 { sub @IniWKafBase by kwN2200 @IniWKafBase; } _ByKern2250;
+lookup _ByKern2300 { sub @IniWKafBase by kwN2300 @IniWKafBase; } _ByKern2300;
+lookup _ByKern2350 { sub @IniWKafBase by kwN2300 @IniWKafBase; } _ByKern2350;
+lookup _ByKern2400 { sub @IniWKafBase by kwN2400 @IniWKafBase; } _ByKern2400;
 
 lookup _PreventKernUnder { sub @IniWKafBase by kblockHard @IniWKafBase; } _PreventKernUnder;
 
@@ -432,11 +432,45 @@ lookup _AttByRight {
 } _AttByRight;
 
 lookup _DeleteShim {
-	# Replacing with NULL does not work in MS Word.
+	# Replacing with NULL does not work in MS Word. Do we need to do this?
 	sub _byShim1  by  bogus;
 	sub _byShim2  by  bogus;
 	sub _byShim3  by  bogus;
 } _DeleteShim; 
+
+
+# Allah ligature
+
+lookup _AllahSub_Alef {
+    sub @AlefNoAllah  by  @AlefAllah;
+} _AllahSub_Alef ;
+
+lookup _AllahSub_Lam1 {
+    sub @Lam1NoAllah  by  @Lam1Allah;
+} _AllahSub_Lam1 ;
+
+lookup _AllahSub_Lam2 {
+    sub absLamMed     by absLamMed_allah2;
+} _AllahSub_Lam2 ;
+
+lookup _AllahSub_Lam2_insertSA {    # insert shadda-alef
+	lookupflag 0;
+	sub absLamMed  by  absLamMed_allah2  _shadda_kharizabar;  # the Allah form of the shadda+alef is created later in ShaddaAlefLigatures
+} _AllahSub_Lam2_insertSA ;
+
+lookup _AllahSub_Heh {
+    sub @HehNoAllah  by  @HehAllah;
+} _AllahSub_Heh ;
+
+lookup _AllahSub_SAHeh {
+    # This rule is the same as previous but handles the case where a shadda-alef glyph has been inserted.
+    # Inserted glyphs result in the target lookup being applied to the inserted glyph instead of the heh that follows.
+    sub _shadda_kharizabar' @HehNoAllah' lookup _AllahSub_Heh;
+} _AllahSub_SAHeh;
+
+lookup _AllahSub_Shadda_insertA {
+    sub absShadda     by   _shadda_kharizabar;  # the Allah form of the shadda+alef is created later in ShaddaAlefLigatures
+} _AllahSub_Shadda_insertA ;
 
 
 #====================  GSUB features  ====================
@@ -447,6 +481,11 @@ feature ccmp {
 lookup FontCheck;		# both latn and arab
 
 script arab;
+
+lookup Heh2HehGoal {
+	sub	absHeh	by	absHehGoal;
+} Heh2HehGoal;
+
 lookup DecomposeBases {
 	
 
@@ -493,7 +532,10 @@ lookup RecomposeIsolates {
 	sub		absHehGoal				@HehGoalMark_sub		by		@HehGoalComposed_sub;
 	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
 	sub		nlqChotiyeh				@ChotiyehMark_sub		by		@ChotiyehComposed_sub;
-	sub		absAlef					@AlefMark_sub			by		@AlefComposed_sub;
+
+	# Don't recompose alefs until after we've handled the Allah ligature.
+	#sub	absAlef					@AlefMark_sub			by		@AlefComposed_sub;
+
 	sub		absDal					@DalMark_sub			by		@DalComposed_sub;
 	sub		absReh					@RehMark_sub			by		@RehComposed_sub;
 	sub		absWaw					@WawMark_sub			by		@WawComposed_sub;
@@ -591,6 +633,139 @@ lookup InitialForms {
 feature rlig {
 script arab;
 
+# Allah
+
+# The Allah is formed by variant forms for glyphs rather than by ligature glyphs.
+
+# We implement the rules described in UTN #46 Rendering the Allah ligature, which are (with additional indentifiers):
+#
+#  A sequence of lam+lam+heh should be rendered with the ligature form if all the following conditions are met:
+#    1. One or both of the following are true:
+#      a. the sequence is immediately preceded by an isolate alef
+#      b. a shadda follows the second lam
+#    2. Characters immediately preceding the first lam, if any, may have marks.
+#    3. The first lam may include a kasra (zair) (0650), but no other marks
+#    4. The shadda may be followed or preceded by either a superscript-alef (kharizabar) or a fatha (zabar) but no other marks.
+#    5. The heh must be final form and may have marks
+# For the purposes of the above rules:
+#    6. alef can be any alef-like character, including alef, alef-hamza, alef-hamza-below, alef-madda, alefwasla, etc.
+#    7. heh can be either heh (0647) or heh-goal (06C1)
+# Additional:
+#    8. If there is an isolate alef but no marks on the second lam then shadda superscript-alef should be displayed on that lam.
+#    9. To disable the special rendering, insert a zero-width-joiner (200D) somewhere in the sequence.
+#    10. U+FDF2 should always display as if it were initial alef lam lam shadda superscript-alef final heh.`
+#
+# The rule numbers will be used in the comments below.
+
+# Note:
+# The shadda-alef ligature is created later in a separate lookup - ShaddaAlefLigatures.
+# Also the special form of the alef is created later (except in the case of Rule 1a) - lookup AllahAlef -
+# in order to allow for the lam-alef ligature exception.
+
+lookup AllahLigatures {
+	lookupflag 0;
+
+    # Rule 1a+6+8: alefIso-[marks]-lam-lam-heh (no shadda-alef)
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        absLamIni'          lookup _AllahSub_Lam1
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        @Mark'
+        absLamIni'          lookup _AllahSub_Lam1
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        @Mark'
+        @Mark'
+        absLamIni'          lookup _AllahSub_Lam1
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    # Rule 1a+3+6+8: alefIso-[marks]-lam-kasra-lam-heh (no shadda-alef)
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        absLamIni'          lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        @Mark'
+        absLamIni'          lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    sub @AlefNoAllahIsol'   lookup _AllahSub_Alef
+        @Mark'
+        @Mark'
+        absLamIni'          lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'          lookup _AllahSub_Lam2_insertSA
+        @HehNoAllah'        lookup _AllahSub_SAHeh;
+
+    # Rule 1b+4: lam-lam-shadda-kharizabar/zabar-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        absLamMed'               lookup _AllahSub_Lam2
+        absShadda'
+        [nlqKharizabar nlqZabar]'
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+    # Rule 1b+4: lam-lam-kharizabar/fatha-shadda-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        absLamMed'               lookup _AllahSub_Lam2
+        [nlqKharizabar nlqZabar]'
+        absShadda'
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+    # Rule 1b: lam-lam-shadda-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        absLamMed'               lookup _AllahSub_Lam2
+        absShadda'               lookup _AllahSub_Shadda_insertA
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+    # Rule 1b+3+4: lam-kasra-lam-shadda-kharizabar/zabar-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'               lookup _AllahSub_Lam2
+        absShadda'
+        [nlqKharizabar nlqZabar]'
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+    # Rule 1b+3+4: lam-kasra-kharizabar/zabar-lam-shadda-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'               lookup _AllahSub_Lam2
+        [nlqKharizabar nlqZabar]'
+        absShadda'
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+    # Rule 1b+3: lam-kasra-lam-shadda-heh
+    sub @Lam1NoAllah'            lookup _AllahSub_Lam1
+        @KasraInAllah'
+        absLamMed'               lookup _AllahSub_Lam2
+        absShadda'               lookup _AllahSub_Shadda_insertA
+        @HehNoAllah'             lookup _AllahSub_Heh;
+
+} AllahLigatures;
+
+@ShaddaLigatureFilter = [ @ShaddaMarks @ShaddaKasraMarks absShadda 
+      # All the remaining are to prevent ligature formation if they are between shadda and the mark:
+      nlqKharizabar # graphemejoinercomb
+      # Note: The following are unlikely in real life, but UTR53's "Artificial test case" has one:
+      #fathasmall-ar dammasmall-ar openfathatan-ar opendammatan-ar  
+];
+
+# In theory we could do this up where we create the Allah ligature, but this simpler:
+lookup ShaddaAlefLigatures {
+	lookupflag UseMarkFilteringSet @ShaddaLigatureFilter;
+
+    sub absLamMed_allah2 absShadda'		nlqKharizabar'	by  _shadda_kharizabar_allah;
+    sub absLamMed_allah2 nlqKharizabar'	absShadda'		by  _shadda_kharizabar_allah;
+} ShaddaAlefLigatures ;
+
 # Forms that need two slots for the pre-context.
 lookup DoublePreContext {
 	lookupflag IgnoreMarks;
@@ -598,13 +773,19 @@ lookup DoublePreContext {
 	sub @IniDefault_sub'	@BehForms absNoonFin		by	@IniBeNn_sub;
 	sub @MedDefault_sub'	@BehForms absNoonFin		by	@MedBeNn_sub;
 	
-	sub @IniDefault_sub' @BehForms absRehFin			by	@IniBeRe_sub;
-	sub @MedDefault_sub' @BehForms absRehFin			by	@MedBeRe_sub;
+	sub @IniDefault_sub' 	@BehForms absRehFin			by	@IniBeRe_sub;
+	sub @MedDefault_sub' 	@BehForms absRehFin			by	@MedBeRe_sub;
 	
-	sub @IniDefault_sub' @BehForms absHehGoalFin	by	@IniBeHg_sub;
-	sub @MedDefault_sub' @BehForms absHehGoalFin	by	@MedBeHg_sub;
+	sub @IniDefault_sub' 	@BehForms absHehGoalFin	by	@IniBeHg_sub;
+	sub @MedDefault_sub' 	@BehForms absHehGoalFin	by	@MedBeHg_sub;
 
 } DoublePreContext;
+
+
+# We delayed doing this in the 'isol' feature until after the Allah was created.
+lookup RecomposeAlefIsol {
+	sub	absAlef			@AlefMark_sub		by		@AlefComposed_sub;
+} RecomposeAlefIsol;
 
 
 lookup BasicContextuals {
@@ -798,6 +979,14 @@ lookup SpecialContextuals {
 	sub [absBehIni.beM2 absBehMed.behg]		absBehMed.hgF'		absHehGoalFin		by		absBehMed.hgF_be;
 	
 } SpecialContextuals;
+
+
+# Must happen after the lam-alef ligature is formed:
+lookup AllahAlef {  # clean up: make sure alef is correct form for Allah
+	lookupflag IgnoreMarks;
+	sub @AlefNoAllah'  absLamIni_allah1  by  @AlefAllah;
+} AllahAlef ;
+
 
 
 @KafKfNormal = [absKehehIni.kf      absGafIni.kf      absKehehMed.dk      absGafMed.dk];
@@ -1178,6 +1367,7 @@ lookup CleanupsDelete {
 	# delete hehhook from final hehgoals:
 	#sub  @HehGoalMedForms'	_hehHook.small'		by		@HehGoalMedForms;  # eventually controlled by a user feature
 	sub  absHehGoalFin'		_hehHook.small'		by		absHehGoalFin;
+	sub  absHehFin_allah'	_hehHook.small'		by		absHehFin_allah;
 	
 	# delete non-existent nuqtas:
 	# TODO: merge into one rule?
@@ -1415,28 +1605,106 @@ lookup Kern4BariyehTail {
 } Kern4BariyehTail;
 
 
+# --------------------------------------------------------------
+# This is annoying kludge that is needed for MS Word/DirectWrite. It is picky about which glyph is
+# at the start of a character cluster. So we need to shift the KwMarker from the start of the initial
+# cluster back to the end of the previous final/isolate/space. Otherwise the diacritic gets attached 
+# to the KwMarker instead of the kaf base. 
+# It would make more sense to insert the KwMarker after the final to begin with, but it seemed like 
+# there were signficant performance problems when I did that.
+
+# NOTE: The case with a space after the previous segment does not work in Word, although it does in DWBox.
+
+# Duplicate the kerning marker on the previous final:
+lookup WordKludgeByKern_Dup {
+	lookupflag 0;
+
+do	forlet i = range(200, 2500, 100);
+	let kw = "kwN" + str(i);
+{
+	sub @IsoFin'	$kw  @Initials			by  @IsoFin	kblockHard $kw;
+	sub space'		$kw  @Initials			by  space	kblockHard $kw;
+	sub @IsoFin'	$kw  @KehehIniBase_sub	by  @IsoFin	kblockHard $kw;
+	sub space'		$kw  @KehehIniBase_sub	by  space	kblockHard $kw;
+}
+
+	# Preventing kerning:
+	sub @IsoFin'	kblockHard	@Initials			by	@IsoFin	kblockHard;
+	sub space'		kblockHard	@Initials			by	space	kblockHard;
+	sub @IsoFin'	kblockHard	@KehehIniBase_sub	by	@IsoFin	kblockHard;
+	sub space'		kblockHard	@KehehIniBase_sub	by	space	kblockHard;
+
+} WordKludgeByKern_Dup;
+
+# Then delete the extra marker:
+lookup WordKludgeByKern_Del {
+	lookupflag UseMarkFilteringSet [@KwMarker kblockHard];
+						# @Initials \/ \/ \/
+    sub @KwMarker @KwMarker'	@BehIniForms'	by @BehIniForms;
+	sub kblockHard kblockHard'	@BehIniForms'	by @BehIniForms;
+    sub @KwMarker @KwMarker'	@JeemIniForms'	by @JeemIniForms;
+	sub kblockHard kblockHard'	@JeemIniForms'	by @JeemIniForms;
+    sub @KwMarker @KwMarker'	@SeenIniForms'	by @SeenIniForms;
+	sub kblockHard kblockHard'	@SeenIniForms'	by @SeenIniForms;
+    sub @KwMarker @KwMarker'	@SadIniForms'	by @SadIniForms;
+	sub kblockHard kblockHard'	@SadIniForms'	by @SadIniForms;
+    sub @KwMarker @KwMarker'	@TahIniForms'	by @TahIniForms;
+	sub kblockHard kblockHard'	@TahIniForms'	by @TahIniForms;
+    sub @KwMarker @KwMarker'	@AinIniForms'	by @AinIniForms;
+	sub kblockHard kblockHard'	@AinIniForms'	by @AinIniForms;
+    sub @KwMarker @KwMarker'	@FehIniForms'	by @FehIniForms;
+	sub kblockHard kblockHard'	@FehIniForms'	by @FehIniForms;
+    sub @KwMarker @KwMarker'	@KehehIniForms'	by @KehehIniForms;
+	sub kblockHard kblockHard'	@KehehIniForms'	by @KehehIniForms;
+    sub @KwMarker @KwMarker'	@GafIniForms'	by @GafIniForms;
+	sub kblockHard kblockHard'	@GafIniForms'	by @GafIniForms;
+    sub @KwMarker @KwMarker'	@LamIniForms'	by @LamIniForms;
+	sub kblockHard kblockHard'	@LamIniForms'	by @LamIniForms;
+    sub @KwMarker @KwMarker'	@MeemIniForms'		by @MeemIniForms;
+	sub kblockHard kblockHard'	@MeemIniForms'		by @MeemIniForms;
+    sub @KwMarker @KwMarker'	@HehDoIniForms'		by @HehDoIniForms;
+	sub kblockHard kblockHard'	@HehDoIniForms'		by @HehDoIniForms;
+    sub @KwMarker @KwMarker'	@HehGoalIniForms'	by @HehGoalIniForms;
+	sub kblockHard kblockHard'	@HehGoalIniForms'	by @HehGoalIniForms;
+    sub @KwMarker @KwMarker'	@KehehIniBase_sub'	by @KehehIniBase_sub;
+	sub kblockHard kblockHard'	@KehehIniBase_sub'	by @KehehIniBase_sub;
+} WordKludgeByKern_Del;
+
+# -------------- end of Word kludge --------------------
+
+
 @RehWawDalAlef = [absReh absRehFin._jkl absWaw absWawFin absDal absDalFin @AlefForms];
 
 @KafIniHgM = [absKehehIni.hgM absGafIni.hgM absKehehIni.hgM_base];
 
+
 # The automatic calculations aren't quite right for some sequences. Adjust.
 lookup HandFixBariyehKern {
-	lookupflag UseMarkFilteringSet [kSp950];
+	lookupflag UseMarkFilteringSet [@KwMarker];
 
-	sub @IsoFin kSp950' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
-	sub @IsoFin kSp950' space 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
-	sub @IsoFin kSp950' space space	absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kSp500;
+	sub @IsoFin kwN900' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
+	sub @IsoFin space kwN900' 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
+	sub @IsoFin space space	kwN900' absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
 
-	sub @IsoFin					@KafIniHgM'  absHehGoalMed.be absBehMed.by	by	kSp200 @KafIniHgM;
-	sub @IsoFin space			@KafIniHgM'  absHehGoalMed.be absBehMed.by	by	kSp200 @KafIniHgM;
-	sub @IsoFin space space		@KafIniHgM'  absHehGoalMed.be absBehMed.by	by	kSp200 @KafIniHgM;
+	sub @IsoFin kwN1500' 			absFehIni.by	by	kwN1700;
+	sub @IsoFin space kwN1500'		absFehIni.by	by	kwN1700;
 
+	# Is this set needed?
+	sub @IsoFin'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	@IsoFin kwN200;
+	sub @IsoFin space'			@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
+	sub @IsoFin space space'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
+
+	sub @IsoFin kwN200'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
+	sub @IsoFin space kwN200'		@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
+	sub @IsoFin space space kwN200'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
+
+	# Is this set needed?
 	sub @IsoFin'				[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
 									by	@IsoFin kw0;
-	sub @IsoFin'  space			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
-									by	@IsoFin kw0;
-	sub @IsoFin'  space space	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
-									by	@IsoFin kw0;
+	sub @IsoFin  space'			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
+									by	space kw0;
+	sub @IsoFin  space space'	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
+									by	space kw0;
 } HandFixBariyehKern;
 
 
@@ -1507,6 +1775,146 @@ lookup BasicConnections {
 } BasicConnections;
 	
 } curs;			# end of feature
+
+
+feature kern {
+script arab;
+
+#lookup TempTest {
+#	lookupflag 0;
+#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
+#} TempTest;
+
+lookup ShiftNuqtasNS {
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
+	pos @Shiftable' <0  100 0 0> cfN100;
+	pos @Shiftable' <0  200 0 0> cfN200;
+	pos @Shiftable' <0  300 0 0> cfN300;
+	pos @Shiftable' <0  400 0 0> cfN400;
+	pos @Shiftable' <0  500 0 0> cfN500;
+	pos @Shiftable' <0  600 0 0> cfN600;
+	pos @Shiftable' <0  700 0 0> cfN700;
+
+	pos @Shiftable' <0 -100 0 0> cfS100;
+	pos @Shiftable' <0 -200 0 0> cfS200;
+	pos @Shiftable' <0 -300 0 0> cfS300;
+	pos @Shiftable' <0 -400 0 0> cfS400;
+	pos @Shiftable' <0 -500 0 0> cfS500;
+	pos @Shiftable' <0 -600 0 0> cfS600;
+	pos @Shiftable' <0 -700 0 0> cfS700;
+} ShiftNuqtasNS;
+
+lookup ShiftNuqtasEW {
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerEW];
+	pos @Shiftable' < 100 0 0 0> cfE100;
+	pos @Shiftable' < 200 0 0 0> cfE200;
+	pos @Shiftable' < 300 0 0 0> cfE300;
+	pos @Shiftable' < 400 0 0 0> cfE400;
+	pos @Shiftable' < 500 0 0 0> cfE500;
+
+	pos @Shiftable' <-100 0 0 0> cfW100;
+	pos @Shiftable' <-200 0 0 0> cfW200;
+	pos @Shiftable' <-300 0 0 0> cfW300;
+	pos @Shiftable' <-400 0 0 0> cfW400;
+	pos @Shiftable' <-500 0 0 0> cfW500;
+} ShiftNuqtasEW;
+
+lookup DoKerning {
+	lookupflag UseMarkFilteringSet @KwMarker;
+
+do	if AutoKern() == 1; {
+	# For auto-kerning, it helps to just loosen everything up a little.
+	pos @GDEF_bases <2400 0 2400 0> kwN2400;
+	pos @GDEF_bases <2300 0 2300 0> kwN2300;
+	pos @GDEF_bases <2200 0 2200 0> kwN2200;
+	pos @GDEF_bases <2100 0 2100 0> kwN2100;
+	pos @GDEF_bases <2000 0 2000 0> kwN2000;
+	pos @GDEF_bases <1900 0 1900 0> kwN1900;
+	pos @GDEF_bases <1800 0 1800 0> kwN1800;
+	pos @GDEF_bases <1700 0 1700 0> kwN1700;
+	pos @GDEF_bases <1600 0 1600 0> kwN1600;
+	pos @GDEF_bases <1500 0 1500 0> kwN1500;
+	pos @GDEF_bases <1400 0 1400 0> kwN1400;
+	pos @GDEF_bases <1300 0 1300 0> kwN1300;
+	pos @GDEF_bases <1200 0 1200 0> kwN1200;
+	pos @GDEF_bases <1100 0 1100 0> kwN1100;
+	pos @GDEF_bases <1000 0 1000 0> kwN1000;
+	pos @GDEF_bases <950 0 950 0> kwN900;
+	pos @GDEF_bases <850 0 850 0> kwN800;
+	pos @GDEF_bases <750 0 750 0> kwN700;
+	pos @GDEF_bases <650 0 650 0> kwN600;
+	pos @GDEF_bases <550 0 550 0> kwN500;
+	pos @GDEF_bases <450 0 450 0> kwN400;
+	pos @GDEF_bases <350 0 350 0> kwN300;
+	pos @GDEF_bases <250 0 250 0> kwN200;
+	pos @GDEF_bases <150 0 150 0> kwN100;
+
+	pos @GDEF_bases <-50 0 -50 0> kw100;
+	pos @GDEF_bases <-150 0 -150 0> kw200;
+	pos @GDEF_bases <-250 0 -250 0> kw300;
+	pos @GDEF_bases <-350 0 -350 0> kw400;
+	pos @GDEF_bases <-450 0 -450 0> kw500;
+	pos @GDEF_bases <-550 0 -550 0> kw600;
+	pos @GDEF_bases <-650 0 -650 0> kw700;
+	pos @GDEF_bases <-750 0 -750 0> kw800;
+	pos @GDEF_bases <-850 0 -850 0> kw900;
+	pos @GDEF_bases <-950 0 -950 0> kw1000;
+	pos @GDEF_bases <-1050 0 -1050 0> kw1100;
+	pos @GDEF_bases <-1150 0 -1150 0> kw1200;
+	pos @GDEF_bases <-1250 0 -1250 0> kw1300;
+	pos @GDEF_bases <-1350 0 -1350 0> kw1400;
+	pos @GDEF_bases <-1450 0 -1450 0> kw1500;
+	pos @GDEF_bases <-1550 0 -1500 0> kw1600;
+}
+
+do	if AutoKern() != 1; {
+	# Standard kerning
+	pos @GDEF_bases <2400 0 2400 0> kwN2400;
+	pos @GDEF_bases <2300 0 2300 0> kwN2300;
+	pos @GDEF_bases <2200 0 2200 0> kwN2200;
+	pos @GDEF_bases <2100 0 2100 0> kwN2100;
+	pos @GDEF_bases <2000 0 2000 0> kwN2000;
+	pos @GDEF_bases <1900 0 1900 0> kwN1900;
+	pos @GDEF_bases <1800 0 1800 0> kwN1800;
+	pos @GDEF_bases <1700 0 1700 0> kwN1700;
+	pos @GDEF_bases <1600 0 1600 0> kwN1600;
+	pos @GDEF_bases <1500 0 1500 0> kwN1500;
+	pos @GDEF_bases <1400 0 1400 0> kwN1400;
+	pos @GDEF_bases <1300 0 1300 0> kwN1300;
+	pos @GDEF_bases <1200 0 1200 0> kwN1200;
+	pos @GDEF_bases <1100 0 1100 0> kwN1100;
+	pos @GDEF_bases <1000 0 1000 0> kwN1000;
+	pos @GDEF_bases <900 0 900 0> kwN900;
+	pos @GDEF_bases <800 0 800 0> kwN800;
+	pos @GDEF_bases <700 0 700 0> kwN700;
+	pos @GDEF_bases <600 0 600 0> kwN600;
+	pos @GDEF_bases <500 0 500 0> kwN500;
+	pos @GDEF_bases <400 0 400 0> kwN400;
+	pos @GDEF_bases <300 0 300 0> kwN300;
+	pos @GDEF_bases <200 0 200 0> kwN200;
+	pos @GDEF_bases <100 0 100 0> kwN100;
+
+	pos @GDEF_bases <-100 0 -100 0> kw100;
+	pos @GDEF_bases <-200 0 -200 0> kw200;
+	pos @GDEF_bases <-300 0 -300 0> kw300;
+	pos @GDEF_bases <-400 0 -400 0> kw400;
+	pos @GDEF_bases <-500 0 -500 0> kw500;
+	pos @GDEF_bases <-600 0 -600 0> kw600;
+	pos @GDEF_bases <-700 0 -700 0> kw700;
+	pos @GDEF_bases <-800 0 -800 0> kw800;
+	pos @GDEF_bases <-900 0 -900 0> kw900;
+	pos @GDEF_bases <-1000 0 -1000 0> kw1000;
+	pos @GDEF_bases <-1100 0 -1100 0> kw1100;
+	pos @GDEF_bases <-1200 0 -1200 0> kw1200;
+	pos @GDEF_bases <-1300 0 -1300 0> kw1300;
+	pos @GDEF_bases <-1400 0 -1400 0> kw1400;
+	pos @GDEF_bases <-1500 0 -1500 0> kw1500;
+	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
+}
+
+} DoKerning;
+
+} kern;
 
 
 feature mark {
@@ -1750,154 +2158,4 @@ lookup AttRing2Mark {
 } mkmk;
 
 
-feature dist {
-script arab;
 
-# This is now being done by inserting spacing glyphs.
-#lookup BariyehKern {
-#		lookupflag IgnoreMarks;	
-#include(../../source/opentype/bariyehKernRules.feax);
-#} BariyehKern;
-
-} dist;
-
-
-feature kern {
-script arab;
-
-
-#lookup TempTest {
-#	lookupflag 0;
-#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
-#} TempTest;
-
-lookup ShiftNuqtasNS {
-	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
-	pos @Shiftable' <0  100 0 0> cfN100;
-	pos @Shiftable' <0  200 0 0> cfN200;
-	pos @Shiftable' <0  300 0 0> cfN300;
-	pos @Shiftable' <0  400 0 0> cfN400;
-	pos @Shiftable' <0  500 0 0> cfN500;
-	pos @Shiftable' <0  600 0 0> cfN600;
-	pos @Shiftable' <0  700 0 0> cfN700;
-
-	pos @Shiftable' <0 -100 0 0> cfS100;
-	pos @Shiftable' <0 -200 0 0> cfS200;
-	pos @Shiftable' <0 -300 0 0> cfS300;
-	pos @Shiftable' <0 -400 0 0> cfS400;
-	pos @Shiftable' <0 -500 0 0> cfS500;
-	pos @Shiftable' <0 -600 0 0> cfS600;
-	pos @Shiftable' <0 -700 0 0> cfS700;
-} ShiftNuqtasNS;
-
-lookup ShiftNuqtasEW {
-	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerEW];
-	pos @Shiftable' < 100 0 0 0> cfE100;
-	pos @Shiftable' < 200 0 0 0> cfE200;
-	pos @Shiftable' < 300 0 0 0> cfE300;
-	pos @Shiftable' < 400 0 0 0> cfE400;
-	pos @Shiftable' < 500 0 0 0> cfE500;
-
-	pos @Shiftable' <-100 0 0 0> cfW100;
-	pos @Shiftable' <-200 0 0 0> cfW200;
-	pos @Shiftable' <-300 0 0 0> cfW300;
-	pos @Shiftable' <-400 0 0 0> cfW400;
-	pos @Shiftable' <-500 0 0 0> cfW500;
-} ShiftNuqtasEW;
-
-lookup DoKerning {
-	lookupflag UseMarkFilteringSet @KwMarker;
-
-do	if AutoKern() == 1; {
-	# For auto-kerning, it helps to just loosen everything up a little.
-	pos @GDEF_bases <2400 0 2400 0> kwN2400;
-	pos @GDEF_bases <2300 0 2300 0> kwN2300;
-	pos @GDEF_bases <2200 0 2200 0> kwN2200;
-	pos @GDEF_bases <2100 0 2100 0> kwN2100;
-	pos @GDEF_bases <2000 0 2000 0> kwN2000;
-	pos @GDEF_bases <1900 0 1900 0> kwN1900;
-	pos @GDEF_bases <1800 0 1800 0> kwN1800;
-	pos @GDEF_bases <1700 0 1700 0> kwN1700;
-	pos @GDEF_bases <1600 0 1600 0> kwN1600;
-	pos @GDEF_bases <1500 0 1500 0> kwN1500;
-	pos @GDEF_bases <1400 0 1400 0> kwN1400;
-	pos @GDEF_bases <1300 0 1300 0> kwN1300;
-	pos @GDEF_bases <1200 0 1200 0> kwN1200;
-	pos @GDEF_bases <1100 0 1100 0> kwN1100;
-	pos @GDEF_bases <1000 0 1000 0> kwN1000;
-	pos @GDEF_bases <950 0 950 0> kwN900;
-	pos @GDEF_bases <850 0 850 0> kwN800;
-	pos @GDEF_bases <750 0 750 0> kwN700;
-	pos @GDEF_bases <650 0 650 0> kwN600;
-	pos @GDEF_bases <550 0 550 0> kwN500;
-	pos @GDEF_bases <450 0 450 0> kwN400;
-	pos @GDEF_bases <350 0 350 0> kwN300;
-	pos @GDEF_bases <250 0 250 0> kwN200;
-	pos @GDEF_bases <150 0 150 0> kwN100;
-
-	pos @GDEF_bases <-50 0 -50 0> kw100;
-	pos @GDEF_bases <-150 0 -150 0> kw200;
-	pos @GDEF_bases <-250 0 -250 0> kw300;
-	pos @GDEF_bases <-350 0 -350 0> kw400;
-	pos @GDEF_bases <-450 0 -450 0> kw500;
-	pos @GDEF_bases <-550 0 -550 0> kw600;
-	pos @GDEF_bases <-650 0 -650 0> kw700;
-	pos @GDEF_bases <-750 0 -750 0> kw800;
-	pos @GDEF_bases <-850 0 -850 0> kw900;
-	pos @GDEF_bases <-950 0 -950 0> kw1000;
-	pos @GDEF_bases <-1050 0 -1050 0> kw1100;
-	pos @GDEF_bases <-1150 0 -1150 0> kw1200;
-	pos @GDEF_bases <-1250 0 -1250 0> kw1300;
-	pos @GDEF_bases <-1350 0 -1350 0> kw1400;
-	pos @GDEF_bases <-1450 0 -1450 0> kw1500;
-	pos @GDEF_bases <-1550 0 -1500 0> kw1600;
-}
-
-do	if AutoKern() != 1; {
-	# Standard kerning
-	pos @GDEF_bases <2400 0 2400 0> kwN2400;
-	pos @GDEF_bases <2300 0 2300 0> kwN2300;
-	pos @GDEF_bases <2200 0 2200 0> kwN2200;
-	pos @GDEF_bases <2100 0 2100 0> kwN2100;
-	pos @GDEF_bases <2000 0 2000 0> kwN2000;
-	pos @GDEF_bases <1900 0 1900 0> kwN1900;
-	pos @GDEF_bases <1800 0 1800 0> kwN1800;
-	pos @GDEF_bases <1700 0 1700 0> kwN1700;
-	pos @GDEF_bases <1600 0 1600 0> kwN1600;
-	pos @GDEF_bases <1500 0 1500 0> kwN1500;
-	pos @GDEF_bases <1400 0 1400 0> kwN1400;
-	pos @GDEF_bases <1300 0 1300 0> kwN1300;
-	pos @GDEF_bases <1200 0 1200 0> kwN1200;
-	pos @GDEF_bases <1100 0 1100 0> kwN1100;
-	pos @GDEF_bases <1000 0 1000 0> kwN1000;
-	pos @GDEF_bases <900 0 900 0> kwN900;
-	pos @GDEF_bases <800 0 800 0> kwN800;
-	pos @GDEF_bases <700 0 700 0> kwN700;
-	pos @GDEF_bases <600 0 600 0> kwN600;
-	pos @GDEF_bases <500 0 500 0> kwN500;
-	pos @GDEF_bases <400 0 400 0> kwN400;
-	pos @GDEF_bases <300 0 300 0> kwN300;
-	pos @GDEF_bases <200 0 200 0> kwN200;
-	pos @GDEF_bases <100 0 100 0> kwN100;
-
-	pos @GDEF_bases <-100 0 -100 0> kw100;
-	pos @GDEF_bases <-200 0 -200 0> kw200;
-	pos @GDEF_bases <-300 0 -300 0> kw300;
-	pos @GDEF_bases <-400 0 -400 0> kw400;
-	pos @GDEF_bases <-500 0 -500 0> kw500;
-	pos @GDEF_bases <-600 0 -600 0> kw600;
-	pos @GDEF_bases <-700 0 -700 0> kw700;
-	pos @GDEF_bases <-800 0 -800 0> kw800;
-	pos @GDEF_bases <-900 0 -900 0> kw900;
-	pos @GDEF_bases <-1000 0 -1000 0> kw1000;
-	pos @GDEF_bases <-1100 0 -1100 0> kw1100;
-	pos @GDEF_bases <-1200 0 -1200 0> kw1200;
-	pos @GDEF_bases <-1300 0 -1300 0> kw1300;
-	pos @GDEF_bases <-1400 0 -1400 0> kw1400;
-	pos @GDEF_bases <-1500 0 -1500 0> kw1500;
-	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
-}
-
-} DoKerning;
-
-} kern;
