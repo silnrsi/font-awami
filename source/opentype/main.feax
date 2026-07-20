@@ -67,6 +67,16 @@ lookup FontCheck {
       n' lookup _FontCheck_n;
 } FontCheck ;
 
+#--- UTR53 ---
+
+lookup _InsertHamza {
+	sub @PostHamzaMarks  by		absHamzaAbove	@PostHamzaMarks;
+} _InsertHamza;
+
+lookup _DeleteHamza {
+	sub	@DiacUpper' absHamzaAbove'		by 	@DiacUpper;
+} _DeleteHamza;
+
 #--- bariyeh kerning ---
 
 # TODO: decide if we need 150, 250, 350, etc.
@@ -473,7 +483,35 @@ lookup _AllahSub_Shadda_insertA {
 } _AllahSub_Shadda_insertA ;
 
 
-#====================  GSUB features  ====================
+# Subtending mark digits
+
+lookup _SignWith_4digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_4 by @c_4 ;
+} _SignWith_4digits ;
+
+lookup _SignWith_3digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_3 by @c_3 ;
+} _SignWith_3digits ;
+
+lookup _SignWith_2digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_2 by @c_2 ;
+} _SignWith_2digits ;
+
+lookup _SignDigits_ToSmall {
+	lookupflag IgnoreMarks ;
+	sub @DigitsAny by @DigitsAnySmall ;
+} _SignDigits_ToSmall ;
+
+lookup _SignDigits_ToSmaller {
+	lookupflag IgnoreMarks ;
+	sub @DigitsAny by @DigitsAnySmaller ;
+} _SignDigits_ToSmaller ;
+
+
+#===========================  GSUB features  ===========================
 
 # Separate bases from nuqtas
 feature ccmp {
@@ -482,13 +520,16 @@ lookup FontCheck;		# both latn and arab
 
 script arab;
 
-lookup Heh2HehGoal {
-	sub	absHeh	by	absHehGoal;
-} Heh2HehGoal;
+# For UAX53 behavior in Harfbuzz, we need to decompose alef+mark. This is always done in Awami.
+
+# A few characters occur rarely in Nastaliq script, we just substitute them with more common ones.
+lookup ReplaceCharacters {
+	sub	absHeh			by	absHehGoal;
+	sub absHehYehAbove	by	absTehMarbutaGoal;
+} ReplaceCharacters;
+
 
 lookup DecomposeBases {
-	
-
 	sub		@BehComposed_sub 			by 		absDotlessBeh 	@BehMark_sub;
 	sub		@JeemComposed_sub			by		absHah			@JeemMark_sub;
 	sub		@SeenComposed_sub			by		absSeen			@SeenMark_sub;
@@ -509,6 +550,37 @@ lookup DecomposeBases {
 	sub		@WawComposed_sub			by		absWaw			@WawMark_sub;
 	sub		@BariyehComposed_sub		by		nlqBariyeh		@BariyehMark_sub;
 } DecomposeBases;
+
+
+# For situations where UTR53 is not done: move hamzas down closer to base.
+
+@HamzaAboveFilter = [@UTR53_230MCM @UTR53_230other graphemejoinercomb];
+
+lookup HamzaShiftUtr53 {
+	lookupflag UseMarkFilteringSet [@HamzaAboveFilter absShadda];
+
+	# shouldn't ligate hamza + following fatha|damma when hamza preceded by non-MCM 230 because
+    # UTR53 would have moved the fatha|damma to before the 230 marks but could not move the
+    # hamza as it isn't at the beginning of the 230 sequence.
+    ignore sub @UTR53_230other'               absHamzaAbove;
+    ignore sub @UTR53_230other' @UTR53_230MCM absHamzaAbove;
+    
+	# shouldn't ligate fatha|damma + following hamza when a 230MCM follows the hamza because
+    # UTR53 would have moved both hamza and following 230MCM to before the fatha|damma at which
+    # point the 230MCM would be between the hamza and the fatha|damma, blocking ligation.
+	ignore sub @PostHamzaMarks'                  absHamzaAbove @UTR53_230MCM ;
+	ignore sub @PostHamzaMarks'    @UTR53_230MCM absHamzaAbove @UTR53_230MCM ;
+
+	# In these situations the hamza is already first. Shift the zabar/pesh.
+
+    #sub hamzaabove-ar' lookup _LigateHamzaMarks                                                   @HamzaMarks ;
+    #sub hamzaabove-ar' lookup _LigateHamzaMarks @UTR53_230other                                   @HamzaMarks ;
+    #sub hamzaabove-ar' lookup _LigateHamzaMarks @UTR53_230other [ @UTR53_230other @UTR53_230MCM ] @HamzaMarks ;
+
+###    sub @PostHamzaMarks' lookup _InsertHamza	absHamzaAbove' lookup _DeleteHamza;
+###    sub @PostHamzaMarks' lookup _InsertHamza	@UTR53_230MCM' lookup _DeleteHamza  absHamzaAbove;
+
+} HamzaShiftUtr53;
 
 } ccmp;		# end of feature
 
@@ -533,7 +605,7 @@ lookup RecomposeIsolates {
 	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
 	sub		nlqChotiyeh				@ChotiyehMark_sub		by		@ChotiyehComposed_sub;
 
-	# Don't recompose alefs until after we've handled the Allah ligature.
+	# Don't recompose alefs until after we've handled the Allah ligature; see RecomposeAlefIsol.
 	#sub	absAlef					@AlefMark_sub			by		@AlefComposed_sub;
 
 	sub		absDal					@DalMark_sub			by		@DalComposed_sub;
@@ -784,6 +856,7 @@ lookup DoublePreContext {
 
 # We delayed doing this in the 'isol' feature until after the Allah was created.
 lookup RecomposeAlefIsol {
+	lookupflag 0;
 	sub	absAlef			@AlefMark_sub		by		@AlefComposed_sub;
 } RecomposeAlefIsol;
 
@@ -986,7 +1059,6 @@ lookup AllahAlef {  # clean up: make sure alef is correct form for Allah
 	lookupflag IgnoreMarks;
 	sub @AlefNoAllah'  absLamIni_allah1  by  @AlefAllah;
 } AllahAlef ;
-
 
 
 @KafKfNormal = [absKehehIni.kf      absGafIni.kf      absKehehMed.dk      absGafMed.dk];
@@ -1762,6 +1834,68 @@ do	if AutoKern() == 0; {
 } calt;
 
 
+feature rlig {
+
+lookup SignWithDigits {
+	lookupflag IgnoreMarks;
+
+	# Uniscribe or HarfBuzz 'latn'
+    sub [ absNumberSign absYearSign absSamvat absPageSign ]' lookup _SignWith_4digits
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall ;	
+    sub [ absNumberSign absYearSign absSamvat absPageSign ]' lookup _SignWith_3digits
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall ;
+    sub [ absEndOfAyah ]' lookup _SignWith_3digits
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller ;
+    sub [ absNumberSign absYearSign absSamvat absFootnoteSign absPageSign  ]' lookup _SignWith_2digits
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall ;
+    sub [ absEndOfAyah ]' lookup _SignWith_2digits
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller ;
+    sub [ absNumberSign absYearSign absSamvat absFootnoteSign absPageSign ]'
+        @DigitsAny' lookup _SignDigits_ToSmall ;
+    sub [ absEndOfAyah ]'
+        @DigitsAny' lookup _SignDigits_ToSmaller ;
+
+# HarfBuzz 'arab'
+    sub @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        [ absNumberSign absYearSign absSamvat absPageSign ]' lookup _SignWith_4digits ;  # poundmarkabove, piastremarkabove
+    sub @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        [ absNumberSign absYearSign absSamvat absPageSign ]' lookup _SignWith_3digits ;
+    sub @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        [ absEndOfAyah ]' lookup _SignWith_3digits ;
+    sub @DigitsAny' lookup _SignDigits_ToSmall
+        @DigitsAny' lookup _SignDigits_ToSmall
+        [ absNumberSign absYearSign absSamvat absFootnoteSign absPageSign ]' lookup _SignWith_2digits ;
+	sub @DigitsAny' lookup _SignDigits_ToSmaller
+        @DigitsAny' lookup _SignDigits_ToSmaller
+        [ absEndOfAyah ]'  lookup _SignWith_2digits;
+    sub @DigitsAny' lookup _SignDigits_ToSmall
+        [ absNumberSign absYearSign absSamvat absFootnoteSign absPageSign ]' ;
+    sub @DigitsAny' lookup _SignDigits_ToSmaller
+        [ absEndOfAyah ]' ;
+
+} SignWithDigits;
+
+
+} rlig;
+
+
+
 #====================  GPOS features  ====================
 
 
@@ -1914,6 +2048,101 @@ do	if AutoKern() != 1; {
 
 } DoKerning;
 
+# --- Subtending mark positioning ---
+
+# Based on Scheherazade implementation
+
+lookup SubtendingMarks {
+	###lookupflag IgnoreMarks ;
+	lookupflag 0;
+
+    # In Graphite we use mark attachment rules. However, in OpenType positioning digits on 
+    # subtending marks has to be done with adjustments rather than attachment since for some 
+    # engines the digits will ordered *before* the subtending mark.
+    
+    # Additionally, the adjustment value records depend on font face (e.g. bold vs regular). Therefore
+    # we use feax extentions to calculate the value records based on glyph advancewidths and digit AP coordinates.
+    
+    # In each "do" template, the first rule is ordered for Uniscribe or HarfBuzz 'latin', the second for HarfBuzz 'arab'.
+
+    # Those that take 4 small digits
+    do for m = @c_4 ;
+       let y = APy(m, "digit") - APy("zero.small", "digitL");
+       let w = -ADVx("zero.small"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+       let x2 = x1 - w; let x3 = x2 - w; let x4 = x3 - w;
+    {
+        pos $m  @DigitsAnySmall' <$x1 $y $w 0> @DigitsAnySmall' <$x2 $y $w 0>  @DigitsAnySmall' <$x3 $y $w 0>  @DigitsAnySmall' <$x4 $y $w 0> ;
+        pos     @DigitsAnySmall' <$x4 $y $w 0> @DigitsAnySmall' <$x3 $y $w 0>  @DigitsAnySmall' <$x2 $y $w 0>  @DigitsAnySmall' <$x1 $y $w 0> $m ;
+    }
+    
+    # Those that take 3 small digits
+    do for m = [ absNumberSign.3 absPageSign.3 absYearSign.3 absSamvat ];  # absFootnoteSign.3
+       let y = APy(m, "digit") - APy("zero.small", "digitL");
+       let w = -ADVx("zero.small"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+       let x2 = x1 - w; let x3 = x2 - w;
+    {
+        pos $m  @DigitsAnySmall' <$x1 $y $w 0>  @DigitsAnySmall' <$x2 $y $w 0>  @DigitsAnySmall' <$x3 $y $w 0> ;
+        pos     @DigitsAnySmall' <$x3 $y $w 0>  @DigitsAnySmall' <$x2 $y $w 0>  @DigitsAnySmall' <$x1 $y $w 0>  $m ;
+    }
+
+    # Those that take 3 smaller digits
+    do for m = [ absEndOfAyah.3 ] ;	  # disputed end of ayah
+       let y = APy(m, "digit") - APy("zero.smaller", "digitL");
+       let w = -ADVx("zero.smaller"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+       let x2 = x1 - w; let x3 = x2 - w;
+    {
+        pos $m  @DigitsAnySmaller' <$x1 $y $w 0>  @DigitsAnySmaller' <$x2 $y $w 0>  @DigitsAnySmaller' <$x3 $y $w 0> ;
+        pos     @DigitsAnySmaller' <$x3 $y $w 0>  @DigitsAnySmaller' <$x2 $y $w 0>  @DigitsAnySmaller' <$x1 $y $w 0>  $m ;
+    }
+
+    # Those that take 2 small digits
+    do for m = [ absNumberSign.2 absPageSign.2 absYearSign.2 absFootnoteSign.2 ] ;
+       let y = APy(m, "digit") - APy("zero.small", "digitL");
+       let w = -ADVx("zero.small"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+       let x2 = x1 - w; 
+    {
+        pos $m  @DigitsAnySmall' <$x1 $y $w 0>  @DigitsAnySmall' <$x2 $y $w 0> ;
+        pos     @DigitsAnySmall' <$x2 $y $w 0>  @DigitsAnySmall' <$x1 $y $w 0>  $m ;
+    }
+    
+    # Those that take 2 smaller digits
+    do for m = [ absEndOfAyah.2] ;   # disputed end of ayah
+       let y = APy(m, "digit") - APy("zero.smaller", "digitL");
+       let w = -ADVx("zero.smaller"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+       let x2 = x1 - w; 
+    {
+        pos $m  @DigitsAnySmaller' <$x1 $y $w 0>  @DigitsAnySmaller' <$x2 $y $w 0> ;
+        pos     @DigitsAnySmaller' <$x2 $y $w 0>  @DigitsAnySmaller' <$x1 $y $w 0>  $m ;
+    }
+
+    # Those that take 1 smaller digit
+    do for m = [ absEndOfAyah ] ;   # disputed end of ayah
+       let y = APy(m, "digit") - APy("zero.smaller", "digitL");
+       let w = -ADVx("zero.smaller"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+    {
+        pos $m  @DigitsAnySmaller' <$x1 $y $w 0> ;
+        pos     @DigitsAnySmaller' <$x1 $y $w 0>  $m ;
+    }
+
+    # Those that take 1 small digit (default)
+    do for m = [ absNumberSign absPageSign absYearSign absFootnoteSign ] ;
+       let y = APy(m, "digit") - APy("zero.small", "digitL");
+       let w = -ADVx("zero.small"); 
+       let x1 = APx(m, "digit") - ADVx(m); 
+    {
+        pos $m @DigitsAnySmall' <$x1 $y $w 0> ;
+        pos    @DigitsAnySmall' <$x1 $y $w 0> $m ;
+    }
+ 
+} SubtendingMarks;
+
+
 } kern;
 
 
@@ -2017,8 +2246,10 @@ lookup AttachUpper {
 } AttachUpper;
 
 lookup AttachHamzaAsUpper {
-	lookupflag UseMarkFilteringSet @_hamzaUpper;
+	#lookupflag UseMarkFilteringSet @MarkUpper;		# was @_hamzaUpper
+	lookupflag 0;
 	pos		base @nUpper		mark @_hamzaUpper;
+	pos		base @mUpper		mark @_hamzaUpper;
 } AttachHamzaAsUpper;
 
 lookup AttachUpper2 {
@@ -2136,7 +2367,16 @@ lookup AttGrafStroke {
 lookup AttMark2MarkUpper {
 	lookupflag UseMarkFilteringSet [@mUpper_MarkBase @_mUpper];
 	pos mark @mUpper_MarkBase	mark @_mUpper;
+	pos mark @mUpper_MarkBase	mark @_hamzaUpper;
 } AttMark2MarkUpper;
+
+# Currently we don't allow anything to attach to honorific diacritics
+# like small high ain mark, small high reh-dad, etc.
+# Their mUpper AP has been renamed to mUpper2h and we ignore it.
+# If any diacritics occur "outside" of them (pathological, I think)
+# and want to attach to them, they will attach to the base, which may or
+# may not cause collisions depending on the position of the _honorific AP.
+# TODO: maybe we should reorder to ensure the honorifics are on the outside.
 
 lookup AttMark2MarkLower {
 	lookupflag UseMarkFilteringSet [@mLower_MarkBase @_mLower];
@@ -2154,6 +2394,7 @@ lookup AttRing2Mark {
 	lookupflag UseMarkFilteringSet [@ring_MarkBase @_ring];
 	pos mark @ring_MarkBase		mark @_ring;
 } AttRing2Mark;
+
 
 } mkmk;
 

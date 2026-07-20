@@ -30,9 +30,9 @@ details including an FAQ.
 	</class>
 	-->
 
-	<!-- ============= -->
-	<!--  BASIC FORMS  -->
-	<!-- ============= -->
+	<!-- =============== -->
+	<!--   BASIC FORMS   -->
+	<!-- =============== -->
 
 	<class name="BehIniForms">
 		absBehIni absBehIni.ai absBehIni.be absBehIni.beM1 absBehIni.beM2 absBehIni.benn <!--absBehIni.behg--> absBehIni.bere
@@ -1481,20 +1481,20 @@ details including an FAQ.
     </class>
 
     <class name="UTR53_230other">
-		nlqUltaPesh					<!-- dammainverted-ar -->
-		absVowelSmallV absVowelInvSmallV  <!-- vabove-ar vinvertedabove-ar-->
-		nlqZabarTwoDots				<!-- fathatwodots-ar -->
-		absShortVowelMark			<!-- marksidewaysnoonghunna-ar -->
-		absMaddaAbove				<!-- madda-ar -->
-		absLeftArrowhead			<!-- leftarrowheadabove-ar -->
-		absNameMarker				<!-- takhallusabove-ar -->
-		absSmallHighRehDadMark		<!-- rehDadabove-ar -->
-		absSmallHighRehHahMark		<!-- rehHahabove-ar  -->
-		absSmallHighSadMark			<!-- sallallahouAlayheWassallamcomb-ar -->
-		absSmallHighTah				<!-- tahabove-ar -->
-		absSmallDotlessHeadOfKhah	<!-- hahabove-ar -->
-		absSmallUprightRectangularZero <!-- sukunoval-ar -->
-		absZwarakay					<!-- fathaHorizont-ar -->
+		nlqUltaPesh						<!-- dammainverted-ar -->
+		absVowelSmallV absVowelInvSmallV <!-- vabove-ar vinvertedabove-ar-->
+		nlqZabarTwoDots					<!-- fathatwodots-ar -->
+		absShortVowelMark				<!-- marksidewaysnoonghunna-ar -->
+		absMaddaAbove					<!-- madda-ar -->
+		absLeftArrowhead				<!-- leftarrowheadabove-ar -->
+		absNameMarker					<!-- takhallusabove-ar -->
+		absSmallHighRehDadMark			<!-- rehDadabove-ar -->
+		absSmallHighRehHahMark			<!-- rehHahabove-ar  -->
+		absSmallHighSadMark				<!-- sallallahouAlayheWassallamcomb-ar -->
+		absSmallHighTah					<!-- tahabove-ar -->
+		absSmallDotlessHeadOfKhah		<!-- hahabove-ar -->
+		absSmallUprightRectangularZero	<!-- sukunoval-ar -->
+		absZwarakay						<!-- fathaHorizont-ar -->
         <!-- ainabove-ar alefLamYehabove-ar alefmokhassasabove-ar aljuzabove-ar annisfabove-ar arrubabove-ar assajdaabove-ar
         aththalathaabove-ar dammaCurly-ar dammaDot-ar dammainverted-ar.filled dammainverted-ar.open dammareversed-ar
         dammatanCurly-ar dotStopabove-ar doublerightarrowheadDotabove-ar doublerightarrowheadabove-ar fathaCurly-ar fathaDotabove-ar
@@ -1506,6 +1506,8 @@ details including an FAQ.
         threedotsabove-ar toneloopabove-ar toneonedotabove-ar tonetwodotsabove-ar 
         waqfaabove-ar zainabove-ar -->
     </class>
+
+	<class name="PostHamzaMarks">nlqZabar nlqPesh</class>
 
 
 	<!-- ================================== -->
@@ -1541,6 +1543,68 @@ details including an FAQ.
 	<class name="ShaddaLigatureParts">
 		@ShaddaMarks nlqDopesh nlqPesh absShadda graphemejoinercomb
 	</class>
+
+	<!-- ================== -->
+	<!--  SUBTENDING MARKS  -->
+	<!-- ================== -->
+
+    <!-- *NEXT 3 CLASSES MUST MATCH* -->
+    <class name="DigitsArabic">
+        absZero  absOne  absTwo    absThree  absFour
+        absFive  absSix  absSeven  absEight  absNine
+    </class>
+
+    <class name="DigitsArabicSmall">
+        absZero.small  absOne.small  absTwo.small    absThree.small  absFour.small
+        absFive.small  absSix.small  absSeven.small  absEight.small  absNine.small
+    </class>
+
+    <class name="DigitsArabicSmaller">
+        absZero.smaller  absOne.smaller  absTwo.smaller    absThree.smaller  absFour.smaller
+        absFive.smaller  absSix.smaller  absSeven.smaller  absEight.smaller  absNine.smaller
+    </class>
+
+    <!-- *NEXT 3 CLASSES MUST MATCH* -->
+    <class name="DigitsEastern">
+        absEasternZero  absEasternOne  absEasternTwo    absEasternThree  absEasternFour
+        absEasternFive  absEasternSix  absEasternSeven  absEasternEight  absEasternNine
+        eight-persian  nine-persian
+    </class>
+
+    <class name="DigitsEasternSmall">
+        absEasternZero.small  absEasternOne.small  absEasternTwo.small    absEasternThree.small  absEasternFour.small
+        absEasternFive.small  absEasternSix.small  absEasternSeven.small  absEasternEight.small  absEasternNine.small
+    </class>
+
+    <class name="DigitsEasternSmaller">
+        absEasternZero.smaller  absEasternOne.smaller  absEasternTwo.smaller  absEasternThree.smaller  absEasternFour.smaller
+        absEasternFive.smaller  absEasternSix.smaller  absEasternSeven.smaller  absEasternEight.smaller  absEasternNine.smaller
+    </class>
+
+    <!-- *NEXT 3 CLASSES MUST MATCH* -->
+    <class name="DigitsLatin">
+        zero  one  two  three  four
+        five  six  seven  eight  nine
+    </class>
+
+    <class name="DigitsLatinSmall">
+        zero.small  one.small  two.small    three.small  four.small
+        five.small  six.small  seven.small  eight.small  nine.small
+    </class>
+
+    <class name="DigitsLatinSmaller">
+        zero.smaller  one.smaller  two.smaller    three.smaller  four.smaller
+        five.smaller  six.smaller  seven.smaller  eight.smaller  nine.smaller
+    </class>
+
+    <!-- *NEXT 3 CLASSES MUST MATCH* -->
+    <class name="DigitsAny">       @DigitsArabic         @DigitsEastern         @DigitsLatin</class>
+    <class name="DigitsAnySmall">  @DigitsArabicSmall    @DigitsEasternSmall    @DigitsLatinSmall</class>
+    <class name="DigitsAnySmaller">@DigitsArabicSmaller  @DigitsEasternSmaller  @DigitsLatinSmaller</class>
+
+    <class name="DigitsAnySmallOrSmaller">
+        @DigitsAnySmall  @DigitsAnySmaller
+    </class>
 
 	<!-- ================== -->
 	<!--  COLLISION FIXING  -->
