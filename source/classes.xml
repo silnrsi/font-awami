@@ -1399,7 +1399,7 @@ details including an FAQ.
 	<class name="DiacUpper">
 		nlqZabar nlqPesh absShadda nlqUltaPesh nlqZabarTwoDots nlqKharizabar nlqJazm nlqJazm_openleft
 		nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
-		absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
+		absLeftArrowhead absMaddaAbove absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
 		absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
 		absSmallHighSadMark absSmallHighSeen absSmallHighTah
 		_kharizabar_dopesh _kharizabar_pesh _kharizabar_zabar _kharizabar_dozabar _shadda_dopesh _shadda_dozabar
@@ -1412,11 +1412,7 @@ details including an FAQ.
 		<!-- @_mLower  -->
 	</class>
 
-	<!-- For UAX#53:
-			TODO: implement all this!
-	-->
-
-	<class name="DiacUpperC2">
+	<class name="DiacUpperC2"> <!-- is this used for anything?? -->
 		nlqZabar nlqPesh absShadda nlqUltaPesh nlqKharizabar nlqJazm nlqJazm_openleft
 		nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
 		absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
@@ -1437,6 +1433,80 @@ details including an FAQ.
 	<class name="Mark">@MarkUpper @MarkLower @MarkMiddle</class>
 
 	<class name="ByShim">_byShim1 _byShim2 _byShim3</class>
+
+	<!-- ============= -->
+	<!--     UAX53     -->
+	<!-- ============= -->
+
+	<!-- Copied and reworked from Scheherazade -->
+
+    <class name="UTR53_220MCM">
+        absHamzaBelow		<!-- hamzabelow-ar -->
+		<!-- largerounddotbelow-ar seenbelow-ar wawbelow-ar -->
+    </class>
+
+    <class name="UTR53_230MCM">
+        absHamzaAbove		<!-- hamzaabove-ar -->
+		absSmallHighSeen	<!-- seenabove-ar -->
+		absNoonGhunnaMark	<!-- noonghunnaabove-ar -->
+		<!-- highwaw-ar largerounddotabove-ar noonabove-ar yehabove-ar yehabove-farsi
+		yehbarreeTwobelowabove-ar zahabove-ar  -->
+    </class>
+
+    <class name="UTR53_shadda">
+        absShadda
+    </class>
+
+    <class name="UTR53_fixedPos">
+        nlqZabar nlqZair nlqPesh 		<!-- fatha, kasra, damma-->
+		nlqDozabar nlqDozair nlqDopesh	<!-- fathatan, kasratan, dammatan -->
+		nlqJazm nlqJazm_openleft		<!-- sukun-ar -->
+		<!-- damma-ar.filled damma-ar.short dammasmall-ar  dammatan-ar.sixNine fathasmall-ar
+        kasra-ar.lowered kasrasmall-ar kasratan-ar.lowered opendammatan-ar openfathatan-ar openkasratan-ar
+        sukun-ar.downOpen -->
+    </class>
+
+    <class name="UTR53_alef">
+        nlqKharizabar  <!-- alefabove-ar -->
+    </class>
+
+    <class name="UTR53_220other">
+		absWavyHamzaBelow		<!-- wavyhamzabelow-ar -->
+		absSmallLowMeem			<!-- meembelow-ar -->
+		absEmptyCentreLowStop	<!-- rhombusStopbelow-ar -->
+		<!-- alefbelow-ar dammaturnedbelow-ar dotvowelbelow-ar doubleverticalbarbelow-ar imaalabelow-ar ishmaambelow-ar kasraCurly-ar
+        kasraDotbelow-ar kasratanCurly-ar largecirclebelow-ar largerounddotinsidecirclebelow-ar leftarrowheadbelow-ar 
+        noonbelow-ar qasrbelow-ar rightarrowheadbelow-ar saktabelow-ar sukunbelow-ar tasheel-ar toneloopbelow-ar
+        toneonedotbelow-ar tonetwodotsbelow-ar wordmaddabelow-ar -->
+    </class>
+
+    <class name="UTR53_230other">
+		nlqUltaPesh					<!-- dammainverted-ar -->
+		absVowelSmallV absVowelInvSmallV  <!-- vabove-ar vinvertedabove-ar-->
+		nlqZabarTwoDots				<!-- fathatwodots-ar -->
+		absShortVowelMark			<!-- marksidewaysnoonghunna-ar -->
+		absMaddaAbove				<!-- madda-ar -->
+		absLeftArrowhead			<!-- leftarrowheadabove-ar -->
+		absNameMarker				<!-- takhallusabove-ar -->
+		absSmallHighRehDadMark		<!-- rehDadabove-ar -->
+		absSmallHighRehHahMark		<!-- rehHahabove-ar  -->
+		absSmallHighSadMark			<!-- sallallahouAlayheWassallamcomb-ar -->
+		absSmallHighTah				<!-- tahabove-ar -->
+		absSmallDotlessHeadOfKhah	<!-- hahabove-ar -->
+		absSmallUprightRectangularZero <!-- sukunoval-ar -->
+		absZwarakay					<!-- fathaHorizont-ar -->
+        <!-- ainabove-ar alefLamYehabove-ar alefmokhassasabove-ar aljuzabove-ar annisfabove-ar arrubabove-ar assajdaabove-ar
+        aththalathaabove-ar dammaCurly-ar dammaDot-ar dammainverted-ar.filled dammainverted-ar.open dammareversed-ar
+        dammatanCurly-ar dotStopabove-ar doublerightarrowheadDotabove-ar doublerightarrowheadabove-ar fathaCurly-ar fathaDotabove-ar
+        fathaRing-ar fathatanCurly-ar footnotemarkerabove-ar halfmaddaovermadda-ar
+        jeemabove-ar lamAlefabove-ar  madda-ar.small maddadoubled-ar maddalong-ar maddawaajib-ar 
+        meemStopabove-ar meemabove-ar noonKasraabove-ar noonKasrabelow-ar pepet-ar qafLamAlefMaksuraabove-ar qafabove-ar qifabove-ar
+        rhombusStopabove-ar rightarrowheadDotabove-ar rightarrowheadabove-ar sadLamAlefMaksuraabove-ar
+        sadabove-ar safhaabove-ar sahabove-ar saktaabove-ar sukunround-ar
+        threedotsabove-ar toneloopabove-ar toneonedotabove-ar tonetwodotsabove-ar 
+        waqfaabove-ar zainabove-ar -->
+    </class>
+
 
 	<!-- ================================== -->
 	<!--  ALLAH LIGATURE and SHADDA COMBOS  -->
@@ -1466,9 +1536,10 @@ details including an FAQ.
 	<class name="ShaddaMarks">nlqZabar nlqPesh nlqDozabar nlqDopesh</class>
 	<class name="ShaddaLigatures">_shadda_zabar _shadda_pesh _shadda_dozabar _shadda_dopesh</class>
 
+    <!-- Including graphemejoinercomb allows it to interrupt the ligature formation,
+          otherwise the lookupflag causes it to be ignored. -->
 	<class name="ShaddaLigatureParts">
-		@ShaddaMarks nlqDopesh nlqPesh absShadda
-		<!-- graphemejoinercomb -->
+		@ShaddaMarks nlqDopesh nlqPesh absShadda graphemejoinercomb
 	</class>
 
 	<!-- ================== -->
