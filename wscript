@@ -134,7 +134,7 @@ if ('--autoKernOnly' not in opts):
             mapfile = genout + "${DS:FILENAME_BASE}.map",
             master = create(genout + 'mainMinKern.feax', 
                             cmd('sed -E ' +
-                                "-e 's/return 1/return 0/' " +
+                                "-e 's/return 1    # toggle/return 0    # toggle/' " +
                                 "-e 's/^(include.*autokern.feax.*)$/#\\1/' " +
                                 '${SRC} > ${TGT}', 
                                 ['source/opentype/main.feax']

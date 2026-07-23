@@ -1,0 +1,494 @@
+#
+#	File: aux_inc.feax
+#
+#	Auxiliary lookup FEAX code for Awami Nastaliq
+
+#	This file is part of the Awami Nastaliq font 
+#	(https://software.sil.org/awami) and is 
+#	Copyright (c) 2014-2024 SIL Global (https://www.sil.org/),
+#	with Reserved Font Names "Awami" and "SIL".
+#
+#	This Font Software is licensed under the SIL Open Font License,
+#	Version 1.1.
+#
+#	You should have received a copy of the license along with this Font Software.
+#	If this is not the case, go to (https://openfontlicense.org/) for all the
+#	details including an FAQ.
+
+
+#====================  AUXILIARY LOOKUPS  ====================
+
+#lookup DeleteNull {  # not used
+#	lookupflag 0;
+#	sub NULL nlqBariyehFin		by   nlqBariyehFin;
+#	sub @GDEF_bases NULL  by		@GDEF_bases;
+#	sub @GDEF_marks NULL	 by		@GDEF_marks;
+#} DeleteNull;
+
+#--- RenderingOpenType ---
+
+# The following three lookups change "RenderingUnknown" to "RenderingOpenType".
+lookup _FontCheck_Unknow {
+  lookupflag IgnoreMarks;
+    sub [U n k o w ] by [O p e T y];
+} _FontCheck_Unknow ;
+
+lookup _FontCheck_n {
+  lookupflag IgnoreMarks;
+    sub n by p e;
+} _FontCheck_n ;
+
+lookup FontCheck {
+  lookupflag IgnoreMarks ;
+    sub [R] e n d e r i n g
+      U' lookup _FontCheck_Unknow
+      n' lookup _FontCheck_Unknow
+      k' lookup _FontCheck_Unknow
+      n'
+      o' lookup _FontCheck_Unknow
+      w' lookup _FontCheck_Unknow
+      n' lookup _FontCheck_n;
+} FontCheck ;
+
+#--- UTR53 ---
+
+lookup _InsertHamza {
+	sub @PostHamzaMarks  by		absHamzaAbove	@PostHamzaMarks;
+} _InsertHamza;
+
+lookup _DeleteHamza {
+	sub	@DiacUpper' absHamzaAbove'		by 	@DiacUpper;
+} _DeleteHamza;
+
+#--- bariyeh kerning ---
+
+# TODO: decide if we need 150, 250, 350, etc.
+lookup _ByKern50 { sub @IniWKafBase by kwN100 @IniWKafBase; } _ByKern50;
+lookup _ByKern100 { sub @IniWKafBase by kwN100 @IniWKafBase; } _ByKern100;
+lookup _ByKern150 { sub @IniWKafBase by kwN200 @IniWKafBase; } _ByKern150;
+lookup _ByKern200 { sub @IniWKafBase by kwN200 @IniWKafBase; } _ByKern200;
+lookup _ByKern250 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern250;
+lookup _ByKern300 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern300;
+lookup _ByKern350 { sub @IniWKafBase by kwN300 @IniWKafBase; } _ByKern350;
+lookup _ByKern400 { sub @IniWKafBase by kwN400 @IniWKafBase; } _ByKern400;
+lookup _ByKern450 { sub @IniWKafBase by kwN400 @IniWKafBase; } _ByKern450;
+lookup _ByKern500 { sub @IniWKafBase by kwN500 @IniWKafBase; } _ByKern500;
+lookup _ByKern550 { sub @IniWKafBase by kwN500 @IniWKafBase; } _ByKern550;
+lookup _ByKern600 { sub @IniWKafBase by kwN600 @IniWKafBase; } _ByKern600;
+lookup _ByKern650 { sub @IniWKafBase by kwN600 @IniWKafBase; } _ByKern650;
+lookup _ByKern700 { sub @IniWKafBase by kwN700 @IniWKafBase; } _ByKern700;
+lookup _ByKern750 { sub @IniWKafBase by kwN700 @IniWKafBase; } _ByKern750;
+lookup _ByKern800 { sub @IniWKafBase by kwN800 @IniWKafBase; } _ByKern800;
+lookup _ByKern850 { sub @IniWKafBase by kwN800 @IniWKafBase; } _ByKern850;
+lookup _ByKern900 { sub @IniWKafBase by kwN900 @IniWKafBase; } _ByKern900;
+lookup _ByKern950 { sub @IniWKafBase by kwN900 @IniWKafBase; } _ByKern950;
+lookup _ByKern1000 { sub @IniWKafBase by kwN1000 @IniWKafBase; } _ByKern1000;
+lookup _ByKern1050 { sub @IniWKafBase by kwN1000 @IniWKafBase; } _ByKern1050;
+lookup _ByKern1100 { sub @IniWKafBase by kwN1100 @IniWKafBase; } _ByKern1100;
+lookup _ByKern1150 { sub @IniWKafBase by kwN1100 @IniWKafBase; } _ByKern1150;
+lookup _ByKern1200 { sub @IniWKafBase by kwN1200 @IniWKafBase; } _ByKern1200;
+lookup _ByKern1250 { sub @IniWKafBase by kwN1200 @IniWKafBase; } _ByKern1250;
+lookup _ByKern1300 { sub @IniWKafBase by kwN1300 @IniWKafBase; } _ByKern1300;
+lookup _ByKern1350 { sub @IniWKafBase by kwN1300 @IniWKafBase; } _ByKern1350;
+lookup _ByKern1400 { sub @IniWKafBase by kwN1400 @IniWKafBase; } _ByKern1400;
+lookup _ByKern1450 { sub @IniWKafBase by kwN1400 @IniWKafBase; } _ByKern1450;
+lookup _ByKern1500 { sub @IniWKafBase by kwN1500 @IniWKafBase; } _ByKern1500;
+lookup _ByKern1550 { sub @IniWKafBase by kwN1500 @IniWKafBase; } _ByKern1550;
+lookup _ByKern1600 { sub @IniWKafBase by kwN1600 @IniWKafBase; } _ByKern1600;
+lookup _ByKern1650 { sub @IniWKafBase by kwN1600 @IniWKafBase; } _ByKern1650;
+lookup _ByKern1700 { sub @IniWKafBase by kwN1700 @IniWKafBase; } _ByKern1700;
+lookup _ByKern1750 { sub @IniWKafBase by kwN1700 @IniWKafBase; } _ByKern1750;
+lookup _ByKern1800 { sub @IniWKafBase by kwN1800 @IniWKafBase; } _ByKern1800;
+lookup _ByKern1850 { sub @IniWKafBase by kwN1800 @IniWKafBase; } _ByKern1850;
+lookup _ByKern1900 { sub @IniWKafBase by kwN1900 @IniWKafBase; } _ByKern1900;
+lookup _ByKern1950 { sub @IniWKafBase by kwN1900 @IniWKafBase; } _ByKern1950;
+lookup _ByKern2000 { sub @IniWKafBase by kwN2000 @IniWKafBase; } _ByKern2000;
+lookup _ByKern2050 { sub @IniWKafBase by kwN2000 @IniWKafBase; } _ByKern2050;
+lookup _ByKern2100 { sub @IniWKafBase by kwN2100 @IniWKafBase; } _ByKern2100;
+lookup _ByKern2150 { sub @IniWKafBase by kwN2100 @IniWKafBase; } _ByKern2150;
+lookup _ByKern2200 { sub @IniWKafBase by kwN2200 @IniWKafBase; } _ByKern2200;
+lookup _ByKern2250 { sub @IniWKafBase by kwN2200 @IniWKafBase; } _ByKern2250;
+lookup _ByKern2300 { sub @IniWKafBase by kwN2300 @IniWKafBase; } _ByKern2300;
+lookup _ByKern2350 { sub @IniWKafBase by kwN2300 @IniWKafBase; } _ByKern2350;
+lookup _ByKern2400 { sub @IniWKafBase by kwN2400 @IniWKafBase; } _ByKern2400;
+
+lookup _PreventKernUnder { sub @IniWKafBase by kblockHard @IniWKafBase; } _PreventKernUnder;
+
+
+#--- wide forms and small forms ---
+
+# For when space is tight
+
+@NuqtaPlusMark_sub = [_dot1u_smallV _dot1u_smallTah];
+@NuqtaPlusMarkKf_sub = [_dot1u_smallV.kf _dot1u_smallTah.kf];
+
+@NuqtaUpper_normal_sub = [_dot1u  _dot2u  _dot2vu  _dot3u  _dot3uD  _dot4u];
+@NuqtaUpper_small_sub = [_dot1u.small  _dot2u.small  _dot2vu.small  _dot3u.small  _dot3uD.small  _dot4u.small];
+
+lookup _WideSmForm {
+	sub absBehMed by absBehMed.kf_wide;
+	sub absJeemMed by absJeemMed.kf_wide;
+	sub @NuqtaPlusMark_sub by @NuqtaPlusMarkKf_sub;
+	sub @NuqtaUpper_normal_sub by @NuqtaUpper_small_sub;
+} _WideSmForm;
+
+
+#--- short kafs and other short forms ---
+
+# Use a short version of the keheh or gaf.
+lookup _KafShort {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		let g_base = feaclass('GafIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_short_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_short_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		#let g_base = k_base;
+		let g_base = feaclass('GafMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_short_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_short_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+} _KafShort;
+
+# Use an even shorter version of the keheh or gaf.
+lookup _KafShorter {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		let g_base = feaclass('GafIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_shorter_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_shorter_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBase_sub')[i];
+		let g_base = feaclass('GafMedBase_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_shorter_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_shorter_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+} _KafShorter;
+
+# Use a tall version of the keheh or gaf. Only needed for medials.
+lookup _KafTall {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBaseT_sub')[i];
+		let g_base = feaclass('GafMedBaseT_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_tall_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_tall_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+} _KafTall;
+
+# Use an even taller version of the keheh or gaf. Only needed for initials.
+lookup _KafTaller {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehIniFull_sub'));
+		let g = feaclass('GafIniFull_sub')[i];
+		let k_base = feaclass('KehehIniBase_sub')[i];
+		#let g_base = feaclass('GafIniBase_sub')[i];
+		let alt_top_k = feaclass('KehehIni_top_taller_sub')[i];
+		let alt_top_g = feaclass('GafIni_top_taller_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $k_base $alt_top_g;
+		}
+} _KafTaller;
+
+# Use a medium-short version of the keheh or gaf (standard height with short diagonal).
+# Only needed for medials.
+lookup _KafMedshort {
+	lookupflag IgnoreMarks;
+	do  forlet i,k = enumerate(feaclass('KehehMedFull_sub'));
+		let g = feaclass('GafMedFull_sub')[i];
+		let k_base = feaclass('KehehMedBaseT_sub')[i];
+		let g_base = feaclass('GafMedBaseT_sub')[i];
+		let alt_top_k = feaclass('KehehMed_top_medshort_sub')[i];
+		let alt_top_g = feaclass('GafMed_top_medshort_sub')[i];
+		{
+			sub $k by $k_base $alt_top_k;
+			sub $g by $g_base $alt_top_g;
+		}
+} _KafMedshort;
+
+lookup _KafRestoreFull {
+	sub @KehehMedBase_sub  @KehehMed_top_short_sub		by	@KehehMedFull_sub;
+	sub @KehehMedBase_sub  @GafMed_top_short_sub		by	@GafMedFull_sub;
+	sub @KehehMedBase_sub  @KehehMed_top_shorter_sub	by	@KehehMedFull_sub;
+	sub @KehehMedBase_sub  @GafMed_top_shorter_sub		by	@GafMedFull_sub;
+} _KafRestoreFull;
+
+
+# Use a short version of the lam or tah before a kaf.
+lookup _LamTahShort {
+	sub absLamIni  by  absLamIni_short;
+	sub absLamMed  by  absLamMed_short;
+	sub absTahIni  by  absTahIni.kf;
+	sub absTahMed  by  absTahMed.kf;
+} _LamTahShort;
+
+lookup _NoChange {
+	ignore sub @MarkUpper';
+	ignore sub @MeemForms';
+} _NoChange;
+
+
+#--- marks attached to bariyeh ---
+
+lookup _PreByHide {
+	lookupflag 0;
+	sub @NLikeSubBy_sub by @NLikeHid_sub;
+} _PreByHide;
+
+lookup _PreByDelDiac {
+	lookupflag 0;
+	sub @DiacLower by .null;
+} _PreByDelDiac;
+
+@ByShim = [_byShim1 _byShim2 _byShim3];
+
+lookup _ByInsertDot1l {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim _dot1l;
+} _ByInsertDot1l;
+
+lookup _ByInsertDot2l {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _dot2l;
+} _ByInsertDot2l;
+
+lookup _ByInsertDot2vl {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim _dot2vl;
+} _ByInsertDot2vl;
+
+lookup _ByInsertDot3l {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _dot3l;
+} _ByInsertDot3l;
+
+lookup _ByInsertDot4l {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim _dot4l;
+} _ByInsertDot4l;
+
+lookup _ByInsertHehHook {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim _hehHook.small;
+} _ByInsertHehHook;
+
+lookup _ByInsertSmallTahBelow {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim _smallTahBelow;
+} _ByInsertSmallTahBelow;
+
+lookup _ByInsertSmallTah2dotsBelow {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _smallTah2dotsBelow;
+} _ByInsertSmallTah2dotsBelow;
+
+lookup _ByInsertSmallVBelow {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _smallVBelow;
+} _ByInsertSmallVBelow;
+
+lookup _ByInsertSmallVinvBelow {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _smallVinvBelow;
+} _ByInsertSmallVinvBelow;
+
+lookup _ByInsertZair {
+	#lookupflag UseMarkFilteringSet [@ByShim @NuqtaLikeLower];
+	lookupflag 0;
+	sub @ByShim          by  @ByShim          nlqZair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqZair;
+} _ByInsertZair;
+
+lookup _ByInsertDozair {
+	lookupflag UseMarkFilteringSet @MarkLower;
+	sub @ByShim          by  @ByShim          nlqDozair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqDozair;
+} _ByInsertDozair;
+
+lookup _ByInsertKharizair {
+	lookupflag UseMarkFilteringSet @MarkLower;
+	sub @ByShim          by  @ByShim          nlqKharizair;
+	sub @NuqtaLikeLower  by  @NuqtaLikeLower  nlqKharizair;
+} _ByInsertKharizair;
+
+#lookup _ByIndex2 {
+#	lookupflag 0;
+#	sub @NLikeSubBy_sub by @NLikeSubBy2_sub;
+#} _ByIndex2;
+
+#lookup _ByIndex3 {
+#	lookupflag 0;
+#	sub @NLikeSubBy_sub by @NLikeSubBy3_sub;
+#} _ByIndex3;
+
+
+lookup _AttByLeft {
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByLeftLower mark @_nLowerBy1;
+	pos base @nByLeftLower mark @_nLowerBy2;
+	pos base @nByLeftLower mark @_nLowerBy3;
+	pos base @nByLeftLower mark @_n1Lower;
+	pos base @nByLeftLower mark @_n23Lower;
+	pos base @nByLeftLower mark @_hehhook;
+	pos base @nByLeftLower mark @_tahLower;
+} _AttByLeft;
+
+lookup _AttByLeft3 {
+	lookupflag UseMarkFilteringSet [_byShim3];
+	pos base @nByLeftLower mark @_nLowerBy3;
+} _AttByLeft3;
+
+lookup _AttByMidLeft3 {
+	lookupflag UseMarkFilteringSet [_byShim3];
+	pos base @nByMidLeftLower mark @_nLowerBy3;
+} _AttByMidLeft3;
+
+lookup _AttByMidLeft2 {
+	lookupflag UseMarkFilteringSet [_byShim2];
+	pos base @nByMidLeftLower mark @_nLowerBy2;
+} _AttByMidLeft2;
+
+lookup _AttByMidLeft {
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByMidLeftLower mark @_nLowerBy1;
+	pos base @nByMidLeftLower mark @_nLowerBy2;
+	pos base @nByMidLeftLower mark @_nLowerBy3;
+	pos base @nByMidLeftLower mark @_n1Lower;
+	pos base @nByMidLeftLower mark @_n23Lower;
+	pos base @nByMidLeftLower mark @_hehhook;
+	pos base @nByMidLeftLower mark @_tahLower;
+} _AttByMidLeft;
+
+lookup _AttByCenter {
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByCenterLower mark @_nLowerBy1;
+	pos base @nByCenterLower mark @_nLowerBy2;
+	pos base @nByCenterLower mark @_nLowerBy3;
+	pos base @nByCenterLower mark @_n1Lower;
+	pos base @nByCenterLower mark @_n23Lower;
+	pos base @nByCenterLower mark @_hehhook;
+	pos base @nByCenterLower mark @_tahLower;
+} _AttByCenter;
+
+lookup _AttByCenter2 {
+	lookupflag UseMarkFilteringSet [_byShim2];
+	pos base @nByCenterLower mark @_nLowerBy2;
+} _AttByCenter2;
+
+
+lookup _AttByMidRight {
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByMidRightLower mark @_nLowerBy1;
+	pos base @nByMidRightLower mark @_nLowerBy2;
+	pos base @nByMidRightLower mark @_nLowerBy3;
+	pos base @nByMidRightLower mark @_n1Lower;
+	pos base @nByMidRightLower mark @_n23Lower;
+	pos base @nByMidRightLower mark @_hehhook;
+	pos base @nByMidRightLower mark @_tahLower;
+} _AttByMidRight;
+
+lookup _AttByRight {
+	lookupflag UseMarkFilteringSet @ByShim;
+	pos base @nByRightLower mark @_nLowerBy1;
+	pos base @nByRightLower mark @_nLowerBy2;
+	pos base @nByRightLower mark @_nLowerBy3;
+	pos base @nByRightLower mark @_n1Lower;
+	pos base @nByRightLower mark @_n23Lower;
+	pos base @nByRightLower mark @_hehhook;
+	pos base @nByRightLower mark @_tahLower;
+} _AttByRight;
+
+lookup _DeleteShim {
+	# Replacing with NULL does not work in MS Word. Do we need to do this?
+	sub _byShim1  by  bogus;
+	sub _byShim2  by  bogus;
+	sub _byShim3  by  bogus;
+} _DeleteShim; 
+
+
+# Allah ligature
+
+lookup _AllahSub_Alef {
+    sub @AlefNoAllah  by  @AlefAllah;
+} _AllahSub_Alef ;
+
+lookup _AllahSub_Lam1 {
+    sub @Lam1NoAllah  by  @Lam1Allah;
+} _AllahSub_Lam1 ;
+
+lookup _AllahSub_Lam2 {
+    sub absLamMed     by absLamMed_allah2;
+} _AllahSub_Lam2 ;
+
+lookup _AllahSub_Lam2_insertSA {    # insert shadda-alef
+	lookupflag 0;
+	sub absLamMed  by  absLamMed_allah2  _shadda_kharizabar;  # the Allah form of the shadda+alef is created later in ShaddaAlefLigatures
+} _AllahSub_Lam2_insertSA ;
+
+lookup _AllahSub_Heh {
+    sub @HehNoAllah  by  @HehAllah;
+} _AllahSub_Heh ;
+
+lookup _AllahSub_SAHeh {
+    # This rule is the same as previous but handles the case where a shadda-alef glyph has been inserted.
+    # Inserted glyphs result in the target lookup being applied to the inserted glyph instead of the heh that follows.
+    sub _shadda_kharizabar' @HehNoAllah' lookup _AllahSub_Heh;
+} _AllahSub_SAHeh;
+
+lookup _AllahSub_Shadda_insertA {
+    sub absShadda     by   _shadda_kharizabar;  # the Allah form of the shadda+alef is created later in ShaddaAlefLigatures
+} _AllahSub_Shadda_insertA ;
+
+
+# Subtending mark digits
+
+lookup _SignWith_4digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_4 by @c_4 ;
+} _SignWith_4digits ;
+
+lookup _SignWith_3digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_3 by @c_3 ;
+} _SignWith_3digits ;
+
+lookup _SignWith_2digits {
+	lookupflag IgnoreMarks ;
+	sub @cno_2 by @c_2 ;
+} _SignWith_2digits ;
+
+lookup _SignDigits_ToSmall {
+	lookupflag IgnoreMarks ;
+	sub @DigitsAny by @DigitsAnySmall ;
+} _SignDigits_ToSmall ;
+
+lookup _SignDigits_ToSmaller {
+	lookupflag IgnoreMarks ;
+	sub @DigitsAny by @DigitsAnySmaller ;
+} _SignDigits_ToSmaller ;
