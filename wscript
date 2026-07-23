@@ -46,10 +46,10 @@ ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
 # smith project-specific options:
 #   --autohint  - autohint the font (otherwise hints are stripped)
-#   --noPSnames - remove psf names
+#   --psnames - retain psf names (otherwise strip them out)
 #   --minKernOnly    - build minKern version only
 #   --autoKernOnly   - build autoKern version only
-opts = preprocess_args({'opt': '--autohint'}, {'opt': '--noPSnames'}, {'opt': '--minKernOnly'}, {'opt': '--autoKernOnly'})
+opts = preprocess_args({'opt': '--autohint'}, {'opt': '--psnames'}, {'opt': '--minKernOnly'}, {'opt': '--autoKernOnly'})
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
@@ -62,7 +62,7 @@ cmds = [
 #    cmd('${OCTALAP} -m ${SRC} -o ${TGT} ${DEP}', "source/graphite/octabox_${DS:FILENAME_BASE}.json"),
 ]
 
-if '--noPSnames' in opts:
+if '--psnames' not in opts:
     cmds.append(cmd('psfix -s ${DEP} ${TGT}'))
 
 if '--autohint' in opts:
