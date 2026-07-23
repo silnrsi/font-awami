@@ -93,19 +93,18 @@ lookup HandleJeemBackswash {
 
 
 # Kerning before isolates will be handled by hard-coding.
-# We can do this because we always know their vertical position - that is, zero.
-lookup PreventPreIsoKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @KBlock];
-	
-	ignore sub @KBlock @KwMarker';  # already handled
 
-	sub kw0'       				@Isolates	by	kblockHard kw0;
-	sub kw0' space 				@Isolates	by	kblockHard kw0;
-	sub kw0' space space 		@Isolates	by	kblockHard kw0;
-	sub kw0' space space space	@Isolates	by	kblockHard kw0;
-	# If we have lots of spaces, the kerning doesn't matter too much!
 
-} PreventPreIsoKern;
+# Can't block things until we've handled the special cases (below).
+#lookup PreventPreIsoKern {
+#	lookupflag UseMarkFilteringSet [@KwMarker @KBlock];
+#	ignore sub @KBlock @KwMarker';  # already handled
+#	sub kw0'       				@Isolates	by	kblockHard kw0;
+#	sub kw0' space 				@Isolates	by	kblockHard kw0;
+#	sub kw0' space space 		@Isolates	by	kblockHard kw0;
+#	sub kw0' space space space	@Isolates	by	kblockHard kw0;
+#	# If we have lots of spaces, the kerning doesn't matter too much!
+#} PreventPreIsoKern;
 
 
 # Name markers are wide and generally positioned high. Just say we can't kern after them.
@@ -138,7 +137,7 @@ lookup HardCodeSpecialIsolates {
 
 # Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
 # using the kerning algorithm.
-# TODO: if we move TreatBasesAsMarks up, delete most of these rules.
+# TODO: if we move TreatBasesAsMarks up before this lookup, delete most of these rules.
 lookup ClearAscentsPreIso {
 	lookupflag UseMarkFilteringSet [@AscMarker @KBlock @KwMarker];  # include @KwMarker to recognize segment breaks
 
@@ -151,6 +150,7 @@ lookup ClearAscentsPreIso {
 } ClearAscentsPreIso;
 
 # I suspect this is worth it since we can clean up the stream quite a lot right at the beginning of the process.
+# However, it had no effect in MS Word.
 lookup DelYtIgnore1 {
 	lookupflag 0;
 	sub ytIgnore by NULL;
@@ -166,10 +166,11 @@ lookup IgnoreInvisibles {
 
 
 # Handle isolate forms explicitly, also some short sequences.
+# We can do this because we always know their vertical position.
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
-							@KBlock];  # ignore when case has already been handled
+							@KBlock];  # ignore lookup when case has already been handled
 
 	# alef
 	sub [absRehFin._jkl]									kw0' lookup _HardBlock200		@AlefIsoForms;
@@ -192,21 +193,27 @@ lookup HardCodeIsolates {
 	sub [absRehFin]											kw0' lookup _HardBlock300		[@SeenIsoForms @SadIsoForms];
 	sub [absZain]											kw0' lookup _HardBlock200		[@SeenIsoForms @SadIsoForms];
 
+	# meem
+	sub [absReh absRehFin._jkl @DalIsoForms @DalFinForms]	kw0' lookup _HardBlock200	absMeem;
+
 	# kaf
-	sub @AllBases			kw0' lookup _HardBlock1000		[@KafIsoForms];
+	sub @AllBases				kw0' lookup _HardBlock1000		[@KafIsoForms];
 
 	# qaf
-	sub absRehFin			kw0' lookup _HardBlock100		absQafFin;
+	#sub absRehFin				kw0' lookup _HardBlock100		absQafFin;  huh? this rule is impossible
 
 	# waw
-	sub [@DalIsoForms]		kw0' lookup _HardBlock100		@WawIsoForms;	
+	sub [@DalIsoForms]			kw0' lookup _HardBlock100		@WawIsoForms;
+
+	# Default case: block kerning before an isolate:
+	sub							kw0' lookup _HardBlock0			@Isolates;
 
 } HardCodeIsolates;
 
 
-# When there are 2 characters in a sequence with the same number of slices, once you have fully kerned under
-# the first glyph and fully kerned the second, the process meets in the middle and gets in a tangle. 
-# So we hard-code one side.
+# Special cases: When there are 2 characters in a sequence with the same number of slices, 
+# once you have fully kerned under the first glyph and fully kerned the second, 
+# the process meets in the middle and gets in a tangle. So we hard-code one side.
 lookup HardCode2CharSeq {
 	lookupflag UseMarkFilteringSet [@KwMarker
 									@KBlock];  # ignore when case has already been handled

@@ -1908,50 +1908,11 @@ lookup BasicConnections {
 	pos cursive @entry @exit;
 } BasicConnections;
 	
-} curs;			# end of feature
+} curs;		# end of feature
 
 
 feature kern {
 script arab;
-
-#lookup TempTest {
-#	lookupflag 0;
-#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
-#} TempTest;
-
-lookup ShiftNuqtasNS {
-	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
-	pos @Shiftable' <0  100 0 0> cfN100;
-	pos @Shiftable' <0  200 0 0> cfN200;
-	pos @Shiftable' <0  300 0 0> cfN300;
-	pos @Shiftable' <0  400 0 0> cfN400;
-	pos @Shiftable' <0  500 0 0> cfN500;
-	pos @Shiftable' <0  600 0 0> cfN600;
-	pos @Shiftable' <0  700 0 0> cfN700;
-
-	pos @Shiftable' <0 -100 0 0> cfS100;
-	pos @Shiftable' <0 -200 0 0> cfS200;
-	pos @Shiftable' <0 -300 0 0> cfS300;
-	pos @Shiftable' <0 -400 0 0> cfS400;
-	pos @Shiftable' <0 -500 0 0> cfS500;
-	pos @Shiftable' <0 -600 0 0> cfS600;
-	pos @Shiftable' <0 -700 0 0> cfS700;
-} ShiftNuqtasNS;
-
-lookup ShiftNuqtasEW {
-	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerEW];
-	pos @Shiftable' < 100 0 0 0> cfE100;
-	pos @Shiftable' < 200 0 0 0> cfE200;
-	pos @Shiftable' < 300 0 0 0> cfE300;
-	pos @Shiftable' < 400 0 0 0> cfE400;
-	pos @Shiftable' < 500 0 0 0> cfE500;
-
-	pos @Shiftable' <-100 0 0 0> cfW100;
-	pos @Shiftable' <-200 0 0 0> cfW200;
-	pos @Shiftable' <-300 0 0 0> cfW300;
-	pos @Shiftable' <-400 0 0 0> cfW400;
-	pos @Shiftable' <-500 0 0 0> cfW500;
-} ShiftNuqtasEW;
 
 lookup DoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
@@ -2399,4 +2360,48 @@ lookup AttRing2Mark {
 } mkmk;
 
 
+# Shifting marks has to happen after they are attached.
 
+feature kern {
+
+#lookup TempTest {
+#	lookupflag 0;
+#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
+#} TempTest;
+
+lookup ShiftNuqtasNS {
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];
+	pos @Shiftable' <0  100 0 0> cfN100;
+	pos @Shiftable' <0  200 0 0> cfN200;
+	pos @Shiftable' <0  300 0 0> cfN300;
+	pos @Shiftable' <0  400 0 0> cfN400;
+	pos @Shiftable' <0  500 0 0> cfN500;
+	pos @Shiftable' <0  600 0 0> cfN600;
+	pos @Shiftable' <0  700 0 0> cfN700;
+
+	pos @Shiftable' <0 -100 0 0> cfS100;
+	pos @Shiftable' <0 -200 0 0> cfS200;
+	pos @Shiftable' <0 -300 0 0> cfS300;
+	pos @Shiftable' <0 -400 0 0> cfS400;
+	pos @Shiftable' <0 -500 0 0> cfS500;
+	pos @Shiftable' <0 -600 0 0> cfS600;
+	pos @Shiftable' <0 -700 0 0> cfS700;
+} ShiftNuqtasNS;
+
+lookup ShiftNuqtasEW {
+	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerEW];
+	pos @Shiftable' < 100 0 0 0> cfE100;
+	pos @Shiftable' < 200 0 0 0> cfE200;
+	pos @Shiftable' < 300 0 0 0> cfE300;
+	pos @Shiftable' < 400 0 0 0> cfE400;
+	pos @Shiftable' < 500 0 0 0> cfE500;
+
+	pos @Shiftable' <-100 0 0 0> cfW100;
+	pos @Shiftable' <-200 0 0 0> cfW200;
+	pos @Shiftable' <-300 0 0 0> cfW300;
+	pos @Shiftable' <-400 0 0 0> cfW400;
+	pos @Shiftable' <-500 0 0 0> cfW500;
+} ShiftNuqtasEW;
+
+
+} kern;
