@@ -3,6 +3,12 @@
 # generate Debg table
 export FONTTOOLS_LOOKUP_DEBUGGING=1
 
+cd tools/bin
+
+./mkglyphbounds -o ../../source/opentype/autoKernMetrics.feax ../../source/masters/AwamiNastaliq-Regular.ufo
+
+cd ../..
+
 smith distclean
 smith configure
 smith build -v --psnames
