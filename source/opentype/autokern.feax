@@ -73,7 +73,7 @@ lookup UndoInitMetricsKludge {
 
 # Patch bariyeh tail kerning
 lookup PatchBariyehKerning {
-	lookupflag UseMarkFilteringSet [@KwMarker kblockHard @KernBaseMark];
+	lookupflag UseMarkFilteringSet [@KwMarker kblockHard];
 
 	sub kw0' kblockHard' @KwMarker	by	kblockHard;
 } PatchBariyehKerning;
@@ -170,7 +170,7 @@ lookup IgnoreInvisibles {
 # (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
-							@KBlock];  # ignore lookup when case has already been handled
+									@KBlock ];  # ignore lookup when case has already been handled
 
 	# alef
 	sub [absRehFin._jkl]									kw0' lookup _HardBlock200		@AlefIsoForms;
@@ -206,6 +206,7 @@ lookup HardCodeIsolates {
 	sub [@DalIsoForms]			kw0' lookup _HardBlock100		@WawIsoForms;
 
 	# Default case: block kerning before an isolate:
+	ignore sub @KBlock			kw0';
 	sub							kw0' lookup _HardBlock0			@Isolates;
 
 } HardCodeIsolates;

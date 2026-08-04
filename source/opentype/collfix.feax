@@ -141,6 +141,9 @@ lookup CollFixNuqtasUpper {  # some of these rules are generalized to include al
 	# sheen + jeem
 	sub absSeenIni.jm  @NuqtaVisUpper' lookup _ShiftE300	absJeemMed.beM1  @NuqtaVisUpper;
 
+	# sheen + qaf
+	sub absSeenIni.qf  @DotWideU' lookup _ShiftE100	absQafFin._stfh'  @DotWideU' @Any' lookup _ShiftW100;
+
 	# tah
 	sub absBehMed.ta	@NuqtaVisUpper		@TahMedForms	@NuqtaVisUpper' lookup _ShiftN100;
 	sub absBehMed.ta	@NuqtaVisUpper		@TahFinForms	@NuqtaVisUpper' lookup _ShiftN300;

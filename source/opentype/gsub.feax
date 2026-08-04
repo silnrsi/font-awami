@@ -1264,10 +1264,10 @@ lookup WordKludgeByKern_Dup {
 do	forlet i = range(200, 2500, 100);
 	let kw = "kwN" + str(i);
 {
-	sub @IsoFin'	$kw  @Initials			by  @IsoFin	kblockHard $kw;
-	sub space'		$kw  @Initials			by  space	kblockHard $kw;
-	sub @IsoFin'	$kw  @KehehIniBase_sub	by  @IsoFin	kblockHard $kw;
-	sub space'		$kw  @KehehIniBase_sub	by  space	kblockHard $kw;
+	sub @IsoFin'	$kw  @Initials			by  @IsoFin	$kw;
+	sub space'		$kw  @Initials			by  space	$kw;
+	sub @IsoFin'	$kw  @KehehIniBase_sub	by  @IsoFin	$kw;
+	sub space'		$kw  @KehehIniBase_sub	by  space	$kw;
 }
 
 	# Preventing kerning:
@@ -1326,29 +1326,39 @@ lookup WordKludgeByKern_Del {
 lookup HandFixBariyehKern {
 	lookupflag UseMarkFilteringSet [@KwMarker];
 
-	sub @IsoFin kwN900' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
-	sub @IsoFin space kwN900' 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
-	sub @IsoFin space space	kwN900' absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kwN500;
+	sub @IsoFin kwN900' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
+	sub @IsoFin space kwN900' 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
+	sub @IsoFin space space	kwN900' absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
 
-	sub @IsoFin kwN1500' 			absFehIni.by	by	kwN1700;
-	sub @IsoFin space kwN1500'		absFehIni.by	by	kwN1700;
+	sub @IsoFin kwN1500' 			absFehIni.by	by	kblockHard kwN1700;
+	sub @IsoFin space kwN1500'		absFehIni.by	by	kblockHard kwN1700;
 
-	# Is this set needed?
-	sub @IsoFin'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	@IsoFin kwN200;
-	sub @IsoFin space'			@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
-	sub @IsoFin space space'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
+	sub @IsoFin kwN200'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
+	sub @IsoFin space kwN200'		@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
+	sub @IsoFin space space kwN200'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
 
-	sub @IsoFin kwN200'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
-	sub @IsoFin space kwN200'		@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
-	sub @IsoFin space space kwN200'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kwN100;
+	sub @IsoFin kwN900'				absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
+	sub @IsoFin space kwN900'		absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
+	sub @IsoFin space space kwN900'	absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
 
-	# Is this set needed?
-	sub @IsoFin'				[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
-									by	@IsoFin kw0;
-	sub @IsoFin  space'			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
-									by	space kw0;
-	sub @IsoFin  space space'	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by
-									by	space kw0;
+	sub @IsoFin kwN1300'				absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
+	sub @IsoFin space kwN1300'			absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
+	sub @IsoFin space space kwN1300'	absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
+
+	# Are these sets needed? Seem to be taken care of by Kern4BariyehTail.
+	#sub @IsoFin'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	@IsoFin kwN200;
+	#sub @IsoFin space'			@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
+	#sub @IsoFin space space'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
+	#sub @IsoFin'				[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by	by  @IsoFin kw0;
+	#sub @IsoFin space'			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by by	space kw0;
+	#sub @IsoFin space space'	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by	by	space kw0;
+
+	# Otherwise, freeze kerning before a bariyeh.
+	sub @KwMarker'	@IniBy_sub											by 	kblockHard @KwMarker;
+	sub @KwMarker'	@Initials @MedBy_sub								by	kblockHard @KwMarker;
+	sub @KwMarker'	@Initials @Medials @MedBy_sub						by	kblockHard @KwMarker;
+	sub @KwMarker'	@Initials @Medials @Medials @MedBy_sub				by	kblockHard @KwMarker;
+	sub @KwMarker'	@Initials @Medials @Medials @Medials @MedBy_sub		by	kblockHard @KwMarker;
 } HandFixBariyehKern;
 
 
