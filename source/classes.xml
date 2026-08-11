@@ -318,7 +318,8 @@ details including an FAQ.
 	</class>
 	
 	<class name="BehIsoForms">
-		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh absDotlessBeh
+		absBeh absTeh absTheh absPeh absTteh absTteheh absTehRing absTehThreeDotsDownwards absBeeh 
+		absBehTwoDotsBelowDotAbove absDotlessBeh
 	</class>
 
 
@@ -359,11 +360,12 @@ details including an FAQ.
 	<class name="Isolates">
 		@AlefIsoForms
 		@BehIsoForms
-		absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV 
+		absNoon absNoonGhunna absNoonDotBelow absNoonThreeDots absRnoon absNoonRetro absNoonSmallV
+			absNoonRing absNoonRingAbove
 		nlqChotiyeh absYeh absYehHamzaAbove absE absYehSmallV absAlefMaksura absYehTwoAbove absYehThreeAbove absYehFourBelow
 			absYehTail absKashmiriYeh
-		absJeem absHah absKhah absHehHamzaAbove absHahSmallTahAbove absHahSmallTahBelow absHahSmallTwhTwoDotsBelow absHahThreeDotsAbove
-						absHahFourBelow absTcheh absNyeh absDyeh absTcheheh
+		absJeem absHah absKhah absHehHamzaAbove absHahSmallTahAbove absHahSmallTahBelow absHahSmallTahTwoDots 
+			absHahThreeDotsAbove absHahFourBelow absTcheh absNyeh absDyeh absTcheheh absHahTwoDotsVert
 		@RehIsoForms
 		@DalIsoForms
 		@SeenIsoForms
@@ -371,7 +373,7 @@ details including an FAQ.
 		absTah absZah
 		absAin absGhain absAinThreeDotsAbove 
 		absFeh absFehThreeDotsBelow absDotlessFeh absVeh
-				absQaf absDotlessQaf 
+			absQaf absQafThreeDots absDotlessQaf 
 		@KafIsoForms
 		absLam absLamBar absLamSmallV absLamSmallTah absLamThreeDots
 		absMeem
@@ -400,19 +402,21 @@ details including an FAQ.
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="BehMark_sub">
 		_dot1l  _dot2u  _dot3u  _smallTah  _dot3l  _dot2vl  _ring__dot2u  _dot2vu  _dot3uD
+		_dot2l__dot1u
 	</class>
 	<class name="BehComposed_sub">
 		absBeh absTeh absTheh absTteh absPeh absBeeh absTehRing absTteheh absTehThreeDotsAboveDownwards
+		absBehTwoDotsBelowDotAbove
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="JeemMark_sub">
 		_dot1l  _dot1u  _dot3l  _dot2vl  _dot2l  _dot4l  _smallTah  _smallTahBelow
-		_smallTah2dotsBelow  _dot3u  absHamzaAbove  _smallFourBelow
+		_smallTah2dotsBelow  _dot3u  absHamzaAbove  _smallFourBelow _dot2vu
 	</class>
 	<class name="JeemComposed_sub">
 		absJeem absKhah absTcheh absDyeh absNyeh absTcheheh absHahSmallTahAbove absHahSmallTahBelow
-		absHahSmallTahTwoDots absHahThreeDotsAbove absHahHamzaAbove absHahFourBelow
+		absHahSmallTahTwoDots absHahThreeDotsAbove absHahHamzaAbove absHahFourBelow absHahTwoDotsVert
 	</class>
 	
 		<!-- *NEXT 2 CLASSES MUST MATCH* -->
@@ -451,10 +455,10 @@ details including an FAQ.
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="FehMark_sub">
-		_dot1u  _dot2u  _dot3l  _dot3u
+		_dot1u  _dot2u  _dot3l  _dot3u  _dot3uQaf
 	</class>
 	<class name="FehComposed_sub">
-		absFeh absQaf absFehThreeDotsBelow absVeh
+		absFeh absQaf absFehThreeDotsBelow absVeh absQafThreeDots
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
@@ -495,11 +499,11 @@ details including an FAQ.
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="NoonMark_sub">
 		_dot1u  _noDot1u  _dot1u_smallTah  _dot1l__dot1u  _smallTah
-		_dot1u_smallV  _ring__dot1u  _dot3Noon 			<!-- _dot1u_ngMark -->
+		_dot1u_smallV  _ring__dot1u  _ringabove  _dot3Noon 			<!-- _dot1u_ngMark -->
 	</class>
 	<class name="NoonComposed_sub">
 		absNoon absNoonGhunna absNoonRetro absNoonDotBelow absRnoon
-		absNoonSmallV absNoonRing absNoonThreeDots
+		absNoonSmallV absNoonRing absNoonRingAbove absNoonThreeDots
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->abs
@@ -1354,7 +1358,8 @@ details including an FAQ.
 	<!-- =========== -->
 
 	<class name="NuqtaUpper">
-		_dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot4u _dot1u.small _dot2u.small _dot3u.small _dot3uD.small _dot4u.small
+		_dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot3uQaf _dot4u 
+		_dot1u.small _dot2u.small _dot3u.small _dot3uD.small _dot4u.small
 	</class>
 	<class name="NuqtaLower">
 		_dot1l _dot2l _dot2vl _dot3l _dot4l _dot1l.small _dot2l.small _dot2vl.small _dot3l.small _dot4l.small
@@ -1362,7 +1367,7 @@ details including an FAQ.
 	<class name="Nuqta">@NuqtaUpper @NuqtaLower</class>
 	<class name="NuqtaLikeUpper">
 		@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove
-		_smallTah  _smallV  _smallTah2dots  _kafSquiggle
+		_smallTah  _smallV  _ringabove  _smallTah2dots  _kafSquiggle
 		_smallThreeAbove  _smallTwoAbove  _wasla  _wavyHamza  _grafStroke
 		_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
 		_dot1u_smallV  _dot1u_smallV.kf  _dot1u_smallTah  _dot1u_smallTah.kf
@@ -1380,15 +1385,15 @@ details including an FAQ.
 
 	<class name="NLowerUpper">
 		_dot1l__smallTah  _dot2vl__smallTah  _dot1l__dot1u  _hehHook__dot2u
-		_ring__dot2u  _noDot2l__hamza  _dot2lIM__smallV  _hehHook__hamza _dot3l__dot3u
+		_ring__dot2u  _noDot2l__hamza  _dot2lIM__smallV  _hehHook__hamza  _dot3l__dot3u  _dot2l__dot1u
 		_ring__dot1u  _dot2lIM__smallTwo  _dot2lIM__smallThree</class>
 	<class name="NLowerNoUpper">
 		_dot1l  _dot2vl  _dot1l  _hehHook.small
-		_attachedRing  _noDot2l  _dot2l  _hehHook.small  _dot3l
+		_attachedRing  _noDot2l  _dot2l  _hehHook.small  _dot3l  _dot2l
 		_attachedRing  _dot2l  _dot2l</class>
 	<class name="NUpperNoLower">
 		_smallTah  _smallTah  _dot1u.small  _dot2u.small
-		_dot2u.small  absHamzaAbove  _smallV  absHamzaAbove  _dot3u.small
+		_dot2u.small  absHamzaAbove  _smallV  absHamzaAbove  _dot3u.small  _dot1u.small
 		_dot1u.small  _smallTwoAbove  _smallThreeAbove</class>
 
 	<class name="NuqtaVisUpper">@NuqtaLikeUpper @NLowerUpper</class>
@@ -1611,13 +1616,13 @@ details including an FAQ.
 	<!-- ================== -->
 
 	<class name="DotWideU">
-		_dot2u _dot3u _dot4u _hamza absHamzaAbove
+		_dot2u _dot3u _dot3uQaf _dot4u _hamza absHamzaAbove
 	</class>
 	<class name="DotNarrowU">
 		_dot1u _smallTah _smallTah2dots
 	</class>
 	<class name="DotTallU">
-		_dot3u _dot4u _smallTah _smallTah2dots
+		_dot3u _dot3uQaf _dot4u _smallTah _smallTah2dots
 	</class>
 	<class name="DotFlatU">
 		_dot1u _dot2u _hamza absHamzaAbove
@@ -1654,11 +1659,11 @@ details including an FAQ.
 	<class name="Shiftable">@NuqtaLike @Diac</class>
 	<class name="HardKernable">absAlefMaddaAbove absAlef absAlefFin</class>
 
-	<class name="NuqtaUpperWide_sub">_dot2u _dot3u _dot4u</class>
-	<class name="NuqtaUpperWide_small_sub">_dot2u.small _dot3u.small _dot4u.small</class>
+	<class name="NuqtaUpperWide_sub">_dot2u _dot3u _dot3uQaf _dot4u</class>
+	<class name="NuqtaUpperWide_small_sub">_dot2u.small _dot3u.small _dot3u.small _dot4u.small</class>
 
 	<class name="NLikeUpperTall">
-		_dot3u _dot3u.small _dot4u _dot4u.small _dot2vu _smallTah _smallTah2dots
+		_dot3u _dot3uQaf _dot3u.small _dot4u _dot4u.small _dot2vu _smallTah _smallTah2dots
 		_dot1u_smallTah _dot1u_smallTah.kf _dot1u_smallV _dot1u_smallV.kf _dot1u_ngMark 
 		_dot2lIM__hamza _verticalStroke</class>
 	<class name="NLikeUpperFlat">_dot1u  _dot1u.small  _dot2u  _dot2u.small</class>
@@ -1925,7 +1930,8 @@ details including an FAQ.
 						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
 	</class>
 	<class name="BehKernBaseMarkIso">
-		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh mkDotlessBeh
+		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsDownwards mkBeeh 
+		mkBehTwoDotsBelowDotAbove mkDotlessBeh
 	</class>
 	<class name="DalKernBaseMarkIso">
 		mkDal mkThal mkDalDotBelowSmallTah mkDalFourDotsAbove mkDalRing mkDalTwoVertBelowSmallTah mkDalDotBelow mkDalInvertedVBelow
@@ -1958,11 +1964,11 @@ details including an FAQ.
 	<class name="KernBaseMarkIso">
 		@AlefKernBaseMarkIso
 		@BehKernBaseMarkIso
-		mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV 
+		mkNoon mkNoonGhunna mkNoonDotBelow mkNoonThreeDots mkRnoon mkNoonRetro mkNoonSmallV mkNoonRing mkNoonRingAbove
 		mkChotiyeh mkYeh mkYehHamzaAbove mkE mkYehSmallV mkAlefMaksura mkYehTwoAbove mkYehThreeAbove mkYehFourBelow
 				mkYehTail mkKashmiriYeh
-		mkJeem mkHah mkKhah mkHehHamzaAbove mkHahSmallTahAbove mkHahSmallTahBelow mkHahSmallTwhTwoDotsBelow mkHahThreeDotsAbove
-				mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh
+		mkJeem mkHah mkKhah mkHehHamzaAbove mkHahSmallTahAbove mkHahSmallTahBelow mkHahSmallTahTwoDots
+				mkHahThreeDotsAbove mkHahFourBelow mkTcheh mkNyeh mkDyeh mkTcheheh mkHahTwoDotsVert
 		@RehKernBaseMarkIso
 		@DalKernBaseMarkIso
 		@SeenKernBaseMarkIso
@@ -1970,7 +1976,7 @@ details including an FAQ.
 		mkTah mkZah
 		mkAin mkGhain mkAinThreeDotsAbove 
 		mkFeh mkFehThreeDotsBelow mkDotlessFeh mkVeh
-				mkQaf mkDotlessQaf 
+				mkQaf mkQafThreeDots mkDotlessQaf 
 		@KafKernBaseMarkIso
 		mkLam mkLamBar mkLamSmallV mkLamSmallTah mkLamThreeDots
 		mkMeem
