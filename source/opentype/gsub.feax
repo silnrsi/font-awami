@@ -18,6 +18,18 @@
 
 #===========================  GSUB features  ===========================
 
+
+# Mirroring
+feature rtlm {
+
+lookup Mirror {
+	lookupflag IgnoreMarks;
+	sub @cno_rtl by @c_rtl;
+} Mirror;
+
+} rtlm;
+
+
 # Separate bases from nuqtas
 feature ccmp {
 

@@ -2,8 +2,6 @@
 #	File: main.feax
 #
 #	Main FEAX code for Awami Nastaliq
-#
-#	*** Any changes to this file should also be made in mainMinKern.feax. ***
 
 #	This file is part of the Awami Nastaliq font 
 #	(https://software.sil.org/awami) and is 
@@ -17,8 +15,8 @@
 #	If this is not the case, go to (https://openfontlicense.org/) for all the
 #	details including an FAQ.
 
-languagesystem latn dflt ;
 languagesystem arab dflt;
+languagesystem latn dflt;
 
 
 def SliceWidth() {
