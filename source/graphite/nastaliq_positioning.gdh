@@ -2257,7 +2257,7 @@ cNuqtaUpper { shift { x = -100m; y = -100m } }
 // Special case: initial beh/peh/yeh + beh/peh/yeh
 // Leave FIX off for the right-most nuqtas so they don't shift back.
 cNlWide { shift { x = 300m; y = -200m } }
-	cNuqtaLower { shift { x = 350m; y = -200m } }  // we don't expect collisions
+	cNuqtaLower { shift { x = 350m; y = -100m } }  // we don't expect collisions
 	/  (gBehIniBe gBehIniBeM1) _=N1 cDiacritic? 
 		(gBehMedAi gBehMedFe gBehMedSd gBehMedBeF gBehMedSn gBehMedSnSn) _=N2;
 cNlWide { shift { x = 300m; y = -130m } }
@@ -2856,7 +2856,7 @@ cIsoWithUpperNuqta = (gTeh, gTheh, gTehRing, gTehThreeDotsAboveDownwards, gBehTw
 	gSheen, gSeenDotBelowDotAbove, gSeenFourDotsAbove, gSeenSmallTahTwoDots, gSeenTwoVertAbove,
 	gSeen3DotsBelow3DotsAbove, gSeenInvertedVAbove, gSeenFourAbove, gDad, gZah, gGhain,
 	gFeh, gQaf, gQafThreeDots, gLamSmallV, gLamThreeDots, gLamSmallTah, 
-	gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRetro,
+	gNoon, gRnoon, gNoonDotBelow, gNoonSmallV, gNoonRing, gNoonRingAbove, gNoonRetro,
 	gThal, gDdal, gDalDotBelowSmallTah, gDalTwoVertBelowSmallTah, gDalFourDotsAbove,
 	gWawDotAbove, gWawTwoDotsAbove, gWawTwoAbove, gWawThreeAbove, gZain,gRreh, gJeh, gRehDotBelowDotAbove,
 	gRehTwoDotsAbove, gRehTwoVertAbove, gRehSmallTahTwoDots, gYehSmallV, gYehTwoAbove, gYehThreeAbove,

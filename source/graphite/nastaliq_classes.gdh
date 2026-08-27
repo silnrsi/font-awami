@@ -143,7 +143,7 @@ g__kafTop_by_tall_notused { ktDelta = 0m }; // currently not used, just to avoid
 
 
 // General classes of nuqta-like things (attached pieces that are considered an intrinsic part of the letter):
-cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic, g__wasla,
+cNuqtaLikeUpper = (cNuqtaUpper, g__smallTah, g__hamza, gHamzaAbove, g__hamzaArabic, g_highHamza, g_highHamzaArabic, g__wasla, g__ringabove,
 	g__smallV, g__smallVinv, g__dot1u_smallTah, g__dot1u_smallV, g__dot1u_smallVKf, g__dot1u_smallTah, g__dot1u_smallTahKf,
 	g__dot1u_ngMark, g__smallTah2dots, g__kafSquiggle, gPeshWaw, g__wavyHamza, g__noDot2l__hamza, g__dot2lIM__hamza,
 	g__verticalStroke, cKafTop,
@@ -184,7 +184,7 @@ csNuqta_small = (g__dot1l_small, g__dot1u_small, g__dot2l_small, g__dot2u_small,
 	g__dot2vl_small, g__dot2vu_small, g__dot3l_small, g__dot3u_small, g__dot3uD_small,
 	g__dot4u_small, g__dot4l_small);
 
-// Don't include the single nuqta because it is small doesn't need to be made smaller.
+// Don't include the single nuqta; because it is small doesn't need to be made smaller.
 csNuqtaUpper_normal = (g__dot2u,       g__dot2vu,       g__dot3u,       g__dot3uD,       g__dot4u);
 csNuqtaUpper_small =  (g__dot2u_small, g__dot2vu_small, g__dot3u_small, g__dot3uD_small, g__dot4u_small);
 
@@ -392,7 +392,7 @@ cLamIso = (gLam, gLamBar, gLamSmallV, gLamSmallV_alt, gLamThreeDots, gLamSmallTa
 cLamFin = (gLamFin, gLamFin_short, gLamFin_kfTall);
 cMeemIso = (gMeem, gMeemLowdiac);
 cMeemFin = (gMeemFin, gMeemFin_short, gMeemFinLowdiac);
-cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonSmallV, gNoonThreeDots);
+cNoonIso = (gNoon, gNoonGhunna, gRnoon, gNoonRetro, gNoonDotBelow, gNoonRing, gNoonRingAbove, gNoonSmallV, gNoonThreeDots);
 cNoonFin = (gNoonFin, gNoonGhunnaFin, gNoonFin_short);
 cKafIso = (gKaf, gGaf, gGueh, gNgoeh, gKafRing, gGafRing, gGraf, gArabicKaf, gKafDotAbove, gKafThreeDotsAbove,
 	gArabicKafTwoDotsAbove, gArabicKafThreeDotsAbove);
@@ -1099,10 +1099,10 @@ cs_gafComposed = (gGueh, gNgoeh, gGafRing, gGraf);
 
 cs_noonMark = (
 	g__dot1u, g__noDot1u, g__dot1u_smallTah, g__dot1l__dot1u, g__smallTah,
-	g__dot1u_smallV, g__ring__dot1u, g__dot3Noon); // g__dot1u_ngMark
+	g__dot1u_smallV, g__ring__dot1u, g__ringabove, g__dot3Noon); // g__dot1u_ngMark
 cs_noonComposed = (
 	gNoon, gNoonGhunna, gNoonRetro, gNoonDotBelow, gRnoon,
-	gNoonSmallV, gNoonRing, gNoonThreeDots);
+	gNoonSmallV, gNoonRing, gNoonRingAbove, gNoonThreeDots);
 
 cs_hehGoalMark = (g__hehHook_small, g__hehHook__dot2u, gHamzaAbove, g__hamza, g__hehHook__hamza);
 cs_hehGoalComposed = (gHehGoal, gTehMarbutaGoal, gHehGoalHamza, gHehGoalHamza, gHehGoalHamza);
