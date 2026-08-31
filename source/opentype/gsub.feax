@@ -1074,6 +1074,7 @@ lookup CleanupsSub {
 		
 } CleanupsSub;
 
+
 # --- Kaf + lam-bar ---
 
 @Bars = [_bar _bar.raised _bar.raised_gaf _bar.narrow _bar.waw];
@@ -1100,6 +1101,40 @@ lookup RaiseLamBar {
 	sub @KehehIMForms	@LamMFForms @Bars'  by  _bar.raised;
 	
 } RaiseLamBar;
+
+
+# --- Short finals ---
+
+lookup ShortFinals {
+	lookupflag IgnoreMarks;
+
+	# sequences with 5 chars or more get short finals
+	sub @IniKB @MedKB @MedKB @MedKB @FinalRegular'								by  @FinalShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @FinalRegular'						by  @FinalShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @FinalRegular'				by  @FinalShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @FinalRegular'			by  @FinalShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @FinalRegular'	by  @FinalShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB
+																@FinalRegular'	by  @FinalShort;
+
+	# beh + bariyeh, jeem + qaf
+	sub @IniKB @MedKB @MedKB @PenultRegular'									by  @PenultShort;
+	sub @IniKB @MedKB @MedKB @MedKB @PenultRegular'								by  @PenultShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @PenultRegular'						by  @PenultShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @PenultRegular'				by  @PenultShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @PenultRegular'		by  @PenultShort;
+	sub @IniKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @MedKB @PenultRegular'	by  @PenultShort;
+
+	# shorter sequences with a kaf get short finals
+	sub @KafIniFull_sub @MedKB @FinalRegular'						by  @FinalShort;
+	sub @KafIniBase_sub @MedKB @FinalRegular'						by  @FinalShort;
+	sub @KafIniFull_sub @MedKB @MedKB @FinalRegular'				by  @FinalShort;
+	sub @KafIniBase_sub @MedKB @MedKB @FinalRegular'				by  @FinalShort;
+	sub @IniKB @KafMedFull_sub @MedKB @FinalRegular'				by  @FinalShort;
+	sub @IniKB @KafMedBase_sub @MedKB @FinalRegular'				by  @FinalShort;
+
+} ShortFinals;
+
 
 # --- Bariyeh tails with attached nuqtas and diacritics ---
 

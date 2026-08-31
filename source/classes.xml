@@ -395,6 +395,9 @@ details including an FAQ.
 		@Initials  @Medials  @Finals  @Isolates
 	</class>
 
+	<class name="IniKB">@Initials @KafIniBase_sub</class>
+	<class name="MedKB">@Medials @KafMedBase_sub</class>
+
 	<!-- ================== -->
 	<!--  FOR DECOMPOSIION  -->
 	<!-- ================== -->
@@ -974,6 +977,30 @@ details including an FAQ.
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="KafKfNormal">absKehehIni.kf      absKehehMed.dk      absGafIni.kf      absGafMed.dk</class>
 	<class name="KafKfWide">  absKehehIni.kf_wide absKehehMed.kf_wide absGafIni.kf_wide absGafMed.kf_wide</class>
+
+	<!-- ====================== -->
+	<!--      SHORT FINALS      -->
+	<!-- ====================== -->
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="FinalShort">
+		absJeemFin_short absSeenFin_short absSadFin_short absLamFin_short absMeemFin_short
+		absQafFin_short absQafFin._stfh_short nlqChotiyehFin_short nlqChotiyehFin.bfkl_short	
+	</class>
+
+	<class name="FinalRegular">
+		absJeemFin absSeenFin absSadFin absLamFin absMeemFin
+		absQafFin absQafFin._stfh nlqChotiyehFin nlqChotiyehFin.bfkl
+	</class>
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="PenultShort">
+		absBehMed.qf_short absJeemMed.by_short
+	</class>
+
+	<class name="PenultRegular">
+		absBehMed.qf absJeemMed.by
+	</class>
 	
 	<!-- ======================= -->
 	<!--  ALTERNATE HEIGHT KAFS  -->
@@ -1353,9 +1380,9 @@ details including an FAQ.
 	<class name="IniWKafBase">@Initials @KehehIniBase_sub</class>
 	<class name="MedWKafBase">@Medials @KehehMedBase_sub</class>
 
-	<!-- =========== -->
-	<!--    MARKS    -->
-	<!-- =========== -->
+	<!-- ============= -->
+	<!--     MARKS     -->
+	<!-- ============= -->
 
 	<class name="NuqtaUpper">
 		_dot1u _dot2u  _dot2vu _dot3u _dot3uD _dot3uQaf _dot4u 
@@ -1439,9 +1466,9 @@ details including an FAQ.
 
 	<class name="ByShim">_byShim1 _byShim2 _byShim3</class>
 
-	<!-- ============= -->
-	<!--     UAX53     -->
-	<!-- ============= -->
+	<!-- ================ -->
+	<!--      UAX-53      -->
+	<!-- ================ -->
 
 	<!-- Copied and reworked from Scheherazade -->
 
