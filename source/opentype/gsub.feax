@@ -1289,6 +1289,8 @@ lookup Kern4BariyehTail {
 	# Special cases:
 	sub [absKehehIni absGafIni]' lookup _ByKern800	absLamMed.by;	# 400
 
+	sub [absFehIni.by]' lookup _ByKern1700;			# 1500
+
 	# Default auto-generated rules:
 	include(../../source/opentype/bariyehKernRules.feax);
 

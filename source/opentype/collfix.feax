@@ -249,6 +249,10 @@ lookup CollFixNuqtasLower {
 	sub absHehGoalIni		_hehHook.small' lookup _ShiftE100	[absLamMed.ch absKehehMed.ch absGafMed.ch absKehehMed.ch_base];
 	sub absHehGoalIni.jm	_hehHook.small' lookup _ShiftE200;
 
+	# reh + yeh
+
+	sub [@RehIsoForms absRehFin._jkl] absBehIni.qf @NuqtaLikeLower' lookup _ShiftS500;
+
 	# reh overhang
 
 	####sub absRehFin  absBehIni.ch @NuqtaLikeLower' lookup _ShiftS300;
