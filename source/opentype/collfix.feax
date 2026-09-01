@@ -452,7 +452,15 @@ lookup CollFixRedoUpper {
 	sub absFehIni.beM2 @NuqtaVisUpper cfN200'	absBehMed @NuqtaVisUpper @CfMarkerNS @CfMarkerEW	by	cfN300;
 	sub absBehMed @NuqtaVisUpper @CfMarkerNS cfW100'	[absAlefFin @LamMFForms @KafMFForms]		by	NULL;
 
+	# noon + noon-ghunna mark + round kaf
+	sub absBehMed.sd _dot1u cfN200' @CfMarkerEW absNoonGhunnaMark [absKehehMed absGafMed]	by cfS100;
 } CollFixRedoUpper;
+
+lookup MergeTightMarks {
+	lookupflag UseMarkFilteringSet [@MarkUpper];
+
+	sub _dot1u absNoonGhunnaMark	by	_dot1u_ngMark;
+} MergeTightMarks;
 
 lookup CollFixRedoLower {
 	lookupflag UseMarkFilteringSet [@MarkLower @CfMarker];
