@@ -246,8 +246,11 @@ lookup AttachKafTop {
 lookup AttachByShim1 {		# right-most nuqta (first in stream)
 	lookupflag UseMarkFilteringSet @ByShim;
 
-	# If all three shims are used, attach all the way to the right.
-	pos nlqBariyehFin' _byShim1' lookup _AttByRight		_byShim2	_byShim3;
+	## If all three shims are used, attach all the way to the right- no prefer to attach further to the right.
+	#pos nlqBariyehFin' _byShim1' lookup _AttByRight	_byShim2	_byShim3;
+
+	# If more than one shim is used, attach all the way to the right.
+	pos nlqBariyehFin' _byShim1' lookup _AttByRight		[_byShim2 _byShim3];
 	
 	# Otherwise, attach mid-right.
 	pos nlqBariyehFin' _byShim1' lookup _AttByMidRight;

@@ -973,6 +973,8 @@ lookup KafLineHeight_JmShort {
 
 } calt;
 
+# Note that after we've created short kafs, we need to use classes like @IniKB and @MedKB almost everywhere
+# instead of @Initials and @Medials.
 
 feature rclt {
 
@@ -1144,110 +1146,106 @@ lookup BariyehShims {
 	sub nlqBariyehFin  by  nlqBariyehFin  _byShim1  _byShim2  _byShim3;
 } BariyehShims;
 
-@NuqtaLowerShim = [@NuqtaLikeLower @ByShim];
-@NLikeHid = [_dot1l.hid _dot2l.hid _dot2vl.hid _dot3l.hid _dot4l.hid _hehHook.hid _smallTahBelow.hid _smallTah2dotsBelow.hid 
-	_smallVBelow.hid _smallVinvBelow.hid];
-@NuqtaDiacLowerShim  = [@NuqtaLikeLower @DiacLower @ByShim];
-
 lookup BariyehNuqta3 {		#  closest to bariyeh
-	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @ByShim];
 	
-	sub @IniMed	_dot1l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow' 		lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_dot1l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot1l;
+	sub @IniMedKB	_dot2l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2l;
+	sub @IniMedKB	_dot2vl'				lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot2vl;
+	sub @IniMedKB	_dot3l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot3l;
+	sub @IniMedKB	_dot4l'					lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertDot4l;
+	sub @IniMedKB	_hehHook.small'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertHehHook;
+	sub @IniMedKB	_smallTahBelow'			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTahBelow;
+	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
+	sub @IniMedKB	_smallVinvBelow' 		lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
 } BariyehNuqta3;
 
+
 lookup BariyehDiac3 {
-	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower @ByShim];
 	
 	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
 	# positioning confused. It is replaced with a .null glyph which gets deleted below.
 	
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertZair;
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'										lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  nlqBariyehFin' _byShim1' _byShim2' _byShim3'										lookup _ByInsertZair;
 	
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertDozair;
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertDozair;
 	
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertKharizair;
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'  @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  nlqBariyehFin'  _byShim1' _byShim2' _byShim3'										lookup _ByInsertKharizair;
 	
 } BariyehDiac3;
 
 lookup DelNull3 { lookupflag 0; sub .null by bogus; } DelNull3;
 
 lookup BariyehNuqta2 {  # second from bariyeh
-	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @ByShim];
 
-	sub @IniMed	_dot1l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'				lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'					lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 			lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow'		lookup _PreByHide		@Medials' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_dot1l'					lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot1l;
+	sub @IniMedKB	_dot2l'					lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2l;
+	sub @IniMedKB	_dot2vl'				lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot2vl;
+	sub @IniMedKB	_dot3l'					lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot3l;
+	sub @IniMedKB	_dot4l'					lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertDot4l;
+	sub @IniMedKB	_hehHook.small'			lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertHehHook;
+	sub @IniMedKB	_smallTahBelow'			lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTahBelow;
+	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
+	sub @IniMedKB	_smallVinvBelow'		lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
 	
 } BariyehNuqta2;
 
 lookup BariyehDiac2 {
-	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower @ByShim];
 	
 	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
 	# positioning confused. It is replaced with a .null glyph which gets deleted below.
 	
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin' _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertZair;
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin' _byShim1' _byShim2' 									lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin' _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin' _byShim1' _byShim2' 									lookup _ByInsertZair;
 	
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertDozair;
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertDozair;
 
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertKharizair;
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin'  _byShim1' _byShim2' @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  @MedKB' 	nlqBariyehFin'  _byShim1' _byShim2' 									lookup _ByInsertKharizair;
 
 } BariyehDiac2;
 
 lookup DelNull2 { lookupflag 0; sub .null by bogus; } DelNull2;
 
 lookup BariyehNuqta1 {  # third from bariyeh
-	lookupflag UseMarkFilteringSet @NuqtaLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @ByShim];
 
-	sub @IniMed	_dot1l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot1l;
-	sub @IniMed	_dot2l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2l;
-	sub @IniMed	_dot2vl'				lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot2vl;
-	sub @IniMed	_dot3l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot3l;
-	sub @IniMed	_dot4l'					lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertDot4l;
-	sub @IniMed	_hehHook.small'			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertHehHook;
-	sub @IniMed	_smallTahBelow'			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTahBelow;
-	sub @IniMed	_smallTah2dotsBelow'	lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTah2dotsBelow;
-	sub @IniMed	_smallVBelow' 			lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
-	sub @IniMed	_smallVinvBelow'		lookup _PreByHide		@Medials' @Medials' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_dot1l'					lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertDot1l;
+	sub @IniMedKB	_dot2l'					lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertDot2l;
+	sub @IniMedKB	_dot2vl'				lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertDot2vl;
+	sub @IniMedKB	_dot3l'					lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertDot3l;
+	sub @IniMedKB	_dot4l'					lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertDot4l;
+	sub @IniMedKB	_hehHook.small'			lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertHehHook;
+	sub @IniMedKB	_smallTahBelow'			lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTahBelow;
+	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTah2dotsBelow;
+	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
+	sub @IniMedKB	_smallVinvBelow'		lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
 	
 } BariyehNuqta1;
 
 lookup BariyehDiac1 {
-	lookupflag UseMarkFilteringSet @NuqtaDiacLowerShim;
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @DiacLower @ByShim];
 	
 	# Note that _PreByDelDiac doesn't actually delete the diacritic, because that would get the stream
 	# positioning confused. It is replaced with a .null glyph which gets deleted below.
 	
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin' _byShim1' @NuqtaLikeLower'	lookup _ByInsertZair;
-	sub @IniMed  nlqZair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin' _byShim1' 									lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin' _byShim1' @NuqtaLikeLower'	lookup _ByInsertZair;
+	sub @IniMedKB  nlqZair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin' _byShim1' 									lookup _ByInsertZair;
 	
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertDozair;
-	sub @IniMed nlqDozair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertDozair;
+	sub @IniMedKB nlqDozair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertDozair;
 	
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertKharizair;
-	sub @IniMed nlqKharizair' lookup _PreByDelDiac  @Medials' @Medials' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin'  _byShim1' @NuqtaLikeLower'	lookup _ByInsertKharizair;
+	sub @IniMedKB nlqKharizair' lookup _PreByDelDiac  @MedKB' @MedKB' 	nlqBariyehFin'  _byShim1'  									lookup _ByInsertKharizair;
 	
 } BariyehDiac1;
 

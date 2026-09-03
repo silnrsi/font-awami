@@ -1144,6 +1144,7 @@ details including an FAQ.
 
 	<class name="IniKB">@Initials @KafIniBase_sub</class>
 	<class name="MedKB">@Medials @KafMedBase_sub</class>
+	<class name="IniMedKB">@IniKB @MedKB</class>
 
 	<!-- Kaf tops -->
 
@@ -1680,7 +1681,9 @@ details including an FAQ.
 	<class name="CfMarkerEW">cfEW0 @CfMarkerE @CfMarkerW</class>
 	<class name="CfMarker">@CfMarkerNS @CfMarkerEW</class>
 
+	<!-- OT-specific:
 	<class name="Any">@GDEF_bases @GDEF_marks</class>
+	-->
 
 	<class name="Shiftable">@NuqtaLike @Diac</class>
 	<class name="HardKernable">absAlefMaddaAbove absAlef absAlefFin</class>

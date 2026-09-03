@@ -27,6 +27,9 @@ def SliceWidth() {
 
 # Currently most classes are defined in classes.xml.
 
+# OpenType-specific:
+@Any = [@GDEF_bases @GDEF_marks];
+
 include(../../source/opentype/bariyehKernClasses.feax);
 
 
