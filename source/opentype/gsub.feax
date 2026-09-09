@@ -42,30 +42,31 @@ script arab;
 # A few characters occur rarely in Nastaliq script, we just substitute them with more common ones.
 lookup ReplaceCharacters {
 	sub	absHeh			by	absHehGoal;
-	sub absHehYehAbove	by	absTehMarbutaGoal;
+	#sub absHehYehAbove	by	absTehMarbutaGoal  absHamzaAbove;
 } ReplaceCharacters;
 
 
 lookup DecomposeBases {
-	sub		@BehComposed_sub 			by 		absDotlessBeh 	@BehMark_sub;
-	sub		@JeemComposed_sub			by		absHah			@JeemMark_sub;
-	sub		@SeenComposed_sub			by		absSeen			@SeenMark_sub;
-	sub		@SadComposed_sub			by		absSad			@SadMark_sub;
-	sub		@TahComposed_sub			by		absTah			@TahMark_sub;
-	sub		@AinComposed_sub			by		absAin			@AinMark_sub;
-	sub		@FehComposed_sub			by		absDotlessFeh	@FehMark_sub;
-	sub		@KehehComposed_sub			by		absKeheh		@KehehMark_sub;
-	sub		@GafComposed_sub			by		absGaf			@GafMark_sub;
-	sub		@LamComposed_sub			by		absLam			@LamMark_sub;
+	sub		@BehComposed_sub 			by 		absDotlessBeh 		@BehMark_sub;
+	sub		@JeemComposed_sub			by		absHah				@JeemMark_sub;
+	sub		@SeenComposed_sub			by		absSeen				@SeenMark_sub;
+	sub		@SadComposed_sub			by		absSad				@SadMark_sub;
+	sub		@TahComposed_sub			by		absTah				@TahMark_sub;
+	sub		@AinComposed_sub			by		absAin				@AinMark_sub;
+	sub		@FehComposed_sub			by		absDotlessFeh		@FehMark_sub;
+	sub		@KehehComposed_sub			by		absKeheh			@KehehMark_sub;
+	sub		@GafComposed_sub			by		absGaf				@GafMark_sub;
+	sub		@LamComposed_sub			by		absLam				@LamMark_sub;
 	# no meem varieties at this point
-	sub		@HehGoalComposed_sub		by		absHehGoal		@HehGoalMark_sub;
-	sub		@NoonComposed_sub			by		absNoon			@NoonMark_sub;
-	sub		@ChotiyehComposed_sub		by		nlqChotiyeh		@ChotiyehMark_sub;
-	sub		@AlefComposed_sub			by		absAlef			@AlefMark_sub;
-	sub		@DalComposed_sub			by		absDal			@DalMark_sub;
-	sub		@RehComposed_sub			by		absReh			@RehMark_sub;
-	sub		@WawComposed_sub			by		absWaw			@WawMark_sub;
-	sub		@BariyehComposed_sub		by		nlqBariyeh		@BariyehMark_sub;
+	sub		@HehGoalComposed_sub		by		absHehGoal			@HehGoalMark_sub;
+	sub		@TehMarbutaGoalComposed_sub	by		absTehMarbutaGoal	@TehMarbutaGoalMark_sub;
+	sub		@NoonComposed_sub			by		absNoon				@NoonMark_sub;
+	sub		@ChotiyehComposed_sub		by		nlqChotiyeh			@ChotiyehMark_sub;
+	sub		@AlefComposed_sub			by		absAlef				@AlefMark_sub;
+	sub		@DalComposed_sub			by		absDal				@DalMark_sub;
+	sub		@RehComposed_sub			by		absReh				@RehMark_sub;
+	sub		@WawComposed_sub			by		absWaw				@WawMark_sub;
+	sub		@BariyehComposed_sub		by		nlqBariyeh			@BariyehMark_sub;
 } DecomposeBases;
 
 
@@ -119,6 +120,7 @@ lookup RecomposeIsolates {
 	sub		absLam					@LamMark_sub			by		@LamComposed_sub;
 	# no meem varieties at this point
 	sub		absHehGoal				@HehGoalMark_sub		by		@HehGoalComposed_sub;
+	sub		absTehMarbutaGoal		@TehMarbutaGoalMark_sub	by		@TehMarbutaGoalComposed_sub;
 	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
 	sub		nlqChotiyeh				@ChotiyehMark_sub		by		@ChotiyehComposed_sub;
 
@@ -416,6 +418,9 @@ lookup BasicContextuals {
 	sub @IniDefault_sub' absHehGoalFin			by @IniHgF_sub;
 	sub @MedDefault_sub' absHehGoalFin			by @MedHgF_sub;
 	
+	sub @IniDefault_sub' absTehMarbutaGoalFin	by @IniHgF_sub;
+	sub @MedDefault_sub' absTehMarbutaGoalFin	by @MedHgF_sub;
+
 	sub @IniDefault_sub' @HehGoalForms			by	@IniHgM_sub;
 	sub	@MedDefault_sub' @HehGoalForms			by	@MedHgM_sub;
 	
@@ -1425,3 +1430,47 @@ include(../../source/opentype/collfix.feax);
 
 } rclt;
 
+
+feature cv55 {  # hamza alternate
+
+lookup ReDecomposeHamza {
+	sub @BaseHamzaAbove		by	@BaseNoHamzaAbove	absHamzaAbove;
+	sub @BaseHamzaBelow		by	@BaseNoHamzaBelow	absHamzaBelow;
+} ReDecomposeHamza;
+
+lookup HamzaAlternates {
+
+	#	0=default					1=Arabic				2=Urdu
+	sub @UrduHamza_sub  	from [	@ArabicHamza_sub		@UrduHamza_sub ];
+
+} HamzaAlternates;
+
+} cv55;
+
+
+feature cv56 {  # high-hamza alternate
+
+lookup ReDecomposeHighHamza {
+	sub absHighHamzaAlef	by	absAlef	highHamza;
+} ReDecomposeHighHamza;
+
+lookup HighHamzaAlternates {
+
+	#	0=default				1=Arabic				2=Urdu
+	sub absHighHamza	from  [	absHighHamza.arabic		absHighHamza ];
+	sub highHamza  		from  [	highHamza.arabic		highHamza ];
+
+} HighHamzaAlternates;
+
+} cv56;
+
+
+feature cv49 {	# heh doachashmee
+
+} cv49;
+
+
+feature cv78 {	# sukun
+
+
+} cv78;

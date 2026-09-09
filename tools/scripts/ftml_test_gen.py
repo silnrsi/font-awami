@@ -8,7 +8,8 @@
 # - Add a code for it in the appropriate list(s) in expand_sequences() or insert_diacritics().
 # - Add the corresponding information in _group_name_format() or _diac_group_name_format().
 
-# To use default output, run from the root directory of the project.
+# To use default output, run from the root directory of the project:
+#			python3 ./tools/scripts/ftml_test_gen.py
 
 import collections
 import codecs

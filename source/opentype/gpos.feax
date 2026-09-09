@@ -329,6 +329,13 @@ lookup AttachUpper {
 	pos		base @graf			mark @_graf;
 } AttachUpper;
 
+lookup AttachHamzaAsLower {
+	#lookupflag UseMarkFilteringSet @MarkLower;
+	lookupflag 0;
+	pos		base @n1Lower		mark @_hamzaLower;
+	pos		base @mLower		mark @_hamzaLower;
+} AttachHamzaAsLower;
+
 lookup AttachHamzaAsUpper {
 	#lookupflag UseMarkFilteringSet @MarkUpper;		# was @_hamzaUpper
 	lookupflag 0;

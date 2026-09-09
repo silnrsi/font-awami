@@ -490,10 +490,18 @@ details including an FAQ.
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="HehGoalMark_sub">
-		_hehHook.small  _hehHook__dot2u  absHamzaAbove  <!--_hamza  _hehHook__hamza -->
+		_hehHook.small  absHamzaAbove  <!--_hamza  _hehHook__hamza -->
 	</class>
 	<class name="HehGoalComposed_sub">
-		absHehGoal absTehMarbutaGoal absHehGoalHamzaAbove   <!-- absHehGoalHamza absHehGoalHamza -->
+		absHehGoal absHehGoalHamzaAbove   <!-- absHehGoalHamza absHehGoalHamza -->
+	</class>
+	
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="TehMarbutaGoalMark_sub">
+		_hehHook__dot2u  absHamzaAbove
+	</class>
+	<class name="TehMarbutaGoalComposed_sub">
+		absTehMarbutaGoal absHehYehAbove
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
@@ -1637,6 +1645,39 @@ details including an FAQ.
     <class name="DigitsAnySmallOrSmaller">
         @DigitsAnySmall  @DigitsAnySmaller
     </class>
+
+	<!-- ========================== -->
+	<!--  USER-SELECTABLE FEATURES  -->
+	<!-- ========================== -->
+
+	<class name="UrduHamza_sub">
+		_hamza absHamzaAbove absHamzaBelow
+		<!-- don't include absHighHamza, highHamza, or absHighHamzaAlef - 
+				they are handled by a different feature -->
+	</class>
+
+	<class name="ArabicHamza_sub">
+		_hamza.arabic absHamzaAbove.arabic absHamzaBelow.arabic  
+		<!-- absHighHamza.arabic highHamza.arabic absHighHamzaAlef.arabic -->
+	</class>
+
+	<class name="BaseHamzaAbove">
+		absAlefHamzaAbove absRehHamzaAbove absHahHamzaAbove absWawHamzaAbove
+		absHehGoalHamzaAbove absYehHamzaAbove nlqBariyehHamzaAbove absHehYehAbove
+	</class>
+
+	<class name="BaseNoHamzaAbove">
+		absAlef absReh absHah absWaw 
+		absHehGoal nlqChotiyeh nlqBariyeh absHehGoal
+	</class>
+	
+	<class name="BaseHamzaBelow">
+		absAlefHamzaBelow
+	</class>
+
+	<class name="BaseNoHamzaBelow">
+		absAlef
+	</class>
 
 	<!-- ================== -->
 	<!--  COLLISION FIXING  -->
