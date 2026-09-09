@@ -33,9 +33,9 @@ lookup Mirror {
 # Separate bases from nuqtas
 feature ccmp {
 
-lookup FontCheck;		# both latn and arab
-
 script arab;
+
+lookup FontCheck;		# both latn and arab
 
 # For UAX53 behavior in Harfbuzz, we need to decompose alef+mark. This is always done in Awami.
 
@@ -47,6 +47,7 @@ lookup ReplaceCharacters {
 
 
 lookup DecomposeBases {
+
 	sub		@BehComposed_sub 			by 		absDotlessBeh 		@BehMark_sub;
 	sub		@JeemComposed_sub			by		absHah				@JeemMark_sub;
 	sub		@SeenComposed_sub			by		absSeen				@SeenMark_sub;
@@ -100,6 +101,11 @@ lookup HamzaShiftUtr53 {
 
 } HamzaShiftUtr53;
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } ccmp;		# end of feature
 
 
@@ -132,6 +138,11 @@ lookup RecomposeIsolates {
 	sub		absWaw					@WawMark_sub			by		@WawComposed_sub;
 	sub		nlqBariyeh				@BariyehMark_sub		by		@BariyehComposed_sub;
 } RecomposeIsolates;
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } isol;		# end of feature
 
@@ -177,7 +188,13 @@ lookup DualFinals {
 	sub			@DualPostCcmp_sub		by		@DualFinals_sub;
 } DualFinals;
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } fina;		# end of feature
+
 
 # Make sure medial/initial noons and yehs use beh forms and qaf uses feh forms.
 # Used for both initials and medials.
@@ -202,6 +219,11 @@ lookup MedialForms {
 #	sub absHehGoalMed by absHehGoalMed _hehHook.small;	
 #} InsertHehHook;
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } medi;		# end of feature
 
 
@@ -215,6 +237,11 @@ lookup InitialForms {
 
 	sub		@DualPostCcmp_sub		by		@IniDefault_sub;
 } InitialForms;
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } init;		# end of feature
 
@@ -736,6 +763,11 @@ lookup SignWithDigits {
 } SignWithDigits;
 
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } rlig;		# end of feature
 
 
@@ -976,12 +1008,18 @@ lookup KafLineHeight_JmShort {
 
 # TODO: delete _kehehTop_m_bogus
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } calt;
 
 # Note that after we've created short kafs, we need to use classes like @IniKB and @MedKB almost everywhere
 # instead of @Initials and @Medials.
 
 feature rclt {
+script arab;
 
 lookup SplitNuqtaPairs {
 	lookupflag 0;
@@ -1414,8 +1452,56 @@ lookup HandFixBariyehKern {
 	sub @KwMarker'	@Initials @Medials @Medials @Medials @MedBy_sub		by	kblockHard @KwMarker;
 } HandFixBariyehKern;
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } rclt;	 # end of feature
+
+
+# --- Language-related features ---
+
+lookup DecomposeHamza {
+	lookupflag 0;
+	sub @BaseHamzaAbove		by	@BaseNoHamzaAbove	absHamzaAbove;
+	sub @BaseHamzaBelow		by	@BaseNoHamzaBelow	absHamzaBelow;
+} DecomposeHamza;
+
+lookup HamzaAlternates {
+	lookupflag 0;
+
+	#	0=default					1=Arabic				2=Urdu
+	sub @UrduHamza_sub  	from [	@ArabicHamza_sub		@UrduHamza_sub ];
+
+} HamzaAlternates;
+
+lookup HighHamzaAlternates {
+	lookupflag 0;
+
+	#	0=default					1=Arabic				2=Urdu
+	sub absHighHamza		from  [	absHighHamza.arabic		absHighHamza ];
+	sub highHamza  			from  [	highHamza.arabic		highHamza ];
+	sub absHighHamzaAlef	from  [	absHighHamzaAlef.arabic	absHighHamzaAlef ];
+
+} HighHamzaAlternates;
+
+feature calt {
+script arab;
+
+language KSH;	# Kashmiri
+	lookup DecomposeHamza;
+	lookup HamzaAlternates;
+
+language MLY;	# Malay/Jawi
+	lookup DecomposeHamza;
+	lookup HamzaAlternates;
+	lookup HighHamzaAlternates;
+
+#language RAS;	# Gojri (Rajasthani)
+	#lookup LamVAlternate;
+	
+} calt;
 
 
 # --- Collision fixing ---
@@ -1427,50 +1513,50 @@ script arab;
 
 include(../../source/opentype/collfix.feax);
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } rclt;
 
+# --- User-selectable features ---
 
 feature cv55 {  # hamza alternate
+script arab;
 
-lookup ReDecomposeHamza {
-	sub @BaseHamzaAbove		by	@BaseNoHamzaAbove	absHamzaAbove;
-	sub @BaseHamzaBelow		by	@BaseNoHamzaBelow	absHamzaBelow;
-} ReDecomposeHamza;
+	lookup DecomposeHamza;
+	lookup HamzaAlternates;
 
-lookup HamzaAlternates {
-
-	#	0=default					1=Arabic				2=Urdu
-	sub @UrduHamza_sub  	from [	@ArabicHamza_sub		@UrduHamza_sub ];
-
-} HamzaAlternates;
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } cv55;
 
 
 feature cv56 {  # high-hamza alternate
+script arab;
 
-lookup ReDecomposeHighHamza {
-	sub absHighHamzaAlef	by	absAlef	highHamza;
-} ReDecomposeHighHamza;
+	lookup HighHamzaAlternates;
 
-lookup HighHamzaAlternates {
-
-	#	0=default				1=Arabic				2=Urdu
-	sub absHighHamza	from  [	absHighHamza.arabic		absHighHamza ];
-	sub highHamza  		from  [	highHamza.arabic		highHamza ];
-
-} HighHamzaAlternates;
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } cv56;
 
 
-feature cv49 {	# heh doachashmee
-
-} cv49;
-
-
 feature cv78 {	# sukun
+script arab;
 
+# lookup here
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } cv78;

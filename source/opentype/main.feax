@@ -16,6 +16,9 @@
 #	details including an FAQ.
 
 languagesystem arab dflt;
+languagesystem arab KSH;    # ks: Kashmiri
+languagesystem arab MLY;    # ms: Malay
+languagesystem arab RAJ;    # Gojri, part of Rajasthani macrolanguage
 languagesystem latn dflt;
 
 
@@ -76,6 +79,11 @@ do	if AutoKern() == 0; {
 	# And we need even more hand-kerning when auto-kerning is turned off.
 	include(../../source/opentype/handkernextra.feax);
 }
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } rclt;
 

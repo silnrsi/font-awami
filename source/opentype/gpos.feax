@@ -28,6 +28,11 @@ lookup BasicConnections {
 	pos cursive @entry @exit;
 } BasicConnections;
 	
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
 } curs;		# end of feature
 
 
@@ -223,6 +228,10 @@ lookup SubtendingMarks {
  
 } SubtendingMarks;
 
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
 
 } kern;
 
