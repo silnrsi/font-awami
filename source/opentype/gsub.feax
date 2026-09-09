@@ -1462,6 +1462,11 @@ language RAJ;
 
 # --- Language-related features ---
 
+lookup LamVAlternate {
+	lookupflag 0;
+	sub [absLamSmallV absLamFin]  by  [absLamSmallV_alt absLamFin_altV];
+} LamVAlternate;
+
 lookup DecomposeHamza {
 	lookupflag 0;
 	sub @BaseHamzaAbove		by	@BaseNoHamzaAbove	absHamzaAbove;
@@ -1498,8 +1503,8 @@ language MLY;	# Malay/Jawi
 	lookup HamzaAlternates;
 	lookup HighHamzaAlternates;
 
-#language RAS;	# Gojri (Rajasthani)
-	#lookup LamVAlternate;
+language RAS;	# Gojri (Rajasthani)
+	lookup LamVAlternate;
 	
 } calt;
 
@@ -1509,7 +1514,7 @@ language MLY;	# Malay/Jawi
 feature cv43 {	# lam-V alternate
 script arab;
 
-# lookup here
+lookup LamVAlternate;
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1522,7 +1527,7 @@ language RAJ;
 feature cv49 {	# initial heh-doachashmee
 script arab;
 
-# lookup here
+# lookup here....
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1535,7 +1540,7 @@ language RAJ;
 feature cv50 {	# medial heh-goal hook
 script arab;
 
-# lookup here
+# lookup here....
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1575,7 +1580,7 @@ language RAJ;
 feature cv78 {	# sukun
 script arab;
 
-# lookup here
+# lookup here....
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1588,7 +1593,7 @@ language RAJ;
 feature cv85 {	# punctuation
 script arab;
 
-# lookup here
+# lookup here....
 
 # Force other languages to include Arabic script default rules:
 language KSH;
