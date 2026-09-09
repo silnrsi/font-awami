@@ -1504,23 +1504,46 @@ language MLY;	# Malay/Jawi
 } calt;
 
 
-# --- Collision fixing ---
+# --- User-selectable features ---
 
-include(../../source/opentype/collfix_inc.feax);
-
-feature rclt {
+feature cv43 {	# lam-V alternate
 script arab;
 
-include(../../source/opentype/collfix.feax);
+# lookup here
 
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
 language RAJ;
 
-} rclt;
+} cv43;
 
-# --- User-selectable features ---
+
+feature cv49 {	# initial heh-doachashmee
+script arab;
+
+# lookup here
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
+} cv49;
+
+
+feature cv50 {	# medial heh-goal hook
+script arab;
+
+# lookup here
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
+} cv50;
+
 
 feature cv55 {  # hamza alternate
 script arab;
@@ -1560,3 +1583,48 @@ language MLY;
 language RAJ;
 
 } cv78;
+
+
+feature cv85 {	# punctuation
+script arab;
+
+# lookup here
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
+} cv85;
+
+
+feature cv86 {	# full-stop
+script arab;
+
+lookup FullStopAlt {
+	sub absFullStop  by  absFullStop.dot;
+} FullStopAlt;
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
+} cv86;
+
+
+# --- Collision fixing ---
+
+include(../../source/opentype/collfix_inc.feax);
+
+feature liga {
+script arab;
+
+include(../../source/opentype/collfix.feax);
+
+# Force other languages to include Arabic script default rules:
+language KSH;
+language MLY;
+language RAJ;
+
+} liga;
