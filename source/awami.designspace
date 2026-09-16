@@ -21,7 +21,7 @@
     </axes>
     
     <sources>
-        <source familyname="Awami Nastaliq OT" name="AwamiNastaliqOT-Regular" filename="masters/AwamiNastaliq-Regular.ufo" stylename="Regular">
+        <source familyname="Awami" name="Awami-Regular" filename="masters/Awami-Regular.ufo" stylename="Regular">
             <lib copy="1" />
             <groups copy="1" />
             <features copy="1" />
@@ -33,7 +33,7 @@
             </location>
         </source>
         
-        <source familyname="Awami Nastaliq OT" filename="masters/AwamiNastaliq-Black.ufo" name="AwamiNastaliqOT-Black" stylename="Black">
+        <source familyname="Awami" filename="masters/Awami-Black.ufo" name="Awami-Black" stylename="Black">
           <location>
                 <dimension name="weight" xvalue="900.000000" />  <!-- design weight -->
                 <dimension name="width" xvalue="100.000000" />
@@ -45,13 +45,13 @@
 
     <instances>
         <!-- Regular -->
-        <instance      familyname="Awami Nastaliq OT"
-                         filename="instances/AwamiNastaliq-Regular.ufo"
-                             name="Awami Nastaliq OT Regular"
-               stylemapfamilyname="Awami Nastaliq OT"
+        <instance      familyname="Awami"
+                         filename="instances/Awami-Regular.ufo"
+                             name="Awami Regular"
+               stylemapfamilyname="Awami"
                         stylename="Regular"
                 stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliqOT-Regular">
+               postscriptfontname="Awami-Regular">
             <location>
                 <dimension name="weight" xvalue="400.000000" />    <!-- design weight -->
                 <dimension name="width"  xvalue="100.000000" />
@@ -62,13 +62,13 @@
         </instance>
         
         <!-- Medium -->
-        <instance      familyname="Awami Nastaliq OT"
-        	               filename="instances/AwamiNastaliq-Medium.ufo"
-                             name="Awami Nastaliq OT Medium"
-               stylemapfamilyname="Awami Nastaliq OT Medium"
+        <instance      familyname="Awami"
+        	               filename="instances/Awami-Medium.ufo"
+                             name="Awami Medium"
+               stylemapfamilyname="Awami Medium"
                         stylename="Medium"
                 stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliqOT-Medium">
+               postscriptfontname="Awami-Medium">
             <location>
                 <dimension name="weight" xvalue="500.000000" />    <!-- design weight -->
                 <dimension name="width"  xvalue="100.000000" />
@@ -79,13 +79,13 @@
         </instance>
         
         <!-- SemiBold -->
-        <instance      familyname="Awami Nastaliq OT"
-        	               filename="instances/AwamiNastaliq-SemiBold.ufo"
-                             name="Awami Nastaliq OT SemiBold"
-               stylemapfamilyname="Awami Nastaliq OT SemiBold"
+        <instance      familyname="Awami"
+        	               filename="instances/Awami-SemiBold.ufo"
+                             name="Awami SemiBold"
+               stylemapfamilyname="Awami SemiBold"
                         stylename="SemiBold"
                 stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliqOT-SemiBold">
+               postscriptfontname="Awami-SemiBold">
             <location>
                 <dimension name="weight" xvalue="600.000000" />    <!-- design weight -->
                 <dimension name="width"  xvalue="100.000000" />
@@ -96,13 +96,13 @@
         </instance>
         
         <!-- Bold -->
-        <instance      familyname="Awami Nastaliq OT"
-                         filename="instances/AwamiNastaliq-Bold.ufo"
-                             name="Awami Nastaliq OT Bold"
-               stylemapfamilyname="Awami Nastaliq OT"
+        <instance      familyname="Awami"
+                         filename="instances/Awami-Bold.ufo"
+                             name="Awami Bold"
+               stylemapfamilyname="Awami"
                         stylename="Bold"
                 stylemapstylename="bold"
-               postscriptfontname="AwamiNastaliqOT-Bold">
+               postscriptfontname="Awami-Bold">
             <location>
                 <dimension name="weight" xvalue="700.000000" />    <!-- design weight -->
                 <dimension name="width"  xvalue="100.000000" />
@@ -113,13 +113,13 @@
         </instance>
         
         <!-- ExtraBold -->
-        <instance      familyname="Awami Nastaliq OT"
-        	               filename="instances/AwamiNastaliq-ExtraBold.ufo"
-                             name="Awami Nastaliq OT ExtraBold"
-               stylemapfamilyname="Awami Nastaliq OT ExtraBold"
+        <instance      familyname="Awami"
+        	               filename="instances/Awami-ExtraBold.ufo"
+                             name="Awami ExtraBold"
+               stylemapfamilyname="Awami ExtraBold"
                         stylename="ExtraBold"
                 stylemapstylename="regular"
-               postscriptfontname="AwamiNastaliq-ExtraBold">
+               postscriptfontname="Awami-ExtraBold">
             <location>
                 <dimension name="weight" xvalue="900.000000" />    <!-- design weight -->
                 <dimension name="width"  xvalue="100.000000" />
