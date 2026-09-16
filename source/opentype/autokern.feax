@@ -135,7 +135,7 @@ lookup HardCodeSpecialIsolates {
 } HardCodeSpecialIsolates;
 
 
-# Clear the ascents from all the glyphs in a sequence before an isolate, since we will not be
+# Clear the ascents from all the glyphs in a sequence before an isolate, since these will not be
 # using the kerning algorithm.
 # TODO: if we move TreatBasesAsMarks up before this lookup, delete most of these rules.
 lookup ClearAscentsPreIso {
@@ -180,9 +180,9 @@ lookup HardCodeIsolates {
 			@WawIsoForms]									kw0' lookup _HardBlock100		@AlefIsoForms;
 
 	# beh
-	sub absBehIni.re absRehFin._jkl 						kw0' lookup _HardBlock300		absBehIni [absAlefFin absLamFin];
+	sub absBehIni.re absRehFin._jkl 						kw0' lookup _HardBlock300		absBehIni	[absAlefFin absLamFin];
 
-	sub [@RehIsoForms absRehFin._jkl]						kw0' lookup _HardBlock500		absBehIni.qf @WawFinForms;
+	sub [@RehIsoForms absRehFin._jkl]						kw0' lookup _HardBlock500		absBehIni.qf	@WawFinForms;
 
 	# reh
 	sub [@AlefIsoForms @AlefFinForms]						kw0' lookup _HardBlock0			@RehIsoForms;
@@ -202,7 +202,7 @@ lookup HardCodeIsolates {
 	sub @AllBases				kw0' lookup _HardBlock1000		[@KafIsoForms];
 
 	# qaf
-	#sub absRehFin				kw0' lookup _HardBlock100		absQafFin;  huh? this rule is impossible
+	#sub absRehFin				kw0' lookup _HardBlock100		absQafFin;  -- huh? this rule is impossible
 
 	# waw
 	sub [@DalIsoForms]			kw0' lookup _HardBlock100		@WawIsoForms;
@@ -845,9 +845,9 @@ lookup IniKafKern {
 	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis];
 
 	# Account for jeem and ain back-swashes.
-	sub @KernBaseMarkIsoFin		kw1200'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw300;		# eg, noon
+	sub @KernBaseMarkIsoFin		kw1200'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw300;		# eg, noon+jeem
 	sub @KernBaseMarkIsoFin		kw400'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw0;
-	sub @KernBaseMarkIsoFin		kw500'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw200;		# eg, heh-goal
+	sub @KernBaseMarkIsoFin		kw500'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw200;		# eg, heh-goal+ain
 	sub @KernBaseMarkIsoFin		kw600'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw300;		# eg, lam-alef
 	sub @KernBaseMarkIsoFin		kw700'		@KafKernBaseMarkIni		[mkJeemFin mkAinFin]	by	kw400;
 

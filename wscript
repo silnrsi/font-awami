@@ -29,27 +29,26 @@ genout = "generated/"
 # STANDARDS = 'reference'
 
 # set package name
-APPNAME='AwamiOTTechPreview'
+APPNAME='AwamiPreviewB'
 
 # set the font family name
 # FAMILY=APPNAME
 
 
-# DESC_NAME = "Awami-Nastaliq-OT"
+# DESC_NAME = "Awami"
 # DEBPKG = 'fonts-awami'
 
 # Get version info from Regular UFO; must be first function call:
 #getufoinfo('source/masters/' + FAMILY + '-Regular' + '.ufo')
-getufoinfo('source/masters/AwamiNastaliq-Regular.ufo')
+getufoinfo('source/masters/Awami-Regular.ufo')
 
 ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 
 # smith project-specific options:
 #   --autohint  - autohint the font (otherwise hints are stripped)
-#   --psnames - retain psf names (otherwise strip them out)
-#   --minKernOnly    - build minKern version only
-#   --autoKernOnly   - build autoKern version only
-opts = preprocess_args({'opt': '--autohint'}, {'opt': '--psnames'}, {'opt': '--minKernOnly'}, {'opt': '--autoKernOnly'})
+#   --psnames   - retain psf names (otherwise strip them out)
+#   --qd        - build quick-and-dirty version (no auto-kerning)
+opts = preprocess_args({'opt': '--autohint'}, {'opt': '--psnames'}, {'opt': '--qd'})
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
@@ -75,6 +74,10 @@ else:
         cmd('gftools fix-nonhinting --no-backup -q ${DEP} ${TGT}')
     ])
 
+if '--qd' in opts:
+    print("Include QD version")
+
+
 #cmds.extend([
 #    cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
 #])
@@ -84,55 +87,57 @@ else:
 omitaps = '--omitaps "kafExclude,kernBbRight,kernBbLeft"'
 
 
-if ('--minKernOnly' not in opts):
-    # Build the autoKern version
+# Build the full version
 
-    designspace('source/awamiOTautokern.designspace',
-        # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
-        instanceparams='-l ${DS:FILENAME_BASE}_createintance.log',
-        instances = ['Awami OT TechPre AutoKern Regular'],
-        target = process('${DS:FILENAME_BASE}.ttf', *cmds),
-        version=VERSION,  # Needed to ensure dev information on version string
+designspace('source/awamiPreviewB.designspace',
+    # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
+    instanceparams='-l ${DS:FILENAME_BASE}_createintance.log',
+    #instances = ['Awami Preview B Regular'],
+    instances = None,
+    target = process('${DS:FILENAME_BASE}.ttf', *cmds),
+    version=VERSION,  # Needed to ensure dev information on version string
         
-        opentype = fea(process(genout + '${DS:FILENAME_BASE}.fea', cmd("sed 's/\\\\NULL/NULL/' ${DEP} > ${TGT}")),
-            mapfile = genout + "${DS:FILENAME_BASE}.map",
-            master = 'source/opentype/main.feax',
-            params = '-e --nohb',
+    opentype = fea(process(genout + '${DS:FILENAME_BASE}.fea', cmd("sed 's/\\\\NULL/NULL/' ${DEP} > ${TGT}")),
+        mapfile = genout + "${DS:FILENAME_BASE}.map",
+        master = 'source/opentype/main.feax',
+        params = '-e --nohb',
             
-    #        make_params = '--ignoreglyphs ' + omitaps + noOTkern,
-            make_params = omitaps,
-            # depends = ['source/opentype/gsub.feax', 'source/opentype/gpos.feax', 
-            #            'source/opentype/customCollisionSubs.feax',
-            #            'source/opentype/customKerning.feax',
-            #            'source/opentype/customShifting.feax',]
-            ),
+#        make_params = '--ignoreglyphs ' + omitaps + noOTkern,
+        make_params = omitaps,
+        # depends = ['source/opentype/gsub.feax', 'source/opentype/gpos.feax', 
+        #            'source/opentype/customCollisionSubs.feax',
+        #            'source/opentype/customKerning.feax',
+        #            'source/opentype/customShifting.feax',]
+        ),
     
-        #typetuner = typetuner("source/typetuner/feat_all.xml"),
-        classes = 'source/classes.xml',
-        script='arab',
-        #pdf=fret(params = '-r -b'),     # -b = show octaboxes
-        #woff = woff('web/${DS:FILENAME_BASE}.woff',
-        #    metadata=f'../source/{FAMILY}-WOFF-metadata.xml',
-        #    cmd='psfwoffit -m ${SRC[1]} --woff ${TGT} --woff2 ${TGT}2 ${SRC[0]}'
-        #    ),
+    #typetuner = typetuner("source/typetuner/feat_all.xml"),
+    classes = 'source/classes.xml',
+    script='arab',
+    #pdf=fret(params = '-r -b'),     # -b = show octaboxes
+    #woff = woff('web/${DS:FILENAME_BASE}.woff',
+    #    metadata=f'../source/{FAMILY}-WOFF-metadata.xml',
+    #    cmd='psfwoffit -m ${SRC[1]} --woff ${TGT} --woff2 ${TGT}2 ${SRC[0]}'
+    #    ),
 
-        #woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml'),
-        )
+    #woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml'),
+    )
 
+if '--qd' in opts:
 
-if ('--autoKernOnly' not in opts):
-    # Build minkern version by editing the main.feax file with sed
+    # Build the quick-and-dirty version (no auto-kerning) - REGULAR only
+    # Do this by editing the main.feax file with sed.
 
-    designspace('source/awamiOTminkern.designspace',
+    designspace('source/awamiPreviewB-QD.designspace',
         # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
         instanceparams='-l ${DS:FILENAME_BASE}_createintance.log',
-        instances = ['Awami OT TechPre MinKern Regular'],
+        #instances = ['Awami Preview B QD Regular'],
+        instances = None,
         target = process('${DS:FILENAME_BASE}.ttf', *cmds),
         version=VERSION,  # Needed to ensure dev information on version string
         
         opentype = fea(process(genout + '${DS:FILENAME_BASE}.fea', cmd("sed 's/\\\\NULL/NULL/' ${DEP} > ${TGT}")),
             mapfile = genout + "${DS:FILENAME_BASE}.map",
-            master = create(genout + 'mainMinKern.feax', 
+            master = create(genout + 'mainQD.feax', 
                             cmd('sed -E ' +
                                 "-e 's/return 1    # toggle/return 0    # toggle/' " +
                                 "-e 's/^(include.*autokern.feax.*)$/#\\1/' " +

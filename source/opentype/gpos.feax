@@ -366,6 +366,7 @@ lookup AttachUpper3 {
 } AttachUpper3;
 
 # Special cases go last so that they override:
+
 lookup AttachAlefDiacToYeh {
 	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @alef			mark @_mUpper;
