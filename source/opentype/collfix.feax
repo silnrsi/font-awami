@@ -150,6 +150,7 @@ lookup CollFixNuqtasUpper {  # some of these rules are generalized to include al
 
 } CollFixNuqtasUpper;
 
+
 @BehBe = [absBehIni.be absBehMed.be];
 
 lookup CollFixNuqtasLower {
@@ -259,6 +260,15 @@ lookup CollFixNuqtasLower {
 
 } CollFixNuqtasLower;
 
+lookup CollFixLowerBold {
+	lookupflag UseMarkFilteringSet [@NuqtaLikeLower];
+
+ifinfo(styleName, "Bold") {	# SemiBold, Bold, ExtraBold
+	# any rules here?
+}
+
+} CollFixLowerBold;
+
 lookup CollFixLowerBariyeh {
 	lookupflag UseMarkFilteringSet [@NuqtaLikeLower @ByShim];
 
@@ -355,6 +365,25 @@ lookup CollFixDiacUpper {
 	sub absFehIni.qf @MarkUpper @MarkUpper	absWawFin @DiacUpper' lookup _ShiftW200;
 
 } CollFixDiacUpper;
+
+
+lookup CollFixUpperBold {
+	lookupflag UseMarkFilteringSet [@MarkUpper @CfMarker];
+
+ifinfo(styleName, "Bold") {	# SemiBold, Bold, ExtraBold
+	# jeem + kaf
+	sub absJeemIni @Mark' lookup _ShiftS100E200 @KafMedForms;
+
+	# qaf + kaf
+	sub absFehIni.kf_wide @Mark' lookup _ShiftE200 [@KafMFForms @KafMedBase_sub];
+
+	# meem + mark + kaf
+	sub absMeemIni @Mark' lookup _ShiftS100E100 [@KafMFForms @KafMedBase_sub];
+
+}
+
+} CollFixUpperBold;
+
 
 @LamKafBeLowTooth = [absLamMed.be absKehehMed.be absGafMed.be absKehehMed.be_base 
 	absLamMed.beM2 absKehehMed.beM2 absGafMed.beM2 absKehehMed.beM2_base];
@@ -458,6 +487,17 @@ lookup CollFixRedoUpper {
 
 	# noon + noon-ghunna mark + round kaf
 	sub absBehMed.sd _dot1u cfN200' @CfMarkerEW absNoonGhunnaMark [absKehehMed absGafMed]	by cfS100;
+
+ifinfo(styleName, "Bold") {
+
+	# feh + teh + alef
+	sub absFehIni.beM2 @MarkUpper @CfMarker absBehMed @MarkUpper cfN500' @CfMarkerEW 
+																		[absAlefFin @LamMFForms]	by	cfN600;
+
+	# ain + meem + mark
+	sub [absAinIni.mm absAinMed.mm] absMeemMed @MarkUpper cfW300'	by	cfW400;
+}
+
 } CollFixRedoUpper;
 
 lookup MergeTightMarks {
