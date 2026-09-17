@@ -47,8 +47,9 @@ ftmlTest('tests/FTML_XSL/ftml-smith.xsl')
 # smith project-specific options:
 #   --autohint  - autohint the font (otherwise hints are stripped)
 #   --psnames   - retain psf names (otherwise strip them out)
+#   --dev       - for development, build bold and regular, but no other weights
 #   --qd        - build quick-and-dirty version (no auto-kerning)
-opts = preprocess_args({'opt': '--autohint'}, {'opt': '--psnames'}, {'opt': '--qd'})
+opts = preprocess_args({'opt': '--autohint'}, {'opt': '--psnames'}, {'opt': '--qd'}, {'opt': '--dev'})
 
 # override tex for pdfs
 testCommand('pdfs', cmd="${CMPTXTRENDER} -t ${SRC[0]} -e ${shaper} --outputtype=json -r ${SRC[1]} | ${PDFSHAPED} -s 16 -l 2.0 -o ${TGT} -f ${SRC[1]}",
@@ -74,9 +75,6 @@ else:
         cmd('gftools fix-nonhinting --no-backup -q ${DEP} ${TGT}')
     ])
 
-if '--qd' in opts:
-    print("Include QD version")
-
 
 #cmds.extend([
 #    cmd('typetuner -o ${TGT} add ${SRC} ${DEP}', "source/typetuner/feat_all.xml")
@@ -86,10 +84,14 @@ if '--qd' in opts:
 #omitaps = '--omitaps "_above,_below,_center,_ring,_through,_aboveLeft,_H,_L,_O,_U,_R,above,below,center,ring,through,aboveLeft,H,L,O,U,R"'
 omitaps = '--omitaps "kafExclude,kernBbRight,kernBbLeft"'
 
+designspace_file = "awamiPreviewB"
+if '--dev' in opts:
+    designspace_file = "awamiPreviewB-dev"
+
 
 # Build the full version
 
-designspace('source/awamiPreviewB.designspace',
+designspace('source/' + designspace_file + '.designspace',
     # -W option resets weights to 400 and 700, for RIBBI fonts - we don't want that.
     instanceparams='-l ${DS:FILENAME_BASE}_createintance.log',
     #instances = ['Awami Preview B Regular'],
@@ -122,9 +124,9 @@ designspace('source/awamiPreviewB.designspace',
     #woff=woff('web/${DS:FILENAME_BASE}.woff', params='-v ' + VERSION + ' -m ../source/${FAMILY}-WOFF-metadata.xml'),
     )
 
-if '--qd' in opts:
+if '--qd' in opts or '--dev' in opts:
 
-    # Build the quick-and-dirty version (no auto-kerning) - REGULAR only
+    # Build the quick-and-dirty version (no auto-kerning).
     # Do this by editing the main.feax file with sed.
 
     designspace('source/awamiPreviewB-QD.designspace',

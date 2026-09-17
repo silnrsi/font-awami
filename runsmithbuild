@@ -1,13 +1,15 @@
 #!/bin/sh
 
+# Build regular and bold weights only for the full font and the quick-and-dirty font.
+
 # generate Debg table
 export FONTTOOLS_LOOKUP_DEBUGGING=1
 
 smith distclean
 smith configure
-smith build -v --psnames #--qd
+smith build -v --psnames --dev
 
-#echo NOTE: Ignore warning about mainQD
+echo NOTE: Ignore warning about mainQD
 
 #smith test
 #smith sile

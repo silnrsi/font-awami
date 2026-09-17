@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Build all the weights for the full font; don't build the quick-and-dirty font.
+
+# generate Debg table
+export FONTTOOLS_LOOKUP_DEBUGGING=1
+
+smith distclean
+smith configure
+smith build -v --psnames -j 2
+
+#smith test
+#smith sile
+#smith pdfs

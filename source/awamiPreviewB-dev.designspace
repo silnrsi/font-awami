@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<designspace format="3">
+    <axes>
+        <axis default="400.0" maximum="800.0" minimum="400.0" name="weight" tag="wght">    <!-- user weights -->
+        		<!-- input is user weight (eg, CSS); output is design weight -->
+            <map input="400.0" output="400.0" />
+            <map input="500.0" output="500.0" />
+            <map input="600.0" output="600.0" />
+            <map input="700.0" output="700.0" />
+            <map input="800.0" output="900.0" />
+            <labelname xml:lang="en">Weight</labelname>
+        </axis>
+        <axis default="100.0" maximum="100.0" minimum="100.0" name="width" tag="wdth">
+            <map input="100.0" output="100.0" />
+            <labelname xml:lang="en">Width</labelname>
+        </axis>
+        <axis default="0.0" maximum="0.0" minimum="0.0" name="custom" tag="XXXX">
+            <map input="0.0" output="0.0" />
+            <labelname xml:lang="en">Custom</labelname>
+        </axis>
+    </axes>
+    
+    <sources>
+        <source familyname="Awami Preview B" name="AwamiPreviewB-Regular" filename="masters/Awami-Regular.ufo" stylename="Regular">
+            <lib copy="1" />
+            <groups copy="1" />
+            <features copy="1" />
+            <info copy="1" />
+            <location>
+                <dimension name="weight" xvalue="400.000000" />  <!-- design weight -->
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+        </source>
+        
+        <source familyname="Awami Preview B" name="AwamiPreviewB-Black" filename="masters/Awami-Black.ufo" stylename="Black">
+          <location>
+                <dimension name="weight" xvalue="900.000000" />  <!-- design weight -->
+                <dimension name="width" xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+        </source>
+    
+    </sources>
+
+    <instances>
+        <!-- Regular -->
+        <instance      familyname="Awami Preview B"
+                         filename="instances/AwamiPreviewB-Regular.ufo"
+                             name="Awami Preview B Regular"
+               stylemapfamilyname="Awami Preview B"
+                        stylename="Regular"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiPreviewB-Regular">
+            <location>
+                <dimension name="weight" xvalue="400.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- Medium -->
+<!--
+        <instance      familyname="Awami Preview B"
+        	               filename="instances/AwamiPreviewB-Medium.ufo"
+                             name="Awami Preview B Medium"
+               stylemapfamilyname="Awami Preview B Medium"
+                        stylename="Medium"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiPreviewB-Medium">
+            <location>
+                <dimension name="weight" xvalue="500.000000" />    <!- - design weight - ->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+-->
+
+        <!-- SemiBold -->
+<!--
+        <instance      familyname="Awami Preview B"
+        	               filename="instances/AwamiPreviewB-SemiBold.ufo"
+                             name="Awami Preview B SemiBold"
+               stylemapfamilyname="Awami Preview B SemiBold"
+                        stylename="SemiBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiPreviewB-SemiBold">
+            <location>
+                <dimension name="weight" xvalue="600.000000" />    <!- - design weight - ->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+-->
+
+        <!-- Bold -->
+        <instance      familyname="Awami Preview B"
+                         filename="instances/AwamiPreviewB-Bold.ufo"
+                             name="Awami Preview B Bold"
+               stylemapfamilyname="Awami Preview B"
+                        stylename="Bold"
+                stylemapstylename="bold"
+               postscriptfontname="AwamiPreviewB-Bold">
+            <location>
+                <dimension name="weight" xvalue="700.000000" />    <!-- design weight -->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+        
+        <!-- ExtraBold -->
+<!--
+        <instance      familyname="Awami Preview B"
+        	               filename="instances/AwamiPreviewB-ExtraBold.ufo"
+                             name="Awami Preview B ExtraBold"
+               stylemapfamilyname="Awami Preview B ExtraBold"
+                        stylename="ExtraBold"
+                stylemapstylename="regular"
+               postscriptfontname="AwamiPreviewB-ExtraBold">
+            <location>
+                <dimension name="weight" xvalue="900.000000" />    <!- - design weight - ->
+                <dimension name="width"  xvalue="100.000000" />
+                <dimension name="custom" xvalue="0.000000" />
+            </location>
+            <info />
+            <kerning />
+        </instance>
+-->
+
+    </instances>
+</designspace>
