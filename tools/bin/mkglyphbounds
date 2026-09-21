@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 # Run this script from the tools/bin directory where the file is located:
-#    ./mkglyphbounds -o ../../source/opentype/autoKernMetrics.feax ../../source/masters/AwamiNastaliq-Regular.ufo
+#    ./mkglyphbounds -o ../../source/opentype/autoKernMetrics-R.feax ../../source/masters/Awami-Regular.ufo
+#    ./mkglyphbounds -o ../../source/opentype/autoKernMetrics-B.feax ../../source/masters/Awami-Black.ufo
 
 import argparse
 from fontTools import ttLib, ufoLib
@@ -648,7 +649,8 @@ def TrimMetricsForOverlappingConnections_200(gname, uppers, lowers, entry, exit)
     # The post-lam alef completely covers the lam. Extend the alef to include the lam overhang on the left.
     if gname == "absAlefFin._lm":
         #uppersNew = (uppers[0], uppers[1], 500)
-        uppersNew = (uppers[0], 500, 500)
+        uppersNew = (uppers[0], 500, 500)  # regular
+        ###uppersNew = (500, 500)       # bold
         uppers = uppersNew
     # The lam is already truncated for some reason that I don't understand.
     # if gname == "absLamMed.al":

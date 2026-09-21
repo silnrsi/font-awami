@@ -1,11 +1,18 @@
 #	File: autoKernMetrics.feax
 #
-#	FEAX code for Awami Nastaliq
+#	FEAX code for Awami Nastaliq font
 
 # lookup InitKernMetrics:
 do	if SliceWidth() == 200;
 	{
-		include(../../source/opentype/autoKernMetrics-200.feax);
+
+	ifinfo(styleName, "Regular|Medium") {
+		include(../../source/opentype/autoKernMetrics-R-200.feax);
+	}
+	ifinfo(styleName, "Bold") {				# SemiBold, Bold, ExtraBold
+		include(../../source/opentype/autoKernMetrics-B-200.feax);
+	}
+
 	}
 
 	
@@ -13,4 +20,3 @@ do	if SliceWidth() == 100;
 	{
 		include(../../source/opentype/autoKernMetrics-100.feax);
 	}
-
