@@ -1481,13 +1481,19 @@ lookup HamzaAlternates {
 
 } HamzaAlternates;
 
+lookup HighHamzaAlefDecompose {	# decompose in order to substitute the large arabic hamza
+	lookupflag 0;
+	sub absHighHamzaAlef  by  absAlef  highHamza;
+} HighHamzaAlefDecompose;
+
+
 lookup HighHamzaAlternates {
 	lookupflag 0;
 
-	#	0=default					1=Arabic				2=Urdu
-	sub absHighHamza		from  [	absHighHamza.arabic		absHighHamza ];
-	sub highHamza  			from  [	highHamza.arabic		highHamza ];
-	sub absHighHamzaAlef	from  [	absHighHamzaAlef.arabic	absHighHamzaAlef ];
+	#	0=default					1=Arabic						2=Urdu
+	sub absHighHamza		from  [	absHighHamza.arabicLarge		absHighHamza ];
+	sub highHamza  			from  [	highHamza.arabicLarge			highHamza ];
+	#sub absHighHamzaAlef	from  [	absHighHamzaAlef.arabicLarge	absHighHamzaAlef ]; # -- decomposed above
 
 } HighHamzaAlternates;
 
@@ -1501,6 +1507,7 @@ language KSH;	# Kashmiri
 language MLY;	# Malay/Jawi
 	lookup DecomposeHamza;
 	lookup HamzaAlternates;
+	lookup HighHamzaAlefDecompose;
 	lookup HighHamzaAlternates;
 
 language RAJ;	# Gojri (Rajasthani)
@@ -1566,6 +1573,7 @@ language RAJ;
 feature cv56 {  # high-hamza alternate
 script arab;
 
+	lookup HighHamzaAlefDecompose;
 	lookup HighHamzaAlternates;
 
 # Force other languages to include Arabic script default rules:
@@ -1589,10 +1597,12 @@ language RAJ;
 } cv78;
 
 
-feature cv85 {	# punctuation
+feature cv85 {	# full-stop
 script arab;
 
-# lookup here....
+lookup FullStopAlt {
+	sub absFullStop  by  absFullStop.dot;
+} FullStopAlt;
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1602,12 +1612,10 @@ language RAJ;
 } cv85;
 
 
-feature cv86 {	# full-stop
+feature cv86 {	# punctuation
 script arab;
 
-lookup FullStopAlt {
-	sub absFullStop  by  absFullStop.dot;
-} FullStopAlt;
+# lookup here....
 
 # Force other languages to include Arabic script default rules:
 language KSH;
