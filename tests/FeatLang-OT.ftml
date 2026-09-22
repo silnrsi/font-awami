@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../tools/ftml.xsl" type="text/xsl"?>
+<ftml version="1.0">
+  <head>
+    <fontscale>200</fontscale>
+    <fontsrc label="ref">url(../references/AwamiNastaliq-Regular.ttf)</fontsrc>
+    <fontsrc label="Reg">url(../results/AwamiNastaliq-Regular.ttf)</fontsrc>
+    <fontsrc label="PreB">url(../results/AwamiPreviewB-Regular.ttf)</fontsrc>
+    <styles>
+      <style lang="ks" name="ks"/>
+      <style lang="gju" name="gju"/>
+      <style lang="raj" name="raj"/>
+      <style feats="'cv43' 1" name="cv43_1"/>
+      <style feats="'cv49' 1" name="cv49_1"/>
+      <style feats="'cv50' 1" name="cv50_1"/>
+      <style feats="'cv55' 1" name="cv55_1"/>
+      <style feats="'cv56' 1" name="cv56_1"/>
+      <style feats="'cv85' 1" name="cv85_1"/>
+      <style feats="'cv86' 1" name="cv86_1"/>
+      <style feats="'hedo' 1" name="hedo_1"/>
+      <style feats="'hehk' 0" name="hehk_0"/>
+      <style feats="'hamz' 1" name="hamz_1"/>
+      <style feats="'hihm' 1" name="hihm_1"/>
+    </styles>
+    <title>Feature-Language Interactions</title>
+    <widths string="25%"/>
+  </head>
+  <testgroup background="#f0f0f0" label="Rendering Check">
+    <test label="check">
+      <string>RenderingUnknown</string>
+    </test>
+  </testgroup>
+  <testgroup label="Kashmiri alternates">
+    <test label="U+0623 U+0625 U+0654 U+0655" rtl="True">
+      <string>\u000623 \u000627\u000654 \u000625 \u000627\u000655</string>
+    </test>
+    <test label="U+0623 U+0625 U+0654 U+0655" rtl="True" stylename="ks">
+      <string>\u000623 \u000627\u000654 \u000625 \u000627\u000655</string>
+    </test>
+    <test label="boy" rtl="True">
+      <string>لٔڑکہٕ</string>
+    </test>
+    <test label="boy" rtl="True" stylename="ks">
+      <string>لٔڑکہٕ</string>
+    </test>
+  </testgroup>
+  <testgroup label="Gojri alternates">
+    <test label="U+06B5" rtl="True">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+    <test label="U+06B5" rtl="True" stylename="gju">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+    <test label="U+06B5" rtl="True" stylename="raj">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+  </testgroup>
+  <testgroup label="Character Variants">
+    <test label="Lam with V 06b5" rtl="True">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+    <test label="Lam with V 06b5" rtl="True" stylename="cv43_1">
+      <string>\u0006B5 \u0006B5\u0006B5\u0006B5 </string>
+    </test>
+    <test label="Initial heh doachashmee 06be" rtl="True">
+      <string>\u0006BE \u0006Be\u0006Be\u0006Be </string>
+    </test>
+    <test label="Initial heh doachashmee 06be" rtl="True" stylename="cv49_1">
+      <string>\u0006Be \u0006Be\u0006Be\u0006Be </string>
+    </test>
+    <test label="Initial heh doachashmee 06be" rtl="True" stylename="hedo_1">
+      <string>\u0006Be \u0006Be\u0006Be\u0006Be </string>
+    </test>
+    <test label="Hook on medial heh-goal 06C1 06C2" rtl="True">
+      <string>\u0006c1 \u0006c1\u06c1\u0006c1 \u0006c2 \u0006c2\u06c2\u0006c2</string>
+    </test>
+    <test label="Hook on medial heh-goal 06C1 06C2" rtl="True" stylename="cv50_1">
+      <string>\u0006c1 \u0006c1\u06c1\u0006c1 \u0006c2 \u0006c2\u06c2\u0006c2</string>
+    </test>
+    <test label="Hook on medial heh-goal 06C1 06C2" rtl="True" stylename="hehk_0">
+      <string>\u0006c1 \u0006c1\u06c1\u0006c1 \u0006c2 \u0006c2\u06c2\u0006c2</string>
+    </test>
+    <test label="Hamza 0623, 0624, 0626, 0654, 0655, 0675, 0681, 06C2, 06D3, 076C" rtl="True">
+      <string>\u000621 \u000623 \u0628\u0623 \u0624 \u0628\u0624 \u000625 \u0628\u0625 \u000626 \u000626\u000626\u000626 \u000628\u0654 \u000628\u0655 \u0674 \u0675 \u0628\u0675 \u0681 \u0681\u0681\u0681 \u06C2 \u06C2\u06C2\u06C2 \u06D3 \u0628\u06D3 \u076c \u0628\u076c</string>
+    </test>
+    <test label="Hamza 0623, 0624, 0626, 0654, 0655, 0675, 0681, 06C2, 06D3, 076C" rtl="True" stylename="cv55_1">
+      <string>\u000621 \u000623 \u0628\u0623 \u0624 \u0628\u0624 \u000625 \u0628\u0625 \u000626 \u000626\u000626\u000626 \u000628\u0654 \u000628\u0655 \u0674 \u0675 \u0628\u0675 \u0681 \u0681\u0681\u0681 \u06C2 \u06C2\u06C2\u06C2 \u06D3 \u0628\u06D3 \u076c \u0628\u076c</string>
+    </test>
+    <test label="Hamza 0623, 0624, 0626, 0654, 0655, 0675, 0681, 06C2, 06D3, 076C" rtl="True" stylename="hamz_1">
+      <string>\u000621 \u000623 \u0628\u0623 \u0624 \u0628\u0624 \u000625 \u0628\u0625 \u000626 \u000626\u000626\u000626 \u000628\u0654 \u000628\u0655 \u0674 \u0675 \u0628\u0675 \u0681 \u0681\u0681\u0681 \u06C2 \u06C2\u06C2\u06C2 \u06D3 \u0628\u06D3 \u076c \u0628\u076c</string>
+    </test>
+    <test label="High Hamza (for Malay) 0674" rtl="True">
+      <string>\u000674 \u000628\u000674 </string>
+    </test>
+    <test label="High Hamza (for Malay) 0674" rtl="True" stylename="cv56_1">
+      <string>\u000674 \u000628\u000674 </string>
+    </test>
+    <test label="High Hamza (for Malay) 0674" rtl="True" stylename="hihm_1">
+      <string>\u000674 \u000628\u000674 </string>
+    </test>
+    <test label="Full Stop 06D4" rtl="True">
+      <string>\u000628\u0006D4 </string>
+    </test>
+    <test label="Full Stop 06D4" rtl="True" stylename="cv86_1">
+      <string>\u000628\u0006D4</string>
+    </test>
+    <test label="Punctuation" rtl="True">
+      <string>! ” ‘ ( ) * + – / : [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙</string>
+    </test>
+    <test label="Punctuation" rtl="True" stylename="cv85_1">
+      <string>! ” ‘ ( ) * + – / : [ \ ] { } « ­ ± · » ×   ‐ ‑ ‒ – — ― ‘ ’ ‚ “ ” „ • ‥ … ‧ ‰ ‹ › − ∙</string>
+    </test>
+  </testgroup>
+</ftml>
