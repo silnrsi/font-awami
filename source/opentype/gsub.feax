@@ -1481,19 +1481,15 @@ lookup HamzaAlternates {
 
 } HamzaAlternates;
 
-lookup HighHamzaAlefDecompose {	# decompose in order to substitute the large arabic hamza
-	lookupflag 0;
-	sub absHighHamzaAlef  by  absAlef  highHamza;
-} HighHamzaAlefDecompose;
-
-
 lookup HighHamzaAlternates {
 	lookupflag 0;
 
-	#	0=default					1=Arabic						2=Urdu
-	sub absHighHamza		from  [	absHighHamza.arabicLarge		absHighHamza ];
-	sub highHamza  			from  [	highHamza.arabicLarge			highHamza ];
-	#sub absHighHamzaAlef	from  [	absHighHamzaAlef.arabicLarge	absHighHamzaAlef ]; # -- decomposed above
+	#	0=default						1=large							2=small/unchanged
+	sub absHighHamza			from  [	absHighHamza.arabicLarge		absHighHamza ];
+	sub absHighHamza.arabic		from  [	absHighHamza.arabicLarge		absHighHamza.arabic ];
+	sub highHamza  				from  [	highHamza.arabic				highHamza ];	# maybe this rule is not wanted
+	sub absHighHamzaAlef		from  [	absHighHamzaAlef.arabicLarge	absHighHamzaAlef ];
+	sub absHighHamzaAlef.arabic	from  [	absHighHamzaAlef.arabicLarge	absHighHamzaAlef.arabic ];
 
 } HighHamzaAlternates;
 
@@ -1507,7 +1503,6 @@ language KSH;	# Kashmiri
 language MLY;	# Malay/Jawi
 	lookup DecomposeHamza;
 	lookup HamzaAlternates;
-	lookup HighHamzaAlefDecompose;
 	lookup HighHamzaAlternates;
 
 language RAJ;	# Gojri (Rajasthani)
@@ -1573,7 +1568,6 @@ language RAJ;
 feature cv56 {  # high-hamza alternate
 script arab;
 
-	lookup HighHamzaAlefDecompose;
 	lookup HighHamzaAlternates;
 
 # Force other languages to include Arabic script default rules:

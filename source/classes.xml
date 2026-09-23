@@ -275,6 +275,7 @@ details including an FAQ.
 	<class name="AlefIsoForms">
 		absAlef absAlefHamzaAbove absAlefHamzaBelow absAlefMaddaAbove absAlefWavyHamzaAbove absAlefWavyHamzaBelow
 						absAlefTwoAbove absAlefThreeAbove absHighHamzaAlef absAlefWasla
+						absHighHamzaAlef.arabic absHighHamzaAlef.arabicLarge
 	</class>
 	
 	<class name="AlefForms">
@@ -383,6 +384,7 @@ details including an FAQ.
 		@BariyehIsoForms
 		absTehMarbuta
 		absTehMarbutaGoal
+		absHighHamza absHighHamza.arabic absHighHamza.arabicLarge
 	</class>
 	
 	<class name="IniMed">@Initials @Medials</class>
@@ -1652,13 +1654,12 @@ details including an FAQ.
 
 	<class name="UrduHamza_sub">
 		_hamza absHamzaAbove absHamzaBelow
-		<!-- don't include absHighHamza, highHamza, or absHighHamzaAlef - 
-				they are handled by a different feature -->
+		absHighHamza highHamza absHighHamzaAlef
 	</class>
 
 	<class name="ArabicHamza_sub">
-		_hamza.arabic absHamzaAbove.arabic absHamzaBelow.arabic  
-		<!-- absHighHamza.arabic highHamza.arabic absHighHamzaAlef.arabic -->
+		_hamza.arabic absHamzaAbove.arabic absHamzaBelow.arabic
+		absHighHamza.arabic highHamza.arabic absHighHamzaAlef.arabic
 	</class>
 
 	<class name="BaseHamzaAbove">
@@ -1998,6 +1999,7 @@ details including an FAQ.
 	<class name="AlefKernBaseMarkIso">
 		mkAlef mkAlefHamzaAbove mkAlefHamzaBelow mkAlefMaddaAbove mkAlefWavyHamzaAbove mkAlefWavyHamzaBelow
 						mkAlefTwoAbove mkAlefThreeAbove mkHighHamzaAlef mkAlefWasla
+						mkHighHamzaAlef.arabic mkHighHamzaAlef.arabicLarge
 	</class>
 	<class name="BehKernBaseMarkIso">
 		mkBeh mkTeh mkTheh mkPeh mkTteh mkTteheh mkTehRing mkTehThreeDotsAboveDownwards mkBeeh 
@@ -2056,6 +2058,7 @@ details including an FAQ.
 		@ByKernBaseMarkIso
 		mkTehMarbuta
 		mkTehMarbutaGoal
+		mkHighHamza mkHighHamza.arabic mkHighHamza.arabicLarge
 	</class>
 
 	<class name="KernBaseOther">space zerojoin zeronojoin</class>
