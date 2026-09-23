@@ -31,7 +31,6 @@ lookup BasicConnections {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } curs;		# end of feature
 
@@ -39,7 +38,7 @@ language RAJ;
 feature kern {
 script arab;
 
-lookup DoKerning {
+lookup DoAutoKerning {
 	lookupflag UseMarkFilteringSet @KwMarker;
 
 do	if AutoKern() == 1; {
@@ -132,7 +131,7 @@ do	if AutoKern() != 1; {
 	pos @GDEF_bases <-1600 0 -1600 0> kw1600;
 }
 
-} DoKerning;
+} DoAutoKerning;
 
 # --- Subtending mark positioning ---
 
@@ -231,7 +230,6 @@ lookup SubtendingMarks {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } kern;
 

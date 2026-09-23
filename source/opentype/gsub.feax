@@ -104,7 +104,6 @@ lookup HamzaShiftUtr53 {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } ccmp;		# end of feature
 
@@ -142,7 +141,6 @@ lookup RecomposeIsolates {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } isol;		# end of feature
 
@@ -191,7 +189,6 @@ lookup DualFinals {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } fina;		# end of feature
 
@@ -222,7 +219,6 @@ lookup MedialForms {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } medi;		# end of feature
 
@@ -241,7 +237,6 @@ lookup InitialForms {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } init;		# end of feature
 
@@ -766,7 +761,6 @@ lookup SignWithDigits {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } rlig;		# end of feature
 
@@ -1011,7 +1005,6 @@ lookup KafLineHeight_JmShort {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } calt;
 
@@ -1452,20 +1445,23 @@ lookup HandFixBariyehKern {
 	sub @KwMarker'	@Initials @Medials @Medials @Medials @MedBy_sub		by	kblockHard @KwMarker;
 } HandFixBariyehKern;
 
+
+# Make the alternate over-bowl position the default.
+lookup LamVOverBowl {
+	lookupflag 0;
+	sub [absLamSmallV absLamFin]  by  [absLamSmallV_alt absLamFin_altV];
+} LamVOverBowl;
+
+
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } rclt;	 # end of feature
 
 
-# --- Language-related features ---
 
-lookup LamVAlternate {
-	lookupflag 0;
-	sub [absLamSmallV absLamFin]  by  [absLamSmallV_alt absLamFin_altV];
-} LamVAlternate;
+# --- Language-related features ---
 
 lookup DecomposeHamza {
 	lookupflag 0;
@@ -1505,8 +1501,9 @@ language MLY;	# Malay/Jawi
 	lookup HamzaAlternates;
 	lookup HighHamzaAlternates;
 
-language RAJ;	# Gojri (Rajasthani)
-	lookup LamVAlternate;
+# no longer needed since the Gojri form is the default
+#language RAJ;	# Gojri (Rajasthani)
+#	lookup LamVAlternate;
 } calt;
 
 
@@ -1515,12 +1512,15 @@ language RAJ;	# Gojri (Rajasthani)
 feature cv43 {	# lam-V alternate
 script arab;
 
-lookup LamVAlternate;
+# The over-bowl form is now the default; switch back to the over-stem form.
+lookup LamVAlternate {
+	lookupflag 0;
+	sub [absLamSmallV_alt absLamFin_altV]	by	[absLamSmallV absLamFin];
+} LamVAlternate;
 
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv43;
 
@@ -1533,7 +1533,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv49;
 
@@ -1546,7 +1545,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv50;
 
@@ -1560,7 +1558,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv55;
 
@@ -1573,7 +1570,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv56;
 
@@ -1586,7 +1582,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv78;
 
@@ -1601,7 +1596,6 @@ lookup FullStopAlt {
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv85;
 
@@ -1614,7 +1608,6 @@ script arab;
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } cv86;
 
@@ -1631,6 +1624,5 @@ include(../../source/opentype/collfix.feax);
 # Force other languages to include Arabic script default rules:
 language KSH;
 language MLY;
-language RAJ;
 
 } liga;
