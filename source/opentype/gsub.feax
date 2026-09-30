@@ -1510,6 +1510,20 @@ language MLY;	# Malay/Jawi
 # --- User-selectable features ---
 
 feature cv43 {	# lam-V alternate
+
+cvParameters {
+	FeatUILabelNameID { name 3 1 0x0409 "Lam-V alternate" ; };  # 0x0409 = US English
+	
+	FeatUITooltipTextNameID { name 3 1 0x0409 "Alternate places V over stem for final and isolate."; };
+
+	SampleTextNameID {
+		name 3 1 0x0409 "ڵ ڵڵڵ";;  # \u06B5 \u06B5\u06B5\u06B5
+	};
+
+	### ParamUILabelNameID { name 3 1 0x0409 "Over bowl" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Over stem" ; };
+};
+
 script arab;
 
 # The over-bowl form is now the default; switch back to the over-stem form.
@@ -1550,10 +1564,25 @@ language MLY;
 
 
 feature cv55 {  # hamza alternate
+
+cvParameters {
+	FeatUILabelNameID { name 3 1 0x0409 "Hamza alternate" ; };  # 0x0409 = US English
+	
+	FeatUITooltipTextNameID { name 3 1 0x0409 "Arabic-style hamza"; };
+
+	SampleTextNameID {
+		name 3 1 0x0409 "  ٔ أ ؤ ئ ۂ ۓ ݬ ځ";  # \u0675 \u0674
+	};
+
+	### ParamUILabelNameID { name 3 1 0x0409 "Default" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Arabic style" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Urdu style" ; };
+};
+
 script arab;
 
-	lookup DecomposeHamza;
-	lookup HamzaAlternates;
+lookup DecomposeHamza;
+lookup HamzaAlternates;
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1565,7 +1594,21 @@ language MLY;
 feature cv56 {  # high-hamza alternate
 script arab;
 
-	lookup HighHamzaAlternates;
+cvParameters {
+	FeatUILabelNameID { name 3 1 0x0409 "High-hamza alternate" ; };  # 0x0409 = US English
+	
+	FeatUITooltipTextNameID { name 3 1 0x0409 "Large Arabic-style hamza"; };
+
+	SampleTextNameID {
+		name 3 1 0x0409 "ٵ ٴ";  # \u0675 \u0674
+	};
+
+	### ParamUILabelNameID { name 3 1 0x0409 "Default" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Large" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Small" ; };
+};
+
+lookup HighHamzaAlternates;
 
 # Force other languages to include Arabic script default rules:
 language KSH;
@@ -1587,6 +1630,20 @@ language MLY;
 
 
 feature cv85 {	# full-stop
+
+cvParameters {
+	FeatUILabelNameID { name 3 1 0x0409 "Full-stop alternate" ; };  # 0x0409 = US English
+	
+	FeatUITooltipTextNameID { name 3 1 0x0409 "Dash or dot"; };
+
+	SampleTextNameID {
+		name 3 1 0x0409 "ہیلو.";
+	};
+
+	### ParamUILabelNameID { name 3 1 0x0409 "Dash" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Dot" ; };
+};
+
 script arab;
 
 lookup FullStopAlt {
