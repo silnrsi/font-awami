@@ -373,6 +373,8 @@ lookup CollFixUpperBold {
 ifinfo(styleName, "Bold") {	# SemiBold, Bold, ExtraBold
 	# jeem + kaf
 	sub absJeemIni @Mark' lookup _ShiftS100E200 @KafMedForms;
+	# heh-doachashmee + kaf
+	sub [absHehDoachashmeeIni absHehDoachashmeeMed] @Mark' lookup _ShiftS100E200 @KafMedForms;
 
 	# qaf + kaf
 	sub absFehIni.kf_wide @Mark' lookup _ShiftE200 [@KafMFForms @KafMedBase_sub];

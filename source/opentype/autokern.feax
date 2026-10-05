@@ -92,6 +92,18 @@ lookup HandleJeemBackswash {
 } HandleJeemBackswash;
 
 
+# The final kaf will overhang narrow initials (eg beh, meem, heh-goal), 
+# so add some slices to them to account for the kaf top.
+lookup Extend4KafOverhang {
+	lookupflag UseMarkFilteringSet @AscMarker;
+
+	sub @Initials @AscMarker'							@KafFinForms	by	asc1800 asc1600 asc1400 @AscMarker;
+	sub @Initials @AscMarker' @AscMarker				@KafFinForms	by	asc1800 asc1600 @AscMarker;
+	sub @Initials @AscMarker' @AscMarker @AscMarker		@KafFinForms	by	asc1800 @AscMarker;
+
+} Extend4KafOverhang;
+
+
 # Kerning before isolates will be handled by hard-coding.
 
 
@@ -167,7 +179,16 @@ lookup IgnoreInvisibles {
 
 # Handle isolate forms explicitly, also some short sequences.
 # We can do this because we always know their vertical position.
-# (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives better results.)
+# (You'd think this would be faster than running the algorithm, but maybe not. At any rate it gives 
+# better results.)
+lookup HardCodeIsolatesPostMark {
+	lookupflag UseMarkFilteringSet [@KwMarker @MarkUpper
+									@KBlock ];  # ignore lookup when case has already been handled
+	# alef + kaf
+	sub [absAlef absAlefFin] kw0' lookup _HardBlock0	@MarkUpper	[@KafIsoForms];
+
+} HardCodeIsolatesPostMark;
+
 lookup HardCodeIsolates {
 	lookupflag UseMarkFilteringSet [@KwMarker
 									@KBlock ];  # ignore lookup when case has already been handled
@@ -272,6 +293,19 @@ lookup HandleAscMarkLimited {
 	sub [absBehFin absBehFin._bfkl]		ascx1000'	@NuqtaLikeUpper		by	ascx1000.Mid8;
 
 } HandleAscMarkLimited;
+
+
+lookup IgnoreNuqtaAscent {
+	lookupflag UseMarkFilteringSet [pyNULL @AscMarker @AscXMarker];
+
+	# In the case of a final kaf that overhangs narrow glyphs, ignore the nuqta ascent, since it will
+	# be under the kaf.
+	# See also lookup Extend4KafOverhang.
+
+	#sub @Initials pyNULL @AscXMarker' asc1800' @AscMarker @AscMarker @AscMarker @KafFinForms	by	asc1800;
+	sub absBehIni pyNULL' ascx600' asc1800 asc1600 ascN200 ascN400 absGafFin  by  pyNULL;
+
+} IgnoreNuqtaAscent;
 
 
 # Currently we initialize the kerning metrics for isolates using absolute coordinates, to avoid
@@ -481,6 +515,15 @@ lookup AdjustForUpperNuqtaOverhang {
 	sub @KwMarker' lookup _DecKwBy100 @Mark'	[@MkLamIni]'	ybLast' lookup _ExtendYbBy100	[_bar];
 
 } AdjustForUpperNuqtaOverhang;
+
+lookup AdjustForKafOverhang {
+	lookupflag UseMarkFilteringSet [@KwMarker @KernBaseMarkVis @AscMarker];
+
+	# We've already extended with slices (Extend4KafOverhang), but we need to kern out.
+	sub @KwMarker' lookup _DecKwBy200 @KernBaseMarkIni asc1800 @AscMarker @AscMarker @AscMarker
+																				[mkKehehFin mkGafFin];
+} AdjustForKafOverhang;
+
 
 # Add another slice or two if the nuqta of interest has been shifted right (east).
 lookup AdjustForNuqtaShift {
