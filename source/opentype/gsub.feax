@@ -24,20 +24,26 @@ feature rtlm {
 
 lookup Mirror {
 	lookupflag IgnoreMarks;
-	sub @cno_rtl by @c_rtl;
+	sub @cno_rtl by @c_rtl;		# mainly math symbols
 } Mirror;
 
 } rtlm;
 
 
-# Separate bases from nuqtas
 feature ccmp {
-
-script arab;
 
 lookup FontCheck;		# both latn and arab
 
-# For UAX53 behavior in Harfbuzz, we need to decompose alef+mark. This is always done in Awami.
+script latn;
+# Punctuation is Latin by default; nothing to do.
+
+
+script arab;
+
+lookup PunctArabic {
+	lookupflag 0;
+	sub @PunctLatin_sub		by	@PunctArabic_sub;
+} PunctArabic;
 
 # A few characters occur rarely in Nastaliq script, we just substitute them with more common ones.
 lookup ReplaceCharacters {
@@ -45,7 +51,9 @@ lookup ReplaceCharacters {
 	#sub absHehYehAbove	by	absTehMarbutaGoal  absHamzaAbove;
 } ReplaceCharacters;
 
+# NB: for UAX53 behavior in Harfbuzz, we need to decompose alef+mark. This is always done in Awami.
 
+# Separate bases from nuqtas
 lookup DecomposeBases {
 
 	sub		@BehComposed_sub 			by 		absDotlessBeh 		@BehMark_sub;
@@ -1465,8 +1473,8 @@ language MLY;
 
 lookup DecomposeHamza {
 	lookupflag 0;
-	sub @BaseHamzaAbove		by	@BaseNoHamzaAbove	absHamzaAbove;
-	sub @BaseHamzaBelow		by	@BaseNoHamzaBelow	absHamzaBelow;
+	sub @BaseHamzaAbove_sub		by	@BaseNoHamzaAbove_sub	absHamzaAbove;
+	sub @BaseHamzaBelow_sub		by	@BaseNoHamzaBelow_sub	absHamzaBelow;
 } DecomposeHamza;
 
 lookup HamzaAlternates {
@@ -1658,13 +1666,31 @@ language MLY;
 
 
 feature cv86 {	# punctuation
-script arab;
 
-# lookup here....
+cvParameters {
+	FeatUILabelNameID { name 3 1 0x0409 "Punctuation alternates" ; };  # 0x0409 = US English
+	
+	FeatUITooltipTextNameID { name 3 1 0x0409 "Arabic- or Latin-style punctuation"; };
 
-# Force other languages to include Arabic script default rules:
-language KSH;
-language MLY;
+	SampleTextNameID {
+		name 3 1 0x0409 "(سم':(";  # 
+	};
+
+	### ParamUILabelNameID { name 3 1 0x0409 "Default" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Arabic" ; };
+		ParamUILabelNameID { name 3 1 0x0409 "Latin" ; };
+};
+
+# Same for latn and arab:
+
+lookup PunctAlt {
+	lookupflag 0;
+
+	#	0=default					1=Arabic			2=Latin
+	sub @PunctLatin_sub  	from [	@PunctArabic_sub	@PunctLatin_sub ];
+	sub @PunctArabic_sub  	from [	@PunctArabic_sub	@PunctLatin_sub ];
+
+} PunctAlt;
 
 } cv86;
 

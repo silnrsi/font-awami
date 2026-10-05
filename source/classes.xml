@@ -1652,6 +1652,7 @@ details including an FAQ.
 	<!--  USER-SELECTABLE FEATURES  -->
 	<!-- ========================== -->
 
+    <!-- *NEXT 2 CLASSES MUST MATCH* -->
 	<class name="UrduHamza_sub">
 		_hamza absHamzaAbove absHamzaBelow
 		absHighHamza highHamza absHighHamzaAlef
@@ -1662,22 +1663,43 @@ details including an FAQ.
 		absHighHamza.arabic highHamza.arabic absHighHamzaAlef.arabic
 	</class>
 
-	<class name="BaseHamzaAbove">
+    <!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="BaseHamzaAbove_sub">
 		absAlefHamzaAbove absRehHamzaAbove absHahHamzaAbove absWawHamzaAbove
 		absHehGoalHamzaAbove absYehHamzaAbove nlqBariyehHamzaAbove absHehYehAbove
 	</class>
 
-	<class name="BaseNoHamzaAbove">
+	<class name="BaseNoHamzaAbove_sub">
 		absAlef absReh absHah absWaw 
 		absHehGoal nlqChotiyeh nlqBariyeh absHehGoal
 	</class>
 	
-	<class name="BaseHamzaBelow">
+    <!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="BaseHamzaBelow_sub">
 		absAlefHamzaBelow
 	</class>
 
-	<class name="BaseNoHamzaBelow">
+	<class name="BaseNoHamzaBelow_sub">
 		absAlef
+	</class>
+
+    <!-- *NEXT 2 CLASSES MUST MATCH* -->
+	<class name="PunctLatin_sub">
+		exclam quotedbl quotesingle parenleft asterisk plus minus hyphen
+		slash fraction colon less equal greater bracketleft backslash
+    	bracketright braceleft bar braceright quotesinglbase quotedblbase ellipsis uni2025
+    	guilsinglleft quoteleft quoteright quotedblleft quotedblright bullet endash emdash
+    	guilsinglright guillemotleft sfthyphen plusminus periodcentered bulletoperator guillemotright
+		g_multiply noBreakHyphen figuredash horizontalbar hyphenationPoint parenright
+	</class>
+
+	<class name="PunctArabic_sub">
+		exclam.arab quotedbl.arab quotesingle.arab parenleft.arab asterisk.arab plus.arab minus.arab hyphen.arab
+		slash.arab fraction.arab colon.arab less.arab equal.arab greater.arab bracketleft.arab backslash.arab
+    	bracketright.arab braceleft.arab bar.arab braceright.arab quotesinglbase.arab quotedblbase.arab ellipsis.arab uni2025.arab
+    	guilsinglleft.arab quoteleft.arab quoteright.arab quotedblleft.arab quotedblright.arab bullet.arab endash.arab emdash.arab
+    	guilsinglright.arab guillemotleft.arab sfthyphen.arab plusminus.arab periodcentered.arab bulletoperator.arab guillemotright.arab
+		g_multiply.arab noBreakHyphen.arab figuredash.arab horizontalbar.arab hyphenationPoint.arab parenright.arab
 	</class>
 
 	<!-- ================== -->
