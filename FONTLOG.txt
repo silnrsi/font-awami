@@ -1,21 +1,21 @@
 FONTLOG
-Awami Nastaliq font
+Awami Preview B font
 =================
 
-This file provides detailed information on the Awami Nastaliq font software.
-This information should be distributed along with the Awami Nastaliq font
+This file provides detailed information on the Awami Preview B font software.
+This information should be distributed along with the Awami font
 and any derivative works.
 
 Basic Font Information
 ----------------------
 
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of
+Awami is a Nastaliq-style Arabic script font supporting a wide variety of
 languages of Southwest Asia, including but not limited to Urdu. This font is aimed
 at minority language support. This makes it unique among Nastaliq fonts.
 
 Awami means "of the people", "of the common population" or "public".
 
-The Awami Nastaliq font does not provide complete coverage of all the characters
+The Awami font does not provide complete coverage of all the characters
 defined in Unicode for Arabic script. Because the font style is specifically
 intended for languages using the Nastaliq style of southwest Asia, the character
 set for this font is aimed at those languages.
@@ -23,18 +23,52 @@ set for this font is aimed at those languages.
 This font makes use of state-of-the-art font technologies to support complex
 typographic issues. Font smarts have been implemented using OpenType.
 
-Two font are included in this release:
+Five fonts from this typeface family are included in this release:
+      
+- Awami Preview B Regular
+- Awami Preview B Medium
+- Awami Preview B SemiBold
+- Awami Preview B Bold
+- Awami Preview B ExtraBold
 
-* Awami OT TechPre MinKern Regular
-* Awami OT TechPre AutoKern Regular
-
-For detailed documentation see the contents of the 'documentation-techpre' folder.
-
-Awami is a of SIL Global.
+For detailed documentation see the contents of the 'documentation' folder.
 
 ## ChangeLog
 ---------
 (This should list both major and minor changes, most recent first.)
+
+### 2026 Oct 13 (WSTech team) Awami Preview B Version 0.900 (preview)
+
+#### New
+
+- Characters added:
+   - U+0682 ARABIC LETTER HAH WITH TWO DOTS VERTICAL ABOVE
+   - U+06A8 ARABIC LETTER QAF WITH THREE DOTS ABOVE
+   - U+0754 ARABIC LETTER BEH WITH TWO DOTS BELOW AND DOT ABOVE
+   - U+088F ARABIC LETTER NOON WITH RING ABOVE
+   - U+FD4F ARABIC LIGATURE RAHIMAHUM ALLAAH
+   - U+FDFF ARABIC LIGATURE AZZA WA JALL
+- Added features:
+   - cv43 Lam-V alternate
+   - cv55 Arabic-style hamza
+   - cv56 High-hamza alternate
+   - cv85 Full-stop alternate
+   - cv86 Arabic- or Latin-style punctuation 
+- Added language support for Kashmiri and Malay
+- Added 4 weights: Medium, SemiBold, Bold, and ExtraBold
+- Implemented short finals
+- Implemented mirroring
+- Implemented Allah ligature
+
+#### Improved
+
+- Improved kerning
+- Fixed collisions reported during the TechPre cycle
+
+#### Known issues
+
+- At this point we have had very limited success using the font in MS Word.
+
 
 ### 2026 Apr 29 (WSTech team) Awami OT TechPre MinKern and Awami OT TechPre AutoKern Version 0.500 (technical preview)
 - Initial version of OpenType font (based on Awami Nastaliq version 3.300)
@@ -72,8 +106,8 @@ E: fonts@sil.org
 W: https://software.sil.org/wstech/
 D: Lead designer
 
-The Awami Nastaliq project is maintained by SIL Global.
+The Awami project is maintained by SIL Global.
 
-For more information please visit the Awami Nastaliq font page on
+For more information please visit the Awami font page on
 SIL Global's website:
 https://software.sil.org/awami/

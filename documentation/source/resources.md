@@ -1,11 +1,11 @@
 ---
-title: Awami Nastaliq - Resources
-fontversion: 3.300
+title: Awami Preview B - Resources
+fontversion: 0.900
 ---
 
 The SIL Arabic script fonts are encoded according to Unicode, so your application must support Unicode text in order to access letters other than the standard ANSI characters. Most applications now provide basic Unicode support. You will, however, need some way of entering Unicode text into your document.
 
-Arabic script is a complex and difficult script, and this complexity is compounded by the fact that Arabic script is used for [many different languages](https://scriptsource.org/scr/Arab) and cultures with variations in acceptable calligraphic style. From a computer perspective at least, the technologies used to implement Arabic script are not yet fully mature. The result is that while a given font might work for one set of languages on a given software platform, the same font might not work for other languages or on other platforms. This means that it is very difficult to give an accurate answer to the question of software requirements. 
+Arabic script is a complex and difficult script, and this complexity is compounded by the fact that Arabic script is used for [many different languages](https://writingsystems.info/scrlang/scripts/arab/) and cultures with variations in acceptable calligraphic style. From a computer perspective at least, the technologies used to implement Arabic script are not yet fully mature. The result is that while a given font might work for one set of languages on a given software platform, the same font might not work for other languages or on other platforms. This means that it is very difficult to give an accurate answer to the question of software requirements. 
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Install the font by decompressing the .zip archive and installing the font using
 
 This font package does not include keyboards or other software for entering text. To type the symbols in this font, use the keyboarding systems provided in your OS or use a separate utility. [Keyman](https://keyman.com/) is a cross-platform keyboarding system.
 
-Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://scriptsource.org/entry/ytr8g8n6sw).
+Various other means may be available for different operating-system platforms to create additional input methods. Some suggestions are listed here: [Keyboard Systems Overview](https://writingsystems.info/topics/input/keyboards-and-tools/).
 
 See [Character set support](charset.md) for details of the Unicode characters supported by this font.
 
@@ -42,75 +42,7 @@ On Windows 10/11: see [Use the On-Screen Keyboard (OSK) to type](https://support
 
 ## Rendering and application support
 
-The Awami Nastaliq font requires software enabled with the very latest [Graphite](https://graphite.sil.org/) engine (version 1.3.4+) in order to render correctly. The font does not support OpenType rendering. **It will not work with standard software such as Microsoft Office**. 
-
-Currently, the only software that can render Awami Nastaliq are the [Firefox web browser](https://www.mozilla.org/firefox), the [LibreOffice suite](https://www.libreoffice.org/), [XeTeX/XeLaTeX](https://www.tug.org/texlive/), and linguistic software such as [FieldWorks](https://software.sil.org/fieldworks/), [Paratext](https://paratext.org/), [PTXprint](https://software.sil.org/ptxprint/), and [Bloom](https://bloomlibrary.org/).
-
-If a developer wishes to add support for Graphite, the Graphite engine is available [here](https://github.com/silnrsi/graphite/releases/).
-
-Here are links for downloading appropriate versions:
-
-### Firefox
-
-You will need a [recent version of Firefox](https://www.mozilla.org/en-US/firefox/new/?scene=2&amp;f=85) - version 46 or later.
-
-Due to security concerns, Graphite has sometimes been disabled in Firefox by default, so you might need to enable it. Follow these [instructions for enabling Graphite in Firefox](https://graphite.sil.org/graphite_firefox).
-
-### LibreOffice
-
-We recommend [LibreOffice 5.3+](https://www.libreoffice.org/) which supports version 1.3.8 of the Graphite engine.
-
-Version 5.2 fixed the bug that was in version 5.1.
-
-Version 5.1 supports Awami, but it has a bug where certain characters (eg, the small tah) would be displayed in an incorrect position.
-
-
-### XeTeX
-
-The TeXLive 2017 version of XeTeX contains a fix for Harfbuzz which was causing combining marks to clash at the end of words when followed by a Latin character.
-
-TeXLive is available from [https://www.tug.org/texlive/](https://www.tug.org/texlive/).
-
-#### Full Collision Avoidance
-
-To use the full collision avoidance (both intra- and inter- word) of Awami in XeTeX (required version 0.99995 or newer) a macro parameter needs to be set. 
-
-Explanations of this parameter are at:
-
-[https://tug.org/pipermail/xetex/2016-February/026398.html](https://tug.org/pipermail/xetex/2016-February/026398.html)
-[https://tug.org/pipermail/xetex/2016-February/026401.html](https://tug.org/pipermail/xetex/2016-February/026401.html)
-[https://tug.org/pipermail/xetex/2016-February/026402.html](https://tug.org/pipermail/xetex/2016-February/026402.html)
-[https://tug.org/pipermail/xetex/2016-February/026403.html](https://tug.org/pipermail/xetex/2016-February/026403.html)
-[https://tug.org/pipermail/xetex/2016-February/026474.html](https://tug.org/pipermail/xetex/2016-February/026474.html)
-
-This parameter should be set in a .tex file. The file could look something like:
-
-```
-%% Cross-space contextualization
-
-% No cross-space contextualization.
-% This is how XeTeX behaves by default.
-% Most projects will use this setting.
-% \XeTeXinterwordspaceshaping = 0
-
-% Some cross-space contextualization.
-% Spaces between words are adjusted,
-% but the rendering of individual words is not affected by the spaces.
-% \XeTeXinterwordspaceshaping = 1
-
-% Full cross-space contextualization.
-% Spaces between words are adjusted,
-% and the rendering of individual words is affected by the spaces.
-% \XeTeXinterwordspaceshaping = 2
-```
-
-You must uncomment the appropriate command! For Awami Nastaliq, you will likely want to uncomment the last line (`\XeTeXinterwordspaceshaping = 2`). That allows the full support for collision avoidance.  
-
-The above text (all comments and commented out statements) will give the same behaviour as before this feature was added to XeTeX, so existing users do not see any unexpected changes.
-
-#### Bidi Support
-
-XeTeX in [TeXLive 2017+](https://www.tug.org/texlive/) uses the latest version of Harfbuzz (1.4.6+) which fixes a bug in bidirectional data.
+This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). **However, it still does not work well with some software such as Microsoft Office**. 
 
 ## Web fonts
 
@@ -122,7 +54,7 @@ One common type of data conversion is from Roman script to Arabic script. Cross-
 
 One page that may prove helpful is: [Roman Script to Arabic Script Conversion](https://software.sil.org/arabicfonts/rs-to-as-conversion/).
 
-Other suggestions are listed here: [Introduction to Text Conversion and Transliteration](https://scriptsource.org/entry/xlzd6n5aqt).
+Other suggestions are listed here: [Encoding Conversion](http://writingsystems.info/topics/encoding/encoding-conversion/).
 
 See also: [Arabic Fonts -- Resources](https://software.sil.org/arabicfonts/resources/).
 

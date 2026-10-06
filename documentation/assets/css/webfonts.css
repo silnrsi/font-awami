@@ -5,24 +5,16 @@ Font Names "Awami" and "SIL". This Font Software is licensed under the SIL
 Open Font License, Version 1.1 (https://openfontlicense.org/).
 */
 @font-face {
-    font-family: AwamiNastaliq-R;
-    src: url("../../../web/AwamiNastaliq-Regular.woff2") format("woff2");
+    font-family: AwamiPreviewB-R;
+    src: url("../../../web/AwamiPreviewB-Regular.ttf") format("woff2");
 }
 @font-face {
-    font-family: AwamiNastaliq-B;
-    src: url("../../../web/AwamiNastaliq-Bold.woff2") format("woff2");
-}
-@font-face {
-    font-family: AwamiNastaliqL-R;
-    src: url("../../../web/AwamiNastaliq-Regular.woff2") format("woff2");
-}
-@font-face {
-    font-family: AwamiNastaliqL-B;
-    src: url("../../../web/AwamiNastaliq-Bold.woff2") format("woff2");
+    font-family: AwamiPreviewB-B;
+    src: url("../../../web/AwamiPreviewB-Bold.ttf") format("woff2");
 }
 
-.awamipar-R { font-family: AwamiNastaliq-R; direction: rtl; text-align: right; line-height: 2.0;}
-.awami-R { font-family: AwamiNastaliq-R; direction: rtl; text-align: right;}
-.awami-B { font-family: AwamiNastaliq-B; direction: rtl; text-align: right;}
-.awamiL-R { font-family: AwamiNastaliq-R; direction: ltr; text-align: left;}
-.awamiL-B { font-family: AwamiNastaliq-B; direction: ltr; text-align: left;}
+.awamipar-R { font-family: AwamiPreviewB-R; direction: rtl; text-align: right; line-height: 2.0;}
+.awami-R { font-family: AwamiPreviewB-R; direction: rtl; text-align: right;}
+.awami-B { font-family: AwamiPreviewB-B; direction: rtl; text-align: right;}
+.awamiL-R { font-family: AwamiPreviewB-R; direction: ltr; text-align: left;}
+.awamiL-B { font-family: AwamiPreviewB-B; direction: ltr; text-align: left;}

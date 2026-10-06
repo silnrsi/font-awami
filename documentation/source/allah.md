@@ -1,15 +1,11 @@
 ---
-title: Awami Nastaliq - Rendering the Allah ligature
-fontversion: 3.300
+title: Awami Preview B - Rendering the Allah ligature
+fontversion: 0.900
 ---
-
-<font color="red">Note:</font> |
-------------- | ---------------
-**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
 
 In certain types of literature, the name *Allah* and words related to this name are given unique rendering. Unicode has a *presentation form* character (U+FDF2 ARABIC LIGATURE ALLAH ISOLATED FORM) that implements this rendering and, while this can work (in some fonts) for the word in isolation, it doesn’t help users obtain special rendering in other contexts where it is desired. 
 
-Awami Nastaliq provides the special rendering for sequences of Arabic letters that meet specific patterns, giving much more flexibility to document authors. 
+Awami provides the special rendering for sequences of Arabic letters that meet specific patterns, giving much more flexibility to document authors. 
 
 * Under certain conditions, a sequence of lam-lam-heh will form an Allah ligature:
   * The sequence must include either a preceding isolate *alef* or a *shadda* on the second *lam*, or both.
@@ -44,6 +40,6 @@ Characters | → | Glyph | Comment
 
 
 <!-- PRODUCT SITE ONLY
-[font id='awami' face='AwamiNastaliq-Regular' size='150%' rtl=1]
-[font id='awamiL' face='AwamiNastaliq-Regular' size='150%' ltr=1]
+[font id='awami' face='AwamiPreviewB-Regular' size='150%' rtl=1]
+[font id='awamiL' face='AwamiPreviewB-Regular' size='150%' ltr=1]
 -->

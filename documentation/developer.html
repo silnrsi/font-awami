@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <title>Awami Nastaliq - Developer information</title>
+    <title>Awami Preview B - Developer information</title>
     <meta name="author" content="SIL Writing Systems Technology">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="stylesheet" href="./assets/css/theme.css">
@@ -12,7 +12,7 @@
 <div class="container">
 <article class="article">
     <header>
-        <h1 class="title">Awami Nastaliq - Developer information</h1>
+        <h1 class="title">Awami Preview B - Developer information</h1>
     </header>
     <h2 id="welcome-font-developers">Welcome font developers!</h2>
     <p>We welcome other developers who wish to get involved in
@@ -36,8 +36,9 @@
     href="http://unifiedfontobject.org/versions/ufo3/">UFO3</a> format
     with font family structures defined using <a
     href="https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib">designspace</a>.
-    There is no OpenType code in this font, but the font does use the
-    Graphite smart font technology.</p>
+    This version of the font is using the Opentype rendering rather than
+    SIL's smart-font technology, <a
+    href="https://graphite.sil.org">Graphite</a>.</p>
     <p>The fonts are built using a completely free and open source
     workflow using industry-standard tools (<a
     href="https://github.com/fonttools/fonttools">fonttools</a>), a
@@ -48,8 +49,8 @@
     toolchain is available as a Docker container.</p>
     <p>Full instructions for setting up the tools and building SIL fonts
     are available on a dedicated web site: <a
-    href="https://silnrsi.github.io/silfontdev/">SIL Font Development
-    Guide</a>.</p>
+    href="https://writingsystems.info/topics/fonts/building-and-modifying-sil-fonts/">Building
+    and Modifying SIL Fonts</a>.</p>
     <h3 id="building">Building</h3>
     <p>The Awami Nastliq project can be built from source using <a
     href="https://github.com/silnrsi/smith">smith</a>. This is done via
@@ -78,6 +79,10 @@
     incompatible with Graide.</p>
     <p><code>--regOnly</code> causes smith to build the Regular weight
     only. This is useful during development and debugging.</p>
+    <p>This would just build Regular:</p>
+    <pre><code>    smith distclean
+    smith configure
+    smith build -d --regOnly -v -j1</code></pre>
     <h2 id="modifying-the-font">Modifying the font</h2>
     <h3 id="project-documentation">Project documentation</h3>
     <p>A good deal of developer documentation for the Awami Nastaliq
@@ -161,11 +166,10 @@
     the appropriate list in the <code>expand_sequences()</code> or
     <code>insert_diacritics()</code> function.</p>
     <p><code>tools/ftml.xsl</code> can be used to view ftml documents
-    directly in Firefox (which supports both Graphite rendering).</p>
+    directly in Firefox.</p>
     <h4 id="viewing-ftml-test-files">Viewing FTML test files</h4>
     <p>The <code>ftml.xsl</code> file is used to view the FTML files in
-    Firefox. Firefox is needed to both handle the XSL transforms as well
-    as provide Graphite render.</p>
+    Firefox. Firefox is needed to handle the XSL transforms.</p>
     <p>However, in order for Firefox to access the .xsl file, you need
     to relax its "strict URI" policy by going to about:config and
     setting <a
@@ -177,7 +181,7 @@
     project</h2>
     <p>We warmly welcome contributions to the fonts, such as new glyphs,
     enhanced smart font code, or bug fixes. The <a
-    href="https://silnrsi.github.io/silfontdev/en-US/Contributing_Changes.html">brief
+    href="https://writingsystems.info/topics/fonts/building-and-modifying-sil-fonts/#contributing-changes">brief
     overview of contributing changes</a> is a good place to begin. The
     next step is to contact us by responding to an existing issue or
     creating an issue in the Github repository and expressing your
@@ -193,7 +197,7 @@
     href="https://software.sil.org/fontcla">CLA information
     page</a>.</p>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.3 and is copyright © 2014-2024 SIL Global.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami project</a> version 0.9 and is copyright © 2014-2026 SIL Global.</p>
     </footer>
 </article>
 </div>

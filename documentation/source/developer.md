@@ -1,6 +1,6 @@
 ---
-title: Awami Nastaliq - Developer information
-fontversion: 3.300
+title: Awami Preview B - Developer information
+fontversion: 0.900
 ---
 
 ## Welcome font developers!
@@ -15,11 +15,11 @@ SIL’s fonts are licensed according to the terms of the [SIL Open Font License]
 
 Font sources are published in a [Github project](https://github.com/silnrsi/font-awami). The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](https://github.com/silnrsi/smith/blob/master/wscript).    
 
-Font sources are in the [UFO3](http://unifiedfontobject.org/versions/ufo3/) format with font family structures defined using [designspace](https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib). There is no OpenType code in this font, but the font does use the Graphite smart font technology.
+Font sources are in the [UFO3](http://unifiedfontobject.org/versions/ufo3/) format with font family structures defined using [designspace](https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib). This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
 
 The fonts are built using a completely free and open source workflow using industry-standard tools ([fonttools](https://github.com/fonttools/fonttools)), a package of custom python scripts ([pysilfont](https://github.com/silnrsi/pysilfont)), and a build and packaging system ([smith](https://github.com/silnrsi/smith)). The whole toolchain is available as a Docker container. 
 
-Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: [SIL Font Development Guide](https://silnrsi.github.io/silfontdev/).
+Full instructions for setting up the tools and building SIL fonts are available on a dedicated web site: [Building and Modifying SIL Fonts](https://writingsystems.info/topics/fonts/building-and-modifying-sil-fonts/).
 
 ### Building
 
@@ -41,6 +41,14 @@ Because of the complex kerning and collision avoidance logic, builds can take up
 `-d` should normally be omitted when building the fonts. However, when developing/debugging a font using Graide, the `-d` must be used to prevent some optimizations that are incompatible with Graide. 
 
 `--regOnly` causes smith to build the Regular weight only. This is useful during development and debugging.
+
+This would just build Regular:
+
+```
+    smith distclean
+    smith configure
+    smith build -d --regOnly -v -j1
+```
 
 ## Modifying the font
 
@@ -113,11 +121,11 @@ When new characters are added to the font, they should be added to `ftml_test_ge
 - Add the code to the appropriate list in the `expand_sequences()` or `insert_diacritics()` function.
 
 
-`tools/ftml.xsl` can be used to view ftml documents directly in Firefox (which supports both Graphite rendering).
+`tools/ftml.xsl` can be used to view ftml documents directly in Firefox.
 
 #### Viewing FTML test files
 
-The `ftml.xsl` file is used to view the FTML files in Firefox. Firefox is needed to both handle the XSL transforms as well as provide Graphite render.
+The `ftml.xsl` file is used to view the FTML files in Firefox. Firefox is needed to handle the XSL transforms.
 
 However, in order for Firefox to access the .xsl file, you need to relax its "strict URI" policy by going to about:config and
 setting [security.fileuri.strict_origin_policy](http://kb.mozillazine.org/Security.fileuri.strict_origin_policy) to false.
@@ -126,6 +134,6 @@ Once you have this setting in effect, you can load the FTML documents directly i
 
 ## Contributing to the project
 
-We warmly welcome contributions to the fonts, such as new glyphs, enhanced smart font code, or bug fixes. The [brief overview of contributing changes](https://silnrsi.github.io/silfontdev/en-US/Contributing_Changes.html) is a good place to begin. The next step is to contact us by responding to an existing issue or creating an issue in the Github repository and expressing your interest. We can then work together to plan and integrate your contributions.
+We warmly welcome contributions to the fonts, such as new glyphs, enhanced smart font code, or bug fixes. The [brief overview of contributing changes](https://writingsystems.info/topics/fonts/building-and-modifying-sil-fonts/#contributing-changes) is a good place to begin. The next step is to contact us by responding to an existing issue or creating an issue in the Github repository and expressing your interest. We can then work together to plan and integrate your contributions.
 
 To enable us to accept contributions in a way that honors your contribution and respects your copyright while preserving long-term flexibility for open source licensing, you would also need to agree to the **SIL Global Contributor License Agreement for Font Software (v1.0)** prior to sending us your contribution. To read more about this requirement and find out how to submit the required form, please visit the [CLA information page](https://software.sil.org/fontcla).

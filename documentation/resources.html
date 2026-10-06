@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <title>Awami Nastaliq - Resources</title>
+    <title>Awami Preview B - Resources</title>
     <meta name="author" content="SIL Writing Systems Technology">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="stylesheet" href="./assets/css/theme.css">
@@ -12,7 +12,7 @@
 <div class="container">
 <article class="article">
     <header>
-        <h1 class="title">Awami Nastaliq - Resources</h1>
+        <h1 class="title">Awami Preview B - Resources</h1>
     </header>
     <p>The SIL Arabic script fonts are encoded according to Unicode, so
     your application must support Unicode text in order to access
@@ -21,8 +21,8 @@
     of entering Unicode text into your document.</p>
     <p>Arabic script is a complex and difficult script, and this
     complexity is compounded by the fact that Arabic script is used for
-    <a href="https://scriptsource.org/scr/Arab">many different
-    languages</a> and cultures with variations in acceptable
+    <a href="https://writingsystems.info/scrlang/scripts/arab/">many
+    different languages</a> and cultures with variations in acceptable
     calligraphic style. From a computer perspective at least, the
     technologies used to implement Arabic script are not yet fully
     mature. The result is that while a given font might work for one set
@@ -51,8 +51,8 @@
     <p>Various other means may be available for different
     operating-system platforms to create additional input methods. Some
     suggestions are listed here: <a
-    href="https://scriptsource.org/entry/ytr8g8n6sw">Keyboard Systems
-    Overview</a>.</p>
+    href="https://writingsystems.info/topics/input/keyboards-and-tools/">Keyboard
+    Systems Overview</a>.</p>
     <p>See <a href="charset.html">Character set support</a> for details
     of the Unicode characters supported by this font.</p>
     <h3 id="keyman-keyboards">Keyman keyboards</h3>
@@ -79,89 +79,11 @@
     the On-Screen Keyboard (OSK) to type</a>.</p>
     <h2 id="rendering-and-application-support">Rendering and application
     support</h2>
-    <p>The Awami Nastaliq font requires software enabled with the very
-    latest <a href="https://graphite.sil.org/">Graphite</a> engine
-    (version 1.3.4+) in order to render correctly. The font does not
-    support OpenType rendering. <strong>It will not work with standard
-    software such as Microsoft Office</strong>.</p>
-    <p>Currently, the only software that can render Awami Nastaliq are
-    the <a href="https://www.mozilla.org/firefox">Firefox web
-    browser</a>, the <a href="https://www.libreoffice.org/">LibreOffice
-    suite</a>, <a href="https://www.tug.org/texlive/">XeTeX/XeLaTeX</a>,
-    and linguistic software such as <a
-    href="https://software.sil.org/fieldworks/">FieldWorks</a>, <a
-    href="https://paratext.org/">Paratext</a>, <a
-    href="https://software.sil.org/ptxprint/">PTXprint</a>, and <a
-    href="https://bloomlibrary.org/">Bloom</a>.</p>
-    <p>If a developer wishes to add support for Graphite, the Graphite
-    engine is available <a
-    href="https://github.com/silnrsi/graphite/releases/">here</a>.</p>
-    <p>Here are links for downloading appropriate versions:</p>
-    <h3 id="firefox">Firefox</h3>
-    <p>You will need a <a
-    href="https://www.mozilla.org/en-US/firefox/new/?scene=2&amp;f=85">recent
-    version of Firefox</a> - version 46 or later.</p>
-    <p>Due to security concerns, Graphite has sometimes been disabled in
-    Firefox by default, so you might need to enable it. Follow these <a
-    href="https://graphite.sil.org/graphite_firefox">instructions for
-    enabling Graphite in Firefox</a>.</p>
-    <h3 id="libreoffice">LibreOffice</h3>
-    <p>We recommend <a href="https://www.libreoffice.org/">LibreOffice
-    5.3+</a> which supports version 1.3.8 of the Graphite engine.</p>
-    <p>Version 5.2 fixed the bug that was in version 5.1.</p>
-    <p>Version 5.1 supports Awami, but it has a bug where certain
-    characters (eg, the small tah) would be displayed in an incorrect
-    position.</p>
-    <h3 id="xetex">XeTeX</h3>
-    <p>The TeXLive 2017 version of XeTeX contains a fix for Harfbuzz
-    which was causing combining marks to clash at the end of words when
-    followed by a Latin character.</p>
-    <p>TeXLive is available from <a
-    href="https://www.tug.org/texlive/">https://www.tug.org/texlive/</a>.</p>
-    <h4 id="full-collision-avoidance">Full Collision Avoidance</h4>
-    <p>To use the full collision avoidance (both intra- and inter- word)
-    of Awami in XeTeX (required version 0.99995 or newer) a macro
-    parameter needs to be set.</p>
-    <p>Explanations of this parameter are at:</p>
-    <p><a
-    href="https://tug.org/pipermail/xetex/2016-February/026398.html">https://tug.org/pipermail/xetex/2016-February/026398.html</a>
-    <a
-    href="https://tug.org/pipermail/xetex/2016-February/026401.html">https://tug.org/pipermail/xetex/2016-February/026401.html</a>
-    <a
-    href="https://tug.org/pipermail/xetex/2016-February/026402.html">https://tug.org/pipermail/xetex/2016-February/026402.html</a>
-    <a
-    href="https://tug.org/pipermail/xetex/2016-February/026403.html">https://tug.org/pipermail/xetex/2016-February/026403.html</a>
-    <a
-    href="https://tug.org/pipermail/xetex/2016-February/026474.html">https://tug.org/pipermail/xetex/2016-February/026474.html</a></p>
-    <p>This parameter should be set in a .tex file. The file could look
-    something like:</p>
-    <pre><code>    %% Cross-space contextualization
-
-% No cross-space contextualization.
-% This is how XeTeX behaves by default.
-% Most projects will use this setting.
-% \XeTeXinterwordspaceshaping = 0
-
-% Some cross-space contextualization.
-% Spaces between words are adjusted,
-% but the rendering of individual words is not affected by the spaces.
-% \XeTeXinterwordspaceshaping = 1
-
-% Full cross-space contextualization.
-% Spaces between words are adjusted,
-% and the rendering of individual words is affected by the spaces.
-% \XeTeXinterwordspaceshaping = 2</code></pre>
-    <p>You must uncomment the appropriate command! For Awami Nastaliq,
-    you will likely want to uncomment the last line
-    (<code>\XeTeXinterwordspaceshaping = 2</code>). That allows the full
-    support for collision avoidance.</p>
-    <p>The above text (all comments and commented out statements) will
-    give the same behaviour as before this feature was added to XeTeX,
-    so existing users do not see any unexpected changes.</p>
-    <h4 id="bidi-support">Bidi Support</h4>
-    <p>XeTeX in <a href="https://www.tug.org/texlive/">TeXLive 2017+</a>
-    uses the latest version of Harfbuzz (1.4.6+) which fixes a bug in
-    bidirectional data.</p>
+    <p>This version of the font is using the Opentype rendering rather
+    than SIL's smart-font technology, <a
+    href="https://graphite.sil.org">Graphite</a>. <strong>However, it
+    still does not work well with some software such as Microsoft
+    Office</strong>.</p>
     <h2 id="web-fonts">Web fonts</h2>
     <p>Web font versions of this font (in WOFF and WOFF2 formats) are
     available in the <code>web</code> folder. These can be copied to a
@@ -183,8 +105,8 @@
     href="https://software.sil.org/arabicfonts/rs-to-as-conversion/">Roman
     Script to Arabic Script Conversion</a>.</p>
     <p>Other suggestions are listed here: <a
-    href="https://scriptsource.org/entry/xlzd6n5aqt">Introduction to
-    Text Conversion and Transliteration</a>.</p>
+    href="http://writingsystems.info/topics/encoding/encoding-conversion/">Encoding
+    Conversion</a>.</p>
     <p>See also: <a
     href="https://software.sil.org/arabicfonts/resources/">Arabic Fonts
     -- Resources</a>.</p>
@@ -192,7 +114,7 @@
     <p>See <a href="features.html">Font features</a> for further
     information.</p>
     <footer class="footer">
-        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami Nastaliq project</a> version 3.3 and is copyright © 2014-2024 SIL Global.</p>
+        <p>This guide is from the <a href="https://software.sil.org/awami/" title="" class="active">Awami project</a> version 0.9 and is copyright © 2014-2026 SIL Global.</p>
     </footer>
 </article>
 </div>

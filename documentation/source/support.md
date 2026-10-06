@@ -1,6 +1,6 @@
 ---
-title: Awami Nastaliq - Support
-fontversion: 3.300
+title: Awami Preview B - Support
+fontversion: 0.900
 ---
 
 ## Support options
@@ -15,9 +15,9 @@ For person-to-person support visit the [SIL Language Software Community](https:/
 
 ## Reporting bugs and feature requests
 
-If you have a bug to report or a suggestion for how we could improve the font please create an issue in the [Github Awami Nastaliq project](https://github.com/silnrsi/font-awami/issues) or contact us directly.
+If you have a bug to report or a suggestion for how we could improve the font please create an issue in the [Github Awami project](https://github.com/silnrsi/font-awami/issues) or contact us directly.
 
 ## Contact form
 
-If the documentation and community fail to answer your question or need further help using the font, please contact us using [the form on the Awami Nastaliq web site](https://software.sil.org/awami/about/contact/).
+If the documentation and community fail to answer your question or need further help using the font, please contact us using [the form on the Awami web site](https://software.sil.org/awami/about/contact/).
 
