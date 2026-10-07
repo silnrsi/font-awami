@@ -1,5 +1,5 @@
 README
-Awami Nastaliq font
+Awami font
 ===================
 
 Thanks for your interest in Awami Nastaliq. The goal of this “tech-preview” release 
@@ -22,13 +22,13 @@ for.
 ABOUT
 =====
 
-Awami Nastaliq is a Nastaliq-style Arabic script font supporting a wide variety of 
+Awami is a Nastaliq-style Arabic script font supporting a wide variety of 
 languages of Southwest Asia, including but not limited to Urdu. This font is aimed 
 at minority language support. This makes it unique among Nastaliq fonts.
 
 Awami means "of the people", "of the common population" or "public". 
 
-The Awami Nastaliq font does not provide complete coverage of all the characters 
+The Awami font does not provide complete coverage of all the characters 
 defined in Unicode for Arabic script. Because the font style is specifically 
 intended for languages using the Nastaliq style of southwest Asia, the character 
 set for this font is aimed at those languages.
@@ -36,7 +36,7 @@ set for this font is aimed at those languages.
 This font makes use of state-of-the-art font technologies to support complex 
 typographic issues. Font smarts have been implemented using OpenType.
 
-Awami Nastaliq is released under the SIL Open Font License.
+Awami is released under the SIL Open Font License.
 
 Awami is a trademark of SIL Global.
 	
@@ -85,11 +85,11 @@ To type the symbols in this font, use the keyboarding systems provided in your O
 or use a separate utility. Keyman(https://keyman.com/) is a cross-platform keyboarding system.
 
 Various other means may be available for different operating-system platforms to create 
-additional input methods. Some suggestions are listed here: https://scriptsource.org/entry/ytr8g8n6sw.
+additional input methods. Some suggestions are listed here: https://writingsystems.info/topics/input/other-input-methods.
 
 CONTACT
 ========
-For more information please visit the Awami Nastaliq page on SIL Global's
+For more information please visit the Awami page on SIL Global's
 Computers and Writing systems website: https://software.sil.org/awami
 
 Support through the website: https://software.sil.org/awami/support

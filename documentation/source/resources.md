@@ -42,7 +42,7 @@ On Windows 10/11: see [Use the On-Screen Keyboard (OSK) to type](https://support
 
 ## Rendering and application support
 
-This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). **However, it still does not work well with some software such as Microsoft Office**. 
+This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). **However, it still does not work well with some software such as Microsoft Office**. 
 
 ## Web fonts
 

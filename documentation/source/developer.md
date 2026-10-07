@@ -15,7 +15,7 @@ SIL’s fonts are licensed according to the terms of the [SIL Open Font License]
 
 Font sources are published in a [Github project](https://github.com/silnrsi/font-awami). The build process requires [smith](https://github.com/silnrsi/smith) and project build parameters are set in the [wscript](https://github.com/silnrsi/smith/blob/master/wscript).    
 
-Font sources are in the [UFO3](http://unifiedfontobject.org/versions/ufo3/) format with font family structures defined using [designspace](https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib). This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
+Font sources are in the [UFO3](http://unifiedfontobject.org/versions/ufo3/) format with font family structures defined using [designspace](https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib). This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
 
 The fonts are built using a completely free and open source workflow using industry-standard tools ([fonttools](https://github.com/fonttools/fonttools)), a package of custom python scripts ([pysilfont](https://github.com/silnrsi/pysilfont)), and a build and packaging system ([smith](https://github.com/silnrsi/smith)). The whole toolchain is available as a Docker container. 
 
@@ -23,7 +23,7 @@ Full instructions for setting up the tools and building SIL fonts are available 
 
 ### Building
 
-The Awami Nastliq project can be built from source using [smith](https://github.com/silnrsi/smith). This is done via the sequence:
+The Awami project can be built from source using [smith](https://github.com/silnrsi/smith). This is done via the sequence:
 ```
     smith distclean
     smith configure
@@ -60,38 +60,15 @@ A good deal of developer documentation for the Awami Nastaliq font can be found 
 
 Like most Nastaliq fonts, Awami takes a "decomposition" approach, where initial, medial, and final forms are constructed at rendering time from separate base glyphs and nuqtas and other inherent parts of characters. This means that adding a new character will likely require only adding the isolate form along with its USV encoding.
 
-After adding new glyphs to the font, the shaping logic will need to be extended to handle them.  The bulk of the code is found in:
-- `nastaliq_classes.gdh`
-- `nastaliq_cntxlClasses.gdh`
-- `nastaliq_shaping.gdh`
-- `nastaliq_rules.gdh`.
+After adding new glyphs to the font, the shaping logic will need to be extended to handle them.  The bulk of the code is found in `gsub.feax`. Custom collision fixing is in `collfix.feax`. Special cases for kerning are in `autokern.feax`.
 
 A helpful approach is to do a global search through the code for a character with similar behavior and add glyphs for the new character in all the corresponding places.
 
 In addition, the following will need to be updated:
 - `glyph_data.csv` -- should include all glyphs in the font; it is used to set glyph order in the built font.
-- `nastaliq_complexShapes.gdh` -- needs to include any glyphs who shapes cannot be approximated by a simple polygon for the purposes of kerning, particularly those with concave portions.
-- "Octabox" data will need to be updated for all the weights of the font; see below.
+- `autoKernMetrics-R-200.feax` -- includes metrics used for the autokerning mechanism for the Regular weight; also used for Medium weight. This file is generated from the `mkglyphbounds` Python script.
+- `autoKernMetrics-B-200.feax` -- includes metrics used for the autokerning mechanism for the Black (ExtraBold) weight; also used for Bold and SemiBold.
 - `ftml_test_gen.py` -- should include the new character in order for it to be included in the automatically generated test files.
-
-### Generating octaboxes
-
-"Octaboxes" are polygons that approximate the shape of the glyphs; these are used for kerning and fixing collisions. There is an octabox JSON file for each font weight. Whenever new glyphs are added or glyph shapes are signficantly modified, the octaboxes should be regenerated. 
-
-Before any octabox can be updated, the ttf file for the corresponding font must be in the `results/` folder, so you first need to build the fonts (see above). Then the command to update a single octabox is:
-```
-octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf
-```
-
-where WEIGHT is Regular, Bold, etc. As given above, the command must be run from the root of the project. The command must be executed for each weight, and each will take several minutes to execute. 
-
-Alternatively, there is a script in the `tools/` folder called `run_octalap` which, if run from the `tools/` folder, will update all the octaboxes:
-```
-cd tools
-./run_octalap
-```
-
-In order to use the newly generated octaboxes the font must then be rebuilt.
 
 ### Auto-generated test files
 

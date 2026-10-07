@@ -34,7 +34,7 @@ If you choose a weight other than Regular (such as ExtraLight), then use applica
 
 This is the very first Nastaliq-style font with support for a wide range of languages, made possible by a flexible technology. This is the only freely-available font to provide an authentic Nastaliq style with kerned calligraphic segments. 
 
-This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). The advanced capabilities in this font provide access to the variant character forms used in some languages. See [Font features](features.md) and [What is Special About Awami? ](https://software.sil.org/awami/what-is-special/)
+This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). The advanced capabilities in this font provide access to the variant character forms used in some languages. See [Font features](features.md) and [What is Special About Awami? ](https://software.sil.org/awami/what-is-special/)
 
 ### *What does Awami mean?*
 

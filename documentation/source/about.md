@@ -11,7 +11,7 @@ For more information on the visual characteristics of the font see [Design](desi
 
 ## Future plans
 
-This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). As a _preview_ we are actively requesting feedback.
+This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org). As this font is a _preview_, we are actively requesting feedback.
 
 The highest priorities for future additions and enhancements are mainly driven by:
 

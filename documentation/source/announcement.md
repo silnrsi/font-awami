@@ -5,7 +5,7 @@ fontversion: 0.900
 
 We are happy to announce the release of Awami Preview B version 0.900. These fonts are the result of initial efforts to use OpenType (rather than Graphite) to render the Nastaliq style, including fixing collisions and performing kerning in a way that properly reflects the Nastaliq tradition.
 
-**PLEASE NOTE:** this is a “preview” release. We believe the font is in fairly good shape and close to a full release. However, we are sure there are still some bugs and infelicities. It will not be difficult to find collisions even in Urdu text. You also are welcome to try the fonts with other languages, but there will likely be even more collisions in that data.
+**PLEASE NOTE:** this is a “preview” release. We believe the font is in fairly good shape and close to a full release. However, we are sure there are still some bugs and infelicities. It will not be difficult to find collisions even in Urdu text. We invite you to try out the font with other languages as well and report any bugs or collisions.
 
 ## Changes in this version
 
@@ -29,6 +29,7 @@ We are happy to announce the release of Awami Preview B version 0.900. These fon
 - Implemented short finals
 - Implemented mirroring
 - Implemented Allah ligature
+- Implemented subtending marks
 
 #### Improved
 
@@ -37,7 +38,7 @@ We are happy to announce the release of Awami Preview B version 0.900. These fon
 
 #### Known issues
 
-- At this point we have had very limited success using the font in MS Word.
+- At this point we have had very limited success using the font in MS Word. It appears that there are bugs in Word's rendering engine that are preventing the font from working.
 
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://github.com/silnrsi/font-awami/releases#release-v0.900).
 

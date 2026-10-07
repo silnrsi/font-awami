@@ -2,7 +2,6 @@
 
 Awami is a Nastaliq-style Arabic script font supporting a wide variety of languages of southwest Asia, including but not limited to Urdu. 
 
-
 This font makes use of state-of-the-art font technologies to support complex 
 typographic issues. Font smarts have been implemented using OpenType.
 

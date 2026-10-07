@@ -3,7 +3,7 @@ title: Awami Preview B - Design
 fontversion: 0.900
 ---
 
-Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. This version of the font is using the Opentype rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
+Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
 
 The sloping nature of Nastaliq creates a great challenge: glyph collisions. A straightforward, naive layout of base glyphs, nuqtas, and diacritics will inevitably result in a rendering where the glyphs collide, forming ugly and even unreadable text. Fixing these collisions is exacerbated by the large number of glyphs and the complex positioning created by the sloping baseline.
 
@@ -47,11 +47,11 @@ In certain types of literature, the name *Allah* and words related to this name 
 
 ## Automatic collision-fixing
 
-To solve the problem of collisions, we have enhanced Graphite with an automatic collision-fixing capability. The Graphite engine makes use of a simplified form of the rendered glyphs to detect collisions, shift nuqtas and diacritics, and add kerning to create nicely laid-out text. Besides fixing collisions, the shape-based kerning mechanism can also create diagonal overlaps in the sloping text, as Nastaliq is traditionally written. 
+To solve the problem of collisions, we have enhanced Graphite with an automatic collision-fixing capability. The Graphite engine makes use of a simplified form of the rendered glyphs to detect collisions, shift nuqtas and diacritics, and add kerning to create nicely laid-out text. Besides fixing collisions, the shape-based kerning mechanism can also create diagonal overlaps in the sloping text, as Nastaliq is traditionally written.
 
 ## Vowel diacritical marks
 
-Few Nastaliq style fonts handle vowel marks well. This is acceptable for Urdu, but not for other languages, such as Saraiki and Marwari, that make more extensive use of vowel marks. Awami provides good support for the vowel marks often used by other languages.
+Few Nastaliq style fonts handle vowel marks well. This is acceptable for Urdu, but not for other languages, such as Saraiki and Marwari, that make more extensive use of vowel marks. The goal for Awami is to provide good support for the vowel marks often used by other languages.
 
 ## User-selectable Font Features
 

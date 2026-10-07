@@ -3,7 +3,7 @@ title: Awami Preview B - Font Features
 fontversion: 0.900
 ---
 
-Awami is a TrueType font with smart font capabilities added using the Opentype font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used. For applications that do not make use of the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](https://typetunerweb.languagetechnology.org/ttw/fonts2go.cgi), then choose the variants and download your font. **This version of the font does not yet contain support for TypeTuner.**
+Awami is a TrueType font with smart font capabilities added using the OpenType font technology. The font includes a number of optional features that provide alternative rendering that might be preferable for use in some contexts. The chart below enumerates the details of these features. Whether these features are available to users will depend on the application being used. For applications that do not make use of the OpenType Character Variants, you can now download fonts customized with the variant glyphs you choose. Read this document, visit [TypeTuner Web](https://typetunerweb.languagetechnology.org/ttw/fonts2go.cgi), then choose the variants and download your font. **This version of the font does not yet contain support for TypeTuner.**
 
 See [Using Font Features](https://software.sil.org/fonts/features/). Although that page is not targeted at Arabic script support, it does provide a comprehensive list of applications that make full use of both the OpenType and Graphite font technologies.
 
@@ -31,7 +31,7 @@ Malay | <span dir="rtl" class='awami-R normal' lang='ms' style="color:red">&#x06
 
 ### Character variants
 
-There are some character shape differences in different languages which use the Arabic script. These can be accessed by using Opentype character variants.  
+There are some character shape differences in different languages which use the Arabic script. These can be accessed by using OpenType character variants.  
 
 Unless otherwise indicated, the first feature in a table is the default.
 
