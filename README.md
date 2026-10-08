@@ -14,10 +14,10 @@ To download the fonts visit the [Awami downloads page](https://software.sil.org/
 
 For more information on using the fonts see the full project documentation for this preview:
 
-- *Github repo* - https://github.com/silnrsi/font-awami/blob/opentype/documentation-techpre/README.md
-- *local markdown* - Download the release or source package and open the file `documentation-techpre/README.md`
+- *Github repo* - https://github.com/silnrsi/font-awami/blob/opentype/documentation/README.md
+- *local markdown* - Download the release or source package and open the file `documentation/README.md`
 
-For more information on developing the fonts see the [project developer documentation](https://github.com/silnrsi/font-awami/blob/master/documentation/developer/dev01_intro.md). 
+For more information on developing the fonts see the [project developer documentation](https://github.com/silnrsi/font-awami/blob/master/documentation/developer/dev01_intro.md). However, note that much of this information relates to the Graphite implementation, not OpenType.
 
 For a complete list of changes in this version see the [FONTLOG.txt](FONTLOG.txt).
 

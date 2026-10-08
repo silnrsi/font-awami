@@ -1457,7 +1457,7 @@ lookup HandFixBariyehKern {
 # Make the alternate over-bowl position the default.
 lookup LamVOverBowl {
 	lookupflag 0;
-	sub [absLamSmallV absLamFin]  by  [absLamSmallV_alt absLamFin_altV];
+	sub [absLamSmallV absLamFin absLamFin_short]  by  [absLamSmallV_alt absLamFin_altV absLamFin_altV_short];
 } LamVOverBowl;
 
 
