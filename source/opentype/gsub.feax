@@ -1537,7 +1537,7 @@ script arab;
 # The over-bowl form is now the default; switch back to the over-stem form.
 lookup LamVAlternate {
 	lookupflag 0;
-	sub [absLamSmallV_alt absLamFin_altV]	by	[absLamSmallV absLamFin];
+	sub [absLamSmallV_alt absLamFin_altV absLamFin_altV_short]	by	[absLamSmallV absLamFin absLamFin_short];
 } LamVAlternate;
 
 # Force other languages to include Arabic script default rules:
