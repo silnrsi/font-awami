@@ -3,11 +3,6 @@ title: Awami Preview B - Type Sample
 fontversion: 0.900
 ---
 
-<font color="red">Note:</font> |
-:------------- | :---------------
-**This page will only display properly in Mozilla Firefox. Also, Graphite must be enabled. See [Using Graphite in Mozilla Firefox](https://graphite.sil.org/graphite_firefox).** |
-
-
 This document demonstrates all of the characters in the font. It is organized by Unicode block. Alternate glyphs that are available through features are demonstrated in the [Features](features.md) document. At the end is a sample demonstrating Arabic shaping and another example of running text.
 
 ### Basic Latin:
@@ -105,6 +100,15 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 #### Bold:
 <p dir="rtl"><span dir="rtl" class='awami-B normal'>&#x08C7; &#x08C8; &#x25cc;&#x08F7; &#x25cc;&#x08FF;</span></p>
 
+### Arabic Extended-B:
+
+#### Regular:
+<p dir="rtl"><span dir="rtl" class='awami-R normal'>&#x088F;</span></p>
+
+#### Bold:
+<p dir="rtl"><span dir="rtl" class='awami-B normal'>&#x088F;</span></p>
+
+
 
 ### Arabic Presentation Forms A and B:
 
@@ -144,13 +148,14 @@ Regular:<span class='awamiL-R normal'>™ ◌</span>
 <p dir="rtl"><span class='awami-R normal'>(۳) والدین کو اس بات کے انتخاب کا اوّلین حق ہے کہ ان کے بچوں کو کس قسم کی تعلیم دی جائے گی۔</span></p>
 
 ## Uyghur UDHR #26:
-<p dir="rtl"><span class='awami-B normal' style='font-feature-settings: "hamz" 1'>26 ماددا</span></p>
 
-<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "hamz" 1'>ھەمە ئادەم بىلىم ئېلىش ھوقۇقىغا ئىگە. بىلىم ئېلىش ھەقسىز بولۇشى كېرەك. ھېچ بولمىغاندا، باشلانغۇچ ۋە ئاساسىي باسقۇچتا شۇنداق بولۇشى كېرەك. باشلانغۇچ مائارىپ مەجبۇرىيەت خاراكتېرىدا بولۇشى كېرەك. تېخنىكا مائارىپى ۋە كەسپىي مائارىپى ئومۇميۈزلۈك تەسىس قىلىش كېرەك. ئالىي مائارىپنىڭ ئىشىكىنى نەتىجىگە قاراپ بارلىق كىشىلەرگە تەڭ ئېچىۋېتىش كېرەك.</span></p>
+<p dir="rtl"><span class='awami-B normal' style='font-feature-settings: "cv55" 1'>26 ماددا</span></p>
 
-<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "hamz" 1'>مائارىپنىڭ مەقسىتى ئادمنىڭ خاسلىقىنى بولۇق يېتىلدۈرۈش ھەمدە كىشىلىك ھوقۇقى ۋە ئاساسىي ئەركىنلىككە بولغان ھۆرمەتنى كۈچەيتىش. مائارىپ ھەرقايسى دۆلەتلەر، ئىرقلار، ياكى ھەرقايسى دىنىي گۇرۇھلار ئارا چۇشىنىشنى، يول قويۇشنى ۋە دوستلۇقنى ئىلگىرى سۈرۈشى ھەمدە بىرلەشكەن دۆلەتلەر تەشكىلاتىنىڭ تىنچلىقنى قوغداش يولىدىكى تۇرلۇك پائالىيەتلىرنى ئالغا سۈرۈشى كېرەك.</span></p>
+<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "cv55" 1'>ھەمە ئادەم بىلىم ئېلىش ھوقۇقىغا ئىگە. بىلىم ئېلىش ھەقسىز بولۇشى كېرەك. ھېچ بولمىغاندا، باشلانغۇچ ۋە ئاساسىي باسقۇچتا شۇنداق بولۇشى كېرەك. باشلانغۇچ مائارىپ مەجبۇرىيەت خاراكتېرىدا بولۇشى كېرەك. تېخنىكا مائارىپى ۋە كەسپىي مائارىپى ئومۇميۈزلۈك تەسىس قىلىش كېرەك. ئالىي مائارىپنىڭ ئىشىكىنى نەتىجىگە قاراپ بارلىق كىشىلەرگە تەڭ ئېچىۋېتىش كېرەك.</span></p>
 
-<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "hamz" 1'>ئاتا-ئانىلار پەرزەنتلىرىنىڭ ئېلىشقا تېگىشلىك بىلىم تۇرلىرىنى ئاۋۋال تاللاش ھوقۇقىغا ىگە.</span></p>
+<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "cv55" 1'>مائارىپنىڭ مەقسىتى ئادمنىڭ خاسلىقىنى بولۇق يېتىلدۈرۈش ھەمدە كىشىلىك ھوقۇقى ۋە ئاساسىي ئەركىنلىككە بولغان ھۆرمەتنى كۈچەيتىش. مائارىپ ھەرقايسى دۆلەتلەر، ئىرقلار، ياكى ھەرقايسى دىنىي گۇرۇھلار ئارا چۇشىنىشنى، يول قويۇشنى ۋە دوستلۇقنى ئىلگىرى سۈرۈشى ھەمدە بىرلەشكەن دۆلەتلەر تەشكىلاتىنىڭ تىنچلىقنى قوغداش يولىدىكى تۇرلۇك پائالىيەتلىرنى ئالغا سۈرۈشى كېرەك.</span></p>
+
+<p dir="rtl"><span class='awami-R normal' style='font-feature-settings: "cv55" 1'>ئاتا-ئانىلار پەرزەنتلىرىنىڭ ئېلىشقا تېگىشلىك بىلىم تۇرلىرىنى ئاۋۋال تاللاش ھوقۇقىغا ىگە.</span></p>
 
 <!-- PRODUCT SITE ONLY
 [font id='awami' face='AwamiPreviewB-Regular' bold='AwamiPreviewB-Bold' size='150%' lineheight='210%' rtl=1]

@@ -36,7 +36,7 @@
     href="http://unifiedfontobject.org/versions/ufo3/">UFO3</a> format
     with font family structures defined using <a
     href="https://github.com/fonttools/fonttools/tree/master/Doc/source/designspaceLib">designspace</a>.
-    This version of the font is using the Opentype rendering rather than
+    This version of the font is using the OpenType rendering rather than
     SIL's smart-font technology, <a
     href="https://graphite.sil.org">Graphite</a>.</p>
     <p>The fonts are built using a completely free and open source
@@ -52,7 +52,7 @@
     href="https://writingsystems.info/topics/fonts/building-and-modifying-sil-fonts/">Building
     and Modifying SIL Fonts</a>.</p>
     <h3 id="building">Building</h3>
-    <p>The Awami Nastliq project can be built from source using <a
+    <p>The Awami project can be built from source using <a
     href="https://github.com/silnrsi/smith">smith</a>. This is done via
     the sequence:</p>
     <pre><code>    smith distclean
@@ -97,46 +97,25 @@
     require only adding the isolate form along with its USV
     encoding.</p>
     <p>After adding new glyphs to the font, the shaping logic will need
-    to be extended to handle them. The bulk of the code is found in: -
-    <code>nastaliq_classes.gdh</code> -
-    <code>nastaliq_cntxlClasses.gdh</code> -
-    <code>nastaliq_shaping.gdh</code> -
-    <code>nastaliq_rules.gdh</code>.</p>
+    to be extended to handle them. The bulk of the code is found in
+    <code>gsub.feax</code>. Custom collision fixing is in
+    <code>collfix.feax</code>. Special cases for kerning are in
+    <code>autokern.feax</code>.</p>
     <p>A helpful approach is to do a global search through the code for
     a character with similar behavior and add glyphs for the new
     character in all the corresponding places.</p>
     <p>In addition, the following will need to be updated: -
     <code>glyph_data.csv</code> -- should include all glyphs in the
     font; it is used to set glyph order in the built font. -
-    <code>nastaliq_complexShapes.gdh</code> -- needs to include any
-    glyphs who shapes cannot be approximated by a simple polygon for the
-    purposes of kerning, particularly those with concave portions. -
-    "Octabox" data will need to be updated for all the weights of the
-    font; see below. - <code>ftml_test_gen.py</code> -- should include
-    the new character in order for it to be included in the
-    automatically generated test files.</p>
-    <h3 id="generating-octaboxes">Generating octaboxes</h3>
-    <p>"Octaboxes" are polygons that approximate the shape of the
-    glyphs; these are used for kerning and fixing collisions. There is
-    an octabox JSON file for each font weight. Whenever new glyphs are
-    added or glyph shapes are signficantly modified, the octaboxes
-    should be regenerated.</p>
-    <p>Before any octabox can be updated, the ttf file for the
-    corresponding font must be in the <code>results/</code> folder, so
-    you first need to build the fonts (see above). Then the command to
-    update a single octabox is:</p>
-    <pre><code>octalap -j 0 -q -o source/graphite/octabox_AwamiNastaliq-WEIGHT.json   results/AwamiNastaliq-WEIGHT.ttf</code></pre>
-    <p>where WEIGHT is Regular, Bold, etc. As given above, the command
-    must be run from the root of the project. The command must be
-    executed for each weight, and each will take several minutes to
-    execute.</p>
-    <p>Alternatively, there is a script in the <code>tools/</code>
-    folder called <code>run_octalap</code> which, if run from the
-    <code>tools/</code> folder, will update all the octaboxes:</p>
-    <pre><code>cd tools
-./run_octalap</code></pre>
-    <p>In order to use the newly generated octaboxes the font must then
-    be rebuilt.</p>
+    <code>autoKernMetrics-R-200.feax</code> -- includes metrics used for
+    the autokerning mechanism for the Regular weight; also used for
+    Medium weight. This file is generated from the
+    <code>mkglyphbounds</code> Python script. -
+    <code>autoKernMetrics-B-200.feax</code> -- includes metrics used for
+    the autokerning mechanism for the Black (ExtraBold) weight; also
+    used for Bold and SemiBold. - <code>ftml_test_gen.py</code> --
+    should include the new character in order for it to be included in
+    the automatically generated test files.</p>
     <h3 id="auto-generated-test-files">Auto-generated test files</h3>
     <p>The project includes a Python program
     <code>tools/scripts/ftml_test_gen.py</code> that can generates test
