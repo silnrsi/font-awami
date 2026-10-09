@@ -68,6 +68,7 @@ lookup DecomposeBases {
 	sub		@LamComposed_sub			by		absLam				@LamMark_sub;
 	# no meem varieties at this point
 	sub		@HehGoalComposed_sub		by		absHehGoal			@HehGoalMark_sub;
+	sub		absTehMarbuta				by		absTehMarbuta		_dot2u;
 	sub		@TehMarbutaGoalComposed_sub	by		absTehMarbutaGoal	@TehMarbutaGoalMark_sub;
 	sub		@NoonComposed_sub			by		absNoon				@NoonMark_sub;
 	sub		@ChotiyehComposed_sub		by		nlqChotiyeh			@ChotiyehMark_sub;
@@ -133,6 +134,7 @@ lookup RecomposeIsolates {
 	sub		absLam					@LamMark_sub			by		@LamComposed_sub;
 	# no meem varieties at this point
 	sub		absHehGoal				@HehGoalMark_sub		by		@HehGoalComposed_sub;
+	sub		absTehMarbuta			_dot2u					by		absTehMarbuta;
 	sub		absTehMarbutaGoal		@TehMarbutaGoalMark_sub	by		@TehMarbutaGoalComposed_sub;
 	sub		absNoon					@NoonMark_sub			by		@NoonComposed_sub;
 	sub		nlqChotiyeh				@ChotiyehMark_sub		by		@ChotiyehComposed_sub;
@@ -173,6 +175,7 @@ lookup RightFinals1 {
 	#sub		nlqBariyeh			by		nlqBariyehFin;
 	sub		absTehMarbuta			by		absTehMarbutaFin;
 	sub		absTehMarbutaGoal		by 		absTehMarbutaGoalFin;
+	sub		absAe					by		absTehMarbutaFin;
 	
 	# if there is still a noon or chotiyeh or qaf, it must be dotless
 	sub		absNoon			by		absNoonFin;
@@ -1063,42 +1066,44 @@ lookup NarrowLamBar {
 # --- Clean-ups ---
 
 lookup CleanupsDelete {
-	lookupflag 0;
+	lookupflag UseMarkFilteringSet [_hehHook.small _noDot1u _noDot2u _noDot2l _kafSquiggle _kehehTop_m_bogus];
 	
 	# delete hehhook from final hehgoals:
-	#sub  @HehGoalMedForms'	_hehHook.small'		by		@HehGoalMedForms;  # eventually controlled by a user feature
-	sub  absHehGoalFin'		_hehHook.small'		by		absHehGoalFin;
-	sub  absHehFin_allah'	_hehHook.small'		by		absHehFin_allah;
+	#sub  @HehGoalMedForms	_hehHook.small		by		@HehGoalMedForms;  # eventually controlled by a user feature
+	sub  absHehGoalFin		_hehHook.small		by		absHehGoalFin;
+	sub  absHehFin_allah	_hehHook.small		by		absHehFin_allah;
 	
 	# delete non-existent nuqtas:
-	# TODO: merge into one rule?
-	sub @BehIniForms'			_noDot1u'		by		@BehIniForms;		# noon ghunna
-	sub @BehMedForms'			_noDot1u'		by		@BehMedForms;
-	sub @BehFinForms'			_noDot1u'		by		@BehFinForms;
-	sub @NoonFinForms'			_noDot1u'		by		@NoonFinForms;		# noon ghunna
-	sub @FehIniForms'			_noDot1u'		by		@FehIniForms;		# dotless feh
-	sub @FehMedForms'			_noDot1u'		by		@FehMedForms;		# dotless feh
-	sub absFehFin'				_noDot1u'		by		absFehFin;			# dotless feh
-	sub @QafFinForms'			_noDot2u'		by		@QafFinForms;		# dotless qaf
-	sub @BehIniForms'			_noDot2l'		by		@BehIniForms;		# chotiyeh
-	sub @BehMedForms'			_noDot2l'		by		@BehMedForms;		# chotiyeh
-	sub @BehFinForms'			_noDot2l'		by		@BehFinForms;		# chotiyeh
-	sub @ChotiyehFinForms'		_noDot2l'		by		@ChotiyehFinForms;	# chotiyeh
-	sub @BariyehFinForms'		_noDot2l'		by		@BariyehFinForms;
+	sub @BehIniForms			_noDot1u		by		@BehIniForms;		# noon ghunna
+	sub @BehMedForms			_noDot1u		by		@BehMedForms;
+	sub @BehFinForms			_noDot1u		by		@BehFinForms;
+	sub @NoonFinForms			_noDot1u		by		@NoonFinForms;		# noon ghunna
+	sub @FehIniForms			_noDot1u		by		@FehIniForms;		# dotless feh
+	sub @FehMedForms			_noDot1u		by		@FehMedForms;		# dotless feh
+	sub absFehFin				_noDot1u		by		absFehFin;			# dotless feh
+	sub @BehIniForms			_noDot2u		by		@BehIniForms;		# alef maksura
+	sub @BehMedForms			_noDot2u		by		@BehMedForms;		# alef maksura
+	sub nlqChotiyehFin			_noDot2u		by		nlqChotiyehFin;		# alef maksura
+	sub @QafFinForms			_noDot2u		by		@QafFinForms;		# dotless qaf
+	sub @BehIniForms			_noDot2l		by		@BehIniForms;		# chotiyeh
+	sub @BehMedForms			_noDot2l		by		@BehMedForms;		# chotiyeh
+	sub @BehFinForms			_noDot2l		by		@BehFinForms;		# chotiyeh
+	sub @ChotiyehFinForms		_noDot2l		by		@ChotiyehFinForms;	# chotiyeh
+	sub @BariyehFinForms		_noDot2l		by		@BariyehFinForms;
 	
 	# delete kaf squiggle from initials and medials:
-	sub	@KehehIniForms'			_kafSquiggle'		by		@KehehIniForms;
-	sub @KehehIniBase_sub'		_kafSquiggle'		by 		@KehehIniBase_sub;
-	sub	@KehehMedForms'			_kafSquiggle'		by		@KehehMedForms;
-	sub @KehehMedBase_sub'		_kafSquiggle'		by 		@KehehMedBase_sub;
+	sub	@KehehIniForms			_kafSquiggle		by		@KehehIniForms;
+	sub @KehehIniBase_sub		_kafSquiggle		by 		@KehehIniBase_sub;
+	sub	@KehehMedForms			_kafSquiggle		by		@KehehMedForms;
+	sub @KehehMedBase_sub		_kafSquiggle		by 		@KehehMedBase_sub;
 	
 	# delete bogus kaf tops:
-	sub absKehehMed.jm'			_kehehTop_m_bogus		by  absKehehMed.jm;
-	sub absGafMed.jm'			_kehehTop_m_bogus		by  absGafMed.jm;
-	sub absKehehMed.by'			_kehehTop_m_bogus		by  absKehehMed.by;
-	sub absGafMed.by'			_kehehTop_m_bogus		by  absGafMed.by;
-	sub absKehehMed.mm'			_kehehTop_m_bogus		by  absKehehMed.mm;
-	sub absGafMed.mm'			_kehehTop_m_bogus		by  absGafMed.mm;
+	sub absKehehMed.jm			_kehehTop_m_bogus		by  absKehehMed.jm;
+	sub absGafMed.jm			_kehehTop_m_bogus		by  absGafMed.jm;
+	sub absKehehMed.by			_kehehTop_m_bogus		by  absKehehMed.by;
+	sub absGafMed.by			_kehehTop_m_bogus		by  absGafMed.by;
+	sub absKehehMed.mm			_kehehTop_m_bogus		by  absKehehMed.mm;
+	sub absGafMed.mm			_kehehTop_m_bogus		by  absGafMed.mm;
 	
 } CleanupsDelete;
 

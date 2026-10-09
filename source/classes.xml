@@ -497,8 +497,8 @@ details including an FAQ.
 	<class name="HehGoalComposed_sub">
 		absHehGoal absHehGoalHamzaAbove   <!-- absHehGoalHamza absHehGoalHamza -->
 	</class>
-	
-	<!-- *NEXT 2 CLASSES MUST MATCH* -->
+
+	<!-- *NEXT 2 CLASSES MUST MATCH* -->	
 	<class name="TehMarbutaGoalMark_sub">
 		_hehHook__dot2u  absHamzaAbove
 	</class>
@@ -520,10 +520,12 @@ details including an FAQ.
 	<class name="ChotiyehMark_sub">
 		_dot2lIM  _dot2l  _dot2vl  _dot2lIM__smallV   _dot2l.tail  _ring
 		_dot2lIM__smallTwo  _dot2lIM__smallThree  _smallFourBelow  _noDot2l__hamza
+		_noDot2u
 	</class>
 	<class name="ChotiyehComposed_sub">
 		nlqChotiyeh  absYeh absE absYehSmallV absYehTail absKashmiriYeh
 		absYehTwoAbove absYehThreeAbove absYehFourBelow absYehHamzaAbove
+		absAlefMaksura
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
@@ -1407,6 +1409,7 @@ details including an FAQ.
 		@NuqtaUpper  _hamza  _hamza.arabic  absHamzaAbove
 		_smallTah  _smallV  _ringabove  _smallTah2dots  _kafSquiggle
 		_smallThreeAbove  _smallTwoAbove  _wasla  _wavyHamza  _grafStroke
+		nlqPeshWaw  _verticalStroke
 		_dot2u__squiggle  _dot3u__squiggle  _dot3Noon
 		_dot1u_smallV  _dot1u_smallV.kf  _dot1u_ngMark  _dot1u_smallTah  _dot1u_smallTah.kf
 		_noDot1u _noDot2u
