@@ -1208,6 +1208,7 @@ lookup BariyehNuqta3 {		#  closest to bariyeh
 	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallTah2dotsBelow;
 	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVBelow;
 	sub @IniMedKB	_smallVinvBelow' 		lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_smallFourBelow' 		lookup _PreByHide		nlqBariyehFin' _byShim1' _byShim2' _byShim3' lookup _ByInsertSmallFourBelow;
 } BariyehNuqta3;
 
 
@@ -1243,6 +1244,7 @@ lookup BariyehNuqta2 {  # second from bariyeh
 	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallTah2dotsBelow;
 	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVBelow;
 	sub @IniMedKB	_smallVinvBelow'		lookup _PreByHide		@MedKB' 	nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_smallFourBelow' 		lookup _PreByHide		@MedKB'		nlqBariyehFin' _byShim1' _byShim2' lookup _ByInsertSmallFourBelow;
 	
 } BariyehNuqta2;
 
@@ -1278,6 +1280,7 @@ lookup BariyehNuqta1 {  # third from bariyeh
 	sub @IniMedKB	_smallTah2dotsBelow'	lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallTah2dotsBelow;
 	sub @IniMedKB	_smallVBelow' 			lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVBelow;
 	sub @IniMedKB	_smallVinvBelow'		lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallVinvBelow;
+	sub @IniMedKB	_smallFourBelow' 		lookup _PreByHide		@MedKB' @MedKB' nlqBariyehFin' _byShim1' lookup _ByInsertSmallFourBelow;
 	
 } BariyehNuqta1;
 

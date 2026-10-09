@@ -318,6 +318,11 @@ lookup _ByInsertSmallVinvBelow {
 	sub @ByShim by @ByShim  _smallVinvBelow;
 } _ByInsertSmallVinvBelow;
 
+lookup _ByInsertSmallFourBelow {
+	lookupflag UseMarkFilteringSet @NuqtaLikeLower;
+	sub @ByShim by @ByShim  _smallFourBelow;
+} _ByInsertSmallFourBelow;
+
 lookup _ByInsertZair {
 	#lookupflag UseMarkFilteringSet [@ByShim @NuqtaLikeLower];
 	lookupflag 0;
