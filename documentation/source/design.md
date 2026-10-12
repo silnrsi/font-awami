@@ -3,7 +3,7 @@ title: Awami Preview B - Design
 fontversion: 0.900
 ---
 
-Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. This version of the font is using the OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
+Nastaliq style Arabic is one of the most complex forms of writing in the world, and standard font technologies are not quite up to the challenge of handling its sloping, calligraphic form. This version of the font is using OpenType rendering rather than SIL's smart-font technology, [Graphite](https://graphite.sil.org).
 
 The sloping nature of Nastaliq creates a great challenge: glyph collisions. A straightforward, naive layout of base glyphs, nuqtas, and diacritics will inevitably result in a rendering where the glyphs collide, forming ugly and even unreadable text. Fixing these collisions is exacerbated by the large number of glyphs and the complex positioning created by the sloping baseline.
 

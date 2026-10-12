@@ -107,7 +107,7 @@ U+0604 ARABIC SIGN SAMVAT (Samvat era dates in Urdu)<br>(U+202D U+0604 U+06F1 U+
 
 ## Paragraph of text
 
-This sentence comes from the [Saraiki UDHR](https://www.unicode.org/udhr/d/udhr_skr.txt). 
+This sentence comes from the [Saraiki UDHR](https://github.com/eric-muller/udhr/blob/main/data/udhr/udhr_skr.xml). 
 
 Sample  | Feature setting
 ---------------: | :---- 

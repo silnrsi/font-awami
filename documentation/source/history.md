@@ -33,7 +33,7 @@ fontversion: 0.900
 
 #### Known issues
 
-- At this point we have had very limited success using the font in MS Word.
+- At this point we have had very limited success using the font in MS Word.  It appears that there are bugs in Word's rendering engine that are preventing the font from working.
 
 
 ### 2026 Apr 29 (WSTech team) Awami OT TechPre MinKern and Awami OT TechPre AutoKern Version 0.500 (technical preview)
