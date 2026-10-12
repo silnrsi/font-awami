@@ -2,7 +2,7 @@ README
 Awami font
 ===================
 
-Thanks for your interest in Awami Nastaliq. The goal of this “tech-preview” release 
+Thanks for your interest in Awami. The goal of this “preview b” release 
 is to gain feedback on our approach to using OpenType for smart rendering of Nastaliq.
 
 Our current officially-released font (Awami Nastaliq 3.400: http://software.sil.org/awami) 
@@ -11,13 +11,9 @@ traditional Nastaliq style. The biggest rendering challenges are collision avoid
 and automatic kerning. However, the Graphite system imposes some limitations on the usefulness 
 of the font, due to a lack of Graphite support in a wide range of applications.
 
-Our current hope is to create a version of Awami Nastaliq that uses OpenType to fix collisions 
-and perform kerning in a way that properly reflects the Nastaliq tradition. This requires not 
-only loosening the kerning to avoid collisions between segments, but also tightening the kerning 
-to create overlaps between diagonal segments, as shown in the images below.
-
-Please go the documentation-techpre/README.md file to see what kinds of feedback we are looking
-for.
+Awami Preview B uses OpenType to fix collisions and perform kerning in a way that properly reflects 
+the Nastaliq tradition. This requires not only loosening the kerning to avoid collisions between 
+segments, but also tightening the kerning to create overlaps between diagonal segments.
 
 ABOUT
 =====
@@ -82,7 +78,7 @@ in development.
 Keyboarding:
 This font package does not include keyboards or other software for entering text. 
 To type the symbols in this font, use the keyboarding systems provided in your OS 
-or use a separate utility. Keyman(https://keyman.com/) is a cross-platform keyboarding system.
+or use a separate utility. Keyman (https://keyman.com/) is a cross-platform keyboarding system.
 
 Various other means may be available for different operating-system platforms to create 
 additional input methods. Some suggestions are listed here: https://writingsystems.info/topics/input/other-input-methods.
