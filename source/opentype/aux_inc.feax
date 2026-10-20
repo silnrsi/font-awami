@@ -52,6 +52,18 @@ lookup FontCheck {
 
 #--- UTR53 ---
 
+@MaddaSkip = [ @UTR53_shadda @UTR53_fixedPos @UTR53_alef @UTR53_220MCM @UTR53_220other ] ;
+
+lookup _ReorderMaddaVowel1_aux {
+  lookupflag 0 ;
+    sub @MaddaSkip  by  @MaddaSkip  absMaddaAbove ;
+} _ReorderMaddaVowel1_aux ;
+
+lookup _ReorderMaddaVowel2_aux {
+  lookupflag 0 ;
+    sub absMaddaAbove  @MaddaSkip by @MaddaSkip ;
+} _ReorderMaddaVowel2_aux ;
+
 lookup _InsertHamza {
 	sub @PostHamzaMarks  by		absHamzaAbove	@PostHamzaMarks;
 } _InsertHamza;

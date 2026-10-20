@@ -29,7 +29,6 @@ lookup Mirror {
 
 } rtlm;
 
-
 feature ccmp {
 
 lookup FontCheck;		# both latn and arab
@@ -78,6 +77,19 @@ lookup DecomposeBases {
 	sub		@WawComposed_sub			by		absWaw				@WawMark_sub;
 	sub		@BariyehComposed_sub		by		nlqBariyeh			@BariyehMark_sub;
 } DecomposeBases;
+
+
+lookup ReorderMaddaVowel1 {
+	lookupflag 0;
+	# Insert a madda after the diacritics to be skipped:
+    sub absMaddaAbove  @MaddaSkip' lookup _ReorderMaddaVowel1_aux ;
+} ReorderMaddaVowel1 ;
+
+lookup ReorderMaddaVowel2 {
+	lookupflag 0;
+	# Delete the original madda:
+    sub absMaddaAbove' lookup _ReorderMaddaVowel2_aux  @MaddaSkip'  absMaddaAbove ;
+} ReorderMaddaVowel2 ;
 
 
 # For situations where UAX53 is not done: move hamzas down closer to base.
