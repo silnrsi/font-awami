@@ -361,6 +361,7 @@ lookup AttachUpper2 {
 lookup AttachUpper3 {
 	lookupflag UseMarkFilteringSet @MarkUpper;
 	pos		base @honorific		mark @_honorific;
+	pos		base @digitUpper	mark @_digitUpper;		# alef/yeh + small digit
 } AttachUpper3;
 
 # Special cases go last so that they override:
