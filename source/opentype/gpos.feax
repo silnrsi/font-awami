@@ -231,7 +231,7 @@ lookup SubtendingMarks {
 language KSH;
 language MLY;
 
-} kern;
+} kern;		# More kern feature lookups below
 
 
 feature mark {
@@ -505,12 +505,7 @@ lookup AttRing2Mark {
 
 # Shifting marks has to happen after they are attached.
 
-feature kern {
-
-#lookup TempTest {
-#	lookupflag 0;
-#	pos absRehFin._jkl'  <-650 0 -650 0>  absBehIni.sn _dot2u  absSeenFin;
-#} TempTest;
+feature kern {		# kern feature continued from above
 
 lookup ShiftNuqtasNS {
 	lookupflag UseMarkFilteringSet [@Shiftable @CfMarkerNS];

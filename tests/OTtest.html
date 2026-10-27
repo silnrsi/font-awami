@@ -5,11 +5,18 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Test">
 		<style>
-			body, td { font-family: sans-serif; } 
-			@font-face {font-family: TestFont1; 
-				src: local(Awami Nastaliq OT), url(..\results\AwamiNastaliq-RegularOT.ttf); }
-			.sample {font-family: TestFont1; font-size: 22px; text-align: right; }
-			.error { color: #FF0000; }
+        	@font-face {
+            	font-family: "AwamiOT";
+            	src: url("../results/AwamiPreviewB-Regular.ttf") format("truetype");
+        	}
+        	@font-face {
+        		font-family: "AwamiOT-B";
+        		src: url("../results/AwamiPreviewB-Bold.ttf") format("truetype");
+        	}
+        	body { font-family: 'AwamiOT', sans-serif; }
+        	h1, h2 { font-family: 'AwamiOT-B'; sans-serif; }
+			.sample {font-family: "AwamiOT"; font-size: 22px; text-align: right; }
+			.error {color: #FF0000;}
 		</style>
 	</head>
 	<body>
