@@ -341,7 +341,7 @@ lookup AdjustAscxDscx4Shifts {
 # Turn bases into marks so we can filter them out of all the arithmetic and kerning logic.
 lookup TreatBasesAsMarks {
 	lookupflag IgnoreMarks;
-	# sub @KernBase 		by 	@KernBaseMark;  # FEAX doesn't handle classes with different structures, so list everything out:
+####sub @KernBase 			by 	@KernBaseMark;  # FEAX doesn't handle classes with different structures, so list everything out:
 	sub @Initials			by	@KernBaseMarkIni;
 	sub @Medials			by	@KernBaseMarkMed;
 	sub @KernFinals			by	@KernBaseMarkFin;
