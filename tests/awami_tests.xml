@@ -3,7 +3,7 @@
 <ftml version="1.0">
   <head>
     <columns comment="30%" label="25%" string="45%" />
-    <fontsrc>url(..\results\AwamiNastaliq-Dev.ttf)</fontsrc>
+    <fontsrc>url(unknown font)</fontsrc>
     <styles>
       <style name="fset10" feats="=0 agca=3 dbsp=0 hehk=1 olap=2" />
       <style name="fset2" feats="hehk=0 olap=2" />
@@ -2329,7 +2329,7 @@
     </test>
     <test label="teh marbuta" rtl="True">
       <comment>Because these are right-joining, a sequence of them uses all isolate forms.</comment>
-      <string>ة ةةة</string>
+      <string>ة ةةة سة</string>
     </test>
     <test label="noon dot below" rtl="True">
       <string>ڹ ڹڹڹ</string>
@@ -2600,6 +2600,9 @@
       <comment>This showed up in the document Martin produced.</comment>
       <string>ؾ بؾ</string>
     </test>
+    <test label="AE - Uyghur" rtl="True" class="fset23034">
+      <string>ە ەەە سە</string>
+    </test>
     <test label="non-final noon ghunna" rtl="True">
       <comment>Balti</comment>
       <string>بون٘و</string>
@@ -2753,8 +2756,14 @@
     <test label="alt hamza below" rtl="True" class="fset22">
       <string>إ سإ رٕ</string>
     </test>
+    <test label="alt hamza - high hamza (no large forms)" rtl="True" class="fset22">
+      <string>ٴ ٵ</string>
+    </test>
     <test label="hamza - alt" rtl="True" class="fset22">
       <string>ء أ ؤ بؤ إ ۂ بۂ ۓ بۓ ٵ ݬ بݬ ځ بځ بځب بٔ بٕ</string>
+    </test>
+    <test label="special case for hamza" rtl="True" class="fset22">
+      <string>یٔ ځ یٔیٔ یٔیٔیٔ ۂ ۓ ۂ ۃٔ</string>
     </test>
     <test label="full stop - default" rtl="True">
       <string>نِ نیا ز۔</string>
@@ -2762,8 +2771,11 @@
     <test label="alt full stop" rtl="True" class="fset35">
       <string>نِ نیا ز۔</string>
     </test>
-    <test label="special case for hamza" rtl="True" class="fset22">
-      <string>یٔ ځ یٔیٔ یٔیٔیٔ ۂ ۓ ۂ ۃٔ</string>
+    <test label="lam-V - default" rtl="True" class="fset23034">
+      <string>سڵ ڵ</string>
+    </test>
+    <test label="lam-V" rtl="True" class="fset7164">
+      <string>سڵ ڵ</string>
     </test>
     <test label="LANGUAGES" background="#ffaaff" rtl="True" class="fset23034">
       <string />
@@ -2782,6 +2794,9 @@
       <string>سٴبفئځ ٴ اٴ ٵ</string>
     </test>
     <test label="Jawi - msa" rtl="True" class="fset23042">
+      <string>سٴبفئځ ٴ اٴ ٵ</string>
+    </test>
+    <test label="Not Jawi" rtl="True" class="fset23034">
       <string>سٴبفئځ ٴ اٴ ٵ</string>
     </test>
   </testgroup>
@@ -4173,7 +4188,7 @@ Is absBehIni.hd too thick at right edge?</comment>
     <test label="exclamation mark, colon, parens - Arabic" rtl="True" class="fset37">
       <string>ب: (سر)!</string>
     </test>
-    <test label="braces and brackets - Latin" rtl="True" class="fset37">
+    <test label="braces and brackets - Latin" class="fset37">
       <string>س [abs] ص</string>
     </test>
     <test label="braces and brackets - Arabic" class="fset37">
