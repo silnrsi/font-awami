@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - About
-fontversion: 3.400
+fontversion: 3.500
 ---
 
 *Awami Nastaliq* is a Nastaliq-style Arabic script font supporting a wide variety of languages of South Asia, including but not limited to Urdu. This font is aimed at minority language support. This makes it unique among Nastaliq fonts.

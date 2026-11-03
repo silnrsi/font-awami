@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Versions and Changes
-fontversion: 3.400
+fontversion: 3.500
 ---
 
 ## Announcement list

@@ -1,25 +1,24 @@
 ---
 title: Awami Nastaliq - Announcement
-fontversion: 3.400
+fontversion: 3.500
 ---
 
-We are happy to announce the release of Awami Nastaliq version 3.400. This is a maintenance release of Awami Nastaliq.
+We are happy to announce the release of Awami Nastaliq version 3.500. This is a maintenance release of Awami Nastaliq.
 
 ## Changes
 
 #### Improved
-
-- Fixed issues with kerning and collisions.
+- Make mathematical symbols more consistent in width
+- Fixed diacritic positioning for final teh marbuta goal
 
 #### New
-
-- Added support for Malay hamza forms.
-- Added 5 characters:
-  - U+0682 ARABIC LETTER HAH WITH TWO DOTS VERTICAL ABOVE
-  - U+06A8 ARABIC LETTER QAF WITH THREE DOTS ABOVE
-  - U+0754 ARABIC LETTER BEH WITH TWO DOTS BELOW AND DOT ABOVE
-  - U+FD4F ARABIC LIGATURE RAHIMAHUM ALLAAH
-  - U+FDFF ARABIC LIGATURE AZZA WA JALL
+- Added 2 characters:
+	- U+088F ARABIC LETTER NOON WITH RING ABOVE
+	- U+20B9 INDIAN RUPEE SIGN
+- Added right-to-left forms for 5 math symbols
+	
+#### Removed
+- U+00AD SOFT HYPHEN
 
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 

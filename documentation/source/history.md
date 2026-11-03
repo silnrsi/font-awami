@@ -1,16 +1,29 @@
 ---
 title: Awami Nastaliq - Version History
-fontversion: 3.400
+fontversion: 3.500
 ---
+
+### 2026-Nov-09 (SIL WSTech team) Awami Nastaliq Version 3.500
+
+#### Improved
+- Make mathematical symbols more consistent in width
+- Fixed diacritic positioning for final teh marbuta goal
+
+#### New
+- Added 2 characters:
+	- U+088F ARABIC LETTER NOON WITH RING ABOVE
+	- U+20B9 INDIAN RUPEE SIGN
+- Added right-to-left forms for 5 math symbols
+	
+#### Removed
+- U+00AD SOFT HYPHEN
 
 ### 2025-Oct-17 (SIL WSTech team) Awami Nastaliq Version 3.400
 
 #### Improved
-
 - Fixed issues with kerning and collisions.
 
 #### New
-
 - Added support for Malay hamza forms.
 - Added 5 characters:
   - U+0682 ARABIC LETTER HAH WITH TWO DOTS VERTICAL ABOVE

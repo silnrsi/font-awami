@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Type Sample
-fontversion: 3.400
+fontversion: 3.500
 ---
 
 <font color="red">Note:</font> |

@@ -1,6 +1,6 @@
 ---
 title: Awami Nastaliq - Font Features
-fontversion: 3.400
+fontversion: 3.500
 ---
 
 
