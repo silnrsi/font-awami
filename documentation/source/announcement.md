@@ -22,5 +22,7 @@ We are happy to announce the release of Awami Nastaliq version 3.500. This is a 
 
 Both desktop and web fonts are provided in a single, all-platforms package on the [Download Page](https://software.sil.org/awami/download/).
 
+## OpenType development
 
+An OpenType version of this font is in development. For testing and input into the final release of the font, please see [Awami Preview B](https://github.com/silnrsi/font-awami/releases/tag/v0.900).
 
