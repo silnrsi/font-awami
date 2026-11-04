@@ -3,7 +3,7 @@ title: Awami Nastaliq - Version History
 fontversion: 3.500
 ---
 
-### 2026-Nov-09 (SIL WSTech team) Awami Nastaliq Version 3.500
+### 2026-Nov-05 (SIL WSTech team) Awami Nastaliq Version 3.500
 
 #### Improved
 - Make mathematical symbols more consistent in width
