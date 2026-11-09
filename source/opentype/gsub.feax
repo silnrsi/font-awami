@@ -1345,13 +1345,28 @@ lookup DeleteBogus {
 } DeleteBogus;
 
 
+@KafIniHgM = [absKehehIni.hgM absGafIni.hgM absKehehIni.hgM_base];
+@KafIniHd = [absKehehIni.hd absGafIni.hd absKehehIni.hd_base];
+
 lookup Kern4BariyehTail {
 	lookupflag IgnoreMarks;
 
 	# Special cases:
-	sub [absKehehIni absGafIni]' lookup _ByKern800	absLamMed.by;	# 400
+	sub absFehIni.by' lookup _ByKern1700;	# 1500
+	sub absSadIni.by' lookup _ByKern900;	# 1200
+	sub [absKehehIni.by absGafIni.by]' lookup _ByKern1000;	# 1200
 
-	sub [absFehIni.by]' lookup _ByKern1700;			# 1500
+	sub absJeemIni.be' lookup _ByKern900				absBehMed.by;		# 1300
+	sub absFehIni.fe' lookup _ByKern1000				absFehMed.by;		# 1300
+	sub [absKehehIni absGafIni]' lookup _ByKern800		absLamMed.by;		# 400
+	sub [absKehehIni.jm absGafIni.jm]' lookup _ByKern600 absJeemMed.by;		# 800
+	sub absHehGoalIni.be' lookup _ByKern1000			absBehMed.by;		# 1300
+
+	sub absBehIni' lookup _ByKern1100		absLamMed.be absBehMed.by;				# 900
+	sub absBehIni.hgM' lookup _ByKern300	absHehGoalMed [absKehehMed.by absGafMed.by];	# 600
+	sub absSeenIni.mmX' lookup _ByKern500	absMeemMed._alt absLamMed.by;			# 100
+	sub absLamIni.hd' lookup _ByKern700		absHehDoachashmeeMed.be absBehMed.by;	# 900
+	sub @KafIniHgM' lookup _ByKern100		absHehGoalMed.be absBehMed.by;			# 200
 
 	# Default auto-generated rules:
 	include(../../source/opentype/bariyehKernRules.feax);
@@ -1427,51 +1442,16 @@ lookup WordKludgeByKern_Del {
 # -------------- end of Word kludge --------------------
 
 
-@RehWawDalAlef = [absReh absRehFin._jkl absWaw absWawFin absDal absDalFin @AlefForms];
-
-@KafIniHgM = [absKehehIni.hgM absGafIni.hgM absKehehIni.hgM_base];
-
-
-# --- Bariyeh tail tweaks ---
-
-# The automatic calculations aren't quite right for some sequences. Adjust.
-lookup HandFixBariyehKern {
+lookup FreezeBariyehKern {
 	lookupflag UseMarkFilteringSet [@KwMarker];
 
-	sub @IsoFin kwN900' 			absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
-	sub @IsoFin space kwN900' 		absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
-	sub @IsoFin space space	kwN900' absLamIni.hd absHehDoachashmeeMed.be absBehMed.by	by	kblockHard kwN500;
-
-	sub @IsoFin kwN1500' 			absFehIni.by	by	kblockHard kwN1700;
-	sub @IsoFin space kwN1500'		absFehIni.by	by	kblockHard kwN1700;
-
-	sub @IsoFin kwN200'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
-	sub @IsoFin space kwN200'		@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
-	sub @IsoFin space space kwN200'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	kblockHard kwN100;
-
-	sub @IsoFin kwN900'				absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
-	sub @IsoFin space kwN900'		absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
-	sub @IsoFin space space kwN900'	absBehIni absLamMed.be absBehMed.by	by	kblockHard kwN1100;
-
-	sub @IsoFin kwN1300'				absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
-	sub @IsoFin space kwN1300'			absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
-	sub @IsoFin space space kwN1300'	absJeemIni.be absBehMed.by	by	kblockHard kwN1000;
-
-	# Are these sets needed? Seem to be taken care of by Kern4BariyehTail.
-	#sub @IsoFin'				@KafIniHgM  absHehGoalMed.be absBehMed.by	by	@IsoFin kwN200;
-	#sub @IsoFin space'			@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
-	#sub @IsoFin space space'	@KafIniHgM  absHehGoalMed.be absBehMed.by	by	space kwN200;
-	#sub @IsoFin'				[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by	by  @IsoFin kw0;
-	#sub @IsoFin space'			[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by by	space kw0;
-	#sub @IsoFin space space'	[@KafIniForms @KehehIniBase_sub @GafIniBase_sub] absHehDoachashmeeMed.be absBehMed.by	by	space kw0;
-
-	# Otherwise, freeze kerning before a bariyeh.
+	# Freeze kerning before a bariyeh.
 	sub @KwMarker'	@IniBy_sub											by 	kblockHard @KwMarker;
 	sub @KwMarker'	@Initials @MedBy_sub								by	kblockHard @KwMarker;
 	sub @KwMarker'	@Initials @Medials @MedBy_sub						by	kblockHard @KwMarker;
 	sub @KwMarker'	@Initials @Medials @Medials @MedBy_sub				by	kblockHard @KwMarker;
 	sub @KwMarker'	@Initials @Medials @Medials @Medials @MedBy_sub		by	kblockHard @KwMarker;
-} HandFixBariyehKern;
+} FreezeBariyehKern;
 
 
 # Make the alternate over-bowl position the default.

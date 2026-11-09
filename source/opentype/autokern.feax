@@ -944,7 +944,7 @@ lookup RestoreBases_altKaf {  # separate lookup due to mkKehehMed.by existing in
 } RestoreBases_altKaf;
 
 
-# Leaving the markers in for the time being helps with debugging, but it creates problems for 
+# Leaving the markers in can help with debugging, but it creates problems for 
 # some applications like Emacs.
 lookup CleanUpMarkers {
 	lookupflag UseMarkFilteringSet [@DyMarker @AscXMarker @DscXMarker @YtMarker @YtkMarker @YbMarker @KBlock @PyMarker ybLast ytIgnore ybIgnore];
