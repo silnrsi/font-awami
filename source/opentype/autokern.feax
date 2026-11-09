@@ -799,7 +799,7 @@ do	let loopCount = int(1400 / SliceWidth());	# 1400 is the maximum kern to calcu
 {
 
 lookup $ln_CalculateKern {
-	lookupflag UseMarkFilteringSet [@KwMarker @PyMarker @YtMarker @YtkMarker @YbMarker @YbkMarker @KBlock];
+	lookupflag UseMarkFilteringSet [@KwMarker @PyMarker @YtMarker @YtkMarker @YbMarker @KBlock];  ### YbkMarker
 
 #	sub  @YtMarker'  lookup _TryKern	@KwMarker   @YbMarker;
 
@@ -944,15 +944,20 @@ lookup RestoreBases_altKaf {  # separate lookup due to mkKehehMed.by existing in
 } RestoreBases_altKaf;
 
 
-# Leaving the markers in for the time being helps with debugging.
-# lookup CleanUpMarkers {
-# 	lookupflag UseMarkFilteringSet [@DyMarker @YtMarker @YbMarker @KBlock @PyMarker];
-# 	sub @DyMarker by NULL;
-# 	sub @YtMarker by NULL;
-# 	sub @YbMarker by NULL;
-# 	sub @KBlock by NULL;
-# 	sub @PyMarker by NULL;
-#   sub ybIgnore by NULL;
-#   sub ytIgnore by NULL;
-#	# Whatever we do, don't delete KwMarkers or CfMarkers!
-# } CleanUpMarkers;
+# Leaving the markers in for the time being helps with debugging, but it creates problems for 
+# some applications like Emacs.
+lookup CleanUpMarkers {
+	lookupflag UseMarkFilteringSet [@DyMarker @AscXMarker @DscXMarker @YtMarker @YtkMarker @YbMarker @KBlock @PyMarker ybLast ytIgnore ybIgnore];
+ 	sub @DyMarker by NULL;
+	sub @AscXMarker by NULL;
+	sub @DscXMarker by NULL;
+	sub @YtMarker by NULL;
+	sub @YtkMarker by NULL;
+	sub @YbMarker by NULL;
+	sub @KBlock by NULL;
+	sub @PyMarker by NULL;
+	sub ybLast by NULL;
+	sub ytIgnore by NULL;
+	sub ybIgnore by NULL;
+	# Whatever we do, don't delete KwMarkers or CfMarkers!
+} CleanUpMarkers;
