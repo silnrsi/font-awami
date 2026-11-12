@@ -486,6 +486,7 @@ lookup AttMark2MarkUpper {
 lookup AttMark2MarkLower {
 	lookupflag UseMarkFilteringSet [@mLower_MarkBase @_mLower];
 	pos mark @mLower_MarkBase	mark @_mLower;
+	pos mark @mLower_MarkBase	mark @_hamzaLower;
 } AttMark2MarkLower;
 
 # Do we need this?
