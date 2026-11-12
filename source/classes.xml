@@ -296,6 +296,10 @@ details including an FAQ.
 		nlqChotiyehFin nlqChotiyehFin_short nlqChotiyehFin._bfkl nlqChotiyehFin._bfkl_short
 	</class>
 
+	<class name="YehForms">  <!-- for generating contextual forms -->
+		nlqChotiyehFin absYehTailFin absKashmiriYehFin
+	</class>
+
 	<class name="WawFinForms">
 		absWawFin absWawFin._stfh
 	</class>
@@ -518,14 +522,16 @@ details including an FAQ.
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->abs
 	<class name="ChotiyehMark_sub">
-		_dot2lIM  _dot2l  _dot2vl  _dot2lIM__smallV   _dot2l.tail  _ring
-		_dot2lIM__smallTwo  _dot2lIM__smallThree  _smallFourBelow  _noDot2l__hamza
-		_noDot2u
+		_dot2lIM  _dot2l  _dot2vl  _dot2lIM__smallV
+		_dot2lIM__smallTwo  _dot2lIM__smallThree  _smallFourBelow
+		_noDot2l__hamza  _noDot2u
+		 _ring  _dot2l.tail
 	</class>
 	<class name="ChotiyehComposed_sub">
-		nlqChotiyeh  absYeh absE absYehSmallV absYehTail absKashmiriYeh
-		absYehTwoAbove absYehThreeAbove absYehFourBelow absYehHamzaAbove
-		absAlefMaksura
+		nlqChotiyeh  absYeh  absE  absYehSmallV
+		absYehTwoAbove  absYehThreeAbove  absYehFourBelow
+		absYehHamzaAbove  absAlefMaksura
+		absKashmiriYeh absYehTail
 	</class>
 	
 	<!-- *NEXT 2 CLASSES MUST MATCH* -->
