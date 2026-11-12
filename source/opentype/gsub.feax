@@ -1384,24 +1384,29 @@ lookup Kern4BariyehTail {
 
 # NOTE: The case with a space after the previous segment does not work in Word, although it does in DWBox.
 
+lookup WordKludgeSpace2Mark {
+	lookupflag 0;
+	sub space by mkSpace;
+} WordKludgeSpace2Mark;
+
 # Duplicate the kerning marker on the previous final:
 lookup WordKludgeByKern_Dup {
-	lookupflag 0;
+	lookupflag UseMarkFilteringSet [@KwMarker];
 
 do	forlet i = range(200, 2500, 100);
 	let kw = "kwN" + str(i);
 {
 	sub @IsoFin'	$kw  @Initials			by  @IsoFin	$kw;
-	sub space'		$kw  @Initials			by  space	$kw;
+	#sub space'		$kw  @Initials			by  space	$kw;
 	sub @IsoFin'	$kw  @KehehIniBase_sub	by  @IsoFin	$kw;
-	sub space'		$kw  @KehehIniBase_sub	by  space	$kw;
+	#sub space'		$kw  @KehehIniBase_sub	by  space	$kw;
 }
 
 	# Preventing kerning:
 	sub @IsoFin'	kblockHard	@Initials			by	@IsoFin	kblockHard;
-	sub space'		kblockHard	@Initials			by	space	kblockHard;
+	#sub space'		kblockHard	@Initials			by	space	kblockHard;
 	sub @IsoFin'	kblockHard	@KehehIniBase_sub	by	@IsoFin	kblockHard;
-	sub space'		kblockHard	@KehehIniBase_sub	by	space	kblockHard;
+	#sub space'		kblockHard	@KehehIniBase_sub	by	space	kblockHard;
 
 } WordKludgeByKern_Dup;
 
@@ -1438,6 +1443,22 @@ lookup WordKludgeByKern_Del {
     sub @KwMarker @KwMarker'	@KehehIniBase_sub'	by @KehehIniBase_sub;
 	sub kblockHard kblockHard'	@KehehIniBase_sub'	by @KehehIniBase_sub;
 } WordKludgeByKern_Del;
+
+lookup WordKludgeMark2Space {
+	lookupflag 0;
+	sub mkSpace by space;
+} WordKludgeMark2Space;
+
+#lookup WordCraftSpaceKludgeByKern_Dup {
+#	lookupflag IgnoreMarks;
+#	sub @IsoFin' space kwN1500	by	@IsoFin kwN1500;
+#} WordCraftSpaceKludgeByKern_Dup;
+
+#lookup WordCraftSpaceKludgeByKern_Del {
+#	lookupflag UseMarkFilteringSet [@KwMarker kblockHard];
+#	sub space kwN1500	by	space;
+#} WordCraftSpaceKludgeByKern_Del;
+
 
 # -------------- end of Word kludge --------------------
 
