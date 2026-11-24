@@ -1421,8 +1421,8 @@ details including an FAQ.
 		_noDot1u _noDot2u
 	</class>
 	<class name="NuqtaLikeLower">
-		@NuqtaLower absHamzaBelow _hehHook.small _smallTahBelow _smallVBelow _smallTah2dotsBelow 
-		_smallVinvBelow _ring  _attachedRing _smallFourBelow
+		@NuqtaLower absHamzaBelow absHamzaBelow.arabic _hehHook.small _smallTahBelow _smallVBelow 
+		_smallTah2dotsBelow _smallVinvBelow _ring  _attachedRing _smallFourBelow
 		_dot2lIM  _dot2lIM.small _dot2l.tail
 		_noDot2l _noDot2l.small
 	</class>
@@ -1464,14 +1464,17 @@ details including an FAQ.
 		<!-- @_mLower  -->
 	</class>
 
-	<class name="DiacUpperC2"> <!-- is this used for anything?? -->
+	<class name="Diac">@DiacUpper @DiacLower</class>
+
+	<!-- Doesn't appear to be used for anything
+	<class name="DiacUpperC2"> 
 		nlqZabar nlqPesh absShadda nlqUltaPesh nlqKharizabar nlqJazm nlqJazm_openleft
 		nlqDopesh nlqDozabar absVowelInvSmallV absVowelSmallV 
 		absLeftArrowhead absMaddaAbove absNameMarker absNoonGhunnaMark absShortVowelMark absSmallDotlessHeadOfKhah
 		absZwarakay absSmallUprightRectangularZero absSmallHighAinMark absSmallHighRehDadMark absSmallHighRehHahMark
 		absSmallHighSadMark absSmallHighSeen absSmallHighTah</class>
+	-->
 
-	<class name="Diac">@DiacUpper @DiacLower</class>
 
 	<!-- TODO: handle gafStroke, graf, _kafTop_bj -->
 

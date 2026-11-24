@@ -206,6 +206,8 @@ lookup RightFinalsDelNuqtaSub {
 	sub		nlqChotiyehFin	_dot2lIM__smallV'		by 	_smallV;
 	sub		nlqChotiyehFin	_dot2lIM__smallTwo'		by 	_smallTwoAbove;
 	sub		nlqChotiyehFin	_dot2lIM__smallThree'	by 	_smallThreeAbove;
+
+	sub		absTehMarbutaGoalFin _hehHook__dot2u'	by	_dot2u;
 } RightFinalsDelNuqtaSub;
 
 lookup DualFinals {
@@ -267,8 +269,20 @@ language MLY;
 } init;		# end of feature
 
 
+@DiacNeedingDottedCircle = [@Diac];  # [absNameMarker nlqZabar nlqZair nlqPesh];
+
 feature rlig {
 script arab;
+
+lookup AddDottedCircle4Diac {
+	#lookupflag UseMarkFilteringSet [@Mark graphemejoinercomb];
+	lookupflag 0;
+	ignore sub @AllBases @DiacNeedingDottedCircle';
+	ignore sub @Mark @DiacNeedingDottedCircle';
+	ignore sub graphemejoinercomb @DiacNeedingDottedCircle';
+
+	sub @DiacNeedingDottedCircle'	by	circledash @DiacNeedingDottedCircle;
+} AddDottedCircle4Diac;
 
 # --- Allah ---
 
@@ -418,6 +432,8 @@ lookup DoublePreContext {
 	sub @IniDefault_sub' 	@BehForms absHehGoalFin	by	@IniBeHg_sub;
 	sub @MedDefault_sub' 	@BehForms absHehGoalFin	by	@MedBeHg_sub;
 
+	sub @IniDefault_sub' 	@BehForms absTehMarbutaGoalFin	by	@IniBeHg_sub;
+	sub @MedDefault_sub' 	@BehForms absTehMarbutaGoalFin	by	@MedBeHg_sub;
 } DoublePreContext;
 
 
@@ -456,6 +472,9 @@ lookup BasicContextuals {
 
 	sub @IniDefault_sub' @FehForms		by	@IniFe_sub;
 	sub	@MedDefault_sub' @FehForms		by	@MedFe_sub;
+
+	sub @IniDefault_sub' zerojoin		by	@IniFe_sub;
+	sub	@MedDefault_sub' zerojoin		by	@MedFe_sub;
 		
 	sub @IniDefault_sub' @MeemForms		by	@IniMm_sub;
 	sub	@MedDefault_sub' @MeemForms		by	@MedMm_sub;

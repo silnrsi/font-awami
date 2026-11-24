@@ -325,6 +325,9 @@ lookup CollFixDiacUpper {
 	# beh + beh
 	sub absBehIni.beM2	@MarkUpper' lookup _ShiftN100		absBehMed.benn'	@MarkUpper'	@Any' lookup _ShiftS100W100;
 
+	# beh + waw
+	sub absBehMed.qf @DiacUpper' lookup _ShiftN400 absWawFin' [_smallV absVowelSmallV]' @Any' lookup _ShiftS100;
+
 	# jeem
 	sub absJeemMed	@DiacUpper'	lookup _ShiftE200		[absAlefFin @LamMedForms @LamFinForms @KafMedForms @KafFinForms @KafMedBase_sub];
 	
@@ -424,6 +427,9 @@ lookup CollFixDiacLower {
 
 	# seen + jeem
 	sub @SeenIMForms  @DiacLower' lookup _ShiftE200 @JeemMedForms;
+
+	# tah + final jeem
+	sub [absTahIni.jm absTahMed.jm] @MarkLower' lookup _ShiftE300 absJeemFin [_dot2l _dot3l _dot4l];
 
 	# feh
 	sub absFehIni.be @DiacLower' lookup _ShiftS400  absBehMed.sd'  @NuqtaLikeLower' @Any' lookup _ShiftW200;
